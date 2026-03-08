@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Scale, Loader2, CheckCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 export default function SignupPage() {
   const [email, setEmail] = useState("");
