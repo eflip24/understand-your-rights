@@ -4,6 +4,7 @@ import { Menu, X, Search, Scale } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import ThemeToggle from "@/components/layout/ThemeToggle";
 
 const navLinks = [
   { label: "Tools", href: "/tools" },
