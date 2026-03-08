@@ -65,6 +65,12 @@ import BreakevenCalculator from "@/components/tools/BreakevenCalculator";
 import RiskRewardCalculator from "@/components/tools/RiskRewardCalculator";
 import CryptoConverterCalculator from "@/components/tools/CryptoConverterCalculator";
 import LoanPaymentCalculator from "@/components/tools/LoanPaymentCalculator";
+import GrantBudgetCalculator from "@/components/tools/GrantBudgetCalculator";
+import GrantDeadlineTracker from "@/components/tools/GrantDeadlineTracker";
+import GrantComplianceChecklist from "@/components/tools/GrantComplianceChecklist";
+import VestingScheduleCalculator from "@/components/tools/VestingScheduleCalculator";
+import StockOptionTaxCalculator from "@/components/tools/StockOptionTaxCalculator";
+import EquityDilutionCalculator from "@/components/tools/EquityDilutionCalculator";
 
 const toolComponents: Record<string, React.ComponentType> = {
   "reading-time": ReadingTimeCalculator,
@@ -128,6 +134,12 @@ const toolComponents: Record<string, React.ComponentType> = {
   "risk-reward": RiskRewardCalculator,
   "crypto-converter": CryptoConverterCalculator,
   "loan-payment": LoanPaymentCalculator,
+  "grant-budget": GrantBudgetCalculator,
+  "grant-deadline": GrantDeadlineTracker,
+  "grant-compliance": GrantComplianceChecklist,
+  "vesting-schedule": VestingScheduleCalculator,
+  "stock-option-tax": StockOptionTaxCalculator,
+  "equity-dilution": EquityDilutionCalculator,
 };
 
 export default function ToolPage() {
