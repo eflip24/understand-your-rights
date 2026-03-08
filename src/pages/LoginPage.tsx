@@ -17,6 +17,7 @@ export default function LoginPage() {
   const { user } = useAuth();
 
   useEffect(() => {
+    document.title = "Log In | LegallySpoken";
     if (user) navigate("/dashboard", { replace: true });
   }, [user, navigate]);
 

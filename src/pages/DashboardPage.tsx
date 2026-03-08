@@ -65,9 +65,6 @@ export default function DashboardPage() {
 
   return (
     <div className="container max-w-3xl py-12 px-4">
-      <Helmet>
-        <title>Dashboard | LegallySpoken</title>
-      </Helmet>
       <div className="flex items-center gap-3 mb-8">
         <Scale className="h-7 w-7 text-accent" />
         <div>

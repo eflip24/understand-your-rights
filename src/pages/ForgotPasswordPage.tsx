@@ -50,9 +50,6 @@ export default function ForgotPasswordPage() {
 
   return (
     <div className="min-h-[60vh] flex items-center justify-center px-4">
-      <Helmet>
-        <title>Reset Password | LegallySpoken</title>
-      </Helmet>
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle className="font-serif text-2xl">Reset Password</CardTitle>

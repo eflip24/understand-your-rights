@@ -57,10 +57,6 @@ export default function SignupPage() {
 
   return (
     <div className="min-h-[60vh] flex items-center justify-center px-4">
-      <Helmet>
-        <title>Sign Up | LegallySpoken</title>
-        <meta name="description" content="Create a free LegallySpoken account to save your contract analyses and access them anytime." />
-      </Helmet>
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <div className="flex justify-center mb-2">
