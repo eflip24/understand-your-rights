@@ -74,6 +74,13 @@ export const categories: CategoryInfo[] = [
     icon: Users,
     color: "text-indigo-500",
   },
+  {
+    id: "finance",
+    label: "Finance & Trading",
+    description: "Calculators for trading, crypto, investing, and personal finance.",
+    icon: DollarSign,
+    color: "text-emerald-500",
+  },
 ];
 
 export const tools: Tool[] = [
