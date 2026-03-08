@@ -66,6 +66,12 @@ const toolComponents: Record<string, React.ComponentType> = {
   "amendment-drafter": AmendmentDrafter,
   "contract-value": ContractValueCalculator,
   "warranty-tracker": WarrantyExpirationCalculator,
+  "statute-of-limitations": StatuteOfLimitationsLookup,
+  "small-claims-limit": SmallClaimsLimitChecker,
+  "consumer-rights-quiz": ConsumerRightsQuiz,
+  "dispute-letter": DisputeLetterGenerator,
+  "salary-converter": SalaryToHourlyConverter,
+  "pto-calculator": PTOCalculator,
 };
 
 export default function ToolPage() {
