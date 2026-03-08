@@ -96,6 +96,18 @@ const toolComponents: Record<string, React.ComponentType> = {
   "cease-desist": CeaseAndDesistGenerator,
   "poa-generator": PowerOfAttorneyGenerator,
   "ic-agreement": IndependentContractorAgreement,
+  "promissory-note": PromissoryNoteGenerator,
+  "security-deposit": SecurityDepositCalculator,
+  "rent-increase": RentIncreaseCalculator,
+  "lease-comparison": LeaseTermComparison,
+  "moveout-checklist": MoveOutChecklistGenerator,
+  "rental-agreement": RentalAgreementGenerator,
+  "business-name": BusinessNameChecker,
+  "contractor-vs-employee": ContractorVsEmployeeChecker,
+  "severance-pay": SeverancePayCalculator,
+  "overtime-calc": OvertimeCalculator,
+  "partnership-split": PartnershipSplitCalculator,
+  "business-expense": BusinessExpenseTracker,
 };
 
 export default function ToolPage() {
