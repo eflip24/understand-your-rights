@@ -14,6 +14,102 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_categories: {
+        Row: {
+          created_at: string | null
+          id: string
+          name: string
+          parent_wp_id: number | null
+          slug: string
+          wp_id: number
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          name: string
+          parent_wp_id?: number | null
+          slug: string
+          wp_id: number
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          name?: string
+          parent_wp_id?: number | null
+          slug?: string
+          wp_id?: number
+        }
+        Relationships: []
+      }
+      blog_post_categories: {
+        Row: {
+          category_id: string
+          post_id: string
+        }
+        Insert: {
+          category_id: string
+          post_id: string
+        }
+        Update: {
+          category_id?: string
+          post_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blog_post_categories_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "blog_categories"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "blog_post_categories_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      blog_posts: {
+        Row: {
+          author_name: string
+          content: string
+          created_at: string | null
+          excerpt: string
+          featured_image_url: string | null
+          id: string
+          published_at: string | null
+          slug: string
+          title: string
+          wp_id: number
+        }
+        Insert: {
+          author_name?: string
+          content?: string
+          created_at?: string | null
+          excerpt?: string
+          featured_image_url?: string | null
+          id?: string
+          published_at?: string | null
+          slug: string
+          title: string
+          wp_id: number
+        }
+        Update: {
+          author_name?: string
+          content?: string
+          created_at?: string | null
+          excerpt?: string
+          featured_image_url?: string | null
+          id?: string
+          published_at?: string | null
+          slug?: string
+          title?: string
+          wp_id?: number
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string | null
