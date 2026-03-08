@@ -27,33 +27,30 @@ export function useBlogPosts(categorySlug?: string) {
   return useQuery({
     queryKey: ["blog-posts", categorySlug],
     queryFn: async () => {
-      let postIds: string[] | null = null;
+      // Use the view for single-query fetch with categories
+      let query = supabase
+        .from("blog_posts_with_categories")
+        .select("*")
+        .eq("status", "published")
+        .order("published_at", { ascending: false });
 
       if (categorySlug) {
+        // Filter posts that have this category — use containment on the JSON array
         const { data: cat } = await supabase
           .from("blog_categories")
           .select("id")
           .eq("slug", categorySlug)
           .single();
 
-        if (cat) {
-          const { data: mappings } = await supabase
-            .from("blog_post_categories")
-            .select("post_id")
-            .eq("category_id", cat.id);
-          postIds = mappings?.map((m) => m.post_id) || [];
-        } else {
-          return [];
-        }
-      }
+        if (!cat) return [];
 
-      let query = supabase
-        .from("blog_posts")
-        .select("*")
-        .eq("status", "published")
-        .order("published_at", { ascending: false });
+        // Get post IDs for this category
+        const { data: mappings } = await supabase
+          .from("blog_post_categories")
+          .select("post_id")
+          .eq("category_id", cat.id);
 
-      if (postIds) {
+        const postIds = mappings?.map((m) => m.post_id) || [];
         if (postIds.length === 0) return [];
         query = query.in("id", postIds);
       }
@@ -61,30 +58,30 @@ export function useBlogPosts(categorySlug?: string) {
       const { data, error } = await query;
       if (error) throw error;
 
-      // Fetch categories for each post
-      const posts = data as BlogPost[];
-      const allPostIds = posts.map((p) => p.id);
-
-      const { data: allMappings } = await supabase
-        .from("blog_post_categories")
-        .select("post_id, category_id")
-        .in("post_id", allPostIds);
-
-      const catIds = [...new Set(allMappings?.map((m) => m.category_id) || [])];
-      const { data: cats } = catIds.length
-        ? await supabase.from("blog_categories").select("*").in("id", catIds)
-        : { data: [] };
-
-      const catLookup = new Map((cats || []).map((c) => [c.id, c as BlogCategory]));
-
-      return posts.map((post) => ({
-        ...post,
-        categories: (allMappings || [])
-          .filter((m) => m.post_id === post.id)
-          .map((m) => catLookup.get(m.category_id)!)
-          .filter(Boolean),
-      }));
+      return (data || []).map((row: any) => ({
+        ...row,
+        categories: row.categories || [],
+      })) as BlogPost[];
     },
+  });
+}
+
+// Lightweight query for related posts — no categories needed, limit 4
+export function useRelatedPosts(currentPostId?: string) {
+  return useQuery({
+    queryKey: ["related-posts", currentPostId],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("blog_posts")
+        .select("id, title, slug, featured_image_url, published_at")
+        .eq("status", "published")
+        .neq("id", currentPostId!)
+        .order("published_at", { ascending: false })
+        .limit(3);
+      if (error) throw error;
+      return data as Pick<BlogPost, "id" | "title" | "slug" | "featured_image_url" | "published_at">[];
+    },
+    enabled: !!currentPostId,
   });
 }
 
@@ -93,25 +90,16 @@ export function useBlogPost(slug: string) {
     queryKey: ["blog-post", slug],
     queryFn: async () => {
       const { data, error } = await supabase
-        .from("blog_posts")
+        .from("blog_posts_with_categories")
         .select("*")
         .eq("slug", slug)
         .single();
       if (error) throw error;
 
-      const post = data as BlogPost;
-
-      const { data: mappings } = await supabase
-        .from("blog_post_categories")
-        .select("category_id")
-        .eq("post_id", post.id);
-
-      const catIds = mappings?.map((m) => m.category_id) || [];
-      const { data: cats } = catIds.length
-        ? await supabase.from("blog_categories").select("*").in("id", catIds)
-        : { data: [] };
-
-      return { ...post, categories: (cats || []) as BlogCategory[] };
+      return {
+        ...data,
+        categories: data.categories || [],
+      } as BlogPost;
     },
     enabled: !!slug,
   });

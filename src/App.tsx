@@ -36,7 +36,15 @@ const AdminBlogEditor = React.lazy(() => import("@/pages/admin/AdminBlogEditor")
 const AdminCategories = React.lazy(() => import("@/pages/admin/AdminCategories"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      gcTime: 10 * 60 * 1000, // 10 minutes
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-[60vh]">

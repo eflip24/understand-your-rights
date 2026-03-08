@@ -11,8 +11,9 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { useBlogPost, useBlogPosts } from "@/hooks/useBlogPosts";
+import { useBlogPost, useRelatedPosts } from "@/hooks/useBlogPosts";
 import Head from "@/components/seo/Head";
+import JsonLd, { blogPostingSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import { Card, CardContent } from "@/components/ui/card";
 import { format } from "date-fns";
 
@@ -70,7 +71,7 @@ function addHeadingIds(html: string) {
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const { data: post, isLoading } = useBlogPost(slug || "");
-  const { data: relatedPosts } = useBlogPosts();
+  const { data: related = [] } = useRelatedPosts(post?.id);
 
   const processedContent = useMemo(() => {
     if (!post?.content) return "";
@@ -81,13 +82,6 @@ export default function BlogPostPage() {
     if (!post?.content) return [];
     return extractHeadings(post.content);
   }, [post?.content]);
-
-  const related = useMemo(() => {
-    if (!relatedPosts || !post) return [];
-    return relatedPosts
-      .filter((p) => p.id !== post.id)
-      .slice(0, 3);
-  }, [relatedPosts, post]);
 
   if (isLoading) {
     return (
@@ -117,10 +111,33 @@ export default function BlogPostPage() {
   }
 
   const title = decodeHtml(post.title);
+  const postUrl = `https://legallyspoken.com/blog/${post.slug}`;
 
   return (
     <>
-      <Head title={`${title} — LegallySpoken`} description={post.excerpt} />
+      <Head
+        title={`${title} — LegallySpoken`}
+        description={post.excerpt}
+        ogImage={post.featured_image_url || undefined}
+        ogType="article"
+      />
+      <JsonLd
+        data={blogPostingSchema({
+          headline: title,
+          description: post.excerpt,
+          url: postUrl,
+          datePublished: post.published_at || undefined,
+          author: post.author_name,
+          image: post.featured_image_url || undefined,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: "https://legallyspoken.com" },
+          { name: "Blog", url: "https://legallyspoken.com/blog" },
+          { name: title, url: postUrl },
+        ])}
+      />
 
       {/* Hero */}
       <div className="relative">

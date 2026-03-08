@@ -97,3 +97,57 @@ export function websiteSchema() {
     },
   };
 }
+
+export function breadcrumbSchema(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function blogPostingSchema(opts: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished?: string;
+  author?: string;
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: opts.headline,
+    description: opts.description,
+    url: opts.url,
+    ...(opts.datePublished && { datePublished: opts.datePublished }),
+    ...(opts.image && { image: opts.image }),
+    author: {
+      "@type": "Person",
+      name: opts.author || "LegallySpoken",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "LegallySpoken",
+    },
+  };
+}
+
+export function itemListSchema(name: string, items: { url: string; name: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: item.url,
+      name: item.name,
+    })),
+  };
+}

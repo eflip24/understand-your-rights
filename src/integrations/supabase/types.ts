@@ -69,6 +69,13 @@ export type Database = {
             referencedRelation: "blog_posts"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "blog_post_categories_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts_with_categories"
+            referencedColumns: ["id"]
+          },
         ]
       }
       blog_posts: {
@@ -184,7 +191,23 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      blog_posts_with_categories: {
+        Row: {
+          author_name: string | null
+          categories: Json | null
+          content: string | null
+          created_at: string | null
+          excerpt: string | null
+          featured_image_url: string | null
+          id: string | null
+          published_at: string | null
+          slug: string | null
+          status: string | null
+          title: string | null
+          wp_id: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       has_role: {
