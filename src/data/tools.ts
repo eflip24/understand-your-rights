@@ -1,6 +1,6 @@
-import { FileText, Calculator, Shield, Users, Scale, Clock, DollarSign, Search, FileCheck, Briefcase, Receipt, Ban, AlertTriangle, ScrollText, Mail } from "lucide-react";
+import { FileText, Calculator, Shield, Users, Scale, Clock, DollarSign, Search, FileCheck, Briefcase, Receipt, Ban, AlertTriangle, ScrollText, Mail, Brain, Home, GitCompare, MessageSquare } from "lucide-react";
 
-export type ToolCategory = "contract" | "consumer" | "employment" | "generators";
+export type ToolCategory = "contract" | "consumer" | "employment" | "generators" | "ai";
 
 export interface Tool {
   id: string;
