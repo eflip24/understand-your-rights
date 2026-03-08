@@ -58,9 +58,9 @@ export function useBlogPosts(categorySlug?: string) {
       const { data, error } = await query;
       if (error) throw error;
 
-      return (data || []).map((row: any) => ({
+      return (data || []).map((row) => ({
         ...row,
-        categories: row.categories || [],
+        categories: (row.categories as unknown as BlogCategory[]) || [],
       })) as BlogPost[];
     },
   });
