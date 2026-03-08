@@ -78,6 +78,12 @@ const toolComponents: Record<string, React.ComponentType> = {
   "dispute-letter": DisputeLetterGenerator,
   "salary-converter": SalaryToHourlyConverter,
   "pto-calculator": PTOCalculator,
+  "wrongful-termination": WrongfulTerminationChecklist,
+  "minimum-wage": MinimumWageLookup,
+  "employment-checklist": EmploymentContractChecklist,
+  "cease-desist": CeaseAndDesistGenerator,
+  "poa-generator": PowerOfAttorneyGenerator,
+  "ic-agreement": IndependentContractorAgreement,
 };
 
 export default function ToolPage() {

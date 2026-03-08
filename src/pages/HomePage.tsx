@@ -170,7 +170,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-8 md:grid-cols-3 max-w-3xl mx-auto">
             {[
-              { step: "1", title: "Choose a Tool", desc: "Browse our collection of 15+ free legal tools." },
+              { step: "1", title: "Choose a Tool", desc: "Browse our collection of 33+ free legal tools." },
               { step: "2", title: "Enter Your Details", desc: "Paste text, fill in numbers, or answer questions." },
               { step: "3", title: "Get Results", desc: "Instant analysis, calculations, or generated documents." },
             ].map((item) => (
