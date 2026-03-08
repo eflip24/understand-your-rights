@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { tools, categories, searchTools, getToolsByCategory, type ToolCategory } from "@/data/tools";
 import { Button } from "@/components/ui/button";
+import Head from "@/components/seo/Head";
 
 export default function ToolsDirectory() {
   const [searchParams] = useSearchParams();
