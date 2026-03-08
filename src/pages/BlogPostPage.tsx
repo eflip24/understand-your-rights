@@ -154,7 +154,14 @@ export default function BlogPostPage() {
           </div>
         )}
         {!post.featured_image_url && (
-          <div className="h-32 bg-primary" />
+          <div className="h-[320px] md:h-[420px] overflow-hidden">
+            <img
+              src={blogDefaultImage}
+              alt="LegallySpoken Blog"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+          </div>
         )}
       </div>
 
