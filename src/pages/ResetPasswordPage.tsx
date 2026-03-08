@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import { Helmet } from "react-helmet-async";
 
 export default function ResetPasswordPage() {
   const [password, setPassword] = useState("");
