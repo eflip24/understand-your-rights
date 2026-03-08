@@ -4,9 +4,31 @@ import { Search, ArrowRight, FileText, Shield, Briefcase, ScrollText, BookOpen, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { getPopularTools, categories } from "@/data/tools";
+import { getPopularTools, categories, type ToolCategory } from "@/data/tools";
 import JsonLd, { websiteSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
+import heroIllustration from "@/assets/hero-illustration.png";
+import catContract from "@/assets/cat-contract.png";
+import catConsumer from "@/assets/cat-consumer.png";
+import catEmployment from "@/assets/cat-employment.png";
+import catGenerators from "@/assets/cat-generators.png";
+import catAi from "@/assets/cat-ai.png";
+import catRealestate from "@/assets/cat-realestate.png";
+import catBusiness from "@/assets/cat-business.png";
+import catFinance from "@/assets/cat-finance.png";
+import catEnergy from "@/assets/cat-energy.png";
+
+const categoryImages: Record<string, string> = {
+  contract: catContract,
+  consumer: catConsumer,
+  employment: catEmployment,
+  generators: catGenerators,
+  ai: catAi,
+  realestate: catRealestate,
+  business: catBusiness,
+  finance: catFinance,
+  energy: catEnergy,
+};
 
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
