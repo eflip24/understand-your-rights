@@ -7,10 +7,17 @@ import { AlertTriangle } from "lucide-react";
 
 export default function LegalClausePage() {
   const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
   if (!slug) return <NotFound />;
 
   const clause = getLegalClauseBySlug(slug);
   if (!clause) return <NotFound />;
+
+  const url = `https://legallyspoken.com${location.pathname}`;
+  const schemas = [
+    articleSchema(clause.title, clause.explanation.slice(0, 155), url),
+    ...(clause.faqs?.length ? [faqSchema(clause.faqs)] : []),
+  ].filter(Boolean);
 
   return (
     <ContentPageLayout
