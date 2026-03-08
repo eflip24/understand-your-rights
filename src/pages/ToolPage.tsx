@@ -37,6 +37,12 @@ import ConsumerRightsQuiz from "@/components/tools/ConsumerRightsQuiz";
 import DisputeLetterGenerator from "@/components/tools/DisputeLetterGenerator";
 import SalaryToHourlyConverter from "@/components/tools/SalaryToHourlyConverter";
 import PTOCalculator from "@/components/tools/PTOCalculator";
+import WrongfulTerminationChecklist from "@/components/tools/WrongfulTerminationChecklist";
+import MinimumWageLookup from "@/components/tools/MinimumWageLookup";
+import EmploymentContractChecklist from "@/components/tools/EmploymentContractChecklist";
+import CeaseAndDesistGenerator from "@/components/tools/CeaseAndDesistGenerator";
+import PowerOfAttorneyGenerator from "@/components/tools/PowerOfAttorneyGenerator";
+import IndependentContractorAgreement from "@/components/tools/IndependentContractorAgreement";
 
 const toolComponents: Record<string, React.ComponentType> = {
   "reading-time": ReadingTimeCalculator,
