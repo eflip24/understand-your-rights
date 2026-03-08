@@ -22,6 +22,7 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "Dashboard | LegallySpoken";
     if (!authLoading && !user) {
       navigate("/login", { replace: true });
     }
