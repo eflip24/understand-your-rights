@@ -12,7 +12,12 @@ interface ToolPageLayoutProps {
 
 export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) {
   const relatedTools = getRelatedTools(tool.id);
-
+  const location = useLocation();
+  const url = `https://legallyspoken.com${location.pathname}`;
+  const schemas = [
+    webApplicationSchema(tool.name, tool.description, url),
+    ...(tool.faqs?.length ? [faqSchema(tool.faqs)] : []),
+  ].filter(Boolean);
   return (
     <div className="container py-8 max-w-4xl">
       {/* Breadcrumb */}
