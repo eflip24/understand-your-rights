@@ -94,6 +94,9 @@ const App = () => (
                   <Route path="blog/edit/:id" element={<AdminBlogEditor />} />
                   <Route path="categories" element={<AdminCategories />} />
                 </Route>
+                <Route path="/disclaimer" element={<DisclaimerPage />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                <Route path="/terms-of-service" element={<TermsOfServicePage />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
