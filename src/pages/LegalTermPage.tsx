@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { getLegalTermBySlug } from "@/data/legalTermPages";
 import ContentPageLayout from "@/components/layout/ContentPageLayout";
 import NotFound from "@/pages/NotFound";
 import { Card, CardContent } from "@/components/ui/card";
+import JsonLd, { definedTermSchema, faqSchema } from "@/components/seo/JsonLd";
 
 export default function LegalTermPage() {
   const { slug } = useParams<{ slug: string }>();
