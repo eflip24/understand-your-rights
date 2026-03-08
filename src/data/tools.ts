@@ -53,6 +53,13 @@ export const categories: CategoryInfo[] = [
     icon: ScrollText,
     color: "text-amber-500",
   },
+  {
+    id: "ai",
+    label: "AI Analysis Tools",
+    description: "AI-powered contract analysis, scoring, and comparison.",
+    icon: Brain,
+    color: "text-rose-500",
+  },
 ];
 
 export const tools: Tool[] = [
