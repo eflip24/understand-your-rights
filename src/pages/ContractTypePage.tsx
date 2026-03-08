@@ -35,6 +35,8 @@ export default function ContractTypePage() {
       metaTitle={`${contractType.title} — Guide & Key Clauses | LegallySpoken`}
       metaDescription={contractType.description.slice(0, 155) + "..."}
     >
+      {schemas.map((s, i) => <JsonLd key={i} data={s as Record<string, unknown>} />)}
+
       {/* Description */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4">Overview</h2>

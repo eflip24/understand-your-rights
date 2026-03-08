@@ -33,6 +33,8 @@ export default function LegalClausePage() {
       metaTitle={`${clause.title} — Guide & Examples | LegallySpoken`}
       metaDescription={clause.explanation.slice(0, 155) + "..."}
     >
+      {schemas.map((s, i) => <JsonLd key={i} data={s as Record<string, unknown>} />)}
+
       {/* Explanation */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4">What Is a {clause.title}?</h2>

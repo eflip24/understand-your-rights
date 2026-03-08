@@ -20,6 +20,7 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
   ].filter(Boolean);
   return (
     <div className="container py-8 max-w-4xl">
+      {schemas.map((s, i) => <JsonLd key={i} data={s as Record<string, unknown>} />)}
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">
         <Link to="/tools" className="hover:text-foreground transition-colors">Tools</Link>

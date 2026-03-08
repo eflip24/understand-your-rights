@@ -34,6 +34,8 @@ export default function LegalTermPage() {
       metaTitle={`${term.term} — Definition & Examples | LegallySpoken`}
       metaDescription={term.definition}
     >
+      {schemas.map((s, i) => <JsonLd key={i} data={s as Record<string, unknown>} />)}
+
       {/* Definition Callout */}
       <Card className="bg-accent/5 border-accent/20 mb-8">
         <CardContent className="p-6">
