@@ -63,6 +63,8 @@ export default function Navbar() {
           </div>
         </form>
 
+        <ThemeToggle />
+
         {/* Mobile menu */}
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild className="lg:hidden">
