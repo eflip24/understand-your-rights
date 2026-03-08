@@ -11,7 +11,6 @@ import { useAdminRole } from "@/hooks/useAdminRole";
 const navLinks = [
   { label: "Tools", href: "/tools" },
   { label: "AI Analysis", href: "/tools/ai" },
-  { label: "Blog", href: "/blog" },
   { label: "Legal Terms", href: "/legal-terms" },
   { label: "Legal Clauses", href: "/legal-clauses" },
   { label: "Contract Types", href: "/contract-types" },
