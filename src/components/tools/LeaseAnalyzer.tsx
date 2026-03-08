@@ -83,7 +83,14 @@ export default function LeaseAnalyzer() {
                 </ul>
               </CardContent>
             </Card>
-          )}
+           )}
+
+          <SaveAnalysisButton
+            toolSlug="lease-agreement-analyzer"
+            toolName="Lease Agreement Analyzer"
+            inputData={{ text }}
+            resultData={result as unknown as Record<string, unknown>}
+          />
         </div>
       )}
     </div>

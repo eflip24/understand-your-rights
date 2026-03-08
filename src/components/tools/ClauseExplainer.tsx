@@ -79,7 +79,14 @@ export default function ClauseExplainer() {
                 </ul>
               </CardContent>
             </Card>
-          )}
+           )}
+
+          <SaveAnalysisButton
+            toolSlug="clause-explainer"
+            toolName="Clause Explainer"
+            inputData={{ text }}
+            resultData={result as unknown as Record<string, unknown>}
+          />
         </div>
       )}
     </div>

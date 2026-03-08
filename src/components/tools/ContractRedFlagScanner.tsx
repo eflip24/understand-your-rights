@@ -80,6 +80,13 @@ export default function ContractRedFlagScanner() {
               </CardContent>
             </Card>
           ))}
+
+          <SaveAnalysisButton
+            toolSlug="contract-red-flag-scanner"
+            toolName="Contract Red Flag Scanner"
+            inputData={{ text }}
+            resultData={result as unknown as Record<string, unknown>}
+          />
         </div>
       )}
     </div>

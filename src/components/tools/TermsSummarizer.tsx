@@ -65,6 +65,13 @@ export default function TermsSummarizer() {
               </CardContent>
             </Card>
           ))}
+
+          <SaveAnalysisButton
+            toolSlug="terms-summarizer"
+            toolName="Terms & Conditions Summarizer"
+            inputData={{ text }}
+            resultData={result as unknown as Record<string, unknown>}
+          />
         </div>
       )}
     </div>

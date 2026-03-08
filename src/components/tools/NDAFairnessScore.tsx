@@ -82,7 +82,14 @@ export default function NDAFairnessScore() {
                 </ul>
               </CardContent>
             </Card>
-          )}
+           )}
+
+          <SaveAnalysisButton
+            toolSlug="nda-fairness-score"
+            toolName="NDA Fairness Score"
+            inputData={{ text }}
+            resultData={result as unknown as Record<string, unknown>}
+          />
         </div>
       )}
     </div>
