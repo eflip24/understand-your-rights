@@ -8,6 +8,7 @@ import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 // Lazy-load all page components
 const HomePage = React.lazy(() => import("@/pages/HomePage"));
