@@ -98,7 +98,7 @@ export function useBlogPost(slug: string) {
 
       return {
         ...data,
-        categories: data.categories || [],
+        categories: (data.categories as unknown as BlogCategory[]) || [],
       } as BlogPost;
     },
     enabled: !!slug,
