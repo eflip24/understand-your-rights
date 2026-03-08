@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { getLegalClauseBySlug } from "@/data/legalClauses";
 import ContentPageLayout from "@/components/layout/ContentPageLayout";
 import NotFound from "@/pages/NotFound";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle } from "lucide-react";
+import JsonLd, { articleSchema, faqSchema } from "@/components/seo/JsonLd";
 
 export default function LegalClausePage() {
   const { slug } = useParams<{ slug: string }>();
