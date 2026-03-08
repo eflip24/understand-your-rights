@@ -29,6 +29,11 @@ const DashboardPage = React.lazy(() => import("@/pages/DashboardPage"));
 const BlogPage = React.lazy(() => import("@/pages/BlogPage"));
 const BlogPostPage = React.lazy(() => import("@/pages/BlogPostPage"));
 const BlogCategoryPage = React.lazy(() => import("@/pages/BlogCategoryPage"));
+const AdminLayout = React.lazy(() => import("@/pages/admin/AdminLayout"));
+const AdminDashboard = React.lazy(() => import("@/pages/admin/AdminDashboard"));
+const AdminBlogList = React.lazy(() => import("@/pages/admin/AdminBlogList"));
+const AdminBlogEditor = React.lazy(() => import("@/pages/admin/AdminBlogEditor"));
+const AdminCategories = React.lazy(() => import("@/pages/admin/AdminCategories"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
 const queryClient = new QueryClient();
