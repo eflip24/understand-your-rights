@@ -91,6 +91,14 @@ export default {
           from: { opacity: "0", transform: "translateY(10px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "pulse-glow": {
+          "0%, 100%": { transform: "translate(-50%, -50%) scale(1)", opacity: "1" },
+          "50%": { transform: "translate(-50%, -50%) scale(1.05)", opacity: "0.8" },
+        },
+        "pulse-glow-delayed": {
+          "0%, 100%": { transform: "translate(-40%, -50%) scale(1)", opacity: "1" },
+          "50%": { transform: "translate(-40%, -50%) scale(1.08)", opacity: "0.6" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
