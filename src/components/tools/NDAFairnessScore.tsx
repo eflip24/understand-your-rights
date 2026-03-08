@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import SaveAnalysisButton from "@/components/SaveAnalysisButton";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, Scale } from "lucide-react";
@@ -81,7 +82,14 @@ export default function NDAFairnessScore() {
                 </ul>
               </CardContent>
             </Card>
-          )}
+           )}
+
+          <SaveAnalysisButton
+            toolSlug="nda-fairness-score"
+            toolName="NDA Fairness Score"
+            inputData={{ text }}
+            resultData={result as unknown as Record<string, unknown>}
+          />
         </div>
       )}
     </div>

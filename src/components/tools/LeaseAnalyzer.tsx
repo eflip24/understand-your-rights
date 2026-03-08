@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import SaveAnalysisButton from "@/components/SaveAnalysisButton";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, Home } from "lucide-react";
@@ -82,7 +83,14 @@ export default function LeaseAnalyzer() {
                 </ul>
               </CardContent>
             </Card>
-          )}
+           )}
+
+          <SaveAnalysisButton
+            toolSlug="lease-agreement-analyzer"
+            toolName="Lease Agreement Analyzer"
+            inputData={{ text }}
+            resultData={result as unknown as Record<string, unknown>}
+          />
         </div>
       )}
     </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import SaveAnalysisButton from "@/components/SaveAnalysisButton";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, GitCompare } from "lucide-react";
@@ -88,7 +89,14 @@ export default function ContractComparison() {
               <h4 className="font-semibold text-sm mb-1">Overall Recommendation</h4>
               <p className="text-sm text-muted-foreground">{result.recommendation}</p>
             </CardContent>
-          </Card>
+           </Card>
+
+          <SaveAnalysisButton
+            toolSlug="contract-comparison"
+            toolName="Contract Comparison Tool"
+            inputData={{ textA, textB }}
+            resultData={result as unknown as Record<string, unknown>}
+          />
         </div>
       )}
     </div>

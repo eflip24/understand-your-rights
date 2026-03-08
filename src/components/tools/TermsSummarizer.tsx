@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import SaveAnalysisButton from "@/components/SaveAnalysisButton";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -64,6 +65,13 @@ export default function TermsSummarizer() {
               </CardContent>
             </Card>
           ))}
+
+          <SaveAnalysisButton
+            toolSlug="terms-summarizer"
+            toolName="Terms & Conditions Summarizer"
+            inputData={{ text }}
+            resultData={result as unknown as Record<string, unknown>}
+          />
         </div>
       )}
     </div>
