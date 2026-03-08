@@ -19,6 +19,12 @@ import NDAGenerator from "@/components/tools/NDAGenerator";
 import PrivacyPolicyGenerator from "@/components/tools/PrivacyPolicyGenerator";
 import ComplaintLetterGenerator from "@/components/tools/ComplaintLetterGenerator";
 import TermsOfServiceGenerator from "@/components/tools/TermsOfServiceGenerator";
+import ContractRedFlagScanner from "@/components/tools/ContractRedFlagScanner";
+import NDAFairnessScore from "@/components/tools/NDAFairnessScore";
+import LeaseAnalyzer from "@/components/tools/LeaseAnalyzer";
+import TermsSummarizer from "@/components/tools/TermsSummarizer";
+import ContractComparison from "@/components/tools/ContractComparison";
+import ClauseExplainer from "@/components/tools/ClauseExplainer";
 
 const toolComponents: Record<string, React.ComponentType> = {
   "reading-time": ReadingTimeCalculator,
@@ -36,6 +42,12 @@ const toolComponents: Record<string, React.ComponentType> = {
   "privacy-generator": PrivacyPolicyGenerator,
   "complaint-generator": ComplaintLetterGenerator,
   "tos-generator": TermsOfServiceGenerator,
+  "red-flag-scanner": ContractRedFlagScanner,
+  "nda-fairness": NDAFairnessScore,
+  "lease-analyzer": LeaseAnalyzer,
+  "terms-summarizer": TermsSummarizer,
+  "contract-comparison": ContractComparison,
+  "clause-explainer": ClauseExplainer,
 };
 
 export default function ToolPage() {

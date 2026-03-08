@@ -1,6 +1,6 @@
-import { FileText, Calculator, Shield, Users, Scale, Clock, DollarSign, Search, FileCheck, Briefcase, Receipt, Ban, AlertTriangle, ScrollText, Mail } from "lucide-react";
+import { FileText, Calculator, Shield, Users, Scale, Clock, DollarSign, Search, FileCheck, Briefcase, Receipt, Ban, AlertTriangle, ScrollText, Mail, Brain, Home, GitCompare, MessageSquare } from "lucide-react";
 
-export type ToolCategory = "contract" | "consumer" | "employment" | "generators";
+export type ToolCategory = "contract" | "consumer" | "employment" | "generators" | "ai";
 
 export interface Tool {
   id: string;
@@ -52,6 +52,13 @@ export const categories: CategoryInfo[] = [
     description: "Generate legal documents from simple forms.",
     icon: ScrollText,
     color: "text-amber-500",
+  },
+  {
+    id: "ai",
+    label: "AI Analysis Tools",
+    description: "AI-powered contract analysis, scoring, and comparison.",
+    icon: Brain,
+    color: "text-rose-500",
   },
 ];
 
@@ -306,6 +313,105 @@ export const tools: Tool[] = [
       { question: "Can users agree by using my site?", answer: "Browsewrap agreements are weaker than clickwrap. Consider requiring explicit agreement." },
     ],
     relatedToolIds: ["privacy-generator", "nda-generator", "complaint-generator"],
+  },
+  // AI Analysis Tools
+  {
+    id: "red-flag-scanner",
+    name: "Contract Red Flag Scanner",
+    slug: "red-flag-scanner",
+    category: "ai",
+    categoryLabel: "AI Analysis",
+    description: "Paste your contract and let AI identify risky clauses, unfair terms, and potential legal issues with severity ratings and recommendations.",
+    shortDescription: "AI scans contracts for risky clauses.",
+    icon: AlertTriangle,
+    popular: true,
+    faqs: [
+      { question: "How does the scanner work?", answer: "It uses AI to analyze your contract text and identify clauses that could be problematic, one-sided, or contain hidden risks." },
+      { question: "Is this legal advice?", answer: "No. This is an AI-powered analysis tool for educational purposes. Always consult a lawyer for legal decisions." },
+      { question: "How long does analysis take?", answer: "Typically 5-15 seconds depending on the length of the contract." },
+    ],
+    relatedToolIds: ["clause-finder", "clause-explainer", "nda-fairness"],
+  },
+  {
+    id: "nda-fairness",
+    name: "NDA Fairness Score",
+    slug: "nda-fairness-score",
+    category: "ai",
+    categoryLabel: "AI Analysis",
+    description: "Paste an NDA and get a fairness score from 0-100, with a breakdown of strengths, concerns, and recommendations for negotiation.",
+    shortDescription: "Score your NDA's fairness 0-100.",
+    icon: Scale,
+    faqs: [
+      { question: "What does the score mean?", answer: "A score of 70+ indicates a generally fair NDA. Below 40 suggests significant one-sided terms that should be negotiated." },
+      { question: "Does it work for mutual NDAs?", answer: "Yes, it analyzes both mutual and one-way NDAs and considers whether the obligations are balanced." },
+      { question: "Can I use this before signing?", answer: "Absolutely — that's the ideal use case. Review the score and concerns before signing any NDA." },
+    ],
+    relatedToolIds: ["nda-generator", "red-flag-scanner", "clause-explainer"],
+  },
+  {
+    id: "lease-analyzer",
+    name: "Lease Agreement Analyzer",
+    slug: "lease-analyzer",
+    category: "ai",
+    categoryLabel: "AI Analysis",
+    description: "Paste your lease agreement and get a summary of key terms, hidden risks, and recommendations. Perfect for renters reviewing a new lease.",
+    shortDescription: "Analyze lease agreements for risks.",
+    icon: Home,
+    faqs: [
+      { question: "What types of leases does it analyze?", answer: "Residential and commercial leases. It identifies key terms like rent, deposit, duration, and maintenance obligations." },
+      { question: "Will it catch hidden fees?", answer: "The AI looks for unusual charges, escalation clauses, and fees that may not be obvious at first reading." },
+      { question: "Should I trust the analysis completely?", answer: "Use it as a starting point. For significant lease commitments, always have a lawyer review the full document." },
+    ],
+    relatedToolIds: ["red-flag-scanner", "clause-explainer", "terms-summarizer"],
+  },
+  {
+    id: "terms-summarizer",
+    name: "Terms & Conditions Summarizer",
+    slug: "terms-summarizer",
+    category: "ai",
+    categoryLabel: "AI Analysis",
+    description: "Paste any Terms & Conditions or legal document and get a plain-English summary organized by topic, with concerning sections highlighted.",
+    shortDescription: "Summarize T&C in plain English.",
+    icon: FileText,
+    popular: true,
+    faqs: [
+      { question: "How long can the document be?", answer: "It works best with documents under 10,000 words. For longer documents, paste the most relevant sections." },
+      { question: "What does 'Concern' mean?", answer: "Sections flagged as concerns contain terms that are unusual, potentially unfavorable, or worth paying extra attention to." },
+      { question: "Can I use this for privacy policies?", answer: "Yes! It works for any legal document — T&C, privacy policies, EULAs, and more." },
+    ],
+    relatedToolIds: ["jargon-translator", "clause-explainer", "red-flag-scanner"],
+  },
+  {
+    id: "contract-comparison",
+    name: "Contract Comparison Tool",
+    slug: "contract-comparison",
+    category: "ai",
+    categoryLabel: "AI Analysis",
+    description: "Paste two contracts side by side and get an AI-powered comparison highlighting key differences, changed terms, and which version favors which party.",
+    shortDescription: "Compare two contracts side-by-side.",
+    icon: GitCompare,
+    faqs: [
+      { question: "What should I compare?", answer: "Compare different versions of the same contract, competing offers, or a proposed contract against a standard template." },
+      { question: "Does it show exact text differences?", answer: "It highlights semantic differences — changes in meaning, scope, and obligations — rather than word-by-word diffs." },
+      { question: "Can I compare different types of contracts?", answer: "You can, but the most useful comparisons are between similar contract types (e.g., two employment contracts)." },
+    ],
+    relatedToolIds: ["red-flag-scanner", "clause-finder", "clause-explainer"],
+  },
+  {
+    id: "clause-explainer",
+    name: "Clause Explainer",
+    slug: "clause-explainer",
+    category: "ai",
+    categoryLabel: "AI Analysis",
+    description: "Paste any legal clause and get a plain-English explanation, risk assessment, practical implications, and negotiation tips.",
+    shortDescription: "Get plain-English clause explanations.",
+    icon: MessageSquare,
+    faqs: [
+      { question: "What kind of clauses can I explain?", answer: "Any legal clause from any type of contract — employment, lease, NDA, terms of service, or any other agreement." },
+      { question: "Is the explanation legally accurate?", answer: "The AI provides general interpretations. For clauses with significant financial or legal implications, consult a lawyer." },
+      { question: "Can I paste multiple clauses?", answer: "For best results, paste one clause at a time. This ensures focused, detailed explanations." },
+    ],
+    relatedToolIds: ["jargon-translator", "red-flag-scanner", "clause-finder"],
   },
 ];
 
