@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Menu, X, Search, Scale, LogOut, LayoutDashboard, LogIn } from "lucide-react";
+import { Menu, X, Search, Scale, LogOut, LayoutDashboard, LogIn, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import { useAuth } from "@/contexts/AuthContext";
+import { useAdminRole } from "@/hooks/useAdminRole";
 
 const navLinks = [
   { label: "Tools", href: "/tools" },
