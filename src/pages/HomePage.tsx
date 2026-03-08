@@ -71,7 +71,7 @@ export default function HomePage() {
               </Button>
             </form>
             <p className="mt-4 text-sm text-primary-foreground/50">
-              33 free tools available • No signup required
+              50+ free tools available • No signup required
             </p>
           </div>
         </div>
