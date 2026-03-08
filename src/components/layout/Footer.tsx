@@ -32,6 +32,7 @@ export default function Footer() {
             <h4 className="font-serif font-semibold mb-3">Resources</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
               <li><Link to="/tools" className="hover:text-accent transition-colors">All Tools</Link></li>
+              <li><Link to="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
             </ul>
           </div>
 
