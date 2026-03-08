@@ -14,6 +14,7 @@ export default function ResetPasswordPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Set New Password | LegallySpoken";
     const hash = window.location.hash;
     if (hash.includes("type=recovery")) {
       setIsRecovery(true);
