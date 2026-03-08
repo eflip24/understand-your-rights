@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { getPopularTools, categories } from "@/data/tools";
+import JsonLd, { websiteSchema } from "@/components/seo/JsonLd";
 
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -44,6 +45,7 @@ export default function HomePage() {
 
   return (
     <div>
+      <JsonLd data={websiteSchema()} />
       {/* Hero */}
       <section className="relative bg-primary text-primary-foreground overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-navy-dark opacity-90" />

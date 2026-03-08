@@ -1,15 +1,23 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { getLegalTermBySlug } from "@/data/legalTermPages";
 import ContentPageLayout from "@/components/layout/ContentPageLayout";
 import NotFound from "@/pages/NotFound";
 import { Card, CardContent } from "@/components/ui/card";
+import JsonLd, { definedTermSchema, faqSchema } from "@/components/seo/JsonLd";
 
 export default function LegalTermPage() {
   const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
   if (!slug) return <NotFound />;
 
   const term = getLegalTermBySlug(slug);
   if (!term) return <NotFound />;
+
+  const url = `https://legallyspoken.com${location.pathname}`;
+  const schemas = [
+    definedTermSchema(term.term, term.definition, url),
+    ...(term.faqs?.length ? [faqSchema(term.faqs)] : []),
+  ].filter(Boolean);
 
   return (
     <ContentPageLayout
@@ -26,6 +34,8 @@ export default function LegalTermPage() {
       metaTitle={`${term.term} — Definition & Examples | LegallySpoken`}
       metaDescription={term.definition}
     >
+      {schemas.map((s, i) => <JsonLd key={i} data={s as Record<string, unknown>} />)}
+
       {/* Definition Callout */}
       <Card className="bg-accent/5 border-accent/20 mb-8">
         <CardContent className="p-6">

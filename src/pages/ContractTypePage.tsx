@@ -1,17 +1,25 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { getContractTypeBySlug } from "@/data/contractTypes";
 import ContentPageLayout from "@/components/layout/ContentPageLayout";
 import NotFound from "@/pages/NotFound";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import JsonLd, { articleSchema, faqSchema } from "@/components/seo/JsonLd";
 
 export default function ContractTypePage() {
   const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
   if (!slug) return <NotFound />;
 
   const contractType = getContractTypeBySlug(slug);
   if (!contractType) return <NotFound />;
+
+  const url = `https://legallyspoken.com${location.pathname}`;
+  const schemas = [
+    articleSchema(contractType.title, contractType.description.slice(0, 155), url),
+    ...(contractType.faqs?.length ? [faqSchema(contractType.faqs)] : []),
+  ].filter(Boolean);
 
   return (
     <ContentPageLayout
@@ -27,6 +35,8 @@ export default function ContractTypePage() {
       metaTitle={`${contractType.title} — Guide & Key Clauses | LegallySpoken`}
       metaDescription={contractType.description.slice(0, 155) + "..."}
     >
+      {schemas.map((s, i) => <JsonLd key={i} data={s as Record<string, unknown>} />)}
+
       {/* Description */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4">Overview</h2>
