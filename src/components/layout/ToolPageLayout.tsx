@@ -4,6 +4,7 @@ import { Tool, getRelatedTools } from "@/data/tools";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import JsonLd, { webApplicationSchema, faqSchema } from "@/components/seo/JsonLd";
+import Head from "@/components/seo/Head";
 
 interface ToolPageLayoutProps {
   tool: Tool;
@@ -20,6 +21,10 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
   ].filter(Boolean);
   return (
     <div className="container py-8 max-w-4xl">
+      <Head
+        title={`${tool.name} — Free Tool | LegallySpoken`}
+        description={tool.description.slice(0, 155)}
+      />
       {schemas.map((s, i) => <JsonLd key={i} data={s as Record<string, unknown>} />)}
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">

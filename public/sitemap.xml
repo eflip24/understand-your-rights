@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://legallyspoken.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://legallyspoken.com/tools</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Tool Categories -->
+  <url><loc>https://legallyspoken.com/tools/contract</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legallyspoken.com/tools/consumer</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legallyspoken.com/tools/employment</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legallyspoken.com/tools/generators</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legallyspoken.com/tools/ai</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legallyspoken.com/tools/realestate</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legallyspoken.com/tools/business</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legallyspoken.com/tools/energy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Contract Tools -->
+  <url><loc>https://legallyspoken.com/tools/contract/reading-time-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/contract/word-counter</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/contract/jargon-translator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/contract/clause-finder</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/contract/contract-expiration-tracker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/contract/signature-block-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/contract/contract-checklist-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/contract/amendment-drafter</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/contract/contract-value-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Consumer Tools -->
+  <url><loc>https://legallyspoken.com/tools/consumer/cancellation-deadline-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/consumer/notice-period-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/consumer/late-fee-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/consumer/refund-eligibility-checker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/consumer/warranty-expiration-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/consumer/statute-of-limitations-lookup</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/consumer/small-claims-limit-checker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/consumer/consumer-rights-quiz</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/consumer/dispute-letter-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Employment Tools -->
+  <url><loc>https://legallyspoken.com/tools/employment/non-compete-checker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/employment/freelance-rate-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/employment/invoice-interest-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/employment/salary-to-hourly-converter</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/employment/pto-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/employment/wrongful-termination-checklist</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/employment/minimum-wage-lookup</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/employment/employment-contract-checklist</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Document Generators -->
+  <url><loc>https://legallyspoken.com/tools/generators/nda-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/generators/privacy-policy-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/generators/complaint-letter-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/generators/terms-of-service-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/generators/cease-and-desist-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/generators/power-of-attorney-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/generators/independent-contractor-agreement-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/generators/promissory-note-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- AI Analysis Tools -->
+  <url><loc>https://legallyspoken.com/tools/ai/red-flag-scanner</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/ai/nda-fairness-score</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/ai/lease-analyzer</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/ai/terms-summarizer</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/ai/contract-comparison</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/ai/clause-explainer</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Real Estate Tools -->
+  <url><loc>https://legallyspoken.com/tools/realestate/security-deposit-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/realestate/rent-increase-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/realestate/lease-term-comparison</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/realestate/move-out-checklist-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/realestate/rental-agreement-generator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Business Tools -->
+  <url><loc>https://legallyspoken.com/tools/business/business-name-checker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/business/contractor-vs-employee-checker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/business/severance-pay-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/business/overtime-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/business/partnership-split-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/business/business-expense-tracker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Finance & Trading Tools -->
+  <url><loc>https://legallyspoken.com/tools/finance/crypto-tax-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/dca-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/position-size-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/profit-loss-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/compound-interest-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/margin-call-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/breakeven-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/risk-reward-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/crypto-converter</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/loan-payment-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/grant-budget-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/grant-deadline-tracker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/grant-compliance-checklist</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/vesting-schedule-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/stock-option-tax-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/finance/equity-dilution-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Green Energy & Solar Tools -->
+  <url><loc>https://legallyspoken.com/tools/energy/solar-panel-roi-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/energy/solar-incentive-tax-credit-estimator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/energy/energy-savings-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/energy/carbon-footprint-offset-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/energy/green-lease-clause-checker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/energy/ev-vs-gas-cost-comparison</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/energy/home-energy-audit-checklist</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legallyspoken.com/tools/energy/power-purchase-agreement-calculator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Legal Terms -->
+  <url><loc>https://legallyspoken.com/legal-terms/indemnification</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/arbitration</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/force-majeure</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/liability</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/non-compete</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/non-disclosure</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/severability</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/waiver</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/breach</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/consideration</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/jurisdiction</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/statute-of-limitations</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/due-diligence</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/fiduciary</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/negligence</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/tort</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/damages</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/escrow</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/lien</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/power-of-attorney</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/affidavit</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/addendum</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/amendment</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/boilerplate</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/cease-and-desist</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/covenant</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/default</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/discovery</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/good-faith</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/injunction</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/intellectual-property</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/material-breach</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/mediation</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/termination</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/warranty</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/collateral</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/contingency</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/estoppel</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/guarantor</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/liquidated-damages</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/plaintiff</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/defendant</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/deposition</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/subpoena</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/hold-harmless</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/void-voidable</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/mutual-assent</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/remedy</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/rescission</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/notarization</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/precedent</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/title</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/unjust-enrichment</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/deed</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/easement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/surety</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/accord-and-satisfaction</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/bailment</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/bona-fide</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/indemnity</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/malfeasance</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/misdemeanor</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/novation</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/perjury</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/privity</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/retainer</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/standing</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/subrogation</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/adhesion-contract</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/anti-assignment-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/bilateral-contract</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/capacity</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/class-action</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/comparative-negligence</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/quitclaim-deed</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-terms/pro-bono</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <!-- Legal Clauses -->
+  <url><loc>https://legallyspoken.com/legal-clauses/non-compete-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/confidentiality-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/indemnification-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/limitation-of-liability</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/termination-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/force-majeure-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/arbitration-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/governing-law-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/intellectual-property-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/payment-terms-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/entire-agreement-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/assignment-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/warranty-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/notice-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/severability-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/dispute-resolution-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/non-solicitation-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/data-protection-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/insurance-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/representations-warranties-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/waiver-of-jury-trial</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/acceleration-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/anti-dilution-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/automatic-renewal-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/best-efforts-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/choice-of-forum-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/clawback-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/change-of-control-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/compliance-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/cross-default-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/cure-period-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/drag-along-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/exclusivity-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/first-right-of-refusal-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/holdback-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/indemnity-cap-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/integration-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/key-person-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/material-adverse-change-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/most-favored-nation-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/no-shop-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/non-disparagement-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/penalty-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/price-adjustment-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/right-to-audit-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/right-of-first-offer-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/survival-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/tag-along-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/time-is-of-the-essence-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/legal-clauses/tolling-clause</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <!-- Contract Types -->
+  <url><loc>https://legallyspoken.com/contract-types/nda</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/employment-contract</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/freelance-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/lease-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/saas-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/consulting-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/partnership-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/purchase-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/service-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/licensing-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/terms-of-service</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/privacy-policy</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/joint-venture-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/real-estate-purchase</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/loan-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/non-solicitation-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/shareholder-agreement</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/commercial-lease</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://legallyspoken.com/contract-types/website-terms</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+</urlset>

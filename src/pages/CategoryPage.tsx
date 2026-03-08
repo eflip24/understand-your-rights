@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { categories, getToolsByCategory, type ToolCategory } from "@/data/tools";
 import NotFound from "@/pages/NotFound";
+import Head from "@/components/seo/Head";
 
 export default function CategoryPage() {
   const { category } = useParams<{ category: string }>();
@@ -12,6 +13,10 @@ export default function CategoryPage() {
 
   return (
     <div className="container py-10">
+      <Head
+        title={`${catInfo.label} — Free Legal Tools | LegallySpoken`}
+        description={catInfo.description}
+      />
       <div className="flex items-center gap-3 mb-2">
         <div className="p-2.5 rounded-lg bg-accent/10">
           <catInfo.icon className="h-6 w-6 text-accent" />
