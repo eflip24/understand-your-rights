@@ -25,6 +25,12 @@ import LeaseAnalyzer from "@/components/tools/LeaseAnalyzer";
 import TermsSummarizer from "@/components/tools/TermsSummarizer";
 import ContractComparison from "@/components/tools/ContractComparison";
 import ClauseExplainer from "@/components/tools/ClauseExplainer";
+import ContractExpirationTracker from "@/components/tools/ContractExpirationTracker";
+import SignatureBlockGenerator from "@/components/tools/SignatureBlockGenerator";
+import ContractChecklistGenerator from "@/components/tools/ContractChecklistGenerator";
+import AmendmentDrafter from "@/components/tools/AmendmentDrafter";
+import ContractValueCalculator from "@/components/tools/ContractValueCalculator";
+import WarrantyExpirationCalculator from "@/components/tools/WarrantyExpirationCalculator";
 
 const toolComponents: Record<string, React.ComponentType> = {
   "reading-time": ReadingTimeCalculator,
