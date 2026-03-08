@@ -31,33 +31,39 @@ function decodeHtml(html: string) {
 }
 
 function cleanContent(html: string): string {
-  return html
-    // Remove Elementor data attributes and classes but keep structure
-    .replace(/data-elementor[^=]*=\\"[^\\"]*\\"/gi, "")
-    .replace(/data-widget_type=\\"[^\\"]*\\"/gi, "")
-    .replace(/data-id=\\"[^\\"]*\\"/gi, "")
-    .replace(/data-element_type=\\"[^\\"]*\\"/gi, "")
-    .replace(/data-settings='[^']*'/gi, "")
-    .replace(/class=\\"elementor[^\\"]*\\"/gi, "")
-    // Remove empty divs/sections
-    .replace(/<(div|section|span)\\s*>\\s*<\\/\\1>/gi, "")
-    // Clean up extra whitespace
-    .replace(/\\n{3,}/g, "\\n\\n");
+  let cleaned = html;
+  cleaned = cleaned.replace(/data-elementor[^=]*="[^"]*"/gi, "");
+  cleaned = cleaned.replace(/data-widget_type="[^"]*"/gi, "");
+  cleaned = cleaned.replace(/data-id="[^"]*"/gi, "");
+  cleaned = cleaned.replace(/data-element_type="[^"]*"/gi, "");
+  cleaned = cleaned.replace(/data-settings='[^']*'/gi, "");
+  cleaned = cleaned.replace(/class="elementor[^"]*"/gi, "");
+  cleaned = cleaned.replace(/<div\s*>\s*<\/div>/gi, "");
+  cleaned = cleaned.replace(/<section\s*>\s*<\/section>/gi, "");
+  cleaned = cleaned.replace(/<span\s*>\s*<\/span>/gi, "");
+  return cleaned;
 }
 
 function extractHeadings(html: string) {
-  const matches = [...html.matchAll(/<h([23])[^>]*>(.*?)<\\/h\\1>/gi)];
-  return matches.map((m, i) => ({
-    level: parseInt(m[1]),
-    text: m[2].replace(/<[^>]+>/g, ""),
-    id: `heading-${i}`,
-  }));
+  const regex = /<h([23])[^>]*>([\s\S]*?)<\/h[23]>/gi;
+  const results: Array<{ level: number; text: string; id: string }> = [];
+  let match;
+  let i = 0;
+  while ((match = regex.exec(html)) !== null) {
+    results.push({
+      level: parseInt(match[1]),
+      text: match[2].replace(/<[^>]+>/g, ""),
+      id: "heading-" + i,
+    });
+    i++;
+  }
+  return results;
 }
 
 function addHeadingIds(html: string) {
-  let i = 0;
-  return html.replace(/<h([23])([^>]*)>/gi, (_, level, attrs) => {
-    return `<h${level}${attrs} id=\\"heading-${i++}\\">`;
+  let counter = 0;
+  return html.replace(/<h([23])([^>]*)>/gi, function (_match, level, attrs) {
+    return "<h" + level + attrs + ' id="heading-' + counter++ + '">';
   });
 }
 
@@ -219,14 +225,7 @@ export default function BlogPostPage() {
             <Card>
               <CardContent className="p-8 md:p-10">
                 <div
-                  className="prose prose-lg dark:prose-invert max-w-none
-                    prose-headings:font-serif prose-headings:text-foreground
-                    prose-p:text-foreground/85 prose-p:leading-relaxed
-                    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
-                    prose-img:rounded-lg prose-img:shadow-md
-                    prose-blockquote:border-accent prose-blockquote:bg-muted/50 prose-blockquote:rounded-r-lg prose-blockquote:py-1
-                    prose-strong:text-foreground
-                    prose-li:text-foreground/85"
+                  className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-headings:text-foreground prose-p:text-foreground/85 prose-p:leading-relaxed prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-img:shadow-md prose-blockquote:border-accent prose-blockquote:bg-muted/50 prose-blockquote:rounded-r-lg prose-blockquote:py-1 prose-strong:text-foreground prose-li:text-foreground/85"
                   dangerouslySetInnerHTML={{ __html: processedContent }}
                 />
               </CardContent>
