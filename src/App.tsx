@@ -9,6 +9,12 @@ import HomePage from "@/pages/HomePage";
 import ToolsDirectory from "@/pages/ToolsDirectory";
 import CategoryPage from "@/pages/CategoryPage";
 import ToolPage from "@/pages/ToolPage";
+import LegalTermsDirectory from "@/pages/LegalTermsDirectory";
+import LegalTermPage from "@/pages/LegalTermPage";
+import LegalClausesDirectory from "@/pages/LegalClausesDirectory";
+import LegalClausePage from "@/pages/LegalClausePage";
+import ContractTypesDirectory from "@/pages/ContractTypesDirectory";
+import ContractTypePage from "@/pages/ContractTypePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +33,12 @@ const App = () => (
               <Route path="/tools" element={<ToolsDirectory />} />
               <Route path="/tools/:category" element={<CategoryPage />} />
               <Route path="/tools/:category/:tool" element={<ToolPage />} />
+              <Route path="/legal-terms" element={<LegalTermsDirectory />} />
+              <Route path="/legal-terms/:slug" element={<LegalTermPage />} />
+              <Route path="/legal-clauses" element={<LegalClausesDirectory />} />
+              <Route path="/legal-clauses/:slug" element={<LegalClausePage />} />
+              <Route path="/contract-types" element={<ContractTypesDirectory />} />
+              <Route path="/contract-types/:slug" element={<ContractTypePage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

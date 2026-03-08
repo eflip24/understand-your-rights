@@ -7,10 +7,9 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/s
 
 const navLinks = [
   { label: "Tools", href: "/tools" },
-  { label: "Contract Tools", href: "/tools/contract" },
-  { label: "Consumer Tools", href: "/tools/consumer" },
-  { label: "Employment Tools", href: "/tools/employment" },
-  { label: "Document Generators", href: "/tools/generators" },
+  { label: "Legal Terms", href: "/legal-terms" },
+  { label: "Legal Clauses", href: "/legal-clauses" },
+  { label: "Contract Types", href: "/contract-types" },
 ];
 
 export default function Navbar() {
