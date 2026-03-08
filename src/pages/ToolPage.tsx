@@ -31,6 +31,12 @@ import ContractChecklistGenerator from "@/components/tools/ContractChecklistGene
 import AmendmentDrafter from "@/components/tools/AmendmentDrafter";
 import ContractValueCalculator from "@/components/tools/ContractValueCalculator";
 import WarrantyExpirationCalculator from "@/components/tools/WarrantyExpirationCalculator";
+import StatuteOfLimitationsLookup from "@/components/tools/StatuteOfLimitationsLookup";
+import SmallClaimsLimitChecker from "@/components/tools/SmallClaimsLimitChecker";
+import ConsumerRightsQuiz from "@/components/tools/ConsumerRightsQuiz";
+import DisputeLetterGenerator from "@/components/tools/DisputeLetterGenerator";
+import SalaryToHourlyConverter from "@/components/tools/SalaryToHourlyConverter";
+import PTOCalculator from "@/components/tools/PTOCalculator";
 
 const toolComponents: Record<string, React.ComponentType> = {
   "reading-time": ReadingTimeCalculator,
