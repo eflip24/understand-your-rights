@@ -171,8 +171,12 @@ export default function HomePage() {
             {categories.map((cat) => (
               <Link key={cat.id} to={`/tools/${cat.id}`}>
                 <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all text-center p-6 group">
-                  <div className="mx-auto w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                    <cat.icon className="h-7 w-7 text-accent" />
+                  <div className="mx-auto w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors overflow-hidden">
+                    {categoryImages[cat.id] ? (
+                      <img src={categoryImages[cat.id]} alt={cat.label} className="w-14 h-14 object-contain" loading="lazy" />
+                    ) : (
+                      <cat.icon className="h-7 w-7 text-accent" />
+                    )}
                   </div>
                   <h3 className="font-serif font-bold text-lg mb-2">{cat.label}</h3>
                   <p className="text-sm text-muted-foreground">{cat.description}</p>
