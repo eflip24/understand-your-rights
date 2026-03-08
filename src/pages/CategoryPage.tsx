@@ -13,6 +13,10 @@ export default function CategoryPage() {
 
   return (
     <div className="container py-10">
+      <Head
+        title={`${catInfo.label} — Free Legal Tools | LegallySpoken`}
+        description={catInfo.description}
+      />
       <div className="flex items-center gap-3 mb-2">
         <div className="p-2.5 rounded-lg bg-accent/10">
           <catInfo.icon className="h-6 w-6 text-accent" />

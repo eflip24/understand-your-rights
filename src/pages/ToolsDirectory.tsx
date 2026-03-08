@@ -23,6 +23,10 @@ export default function ToolsDirectory() {
 
   return (
     <div className="container py-10">
+      <Head
+        title="All Legal Tools — Free Calculators & Generators | LegallySpoken"
+        description="Browse 70+ free legal tools including contract analyzers, document generators, financial calculators, and more. No signup required."
+      />
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">All Legal Tools</h1>
         <p className="text-muted-foreground">Browse our complete collection of free legal tools.</p>

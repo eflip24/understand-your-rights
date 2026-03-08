@@ -46,6 +46,10 @@ export default function HomePage() {
 
   return (
     <div>
+      <Head
+        title="LegallySpoken — Free Legal Tools for Everyday People"
+        description="50+ free legal tools to understand contracts, check risks, calculate deadlines, and generate documents. No lawyer required."
+      />
       <JsonLd data={websiteSchema()} />
       {/* Hero */}
       <section className="relative bg-primary text-primary-foreground overflow-hidden">
