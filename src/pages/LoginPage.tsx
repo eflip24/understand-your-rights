@@ -34,10 +34,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-[60vh] flex items-center justify-center px-4">
-      <Helmet>
-        <title>Log In | LegallySpoken</title>
-        <meta name="description" content="Log in to your LegallySpoken account to access saved analyses and your dashboard." />
-      </Helmet>
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <div className="flex justify-center mb-2">
