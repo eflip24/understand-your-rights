@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
+import { AuthProvider } from "@/contexts/AuthContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HomePage from "@/pages/HomePage";
@@ -16,6 +17,11 @@ import LegalClausesDirectory from "@/pages/LegalClausesDirectory";
 import LegalClausePage from "@/pages/LegalClausePage";
 import ContractTypesDirectory from "@/pages/ContractTypesDirectory";
 import ContractTypePage from "@/pages/ContractTypePage";
+import LoginPage from "@/pages/LoginPage";
+import SignupPage from "@/pages/SignupPage";
+import ForgotPasswordPage from "@/pages/ForgotPasswordPage";
+import ResetPasswordPage from "@/pages/ResetPasswordPage";
+import DashboardPage from "@/pages/DashboardPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +29,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+    <AuthProvider>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -41,6 +48,11 @@ const App = () => (
               <Route path="/legal-clauses/:slug" element={<LegalClausePage />} />
               <Route path="/contract-types" element={<ContractTypesDirectory />} />
               <Route path="/contract-types/:slug" element={<ContractTypePage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/signup" element={<SignupPage />} />
+              <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="/reset-password" element={<ResetPasswordPage />} />
+              <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
@@ -48,6 +60,7 @@ const App = () => (
         </div>
       </BrowserRouter>
     </TooltipProvider>
+    </AuthProvider>
     </ThemeProvider>
   </QueryClientProvider>
 );

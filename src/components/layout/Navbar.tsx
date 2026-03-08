@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Menu, X, Search, Scale } from "lucide-react";
+import { Menu, X, Search, Scale, LogOut, LayoutDashboard, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import ThemeToggle from "@/components/layout/ThemeToggle";
+import { useAuth } from "@/contexts/AuthContext";
 
 const navLinks = [
   { label: "Tools", href: "/tools" },
@@ -18,6 +19,7 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
+  const { user, signOut } = useAuth();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,6 +27,11 @@ export default function Navbar() {
       navigate(`/tools?q=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery("");
     }
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
   };
 
   return (
@@ -63,6 +70,30 @@ export default function Navbar() {
           </div>
         </form>
 
+        <div className="hidden lg:flex items-center gap-2">
+          {user ? (
+            <>
+              <Button variant="ghost" size="sm" asChild>
+                <Link to="/dashboard" className="gap-1.5">
+                  <LayoutDashboard className="h-4 w-4" />
+                  Dashboard
+                </Link>
+              </Button>
+              <Button variant="ghost" size="sm" onClick={handleSignOut} className="gap-1.5 text-muted-foreground">
+                <LogOut className="h-4 w-4" />
+                Log out
+              </Button>
+            </>
+          ) : (
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/login" className="gap-1.5">
+                <LogIn className="h-4 w-4" />
+                Log in
+              </Link>
+            </Button>
+          )}
+        </div>
+
         <ThemeToggle />
 
         {/* Mobile menu */}
@@ -96,6 +127,35 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <div className="border-t border-border my-2" />
+              {user ? (
+                <>
+                  <Link
+                    to="/dashboard"
+                    onClick={() => setMobileOpen(false)}
+                    className="px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary flex items-center gap-2"
+                  >
+                    <LayoutDashboard className="h-4 w-4" />
+                    Dashboard
+                  </Link>
+                  <button
+                    onClick={() => { handleSignOut(); setMobileOpen(false); }}
+                    className="px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary flex items-center gap-2 text-left w-full"
+                  >
+                    <LogOut className="h-4 w-4" />
+                    Log out
+                  </button>
+                </>
+              ) : (
+                <Link
+                  to="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="px-3 py-3 text-sm font-medium text-accent hover:text-foreground transition-colors rounded-md hover:bg-secondary flex items-center gap-2"
+                >
+                  <LogIn className="h-4 w-4" />
+                  Log in
+                </Link>
+              )}
             </nav>
           </SheetContent>
         </Sheet>
