@@ -1,10 +1,11 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { getContractTypeBySlug } from "@/data/contractTypes";
 import ContentPageLayout from "@/components/layout/ContentPageLayout";
 import NotFound from "@/pages/NotFound";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import JsonLd, { articleSchema, faqSchema } from "@/components/seo/JsonLd";
 
 export default function ContractTypePage() {
   const { slug } = useParams<{ slug: string }>();
