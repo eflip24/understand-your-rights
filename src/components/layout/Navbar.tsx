@@ -76,6 +76,14 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-2">
           {user ? (
             <>
+              {isAdmin && (
+                <Button variant="ghost" size="sm" asChild>
+                  <Link to="/admin" className="gap-1.5">
+                    <Shield className="h-4 w-4" />
+                    Admin
+                  </Link>
+                </Button>
+              )}
               <Button variant="ghost" size="sm" asChild>
                 <Link to="/dashboard" className="gap-1.5">
                   <LayoutDashboard className="h-4 w-4" />
