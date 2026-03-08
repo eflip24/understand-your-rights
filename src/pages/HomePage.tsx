@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { getPopularTools, categories, type ToolCategory } from "@/data/tools";
 import JsonLd, { websiteSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
-import heroIllustration from "@/assets/hero-illustration.png";
+
 import catContract from "@/assets/cat-contract.png";
 import catConsumer from "@/assets/cat-consumer.png";
 import catEmployment from "@/assets/cat-employment.png";
