@@ -26,6 +26,9 @@ const SignupPage = React.lazy(() => import("@/pages/SignupPage"));
 const ForgotPasswordPage = React.lazy(() => import("@/pages/ForgotPasswordPage"));
 const ResetPasswordPage = React.lazy(() => import("@/pages/ResetPasswordPage"));
 const DashboardPage = React.lazy(() => import("@/pages/DashboardPage"));
+const BlogPage = React.lazy(() => import("@/pages/BlogPage"));
+const BlogPostPage = React.lazy(() => import("@/pages/BlogPostPage"));
+const BlogCategoryPage = React.lazy(() => import("@/pages/BlogCategoryPage"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -65,6 +68,9 @@ const App = () => (
                 <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                 <Route path="/reset-password" element={<ResetPasswordPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/category/:slug" element={<BlogCategoryPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
