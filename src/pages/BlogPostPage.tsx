@@ -12,7 +12,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { useBlogPost, useBlogPosts } from "@/hooks/useBlogPosts";
-import { Head } from "@/components/seo/Head";
+import Head from "@/components/seo/Head";
 import { Card, CardContent } from "@/components/ui/card";
 import { format } from "date-fns";
 

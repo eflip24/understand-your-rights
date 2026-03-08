@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useBlogPosts, useBlogCategories } from "@/hooks/useBlogPosts";
-import { Head } from "@/components/seo/Head";
+import Head from "@/components/seo/Head";
 import { format } from "date-fns";
 
 export default function BlogPage() {
