@@ -52,36 +52,43 @@ export default function HomePage() {
       />
       <JsonLd data={websiteSchema()} />
       {/* Hero */}
-      <section className="relative bg-primary text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-navy-dark opacity-90" />
+      <section className="relative overflow-hidden bg-[hsl(222,50%,8%)]">
+        {/* Radial gold glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(42,55%,55%,0.08),transparent)]" />
+        {/* Subtle grid texture */}
+        <div className="absolute inset-0 bg-[linear-gradient(hsl(0,0%,100%,0.02)_1px,transparent_1px),linear-gradient(90deg,hsl(0,0%,100%,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+        {/* Top border accent */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(42,55%,55%,0.3)] to-transparent" />
         <div className="container relative py-20 md:py-28">
           <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight text-white">
               Simple Legal Tools for{" "}
-              <span className="text-accent">Everyday People</span>
+              <span className="text-[hsl(42,55%,65%)]">Everyday People</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-lg mx-auto">
+            <p className="text-lg md:text-xl text-white/60 mb-8 max-w-lg mx-auto">
               Understand contracts, check risks, calculate deadlines, and generate documents — no lawyer required.
             </p>
             <form onSubmit={handleSearch} className="max-w-md mx-auto flex gap-2">
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/40" />
                 <Input
                   placeholder="Search for a legal tool..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-12 bg-background text-foreground border-none text-base"
+                  className="pl-10 h-12 bg-white/[0.07] text-white border border-white/[0.12] text-base placeholder:text-white/30 focus-visible:border-[hsl(42,55%,55%,0.4)] focus-visible:ring-[hsl(42,55%,55%,0.15)]"
                 />
               </div>
               <Button type="submit" className="h-12 px-6 bg-accent text-accent-foreground hover:bg-gold-dark">
                 Search
               </Button>
             </form>
-            <p className="mt-4 text-sm text-primary-foreground/50">
+            <p className="mt-4 text-sm text-white/35">
               50+ free tools available • No signup required
             </p>
           </div>
         </div>
+        {/* Bottom border accent */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(42,55%,55%,0.2)] to-transparent" />
       </section>
 
       {/* Popular Tools */}
