@@ -35,6 +35,36 @@ export type Database = {
         }
         Relationships: []
       }
+      saved_analyses: {
+        Row: {
+          created_at: string | null
+          id: string
+          input_data: Json
+          result_data: Json
+          tool_name: string
+          tool_slug: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          input_data?: Json
+          result_data?: Json
+          tool_name: string
+          tool_slug: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          input_data?: Json
+          result_data?: Json
+          tool_name?: string
+          tool_slug?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
