@@ -34,6 +34,9 @@ const AdminDashboard = React.lazy(() => import("@/pages/admin/AdminDashboard"));
 const AdminBlogList = React.lazy(() => import("@/pages/admin/AdminBlogList"));
 const AdminBlogEditor = React.lazy(() => import("@/pages/admin/AdminBlogEditor"));
 const AdminCategories = React.lazy(() => import("@/pages/admin/AdminCategories"));
+const DisclaimerPage = React.lazy(() => import("@/pages/DisclaimerPage"));
+const PrivacyPolicyPage = React.lazy(() => import("@/pages/PrivacyPolicyPage"));
+const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
 const queryClient = new QueryClient({
