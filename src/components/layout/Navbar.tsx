@@ -11,7 +11,6 @@ import { useAdminRole } from "@/hooks/useAdminRole";
 const navLinks = [
   { label: "Tools", href: "/tools" },
   { label: "AI Analysis", href: "/tools/ai" },
-  { label: "Blog", href: "/blog" },
   { label: "Legal Terms", href: "/legal-terms" },
   { label: "Legal Clauses", href: "/legal-clauses" },
   { label: "Contract Types", href: "/contract-types" },
@@ -39,7 +38,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
-      <div className="container flex h-16 items-center justify-between gap-4">
+      <div className="w-full px-6 flex h-16 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2 shrink-0">
           <Scale className="h-7 w-7 text-accent" />
           <span className="font-serif text-xl font-bold text-foreground">
