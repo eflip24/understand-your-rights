@@ -29,6 +29,11 @@ const DashboardPage = React.lazy(() => import("@/pages/DashboardPage"));
 const BlogPage = React.lazy(() => import("@/pages/BlogPage"));
 const BlogPostPage = React.lazy(() => import("@/pages/BlogPostPage"));
 const BlogCategoryPage = React.lazy(() => import("@/pages/BlogCategoryPage"));
+const AdminLayout = React.lazy(() => import("@/pages/admin/AdminLayout"));
+const AdminDashboard = React.lazy(() => import("@/pages/admin/AdminDashboard"));
+const AdminBlogList = React.lazy(() => import("@/pages/admin/AdminBlogList"));
+const AdminBlogEditor = React.lazy(() => import("@/pages/admin/AdminBlogEditor"));
+const AdminCategories = React.lazy(() => import("@/pages/admin/AdminCategories"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -71,6 +76,13 @@ const App = () => (
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/category/:slug" element={<BlogCategoryPage />} />
                 <Route path="/blog/:slug" element={<BlogPostPage />} />
+                <Route path="/admin" element={<AdminLayout />}>
+                  <Route index element={<AdminDashboard />} />
+                  <Route path="blog" element={<AdminBlogList />} />
+                  <Route path="blog/new" element={<AdminBlogEditor />} />
+                  <Route path="blog/edit/:id" element={<AdminBlogEditor />} />
+                  <Route path="categories" element={<AdminCategories />} />
+                </Route>
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

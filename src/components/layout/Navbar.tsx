@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Menu, X, Search, Scale, LogOut, LayoutDashboard, LogIn } from "lucide-react";
+import { Menu, X, Search, Scale, LogOut, LayoutDashboard, LogIn, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import { useAuth } from "@/contexts/AuthContext";
+import { useAdminRole } from "@/hooks/useAdminRole";
 
 const navLinks = [
   { label: "Tools", href: "/tools" },
@@ -21,6 +22,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
+  const { isAdmin } = useAdminRole();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,6 +76,14 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-2">
           {user ? (
             <>
+              {isAdmin && (
+                <Button variant="ghost" size="sm" asChild>
+                  <Link to="/admin" className="gap-1.5">
+                    <Shield className="h-4 w-4" />
+                    Admin
+                  </Link>
+                </Button>
+              )}
               <Button variant="ghost" size="sm" asChild>
                 <Link to="/dashboard" className="gap-1.5">
                   <LayoutDashboard className="h-4 w-4" />

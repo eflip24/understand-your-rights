@@ -50,6 +50,7 @@ export function useBlogPosts(categorySlug?: string) {
       let query = supabase
         .from("blog_posts")
         .select("*")
+        .eq("status", "published")
         .order("published_at", { ascending: false });
 
       if (postIds) {

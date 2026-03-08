@@ -2,3 +2,6 @@ project_id = "fpdfibyywvlcqjrkuuhz"
 
 [functions.analyze-contract]
 verify_jwt = false
+
+[functions.admin-blog]
+verify_jwt = false
