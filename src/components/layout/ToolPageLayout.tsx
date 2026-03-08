@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import { Tool, getRelatedTools } from "@/data/tools";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import JsonLd, { webApplicationSchema, faqSchema } from "@/components/seo/JsonLd";
 
 interface ToolPageLayoutProps {
   tool: Tool;
