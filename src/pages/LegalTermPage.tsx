@@ -7,10 +7,17 @@ import JsonLd, { definedTermSchema, faqSchema } from "@/components/seo/JsonLd";
 
 export default function LegalTermPage() {
   const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
   if (!slug) return <NotFound />;
 
   const term = getLegalTermBySlug(slug);
   if (!term) return <NotFound />;
+
+  const url = `https://legallyspoken.com${location.pathname}`;
+  const schemas = [
+    definedTermSchema(term.term, term.definition, url),
+    ...(term.faqs?.length ? [faqSchema(term.faqs)] : []),
+  ].filter(Boolean);
 
   return (
     <ContentPageLayout
