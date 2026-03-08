@@ -9,10 +9,17 @@ import JsonLd, { articleSchema, faqSchema } from "@/components/seo/JsonLd";
 
 export default function ContractTypePage() {
   const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
   if (!slug) return <NotFound />;
 
   const contractType = getContractTypeBySlug(slug);
   if (!contractType) return <NotFound />;
+
+  const url = `https://legallyspoken.com${location.pathname}`;
+  const schemas = [
+    articleSchema(contractType.title, contractType.description.slice(0, 155), url),
+    ...(contractType.faqs?.length ? [faqSchema(contractType.faqs)] : []),
+  ].filter(Boolean);
 
   return (
     <ContentPageLayout
