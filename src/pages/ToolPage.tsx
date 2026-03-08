@@ -55,6 +55,16 @@ import SeverancePayCalculator from "@/components/tools/SeverancePayCalculator";
 import OvertimeCalculator from "@/components/tools/OvertimeCalculator";
 import PartnershipSplitCalculator from "@/components/tools/PartnershipSplitCalculator";
 import BusinessExpenseTracker from "@/components/tools/BusinessExpenseTracker";
+import CryptoTaxCalculator from "@/components/tools/CryptoTaxCalculator";
+import DCACalculator from "@/components/tools/DCACalculator";
+import PositionSizeCalculator from "@/components/tools/PositionSizeCalculator";
+import ProfitLossCalculator from "@/components/tools/ProfitLossCalculator";
+import CompoundInterestCalculator from "@/components/tools/CompoundInterestCalculator";
+import MarginCallCalculator from "@/components/tools/MarginCallCalculator";
+import BreakevenCalculator from "@/components/tools/BreakevenCalculator";
+import RiskRewardCalculator from "@/components/tools/RiskRewardCalculator";
+import CryptoConverterCalculator from "@/components/tools/CryptoConverterCalculator";
+import LoanPaymentCalculator from "@/components/tools/LoanPaymentCalculator";
 
 const toolComponents: Record<string, React.ComponentType> = {
   "reading-time": ReadingTimeCalculator,
