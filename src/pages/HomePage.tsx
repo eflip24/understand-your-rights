@@ -82,31 +82,41 @@ export default function HomePage() {
         {/* Top border accent */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(42,55%,55%,0.3)] to-transparent" />
         <div className="container relative py-20 md:py-28">
-          <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight text-white">
-              Simple Legal Tools for{" "}
-              <span className="text-[hsl(42,55%,65%)]">Everyday People</span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/60 mb-8 max-w-lg mx-auto">
-              Understand contracts, check risks, calculate deadlines, and generate documents — no lawyer required.
-            </p>
-            <form onSubmit={handleSearch} className="max-w-md mx-auto flex gap-2">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/40" />
-                <Input
-                  placeholder="Search for a legal tool..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-12 bg-white/[0.07] text-white border border-white/[0.12] text-base placeholder:text-white/30 focus-visible:border-[hsl(42,55%,55%,0.4)] focus-visible:ring-[hsl(42,55%,55%,0.15)]"
-                />
-              </div>
-              <Button type="submit" className="h-12 px-6 bg-accent text-accent-foreground hover:bg-gold-dark">
-                Search
-              </Button>
-            </form>
-            <p className="mt-4 text-sm text-white/35">
-              50+ free tools available • No signup required
-            </p>
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight text-white">
+                Simple Legal Tools for{" "}
+                <span className="text-[hsl(42,55%,65%)]">Everyday People</span>
+              </h1>
+              <p className="text-lg md:text-xl text-white/60 mb-8 max-w-lg mx-auto md:mx-0">
+                Understand contracts, check risks, calculate deadlines, and generate documents — no lawyer required.
+              </p>
+              <form onSubmit={handleSearch} className="max-w-md mx-auto md:mx-0 flex gap-2">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/40" />
+                  <Input
+                    placeholder="Search for a legal tool..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-10 h-12 bg-white/[0.07] text-white border border-white/[0.12] text-base placeholder:text-white/30 focus-visible:border-[hsl(42,55%,55%,0.4)] focus-visible:ring-[hsl(42,55%,55%,0.15)]"
+                  />
+                </div>
+                <Button type="submit" className="h-12 px-6 bg-accent text-accent-foreground hover:bg-gold-dark">
+                  Search
+                </Button>
+              </form>
+              <p className="mt-4 text-sm text-white/35">
+                50+ free tools available • No signup required
+              </p>
+            </div>
+            <div className="hidden md:block flex-1 max-w-md">
+              <img
+                src={heroIllustration}
+                alt="Legal tools illustration with scales of justice, contracts, and gavel"
+                className="w-full h-auto rounded-lg opacity-90"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
         {/* Bottom border accent */}
