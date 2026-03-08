@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { categories, getToolsByCategory, type ToolCategory } from "@/data/tools";
 import NotFound from "@/pages/NotFound";
+import Head from "@/components/seo/Head";
 
 export default function CategoryPage() {
   const { category } = useParams<{ category: string }>();
