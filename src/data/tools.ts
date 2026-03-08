@@ -81,6 +81,13 @@ export const categories: CategoryInfo[] = [
     icon: DollarSign,
     color: "text-emerald-500",
   },
+  {
+    id: "energy",
+    label: "Green Energy & Solar",
+    description: "Solar ROI calculators, energy savings tools, and green lease checkers.",
+    icon: Sun,
+    color: "text-yellow-500",
+  },
 ];
 
 export const tools: Tool[] = [

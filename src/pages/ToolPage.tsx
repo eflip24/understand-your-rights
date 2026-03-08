@@ -148,6 +148,14 @@ const toolComponents: Record<string, React.ComponentType> = {
   "vesting-schedule": VestingScheduleCalculator,
   "stock-option-tax": StockOptionTaxCalculator,
   "equity-dilution": EquityDilutionCalculator,
+  "solar-roi": SolarROICalculator,
+  "solar-incentive": SolarIncentiveEstimator,
+  "energy-savings": EnergySavingsCalculator,
+  "carbon-footprint": CarbonFootprintCalculator,
+  "green-lease": GreenLeaseChecker,
+  "ev-vs-gas": EVvsGasCalculator,
+  "home-energy-audit": HomeEnergyAuditChecklist,
+  "ppa-calculator": PPACalculator,
 };
 
 export default function ToolPage() {
