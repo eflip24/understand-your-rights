@@ -60,6 +60,20 @@ export const categories: CategoryInfo[] = [
     icon: Brain,
     color: "text-rose-500",
   },
+  {
+    id: "realestate",
+    label: "Real Estate Tools",
+    description: "Calculators and generators for rental and property agreements.",
+    icon: Home,
+    color: "text-teal-500",
+  },
+  {
+    id: "business",
+    label: "Business Tools",
+    description: "Tools for business formation, classification, and financial planning.",
+    icon: Users,
+    color: "text-indigo-500",
+  },
 ];
 
 export const tools: Tool[] = [
