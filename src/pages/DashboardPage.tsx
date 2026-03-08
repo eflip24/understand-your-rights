@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, Trash2, FileText, Scale } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import { Helmet } from "react-helmet-async";
 
 interface SavedAnalysis {
   id: string;
