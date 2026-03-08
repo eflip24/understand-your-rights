@@ -43,6 +43,18 @@ import EmploymentContractChecklist from "@/components/tools/EmploymentContractCh
 import CeaseAndDesistGenerator from "@/components/tools/CeaseAndDesistGenerator";
 import PowerOfAttorneyGenerator from "@/components/tools/PowerOfAttorneyGenerator";
 import IndependentContractorAgreement from "@/components/tools/IndependentContractorAgreement";
+import PromissoryNoteGenerator from "@/components/tools/PromissoryNoteGenerator";
+import SecurityDepositCalculator from "@/components/tools/SecurityDepositCalculator";
+import RentIncreaseCalculator from "@/components/tools/RentIncreaseCalculator";
+import LeaseTermComparison from "@/components/tools/LeaseTermComparison";
+import MoveOutChecklistGenerator from "@/components/tools/MoveOutChecklistGenerator";
+import RentalAgreementGenerator from "@/components/tools/RentalAgreementGenerator";
+import BusinessNameChecker from "@/components/tools/BusinessNameChecker";
+import ContractorVsEmployeeChecker from "@/components/tools/ContractorVsEmployeeChecker";
+import SeverancePayCalculator from "@/components/tools/SeverancePayCalculator";
+import OvertimeCalculator from "@/components/tools/OvertimeCalculator";
+import PartnershipSplitCalculator from "@/components/tools/PartnershipSplitCalculator";
+import BusinessExpenseTracker from "@/components/tools/BusinessExpenseTracker";
 
 const toolComponents: Record<string, React.ComponentType> = {
   "reading-time": ReadingTimeCalculator,
@@ -84,6 +96,18 @@ const toolComponents: Record<string, React.ComponentType> = {
   "cease-desist": CeaseAndDesistGenerator,
   "poa-generator": PowerOfAttorneyGenerator,
   "ic-agreement": IndependentContractorAgreement,
+  "promissory-note": PromissoryNoteGenerator,
+  "security-deposit": SecurityDepositCalculator,
+  "rent-increase": RentIncreaseCalculator,
+  "lease-comparison": LeaseTermComparison,
+  "moveout-checklist": MoveOutChecklistGenerator,
+  "rental-agreement": RentalAgreementGenerator,
+  "business-name": BusinessNameChecker,
+  "contractor-vs-employee": ContractorVsEmployeeChecker,
+  "severance-pay": SeverancePayCalculator,
+  "overtime-calc": OvertimeCalculator,
+  "partnership-split": PartnershipSplitCalculator,
+  "business-expense": BusinessExpenseTracker,
 };
 
 export default function ToolPage() {
