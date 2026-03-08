@@ -68,6 +68,9 @@ const App = () => (
                 <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                 <Route path="/reset-password" element={<ResetPasswordPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/category/:slug" element={<BlogCategoryPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
