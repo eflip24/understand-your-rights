@@ -17,7 +17,6 @@ import JsonLd, { blogPostingSchema, breadcrumbSchema } from "@/components/seo/Js
 import { Card, CardContent } from "@/components/ui/card";
 import { format } from "date-fns";
 import blogDefaultImage from "@/assets/blog-default.jpg";
-import { format } from "date-fns";
 
 function decodeHtml(html: string) {
   return html
