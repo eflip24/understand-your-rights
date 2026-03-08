@@ -4,9 +4,31 @@ import { Search, ArrowRight, FileText, Shield, Briefcase, ScrollText, BookOpen, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { getPopularTools, categories } from "@/data/tools";
+import { getPopularTools, categories, type ToolCategory } from "@/data/tools";
 import JsonLd, { websiteSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
+import heroIllustration from "@/assets/hero-illustration.png";
+import catContract from "@/assets/cat-contract.png";
+import catConsumer from "@/assets/cat-consumer.png";
+import catEmployment from "@/assets/cat-employment.png";
+import catGenerators from "@/assets/cat-generators.png";
+import catAi from "@/assets/cat-ai.png";
+import catRealestate from "@/assets/cat-realestate.png";
+import catBusiness from "@/assets/cat-business.png";
+import catFinance from "@/assets/cat-finance.png";
+import catEnergy from "@/assets/cat-energy.png";
+
+const categoryImages: Record<string, string> = {
+  contract: catContract,
+  consumer: catConsumer,
+  employment: catEmployment,
+  generators: catGenerators,
+  ai: catAi,
+  realestate: catRealestate,
+  business: catBusiness,
+  finance: catFinance,
+  energy: catEnergy,
+};
 
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -60,31 +82,41 @@ export default function HomePage() {
         {/* Top border accent */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(42,55%,55%,0.3)] to-transparent" />
         <div className="container relative py-20 md:py-28">
-          <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight text-white">
-              Simple Legal Tools for{" "}
-              <span className="text-[hsl(42,55%,65%)]">Everyday People</span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/60 mb-8 max-w-lg mx-auto">
-              Understand contracts, check risks, calculate deadlines, and generate documents — no lawyer required.
-            </p>
-            <form onSubmit={handleSearch} className="max-w-md mx-auto flex gap-2">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/40" />
-                <Input
-                  placeholder="Search for a legal tool..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-12 bg-white/[0.07] text-white border border-white/[0.12] text-base placeholder:text-white/30 focus-visible:border-[hsl(42,55%,55%,0.4)] focus-visible:ring-[hsl(42,55%,55%,0.15)]"
-                />
-              </div>
-              <Button type="submit" className="h-12 px-6 bg-accent text-accent-foreground hover:bg-gold-dark">
-                Search
-              </Button>
-            </form>
-            <p className="mt-4 text-sm text-white/35">
-              50+ free tools available • No signup required
-            </p>
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight text-white">
+                Simple Legal Tools for{" "}
+                <span className="text-[hsl(42,55%,65%)]">Everyday People</span>
+              </h1>
+              <p className="text-lg md:text-xl text-white/60 mb-8 max-w-lg mx-auto md:mx-0">
+                Understand contracts, check risks, calculate deadlines, and generate documents — no lawyer required.
+              </p>
+              <form onSubmit={handleSearch} className="max-w-md mx-auto md:mx-0 flex gap-2">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/40" />
+                  <Input
+                    placeholder="Search for a legal tool..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-10 h-12 bg-white/[0.07] text-white border border-white/[0.12] text-base placeholder:text-white/30 focus-visible:border-[hsl(42,55%,55%,0.4)] focus-visible:ring-[hsl(42,55%,55%,0.15)]"
+                  />
+                </div>
+                <Button type="submit" className="h-12 px-6 bg-accent text-accent-foreground hover:bg-gold-dark">
+                  Search
+                </Button>
+              </form>
+              <p className="mt-4 text-sm text-white/35">
+                50+ free tools available • No signup required
+              </p>
+            </div>
+            <div className="hidden md:block flex-1 max-w-md">
+              <img
+                src={heroIllustration}
+                alt="Legal tools illustration with scales of justice, contracts, and gavel"
+                className="w-full h-auto rounded-lg opacity-90"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
         {/* Bottom border accent */}
@@ -139,8 +171,12 @@ export default function HomePage() {
             {categories.map((cat) => (
               <Link key={cat.id} to={`/tools/${cat.id}`}>
                 <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all text-center p-6 group">
-                  <div className="mx-auto w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                    <cat.icon className="h-7 w-7 text-accent" />
+                  <div className="mx-auto w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors overflow-hidden">
+                    {categoryImages[cat.id] ? (
+                      <img src={categoryImages[cat.id]} alt={cat.label} className="w-14 h-14 object-contain" loading="lazy" />
+                    ) : (
+                      <cat.icon className="h-7 w-7 text-accent" />
+                    )}
                   </div>
                   <h3 className="font-serif font-bold text-lg mb-2">{cat.label}</h3>
                   <p className="text-sm text-muted-foreground">{cat.description}</p>

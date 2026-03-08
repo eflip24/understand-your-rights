@@ -16,6 +16,7 @@ import Head from "@/components/seo/Head";
 import JsonLd, { blogPostingSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import { Card, CardContent } from "@/components/ui/card";
 import { format } from "date-fns";
+import blogDefaultImage from "@/assets/blog-default.jpg";
 
 function decodeHtml(html: string) {
   return html
@@ -152,7 +153,14 @@ export default function BlogPostPage() {
           </div>
         )}
         {!post.featured_image_url && (
-          <div className="h-32 bg-primary" />
+          <div className="h-[320px] md:h-[420px] overflow-hidden">
+            <img
+              src={blogDefaultImage}
+              alt="LegallySpoken Blog"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+          </div>
         )}
       </div>
 
