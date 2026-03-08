@@ -81,6 +81,11 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "ev-vs-gas": React.lazy(() => import("@/components/tools/EVvsGasCalculator")),
   "home-energy-audit": React.lazy(() => import("@/components/tools/HomeEnergyAuditChecklist")),
   "ppa-calculator": React.lazy(() => import("@/components/tools/PPACalculator")),
+  "income-tax": React.lazy(() => import("@/components/tools/IncomeTaxEstimator")),
+  "auto-loan": React.lazy(() => import("@/components/tools/AutoLoanCalculator")),
+  "debt-payoff": React.lazy(() => import("@/components/tools/DebtPayoffCalculator")),
+  "net-worth": React.lazy(() => import("@/components/tools/NetWorthCalculator")),
+  "paycheck-calc": React.lazy(() => import("@/components/tools/PaycheckCalculator")),
 };
 
 const ToolLoader = () => (
