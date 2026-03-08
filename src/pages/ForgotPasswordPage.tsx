@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Loader2, Mail } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
