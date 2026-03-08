@@ -118,6 +118,16 @@ const toolComponents: Record<string, React.ComponentType> = {
   "overtime-calc": OvertimeCalculator,
   "partnership-split": PartnershipSplitCalculator,
   "business-expense": BusinessExpenseTracker,
+  "crypto-tax": CryptoTaxCalculator,
+  "dca-calculator": DCACalculator,
+  "position-size": PositionSizeCalculator,
+  "profit-loss": ProfitLossCalculator,
+  "compound-interest": CompoundInterestCalculator,
+  "margin-call": MarginCallCalculator,
+  "breakeven-calc": BreakevenCalculator,
+  "risk-reward": RiskRewardCalculator,
+  "crypto-converter": CryptoConverterCalculator,
+  "loan-payment": LoanPaymentCalculator,
 };
 
 export default function ToolPage() {
