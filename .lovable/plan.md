@@ -1,32 +1,86 @@
 
 
-# Site Health Check Results
+# Phase 4: Ecosystem Expansion to 50+ Tools
 
-## What's Working
-- **Homepage**: Renders correctly with hero, popular tools, categories, legal resources section, and footer
-- **Legal Terms Directory** (`/legal-terms`): 56+ terms with A-Z navigation, search, and category filters
-- **Legal Term Pages** (`/legal-terms/indemnification`): Full content with breadcrumbs, definition callout, explanation, example clause
-- **Legal Clauses Directory** (`/legal-clauses`): 21 clauses with category filters
-- **Contract Types Directory** (`/contract-types`): Working with search and filters
-- **Tool Pages**: All tools render correctly (e.g., `/tools/contract/reading-time-calculator`)
-- **Navigation**: All 5 nav links work (Tools, AI Analysis, Legal Terms, Legal Clauses, Contract Types)
-- **Edge Function**: `analyze-contract` is properly structured with all 6 AI tool types
+## Current State
+- **21 tools** total: 4 contract, 4 consumer, 3 employment, 4 generators, 6 AI
+- Need **~30 more tools** to reach 50+
 
-## Issues Found
+## New Tools Plan (30 tools across 6 categories)
 
-### 1. Console Warnings: "Function components cannot be given refs"
-Three warnings from React about refs being passed to function components:
-- `ToolPage` (from `App.tsx` route)
-- `ToolPageLayout` (from `ToolPage`)
-- `NDAFairnessScore` (from `ToolPage`)
+We'll add two new categories and expand existing ones.
 
-These are **non-breaking warnings** but indicate that somewhere a ref is being passed to these components. This is a React Router internal behavior — not causing any visual bugs but should be cleaned up.
+### New Category: "Real Estate" (5 tools)
+- **Security Deposit Calculator** — Calculate max deposit, interest owed, return deadline by state
+- **Rent Increase Calculator** — Check if a rent increase is legal based on lease terms and local caps
+- **Lease Term Comparison** — Compare two lease offers side by side (non-AI, structured comparison)
+- **Move-Out Checklist Generator** — Generate a checklist based on lease requirements
+- **Rental Agreement Generator** — Generate a basic residential lease from a form
 
-**Fix**: No action needed — these are harmless dev-mode warnings from React Router v6 passing refs to route components.
+### New Category: "Business" (6 tools)
+- **Business Name Checker** — Check naming considerations (trademark basics, domain availability tips)
+- **Contractor vs Employee Checker** — Questionnaire-based classification helper
+- **Severance Pay Calculator** — Estimate severance based on tenure and salary
+- **Overtime Calculator** — Calculate overtime pay based on hourly rate and hours worked
+- **Partnership Split Calculator** — Calculate equity/profit splits for partnerships
+- **Business Expense Tracker Template** — Generate a formatted expense tracking template
 
-### 2. No Actual Bugs Found
-All pages render, navigation works, internal links resolve, and the edge function is properly configured.
+### Expand "Contract Tools" (+5)
+- **Contract Expiration Tracker** — Enter contract dates, get alerts/timeline of expirations
+- **Signature Block Generator** — Generate proper signature blocks for different entity types
+- **Contract Checklist Generator** — Generate a review checklist based on contract type
+- **Amendment Drafter** — Generate a basic contract amendment from form inputs
+- **Contract Value Calculator** — Calculate total contract value including renewals, escalations
 
-## Verdict
-The site is fully functional. All Phase 1 tools (15), Phase 2 SEO pages (100+), and Phase 3 AI tools (6) are wired up and working. Ready to proceed.
+### Expand "Consumer Tools" (+5)
+- **Warranty Expiration Calculator** — Track warranty end dates for purchases
+- **Statute of Limitations Lookup** — Look up general SOL by state and claim type
+- **Small Claims Court Limit Checker** — Check small claims $ limits by state
+- **Consumer Rights Quiz** — Interactive quiz about consumer protection rights
+- **Dispute Letter Generator** — Generate a formal dispute letter for billing/credit issues
+
+### Expand "Employment Tools" (+5)
+- **Salary to Hourly Converter** — Convert between salary and hourly rate with benefits
+- **PTO Calculator** — Calculate accrued PTO based on policy and tenure
+- **Wrongful Termination Checklist** — Questionnaire to assess potential wrongful termination
+- **Minimum Wage Lookup** — Look up federal and state minimum wage rates
+- **Employment Contract Checklist** — Generate a checklist of what to look for in an employment contract
+
+### Expand "Document Generators" (+4)
+- **Cease and Desist Letter Generator** — Generate C&D letters for common scenarios
+- **Power of Attorney Generator** — Generate a basic POA document
+- **Independent Contractor Agreement Generator** — Generate an IC agreement from form
+- **Promissory Note Generator** — Generate a basic promissory note
+
+## Technical Approach
+
+All 30 tools are **client-side only** (no AI/edge functions needed). They follow the same patterns as existing tools:
+- **Calculators**: Form inputs → computed results (like `LateFeeCalculator`)
+- **Generators**: Form inputs → formatted text output with copy button (like `NDAGenerator`)
+- **Checkers/Quizzes**: Questionnaire → conditional results (like `RefundChecker`)
+- **Lookup tools**: Search/select → display data from embedded dataset (like `NonCompeteChecker`)
+
+## Implementation Structure
+
+1. **Add 2 new categories** to `tools.ts`: "realestate" and "business"
+2. **Register all 30 tools** in `tools.ts` with slugs, descriptions, FAQs, and related tool IDs
+3. **Create 30 component files** in `src/components/tools/`
+4. **Register components** in `src/pages/ToolPage.tsx`
+5. **Update homepage** tool count from "21" to "50+"
+
+## Build Order (5 batches of 6)
+
+1. **Batch 1**: All 5 new contract tools + 1 consumer tool
+2. **Batch 2**: Remaining 4 consumer tools + 2 employment tools
+3. **Batch 3**: Remaining 3 employment tools + 3 generators
+4. **Batch 4**: Remaining 1 generator + 5 real estate tools
+5. **Batch 5**: All 6 business tools + homepage/navbar updates
+
+Each batch: add tool entries to `tools.ts`, create components, register in `ToolPage.tsx`.
+
+## Files Modified
+- `src/data/tools.ts` — Add 2 categories + 30 tool entries
+- `src/pages/ToolPage.tsx` — Register 30 new components
+- `src/pages/HomePage.tsx` — Update tool count
+- 30 new files in `src/components/tools/`
 
