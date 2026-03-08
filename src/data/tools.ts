@@ -1,6 +1,6 @@
-import { FileText, Calculator, Shield, Users, Scale, Clock, DollarSign, Search, FileCheck, Briefcase, Receipt, Ban, AlertTriangle, ScrollText, Mail, Brain, Home, GitCompare, MessageSquare } from "lucide-react";
+import { FileText, Calculator, Shield, Users, Scale, Clock, DollarSign, Search, FileCheck, Briefcase, Receipt, Ban, AlertTriangle, ScrollText, Mail, Brain, Home, GitCompare, MessageSquare, Sun, Leaf, Car, Zap, ClipboardCheck, BarChart3 } from "lucide-react";
 
-export type ToolCategory = "contract" | "consumer" | "employment" | "generators" | "ai" | "realestate" | "business" | "finance";
+export type ToolCategory = "contract" | "consumer" | "employment" | "generators" | "ai" | "realestate" | "business" | "finance" | "energy";
 
 export interface Tool {
   id: string;
@@ -80,6 +80,13 @@ export const categories: CategoryInfo[] = [
     description: "Calculators for trading, crypto, investing, and personal finance.",
     icon: DollarSign,
     color: "text-emerald-500",
+  },
+  {
+    id: "energy",
+    label: "Green Energy & Solar",
+    description: "Solar ROI calculators, energy savings tools, and green lease checkers.",
+    icon: Sun,
+    color: "text-yellow-500",
   },
 ];
 
@@ -1189,6 +1196,136 @@ export const tools: Tool[] = [
       { question: "What is an option pool?", answer: "A reserve of shares set aside for future employee equity grants. Investors often require an option pool be created or expanded before funding." },
     ],
     relatedToolIds: ["vesting-schedule", "stock-option-tax", "partnership-split"],
+  },
+  // Green Energy & Solar Tools
+  {
+    id: "solar-roi",
+    name: "Solar Panel ROI Calculator",
+    slug: "solar-panel-roi-calculator",
+    category: "energy",
+    categoryLabel: "Green Energy & Solar",
+    description: "Calculate the return on investment for solar panel installation. Input system cost, energy production, electricity rate, and incentives to see payback period, 25-year savings, and ROI percentage.",
+    shortDescription: "Calculate solar panel payback period and ROI.",
+    icon: Sun,
+    popular: true,
+    faqs: [
+      { question: "How long does it take for solar panels to pay for themselves?", answer: "Typically 6–10 years depending on system cost, local electricity rates, and available incentives. After payback, the electricity generated is essentially free." },
+      { question: "What affects solar ROI the most?", answer: "The biggest factors are system cost, local electricity rates, available incentives/rebates, and how much sun your location receives annually." },
+      { question: "Do solar panels increase home value?", answer: "Studies show solar panels can increase home value by 3-4% on average, providing additional ROI beyond energy savings." },
+    ],
+    relatedToolIds: ["solar-incentive", "energy-savings", "carbon-footprint"],
+  },
+  {
+    id: "solar-incentive",
+    name: "Solar Incentive & Tax Credit Estimator",
+    slug: "solar-incentive-tax-credit-estimator",
+    category: "energy",
+    categoryLabel: "Green Energy & Solar",
+    description: "Estimate federal and state solar incentives including the 30% Investment Tax Credit (ITC), state rebates, and SREC values. See your net cost after all available incentives.",
+    shortDescription: "Estimate solar tax credits and state rebates.",
+    icon: DollarSign,
+    faqs: [
+      { question: "What is the federal solar ITC?", answer: "The Investment Tax Credit allows you to deduct 30% of the cost of installing a solar energy system from your federal taxes. This rate is available through 2032." },
+      { question: "What are SRECs?", answer: "Solar Renewable Energy Certificates represent the environmental benefits of solar electricity. In some states, you can sell SRECs for additional income." },
+      { question: "Can I combine federal and state incentives?", answer: "Yes, the federal ITC can be combined with state rebates and SRECs. However, some state incentives may reduce the cost basis for the federal credit." },
+    ],
+    relatedToolIds: ["solar-roi", "energy-savings", "ppa-calculator"],
+  },
+  {
+    id: "energy-savings",
+    name: "Energy Savings Calculator",
+    slug: "energy-savings-calculator",
+    category: "energy",
+    categoryLabel: "Green Energy & Solar",
+    description: "Calculate how much you can save on electricity by going solar. Input your current bill, solar coverage percentage, and system cost to see monthly, annual, and lifetime savings.",
+    shortDescription: "Calculate electricity savings from solar power.",
+    icon: Zap,
+    faqs: [
+      { question: "What solar coverage percentage should I aim for?", answer: "Most homeowners aim for 80-100% coverage. Going above 100% may not be cost-effective unless your utility offers favorable net metering." },
+      { question: "Do solar savings increase over time?", answer: "Yes, as utility rates typically increase 3-4% annually, your savings grow each year while your solar production costs remain fixed." },
+      { question: "What's included in the break-even calculation?", answer: "Break-even accounts for total system cost minus the monthly savings until cumulative savings equal the initial investment." },
+    ],
+    relatedToolIds: ["solar-roi", "solar-incentive", "carbon-footprint"],
+  },
+  {
+    id: "carbon-footprint",
+    name: "Carbon Footprint Offset Calculator",
+    slug: "carbon-footprint-offset-calculator",
+    category: "energy",
+    categoryLabel: "Green Energy & Solar",
+    description: "Calculate the CO₂ emissions you can avoid by switching to renewable energy. See equivalents in trees planted and driving miles offset based on your energy source and usage.",
+    shortDescription: "Calculate CO₂ savings from switching to renewables.",
+    icon: Leaf,
+    faqs: [
+      { question: "How much CO₂ does the average US home produce?", answer: "The average US home produces about 7.5 metric tons of CO₂ per year from electricity use, though this varies significantly by energy source." },
+      { question: "How are trees-equivalent calculated?", answer: "A mature tree absorbs approximately 22 kg (0.022 metric tons) of CO₂ per year. We divide your avoided emissions by this factor." },
+      { question: "What energy source has the highest carbon footprint?", answer: "Coal has the highest emissions at about 0.95 kg CO₂/kWh, followed by oil (0.72) and natural gas (0.42). The US grid average is about 0.39 kg CO₂/kWh." },
+    ],
+    relatedToolIds: ["energy-savings", "ev-vs-gas", "home-energy-audit"],
+  },
+  {
+    id: "green-lease",
+    name: "Green Lease Clause Checker",
+    slug: "green-lease-clause-checker",
+    category: "energy",
+    categoryLabel: "Green Energy & Solar",
+    description: "Evaluate your commercial lease for green provisions. Check which sustainability clauses are present and get a score with recommendations for missing essential provisions.",
+    shortDescription: "Check green clauses in commercial leases.",
+    icon: ClipboardCheck,
+    faqs: [
+      { question: "What is a green lease?", answer: "A green lease includes provisions that align landlord and tenant incentives for energy efficiency, sustainability, and environmental performance in commercial buildings." },
+      { question: "Why are energy benchmarking clauses important?", answer: "Energy benchmarking is required by law in many cities and helps track building performance over time, identifying opportunities for efficiency improvements." },
+      { question: "What is a cost-sharing clause?", answer: "Cost-sharing clauses define how energy efficiency upgrade costs and resulting savings are split between landlord and tenant, solving the 'split incentive' problem." },
+    ],
+    relatedToolIds: ["lease-analyzer", "home-energy-audit", "carbon-footprint"],
+  },
+  {
+    id: "ev-vs-gas",
+    name: "EV vs Gas Cost Comparison",
+    slug: "ev-vs-gas-cost-comparison",
+    category: "energy",
+    categoryLabel: "Green Energy & Solar",
+    description: "Compare the annual fuel costs of driving an electric vehicle versus a gas vehicle. See side-by-side costs, annual savings, and 10-year projected savings.",
+    shortDescription: "Compare EV and gas vehicle fuel costs.",
+    icon: Car,
+    faqs: [
+      { question: "How much cheaper is it to drive an EV?", answer: "On average, EVs cost 50-70% less to fuel than gas vehicles, depending on local electricity and gas prices." },
+      { question: "What is EV efficiency measured in?", answer: "EV efficiency is typically measured in kWh per 100 miles. Most modern EVs range from 25-35 kWh per 100 miles." },
+      { question: "Does this include maintenance savings?", answer: "This calculator focuses on fuel costs only. EVs also typically save $500-1000/year on maintenance due to fewer moving parts." },
+    ],
+    relatedToolIds: ["carbon-footprint", "energy-savings", "solar-roi"],
+  },
+  {
+    id: "home-energy-audit",
+    name: "Home Energy Audit Checklist",
+    slug: "home-energy-audit-checklist",
+    category: "energy",
+    categoryLabel: "Green Energy & Solar",
+    description: "Generate a prioritized checklist of energy improvements for your home. Select your home type and age to see applicable upgrades with estimated savings ranges.",
+    shortDescription: "Get a personalized home energy improvement checklist.",
+    icon: Home,
+    faqs: [
+      { question: "What's the most impactful energy improvement?", answer: "For most homes, attic insulation and air sealing provide the best ROI, reducing heating/cooling costs by 10-20%." },
+      { question: "Should I get a professional energy audit?", answer: "Yes, a professional audit with blower door testing can identify hidden air leaks and insulation gaps that visual inspection misses." },
+      { question: "Do these savings estimates include rebates?", answer: "The savings shown are from reduced energy bills only. Many improvements also qualify for federal or state rebates, improving the ROI further." },
+    ],
+    relatedToolIds: ["energy-savings", "carbon-footprint", "solar-roi"],
+  },
+  {
+    id: "ppa-calculator",
+    name: "Power Purchase Agreement Calculator",
+    slug: "power-purchase-agreement-calculator",
+    category: "energy",
+    categoryLabel: "Green Energy & Solar",
+    description: "Compare the total cost of a Power Purchase Agreement (PPA) versus utility electricity over the contract term. See year-by-year cost breakdowns including rate escalations.",
+    shortDescription: "Compare PPA costs vs utility electricity.",
+    icon: BarChart3,
+    faqs: [
+      { question: "What is a PPA?", answer: "A Power Purchase Agreement is a contract where a solar provider installs panels on your property and sells you the electricity at a fixed rate, typically lower than utility rates." },
+      { question: "What is a typical PPA escalation rate?", answer: "PPA escalation rates typically range from 1-3% annually, compared to utility rate increases of 3-5% per year historically." },
+      { question: "Who owns the panels in a PPA?", answer: "The solar provider owns and maintains the panels. At the end of the contract term (usually 15-25 years), you may have the option to buy the system or have it removed." },
+    ],
+    relatedToolIds: ["solar-roi", "solar-incentive", "energy-savings"],
   },
 ];
 

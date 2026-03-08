@@ -71,6 +71,14 @@ import GrantComplianceChecklist from "@/components/tools/GrantComplianceChecklis
 import VestingScheduleCalculator from "@/components/tools/VestingScheduleCalculator";
 import StockOptionTaxCalculator from "@/components/tools/StockOptionTaxCalculator";
 import EquityDilutionCalculator from "@/components/tools/EquityDilutionCalculator";
+import SolarROICalculator from "@/components/tools/SolarROICalculator";
+import SolarIncentiveEstimator from "@/components/tools/SolarIncentiveEstimator";
+import EnergySavingsCalculator from "@/components/tools/EnergySavingsCalculator";
+import CarbonFootprintCalculator from "@/components/tools/CarbonFootprintCalculator";
+import GreenLeaseChecker from "@/components/tools/GreenLeaseChecker";
+import EVvsGasCalculator from "@/components/tools/EVvsGasCalculator";
+import HomeEnergyAuditChecklist from "@/components/tools/HomeEnergyAuditChecklist";
+import PPACalculator from "@/components/tools/PPACalculator";
 
 const toolComponents: Record<string, React.ComponentType> = {
   "reading-time": ReadingTimeCalculator,
@@ -140,6 +148,14 @@ const toolComponents: Record<string, React.ComponentType> = {
   "vesting-schedule": VestingScheduleCalculator,
   "stock-option-tax": StockOptionTaxCalculator,
   "equity-dilution": EquityDilutionCalculator,
+  "solar-roi": SolarROICalculator,
+  "solar-incentive": SolarIncentiveEstimator,
+  "energy-savings": EnergySavingsCalculator,
+  "carbon-footprint": CarbonFootprintCalculator,
+  "green-lease": GreenLeaseChecker,
+  "ev-vs-gas": EVvsGasCalculator,
+  "home-energy-audit": HomeEnergyAuditChecklist,
+  "ppa-calculator": PPACalculator,
 };
 
 export default function ToolPage() {
