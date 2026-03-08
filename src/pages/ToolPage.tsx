@@ -25,6 +25,24 @@ import LeaseAnalyzer from "@/components/tools/LeaseAnalyzer";
 import TermsSummarizer from "@/components/tools/TermsSummarizer";
 import ContractComparison from "@/components/tools/ContractComparison";
 import ClauseExplainer from "@/components/tools/ClauseExplainer";
+import ContractExpirationTracker from "@/components/tools/ContractExpirationTracker";
+import SignatureBlockGenerator from "@/components/tools/SignatureBlockGenerator";
+import ContractChecklistGenerator from "@/components/tools/ContractChecklistGenerator";
+import AmendmentDrafter from "@/components/tools/AmendmentDrafter";
+import ContractValueCalculator from "@/components/tools/ContractValueCalculator";
+import WarrantyExpirationCalculator from "@/components/tools/WarrantyExpirationCalculator";
+import StatuteOfLimitationsLookup from "@/components/tools/StatuteOfLimitationsLookup";
+import SmallClaimsLimitChecker from "@/components/tools/SmallClaimsLimitChecker";
+import ConsumerRightsQuiz from "@/components/tools/ConsumerRightsQuiz";
+import DisputeLetterGenerator from "@/components/tools/DisputeLetterGenerator";
+import SalaryToHourlyConverter from "@/components/tools/SalaryToHourlyConverter";
+import PTOCalculator from "@/components/tools/PTOCalculator";
+import WrongfulTerminationChecklist from "@/components/tools/WrongfulTerminationChecklist";
+import MinimumWageLookup from "@/components/tools/MinimumWageLookup";
+import EmploymentContractChecklist from "@/components/tools/EmploymentContractChecklist";
+import CeaseAndDesistGenerator from "@/components/tools/CeaseAndDesistGenerator";
+import PowerOfAttorneyGenerator from "@/components/tools/PowerOfAttorneyGenerator";
+import IndependentContractorAgreement from "@/components/tools/IndependentContractorAgreement";
 
 const toolComponents: Record<string, React.ComponentType> = {
   "reading-time": ReadingTimeCalculator,
@@ -48,6 +66,24 @@ const toolComponents: Record<string, React.ComponentType> = {
   "terms-summarizer": TermsSummarizer,
   "contract-comparison": ContractComparison,
   "clause-explainer": ClauseExplainer,
+  "contract-expiration": ContractExpirationTracker,
+  "signature-block": SignatureBlockGenerator,
+  "contract-checklist": ContractChecklistGenerator,
+  "amendment-drafter": AmendmentDrafter,
+  "contract-value": ContractValueCalculator,
+  "warranty-tracker": WarrantyExpirationCalculator,
+  "statute-of-limitations": StatuteOfLimitationsLookup,
+  "small-claims-limit": SmallClaimsLimitChecker,
+  "consumer-rights-quiz": ConsumerRightsQuiz,
+  "dispute-letter": DisputeLetterGenerator,
+  "salary-converter": SalaryToHourlyConverter,
+  "pto-calculator": PTOCalculator,
+  "wrongful-termination": WrongfulTerminationChecklist,
+  "minimum-wage": MinimumWageLookup,
+  "employment-checklist": EmploymentContractChecklist,
+  "cease-desist": CeaseAndDesistGenerator,
+  "poa-generator": PowerOfAttorneyGenerator,
+  "ic-agreement": IndependentContractorAgreement,
 };
 
 export default function ToolPage() {
