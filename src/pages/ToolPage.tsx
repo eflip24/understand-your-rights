@@ -54,6 +54,12 @@ const toolComponents: Record<string, React.ComponentType> = {
   "terms-summarizer": TermsSummarizer,
   "contract-comparison": ContractComparison,
   "clause-explainer": ClauseExplainer,
+  "contract-expiration": ContractExpirationTracker,
+  "signature-block": SignatureBlockGenerator,
+  "contract-checklist": ContractChecklistGenerator,
+  "amendment-drafter": AmendmentDrafter,
+  "contract-value": ContractValueCalculator,
+  "warranty-tracker": WarrantyExpirationCalculator,
 };
 
 export default function ToolPage() {
