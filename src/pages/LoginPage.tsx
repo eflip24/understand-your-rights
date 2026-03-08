@@ -8,7 +8,6 @@ import { Scale, Loader2 } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
