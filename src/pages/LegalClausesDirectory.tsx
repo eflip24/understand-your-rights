@@ -1,19 +1,16 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { legalClauses, getLegalClauseCategories } from "@/data/legalClauses";
+import Head from "@/components/seo/Head";
 
 export default function LegalClausesDirectory() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const categories = getLegalClauseCategories();
-
-  useEffect(() => {
-    document.title = "Legal Clauses Guide — Common Contract Clauses Explained | LegallySpoken";
-  }, []);
 
   const filtered = useMemo(() => {
     let result = legalClauses;
@@ -27,6 +24,10 @@ export default function LegalClausesDirectory() {
 
   return (
     <div className="container py-8 max-w-5xl">
+      <Head
+        title="Legal Clauses Guide — Common Contract Clauses Explained | LegallySpoken"
+        description={`Explore ${legalClauses.length} common contract clauses with examples, enforceability notes, and red flags. Understand what each clause means before you sign.`}
+      />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">Legal Clauses Guide</h1>
         <p className="text-muted-foreground text-lg">{legalClauses.length} common contract clauses explained with examples and red flags.</p>

@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, ThumbsUp, ThumbsDown } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { tools } from "@/data/tools";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Head from "@/components/seo/Head";
 
 interface Breadcrumb {
   label: string;
@@ -45,24 +46,14 @@ export default function ContentPageLayout({
   children,
 }: ContentPageLayoutProps) {
   const [helpful, setHelpful] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    document.title = metaTitle || `${title} | LegallySpoken`;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta && metaDescription) {
-      meta.setAttribute("content", metaDescription);
-    } else if (metaDescription) {
-      const newMeta = document.createElement("meta");
-      newMeta.name = "description";
-      newMeta.content = metaDescription;
-      document.head.appendChild(newMeta);
-    }
-  }, [title, metaTitle, metaDescription]);
-
   const relatedTools = tools.filter((t) => relatedToolIds.includes(t.id));
 
   return (
     <div className="container py-8 max-w-4xl">
+      <Head
+        title={metaTitle || `${title} | LegallySpoken`}
+        description={metaDescription || subtitle || `Learn about ${title} — plain-English guide with examples and FAQs.`}
+      />
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
         <Link to="/" className="hover:text-foreground transition-colors">Home</Link>

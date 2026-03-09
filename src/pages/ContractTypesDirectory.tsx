@@ -1,19 +1,16 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { contractTypes, getContractTypeCategories } from "@/data/contractTypes";
+import Head from "@/components/seo/Head";
 
 export default function ContractTypesDirectory() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const categories = getContractTypeCategories();
-
-  useEffect(() => {
-    document.title = "Contract Types Guide — Common Agreements Explained | LegallySpoken";
-  }, []);
 
   const filtered = useMemo(() => {
     let result = contractTypes;
@@ -27,6 +24,10 @@ export default function ContractTypesDirectory() {
 
   return (
     <div className="container py-8 max-w-5xl">
+      <Head
+        title="Contract Types Guide — Common Agreements Explained | LegallySpoken"
+        description={`Explore ${contractTypes.length} common contract types with key clauses, risks, and FAQs. Understand NDAs, leases, employment contracts, and more.`}
+      />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">Contract Types Guide</h1>
         <p className="text-muted-foreground text-lg">{contractTypes.length} common contract types with key clauses and risks.</p>

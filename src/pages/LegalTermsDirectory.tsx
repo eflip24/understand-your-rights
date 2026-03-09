@@ -1,19 +1,16 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { legalTermPages, getLegalTermCategories } from "@/data/legalTermPages";
+import Head from "@/components/seo/Head";
 
 export default function LegalTermsDirectory() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const categories = getLegalTermCategories();
-
-  useEffect(() => {
-    document.title = "Legal Terms Dictionary — Plain English Definitions | LegallySpoken";
-  }, []);
 
   const filtered = useMemo(() => {
     let result = legalTermPages;
@@ -29,6 +26,10 @@ export default function LegalTermsDirectory() {
 
   return (
     <div className="container py-8 max-w-5xl">
+      <Head
+        title="Legal Terms Dictionary — Plain English Definitions | LegallySpoken"
+        description={`Browse ${legalTermPages.length}+ legal terms explained in plain English. Understand contracts, court processes, and legal jargon with examples and FAQs.`}
+      />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">Legal Terms Dictionary</h1>
         <p className="text-muted-foreground text-lg">Plain-English definitions for {legalTermPages.length}+ legal terms.</p>
