@@ -46,20 +46,6 @@ export default function ContentPageLayout({
   children,
 }: ContentPageLayoutProps) {
   const [helpful, setHelpful] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    document.title = metaTitle || `${title} | LegallySpoken`;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta && metaDescription) {
-      meta.setAttribute("content", metaDescription);
-    } else if (metaDescription) {
-      const newMeta = document.createElement("meta");
-      newMeta.name = "description";
-      newMeta.content = metaDescription;
-      document.head.appendChild(newMeta);
-    }
-  }, [title, metaTitle, metaDescription]);
-
   const relatedTools = tools.filter((t) => relatedToolIds.includes(t.id));
 
   return (
