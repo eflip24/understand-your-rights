@@ -104,15 +104,17 @@ export default function Navbar() {
           )}
         </div>
 
-        <ThemeToggle />
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
 
-        {/* Mobile menu */}
-        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-          <SheetTrigger asChild className="lg:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
+          {/* Mobile menu */}
+          <div className="lg:hidden">
+            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
           <SheetContent side="right" className="w-80">
             <SheetTitle className="font-serif text-lg">Menu</SheetTitle>
             <form onSubmit={(e) => { handleSearch(e); setMobileOpen(false); }} className="mt-4">
