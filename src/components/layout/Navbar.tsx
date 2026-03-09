@@ -38,9 +38,9 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
-      <div className="w-full px-6 flex h-16 items-center justify-between gap-4">
+      <div className="w-full px-6 flex h-14 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <Scale className="h-7 w-7 text-accent" />
+          <Scale className="w-[28px] h-[28px] text-accent" />
           <span className="font-serif text-xl font-bold text-foreground">
             Legally<span className="text-accent">Spoken</span>
           </span>
@@ -52,7 +52,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               to={link.href}
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary"
+              className="px-2 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary"
             >
               {link.label}
             </Link>
@@ -104,15 +104,17 @@ export default function Navbar() {
           )}
         </div>
 
-        <ThemeToggle />
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
 
-        {/* Mobile menu */}
-        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-          <SheetTrigger asChild className="lg:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
+          {/* Mobile menu */}
+          <div className="lg:hidden">
+            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
           <SheetContent side="right" className="w-80">
             <SheetTitle className="font-serif text-lg">Menu</SheetTitle>
             <form onSubmit={(e) => { handleSearch(e); setMobileOpen(false); }} className="mt-4">
@@ -167,8 +169,10 @@ export default function Navbar() {
                 </Link>
               )}
             </nav>
-          </SheetContent>
-        </Sheet>
+            </SheetContent>
+          </Sheet>
+          </div>
+        </div>
       </div>
     </header>
   );
