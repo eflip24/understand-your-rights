@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, ThumbsUp, ThumbsDown } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { tools } from "@/data/tools";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Head from "@/components/seo/Head";
 
 interface Breadcrumb {
   label: string;
