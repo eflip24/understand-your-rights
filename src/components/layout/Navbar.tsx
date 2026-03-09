@@ -169,8 +169,10 @@ export default function Navbar() {
                 </Link>
               )}
             </nav>
-          </SheetContent>
-        </Sheet>
+            </SheetContent>
+          </Sheet>
+          </div>
+        </div>
       </div>
     </header>
   );
