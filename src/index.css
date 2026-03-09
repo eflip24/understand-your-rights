@@ -95,6 +95,11 @@
 }
 
 @layer base {
+  html {
+    font-size: 120%;
+  }
+
+
   * {
     @apply border-border;
   }
