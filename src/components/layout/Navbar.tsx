@@ -38,9 +38,9 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
-      <div className="w-full px-6 flex h-16 items-center justify-between gap-4">
+      <div className="w-full px-6 flex h-14 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <Scale className="h-7 w-7 text-accent" />
+          <Scale className="w-[28px] h-[28px] text-accent" />
           <span className="font-serif text-xl font-bold text-foreground">
             Legally<span className="text-accent">Spoken</span>
           </span>
