@@ -24,6 +24,10 @@ export default function LegalClausesDirectory() {
 
   return (
     <div className="container py-8 max-w-5xl">
+      <Head
+        title="Legal Clauses Guide — Common Contract Clauses Explained | LegallySpoken"
+        description={`Explore ${legalClauses.length} common contract clauses with examples, enforceability notes, and red flags. Understand what each clause means before you sign.`}
+      />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">Legal Clauses Guide</h1>
         <p className="text-muted-foreground text-lg">{legalClauses.length} common contract clauses explained with examples and red flags.</p>

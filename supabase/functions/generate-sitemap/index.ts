@@ -8,6 +8,144 @@ const corsHeaders = {
 
 const SITE = "https://legallyspoken.com";
 
+// Tool pages: category/slug pairs
+const toolPages: [string, string][] = [
+  ["contract", "reading-time-calculator"],
+  ["contract", "word-counter"],
+  ["contract", "jargon-translator"],
+  ["contract", "clause-finder"],
+  ["contract", "contract-expiration-tracker"],
+  ["contract", "signature-block-generator"],
+  ["contract", "contract-checklist-generator"],
+  ["contract", "amendment-drafter"],
+  ["contract", "contract-value-calculator"],
+  ["consumer", "cancellation-deadline-calculator"],
+  ["consumer", "notice-period-calculator"],
+  ["consumer", "late-fee-calculator"],
+  ["consumer", "refund-eligibility-checker"],
+  ["consumer", "warranty-expiration-calculator"],
+  ["consumer", "statute-of-limitations-lookup"],
+  ["consumer", "small-claims-limit-checker"],
+  ["consumer", "consumer-rights-quiz"],
+  ["consumer", "dispute-letter-generator"],
+  ["employment", "non-compete-checker"],
+  ["employment", "freelance-rate-calculator"],
+  ["employment", "invoice-interest-calculator"],
+  ["employment", "salary-to-hourly-converter"],
+  ["employment", "pto-calculator"],
+  ["employment", "wrongful-termination-checklist"],
+  ["employment", "minimum-wage-lookup"],
+  ["employment", "employment-contract-checklist"],
+  ["employment", "overtime-calculator"],
+  ["employment", "severance-pay-calculator"],
+  ["employment", "contractor-vs-employee-checker"],
+  ["employment", "paycheck-calculator"],
+  ["generators", "nda-generator"],
+  ["generators", "privacy-policy-generator"],
+  ["generators", "complaint-letter-generator"],
+  ["generators", "terms-of-service-generator"],
+  ["generators", "cease-and-desist-generator"],
+  ["generators", "power-of-attorney-generator"],
+  ["generators", "independent-contractor-agreement-generator"],
+  ["generators", "promissory-note-generator"],
+  ["generators", "rental-agreement-generator"],
+  ["ai", "red-flag-scanner"],
+  ["ai", "nda-fairness-score"],
+  ["ai", "lease-analyzer"],
+  ["ai", "terms-summarizer"],
+  ["ai", "contract-comparison"],
+  ["ai", "clause-explainer"],
+  ["realestate", "security-deposit-calculator"],
+  ["realestate", "rent-increase-calculator"],
+  ["realestate", "lease-term-comparison"],
+  ["realestate", "move-out-checklist-generator"],
+  ["business", "business-name-checker"],
+  ["business", "partnership-split-calculator"],
+  ["business", "business-expense-tracker"],
+  ["finance", "crypto-tax-calculator"],
+  ["finance", "dca-calculator"],
+  ["finance", "position-size-calculator"],
+  ["finance", "profit-loss-calculator"],
+  ["finance", "compound-interest-calculator"],
+  ["finance", "margin-call-calculator"],
+  ["finance", "breakeven-calculator"],
+  ["finance", "risk-reward-calculator"],
+  ["finance", "crypto-converter"],
+  ["finance", "loan-payment-calculator"],
+  ["finance", "grant-budget-calculator"],
+  ["finance", "grant-deadline-tracker"],
+  ["finance", "grant-compliance-checklist"],
+  ["finance", "vesting-schedule-calculator"],
+  ["finance", "stock-option-tax-calculator"],
+  ["finance", "equity-dilution-calculator"],
+  ["finance", "income-tax-estimator"],
+  ["finance", "auto-loan-calculator"],
+  ["finance", "debt-payoff-calculator"],
+  ["finance", "net-worth-calculator"],
+  ["energy", "solar-panel-roi-calculator"],
+  ["energy", "solar-incentive-tax-credit-estimator"],
+  ["energy", "energy-savings-calculator"],
+  ["energy", "carbon-footprint-offset-calculator"],
+  ["energy", "green-lease-clause-checker"],
+  ["energy", "ev-vs-gas-cost-comparison"],
+  ["energy", "home-energy-audit-checklist"],
+  ["energy", "power-purchase-agreement-calculator"],
+];
+
+const toolCategories = [
+  "contract", "consumer", "employment", "generators", "ai",
+  "realestate", "business", "finance", "energy",
+];
+
+const legalTermSlugs = [
+  "indemnification", "arbitration", "force-majeure", "liability", "non-compete",
+  "non-disclosure", "severability", "waiver", "breach", "consideration",
+  "jurisdiction", "statute-of-limitations", "due-diligence", "fiduciary",
+  "negligence", "tort", "damages", "escrow", "lien", "power-of-attorney",
+  "affidavit", "addendum", "amendment", "boilerplate", "cease-and-desist",
+  "covenant", "default", "discovery", "good-faith", "injunction",
+  "intellectual-property", "material-breach", "mediation", "termination",
+  "warranty", "collateral", "contingency", "estoppel", "guarantor",
+  "liquidated-damages", "plaintiff", "defendant", "deposition", "subpoena",
+  "hold-harmless", "void-voidable", "mutual-assent", "remedy", "rescission",
+  "notarization", "precedent", "privity", "duress", "encumbrance",
+  "perjury", "surety", "title", "deed", "fraud", "contempt",
+  "stare-decisis", "indemnity", "retainer", "standing", "subrogation",
+  "usury", "tort-reform", "unconscionable", "venue", "quitclaim-deed",
+  "pro-bono", "capacity", "class-action", "comparative-negligence",
+  "consequential-damages", "constructive-notice", "counterpart",
+  "cross-default", "de-facto", "forum-selection",
+];
+
+const legalClauseSlugs = [
+  "non-compete-clause", "confidentiality-clause", "indemnification-clause",
+  "limitation-of-liability", "termination-clause", "force-majeure-clause",
+  "arbitration-clause", "governing-law-clause", "intellectual-property-clause",
+  "payment-terms-clause", "entire-agreement-clause", "assignment-clause",
+  "warranty-clause", "notice-clause", "severability-clause",
+  "dispute-resolution-clause", "non-solicitation-clause", "data-protection-clause",
+  "insurance-clause", "representations-warranties-clause", "waiver-of-jury-trial",
+  "acceleration-clause", "anti-dilution-clause", "automatic-renewal-clause",
+  "best-efforts-clause", "choice-of-forum-clause", "clawback-clause",
+  "change-of-control-clause", "compliance-clause", "cross-default-clause",
+  "cure-period-clause", "drag-along-clause", "exclusivity-clause",
+  "first-right-of-refusal-clause", "holdback-clause", "indemnity-cap-clause",
+  "integration-clause", "key-person-clause", "material-adverse-change-clause",
+  "most-favored-nation-clause", "no-shop-clause", "non-disparagement-clause",
+  "penalty-clause", "price-adjustment-clause", "right-to-audit-clause",
+  "right-of-first-offer-clause", "survival-clause", "tag-along-clause",
+  "time-is-of-the-essence-clause", "tolling-clause", "venue-clause",
+];
+
+const contractTypeSlugs = [
+  "nda", "employment-contract", "freelance-agreement", "lease-agreement",
+  "saas-agreement", "consulting-agreement", "partnership-agreement",
+  "purchase-agreement", "service-agreement", "licensing-agreement",
+  "terms-of-service", "privacy-policy", "joint-venture-agreement",
+  "real-estate-purchase", "loan-agreement", "non-solicitation-agreement",
+  "shareholder-agreement", "commercial-lease", "website-terms",
+];
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -47,6 +185,61 @@ Deno.serve(async (req) => {
     <priority>${u.priority}</priority>
   </url>`
   );
+
+  // Tool category pages
+  for (const cat of toolCategories) {
+    urlEntries.push(
+      `  <url>
+    <loc>${SITE}/tools/${cat}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>`
+    );
+  }
+
+  // Individual tool pages
+  for (const [cat, slug] of toolPages) {
+    urlEntries.push(
+      `  <url>
+    <loc>${SITE}/tools/${cat}/${slug}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>`
+    );
+  }
+
+  // Legal term pages
+  for (const slug of legalTermSlugs) {
+    urlEntries.push(
+      `  <url>
+    <loc>${SITE}/legal-terms/${slug}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>`
+    );
+  }
+
+  // Legal clause pages
+  for (const slug of legalClauseSlugs) {
+    urlEntries.push(
+      `  <url>
+    <loc>${SITE}/legal-clauses/${slug}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>`
+    );
+  }
+
+  // Contract type pages
+  for (const slug of contractTypeSlugs) {
+    urlEntries.push(
+      `  <url>
+    <loc>${SITE}/contract-types/${slug}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>`
+    );
+  }
 
   // Blog posts
   if (posts) {

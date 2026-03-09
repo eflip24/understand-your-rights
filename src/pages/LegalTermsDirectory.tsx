@@ -26,6 +26,10 @@ export default function LegalTermsDirectory() {
 
   return (
     <div className="container py-8 max-w-5xl">
+      <Head
+        title="Legal Terms Dictionary — Plain English Definitions | LegallySpoken"
+        description={`Browse ${legalTermPages.length}+ legal terms explained in plain English. Understand contracts, court processes, and legal jargon with examples and FAQs.`}
+      />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">Legal Terms Dictionary</h1>
         <p className="text-muted-foreground text-lg">Plain-English definitions for {legalTermPages.length}+ legal terms.</p>

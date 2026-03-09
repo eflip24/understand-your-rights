@@ -50,6 +50,10 @@ export default function ContentPageLayout({
 
   return (
     <div className="container py-8 max-w-4xl">
+      <Head
+        title={metaTitle || `${title} | LegallySpoken`}
+        description={metaDescription || subtitle || `Learn about ${title} — plain-English guide with examples and FAQs.`}
+      />
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
         <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
