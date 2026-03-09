@@ -1,19 +1,16 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { contractTypes, getContractTypeCategories } from "@/data/contractTypes";
+import Head from "@/components/seo/Head";
 
 export default function ContractTypesDirectory() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const categories = getContractTypeCategories();
-
-  useEffect(() => {
-    document.title = "Contract Types Guide — Common Agreements Explained | LegallySpoken";
-  }, []);
 
   const filtered = useMemo(() => {
     let result = contractTypes;
