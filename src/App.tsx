@@ -38,6 +38,10 @@ const DisclaimerPage = React.lazy(() => import("@/pages/DisclaimerPage"));
 const PrivacyPolicyPage = React.lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
+const PillarPage = React.lazy(() => import("@/pages/PillarPage"));
+const ClusterArticlePage = React.lazy(() => import("@/pages/ClusterArticlePage"));
+const LocalLawyersDirectory = React.lazy(() => import("@/pages/LocalLawyersDirectory"));
+const LocalLawyersAreaPage = React.lazy(() => import("@/pages/LocalLawyersAreaPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
