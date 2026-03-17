@@ -146,7 +146,33 @@ const contractTypeSlugs = [
   "shareholder-agreement", "commercial-lease", "website-terms",
 ];
 
-Deno.serve(async (req) => {
+const autoAccidentSlugs = [
+  "what-to-do-after-car-accident", "how-fault-is-determined", "no-fault-vs-at-fault-states",
+  "filing-insurance-claim", "statute-of-limitations", "comparative-negligence",
+  "uninsured-motorist-claims", "car-accident-case-value", "rideshare-accident-claims",
+  "hit-and-run-legal-steps",
+];
+
+const personalInjurySlugs = [
+  "types-of-cases", "how-settlements-work", "pain-and-suffering-calculator",
+  "medical-malpractice", "slip-and-fall-liability", "dog-bite-laws",
+  "workers-comp-vs-pi", "product-liability", "wrongful-death-claims", "contingency-fees",
+];
+
+const insuranceLawSlugs = [
+  "appeal-denied-claim", "bad-faith-insurance", "homeowners-policy-guide",
+  "health-insurance-denial", "life-insurance-disputes", "auto-coverage-types",
+  "subrogation-explained", "file-complaint-against-insurer", "umbrella-insurance",
+  "insurance-fraud",
+];
+
+const lawyerAreaSlugs = [
+  "personal-injury", "car-accident", "workers-compensation", "employment",
+  "insurance-dispute", "real-estate", "family-law", "bankruptcy",
+  "criminal-defense", "immigration",
+];
+
+
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -241,7 +267,32 @@ Deno.serve(async (req) => {
     );
   }
 
-  // Blog posts
+  // Pillar pages
+  const pillarPages = [
+    { loc: "/auto-accident-law", priority: "0.8" },
+    { loc: "/personal-injury-law", priority: "0.8" },
+    { loc: "/insurance-law", priority: "0.8" },
+    { loc: "/local-lawyers", priority: "0.8" },
+  ];
+  for (const p of pillarPages) {
+    urlEntries.push(`  <url>\n    <loc>${SITE}${p.loc}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`);
+  }
+
+  // Cluster articles
+  for (const slug of autoAccidentSlugs) {
+    urlEntries.push(`  <url>\n    <loc>${SITE}/auto-accident-law/${slug}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`);
+  }
+  for (const slug of personalInjurySlugs) {
+    urlEntries.push(`  <url>\n    <loc>${SITE}/personal-injury-law/${slug}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`);
+  }
+  for (const slug of insuranceLawSlugs) {
+    urlEntries.push(`  <url>\n    <loc>${SITE}/insurance-law/${slug}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`);
+  }
+  for (const slug of lawyerAreaSlugs) {
+    urlEntries.push(`  <url>\n    <loc>${SITE}/local-lawyers/${slug}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`);
+  }
+
+
   if (posts) {
     for (const post of posts) {
       const lastmod = post.published_at

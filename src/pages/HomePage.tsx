@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Search, ArrowRight, FileText, Shield, Briefcase, ScrollText, BookOpen, Scale, Gavel } from "lucide-react";
+import { Search, ArrowRight, FileText, Shield, Briefcase, ScrollText, BookOpen, Scale, Gavel, Car, HeartPulse, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -41,6 +41,33 @@ export default function HomePage() {
       navigate(`/tools?q=${encodeURIComponent(searchQuery.trim())}`);
     }
   };
+
+  const legalGuides = [
+    {
+      title: "Auto Accident Law",
+      description: "Know your rights after a car crash. Step-by-step guides on fault, claims, and compensation.",
+      href: "/auto-accident-law",
+      icon: Car,
+    },
+    {
+      title: "Personal Injury Law",
+      description: "Understand how personal injury claims work, settlement processes, and what you can recover.",
+      href: "/personal-injury-law",
+      icon: HeartPulse,
+    },
+    {
+      title: "Insurance Law",
+      description: "Fight denied claims, understand your policy, and know your rights against bad faith insurers.",
+      href: "/insurance-law",
+      icon: ShieldCheck,
+    },
+    {
+      title: "Find a Lawyer",
+      description: "Browse our free attorney directory by practice area to find the right lawyer near you.",
+      href: "/local-lawyers",
+      icon: Users,
+    },
+  ];
 
   const legalResources = [
     {
@@ -221,6 +248,27 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-serif font-bold text-lg mb-2">{resource.title}</h3>
                 <p className="text-sm text-muted-foreground">{resource.description}</p>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Legal Guides */}
+      <section className="container py-16">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold mb-2">Legal Guides</h2>
+          <p className="text-muted-foreground">In-depth guides on high-impact legal topics, written in plain English.</p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {legalGuides.map((guide) => (
+            <Link key={guide.href} to={guide.href}>
+              <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all group p-6">
+                <div className="p-2.5 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors w-fit mb-4">
+                  <guide.icon className="h-6 w-6 text-accent" />
+                </div>
+                <h3 className="font-serif font-bold text-lg mb-2">{guide.title}</h3>
+                <p className="text-sm text-muted-foreground">{guide.description}</p>
               </Card>
             </Link>
           ))}

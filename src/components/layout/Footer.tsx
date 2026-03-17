@@ -29,9 +29,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-serif font-semibold mb-3">Resources</h4>
+            <h4 className="font-serif font-semibold mb-3">Guides</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li><Link to="/tools" className="hover:text-accent transition-colors">All Tools</Link></li>
+              <li><Link to="/auto-accident-law" className="hover:text-accent transition-colors">Auto Accident Law</Link></li>
+              <li><Link to="/personal-injury-law" className="hover:text-accent transition-colors">Personal Injury Law</Link></li>
+              <li><Link to="/insurance-law" className="hover:text-accent transition-colors">Insurance Law</Link></li>
+              <li><Link to="/local-lawyers" className="hover:text-accent transition-colors">Find a Lawyer</Link></li>
               <li><Link to="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
             </ul>
           </div>

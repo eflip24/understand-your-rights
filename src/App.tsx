@@ -9,6 +9,20 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { autoAccidentLaw } from "@/data/autoAccidentLaw";
+import { personalInjuryLaw } from "@/data/personalInjuryLaw";
+import { insuranceLaw } from "@/data/insuranceLaw";
+
+const PillarPageLazy = React.lazy(() => import("@/pages/PillarPage"));
+const ClusterArticlePageLazy = React.lazy(() => import("@/pages/ClusterArticlePage"));
+
+const pillarDataMap = { auto: autoAccidentLaw, pi: personalInjuryLaw, insurance: insuranceLaw } as const;
+const PillarPageWrapper = ({ category }: { category: keyof typeof pillarDataMap }) => (
+  <PillarPageLazy data={pillarDataMap[category]} />
+);
+const ClusterPageWrapper = ({ category }: { category: keyof typeof pillarDataMap }) => (
+  <ClusterArticlePageLazy data={pillarDataMap[category]} />
+);
 
 // Lazy-load all page components
 const HomePage = React.lazy(() => import("@/pages/HomePage"));
@@ -38,6 +52,8 @@ const DisclaimerPage = React.lazy(() => import("@/pages/DisclaimerPage"));
 const PrivacyPolicyPage = React.lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
+const LocalLawyersDirectory = React.lazy(() => import("@/pages/LocalLawyersDirectory"));
+const LocalLawyersAreaPage = React.lazy(() => import("@/pages/LocalLawyersAreaPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -94,6 +110,14 @@ const App = () => (
                   <Route path="blog/edit/:id" element={<AdminBlogEditor />} />
                   <Route path="categories" element={<AdminCategories />} />
                 </Route>
+                <Route path="/auto-accident-law" element={<PillarPageWrapper category="auto" />} />
+                <Route path="/auto-accident-law/:slug" element={<ClusterPageWrapper category="auto" />} />
+                <Route path="/personal-injury-law" element={<PillarPageWrapper category="pi" />} />
+                <Route path="/personal-injury-law/:slug" element={<ClusterPageWrapper category="pi" />} />
+                <Route path="/insurance-law" element={<PillarPageWrapper category="insurance" />} />
+                <Route path="/insurance-law/:slug" element={<ClusterPageWrapper category="insurance" />} />
+                <Route path="/local-lawyers" element={<LocalLawyersDirectory />} />
+                <Route path="/local-lawyers/:area" element={<LocalLawyersAreaPage />} />
                 <Route path="/disclaimer" element={<DisclaimerPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms-of-service" element={<TermsOfServicePage />} />

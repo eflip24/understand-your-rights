@@ -14,6 +14,8 @@ const navLinks = [
   { label: "Legal Terms", href: "/legal-terms" },
   { label: "Legal Clauses", href: "/legal-clauses" },
   { label: "Contract Types", href: "/contract-types" },
+  { label: "Guides", href: "/auto-accident-law" },
+  { label: "Find a Lawyer", href: "/local-lawyers" },
 ];
 
 export default function Navbar() {
