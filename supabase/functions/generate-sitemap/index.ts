@@ -90,6 +90,11 @@ const toolPages: [string, string][] = [
   ["energy", "ev-vs-gas-cost-comparison"],
   ["energy", "home-energy-audit-checklist"],
   ["energy", "power-purchase-agreement-calculator"],
+  ["consumer", "settlement-estimator"],
+  ["consumer", "insurance-quote-comparison"],
+  ["consumer", "accident-damage-calculator"],
+  ["consumer", "attorney-fee-calculator"],
+  ["consumer", "insurance-premium-estimator"],
 ];
 
 const toolCategories = [
