@@ -13,15 +13,16 @@ import { autoAccidentLaw } from "@/data/autoAccidentLaw";
 import { personalInjuryLaw } from "@/data/personalInjuryLaw";
 import { insuranceLaw } from "@/data/insuranceLaw";
 
-const pillarDataMap = { auto: autoAccidentLaw, pi: personalInjuryLaw, insurance: insuranceLaw };
-const PillarPageWrapper = ({ category }: { category: keyof typeof pillarDataMap }) => {
-  const PillarPage = React.lazy(() => import("@/pages/PillarPage"));
-  return <PillarPage data={pillarDataMap[category]} />;
-};
-const ClusterPageWrapper = ({ category }: { category: keyof typeof pillarDataMap }) => {
-  const ClusterArticlePage = React.lazy(() => import("@/pages/ClusterArticlePage"));
-  return <ClusterArticlePage data={pillarDataMap[category]} />;
-};
+const PillarPageLazy = React.lazy(() => import("@/pages/PillarPage"));
+const ClusterArticlePageLazy = React.lazy(() => import("@/pages/ClusterArticlePage"));
+
+const pillarDataMap = { auto: autoAccidentLaw, pi: personalInjuryLaw, insurance: insuranceLaw } as const;
+const PillarPageWrapper = ({ category }: { category: keyof typeof pillarDataMap }) => (
+  <PillarPageLazy data={pillarDataMap[category]} />
+);
+const ClusterPageWrapper = ({ category }: { category: keyof typeof pillarDataMap }) => (
+  <ClusterArticlePageLazy data={pillarDataMap[category]} />
+);
 
 // Lazy-load all page components
 const HomePage = React.lazy(() => import("@/pages/HomePage"));
