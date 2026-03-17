@@ -92,6 +92,24 @@ export const practiceAreas: PracticeArea[] = [
     metaDescription: "Browse immigration lawyers near you. Get help with visas, green cards, citizenship, and deportation defense.",
     description: "Immigration lawyers help with visa applications, green card petitions, citizenship, asylum claims, deportation defense, and employer-sponsored immigration.",
   },
+  {
+    slug: "truck-accident",
+    title: "Truck Accident Lawyers Near Me",
+    shortTitle: "Truck Accident",
+    metaTitle: "Find a Truck Accident Lawyer Near You | LegallySpoken",
+    metaDescription: "Browse truck accident lawyers near you. Get specialized help with commercial trucking accident claims and federal regulation violations.",
+    description: "Truck accident lawyers specialize in commercial vehicle crashes involving semi-trucks, 18-wheelers, and delivery trucks. They understand federal trucking regulations and how to pursue claims against trucking companies.",
+    relatedPillarPath: "/auto-accident-law",
+  },
+  {
+    slug: "medical-malpractice",
+    title: "Medical Malpractice Lawyers Near Me",
+    shortTitle: "Medical Malpractice",
+    metaTitle: "Find a Medical Malpractice Lawyer Near You | LegallySpoken",
+    metaDescription: "Browse medical malpractice lawyers near you. Get help with surgical errors, misdiagnosis, birth injuries, and medication mistakes.",
+    description: "Medical malpractice lawyers help patients harmed by healthcare provider negligence. They handle cases involving surgical errors, misdiagnosis, delayed treatment, birth injuries, and medication errors.",
+    relatedPillarPath: "/personal-injury-law",
+  },
 ];
 
 export const usStates = [
