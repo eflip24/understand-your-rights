@@ -254,6 +254,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Legal Guides */}
+      <section className="container py-16">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold mb-2">Legal Guides</h2>
+          <p className="text-muted-foreground">In-depth guides on high-impact legal topics, written in plain English.</p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {legalGuides.map((guide) => (
+            <Link key={guide.href} to={guide.href}>
+              <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all group p-6">
+                <div className="p-2.5 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors w-fit mb-4">
+                  <guide.icon className="h-6 w-6 text-accent" />
+                </div>
+                <h3 className="font-serif font-bold text-lg mb-2">{guide.title}</h3>
+                <p className="text-sm text-muted-foreground">{guide.description}</p>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="bg-secondary/50 py-16">
         <div className="container">
