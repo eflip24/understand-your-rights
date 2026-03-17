@@ -179,5 +179,263 @@ export const personalInjuryLaw: PillarData = {
       relatedToolIds: ["freelance-rate-calculator", "compound-interest-calculator"],
       relatedTermSlugs: ["retainer", "consideration", "good-faith"],
     },
+    {
+      slug: "case-timeline",
+      title: "How Long Does a Personal Injury Case Take?",
+      metaTitle: "Personal Injury Case Timeline — How Long Does It Take? | LegallySpoken",
+      metaDescription: "Learn how long personal injury cases take from filing to settlement. Understand factors that affect timelines and what to expect at each stage.",
+      content: `<h2>Personal Injury Case Timeline</h2>
+<p>One of the most common questions injury victims ask is how long their case will take. The answer depends on several factors.</p>
+<h3>Typical Timeline</h3>
+<p><strong>Simple Cases:</strong> 3-9 months from injury to settlement.<br/>
+<strong>Moderate Cases:</strong> 1-2 years, especially if litigation is required.<br/>
+<strong>Complex Cases:</strong> 2-4+ years for severe injuries, disputed liability, or multiple defendants.</p>
+<h3>Key Phases</h3><p>Medical treatment and recovery, demand letter and negotiation, filing a lawsuit (if needed), discovery and depositions, mediation or trial.</p>
+<h3>Factors That Extend Timelines</h3><p>Ongoing medical treatment, disputed liability, multiple defendants, high-value claims that insurers fight harder, and court backlogs.</p>`,
+      faqs: [
+        { question: "Should I settle quickly?", answer: "Generally no. Settling before reaching maximum medical improvement (MMI) risks leaving money on the table for future medical expenses." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedTermSlugs: ["damages", "remedy", "good-faith"],
+    },
+    {
+      slug: "average-settlement-amounts",
+      title: "Average Personal Injury Settlement Amounts",
+      metaTitle: "Average Personal Injury Settlement Amounts by Case Type | LegallySpoken",
+      metaDescription: "Learn average personal injury settlement amounts by case type. Understand what affects settlement value and how to maximize compensation.",
+      content: `<h2>Average Settlement Amounts</h2>
+<p>While every case is unique, understanding typical settlement ranges helps you evaluate whether an offer is fair.</p>
+<h3>By Case Type</h3>
+<p><strong>Car Accidents:</strong> $15,000–$75,000 (minor), $75,000–$500,000+ (serious).<br/>
+<strong>Slip and Fall:</strong> $10,000–$50,000 (minor), $50,000–$300,000+ (serious).<br/>
+<strong>Medical Malpractice:</strong> $200,000–$1,000,000+ (average verdict exceeds $1M).<br/>
+<strong>Dog Bites:</strong> $30,000–$50,000 average.<br/>
+<strong>Wrongful Death:</strong> $500,000–$5,000,000+.</p>
+<h3>Factors Affecting Value</h3><p>Severity of injuries, medical expenses, lost income, age and health of victim, clarity of liability, insurance policy limits, and jurisdiction.</p>`,
+      faqs: [
+        { question: "Why are averages misleading?", answer: "A few extremely high verdicts can skew averages upward. Median settlements are often significantly lower than averages. Your case value depends on your specific circumstances." },
+      ],
+      relatedToolIds: ["compound-interest-calculator", "late-fee-calculator"],
+      relatedTermSlugs: ["damages", "remedy", "liquidated-damages"],
+    },
+    {
+      slug: "whiplash-claims",
+      title: "Whiplash Injury Claims — What to Know",
+      metaTitle: "Whiplash Injury Claims — Guide to Compensation | LegallySpoken",
+      metaDescription: "Learn about whiplash injury claims after car accidents. Understand symptoms, treatment, and how to prove and value your whiplash claim.",
+      content: `<h2>Whiplash Injury Claims</h2>
+<p>Whiplash is the most common car accident injury, but insurance companies often try to minimize these claims.</p>
+<h3>Understanding Whiplash</h3><p>Whiplash occurs when the head is suddenly jerked forward and back, straining neck muscles and ligaments. Symptoms may not appear for 24-72 hours after the accident.</p>
+<h3>Common Symptoms</h3><p>Neck pain and stiffness, headaches, dizziness, blurred vision, fatigue, difficulty concentrating, and shoulder or upper back pain.</p>
+<h3>Proving Your Claim</h3><p>Seek medical attention immediately, follow treatment plans consistently, document symptoms in a pain journal, and get diagnostic imaging (MRI, CT scan).</p>
+<h3>Settlement Values</h3><p>Minor whiplash: $2,500–$10,000. Moderate whiplash with treatment: $10,000–$50,000. Severe whiplash with chronic pain: $50,000–$200,000+.</p>`,
+      faqs: [
+        { question: "Can you get a settlement for whiplash?", answer: "Yes. Despite what insurance companies may imply, whiplash is a legitimate injury that can cause significant pain and disability. Documented medical treatment strengthens your claim." },
+      ],
+      relatedToolIds: ["complaint-letter-generator"],
+      relatedTermSlugs: ["damages", "negligence", "remedy"],
+    },
+    {
+      slug: "nursing-home-abuse",
+      title: "Nursing Home Abuse — Legal Options",
+      metaTitle: "Nursing Home Abuse — Legal Rights & Options | LegallySpoken",
+      metaDescription: "Learn about nursing home abuse laws, signs of abuse, and legal options for holding facilities accountable.",
+      content: `<h2>Nursing Home Abuse</h2>
+<p>Nursing home abuse and neglect affect an estimated 1 in 10 residents. Families have legal options to protect their loved ones and seek justice.</p>
+<h3>Types of Abuse</h3>
+<p><strong>Physical:</strong> Hitting, pushing, restraining, or rough handling.<br/>
+<strong>Emotional:</strong> Intimidation, isolation, verbal abuse.<br/>
+<strong>Neglect:</strong> Failure to provide food, water, medication, hygiene, or medical care.<br/>
+<strong>Financial:</strong> Theft, forging signatures, unauthorized use of funds.<br/>
+<strong>Sexual:</strong> Any non-consensual sexual contact.</p>
+<h3>Warning Signs</h3><p>Unexplained injuries, sudden weight loss, bedsores, poor hygiene, withdrawal, fear of staff, and unexplained financial changes.</p>
+<h3>Legal Options</h3><p>File a complaint with your state's health department, report to Adult Protective Services, file a personal injury lawsuit, or pursue a wrongful death claim.</p>`,
+      faqs: [
+        { question: "Can I sue a nursing home?", answer: "Yes. You can file a civil lawsuit for negligence, abuse, or wrongful death. Many cases settle before trial. Some states also allow claims against individual staff members." },
+      ],
+      relatedToolIds: ["complaint-letter-generator", "statute-of-limitations-lookup"],
+      relatedTermSlugs: ["negligence", "fiduciary", "damages"],
+    },
+    {
+      slug: "construction-accidents",
+      title: "Construction Accident Injury Claims",
+      metaTitle: "Construction Accident Claims — Legal Guide | LegallySpoken",
+      metaDescription: "Learn about construction accident injury claims. Understand liability, workers' comp, and third-party lawsuits for construction site injuries.",
+      content: `<h2>Construction Accident Claims</h2>
+<p>Construction is one of the most dangerous industries. Workers injured on construction sites may have multiple legal options beyond workers' compensation.</p>
+<h3>Common Construction Accidents</h3><p>Falls from heights, scaffold collapses, electrocution, struck-by-object injuries, crane accidents, trench collapses, and equipment malfunctions.</p>
+<h3>Workers' Comp vs. Third-Party Claims</h3><p>Workers' comp covers medical bills and partial wages but doesn't include pain and suffering. Third-party lawsuits against equipment manufacturers, subcontractors, or property owners allow full compensation.</p>
+<h3>OSHA Violations</h3><p>OSHA safety violations by the employer or site manager can serve as strong evidence of negligence in a personal injury claim.</p>`,
+      faqs: [
+        { question: "Can I sue my employer for a construction injury?", answer: "Usually not directly — workers' comp is the exclusive remedy against employers. But you can sue third parties like equipment manufacturers, subcontractors, or property owners whose negligence contributed to your injury." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedTermSlugs: ["negligence", "liability", "damages"],
+    },
+    {
+      slug: "brain-injury-claims",
+      title: "Brain Injury Claims — TBI Compensation",
+      metaTitle: "Traumatic Brain Injury Claims — TBI Legal Guide | LegallySpoken",
+      metaDescription: "Learn about traumatic brain injury (TBI) claims. Understand compensation, proving TBI, and long-term care costs.",
+      content: `<h2>Traumatic Brain Injury Claims</h2>
+<p>TBI is one of the most serious injuries in personal injury law, often requiring lifelong medical care and significantly impacting the victim's quality of life.</p>
+<h3>Types of TBI</h3>
+<p><strong>Concussion:</strong> Mild TBI that usually resolves within weeks.<br/>
+<strong>Contusion:</strong> Bruising of brain tissue requiring monitoring or surgery.<br/>
+<strong>Diffuse Axonal Injury:</strong> Severe brain damage from rotational forces, often causing coma.<br/>
+<strong>Penetrating Injury:</strong> Object pierces the skull and damages brain tissue.</p>
+<h3>Proving TBI</h3><p>Medical imaging (CT, MRI), neuropsychological testing, expert medical testimony, before-and-after witness testimony about cognitive changes.</p>
+<h3>Compensation Values</h3><p>Mild TBI/concussion: $50,000–$200,000. Moderate TBI: $200,000–$1,000,000. Severe TBI: $1,000,000–$10,000,000+ including lifetime care costs.</p>`,
+      faqs: [
+        { question: "What if TBI symptoms appear later?", answer: "Many TBI symptoms are delayed. The discovery rule may extend the statute of limitations in cases where symptoms weren't immediately apparent. Document all symptoms as they develop." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedTermSlugs: ["damages", "negligence", "remedy"],
+    },
+    {
+      slug: "spinal-cord-injuries",
+      title: "Spinal Cord Injury Lawsuits",
+      metaTitle: "Spinal Cord Injury Lawsuits — Legal Guide | LegallySpoken",
+      metaDescription: "Learn about spinal cord injury lawsuits. Understand compensation for paralysis, lifetime care costs, and how to build a strong case.",
+      content: `<h2>Spinal Cord Injury Lawsuits</h2>
+<p>Spinal cord injuries are among the most devastating and expensive injuries, often resulting in partial or complete paralysis.</p>
+<h3>Types of Spinal Cord Injuries</h3>
+<p><strong>Complete:</strong> Total loss of function below the injury site.<br/>
+<strong>Incomplete:</strong> Some function remains below the injury site.</p>
+<h3>Lifetime Costs</h3><p>The National Spinal Cord Injury Statistical Center estimates lifetime costs of $1.2 million to $5.1 million depending on severity and age at injury. This includes medical care, home modifications, assistive devices, and lost earning capacity.</p>
+<h3>Building Your Case</h3><p>Expert medical testimony, life care plans from rehabilitation specialists, vocational experts to establish lost earning capacity, and economists to calculate future losses.</p>`,
+      faqs: [
+        { question: "What is the average settlement for a spinal cord injury?", answer: "Settlements vary widely but typically range from $500,000 to several million dollars. Cases involving complete paralysis can result in verdicts exceeding $10 million." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedTermSlugs: ["damages", "negligence", "liability"],
+    },
+    {
+      slug: "burn-injury-claims",
+      title: "Burn Injury Claims & Compensation",
+      metaTitle: "Burn Injury Claims — Compensation Guide | LegallySpoken",
+      metaDescription: "Learn about burn injury claims, compensation for different burn degrees, and how to pursue legal action for burn injuries.",
+      content: `<h2>Burn Injury Claims</h2>
+<p>Burn injuries cause extreme pain, scarring, and psychological trauma. Victims may be entitled to significant compensation.</p>
+<h3>Burn Severity</h3>
+<p><strong>First-Degree:</strong> Affects outer skin layer only. Painful but typically heals without scarring.<br/>
+<strong>Second-Degree:</strong> Affects deeper skin layers. Causes blistering and may require skin grafts.<br/>
+<strong>Third-Degree:</strong> Destroys all skin layers. Requires extensive surgery and causes permanent scarring.<br/>
+<strong>Fourth-Degree:</strong> Reaches muscle and bone. May require amputation.</p>
+<h3>Common Causes in Legal Cases</h3><p>Vehicle fires, workplace explosions, defective products, electrical burns, chemical exposure, and building fires due to code violations.</p>
+<h3>Compensation</h3><p>Medical treatment (often $100,000+), reconstructive surgery, pain management, psychological counseling, lost wages, and pain and suffering.</p>`,
+      faqs: [
+        { question: "How long do burn injury cases take?", answer: "Burn injury cases often take 2-4 years because treatment is prolonged. It's important to wait until you've completed all surgeries and reached maximum medical improvement before settling." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedTermSlugs: ["damages", "negligence", "liability"],
+    },
+    {
+      slug: "pedestrian-accidents",
+      title: "Pedestrian Accident Claims",
+      metaTitle: "Pedestrian Accident Claims — Legal Guide | LegallySpoken",
+      metaDescription: "Learn about pedestrian accident claims. Understand right-of-way laws, proving fault, and compensation for pedestrian injuries.",
+      content: `<h2>Pedestrian Accident Claims</h2>
+<p>Pedestrians struck by vehicles suffer disproportionately severe injuries due to the lack of protection. Drivers generally have a duty to yield to pedestrians.</p>
+<h3>Right of Way Laws</h3><p>Pedestrians generally have the right of way in crosswalks and at intersections. However, jaywalking or crossing against signals may reduce compensation under comparative negligence.</p>
+<h3>Common Injuries</h3><p>Broken bones, head injuries, spinal cord damage, internal organ damage, and fatalities. Even low-speed impacts can cause serious injury to pedestrians.</p>
+<h3>Proving Fault</h3><p>Traffic camera footage, witness statements, police reports, vehicle damage patterns, and accident reconstruction can establish the driver's negligence.</p>`,
+      faqs: [
+        { question: "Can a pedestrian be at fault?", answer: "Yes. If a pedestrian jaywalks, crosses against a signal, or is intoxicated, their compensation may be reduced or barred depending on the state's comparative negligence rules." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedTermSlugs: ["negligence", "liability", "damages"],
+    },
+    {
+      slug: "bicycle-accidents",
+      title: "Bicycle Accident Injury Claims",
+      metaTitle: "Bicycle Accident Claims — Legal Guide | LegallySpoken",
+      metaDescription: "Learn about bicycle accident injury claims. Understand cyclist rights, common causes, and how to pursue compensation.",
+      content: `<h2>Bicycle Accident Claims</h2>
+<p>Cyclists are vulnerable road users with the same rights as motorists. When drivers fail to share the road safely, they can be held liable for injuries.</p>
+<h3>Common Causes</h3><p>Dooring (opening car door into cyclist), right-hook turns, failure to yield, distracted driving, and unsafe passing distances.</p>
+<h3>Cyclist Rights</h3><p>In most states, bicycles have the same rights and responsibilities as motor vehicles. Many states have specific laws requiring safe passing distances (typically 3 feet).</p>
+<h3>Insurance Challenges</h3><p>Cyclists typically don't carry auto insurance, but can recover from the driver's liability insurance, their own auto policy's UM coverage, or health insurance.</p>`,
+      faqs: [
+        { question: "Do I need a helmet for a bicycle accident claim?", answer: "Most states don't require adult cyclists to wear helmets, and not wearing one typically doesn't bar your claim. However, it could potentially reduce damages in some jurisdictions." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedTermSlugs: ["negligence", "liability", "damages"],
+    },
+    {
+      slug: "pool-accident-liability",
+      title: "Swimming Pool Accident Liability",
+      metaTitle: "Swimming Pool Accident Liability — Legal Guide | LegallySpoken",
+      metaDescription: "Learn about swimming pool accident liability. Understand attractive nuisance doctrine, premises liability, and drowning claim rights.",
+      content: `<h2>Swimming Pool Accident Liability</h2>
+<p>Pool owners have heightened legal responsibilities because pools are inherently dangerous, especially to children.</p>
+<h3>Attractive Nuisance Doctrine</h3><p>Pool owners can be liable for child injuries even if the child was trespassing. The attractive nuisance doctrine requires pool owners to take reasonable precautions to prevent child access.</p>
+<h3>Required Safety Measures</h3><p>Many jurisdictions require fencing (at least 4 feet high), self-closing and self-latching gates, pool covers, alarms, and visible signage.</p>
+<h3>Liability Scenarios</h3><p>Residential pool accidents, hotel/resort pool negligence, public pool safety violations, diving accidents, drain entrapment, and inadequate supervision.</p>`,
+      faqs: [
+        { question: "Can I be sued if someone drowns in my pool?", answer: "Yes. Pool owners can be held liable for drowning or near-drowning incidents if they failed to maintain proper safety measures, adequate fencing, or appropriate supervision." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedTermSlugs: ["negligence", "liability", "damages"],
+    },
+    {
+      slug: "premises-liability",
+      title: "Premises Liability — Property Owner Responsibility",
+      metaTitle: "Premises Liability Law — Property Owner Duties | LegallySpoken",
+      metaDescription: "Learn about premises liability law. Understand property owner duties, visitor classifications, and how to prove negligence in premises liability cases.",
+      content: `<h2>Premises Liability</h2>
+<p>Premises liability holds property owners responsible for injuries that occur on their property due to unsafe conditions.</p>
+<h3>Visitor Classifications</h3>
+<p><strong>Invitees:</strong> Customers, clients — owed the highest duty of care.<br/>
+<strong>Licensees:</strong> Social guests — owed a duty to warn of known hazards.<br/>
+<strong>Trespassers:</strong> Generally owed minimal duty, except for children (attractive nuisance).</p>
+<h3>Common Premises Liability Cases</h3><p>Slip and fall, inadequate security, elevator/escalator accidents, swimming pool accidents, dog bites, toxic exposure, and fire/building code violations.</p>
+<h3>Proving Your Case</h3><p>Show the owner knew or should have known about the hazard, failed to fix or warn about it, and the hazard directly caused your injury.</p>`,
+      faqs: [
+        { question: "How long does a property owner have to fix a hazard?", answer: "There's no fixed time — the standard is 'reasonable.' What's reasonable depends on the type of hazard, how long the owner knew about it, and the difficulty of fixing it." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedTermSlugs: ["negligence", "liability", "damages"],
+    },
+    {
+      slug: "mesothelioma-claims",
+      title: "Mesothelioma Lawyer — Asbestos Exposure Claims",
+      metaTitle: "Mesothelioma Claims — Asbestos Exposure Legal Guide | LegallySpoken",
+      metaDescription: "Learn about mesothelioma and asbestos exposure claims. Understand trust funds, lawsuits, and compensation options for asbestos victims.",
+      content: `<h2>Mesothelioma & Asbestos Claims</h2>
+<p>Mesothelioma is a deadly cancer caused by asbestos exposure. Victims and their families have multiple legal options for compensation.</p>
+<h3>Legal Options</h3>
+<p><strong>Asbestos Trust Funds:</strong> Over $30 billion in trust funds established by bankrupt asbestos companies. Claims don't require a lawsuit.<br/>
+<strong>Personal Injury Lawsuits:</strong> Sue companies that manufactured or used asbestos products.<br/>
+<strong>Veterans Claims:</strong> Veterans exposed to asbestos during service may qualify for VA benefits.<br/>
+<strong>Wrongful Death:</strong> Family members can file after a mesothelioma death.</p>
+<h3>Compensation Ranges</h3><p>Trust fund claims: $50,000–$400,000. Settlements: $1 million–$2.4 million average. Trial verdicts: $5 million–$50 million+.</p>
+<h3>Statute of Limitations</h3><p>Usually starts from diagnosis or discovery of asbestos exposure, not the original exposure date. Typically 1-3 years depending on the state.</p>`,
+      faqs: [
+        { question: "Can I file a claim decades after asbestos exposure?", answer: "Yes. Mesothelioma has a latency period of 20-50 years. The statute of limitations typically begins at diagnosis, not exposure. You can file even if the exposure happened decades ago." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedTermSlugs: ["damages", "negligence", "liability"],
+    },
+    {
+      slug: "birth-injury-claims",
+      title: "Birth Injury Lawyer — Medical Negligence",
+      metaTitle: "Birth Injury Claims — Medical Negligence Guide | LegallySpoken",
+      metaDescription: "Learn about birth injury claims caused by medical negligence. Understand common injuries, proving malpractice, and compensation for lifetime care.",
+      content: `<h2>Birth Injury Claims</h2>
+<p>Birth injuries caused by medical negligence can result in lifelong disabilities requiring millions of dollars in care. Families have the right to seek compensation.</p>
+<h3>Common Birth Injuries</h3>
+<p><strong>Cerebral Palsy:</strong> Often caused by oxygen deprivation during delivery.<br/>
+<strong>Erb's Palsy:</strong> Nerve damage from excessive force during delivery.<br/>
+<strong>Brain Damage:</strong> From delayed C-section, improper use of forceps, or failure to monitor fetal distress.<br/>
+<strong>Fractures:</strong> Broken bones during difficult deliveries.</p>
+<h3>Proving Medical Negligence</h3><p>Expert medical testimony comparing the provider's actions to the standard of care, medical records showing signs of fetal distress that were ignored, and evidence of harm caused by the negligence.</p>
+<h3>Compensation</h3><p>Lifetime medical care costs, therapy and rehabilitation, special education, adaptive equipment, pain and suffering, and parents' emotional distress. Lifetime costs for severe birth injuries can exceed $10 million.</p>`,
+      faqs: [
+        { question: "How long do I have to file a birth injury claim?", answer: "Statutes of limitations for birth injury vary by state, typically 2-3 years. However, many states extend the deadline for minors until they turn 18 or 20, giving families more time to file." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedTermSlugs: ["negligence", "fiduciary", "damages"],
+    },
   ],
 };

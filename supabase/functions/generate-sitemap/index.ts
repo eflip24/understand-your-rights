@@ -90,6 +90,11 @@ const toolPages: [string, string][] = [
   ["energy", "ev-vs-gas-cost-comparison"],
   ["energy", "home-energy-audit-checklist"],
   ["energy", "power-purchase-agreement-calculator"],
+  ["consumer", "settlement-estimator"],
+  ["consumer", "insurance-quote-comparison"],
+  ["consumer", "accident-damage-calculator"],
+  ["consumer", "attorney-fee-calculator"],
+  ["consumer", "insurance-premium-estimator"],
 ];
 
 const toolCategories = [
@@ -150,26 +155,35 @@ const autoAccidentSlugs = [
   "what-to-do-after-car-accident", "how-fault-is-determined", "no-fault-vs-at-fault-states",
   "filing-insurance-claim", "statute-of-limitations", "comparative-negligence",
   "uninsured-motorist-claims", "car-accident-case-value", "rideshare-accident-claims",
-  "hit-and-run-legal-steps",
+  "hit-and-run-legal-steps", "truck-accident-lawyer", "motorcycle-accident-lawyer",
+  "truck-accident-injuries", "motorcycle-accident-laws", "diminished-value-claim",
 ];
 
 const personalInjurySlugs = [
   "types-of-cases", "how-settlements-work", "pain-and-suffering-calculator",
   "medical-malpractice", "slip-and-fall-liability", "dog-bite-laws",
   "workers-comp-vs-pi", "product-liability", "wrongful-death-claims", "contingency-fees",
+  "case-timeline", "average-settlement-amounts", "whiplash-claims", "nursing-home-abuse",
+  "construction-accidents", "brain-injury-claims", "spinal-cord-injuries", "burn-injury-claims",
+  "pedestrian-accidents", "bicycle-accidents", "pool-accident-liability", "premises-liability",
+  "mesothelioma-claims", "birth-injury-claims",
 ];
 
 const insuranceLawSlugs = [
   "appeal-denied-claim", "bad-faith-insurance", "homeowners-policy-guide",
   "health-insurance-denial", "life-insurance-disputes", "auto-coverage-types",
   "subrogation-explained", "file-complaint-against-insurer", "umbrella-insurance",
-  "insurance-fraud",
+  "insurance-fraud", "compare-car-insurance-companies", "car-insurance-cost-per-month",
+  "renters-insurance-cost", "liability-insurance-explained", "get-car-insurance-quotes",
+  "compare-insurance-quotes", "car-insurance-massachusetts", "how-to-shop-car-insurance",
+  "kin-insurance-review", "florida-car-insurance-cost", "cheapest-car-insurance-florida",
+  "sharing-health-insurance", "fdic-insurance-explained", "lemon-law-guide",
 ];
 
 const lawyerAreaSlugs = [
   "personal-injury", "car-accident", "workers-compensation", "employment",
   "insurance-dispute", "real-estate", "family-law", "bankruptcy",
-  "criminal-defense", "immigration",
+  "criminal-defense", "immigration", "truck-accident", "medical-malpractice",
 ];
 
 Deno.serve(async (req) => {

@@ -86,6 +86,11 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "debt-payoff": React.lazy(() => import("@/components/tools/DebtPayoffCalculator")),
   "net-worth": React.lazy(() => import("@/components/tools/NetWorthCalculator")),
   "paycheck-calc": React.lazy(() => import("@/components/tools/PaycheckCalculator")),
+  "settlement-estimator": React.lazy(() => import("@/components/tools/SettlementEstimator")),
+  "insurance-quote-comparison": React.lazy(() => import("@/components/tools/InsuranceQuoteComparison")),
+  "accident-damage": React.lazy(() => import("@/components/tools/AccidentDamageCalculator")),
+  "attorney-fee": React.lazy(() => import("@/components/tools/AttorneyFeeCalculator")),
+  "insurance-premium": React.lazy(() => import("@/components/tools/InsurancePremiumEstimator")),
 };
 
 const ToolLoader = () => (

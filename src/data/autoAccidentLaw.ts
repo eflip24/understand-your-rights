@@ -273,5 +273,99 @@ export const autoAccidentLaw: PillarData = {
       relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
       relatedTermSlugs: ["negligence", "damages", "liability"],
     },
+    {
+      slug: "truck-accident-lawyer",
+      title: "Truck Accident Lawyer — Why You Need a Specialist",
+      metaTitle: "Truck Accident Lawyer — When to Hire One | LegallySpoken",
+      metaDescription: "Learn why truck accident cases need specialist lawyers. Understand federal trucking regulations, multiple liable parties, and how to maximize your claim.",
+      content: `<h2>Why Truck Accident Cases Need a Specialist</h2>
+<p>Truck accidents are fundamentally different from car accidents. The injuries are more severe, the regulations are more complex, and multiple parties may be liable.</p>
+<h3>Federal Trucking Regulations</h3><p>Commercial trucks are governed by the Federal Motor Carrier Safety Administration (FMCSA). Violations of hours-of-service rules, maintenance requirements, or weight limits can establish negligence.</p>
+<h3>Multiple Liable Parties</h3><p>Unlike car accidents, truck crashes may involve liability from the driver, trucking company, cargo loader, truck manufacturer, and maintenance providers.</p>
+<h3>Common Causes</h3><p>Driver fatigue, distracted driving, improper loading, brake failure, blind spot accidents, and driving under the influence.</p>
+<h3>Higher Compensation</h3><p>Due to the severity of injuries, truck accident settlements are typically much larger than car accident settlements, often ranging from $100,000 to several million dollars.</p>`,
+      faqs: [
+        { question: "How is a truck accident case different from a car accident?", answer: "Truck cases involve federal regulations, multiple potentially liable parties, commercial insurance policies with higher limits, and typically more severe injuries requiring specialized legal knowledge." },
+        { question: "How long do truck accident cases take?", answer: "Most truck accident cases take 1-3 years to resolve due to their complexity. Cases involving severe injuries or disputed liability may take longer." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedTermSlugs: ["negligence", "liability", "damages"],
+    },
+    {
+      slug: "motorcycle-accident-lawyer",
+      title: "Motorcycle Accident Lawyer — Unique Legal Challenges",
+      metaTitle: "Motorcycle Accident Lawyer — Legal Guide | LegallySpoken",
+      metaDescription: "Learn about the unique legal challenges in motorcycle accident cases. Understand bias issues, helmet laws, and how to protect your claim.",
+      content: `<h2>Motorcycle Accident Legal Challenges</h2>
+<p>Motorcycle accidents present unique legal challenges that require specialized knowledge. Riders face bias, different insurance rules, and often more severe injuries.</p>
+<h3>Anti-Motorcycle Bias</h3><p>Jurors and insurance adjusters often have bias against motorcyclists, assuming they were riding recklessly. An experienced motorcycle accident lawyer knows how to counter this prejudice.</p>
+<h3>Helmet Laws & Comparative Fault</h3><p>In states without helmet mandates, not wearing a helmet can still reduce your compensation under comparative negligence rules, even if the helmet wouldn't have prevented your injuries.</p>
+<h3>Common Injuries</h3><p>Road rash, broken bones, traumatic brain injury, spinal cord damage, and internal organ damage. These severe injuries often result in substantial medical bills and long-term care needs.</p>
+<h3>Lane Splitting Laws</h3><p>Only California explicitly permits lane splitting. In other states, lane splitting may affect your ability to recover damages.</p>`,
+      faqs: [
+        { question: "Can I still recover damages if I wasn't wearing a helmet?", answer: "In most states, yes, but your compensation may be reduced. Some states bar the 'helmet defense' entirely, meaning not wearing a helmet can't be used against you." },
+        { question: "What if the driver says they didn't see me?", answer: "Failure to see a motorcycle is not a defense. Drivers have a duty to watch for all vehicles, including motorcycles. An experienced attorney can use accident reconstruction to prove the driver's negligence." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedTermSlugs: ["negligence", "comparative-negligence", "damages"],
+    },
+    {
+      slug: "truck-accident-injuries",
+      title: "Truck Accident Injuries & Compensation",
+      metaTitle: "Truck Accident Injuries & Compensation Guide | LegallySpoken",
+      metaDescription: "Learn about common truck accident injuries, expected compensation ranges, and factors that affect settlement values.",
+      content: `<h2>Truck Accident Injuries</h2>
+<p>Due to the massive size difference between commercial trucks (up to 80,000 lbs) and passenger vehicles, truck accidents often cause catastrophic injuries.</p>
+<h3>Common Injuries</h3>
+<p><strong>Traumatic Brain Injury (TBI):</strong> Can result in cognitive impairment, personality changes, and lifelong disability.<br/>
+<strong>Spinal Cord Injuries:</strong> May cause partial or complete paralysis.<br/>
+<strong>Broken Bones & Crush Injuries:</strong> Multiple fractures are common in truck crashes.<br/>
+<strong>Burns:</strong> Truck fuel fires can cause severe burn injuries.<br/>
+<strong>Internal Organ Damage:</strong> The force of impact can damage organs even without external wounds.</p>
+<h3>Compensation Factors</h3><p>Medical expenses (current and future), lost wages and earning capacity, pain and suffering, disability and disfigurement, and loss of quality of life.</p>
+<h3>Average Settlement Ranges</h3><p>Minor injuries: $50,000–$100,000. Moderate injuries: $100,000–$500,000. Severe/catastrophic injuries: $500,000–$5 million+. Wrongful death: $1 million–$10 million+.</p>`,
+      faqs: [
+        { question: "Who pays for truck accident injuries?", answer: "Commercial trucking companies carry insurance policies of $750,000 to $5 million or more. The trucking company, driver, and their insurers are typically responsible for paying damages." },
+      ],
+      relatedToolIds: ["late-fee-calculator", "compound-interest-calculator"],
+      relatedTermSlugs: ["damages", "negligence", "liability"],
+    },
+    {
+      slug: "motorcycle-accident-laws",
+      title: "Motorcycle Accident Laws by State",
+      metaTitle: "Motorcycle Accident Laws by State | LegallySpoken",
+      metaDescription: "State-by-state guide to motorcycle accident laws including helmet requirements, insurance minimums, and fault rules.",
+      content: `<h2>Motorcycle Laws Vary by State</h2>
+<p>Every state has different motorcycle laws that affect your rights after an accident. Understanding your state's rules is critical for protecting your claim.</p>
+<h3>Helmet Laws</h3><p>19 states and D.C. require all riders to wear helmets. 28 states require helmets only for riders under a certain age. 3 states (Illinois, Iowa, New Hampshire) have no helmet law.</p>
+<h3>Insurance Requirements</h3><p>Most states require liability insurance for motorcycles, but minimum coverage amounts vary widely. Some states also require uninsured motorist coverage.</p>
+<h3>Fault Systems</h3><p>Your state's fault system determines how compensation works. No-fault states handle motorcycle accidents differently than car accidents — most no-fault laws don't apply to motorcycles.</p>
+<h3>Lane Splitting</h3><p>Currently only California explicitly allows lane splitting. Utah allows lane filtering (at low speeds). Montana allows lane splitting on roads with speed limits under 50 mph.</p>`,
+      faqs: [
+        { question: "Are motorcycle accidents handled differently in no-fault states?", answer: "Yes. Most no-fault auto insurance laws specifically exclude motorcycles. This means motorcycle accident claims typically follow traditional fault-based rules even in no-fault states." },
+      ],
+      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedTermSlugs: ["negligence", "liability", "comparative-negligence"],
+    },
+    {
+      slug: "diminished-value-claim",
+      title: "Diminished Value Claim After a Car Accident",
+      metaTitle: "Diminished Value Claim — Recover Your Car's Lost Value | LegallySpoken",
+      metaDescription: "Learn how to file a diminished value claim after a car accident. Understand how much your car's value decreased and how to get compensated.",
+      content: `<h2>What Is a Diminished Value Claim?</h2>
+<p>Even after a car is fully repaired following an accident, it's worth less than a comparable vehicle with no accident history. A diminished value claim compensates you for this loss.</p>
+<h3>Types of Diminished Value</h3>
+<p><strong>Inherent Diminished Value:</strong> The automatic loss in market value simply because the vehicle has an accident history, even with perfect repairs.<br/>
+<strong>Repair-Related Diminished Value:</strong> Loss due to imperfect repairs — aftermarket parts, paint mismatches, or structural issues.<br/>
+<strong>Immediate Diminished Value:</strong> The difference between pre-accident value and damaged value (before repair).</p>
+<h3>How to Calculate</h3><p>The most common formula is the 17c formula: take the vehicle's pre-accident value, apply a damage multiplier (0.00–1.00), and a mileage multiplier. Professional appraisals provide the most accurate assessments.</p>
+<h3>Filing the Claim</h3><p>File against the at-fault driver's insurance. Georgia is the only state that requires insurers to pay diminished value on first-party claims. Most states allow third-party diminished value claims.</p>`,
+      faqs: [
+        { question: "Can I file a diminished value claim with my own insurance?", answer: "In most states, diminished value claims are only available against the at-fault driver's insurance (third-party claims). Georgia is the notable exception, allowing first-party diminished value claims." },
+        { question: "How much diminished value can I recover?", answer: "Typically 10-25% of the vehicle's pre-accident value, depending on the severity of damage, the vehicle's age, and mileage. Newer, higher-value vehicles have larger diminished value claims." },
+      ],
+      relatedToolIds: ["auto-loan-calculator", "late-fee-calculator"],
+      relatedTermSlugs: ["damages", "liability", "indemnification"],
+    },
   ],
 };
