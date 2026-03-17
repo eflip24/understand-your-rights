@@ -98,6 +98,14 @@ const App = () => (
                   <Route path="blog/edit/:id" element={<AdminBlogEditor />} />
                   <Route path="categories" element={<AdminCategories />} />
                 </Route>
+                <Route path="/auto-accident-law" element={<PillarPageWrapper category="auto" />} />
+                <Route path="/auto-accident-law/:slug" element={<ClusterPageWrapper category="auto" />} />
+                <Route path="/personal-injury-law" element={<PillarPageWrapper category="pi" />} />
+                <Route path="/personal-injury-law/:slug" element={<ClusterPageWrapper category="pi" />} />
+                <Route path="/insurance-law" element={<PillarPageWrapper category="insurance" />} />
+                <Route path="/insurance-law/:slug" element={<ClusterPageWrapper category="insurance" />} />
+                <Route path="/local-lawyers" element={<LocalLawyersDirectory />} />
+                <Route path="/local-lawyers/:area" element={<LocalLawyersAreaPage />} />
                 <Route path="/disclaimer" element={<DisclaimerPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms-of-service" element={<TermsOfServicePage />} />
