@@ -42,6 +42,33 @@ export default function HomePage() {
     }
   };
 
+  const legalGuides = [
+    {
+      title: "Auto Accident Law",
+      description: "Know your rights after a car crash. Step-by-step guides on fault, claims, and compensation.",
+      href: "/auto-accident-law",
+      icon: Car,
+    },
+    {
+      title: "Personal Injury Law",
+      description: "Understand how personal injury claims work, settlement processes, and what you can recover.",
+      href: "/personal-injury-law",
+      icon: HeartPulse,
+    },
+    {
+      title: "Insurance Law",
+      description: "Fight denied claims, understand your policy, and know your rights against bad faith insurers.",
+      href: "/insurance-law",
+      icon: ShieldCheck,
+    },
+    {
+      title: "Find a Lawyer",
+      description: "Browse our free attorney directory by practice area to find the right lawyer near you.",
+      href: "/local-lawyers",
+      icon: Users,
+    },
+  ];
+
   const legalResources = [
     {
       title: "Legal Terms Dictionary",
