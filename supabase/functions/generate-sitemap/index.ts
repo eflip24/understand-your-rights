@@ -306,6 +306,83 @@ Deno.serve(async (req) => {
     urlEntries.push(`  <url>\n    <loc>${SITE}/local-lawyers/${slug}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`);
   }
 
+  // Local lawyer state pages
+  const stateSlugs = [
+    "alabama","alaska","arizona","arkansas","california","colorado","connecticut",
+    "delaware","florida","georgia","hawaii","idaho","illinois","indiana","iowa",
+    "kansas","kentucky","louisiana","maine","maryland","massachusetts","michigan",
+    "minnesota","mississippi","missouri","montana","nebraska","nevada","new-hampshire",
+    "new-jersey","new-mexico","new-york","north-carolina","north-dakota","ohio",
+    "oklahoma","oregon","pennsylvania","rhode-island","south-carolina","south-dakota",
+    "tennessee","texas","utah","vermont","virginia","washington","west-virginia",
+    "wisconsin","wyoming",
+  ];
+  for (const area of lawyerAreaSlugs) {
+    for (const st of stateSlugs) {
+      urlEntries.push(`  <url>\n    <loc>${SITE}/local-lawyers/${area}/${st}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.5</priority>\n  </url>`);
+    }
+  }
+
+  // Local lawyer city pages
+  const citySlugsMap: Record<string, string[]> = {
+    "louisiana": ["baton-rouge", "lafayette", "new-orleans"],
+    "texas": ["corpus-christi", "houston", "san-antonio", "dallas", "austin", "fort-worth", "el-paso"],
+    "missouri": ["st-louis", "kansas-city"],
+    "rhode-island": ["providence"],
+    "utah": ["provo", "salt-lake-city"],
+    "new-york": ["new-york-city"],
+    "california": ["los-angeles", "san-diego", "san-jose", "san-francisco", "fresno", "mesa", "sacramento"],
+    "illinois": ["chicago"],
+    "arizona": ["phoenix", "tucson"],
+    "pennsylvania": ["philadelphia", "pittsburgh"],
+    "florida": ["jacksonville", "miami", "tampa", "orlando"],
+    "ohio": ["columbus", "cleveland"],
+    "north-carolina": ["charlotte", "raleigh"],
+    "indiana": ["indianapolis"],
+    "washington": ["seattle"],
+    "colorado": ["denver"],
+    "tennessee": ["nashville", "memphis"],
+    "oklahoma": ["oklahoma-city", "tulsa"],
+    "massachusetts": ["boston"],
+    "oregon": ["portland"],
+    "nevada": ["las-vegas", "reno"],
+    "kentucky": ["louisville"],
+    "maryland": ["baltimore"],
+    "wisconsin": ["milwaukee", "madison"],
+    "new-mexico": ["albuquerque"],
+    "georgia": ["atlanta"],
+    "nebraska": ["omaha", "lincoln"],
+    "michigan": ["detroit"],
+    "minnesota": ["minneapolis"],
+    "alabama": ["birmingham"],
+    "virginia": ["richmond", "virginia-beach"],
+    "connecticut": ["hartford"],
+    "iowa": ["des-moines"],
+    "arkansas": ["little-rock"],
+    "mississippi": ["jackson"],
+    "delaware": ["wilmington"],
+    "hawaii": ["honolulu"],
+    "alaska": ["anchorage"],
+    "idaho": ["boise"],
+    "montana": ["billings"],
+    "kansas": ["wichita"],
+    "south-dakota": ["sioux-falls"],
+    "north-dakota": ["fargo"],
+    "vermont": ["burlington"],
+    "west-virginia": ["charleston"],
+    "new-hampshire": ["manchester"],
+    "maine": ["portland-me"],
+    "wyoming": ["cheyenne"],
+    "south-carolina": ["charleston-sc"],
+  };
+  for (const area of lawyerAreaSlugs) {
+    for (const [st, cities] of Object.entries(citySlugsMap)) {
+      for (const city of cities) {
+        urlEntries.push(`  <url>\n    <loc>${SITE}/local-lawyers/${area}/${st}/${city}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.5</priority>\n  </url>`);
+      }
+    }
+  }
+
 
   if (posts) {
     for (const post of posts) {

@@ -54,6 +54,8 @@ const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage")
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 const LocalLawyersDirectory = React.lazy(() => import("@/pages/LocalLawyersDirectory"));
 const LocalLawyersAreaPage = React.lazy(() => import("@/pages/LocalLawyersAreaPage"));
+const LocalLawyersStatePage = React.lazy(() => import("@/pages/LocalLawyersStatePage"));
+const LocalLawyersCityPage = React.lazy(() => import("@/pages/LocalLawyersCityPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -118,6 +120,8 @@ const App = () => (
                 <Route path="/insurance-law/:slug" element={<ClusterPageWrapper category="insurance" />} />
                 <Route path="/local-lawyers" element={<LocalLawyersDirectory />} />
                 <Route path="/local-lawyers/:area" element={<LocalLawyersAreaPage />} />
+                <Route path="/local-lawyers/:area/:state" element={<LocalLawyersStatePage />} />
+                <Route path="/local-lawyers/:area/:state/:city" element={<LocalLawyersCityPage />} />
                 <Route path="/disclaimer" element={<DisclaimerPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms-of-service" element={<TermsOfServicePage />} />

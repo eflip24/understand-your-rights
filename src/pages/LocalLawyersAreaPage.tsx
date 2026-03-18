@@ -67,17 +67,19 @@ export default function LocalLawyersAreaPage() {
       <h2 className="text-2xl font-bold mb-4">Browse by State</h2>
       <div className="grid gap-2 sm:grid-cols-3 md:grid-cols-4">
         {usStates.map((state) => (
-          <Card key={state} className="hover:shadow-sm hover:border-accent/30 transition-all cursor-default">
-            <CardContent className="p-3 flex items-center gap-2">
-              <MapPin className="h-3.5 w-3.5 text-accent flex-shrink-0" />
-              <span className="text-sm font-medium text-foreground">{state}</span>
-            </CardContent>
-          </Card>
+          <Link key={state} to={`/local-lawyers/${practiceArea.slug}/${stateToSlug(state)}`}>
+            <Card className="hover:shadow-sm hover:border-accent/30 transition-all cursor-pointer">
+              <CardContent className="p-3 flex items-center gap-2">
+                <MapPin className="h-3.5 w-3.5 text-accent flex-shrink-0" />
+                <span className="text-sm font-medium text-foreground">{state}</span>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
 
       <p className="text-sm text-muted-foreground mt-4 mb-8">
-        State-specific lawyer listings are coming soon. In the meantime, use your state bar association's directory to find qualified attorneys.
+        Select a state above to browse city-specific lawyer listings and local courthouse information.
       </p>
 
       <AdSlot slot="end-of-article" className="mb-8" />

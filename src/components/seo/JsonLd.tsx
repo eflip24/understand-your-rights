@@ -138,6 +138,27 @@ export function blogPostingSchema(opts: {
   };
 }
 
+export function localBusinessSchema(opts: {
+  name: string;
+  address: string;
+  lat: number;
+  lng: number;
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    name: opts.name,
+    address: opts.address,
+    url: opts.url,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: opts.lat,
+      longitude: opts.lng,
+    },
+  };
+}
+
 export function itemListSchema(name: string, items: { url: string; name: string }[]) {
   return {
     "@context": "https://schema.org",
