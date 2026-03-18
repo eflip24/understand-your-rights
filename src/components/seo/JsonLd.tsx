@@ -171,3 +171,4 @@ export function itemListSchema(name: string, items: { url: string; name: string 
       name: item.name,
     })),
   };
+}
