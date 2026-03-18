@@ -171,16 +171,3 @@ export function itemListSchema(name: string, items: { url: string; name: string 
       name: item.name,
     })),
   };
-}
-  return {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name,
-    itemListElement: items.map((item, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      url: item.url,
-      name: item.name,
-    })),
-  };
-}

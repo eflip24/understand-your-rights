@@ -79,7 +79,7 @@ export default function LocalLawyersAreaPage() {
       </div>
 
       <p className="text-sm text-muted-foreground mt-4 mb-8">
-        State-specific lawyer listings are coming soon. In the meantime, use your state bar association's directory to find qualified attorneys.
+        Select a state above to browse city-specific lawyer listings and local courthouse information.
       </p>
 
       <AdSlot slot="end-of-article" className="mb-8" />
