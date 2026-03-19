@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ChevronRight, ThumbsUp, ThumbsDown } from "lucide-react";
+import { ChevronRight, ThumbsUp, ThumbsDown, Calculator } from "lucide-react";
 import { useState } from "react";
 import { tools } from "@/data/tools";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +9,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Head from "@/components/seo/Head";
 import JsonLd, { articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
+import SmartLocalLink from "@/components/seo/SmartLocalLink";
+import { linkifyLegalContent } from "@/lib/linkifyContent";
 import type { PillarData } from "@/data/autoAccidentLaw";
 
 interface ClusterArticlePageProps {
@@ -24,6 +26,12 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
   if (!article) return <Navigate to={data.basePath} replace />;
 
   const relatedTools = tools.filter((t) => article.relatedToolIds.includes(t.id));
+  const linkedContent = linkifyLegalContent(article.content);
+
+  // Determine the best CTA tool for this pillar
+  const ctaTool = data.category === "Insurance Law"
+    ? tools.find((t) => t.id === "insurance-premium")
+    : tools.find((t) => t.id === "settlement-estimator");
 
   return (
     <div className="container py-8 max-w-4xl">
@@ -61,8 +69,26 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
       {/* Content */}
       <div
         className="prose prose-lg dark:prose-invert max-w-none mb-10 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-6 [&_h3]:mb-3 [&_p]:text-muted-foreground [&_p]:leading-relaxed [&_p]:mb-4 [&_strong]:text-foreground"
-        dangerouslySetInnerHTML={{ __html: article.content }}
+        dangerouslySetInnerHTML={{ __html: linkedContent }}
       />
+
+      {/* CTA Banner */}
+      {ctaTool && (
+        <Link to={`/tools/${ctaTool.category}/${ctaTool.slug}`}>
+          <Card className="border-accent/30 bg-accent/5 hover:bg-accent/10 hover:shadow-md transition-all group mb-10">
+            <CardContent className="p-6 flex items-center gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <Calculator className="h-6 w-6 text-accent" />
+              </div>
+              <div className="flex-1">
+                <p className="font-bold text-foreground text-lg">{ctaTool.name}</p>
+                <p className="text-sm text-muted-foreground">{ctaTool.shortDescription}</p>
+              </div>
+              <Badge variant="secondary" className="hidden sm:inline-flex">Free Tool</Badge>
+            </CardContent>
+          </Card>
+        </Link>
+      )}
 
       <AdSlot slot="mid-content" className="my-8" />
 
@@ -120,6 +146,11 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
           </div>
         </div>
       )}
+
+      {/* Smart Local Link */}
+      <div className="mb-10">
+        <SmartLocalLink category={data.category} />
+      </div>
 
       <AdSlot slot="end-of-article" className="mb-8" />
 
