@@ -25,7 +25,7 @@ export const personalInjuryLaw: PillarData = {
         { question: "What's the most common personal injury case?", answer: "Motor vehicle accidents are the most common type of personal injury case, followed by slip and fall incidents and medical malpractice." },
         { question: "Do all personal injury cases go to trial?", answer: "No. The vast majority (around 95-96%) of personal injury cases settle before trial. Trials are typically a last resort when settlement negotiations fail." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator"],
       relatedTermSlugs: ["negligence", "tort", "liability"],
     },
     {
@@ -43,7 +43,7 @@ export const personalInjuryLaw: PillarData = {
         { question: "How long does a settlement take?", answer: "Simple cases may settle in 3-6 months. Complex cases involving serious injuries can take 1-3 years or longer." },
         { question: "Is a settlement taxable?", answer: "Compensation for physical injuries is generally not taxable. However, punitive damages, interest, and emotional distress awards (without physical injury) may be taxable." },
       ],
-      relatedToolIds: ["complaint-letter-generator", "late-fee-calculator"],
+      relatedToolIds: ["complaint-letter-generator", "late-fee-calculator", "settlement-estimator"],
       relatedTermSlugs: ["damages", "remedy", "good-faith"],
     },
     {
@@ -59,7 +59,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Is there a cap on pain and suffering damages?", answer: "Some states cap non-economic damages, particularly in medical malpractice cases. Caps vary widely — check your state's specific rules." },
       ],
-      relatedToolIds: ["compound-interest-calculator", "late-fee-calculator"],
+      relatedToolIds: ["compound-interest-calculator", "late-fee-calculator", "settlement-estimator"],
       relatedTermSlugs: ["damages", "liquidated-damages", "remedy"],
     },
     {
@@ -76,7 +76,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "How long do I have to file a medical malpractice claim?", answer: "Statutes of limitations for malpractice vary by state, typically 1-3 years from the injury or its discovery. Some states also have statutes of repose that set an absolute outer deadline." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator"],
       relatedTermSlugs: ["negligence", "fiduciary", "damages"],
     },
     {
@@ -92,7 +92,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Can I sue if I slipped on ice?", answer: "Yes, if the property owner failed to clear ice or warn visitors within a reasonable time. Some jurisdictions follow the 'natural accumulation' rule, which may limit liability for natural weather conditions." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator"],
       relatedTermSlugs: ["negligence", "liability", "damages"],
     },
     {
@@ -108,7 +108,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Does homeowner's insurance cover dog bites?", answer: "Most homeowner's policies cover dog bite liability, but some exclude certain breeds considered 'dangerous.' Check your policy for breed-specific exclusions." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator"],
       relatedTermSlugs: ["liability", "negligence", "damages"],
     },
     {
@@ -124,7 +124,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Can I sue my employer for a work injury?", answer: "Generally no — workers' comp is the exclusive remedy against employers. Exceptions exist for intentional harm, lack of workers' comp coverage, or third-party negligence." },
       ],
-      relatedToolIds: ["overtime-calculator", "paycheck-calculator"],
+      relatedToolIds: ["overtime-calculator", "paycheck-calculator", "settlement-estimator"],
       relatedTermSlugs: ["liability", "negligence", "damages"],
     },
     {
@@ -142,7 +142,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "How long do I have to keep a defective product?", answer: "Preserve the product and any packaging as evidence. Don't repair, alter, or throw away the product — it's critical evidence for your claim." },
       ],
-      relatedToolIds: ["complaint-letter-generator", "refund-eligibility-checker"],
+      relatedToolIds: ["complaint-letter-generator", "refund-eligibility-checker", "settlement-estimator"],
       relatedTermSlugs: ["liability", "warranty", "damages"],
     },
     {
@@ -159,7 +159,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Is wrongful death the same as murder?", answer: "No. Wrongful death is a civil claim seeking monetary compensation. Murder is a criminal charge. Both can arise from the same incident, but they're separate legal proceedings with different standards of proof." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator"],
       relatedTermSlugs: ["damages", "negligence", "tort"],
     },
     {
@@ -176,7 +176,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Can I negotiate the contingency fee percentage?", answer: "Yes. Contingency fees are negotiable, especially for cases with high potential value or clear liability. Don't hesitate to discuss the fee structure before signing." },
       ],
-      relatedToolIds: ["freelance-rate-calculator", "compound-interest-calculator"],
+      relatedToolIds: ["freelance-rate-calculator", "compound-interest-calculator", "settlement-estimator"],
       relatedTermSlugs: ["retainer", "consideration", "good-faith"],
     },
     {
@@ -195,7 +195,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Should I settle quickly?", answer: "Generally no. Settling before reaching maximum medical improvement (MMI) risks leaving money on the table for future medical expenses." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator"],
       relatedTermSlugs: ["damages", "remedy", "good-faith"],
     },
     {
@@ -215,7 +215,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Why are averages misleading?", answer: "A few extremely high verdicts can skew averages upward. Median settlements are often significantly lower than averages. Your case value depends on your specific circumstances." },
       ],
-      relatedToolIds: ["compound-interest-calculator", "late-fee-calculator"],
+      relatedToolIds: ["compound-interest-calculator", "late-fee-calculator", "settlement-estimator"],
       relatedTermSlugs: ["damages", "remedy", "liquidated-damages"],
     },
     {
@@ -232,7 +232,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Can you get a settlement for whiplash?", answer: "Yes. Despite what insurance companies may imply, whiplash is a legitimate injury that can cause significant pain and disability. Documented medical treatment strengthens your claim." },
       ],
-      relatedToolIds: ["complaint-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "settlement-estimator"],
       relatedTermSlugs: ["damages", "negligence", "remedy"],
     },
     {
@@ -253,7 +253,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Can I sue a nursing home?", answer: "Yes. You can file a civil lawsuit for negligence, abuse, or wrongful death. Many cases settle before trial. Some states also allow claims against individual staff members." },
       ],
-      relatedToolIds: ["complaint-letter-generator", "statute-of-limitations-lookup"],
+      relatedToolIds: ["complaint-letter-generator", "statute-of-limitations-lookup", "settlement-estimator"],
       relatedTermSlugs: ["negligence", "fiduciary", "damages"],
     },
     {
@@ -269,7 +269,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Can I sue my employer for a construction injury?", answer: "Usually not directly — workers' comp is the exclusive remedy against employers. But you can sue third parties like equipment manufacturers, subcontractors, or property owners whose negligence contributed to your injury." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator"],
       relatedTermSlugs: ["negligence", "liability", "damages"],
     },
     {
@@ -289,7 +289,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "What if TBI symptoms appear later?", answer: "Many TBI symptoms are delayed. The discovery rule may extend the statute of limitations in cases where symptoms weren't immediately apparent. Document all symptoms as they develop." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator"],
       relatedTermSlugs: ["damages", "negligence", "remedy"],
     },
     {
@@ -307,7 +307,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "What is the average settlement for a spinal cord injury?", answer: "Settlements vary widely but typically range from $500,000 to several million dollars. Cases involving complete paralysis can result in verdicts exceeding $10 million." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator"],
       relatedTermSlugs: ["damages", "negligence", "liability"],
     },
     {
@@ -327,7 +327,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "How long do burn injury cases take?", answer: "Burn injury cases often take 2-4 years because treatment is prolonged. It's important to wait until you've completed all surgeries and reached maximum medical improvement before settling." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator"],
       relatedTermSlugs: ["damages", "negligence", "liability"],
     },
     {
@@ -343,7 +343,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Can a pedestrian be at fault?", answer: "Yes. If a pedestrian jaywalks, crosses against a signal, or is intoxicated, their compensation may be reduced or barred depending on the state's comparative negligence rules." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator"],
       relatedTermSlugs: ["negligence", "liability", "damages"],
     },
     {
@@ -359,7 +359,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Do I need a helmet for a bicycle accident claim?", answer: "Most states don't require adult cyclists to wear helmets, and not wearing one typically doesn't bar your claim. However, it could potentially reduce damages in some jurisdictions." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator"],
       relatedTermSlugs: ["negligence", "liability", "damages"],
     },
     {
@@ -375,7 +375,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Can I be sued if someone drowns in my pool?", answer: "Yes. Pool owners can be held liable for drowning or near-drowning incidents if they failed to maintain proper safety measures, adequate fencing, or appropriate supervision." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator"],
       relatedTermSlugs: ["negligence", "liability", "damages"],
     },
     {
@@ -394,7 +394,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "How long does a property owner have to fix a hazard?", answer: "There's no fixed time — the standard is 'reasonable.' What's reasonable depends on the type of hazard, how long the owner knew about it, and the difficulty of fixing it." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator"],
       relatedTermSlugs: ["negligence", "liability", "damages"],
     },
     {
@@ -414,7 +414,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "Can I file a claim decades after asbestos exposure?", answer: "Yes. Mesothelioma has a latency period of 20-50 years. The statute of limitations typically begins at diagnosis, not exposure. You can file even if the exposure happened decades ago." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator"],
       relatedTermSlugs: ["damages", "negligence", "liability"],
     },
     {
@@ -434,7 +434,7 @@ export const personalInjuryLaw: PillarData = {
       faqs: [
         { question: "How long do I have to file a birth injury claim?", answer: "Statutes of limitations for birth injury vary by state, typically 2-3 years. However, many states extend the deadline for minors until they turn 18 or 20, giving families more time to file." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator"],
       relatedTermSlugs: ["negligence", "fiduciary", "damages"],
     },
   ],

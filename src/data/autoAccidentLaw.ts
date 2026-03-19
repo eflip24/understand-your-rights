@@ -60,7 +60,7 @@ export const autoAccidentLaw: PillarData = {
         { question: "How long do I have to see a doctor after a car accident?", answer: "You should see a doctor within 24-72 hours. Delayed symptoms are common with injuries like whiplash and concussions. Waiting too long can also hurt your claim, as insurers may argue injuries weren't caused by the accident." },
         { question: "What if the other driver doesn't have insurance?", answer: "If you have uninsured motorist coverage, your own policy will cover your damages. You can also file a lawsuit against the uninsured driver, though collecting damages may be difficult." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["negligence", "damages", "liability"],
     },
     {
@@ -83,7 +83,7 @@ export const autoAccidentLaw: PillarData = {
         { question: "Can both drivers be at fault?", answer: "Yes. In comparative negligence states, fault can be split between drivers. Your compensation is reduced by your percentage of fault." },
         { question: "Does a police report determine fault?", answer: "Police reports are influential but not conclusive. Insurance adjusters and courts make final fault determinations using all available evidence." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["negligence", "comparative-negligence", "liability"],
     },
     {
@@ -106,7 +106,7 @@ export const autoAccidentLaw: PillarData = {
         { question: "Can I sue in a no-fault state?", answer: "Yes, but only if your injuries meet the state's threshold — typically meaning serious injuries, permanent disfigurement, or medical bills exceeding a specific dollar amount." },
         { question: "Which system is better for accident victims?", answer: "It depends on the situation. At-fault systems allow victims to pursue full compensation but require proving fault. No-fault systems provide faster payouts but limit your right to sue." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["liability", "tort", "damages"],
     },
     {
@@ -135,7 +135,7 @@ export const autoAccidentLaw: PillarData = {
         { question: "How long does an insurance claim take?", answer: "Simple claims may settle in 2-4 weeks. Complex claims involving injuries, disputed fault, or significant damages can take months to a year or more." },
         { question: "Should I accept the first settlement offer?", answer: "Generally, no. First offers are often lower than what the claim is worth. Review the offer carefully and consider negotiating, especially if you have ongoing medical treatment." },
       ],
-      relatedToolIds: ["complaint-letter-generator", "dispute-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "dispute-letter-generator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["damages", "breach", "good-faith"],
     },
     {
@@ -158,7 +158,7 @@ export const autoAccidentLaw: PillarData = {
         { question: "What happens if I miss the statute of limitations?", answer: "If you miss the deadline, the court will almost certainly dismiss your case. There are very few exceptions, which is why it's critical to know and track your state's deadline." },
         { question: "Does the statute of limitations apply to insurance claims?", answer: "The statute of limitations applies to lawsuits, not insurance claims. However, insurance policies have their own deadlines for reporting accidents and filing claims." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "cancellation-deadline-calculator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "cancellation-deadline-calculator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["statute-of-limitations"],
     },
     {
@@ -180,7 +180,7 @@ export const autoAccidentLaw: PillarData = {
       faqs: [
         { question: "What's the difference between 50% and 51% bar rules?", answer: "In 50% bar states, you can't recover if you're 50% or more at fault. In 51% bar states, you can still recover at exactly 50% fault but not at 51% or more." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["comparative-negligence", "negligence", "damages"],
     },
     {
@@ -202,7 +202,7 @@ export const autoAccidentLaw: PillarData = {
       faqs: [
         { question: "Does UM coverage protect me in a hit-and-run?", answer: "Yes, in most states UM coverage applies to hit-and-run accidents where the at-fault driver can't be identified." },
       ],
-      relatedToolIds: ["dispute-letter-generator"],
+      relatedToolIds: ["dispute-letter-generator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["liability", "subrogation", "damages"],
     },
     {
@@ -224,7 +224,7 @@ export const autoAccidentLaw: PillarData = {
       faqs: [
         { question: "What's the average car accident settlement?", answer: "There's no meaningful average because cases vary dramatically. Minor injury claims may settle for $10,000-$25,000, while serious injury cases can reach hundreds of thousands or millions." },
       ],
-      relatedToolIds: ["late-fee-calculator", "compound-interest-calculator"],
+      relatedToolIds: ["late-fee-calculator", "compound-interest-calculator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["damages", "liquidated-damages", "remedy"],
     },
     {
@@ -245,7 +245,7 @@ export const autoAccidentLaw: PillarData = {
       faqs: [
         { question: "Does Uber's insurance cover me as a passenger?", answer: "Yes. When you're a passenger during an active ride, Uber provides $1 million in liability coverage plus uninsured/underinsured motorist coverage." },
       ],
-      relatedToolIds: ["complaint-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["liability", "negligence", "indemnification"],
     },
     {
@@ -270,7 +270,7 @@ export const autoAccidentLaw: PillarData = {
       faqs: [
         { question: "Can I recover compensation if the driver is never found?", answer: "Yes, through your own uninsured motorist coverage. If you don't have UM coverage, your options are limited but may include collision coverage for vehicle damage." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["negligence", "damages", "liability"],
     },
     {
@@ -288,7 +288,7 @@ export const autoAccidentLaw: PillarData = {
         { question: "How is a truck accident case different from a car accident?", answer: "Truck cases involve federal regulations, multiple potentially liable parties, commercial insurance policies with higher limits, and typically more severe injuries requiring specialized legal knowledge." },
         { question: "How long do truck accident cases take?", answer: "Most truck accident cases take 1-3 years to resolve due to their complexity. Cases involving severe injuries or disputed liability may take longer." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["negligence", "liability", "damages"],
     },
     {
@@ -306,7 +306,7 @@ export const autoAccidentLaw: PillarData = {
         { question: "Can I still recover damages if I wasn't wearing a helmet?", answer: "In most states, yes, but your compensation may be reduced. Some states bar the 'helmet defense' entirely, meaning not wearing a helmet can't be used against you." },
         { question: "What if the driver says they didn't see me?", answer: "Failure to see a motorcycle is not a defense. Drivers have a duty to watch for all vehicles, including motorcycles. An experienced attorney can use accident reconstruction to prove the driver's negligence." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator"],
+      relatedToolIds: ["statute-of-limitations-lookup", "complaint-letter-generator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["negligence", "comparative-negligence", "damages"],
     },
     {
@@ -327,7 +327,7 @@ export const autoAccidentLaw: PillarData = {
       faqs: [
         { question: "Who pays for truck accident injuries?", answer: "Commercial trucking companies carry insurance policies of $750,000 to $5 million or more. The trucking company, driver, and their insurers are typically responsible for paying damages." },
       ],
-      relatedToolIds: ["late-fee-calculator", "compound-interest-calculator"],
+      relatedToolIds: ["late-fee-calculator", "compound-interest-calculator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["damages", "negligence", "liability"],
     },
     {
@@ -344,7 +344,7 @@ export const autoAccidentLaw: PillarData = {
       faqs: [
         { question: "Are motorcycle accidents handled differently in no-fault states?", answer: "Yes. Most no-fault auto insurance laws specifically exclude motorcycles. This means motorcycle accident claims typically follow traditional fault-based rules even in no-fault states." },
       ],
-      relatedToolIds: ["statute-of-limitations-lookup"],
+      relatedToolIds: ["statute-of-limitations-lookup", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["negligence", "liability", "comparative-negligence"],
     },
     {
@@ -364,7 +364,7 @@ export const autoAccidentLaw: PillarData = {
         { question: "Can I file a diminished value claim with my own insurance?", answer: "In most states, diminished value claims are only available against the at-fault driver's insurance (third-party claims). Georgia is the notable exception, allowing first-party diminished value claims." },
         { question: "How much diminished value can I recover?", answer: "Typically 10-25% of the vehicle's pre-accident value, depending on the severity of damage, the vehicle's age, and mileage. Newer, higher-value vehicles have larger diminished value claims." },
       ],
-      relatedToolIds: ["auto-loan-calculator", "late-fee-calculator"],
+      relatedToolIds: ["auto-loan-calculator", "late-fee-calculator", "settlement-estimator", "accident-damage"],
       relatedTermSlugs: ["damages", "liability", "indemnification"],
     },
   ],
