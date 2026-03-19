@@ -17,6 +17,7 @@ import JsonLd, { blogPostingSchema, breadcrumbSchema } from "@/components/seo/Js
 import { Card, CardContent } from "@/components/ui/card";
 import { format } from "date-fns";
 import blogDefaultImage from "@/assets/blog-default.jpg";
+import { linkifyLegalContent } from "@/lib/linkifyContent";
 
 function decodeHtml(html: string) {
   return html
@@ -76,7 +77,7 @@ export default function BlogPostPage() {
 
   const processedContent = useMemo(() => {
     if (!post?.content) return "";
-    return addHeadingIds(cleanContent(post.content));
+    return linkifyLegalContent(addHeadingIds(cleanContent(post.content)));
   }, [post?.content]);
 
   const headings = useMemo(() => {

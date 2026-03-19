@@ -14,7 +14,9 @@ const navLinks = [
   { label: "Legal Terms", href: "/legal-terms" },
   { label: "Legal Clauses", href: "/legal-clauses" },
   { label: "Contract Types", href: "/contract-types" },
-  { label: "Guides", href: "/auto-accident-law" },
+  { label: "Auto Accident", href: "/auto-accident-law" },
+  { label: "Personal Injury", href: "/personal-injury-law" },
+  { label: "Insurance Law", href: "/insurance-law" },
   { label: "Find a Lawyer", href: "/local-lawyers" },
 ];
 

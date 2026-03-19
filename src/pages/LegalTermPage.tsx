@@ -4,6 +4,7 @@ import ContentPageLayout from "@/components/layout/ContentPageLayout";
 import NotFound from "@/pages/NotFound";
 import { Card, CardContent } from "@/components/ui/card";
 import JsonLd, { definedTermSchema, faqSchema } from "@/components/seo/JsonLd";
+import { linkifyLegalContent } from "@/lib/linkifyContent";
 
 export default function LegalTermPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -18,6 +19,10 @@ export default function LegalTermPage() {
     definedTermSchema(term.term, term.definition, url),
     ...(term.faqs?.length ? [faqSchema(term.faqs)] : []),
   ].filter(Boolean);
+
+  const linkedExplanation = linkifyLegalContent(
+    term.explanation.split("\n\n").map((p) => `<p>${p}</p>`).join("")
+  );
 
   return (
     <ContentPageLayout
@@ -48,9 +53,10 @@ export default function LegalTermPage() {
       {/* Explanation */}
       <div className="prose prose-slate max-w-none mb-8">
         <h2 className="text-2xl font-bold mb-4">What Does "{term.term}" Mean?</h2>
-        {term.explanation.split("\n\n").map((para, i) => (
-          <p key={i} className="text-muted-foreground leading-relaxed mb-4">{para}</p>
-        ))}
+        <div
+          className="[&_p]:text-muted-foreground [&_p]:leading-relaxed [&_p]:mb-4"
+          dangerouslySetInnerHTML={{ __html: linkedExplanation }}
+        />
       </div>
 
       {/* Example Clause */}

@@ -26,7 +26,7 @@ export const insuranceLaw: PillarData = {
         { question: "How long do I have to appeal a denied claim?", answer: "Appeal deadlines vary by policy and state, typically 30-180 days from the denial. Check your denial letter for the specific deadline." },
         { question: "Can I hire a lawyer for an insurance appeal?", answer: "Yes. Many insurance attorneys work on contingency for denied claims, especially for large claims or bad faith situations." },
       ],
-      relatedToolIds: ["complaint-letter-generator", "dispute-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "dispute-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["good-faith", "breach", "remedy"],
     },
     {
@@ -44,7 +44,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "How do I prove bad faith?", answer: "You need to show the insurer had no reasonable basis for denying or delaying your claim and knew or recklessly disregarded this fact." },
       ],
-      relatedToolIds: ["complaint-letter-generator", "dispute-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "dispute-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["good-faith", "breach", "damages"],
     },
     {
@@ -64,7 +64,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Does homeowner's insurance cover flooding?", answer: "No. Standard homeowners policies exclude flood damage. You need separate flood insurance, typically through the National Flood Insurance Program (NFIP) or a private insurer." },
       ],
-      relatedToolIds: ["security-deposit-calculator", "lease-term-comparison"],
+      relatedToolIds: ["security-deposit-calculator", "lease-term-comparison", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["indemnification", "liability", "warranty"],
     },
     {
@@ -80,7 +80,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Can my insurance company deny a procedure my doctor recommends?", answer: "Yes, insurers can deny coverage for procedures they deem not medically necessary, experimental, or outside your plan's coverage. However, you have appeal rights to challenge the decision." },
       ],
-      relatedToolIds: ["complaint-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["good-faith", "breach", "remedy"],
     },
     {
@@ -96,7 +96,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Can a life insurance claim be denied for suicide?", answer: "Most policies include a suicide exclusion for the first 2 years. After the exclusion period, suicide is typically covered." },
       ],
-      relatedToolIds: ["dispute-letter-generator"],
+      relatedToolIds: ["dispute-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["breach", "good-faith", "remedy"],
     },
     {
@@ -114,7 +114,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "What's the minimum auto insurance required?", answer: "Requirements vary by state but typically include liability coverage. Most states require minimum bodily injury and property damage limits." },
       ],
-      relatedToolIds: ["auto-loan-calculator"],
+      relatedToolIds: ["auto-loan-calculator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["liability", "indemnification", "subrogation"],
     },
     {
@@ -130,7 +130,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Will I get my deductible back through subrogation?", answer: "Possibly. If your insurer successfully recovers the full amount from the at-fault party, you should receive your deductible back. Partial recoveries may result in a proportional deductible refund." },
       ],
-      relatedToolIds: ["late-fee-calculator"],
+      relatedToolIds: ["late-fee-calculator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["subrogation", "indemnification", "liability"],
     },
     {
@@ -150,7 +150,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Can the insurance commissioner force my insurer to pay?", answer: "The commissioner can't directly award you money, but they can investigate, impose fines, and pressure the insurer to comply with the law. Their involvement often leads to resolution." },
       ],
-      relatedToolIds: ["complaint-letter-generator", "dispute-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "dispute-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["good-faith", "breach"],
     },
     {
@@ -167,7 +167,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Does umbrella insurance cover my business?", answer: "No. Personal umbrella policies don't cover business-related liability. You'd need a commercial umbrella policy for business risks." },
       ],
-      relatedToolIds: ["net-worth-calculator"],
+      relatedToolIds: ["net-worth-calculator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["liability", "indemnification", "damages"],
     },
     {
@@ -185,7 +185,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Is exaggerating a claim considered fraud?", answer: "Yes. Inflating the value of a claim, even slightly, is considered soft fraud and can result in claim denial, policy cancellation, and potentially criminal charges." },
       ],
-      relatedToolIds: ["complaint-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["fraud", "breach", "perjury"],
     },
     {
@@ -204,7 +204,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "How many insurance quotes should I get?", answer: "Get at least 3-5 quotes from different companies. Rates can vary by hundreds of dollars for the same coverage, so shopping around is one of the most effective ways to save." },
       ],
-      relatedToolIds: ["complaint-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["good-faith", "breach", "warranty"],
     },
     {
@@ -223,7 +223,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Why is my car insurance so expensive?", answer: "Common reasons include: young age, poor driving record, low credit score, living in a high-crime area, driving an expensive vehicle, or insufficient shopping around for better rates." },
       ],
-      relatedToolIds: ["auto-loan-calculator"],
+      relatedToolIds: ["auto-loan-calculator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["liability", "indemnification"],
     },
     {
@@ -243,7 +243,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Does renters insurance cover flooding?", answer: "No. Standard renters insurance excludes flood damage. You need a separate flood insurance policy, available through the NFIP or private insurers." },
       ],
-      relatedToolIds: ["security-deposit-calculator"],
+      relatedToolIds: ["security-deposit-calculator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["liability", "indemnification", "warranty"],
     },
     {
@@ -262,7 +262,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "How much liability insurance do I need?", answer: "At minimum, enough to cover your assets. Many experts recommend at least 100/300/100 for auto insurance. If you have significant assets, consider an umbrella policy." },
       ],
-      relatedToolIds: ["net-worth-calculator"],
+      relatedToolIds: ["net-worth-calculator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["liability", "indemnification", "damages"],
     },
     {
@@ -282,7 +282,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Do insurance quotes affect my credit score?", answer: "No. Insurance companies use a 'soft pull' that doesn't affect your credit score. You can get as many quotes as you want without any credit impact." },
       ],
-      relatedToolIds: ["complaint-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["good-faith", "warranty"],
     },
     {
@@ -299,7 +299,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "When should I shop for new insurance quotes?", answer: "At every renewal period (typically annually), after major life changes (marriage, new home, new car), and whenever your rates increase significantly." },
       ],
-      relatedToolIds: ["complaint-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["good-faith", "warranty", "breach"],
     },
     {
@@ -319,7 +319,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Is Massachusetts a no-fault state?", answer: "Yes. Massachusetts requires PIP coverage, and you file injury claims with your own insurer first. You can only sue the at-fault driver if medical expenses exceed $2,000 or you suffer serious injuries." },
       ],
-      relatedToolIds: ["auto-loan-calculator"],
+      relatedToolIds: ["auto-loan-calculator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["liability", "indemnification"],
     },
     {
@@ -337,7 +337,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "How often should I shop for car insurance?", answer: "At least once a year at renewal time. Rates change frequently, and loyalty doesn't usually earn discounts. Shopping around every 6-12 months is the best way to ensure competitive rates." },
       ],
-      relatedToolIds: ["complaint-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["good-faith", "warranty"],
     },
     {
@@ -354,7 +354,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Is Kin Insurance financially stable?", answer: "Kin uses reinsurance from top-rated carriers, which protects policyholders even if Kin faces financial difficulty. However, as a newer company, they don't have the decades-long track record of established insurers." },
       ],
-      relatedToolIds: ["complaint-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["good-faith", "warranty", "breach"],
     },
     {
@@ -374,7 +374,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Will Florida car insurance rates go down?", answer: "Florida enacted insurance reform in 2023 aimed at reducing litigation costs. Some insurers have started filing rate reductions, but significant savings may take several years to materialize." },
       ],
-      relatedToolIds: ["auto-loan-calculator"],
+      relatedToolIds: ["auto-loan-calculator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["liability", "indemnification"],
     },
     {
@@ -393,7 +393,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Is minimum coverage enough in Florida?", answer: "No. Florida's minimum coverage ($10,000 PIP and $10,000 PDL) provides almost no protection. You'd have no bodily injury liability coverage, meaning you could be personally liable for injuries you cause." },
       ],
-      relatedToolIds: ["auto-loan-calculator"],
+      relatedToolIds: ["auto-loan-calculator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["liability", "indemnification"],
     },
     {
@@ -410,7 +410,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Is domestic partner health insurance taxable?", answer: "Unlike spousal coverage, the employer's contribution to domestic partner health insurance is typically considered taxable income to the employee, unless the partner qualifies as a tax dependent." },
       ],
-      relatedToolIds: [],
+      relatedToolIds: ["insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: [],
     },
     {
@@ -427,7 +427,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "What happens if my bank fails?", answer: "The FDIC typically arranges for another bank to assume the failed bank's deposits. You usually have access to your insured funds within 1-2 business days." },
       ],
-      relatedToolIds: ["net-worth-calculator"],
+      relatedToolIds: ["net-worth-calculator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["indemnification", "warranty"],
     },
     {
@@ -447,7 +447,7 @@ export const insuranceLaw: PillarData = {
       faqs: [
         { question: "Does lemon law cover used cars?", answer: "It depends on your state. About 6 states have used car lemon laws. Even without a specific used car lemon law, you may have remedies under implied warranty laws or the Magnuson-Moss Act." },
       ],
-      relatedToolIds: ["complaint-letter-generator", "dispute-letter-generator"],
+      relatedToolIds: ["complaint-letter-generator", "dispute-letter-generator", "insurance-premium", "insurance-quote-comparison"],
       relatedTermSlugs: ["warranty", "breach", "remedy"],
     },
   ],
