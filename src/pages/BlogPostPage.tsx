@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Calendar, User, ArrowLeft } from "lucide-react";
+import { Calendar, User, ArrowLeft, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,10 +14,11 @@ import {
 import { useBlogPost, useRelatedPosts } from "@/hooks/useBlogPosts";
 import Head from "@/components/seo/Head";
 import { JsonLdGraph, blogPostingSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { format } from "date-fns";
 import blogDefaultImage from "@/assets/blog-default.jpg";
 import { linkifyLegalContent } from "@/lib/linkifyContent";
+import { tools } from "@/data/tools";
 
 function decodeHtml(html: string) {
   return html
