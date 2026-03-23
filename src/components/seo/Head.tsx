@@ -45,12 +45,11 @@ export default function Head({ title, description, noindex, ogImage, ogType = "w
     }
     canonical.setAttribute("href", url.replace(/\/+$/, ""));
 
-    // Noindex
+    // Robots
     if (noindex) {
       setMeta("robots", "noindex, nofollow");
     } else {
-      const robotsMeta = document.querySelector('meta[name="robots"]');
-      if (robotsMeta) robotsMeta.remove();
+      setMeta("robots", "index, follow");
     }
 
     return () => {

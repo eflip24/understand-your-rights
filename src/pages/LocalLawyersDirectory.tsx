@@ -3,7 +3,7 @@ import { ChevronRight, Users, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Head from "@/components/seo/Head";
-import JsonLd, { itemListSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, itemListSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import { practiceAreas } from "@/data/localLawyers";
 
@@ -16,14 +16,16 @@ export default function LocalLawyersDirectory() {
         title="Find a Lawyer Near You — Free Attorney Directory | LegallySpoken"
         description="Browse verified lawyers by practice area. Find personal injury, car accident, employment, insurance, and other lawyers near you."
       />
-      <JsonLd data={itemListSchema(
-        "Local Lawyers Directory",
-        practiceAreas.map((pa) => ({ url: `${SITE}/local-lawyers/${pa.slug}`, name: pa.title }))
-      )} />
-      <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: SITE },
-        { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
-      ])} />
+      <JsonLdGraph schemas={[
+        itemListSchema(
+          "Local Lawyers Directory",
+          practiceAreas.map((pa) => ({ url: `${SITE}/local-lawyers/${pa.slug}`, name: pa.title }))
+        ),
+        breadcrumbSchema([
+          { name: "Home", url: SITE },
+          { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
+        ]),
+      ]} />
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">

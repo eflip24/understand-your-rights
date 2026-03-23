@@ -64,6 +64,12 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
         <Badge variant="secondary" className="mb-3">{data.category}</Badge>
         <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-2">{article.title}</h1>
         <p className="text-lg text-muted-foreground max-w-2xl">{article.metaDescription}</p>
+        {/* E-E-A-T signals */}
+        <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-muted-foreground">
+          <span className="flex items-center gap-1.5">✍️ LegallySpoken Editorial Team</span>
+          <span className="flex items-center gap-1.5">📖 {Math.max(3, Math.ceil(article.content.replace(/<[^>]+>/g, "").split(/\s+/).length / 238))} min read</span>
+          <span className="flex items-center gap-1.5">🔄 Last reviewed: March 2026</span>
+        </div>
       </div>
 
       <AdSlot slot="above-content" className="mb-8" />
