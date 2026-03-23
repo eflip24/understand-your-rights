@@ -5,7 +5,7 @@ import NotFound from "@/pages/NotFound";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import JsonLd, { articleSchema, faqSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, articleSchema, faqSchema } from "@/components/seo/JsonLd";
 
 export default function ContractTypePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -19,7 +19,7 @@ export default function ContractTypePage() {
   const schemas = [
     articleSchema(contractType.title, contractType.description.slice(0, 155), url),
     ...(contractType.faqs?.length ? [faqSchema(contractType.faqs)] : []),
-  ].filter(Boolean);
+  ];
 
   return (
     <ContentPageLayout
@@ -35,7 +35,7 @@ export default function ContractTypePage() {
       metaTitle={`${contractType.title} — Guide & Key Clauses | LegallySpoken`}
       metaDescription={contractType.description.slice(0, 155) + "..."}
     >
-      {schemas.map((s, i) => <JsonLd key={i} data={s as Record<string, unknown>} />)}
+      <JsonLdGraph schemas={schemas} />
 
       {/* Description */}
       <div className="mb-8">

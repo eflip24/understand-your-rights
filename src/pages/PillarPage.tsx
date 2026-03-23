@@ -3,7 +3,7 @@ import { ChevronRight, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Head from "@/components/seo/Head";
-import JsonLd, { articleSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, articleSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import SmartLocalLink from "@/components/seo/SmartLocalLink";
 import { tools } from "@/data/tools";
@@ -33,11 +33,13 @@ export default function PillarPage({ data }: PillarPageProps) {
         title={data.pillarMetaTitle}
         description={data.pillarMetaDescription}
       />
-      <JsonLd data={articleSchema(data.pillarTitle, data.pillarMetaDescription, `${SITE}${data.basePath}`)} />
-      <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: SITE },
-        { name: data.category, url: `${SITE}${data.basePath}` },
-      ])} />
+      <JsonLdGraph schemas={[
+        articleSchema(data.pillarTitle, data.pillarMetaDescription, `${SITE}${data.basePath}`),
+        breadcrumbSchema([
+          { name: "Home", url: SITE },
+          { name: data.category, url: `${SITE}${data.basePath}` },
+        ]),
+      ]} />
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">

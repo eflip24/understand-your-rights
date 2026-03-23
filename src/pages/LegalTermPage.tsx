@@ -3,7 +3,7 @@ import { getLegalTermBySlug } from "@/data/legalTermPages";
 import ContentPageLayout from "@/components/layout/ContentPageLayout";
 import NotFound from "@/pages/NotFound";
 import { Card, CardContent } from "@/components/ui/card";
-import JsonLd, { definedTermSchema, faqSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, definedTermSchema, faqSchema } from "@/components/seo/JsonLd";
 import { linkifyLegalContent } from "@/lib/linkifyContent";
 
 export default function LegalTermPage() {
@@ -18,7 +18,7 @@ export default function LegalTermPage() {
   const schemas = [
     definedTermSchema(term.term, term.definition, url),
     ...(term.faqs?.length ? [faqSchema(term.faqs)] : []),
-  ].filter(Boolean);
+  ];
 
   const linkedExplanation = linkifyLegalContent(
     term.explanation.split("\n\n").map((p) => `<p>${p}</p>`).join("")
@@ -39,7 +39,7 @@ export default function LegalTermPage() {
       metaTitle={`${term.term} — Definition & Examples | LegallySpoken`}
       metaDescription={term.definition}
     >
-      {schemas.map((s, i) => <JsonLd key={i} data={s as Record<string, unknown>} />)}
+      <JsonLdGraph schemas={schemas} />
 
       {/* Definition Callout */}
       <Card className="bg-accent/5 border-accent/20 mb-8">
