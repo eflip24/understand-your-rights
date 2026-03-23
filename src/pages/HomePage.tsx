@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { getPopularTools, categories, type ToolCategory } from "@/data/tools";
-import JsonLd, { websiteSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, websiteSchema, organizationSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
 
 import catContract from "@/assets/cat-contract.png";

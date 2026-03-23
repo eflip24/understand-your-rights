@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Head from "@/components/seo/Head";
-import JsonLd, { articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import SmartLocalLink from "@/components/seo/SmartLocalLink";
 import { linkifyLegalContent } from "@/lib/linkifyContent";
