@@ -3,7 +3,7 @@ import { ChevronRight, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Head from "@/components/seo/Head";
-import JsonLd, { breadcrumbSchema, itemListSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, breadcrumbSchema, itemListSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import { practiceAreas } from "@/data/localLawyers";
 import { getStateBySlug, stateData } from "@/data/locations/stateData";
@@ -32,21 +32,21 @@ export default function LocalLawyersStatePage() {
         title={`${practiceArea.shortTitle} Lawyers in ${stateInfo.name} | LegallySpoken`}
         description={`Find ${practiceArea.shortTitle.toLowerCase()} lawyers in ${stateInfo.name}. ${stateInfo.name} statute of limitations: ${stateInfo.personalInjurySOL}. Free courthouse info and settlement calculator.`}
       />
-      <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: SITE },
-        { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
-        { name: practiceArea.shortTitle, url: `${SITE}/local-lawyers/${practiceArea.slug}` },
-        { name: stateInfo.name, url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}` },
-      ])} />
-      {cities.length > 0 && (
-        <JsonLd data={itemListSchema(
+      <JsonLdGraph schemas={[
+        breadcrumbSchema([
+          { name: "Home", url: SITE },
+          { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
+          { name: practiceArea.shortTitle, url: `${SITE}/local-lawyers/${practiceArea.slug}` },
+          { name: stateInfo.name, url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}` },
+        ]),
+        cities.length > 0 ? itemListSchema(
           `${practiceArea.shortTitle} Lawyers in ${stateInfo.name}`,
           cities.map((c) => ({
             url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}/${c.slug}`,
             name: `${practiceArea.shortTitle} Lawyers in ${c.name}`,
           }))
-        )} />
-      )}
+        ) : null,
+      ]} />
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">

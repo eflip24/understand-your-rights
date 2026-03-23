@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Calendar, User, ArrowLeft } from "lucide-react";
+import { Calendar, User, ArrowLeft, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,10 +14,11 @@ import {
 import { useBlogPost, useRelatedPosts } from "@/hooks/useBlogPosts";
 import Head from "@/components/seo/Head";
 import { JsonLdGraph, blogPostingSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { format } from "date-fns";
 import blogDefaultImage from "@/assets/blog-default.jpg";
 import { linkifyLegalContent } from "@/lib/linkifyContent";
+import { tools } from "@/data/tools";
 
 function decodeHtml(html: string) {
   return html
@@ -85,6 +86,31 @@ export default function BlogPostPage() {
     return extractHeadings(post.content);
   }, [post?.content]);
 
+  const categoryNames = useMemo(() => {
+    if (!post?.categories) return [];
+    return (post.categories as { name: string }[]).map(c => c.name.toLowerCase());
+  }, [post?.categories]);
+
+  const suggestedTools = useMemo(() => {
+    const keywords: Record<string, string[]> = {
+      "accident": ["settlement-estimator", "accident-damage", "attorney-fee-calculator"],
+      "injury": ["settlement-estimator", "attorney-fee-calculator"],
+      "insurance": ["insurance-premium", "insurance-quote-comparison"],
+      "contract": ["red-flag-scanner", "reading-time-calculator", "clause-finder"],
+      "employment": ["non-compete-checker", "freelance-rate-calculator", "overtime-calculator"],
+      "real estate": ["security-deposit-calculator", "rent-increase-calculator", "lease-analyzer"],
+      "finance": ["compound-interest-calculator", "loan-payment-calculator"],
+    };
+    const matched = new Set<string>();
+    for (const cat of categoryNames) {
+      for (const [key, ids] of Object.entries(keywords)) {
+        if (cat.includes(key)) ids.forEach(id => matched.add(id));
+      }
+    }
+    if (matched.size === 0) return tools.filter(t => t.popular).slice(0, 3);
+    return tools.filter(t => matched.has(t.id)).slice(0, 4);
+  }, [categoryNames]);
+
   if (isLoading) {
     return (
       <div className="container py-16">
@@ -114,6 +140,8 @@ export default function BlogPostPage() {
 
   const title = decodeHtml(post.title);
   const postUrl = `https://legallyspoken.com/blog/${post.slug}`;
+  const wordCount = post.content ? post.content.replace(/<[^>]+>/g, "").split(/\s+/).length : 0;
+  const readingTime = Math.max(3, Math.ceil(wordCount / 238));
 
   return (
     <>
@@ -215,6 +243,10 @@ export default function BlogPostPage() {
                   {format(new Date(post.published_at), "MMMM d, yyyy")}
                 </span>
               )}
+              <span className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4" />
+                {readingTime} min read
+              </span>
             </div>
           </CardContent>
         </Card>
@@ -284,6 +316,30 @@ export default function BlogPostPage() {
                           {format(new Date(rp.published_at), "MMM d, yyyy")}
                         </p>
                       )}
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Related Tools */}
+        {suggestedTools.length > 0 && (
+          <section className="mt-12">
+            <h2 className="font-serif text-2xl font-bold mb-6">Related Tools</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {suggestedTools.map((tool) => (
+                <Link key={tool.id} to={`/tools/${tool.category}/${tool.slug}`}>
+                  <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all group">
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center gap-2">
+                        <tool.icon className="h-4 w-4 text-accent" />
+                        <CardTitle className="text-sm">{tool.name}</CardTitle>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-xs text-muted-foreground">{tool.shortDescription}</p>
                     </CardContent>
                   </Card>
                 </Link>

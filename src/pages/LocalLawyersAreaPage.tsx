@@ -3,7 +3,7 @@ import { ChevronRight, MapPin, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Head from "@/components/seo/Head";
-import JsonLd, { itemListSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, itemListSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import { practiceAreas, usStates, stateToSlug } from "@/data/localLawyers";
 
@@ -21,18 +21,20 @@ export default function LocalLawyersAreaPage() {
         title={practiceArea.metaTitle}
         description={practiceArea.metaDescription}
       />
-      <JsonLd data={itemListSchema(
-        practiceArea.title,
-        usStates.map((state) => ({
-          url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateToSlug(state)}`,
-          name: `${practiceArea.shortTitle} Lawyers in ${state}`,
-        }))
-      )} />
-      <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: SITE },
-        { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
-        { name: practiceArea.shortTitle, url: `${SITE}/local-lawyers/${practiceArea.slug}` },
-      ])} />
+      <JsonLdGraph schemas={[
+        itemListSchema(
+          practiceArea.title,
+          usStates.map((state) => ({
+            url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateToSlug(state)}`,
+            name: `${practiceArea.shortTitle} Lawyers in ${state}`,
+          }))
+        ),
+        breadcrumbSchema([
+          { name: "Home", url: SITE },
+          { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
+          { name: practiceArea.shortTitle, url: `${SITE}/local-lawyers/${practiceArea.slug}` },
+        ]),
+      ]} />
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
