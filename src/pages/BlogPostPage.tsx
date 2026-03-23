@@ -115,6 +115,30 @@ export default function BlogPostPage() {
 
   const title = decodeHtml(post.title);
   const postUrl = `https://legallyspoken.com/blog/${post.slug}`;
+  const wordCount = post.content ? post.content.replace(/<[^>]+>/g, "").split(/\s+/).length : 0;
+  const readingTime = Math.max(3, Math.ceil(wordCount / 238));
+
+  // Related tools based on blog category keywords
+  const categoryNames = (post.categories || []).map((c: { name: string }) => c.name.toLowerCase());
+  const suggestedTools = useMemo(() => {
+    const keywords: Record<string, string[]> = {
+      "accident": ["settlement-estimator", "accident-damage", "attorney-fee-calculator"],
+      "injury": ["settlement-estimator", "attorney-fee-calculator"],
+      "insurance": ["insurance-premium", "insurance-quote-comparison"],
+      "contract": ["red-flag-scanner", "reading-time-calculator", "clause-finder"],
+      "employment": ["non-compete-checker", "freelance-rate-calculator", "overtime-calculator"],
+      "real estate": ["security-deposit-calculator", "rent-increase-calculator", "lease-analyzer"],
+      "finance": ["compound-interest-calculator", "loan-payment-calculator"],
+    };
+    const matched = new Set<string>();
+    for (const cat of categoryNames) {
+      for (const [key, ids] of Object.entries(keywords)) {
+        if (cat.includes(key)) ids.forEach(id => matched.add(id));
+      }
+    }
+    if (matched.size === 0) return tools.filter(t => t.popular).slice(0, 3);
+    return tools.filter(t => matched.has(t.id)).slice(0, 4);
+  }, [categoryNames.join(",")]);
 
   return (
     <>
@@ -216,6 +240,10 @@ export default function BlogPostPage() {
                   {format(new Date(post.published_at), "MMMM d, yyyy")}
                 </span>
               )}
+              <span className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4" />
+                {readingTime} min read
+              </span>
             </div>
           </CardContent>
         </Card>
