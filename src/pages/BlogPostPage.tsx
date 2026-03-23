@@ -324,6 +324,30 @@ export default function BlogPostPage() {
           </section>
         )}
 
+        {/* Related Tools */}
+        {suggestedTools.length > 0 && (
+          <section className="mt-12">
+            <h2 className="font-serif text-2xl font-bold mb-6">Related Tools</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {suggestedTools.map((tool) => (
+                <Link key={tool.id} to={`/tools/${tool.category}/${tool.slug}`}>
+                  <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all group">
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center gap-2">
+                        <tool.icon className="h-4 w-4 text-accent" />
+                        <CardTitle className="text-sm">{tool.name}</CardTitle>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-xs text-muted-foreground">{tool.shortDescription}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
         <div className="mt-12">
           <Button variant="outline" asChild>
             <Link to="/blog" className="gap-2">
