@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { useBlogPost, useRelatedPosts } from "@/hooks/useBlogPosts";
 import Head from "@/components/seo/Head";
-import JsonLd, { blogPostingSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, blogPostingSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import { Card, CardContent } from "@/components/ui/card";
 import { format } from "date-fns";
 import blogDefaultImage from "@/assets/blog-default.jpg";
@@ -123,23 +123,21 @@ export default function BlogPostPage() {
         ogImage={post.featured_image_url || undefined}
         ogType="article"
       />
-      <JsonLd
-        data={blogPostingSchema({
+      <JsonLdGraph schemas={[
+        blogPostingSchema({
           headline: title,
           description: post.excerpt,
           url: postUrl,
           datePublished: post.published_at || undefined,
           author: post.author_name,
           image: post.featured_image_url || undefined,
-        })}
-      />
-      <JsonLd
-        data={breadcrumbSchema([
+        }),
+        breadcrumbSchema([
           { name: "Home", url: "https://legallyspoken.com" },
           { name: "Blog", url: "https://legallyspoken.com/blog" },
           { name: title, url: postUrl },
-        ])}
-      />
+        ]),
+      ]} />
 
       {/* Hero */}
       <div className="relative">

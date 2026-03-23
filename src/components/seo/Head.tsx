@@ -43,7 +43,7 @@ export default function Head({ title, description, noindex, ogImage, ogType = "w
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", url);
+    canonical.setAttribute("href", url.replace(/\/+$/, ""));
 
     // Noindex
     if (noindex) {

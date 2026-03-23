@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Head from "@/components/seo/Head";
-import JsonLd, { articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import SmartLocalLink from "@/components/seo/SmartLocalLink";
 import { linkifyLegalContent } from "@/lib/linkifyContent";
@@ -40,13 +40,15 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
         description={article.metaDescription}
         ogType="article"
       />
-      <JsonLd data={articleSchema(article.title, article.metaDescription, `${SITE}${data.basePath}/${article.slug}`)} />
-      <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: SITE },
-        { name: data.category, url: `${SITE}${data.basePath}` },
-        { name: article.title, url: `${SITE}${data.basePath}/${article.slug}` },
-      ])} />
-      {article.faqs.length > 0 && <JsonLd data={faqSchema(article.faqs) as Record<string, unknown>} />}
+      <JsonLdGraph schemas={[
+        articleSchema(article.title, article.metaDescription, `${SITE}${data.basePath}/${article.slug}`),
+        breadcrumbSchema([
+          { name: "Home", url: SITE },
+          { name: data.category, url: `${SITE}${data.basePath}` },
+          { name: article.title, url: `${SITE}${data.basePath}/${article.slug}` },
+        ]),
+        article.faqs.length > 0 ? faqSchema(article.faqs) : null,
+      ]} />
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">

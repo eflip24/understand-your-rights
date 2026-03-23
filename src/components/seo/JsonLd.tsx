@@ -4,6 +4,7 @@ interface JsonLdProps {
   data: Record<string, unknown> | Record<string, unknown>[];
 }
 
+/** @deprecated Use JsonLdGraph instead to avoid duplicate schema issues */
 export default function JsonLd({ data }: JsonLdProps) {
   const jsonString = JSON.stringify(data);
 
@@ -16,6 +17,33 @@ export default function JsonLd({ data }: JsonLdProps) {
       document.head.removeChild(script);
     };
   }, [jsonString]);
+
+  return null;
+}
+
+/**
+ * Consolidated JSON-LD component that merges all schemas into a single
+ * <script> tag using the @graph pattern. Prevents duplicate FAQPage errors.
+ */
+export function JsonLdGraph({ schemas }: { schemas: (Record<string, unknown> | null | undefined)[] }) {
+  const filtered = schemas.filter(Boolean) as Record<string, unknown>[];
+  const graph = filtered.map(({ "@context": _, ...rest }) => rest);
+  const data = { "@context": "https://schema.org", "@graph": graph };
+  const json = JSON.stringify(data);
+
+  useEffect(() => {
+    let el = document.getElementById("ld-json-graph") as HTMLScriptElement | null;
+    if (!el) {
+      el = document.createElement("script");
+      el.id = "ld-json-graph";
+      el.type = "application/ld+json";
+      document.head.appendChild(el);
+    }
+    el.textContent = json;
+    return () => {
+      el?.remove();
+    };
+  }, [json]);
 
   return null;
 }
@@ -95,6 +123,17 @@ export function websiteSchema() {
       target: "https://legallyspoken.com/tools?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
+  };
+}
+
+export function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "LegallySpoken",
+    url: "https://legallyspoken.com",
+    description: "Free legal tools, contract analyzers, and plain-English legal resources for everyday people.",
+    sameAs: [],
   };
 }
 

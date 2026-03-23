@@ -4,8 +4,7 @@ import { ChevronRight, MapPin, Scale, Clock, Shield } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import Head from "@/components/seo/Head";
-import JsonLd, { breadcrumbSchema } from "@/components/seo/JsonLd";
-import { localBusinessSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, breadcrumbSchema, localBusinessSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import { practiceAreas } from "@/data/localLawyers";
 import { getStateBySlug } from "@/data/locations/stateData";
@@ -38,20 +37,22 @@ export default function LocalLawyersCityPage() {
         title={`${pageTitle} | LegallySpoken`}
         description={`Find ${practiceArea.shortTitle.toLowerCase()} lawyers in ${cityInfo.name}, ${stateInfo.name}. ${stateInfo.name} statute of limitations: ${stateInfo.personalInjurySOL}. Free local courthouse info and settlement calculator.`}
       />
-      <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: SITE },
-        { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
-        { name: practiceArea.shortTitle, url: `${SITE}/local-lawyers/${practiceArea.slug}` },
-        { name: stateInfo.name, url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}` },
-        { name: cityInfo.name, url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}/${cityInfo.slug}` },
-      ])} />
-      <JsonLd data={localBusinessSchema({
-        name: cityInfo.courthouse.name,
-        address: cityInfo.courthouse.address,
-        lat: cityInfo.courthouse.lat,
-        lng: cityInfo.courthouse.lng,
-        url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}/${cityInfo.slug}`,
-      })} />
+      <JsonLdGraph schemas={[
+        breadcrumbSchema([
+          { name: "Home", url: SITE },
+          { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
+          { name: practiceArea.shortTitle, url: `${SITE}/local-lawyers/${practiceArea.slug}` },
+          { name: stateInfo.name, url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}` },
+          { name: cityInfo.name, url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}/${cityInfo.slug}` },
+        ]),
+        localBusinessSchema({
+          name: cityInfo.courthouse.name,
+          address: cityInfo.courthouse.address,
+          lat: cityInfo.courthouse.lat,
+          lng: cityInfo.courthouse.lng,
+          url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}/${cityInfo.slug}`,
+        }),
+      ]} />
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
