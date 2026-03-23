@@ -93,6 +93,22 @@ const insuranceLawSlugs = [
   "sharing-health-insurance","fdic-insurance-explained","lemon-law-guide",
 ];
 
+const employmentLawSlugs = [
+  "wrongful-termination","at-will-employment","workplace-discrimination","contractor-vs-employee","overtime-rights",
+  "workplace-harassment","severance-agreements","non-compete-agreements","whistleblower-protections","wage-theft",
+  "family-medical-leave","unemployment-benefits",
+];
+
+const criminalLawSlugs = [
+  "dui-consequences","felony-vs-misdemeanor","arrest-process","bail-and-bond","plea-bargaining",
+  "expungement","drug-charges","domestic-violence-charges","traffic-violations","juvenile-law",
+];
+
+const landlordTenantLawSlugs = [
+  "eviction-process","security-deposits","lease-breaking","tenant-rights","landlord-responsibilities",
+  "rent-increase-laws","habitability-standards","subletting-rules","fair-housing","repair-obligations",
+];
+
 const lawyerAreaSlugs = ["personal-injury","car-accident","workers-compensation","employment","insurance-dispute","real-estate","family-law","bankruptcy","criminal-defense","immigration","truck-accident","medical-malpractice"];
 
 const stateSlugs = [
@@ -118,6 +134,16 @@ const citySlugsMap: Record<string, string[]> = {
   "west-virginia":["charleston"],"new-hampshire":["manchester"],"maine":["portland-me"],"wyoming":["cheyenne"],"south-carolina":["charleston-sc"],
 };
 
+// All pillar slugs with their article slugs for state variant pages
+const pillarArticleMap: Record<string, string[]> = {
+  "auto-accident-law": autoAccidentSlugs,
+  "personal-injury-law": personalInjurySlugs,
+  "insurance-law": insuranceLawSlugs,
+  "employment-law": employmentLawSlugs,
+  "criminal-law": criminalLawSlugs,
+  "landlord-tenant-law": landlordTenantLawSlugs,
+};
+
 // === Helpers ===
 
 function wrapUrlset(entries: string[]): string {
@@ -129,7 +155,7 @@ function u(loc: string, freq: string, pri: string, lastmod?: string): string {
 }
 
 function sitemapIndex(): string {
-  const subs = ["sitemap-core.xml","sitemap-tools.xml","sitemap-legal-terms.xml","sitemap-guides.xml","sitemap-lawyers.xml","sitemap-blog.xml"];
+  const subs = ["sitemap-core.xml","sitemap-tools.xml","sitemap-legal-terms.xml","sitemap-guides.xml","sitemap-lawyers.xml","sitemap-blog.xml","sitemap-state-guides.xml"];
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${subs.map(s => `  <sitemap>\n    <loc>${SITE}/${s}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
 }
 
@@ -139,7 +165,9 @@ function buildCore(): string {
     u(`${SITE}/legal-terms`,"monthly","0.8"), u(`${SITE}/legal-clauses`,"monthly","0.8"),
     u(`${SITE}/contract-types`,"monthly","0.8"), u(`${SITE}/blog`,"daily","0.8"),
     u(`${SITE}/auto-accident-law`,"weekly","0.8"), u(`${SITE}/personal-injury-law`,"weekly","0.8"),
-    u(`${SITE}/insurance-law`,"weekly","0.8"), u(`${SITE}/local-lawyers`,"weekly","0.8"),
+    u(`${SITE}/insurance-law`,"weekly","0.8"), u(`${SITE}/employment-law`,"weekly","0.8"),
+    u(`${SITE}/criminal-law`,"weekly","0.8"), u(`${SITE}/landlord-tenant-law`,"weekly","0.8"),
+    u(`${SITE}/local-lawyers`,"weekly","0.8"),
   ]);
 }
 
@@ -163,6 +191,21 @@ function buildGuides(): string {
   for (const s of autoAccidentSlugs) e.push(u(`${SITE}/auto-accident-law/${s}`,"monthly","0.7"));
   for (const s of personalInjurySlugs) e.push(u(`${SITE}/personal-injury-law/${s}`,"monthly","0.7"));
   for (const s of insuranceLawSlugs) e.push(u(`${SITE}/insurance-law/${s}`,"monthly","0.7"));
+  for (const s of employmentLawSlugs) e.push(u(`${SITE}/employment-law/${s}`,"monthly","0.7"));
+  for (const s of criminalLawSlugs) e.push(u(`${SITE}/criminal-law/${s}`,"monthly","0.7"));
+  for (const s of landlordTenantLawSlugs) e.push(u(`${SITE}/landlord-tenant-law/${s}`,"monthly","0.7"));
+  return wrapUrlset(e);
+}
+
+function buildStateGuides(): string {
+  const e: string[] = [];
+  for (const [pillar, slugs] of Object.entries(pillarArticleMap)) {
+    for (const st of stateSlugs) {
+      for (const slug of slugs) {
+        e.push(u(`${SITE}/${pillar}/${st}/${slug}`,"monthly","0.5"));
+      }
+    }
+  }
   return wrapUrlset(e);
 }
 
@@ -193,6 +236,7 @@ Deno.serve(async (req) => {
   if (type === "tools") return new Response(buildTools(), { headers: h });
   if (type === "legal-terms") return new Response(buildLegalTerms(), { headers: h });
   if (type === "guides") return new Response(buildGuides(), { headers: h });
+  if (type === "state-guides") return new Response(buildStateGuides(), { headers: h });
   if (type === "lawyers") return new Response(buildLawyers(), { headers: h });
   if (type === "blog") {
     const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!);

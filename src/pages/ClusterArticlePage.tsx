@@ -12,6 +12,7 @@ import AdSlot from "@/components/ads/AdSlot";
 import SmartLocalLink from "@/components/seo/SmartLocalLink";
 import { linkifyLegalContent } from "@/lib/linkifyContent";
 import type { PillarData } from "@/data/autoAccidentLaw";
+import { stateData } from "@/data/locations/stateData";
 
 interface ClusterArticlePageProps {
   data: PillarData;
@@ -154,6 +155,18 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
           </div>
         </div>
       )}
+
+      {/* State Selector */}
+      <div className="mb-10">
+        <h2 className="text-xl font-bold mb-3">Read This Guide for Your State</h2>
+        <div className="flex flex-wrap gap-2">
+          {stateData.map((s) => (
+            <Link key={s.slug} to={`${data.basePath}/${s.slug}/${article.slug}`}>
+              <Badge variant="outline" className="hover:bg-accent/10 transition-colors cursor-pointer text-xs">{s.abbreviation}</Badge>
+            </Link>
+          ))}
+        </div>
+      </div>
 
       {/* Smart Local Link */}
       <div className="mb-10">

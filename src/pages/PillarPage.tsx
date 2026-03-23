@@ -17,6 +17,9 @@ const PILLAR_PAGES = [
   { path: "/auto-accident-law", label: "Auto Accident Law" },
   { path: "/personal-injury-law", label: "Personal Injury Law" },
   { path: "/insurance-law", label: "Insurance Law" },
+  { path: "/employment-law", label: "Employment Law" },
+  { path: "/criminal-law", label: "Criminal Law" },
+  { path: "/landlord-tenant-law", label: "Landlord-Tenant Law" },
 ];
 
 const POPULAR_TOOL_IDS = ["settlement-estimator", "accident-damage", "insurance-premium", "insurance-quote-comparison"];
