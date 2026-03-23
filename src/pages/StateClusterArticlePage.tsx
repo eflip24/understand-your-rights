@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, useLocation, Link, Navigate } from "react-router-dom";
 import { ChevronRight, MapPin, Scale, Shield, Clock, AlertTriangle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,8 +12,12 @@ import { getStateVariant, getNegligenceExplanation, getNoFaultExplanation, state
 import { tools } from "@/data/tools";
 
 export default function StateClusterArticlePage() {
-  const { pillar, state, slug } = useParams<{ pillar: string; state: string; slug: string }>();
+  const { state, slug } = useParams<{ state: string; slug: string }>();
+  const location = useLocation();
   const SITE = "https://legallyspoken.com";
+
+  // Extract pillar slug from the URL path (e.g., "/auto-accident-law/california/slug" → "auto-accident-law")
+  const pillar = location.pathname.split("/")[1];
 
   if (!pillar || !state || !slug) return <Navigate to="/" replace />;
 
