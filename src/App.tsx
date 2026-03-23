@@ -12,11 +12,14 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { autoAccidentLaw } from "@/data/autoAccidentLaw";
 import { personalInjuryLaw } from "@/data/personalInjuryLaw";
 import { insuranceLaw } from "@/data/insuranceLaw";
+import { employmentLaw } from "@/data/employmentLaw";
+import { criminalLaw } from "@/data/criminalLaw";
+import { landlordTenantLaw } from "@/data/landlordTenantLaw";
 
 const PillarPageLazy = React.lazy(() => import("@/pages/PillarPage"));
 const ClusterArticlePageLazy = React.lazy(() => import("@/pages/ClusterArticlePage"));
 
-const pillarDataMap = { auto: autoAccidentLaw, pi: personalInjuryLaw, insurance: insuranceLaw } as const;
+const pillarDataMap = { auto: autoAccidentLaw, pi: personalInjuryLaw, insurance: insuranceLaw, employment: employmentLaw, criminal: criminalLaw, landlord: landlordTenantLaw } as const;
 const PillarPageWrapper = ({ category }: { category: keyof typeof pillarDataMap }) => (
   <PillarPageLazy data={pillarDataMap[category]} />
 );
@@ -56,6 +59,7 @@ const LocalLawyersDirectory = React.lazy(() => import("@/pages/LocalLawyersDirec
 const LocalLawyersAreaPage = React.lazy(() => import("@/pages/LocalLawyersAreaPage"));
 const LocalLawyersStatePage = React.lazy(() => import("@/pages/LocalLawyersStatePage"));
 const LocalLawyersCityPage = React.lazy(() => import("@/pages/LocalLawyersCityPage"));
+const StateClusterArticlePage = React.lazy(() => import("@/pages/StateClusterArticlePage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -118,6 +122,19 @@ const App = () => (
                 <Route path="/personal-injury-law/:slug" element={<ClusterPageWrapper category="pi" />} />
                 <Route path="/insurance-law" element={<PillarPageWrapper category="insurance" />} />
                 <Route path="/insurance-law/:slug" element={<ClusterPageWrapper category="insurance" />} />
+                <Route path="/employment-law" element={<PillarPageWrapper category="employment" />} />
+                <Route path="/employment-law/:slug" element={<ClusterPageWrapper category="employment" />} />
+                <Route path="/criminal-law" element={<PillarPageWrapper category="criminal" />} />
+                <Route path="/criminal-law/:slug" element={<ClusterPageWrapper category="criminal" />} />
+                <Route path="/landlord-tenant-law" element={<PillarPageWrapper category="landlord" />} />
+                <Route path="/landlord-tenant-law/:slug" element={<ClusterPageWrapper category="landlord" />} />
+                {/* State-specific article variants */}
+                <Route path="/auto-accident-law/:state/:slug" element={<StateClusterArticlePage />} />
+                <Route path="/personal-injury-law/:state/:slug" element={<StateClusterArticlePage />} />
+                <Route path="/insurance-law/:state/:slug" element={<StateClusterArticlePage />} />
+                <Route path="/employment-law/:state/:slug" element={<StateClusterArticlePage />} />
+                <Route path="/criminal-law/:state/:slug" element={<StateClusterArticlePage />} />
+                <Route path="/landlord-tenant-law/:state/:slug" element={<StateClusterArticlePage />} />
                 <Route path="/local-lawyers" element={<LocalLawyersDirectory />} />
                 <Route path="/local-lawyers/:area" element={<LocalLawyersAreaPage />} />
                 <Route path="/local-lawyers/:area/:state" element={<LocalLawyersStatePage />} />

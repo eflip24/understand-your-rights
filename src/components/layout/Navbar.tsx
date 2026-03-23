@@ -17,6 +17,9 @@ const navLinks = [
   { label: "Auto Accident", href: "/auto-accident-law" },
   { label: "Personal Injury", href: "/personal-injury-law" },
   { label: "Insurance Law", href: "/insurance-law" },
+  { label: "Employment Law", href: "/employment-law" },
+  { label: "Criminal Law", href: "/criminal-law" },
+  { label: "Landlord-Tenant", href: "/landlord-tenant-law" },
   { label: "Find a Lawyer", href: "/local-lawyers" },
 ];
 

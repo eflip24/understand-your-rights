@@ -6,18 +6,24 @@ const categoryToDirectory: Record<string, { slug: string; label: string }> = {
   "Auto Accident Law": { slug: "car-accident", label: "Car Accident Lawyer" },
   "Personal Injury Law": { slug: "personal-injury", label: "Personal Injury Lawyer" },
   "Insurance Law": { slug: "insurance-dispute", label: "Insurance Dispute Lawyer" },
+  "Employment Law": { slug: "employment", label: "Employment Lawyer" },
+  "Criminal Law": { slug: "criminal-defense", label: "Criminal Defense Lawyer" },
+  "Landlord-Tenant Law": { slug: "real-estate", label: "Real Estate Lawyer" },
 };
 
 interface SmartLocalLinkProps {
   category: string;
+  state?: string;
 }
 
-export default function SmartLocalLink({ category }: SmartLocalLinkProps) {
+export default function SmartLocalLink({ category, state }: SmartLocalLinkProps) {
   const mapping = categoryToDirectory[category];
   if (!mapping) return null;
 
+  const href = state ? `/local-lawyers/${mapping.slug}/${state}` : `/local-lawyers/${mapping.slug}`;
+
   return (
-    <Link to={`/local-lawyers/${mapping.slug}`}>
+    <Link to={href}>
       <Card className="border-accent/20 bg-accent/5 hover:bg-accent/10 hover:shadow-md transition-all group">
         <CardContent className="p-6 flex items-center gap-4">
           <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
