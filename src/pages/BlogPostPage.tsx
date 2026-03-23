@@ -123,23 +123,21 @@ export default function BlogPostPage() {
         ogImage={post.featured_image_url || undefined}
         ogType="article"
       />
-      <JsonLd
-        data={blogPostingSchema({
+      <JsonLdGraph schemas={[
+        blogPostingSchema({
           headline: title,
           description: post.excerpt,
           url: postUrl,
           datePublished: post.published_at || undefined,
           author: post.author_name,
           image: post.featured_image_url || undefined,
-        })}
-      />
-      <JsonLd
-        data={breadcrumbSchema([
+        }),
+        breadcrumbSchema([
           { name: "Home", url: "https://legallyspoken.com" },
           { name: "Blog", url: "https://legallyspoken.com/blog" },
           { name: title, url: postUrl },
-        ])}
-      />
+        ]),
+      ]} />
 
       {/* Hero */}
       <div className="relative">

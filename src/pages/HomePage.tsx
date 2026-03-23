@@ -99,7 +99,7 @@ export default function HomePage() {
         title="LegallySpoken — Free Legal Tools for Everyday People"
         description="50+ free legal tools to understand contracts, check risks, calculate deadlines, and generate documents. No lawyer required."
       />
-      <JsonLd data={websiteSchema()} />
+      <JsonLdGraph schemas={[websiteSchema(), organizationSchema()]} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-[hsl(222,50%,8%)] min-h-[520px] flex items-center">
         {/* Animated gradient orb */}
