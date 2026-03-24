@@ -1,24 +1,14 @@
 
 
-# Fix: wp_id Integer Overflow
+# Expand Blog Post Page Width
 
-## Problem
-`wp_id` is a PostgreSQL `integer` column (max ~2.1 billion). The code sets `wp_id = Date.now()` which in 2026 returns ~1.77 trillion — far exceeding the integer limit.
+## Change
 
-## Fix
+In `src/pages/BlogPostPage.tsx`, line 194, change `max-w-4xl` to a custom max-width of 1350px using Tailwind's arbitrary value syntax: `max-w-[1350px]`.
 
-### 1. Database Migration
-Change `wp_id` column from `integer` to `bigint` on both `blog_posts` and `blog_categories` tables. This supports values up to ~9.2 quintillion.
+This single change widens the entire blog post container — the card, table of contents sidebar, and content area all benefit from the extra space.
 
-```sql
-ALTER TABLE public.blog_posts ALTER COLUMN wp_id TYPE bigint;
-ALTER TABLE public.blog_categories ALTER COLUMN wp_id TYPE bigint;
-```
-
-No code changes needed — `Date.now()` will work correctly with `bigint`.
-
-### Files
 | File | Change |
 |---|---|
-| Database migration | Alter `wp_id` to `bigint` on both tables |
+| `src/pages/BlogPostPage.tsx` | `max-w-4xl` → `max-w-[1350px]` on the main container |
 
