@@ -117,6 +117,46 @@ export default function AdminBlogEditor() {
     );
   };
 
+  const handleAiGenerate = async () => {
+    if (!aiTopic || !aiKeyword) {
+      toast({ title: "Topic and keyword are required", variant: "destructive" });
+      return;
+    }
+    setAiGenerating(true);
+    try {
+      const res = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate-blog-article`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            topic: aiTopic,
+            target_keyword: aiKeyword,
+            target_state: aiState || undefined,
+          }),
+        }
+      );
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || "Generation failed");
+      }
+
+      const article = await res.json();
+      setTitle(article.title || "");
+      setSlug(article.slug || slugify(article.title || ""));
+      setContent(article.content || "");
+      setExcerpt(article.excerpt || "");
+      setSlugManual(true);
+      setAiOpen(false);
+      toast({ title: "Article generated!", description: "Review the content below and publish when ready." });
+    } catch (err: any) {
+      toast({ title: "AI Generation Error", description: err.message, variant: "destructive" });
+    } finally {
+      setAiGenerating(false);
+    }
+  };
+
   const handleSave = async () => {
     if (!title || !slug || !session?.access_token) {
       toast({ title: "Title and slug are required", variant: "destructive" });
