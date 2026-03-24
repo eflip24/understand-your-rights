@@ -15,11 +15,12 @@ import { insuranceLaw } from "@/data/insuranceLaw";
 import { employmentLaw } from "@/data/employmentLaw";
 import { criminalLaw } from "@/data/criminalLaw";
 import { landlordTenantLaw } from "@/data/landlordTenantLaw";
+import { aiTechLaw } from "@/data/aiTechLaw";
 
 const PillarPageLazy = React.lazy(() => import("@/pages/PillarPage"));
 const ClusterArticlePageLazy = React.lazy(() => import("@/pages/ClusterArticlePage"));
 
-const pillarDataMap = { auto: autoAccidentLaw, pi: personalInjuryLaw, insurance: insuranceLaw, employment: employmentLaw, criminal: criminalLaw, landlord: landlordTenantLaw } as const;
+const pillarDataMap = { auto: autoAccidentLaw, pi: personalInjuryLaw, insurance: insuranceLaw, employment: employmentLaw, criminal: criminalLaw, landlord: landlordTenantLaw, aitech: aiTechLaw } as const;
 const PillarPageWrapper = ({ category }: { category: keyof typeof pillarDataMap }) => (
   <PillarPageLazy data={pillarDataMap[category]} />
 );
@@ -128,6 +129,8 @@ const App = () => (
                 <Route path="/criminal-law/:slug" element={<ClusterPageWrapper category="criminal" />} />
                 <Route path="/landlord-tenant-law" element={<PillarPageWrapper category="landlord" />} />
                 <Route path="/landlord-tenant-law/:slug" element={<ClusterPageWrapper category="landlord" />} />
+                <Route path="/ai-tech-law" element={<PillarPageWrapper category="aitech" />} />
+                <Route path="/ai-tech-law/:slug" element={<ClusterPageWrapper category="aitech" />} />
                 {/* State-specific article variants */}
                 <Route path="/auto-accident-law/:state/:slug" element={<StateClusterArticlePage />} />
                 <Route path="/personal-injury-law/:state/:slug" element={<StateClusterArticlePage />} />
@@ -135,6 +138,7 @@ const App = () => (
                 <Route path="/employment-law/:state/:slug" element={<StateClusterArticlePage />} />
                 <Route path="/criminal-law/:state/:slug" element={<StateClusterArticlePage />} />
                 <Route path="/landlord-tenant-law/:state/:slug" element={<StateClusterArticlePage />} />
+                <Route path="/ai-tech-law/:state/:slug" element={<StateClusterArticlePage />} />
                 <Route path="/local-lawyers" element={<LocalLawyersDirectory />} />
                 <Route path="/local-lawyers/:area" element={<LocalLawyersAreaPage />} />
                 <Route path="/local-lawyers/:area/:state" element={<LocalLawyersStatePage />} />
