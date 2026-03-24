@@ -231,6 +231,68 @@ export default function AdminBlogEditor() {
         </h1>
       </div>
 
+      {!isEditing && (
+        <Collapsible open={aiOpen} onOpenChange={setAiOpen} className="mb-6">
+          <Card className="border-accent/30">
+            <CollapsibleTrigger asChild>
+              <CardHeader className="cursor-pointer hover:bg-secondary/50 transition-colors">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Sparkles className="h-4 w-4 text-accent" />
+                  Generate with AI
+                  <ChevronDown className={`h-4 w-4 ml-auto transition-transform ${aiOpen ? "rotate-180" : ""}`} />
+                </CardTitle>
+              </CardHeader>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <CardContent className="space-y-4 pt-0">
+                <div className="space-y-2">
+                  <Label htmlFor="ai-topic">Topic</Label>
+                  <Input
+                    id="ai-topic"
+                    value={aiTopic}
+                    onChange={(e) => setAiTopic(e.target.value)}
+                    placeholder='e.g. "Average Car Accident Settlement in California"'
+                  />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="ai-keyword">Target Keyword</Label>
+                    <Input
+                      id="ai-keyword"
+                      value={aiKeyword}
+                      onChange={(e) => setAiKeyword(e.target.value)}
+                      placeholder='e.g. "car accident settlement california"'
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="ai-state">Target State (optional)</Label>
+                    <Select value={aiState} onValueChange={setAiState}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="General (all states)" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="general">General (all states)</SelectItem>
+                        {US_STATES.map((s) => (
+                          <SelectItem key={s} value={s}>{s}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+                <Button onClick={handleAiGenerate} disabled={aiGenerating} className="gap-2">
+                  {aiGenerating ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Sparkles className="h-4 w-4" />
+                  )}
+                  {aiGenerating ? "Generating (~15s)..." : "Generate Article"}
+                </Button>
+              </CardContent>
+            </CollapsibleContent>
+          </Card>
+        </Collapsible>
+      )}
+
       <div className="grid gap-6">
         <Card>
           <CardHeader>
