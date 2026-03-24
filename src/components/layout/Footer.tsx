@@ -1,12 +1,46 @@
 import { Link } from "react-router-dom";
 import { Scale } from "lucide-react";
 
+const toolLinks = [
+  { label: "All Tools", href: "/tools" },
+  { label: "Contract Tools", href: "/tools/contract" },
+  { label: "Consumer Tools", href: "/tools/consumer" },
+  { label: "Employment Tools", href: "/tools/employment" },
+  { label: "Document Generators", href: "/tools/generators" },
+  { label: "AI Analysis", href: "/tools/ai" },
+];
+
+const guideLinks = [
+  { label: "Auto Accident Law", href: "/auto-accident-law" },
+  { label: "Personal Injury Law", href: "/personal-injury-law" },
+  { label: "Insurance Law", href: "/insurance-law" },
+  { label: "Employment Law", href: "/employment-law" },
+  { label: "Criminal Law", href: "/criminal-law" },
+  { label: "Landlord-Tenant Law", href: "/landlord-tenant-law" },
+  { label: "AI & Tech Law", href: "/ai-tech-law" },
+];
+
+const resourceLinks = [
+  { label: "Legal Terms", href: "/legal-terms" },
+  { label: "Legal Clauses", href: "/legal-clauses" },
+  { label: "Contract Types", href: "/contract-types" },
+  { label: "Find a Lawyer", href: "/local-lawyers" },
+  { label: "Blog", href: "/blog" },
+];
+
+const legalLinks = [
+  { label: "Disclaimer", href: "/disclaimer" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t bg-primary text-primary-foreground">
       <div className="container py-12">
-        <div className="grid gap-8 md:grid-cols-4">
-          <div className="space-y-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+          {/* Brand */}
+          <div className="space-y-3 sm:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2">
               <Scale className="h-6 w-6 text-accent" />
               <span className="font-serif text-lg font-bold">
@@ -18,35 +52,17 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
-            <h4 className="font-serif font-semibold mb-3">Tools</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li><Link to="/tools/contract" className="hover:text-accent transition-colors">Contract Tools</Link></li>
-              <li><Link to="/tools/consumer" className="hover:text-accent transition-colors">Consumer Tools</Link></li>
-              <li><Link to="/tools/employment" className="hover:text-accent transition-colors">Employment Tools</Link></li>
-              <li><Link to="/tools/generators" className="hover:text-accent transition-colors">Document Generators</Link></li>
-            </ul>
-          </div>
+          {/* Tools */}
+          <FooterColumn title="Tools" links={toolLinks} />
 
-          <div>
-            <h4 className="font-serif font-semibold mb-3">Guides</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li><Link to="/auto-accident-law" className="hover:text-accent transition-colors">Auto Accident Law</Link></li>
-              <li><Link to="/personal-injury-law" className="hover:text-accent transition-colors">Personal Injury Law</Link></li>
-              <li><Link to="/insurance-law" className="hover:text-accent transition-colors">Insurance Law</Link></li>
-              <li><Link to="/local-lawyers" className="hover:text-accent transition-colors">Find a Lawyer</Link></li>
-              <li><Link to="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
-            </ul>
-          </div>
+          {/* Legal Guides */}
+          <FooterColumn title="Legal Guides" links={guideLinks} />
 
-          <div>
-            <h4 className="font-serif font-semibold mb-3">Legal</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li><Link to="/disclaimer" className="hover:text-accent transition-colors">Disclaimer</Link></li>
-              <li><Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</Link></li>
-            </ul>
-          </div>
+          {/* Resources */}
+          <FooterColumn title="Resources" links={resourceLinks} />
+
+          {/* Legal */}
+          <FooterColumn title="Legal" links={legalLinks} />
         </div>
 
         <div className="mt-10 pt-6 border-t border-primary-foreground/10">
@@ -59,5 +75,22 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
+  return (
+    <div>
+      <h4 className="font-serif font-semibold mb-3">{title}</h4>
+      <ul className="space-y-2 text-sm text-primary-foreground/70">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link to={link.href} className="hover:text-accent transition-colors">
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
