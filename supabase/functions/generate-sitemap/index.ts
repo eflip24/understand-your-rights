@@ -175,7 +175,7 @@ function buildCore(): string {
     u(`${SITE}/insurance-law`,"weekly","0.8"), u(`${SITE}/employment-law`,"weekly","0.8"),
     u(`${SITE}/criminal-law`,"weekly","0.8"), u(`${SITE}/landlord-tenant-law`,"weekly","0.8"),
     u(`${SITE}/ai-tech-law`,"weekly","0.8"),
-    u(`${SITE}/local-lawyers`,"weekly","0.8"),
+    u(`${SITE}/lawyer-near-me`,"weekly","0.8"),
   ]);
 }
 
@@ -220,9 +220,9 @@ function buildStateGuides(): string {
 
 function buildLawyers(): string {
   const e: string[] = [];
-  for (const a of lawyerAreaSlugs) e.push(u(`${SITE}/local-lawyers/${a}`,"monthly","0.6"));
-  for (const a of lawyerAreaSlugs) for (const st of stateSlugs) e.push(u(`${SITE}/local-lawyers/${a}/${st}`,"monthly","0.5"));
-  for (const a of lawyerAreaSlugs) for (const [st,cities] of Object.entries(citySlugsMap)) for (const c of cities) e.push(u(`${SITE}/local-lawyers/${a}/${st}/${c}`,"monthly","0.5"));
+  for (const a of lawyerAreaSlugs) e.push(u(`${SITE}/lawyer-near-me/${a}`,"monthly","0.6"));
+  for (const a of lawyerAreaSlugs) for (const st of stateSlugs) e.push(u(`${SITE}/lawyer-near-me/${a}/${st}`,"monthly","0.5"));
+  for (const a of lawyerAreaSlugs) for (const [st,cities] of Object.entries(citySlugsMap)) for (const c of cities) e.push(u(`${SITE}/lawyer-near-me/${a}/${st}/${c}`,"monthly","0.5"));
   return wrapUrlset(e);
 }
 

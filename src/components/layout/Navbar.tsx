@@ -125,7 +125,7 @@ export default function Navbar() {
 
             <NavigationMenuItem>
               <Link
-                to="/local-lawyers"
+                to="/lawyer-near-me"
                 className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 Find a Lawyer
@@ -208,7 +208,7 @@ export default function Navbar() {
                   <MobileAccordion title="Guides" links={guidesLinks} onClose={() => setMobileOpen(false)} />
                   <MobileAccordion title="Resources" links={resourcesLinks} onClose={() => setMobileOpen(false)} />
                   <Link
-                    to="/local-lawyers"
+                    to="/lawyer-near-me"
                     onClick={() => setMobileOpen(false)}
                     className="px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary"
                   >
