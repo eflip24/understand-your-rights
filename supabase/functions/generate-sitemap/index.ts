@@ -161,8 +161,9 @@ function u(loc: string, freq: string, pri: string, lastmod?: string): string {
 }
 
 function sitemapIndex(): string {
-  const subs = ["sitemap-core.xml","sitemap-tools.xml","sitemap-legal-terms.xml","sitemap-guides.xml","sitemap-lawyers.xml","sitemap-blog.xml","sitemap-state-guides.xml"];
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${subs.map(s => `  <sitemap>\n    <loc>${SITE}/${s}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
+  const BASE = "https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap";
+  const types = ["core","tools","legal-terms","guides","lawyers","blog","state-guides"];
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${BASE}?type=${t}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
 }
 
 function buildCore(): string {
