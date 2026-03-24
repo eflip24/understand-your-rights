@@ -191,7 +191,7 @@ export default function BlogPostPage() {
         )}
       </div>
 
-      <div className="container max-w-4xl -mt-24 relative z-10 pb-16">
+      <div className="container max-w-[1350px] -mt-24 relative z-10 pb-16">
         {/* Breadcrumb */}
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
