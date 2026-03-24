@@ -2,6 +2,10 @@ import { stateData, type StateLegalData } from "@/data/locations/stateData";
 import { autoAccidentLaw } from "@/data/autoAccidentLaw";
 import { personalInjuryLaw } from "@/data/personalInjuryLaw";
 import { insuranceLaw } from "@/data/insuranceLaw";
+import { employmentLaw } from "@/data/employmentLaw";
+import { criminalLaw } from "@/data/criminalLaw";
+import { landlordTenantLaw } from "@/data/landlordTenantLaw";
+import { aiTechLaw } from "@/data/aiTechLaw";
 import type { PillarData, ClusterArticle } from "@/data/autoAccidentLaw";
 
 export interface StateVariantData {
@@ -14,6 +18,10 @@ const pillarMap: Record<string, PillarData> = {
   "auto-accident-law": autoAccidentLaw,
   "personal-injury-law": personalInjuryLaw,
   "insurance-law": insuranceLaw,
+  "employment-law": employmentLaw,
+  "criminal-law": criminalLaw,
+  "landlord-tenant-law": landlordTenantLaw,
+  "ai-tech-law": aiTechLaw,
 };
 
 export const pillarSlugs = Object.keys(pillarMap);

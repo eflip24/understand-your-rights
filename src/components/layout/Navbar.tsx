@@ -20,6 +20,7 @@ const navLinks = [
   { label: "Employment Law", href: "/employment-law" },
   { label: "Criminal Law", href: "/criminal-law" },
   { label: "Landlord-Tenant", href: "/landlord-tenant-law" },
+  { label: "AI & Tech Law", href: "/ai-tech-law" },
   { label: "Find a Lawyer", href: "/local-lawyers" },
 ];
 

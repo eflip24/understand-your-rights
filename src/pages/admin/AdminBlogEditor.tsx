@@ -10,8 +10,9 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { toast } from "@/hooks/use-toast";
-import { Loader2, Save, ArrowLeft } from "lucide-react";
+import { Loader2, Save, ArrowLeft, Sparkles, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function slugify(text: string) {
@@ -41,6 +42,19 @@ export default function AdminBlogEditor() {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [slugManual, setSlugManual] = useState(false);
+  const [aiOpen, setAiOpen] = useState(false);
+  const [aiTopic, setAiTopic] = useState("");
+  const [aiKeyword, setAiKeyword] = useState("");
+  const [aiState, setAiState] = useState("");
+  const [aiGenerating, setAiGenerating] = useState(false);
+
+  const US_STATES = [
+    "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia",
+    "Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland",
+    "Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey",
+    "New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina",
+    "South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming",
+  ];
 
   // Fetch categories
   const { data: categories } = useQuery({
@@ -101,6 +115,46 @@ export default function AdminBlogEditor() {
     setSelectedCategories((prev) =>
       prev.includes(catId) ? prev.filter((c) => c !== catId) : [...prev, catId]
     );
+  };
+
+  const handleAiGenerate = async () => {
+    if (!aiTopic || !aiKeyword) {
+      toast({ title: "Topic and keyword are required", variant: "destructive" });
+      return;
+    }
+    setAiGenerating(true);
+    try {
+      const res = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate-blog-article`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            topic: aiTopic,
+            target_keyword: aiKeyword,
+            target_state: aiState || undefined,
+          }),
+        }
+      );
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || "Generation failed");
+      }
+
+      const article = await res.json();
+      setTitle(article.title || "");
+      setSlug(article.slug || slugify(article.title || ""));
+      setContent(article.content || "");
+      setExcerpt(article.excerpt || "");
+      setSlugManual(true);
+      setAiOpen(false);
+      toast({ title: "Article generated!", description: "Review the content below and publish when ready." });
+    } catch (err: any) {
+      toast({ title: "AI Generation Error", description: err.message, variant: "destructive" });
+    } finally {
+      setAiGenerating(false);
+    }
   };
 
   const handleSave = async () => {
@@ -176,6 +230,68 @@ export default function AdminBlogEditor() {
           {isEditing ? "Edit Post" : "New Post"}
         </h1>
       </div>
+
+      {!isEditing && (
+        <Collapsible open={aiOpen} onOpenChange={setAiOpen} className="mb-6">
+          <Card className="border-accent/30">
+            <CollapsibleTrigger asChild>
+              <CardHeader className="cursor-pointer hover:bg-secondary/50 transition-colors">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Sparkles className="h-4 w-4 text-accent" />
+                  Generate with AI
+                  <ChevronDown className={`h-4 w-4 ml-auto transition-transform ${aiOpen ? "rotate-180" : ""}`} />
+                </CardTitle>
+              </CardHeader>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <CardContent className="space-y-4 pt-0">
+                <div className="space-y-2">
+                  <Label htmlFor="ai-topic">Topic</Label>
+                  <Input
+                    id="ai-topic"
+                    value={aiTopic}
+                    onChange={(e) => setAiTopic(e.target.value)}
+                    placeholder='e.g. "Average Car Accident Settlement in California"'
+                  />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="ai-keyword">Target Keyword</Label>
+                    <Input
+                      id="ai-keyword"
+                      value={aiKeyword}
+                      onChange={(e) => setAiKeyword(e.target.value)}
+                      placeholder='e.g. "car accident settlement california"'
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="ai-state">Target State (optional)</Label>
+                    <Select value={aiState} onValueChange={setAiState}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="General (all states)" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="general">General (all states)</SelectItem>
+                        {US_STATES.map((s) => (
+                          <SelectItem key={s} value={s}>{s}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+                <Button onClick={handleAiGenerate} disabled={aiGenerating} className="gap-2">
+                  {aiGenerating ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Sparkles className="h-4 w-4" />
+                  )}
+                  {aiGenerating ? "Generating (~15s)..." : "Generate Article"}
+                </Button>
+              </CardContent>
+            </CollapsibleContent>
+          </Card>
+        </Collapsible>
+      )}
 
       <div className="grid gap-6">
         <Card>

@@ -134,6 +134,11 @@ const citySlugsMap: Record<string, string[]> = {
   "west-virginia":["charleston"],"new-hampshire":["manchester"],"maine":["portland-me"],"wyoming":["cheyenne"],"south-carolina":["charleston-sc"],
 };
 
+const aiTechLawSlugs = [
+  "ai-generated-content-legality","ai-art-ownership","deepfake-laws","data-privacy-rights","social-media-legal-issues",
+  "online-defamation","crypto-nft-legal-status","terms-of-service-enforceability","right-to-repair","algorithmic-discrimination",
+];
+
 // All pillar slugs with their article slugs for state variant pages
 const pillarArticleMap: Record<string, string[]> = {
   "auto-accident-law": autoAccidentSlugs,
@@ -142,6 +147,7 @@ const pillarArticleMap: Record<string, string[]> = {
   "employment-law": employmentLawSlugs,
   "criminal-law": criminalLawSlugs,
   "landlord-tenant-law": landlordTenantLawSlugs,
+  "ai-tech-law": aiTechLawSlugs,
 };
 
 // === Helpers ===
@@ -167,6 +173,7 @@ function buildCore(): string {
     u(`${SITE}/auto-accident-law`,"weekly","0.8"), u(`${SITE}/personal-injury-law`,"weekly","0.8"),
     u(`${SITE}/insurance-law`,"weekly","0.8"), u(`${SITE}/employment-law`,"weekly","0.8"),
     u(`${SITE}/criminal-law`,"weekly","0.8"), u(`${SITE}/landlord-tenant-law`,"weekly","0.8"),
+    u(`${SITE}/ai-tech-law`,"weekly","0.8"),
     u(`${SITE}/local-lawyers`,"weekly","0.8"),
   ]);
 }
@@ -194,6 +201,7 @@ function buildGuides(): string {
   for (const s of employmentLawSlugs) e.push(u(`${SITE}/employment-law/${s}`,"monthly","0.7"));
   for (const s of criminalLawSlugs) e.push(u(`${SITE}/criminal-law/${s}`,"monthly","0.7"));
   for (const s of landlordTenantLawSlugs) e.push(u(`${SITE}/landlord-tenant-law/${s}`,"monthly","0.7"));
+  for (const s of aiTechLawSlugs) e.push(u(`${SITE}/ai-tech-law/${s}`,"monthly","0.7"));
   return wrapUrlset(e);
 }
 
