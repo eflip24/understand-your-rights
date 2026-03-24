@@ -53,7 +53,7 @@ export default function HomePage() {
     { title: "Criminal Law", description: "DUI, arrests, felonies, misdemeanors — what to expect and your rights.", href: "/criminal-law", icon: AlertTriangle },
     { title: "Landlord-Tenant Law", description: "Eviction rules, lease disputes, security deposits, and tenant rights.", href: "/landlord-tenant-law", icon: Home },
     { title: "AI & Tech Law", description: "AI content legality, deepfakes, data privacy, and digital rights.", href: "/ai-tech-law", icon: Cpu },
-    { title: "Find a Lawyer", description: "Browse our free attorney directory by practice area near you.", { title: "Find a Lawyer", description: "Browse our free attorney directory by practice area near you.", href: "/lawyer-near-me", icon: Users },, icon: Users },
+    { title: "Find a Lawyer", description: "Browse our free attorney directory by practice area near you.", href: "/lawyer-near-me", icon: Users },
   ];
 
   const legalResources = [
