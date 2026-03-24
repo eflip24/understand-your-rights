@@ -21,7 +21,7 @@ export default function LocalLawyersCityPage() {
   const stateInfo = state ? getStateBySlug(state) : undefined;
   const cityInfo = state && city ? getCityBySlug(state, city) : undefined;
 
-  if (!practiceArea || !stateInfo || !cityInfo) return <Navigate to="/local-lawyers" replace />;
+  if (!practiceArea || !stateInfo || !cityInfo) return <Navigate to="/lawyer-near-me" replace />;
 
   const negligenceLabel = stateInfo.negligenceRule === "contributory"
     ? "contributory negligence (any fault bars recovery)"
@@ -40,17 +40,17 @@ export default function LocalLawyersCityPage() {
       <JsonLdGraph schemas={[
         breadcrumbSchema([
           { name: "Home", url: SITE },
-          { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
-          { name: practiceArea.shortTitle, url: `${SITE}/local-lawyers/${practiceArea.slug}` },
-          { name: stateInfo.name, url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}` },
-          { name: cityInfo.name, url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}/${cityInfo.slug}` },
+          { name: "Find a Lawyer", url: `${SITE}/lawyer-near-me` },
+          { name: practiceArea.shortTitle, url: `${SITE}/lawyer-near-me/${practiceArea.slug}` },
+          { name: stateInfo.name, url: `${SITE}/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}` },
+          { name: cityInfo.name, url: `${SITE}/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}/${cityInfo.slug}` },
         ]),
         localBusinessSchema({
           name: cityInfo.courthouse.name,
           address: cityInfo.courthouse.address,
           lat: cityInfo.courthouse.lat,
           lng: cityInfo.courthouse.lng,
-          url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}/${cityInfo.slug}`,
+          url: `${SITE}/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}/${cityInfo.slug}`,
         }),
       ]} />
 
@@ -58,11 +58,11 @@ export default function LocalLawyersCityPage() {
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
         <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to="/local-lawyers" className="hover:text-foreground transition-colors">Find a Lawyer</Link>
+        <Link to="/lawyer-near-me" className="hover:text-foreground transition-colors">Find a Lawyer</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={`/local-lawyers/${practiceArea.slug}`} className="hover:text-foreground transition-colors">{practiceArea.shortTitle}</Link>
+        <Link to={`/lawyer-near-me/${practiceArea.slug}`} className="hover:text-foreground transition-colors">{practiceArea.shortTitle}</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={`/local-lawyers/${practiceArea.slug}/${stateInfo.slug}`} className="hover:text-foreground transition-colors">{stateInfo.name}</Link>
+        <Link to={`/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}`} className="hover:text-foreground transition-colors">{stateInfo.name}</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">{cityInfo.name}</span>
       </nav>

@@ -20,7 +20,7 @@ export default function SmartLocalLink({ category, state }: SmartLocalLinkProps)
   const mapping = categoryToDirectory[category];
   if (!mapping) return null;
 
-  const href = state ? `/local-lawyers/${mapping.slug}/${state}` : `/local-lawyers/${mapping.slug}`;
+  const href = state ? `/lawyer-near-me/${mapping.slug}/${state}` : `/lawyer-near-me/${mapping.slug}`;
 
   return (
     <Link to={href}>

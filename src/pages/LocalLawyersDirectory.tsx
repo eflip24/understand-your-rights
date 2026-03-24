@@ -19,11 +19,11 @@ export default function LocalLawyersDirectory() {
       <JsonLdGraph schemas={[
         itemListSchema(
           "Local Lawyers Directory",
-          practiceAreas.map((pa) => ({ url: `${SITE}/local-lawyers/${pa.slug}`, name: pa.title }))
+          practiceAreas.map((pa) => ({ url: `${SITE}/lawyer-near-me/${pa.slug}`, name: pa.title }))
         ),
         breadcrumbSchema([
           { name: "Home", url: SITE },
-          { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
+          { name: "Find a Lawyer", url: `${SITE}/lawyer-near-me` },
         ]),
       ]} />
 
@@ -48,7 +48,7 @@ export default function LocalLawyersDirectory() {
       {/* Practice Areas Grid */}
       <div className="grid gap-4 sm:grid-cols-2">
         {practiceAreas.map((area) => (
-          <Link key={area.slug} to={`/local-lawyers/${area.slug}`}>
+          <Link key={area.slug} to={`/lawyer-near-me/${area.slug}`}>
             <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all group">
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-3">

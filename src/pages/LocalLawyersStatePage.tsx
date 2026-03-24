@@ -16,7 +16,7 @@ export default function LocalLawyersStatePage() {
   const practiceArea = practiceAreas.find((pa) => pa.slug === area);
   const stateInfo = state ? getStateBySlug(state) : undefined;
 
-  if (!practiceArea || !stateInfo) return <Navigate to="/local-lawyers" replace />;
+  if (!practiceArea || !stateInfo) return <Navigate to="/lawyer-near-me" replace />;
 
   const cities = getCitiesByState(stateInfo.slug);
 
@@ -35,14 +35,14 @@ export default function LocalLawyersStatePage() {
       <JsonLdGraph schemas={[
         breadcrumbSchema([
           { name: "Home", url: SITE },
-          { name: "Find a Lawyer", url: `${SITE}/local-lawyers` },
-          { name: practiceArea.shortTitle, url: `${SITE}/local-lawyers/${practiceArea.slug}` },
-          { name: stateInfo.name, url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}` },
+          { name: "Find a Lawyer", url: `${SITE}/lawyer-near-me` },
+          { name: practiceArea.shortTitle, url: `${SITE}/lawyer-near-me/${practiceArea.slug}` },
+          { name: stateInfo.name, url: `${SITE}/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}` },
         ]),
         cities.length > 0 ? itemListSchema(
           `${practiceArea.shortTitle} Lawyers in ${stateInfo.name}`,
           cities.map((c) => ({
-            url: `${SITE}/local-lawyers/${practiceArea.slug}/${stateInfo.slug}/${c.slug}`,
+            url: `${SITE}/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}/${c.slug}`,
             name: `${practiceArea.shortTitle} Lawyers in ${c.name}`,
           }))
         ) : null,
@@ -52,9 +52,9 @@ export default function LocalLawyersStatePage() {
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
         <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to="/local-lawyers" className="hover:text-foreground transition-colors">Find a Lawyer</Link>
+        <Link to="/lawyer-near-me" className="hover:text-foreground transition-colors">Find a Lawyer</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={`/local-lawyers/${practiceArea.slug}`} className="hover:text-foreground transition-colors">{practiceArea.shortTitle}</Link>
+        <Link to={`/lawyer-near-me/${practiceArea.slug}`} className="hover:text-foreground transition-colors">{practiceArea.shortTitle}</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">{stateInfo.name}</span>
       </nav>
@@ -102,7 +102,7 @@ export default function LocalLawyersStatePage() {
           <h2 className="text-2xl font-bold mb-4">Browse by City</h2>
           <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3">
             {cities.map((city) => (
-              <Link key={city.slug} to={`/local-lawyers/${practiceArea.slug}/${stateInfo.slug}/${city.slug}`}>
+              <Link key={city.slug} to={`/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}/${city.slug}`}>
                 <Card className="hover:shadow-sm hover:border-accent/30 transition-all cursor-pointer">
                   <CardContent className="p-3 flex items-center gap-2">
                     <MapPin className="h-3.5 w-3.5 text-accent flex-shrink-0" />

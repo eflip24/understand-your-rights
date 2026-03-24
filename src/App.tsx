@@ -139,10 +139,10 @@ const App = () => (
                 <Route path="/criminal-law/:state/:slug" element={<StateClusterArticlePage />} />
                 <Route path="/landlord-tenant-law/:state/:slug" element={<StateClusterArticlePage />} />
                 <Route path="/ai-tech-law/:state/:slug" element={<StateClusterArticlePage />} />
-                <Route path="/local-lawyers" element={<LocalLawyersDirectory />} />
-                <Route path="/local-lawyers/:area" element={<LocalLawyersAreaPage />} />
-                <Route path="/local-lawyers/:area/:state" element={<LocalLawyersStatePage />} />
-                <Route path="/local-lawyers/:area/:state/:city" element={<LocalLawyersCityPage />} />
+                <Route path="/lawyer-near-me" element={<LocalLawyersDirectory />} />
+                <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
+                <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
+                <Route path="/lawyer-near-me/:area/:state/:city" element={<LocalLawyersCityPage />} />
                 <Route path="/disclaimer" element={<DisclaimerPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms-of-service" element={<TermsOfServicePage />} />
