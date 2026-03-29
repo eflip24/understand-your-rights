@@ -56,6 +56,7 @@ const DisclaimerPage = React.lazy(() => import("@/pages/DisclaimerPage"));
 const PrivacyPolicyPage = React.lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
+const LegalHealthCheckPage = React.lazy(() => import("@/pages/LegalHealthCheckPage"));
 const LocalLawyersDirectory = React.lazy(() => import("@/pages/LocalLawyersDirectory"));
 const LocalLawyersAreaPage = React.lazy(() => import("@/pages/LocalLawyersAreaPage"));
 const LocalLawyersStatePage = React.lazy(() => import("@/pages/LocalLawyersStatePage"));
@@ -107,6 +108,7 @@ const App = () => (
                 <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                 <Route path="/reset-password" element={<ResetPasswordPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/legal-health-check" element={<LegalHealthCheckPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/category/:slug" element={<BlogCategoryPage />} />
                 <Route path="/blog/:slug" element={<BlogPostPage />} />

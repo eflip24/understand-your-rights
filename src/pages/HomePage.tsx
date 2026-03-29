@@ -152,6 +152,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Legal Health Check Teaser */}
+      <section className="container py-12">
+        <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-accent/5 via-background to-accent/10 p-8 md:p-12 text-center">
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+              <span>✨</span> 60-Second Quiz
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">Not sure which legal tool you need?</h2>
+            <p className="text-muted-foreground max-w-lg mx-auto mb-6">
+              Take our Legal Health Check and get personalized tool recommendations instantly — 100% free, no signup required.
+            </p>
+            <Link to="/legal-health-check">
+              <Button size="lg" className="gap-2 text-base">
+                Start Legal Health Check <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Popular Tools */}
       <section className="container py-16">
         <div className="text-center mb-10">
