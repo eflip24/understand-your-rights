@@ -56,6 +56,7 @@ const DisclaimerPage = React.lazy(() => import("@/pages/DisclaimerPage"));
 const PrivacyPolicyPage = React.lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
+const LegalHealthCheckPage = React.lazy(() => import("@/pages/LegalHealthCheckPage"));
 const LocalLawyersDirectory = React.lazy(() => import("@/pages/LocalLawyersDirectory"));
 const LocalLawyersAreaPage = React.lazy(() => import("@/pages/LocalLawyersAreaPage"));
 const LocalLawyersStatePage = React.lazy(() => import("@/pages/LocalLawyersStatePage"));
