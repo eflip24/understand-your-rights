@@ -1,10 +1,12 @@
 import { tools, Tool } from "@/data/tools";
+import { Home, Briefcase, FileText, Car, DollarSign, Building2, HelpCircle, CircleAlert, Clock, CheckCircle, ClipboardList, Hand, Scale, Calculator, Search, Compass } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export interface QuizQuestion {
   id: string;
   question: string;
   type: "cards" | "dropdown" | "text";
-  options?: { value: string; label: string; icon?: string }[];
+  options?: { value: string; label: string; icon?: LucideIcon }[];
   optional?: boolean;
 }
 
@@ -14,13 +16,13 @@ export const quizQuestions: QuizQuestion[] = [
     question: "What's the main situation you're dealing with right now?",
     type: "cards",
     options: [
-      { value: "renting", label: "Renting or leasing", icon: "🏠" },
-      { value: "employment", label: "Employment or workplace", icon: "💼" },
-      { value: "contracts", label: "Signing or reviewing a contract", icon: "📄" },
-      { value: "accident", label: "Car accident, injury, or insurance", icon: "🚗" },
-      { value: "money", label: "Money, debt, or taxes", icon: "💰" },
-      { value: "business", label: "Starting or running a business", icon: "🏢" },
-      { value: "other", label: "Something else", icon: "🤔" },
+      { value: "renting", label: "Renting or leasing", icon: Home },
+      { value: "employment", label: "Employment or workplace", icon: Briefcase },
+      { value: "contracts", label: "Signing or reviewing a contract", icon: FileText },
+      { value: "accident", label: "Car accident, injury, or insurance", icon: Car },
+      { value: "money", label: "Money, debt, or taxes", icon: DollarSign },
+      { value: "business", label: "Starting or running a business", icon: Building2 },
+      { value: "other", label: "Something else", icon: HelpCircle },
     ],
   },
   {
@@ -33,9 +35,9 @@ export const quizQuestions: QuizQuestion[] = [
     question: "How urgent is this?",
     type: "cards",
     options: [
-      { value: "urgent", label: "I need help right away", icon: "🔴" },
-      { value: "important", label: "Important but not urgent", icon: "🟡" },
-      { value: "planning", label: "Just planning ahead", icon: "🟢" },
+      { value: "urgent", label: "I need help right away", icon: CircleAlert },
+      { value: "important", label: "Important but not urgent", icon: Clock },
+      { value: "planning", label: "Just planning ahead", icon: CheckCircle },
     ],
   },
   {
@@ -43,8 +45,8 @@ export const quizQuestions: QuizQuestion[] = [
     question: "Do you have any documents related to this?",
     type: "cards",
     options: [
-      { value: "yes", label: "Yes (contract, lease, letter, etc.)", icon: "📋" },
-      { value: "no", label: "No, not yet", icon: "✋" },
+      { value: "yes", label: "Yes (contract, lease, letter, etc.)", icon: ClipboardList },
+      { value: "no", label: "No, not yet", icon: Hand },
     ],
   },
   {
@@ -52,10 +54,10 @@ export const quizQuestions: QuizQuestion[] = [
     question: "What's your main goal?",
     type: "cards",
     options: [
-      { value: "rights", label: "Understand my rights", icon: "⚖️" },
-      { value: "calculate", label: "Calculate something specific", icon: "🧮" },
-      { value: "risk", label: "Check if something looks risky", icon: "🔍" },
-      { value: "guidance", label: "Get next-step guidance", icon: "🧭" },
+      { value: "rights", label: "Understand my rights", icon: Scale },
+      { value: "calculate", label: "Calculate something specific", icon: Calculator },
+      { value: "risk", label: "Check if something looks risky", icon: Search },
+      { value: "guidance", label: "Get next-step guidance", icon: Compass },
     ],
   },
   {
