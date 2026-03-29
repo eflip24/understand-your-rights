@@ -6,7 +6,7 @@ export interface QuizQuestion {
   id: string;
   question: string;
   type: "cards" | "dropdown" | "text";
-  options?: { value: string; label: string; icon?: string }[];
+  options?: { value: string; label: string; icon?: LucideIcon }[];
   optional?: boolean;
 }
 
