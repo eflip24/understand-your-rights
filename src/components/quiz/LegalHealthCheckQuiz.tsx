@@ -222,7 +222,7 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
                     : "border-border hover:border-accent/40 hover:bg-accent/5"
                 }`}
               >
-                <span className="text-xl">{opt.icon}</span>
+                {opt.icon && <opt.icon className="h-5 w-5 text-accent shrink-0" />}
                 <span className="font-medium text-sm">{opt.label}</span>
               </button>
             ))}
