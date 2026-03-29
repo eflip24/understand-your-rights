@@ -1,4 +1,6 @@
 import { tools, Tool } from "@/data/tools";
+import { Home, Briefcase, FileText, Car, DollarSign, Building2, HelpCircle, CircleAlert, Clock, CheckCircle, ClipboardList, Hand, Scale, Calculator, Search, Compass } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export interface QuizQuestion {
   id: string;
