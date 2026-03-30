@@ -1,82 +1,48 @@
 
 
-# AI Legal Assistant Chat Widget
+# Create About Us Page
 
 ## Overview
 
-A floating chat widget (bottom-right bubble) powered by Lovable AI via a streaming edge function. The assistant recommends tools, explains calculator results, and answers follow-up legal questions. Every response starts with a legal disclaimer. No account required.
+A visually rich About Us page at `/about` that matches the site's existing design language — hero section, icon grid, trust signals, and strong CTAs.
 
-## Architecture
-
-### New Files
+## New File
 
 | File | Purpose |
 |---|---|
-| `supabase/functions/legal-chat/index.ts` | Streaming edge function — sends conversation history to Lovable AI with a legal-focused system prompt that knows about all 100+ tools |
-| `src/components/chat/LegalChatWidget.tsx` | Floating chat bubble + expandable chat panel with message list, input, and streaming response rendering |
-| `src/components/chat/useLegalChat.ts` | Hook managing messages state, streaming SSE parsing, and localStorage persistence |
+| `src/pages/AboutPage.tsx` | Full About Us page with all provided content |
 
-### Edited Files
+## Edited Files
 
 | File | Change |
 |---|---|
-| `src/App.tsx` | Render `<LegalChatWidget />` globally (outside Routes, always visible) |
+| `src/App.tsx` | Add lazy-loaded route for `/about` |
+| `src/components/layout/Footer.tsx` | Add "About Us" link to resources column |
+| `src/components/layout/Navbar.tsx` | Add "About" link to the Resources dropdown |
 
-## Edge Function: `legal-chat`
+## Page Structure
 
-- Streaming endpoint using Lovable AI gateway (`google/gemini-3-flash-preview`)
-- System prompt includes:
-  - Legal disclaimer prefix instruction ("Always begin responses with: *This is general information only — not legal advice.*")
-  - Full tool inventory summary (tool names, slugs, categories, short descriptions) injected from a static string so the AI can recommend specific tools with links
-  - Instructions to recommend tools by linking to `/tools/{category}/{slug}`, explain calculator results in plain English, and handle state-specific follow-ups
-- Handles 429/402 errors with user-friendly messages
-- Passes full conversation history for multi-turn context
+1. **Hero Section** — "Legal clarity, simplified." headline + "Free Legal Tools for Everyday People" tagline + "Explore All Tools" button. Clean gradient background matching homepage style.
 
-## Chat Widget UI
+2. **Trust Icons Row** — Four badges: "Free Forever" (Gift icon), "No Signup Required" (UserCheck), "Plain English" (MessageSquare), "50 States Covered" (MapPin).
 
-- **Collapsed**: Floating button bottom-right with `MessageCircle` Lucide icon + "AI Legal Assistant" tooltip
-- **Expanded**: 400px wide, 500px tall panel with:
-  - Header: "AI Legal Assistant" + close button
-  - Disclaimer banner (always visible): "This is general information only — not legal advice."
-  - Scrollable message area with markdown rendering (`react-markdown`)
-  - Input bar with send button
-  - Tool recommendation links rendered as clickable cards when the AI mentions tool slugs
-- **Mobile**: Full-width bottom sheet (100vw, 70vh)
-- Messages persisted in `localStorage` key `legalChatHistory` (cleared on "New Chat" button)
+3. **Our Mission** — Large text block with the mission statement.
 
-## Hook: `useLegalChat`
+4. **What We Offer** — 5-item icon grid (cards): Free Tools, AI Analysis, State Guides, Legal Dictionary, Health Check Quiz. Each with Lucide icon, title, and description from the provided copy.
 
-- Manages `messages: {role, content}[]` state
-- SSE streaming parser (line-by-line, handles `[DONE]`, partial JSON, CRLF)
-- Progressive assistant message update (same pattern as existing AI tools)
-- `sendMessage(text)` → appends user msg, streams assistant response
-- `clearChat()` → resets messages
+5. **Who We Are** — Text section about the team, with attorney input mention.
 
-## System Prompt (Key Excerpt)
+6. **Our Promise** — 4-column grid: Always Free, No Nonsense, Transparency First, Continuously Improving. Each with icon and description.
 
-```text
-You are LegallySpoken's AI Legal Assistant. You help users find the right 
-free legal tool and answer general legal questions.
+7. **Why "Legally Spoken"** — Text section with the name explanation.
 
-IMPORTANT: Always begin every response with:
-"*This is general information only — not legal advice. Consult a licensed attorney for your specific situation.*"
+8. **CTA Section** — "Start Your Legal Health Check" and "Browse 100+ Tools" buttons. Disclaimer text and last updated date.
 
-You have access to 100+ free tools. When recommending a tool, format it as:
-**[Tool Name](/tools/category/slug)** — short description
+## Design
 
-When users describe a situation, recommend 1-3 relevant tools.
-When users ask about calculator results, explain in plain English.
-When users ask state-specific questions, note relevant state variations.
-```
-
-The full tool list (names + slugs + categories) will be embedded in the system prompt from `tools.ts` data.
-
-## Files Summary
-
-| File | Change |
-|---|---|
-| `supabase/functions/legal-chat/index.ts` | Create — streaming chat edge function |
-| `src/components/chat/LegalChatWidget.tsx` | Create — floating chat widget with full UI |
-| `src/components/chat/useLegalChat.ts` | Create — chat state + streaming hook |
-| `src/App.tsx` | Edit — add `<LegalChatWidget />` to global layout |
+- Uses `Head` component for SEO metadata
+- Uses existing `ContentPageLayout` pattern but with custom hero (not the standard breadcrumb header)
+- Prose styling for text sections, card grid for features/promises
+- Fully responsive — single column on mobile, multi-column grids on desktop
+- Lucide icons throughout, no emojis
 
