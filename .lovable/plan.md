@@ -1,10 +1,10 @@
 
 
-# Legal Health Check Quiz — Smart Tool Recommender
+# AI Legal Assistant Chat Widget
 
 ## Overview
 
-A 6-question quiz that maps user situation + state + urgency to 3–6 recommended tools from the existing 100+ tool library. Fully client-side, no account needed, results stored in localStorage.
+A floating chat widget (bottom-right bubble) powered by Lovable AI via a streaming edge function. The assistant recommends tools, explains calculator results, and answers follow-up legal questions. Every response starts with a legal disclaimer. No account required.
 
 ## Architecture
 
@@ -12,77 +12,71 @@ A 6-question quiz that maps user situation + state + urgency to 3–6 recommende
 
 | File | Purpose |
 |---|---|
-| `src/components/quiz/LegalHealthCheckQuiz.tsx` | Main quiz component — stepper UI with 6 questions, progress bar, results screen |
-| `src/components/quiz/quizData.ts` | Question definitions + situation-to-tool mapping logic |
-| `src/pages/LegalHealthCheckPage.tsx` | Standalone page at `/legal-health-check` for SEO + direct linking |
+| `supabase/functions/legal-chat/index.ts` | Streaming edge function — sends conversation history to Lovable AI with a legal-focused system prompt that knows about all 100+ tools |
+| `src/components/chat/LegalChatWidget.tsx` | Floating chat bubble + expandable chat panel with message list, input, and streaming response rendering |
+| `src/components/chat/useLegalChat.ts` | Hook managing messages state, streaming SSE parsing, and localStorage persistence |
 
 ### Edited Files
 
 | File | Change |
 |---|---|
-| `src/pages/HomePage.tsx` | Add teaser card between Stats Bar and Popular Tools sections |
-| `src/App.tsx` | Add route for `/legal-health-check` |
+| `src/App.tsx` | Render `<LegalChatWidget />` globally (outside Routes, always visible) |
 
-## Quiz Questions & Mapping
+## Edge Function: `legal-chat`
 
-**Q1 — Situation** (maps to tool category/tags):
-- Renting/leasing → realestate tools (Rent Increase Calc, Security Deposit, Lease Analyzer, Move-Out Checklist)
-- Employment → employment tools (Overtime Calc, Severance Pay, Wrongful Termination, PTO Calc)
-- Contracts → contract tools (Red Flag Scanner, Clause Finder, Reading Time, Terms Summarizer)
-- Car accident/injury/insurance → consumer + finance (Settlement Estimator, Accident Damage Calc, Insurance Premium, Statute of Limitations)
-- Money/debt/taxes → finance tools (Debt Payoff, Income Tax, Compound Interest, Crypto Tax)
-- Business → business tools (Business Name Checker, Freelance Rate, Partnership Split, Equity Dilution)
-- Something else → show top popular tools
+- Streaming endpoint using Lovable AI gateway (`google/gemini-3-flash-preview`)
+- System prompt includes:
+  - Legal disclaimer prefix instruction ("Always begin responses with: *This is general information only — not legal advice.*")
+  - Full tool inventory summary (tool names, slugs, categories, short descriptions) injected from a static string so the AI can recommend specific tools with links
+  - Instructions to recommend tools by linking to `/tools/{category}/{slug}`, explain calculator results in plain English, and handle state-specific follow-ups
+- Handles 429/402 errors with user-friendly messages
+- Passes full conversation history for multi-turn context
 
-**Q2 — State** (dropdown of 50 states from existing `stateData.ts`) — used to personalize result descriptions
+## Chat Widget UI
 
-**Q3 — Urgency** (3 options) — used to sort results (urgent = actionable calculators first, planning = guides first)
+- **Collapsed**: Floating button bottom-right with `MessageCircle` Lucide icon + "AI Legal Assistant" tooltip
+- **Expanded**: 400px wide, 500px tall panel with:
+  - Header: "AI Legal Assistant" + close button
+  - Disclaimer banner (always visible): "This is general information only — not legal advice."
+  - Scrollable message area with markdown rendering (`react-markdown`)
+  - Input bar with send button
+  - Tool recommendation links rendered as clickable cards when the AI mentions tool slugs
+- **Mobile**: Full-width bottom sheet (100vw, 70vh)
+- Messages persisted in `localStorage` key `legalChatHistory` (cleared on "New Chat" button)
 
-**Q4 — Have documents?** (yes/no) — if yes, boost AI analysis tools (Red Flag Scanner, Contract Comparison, Clause Finder)
+## Hook: `useLegalChat`
 
-**Q5 — Main goal** (4 options: understand rights / calculate something / check risks / get guidance) — further filters tool recommendations
+- Manages `messages: {role, content}[]` state
+- SSE streaming parser (line-by-line, handles `[DONE]`, partial JSON, CRLF)
+- Progressive assistant message update (same pattern as existing AI tools)
+- `sendMessage(text)` → appends user msg, streams assistant response
+- `clearChat()` → resets messages
 
-**Q6 — Optional free text** — displayed but not used for logic (keeps it simple)
+## System Prompt (Key Excerpt)
 
-### Scoring Logic (in `quizData.ts`)
 ```text
-situationMap: Record<string, string[]>  // situation → array of tool IDs
-goalBoost: Record<string, string[]>     // goal → bonus tool IDs
-hasDocumentsBoost: string[]             // AI tool IDs to add if user has docs
+You are LegallySpoken's AI Legal Assistant. You help users find the right 
+free legal tool and answer general legal questions.
+
+IMPORTANT: Always begin every response with:
+"*This is general information only — not legal advice. Consult a licensed attorney for your specific situation.*"
+
+You have access to 100+ free tools. When recommending a tool, format it as:
+**[Tool Name](/tools/category/slug)** — short description
+
+When users describe a situation, recommend 1-3 relevant tools.
+When users ask about calculator results, explain in plain English.
+When users ask state-specific questions, note relevant state variations.
 ```
-Final list = intersection of situation tools + goal-filtered + document-boosted, sorted by popularity flag, capped at 6.
 
-## UI Components
+The full tool list (names + slugs + categories) will be embedded in the system prompt from `tools.ts` data.
 
-### Quiz Stepper (`LegalHealthCheckQuiz.tsx`)
-- Modal/dialog or inline section — controlled by `mode` prop (`"modal" | "inline"`)
-- Progress bar using existing `<Progress />` component
-- Large tappable card-style options (not radio buttons) for mobile friendliness
-- Back/Next navigation
-- Results screen with tool cards linking to `/tools/{category}/{slug}`
-- Each result card shows: tool name, short description, "Why recommended" line, estimated time, [Start Tool] button
-- "Related Tools You Might Like" section below main results
-- Action buttons: Retake Quiz, Browse All Tools, Save Results (localStorage)
-- Disclaimer footer on every step
+## Files Summary
 
-### Homepage Teaser Card
-- Placed between Stats Bar and Popular Tools
-- Headline: "Not sure which legal tool you need?"
-- Subheadline + primary CTA button that opens the quiz inline or navigates to `/legal-health-check`
-- Clean card with Shield/ClipboardCheck icon, matching existing design tokens
-
-### Standalone Page (`/legal-health-check`)
-- Full-page version with Head/SEO metadata
-- Same quiz component rendered inline
-- Good for direct linking and SEO ("free legal health check quiz")
-
-## Mobile
-- Questions render full-width with large touch targets (min 48px height option buttons)
-- Single column layout, no horizontal scrolling
-- Progress bar always visible at top
-
-## Data Flow
-- All client-side — no database, no API calls
-- Results optionally saved to `localStorage` key `legalHealthCheckResults`
-- No authentication required
+| File | Change |
+|---|---|
+| `supabase/functions/legal-chat/index.ts` | Create — streaming chat edge function |
+| `src/components/chat/LegalChatWidget.tsx` | Create — floating chat widget with full UI |
+| `src/components/chat/useLegalChat.ts` | Create — chat state + streaming hook |
+| `src/App.tsx` | Edit — add `<LegalChatWidget />` to global layout |
 
