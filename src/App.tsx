@@ -155,6 +155,7 @@ const App = () => (
           </main>
           <Footer />
         </div>
+        <LegalChatWidget />
       </BrowserRouter>
     </TooltipProvider>
     </AuthProvider>
