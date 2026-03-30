@@ -9,6 +9,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import LegalChatWidget from "@/components/chat/LegalChatWidget";
 import { autoAccidentLaw } from "@/data/autoAccidentLaw";
 import { personalInjuryLaw } from "@/data/personalInjuryLaw";
 import { insuranceLaw } from "@/data/insuranceLaw";
