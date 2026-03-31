@@ -39,6 +39,7 @@ const resourcesLinks = [
   { label: "Legal Clauses", href: "/legal-clauses" },
   { label: "Contract Types", href: "/contract-types" },
   { label: "Blog", href: "/blog" },
+  { label: "About Us", href: "/about" },
 ];
 
 function NavDropdownItem({ href, label, onClick }: { href: string; label: string; onClick?: () => void }) {

@@ -26,6 +26,7 @@ const resourceLinks = [
   { label: "Contract Types", href: "/contract-types" },
   { label: "Find a Lawyer", href: "/lawyer-near-me" },
   { label: "Blog", href: "/blog" },
+  { label: "About Us", href: "/about" },
 ];
 
 const legalLinks = [
