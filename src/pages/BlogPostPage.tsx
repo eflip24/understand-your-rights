@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import DOMPurify from "dompurify";
 import { Link, useParams } from "react-router-dom";
 import { Calendar, User, ArrowLeft, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -78,7 +79,8 @@ export default function BlogPostPage() {
 
   const processedContent = useMemo(() => {
     if (!post?.content) return "";
-    return linkifyLegalContent(addHeadingIds(cleanContent(post.content)));
+    const html = linkifyLegalContent(addHeadingIds(cleanContent(post.content)));
+    return DOMPurify.sanitize(html, { ADD_ATTR: ['id', 'target', 'rel'] });
   }, [post?.content]);
 
   const headings = useMemo(() => {
