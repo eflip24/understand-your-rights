@@ -147,6 +147,7 @@ const App = () => (
                 <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
                 <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
                 <Route path="/lawyer-near-me/:area/:state/:city" element={<LocalLawyersCityPage />} />
+                <Route path="/about" element={<AboutPage />} />
                 <Route path="/disclaimer" element={<DisclaimerPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms-of-service" element={<TermsOfServicePage />} />
