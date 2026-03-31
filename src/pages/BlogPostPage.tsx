@@ -79,7 +79,8 @@ export default function BlogPostPage() {
 
   const processedContent = useMemo(() => {
     if (!post?.content) return "";
-    return linkifyLegalContent(addHeadingIds(cleanContent(post.content)));
+    const html = linkifyLegalContent(addHeadingIds(cleanContent(post.content)));
+    return DOMPurify.sanitize(html, { ADD_ATTR: ['id', 'target', 'rel'] });
   }, [post?.content]);
 
   const headings = useMemo(() => {
