@@ -52,7 +52,6 @@ export default function AboutPage() {
       <Head
         title="About Us | LegallySpoken — Free Legal Tools for Everyone"
         description="Learn about LegallySpoken's mission to provide 100+ free legal tools, plain-English guides, and AI-powered analysis for everyday people across all 50 states."
-        canonicalPath="/about"
       />
 
       {/* Hero */}
