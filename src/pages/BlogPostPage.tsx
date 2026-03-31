@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import DOMPurify from "dompurify";
 import { Link, useParams } from "react-router-dom";
 import { Calendar, User, ArrowLeft, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
