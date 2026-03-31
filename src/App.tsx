@@ -63,6 +63,7 @@ const LocalLawyersAreaPage = React.lazy(() => import("@/pages/LocalLawyersAreaPa
 const LocalLawyersStatePage = React.lazy(() => import("@/pages/LocalLawyersStatePage"));
 const LocalLawyersCityPage = React.lazy(() => import("@/pages/LocalLawyersCityPage"));
 const StateClusterArticlePage = React.lazy(() => import("@/pages/StateClusterArticlePage"));
+const AboutPage = React.lazy(() => import("@/pages/AboutPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
