@@ -116,7 +116,29 @@ export default function LocalLawyersCityPage() {
         </h2>
         <div className="rounded-lg border bg-card p-4 mb-4">
           <h3 className="font-semibold text-foreground mb-1">{cityInfo.courthouse.name}</h3>
-          <p className="text-sm text-muted-foreground">{cityInfo.courthouse.address}</p>
+          <p className="text-sm text-muted-foreground mb-2">{cityInfo.courthouse.address}</p>
+          <div className="flex flex-wrap gap-4">
+            {cityInfo.courthouse.phone && (
+              <a
+                href={`tel:${cityInfo.courthouse.phone.replace(/[^+\d]/g, "")}`}
+                className="inline-flex items-center gap-1.5 text-sm text-accent hover:underline"
+              >
+                <Phone className="h-4 w-4" />
+                {cityInfo.courthouse.phone}
+              </a>
+            )}
+            {cityInfo.courthouse.website && (
+              <a
+                href={cityInfo.courthouse.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-accent hover:underline"
+              >
+                <Globe className="h-4 w-4" />
+                Official Website
+              </a>
+            )}
+          </div>
         </div>
         <Suspense fallback={<Skeleton className="h-[300px] md:h-[400px] w-full rounded-lg" />}>
           <LocalMap
