@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ChevronRight, MapPin, Scale, Clock, Shield } from "lucide-react";
+import { ChevronRight, MapPin, Scale, Clock, Shield, Phone, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import Head from "@/components/seo/Head";
