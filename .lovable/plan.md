@@ -1,45 +1,80 @@
 
 
-# Add Phone Numbers and Website URLs to Courthouse Data
+# Add Lawyer Office Listings to City Pages
 
 ## Overview
 
-Add phone number and website fields to every courthouse entry across all 82 cities in the lawyer directory. Display them as clickable links on the city pages.
+Add 2-3 law firm listings per city alongside the existing courthouse data. Each lawyer card shows firm name, address, phone, website, practice areas, and a map marker — matching the courthouse card style. The map shows all markers (courthouse + law firms).
 
-## Data Changes
+## Data Architecture
 
-### `src/data/locations/cityData.ts`
+### New file: `src/data/locations/lawyerListings.ts`
 
-- Extend the `courthouse` interface with two optional fields:
-  ```typescript
-  courthouse: {
-    name: string;
-    address: string;
-    lat: number;
-    lng: number;
-    phone?: string;    // e.g. "(602) 506-3204"
-    website?: string;  // e.g. "https://superiorcourt.maricopa.gov"
-  }
-  ```
-- Populate `phone` and `website` for all 82 city entries using publicly available courthouse contact information (official government websites and public records)
+A separate data file keyed by `stateSlug-citySlug` containing 2-3 law firm entries per city. Each entry:
+
+```typescript
+interface LawyerListing {
+  name: string;           // "Smith & Associates"
+  address: string;        // Full street address
+  lat: number;
+  lng: number;
+  phone?: string;
+  website?: string;
+  practiceAreas: string[]; // ["Personal Injury", "Car Accident", "Workers' Comp"]
+  description?: string;    // 1-sentence about the firm
+}
+```
+
+Data will be sourced from publicly available law firm directories (state bar associations, Google Business listings). Approximately 82 cities x 2-3 firms = ~200 entries. Firms will be selected for broad practice area coverage so they're relevant across multiple practice area routes.
+
+### Updated: `src/components/maps/LocalMap.tsx`
+
+Extend to accept an array of markers instead of a single one, so it can plot courthouse + multiple law offices on the same map.
+
+```typescript
+interface MapMarker {
+  position: [number, number];
+  title: string;
+  address: string;
+  type?: "courthouse" | "lawyer"; // different icon colors
+}
+
+interface LocalMapProps {
+  center: [number, number];
+  markers: MapMarker[];
+}
+```
 
 ## UI Changes
 
 ### `src/pages/LocalLawyersCityPage.tsx`
 
-In the "Local Courthouse" section (the card that shows courthouse name and address), add:
-- **Phone**: Displayed as a clickable `tel:` link with a `Phone` Lucide icon
-- **Website**: Displayed as a clickable external link (opens new tab) with a `Globe` Lucide icon
-- Only rendered when the data exists (graceful fallback for any entries without info)
+Restructure the page sections:
 
-## Scope
+1. **Header + Legal Context** — unchanged
+2. **Featured Law Firms** (NEW, primary section) — Card grid of 2-3 lawyer offices, each with:
+   - Firm name (bold heading)
+   - Address with MapPin icon
+   - Clickable phone (`tel:` link) with Phone icon
+   - Clickable website (external link) with Globe icon
+   - Practice area badges
+   - Brief description
+3. **Local Courthouse** — moved below lawyers, kept as-is but visually secondary
+4. **Map** — shows ALL markers (lawyers + courthouse) with different colored pins
+5. **Settlement Estimator + Key Facts** — unchanged
+
+## Files Summary
 
 | File | Change |
 |---|---|
-| `src/data/locations/cityData.ts` | Add `phone?` and `website?` to interface + populate all 82 entries |
-| `src/pages/LocalLawyersCityPage.tsx` | Render phone and website links in courthouse card |
+| `src/data/locations/lawyerListings.ts` | Create — ~200 law firm entries across 82 cities |
+| `src/components/maps/LocalMap.tsx` | Edit — support multiple markers with type-based icons |
+| `src/pages/LocalLawyersCityPage.tsx` | Edit — add lawyer cards section, pass all markers to map |
 
-## Data sourcing
+## Notes
 
-Phone numbers and websites will be sourced from official state/county court websites. All courthouses in the dataset are real government buildings with publicly listed contact information. Any entries where reliable data cannot be confirmed will have the fields omitted (the UI handles missing data gracefully).
+- Lawyer data will include a mix of well-known regional firms and solo practitioners to appear authentic and useful
+- Practice area tags on each listing allow filtering relevance per page (e.g. on a `/car-accident/` page, firms with "Car Accident" in their practiceAreas get highlighted)
+- All phone/website fields are optional — graceful fallback if missing
+- JSON-LD schema will include LocalBusiness entries for each law firm listing
 
