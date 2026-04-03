@@ -97,6 +97,117 @@ export const cityData: CityData[] = [
   { name: "Lincoln", slug: "lincoln", state: "nebraska", lat: 40.8136, lng: -96.7026, courthouse: { name: "Lancaster County Courthouse", address: "575 S 10th St, Lincoln, NE 68508", lat: 40.8093, lng: -96.7013, phone: "(402) 441-7281", website: "https://www.lancaster.ne.gov/courts" }, population: 291082 },
   { name: "Reno", slug: "reno", state: "nevada", lat: 39.5296, lng: -119.8138, courthouse: { name: "Washoe County Courthouse", address: "75 Court St, Reno, NV 89501", lat: 39.5295, lng: -119.8137, phone: "(775) 328-3110", website: "https://www.washoecourts.com" }, population: 264165 },
   { name: "Madison", slug: "madison", state: "wisconsin", lat: 43.0731, lng: -89.4012, courthouse: { name: "Dane County Courthouse", address: "215 S Hamilton St, Madison, WI 53703", lat: 43.0723, lng: -89.3840, phone: "(608) 266-4311", website: "https://www.wicourts.gov/courts/circuit/dane.htm" }, population: 269840 },
+
+  // New Jersey (NEW — was missing entirely)
+  { name: "Newark", slug: "newark", state: "new-jersey", lat: 40.7357, lng: -74.1724, courthouse: { name: "Essex County Historic Courthouse", address: "470 Dr Martin Luther King Jr Blvd, Newark, NJ 07102", lat: 40.7410, lng: -74.1710, phone: "(973) 776-9300", website: "https://www.njcourts.gov" }, population: 311549 },
+  { name: "Jersey City", slug: "jersey-city", state: "new-jersey", lat: 40.7178, lng: -74.0431, courthouse: { name: "Hudson County Courthouse", address: "595 Newark Ave, Jersey City, NJ 07306", lat: 40.7340, lng: -74.0630, phone: "(201) 748-4400", website: "https://www.njcourts.gov" }, population: 292449 },
+
+  // Additional cities for single-city states
+  // New York
+  { name: "Buffalo", slug: "buffalo", state: "new-york", lat: 42.8864, lng: -78.8784, courthouse: { name: "Erie County Hall", address: "92 Franklin St, Buffalo, NY 14202", lat: 42.8868, lng: -78.8770, phone: "(716) 845-9301", website: "https://ww2.nycourts.gov/courts/8jd" }, population: 278349 },
+  { name: "Albany", slug: "albany", state: "new-york", lat: 42.6526, lng: -73.7562, courthouse: { name: "Albany County Courthouse", address: "16 Eagle St, Albany, NY 12207", lat: 42.6496, lng: -73.7538, phone: "(518) 285-8989", website: "https://ww2.nycourts.gov/courts/3jd" }, population: 99224 },
+
+  // Illinois
+  { name: "Springfield", slug: "springfield", state: "illinois", lat: 39.7817, lng: -89.6501, courthouse: { name: "Sangamon County Courthouse", address: "200 S 9th St, Springfield, IL 62701", lat: 39.7980, lng: -89.6480, phone: "(217) 753-6674", website: "https://www.sangamoncountycircuitclerk.org" }, population: 114394 },
+  { name: "Rockford", slug: "rockford", state: "illinois", lat: 42.2711, lng: -89.0940, courthouse: { name: "Winnebago County Courthouse", address: "400 W State St, Rockford, IL 61101", lat: 42.2730, lng: -89.0960, phone: "(815) 319-4500", website: "https://www.illinois17th.com" }, population: 148655 },
+
+  // Indiana
+  { name: "Fort Wayne", slug: "fort-wayne", state: "indiana", lat: 41.0793, lng: -85.1394, courthouse: { name: "Allen County Courthouse", address: "715 S Calhoun St, Fort Wayne, IN 46802", lat: 41.0770, lng: -85.1390, phone: "(260) 449-7245", website: "https://www.allencounty.us/courts" }, population: 263886 },
+
+  // Washington
+  { name: "Spokane", slug: "spokane", state: "washington", lat: 47.6588, lng: -117.4260, courthouse: { name: "Spokane County Courthouse", address: "1116 W Broadway Ave, Spokane, WA 99260", lat: 47.6580, lng: -117.4270, phone: "(509) 477-2211", website: "https://www.spokanecounty.org/courts" }, population: 228989 },
+  { name: "Tacoma", slug: "tacoma", state: "washington", lat: 47.2529, lng: -122.4443, courthouse: { name: "Pierce County Superior Court", address: "930 Tacoma Ave S, Tacoma, WA 98402", lat: 47.2510, lng: -122.4430, phone: "(253) 798-7455", website: "https://www.piercecountywa.gov/courts" }, population: 219346 },
+
+  // Colorado
+  { name: "Colorado Springs", slug: "colorado-springs", state: "colorado", lat: 38.8339, lng: -104.8214, courthouse: { name: "El Paso County Combined Courts", address: "270 S Tejon St, Colorado Springs, CO 80903", lat: 38.8310, lng: -104.8240, phone: "(719) 452-5000", website: "https://www.courts.state.co.us/Courts/District/Index.cfm?District_ID=4" }, population: 478961 },
+
+  // Massachusetts
+  { name: "Worcester", slug: "worcester", state: "massachusetts", lat: 42.2626, lng: -71.8023, courthouse: { name: "Worcester Superior Court", address: "225 Main St, Worcester, MA 01608", lat: 42.2630, lng: -71.8020, phone: "(508) 831-2000", website: "https://www.mass.gov/orgs/worcester-county-superior-court" }, population: 206518 },
+  { name: "Springfield", slug: "springfield-ma", state: "massachusetts", lat: 42.1015, lng: -72.5898, courthouse: { name: "Hampden County Superior Court", address: "50 State St, Springfield, MA 01103", lat: 42.1040, lng: -72.5900, phone: "(413) 748-7740", website: "https://www.mass.gov/orgs/hampden-county-superior-court" }, population: 155929 },
+
+  // Oregon
+  { name: "Eugene", slug: "eugene", state: "oregon", lat: 44.0521, lng: -123.0868, courthouse: { name: "Lane County Circuit Court", address: "125 E 8th Ave, Eugene, OR 97401", lat: 44.0510, lng: -123.0870, phone: "(541) 682-4020", website: "https://www.courts.oregon.gov/courts/lane" }, population: 176654 },
+
+  // New Mexico
+  { name: "Las Cruces", slug: "las-cruces", state: "new-mexico", lat: 32.3199, lng: -106.7637, courthouse: { name: "Third Judicial District Court", address: "201 W Picacho Ave, Las Cruces, NM 88005", lat: 32.3430, lng: -106.7560, phone: "(575) 523-8200", website: "https://www.nmcourts.gov" }, population: 111385 },
+
+  // Georgia
+  { name: "Savannah", slug: "savannah", state: "georgia", lat: 32.0809, lng: -81.0912, courthouse: { name: "Chatham County Courthouse", address: "133 Montgomery St, Savannah, GA 31401", lat: 32.0800, lng: -81.0940, phone: "(912) 652-7200", website: "https://www.chathamcounty.org/Courts" }, population: 147780 },
+  { name: "Augusta", slug: "augusta", state: "georgia", lat: 33.4735, lng: -81.9748, courthouse: { name: "Richmond County Courthouse", address: "735 James Brown Blvd, Augusta, GA 30901", lat: 33.4730, lng: -81.9680, phone: "(706) 821-2460", website: "https://www.augustaga.gov/courts" }, population: 202081 },
+
+  // Minnesota
+  { name: "St. Paul", slug: "st-paul", state: "minnesota", lat: 44.9537, lng: -93.0900, courthouse: { name: "Ramsey County Courthouse", address: "15 W Kellogg Blvd, St. Paul, MN 55102", lat: 44.9460, lng: -93.0960, phone: "(651) 266-8100", website: "https://www.mncourts.gov/Find-Courts/Ramsey" }, population: 311527 },
+
+  // Michigan
+  { name: "Grand Rapids", slug: "grand-rapids", state: "michigan", lat: 42.9634, lng: -85.6681, courthouse: { name: "Kent County Courthouse", address: "180 Ottawa Ave NW, Grand Rapids, MI 49503", lat: 42.9680, lng: -85.6710, phone: "(616) 632-5480", website: "https://www.accesskent.com/Courts" }, population: 198917 },
+
+  // Kentucky
+  { name: "Lexington", slug: "lexington", state: "kentucky", lat: 38.0406, lng: -84.5037, courthouse: { name: "Fayette County Circuit Court", address: "120 N Limestone, Lexington, KY 40507", lat: 38.0500, lng: -84.4960, phone: "(859) 246-2231", website: "https://kcoj.kycourts.net" }, population: 322570 },
+
+  // Maryland
+  { name: "Annapolis", slug: "annapolis", state: "maryland", lat: 38.9784, lng: -76.4922, courthouse: { name: "Anne Arundel County Circuit Court", address: "8 Church Circle, Annapolis, MD 21401", lat: 38.9788, lng: -76.4910, phone: "(410) 222-1397", website: "https://www.mdcourts.gov/circuit/anne-arundel" }, population: 40812 },
+
+  // Alabama
+  { name: "Huntsville", slug: "huntsville", state: "alabama", lat: 34.7304, lng: -86.5861, courthouse: { name: "Madison County Courthouse", address: "100 Northside Square, Huntsville, AL 35801", lat: 34.7300, lng: -86.5860, phone: "(256) 532-3300", website: "https://www.madisoncountyal.gov/courts" }, population: 215006 },
+  { name: "Mobile", slug: "mobile", state: "alabama", lat: 30.6954, lng: -88.0399, courthouse: { name: "Mobile County Courthouse", address: "205 Government St, Mobile, AL 36602", lat: 30.6890, lng: -88.0430, phone: "(251) 574-8400", website: "https://www.mobilecountyal.gov/courts" }, population: 187041 },
+
+  // Connecticut
+  { name: "New Haven", slug: "new-haven", state: "connecticut", lat: 41.3083, lng: -72.9279, courthouse: { name: "New Haven Superior Court", address: "235 Church St, New Haven, CT 06510", lat: 41.3070, lng: -72.9270, phone: "(203) 503-6800", website: "https://www.jud.ct.gov" }, population: 134023 },
+
+  // Iowa
+  { name: "Cedar Rapids", slug: "cedar-rapids", state: "iowa", lat: 41.9779, lng: -91.6656, courthouse: { name: "Linn County Courthouse", address: "51 3rd Ave Bridge, Cedar Rapids, IA 52401", lat: 41.9770, lng: -91.6660, phone: "(319) 398-3411", website: "https://www.iowacourts.gov" }, population: 137710 },
+
+  // Arkansas
+  { name: "Fayetteville", slug: "fayetteville", state: "arkansas", lat: 36.0626, lng: -94.1574, courthouse: { name: "Washington County Circuit Court", address: "280 N College Ave, Fayetteville, AR 72701", lat: 36.0660, lng: -94.1640, phone: "(479) 444-1538", website: "https://www.arcourts.gov" }, population: 93949 },
+
+  // Mississippi
+  { name: "Gulfport", slug: "gulfport", state: "mississippi", lat: 30.3674, lng: -89.0928, courthouse: { name: "Harrison County Courthouse", address: "1801 23rd Ave, Gulfport, MS 39501", lat: 30.3710, lng: -89.0930, phone: "(228) 865-4072", website: "https://www.co.harrison.ms.us/courts" }, population: 72076 },
+
+  // Delaware
+  { name: "Dover", slug: "dover", state: "delaware", lat: 39.1582, lng: -75.5244, courthouse: { name: "Kent County Courthouse", address: "38 The Green, Dover, DE 19901", lat: 39.1580, lng: -75.5240, phone: "(302) 735-1900", website: "https://courts.delaware.gov/superior" }, population: 39403 },
+
+  // Hawaii
+  { name: "Hilo", slug: "hilo", state: "hawaii", lat: 19.7241, lng: -155.0868, courthouse: { name: "Hilo Circuit Court", address: "777 Kilauea Ave, Hilo, HI 96720", lat: 19.7170, lng: -155.0810, phone: "(808) 961-7470", website: "https://www.courts.state.hi.us" }, population: 46704 },
+
+  // Alaska
+  { name: "Fairbanks", slug: "fairbanks", state: "alaska", lat: 64.8378, lng: -147.7164, courthouse: { name: "Fairbanks Superior Court", address: "101 Lacey St, Fairbanks, AK 99701", lat: 64.8400, lng: -147.7210, phone: "(907) 452-9277", website: "https://courts.alaska.gov/main/ctdir-fairbanks.htm" }, population: 32515 },
+
+  // Idaho
+  { name: "Nampa", slug: "nampa", state: "idaho", lat: 43.5407, lng: -116.5635, courthouse: { name: "Canyon County Courthouse", address: "1115 Albany St, Caldwell, ID 83605", lat: 43.6630, lng: -116.6870, phone: "(208) 454-7300", website: "https://www.isc.idaho.gov" }, population: 100200 },
+
+  // Montana
+  { name: "Missoula", slug: "missoula", state: "montana", lat: 46.8721, lng: -113.9940, courthouse: { name: "Missoula County Courthouse", address: "200 W Broadway, Missoula, MT 59802", lat: 46.8720, lng: -113.9930, phone: "(406) 258-4780", website: "https://www.missoulacounty.us/courts" }, population: 75516 },
+
+  // Kansas
+  { name: "Overland Park", slug: "overland-park", state: "kansas", lat: 38.9822, lng: -94.6708, courthouse: { name: "Johnson County Courthouse", address: "100 N Kansas Ave, Olathe, KS 66061", lat: 38.8840, lng: -94.8180, phone: "(913) 715-3300", website: "https://www.jocogov.org/department/district-court" }, population: 197238 },
+
+  // South Dakota
+  { name: "Rapid City", slug: "rapid-city", state: "south-dakota", lat: 44.0805, lng: -103.2310, courthouse: { name: "Pennington County Courthouse", address: "315 St. Joseph St, Rapid City, SD 57701", lat: 44.0810, lng: -103.2300, phone: "(605) 394-2575", website: "https://ujs.sd.gov" }, population: 74703 },
+
+  // North Dakota
+  { name: "Bismarck", slug: "bismarck", state: "north-dakota", lat: 46.8083, lng: -100.7837, courthouse: { name: "Burleigh County Courthouse", address: "514 E Thayer Ave, Bismarck, ND 58501", lat: 46.8080, lng: -100.7830, phone: "(701) 222-6690", website: "https://www.ndcourts.gov" }, population: 73622 },
+
+  // Vermont
+  { name: "Rutland", slug: "rutland", state: "vermont", lat: 43.6106, lng: -72.9726, courthouse: { name: "Rutland Superior Court", address: "83 Center St, Rutland, VT 05701", lat: 43.6100, lng: -72.9720, phone: "(802) 786-5887", website: "https://www.vermontjudiciary.org/courts/rutland" }, population: 15807 },
+
+  // West Virginia
+  { name: "Huntington", slug: "huntington", state: "west-virginia", lat: 38.4192, lng: -82.4452, courthouse: { name: "Cabell County Courthouse", address: "750 5th Ave, Huntington, WV 25701", lat: 38.4190, lng: -82.4450, phone: "(304) 526-8625", website: "https://www.courtswv.gov" }, population: 46048 },
+
+  // New Hampshire
+  { name: "Nashua", slug: "nashua", state: "new-hampshire", lat: 42.7654, lng: -71.4676, courthouse: { name: "Hillsborough County Superior Court South", address: "30 Spring St, Nashua, NH 03060", lat: 42.7640, lng: -71.4680, phone: "(603) 594-3080", website: "https://www.courts.nh.gov" }, population: 91322 },
+
+  // Maine
+  { name: "Bangor", slug: "bangor", state: "maine", lat: 44.8012, lng: -68.7778, courthouse: { name: "Penobscot County Courthouse", address: "97 Hammond St, Bangor, ME 04401", lat: 44.7980, lng: -68.7760, phone: "(207) 561-2300", website: "https://www.courts.maine.gov" }, population: 32029 },
+
+  // Wyoming
+  { name: "Casper", slug: "casper", state: "wyoming", lat: 42.8666, lng: -106.3131, courthouse: { name: "Natrona County Courthouse", address: "200 N Center St, Casper, WY 82601", lat: 42.8670, lng: -106.3130, phone: "(307) 235-9244", website: "https://www.courts.state.wy.us" }, population: 58610 },
+
+  // South Carolina
+  { name: "Columbia", slug: "columbia", state: "south-carolina", lat: 34.0007, lng: -81.0348, courthouse: { name: "Richland County Courthouse", address: "1701 Main St, Columbia, SC 29201", lat: 34.0050, lng: -81.0340, phone: "(803) 576-1950", website: "https://www.sccourts.org" }, population: 136632 },
+  { name: "Greenville", slug: "greenville", state: "south-carolina", lat: 34.8526, lng: -82.3940, courthouse: { name: "Greenville County Courthouse", address: "305 E North St, Greenville, SC 29601", lat: 34.8540, lng: -82.3940, phone: "(864) 467-7175", website: "https://www.sccourts.org" }, population: 72095 },
+
+  // Rhode Island
+  { name: "Warwick", slug: "warwick", state: "rhode-island", lat: 41.7001, lng: -71.4162, courthouse: { name: "Kent County Courthouse", address: "222 Quaker Ln, Warwick, RI 02886", lat: 41.6990, lng: -71.4470, phone: "(401) 822-1311", website: "https://www.courts.ri.gov" }, population: 82823 },
 ];
 
 export function getCitiesByState(stateSlug: string): CityData[] {
