@@ -1,80 +1,38 @@
 
 
-# Add Lawyer Office Listings to City Pages
+# Expand City Coverage to All 50 States
 
-## Overview
+## Current State
 
-Add 2-3 law firm listings per city alongside the existing courthouse data. Each lawyer card shows firm name, address, phone, website, practice areas, and a map marker — matching the courthouse card style. The map shows all markers (courthouse + law firms).
+- 50 states defined in `stateData.ts`
+- 78 cities across 49 states in `cityData.ts` (New Jersey is the only state with zero cities)
+- 30 states have only 1 city each — these need 1-2 more cities for better coverage
+- `lawyerListings.ts` has entries for existing cities and needs entries for all new cities
 
-## Data Architecture
+## What Changes
 
-### New file: `src/data/locations/lawyerListings.ts`
+### 1. `src/data/locations/cityData.ts`
+- Add New Jersey cities (Newark, Jersey City)
+- Add 1-2 additional cities to each of the ~30 states that currently only have 1 city
+- Target: ~50 new city entries, bringing the total from 78 to ~130
+- Each entry includes: name, slug, state, lat/lng, courthouse (name, address, coordinates, phone, website), population
 
-A separate data file keyed by `stateSlug-citySlug` containing 2-3 law firm entries per city. Each entry:
+### 2. `src/data/locations/lawyerListings.ts`
+- Add 2-3 law firm listings for each new city (~100-150 new entries)
+- Each entry includes: name, address, lat/lng, phone, website, practiceAreas array, description
 
-```typescript
-interface LawyerListing {
-  name: string;           // "Smith & Associates"
-  address: string;        // Full street address
-  lat: number;
-  lng: number;
-  phone?: string;
-  website?: string;
-  practiceAreas: string[]; // ["Personal Injury", "Car Accident", "Workers' Comp"]
-  description?: string;    // 1-sentence about the firm
-}
-```
-
-Data will be sourced from publicly available law firm directories (state bar associations, Google Business listings). Approximately 82 cities x 2-3 firms = ~200 entries. Firms will be selected for broad practice area coverage so they're relevant across multiple practice area routes.
-
-### Updated: `src/components/maps/LocalMap.tsx`
-
-Extend to accept an array of markers instead of a single one, so it can plot courthouse + multiple law offices on the same map.
-
-```typescript
-interface MapMarker {
-  position: [number, number];
-  title: string;
-  address: string;
-  type?: "courthouse" | "lawyer"; // different icon colors
-}
-
-interface LocalMapProps {
-  center: [number, number];
-  markers: MapMarker[];
-}
-```
-
-## UI Changes
-
-### `src/pages/LocalLawyersCityPage.tsx`
-
-Restructure the page sections:
-
-1. **Header + Legal Context** — unchanged
-2. **Featured Law Firms** (NEW, primary section) — Card grid of 2-3 lawyer offices, each with:
-   - Firm name (bold heading)
-   - Address with MapPin icon
-   - Clickable phone (`tel:` link) with Phone icon
-   - Clickable website (external link) with Globe icon
-   - Practice area badges
-   - Brief description
-3. **Local Courthouse** — moved below lawyers, kept as-is but visually secondary
-4. **Map** — shows ALL markers (lawyers + courthouse) with different colored pins
-5. **Settlement Estimator + Key Facts** — unchanged
-
-## Files Summary
+## Scope Summary
 
 | File | Change |
 |---|---|
-| `src/data/locations/lawyerListings.ts` | Create — ~200 law firm entries across 82 cities |
-| `src/components/maps/LocalMap.tsx` | Edit — support multiple markers with type-based icons |
-| `src/pages/LocalLawyersCityPage.tsx` | Edit — add lawyer cards section, pass all markers to map |
+| `src/data/locations/cityData.ts` | Add ~50 new city entries |
+| `src/data/locations/lawyerListings.ts` | Add ~100-150 new lawyer listings for new cities |
 
-## Notes
+No UI or routing changes needed — the existing dynamic routing and components already handle new data automatically.
 
-- Lawyer data will include a mix of well-known regional firms and solo practitioners to appear authentic and useful
-- Practice area tags on each listing allow filtering relevance per page (e.g. on a `/car-accident/` page, firms with "Car Accident" in their practiceAreas get highlighted)
-- All phone/website fields are optional — graceful fallback if missing
-- JSON-LD schema will include LocalBusiness entries for each law firm listing
+## Priority Cities to Add
+
+States getting their first city: New Jersey (Newark, Jersey City)
+
+States getting additional cities (currently 1 each): e.g. Alaska (+Fairbanks), Alabama (+Huntsville), Colorado (+Colorado Springs), Connecticut (+Hartford), Georgia (+Savannah), Illinois (+Springfield), Indiana (+Fort Wayne), Massachusetts (+Worcester), Michigan (+Grand Rapids), etc.
 
