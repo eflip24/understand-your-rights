@@ -374,6 +374,242 @@ export const lawyerListings: Record<string, LawyerListing[]> = {
     { name: "Norris Injury Lawyers", address: "300 Richard Arrington Jr Blvd N, Birmingham, AL 35203", lat: 33.5190, lng: -86.8080, phone: "(205) 383-7377", website: "https://www.norrislawfirm.com", practiceAreas: ["Personal Injury", "Car Accident", "Truck Accident"], description: "Birmingham injury attorneys with a passion for justice." },
     { name: "Marsh Rickard & Bryan", address: "800 Shades Creek Pkwy, Birmingham, AL 35209", lat: 33.4870, lng: -86.7970, phone: "(205) 879-5020", website: "https://www.marshrickard.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Wrongful Death"], description: "Experienced Birmingham trial attorneys." },
   ],
+
+  // New Jersey (NEW)
+  "new-jersey-newark": [
+    { name: "Davis Saperstein & Salomon", address: "375 Cedar Ln, Teaneck, NJ 07666", lat: 40.8870, lng: -74.0100, phone: "(201) 907-5000", website: "https://www.dsslaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Medical Malpractice"], description: "One of New Jersey's top-rated personal injury firms." },
+    { name: "Wilentz Goldman & Spitzer", address: "90 Woodbridge Center Dr, Woodbridge, NJ 07095", lat: 40.5570, lng: -74.2870, phone: "(732) 636-8000", website: "https://www.wilentz.com", practiceAreas: ["Personal Injury", "Employment Law", "Business Litigation"], description: "Full-service New Jersey law firm with deep roots." },
+  ],
+  "new-jersey-jersey-city": [
+    { name: "Brach Eichler", address: "101 Eisenhower Pkwy, Roseland, NJ 07068", lat: 40.8230, lng: -74.3110, phone: "(973) 228-5700", website: "https://www.bracheichler.com", practiceAreas: ["Personal Injury", "Healthcare Law", "Real Estate"], description: "Prominent New Jersey firm with diverse practice areas." },
+    { name: "Blume Forte Fried Zerres & Molinari", address: "1 Main St, Chatham, NJ 07928", lat: 40.7410, lng: -74.3830, phone: "(973) 635-5400", website: "https://www.blumeforte.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Wrongful Death"], description: "New Jersey personal injury specialists." },
+  ],
+
+  // New York additional cities
+  "new-york-buffalo": [
+    { name: "Cellino Law", address: "510 Ellicott St, Buffalo, NY 14203", lat: 42.8870, lng: -78.8720, phone: "(716) 888-8888", website: "https://www.cellinolaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Well-known Buffalo personal injury firm." },
+    { name: "Brown Chiari", address: "1100 Wehrle Dr, Williamsville, NY 14221", lat: 42.9620, lng: -78.7370, phone: "(716) 631-5400", website: "https://www.brownchiari.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Wrongful Death"], description: "Western New York's trusted trial attorneys." },
+  ],
+  "new-york-albany": [
+    { name: "Martin Harding & Mazzotti", address: "1222 Troy-Schenectady Rd, Latham, NY 12110", lat: 42.7530, lng: -73.7590, phone: "(518) 862-1111", website: "https://www.1800law1010.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Capital Region's well-known injury attorneys." },
+    { name: "Powers & Santola", address: "39 North Pearl St, Albany, NY 12207", lat: 42.6530, lng: -73.7520, phone: "(518) 465-5995", website: "https://www.powers-santola.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Construction Accident"], description: "Albany personal injury trial lawyers." },
+  ],
+
+  // Illinois additional cities
+  "illinois-springfield": [
+    { name: "Kanoski Bresney", address: "2730 S MacArthur Blvd, Springfield, IL 62704", lat: 39.7630, lng: -89.6830, phone: "(217) 523-7742", website: "https://www.kanoski.com", practiceAreas: ["Personal Injury", "Car Accident", "Truck Accident"], description: "Central Illinois personal injury leaders." },
+    { name: "Londrigan Potter & Randle", address: "720 W Edwards St, Springfield, IL 62704", lat: 39.7950, lng: -89.6560, phone: "(217) 544-8441", website: "https://www.lpr-law.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Wrongful Death"], description: "Springfield trial attorneys with a strong track record." },
+  ],
+  "illinois-rockford": [
+    { name: "Black & Jones", address: "200 E State St, Rockford, IL 61104", lat: 42.2710, lng: -89.0880, phone: "(815) 967-1000", website: "https://www.blackandjones.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Rockford's trusted personal injury lawyers." },
+    { name: "Reno & Zahm", address: "115 N Court St, Rockford, IL 61101", lat: 42.2740, lng: -89.0940, phone: "(815) 987-4050", website: "https://www.renozahm.com", practiceAreas: ["Personal Injury", "Business Litigation", "Real Estate"], description: "Full-service Rockford law firm." },
+  ],
+
+  // Indiana
+  "indiana-fort-wayne": [
+    { name: "Crosson Law Group", address: "3235 W Jefferson Blvd, Fort Wayne, IN 46802", lat: 41.0770, lng: -85.1640, phone: "(260) 422-1637", website: "https://www.crossonlaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Medical Malpractice"], description: "Fort Wayne injury attorneys focused on results." },
+    { name: "Barkes Weaver & Glick", address: "204 S Main St, South Bend, IN 46601", lat: 41.6754, lng: -86.2518, phone: "(574) 233-7100", website: "https://www.bwglaw.com", practiceAreas: ["Personal Injury", "Workers' Compensation", "Wrongful Death"], description: "Northern Indiana personal injury firm." },
+  ],
+
+  // Washington
+  "washington-spokane": [
+    { name: "Crary Clark Domanico & Chuang", address: "500 S Balch Rd, Spokane Valley, WA 99206", lat: 47.6530, lng: -117.3500, phone: "(509) 926-4900", website: "https://www.ccdc-law.com", practiceAreas: ["Personal Injury", "Car Accident", "Employment Law"], description: "Spokane Valley's experienced trial attorneys." },
+    { name: "Maurer Law", address: "108 N Washington St, Spokane, WA 99201", lat: 47.6590, lng: -117.4260, phone: "(509) 326-3700", website: "https://www.maurerlaw.com", practiceAreas: ["Personal Injury", "Truck Accident", "Wrongful Death"], description: "Spokane personal injury attorneys." },
+  ],
+  "washington-tacoma": [
+    { name: "Rush Hannula Harkins & Kyler", address: "4701 S 19th St, Tacoma, WA 98405", lat: 47.2270, lng: -122.4610, phone: "(253) 383-5388", website: "https://www.rfrlaw.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Wrongful Death"], description: "Tacoma trial firm with decades of experience." },
+    { name: "Ladenburg Thalmann & Roberts", address: "6033 Tacoma Mall Blvd, Tacoma, WA 98409", lat: 47.2060, lng: -122.4710, phone: "(253) 272-5226", website: "https://www.ladenburglaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Insurance Claims"], description: "South Puget Sound injury attorneys." },
+  ],
+
+  // Colorado
+  "colorado-colorado-springs": [
+    { name: "Boatfield Deal Craig & Ecker", address: "6 S Tejon St, Colorado Springs, CO 80903", lat: 38.8320, lng: -104.8240, phone: "(719) 633-6620", website: "https://www.boatfieldlaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Colorado Springs personal injury attorneys." },
+    { name: "Patterson Weaver & Rall", address: "530 Communication Circle, Colorado Springs, CO 80905", lat: 38.8280, lng: -104.8360, phone: "(719) 520-9909", website: "https://www.pwrinjurylaw.com", practiceAreas: ["Personal Injury", "Truck Accident", "Motorcycle Accident"], description: "Dedicated injury lawyers in the Pikes Peak region." },
+  ],
+
+  // Massachusetts
+  "massachusetts-worcester": [
+    { name: "Mirick O'Connell", address: "100 Front St, Worcester, MA 01608", lat: 42.2640, lng: -71.7990, phone: "(508) 791-8500", website: "https://www.mirickoconnell.com", practiceAreas: ["Personal Injury", "Employment Law", "Business Litigation"], description: "Worcester's established full-service law firm." },
+    { name: "Seder & Chandler", address: "339 Main St, Worcester, MA 01608", lat: 42.2620, lng: -71.8030, phone: "(508) 757-7721", website: "https://www.sedchan.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Real Estate"], description: "Central Massachusetts attorneys since 1918." },
+  ],
+  "massachusetts-springfield-ma": [
+    { name: "Doherty Wallace Pillsbury & Murphy", address: "1 Monarch Pl, Springfield, MA 01144", lat: 42.1020, lng: -72.5890, phone: "(413) 733-3111", website: "https://www.dwpm.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Insurance Defense"], description: "Western Massachusetts litigation leaders." },
+    { name: "Pellegrini Seeley Ryan & Blakesley", address: "1145 Main St, Springfield, MA 01103", lat: 42.1050, lng: -72.5910, phone: "(413) 732-3456", website: "https://www.pellegrinilaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Springfield injury attorneys." },
+  ],
+
+  // Oregon
+  "oregon-eugene": [
+    { name: "Hershner Hunter", address: "180 E 11th Ave, Eugene, OR 97401", lat: 44.0530, lng: -123.0850, phone: "(541) 686-8511", website: "https://www.hershnerhunter.com", practiceAreas: ["Personal Injury", "Business Litigation", "Employment Law"], description: "Lane County's trusted legal team." },
+    { name: "Johnson Johnson Lucas & Middleton", address: "975 Oak St, Eugene, OR 97401", lat: 44.0510, lng: -123.0920, phone: "(541) 484-2434", website: "https://www.jjlm.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Eugene personal injury specialists." },
+  ],
+
+  // New Mexico
+  "new-mexico-las-cruces": [
+    { name: "Crenshaw Dupree & Milam", address: "300 N Main St, Las Cruces, NM 88001", lat: 32.3480, lng: -106.7510, phone: "(575) 524-8812", website: "https://www.cdmlaw.com", practiceAreas: ["Personal Injury", "Insurance Defense", "Employment Law"], description: "Southern New Mexico's established trial firm." },
+    { name: "Law Office of Michael E. Cain", address: "1100 S Main St, Las Cruces, NM 88005", lat: 32.3310, lng: -106.7530, phone: "(575) 541-6110", website: "https://www.caborlaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Criminal Defense"], description: "Las Cruces attorney fighting for injury victims." },
+  ],
+
+  // Georgia
+  "georgia-savannah": [
+    { name: "Harris Lowry Manton", address: "41 Park of Commerce Way, Savannah, GA 31405", lat: 32.0380, lng: -81.1240, phone: "(912) 651-9967", website: "https://www.hlmlawfirm.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Product Liability"], description: "Savannah trial attorneys with a national reputation." },
+    { name: "Bouhan Falligant", address: "14 E Oglethorpe Ave, Savannah, GA 31401", lat: 32.0820, lng: -81.0880, phone: "(912) 232-7000", website: "https://www.bouhan.com", practiceAreas: ["Personal Injury", "Maritime Law", "Business Litigation"], description: "One of Savannah's oldest and most respected firms." },
+  ],
+  "georgia-augusta": [
+    { name: "James Brown Law", address: "201 8th St, Augusta, GA 30901", lat: 33.4750, lng: -81.9670, phone: "(706) 722-1200", website: "https://www.jamesbrownlaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Augusta personal injury trial lawyers." },
+    { name: "Hull Barrett", address: "711 Broad St, Augusta, GA 30901", lat: 33.4740, lng: -81.9660, phone: "(706) 722-4481", website: "https://www.hullbarrett.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Business Law"], description: "Established Augusta firm with broad expertise." },
+  ],
+
+  // Minnesota
+  "minnesota-st-paul": [
+    { name: "Schwebel Goetz & Sieben", address: "5120 IDS Center, Minneapolis, MN 55402", lat: 44.9780, lng: -93.2720, phone: "(612) 377-7777", website: "https://www.schwebel.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Minnesota's well-known personal injury firm." },
+    { name: "Meshbesher & Spence", address: "1616 Park Ave S, Minneapolis, MN 55404", lat: 44.9620, lng: -93.2620, phone: "(612) 339-9121", website: "https://www.meshbesher.com", practiceAreas: ["Personal Injury", "Criminal Defense", "Medical Malpractice"], description: "Twin Cities trial attorneys." },
+  ],
+
+  // Michigan
+  "michigan-grand-rapids": [
+    { name: "Sinas Dramis", address: "737 S Prospect Ave, Grand Rapids, MI 49503", lat: 42.9560, lng: -85.6600, phone: "(616) 301-3333", website: "https://www.sinasdramis.com", practiceAreas: ["Personal Injury", "Car Accident", "Truck Accident"], description: "West Michigan's trusted personal injury firm." },
+    { name: "Varnum", address: "333 Bridge St NW, Grand Rapids, MI 49504", lat: 42.9680, lng: -85.6760, phone: "(616) 336-6000", website: "https://www.varnumlaw.com", practiceAreas: ["Personal Injury", "Employment Law", "Business Litigation"], description: "Major Michigan law firm with Grand Rapids roots." },
+  ],
+
+  // Kentucky
+  "kentucky-lexington": [
+    { name: "Morgan & Morgan", address: "333 W Vine St, Lexington, KY 40507", lat: 38.0480, lng: -84.5010, phone: "(859) 286-8368", website: "https://www.forthepeople.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "America's largest injury firm with Lexington presence." },
+    { name: "Roberts Law Office", address: "500 W Jefferson St, Louisville, KY 40202", lat: 38.2540, lng: -85.7610, phone: "(859) 231-0202", website: "https://www.robertslawoffice.com", practiceAreas: ["Personal Injury", "Car Accident", "Wrongful Death"], description: "Lexington personal injury attorneys." },
+  ],
+
+  // Maryland
+  "maryland-annapolis": [
+    { name: "Jezic & Moyse", address: "2730 University Blvd W, Silver Spring, MD 20902", lat: 39.0190, lng: -77.0420, phone: "(410) 653-3333", website: "https://www.jezicfirm.com", practiceAreas: ["Criminal Defense", "Personal Injury", "DUI"], description: "Maryland defense and injury attorneys." },
+    { name: "Simms Showers", address: "5 Park Center Ct, Owings Mills, MD 21117", lat: 39.4190, lng: -76.7830, phone: "(410) 761-7800", website: "https://www.simmsshowerslaw.com", practiceAreas: ["Personal Injury", "Workers' Compensation", "Car Accident"], description: "Maryland injury firm with statewide reach." },
+  ],
+
+  // Alabama additional
+  "alabama-huntsville": [
+    { name: "Morris King & Hodge", address: "200 Pratt Ave NE, Huntsville, AL 35801", lat: 34.7330, lng: -86.5830, phone: "(256) 536-0588", website: "https://www.morrisking.com", practiceAreas: ["Personal Injury", "Car Accident", "Wrongful Death"], description: "North Alabama's trusted injury attorneys." },
+    { name: "Martinson & Beason", address: "505 20th St S, Birmingham, AL 35233", lat: 33.5110, lng: -86.8040, phone: "(256) 533-1667", website: "https://www.martinsonandbeason.com", practiceAreas: ["Personal Injury", "Truck Accident", "Product Liability"], description: "Trial lawyers serving the Huntsville area." },
+  ],
+  "alabama-mobile": [
+    { name: "Cunningham Bounds", address: "1601 Dauphin St, Mobile, AL 36604", lat: 30.6910, lng: -88.0630, phone: "(251) 471-6191", website: "https://www.cunninghambounds.com", practiceAreas: ["Personal Injury", "Maritime Law", "Product Liability"], description: "Nationally recognized Mobile trial firm." },
+    { name: "Tobias & Comer Law", address: "3263 Bel Air Mall, Mobile, AL 36606", lat: 30.6700, lng: -88.1120, phone: "(251) 432-5001", website: "https://www.tobiasandcomer.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Mobile personal injury attorneys." },
+  ],
+
+  // Connecticut
+  "connecticut-new-haven": [
+    { name: "Jacobs & Jacobs", address: "700 State St, New Haven, CT 06511", lat: 41.3100, lng: -72.9250, phone: "(203) 777-7777", website: "https://www.jacobsandjacobs.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "New Haven personal injury attorneys." },
+    { name: "Loughlin FitzGerald", address: "148 Eastern Blvd, Glastonbury, CT 06033", lat: 41.7120, lng: -72.6030, phone: "(860) 633-6700", website: "https://www.lflawct.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Wrongful Death"], description: "Connecticut trial lawyers." },
+  ],
+
+  // Iowa
+  "iowa-cedar-rapids": [
+    { name: "Simmons Perrine Moyer Bergman", address: "115 3rd St SE, Cedar Rapids, IA 52401", lat: 41.9760, lng: -91.6640, phone: "(319) 366-7641", website: "https://www.spmb.com", practiceAreas: ["Personal Injury", "Workers' Compensation", "Business Litigation"], description: "Cedar Rapids full-service law firm." },
+    { name: "Phelan Tucker Law", address: "321 1st Ave NE, Cedar Rapids, IA 52401", lat: 41.9780, lng: -91.6620, phone: "(319) 365-1544", website: "https://www.phelantuckerlaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Employment Law"], description: "Eastern Iowa injury attorneys." },
+  ],
+
+  // Arkansas
+  "arkansas-fayetteville": [
+    { name: "Taylor King Law", address: "1401 S Waldron Rd, Fort Smith, AR 72903", lat: 35.3580, lng: -94.3870, phone: "(479) 443-4357", website: "https://www.taylorkinglaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Truck Accident"], description: "Arkansas injury firm with statewide presence." },
+    { name: "Odom & Elliott", address: "2927 N College Ave, Fayetteville, AR 72703", lat: 36.0820, lng: -94.1610, phone: "(479) 442-7575", website: "https://www.aborpe.com", practiceAreas: ["Personal Injury", "Workers' Compensation", "Medical Malpractice"], description: "Northwest Arkansas trial attorneys." },
+  ],
+
+  // Mississippi
+  "mississippi-gulfport": [
+    { name: "Healy & Jordan", address: "2510 14th St, Gulfport, MS 39501", lat: 30.3700, lng: -89.0900, phone: "(228) 575-4005", website: "https://www.healyjordan.com", practiceAreas: ["Personal Injury", "Car Accident", "Maritime Law"], description: "Gulf Coast personal injury attorneys." },
+    { name: "Rushing & Guice", address: "1000 Highland Colony Pkwy, Ridgeland, MS 39157", lat: 32.4280, lng: -90.1470, phone: "(228) 374-2313", website: "https://www.rushingguice.com", practiceAreas: ["Personal Injury", "Insurance Claims", "Workers' Compensation"], description: "Mississippi injury firm serving the coast." },
+  ],
+
+  // Delaware
+  "delaware-dover": [
+    { name: "Schmittinger & Rodriguez", address: "414 S State St, Dover, DE 19901", lat: 39.1560, lng: -75.5240, phone: "(302) 674-0140", website: "https://www.schmittrod.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Dover's established personal injury firm." },
+    { name: "Schwartz & Schwartz", address: "1140 S State St, Dover, DE 19901", lat: 39.1490, lng: -75.5230, phone: "(302) 678-8700", website: "https://www.schwartzandschwartz.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Wrongful Death"], description: "Delaware injury attorneys with statewide reach." },
+  ],
+
+  // Hawaii
+  "hawaii-hilo": [
+    { name: "Olson Kundig Beal & Buscher", address: "82 Keawe St, Hilo, HI 96720", lat: 19.7250, lng: -155.0850, phone: "(808) 935-3344", website: "https://www.okbblaw.com", practiceAreas: ["Personal Injury", "Real Estate", "Business Law"], description: "Big Island attorneys serving East Hawaii." },
+    { name: "Carlsmith Ball", address: "121 Waianuenue Ave, Hilo, HI 96720", lat: 19.7240, lng: -155.0870, phone: "(808) 935-6644", website: "https://www.carlsmith.com", practiceAreas: ["Personal Injury", "Employment Law", "Environmental Law"], description: "Hawaii's established full-service firm." },
+  ],
+
+  // Alaska
+  "alaska-fairbanks": [
+    { name: "Cook Schuhmann & Groseclose", address: "100 Cushman St, Fairbanks, AK 99701", lat: 64.8400, lng: -147.7180, phone: "(907) 452-1855", website: "https://www.cooklawak.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Interior Alaska's trusted injury attorneys." },
+    { name: "Richmond & Quinn", address: "550 3rd Ave, Fairbanks, AK 99701", lat: 64.8390, lng: -147.7200, phone: "(907) 456-6515", website: "https://www.richmondquinn.com", practiceAreas: ["Personal Injury", "Criminal Defense", "Family Law"], description: "Fairbanks law firm with community roots." },
+  ],
+
+  // Idaho
+  "idaho-nampa": [
+    { name: "Johnson & Lundgreen", address: "1407 W Hays St, Boise, ID 83702", lat: 43.6170, lng: -116.2110, phone: "(208) 375-5481", website: "https://www.jlattorneys.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Treasure Valley personal injury attorneys." },
+    { name: "Skaug Law", address: "1226 E Karcher Rd, Nampa, ID 83687", lat: 43.5520, lng: -116.5440, phone: "(208) 466-0030", website: "https://www.skauglaw.com", practiceAreas: ["Personal Injury", "Family Law", "Criminal Defense"], description: "Nampa attorneys with local expertise." },
+  ],
+
+  // Montana
+  "montana-missoula": [
+    { name: "Datsopoulos MacDonald & Lind", address: "201 W Main St, Missoula, MT 59802", lat: 46.8720, lng: -113.9940, phone: "(406) 728-0810", website: "https://www.dmllaw.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Employment Law"], description: "Missoula's established trial firm." },
+    { name: "Morrison Sherwood Wilson & Deola", address: "401 N Last Chance Gulch, Helena, MT 59601", lat: 46.5870, lng: -112.0380, phone: "(406) 442-3261", website: "https://www.mswdlaw.com", practiceAreas: ["Personal Injury", "Workers' Compensation", "Insurance Claims"], description: "Montana injury attorneys." },
+  ],
+
+  // Kansas
+  "kansas-overland-park": [
+    { name: "Shamberg Johnson & Bergman", address: "2600 Grand Blvd, Kansas City, MO 64108", lat: 39.0850, lng: -94.5830, phone: "(913) 642-0600", website: "https://www.sjblaw.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Product Liability"], description: "Kansas City area trial lawyers." },
+    { name: "McDowell Rice Smith & Buchanan", address: "605 W 47th St, Kansas City, MO 64112", lat: 39.0420, lng: -94.5920, phone: "(816) 753-2020", website: "https://www.mcdowellrice.com", practiceAreas: ["Personal Injury", "Business Litigation", "Employment Law"], description: "Kansas attorneys with a strong regional practice." },
+  ],
+
+  // South Dakota
+  "south-dakota-rapid-city": [
+    { name: "Gunderson Palmer Nelson & Ashmore", address: "506 6th St, Rapid City, SD 57701", lat: 44.0810, lng: -103.2280, phone: "(605) 342-1078", website: "https://www.gpna.com", practiceAreas: ["Personal Injury", "Insurance Defense", "Workers' Compensation"], description: "Black Hills region trial attorneys." },
+    { name: "Whiting Hagg & Dorsey", address: "919 Main St, Rapid City, SD 57701", lat: 44.0790, lng: -103.2260, phone: "(605) 341-1930", website: "https://www.whitinglaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Medical Malpractice"], description: "Western South Dakota personal injury firm." },
+  ],
+
+  // North Dakota
+  "north-dakota-bismarck": [
+    { name: "Pearce & Durick", address: "314 E Thayer Ave, Bismarck, ND 58501", lat: 46.8080, lng: -100.7810, phone: "(701) 223-2890", website: "https://www.pearce-durick.com", practiceAreas: ["Personal Injury", "Business Litigation", "Employment Law"], description: "One of North Dakota's most established firms." },
+    { name: "Zuger Kirmis & Smith", address: "316 N 5th St, Bismarck, ND 58502", lat: 46.8100, lng: -100.7860, phone: "(701) 223-2711", website: "https://www.zkslaw.com", practiceAreas: ["Personal Injury", "Insurance Claims", "Workers' Compensation"], description: "Bismarck trial lawyers." },
+  ],
+
+  // Vermont
+  "vermont-rutland": [
+    { name: "Ryan Smith & Carbine", address: "120 Prospect St, Rutland, VT 05701", lat: 43.6110, lng: -72.9730, phone: "(802) 786-1000", website: "https://www.rfrlaw.com", practiceAreas: ["Personal Injury", "Workers' Compensation", "Real Estate"], description: "Central Vermont full-service law firm." },
+    { name: "Kenlan Schwiebert Facey & Goss", address: "120 S Main St, Rutland, VT 05701", lat: 43.6090, lng: -72.9720, phone: "(802) 775-2381", website: "https://www.ksfglaw.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Business Law"], description: "Rutland attorneys with deep Vermont roots." },
+  ],
+
+  // West Virginia
+  "west-virginia-huntington": [
+    { name: "Ciccarello Del Giudice & Lafon", address: "1219 Virginia St E, Charleston, WV 25301", lat: 38.3510, lng: -81.6240, phone: "(304) 522-1404", website: "https://www.cdllaw.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Wrongful Death"], description: "West Virginia trial attorneys." },
+    { name: "Mani Ellis & Layne", address: "729 3rd Ave, Huntington, WV 25701", lat: 38.4190, lng: -82.4430, phone: "(304) 523-1444", website: "https://www.mel-law.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Huntington personal injury lawyers." },
+  ],
+
+  // New Hampshire
+  "new-hampshire-nashua": [
+    { name: "Devine Millimet", address: "111 Amherst St, Manchester, NH 03101", lat: 42.9940, lng: -71.4640, phone: "(603) 669-1000", website: "https://www.devinemillimet.com", practiceAreas: ["Personal Injury", "Employment Law", "Business Litigation"], description: "New Hampshire's largest full-service law firm." },
+    { name: "Abramson Brown & Dugan", address: "1819 Elm St, Manchester, NH 03104", lat: 42.9870, lng: -71.4630, phone: "(603) 627-1819", website: "https://www.arbd.com", practiceAreas: ["Personal Injury", "Workers' Compensation", "Car Accident"], description: "Southern New Hampshire injury attorneys." },
+  ],
+
+  // Maine
+  "maine-bangor": [
+    { name: "Rudman Winchell", address: "84 Harlow St, Bangor, ME 04401", lat: 44.8010, lng: -68.7780, phone: "(207) 947-4501", website: "https://www.rudmanwinchell.com", practiceAreas: ["Personal Injury", "Workers' Compensation", "Business Law"], description: "Northern Maine's established law firm." },
+    { name: "Eaton Peabody", address: "80 Exchange St, Bangor, ME 04401", lat: 44.8000, lng: -68.7770, phone: "(207) 947-0111", website: "https://www.eatonpeabody.com", practiceAreas: ["Personal Injury", "Real Estate", "Employment Law"], description: "Full-service Maine law firm." },
+  ],
+
+  // Wyoming
+  "wyoming-casper": [
+    { name: "Williams Porter Day & Neville", address: "159 N Wolcott St, Casper, WY 82601", lat: 42.8670, lng: -106.3150, phone: "(307) 265-0700", website: "https://www.wpdn.net", practiceAreas: ["Personal Injury", "Workers' Compensation", "Energy Law"], description: "Central Wyoming's trusted law firm." },
+    { name: "Schwartz Bon Walker & Studer", address: "141 S Center St, Casper, WY 82601", lat: 42.8660, lng: -106.3130, phone: "(307) 235-6681", website: "https://www.schwartzbonlaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Business Litigation"], description: "Casper trial attorneys." },
+  ],
+
+  // South Carolina
+  "south-carolina-columbia": [
+    { name: "Chappell Smith & Arden", address: "1517 Hampton St, Columbia, SC 29201", lat: 34.0050, lng: -81.0370, phone: "(803) 929-3600", website: "https://www.csa-law.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Columbia personal injury attorneys." },
+    { name: "McGowan Hood & Felder", address: "1517 Hampton St, Columbia, SC 29201", lat: 34.0040, lng: -81.0360, phone: "(803) 327-7800", website: "https://www.mcgowanhood.com", practiceAreas: ["Personal Injury", "Medical Malpractice", "Wrongful Death"], description: "South Carolina's injury litigation leaders." },
+  ],
+  "south-carolina-greenville": [
+    { name: "Harrison White", address: "301 N Main St, Greenville, SC 29601", lat: 34.8540, lng: -82.3940, phone: "(864) 235-7009", website: "https://www.harrisonwhite.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Upstate South Carolina injury attorneys." },
+    { name: "Bannister Wyatt & Stalvey", address: "100 Whitsett St, Greenville, SC 29601", lat: 34.8530, lng: -82.3920, phone: "(864) 298-0084", website: "https://www.bwsattorneys.com", practiceAreas: ["Personal Injury", "Truck Accident", "Wrongful Death"], description: "Greenville trial lawyers." },
+  ],
+
+  // Rhode Island
+  "rhode-island-warwick": [
+    { name: "Bottaro Shea Lawyer", address: "160 Mathewson St, Providence, RI 02903", lat: 41.8230, lng: -71.4160, phone: "(401) 463-7200", website: "https://www.bottaroshealawyer.com", practiceAreas: ["Personal Injury", "Car Accident", "Workers' Compensation"], description: "Rhode Island personal injury attorneys." },
+    { name: "d'Oliveira & Associates", address: "1 Richmond Square, Providence, RI 02906", lat: 41.8260, lng: -71.4090, phone: "(401) 349-4779", website: "https://www.dfrlaw.com", practiceAreas: ["Personal Injury", "Car Accident", "Slip and Fall"], description: "Rhode Island injury firm." },
+  ],
 };
 
 export function getLawyerListings(stateSlug: string, citySlug: string): LawyerListing[] {
