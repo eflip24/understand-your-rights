@@ -6,6 +6,18 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+const BANNED_BOTS = /Baiduspider|Sogou|360Spider|YisouSpider|Bytespider|PetalBot|MJ12bot|SemrushBot|AhrefsBot|DotBot|GPTBot|CCBot|python-requests|scrapy|curl\/|wget\//i;
+
+function isBot(req: Request): boolean {
+  const ua = req.headers.get("user-agent") || "";
+  if (!ua || ua.length < 10) return true;
+  if (BANNED_BOTS.test(ua)) return true;
+  const acceptLang = req.headers.get("accept-language");
+  const accept = req.headers.get("accept");
+  if (!acceptLang && !accept) return true;
+  return false;
+}
+
 const TOOLS_INVENTORY = `Contract Reading Time Calculator|/tools/contract/reading-time-calculator|Estimate how long it takes to read a contract.
 Contract Word Counter|/tools/contract/word-counter|Get detailed word and character statistics.
 Legal Jargon Translator|/tools/contract/jargon-translator|Translate legal terms to plain English.
@@ -117,8 +129,22 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  if (isBot(req)) {
+    return new Response(JSON.stringify({ error: "Access denied" }), {
+      status: 403,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
   try {
-    const { messages } = await req.json();
+    const { messages, _hp } = await req.json();
+
+    if (_hp) {
+      return new Response(JSON.stringify({ error: "Access denied" }), {
+        status: 403,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
     if (!messages || !Array.isArray(messages)) {
       return new Response(

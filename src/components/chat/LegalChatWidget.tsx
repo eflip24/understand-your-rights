@@ -14,6 +14,7 @@ const WELCOME_SUGGESTIONS = [
 const LegalChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const { messages, isLoading, error, sendMessage, clearChat } = useLegalChat();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -29,6 +30,7 @@ const LegalChatWidget: React.FC = () => {
 
   const handleSend = () => {
     if (!input.trim() || isLoading) return;
+    if (honeypot) return; // honeypot triggered — silently ignore
     sendMessage(input);
     setInput("");
   };
@@ -192,6 +194,16 @@ const LegalChatWidget: React.FC = () => {
       {/* Input */}
       <div className="border-t border-border bg-background px-3 py-3">
         <div className="flex items-end gap-2">
+          <input
+            type="text"
+            name="website_url"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            className="absolute opacity-0 h-0 w-0 pointer-events-none"
+            aria-hidden="true"
+          />
           <textarea
             ref={inputRef}
             value={input}
