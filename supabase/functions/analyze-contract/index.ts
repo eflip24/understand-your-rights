@@ -5,6 +5,18 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+const BANNED_BOTS = /Baiduspider|Sogou|360Spider|YisouSpider|Bytespider|PetalBot|MJ12bot|SemrushBot|AhrefsBot|DotBot|GPTBot|CCBot|python-requests|scrapy|curl\/|wget\//i;
+
+function isBot(req: Request): boolean {
+  const ua = req.headers.get("user-agent") || "";
+  if (!ua || ua.length < 10) return true;
+  if (BANNED_BOTS.test(ua)) return true;
+  const acceptLang = req.headers.get("accept-language");
+  const accept = req.headers.get("accept");
+  if (!acceptLang && !accept) return true;
+  return false;
+}
+
 const SYSTEM_PROMPTS: Record<string, string> = {
   "red-flag-scanner": `You are a legal contract analyst. Analyze the provided contract text and identify red flags and risky clauses. For each issue found, provide:
 - clause: The exact or paraphrased problematic text
@@ -202,8 +214,22 @@ const TOOL_SCHEMAS: Record<string, any> = {
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
+  if (isBot(req)) {
+    return new Response(JSON.stringify({ error: "Access denied" }), {
+      status: 403,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
   try {
-    const { toolType, text, textA, textB } = await req.json();
+    const { toolType, text, textA, textB, _hp } = await req.json();
+
+    if (_hp) {
+      return new Response(JSON.stringify({ error: "Access denied" }), {
+        status: 403,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
     if (!toolType || !SYSTEM_PROMPTS[toolType]) {
       return new Response(JSON.stringify({ error: "Invalid tool type" }), {
