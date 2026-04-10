@@ -1,38 +1,39 @@
 
 
-# Expand City Coverage to All 50 States
+# Block Bot Traffic (Especially from China)
 
-## Current State
+## Problem
+The site receives heavy bot traffic, particularly from Chinese bots/crawlers, which wastes resources and skews analytics.
 
-- 50 states defined in `stateData.ts`
-- 78 cities across 49 states in `cityData.ts` (New Jersey is the only state with zero cities)
-- 30 states have only 1 city each — these need 1-2 more cities for better coverage
-- `lawyerListings.ts` has entries for existing cities and needs entries for all new cities
+## Solution — Multi-Layer Bot Protection
 
-## What Changes
+### Layer 1: `robots.txt` — Block Known Chinese Bots
+Update `public/robots.txt` to explicitly disallow known Chinese crawler user agents:
+- `Baiduspider`, `Sogou`, `360Spider`, `YisouSpider`, `Bytespider` (TikTok/ByteDance), `PetalBot` (Huawei), `MJ12bot`, `SemrushBot`, `AhrefsBot`, `DotBot`
 
-### 1. `src/data/locations/cityData.ts`
-- Add New Jersey cities (Newark, Jersey City)
-- Add 1-2 additional cities to each of the ~30 states that currently only have 1 city
-- Target: ~50 new city entries, bringing the total from 78 to ~130
-- Each entry includes: name, slug, state, lat/lng, courthouse (name, address, coordinates, phone, website), population
+### Layer 2: Edge Function Middleware — Request Filtering
+Create a new edge function `bot-shield` that acts as a lightweight verification layer for the AI-powered endpoints (legal-chat, analyze-contract) which are the most expensive to serve to bots:
+- Check `User-Agent` against a blocklist of known bot strings
+- Check for suspicious request patterns (missing headers, empty Accept-Language)
+- Return 403 for blocked requests
+- Update `legal-chat` and `analyze-contract` to call this check before processing
 
-### 2. `src/data/locations/lawyerListings.ts`
-- Add 2-3 law firm listings for each new city (~100-150 new entries)
-- Each entry includes: name, address, lat/lng, phone, website, practiceAreas array, description
+### Layer 3: Client-Side Honeypot + Rate Limiting
+Add a hidden honeypot field to interactive forms (chat widget, contract analyzer). Real users won't fill it; bots will. Requests with the honeypot filled get silently dropped.
 
-## Scope Summary
+### Layer 4: Meta Tags
+Add `<meta>` tags in `index.html` to discourage specific bot indexing beyond robots.txt.
+
+## Files
 
 | File | Change |
 |---|---|
-| `src/data/locations/cityData.ts` | Add ~50 new city entries |
-| `src/data/locations/lawyerListings.ts` | Add ~100-150 new lawyer listings for new cities |
+| `public/robots.txt` | Add Disallow rules for ~10 Chinese/spam bot user agents |
+| `supabase/functions/legal-chat/index.ts` | Add user-agent check + reject known bots |
+| `supabase/functions/analyze-contract/index.ts` | Same bot check |
+| `src/components/chat/LegalChatWidget.tsx` | Add honeypot field to chat requests |
+| `index.html` | Add `<meta name="robots">` directives for specific bots |
 
-No UI or routing changes needed — the existing dynamic routing and components already handle new data automatically.
-
-## Priority Cities to Add
-
-States getting their first city: New Jersey (Newark, Jersey City)
-
-States getting additional cities (currently 1 each): e.g. Alaska (+Fairbanks), Alabama (+Huntsville), Colorado (+Colorado Springs), Connecticut (+Hartford), Georgia (+Savannah), Illinois (+Springfield), Indiana (+Fort Wayne), Massachusetts (+Worcester), Michigan (+Grand Rapids), etc.
+## What This Won't Do
+- This cannot block traffic at the CDN/network level (that requires Cloudflare or similar). If you want IP-based geo-blocking (blocking all Chinese IPs), that would require putting Cloudflare in front of your domain, which is outside Lovable's scope but is the most effective solution for heavy bot traffic.
 
