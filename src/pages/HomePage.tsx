@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getPopularTools, categories } from "@/data/tools";
+import PopularToolsSection from "@/components/home/PopularToolsSection";
 import { JsonLdGraph, websiteSchema, organizationSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
@@ -173,41 +174,7 @@ export default function HomePage() {
       </section>
 
       {/* Popular Tools */}
-      <section className="container py-16">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-2">Popular Tools</h2>
-          <p className="text-muted-foreground">The most used legal tools on our platform.</p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {popularTools.map((tool, i) => (
-            <Link key={tool.id} to={`/tools/${tool.category}/${tool.slug}`}>
-              <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all group" style={{ animationDelay: `${i * 0.1}s` }}>
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
-                      <tool.icon className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{tool.categoryLabel}</span>
-                      <CardTitle className="text-base">{tool.name}</CardTitle>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">{tool.shortDescription}</p>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-        <div className="text-center mt-8">
-          <Link to="/tools">
-            <Button variant="outline" className="gap-2">
-              View All Tools <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+      <PopularToolsSection />
 
       {/* Categories */}
       <section className="bg-secondary/50 py-16">
