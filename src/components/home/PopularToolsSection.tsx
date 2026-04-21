@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getToolBySlug, type Tool, type ToolCategory } from "@/data/tools";
+import { tools, type Tool, type ToolCategory } from "@/data/tools";
 
 const FEATURED_SLUGS = [
   "reading-time-calculator",
@@ -42,7 +42,7 @@ export default function PopularToolsSection() {
   const [active, setActive] = useState<FilterKey>("all");
 
   const featured = useMemo(
-    () => FEATURED_SLUGS.map((s) => getToolBySlug(s)).filter((t): t is Tool => Boolean(t)),
+    () => FEATURED_SLUGS.map((s) => tools.find((t) => t.slug === s)).filter((t): t is Tool => Boolean(t)),
     []
   );
 
