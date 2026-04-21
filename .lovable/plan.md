@@ -1,39 +1,111 @@
 
 
-# Block Bot Traffic (Especially from China)
+# Redesign "Popular Tools" Section
 
-## Problem
-The site receives heavy bot traffic, particularly from Chinese bots/crawlers, which wastes resources and skews analytics.
+Refresh the homepage's Popular Tools section with a modern legaltech look — deep navy + teal accents, category-colored icon cards, filter tabs, and a stronger CTA. **Only this section changes.** Hero, stats, categories, guides, and other sections are untouched.
 
-## Solution — Multi-Layer Bot Protection
+## Design Tokens (added to `src/index.css`)
 
-### Layer 1: `robots.txt` — Block Known Chinese Bots
-Update `public/robots.txt` to explicitly disallow known Chinese crawler user agents:
-- `Baiduspider`, `Sogou`, `360Spider`, `YisouSpider`, `Bytespider` (TikTok/ByteDance), `PetalBot` (Huawei), `MJ12bot`, `SemrushBot`, `AhrefsBot`, `DotBot`
+Add a teal accent alongside the existing navy/gold palette (used only inside this section so the rest of the site is unaffected):
 
-### Layer 2: Edge Function Middleware — Request Filtering
-Create a new edge function `bot-shield` that acts as a lightweight verification layer for the AI-powered endpoints (legal-chat, analyze-contract) which are the most expensive to serve to bots:
-- Check `User-Agent` against a blocklist of known bot strings
-- Check for suspicious request patterns (missing headers, empty Accept-Language)
-- Return 403 for blocked requests
-- Update `legal-chat` and `analyze-contract` to call this check before processing
+```text
+--teal:        180 65% 38%   /* primary teal accent */
+--teal-light:  180 55% 92%   /* badge / icon tile background */
+--teal-dark:   180 70% 28%   /* hover */
+```
 
-### Layer 3: Client-Side Honeypot + Rate Limiting
-Add a hidden honeypot field to interactive forms (chat widget, contract analyzer). Real users won't fill it; bots will. Requests with the honeypot filled get silently dropped.
+## Section Layout
 
-### Layer 4: Meta Tags
-Add `<meta>` tags in `index.html` to discourage specific bot indexing beyond robots.txt.
+```text
+┌────────────────────────────────────────────────────┐
+│              Popular Tools                          │  centered title
+│   The most used legal tools on our platform.       │  subtitle
+│                                                     │
+│  [ All ] [Contract] [Consumer] [Employment] ...    │  pill filter tabs
+│                                                     │
+│  ┌────┐ ┌────┐ ┌────┐ ┌────┐                       │
+│  │card│ │card│ │card│ │card│   4-col desktop       │
+│  └────┘ └────┘ └────┘ └────┘   2-col mobile        │
+│  ┌────┐ ┌────┐ ┌────┐ ┌────┐                       │
+│  │card│ │card│ │card│ │card│                       │
+│  └────┘ └────┘ └────┘ └────┘                       │
+│                                                     │
+│           [  Browse All Tools  →  ]                 │  primary CTA
+└────────────────────────────────────────────────────┘
+```
 
-## Files
+- Background: subtle navy-tinted gradient (`from-background to-secondary/40`) for premium feel
+- Generous vertical padding (`py-20 md:py-24`)
+- Filter tabs: rounded-full pills, navy text, teal active state. Tabs: **All | Contract | Consumer | Employment | AI | Document Generators**
+- Filtering is client-side; switching tab swaps the displayed tools (smooth fade). If a category has fewer than 8, fill remaining slots from other featured tools.
+
+## Card Design
+
+```text
+┌─────────────────────────────┐
+│  ┌───┐                       │
+│  │ 🛈 │   ← large 56px tile, │
+│  └───┘     category color    │
+│                              │
+│  [ Contract ]   ← pill badge │
+│                              │
+│  Contract Reading Time       │  bold, navy, font-serif
+│  Calculator                  │
+│                              │
+│  Know exactly how long       │  benefit-focused
+│  your contract takes to read.│  2-line copy
+│                              │
+│  ────────────────────────    │  divider
+│  [   Use Tool   →   ]        │  full-width teal button
+└─────────────────────────────┘
+```
+
+- `rounded-2xl`, `border border-border/60`, white card background
+- `shadow-sm` resting → `shadow-xl` + `-translate-y-1` on hover (300ms ease)
+- Icon tile: 56×56, rounded-xl, tinted with the category's color (e.g. blue-50 bg + blue-600 icon for Contract; teal for Real Estate; rose for AI; amber for Generators; green for Consumer; purple for Employment)
+- Category badge: `rounded-full`, small, color-matched soft background
+- Tool name: `font-serif font-bold text-lg`, navy
+- Description: `text-sm text-muted-foreground leading-relaxed`, line-clamp-2
+- Button: full-width, teal background, white text, `Use Tool →`. On AI tools the label becomes `Try for Free →`.
+
+## 8 Featured Tools
+
+Resolved from `src/data/tools.ts` (slugs verified against existing IDs):
+
+| # | Tool | Category | Slug |
+|---|---|---|---|
+| 1 | Contract Reading Time Calculator | Contract | `reading-time-calculator` |
+| 2 | Contract Word Counter | Contract | `word-counter` |
+| 3 | Legal Jargon Translator | Contract | `jargon-translator` |
+| 4 | NDA Generator | Generators | `nda-generator` |
+| 5 | Cancellation Deadline Calculator | Consumer | `cancellation-deadline` |
+| 6 | Late Fee Calculator | Consumer | `late-fee-calculator` |
+| 7 | Contract Red Flag Scanner | AI | `contract-red-flag-scanner` |
+| 8 | Terms & Conditions Summarizer | AI | `terms-summarizer` |
+
+A small `FEATURED_TOOL_IDS` array drives the section so swaps stay simple. If a slug doesn't resolve, it's skipped silently.
+
+## Browse All CTA
+
+Below the grid, centered:
+- Primary navy button, large, `rounded-xl`: **Browse All Tools →**
+- Links to `/tools`
+- Subtle helper line under it: *Explore 100+ free legal tools*
+
+## Files Changed
 
 | File | Change |
 |---|---|
-| `public/robots.txt` | Add Disallow rules for ~10 Chinese/spam bot user agents |
-| `supabase/functions/legal-chat/index.ts` | Add user-agent check + reject known bots |
-| `supabase/functions/analyze-contract/index.ts` | Same bot check |
-| `src/components/chat/LegalChatWidget.tsx` | Add honeypot field to chat requests |
-| `index.html` | Add `<meta name="robots">` directives for specific bots |
+| `src/index.css` | Add `--teal`, `--teal-light`, `--teal-dark` HSL tokens |
+| `tailwind.config.ts` | Map `teal`, `teal-light`, `teal-dark` to the new HSL vars |
+| `src/pages/HomePage.tsx` | Replace only the `{/* Popular Tools */}` section (lines 175–210) with the new design + filter state |
 
-## What This Won't Do
-- This cannot block traffic at the CDN/network level (that requires Cloudflare or similar). If you want IP-based geo-blocking (blocking all Chinese IPs), that would require putting Cloudflare in front of your domain, which is outside Lovable's scope but is the most effective solution for heavy bot traffic.
+No other sections, routes, or files are touched.
+
+## Accessibility & Responsiveness
+
+- Filter tabs are real `<button>`s with `aria-pressed` for the active state
+- Cards remain wrapped in `<Link>` so the entire card is clickable; the inner "Use Tool" button is visual (the parent link handles navigation) — no nested `<a>` issue
+- Grid: `grid-cols-2 lg:grid-cols-4`, `gap-5 md:gap-6`
+- Mobile: filter tabs scroll horizontally (`overflow-x-auto`, no scrollbar) with snap
 
