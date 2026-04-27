@@ -1,111 +1,86 @@
+# Create Premium Hero Banner for LegallySpoken
 
+Build a standalone reusable `HeroBanner` component for the homepage hero, matching the requested premium legaltech style and preserving the existing search behavior.
 
-# Redesign "Popular Tools" Section
+## What Will Change
 
-Refresh the homepage's Popular Tools section with a modern legaltech look — deep navy + teal accents, category-colored icon cards, filter tabs, and a stronger CTA. **Only this section changes.** Hero, stats, categories, guides, and other sections are untouched.
+- Replace the current inline hero markup in `src/pages/HomePage.tsx` with a new reusable component:
+  - `src/components/home/HeroBanner.tsx`
+- Keep the rest of the homepage unchanged, including Stats, Legal Health Check, Popular Tools, Categories, Guides, Blog, and CTA sections.
+- Keep the existing search flow: submitting a query sends users to `/tools?q=...`.
 
-## Design Tokens (added to `src/index.css`)
-
-Add a teal accent alongside the existing navy/gold palette (used only inside this section so the rest of the site is unaffected):
-
-```text
---teal:        180 65% 38%   /* primary teal accent */
---teal-light:  180 55% 92%   /* badge / icon tile background */
---teal-dark:   180 70% 28%   /* hover */
-```
-
-## Section Layout
+## Hero Layout
 
 ```text
-┌────────────────────────────────────────────────────┐
-│              Popular Tools                          │  centered title
-│   The most used legal tools on our platform.       │  subtitle
-│                                                     │
-│  [ All ] [Contract] [Consumer] [Employment] ...    │  pill filter tabs
-│                                                     │
-│  ┌────┐ ┌────┐ ┌────┐ ┌────┐                       │
-│  │card│ │card│ │card│ │card│   4-col desktop       │
-│  └────┘ └────┘ └────┘ └────┘   2-col mobile        │
-│  ┌────┐ ┌────┐ ┌────┐ ┌────┐                       │
-│  │card│ │card│ │card│ │card│                       │
-│  └────┘ └────┘ └────┘ └────┘                       │
-│                                                     │
-│           [  Browse All Tools  →  ]                 │  primary CTA
-└────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│ Dark navy premium hero background                            │
+│                                                             │
+│  [100+ Free Legal Tools — No Signup Required]                │
+│                                                             │
+│  Legal clarity, simplified                                  │
+│                 simplified = warm gold                      │
+│                                                             │
+│  Understand contracts, check risks, calculate deadlines,     │
+│  and generate documents — instantly, for free.               │
+│                                                             │
+│  ┌───────────────────────────────────────────────┐ [Search] │
+│  │ Search for a legal tool...                    │          │
+│  └───────────────────────────────────────────────┘          │
+│                                                             │
+│  ✓ No signup required   ✓ Free forever   ✓ Instant results  │
+│                                                             │
+│                      subtle legal illustration on desktop    │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-- Background: subtle navy-tinted gradient (`from-background to-secondary/40`) for premium feel
-- Generous vertical padding (`py-20 md:py-24`)
-- Filter tabs: rounded-full pills, navy text, teal active state. Tabs: **All | Contract | Consumer | Employment | AI | Document Generators**
-- Filtering is client-side; switching tab swaps the displayed tools (smooth fade). If a category has fewer than 8, fill remaining slots from other featured tools.
+## Visual Direction
 
-## Card Design
+- Background: deep navy close to `#0a0f2c`, with subtle radial gradients and a faint document/grid pattern for depth.
+- Accent: warm gold/yellow for the badge detail, the word `simplified`, search button, and checkmarks.
+- Typography: modern sans-serif for the hero (`font-sans`) to satisfy the requested Inter/system feel, even though the rest of the site uses serif headings.
+- Search bar: large centered glass-style search container with strong focus state and gold button.
+- Trust signals: animated hover lift/glow, high-contrast but understated.
+- Illustration: CSS/SVG-style composition on the right side for desktop/tablet:
+  - stylized contract document cards
+  - shield/check icon
+  - scale/legal symbol accent
+  - calendar/deadline tile
+  - soft gold and blue glows
+  - hidden or simplified on small mobile to keep the CTA focused.
 
-```text
-┌─────────────────────────────┐
-│  ┌───┐                       │
-│  │ 🛈 │   ← large 56px tile, │
-│  └───┘     category color    │
-│                              │
-│  [ Contract ]   ← pill badge │
-│                              │
-│  Contract Reading Time       │  bold, navy, font-serif
-│  Calculator                  │
-│                              │
-│  Know exactly how long       │  benefit-focused
-│  your contract takes to read.│  2-line copy
-│                              │
-│  ────────────────────────    │  divider
-│  [   Use Tool   →   ]        │  full-width teal button
-└─────────────────────────────┘
-```
+## Mobile Behavior
 
-- `rounded-2xl`, `border border-border/60`, white card background
-- `shadow-sm` resting → `shadow-xl` + `-translate-y-1` on hover (300ms ease)
-- Icon tile: 56×56, rounded-xl, tinted with the category's color (e.g. blue-50 bg + blue-600 icon for Contract; teal for Real Estate; rose for AI; amber for Generators; green for Consumer; purple for Employment)
-- Category badge: `rounded-full`, small, color-matched soft background
-- Tool name: `font-serif font-bold text-lg`, navy
-- Description: `text-sm text-muted-foreground leading-relaxed`, line-clamp-2
-- Button: full-width, teal background, white text, `Use Tool →`. On AI tools the label becomes `Try for Free →`.
+- Mobile-first layout with centered content.
+- Headline scales from strong mobile sizing to large desktop sizing.
+- Search bar stacks cleanly if needed: input remains prominent, button stays easy to tap.
+- Trust signals wrap neatly under the search.
+- Illustration becomes a subtle background accent or is hidden on narrow screens to avoid clutter.
 
-## 8 Featured Tools
-
-Resolved from `src/data/tools.ts` (slugs verified against existing IDs):
-
-| # | Tool | Category | Slug |
-|---|---|---|---|
-| 1 | Contract Reading Time Calculator | Contract | `reading-time-calculator` |
-| 2 | Contract Word Counter | Contract | `word-counter` |
-| 3 | Legal Jargon Translator | Contract | `jargon-translator` |
-| 4 | NDA Generator | Generators | `nda-generator` |
-| 5 | Cancellation Deadline Calculator | Consumer | `cancellation-deadline` |
-| 6 | Late Fee Calculator | Consumer | `late-fee-calculator` |
-| 7 | Contract Red Flag Scanner | AI | `contract-red-flag-scanner` |
-| 8 | Terms & Conditions Summarizer | AI | `terms-summarizer` |
-
-A small `FEATURED_TOOL_IDS` array drives the section so swaps stay simple. If a slug doesn't resolve, it's skipped silently.
-
-## Browse All CTA
-
-Below the grid, centered:
-- Primary navy button, large, `rounded-xl`: **Browse All Tools →**
-- Links to `/tools`
-- Subtle helper line under it: *Explore 100+ free legal tools*
-
-## Files Changed
+## Technical Details
 
 | File | Change |
 |---|---|
-| `src/index.css` | Add `--teal`, `--teal-light`, `--teal-dark` HSL tokens |
-| `tailwind.config.ts` | Map `teal`, `teal-light`, `teal-dark` to the new HSL vars |
-| `src/pages/HomePage.tsx` | Replace only the `{/* Popular Tools */}` section (lines 175–210) with the new design + filter state |
+| `src/components/home/HeroBanner.tsx` | New reusable React component containing hero UI, local search state, submit handler, shadcn `Input` and `Button`, and the decorative legal illustration. |
+| `src/pages/HomePage.tsx` | Import `<HeroBanner />`, remove inline hero section and search state/handler if no longer needed. |
 
-No other sections, routes, or files are touched.
+Implementation notes:
 
-## Accessibility & Responsiveness
+- Use existing Tailwind tokens where possible: `navy`, `gold`, `accent`, and existing animation utilities.
+- Use `useNavigate` inside `HeroBanner` so the component is self-contained.
+- Use `lucide-react` icons such as `Search`, `CheckCircle2`, `ShieldCheck`, `Scale`, `FileText`, and `CalendarDays`.
+- Keep accessibility intact:
+  - Search form has a proper submit button.
+  - Input includes an accessible label via `aria-label`.
+  - Decorative illustration uses `aria-hidden="true"`.
+- No backend or database changes needed.
 
-- Filter tabs are real `<button>`s with `aria-pressed` for the active state
-- Cards remain wrapped in `<Link>` so the entire card is clickable; the inner "Use Tool" button is visual (the parent link handles navigation) — no nested `<a>` issue
-- Grid: `grid-cols-2 lg:grid-cols-4`, `gap-5 md:gap-6`
-- Mobile: filter tabs scroll horizontally (`overflow-x-auto`, no scrollbar) with snap
+## Expected Result
 
+The homepage opens with a dark, polished, high-converting hero that clearly communicates:
+
+- 100+ free tools
+- no signup required
+- instant legal utility
+- search-first discovery
+
+The section should feel premium and trustworthy while staying fast, responsive, and consistent with the LegallySpoken brand.
