@@ -1,10 +1,9 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Search, ArrowRight, BookOpen, Scale, Gavel, Car, HeartPulse, ShieldCheck, Users, Briefcase, AlertTriangle, Home, Cpu, Wrench, FileText, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getPopularTools, categories } from "@/data/tools";
+import HeroBanner from "@/components/home/HeroBanner";
 import PopularToolsSection from "@/components/home/PopularToolsSection";
 import { JsonLdGraph, websiteSchema, organizationSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
@@ -33,18 +32,9 @@ const categoryImages: Record<string, string> = {
 };
 
 export default function HomePage() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const navigate = useNavigate();
   const popularTools = getPopularTools();
   const { data: blogPosts } = useBlogPosts();
   const latestPosts = blogPosts?.slice(0, 3) || [];
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/tools?q=${encodeURIComponent(searchQuery.trim())}`);
-    }
-  };
 
   const legalGuides = [
     { title: "Auto Accident Law", description: "Know your rights after a car crash. Guides on fault, claims, and compensation.", href: "/auto-accident-law", icon: Car },
@@ -78,63 +68,7 @@ export default function HomePage() {
       />
       <JsonLdGraph schemas={[websiteSchema(), organizationSchema()]} />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(222,50%,8%)] min-h-[520px] flex items-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] animate-pulse-glow">
-          <div className="absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,hsl(42,55%,55%,0.12),hsl(42,55%,45%,0.04)_50%,transparent_70%)] blur-3xl" />
-        </div>
-        <div className="absolute top-1/3 left-1/2 -translate-x-[40%] -translate-y-1/2 w-[500px] h-[400px] animate-pulse-glow-delayed">
-          <div className="absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,hsl(222,50%,40%,0.08),transparent_60%)] blur-3xl" />
-        </div>
-        <div className="absolute inset-0 bg-[radial-gradient(hsl(0,0%,100%,0.04)_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(42,55%,55%,0.3)] to-transparent" />
-
-        <div className="container relative py-24 md:py-32">
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[hsl(42,55%,55%,0.25)] bg-[hsl(42,55%,55%,0.06)] backdrop-blur-sm mb-8 animate-fade-in">
-              <div className="w-1.5 h-1.5 rounded-full bg-[hsl(42,55%,60%)] animate-pulse" />
-              <span className="text-xs font-medium tracking-wide text-[hsl(42,40%,70%)]">100+ Free Legal Tools — No Signup Required</span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] text-white tracking-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              Legal clarity,{" "}
-              <span className="bg-gradient-to-r from-[hsl(42,55%,65%)] to-[hsl(42,45%,50%)] bg-clip-text text-transparent">simplified</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-white/50 mb-10 max-w-xl leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              Understand contracts, check risks, calculate deadlines, and generate documents — instantly, for free.
-            </p>
-
-            <form onSubmit={handleSearch} className="w-full max-w-lg animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <div className="relative flex gap-2 p-1.5 rounded-xl bg-white/[0.05] backdrop-blur-sm border border-white/[0.08] shadow-[0_0_40px_-12px_hsl(42,55%,55%,0.15)]">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-white/30" />
-                  <Input
-                    placeholder="Search for a legal tool..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 h-11 bg-transparent text-white border-0 text-base placeholder:text-white/25 focus-visible:ring-0 focus-visible:ring-offset-0"
-                  />
-                </div>
-                <Button type="submit" className="h-11 px-6 bg-accent text-accent-foreground hover:bg-gold-dark rounded-lg font-semibold">
-                  Search
-                </Button>
-              </div>
-            </form>
-
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              {["No signup required", "Free forever", "Instant results"].map((text) => (
-                <span key={text} className="flex items-center gap-1.5 text-xs text-white/30">
-                  <svg className="w-3.5 h-3.5 text-[hsl(42,55%,55%,0.5)]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                  {text}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(42,55%,55%,0.15)] to-transparent" />
-      </section>
+      <HeroBanner />
 
       {/* Stats Bar */}
       <section className="border-b bg-secondary/50">
