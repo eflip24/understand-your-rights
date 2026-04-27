@@ -1,86 +1,75 @@
-# Create Premium Hero Banner for LegallySpoken
+# Build Quiz + Popular Tools Section
 
-Build a standalone reusable `HeroBanner` component for the homepage hero, matching the requested premium legaltech style and preserving the existing search behavior.
+Create a polished, self-contained homepage section named `QuizAndPopularToolsSection` that combines the Legal Health Check teaser and a streamlined Popular Tools grid exactly as requested.
 
-## What Will Change
+## What will change
 
-- Replace the current inline hero markup in `src/pages/HomePage.tsx` with a new reusable component:
-  - `src/components/home/HeroBanner.tsx`
-- Keep the rest of the homepage unchanged, including Stats, Legal Health Check, Popular Tools, Categories, Guides, Blog, and CTA sections.
-- Keep the existing search flow: submitting a query sends users to `/tools?q=...`.
+### 1. New reusable component
+Add `src/components/home/QuizAndPopularToolsSection.tsx` with:
 
-## Hero Layout
+- Overall clean off-white/light gradient background
+- Top Legal Health Check card:
+  - Light cream/white rounded card with subtle gradient
+  - “60-Second Quiz” badge with sparkle icon and warm gold/orange accent
+  - Headline: “Not sure which legal tool you need?”
+  - Subtitle exactly as provided
+  - Dark navy CTA button: “Start Legal Health Check →” linking to `/legal-health-check`
+- Popular Tools area below:
+  - Heading: “Popular Tools”
+  - Subheading: “The most used legal tools on our platform.”
+  - Mobile-scrollable filter tabs: All, Contract, Consumer, Employment, AI, Document Generators
+  - 4 cards only, responsive as `1 column mobile / 2 tablet / 4 desktop`
+
+### 2. Exact 4 featured cards
+Use the existing tool routes/data where possible, but lock the displayed cards to:
+
+1. Contract Reading Time Calculator
+2. Contract Word Counter
+3. Legal Jargon Translator
+4. NDA Template Generator
+
+Card styling will include:
+
+- Rounded white cards with generous padding
+- Soft border and shadow
+- Hover lift + stronger shadow
+- Teal action button with arrow micro-interaction
+- Clock, Calculator/Grid, Search, and FileText icons from `lucide-react`
+- Contract cards with light blue icon circles and teal “CONTRACT” pills
+- NDA card with warm icon circle and orange “DOCUMENT GENERATORS” pill
+
+### 3. Use shadcn/ui components
+Use existing UI primitives:
+
+- `Card` for the quiz card and tool cards
+- `Button` for CTAs
+- `Badge` for pills
+- `Tabs`, `TabsList`, `TabsTrigger` for filters
+
+The tabs will be functional: selecting a category filters the four-card set, while “All” shows all four.
+
+### 4. Homepage integration
+Update `src/pages/HomePage.tsx` to replace the current separate “Legal Health Check Teaser” section and existing `<PopularToolsSection />` with the new combined `<QuizAndPopularToolsSection />`.
+
+This keeps the rest of the homepage untouched: hero, stats, categories, guides, blog, resources, how-it-works, and footer CTA remain as-is.
+
+## Technical details
+
+- Create `QuizAndPopularToolsSection.tsx` under `src/components/home/`
+- Import it into `HomePage.tsx`
+- Remove the now-unused `PopularToolsSection` import from `HomePage.tsx`
+- Remove any imports from `HomePage.tsx` that become unused after deleting the old inline quiz teaser block, such as the local `ArrowRight` usage if no longer needed there
+- No backend or database changes required
+- No global theme changes required
+
+## Responsive behavior
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│ Dark navy premium hero background                            │
-│                                                             │
-│  [100+ Free Legal Tools — No Signup Required]                │
-│                                                             │
-│  Legal clarity, simplified                                  │
-│                 simplified = warm gold                      │
-│                                                             │
-│  Understand contracts, check risks, calculate deadlines,     │
-│  and generate documents — instantly, for free.               │
-│                                                             │
-│  ┌───────────────────────────────────────────────┐ [Search] │
-│  │ Search for a legal tool...                    │          │
-│  └───────────────────────────────────────────────┘          │
-│                                                             │
-│  ✓ No signup required   ✓ Free forever   ✓ Instant results  │
-│                                                             │
-│                      subtle legal illustration on desktop    │
-└─────────────────────────────────────────────────────────────┘
+Mobile:     Quiz card full width, CTA full width, tabs horizontally scroll, cards 1 column
+Tablet:     Cards 2 columns
+Desktop:    Cards 4 columns, centered premium spacing
 ```
 
-## Visual Direction
+## Validation
 
-- Background: deep navy close to `#0a0f2c`, with subtle radial gradients and a faint document/grid pattern for depth.
-- Accent: warm gold/yellow for the badge detail, the word `simplified`, search button, and checkmarks.
-- Typography: modern sans-serif for the hero (`font-sans`) to satisfy the requested Inter/system feel, even though the rest of the site uses serif headings.
-- Search bar: large centered glass-style search container with strong focus state and gold button.
-- Trust signals: animated hover lift/glow, high-contrast but understated.
-- Illustration: CSS/SVG-style composition on the right side for desktop/tablet:
-  - stylized contract document cards
-  - shield/check icon
-  - scale/legal symbol accent
-  - calendar/deadline tile
-  - soft gold and blue glows
-  - hidden or simplified on small mobile to keep the CTA focused.
-
-## Mobile Behavior
-
-- Mobile-first layout with centered content.
-- Headline scales from strong mobile sizing to large desktop sizing.
-- Search bar stacks cleanly if needed: input remains prominent, button stays easy to tap.
-- Trust signals wrap neatly under the search.
-- Illustration becomes a subtle background accent or is hidden on narrow screens to avoid clutter.
-
-## Technical Details
-
-| File | Change |
-|---|---|
-| `src/components/home/HeroBanner.tsx` | New reusable React component containing hero UI, local search state, submit handler, shadcn `Input` and `Button`, and the decorative legal illustration. |
-| `src/pages/HomePage.tsx` | Import `<HeroBanner />`, remove inline hero section and search state/handler if no longer needed. |
-
-Implementation notes:
-
-- Use existing Tailwind tokens where possible: `navy`, `gold`, `accent`, and existing animation utilities.
-- Use `useNavigate` inside `HeroBanner` so the component is self-contained.
-- Use `lucide-react` icons such as `Search`, `CheckCircle2`, `ShieldCheck`, `Scale`, `FileText`, and `CalendarDays`.
-- Keep accessibility intact:
-  - Search form has a proper submit button.
-  - Input includes an accessible label via `aria-label`.
-  - Decorative illustration uses `aria-hidden="true"`.
-- No backend or database changes needed.
-
-## Expected Result
-
-The homepage opens with a dark, polished, high-converting hero that clearly communicates:
-
-- 100+ free tools
-- no signup required
-- instant legal utility
-- search-first discovery
-
-The section should feel premium and trustworthy while staying fast, responsive, and consistent with the LegallySpoken brand.
+After implementation, run the project build/type check to confirm the new component compiles cleanly and no unused imports remain.
