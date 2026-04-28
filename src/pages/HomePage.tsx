@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { Search, ArrowRight, BookOpen, Scale, Gavel, Car, HeartPulse, ShieldCheck, Users, Briefcase, AlertTriangle, Home, Cpu, Wrench, FileText, BarChart3 } from "lucide-react";
+import { Search, ArrowRight, Car, HeartPulse, ShieldCheck, Users, Briefcase, AlertTriangle, Home, Cpu, Wrench, FileText, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { categories } from "@/data/tools";
 import HeroBanner from "@/components/home/HeroBanner";
 import QuizAndPopularToolsSection from "@/components/home/QuizAndPopularToolsSection";
+import LegalResourcesAndHowItWorks from "@/components/home/LegalResourcesAndHowItWorks";
 import { JsonLdGraph, websiteSchema, organizationSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
@@ -44,12 +45,6 @@ export default function HomePage() {
     { title: "Landlord-Tenant Law", description: "Eviction rules, lease disputes, security deposits, and tenant rights.", href: "/landlord-tenant-law", icon: Home },
     { title: "AI & Tech Law", description: "AI content legality, deepfakes, data privacy, and digital rights.", href: "/ai-tech-law", icon: Cpu },
     { title: "Find a Lawyer", description: "Browse our free attorney directory by practice area near you.", href: "/lawyer-near-me", icon: Users },
-  ];
-
-  const legalResources = [
-    { title: "Legal Terms Dictionary", description: "50+ legal terms explained in plain English with example clauses.", href: "/legal-terms", icon: BookOpen, count: "50+ terms" },
-    { title: "Contract Clauses Guide", description: "Understand common clauses, enforceability, and red flags.", href: "/legal-clauses", icon: Gavel, count: "20+ clauses" },
-    { title: "Contract Types Explained", description: "Different contract types, key clauses, and common risks.", href: "/contract-types", icon: Scale, count: "20+ types" },
   ];
 
   const stats = [
@@ -182,54 +177,7 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Legal Resources */}
-      <section className="container py-16">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-2">Legal Resources</h2>
-          <p className="text-muted-foreground">Browse our library of plain-English legal guides and references.</p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {legalResources.map((resource) => (
-            <Link key={resource.href} to={resource.href}>
-              <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all group p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2.5 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
-                    <resource.icon className="h-6 w-6 text-accent" />
-                  </div>
-                  <span className="text-xs font-semibold text-accent uppercase tracking-wider">{resource.count}</span>
-                </div>
-                <h3 className="font-serif font-bold text-lg mb-2">{resource.title}</h3>
-                <p className="text-sm text-muted-foreground">{resource.description}</p>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="bg-secondary/50 py-16">
-        <div className="container">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-2">How It Works</h2>
-            <p className="text-muted-foreground">Get answers in three simple steps.</p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3 max-w-3xl mx-auto">
-            {[
-              { step: "1", title: "Choose a Tool", desc: "Browse our collection of 100+ free legal tools." },
-              { step: "2", title: "Enter Your Details", desc: "Paste text, fill in numbers, or answer questions." },
-              { step: "3", title: "Get Results", desc: "Instant analysis, calculations, or generated documents." },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="mx-auto w-12 h-12 rounded-full bg-accent text-accent-foreground flex items-center justify-center font-serif font-bold text-xl mb-4">
-                  {item.step}
-                </div>
-                <h3 className="font-serif font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <LegalResourcesAndHowItWorks />
 
       {/* CTA */}
       <section className="bg-primary text-primary-foreground py-16">
