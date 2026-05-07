@@ -1,95 +1,65 @@
-# Build Legal Resources + How It Works Section
+## Plan: Add New Free Legal Tools
 
-Create a self-contained homepage component named `LegalResourcesAndHowItWorks` that replaces the current separate Legal Resources and How It Works blocks with a cleaner, more premium section.
+After auditing the current 100+ tools in `src/data/tools.ts`, I've identified gaps. Below is a curated set of ~20 new client-side tools that don't duplicate existing ones, span all categories, and fit the site's plain-English utility positioning.
 
-## What will change
+### New Tools by Category
 
-### 1. New reusable component
-Add `src/components/home/LegalResourcesAndHowItWorks.tsx` with:
+**Contract Analysis (AI / client-side)**
+1. **Force Majeure Clause Checker** — paste a contract, detect & rate force majeure language strength.
+2. **Auto-Renewal Clause Detector** — flags evergreen/auto-renew terms and notice windows.
+3. **Governing Law Identifier** — extracts jurisdiction, venue, and arbitration clauses.
+4. **Contract Plain-English Rewriter** (AI) — rewrites a clause in 6th-grade reading level.
 
-- Clean light/off-white background using the existing design tokens
-- Dark navy headings
-- Warm gold accents for icons, badges, and step numbers
-- Subtle teal highlights for hover states and dividers
-- Generous spacing and mobile-first responsive layout
+**Consumer Rights**
+5. **Chargeback Eligibility Checker** — quiz-style tool: returns likelihood of successful chargeback.
+6. **Lemon Law Qualifier** — state-aware checker for defective vehicle claims.
+7. **Subscription Cancellation Letter Generator** — fillable letter for cancelling gym/SaaS/etc.
+8. **Data Breach Response Checklist** — personalized steps after a breach notification.
 
-### 2. Legal Resources section
-Add heading and subheading exactly as requested:
+**Employment**
+9. **Final Paycheck Deadline Lookup** — by state, when last paycheck is legally due.
+10. **Unemployment Benefits Estimator** — ballpark weekly benefit by state + prior wages.
+11. **Non-Disclosure vs Non-Compete Comparator** — side-by-side explainer/checker.
+12. **Workplace Discrimination Claim Checklist** — EEOC filing readiness checker.
 
-- Heading: `Legal Resources`
-- Subheading: `Browse our library of plain-English legal guides and references.`
+**Real Estate / Landlord-Tenant**
+13. **Eviction Notice Period Lookup** — by state and reason (nonpayment, lease violation).
+14. **Habitability Issue Tracker** — generates a documented repair-request letter + log.
+15. **Mortgage Affordability Calculator** — DTI-based max home price.
 
-Then render three linked shadcn `Card` components:
+**Business / Generators**
+16. **Operating Agreement Generator (LLC)** — single/multi-member fillable template.
+17. **Founders Agreement Generator** — equity split, vesting, IP assignment.
+18. **DMCA Takedown Notice Generator** — fillable template.
 
-1. Legal Terms Dictionary
-   - Book/Open Book icon in a soft gold circle
-   - Badge: `50+ TERMS`
-   - Description: `50+ legal terms explained in plain English with example clauses.`
-   - Link: `/legal-terms`
+**Finance**
+19. **Emergency Fund Calculator** — months of expenses goal + monthly savings plan.
+20. **Tip & Service Charge Splitter** — receipt splitter with tax/tip allocation (legal nuance for mandatory service charges).
 
-2. Contract Clauses Guide
-   - Paperclip/Link icon in a soft gold circle
-   - Badge: `20+ CLAUSES`
-   - Description: `Understand common clauses, enforceability, and red flags.`
-   - Link: `/legal-clauses`
+**Energy**
+21. **Net Metering Savings Estimator** — annual savings from selling back excess solar.
 
-3. Contract Types Explained
-   - Scale/Balance icon in a soft gold circle
-   - Badge: `20+ TYPES`
-   - Description: `Different contract types, key clauses, and common risks.`
-   - Link: `/contract-types`
+### Implementation Approach
 
-Grid behavior:
+For each tool:
+- Create `src/components/tools/<Name>.tsx` as a self-contained client component (Tailwind + shadcn/ui), matching existing patterns (see `WordCounter`, `LeaseAnalyzer`, `NDAFairnessScore`).
+- Pure client-side logic where possible; use `useContractAnalysis` + a new edge function case only for AI-powered ones (#4).
+- Register in `src/data/tools.ts` with id, slug, category, icon (lucide-react), short description, long description, SEO meta.
+- Add lazy import entry in `src/pages/ToolPage.tsx` `toolComponents` map.
+- Each tool page auto-renders via `ToolPageLayout` (title, breadcrumbs, JSON-LD, AdSlot, disclaimer already handled).
+- For state-aware tools (#9, #13), reuse `src/data/locations/stateData.ts` patterns; add small static lookup tables.
+- AI tool (#4) extends `supabase/functions/analyze-contract/index.ts` with a new `mode: "plain-english-rewriter"` branch using the existing Lovable AI gateway (no new secrets).
 
-```text
-Mobile:  1 column
-Tablet:  2 columns
-Desktop: 3 columns
-```
+### Delivery Strategy
 
-Cards will include lift, subtle scale, stronger shadow, and accent-border hover effects.
+To keep PRs reviewable, I'll ship in **3 batches**:
+- **Batch 1** (Contract + Consumer): tools 1–8
+- **Batch 2** (Employment + Real Estate): tools 9–15
+- **Batch 3** (Business + Finance + Energy): tools 16–21
 
-### 3. Soft divider / transition
-Add a subtle divider between Legal Resources and How It Works using a light gradient line or glow, keeping the section cohesive without looking heavy.
+Each batch: build components, register tools, verify build, no homepage changes required (they auto-appear in `/tools` directory and category pages).
 
-### 4. How It Works section
-Add heading and subheading exactly as requested:
+### Questions Before Building
 
-- Heading: `How It Works`
-- Subheading: `Get answers in three simple steps.`
-
-Render three centered steps:
-
-1. Choose a Tool
-   - `Browse our collection of 100+ free legal tools.`
-2. Enter Your Details
-   - `Paste text, fill in numbers, or answer questions.`
-3. Get Results
-   - `Instant analysis, calculations, or generated documents.`
-
-Each step will use:
-
-- Large gold circle with white number
-- Bold title
-- Short muted description
-- Horizontal layout on desktop, stacked on mobile
-
-### 5. Homepage integration
-Update `src/pages/HomePage.tsx` to:
-
-- Import `<LegalResourcesAndHowItWorks />`
-- Remove the old inline `legalResources` array
-- Remove the old inline Legal Resources section
-- Remove the old inline How It Works section
-- Keep all other homepage sections unchanged
-
-## Technical details
-
-- Use `Card` and `Badge` from shadcn/ui
-- Use lucide-react icons: `BookOpen`, `Link` or `Paperclip`, and `Scale`
-- Use existing semantic Tailwind tokens: `background`, `card`, `navy`, `gold`, `accent`, `teal`, `muted-foreground`, `border`
-- No backend, database, or route changes required
-
-## Validation
-
-After implementation, run a production build to confirm TypeScript compiles and no unused imports remain.
+- Approve all 21, or trim/swap any?
+- OK to proceed with Batch 1 first after approval, then continue to 2 & 3 automatically?
