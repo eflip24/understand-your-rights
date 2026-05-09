@@ -258,6 +258,7 @@ Deno.serve(async (req) => {
   if (type === "guides") return new Response(buildGuides(), { headers: h });
   if (type === "state-guides") return new Response(buildStateGuides(), { headers: h });
   if (type === "lawyers") return new Response(buildLawyers(), { headers: h });
+  if (type === "statutes") return new Response(buildStatutes(), { headers: h });
   if (type === "blog") {
     const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!);
     return new Response(await buildBlog(sb), { headers: h });
