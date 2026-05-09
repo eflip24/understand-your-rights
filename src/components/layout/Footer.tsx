@@ -21,6 +21,7 @@ const guideLinks = [
 ];
 
 const resourceLinks = [
+  { label: "Statute Library", href: "/laws" },
   { label: "Legal Terms", href: "/legal-terms" },
   { label: "Legal Clauses", href: "/legal-clauses" },
   { label: "Contract Types", href: "/contract-types" },

@@ -64,6 +64,8 @@ const LocalLawyersStatePage = React.lazy(() => import("@/pages/LocalLawyersState
 const LocalLawyersCityPage = React.lazy(() => import("@/pages/LocalLawyersCityPage"));
 const StateClusterArticlePage = React.lazy(() => import("@/pages/StateClusterArticlePage"));
 const AboutPage = React.lazy(() => import("@/pages/AboutPage"));
+const StatuteLibraryDirectory = React.lazy(() => import("@/pages/StatuteLibraryDirectory"));
+const StatutePage = React.lazy(() => import("@/pages/StatutePage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -148,6 +150,8 @@ const App = () => (
                 <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
                 <Route path="/lawyer-near-me/:area/:state/:city" element={<LocalLawyersCityPage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/laws" element={<StatuteLibraryDirectory />} />
+                <Route path="/laws/:state/:topic" element={<StatutePage />} />
                 <Route path="/disclaimer" element={<DisclaimerPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms-of-service" element={<TermsOfServicePage />} />

@@ -162,8 +162,18 @@ function u(loc: string, freq: string, pri: string, lastmod?: string): string {
 
 function sitemapIndex(): string {
   const BASE = "https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap";
-  const types = ["core","tools","legal-terms","guides","lawyers","blog","state-guides"];
+  const types = ["core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes"];
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${BASE}?type=${t}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
+}
+
+const statuteTopicSlugs = ["security-deposit-limits", "eviction-notice-period", "minimum-wage"];
+
+function buildStatutes(): string {
+  const e: string[] = [u(`${SITE}/laws`, "weekly", "0.8")];
+  for (const st of stateSlugs) for (const topic of statuteTopicSlugs) {
+    e.push(u(`${SITE}/laws/${st}/${topic}`, "monthly", "0.6"));
+  }
+  return wrapUrlset(e);
 }
 
 function buildCore(): string {
@@ -171,6 +181,7 @@ function buildCore(): string {
     u(`${SITE}/`,"weekly","1.0"), u(`${SITE}/tools`,"weekly","0.9"),
     u(`${SITE}/legal-terms`,"monthly","0.8"), u(`${SITE}/legal-clauses`,"monthly","0.8"),
     u(`${SITE}/contract-types`,"monthly","0.8"), u(`${SITE}/blog`,"daily","0.8"),
+    u(`${SITE}/laws`,"weekly","0.9"),
     u(`${SITE}/auto-accident-law`,"weekly","0.8"), u(`${SITE}/personal-injury-law`,"weekly","0.8"),
     u(`${SITE}/insurance-law`,"weekly","0.8"), u(`${SITE}/employment-law`,"weekly","0.8"),
     u(`${SITE}/criminal-law`,"weekly","0.8"), u(`${SITE}/landlord-tenant-law`,"weekly","0.8"),
@@ -247,6 +258,7 @@ Deno.serve(async (req) => {
   if (type === "guides") return new Response(buildGuides(), { headers: h });
   if (type === "state-guides") return new Response(buildStateGuides(), { headers: h });
   if (type === "lawyers") return new Response(buildLawyers(), { headers: h });
+  if (type === "statutes") return new Response(buildStatutes(), { headers: h });
   if (type === "blog") {
     const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!);
     return new Response(await buildBlog(sb), { headers: h });
