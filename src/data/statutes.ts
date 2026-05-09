@@ -203,7 +203,7 @@ export const statuteTopics: StatuteTopic[] = [
     data: securityDepositData,
     sourceLabel: "Official state landlord–tenant statute",
     sourceUrl: (s) => `https://www.google.com/search?q=${encodeURIComponent(s + " security deposit statute site:.gov")}`,
-    relatedToolIds: ["security-deposit-calculator", "rental-agreement-generator", "habitability-tracker", "move-out-checklist-generator"],
+    relatedToolIds: ["security-deposit", "rental-agreement", "habitability-tracker", "moveout-checklist"],
     faqs: (s) => [
       { question: `What is the maximum security deposit in ${s}?`, answer: `See the table above for the current statutory cap. Some cities in ${s} impose stricter limits than the state.` },
       { question: `Can my landlord keep my deposit for normal wear and tear?`, answer: `No. In every state, landlords can only deduct for damage beyond ordinary wear and tear, unpaid rent, and cleaning costs that exceed normal use.` },
@@ -228,7 +228,7 @@ export const statuteTopics: StatuteTopic[] = [
     data: evictionData,
     sourceLabel: "Official state eviction statute",
     sourceUrl: (s) => `https://www.google.com/search?q=${encodeURIComponent(s + " eviction notice statute site:.gov")}`,
-    relatedToolIds: ["eviction-notice-period-lookup", "habitability-tracker", "rental-agreement-generator", "move-out-checklist-generator"],
+    relatedToolIds: ["eviction-notice-lookup", "habitability-tracker", "rental-agreement", "moveout-checklist"],
     faqs: (s) => [
       { question: `How much notice does a landlord have to give before evicting in ${s}?`, answer: `It depends on the reason — see the table. Nonpayment notices are usually shortest; no-cause notices are longest.` },
       { question: `Can a landlord evict me without notice?`, answer: `In almost every state, no. Landlords must serve a written notice and, if you don't comply, file an eviction lawsuit. "Self-help" evictions (changing locks, shutting off utilities) are illegal.` },
@@ -253,7 +253,7 @@ export const statuteTopics: StatuteTopic[] = [
     data: minimumWageData,
     sourceLabel: "U.S. Department of Labor — State Minimum Wage Laws",
     sourceUrl: () => "https://www.dol.gov/agencies/whd/state/minimum-wage/state",
-    relatedToolIds: ["minimum-wage-lookup", "overtime-calculator", "paycheck-calculator", "salary-to-hourly-converter"],
+    relatedToolIds: ["minimum-wage", "overtime-calc", "paycheck-calc", "salary-converter"],
     faqs: (s) => [
       { question: `What is the current minimum wage in ${s}?`, answer: `See the table — but verify on the state Department of Labor site, as rates change every January (and sometimes mid-year).` },
       { question: `Can my employer pay me less than the federal minimum wage?`, answer: `No. Employers must pay the higher of the federal ($7.25) or applicable state/city minimum wage. Some cities (Seattle, NYC, Denver) require even more.` },
