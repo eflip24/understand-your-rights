@@ -62,6 +62,13 @@ export default function TermsOfServicePage() {
             LegallySpoken makes no guarantees regarding the legal validity or enforceability of generated documents.
           </p>
 
+          <h2>Advertising</h2>
+          <p>
+            LegallySpoken is supported by advertising. We display ads served by Google AdSense and may include
+            sponsored content or affiliate links. We do not endorse products or services advertised on the Site.
+            Your interactions with advertisers are governed by their own terms and privacy policies.
+          </p>
+
           <h2>Limitation of Liability</h2>
           <p>
             To the maximum extent permitted by law, LegallySpoken and its owners, employees, and contributors shall
