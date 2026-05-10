@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { JsonLdGraph, webApplicationSchema, faqSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
+import AdSlot from "@/components/ads/AdSlot";
 
 interface ToolPageLayoutProps {
   tool: Tool;
@@ -57,6 +58,8 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
           {children}
         </CardContent>
       </Card>
+
+      <AdSlot slot="post-result" className="mb-10" />
 
       {/* FAQ */}
       {tool.faqs.length > 0 && (

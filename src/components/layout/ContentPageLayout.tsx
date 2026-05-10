@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Head from "@/components/seo/Head";
+import AdSlot from "@/components/ads/AdSlot";
 
 interface Breadcrumb {
   label: string;
@@ -76,8 +77,12 @@ export default function ContentPageLayout({
         {subtitle && <p className="text-lg text-muted-foreground max-w-2xl">{subtitle}</p>}
       </div>
 
+      <AdSlot slot="above-content" className="mb-6" />
+
       {/* Main Content */}
       <div className="mb-10">{children}</div>
+
+      <AdSlot slot="end-of-article" className="mb-8" />
 
       {/* Related Terms */}
       {relatedTermSlugs.length > 0 && (

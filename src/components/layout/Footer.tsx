@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Scale } from "lucide-react";
+import { openConsentSettings } from "@/lib/consent";
 
 const toolLinks = [
   { label: "All Tools", href: "/tools" },
@@ -70,6 +71,15 @@ export default function Footer() {
         <div className="mt-10 pt-6 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
             <p>© {new Date().getFullYear()} LegallySpoken. All rights reserved.</p>
+            <div className="flex items-center gap-4">
+              <button
+                type="button"
+                onClick={openConsentSettings}
+                className="hover:text-accent transition-colors underline"
+              >
+                Cookie Settings
+              </button>
+            </div>
             <p className="text-center md:text-right max-w-md">
               <strong>Disclaimer:</strong> This site provides general legal information, not legal advice. Consult a qualified attorney for specific legal questions.
             </p>

@@ -20,6 +20,7 @@ import { format } from "date-fns";
 import blogDefaultImage from "@/assets/blog-default.jpg";
 import { linkifyLegalContent } from "@/lib/linkifyContent";
 import { tools } from "@/data/tools";
+import AdSlot from "@/components/ads/AdSlot";
 
 function decodeHtml(html: string) {
   return html
@@ -280,6 +281,7 @@ export default function BlogPostPage() {
 
           {/* Content */}
           <article className="flex-1 min-w-0">
+            <AdSlot slot="above-content" className="mb-6" />
             <Card>
               <CardContent className="p-8 md:p-10">
                 <div
@@ -288,6 +290,7 @@ export default function BlogPostPage() {
                 />
               </CardContent>
             </Card>
+            <AdSlot slot="end-of-article" className="mt-8" />
           </article>
         </div>
 

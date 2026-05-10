@@ -61,3 +61,9 @@ Disallow: /reset-password
 Disallow: /dashboard
 
 Sitemap: https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /

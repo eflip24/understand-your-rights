@@ -34,10 +34,46 @@ export default function PrivacyPolicyPage() {
               If you choose to save an analysis, the input and output data is stored in your account.
             </li>
             <li>
-              <strong>Cookies:</strong> We use essential cookies to maintain your session and preferences. We do not
-              use third-party advertising cookies.
+              <strong>Cookies:</strong> We use essential cookies to maintain your session and preferences. With
+              your consent, we also use advertising and analytics cookies (see "Advertising & Third-Party Cookies"
+              below). You can change your choice anytime via the "Cookie Settings" link in our footer.
             </li>
           </ul>
+
+          <h2>Advertising &amp; Third-Party Cookies (Google AdSense)</h2>
+          <p>
+            We use Google AdSense to display ads on parts of LegallySpoken. Google and its partners may use cookies
+            (including the DoubleClick DART cookie) and similar technologies to serve ads based on your prior visits
+            to this site or other websites.
+          </p>
+          <ul>
+            <li>
+              Google's use of advertising cookies enables it and its partners to serve ads based on your visits to
+              this and other sites on the Internet.
+            </li>
+            <li>
+              You may opt out of personalized advertising by visiting{" "}
+              <a href="https://www.google.com/settings/ads" className="text-accent" target="_blank" rel="noreferrer">Google Ads Settings</a>{" "}
+              or{" "}
+              <a href="https://www.aboutads.info" className="text-accent" target="_blank" rel="noreferrer">aboutads.info</a>.
+            </li>
+            <li>
+              If you reject advertising cookies in our consent banner, we instruct Google to serve only
+              non-personalized ads.
+            </li>
+            <li>
+              Information processed by ad partners may include your IP address, device type, browser, and pages
+              visited.
+            </li>
+          </ul>
+
+          <h2>Your California Privacy Rights (CCPA)</h2>
+          <p>
+            If you are a California resident, you have the right to know what personal information we collect, to
+            request deletion, and to opt out of the "sale" or "sharing" of personal information for cross-context
+            behavioral advertising. We do not sell your personal information for money. To opt out of personalized
+            advertising, use the "Cookie Settings" link in our footer or the Google opt-out links above.
+          </p>
 
           <h2>How We Use Your Information</h2>
           <p>We use the information we collect to:</p>

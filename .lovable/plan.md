@@ -1,128 +1,99 @@
-# Feature Roadmap: Legal Niche Authority + SEO Growth
+# Make LegallySpoken Google AdSense Ready & Compliant
 
-LegallySpoken already has 100+ tools, blog, lawyer directory, pillar pages, and AI chat. The biggest remaining wins are **content depth, programmatic SEO, trust signals, and engagement loops** — not more one-off tools. Below is a prioritized plan grouped by SEO impact.
+Goal: Pass Google AdSense site review and stay compliant with their Publisher Policies, GDPR, and CCPA.
 
----
+## 1. Install the AdSense script (the immediate Google requirement)
 
-## Tier 1 — Programmatic SEO Engines (highest traffic ROI)
+Add to `index.html` inside `<head>`:
 
-### 1. "Statute Library" — State × Topic landing pages
-Generate pages like `/laws/california/security-deposit-limits`, `/laws/texas/at-will-employment` from a structured dataset.
-- ~50 states × ~20 topics = ~1,000 indexable pages
-- Each page: plain-English summary, statute citation, related tools, related lawyers, JSON-LD `LegalService` + `FAQPage`
-- Reuses existing `stateData.ts`, links into tools and lawyer directory
-
-### 2. "Compare Two States" pages
-`/compare/california-vs-texas/non-compete`, etc. High intent, low competition.
-- Auto-generated diff tables from the same statute dataset
-- Internal links to both single-state pages and the relevant tool
-
-### 3. "Document Library" — Free legal templates as standalone pages
-Each existing generator (NDA, Operating Agreement, etc.) gets a paired SEO page:
-`/templates/nda-template`, `/templates/llc-operating-agreement`
-- Long-form: when to use, what's inside, state nuances, downloadable PDF/DOCX, embedded generator
-- Targets high-volume "[document] template" keywords directly
-
-### 4. "Legal Question" Q&A hub
-`/answers/can-my-landlord-enter-without-notice`, etc.
-- Seed 200 common questions, AI-assist drafts, human review
-- Schema: `QAPage` + `FAQPage`; great for Google "People Also Ask"
-
----
-
-## Tier 2 — Engagement & Conversion Features
-
-### 5. Saved Workspace ("My Legal Folder")
-Logged-in users can save tool results, generated docs, and bookmarked guides in one dashboard.
-- Boosts return visits, email capture, lawyer-referral conversion
-- Already have auth + `SaveAnalysisButton` — extend to a real folder UI
-
-### 6. Document Vault with PDF/DOCX export
-Add proper PDF + DOCX export to all generators (NDA, Operating Agreement, POA, etc.) using `pdf-lib` and `docx` packages.
-- Major perceived-value upgrade vs. plain-text output
-- Adds shareable/printable artifacts → backlinks
-
-### 7. Email-gated "Legal Health Report"
-Turn the existing Health Check Quiz into a downloadable personalized PDF report sent by email.
-- Builds mailing list (newsletter = recurring traffic)
-- Each report links to recommended tools + local lawyers
-
-### 8. Lawyer-match form (lead-gen)
-"Describe your situation → get matched with 3 nearby lawyers." Free for users, monetizable later.
-- Plays directly into existing lawyer directory + geo pages
-
----
-
-## Tier 3 — Trust, E-E-A-T & SEO Hygiene
-
-### 9. Author/Reviewer system
-Add `Person` schema, author bios, "Reviewed by [JD/Attorney]" badges on every legal article and statute page. Critical for Google's YMYL ranking on legal content.
-
-### 10. Citations & "Last reviewed" dates
-Every statute/guide page shows: source citation (link to official `.gov` statute), last reviewed date, change log. Big trust + freshness signal.
-
-### 11. Glossary cross-linking auto-pass
-Run `linkifyLegalContent` across blog posts and statute pages on render so every legal term auto-links to its glossary entry. Internal-link graph boost.
-
-### 12. Breadcrumb + HowTo + Speakable schema
-Add `BreadcrumbList` site-wide, `HowTo` schema on tool pages, `Speakable` on FAQs (voice search).
-
----
-
-## Tier 4 — Differentiation Features
-
-### 13. "Plain-English Mode" toggle
-Site-wide toggle that re-renders any legal article at a 6th-grade reading level via cached AI rewrite. Unique brand moat — matches the "plain English" identity.
-
-### 14. Deadline/Reminder system
-Users save deadlines (eviction notice, statute of limitations, lease renewal) and get email reminders. Sticky feature, builds list.
-
-### 15. Community Q&A (moderated)
-Users submit questions; verified attorneys answer. Generates UGC pages → long-tail SEO compounding over time.
-
-### 16. Case Outcome Estimator (AI)
-Input situation → ballpark settlement range based on state + claim type, with disclaimer. High-intent traffic from "how much is my X case worth."
-
----
-
-## Suggested Build Order
-
-```text
-Phase 1 (4-6 weeks, biggest SEO lift):
-  1. Statute Library (#1)
-  2. Document Library SEO pages + PDF/DOCX export (#3, #6)
-  3. Author/Reviewer + citations + "Last reviewed" (#9, #10)
-  4. Breadcrumb/HowTo/FAQ schema audit (#12)
-
-Phase 2 (engagement + list-building):
-  5. Saved Workspace (#5)
-  6. Email-gated Health Report (#7)
-  7. Q&A hub seeded with 200 questions (#4)
-
-Phase 3 (differentiation + compounding):
-  8. Compare-states pages (#2)
-  9. Plain-English toggle (#13)
-  10. Deadline reminders (#14)
-  11. Lawyer-match form (#8)
-  12. Community Q&A + Case Estimator (#15, #16)
+```html
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7983626512285415" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7983626512285415" />
 ```
 
----
+The `<meta>` tag is what AdSense actually checks during site review (works even if the script is blocked by an ad blocker on the reviewer's end).
 
-## Technical Notes
+## 2. Create `public/ads.txt`
 
-- All programmatic pages use existing `Head`, `JsonLd`, `ToolPageLayout`/`ContentPageLayout`, and `SmartLocalLink` patterns
-- Statute dataset: new `src/data/statutes/{topic}.ts` files keyed by state code; reuse `stateData.ts`
-- PDF/DOCX export: add `pdf-lib` + `docx` (client-side, no backend cost)
-- Email features: extend Lovable Cloud edge functions; use Resend (already common pattern) or Supabase SMTP
-- AI features (#13, #16): reuse `analyze-contract` edge function with new `mode` branches; no new secrets
-- Sitemap: extend `generate-sitemap` edge function with new sections (statutes, templates, answers, compare)
-- All new pages must include the standard legal disclaimer (per project memory)
+Required by AdSense for ad serving authorization:
 
----
+```
+google.com, pub-7983626512285415, DIRECT, f08c47fec0942fa0
+```
 
-## Open Questions
+## 3. Fix the `<AdSlot />` component so ads actually render
 
-1. Which phase do you want to start with — Phase 1 (pure SEO firepower) or jump to a specific feature like Saved Workspace or PDF export?
-2. For the Statute Library, OK to seed with the top 20 topics across all 50 states (~1,000 pages) in one batch, or start with 5 topics to validate?
-3. Do you want monetization hooks (lawyer-match lead-gen, premium PDF export) baked in from the start, or kept fully free for now?
+Current bug: it returns `null` until the script tag exists, but never re-renders, and never calls `(adsbygoogle = window.adsbygoogle || []).push({})` — meaning no ad ever loads even after approval.
+
+Rewrite to:
+- Render the `<ins>` container always (with reserved height to avoid CLS).
+- On mount, push to `window.adsbygoogle` so AdSense fills the slot.
+- Accept a real `data-ad-slot` ID per placement (configurable, with a single env-style constant file `src/lib/adsense.ts` mapping slot names → numeric IDs).
+- Set `data-ad-client="ca-pub-7983626512285415"`.
+- Respect cookie consent (see step 5) — only push if user accepted.
+
+## 4. Place ads on real pages (currently `<AdSlot />` is rarely used)
+
+Add `<AdSlot />` to the high-traffic content pages:
+- `BlogPostPage` — above content + mid-content + end-of-article
+- `ToolPage` — post-result
+- `StatutePage`, `LegalTermPage`, `LegalClausePage`, `ContractTypePage`, `ClusterArticlePage`, `PillarPage` — mid + end
+- `LocalLawyersDirectory` etc. — already wired, keep
+- Home: optional in-feed between sections
+
+AdSense rejects sites with the script installed but no ad units placed.
+
+## 5. Cookie consent banner (GDPR/CCPA)
+
+Build a lightweight in-house banner (no third-party dependency):
+- New file: `src/components/consent/CookieConsent.tsx` — bottom sheet with **Accept all**, **Reject non-essential**, **Manage preferences** (Analytics + Advertising toggles).
+- New file: `src/lib/consent.ts` — stores choice in `localStorage` (`ls_consent_v1`), exposes `useConsent()` hook + `hasAdConsent()` helper.
+- Mount the banner once in `App.tsx`.
+- Before AdSense `push()` runs, gate on `hasAdConsent()`.
+- Also forward consent to Google via `window.adsbygoogle.requestNonPersonalizedAds = 1` when user rejects personalized ads.
+
+## 6. Update Privacy Policy & Terms
+
+`PrivacyPolicyPage.tsx`: add sections for:
+- Google AdSense + third-party advertising cookies (DoubleClick DART)
+- How users can opt out (link to https://www.google.com/settings/ads and https://www.aboutads.info)
+- IP address / device data processed by ad partners
+- CCPA "Do Not Sell My Personal Information" notice
+- GDPR legal basis (consent) + how to withdraw
+
+`TermsOfServicePage.tsx`: add a short "Advertising" clause.
+
+Add a footer link: **"Cookie Settings"** that re-opens the consent banner.
+
+## 7. AdSense policy compliance audit
+
+- Ensure every page has unique, substantive content (already true — 100+ tools, blog, statutes).
+- Keep the existing legal disclaimer visible on tool pages (already present).
+- Confirm `robots.txt` and sitemap allow Googlebot + Mediapartners-Google (verify `public/robots.txt`).
+- Ensure no ads appear on: 404 page, login/signup, reset-password, admin pages, thank-you/empty states.
+- Maintain a clear navigation, About, Contact, Privacy, Terms (already present).
+
+## 8. Verify
+
+After implementation, manually load a blog post page and:
+- Confirm script loads (Network tab → `adsbygoogle.js`).
+- Confirm `<ins>` slots render with reserved height.
+- Confirm consent banner blocks ads until accepted.
+- Resubmit site for AdSense review.
+
+## Files to create
+- `public/ads.txt`
+- `src/lib/adsense.ts`
+- `src/lib/consent.ts`
+- `src/components/consent/CookieConsent.tsx`
+- `src/components/consent/CookieSettingsButton.tsx`
+
+## Files to edit
+- `index.html` (script + meta tag)
+- `src/components/ads/AdSlot.tsx` (fix render + push logic + consent gate)
+- `src/App.tsx` (mount `<CookieConsent />`)
+- `src/pages/PrivacyPolicyPage.tsx` (advertising disclosures)
+- `src/pages/TermsOfServicePage.tsx` (advertising clause)
+- `src/components/layout/Footer.tsx` (Cookie Settings link)
+- `src/pages/BlogPostPage.tsx`, `src/pages/ToolPage.tsx`, `src/pages/StatutePage.tsx`, `src/pages/LegalTermPage.tsx`, `src/pages/LegalClausePage.tsx`, `src/pages/ContractTypePage.tsx`, `src/pages/ClusterArticlePage.tsx`, `src/pages/PillarPage.tsx` (insert `<AdSlot />`)
+- `public/robots.txt` (allow Mediapartners-Google if needed)
