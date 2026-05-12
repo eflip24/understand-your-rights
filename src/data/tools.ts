@@ -88,6 +88,13 @@ export const categories: CategoryInfo[] = [
     icon: Sun,
     color: "text-yellow-500",
   },
+  {
+    id: "family",
+    label: "Family Law Tools",
+    description: "Calculators for child support, alimony, divorce costs, and family-related legal estimates.",
+    icon: Heart,
+    color: "text-pink-500",
+  },
 ];
 
 export const tools: Tool[] = [
