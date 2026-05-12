@@ -1,99 +1,58 @@
-# Make LegallySpoken Google AdSense Ready & Compliant
+## Plan: Add 7 High-Demand Legal Calculators (Family + Housing + Cases)
 
-Goal: Pass Google AdSense site review and stay compliant with their Publisher Policies, GDPR, and CCPA.
+I cross-referenced your list against the existing 100+ tools. Several user-suggested tools already exist and I'm excluding them to avoid duplicates:
 
-## 1. Install the AdSense script (the immediate Google requirement)
+**Already built (skipping):**
+- Overtime Pay Calculator → `overtime-calc`
+- Eviction Notice Timeline → `eviction-notice-lookup`
+- Security Deposit Return → `security-deposit`
+- Independent Contractor vs Employee → `contractor-vs-employee`
+- Personal Injury Settlement → `settlement-estimator` + `accident-damage`
+- Legal Fee Estimator → `attorney-fee`
+- Severance Pay → `severance-pay`
+- Statute of Limitations (lookup) → `statute-of-limitations`
+- Wrongful Termination (checklist) → `wrongful-termination`
 
-Add to `index.html` inside `<head>`:
+### New tools to build (7)
 
-```html
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7983626512285415" crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-7983626512285415" />
-```
+These fill the **family law gap** (currently zero tools) and add deeper case-value/housing utilities that don't duplicate anything:
 
-The `<meta>` tag is what AdSense actually checks during site review (works even if the script is blocked by an ad blocker on the reviewer's end).
+| # | Tool | Category | Why it's distinct |
+|---|------|----------|-------------------|
+| 1 | **Child Support Calculator** | Family (new category) | Income shares + percentage-of-income models; state-aware (CA, NY, TX, FL, IL + generic) |
+| 2 | **Alimony / Spousal Support Calculator** | Family | Length-of-marriage formulas, state guidelines, duration estimate |
+| 3 | **Divorce Cost Estimator** | Family | Filing fees + attorney hours by state, contested vs uncontested |
+| 4 | **Statute of Limitations Deadline Calculator** | Consumer | Date-input variant of existing lookup — "incident date → deadline date + days remaining". The current tool only shows years; this answers "can I still sue?" |
+| 5 | **Wrongful Termination Case Value Estimator** | Employment | Lost wages + benefits + emotional distress range + attorney fees. Distinct from existing checklist (which only assesses if you have a case) |
+| 6 | **Lease Break / Early Termination Penalty Calculator** | Real Estate | Months remaining × rent, minus mitigation, plus state-specific penalty caps |
+| 7 | **Severance Offer Fairness Score** | Employment | Compares offer against industry/role/tenure benchmarks with a 0–100 score. Distinct from existing `severance-pay` (which only estimates a range, not fairness) |
 
-## 2. Create `public/ads.txt`
+### Implementation approach
 
-Required by AdSense for ad serving authorization:
+For each tool, follow the established pattern used by `SeverancePayCalculator.tsx` and `StatuteOfLimitationsLookup.tsx`:
 
-```
-google.com, pub-7983626512285415, DIRECT, f08c47fec0942fa0
-```
+1. **Create component** in `src/components/tools/` — client-side React, shadcn `Input`/`Select`/`Card`, state-specific data tables inline.
+2. **Register** in `src/data/tools.ts` (id, slug, name, category, descriptions, icon, SEO keywords).
+3. **Add lazy import** in `src/pages/ToolPage.tsx` `toolComponents` map.
+4. **Add new "Family Law" category** to `categories` array in `tools.ts` (icon: `Heart` or `Users` from lucide).
+5. **Sitemap** auto-includes new tools via existing `generate-sitemap` edge function (driven by tools data).
+6. **AdSense** ad slots auto-render via existing `ToolPageLayout` — no extra wiring needed.
+7. **SEO**: each tool gets a unique `<Head>` title with format `{Tool Name} — Free {Year} Calculator | LegallySpoken`, meta description ~150 chars, FAQ-style intro copy on the page.
 
-## 3. Fix the `<AdSlot />` component so ads actually render
+### Technical notes
 
-Current bug: it returns `null` until the script tag exists, but never re-renders, and never calls `(adsbygoogle = window.adsbygoogle || []).push({})` — meaning no ad ever loads even after approval.
+- **State data**: hardcoded JSON tables for top 10 states (CA, NY, TX, FL, IL, PA, OH, GA, NC, MI) + "Other" fallback. Sources: state code citations included in result text.
+- **Disclaimers**: every result block ends with the standard "general info, not legal advice" line (per project memory).
+- **No new dependencies** — all tools use existing shadcn/ui + native React state.
+- **No backend changes** — pure client-side calcs.
+- **Design tokens only** — no hardcoded colors (text-accent, bg-muted, etc.).
 
-Rewrite to:
-- Render the `<ins>` container always (with reserved height to avoid CLS).
-- On mount, push to `window.adsbygoogle` so AdSense fills the slot.
-- Accept a real `data-ad-slot` ID per placement (configurable, with a single env-style constant file `src/lib/adsense.ts` mapping slot names → numeric IDs).
-- Set `data-ad-client="ca-pub-7983626512285415"`.
-- Respect cookie consent (see step 5) — only push if user accepted.
+### What I will NOT touch
 
-## 4. Place ads on real pages (currently `<AdSlot />` is rarely used)
+- No changes to existing tools, auth, blog, or AdSense setup.
+- No new edge functions or DB migrations.
+- No layout/navigation redesign — new tools simply appear in the directory and category pages automatically.
 
-Add `<AdSlot />` to the high-traffic content pages:
-- `BlogPostPage` — above content + mid-content + end-of-article
-- `ToolPage` — post-result
-- `StatutePage`, `LegalTermPage`, `LegalClausePage`, `ContractTypePage`, `ClusterArticlePage`, `PillarPage` — mid + end
-- `LocalLawyersDirectory` etc. — already wired, keep
-- Home: optional in-feed between sections
+### Deliverable
 
-AdSense rejects sites with the script installed but no ad units placed.
-
-## 5. Cookie consent banner (GDPR/CCPA)
-
-Build a lightweight in-house banner (no third-party dependency):
-- New file: `src/components/consent/CookieConsent.tsx` — bottom sheet with **Accept all**, **Reject non-essential**, **Manage preferences** (Analytics + Advertising toggles).
-- New file: `src/lib/consent.ts` — stores choice in `localStorage` (`ls_consent_v1`), exposes `useConsent()` hook + `hasAdConsent()` helper.
-- Mount the banner once in `App.tsx`.
-- Before AdSense `push()` runs, gate on `hasAdConsent()`.
-- Also forward consent to Google via `window.adsbygoogle.requestNonPersonalizedAds = 1` when user rejects personalized ads.
-
-## 6. Update Privacy Policy & Terms
-
-`PrivacyPolicyPage.tsx`: add sections for:
-- Google AdSense + third-party advertising cookies (DoubleClick DART)
-- How users can opt out (link to https://www.google.com/settings/ads and https://www.aboutads.info)
-- IP address / device data processed by ad partners
-- CCPA "Do Not Sell My Personal Information" notice
-- GDPR legal basis (consent) + how to withdraw
-
-`TermsOfServicePage.tsx`: add a short "Advertising" clause.
-
-Add a footer link: **"Cookie Settings"** that re-opens the consent banner.
-
-## 7. AdSense policy compliance audit
-
-- Ensure every page has unique, substantive content (already true — 100+ tools, blog, statutes).
-- Keep the existing legal disclaimer visible on tool pages (already present).
-- Confirm `robots.txt` and sitemap allow Googlebot + Mediapartners-Google (verify `public/robots.txt`).
-- Ensure no ads appear on: 404 page, login/signup, reset-password, admin pages, thank-you/empty states.
-- Maintain a clear navigation, About, Contact, Privacy, Terms (already present).
-
-## 8. Verify
-
-After implementation, manually load a blog post page and:
-- Confirm script loads (Network tab → `adsbygoogle.js`).
-- Confirm `<ins>` slots render with reserved height.
-- Confirm consent banner blocks ads until accepted.
-- Resubmit site for AdSense review.
-
-## Files to create
-- `public/ads.txt`
-- `src/lib/adsense.ts`
-- `src/lib/consent.ts`
-- `src/components/consent/CookieConsent.tsx`
-- `src/components/consent/CookieSettingsButton.tsx`
-
-## Files to edit
-- `index.html` (script + meta tag)
-- `src/components/ads/AdSlot.tsx` (fix render + push logic + consent gate)
-- `src/App.tsx` (mount `<CookieConsent />`)
-- `src/pages/PrivacyPolicyPage.tsx` (advertising disclosures)
-- `src/pages/TermsOfServicePage.tsx` (advertising clause)
-- `src/components/layout/Footer.tsx` (Cookie Settings link)
-- `src/pages/BlogPostPage.tsx`, `src/pages/ToolPage.tsx`, `src/pages/StatutePage.tsx`, `src/pages/LegalTermPage.tsx`, `src/pages/LegalClausePage.tsx`, `src/pages/ContractTypePage.tsx`, `src/pages/ClusterArticlePage.tsx`, `src/pages/PillarPage.tsx` (insert `<AdSlot />`)
-- `public/robots.txt` (allow Mediapartners-Google if needed)
+7 new tool pages live at `/tools/{category}/{slug}`, listed in the directory, indexed in the sitemap, with ads enabled — closing the family law gap and adding the highest-search-volume case-value calculators.
