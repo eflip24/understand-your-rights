@@ -1697,6 +1697,80 @@ export const tools: Tool[] = [
       { question: "Are there caps?", answer: "Some utilities cap the annual credit value or roll it over to next year only at a discount." },
     ],
     relatedToolIds: ["solar-roi", "solar-incentive", "ppa-calculator"] },
+
+  // ===== Family Law (new category) =====
+  { id: "child-support", name: "Child Support Calculator", slug: "child-support-calculator", category: "family", categoryLabel: "Family Law Tools",
+    description: "Estimate monthly child support obligations using your state's income shares or percentage-of-income guideline. Supports California, New York, Texas, Florida, Illinois, and a generic fallback.",
+    shortDescription: "Estimate monthly child support by state.", icon: Baby, popular: true,
+    faqs: [
+      { question: "How accurate is this estimate?", answer: "It applies the published state guideline formula to the inputs you provide. Actual orders may vary based on custody arrangements, healthcare costs, and judicial discretion." },
+      { question: "Does it account for shared custody?", answer: "Partially — many states adjust support based on overnights. This calculator gives a baseline; your final order may be reduced for shared parenting time." },
+      { question: "Is the result legally binding?", answer: "No. It is an estimate for planning purposes only. Final support orders are issued by a court." },
+    ],
+    relatedToolIds: ["alimony-calc", "divorce-cost", "paycheck-calc"] },
+
+  { id: "alimony-calc", name: "Alimony / Spousal Support Calculator", slug: "alimony-spousal-support-calculator", category: "family", categoryLabel: "Family Law Tools",
+    description: "Estimate monthly alimony (spousal support / maintenance) and likely duration based on incomes, length of marriage, and state guidelines.",
+    shortDescription: "Estimate alimony amount and duration.", icon: Heart, popular: true,
+    faqs: [
+      { question: "How is alimony calculated?", answer: "Most states use a formula based on the difference in spouse incomes plus length of marriage. Some, like California (post-judgment) and Texas, give judges wide discretion." },
+      { question: "How long does alimony last?", answer: "Often 30–50% of the length of the marriage. Marriages of 20+ years may receive indefinite support in some states." },
+      { question: "Can the amount change later?", answer: "Yes — most alimony orders can be modified if there is a substantial change in income, remarriage, or cohabitation." },
+    ],
+    relatedToolIds: ["child-support", "divorce-cost", "net-worth"] },
+
+  { id: "divorce-cost", name: "Divorce Cost Estimator", slug: "divorce-cost-estimator", category: "family", categoryLabel: "Family Law Tools",
+    description: "Estimate the total cost of a divorce including filing fees, attorney hours, mediation, and court costs — for both contested and uncontested cases.",
+    shortDescription: "Estimate the total cost of a divorce.", icon: Scale,
+    faqs: [
+      { question: "What's the average cost of divorce?", answer: "Uncontested: $500–$2,500. Contested: $15,000–$30,000+ per spouse. Costs scale with assets, custody disputes, and trial length." },
+      { question: "Can I avoid attorney fees?", answer: "Yes — DIY filings work for simple, uncontested divorces with no children or shared assets. Most courts have self-help packets." },
+      { question: "Does the loser pay fees?", answer: "Rarely. Most US courts require each spouse to pay their own attorney unless one party acted in bad faith." },
+    ],
+    relatedToolIds: ["alimony-calc", "child-support", "attorney-fee"] },
+
+  // ===== Consumer (deadline variant of SoL) =====
+  { id: "sol-deadline", name: "Statute of Limitations Deadline Calculator", slug: "statute-of-limitations-deadline-calculator", category: "consumer", categoryLabel: "Consumer Tools",
+    description: "Enter the date your claim arose and your state — get the exact filing deadline and how many days you have left to sue. Covers contracts, personal injury, fraud, and property damage.",
+    shortDescription: "Find your exact filing deadline by date.", icon: CalendarClock, popular: true,
+    faqs: [
+      { question: "What if my deadline already passed?", answer: "Your claim is likely time-barred. Some narrow exceptions (discovery rule, fraudulent concealment, minor plaintiffs) may apply — talk to a lawyer immediately." },
+      { question: "When does the clock start?", answer: "Usually on the date of the injury, breach, or discovery of harm — depending on the claim and state." },
+      { question: "Can the deadline be paused?", answer: "Yes — 'tolling' can pause the clock for minors, mental incapacity, or defendant absence from the state." },
+    ],
+    relatedToolIds: ["statute-of-limitations", "small-claims-limit", "settlement-estimator"] },
+
+  // ===== Employment (case value + fairness) =====
+  { id: "wrongful-term-value", name: "Wrongful Termination Case Value Estimator", slug: "wrongful-termination-case-value-estimator", category: "employment", categoryLabel: "Employment Tools",
+    description: "Estimate the potential value of a wrongful termination claim including lost wages, lost benefits, emotional distress damages, and attorney fees.",
+    shortDescription: "Estimate your wrongful termination case value.", icon: BarChart3, popular: true,
+    faqs: [
+      { question: "What damages are typical?", answer: "Back pay (wages from termination to settlement), front pay (future lost earnings), benefits, and in some cases emotional distress and punitive damages." },
+      { question: "Do I have to mitigate damages?", answer: "Yes — you must make reasonable efforts to find new work. Wages from a new job offset back pay." },
+      { question: "What's a typical settlement?", answer: "Most wrongful termination cases settle for 6–12 months of salary. High-profile or discrimination cases can reach $500K+." },
+    ],
+    relatedToolIds: ["wrongful-termination", "severance-fairness", "settlement-estimator"] },
+
+  { id: "severance-fairness", name: "Severance Offer Fairness Score", slug: "severance-offer-fairness-score", category: "employment", categoryLabel: "Employment Tools",
+    description: "Score your severance offer 0–100 against industry benchmarks for your role, tenure, and salary level. Get a fairness rating and negotiation guidance.",
+    shortDescription: "Score your severance offer against benchmarks.", icon: Award,
+    faqs: [
+      { question: "Is severance required by law?", answer: "No — most US employers are not required to offer severance unless promised in a contract or policy. Many do as goodwill or in exchange for a release of claims." },
+      { question: "Should I negotiate?", answer: "Almost always yes. Initial offers are typically 20–40% below what employers will pay if pushed, especially for tenured or senior staff." },
+      { question: "What should I look for?", answer: "Severance amount, healthcare continuation, outplacement services, non-disparagement balance, and the scope of the release of claims." },
+    ],
+    relatedToolIds: ["severance-pay", "wrongful-term-value", "wrongful-termination"] },
+
+  // ===== Real Estate (lease break) =====
+  { id: "lease-break-penalty", name: "Lease Break / Early Termination Penalty Calculator", slug: "lease-break-penalty-calculator", category: "realestate", categoryLabel: "Real Estate Tools",
+    description: "Estimate the financial penalty for breaking your lease early — including months remaining, mitigation by your landlord, and state-specific caps on liability.",
+    shortDescription: "Estimate the cost of breaking your lease.", icon: Home, popular: true,
+    faqs: [
+      { question: "Can I just walk away?", answer: "Not without consequences. Most leases let landlords sue for unpaid rent through the end of the term, plus advertising and re-rental costs." },
+      { question: "Does my landlord have to find a new tenant?", answer: "In most states, yes — landlords have a 'duty to mitigate' by trying to re-rent the unit. Once re-rented, your liability ends." },
+      { question: "Are there legal reasons to break a lease?", answer: "Active military duty (SCRA), domestic violence (state-specific), uninhabitable conditions, and landlord harassment are common protected reasons." },
+    ],
+    relatedToolIds: ["security-deposit", "rent-increase", "habitability-tracker"] },
 ];
 
 export function getToolBySlug(category: string, slug: string): Tool | undefined {
