@@ -36,6 +36,7 @@ const CATEGORY_STYLES: Record<ToolCategory, { tile: string; icon: string; badge:
   business: { tile: "bg-indigo-50", icon: "text-indigo-600", badge: "bg-indigo-50 text-indigo-700" },
   finance: { tile: "bg-cyan-50", icon: "text-cyan-700", badge: "bg-cyan-50 text-cyan-700" },
   energy: { tile: "bg-lime-50", icon: "text-lime-700", badge: "bg-lime-50 text-lime-700" },
+  family: { tile: "bg-pink-50", icon: "text-pink-600", badge: "bg-pink-50 text-pink-700" },
 };
 
 export default function PopularToolsSection() {
