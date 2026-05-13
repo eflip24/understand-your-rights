@@ -1,0 +1,68 @@
+# LegallySpoken
+
+> Free plain-English legal tools, calculators, and guides to help you understand your rights — not a replacement for a lawyer.
+
+LegallySpoken is a consumer legal tech platform offering 100+ free interactive tools, document generators, and state-specific legal guides. The site covers contract analysis, employment rights, consumer protection, family law, real estate, business formation, green energy, finance, and more. All calculators and generators run client-side without signup. Content includes a plain-English legal dictionary, contract clause explainers, statute lookups by state, data-driven pillar guides, and a local lawyer directory.
+
+## Tools
+
+- [/tools](/tools): Browse all 100+ free legal calculators and document generators.
+- [/tools/contract](/tools/contract): Contract tools — reading time estimator, word counter, jargon translator, and clause finder.
+- [/tools/consumer](/tools/consumer): Consumer tools — cancellation deadlines, notice periods, late fees, and refund eligibility.
+- [/tools/employment](/tools/employment): Employment tools — non-compete checker, freelance rate calculator, overtime pay, and invoice interest.
+- [/tools/generators](/tools/generators): Document generators — NDA, privacy policy, complaint letter, and terms of service.
+- [/tools/ai](/tools/ai): AI analysis tools — contract red-flag scanner, clause explainer, and contract comparison.
+- [/tools/realestate](/tools/realestate): Real estate tools — lease analyzer, rent increase calculator, security deposit estimator, and habitability tracker.
+- [/tools/business](/tools/business): Business tools — name checker, expense tracker, founders agreement, and operating agreement generators.
+- [/tools/finance](/tools/finance): Finance & trading calculators — crypto tax, loan payments, net worth, and compound interest.
+- [/tools/energy](/tools/energy): Green energy & solar — solar ROI, energy savings, net metering, and incentive estimators.
+- [/tools/family](/tools/family): Family law tools — child support calculator, alimony estimator, and divorce cost calculator.
+- [/tools/contract/reading-time-calculator](/tools/contract/reading-time-calculator): Estimate how long it takes to read a contract based on word count and legal complexity.
+- [/tools/employment/non-compete-checker](/tools/employment/non-compete-checker): Check non-compete clause enforceability by state and duration.
+- [/tools/realestate/security-deposit-calculator](/tools/realestate/security-deposit-calculator): Calculate security deposit returns and deadlines by state.
+- [/tools/family/child-support](/tools/family/child-support): Child support calculator with state-specific income-shares and percentage-of-income models.
+- [/tools/employment/overtime-calculator](/tools/employment/overtime-calculator): Calculate overtime pay based on hours worked and hourly rate.
+- [/tools/generators/nda-generator](/tools/generators/nda-generator): Generate a basic Non-Disclosure Agreement from a simple form.
+
+## Legal Guides & Reference
+
+- [/legal-terms](/legal-terms): Plain-English dictionary of 100+ legal terms with definitions and examples.
+- [/legal-terms/indemnification](/legal-terms/indemnification): Definition and example of indemnification in contracts.
+- [/legal-clauses](/legal-clauses): Explainer library for common contract clauses — enforceability notes and red flags.
+- [/legal-clauses/non-compete-clause](/legal-clauses/non-compete-clause): Non-compete clause guide — what it means, enforceability by state, and red flags.
+- [/contract-types](/contract-types): Guides for common contract types, key clauses, and common risks.
+- [/contract-types/nda](/contract-types/nda): Non-Disclosure Agreement guide — when to use one, key clauses, and risks.
+- [/laws](/laws): State statute library — plain-English summaries of state laws by topic.
+- [/laws/california/security-deposit-limits](/laws/california/security-deposit-limits): California security deposit laws — limits, return deadlines, and interest rules.
+- [/laws/new-york/eviction-notice-period](/laws/new-york/eviction-notice-period): New York eviction notice periods for nonpayment, lease violation, and no-cause.
+- [/laws/texas/minimum-wage](/laws/texas/minimum-wage): Texas minimum wage, tipped minimum, and overtime rules.
+
+## Pillar Guides
+
+- [/auto-accident-law](/auto-accident-law): Complete guide to auto accident law — steps after a crash, fault, claims, and timelines.
+- [/auto-accident-law/what-to-do-after-car-accident](/auto-accident-law/what-to-do-after-car-accident): Step-by-step guide on what to do immediately after a car accident.
+- [/personal-injury-law](/personal-injury-law): Personal injury law guide — negligence, damages, settlements, and statutes of limitations.
+- [/employment-law](/employment-law): Employment law guide — wrongful termination, wage claims, discrimination, and retaliation.
+- [/insurance-law](/insurance-law): Insurance law guide — claims, bad faith, coverage disputes, and policy interpretation.
+- [/criminal-law](/criminal-law): Criminal law guide — charges, defenses, your rights, and the court process.
+- [/landlord-tenant-law](/landlord-tenant-law): Landlord-tenant law guide — leases, evictions, repairs, security deposits, and habitability.
+- [/ai-tech-law](/ai-tech-law): AI and technology law guide — data privacy, intellectual property, and emerging regulations.
+
+## Lawyer Directory
+
+- [/lawyer-near-me](/lawyer-near-me): Find local lawyers by practice area, state, and city.
+- [/lawyer-near-me/personal-injury](/lawyer-near-me/personal-injury): Personal injury lawyers near you.
+- [/lawyer-near-me/car-accident](/lawyer-near-me/car-accident): Car accident lawyers near you.
+- [/lawyer-near-me/personal-injury/texas/houston](/lawyer-near-me/personal-injury/texas/houston): Personal injury lawyers in Houston, TX.
+
+## Blog & Content
+
+- [/blog](/blog): Articles on legal topics, consumer rights, and tool explainers.
+- [/legal-health-check](/legal-health-check): Interactive quiz that recommends the best legal tools for your situation.
+
+## Company & Legal
+
+- [/about](/about): About LegallySpoken — mission, team, and contact information.
+- [/privacy-policy](/privacy-policy): Privacy policy, cookie disclosures, and California privacy rights.
+- [/terms-of-service](/terms-of-service): Terms of service and user agreement.
+- [/disclaimer](/disclaimer): Legal disclaimer — this site is not a substitute for professional legal advice.
