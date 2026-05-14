@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,68 +11,15 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import LegalChatWidget from "@/components/chat/LegalChatWidget";
 import CookieConsent from "@/components/consent/CookieConsent";
-import { autoAccidentLaw } from "@/data/autoAccidentLaw";
-import { personalInjuryLaw } from "@/data/personalInjuryLaw";
-import { insuranceLaw } from "@/data/insuranceLaw";
-import { employmentLaw } from "@/data/employmentLaw";
-import { criminalLaw } from "@/data/criminalLaw";
-import { landlordTenantLaw } from "@/data/landlordTenantLaw";
-import { aiTechLaw } from "@/data/aiTechLaw";
-
-const PillarPageLazy = React.lazy(() => import("@/pages/PillarPage"));
-const ClusterArticlePageLazy = React.lazy(() => import("@/pages/ClusterArticlePage"));
-
-const pillarDataMap = { auto: autoAccidentLaw, pi: personalInjuryLaw, insurance: insuranceLaw, employment: employmentLaw, criminal: criminalLaw, landlord: landlordTenantLaw, aitech: aiTechLaw } as const;
-const PillarPageWrapper = ({ category }: { category: keyof typeof pillarDataMap }) => (
-  <PillarPageLazy data={pillarDataMap[category]} />
-);
-const ClusterPageWrapper = ({ category }: { category: keyof typeof pillarDataMap }) => (
-  <ClusterArticlePageLazy data={pillarDataMap[category]} />
-);
-
-// Lazy-load all page components
-const HomePage = React.lazy(() => import("@/pages/HomePage"));
-const ToolsDirectory = React.lazy(() => import("@/pages/ToolsDirectory"));
-const CategoryPage = React.lazy(() => import("@/pages/CategoryPage"));
-const ToolPage = React.lazy(() => import("@/pages/ToolPage"));
-const LegalTermsDirectory = React.lazy(() => import("@/pages/LegalTermsDirectory"));
-const LegalTermPage = React.lazy(() => import("@/pages/LegalTermPage"));
-const LegalClausesDirectory = React.lazy(() => import("@/pages/LegalClausesDirectory"));
-const LegalClausePage = React.lazy(() => import("@/pages/LegalClausePage"));
-const ContractTypesDirectory = React.lazy(() => import("@/pages/ContractTypesDirectory"));
-const ContractTypePage = React.lazy(() => import("@/pages/ContractTypePage"));
-const LoginPage = React.lazy(() => import("@/pages/LoginPage"));
-const SignupPage = React.lazy(() => import("@/pages/SignupPage"));
-const ForgotPasswordPage = React.lazy(() => import("@/pages/ForgotPasswordPage"));
-const ResetPasswordPage = React.lazy(() => import("@/pages/ResetPasswordPage"));
-const DashboardPage = React.lazy(() => import("@/pages/DashboardPage"));
-const BlogPage = React.lazy(() => import("@/pages/BlogPage"));
-const BlogPostPage = React.lazy(() => import("@/pages/BlogPostPage"));
-const BlogCategoryPage = React.lazy(() => import("@/pages/BlogCategoryPage"));
-const AdminLayout = React.lazy(() => import("@/pages/admin/AdminLayout"));
-const AdminDashboard = React.lazy(() => import("@/pages/admin/AdminDashboard"));
-const AdminBlogList = React.lazy(() => import("@/pages/admin/AdminBlogList"));
-const AdminBlogEditor = React.lazy(() => import("@/pages/admin/AdminBlogEditor"));
-const AdminCategories = React.lazy(() => import("@/pages/admin/AdminCategories"));
-const DisclaimerPage = React.lazy(() => import("@/pages/DisclaimerPage"));
-const PrivacyPolicyPage = React.lazy(() => import("@/pages/PrivacyPolicyPage"));
-const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage"));
-const NotFound = React.lazy(() => import("@/pages/NotFound"));
-const LegalHealthCheckPage = React.lazy(() => import("@/pages/LegalHealthCheckPage"));
-const LocalLawyersDirectory = React.lazy(() => import("@/pages/LocalLawyersDirectory"));
-const LocalLawyersAreaPage = React.lazy(() => import("@/pages/LocalLawyersAreaPage"));
-const LocalLawyersStatePage = React.lazy(() => import("@/pages/LocalLawyersStatePage"));
-const LocalLawyersCityPage = React.lazy(() => import("@/pages/LocalLawyersCityPage"));
-const StateClusterArticlePage = React.lazy(() => import("@/pages/StateClusterArticlePage"));
-const AboutPage = React.lazy(() => import("@/pages/AboutPage"));
-const StatuteLibraryDirectory = React.lazy(() => import("@/pages/StatuteLibraryDirectory"));
-const StatutePage = React.lazy(() => import("@/pages/StatutePage"));
+import AppRoutes from "@/AppRoutes";
+import LocaleSync from "@/i18n/LocaleSync";
+import "@/i18n/config";
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      gcTime: 10 * 60 * 1000, // 10 minutes
+      staleTime: 5 * 60 * 1000,
+      gcTime: 10 * 60 * 1000,
       refetchOnWindowFocus: false,
     },
   },
@@ -87,86 +34,37 @@ const PageLoader = () => (
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-    <AuthProvider>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <div className="flex min-h-screen flex-col">
-          <Navbar />
-          <main className="flex-1">
-            <Suspense fallback={<PageLoader />}>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/tools" element={<ToolsDirectory />} />
-                <Route path="/tools/:category" element={<CategoryPage />} />
-                <Route path="/tools/:category/:tool" element={<ToolPage />} />
-                <Route path="/legal-terms" element={<LegalTermsDirectory />} />
-                <Route path="/legal-terms/:slug" element={<LegalTermPage />} />
-                <Route path="/legal-clauses" element={<LegalClausesDirectory />} />
-                <Route path="/legal-clauses/:slug" element={<LegalClausePage />} />
-                <Route path="/contract-types" element={<ContractTypesDirectory />} />
-                <Route path="/contract-types/:slug" element={<ContractTypePage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/signup" element={<SignupPage />} />
-                <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-                <Route path="/reset-password" element={<ResetPasswordPage />} />
-                <Route path="/dashboard" element={<DashboardPage />} />
-                <Route path="/legal-health-check" element={<LegalHealthCheckPage />} />
-                <Route path="/blog" element={<BlogPage />} />
-                <Route path="/blog/category/:slug" element={<BlogCategoryPage />} />
-                <Route path="/blog/:slug" element={<BlogPostPage />} />
-                <Route path="/admin" element={<AdminLayout />}>
-                  <Route index element={<AdminDashboard />} />
-                  <Route path="blog" element={<AdminBlogList />} />
-                  <Route path="blog/new" element={<AdminBlogEditor />} />
-                  <Route path="blog/edit/:id" element={<AdminBlogEditor />} />
-                  <Route path="categories" element={<AdminCategories />} />
-                </Route>
-                <Route path="/auto-accident-law" element={<PillarPageWrapper category="auto" />} />
-                <Route path="/auto-accident-law/:slug" element={<ClusterPageWrapper category="auto" />} />
-                <Route path="/personal-injury-law" element={<PillarPageWrapper category="pi" />} />
-                <Route path="/personal-injury-law/:slug" element={<ClusterPageWrapper category="pi" />} />
-                <Route path="/insurance-law" element={<PillarPageWrapper category="insurance" />} />
-                <Route path="/insurance-law/:slug" element={<ClusterPageWrapper category="insurance" />} />
-                <Route path="/employment-law" element={<PillarPageWrapper category="employment" />} />
-                <Route path="/employment-law/:slug" element={<ClusterPageWrapper category="employment" />} />
-                <Route path="/criminal-law" element={<PillarPageWrapper category="criminal" />} />
-                <Route path="/criminal-law/:slug" element={<ClusterPageWrapper category="criminal" />} />
-                <Route path="/landlord-tenant-law" element={<PillarPageWrapper category="landlord" />} />
-                <Route path="/landlord-tenant-law/:slug" element={<ClusterPageWrapper category="landlord" />} />
-                <Route path="/ai-tech-law" element={<PillarPageWrapper category="aitech" />} />
-                <Route path="/ai-tech-law/:slug" element={<ClusterPageWrapper category="aitech" />} />
-                {/* State-specific article variants */}
-                <Route path="/auto-accident-law/:state/:slug" element={<StateClusterArticlePage />} />
-                <Route path="/personal-injury-law/:state/:slug" element={<StateClusterArticlePage />} />
-                <Route path="/insurance-law/:state/:slug" element={<StateClusterArticlePage />} />
-                <Route path="/employment-law/:state/:slug" element={<StateClusterArticlePage />} />
-                <Route path="/criminal-law/:state/:slug" element={<StateClusterArticlePage />} />
-                <Route path="/landlord-tenant-law/:state/:slug" element={<StateClusterArticlePage />} />
-                <Route path="/ai-tech-law/:state/:slug" element={<StateClusterArticlePage />} />
-                <Route path="/lawyer-near-me" element={<LocalLawyersDirectory />} />
-                <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
-                <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
-                <Route path="/lawyer-near-me/:area/:state/:city" element={<LocalLawyersCityPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/laws" element={<StatuteLibraryDirectory />} />
-                <Route path="/laws/:state/:topic" element={<StatutePage />} />
-                <Route path="/disclaimer" element={<DisclaimerPage />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-                <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-          </main>
-          <Footer />
-        </div>
-        <LegalChatWidget />
-        <CookieConsent />
-      </BrowserRouter>
-    </TooltipProvider>
-    </AuthProvider>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <LocaleSync />
+            <ScrollToTop />
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <Routes>
+                    {/* Non-default locales mount the same tree under a prefix.
+                        React Router v6 has no inline regex, so list explicitly. */}
+                    <Route path="/es/*" element={<AppRoutes />} />
+                    <Route path="/fr/*" element={<AppRoutes />} />
+                    <Route path="/de/*" element={<AppRoutes />} />
+                    <Route path="/pt/*" element={<AppRoutes />} />
+                    <Route path="/it/*" element={<AppRoutes />} />
+                    {/* English (default) — no prefix, preserves existing URLs. */}
+                    <Route path="/*" element={<AppRoutes />} />
+                  </Routes>
+                </Suspense>
+              </main>
+              <Footer />
+            </div>
+            <LegalChatWidget />
+            <CookieConsent />
+          </BrowserRouter>
+        </TooltipProvider>
+      </AuthProvider>
     </ThemeProvider>
   </QueryClientProvider>
 );

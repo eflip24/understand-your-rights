@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/s
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import ThemeToggle from "@/components/layout/ThemeToggle";
+import LangSwitcher from "@/components/layout/LangSwitcher";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAdminRole } from "@/hooks/useAdminRole";
 import { cn } from "@/lib/utils";
@@ -181,6 +182,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-1">
+          <LangSwitcher variant="navbar" />
           <ThemeToggle />
 
           {/* Mobile menu */}
