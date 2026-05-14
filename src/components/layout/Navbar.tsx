@@ -182,6 +182,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-1">
+          <LangSwitcher variant="navbar" />
           <ThemeToggle />
 
           {/* Mobile menu */}
