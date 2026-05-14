@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "tools": "Tools",
+    "guides": "Guides",
+    "resources": "Resources",
+    "findLawyer": "Find a Lawyer",
+    "search": "Search tools...",
+    "logIn": "Log in",
+    "logOut": "Log out",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "menu": "Menu"
+  },
+  "footer": {
+    "tagline": "Simple legal tools for everyday people. Not a lawyer, not legal advice.",
+    "tools": "Tools",
+    "guides": "Legal Guides",
+    "resources": "Resources",
+    "legal": "Legal",
+    "cookieSettings": "Cookie Settings",
+    "rights": "All rights reserved.",
+    "disclaimer": "Disclaimer:",
+    "disclaimerBody": "This site provides general legal information, not legal advice. Consult a qualified attorney for specific legal questions."
+  },
+  "language": {
+    "switcher": "Language",
+    "current": "Current language"
+  }
+}
