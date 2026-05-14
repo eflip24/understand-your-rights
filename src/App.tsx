@@ -46,8 +46,13 @@ const App = () => (
               <main className="flex-1">
                 <Suspense fallback={<PageLoader />}>
                   <Routes>
-                    {/* Non-default locales mount the same tree under a prefix. */}
-                    <Route path="/:lang(es|fr|de|pt|it)/*" element={<AppRoutes />} />
+                    {/* Non-default locales mount the same tree under a prefix.
+                        React Router v6 has no inline regex, so list explicitly. */}
+                    <Route path="/es/*" element={<AppRoutes />} />
+                    <Route path="/fr/*" element={<AppRoutes />} />
+                    <Route path="/de/*" element={<AppRoutes />} />
+                    <Route path="/pt/*" element={<AppRoutes />} />
+                    <Route path="/it/*" element={<AppRoutes />} />
                     {/* English (default) — no prefix, preserves existing URLs. */}
                     <Route path="/*" element={<AppRoutes />} />
                   </Routes>
