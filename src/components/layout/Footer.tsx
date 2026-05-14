@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Scale } from "lucide-react";
 import { openConsentSettings } from "@/lib/consent";
+import LangSwitcher from "@/components/layout/LangSwitcher";
 
 const toolLinks = [
   { label: "All Tools", href: "/tools" },
