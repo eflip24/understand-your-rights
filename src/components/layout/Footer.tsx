@@ -73,6 +73,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
             <p>© {new Date().getFullYear()} LegallySpoken. All rights reserved.</p>
             <div className="flex items-center gap-4">
+              <LangSwitcher variant="footer" />
               <button
                 type="button"
                 onClick={openConsentSettings}
