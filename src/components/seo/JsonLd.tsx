@@ -27,7 +27,8 @@ export default function JsonLd({ data }: JsonLdProps) {
  */
 export function JsonLdGraph({ schemas }: { schemas: (Record<string, unknown> | null | undefined)[] }) {
   const filtered = schemas.filter(Boolean) as Record<string, unknown>[];
-  const graph = filtered.map(({ "@context": _, ...rest }) => rest);
+  const lang = (typeof document !== "undefined" && document.documentElement.getAttribute("lang")) || "en";
+  const graph = filtered.map(({ "@context": _, ...rest }) => ({ ...rest, inLanguage: rest.inLanguage ?? lang }));
   const data = { "@context": "https://schema.org", "@graph": graph };
   const json = JSON.stringify(data);
 

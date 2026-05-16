@@ -8,6 +8,12 @@ import fr from "./locales/fr/common.json";
 import de from "./locales/de/common.json";
 import pt from "./locales/pt/common.json";
 import it from "./locales/it/common.json";
+import enSeo from "./locales/en/seo.json";
+import esSeo from "./locales/es/seo.json";
+import frSeo from "./locales/fr/seo.json";
+import deSeo from "./locales/de/seo.json";
+import ptSeo from "./locales/pt/seo.json";
+import itSeo from "./locales/it/seo.json";
 
 export const SUPPORTED_LOCALES = ["en", "es", "fr", "de", "pt", "it"] as const;
 export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
@@ -31,17 +37,17 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { common: en },
-      es: { common: es },
-      fr: { common: fr },
-      de: { common: de },
-      pt: { common: pt },
-      it: { common: it },
+      en: { common: en, seo: enSeo },
+      es: { common: es, seo: esSeo },
+      fr: { common: fr, seo: frSeo },
+      de: { common: de, seo: deSeo },
+      pt: { common: pt, seo: ptSeo },
+      it: { common: it, seo: itSeo },
     },
     fallbackLng: DEFAULT_LOCALE,
     supportedLngs: SUPPORTED_LOCALES as unknown as string[],
     defaultNS: "common",
-    ns: ["common"],
+    ns: ["common", "seo"],
     interpolation: { escapeValue: false },
     detection: {
       // URL is the source of truth (handled by LocaleSync); this is only for the very first visit.

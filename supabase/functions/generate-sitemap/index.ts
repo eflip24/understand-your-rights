@@ -152,18 +152,93 @@ const pillarArticleMap: Record<string, string[]> = {
 
 // === Helpers ===
 
+const LOCALES = ["en", "es", "fr", "de", "pt", "it"] as const;
+const DEFAULT_LOCALE = "en";
+
+function localeUrl(locale: string, path: string): string {
+  const p = path.startsWith("/") ? path : `/${path}`;
+  return locale === DEFAULT_LOCALE ? `${SITE}${p}` : `${SITE}/${locale}${p === "/" ? "" : p}`;
+}
+
+function alternatesFor(path: string): string {
+  const links = LOCALES.map(
+    (l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${localeUrl(l, path)}"/>`,
+  );
+  links.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${localeUrl(DEFAULT_LOCALE, path)}"/>`);
+  return links.join("\n");
+}
+
 function wrapUrlset(entries: string[]): string {
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries.join("\n")}\n</urlset>`;
 }
 
 function u(loc: string, freq: string, pri: string, lastmod?: string): string {
   return `  <url>\n    <loc>${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ""}\n    <changefreq>${freq}</changefreq>\n    <priority>${pri}</priority>\n  </url>`;
 }
 
+/** Emit one <url> per locale, each carrying the full hreflang alternates set. */
+function uL(path: string, freq: string, pri: string): string {
+  const alts = alternatesFor(path);
+  return LOCALES.map(
+    (l) =>
+      `  <url>\n    <loc>${localeUrl(l, path)}</loc>\n${alts}\n    <changefreq>${freq}</changefreq>\n    <priority>${pri}</priority>\n  </url>`,
+  ).join("\n");
+}
+
 function sitemapIndex(): string {
   const BASE = "https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap";
-  const types = ["core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes"];
+  const types = [
+    "core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes",
+    "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n","lawyers-i18n",
+  ];
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${BASE}?type=${t}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
+}
+
+// === i18n shards: one <url> per (path × locale), each with full hreflang alternates ===
+
+const corePaths: [string, string, string][] = [
+  ["/","weekly","1.0"], ["/tools","weekly","0.9"],
+  ["/legal-terms","monthly","0.8"], ["/legal-clauses","monthly","0.8"],
+  ["/contract-types","monthly","0.8"], ["/blog","daily","0.8"],
+  ["/laws","weekly","0.9"],
+  ["/auto-accident-law","weekly","0.8"], ["/personal-injury-law","weekly","0.8"],
+  ["/insurance-law","weekly","0.8"], ["/employment-law","weekly","0.8"],
+  ["/criminal-law","weekly","0.8"], ["/landlord-tenant-law","weekly","0.8"],
+  ["/ai-tech-law","weekly","0.8"], ["/lawyer-near-me","weekly","0.8"],
+];
+
+function buildCoreI18n(): string {
+  return wrapUrlset(corePaths.map(([p, f, pr]) => uL(p, f, pr)));
+}
+function buildToolsI18n(): string {
+  const e: string[] = [];
+  for (const cat of toolCategories) e.push(uL(`/tools/${cat}`, "weekly", "0.7"));
+  for (const [cat, slug] of toolPages) e.push(uL(`/tools/${cat}/${slug}`, "monthly", "0.6"));
+  return wrapUrlset(e);
+}
+function buildLegalTermsI18n(): string {
+  const e: string[] = [];
+  for (const s of legalTermSlugs) e.push(uL(`/legal-terms/${s}`, "monthly", "0.6"));
+  for (const s of legalClauseSlugs) e.push(uL(`/legal-clauses/${s}`, "monthly", "0.6"));
+  for (const s of contractTypeSlugs) e.push(uL(`/contract-types/${s}`, "monthly", "0.6"));
+  return wrapUrlset(e);
+}
+function buildGuidesI18n(): string {
+  const e: string[] = [];
+  for (const s of autoAccidentSlugs) e.push(uL(`/auto-accident-law/${s}`, "monthly", "0.7"));
+  for (const s of personalInjurySlugs) e.push(uL(`/personal-injury-law/${s}`, "monthly", "0.7"));
+  for (const s of insuranceLawSlugs) e.push(uL(`/insurance-law/${s}`, "monthly", "0.7"));
+  for (const s of employmentLawSlugs) e.push(uL(`/employment-law/${s}`, "monthly", "0.7"));
+  for (const s of criminalLawSlugs) e.push(uL(`/criminal-law/${s}`, "monthly", "0.7"));
+  for (const s of landlordTenantLawSlugs) e.push(uL(`/landlord-tenant-law/${s}`, "monthly", "0.7"));
+  for (const s of aiTechLawSlugs) e.push(uL(`/ai-tech-law/${s}`, "monthly", "0.7"));
+  return wrapUrlset(e);
+}
+function buildLawyersI18n(): string {
+  // Area-level only (state/city long-tail stays English-only)
+  const e: string[] = [];
+  for (const a of lawyerAreaSlugs) e.push(uL(`/lawyer-near-me/${a}`, "monthly", "0.6"));
+  return wrapUrlset(e);
 }
 
 const statuteTopicSlugs = ["security-deposit-limits", "eviction-notice-period", "minimum-wage"];
@@ -259,6 +334,11 @@ Deno.serve(async (req) => {
   if (type === "state-guides") return new Response(buildStateGuides(), { headers: h });
   if (type === "lawyers") return new Response(buildLawyers(), { headers: h });
   if (type === "statutes") return new Response(buildStatutes(), { headers: h });
+  if (type === "core-i18n") return new Response(buildCoreI18n(), { headers: h });
+  if (type === "tools-i18n") return new Response(buildToolsI18n(), { headers: h });
+  if (type === "legal-terms-i18n") return new Response(buildLegalTermsI18n(), { headers: h });
+  if (type === "guides-i18n") return new Response(buildGuidesI18n(), { headers: h });
+  if (type === "lawyers-i18n") return new Response(buildLawyersI18n(), { headers: h });
   if (type === "blog") {
     const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!);
     return new Response(await buildBlog(sb), { headers: h });

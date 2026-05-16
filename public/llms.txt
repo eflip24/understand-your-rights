@@ -2,6 +2,8 @@
 
 > Free plain-English legal tools, calculators, and guides to help you understand your rights — not a replacement for a lawyer.
 
+Languages: en (default at /), es (/es/), fr (/fr/), de (/de/), pt (/pt/), it (/it/). Every public page exposes hreflang alternates for all six locales plus x-default.
+
 LegallySpoken is a consumer legal tech platform offering 100+ free interactive tools, document generators, and state-specific legal guides. The site covers contract analysis, employment rights, consumer protection, family law, real estate, business formation, green energy, finance, and more. All calculators and generators run client-side without signup. Content includes a plain-English legal dictionary, contract clause explainers, statute lookups by state, data-driven pillar guides, and a local lawyer directory.
 
 ## Tools
