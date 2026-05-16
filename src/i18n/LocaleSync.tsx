@@ -29,10 +29,14 @@ export default function LocaleSync() {
   const { pathname, search, hash } = useLocation();
   const locale = useLocaleFromUrl();
 
-  // Sync i18n + <html lang>
+  // RTL languages (Arabic, Hebrew, Persian, Urdu) — none active yet, but framework-ready for Tier 3.
+  const RTL_LOCALES = new Set(["ar", "he", "fa", "ur"]);
+
+  // Sync i18n + <html lang> + <html dir>
   useEffect(() => {
     if (i18n.language !== locale) i18n.changeLanguage(locale);
     document.documentElement.setAttribute("lang", locale);
+    document.documentElement.setAttribute("dir", RTL_LOCALES.has(locale) ? "rtl" : "ltr");
     try {
       localStorage.setItem("ls.locale", locale);
     } catch {

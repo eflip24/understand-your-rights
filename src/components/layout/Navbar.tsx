@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Menu, Search, Scale, LogOut, LayoutDashboard, LogIn, Shield, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,38 +11,8 @@ import ThemeToggle from "@/components/layout/ThemeToggle";
 import LangSwitcher from "@/components/layout/LangSwitcher";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAdminRole } from "@/hooks/useAdminRole";
+import { useLocalizedPath } from "@/i18n/paths";
 import { cn } from "@/lib/utils";
-
-const toolsLinks = [
-  { label: "All Tools", href: "/tools" },
-  { label: "Contract Tools", href: "/tools/contract" },
-  { label: "Consumer Tools", href: "/tools/consumer" },
-  { label: "Employment Tools", href: "/tools/employment" },
-  { label: "Document Generators", href: "/tools/generators" },
-  { label: "AI Analysis", href: "/tools/ai" },
-  { label: "Business Tools", href: "/tools/business" },
-  { label: "Finance Tools", href: "/tools/finance" },
-  { label: "Real Estate Tools", href: "/tools/realestate" },
-  { label: "Energy Tools", href: "/tools/energy" },
-];
-
-const guidesLinks = [
-  { label: "Auto Accident Law", href: "/auto-accident-law" },
-  { label: "Personal Injury Law", href: "/personal-injury-law" },
-  { label: "Insurance Law", href: "/insurance-law" },
-  { label: "Employment Law", href: "/employment-law" },
-  { label: "Criminal Law", href: "/criminal-law" },
-  { label: "Landlord-Tenant Law", href: "/landlord-tenant-law" },
-  { label: "AI & Tech Law", href: "/ai-tech-law" },
-];
-
-const resourcesLinks = [
-  { label: "Legal Terms", href: "/legal-terms" },
-  { label: "Legal Clauses", href: "/legal-clauses" },
-  { label: "Contract Types", href: "/contract-types" },
-  { label: "Blog", href: "/blog" },
-  { label: "About Us", href: "/about" },
-];
 
 function NavDropdownItem({ href, label, onClick }: { href: string; label: string; onClick?: () => void }) {
   return (
@@ -65,24 +36,57 @@ export default function Navbar() {
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
   const { isAdmin } = useAdminRole();
+  const { t } = useTranslation();
+  const lp = useLocalizedPath();
+
+  const toolsLinks = [
+    { label: t("nav.tools.allTools"), href: lp("/tools") },
+    { label: t("nav.tools.contract"), href: lp("/tools/contract") },
+    { label: t("nav.tools.consumer"), href: lp("/tools/consumer") },
+    { label: t("nav.tools.employment"), href: lp("/tools/employment") },
+    { label: t("nav.tools.generators"), href: lp("/tools/generators") },
+    { label: t("nav.tools.ai"), href: lp("/tools/ai") },
+    { label: t("nav.tools.business"), href: lp("/tools/business") },
+    { label: t("nav.tools.finance"), href: lp("/tools/finance") },
+    { label: t("nav.tools.realestate"), href: lp("/tools/realestate") },
+    { label: t("nav.tools.energy"), href: lp("/tools/energy") },
+  ];
+
+  const guidesLinks = [
+    { label: t("nav.guides.auto"), href: lp("/auto-accident-law") },
+    { label: t("nav.guides.pi"), href: lp("/personal-injury-law") },
+    { label: t("nav.guides.insurance"), href: lp("/insurance-law") },
+    { label: t("nav.guides.employment"), href: lp("/employment-law") },
+    { label: t("nav.guides.criminal"), href: lp("/criminal-law") },
+    { label: t("nav.guides.landlord"), href: lp("/landlord-tenant-law") },
+    { label: t("nav.guides.aiTech"), href: lp("/ai-tech-law") },
+  ];
+
+  const resourcesLinks = [
+    { label: t("nav.resources.terms"), href: lp("/legal-terms") },
+    { label: t("nav.resources.clauses"), href: lp("/legal-clauses") },
+    { label: t("nav.resources.contracts"), href: lp("/contract-types") },
+    { label: t("nav.resources.blog"), href: lp("/blog") },
+    { label: t("nav.resources.about"), href: lp("/about") },
+  ];
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/tools?q=${encodeURIComponent(searchQuery.trim())}`);
+      navigate(`${lp("/tools")}?q=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery("");
     }
   };
 
   const handleSignOut = async () => {
     await signOut();
-    navigate("/");
+    navigate(lp("/"));
   };
 
   return (
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="w-full px-6 flex h-14 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2 shrink-0">
+        <Link to={lp("/")} className="flex items-center gap-2 shrink-0">
           <Scale className="w-[28px] h-[28px] text-accent" />
           <span className="font-serif text-xl font-bold text-foreground">
             Legally<span className="text-accent">Spoken</span>
@@ -93,7 +97,7 @@ export default function Navbar() {
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-muted-foreground hover:text-foreground">Tools</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-muted-foreground hover:text-foreground">{t("nav.tools")}</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-1 p-3 md:w-[500px] md:grid-cols-2">
                   {toolsLinks.map((link) => (
@@ -104,7 +108,7 @@ export default function Navbar() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-muted-foreground hover:text-foreground">Guides</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-muted-foreground hover:text-foreground">{t("nav.guides")}</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[320px] gap-1 p-3">
                   {guidesLinks.map((link) => (
@@ -115,7 +119,7 @@ export default function Navbar() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-muted-foreground hover:text-foreground">Resources</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-muted-foreground hover:text-foreground">{t("nav.resources")}</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[240px] gap-1 p-3">
                   {resourcesLinks.map((link) => (
@@ -127,10 +131,10 @@ export default function Navbar() {
 
             <NavigationMenuItem>
               <Link
-                to="/lawyer-near-me"
+                to={lp("/lawyer-near-me")}
                 className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
-                Find a Lawyer
+                {t("nav.findLawyer")}
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
@@ -139,12 +143,12 @@ export default function Navbar() {
         {/* Search */}
         <form onSubmit={handleSearch} className="hidden md:flex items-center gap-2 max-w-xs w-full">
           <div className="relative w-full">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search tools..."
+              placeholder={t("nav.search")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-9 h-9 bg-secondary border-none"
+              className="ps-9 h-9 bg-secondary border-none"
             />
           </div>
         </form>
@@ -154,28 +158,28 @@ export default function Navbar() {
             <>
               {isAdmin && (
                 <Button variant="ghost" size="sm" asChild>
-                  <Link to="/admin" className="gap-1.5">
+                  <Link to={lp("/admin")} className="gap-1.5">
                     <Shield className="h-4 w-4" />
-                    Admin
+                    {t("nav.admin")}
                   </Link>
                 </Button>
               )}
               <Button variant="ghost" size="sm" asChild>
-                <Link to="/dashboard" className="gap-1.5">
+                <Link to={lp("/dashboard")} className="gap-1.5">
                   <LayoutDashboard className="h-4 w-4" />
-                  Dashboard
+                  {t("nav.dashboard")}
                 </Link>
               </Button>
               <Button variant="ghost" size="sm" onClick={handleSignOut} className="gap-1.5 text-muted-foreground">
                 <LogOut className="h-4 w-4" />
-                Log out
+                {t("nav.logOut")}
               </Button>
             </>
           ) : (
             <Button variant="ghost" size="sm" asChild>
-              <Link to="/login" className="gap-1.5">
+              <Link to={lp("/login")} className="gap-1.5">
                 <LogIn className="h-4 w-4" />
-                Log in
+                {t("nav.logIn")}
               </Link>
             </Button>
           )}
@@ -189,33 +193,33 @@ export default function Navbar() {
           <div className="lg:hidden">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" aria-label={t("nav.menu")}>
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-80 overflow-y-auto">
-                <SheetTitle className="font-serif text-lg">Menu</SheetTitle>
+                <SheetTitle className="font-serif text-lg">{t("nav.menu")}</SheetTitle>
                 <form onSubmit={(e) => { handleSearch(e); setMobileOpen(false); }} className="mt-4">
                   <div className="relative">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
-                      placeholder="Search tools..."
+                      placeholder={t("nav.search")}
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-9"
+                      className="ps-9"
                     />
                   </div>
                 </form>
                 <nav className="mt-6 flex flex-col gap-1">
-                  <MobileAccordion title="Tools" links={toolsLinks} onClose={() => setMobileOpen(false)} />
-                  <MobileAccordion title="Guides" links={guidesLinks} onClose={() => setMobileOpen(false)} />
-                  <MobileAccordion title="Resources" links={resourcesLinks} onClose={() => setMobileOpen(false)} />
+                  <MobileAccordion title={t("nav.tools")} links={toolsLinks} onClose={() => setMobileOpen(false)} />
+                  <MobileAccordion title={t("nav.guides")} links={guidesLinks} onClose={() => setMobileOpen(false)} />
+                  <MobileAccordion title={t("nav.resources")} links={resourcesLinks} onClose={() => setMobileOpen(false)} />
                   <Link
-                    to="/lawyer-near-me"
+                    to={lp("/lawyer-near-me")}
                     onClick={() => setMobileOpen(false)}
                     className="px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary"
                   >
-                    Find a Lawyer
+                    {t("nav.findLawyer")}
                   </Link>
 
                   <div className="border-t border-border my-2" />
@@ -223,38 +227,38 @@ export default function Navbar() {
                     <>
                       {isAdmin && (
                         <Link
-                          to="/admin"
+                          to={lp("/admin")}
                           onClick={() => setMobileOpen(false)}
                           className="px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary flex items-center gap-2"
                         >
                           <Shield className="h-4 w-4" />
-                          Admin
+                          {t("nav.admin")}
                         </Link>
                       )}
                       <Link
-                        to="/dashboard"
+                        to={lp("/dashboard")}
                         onClick={() => setMobileOpen(false)}
                         className="px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary flex items-center gap-2"
                       >
                         <LayoutDashboard className="h-4 w-4" />
-                        Dashboard
+                        {t("nav.dashboard")}
                       </Link>
                       <button
                         onClick={() => { handleSignOut(); setMobileOpen(false); }}
                         className="px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary flex items-center gap-2 text-left w-full"
                       >
                         <LogOut className="h-4 w-4" />
-                        Log out
+                        {t("nav.logOut")}
                       </button>
                     </>
                   ) : (
                     <Link
-                      to="/login"
+                      to={lp("/login")}
                       onClick={() => setMobileOpen(false)}
                       className="px-3 py-3 text-sm font-medium text-accent hover:text-foreground transition-colors rounded-md hover:bg-secondary flex items-center gap-2"
                     >
                       <LogIn className="h-4 w-4" />
-                      Log in
+                      {t("nav.logIn")}
                     </Link>
                   )}
                 </nav>
@@ -276,7 +280,7 @@ function MobileAccordion({ title, links, onClose }: { title: string; links: { la
         <ChevronDown className={cn("h-4 w-4 text-muted-foreground transition-transform", open && "rotate-180")} />
       </CollapsibleTrigger>
       <CollapsibleContent>
-        <div className="ml-3 border-l border-border pl-3 flex flex-col gap-0.5">
+        <div className="ms-3 border-s border-border ps-3 flex flex-col gap-0.5">
           {links.map((link) => (
             <Link
               key={link.href}
