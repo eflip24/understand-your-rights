@@ -21,4 +21,22 @@
   <sitemap>
     <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=blog</loc>
   </sitemap>
+  <sitemap>
+    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=statutes</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=core-i18n</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=tools-i18n</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=legal-terms-i18n</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=guides-i18n</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=lawyers-i18n</loc>
+  </sitemap>
 </sitemapindex>

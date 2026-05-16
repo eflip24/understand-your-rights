@@ -334,6 +334,11 @@ Deno.serve(async (req) => {
   if (type === "state-guides") return new Response(buildStateGuides(), { headers: h });
   if (type === "lawyers") return new Response(buildLawyers(), { headers: h });
   if (type === "statutes") return new Response(buildStatutes(), { headers: h });
+  if (type === "core-i18n") return new Response(buildCoreI18n(), { headers: h });
+  if (type === "tools-i18n") return new Response(buildToolsI18n(), { headers: h });
+  if (type === "legal-terms-i18n") return new Response(buildLegalTermsI18n(), { headers: h });
+  if (type === "guides-i18n") return new Response(buildGuidesI18n(), { headers: h });
+  if (type === "lawyers-i18n") return new Response(buildLawyersI18n(), { headers: h });
   if (type === "blog") {
     const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!);
     return new Response(await buildBlog(sb), { headers: h });
