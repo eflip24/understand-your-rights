@@ -1,1 +1,55 @@
-{}
+{
+  "nav": {
+    "tools": "Herramientas",
+    "guides": "Guías",
+    "resources": "Recursos",
+    "findLawyer": "Buscar abogado",
+    "search": "Buscar herramientas...",
+    "logIn": "Iniciar sesión",
+    "logOut": "Cerrar sesión",
+    "dashboard": "Panel",
+    "admin": "Admin",
+    "menu": "Menú",
+    "tools.allTools": "Todas las herramientas",
+    "tools.contract": "Herramientas de contratos",
+    "tools.consumer": "Derechos del consumidor",
+    "tools.employment": "Empleo y trabajo",
+    "tools.generators": "Generadores de documentos",
+    "tools.ai": "Análisis con IA",
+    "tools.business": "Negocios",
+    "tools.finance": "Finanzas",
+    "tools.realestate": "Inmobiliaria",
+    "tools.energy": "Energía",
+    "guides.auto": "Accidentes de tráfico",
+    "guides.pi": "Lesiones personales",
+    "guides.insurance": "Seguros",
+    "guides.employment": "Derecho laboral",
+    "guides.criminal": "Derecho penal",
+    "guides.landlord": "Arrendador e inquilino",
+    "guides.aiTech": "IA y tecnología",
+    "resources.terms": "Términos legales",
+    "resources.clauses": "Cláusulas legales",
+    "resources.contracts": "Tipos de contrato",
+    "resources.statutes": "Biblioteca de leyes",
+    "resources.blog": "Blog",
+    "resources.about": "Sobre nosotros"
+  },
+  "footer": {
+    "tagline": "Herramientas legales sencillas para todos. No somos abogados ni damos asesoría legal.",
+    "tools": "Herramientas",
+    "guides": "Guías legales",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "cookieSettings": "Configuración de cookies",
+    "rights": "Todos los derechos reservados.",
+    "disclaimer": "Aviso legal:",
+    "disclaimerBody": "Este sitio ofrece información legal general, no asesoría legal. Consulta a un abogado para preguntas específicas.",
+    "links.disclaimer": "Aviso legal",
+    "links.privacy": "Política de privacidad",
+    "links.terms": "Términos del servicio"
+  },
+  "language": {
+    "switcher": "Idioma",
+    "current": "Idioma actual"
+  }
+}

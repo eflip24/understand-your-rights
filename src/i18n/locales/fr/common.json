@@ -1,1 +1,55 @@
-{}
+{
+  "nav": {
+    "tools": "Outils",
+    "guides": "Guides",
+    "resources": "Ressources",
+    "findLawyer": "Trouver un avocat",
+    "search": "Rechercher des outils...",
+    "logIn": "Connexion",
+    "logOut": "Déconnexion",
+    "dashboard": "Tableau de bord",
+    "admin": "Admin",
+    "menu": "Menu",
+    "tools.allTools": "Tous les outils",
+    "tools.contract": "Outils contrats",
+    "tools.consumer": "Consommation",
+    "tools.employment": "Travail et emploi",
+    "tools.generators": "Générateurs de documents",
+    "tools.ai": "Analyse par IA",
+    "tools.business": "Entreprise",
+    "tools.finance": "Finance",
+    "tools.realestate": "Immobilier",
+    "tools.energy": "Énergie",
+    "guides.auto": "Accidents de la route",
+    "guides.pi": "Dommages corporels",
+    "guides.insurance": "Assurance",
+    "guides.employment": "Droit du travail",
+    "guides.criminal": "Droit pénal",
+    "guides.landlord": "Bailleur et locataire",
+    "guides.aiTech": "IA et technologie",
+    "resources.terms": "Termes juridiques",
+    "resources.clauses": "Clauses juridiques",
+    "resources.contracts": "Types de contrat",
+    "resources.statutes": "Bibliothèque des lois",
+    "resources.blog": "Blog",
+    "resources.about": "À propos"
+  },
+  "footer": {
+    "tagline": "Des outils juridiques simples pour tous. Nous ne sommes pas avocats et ne donnons pas de conseils juridiques.",
+    "tools": "Outils",
+    "guides": "Guides juridiques",
+    "resources": "Ressources",
+    "legal": "Mentions légales",
+    "cookieSettings": "Paramètres des cookies",
+    "rights": "Tous droits réservés.",
+    "disclaimer": "Avertissement :",
+    "disclaimerBody": "Ce site fournit des informations juridiques générales, pas de conseils juridiques. Consultez un avocat qualifié pour vos questions spécifiques.",
+    "links.disclaimer": "Avertissement",
+    "links.privacy": "Politique de confidentialité",
+    "links.terms": "Conditions d'utilisation"
+  },
+  "language": {
+    "switcher": "Langue",
+    "current": "Langue actuelle"
+  }
+}

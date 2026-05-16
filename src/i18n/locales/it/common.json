@@ -1,1 +1,55 @@
-{}
+{
+  "nav": {
+    "tools": "Strumenti",
+    "guides": "Guide",
+    "resources": "Risorse",
+    "findLawyer": "Trova un avvocato",
+    "search": "Cerca strumenti...",
+    "logIn": "Accedi",
+    "logOut": "Esci",
+    "dashboard": "Pannello",
+    "admin": "Admin",
+    "menu": "Menu",
+    "tools.allTools": "Tutti gli strumenti",
+    "tools.contract": "Strumenti contratti",
+    "tools.consumer": "Tutela del consumatore",
+    "tools.employment": "Lavoro e impiego",
+    "tools.generators": "Generatori di documenti",
+    "tools.ai": "Analisi con IA",
+    "tools.business": "Aziende",
+    "tools.finance": "Finanza",
+    "tools.realestate": "Immobiliare",
+    "tools.energy": "Energia",
+    "guides.auto": "Incidenti stradali",
+    "guides.pi": "Danni alla persona",
+    "guides.insurance": "Diritto assicurativo",
+    "guides.employment": "Diritto del lavoro",
+    "guides.criminal": "Diritto penale",
+    "guides.landlord": "Locatore e inquilino",
+    "guides.aiTech": "IA e tecnologia",
+    "resources.terms": "Termini giuridici",
+    "resources.clauses": "Clausole contrattuali",
+    "resources.contracts": "Tipi di contratto",
+    "resources.statutes": "Biblioteca delle leggi",
+    "resources.blog": "Blog",
+    "resources.about": "Chi siamo"
+  },
+  "footer": {
+    "tagline": "Strumenti legali semplici per tutti. Non siamo avvocati né forniamo consulenza legale.",
+    "tools": "Strumenti",
+    "guides": "Guide legali",
+    "resources": "Risorse",
+    "legal": "Note legali",
+    "cookieSettings": "Impostazioni cookie",
+    "rights": "Tutti i diritti riservati.",
+    "disclaimer": "Avvertenza:",
+    "disclaimerBody": "Questo sito fornisce informazioni legali generali, non consulenza legale. Rivolgiti a un avvocato qualificato per domande specifiche.",
+    "links.disclaimer": "Avvertenza",
+    "links.privacy": "Informativa sulla privacy",
+    "links.terms": "Condizioni di servizio"
+  },
+  "language": {
+    "switcher": "Lingua",
+    "current": "Lingua corrente"
+  }
+}

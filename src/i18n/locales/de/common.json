@@ -1,1 +1,55 @@
-{}
+{
+  "nav": {
+    "tools": "Tools",
+    "guides": "Ratgeber",
+    "resources": "Ressourcen",
+    "findLawyer": "Anwalt finden",
+    "search": "Tools suchen...",
+    "logIn": "Anmelden",
+    "logOut": "Abmelden",
+    "dashboard": "Übersicht",
+    "admin": "Admin",
+    "menu": "Menü",
+    "tools.allTools": "Alle Tools",
+    "tools.contract": "Vertrags-Tools",
+    "tools.consumer": "Verbraucherschutz",
+    "tools.employment": "Arbeit und Beruf",
+    "tools.generators": "Dokumentgeneratoren",
+    "tools.ai": "KI-Analyse",
+    "tools.business": "Unternehmen",
+    "tools.finance": "Finanzen",
+    "tools.realestate": "Immobilien",
+    "tools.energy": "Energie",
+    "guides.auto": "Verkehrsunfälle",
+    "guides.pi": "Personenschäden",
+    "guides.insurance": "Versicherungsrecht",
+    "guides.employment": "Arbeitsrecht",
+    "guides.criminal": "Strafrecht",
+    "guides.landlord": "Mietrecht",
+    "guides.aiTech": "KI und Technologie",
+    "resources.terms": "Juristische Begriffe",
+    "resources.clauses": "Vertragsklauseln",
+    "resources.contracts": "Vertragsarten",
+    "resources.statutes": "Gesetzesbibliothek",
+    "resources.blog": "Blog",
+    "resources.about": "Über uns"
+  },
+  "footer": {
+    "tagline": "Einfache juristische Tools für jeden. Keine Anwaltskanzlei, keine Rechtsberatung.",
+    "tools": "Tools",
+    "guides": "Ratgeber",
+    "resources": "Ressourcen",
+    "legal": "Rechtliches",
+    "cookieSettings": "Cookie-Einstellungen",
+    "rights": "Alle Rechte vorbehalten.",
+    "disclaimer": "Hinweis:",
+    "disclaimerBody": "Diese Website bietet allgemeine Rechtsinformationen, keine Rechtsberatung. Wenden Sie sich für konkrete Fragen an einen qualifizierten Anwalt.",
+    "links.disclaimer": "Haftungsausschluss",
+    "links.privacy": "Datenschutzerklärung",
+    "links.terms": "Nutzungsbedingungen"
+  },
+  "language": {
+    "switcher": "Sprache",
+    "current": "Aktuelle Sprache"
+  }
+}
