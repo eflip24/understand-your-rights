@@ -1,1 +1,55 @@
-{}
+{
+  "nav": {
+    "tools": "Ferramentas",
+    "guides": "Guias",
+    "resources": "Recursos",
+    "findLawyer": "Encontrar advogado",
+    "search": "Pesquisar ferramentas...",
+    "logIn": "Entrar",
+    "logOut": "Sair",
+    "dashboard": "Painel",
+    "admin": "Admin",
+    "menu": "Menu",
+    "tools.allTools": "Todas as ferramentas",
+    "tools.contract": "Ferramentas de contrato",
+    "tools.consumer": "Direitos do consumidor",
+    "tools.employment": "Trabalho e emprego",
+    "tools.generators": "Geradores de documentos",
+    "tools.ai": "Análise por IA",
+    "tools.business": "Negócios",
+    "tools.finance": "Finanças",
+    "tools.realestate": "Imobiliário",
+    "tools.energy": "Energia",
+    "guides.auto": "Acidentes de trânsito",
+    "guides.pi": "Lesões pessoais",
+    "guides.insurance": "Seguros",
+    "guides.employment": "Direito do trabalho",
+    "guides.criminal": "Direito penal",
+    "guides.landlord": "Senhorio e inquilino",
+    "guides.aiTech": "IA e tecnologia",
+    "resources.terms": "Termos jurídicos",
+    "resources.clauses": "Cláusulas jurídicas",
+    "resources.contracts": "Tipos de contrato",
+    "resources.statutes": "Biblioteca de leis",
+    "resources.blog": "Blog",
+    "resources.about": "Sobre nós"
+  },
+  "footer": {
+    "tagline": "Ferramentas jurídicas simples para todos. Não somos advogados nem damos aconselhamento jurídico.",
+    "tools": "Ferramentas",
+    "guides": "Guias jurídicos",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "cookieSettings": "Definições de cookies",
+    "rights": "Todos os direitos reservados.",
+    "disclaimer": "Aviso legal:",
+    "disclaimerBody": "Este site fornece informações jurídicas gerais, não aconselhamento jurídico. Consulte um advogado qualificado para questões específicas.",
+    "links.disclaimer": "Aviso legal",
+    "links.privacy": "Política de privacidade",
+    "links.terms": "Termos de utilização"
+  },
+  "language": {
+    "switcher": "Idioma",
+    "current": "Idioma atual"
+  }
+}

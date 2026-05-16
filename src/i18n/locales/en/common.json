@@ -9,7 +9,30 @@
     "logOut": "Log out",
     "dashboard": "Dashboard",
     "admin": "Admin",
-    "menu": "Menu"
+    "menu": "Menu",
+    "tools.allTools": "All Tools",
+    "tools.contract": "Contract Tools",
+    "tools.consumer": "Consumer Tools",
+    "tools.employment": "Employment Tools",
+    "tools.generators": "Document Generators",
+    "tools.ai": "AI Analysis",
+    "tools.business": "Business Tools",
+    "tools.finance": "Finance Tools",
+    "tools.realestate": "Real Estate Tools",
+    "tools.energy": "Energy Tools",
+    "guides.auto": "Auto Accident Law",
+    "guides.pi": "Personal Injury Law",
+    "guides.insurance": "Insurance Law",
+    "guides.employment": "Employment Law",
+    "guides.criminal": "Criminal Law",
+    "guides.landlord": "Landlord-Tenant Law",
+    "guides.aiTech": "AI & Tech Law",
+    "resources.terms": "Legal Terms",
+    "resources.clauses": "Legal Clauses",
+    "resources.contracts": "Contract Types",
+    "resources.statutes": "Statute Library",
+    "resources.blog": "Blog",
+    "resources.about": "About Us"
   },
   "footer": {
     "tagline": "Simple legal tools for everyday people. Not a lawyer, not legal advice.",
@@ -20,7 +43,10 @@
     "cookieSettings": "Cookie Settings",
     "rights": "All rights reserved.",
     "disclaimer": "Disclaimer:",
-    "disclaimerBody": "This site provides general legal information, not legal advice. Consult a qualified attorney for specific legal questions."
+    "disclaimerBody": "This site provides general legal information, not legal advice. Consult a qualified attorney for specific legal questions.",
+    "links.disclaimer": "Disclaimer",
+    "links.privacy": "Privacy Policy",
+    "links.terms": "Terms of Service"
   },
   "language": {
     "switcher": "Language",

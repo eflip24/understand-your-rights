@@ -1,77 +1,73 @@
 import { Link } from "react-router-dom";
 import { Scale } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { openConsentSettings } from "@/lib/consent";
 import LangSwitcher from "@/components/layout/LangSwitcher";
-
-const toolLinks = [
-  { label: "All Tools", href: "/tools" },
-  { label: "Contract Tools", href: "/tools/contract" },
-  { label: "Consumer Tools", href: "/tools/consumer" },
-  { label: "Employment Tools", href: "/tools/employment" },
-  { label: "Document Generators", href: "/tools/generators" },
-  { label: "AI Analysis", href: "/tools/ai" },
-];
-
-const guideLinks = [
-  { label: "Auto Accident Law", href: "/auto-accident-law" },
-  { label: "Personal Injury Law", href: "/personal-injury-law" },
-  { label: "Insurance Law", href: "/insurance-law" },
-  { label: "Employment Law", href: "/employment-law" },
-  { label: "Criminal Law", href: "/criminal-law" },
-  { label: "Landlord-Tenant Law", href: "/landlord-tenant-law" },
-  { label: "AI & Tech Law", href: "/ai-tech-law" },
-];
-
-const resourceLinks = [
-  { label: "Statute Library", href: "/laws" },
-  { label: "Legal Terms", href: "/legal-terms" },
-  { label: "Legal Clauses", href: "/legal-clauses" },
-  { label: "Contract Types", href: "/contract-types" },
-  { label: "Find a Lawyer", href: "/lawyer-near-me" },
-  { label: "Blog", href: "/blog" },
-  { label: "About Us", href: "/about" },
-];
-
-const legalLinks = [
-  { label: "Disclaimer", href: "/disclaimer" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms of Service", href: "/terms-of-service" },
-];
+import { useLocalizedPath } from "@/i18n/paths";
 
 export default function Footer() {
+  const { t } = useTranslation();
+  const lp = useLocalizedPath();
+
+  const toolLinks = [
+    { label: t("nav.tools.allTools"), href: lp("/tools") },
+    { label: t("nav.tools.contract"), href: lp("/tools/contract") },
+    { label: t("nav.tools.consumer"), href: lp("/tools/consumer") },
+    { label: t("nav.tools.employment"), href: lp("/tools/employment") },
+    { label: t("nav.tools.generators"), href: lp("/tools/generators") },
+    { label: t("nav.tools.ai"), href: lp("/tools/ai") },
+  ];
+
+  const guideLinks = [
+    { label: t("nav.guides.auto"), href: lp("/auto-accident-law") },
+    { label: t("nav.guides.pi"), href: lp("/personal-injury-law") },
+    { label: t("nav.guides.insurance"), href: lp("/insurance-law") },
+    { label: t("nav.guides.employment"), href: lp("/employment-law") },
+    { label: t("nav.guides.criminal"), href: lp("/criminal-law") },
+    { label: t("nav.guides.landlord"), href: lp("/landlord-tenant-law") },
+    { label: t("nav.guides.aiTech"), href: lp("/ai-tech-law") },
+  ];
+
+  const resourceLinks = [
+    { label: t("nav.resources.statutes"), href: lp("/laws") },
+    { label: t("nav.resources.terms"), href: lp("/legal-terms") },
+    { label: t("nav.resources.clauses"), href: lp("/legal-clauses") },
+    { label: t("nav.resources.contracts"), href: lp("/contract-types") },
+    { label: t("nav.findLawyer"), href: lp("/lawyer-near-me") },
+    { label: t("nav.resources.blog"), href: lp("/blog") },
+    { label: t("nav.resources.about"), href: lp("/about") },
+  ];
+
+  const legalLinks = [
+    { label: t("footer.links.disclaimer"), href: lp("/disclaimer") },
+    { label: t("footer.links.privacy"), href: lp("/privacy-policy") },
+    { label: t("footer.links.terms"), href: lp("/terms-of-service") },
+  ];
+
   return (
     <footer className="border-t bg-primary text-primary-foreground">
       <div className="container py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div className="space-y-3 sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2">
+            <Link to={lp("/")} className="flex items-center gap-2">
               <Scale className="h-6 w-6 text-accent" />
               <span className="font-serif text-lg font-bold">
                 Legally<span className="text-accent">Spoken</span>
               </span>
             </Link>
-            <p className="text-sm text-primary-foreground/70">
-              Simple legal tools for everyday people. Not a lawyer, not legal advice.
-            </p>
+            <p className="text-sm text-primary-foreground/70">{t("footer.tagline")}</p>
           </div>
 
-          {/* Tools */}
-          <FooterColumn title="Tools" links={toolLinks} />
-
-          {/* Legal Guides */}
-          <FooterColumn title="Legal Guides" links={guideLinks} />
-
-          {/* Resources */}
-          <FooterColumn title="Resources" links={resourceLinks} />
-
-          {/* Legal */}
-          <FooterColumn title="Legal" links={legalLinks} />
+          <FooterColumn title={t("footer.tools")} links={toolLinks} />
+          <FooterColumn title={t("footer.guides")} links={guideLinks} />
+          <FooterColumn title={t("footer.resources")} links={resourceLinks} />
+          <FooterColumn title={t("footer.legal")} links={legalLinks} />
         </div>
 
         <div className="mt-10 pt-6 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
-            <p>© {new Date().getFullYear()} LegallySpoken. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} LegallySpoken. {t("footer.rights")}</p>
             <div className="flex items-center gap-4">
               <LangSwitcher variant="footer" />
               <button
@@ -79,11 +75,11 @@ export default function Footer() {
                 onClick={openConsentSettings}
                 className="hover:text-accent transition-colors underline"
               >
-                Cookie Settings
+                {t("footer.cookieSettings")}
               </button>
             </div>
             <p className="text-center md:text-right max-w-md">
-              <strong>Disclaimer:</strong> This site provides general legal information, not legal advice. Consult a qualified attorney for specific legal questions.
+              <strong>{t("footer.disclaimer")}</strong> {t("footer.disclaimerBody")}
             </p>
           </div>
         </div>
