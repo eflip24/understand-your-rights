@@ -152,12 +152,37 @@ const pillarArticleMap: Record<string, string[]> = {
 
 // === Helpers ===
 
+const LOCALES = ["en", "es", "fr", "de", "pt", "it"] as const;
+const DEFAULT_LOCALE = "en";
+
+function localeUrl(locale: string, path: string): string {
+  const p = path.startsWith("/") ? path : `/${path}`;
+  return locale === DEFAULT_LOCALE ? `${SITE}${p}` : `${SITE}/${locale}${p === "/" ? "" : p}`;
+}
+
+function alternatesFor(path: string): string {
+  const links = LOCALES.map(
+    (l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${localeUrl(l, path)}"/>`,
+  );
+  links.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${localeUrl(DEFAULT_LOCALE, path)}"/>`);
+  return links.join("\n");
+}
+
 function wrapUrlset(entries: string[]): string {
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries.join("\n")}\n</urlset>`;
 }
 
 function u(loc: string, freq: string, pri: string, lastmod?: string): string {
   return `  <url>\n    <loc>${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ""}\n    <changefreq>${freq}</changefreq>\n    <priority>${pri}</priority>\n  </url>`;
+}
+
+/** Emit one <url> per locale, each carrying the full hreflang alternates set. */
+function uL(path: string, freq: string, pri: string): string {
+  const alts = alternatesFor(path);
+  return LOCALES.map(
+    (l) =>
+      `  <url>\n    <loc>${localeUrl(l, path)}</loc>\n${alts}\n    <changefreq>${freq}</changefreq>\n    <priority>${pri}</priority>\n  </url>`,
+  ).join("\n");
 }
 
 function sitemapIndex(): string {
