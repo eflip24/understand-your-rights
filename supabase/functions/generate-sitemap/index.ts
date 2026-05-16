@@ -187,8 +187,58 @@ function uL(path: string, freq: string, pri: string): string {
 
 function sitemapIndex(): string {
   const BASE = "https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap";
-  const types = ["core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes"];
+  const types = [
+    "core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes",
+    "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n","lawyers-i18n",
+  ];
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${BASE}?type=${t}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
+}
+
+// === i18n shards: one <url> per (path × locale), each with full hreflang alternates ===
+
+const corePaths: [string, string, string][] = [
+  ["/","weekly","1.0"], ["/tools","weekly","0.9"],
+  ["/legal-terms","monthly","0.8"], ["/legal-clauses","monthly","0.8"],
+  ["/contract-types","monthly","0.8"], ["/blog","daily","0.8"],
+  ["/laws","weekly","0.9"],
+  ["/auto-accident-law","weekly","0.8"], ["/personal-injury-law","weekly","0.8"],
+  ["/insurance-law","weekly","0.8"], ["/employment-law","weekly","0.8"],
+  ["/criminal-law","weekly","0.8"], ["/landlord-tenant-law","weekly","0.8"],
+  ["/ai-tech-law","weekly","0.8"], ["/lawyer-near-me","weekly","0.8"],
+];
+
+function buildCoreI18n(): string {
+  return wrapUrlset(corePaths.map(([p, f, pr]) => uL(p, f, pr)));
+}
+function buildToolsI18n(): string {
+  const e: string[] = [];
+  for (const cat of toolCategories) e.push(uL(`/tools/${cat}`, "weekly", "0.7"));
+  for (const [cat, slug] of toolPages) e.push(uL(`/tools/${cat}/${slug}`, "monthly", "0.6"));
+  return wrapUrlset(e);
+}
+function buildLegalTermsI18n(): string {
+  const e: string[] = [];
+  for (const s of legalTermSlugs) e.push(uL(`/legal-terms/${s}`, "monthly", "0.6"));
+  for (const s of legalClauseSlugs) e.push(uL(`/legal-clauses/${s}`, "monthly", "0.6"));
+  for (const s of contractTypeSlugs) e.push(uL(`/contract-types/${s}`, "monthly", "0.6"));
+  return wrapUrlset(e);
+}
+function buildGuidesI18n(): string {
+  const e: string[] = [];
+  for (const s of autoAccidentSlugs) e.push(uL(`/auto-accident-law/${s}`, "monthly", "0.7"));
+  for (const s of personalInjurySlugs) e.push(uL(`/personal-injury-law/${s}`, "monthly", "0.7"));
+  for (const s of insuranceLawSlugs) e.push(uL(`/insurance-law/${s}`, "monthly", "0.7"));
+  for (const s of employmentLawSlugs) e.push(uL(`/employment-law/${s}`, "monthly", "0.7"));
+  for (const s of criminalLawSlugs) e.push(uL(`/criminal-law/${s}`, "monthly", "0.7"));
+  for (const s of landlordTenantLawSlugs) e.push(uL(`/landlord-tenant-law/${s}`, "monthly", "0.7"));
+  for (const s of aiTechLawSlugs) e.push(uL(`/ai-tech-law/${s}`, "monthly", "0.7"));
+  return wrapUrlset(e);
+}
+function buildLawyersI18n(): string {
+  // Area-level only (state/city long-tail stays English-only)
+  const e: string[] = [];
+  for (const a of lawyerAreaSlugs) e.push(uL(`/lawyer-near-me/${a}`, "monthly", "0.6"));
+  return wrapUrlset(e);
 }
 
 const statuteTopicSlugs = ["security-deposit-limits", "eviction-notice-period", "minimum-wage"];
