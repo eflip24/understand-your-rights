@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Search, ArrowRight, Car, HeartPulse, ShieldCheck, Users, Briefcase, AlertTriangle, Home, Cpu, Wrench, FileText, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,6 +10,7 @@ import LegalResourcesAndHowItWorks from "@/components/home/LegalResourcesAndHowI
 import { JsonLdGraph, websiteSchema, organizationSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
+import { useLocalizedPath } from "@/i18n/paths";
 
 import catContract from "@/assets/cat-contract.png";
 import catConsumer from "@/assets/cat-consumer.png";
@@ -33,25 +35,27 @@ const categoryImages: Record<string, string> = {
 };
 
 export default function HomePage() {
+  const { t, i18n } = useTranslation(["home"]);
+  const lp = useLocalizedPath();
   const { data: blogPosts } = useBlogPosts();
   const latestPosts = blogPosts?.slice(0, 3) || [];
 
   const legalGuides = [
-    { title: "Auto Accident Law", description: "Know your rights after a car crash. Guides on fault, claims, and compensation.", href: "/auto-accident-law", icon: Car },
-    { title: "Personal Injury Law", description: "How personal injury claims work, settlements, and what you can recover.", href: "/personal-injury-law", icon: HeartPulse },
-    { title: "Insurance Law", description: "Fight denied claims, understand your policy, and know your rights.", href: "/insurance-law", icon: ShieldCheck },
-    { title: "Employment Law", description: "Workplace rights, wrongful termination, overtime, and discrimination.", href: "/employment-law", icon: Briefcase },
-    { title: "Criminal Law", description: "DUI, arrests, felonies, misdemeanors — what to expect and your rights.", href: "/criminal-law", icon: AlertTriangle },
-    { title: "Landlord-Tenant Law", description: "Eviction rules, lease disputes, security deposits, and tenant rights.", href: "/landlord-tenant-law", icon: Home },
-    { title: "AI & Tech Law", description: "AI content legality, deepfakes, data privacy, and digital rights.", href: "/ai-tech-law", icon: Cpu },
-    { title: "Find a Lawyer", description: "Browse our free attorney directory by practice area near you.", href: "/lawyer-near-me", icon: Users },
+    { titleKey: "guides.autoAccident.title", descKey: "guides.autoAccident.description", href: "/auto-accident-law", icon: Car },
+    { titleKey: "guides.personalInjury.title", descKey: "guides.personalInjury.description", href: "/personal-injury-law", icon: HeartPulse },
+    { titleKey: "guides.insurance.title", descKey: "guides.insurance.description", href: "/insurance-law", icon: ShieldCheck },
+    { titleKey: "guides.employment.title", descKey: "guides.employment.description", href: "/employment-law", icon: Briefcase },
+    { titleKey: "guides.criminal.title", descKey: "guides.criminal.description", href: "/criminal-law", icon: AlertTriangle },
+    { titleKey: "guides.landlordTenant.title", descKey: "guides.landlordTenant.description", href: "/landlord-tenant-law", icon: Home },
+    { titleKey: "guides.aiTech.title", descKey: "guides.aiTech.description", href: "/ai-tech-law", icon: Cpu },
+    { titleKey: "guides.findLawyer.title", descKey: "guides.findLawyer.description", href: "/lawyer-near-me", icon: Users },
   ];
 
   const stats = [
-    { value: "100+", label: "Free Tools", icon: Wrench },
-    { value: "7", label: "Legal Guides", icon: FileText },
-    { value: "50", label: "States Covered", icon: BarChart3 },
-    { value: "6,000+", label: "Indexed Pages", icon: Search },
+    { value: "100+", labelKey: "stats.tools", icon: Wrench },
+    { value: "7", labelKey: "stats.guides", icon: FileText },
+    { value: "50", labelKey: "stats.states", icon: BarChart3 },
+    { value: "6,000+", labelKey: "stats.pages", icon: Search },
   ];
 
   return (
