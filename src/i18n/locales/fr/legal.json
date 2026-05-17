@@ -1,0 +1,10 @@
+{
+  "disclaimer": {
+    "title": "Avertissement Légal",
+    "intro": "LegallySpoken fournit des informations juridiques générales et des outils d'auto-assistance. Nous ne sommes pas un cabinet d'avocats et ne fournissons pas de conseils juridiques.",
+    "notAdvice": "Les informations sur ce site ne remplacent pas les conseils juridiques d'un avocat agréé dans votre juridiction. Les lois changent fréquemment et varient selon le lieu.",
+    "noRelationship": "L'utilisation de ce site ne crée pas de relation avocat-client.",
+    "consultLawyer": "Pour des conseils concernant votre situation spécifique, consultez un avocat qualifié."
+  },
+  "shortDisclaimer": "Pas de conseils juridiques. Pour votre situation spécifique, consultez un avocat qualifié."
+}

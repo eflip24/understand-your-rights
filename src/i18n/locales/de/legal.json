@@ -1,0 +1,10 @@
+{
+  "disclaimer": {
+    "title": "Rechtlicher Hinweis",
+    "intro": "LegallySpoken bietet allgemeine rechtliche Informationen und Selbsthilfe-Tools. Wir sind keine Anwaltskanzlei und bieten keine Rechtsberatung an.",
+    "notAdvice": "Informationen auf dieser Website ersetzen keine Rechtsberatung durch einen zugelassenen Anwalt in Ihrer Gerichtsbarkeit. Gesetze ändern sich häufig und variieren je nach Ort.",
+    "noRelationship": "Die Nutzung dieser Website begründet kein Mandatsverhältnis.",
+    "consultLawyer": "Für eine Beratung in Ihrer spezifischen Situation konsultieren Sie einen qualifizierten Anwalt."
+  },
+  "shortDisclaimer": "Keine Rechtsberatung. Für Ihre spezifische Situation konsultieren Sie einen qualifizierten Anwalt."
+}

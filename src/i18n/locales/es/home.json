@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "badge": "Más de 100 herramientas legales gratuitas — Sin necesidad de registrarse",
+    "titleStart": "Claridad legal,",
+    "titleAccent": "simplificada",
+    "subtitle": "Entienda contratos, verifique riesgos, calcule plazos y genere documentos – al instante, de forma gratuita.",
+    "searchPlaceholder": "Buscar una herramienta legal...",
+    "searchAriaLabel": "Buscar una herramienta legal",
+    "searchButton": "Buscar",
+    "trustNoSignup": "No se requiere registro",
+    "trustFree": "Gratis para siempre",
+    "trustInstant": "Resultados instantáneos"
+  },
+  "stats": {
+    "tools": "Herramientas Gratuitas",
+    "guides": "Guías Legales",
+    "states": "Estados Cubiertos",
+    "pages": "Páginas Indexadas"
+  },
+  "categories": {
+    "title": "Categorías de Herramientas",
+    "subtitle": "Explore herramientas por categoría para encontrar lo que necesita."
+  },
+  "guides": {
+    "title": "Guías Legales",
+    "subtitle": "Guías detalladas sobre temas legales de gran impacto, escritas en un lenguaje claro.",
+    "autoAccident": {
+      "title": "Derecho de Accidentes de Automóvil",
+      "description": "Conozca sus derechos después de un accidente de coche. Guías sobre culpa, reclamaciones y compensación."
+    },
+    "personalInjury": {
+      "title": "Derecho de Lesiones Personales",
+      "description": "Cómo funcionan las reclamaciones por lesiones personales, acuerdos y lo que puede recuperar."
+    },
+    "insurance": {
+      "title": "Derecho de Seguros",
+      "description": "Luchas contra reclamaciones denegadas, entienda su póliza y conozca sus derechos."
+    },
+    "employment": {
+      "title": "Derecho Laboral",
+      "description": "Derechos en el lugar de trabajo, despido improcedente, horas extras y discriminación."
+    },
+    "criminal": {
+      "title": "Derecho Penal",
+      "description": "DUI, arrestos, delitos graves, delitos menores — qué esperar y sus derechos."
+    },
+    "landlordTenant": {
+      "title": "Derecho de Arrendamiento",
+      "description": "Normas de desahucio, disputas de arrendamiento, depósitos de seguridad y derechos del inquilino."
+    },
+    "aiTech": {
+      "title": "Derecho de IA y Tecnología",
+      "description": "Legalidad del contenido de IA, deepfakes, privacidad de datos y derechos digitales."
+    },
+    "findLawyer": {
+      "title": "Encuentre un Abogado",
+      "description": "Explore nuestro directorio gratuito de abogados por área de práctica cerca de usted."
+    }
+  },
+  "blog": {
+    "title": "Lo Último del Blog",
+    "subtitle": "Nuevas perspectivas legales y guías prácticas.",
+    "viewAll": "Ver Todas las Publicaciones"
+  },
+  "cta": {
+    "title": "¿Listo para Entender sus Documentos Legales?",
+    "subtitle": "Empiece a usar nuestras herramientas gratuitas hoy mismo. Sin registro, sin tarjeta de crédito, sin complicaciones.",
+    "button": "Explorar Todas las Herramientas"
+  },
+  "meta": {
+    "title": "LegallySpoken — Herramientas Legales Gratuitas para el Público General",
+    "description": "Más de 100 herramientas legales gratuitas para entender contratos, verificar riesgos, calcular plazos y generar documentos. No se necesita abogado."
+  }
+}
