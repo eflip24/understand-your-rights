@@ -1,0 +1,10 @@
+{
+  "disclaimer": {
+    "title": "Legal Disclaimer",
+    "intro": "LegallySpoken provides general legal information and self-help tools. We are not a law firm and do not provide legal advice.",
+    "notAdvice": "Information on this site is not a substitute for legal advice from a licensed attorney in your jurisdiction. Laws change frequently and vary by location.",
+    "noRelationship": "Using this site does not create an attorney-client relationship.",
+    "consultLawyer": "For advice on your specific situation, consult a qualified lawyer."
+  },
+  "shortDisclaimer": "Not legal advice. For your specific situation, consult a qualified lawyer."
+}

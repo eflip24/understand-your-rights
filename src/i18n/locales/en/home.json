@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "badge": "100+ Free Legal Tools — No Signup Required",
+    "titleStart": "Legal clarity,",
+    "titleAccent": "simplified",
+    "subtitle": "Understand contracts, check risks, calculate deadlines, and generate documents — instantly, for free.",
+    "searchPlaceholder": "Search for a legal tool...",
+    "searchAriaLabel": "Search for a legal tool",
+    "searchButton": "Search",
+    "trustNoSignup": "No signup required",
+    "trustFree": "Free forever",
+    "trustInstant": "Instant results"
+  },
+  "stats": {
+    "tools": "Free Tools",
+    "guides": "Legal Guides",
+    "states": "States Covered",
+    "pages": "Indexed Pages"
+  },
+  "categories": {
+    "title": "Tool Categories",
+    "subtitle": "Browse tools by category to find what you need."
+  },
+  "guides": {
+    "title": "Legal Guides",
+    "subtitle": "In-depth guides on high-impact legal topics, written in plain English.",
+    "autoAccident": { "title": "Auto Accident Law", "description": "Know your rights after a car crash. Guides on fault, claims, and compensation." },
+    "personalInjury": { "title": "Personal Injury Law", "description": "How personal injury claims work, settlements, and what you can recover." },
+    "insurance": { "title": "Insurance Law", "description": "Fight denied claims, understand your policy, and know your rights." },
+    "employment": { "title": "Employment Law", "description": "Workplace rights, wrongful termination, overtime, and discrimination." },
+    "criminal": { "title": "Criminal Law", "description": "DUI, arrests, felonies, misdemeanors — what to expect and your rights." },
+    "landlordTenant": { "title": "Landlord-Tenant Law", "description": "Eviction rules, lease disputes, security deposits, and tenant rights." },
+    "aiTech": { "title": "AI & Tech Law", "description": "AI content legality, deepfakes, data privacy, and digital rights." },
+    "findLawyer": { "title": "Find a Lawyer", "description": "Browse our free attorney directory by practice area near you." }
+  },
+  "blog": {
+    "title": "Latest from the Blog",
+    "subtitle": "Fresh legal insights and practical guides.",
+    "viewAll": "View All Posts"
+  },
+  "cta": {
+    "title": "Ready to Understand Your Legal Documents?",
+    "subtitle": "Start using our free tools today. No signup, no credit card, no hassle.",
+    "button": "Explore All Tools"
+  },
+  "meta": {
+    "title": "LegallySpoken — Free Legal Tools for Everyday People",
+    "description": "100+ free legal tools to understand contracts, check risks, calculate deadlines, and generate documents. No lawyer required."
+  }
+}
