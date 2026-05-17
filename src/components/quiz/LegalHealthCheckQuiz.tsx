@@ -97,18 +97,23 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
             <Sparkles className="h-4 w-4" />
-            Results Ready
+            {t("quiz:resultsReady")}
           </div>
           <h2 className="text-2xl md:text-3xl font-bold mb-3">
-            Here's what we recommend for you
+            {t("quiz:resultsTitle")}
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Based on your answers
-            {selectedState ? ` in ${selectedState.name}` : ""}
+            {t("quiz:resultsIntroBase")}
+            {selectedState ? t("quiz:resultsIntroInState", { state: selectedState.name }) : ""}
             {answers.situation !== "other"
-              ? `, it looks like you're dealing with a ${answers.situation.replace("accident", "car accident / insurance")} situation.`
+              ? t("quiz:resultsIntroSituation", {
+                  situation:
+                    answers.situation === "accident"
+                      ? t("quiz:situationCarAccident")
+                      : t(`quiz:options.${answers.situation}`, { defaultValue: answers.situation }).toLowerCase(),
+                })
               : "."}
-            {" "}Here are the most helpful free tools:
+            {t("quiz:resultsIntroTail")}
           </p>
         </div>
 
@@ -116,7 +121,7 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
           {results.map((tool, i) => (
             <Link
               key={tool.id}
-              to={`/tools/${tool.category}/${tool.slug}`}
+              to={lp(`/tools/${tool.category}/${tool.slug}`)}
               className="block"
             >
               <Card className="hover:shadow-md hover:border-accent/30 transition-all group">
@@ -127,11 +132,11 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors">
-                        {tool.name}
+                        {t(`tools:${tool.id}.name`, { defaultValue: tool.name })}
                       </h3>
                     </div>
                     <p className="text-sm text-muted-foreground mb-1.5">
-                      {tool.shortDescription}
+                      {t(`tools:${tool.id}.shortDescription`, { defaultValue: tool.shortDescription })}
                     </p>
                     <div className="flex items-center gap-3 text-xs text-muted-foreground">
                       <span className="inline-flex items-center gap-1 text-accent/80">
@@ -154,19 +159,19 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
         {relatedTools.length > 0 && (
           <div className="mb-8">
             <h3 className="text-lg font-semibold mb-3">
-              Related Tools You Might Like
+              {t("quiz:relatedTitle")}
             </h3>
             <div className="grid gap-3 sm:grid-cols-3">
               {relatedTools.map((tool) => (
                 <Link
                   key={tool.id}
-                  to={`/tools/${tool.category}/${tool.slug}`}
+                  to={lp(`/tools/${tool.category}/${tool.slug}`)}
                 >
                   <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all">
                     <CardContent className="p-4">
-                      <h4 className="font-medium text-sm mb-1">{tool.name}</h4>
+                      <h4 className="font-medium text-sm mb-1">{t(`tools:${tool.id}.name`, { defaultValue: tool.name })}</h4>
                       <p className="text-xs text-muted-foreground">
-                        {tool.shortDescription}
+                        {t(`tools:${tool.id}.shortDescription`, { defaultValue: tool.shortDescription })}
                       </p>
                     </CardContent>
                   </Card>
@@ -178,18 +183,17 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
 
         <div className="flex flex-wrap gap-3 justify-center">
           <Button onClick={handleRetake} variant="outline" className="gap-2">
-            <RotateCcw className="h-4 w-4" /> Retake Quiz
+            <RotateCcw className="h-4 w-4" /> {t("quiz:retake")}
           </Button>
-          <Link to="/tools">
+          <Link to={lp("/tools")}>
             <Button variant="outline" className="gap-2">
-              <List className="h-4 w-4" /> Browse All Tools
+              <List className="h-4 w-4" /> {t("quiz:browseAll")}
             </Button>
           </Link>
         </div>
 
         <p className="text-xs text-muted-foreground text-center mt-6">
-          Powered by LegallySpoken's 100+ free tools • Always free • Not legal
-          advice — consult a professional if needed.
+          {t("quiz:poweredBy")}
         </p>
       </div>
     );
@@ -200,16 +204,16 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
     <div className="max-w-2xl mx-auto">
       {/* Progress */}
       <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
-        <span className="font-medium">Legal Health Check</span>
+        <span className="font-medium">{t("quiz:header")}</span>
         <span>
-          Question {step + 1} of {totalSteps}
+          {t("quiz:questionLabel", { step: step + 1, total: totalSteps })}
         </span>
       </div>
       <Progress value={progressPct} className="h-1.5 mb-8" />
 
       {/* Question */}
       <h2 className="text-xl md:text-2xl font-bold text-center mb-6">
-        {currentQ.question}
+        {t(`quiz:questions.${currentQ.id}`, { defaultValue: currentQ.question })}
       </h2>
 
       {/* Options */}
@@ -227,7 +231,7 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
                 }`}
               >
                 {opt.icon && <opt.icon className="h-5 w-5 text-accent shrink-0" />}
-                <span className="font-medium text-sm">{opt.label}</span>
+                <span className="font-medium text-sm">{t(`quiz:options.${opt.value}`, { defaultValue: opt.label })}</span>
               </button>
             ))}
           </div>
@@ -236,7 +240,7 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
         {currentQ.type === "dropdown" && (
           <Select value={currentValue} onValueChange={setAnswer}>
             <SelectTrigger className="w-full max-w-sm mx-auto">
-              <SelectValue placeholder="Select your state..." />
+              <SelectValue placeholder={t("quiz:stateSelectPlaceholder")} />
             </SelectTrigger>
             <SelectContent>
               {stateData.map((s) => (
@@ -251,7 +255,7 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
         {currentQ.type === "text" && (
           <div className="max-w-md mx-auto">
             <Textarea
-              placeholder="Optional — share any details that might help us recommend better tools..."
+              placeholder={t("quiz:textPlaceholder")}
               value={currentValue}
               onChange={(e) => setAnswer(e.target.value)}
               rows={3}
@@ -268,7 +272,7 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
           disabled={step === 0}
           className="gap-1"
         >
-          <ArrowLeft className="h-4 w-4" /> Back
+          <ArrowLeft className="h-4 w-4" /> {t("quiz:back")}
         </Button>
 
         <Button
@@ -276,13 +280,13 @@ export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
           disabled={!canProceed}
           className="gap-1"
         >
-          {isLastStep ? "See Results" : "Next"}{" "}
+          {isLastStep ? t("quiz:seeResults") : t("quiz:next")}{" "}
           <ArrowRight className="h-4 w-4" />
         </Button>
       </div>
 
       <p className="text-xs text-muted-foreground text-center mt-6">
-        This is a general recommendation tool only. It is not legal advice.
+        {t("quiz:disclaimer")}
       </p>
     </div>
   );
