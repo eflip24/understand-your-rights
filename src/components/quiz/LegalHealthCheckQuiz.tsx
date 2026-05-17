@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ArrowLeft, ArrowRight, RotateCcw, Sparkles, Clock, ExternalLink, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,6 +16,7 @@ import {
   getRelatedRecommendations,
 } from "./quizData";
 import { Tool } from "@/data/tools";
+import { useLocalizedPath } from "@/i18n/paths";
 
 interface Props {
   mode?: "inline" | "modal";
@@ -30,6 +32,8 @@ const defaultAnswers: QuizAnswers = {
 };
 
 export default function LegalHealthCheckQuiz({ mode = "inline" }: Props) {
+  const { t } = useTranslation(["quiz", "tools"]);
+  const lp = useLocalizedPath();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<QuizAnswers>({ ...defaultAnswers });
   const [results, setResults] = useState<RecommendedTool[] | null>(null);
