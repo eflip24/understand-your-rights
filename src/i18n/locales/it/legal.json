@@ -1,0 +1,10 @@
+{
+  "disclaimer": {
+    "title": "Avviso Legale",
+    "intro": "LegallySpoken fornisce informazioni legali generali e strumenti di auto-aiuto. Non siamo uno studio legale e non forniamo consulenza legale.",
+    "notAdvice": "Le informazioni su questo sito non sostituiscono la consulenza legale di un avvocato abilitato nella vostra giurisdizione. Le leggi cambiano frequentemente e variano a seconda della località.",
+    "noRelationship": "L'utilizzo di questo sito non crea un rapporto avvocato-cliente.",
+    "consultLawyer": "Per una consulenza sulla vostra situazione specifica, consultate un avvocato qualificato."
+  },
+  "shortDisclaimer": "Non è consulenza legale. Per la vostra situazione specifica, consultate un avvocato qualificato."
+}

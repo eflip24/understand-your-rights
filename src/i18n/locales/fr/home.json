@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "badge": "Plus de 100 outils juridiques gratuits — Aucune inscription requise",
+    "titleStart": "Clarté juridique,",
+    "titleAccent": "simplifiée",
+    "subtitle": "Comprenez les contrats, vérifiez les risques, calculez les échéances et générez des documents — instantanément, gratuitement.",
+    "searchPlaceholder": "Rechercher un outil juridique...",
+    "searchAriaLabel": "Rechercher un outil juridique",
+    "searchButton": "Rechercher",
+    "trustNoSignup": "Aucune inscription requise",
+    "trustFree": "Gratuit pour toujours",
+    "trustInstant": "Résultats instantanés"
+  },
+  "stats": {
+    "tools": "Outils gratuits",
+    "guides": "Guides juridiques",
+    "states": "États couverts",
+    "pages": "Pages indexées"
+  },
+  "categories": {
+    "title": "Catégories d'outils",
+    "subtitle": "Parcourir les outils par catégorie pour trouver ce dont vous avez besoin."
+  },
+  "guides": {
+    "title": "Guides juridiques",
+    "subtitle": "Guides approfondis sur des sujets juridiques à fort impact, rédigés en langage clair.",
+    "autoAccident": {
+      "title": "Droit des accidents de voiture",
+      "description": "Connaissez vos droits après un accident de voiture. Guides sur la faute, les réclamations et l'indemnisation."
+    },
+    "personalInjury": {
+      "title": "Droit des dommages corporels",
+      "description": "Comment fonctionnent les réclamations pour dommages corporels, les règlements et ce que vous pouvez récupérer."
+    },
+    "insurance": {
+      "title": "Droit des assurances",
+      "description": "Contestez les demandes refusées, comprenez votre police et connaissez vos droits."
+    },
+    "employment": {
+      "title": "Droit du travail",
+      "description": "Droits du travail, licenciement abusif, heures supplémentaires et discrimination."
+    },
+    "criminal": {
+      "title": "Droit pénal",
+      "description": "DUI (conduite en état d'ivresse), arrestations, crimes, délits — à quoi s'attendre et vos droits."
+    },
+    "landlordTenant": {
+      "title": "Droit locatif",
+      "description": "Règles d'expulsion, litiges de bail, dépôts de garantie et droits des locataires."
+    },
+    "aiTech": {
+      "title": "Droit de l'IA et de la technologie",
+      "description": "Légalité du contenu de l'IA, deepfakes, confidentialité des données et droits numériques."
+    },
+    "findLawyer": {
+      "title": "Trouver un avocat",
+      "description": "Parcourez notre annuaire gratuit d'avocats par domaine de pratique près de chez vous."
+    }
+  },
+  "blog": {
+    "title": "Dernières nouvelles du blog",
+    "subtitle": "Nouvelles perspectives juridiques et guides pratiques.",
+    "viewAll": "Voir tous les articles"
+  },
+  "cta": {
+    "title": "Prêt à comprendre vos documents juridiques ?",
+    "subtitle": "Commencez à utiliser nos outils gratuits dès aujourd'hui. Aucune inscription, aucune carte de crédit, aucun souci.",
+    "button": "Explorer tous les outils"
+  },
+  "meta": {
+    "title": "LegallySpoken — Outils juridiques gratuits pour tous",
+    "description": "Plus de 100 outils juridiques gratuits pour comprendre les contrats, vérifier les risques, calculer les délais et générer des documents. Aucun avocat requis."
+  }
+}

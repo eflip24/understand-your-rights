@@ -51,5 +51,16 @@
   "language": {
     "switcher": "Sprache",
     "current": "Aktuelle Sprache"
+  },
+  "page": {
+    "tools": "Tools",
+    "freeToolSuffix": "Kostenloses Tool | LegallySpoken",
+    "faq": "Häufig gestellte Fragen",
+    "relatedTools": "Verwandte Tools",
+    "legalTerms": "Rechtliche Begriffe",
+    "definition": "Definition:",
+    "whatDoesMean": "Was bedeutet „{{term}}“?",
+    "exampleClause": "Beispielklausel",
+    "definitionExamplesSuffix": "Definition & Beispiele | LegallySpoken"
   }
 }

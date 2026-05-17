@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "badge": "100+ kostenlose Rechtstools — keine Anmeldung erforderlich",
+    "titleStart": "Rechtliche Klarheit",
+    "titleAccent": "vereinfacht",
+    "subtitle": "Verträge verstehen, Risiken prüfen, Fristen berechnen und Dokumente erstellen — sofort und kostenlos.",
+    "searchPlaceholder": "Nach einem Rechtstool suchen...",
+    "searchAriaLabel": "Suche nach einem Rechtstool",
+    "searchButton": "Suchen",
+    "trustNoSignup": "Keine Anmeldung erforderlich",
+    "trustFree": "Dauerhaft kostenlos",
+    "trustInstant": "Sofortige Ergebnisse"
+  },
+  "stats": {
+    "tools": "Kostenlose Tools",
+    "guides": "Rechtsratgeber",
+    "states": "Abgedeckte Bundesstaaten",
+    "pages": "Indizierte Seiten"
+  },
+  "categories": {
+    "title": "Tool-Kategorien",
+    "subtitle": "Tools nach Kategorie durchsuchen, um zu finden, was Sie brauchen."
+  },
+  "guides": {
+    "title": "Rechtsratgeber",
+    "subtitle": "Ausführliche Ratgeber zu wichtigen Rechtsthemen, in verständlicher Sprache verfasst.",
+    "autoAccident": {
+      "title": "Verkehrsunfallrecht",
+      "description": "Kennen Sie Ihre Rechte nach einem Autounfall. Ratgeber zu Schuld, Ansprüchen und Entschädigung."
+    },
+    "personalInjury": {
+      "title": "Personenschadensrecht",
+      "description": "Wie Personenschadensansprüche funktionieren, Vergleiche und was Sie zurückfordern können."
+    },
+    "insurance": {
+      "title": "Versicherungsrecht",
+      "description": "Bestreiten Sie abgelehnte Ansprüche, verstehen Sie Ihre Police und kennen Sie Ihre Rechte."
+    },
+    "employment": {
+      "title": "Arbeitsrecht",
+      "description": "Arbeitsplatzrechte, unrechtmäßige Kündigung, Überstunden und Diskriminierung."
+    },
+    "criminal": {
+      "title": "Strafrecht",
+      "description": "Alkohol am Steuer, Verhaftungen, Verbrechen, Ordnungswidrigkeiten – was Sie erwartet und Ihre Rechte."
+    },
+    "landlordTenant": {
+      "title": "Mietrecht",
+      "description": "Regeln zur Räumung, Mietstreitigkeiten, Kautionen und Mieterrechte."
+    },
+    "aiTech": {
+      "title": "KI- und Technologierecht",
+      "description": "Legalität von KI-Inhalten, Deepfakes, Datenschutz und digitale Rechte."
+    },
+    "findLawyer": {
+      "title": "Anwalt finden",
+      "description": "Durchsuchen Sie unser kostenloses Anwaltsverzeichnis nach Rechtsgebieten in Ihrer Nähe."
+    }
+  },
+  "blog": {
+    "title": "Neuestes aus dem Blog",
+    "subtitle": "Aktuelle rechtliche Einblicke und praktische Anleitungen.",
+    "viewAll": "Alle Beiträge ansehen"
+  },
+  "cta": {
+    "title": "Bereit, Ihre Rechtsdokumente zu verstehen?",
+    "subtitle": "Nutzen Sie noch heute unsere kostenlosen Tools. Keine Anmeldung, keine Kreditkarte, kein Aufwand.",
+    "button": "Alle Tools erkunden"
+  },
+  "meta": {
+    "title": "LegallySpoken — Kostenlose Rechtstools für Jedermann",
+    "description": "Über 100 kostenlose Rechtstools, um Verträge zu verstehen, Risiken zu prüfen, Fristen zu berechnen und Dokumente zu erstellen. Kein Anwalt erforderlich."
+  }
+}

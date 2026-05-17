@@ -1,11 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
-import { ArrowLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { ChevronRight } from "lucide-react";
 import { Tool, getRelatedTools } from "@/data/tools";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { JsonLdGraph, webApplicationSchema, faqSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
 import AdSlot from "@/components/ads/AdSlot";
+import { useLocalizedPath } from "@/i18n/paths";
 
 interface ToolPageLayoutProps {
   tool: Tool;
@@ -13,29 +15,36 @@ interface ToolPageLayoutProps {
 }
 
 export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) {
+  const { t } = useTranslation(["tools", "common"]);
+  const lp = useLocalizedPath();
   const relatedTools = getRelatedTools(tool.id);
   const location = useLocation();
   const url = `https://legallyspoken.com${location.pathname}`;
+
+  const localizedName = t(`tools:${tool.id}.name`, { defaultValue: tool.name });
+  const localizedDesc = t(`tools:${tool.id}.description`, { defaultValue: tool.description });
+  const localizedShort = (rt: Tool) => t(`tools:${rt.id}.shortDescription`, { defaultValue: rt.shortDescription });
+
   const schemas = [
-    webApplicationSchema(tool.name, tool.description, url),
+    webApplicationSchema(localizedName, localizedDesc, url),
     ...(tool.faqs?.length ? [faqSchema(tool.faqs)] : []),
   ];
   return (
     <div className="container py-8 max-w-4xl">
       <Head
-        title={`${tool.name} — Free Tool | LegallySpoken`}
-        description={tool.description.slice(0, 155)}
+        title={`${localizedName} — ${t("common:page.freeToolSuffix")}`}
+        description={localizedDesc.slice(0, 155)}
       />
       <JsonLdGraph schemas={schemas} />
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">
-        <Link to="/tools" className="hover:text-foreground transition-colors">Tools</Link>
+        <Link to={lp("/tools")} className="hover:text-foreground transition-colors">{t("common:page.tools")}</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={`/tools/${tool.category}`} className="hover:text-foreground transition-colors">
+        <Link to={lp(`/tools/${tool.category}`)} className="hover:text-foreground transition-colors">
           {tool.categoryLabel}
         </Link>
         <ChevronRight className="h-3 w-3" />
-        <span className="text-foreground">{tool.name}</span>
+        <span className="text-foreground">{localizedName}</span>
       </nav>
 
       {/* Header */}
@@ -46,10 +55,10 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
           </div>
           <div>
             <span className="text-xs font-medium text-accent uppercase tracking-wider">{tool.categoryLabel}</span>
-            <h1 className="text-3xl font-bold text-foreground leading-tight">{tool.name}</h1>
+            <h1 className="text-3xl font-bold text-foreground leading-tight">{localizedName}</h1>
           </div>
         </div>
-        <p className="text-muted-foreground text-lg max-w-2xl">{tool.description}</p>
+        <p className="text-muted-foreground text-lg max-w-2xl">{localizedDesc}</p>
       </div>
 
       {/* Tool Content */}
@@ -64,7 +73,7 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
       {/* FAQ */}
       {tool.faqs.length > 0 && (
         <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-bold mb-4">{t("common:page.faq")}</h2>
           <Accordion type="single" collapsible className="w-full">
             {tool.faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
@@ -79,19 +88,19 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
       {/* Related Tools */}
       {relatedTools.length > 0 && (
         <div>
-          <h2 className="text-2xl font-bold mb-4">Related Tools</h2>
+          <h2 className="text-2xl font-bold mb-4">{t("common:page.relatedTools")}</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {relatedTools.map((rt) => (
-              <Link key={rt.id} to={`/tools/${rt.category}/${rt.slug}`}>
+              <Link key={rt.id} to={lp(`/tools/${rt.category}/${rt.slug}`)}>
                 <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all">
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
                       <rt.icon className="h-4 w-4 text-accent" />
-                      <CardTitle className="text-base">{rt.name}</CardTitle>
+                      <CardTitle className="text-base">{t(`tools:${rt.id}.name`, { defaultValue: rt.name })}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">{rt.shortDescription}</p>
+                    <p className="text-sm text-muted-foreground">{localizedShort(rt)}</p>
                   </CardContent>
                 </Card>
               </Link>

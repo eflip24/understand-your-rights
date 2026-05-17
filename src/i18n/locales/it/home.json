@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "badge": "Oltre 100 Strumenti Legali Gratuiti — Nessuna Registrazione Richiesta",
+    "titleStart": "Chiarezza legale,",
+    "titleAccent": "semplificata",
+    "subtitle": "Comprendi i contratti, verifica i rischi, calcola le scadenze e genera documenti — istantaneamente, gratuitamente.",
+    "searchPlaceholder": "Cerca uno strumento legale...",
+    "searchAriaLabel": "Cerca uno strumento legale",
+    "searchButton": "Cerca",
+    "trustNoSignup": "Nessuna registrazione richiesta",
+    "trustFree": "Sempre gratuito",
+    "trustInstant": "Risultati istantanei"
+  },
+  "stats": {
+    "tools": "Strumenti Gratuiti",
+    "guides": "Guide Legali",
+    "states": "Stati Coperti",
+    "pages": "Pagine Indicizzate"
+  },
+  "categories": {
+    "title": "Categorie di Strumenti",
+    "subtitle": "Sfoglia gli strumenti per categoria per trovare ciò di cui hai bisogno."
+  },
+  "guides": {
+    "title": "Guide Legali",
+    "subtitle": "Guide approfondite su argomenti legali di grande impatto, scritte in un linguaggio semplice.",
+    "autoAccident": {
+      "title": "Legge sugli Incidenti Automobilistici",
+      "description": "Conosci i tuoi diritti dopo un incidente d'auto. Guide su colpa, reclami e risarcimenti."
+    },
+    "personalInjury": {
+      "title": "Diritto delle Lesioni Personali",
+      "description": "Come funzionano i reclami per lesioni personali, le transazioni e cosa puoi recuperare."
+    },
+    "insurance": {
+      "title": "Diritto delle Assicurazioni",
+      "description": "Contrasta i reclami negati, comprendi la tua polizza e conosci i tuoi diritti."
+    },
+    "employment": {
+      "title": "Diritto del Lavoro",
+      "description": "Diritti sul posto di lavoro, licenziamento illegittimo, straordinari e discriminazione."
+    },
+    "criminal": {
+      "title": "Diritto Penale",
+      "description": "Guida in stato di ebbrezza (DUI), arresti, crimini gravi (felony), crimini minori (misdemeanor) — cosa aspettarsi e i tuoi diritti."
+    },
+    "landlordTenant": {
+      "title": "Diritto Proprietario-Inquilino",
+      "description": "Regole di sfratto, controversie di locazione, depositi cauzionali e diritti degli inquilini."
+    },
+    "aiTech": {
+      "title": "Diritto dell'AI e della Tecnologia",
+      "description": "Legalità dei contenuti AI, deepfake, privacy dei dati e diritti digitali."
+    },
+    "findLawyer": {
+      "title": "Trova un Avvocato",
+      "description": "Sfoglia il nostro elenco gratuito di avvocati per area di pratica vicino a te."
+    }
+  },
+  "blog": {
+    "title": "Ultimi Articoli dal Blog",
+    "subtitle": "Nuove intuizioni legali e guide pratiche.",
+    "viewAll": "Visualizza Tutti i Post"
+  },
+  "cta": {
+    "title": "Pronto a Comprendere i Tuoi Documenti Legali?",
+    "subtitle": "Inizia a usare i nostri strumenti gratuiti oggi. Nessuna registrazione, nessuna carta di credito, nessun problema.",
+    "button": "Esplora Tutti gli Strumenti"
+  },
+  "meta": {
+    "title": "LegallySpoken — Strumenti Legali Gratuiti per Tutti",
+    "description": "Oltre 100 strumenti legali gratuiti per comprendere i contratti, controllare i rischi, calcolare le scadenze e generare documenti. Nessun avvocato richiesto."
+  }
+}

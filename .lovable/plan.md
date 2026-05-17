@@ -1,94 +1,62 @@
-# Phase A2 — Multilingual SEO Plumbing
+# Phase A4 — Content Translation (Completed)
 
-Make every route discoverable in all six languages (en, es, fr, de, pt, it) with proper canonical URLs, hreflang alternates, localized meta, and per-locale sitemap shards.
+## What shipped
 
-## Scope
+Translated **page content** into 4 EU languages (ES, FR, DE, IT) with English fallback for anything not yet translated. Portuguese kept in locale list (scaffold only).
 
-1. **Per-locale canonical + hreflang on every page** via the shared `Head.tsx` component.
-2. **Localized `<title>` / `<meta description>`** driven by `react-i18next` namespaces, with English fallback when a translation is missing.
-3. **JSON-LD `inLanguage`** stamped on existing schema graphs.
-4. **Sitemap shards per locale** in the existing `generate-sitemap` edge function, plus `xhtml:link rel="alternate"` entries inside each `<url>`.
-5. **robots.txt + llms.txt** updated to advertise the new sitemap shards.
-6. **`index.html` defaults** kept English (preserves rankings; per-route Helmet-style overrides handled by `Head.tsx`).
-
-## Files to change
-
-### Frontend
-
-- `src/components/seo/Head.tsx`
-  - Read current locale from URL (`useLocaleFromUrl`).
-  - Build canonical as `https://legallyspoken.com` + locale-prefixed path (English = no prefix).
-  - Inject `<link rel="alternate" hreflang="{lang}">` for all 6 locales + `x-default` (English).
-  - Add `<meta property="og:locale">` and `og:locale:alternate` tags.
-  - Accept optional `titleKey` / `descriptionKey` props; when provided, resolve via `t()` and fall back to literal `title`/`description`.
-
-- `src/i18n/locales/{lang}/seo.json` (new namespace, 6 files)
-  - Per-route title/description keys for the ~30 top routes (home, tools index, tool categories, legal-terms index, blog index, pillar landing pages, lawyer-near-me, about, privacy, terms, disclaimer). Long-tail dynamic pages keep current English meta until Phase A4 content translation.
-
-- `src/components/seo/JsonLd.tsx`
-  - Add `inLanguage` to the graph root using current locale.
-
-- `index.html`
-  - Keep English defaults. Remove any hard-coded `<link rel="canonical">` (Head.tsx now owns it per route).
-
-### Sitemaps
-
-- `supabase/functions/generate-sitemap/index.ts`
-  - Add `LOCALES = ["en","es","fr","de","pt","it"]` and `DEFAULT_LOCALE = "en"`.
-  - New helper `localizedUrl(path)` → returns all 6 absolute URLs for a path.
-  - Update `u()` to emit `<xhtml:link rel="alternate" hreflang="{lang}" href="...">` for every locale + `x-default`, and add `xmlns:xhtml` to the urlset wrapper.
-  - Add new shard types: `core-i18n`, `tools-i18n`, `legal-terms-i18n`, `guides-i18n`, `lawyers-i18n`. (state-guides + blog stay English-only for now; revisit Phase A4.)
-  - Update sitemap index to list new shards.
-
-- `public/sitemap.xml`
-  - Add the new `?type=*-i18n` shards alongside existing ones.
-
-- `public/robots.txt`
-  - No structural change (still points to edge function index).
-
-- `public/llms.txt`
-  - Add a short "Languages: en, es, fr, de, pt, it" line under the description.
-
-## Technical notes
+### New i18n namespaces
 
 ```text
-URL strategy
-  English:   https://legallyspoken.com/tools/family
-  Spanish:   https://legallyspoken.com/es/tools/family
-  Canonical: self-referential per locale (each language is its own canonical)
-  x-default: English URL (no prefix)
+src/i18n/locales/{en,es,fr,de,pt,it}/
+  common.json    (chrome — extended with `page` block: tools, FAQ, related, etc.)
+  seo.json       (per-route meta)
+  home.json      NEW — hero, stats, categories, guides, blog, CTA, meta
+  quiz.json      NEW — questions, options, results screen, navigation
+  legal.json     NEW — disclaimer copy (reusable)
+  tools.json     NEW — per-tool name/description/shortDescription, keyed by id (empty for now; EN-fallback)
+  terms.json     NEW — per-term term/definition/explanation/exampleClause, keyed by slug (empty for now; EN-fallback)
 ```
 
-```tsx
-// Head.tsx hreflang loop
-SUPPORTED_LOCALES.forEach(loc => {
-  const href = `https://legallyspoken.com${buildLocaleUrl(loc, pathname)}`;
-  setLink(`alternate-${loc}`, { rel: "alternate", hreflang: loc, href });
-});
-setLink("alternate-x-default", { rel: "alternate", hreflang: "x-default", href: englishHref });
+### Translation pipeline
+
+- One-off Python script (`/tmp/translate_ns.py`) calls Lovable AI Gateway via the `ai-gateway` skill with `google/gemini-2.5-flash`.
+- System prompt enforces: preserve JSON keys, preserve `{{var}}` placeholders, keep US-specific legal terms-of-art untranslated, never invent statutes.
+- Output committed to repo. No runtime translation cost.
+
+### Frontend wiring
+
+- **`src/i18n/config.ts`** — registered new namespaces.
+- **`src/components/home/HeroBanner.tsx`** — fully translated.
+- **`src/pages/HomePage.tsx`** — stats, categories, guides, blog, CTA, meta all translated.
+- **`src/components/quiz/LegalHealthCheckQuiz.tsx`** — questions, options, results, nav all translated.
+- **`src/components/layout/ToolPageLayout.tsx`** — uses `t(\`tools:${tool.id}.name\`, { defaultValue: tool.name })` fallback pattern; missing translations silently render English.
+- **`src/pages/LegalTermPage.tsx`** — same fallback pattern for `terms:` namespace.
+
+### Fallback strategy
+
+```ts
+const localizedName = t(`tools:${tool.id}.name`, { defaultValue: tool.name });
 ```
 
-```xml
-<!-- sitemap entry with alternates -->
-<url>
-  <loc>https://legallyspoken.com/tools/family</loc>
-  <xhtml:link rel="alternate" hreflang="en" href="https://legallyspoken.com/tools/family"/>
-  <xhtml:link rel="alternate" hreflang="es" href="https://legallyspoken.com/es/tools/family"/>
-  <!-- ...4 more... -->
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://legallyspoken.com/tools/family"/>
-  <changefreq>weekly</changefreq><priority>0.7</priority>
-</url>
-```
+When a tool/term key isn't present in the locale JSON, i18next returns the source-data English value. No 404s, no empty strings, no warnings.
 
-## Out of scope (later phases)
+## Out of scope (deferred)
 
-- Translating tool content, FAQs, legal definitions, blog posts (Phase A4).
-- EU lawyer directory routes/data (Track B).
-- Swapping cookie banner for certified CMP (deferred per user).
+- Bulk per-tool / per-term translation of `tools.json` / `terms.json`. Infrastructure is in place; future runs of the translation script can populate these incrementally from `src/data/tools.ts` and `src/data/legalTermPages.ts`.
+- Blog posts (WP-sourced, English).
+- State-level US guides (US-only audience).
+- Lawyer directory listings (US-only data — Track B handles EU directory).
+- Human QA pass (pure AI per user direction).
+- Portuguese active translation.
 
 ## Acceptance
 
-- View source of `/` and `/es/` shows correct canonical + 6 hreflang + x-default.
-- `curl .../generate-sitemap?type=core-i18n` returns valid XML with `xhtml:link` alternates.
-- Google Rich Results test passes for at least one localized route.
-- Lighthouse SEO score unchanged or higher on `/`.
+- `/es/`, `/fr/`, `/de/`, `/it/` home renders translated hero, stats, categories, guides, blog, CTA.
+- `/fr/legal-health-check` quiz renders in French end-to-end.
+- `/de/tools/contract/word-counter` chrome (breadcrumb, FAQ heading, "Related Tools") renders German; tool name/description fall back to English (until tools.json populated).
+- Bundle: all locale JSON inlined via static imports; impact ~50 KB total.
+
+## Next phase
+
+- **Phase A5** (optional): bulk-populate `tools.json` and `terms.json` for top-traffic tools/terms.
+- **Track B**: EU lawyer directory.
