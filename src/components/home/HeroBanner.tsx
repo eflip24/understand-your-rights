@@ -1,10 +1,10 @@
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { CalendarDays, CheckCircle2, FileText, Scale, Search, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
-const trustSignals = ["No signup required", "Free forever", "Instant results"];
+import { useLocalizedPath } from "@/i18n/paths";
 
 function LegalIllustration() {
   return (
@@ -62,11 +62,15 @@ function LegalIllustration() {
 export default function HeroBanner() {
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
+  const { t } = useTranslation("home");
+  const lp = useLocalizedPath();
+
+  const trustSignals = [t("hero.trustNoSignup"), t("hero.trustFree"), t("hero.trustInstant")];
 
   const handleSearch = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const query = searchQuery.trim();
-    if (query) navigate(`/tools?q=${encodeURIComponent(query)}`);
+    if (query) navigate(`${lp("/tools")}?q=${encodeURIComponent(query)}`);
   };
 
   return (
@@ -81,16 +85,16 @@ export default function HeroBanner() {
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-gold/25 bg-navy-dark/70 px-4 py-2 shadow-lg shadow-gold/5 backdrop-blur-md animate-fade-in">
             <span className="h-2 w-2 rounded-full bg-gold shadow-[0_0_18px_hsl(var(--gold))]" />
             <span className="font-sans text-xs font-semibold tracking-wide text-gold-light sm:text-sm">
-              100+ Free Legal Tools — No Signup Required
+              {t("hero.badge")}
             </span>
           </div>
 
           <h1 className="font-sans text-5xl font-extrabold leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl animate-fade-in" style={{ animationDelay: "0.08s" }}>
-            Legal clarity, <span className="text-gold">simplified</span>
+            {t("hero.titleStart")} <span className="text-gold">{t("hero.titleAccent")}</span>
           </h1>
 
           <p className="mt-6 max-w-2xl font-sans text-lg leading-8 text-white/72 sm:text-xl animate-fade-in" style={{ animationDelay: "0.16s" }}>
-            Understand contracts, check risks, calculate deadlines, and generate documents — instantly, for free.
+            {t("hero.subtitle")}
           </p>
 
           <form onSubmit={handleSearch} className="mt-10 w-full max-w-2xl animate-fade-in" style={{ animationDelay: "0.24s" }}>
@@ -99,8 +103,8 @@ export default function HeroBanner() {
                 <div className="relative min-w-0 flex-1">
                   <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gold/80" />
                   <Input
-                    aria-label="Search for a legal tool"
-                    placeholder="Search for a legal tool..."
+                    aria-label={t("hero.searchAriaLabel")}
+                    placeholder={t("hero.searchPlaceholder")}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="h-14 rounded-xl border-0 bg-white text-base font-medium text-navy-dark placeholder:text-charcoal/55 pl-12 shadow-inner focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-0"
@@ -110,7 +114,7 @@ export default function HeroBanner() {
                   type="submit"
                   className="h-14 rounded-xl bg-gold px-8 font-sans text-base font-bold text-navy-dark shadow-lg shadow-gold/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-gold/30"
                 >
-                  Search
+                  {t("hero.searchButton")}
                 </Button>
               </div>
             </div>
