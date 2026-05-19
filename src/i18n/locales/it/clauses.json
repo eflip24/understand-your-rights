@@ -1,1 +1,206 @@
-{}
+{
+  "non-compete-clause": {
+    "title": "Clausola di non concorrenza",
+    "explanation": "Una clausola di non concorrenza impedisce a un dipendente o a un contraente di lavorare per concorrenti o di avviare un'attività in concorrenza dopo aver lasciato un'azienda. Queste clausole sono progettate per proteggere segreti commerciali, relazioni con i clienti e vantaggi competitivi. Tuttavia, sono sempre più esaminate da tribunali e legislatori che considerano le clausole di non concorrenza eccessivamente ampie come ingiuste restrizioni alla capacità dei lavoratori di guadagnarsi da vivere."
+  },
+  "confidentiality-clause": {
+    "title": "Clausola di riservatezza",
+    "explanation": "Una clausola di riservatezza (nota anche come clausola di non divulgazione) obbliga una o entrambe le parti a mantenere segrete determinate informazioni. Queste clausole definiscono quali informazioni sono considerate riservate, come devono essere protette, cosa costituisce una divulgazione consentita e per quanto tempo dura l'obbligo. Si trovano praticamente in ogni tipo di accordo commerciale."
+  },
+  "indemnification-clause": {
+    "title": "Clausola di indennizzo",
+    "explanation": "Una clausola di indennizzo alloca il rischio tra le parti richiedendo a una parte (l'indennizzante) di risarcire l'altra (l'indennizzato) per determinate perdite, danni o responsabilità. Queste clausole sono tra le più negoziate in qualsiasi contratto perché determinano direttamente chi paga quando le cose vanno storte."
+  },
+  "limitation-of-liability": {
+    "title": "Clausola di limitazione di responsabilità",
+    "explanation": "Una clausola di limitazione di responsabilità stabilisce un tetto all'importo totale che una parte può recuperare dall'altra in caso di inadempienza o altra pretesa. Queste clausole comunemente escludono anche determinati tipi di danni (come danni consequenziali, incidentali o punitivi). Sono tra le più importanti disposizioni di allocazione del rischio in qualsiasi contratto."
+  },
+  "termination-clause": {
+    "title": "Clausola di risoluzione",
+    "explanation": "Una clausola di risoluzione definisce le circostanze in cui una o entrambe le parti possono porre fine al contratto prima della sua naturale scadenza. Specifica i tipi di risoluzione disponibili (per giusta causa, per convenienza, o entrambi), i requisiti di preavviso, il periodo di conformità per le violazioni e cosa accade dopo la risoluzione (restituzione dei materiali, pagamento per il lavoro svolto, obblighi sopravviventi)."
+  },
+  "force-majeure-clause": {
+    "title": "Clausola di forza maggiore",
+    "explanation": "Una clausola di forza maggiore esonera una o entrambe le parti dall'adempimento delle proprie obbligazioni contrattuali quando eventi straordinari al di fuori del loro controllo rendono l'adempimento impossibile o impraticabile. Questi eventi includono tipicamente disastri naturali, guerre, pandemie, azioni governative e altre circostanze imprevedibili. La pandemia di COVID-19 ha aumentato notevolmente l'attenzione su queste clausole."
+  },
+  "arbitration-clause": {
+    "title": "Clausola compromissoria",
+    "explanation": "Una clausola compromissoria richiede alle parti di risolvere le controversie tramite arbitrato privato anziché contenzioso giudiziario. Queste clausole specificano le regole dell'arbitrato, il numero di arbitri, il luogo dell'arbitrato e se l'arbitrato è vincolante. Sono comuni nei contratti di lavoro, negli accordi con i consumatori e nei contratti commerciali."
+  },
+  "governing-law-clause": {
+    "title": "Clausola di legge applicabile",
+    "explanation": "Una clausola di legge applicabile (detta anche clausola di scelta della legge) specifica quali leggi della giurisdizione verranno utilizzate per interpretare il contratto e risolvere le controversie. Questo è particolarmente importante nei contratti tra parti in diversi stati o paesi, poiché diverse giurisdizioni possono interpretare lo stesso linguaggio contrattuale in modo diverso."
+  },
+  "intellectual-property-clause": {
+    "title": "Clausola di proprietà intellettuale",
+    "explanation": "Una clausola sulla proprietà intellettuale (IP) definisce la titolarità, i diritti e le restrizioni relative alla proprietà intellettuale creata, utilizzata o scambiata ai sensi del contratto. Queste clausole affrontano chi possiede il prodotto del lavoro, quali licenze sono concesse, come viene trattata la PI preesistente e cosa accade ai diritti di PI alla scadenza del contratto."
+  },
+  "payment-terms-clause": {
+    "title": "Clausola sui termini di pagamento",
+    "explanation": "Una clausola sui termini di pagamento definisce come, quando e quanto la parte pagante deve pagare. Copre l'importo totale o la tariffa, il calendario dei pagamenti, i metodi di pagamento accettabili, le penali per il ritardo nel pagamento, il rimborso delle spese e le procedure di risoluzione delle controversie. Termini di pagamento chiari prevengono la maggior parte delle controversie relative ai pagamenti."
+  },
+  "entire-agreement-clause": {
+    "title": "Clausola di accordo integrale (Merger)",
+    "explanation": "Una clausola di accordo integrale (detta anche clausola di fusione o integrazione) stabilisce che il contratto scritto è l'accordo completo e finale tra le parti, che sostituisce tutte le precedenti negoziazioni, discussioni e accordi. Impedisce a una delle parti di affermare che esistono ulteriori promesse o accordi al di fuori del contratto scritto."
+  },
+  "assignment-clause": {
+    "title": "Clausola di cessione",
+    "explanation": "Una clausola di cessione regola se e come una parte può trasferire i propri diritti e obblighi ai sensi del contratto a una terza parte. Queste clausole possono proibire del tutto la cessione, consentirla con il consenso o permetterla liberamente. Sono importanti nelle transazioni di fusione e acquisizione, nelle riorganizzazioni aziendali e negli accordi di subappalto."
+  },
+  "warranty-clause": {
+    "title": "Clausola di garanzia",
+    "explanation": "Una clausola di garanzia contiene promesse sulla qualità, condizione o prestazione di beni, servizi o altro oggetto del contratto. Le garanzie possono essere espresse (esplicitamente dichiarate) o implicite (imposte dalla legge). Le clausole di garanzia includono anche comunemente esclusioni di garanzia che limitano o escludono determinate garanzie."
+  },
+  "notice-clause": {
+    "title": "Clausola di notifica",
+    "explanation": "Una clausola di notifica specifica come devono essere consegnate le comunicazioni formali tra le parti. Ciò include il metodo di consegna richiesto (posta, e-mail, corriere), gli indirizzi per la notifica e quando la notifica è considerata ricevuta. Una notifica corretta è spesso un prerequisito per l'esercizio dei diritti previsti dal contratto, come la risoluzione o la rivendicazione di una violazione."
+  },
+  "severability-clause": {
+    "title": "Clausola di separabilità",
+    "explanation": "Una clausola di separabilità protegge l'intero contratto se una o più disposizioni risultano essere nulle, illegali o inapplicabili. Senza questa clausola, un tribunale potrebbe annullare l'intero contratto a causa di una disposizione problematica. È considerata una clausola standard, ma svolge una funzione protettiva genuinamente importante."
+  },
+  "dispute-resolution-clause": {
+    "title": "Clausola di risoluzione delle controversie",
+    "explanation": "Una clausola di risoluzione delle controversie stabilisce il processo che le parti devono seguire per risolvere i disaccordi. Può includere un processo a più fasi che inizia con una negoziazione informale, prosegue con la mediazione e infine con l'arbitrato o il contenzioso. Queste clausole mirano a risolvere le controversie in modo efficiente e al minor costo possibile."
+  },
+  "non-solicitation-clause": {
+    "title": "Clausola di non sollecitazione",
+    "explanation": "Una clausola di non sollecitazione impedisce a un dipendente o collaboratore uscente di sollecitare i clienti, i clienti o i dipendenti dell'azienda per un periodo specificato dopo aver lasciato l'azienda. A differenza delle clausole di non concorrenza, che limitano dove si può lavorare, le clausole di non sollecitazione limitano chi si può contattare. Sono generalmente più applicabili delle clausole di non concorrenza perché hanno un ambito più ristretto."
+  },
+  "data-protection-clause": {
+    "title": "Clausola di protezione dei dati",
+    "explanation": "Una clausola di protezione dei dati affronta il modo in cui i dati personali verranno raccolti, elaborati, archiviati e protetti ai sensi del contratto. Con la proliferazione delle normative sulla privacy dei dati (GDPR, CCPA, ecc.), queste clausole sono diventate essenziali in praticamente qualsiasi contratto che coinvolga informazioni personali."
+  },
+  "insurance-clause": {
+    "title": "Clausola assicurativa",
+    "explanation": "Una clausola assicurativa richiede a una o entrambe le parti di mantenere tipi e importi specifici di copertura assicurativa durante il periodo contrattuale. Queste clausole allocano il rischio garantendo che sia disponibile un'assicurazione adeguata per coprire potenziali perdite, riducendo la dipendenza dalle sole disposizioni di indennizzo."
+  },
+  "representations-warranties-clause": {
+    "title": "Clausola di dichiarazioni e garanzie",
+    "explanation": "Le dichiarazioni e le garanzie sono affermazioni di fatto fatte da una o entrambe le parti sullo stato attuale delle cose. Le dichiarazioni sono asserzioni su fatti passati o presenti. Le garanzie sono promesse sulla veridicità di tali fatti. Se una dichiarazione o garanzia si rivela falsa, l'altra parte potrebbe avere un reclamo per inadempimento contrattuale e potenzialmente frode."
+  },
+  "waiver-of-jury-trial": {
+    "title": "Clausola di rinuncia al giudizio con giuria",
+    "explanation": "Una clausola di rinuncia al giudizio con giuria prevede che le parti concordino di far decidere eventuali controversie da un giudice (giudizio senza giuria) anziché da una giuria. Queste clausole sono comuni nei contratti commerciali perché i giudizi senza giuria sono spesso più rapidi, meno costosi e più prevedibili dei giudizi con giuria, in particolare per le controversie commerciali complesse."
+  },
+  "acceleration-clause": {
+    "title": "Clausola di accelerazione",
+    "explanation": "Una clausola di accelerazione consente a un creditore di richiedere il rimborso immediato dell'intero saldo residuo del prestito se il mutuatario viola determinati termini, più comunemente non effettuando i pagamenti. Senza questa clausola, un creditore potrebbe citare in giudizio solo per ogni mancato pagamento individualmente. Le clausole di accelerazione sono standard nei mutui, nei prestiti auto e negli accordi di prestito commerciale. Conferiscono ai creditori una potente leva per imporre il pagamento tempestivo e proteggere il loro investimento."
+  },
+  "anti-dilution-clause": {
+    "title": "Clausola anti-diluizione",
+    "explanation": "Una clausola anti-diluizione protegge gli investitori dalla riduzione della loro percentuale di proprietà quando un'azienda emette nuove azioni a un prezzo inferiore rispetto a quello originariamente pagato dall'investitore. Queste clausole sono standard negli accordi di venture capital e private equity. Adeguano il prezzo di conversione dell'investitore verso il basso per compensare l'effetto diluitivo della nuova emissione, dando loro di fatto più azioni per lo stesso investimento."
+  },
+  "automatic-renewal-clause": {
+    "title": "Clausola di rinnovo automatico",
+    "explanation": "Una clausola di rinnovo automatico (chiamata anche clausola evergreen) estende un contratto per periodi aggiuntivi a meno che una delle parti non fornisca un preavviso di risoluzione entro un periodo di tempo specificato. Queste sono comuni negli accordi di servizio, negli abbonamenti, nei contratti di locazione e nelle licenze software. Sebbene forniscano continuità e comodità, possono intrappolare le parti in estensioni indesiderate se la finestra di cancellazione viene persa."
+  },
+  "best-efforts-clause": {
+    "title": "Clausola di 'migliori sforzi'",
+    "explanation": "Una clausola di 'migliori sforzi' richiede a una parte di impegnarsi al massimo per adempiere a un obbligo, senza garantire in assoluto un risultato specifico. È uno standard più elevato rispetto a 'sforzi ragionevoli' o 'sforzi commercialmente ragionevoli', ma inferiore a una garanzia assoluta. Queste clausole sono comuni quando l'esecuzione dipende da fattori parzialmente al di fuori del controllo di una parte, come l'ottenimento di un'approvazione normativa, l'ottenimento di finanziamenti o il raggiungimento di obiettivi di vendita."
+  },
+  "choice-of-forum-clause": {
+    "title": "Clausola sul Foro Competente",
+    "explanation": "Una clausola sulla scelta del foro (detta anche clausola di selezione del foro) designa il tribunale o il luogo specifico in cui le controversie devono o possono essere litigate. Si differenzia da una clausola sulla scelta della legge, che determina quali leggi della giurisdizione si applicano. Un contratto potrebbe specificare la legge del Delaware (scelta della legge) ma richiedere il contenzioso nei tribunali di New York (scelta del foro). Queste clausole riducono l'incertezza e prevengono la corsa agli sportelli giudiziari."
+  },
+  "clawback-clause": {
+    "title": "Clausola di Clawback (Recupero)",
+    "explanation": "Una clausola di clawback consente a una parte di recuperare compensi, bonus o distribuzioni precedentemente pagati in determinate circostanze — come una rideterminazione finanziaria, una condotta scorretta o il mancato raggiungimento degli obiettivi di performance. Queste clausole sono diventate prominenti dopo scandali aziendali e la crisi finanziaria del 2008. Il Dodd-Frank Act e le norme della SEC richiedono ora alle società quotate in borsa di adottare politiche di clawback per i compensi dei dirigenti."
+  },
+  "change-of-control-clause": {
+    "title": "Clausola di Cambio di Controllo",
+    "explanation": "Una clausola di cambio di controllo disciplina cosa accade a un contratto quando una delle parti subisce un cambiamento significativo nella proprietà — come una fusione, un'acquisizione o il trasferimento di una partecipazione di controllo. Queste clausole possono concedere diritti di risoluzione, attivare requisiti di consenso o attivare disposizioni speciali come pagamenti accelerati o compensi 'golden parachute'."
+  },
+  "compliance-clause": {
+    "title": "Clausola di Conformità",
+    "explanation": "Una clausola di conformità richiede a una o entrambe le parti di aderire a leggi, regolamenti, standard di settore e linee guida etiche applicabili nell'adempimento dei loro obblighi contrattuali. Queste clausole sono diventate sempre più importanti con la crescente complessità normativa, l'applicazione delle leggi anticorruzione (FCPA, UK Bribery Act), le leggi sulla privacy dei dati (GDPR, CCPA) e i regimi sanzionatori."
+  },
+  "cross-default-clause": {
+    "title": "Clausola di Cross-Default (Inadempimento Incrociato)",
+    "explanation": "Una clausola di cross-default prevede che un inadempimento ai sensi di un accordo tra le parti (o accordi correlati) costituisca automaticamente un inadempimento ai sensi dell'accordo corrente. Ciò impedisce a un mutuatario di inadempire selettivamente agli obblighi e garantisce ai creditori di potersi proteggere quando la salute finanziaria di un mutuatario si deteriora. Le clausole di cross-default sono standard nei contratti di prestito, negli atti di obbligazioni e negli accordi di finanziamento complessi."
+  },
+  "cure-period-clause": {
+    "title": "Clausola di Periodo di Rimedio",
+    "explanation": "Una clausola di periodo di rimedio concede a una parte un periodo di tempo specificato per sanare (rimediare) una violazione o un inadempimento prima che l'altra parte possa esercitare rimedi come la risoluzione o l'accelerazione. Queste clausole bilanciano gli interessi di entrambe le parti — dando alla parte inadempiente una giusta opportunità di correggere gli errori pur preservando il diritto della parte non inadempiente di agire se i problemi non vengono risolti."
+  },
+  "drag-along-clause": {
+    "title": "Clausola Drag-Along",
+    "explanation": "Una clausola drag-along conferisce agli azionisti di maggioranza il diritto di costringere gli azionisti di minoranza a vendere le loro azioni in caso di vendita o acquisizione di una società. Ciò impedisce agli azionisti di minoranza di bloccare un affare che la maggioranza desidera perseguire. Gli azionisti di minoranza devono vendere alle stesse condizioni della maggioranza. I diritti drag-along sono standard negli accordi tra azionisti e nei term sheet di venture capital."
+  },
+  "exclusivity-clause": {
+    "title": "Clausola di Esclusiva",
+    "explanation": "Una clausola di esclusiva concede a una parte il diritto esclusivo di fornire servizi, distribuire prodotti o negoziare un accordo all'interno di un ambito definito. Queste clausole sono comuni negli accordi di distribuzione, nei contratti di licenza, nelle trattative di M&A e nei contratti di servizio. Forniscono sicurezza alla parte esclusiva ma limitano la flessibilità dell'altra parte."
+  },
+  "first-right-of-refusal-clause": {
+    "title": "Clausola di Diritto di Prelazione",
+    "explanation": "Un diritto di prelazione (ROFR) conferisce a una parte il diritto di eguagliare qualsiasi offerta che l'altra parte riceva da una terza parte prima che l'altra parte possa accettarla. Se il titolare del ROFR eguaglia l'offerta, la transazione va a lui. Se rifiuta, l'altra parte è libera di procedere con la terza parte. I ROFR sono comuni nei contratti di locazione immobiliare, negli accordi tra azionisti e nei contratti commerciali."
+  },
+  "holdback-clause": {
+    "title": "Clausola di Trattenuta",
+    "explanation": "Una clausola di trattenuta trattiene una parte dell'importo di un pagamento per un periodo specificato per proteggersi da potenziali reclami, carenze o aggiustamenti. Nelle transazioni di M&A, una percentuale del prezzo di acquisto viene tipicamente trattenuta in escrow (deposito fiduciario) per coprire potenziali richieste di indennizzo. Nel settore delle costruzioni, le trattenute (chiamate anche retainage) assicurano che gli appaltatori completino le voci dell'elenco delle cose da fare."
+  },
+  "indemnity-cap-clause": {
+    "title": "Clausola di Massimale di Indennizzo",
+    "explanation": "Un massimale di indennizzo limita l'importo massimo che una parte può essere tenuta a pagare in base alle disposizioni di indennizzo di un contratto. Senza un massimale, la responsabilità di indennizzo di una parte potrebbe teoricamente essere illimitata. I massimali sono tipicamente stabiliti come percentuale del valore del contratto, delle commissioni totali pagate o un importo in dollari fisso. Sono uno strumento critico di allocazione del rischio in quasi tutti i contratti commerciali."
+  },
+  "integration-clause": {
+    "title": "Clausola di Integrazione",
+    "explanation": "Una clausola di integrazione (detta anche clausola di accordo completo o fusione) stabilisce che il contratto scritto rappresenta l'accordo completo e finale tra le parti, sostituendo tutte le negoziazioni, discussioni e accordi precedenti. Ciò impedisce a una delle parti di affermare in seguito che promesse orali o bozze precedenti facciano parte dell'accordo. È una delle clausole boilerplate più importanti in qualsiasi contratto."
+  },
+  "key-person-clause": {
+    "title": "Clausola Persona Chiave",
+    "explanation": "Una clausola persona chiave (detta anche clausola key man) conferisce a una parte diritti specifici — solitamente sospensione, risoluzione o rinegoziazione — se un individuo nominato essenziale per l'esecuzione del contratto non è più coinvolto. Queste clausole sono comuni nei contratti di servizi professionali, negli accordi di gestione di fondi e negli accordi di intrattenimento in cui il valore dipende fortemente da individui specifici."
+  },
+  "material-adverse-change-clause": {
+    "title": "Clausola di Cambiamento Materiale Avverso",
+    "explanation": "Una clausola di cambiamento materiale avverso (MAC) (detta anche clausola di effetto materiale avverso o MAE) consente a una parte di ritirarsi o rinegoziare un accordo se si verifica un evento negativo significativo che influisce fondamentalmente sul valore, sulle operazioni o sulla condizione finanziaria dell'altra parte. Le clausole MAC sono critiche negli accordi di M&A, negli impegni di prestito e nei principali contratti commerciali."
+  },
+  "most-favored-nation-clause": {
+    "title": "Clausola della Nazione Più Favorita",
+    "explanation": "Una clausola della nazione più favorita (MFN) garantisce che una parte riceverà condizioni almeno altrettanto favorevoli di quelle offerte a qualsiasi altra parte. Se il fornitore offre prezzi, termini o condizioni migliori a un altro cliente, il titolare della MFN ha automaticamente diritto agli stessi termini. Queste clausole hanno avuto origine nei trattati commerciali internazionali e sono ora comuni negli accordi di fornitura commerciale, nei contratti di licenza e nei contratti assicurativi."
+  },
+  "no-shop-clause": {
+    "title": "Clausola No-Shop",
+    "explanation": "Una clausola no-shop proibisce a una parte (solitamente un venditore in una transazione di M&A) di sollecitare, incoraggiare o negoziare con altri potenziali acquirenti durante un periodo specificato. Ciò dà al potenziale acquirente la fiducia di investire tempo e risorse nella due diligence senza preoccuparsi di essere superato da offerte. Le clausole no-shop sono standard nelle lettere di intenti, negli accordi di fusione e nei periodi di negoziazione esclusiva."
+  },
+  "non-disparagement-clause": {
+    "title": "Clausola di Non Denigrazione",
+    "explanation": "Una clausola di non denigrazione proibisce a una o entrambe le parti di fare dichiarazioni negative, critiche o dannose sull'altra parte. Queste clausole sono comuni negli accordi di transazione, nei pacchetti di buonuscita e nei contratti di lavoro. Proteggono la reputazione e impediscono a ex partner commerciali o dipendenti di criticarsi pubblicamente dopo la fine del rapporto."
+  },
+  "penalty-clause": {
+    "title": "Clausola Penale",
+    "explanation": "Una clausola penale impone un obbligo di pagamento a una parte che viola un contratto, laddove l'importo è destinato a punire la parte inadempiente piuttosto che a compensare le perdite effettive. Secondo il diritto comune (common law), le clausole penali sono generalmente inapplicabili — i tribunali le annulleranno e le sostituiranno con i danni effettivi. Ciò le distingue dalle clausole di danni liquidati, che stimano un risarcimento autentico pre-concordato."
+  },
+  "price-adjustment-clause": {
+    "title": "Clausola di Adeguamento del Prezzo",
+    "explanation": "Una clausola di adeguamento del prezzo consente al prezzo del contratto di cambiare durante il termine in base a trigger o formule definiti. I meccanismi comuni includono adeguamenti del costo della vita (COLA) legati all'IPC, indici dei prezzi delle materie prime, fluttuazioni valutarie o revisioni periodiche dei tassi di mercato. Queste clausole sono essenziali nei contratti a lungo termine per evitare che una delle parti sia vincolata a prezzi che diventano commercialmente irragionevoli."
+  },
+  "right-to-audit-clause": {
+    "title": "Clausola di Diritto di Audit (Verifica)",
+    "explanation": "Una clausola di diritto di audit conferisce a una parte il diritto di esaminare i libri contabili, le registrazioni e le operazioni dell'altra parte per verificare la conformità ai termini del contratto. Queste clausole sono essenziali nei contratti a costo maggiorato (cost-plus), negli accordi di royalty, negli accordi di franchising e in qualsiasi accordo in cui i pagamenti si basano su cifre dichiarate. Servono sia come deterrente contro le frodi che come meccanismo per garantire l'accuratezza."
+  },
+  "right-of-first-offer-clause": {
+    "title": "Clausola di Diritto di Prima Offerta",
+    "explanation": "Un diritto di prima offerta (ROFO) richiede a una parte di offrire un bene o un'opportunità al titolare del ROFO prima di cercare offerte da terze parti. A differenza di un diritto di prelazione (dove il titolare eguaglia un'offerta di terzi), un ROFO richiede al venditore di dare al titolare la prima opportunità di fare un'offerta. Se il titolare rifiuta o le parti non riescono a concordare i termini, il venditore può quindi cercare offerte da terze parti."
+  },
+  "survival-clause": {
+    "title": "Clausola di Sopravvivenza",
+    "explanation": "Una clausola di sopravvivenza specifica quali disposizioni di un contratto continuano ad essere efficaci dopo la risoluzione o la scadenza del contratto. Senza una clausola di sopravvivenza, tutti i diritti e gli obblighi generalmente cessano alla fine del contratto. Le disposizioni comunemente sopravviventi includono riservatezza, indennizzo, limitazione di responsabilità, proprietà intellettuale, obblighi di non concorrenza e risoluzione delle controversie."
+  },
+  "tag-along-clause": {
+    "title": "Clausola Tag-Along",
+    "explanation": "Una clausola tag-along (detta anche diritto di co-vendita) conferisce agli azionisti di minoranza il diritto di unirsi a una vendita quando un azionista di maggioranza vende le proprie azioni. Se l'azionista di maggioranza trova un acquirente, gli azionisti di minoranza possono 'seguire' e vendere le loro azioni alle stesse condizioni. Ciò protegge gli azionisti di minoranza dal rimanere in una società con nuovi, potenzialmente sfavorevoli, proprietari controllanti."
+  },
+  "time-is-of-the-essence-clause": {
+    "title": "Clausola \"Il Tempo è Essenziale\"",
+    "explanation": "Una clausola \"il tempo è essenziale\" rende la stretta osservanza delle scadenze un termine materiale del contratto. Senza questa clausola, i tribunali generalmente consentono alle parti una ragionevole flessibilità con i tempi, e ritardi minori non costituiscono un inadempimento materiale. Con essa, qualsiasi mancato rispetto di una scadenza — anche di un solo giorno — conferisce alla parte non inadempiente il diritto di risolvere il contratto e chiedere i danni."
+  },
+  "tolling-clause": {
+    "title": "Clausola di Sospensione dei Termini (Tolling Clause)",
+    "explanation": "Una clausola di sospensione dei termini (tolling clause) sospende (mette in pausa) il decorso del termine di prescrizione o di altre scadenze contrattuali per un periodo specificato o durante determinati eventi. Gli accordi di sospensione sono comuni quando le parti stanno negoziando una transazione e vogliono preservare i loro diritti di contenzioso senza la pressione di una scadenza imminente. Possono anche apparire nei contratti per estendere le scadenze durante eventi di forza maggiore o controversie."
+  },
+  "venue-clause": {
+    "title": "Clausola sul Foro Competente",
+    "explanation": "Una clausola sul foro competente specifica la località geografica (città, contea o stato) dove i procedimenti legali devono o possono essere avviati. Sebbene simile a una clausola di scelta del foro, la clausola sul foro competente riguarda specificamente la località geografica, mentre la scelta del foro può anche designare un tipo di tribunale (federale vs. statale). Le clausole sul foro competente riducono i costi del contenzioso e l'incertezza, prevenendo che le controversie vengano avviate in luoghi inaspettati o scomodi."
+  }
+}
