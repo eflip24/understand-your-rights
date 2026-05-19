@@ -61,6 +61,7 @@
     "definition": "Definition:",
     "whatDoesMean": "Was bedeutet „{{term}}“?",
     "exampleClause": "Beispielklausel",
-    "definitionExamplesSuffix": "Definition & Beispiele | LegallySpoken"
+    "definitionExamplesSuffix": "Definition & Beispiele | LegallySpoken",
+    "englishOnlyNotice": "Dieser Leitfaden ist derzeit nur auf Englisch verfügbar."
   }
 }

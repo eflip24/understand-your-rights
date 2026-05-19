@@ -1,0 +1,78 @@
+{
+  "nda": {
+    "title": "Accordo di non divulgazione (NDA)",
+    "description": "Un Accordo di Non Divulgazione (NDA) è un contratto legalmente vincolante che stabilisce una relazione confidenziale tra le parti. La parte che riceve informazioni riservate si impegna a non divulgarle a terzi e ad utilizzarle solo per gli scopi concordati. Gli NDA vengono utilizzati prima di discutere accordi commerciali, assumere collaboratori, condividere segreti commerciali e durante le negoziazioni di fusioni."
+  },
+  "employment-contract": {
+    "title": "Contratto di lavoro subordinato",
+    "description": "Un contratto di lavoro è un accordo tra un datore di lavoro e un dipendente che definisce i termini e le condizioni dell'impiego. Copre retribuzione, benefit, responsabilità lavorative, condizioni di cessazione del rapporto e restrizioni post-impiego. Sebbene l'at-will employment (rapporto di lavoro 'a volontà', che può essere risolto da entrambe le parti in qualsiasi momento senza giusta causa) sia la regola predefinita nella maggior parte degli stati degli Stati Uniti, i contratti di lavoro scritti offrono chiarezza e protezione per entrambe le parti."
+  },
+  "freelance-agreement": {
+    "title": "Contratto per Libero Professionista / Collaboratore Indipendente",
+    "description": "Un accordo per libero professionista (o accordo di collaboratore indipendente) definisce la relazione tra un cliente e un collaboratore indipendente. È fondamentale per stabilire che il lavoratore è un collaboratore, non un dipendente – una distinzione che influisce su tasse, benefit, responsabilità e diritti legali."
+  },
+  "lease-agreement": {
+    "title": "Contratto di Locazione",
+    "description": "Un contratto di locazione è un contratto tra un proprietario (locatore) e un inquilino (conduttore) che concede all'inquilino il diritto di utilizzare la proprietà per un periodo specificato in cambio di un canone di affitto. I contratti di locazione possono riguardare proprietà residenziali, commerciali o industriali, ciascuna con diversi requisiti legali e clausole comuni."
+  },
+  "saas-agreement": {
+    "title": "Accordo SaaS (Software as a Service)",
+    "description": "Un accordo SaaS regola l'uso di servizi software basati su cloud. A differenza delle licenze software tradizionali in cui il cliente acquista e installa il software, gli accordi SaaS forniscono l'accesso a software ospitato su base di abbonamento. Il fornitore mantiene il software, l'infrastruttura e la sicurezza dei dati."
+  },
+  "consulting-agreement": {
+    "title": "Contratto di Consulenza",
+    "description": "Un contratto di consulenza definisce i termini in base ai quali un consulente fornisce consulenza esperta, analisi o servizi specializzati a un cliente. A differenza dei contratti di lavoro subordinato, i contratti di consulenza stabiliscono un rapporto di collaboratore indipendente, in cui il consulente mantiene il controllo su come viene svolto il lavoro."
+  },
+  "partnership-agreement": {
+    "title": "Contratto di Società (Partnership Agreement)",
+    "description": "Un contratto di società definisce i termini di una partnership commerciale, inclusi i diritti, le responsabilità, i contributi e la quota di profitti e perdite di ciascun partner. Senza un contratto di società scritto, i partner sono soggetti alle regole predefinite della legge statale, che potrebbero non essere in linea con le loro intenzioni."
+  },
+  "purchase-agreement": {
+    "title": "Contratto di Compravendita (Vendita di Beni)",
+    "description": "Un contratto di compravendita regola la vendita di beni tra un acquirente e un venditore. Definisce i beni venduti, il prezzo, i termini di consegna, i termini di pagamento, le garanzie e i diritti e i rimedi di ciascuna parte. Per acquisti significativi, un accordo ben redatto protegge entrambe le parti dalle controversie su ciò che è stato promesso."
+  },
+  "service-agreement": {
+    "title": "Contratto di Servizi",
+    "description": "Un contratto di servizi definisce i termini in base ai quali una parte fornisce servizi a un'altra. Copre l'ambito dei servizi, gli standard di prestazione, i prezzi, i tempi, i diritti di proprietà intellettuale, la responsabilità e la risoluzione. I contratti di servizi vanno da semplici documenti di una pagina a complessi accordi quadro di servizi (MSA) con dichiarazioni di lavoro (SOW) multiple."
+  },
+  "licensing-agreement": {
+    "title": "Accordo di Licenza",
+    "description": "Un accordo di licenza concede a una parte (il licenziatario) il diritto di utilizzare la proprietà intellettuale di un'altra parte (il licenziante) — come brevetti, marchi, copyright o segreti commerciali — a condizioni specificate. Il licenziante mantiene la proprietà mentre il licenziatario ottiene i diritti di utilizzo."
+  },
+  "terms-of-service": {
+    "title": "Termini di Servizio (ToS)",
+    "description": "I Termini di Servizio (chiamati anche Termini di Utilizzo o Termini e Condizioni) sono le regole e le linee guida che gli utenti devono accettare per utilizzare un sito web, un'app o un servizio. Creano un accordo legalmente vincolante tra il fornitore di servizi e i suoi utenti, definendo l'uso accettabile, i diritti di proprietà intellettuale, le limitazioni di responsabilità e la risoluzione delle controversie."
+  },
+  "privacy-policy": {
+    "title": "Informativa sulla Privacy",
+    "description": "Un'informativa sulla privacy è un documento legale che spiega come un'organizzazione raccoglie, utilizza, archivia, condivide e protegge le informazioni personali. Le informative sulla privacy sono legalmente richieste da numerose normative, tra cui il GDPR (UE), il CCPA (California) e varie altre leggi sulla privacy statali e internazionali."
+  },
+  "joint-venture-agreement": {
+    "title": "Contratto di Joint Venture",
+    "description": "Un contratto di joint venture stabilisce un accordo commerciale collaborativo tra due o più parti che concordano di mettere in comune le risorse per un progetto specifico o un'attività commerciale mantenendo le proprie identità separate. A differenza di una partnership, una joint venture è tipicamente limitata nell'ambito e nella durata."
+  },
+  "real-estate-purchase": {
+    "title": "Contratto di Compravendita Immobiliare",
+    "description": "Un contratto di compravendita immobiliare è un contratto tra un acquirente e un venditore per la vendita di un immobile. È uno dei contratti più significativi che la maggior parte delle persone firmerà mai, coprendo il prezzo di acquisto, i termini di finanziamento, le contingenze, le procedure di chiusura e le dichiarazioni sullo stato dell'immobile."
+  },
+  "loan-agreement": {
+    "title": "Contratto di Prestito",
+    "description": "Un contratto di prestito è un contratto tra un creditore e un mutuatario che stabilisce i termini di un prestito, inclusi l'importo principale, il tasso di interesse, il piano di rimborso, i requisiti di garanzia e le disposizioni di default. Gli accordi di prestito vanno da semplici cambiali per prestiti personali a complesse linee di credito per mutuatari aziendali."
+  },
+  "non-solicitation-agreement": {
+    "title": "Accordo di non Sollecitazione",
+    "description": "Un accordo di non sollecitazione impedisce a un dipendente o collaboratore uscente di sollecitare i clienti o i dipendenti dell'azienda per un periodo specificato. È più ristretto di un non-compete (che limita dove si può lavorare) e si concentra specificamente sulla protezione delle relazioni commerciali."
+  },
+  "shareholder-agreement": {
+    "title": "Patto Parasociale",
+    "description": "Un patto parasociale è un contratto tra gli azionisti di una società che definisce i loro diritti, obblighi e le regole che governano la società. Integra lo statuto e i regolamenti della società con disposizioni più dettagliate sulla gestione, i trasferimenti di azioni e la risoluzione delle controversie."
+  },
+  "commercial-lease": {
+    "title": "Contratto di Locazione Commerciale",
+    "description": "Un contratto di locazione commerciale è un accordo tra un locatore e un inquilino commerciale per l'uso di una proprietà commerciale (uffici, negozi, spazi industriali o magazzini). A differenza dei contratti di locazione residenziali, i contratti di locazione commerciale sono in gran parte non regolamentati e fortemente negoziati, con condizioni che influenzano in modo significativo le operazioni commerciali e i costi dell'inquilino."
+  },
+  "website-terms": {
+    "title": "Termini e Condizioni del Sito Web",
+    "description": "I termini e le condizioni del sito web (chiamati anche Termini di Utilizzo) stabiliscono le regole per l'utilizzo di un sito web. Proteggono il proprietario del sito web dalla responsabilità, stabiliscono le aspettative per il comportamento dell'utente, affrontano i diritti di proprietà intellettuale e stabiliscono il quadro giuridico per il rapporto utente-sito web."
+  }
+}

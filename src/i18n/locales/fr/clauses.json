@@ -1,0 +1,206 @@
+{
+  "non-compete-clause": {
+    "title": "Clause de non-concurrence",
+    "explanation": "Une clause de non-concurrence interdit à un employé ou à un entrepreneur de travailler pour des concurrents ou de créer une entreprise concurrente après avoir quitté une entreprise. Ces clauses sont conçues pour protéger les secrets commerciaux, les relations avec les clients et les avantages concurrentiels. Cependant, elles sont de plus en plus examinées par les tribunaux et les législateurs qui considèrent les clauses de non-concurrence trop larges comme des entraves injustes à la capacité des travailleurs de gagner leur vie."
+  },
+  "confidentiality-clause": {
+    "title": "Clause de confidentialité",
+    "explanation": "Une clause de confidentialité (également connue sous le nom de disposition de non-divulgation) oblige l'une ou les deux parties à garder secrètes des informations spécifiées. Ces clauses définissent quelles informations sont considérées comme confidentielles, comment elles doivent être protégées, ce qui constitue une divulgation autorisée et pendant combien de temps l'obligation dure. On les trouve dans pratiquement tous les types d'accords commerciaux."
+  },
+  "indemnification-clause": {
+    "title": "Clause d'indemnisation",
+    "explanation": "Une clause d'indemnisation répartit les risques entre les parties en exigeant qu'une partie (l'indemnisateur) indemnise l'autre (l'indemnisé) pour certaines pertes, dommages ou responsabilités. Ces clauses sont parmi les plus âprement négociées dans tout contrat car elles déterminent directement qui paie lorsque les choses tournent mal."
+  },
+  "limitation-of-liability": {
+    "title": "Clause de limitation de responsabilité",
+    "explanation": "Une clause de limitation de responsabilité plafonne le montant total qu'une partie peut recouvrer de l'autre en cas de manquement ou d'autre réclamation. Ces clauses excluent aussi couramment certains types de dommages (tels que les dommages indirects, accessoires ou punitifs). Elles sont parmi les dispositions les plus importantes en matière de répartition des risques dans tout contrat."
+  },
+  "termination-clause": {
+    "title": "Clause de résiliation",
+    "explanation": "Une clause de résiliation définit les circonstances dans lesquelles une ou les deux parties peuvent mettre fin au contrat avant son expiration naturelle. Elle précise les types de résiliation disponibles (pour motif, pour convenance, ou les deux), les exigences de préavis, le délai de régularisation pour les manquements, et ce qui se passe après la résiliation (retour des matériaux, paiement des travaux effectués, obligations survivantes)."
+  },
+  "force-majeure-clause": {
+    "title": "Clause de force majeure",
+    "explanation": "Une clause de force majeure dispense une ou les deux parties d'exécuter leurs obligations contractuelles lorsque des événements extraordinaires échappant à leur contrôle rendent l'exécution impossible ou irréalisable. Ces événements incluent généralement les catastrophes naturelles, les guerres, les pandémies, les actions gouvernementales et d'autres circonstances imprévues. La pandémie de COVID-19 a considérablement accru l'attention portée à ces clauses."
+  },
+  "arbitration-clause": {
+    "title": "Clause d'arbitrage",
+    "explanation": "Une clause d'arbitrage exige que les parties résolvent les litiges par un arbitrage privé plutôt que par un litige devant les tribunaux. Ces clauses spécifient les règles d'arbitrage, le nombre d'arbitres, le lieu de l'arbitrage et si l'arbitrage est contraignant. Elles sont courantes dans les contrats de travail, les accords de consommation et les contrats commerciaux."
+  },
+  "governing-law-clause": {
+    "title": "Clause de loi applicable",
+    "explanation": "Une clause de loi applicable (également appelée clause de choix de loi) spécifie les lois de quelle juridiction seront utilisées pour interpréter le contrat et résoudre les litiges. Ceci est particulièrement important dans les contrats entre parties de différents États ou pays, car différentes juridictions peuvent interpréter le même libellé contractuel différemment."
+  },
+  "intellectual-property-clause": {
+    "title": "Clause de propriété intellectuelle",
+    "explanation": "Une clause de propriété intellectuelle (PI) définit la propriété, les droits et les restrictions liés à la propriété intellectuelle créée, utilisée ou échangée dans le cadre du contrat. Ces clauses abordent la question de savoir à qui appartient le produit du travail, quelles licences sont accordées, comment la PI préexistante est traitée et ce qu'il advient des droits de PI à la fin du contrat."
+  },
+  "payment-terms-clause": {
+    "title": "Clause de modalités de paiement",
+    "explanation": "Une clause de modalités de paiement définit comment, quand et combien la partie payante doit payer. Elle couvre le montant total ou le taux, le calendrier de paiement, les modes de paiement acceptables, les pénalités de retard, le remboursement des dépenses et les procédures de règlement des litiges. Des modalités de paiement claires préviennent la plupart des litiges liés aux paiements."
+  },
+  "entire-agreement-clause": {
+    "title": "Clause d'intégralité de l'accord (fusion)",
+    "explanation": "Une clause d'intégralité de l'accord (également appelée clause de fusion ou d'intégration) stipule que le contrat écrit constitue l'accord complet et définitif entre les parties, annulant toutes les négociations, discussions et accords antérieurs. Elle empêche l'une ou l'autre partie de prétendre que des promesses ou des accords supplémentaires existent en dehors du contrat écrit."
+  },
+  "assignment-clause": {
+    "title": "Clause de cession",
+    "explanation": "Une clause de cession régit si et comment une partie peut transférer ses droits et obligations en vertu du contrat à un tiers. Ces clauses peuvent interdire entièrement la cession, l'autoriser avec consentement, ou la permettre librement. Elles sont importantes dans les transactions de fusions et acquisitions, les réorganisations d'entreprise et les arrangements de sous-traitance."
+  },
+  "warranty-clause": {
+    "title": "Clause de garantie",
+    "explanation": "Une clause de garantie contient des promesses concernant la qualité, l'état ou la performance des biens, services ou autres objets du contrat. Les garanties peuvent être expresses (explicitées) ou implicites (imposées par la loi). Les clauses de garantie incluent également couramment des clauses de non-responsabilité de garantie limitant ou excluant certaines garanties."
+  },
+  "notice-clause": {
+    "title": "Clause de notification",
+    "explanation": "Une clause de notification spécifie comment les communications formelles entre les parties doivent être livrées. Cela inclut la méthode de livraison requise (courrier, e-mail, coursier), les adresses pour la notification et le moment où la notification est considérée comme reçue. Une notification appropriée est souvent une condition préalable à l'exercice des droits en vertu du contrat, tels que la résiliation ou la réclamation d'une violation."
+  },
+  "severability-clause": {
+    "title": "Clause de divisibilité",
+    "explanation": "Une clause de divisibilité protège le contrat global si une ou plusieurs dispositions sont jugées invalides, illégales ou inapplicables. Sans cette clause, un tribunal pourrait annuler l'intégralité du contrat en raison d'une disposition problématique. Elle est considérée comme une formule standard mais remplit une fonction de protection réellement importante."
+  },
+  "dispute-resolution-clause": {
+    "title": "Clause de résolution des litiges",
+    "explanation": "Une clause de résolution des litiges établit le processus que les parties doivent suivre pour résoudre les désaccords. Elle peut inclure un processus en plusieurs étapes commençant par une négociation informelle, puis une médiation, et enfin un arbitrage ou un litige. Ces clauses visent à résoudre les litiges de manière efficace et au coût le plus bas possible."
+  },
+  "non-solicitation-clause": {
+    "title": "Clause de non-sollicitation",
+    "explanation": "Une clause de non-sollicitation empêche un employé ou un prestataire sortant de solliciter les clients, la clientèle ou les employés de l'entreprise pendant une période spécifiée après son départ. Contrairement aux clauses de non-concurrence, qui restreignent le lieu où vous pouvez travailler, les clauses de non-sollicitation restreignent les personnes que vous pouvez contacter. Elles sont généralement plus exécutoires que les clauses de non-concurrence car leur portée est plus étroite."
+  },
+  "data-protection-clause": {
+    "title": "Clause de protection des données",
+    "explanation": "Une clause de protection des données aborde la manière dont les données personnelles seront collectées, traitées, stockées et protégées en vertu du contrat. Avec la prolifération des réglementations en matière de confidentialité des données (RGPD, CCPA, etc.), ces clauses sont devenues essentielles dans pratiquement tout contrat impliquant des informations personnelles."
+  },
+  "insurance-clause": {
+    "title": "Clause d'assurance",
+    "explanation": "Une clause d'assurance exige d'une ou des deux parties qu'elles maintiennent des types et des montants spécifiés de couverture d'assurance pendant la durée du contrat. Ces clauses répartissent les risques en garantissant qu'une assurance adéquate est disponible pour couvrir les pertes potentielles, réduisant ainsi la dépendance aux seules dispositions d'indemnisation."
+  },
+  "representations-warranties-clause": {
+    "title": "Clause de déclarations et de garanties",
+    "explanation": "Les déclarations et garanties sont des déclarations de faits faites par une ou les deux parties concernant l'état actuel des affaires. Les déclarations sont des affirmations sur des faits passés ou présents. Les garanties sont des promesses concernant la véracité de ces faits. Si une déclaration ou une garantie s'avère fausse, l'autre partie peut avoir une réclamation pour rupture de contrat et potentiellement pour fraude."
+  },
+  "waiver-of-jury-trial": {
+    "title": "Clause de renonciation au jury",
+    "explanation": "Une clause de renonciation au jury prévoit que les parties conviennent que tout litige sera tranché par un juge (procès sans jury) plutôt que par un jury. Ces clauses sont courantes dans les contrats commerciaux car les procès sans jury sont souvent plus rapides, moins chers et plus prévisibles que les procès avec jury, en particulier pour les litiges commerciaux complexes."
+  },
+  "acceleration-clause": {
+    "title": "Clause d'exigibilité anticipée (accélération)",
+    "explanation": "Une clause d'exigibilité anticipée permet à un prêteur d'exiger le remboursement immédiat de la totalité du solde du prêt en cours si l'emprunteur viole certaines conditions, le plus souvent en manquant des paiements. Sans cette clause, un prêteur ne pourrait poursuivre qu'individuellement pour chaque paiement manqué. Les clauses d'exigibilité anticipée sont standard dans les hypothèques, les prêts automobiles et les accords de prêt commerciaux. Elles donnent aux prêteurs un puissant levier pour faire respecter le paiement en temps opportun et protéger leur investissement."
+  },
+  "anti-dilution-clause": {
+    "title": "Clause anti-dilution",
+    "explanation": "Une clause anti-dilution protège les investisseurs contre la réduction de leur pourcentage de propriété lorsqu'une entreprise émet de nouvelles actions à un prix inférieur à celui que l'investisseur a payé à l'origine. Ces clauses sont standard dans les opérations de capital-risque et de capital-investissement. Elles ajustent le prix de conversion de l'investisseur à la baisse pour compenser l'effet dilutif de la nouvelle émission, lui donnant ainsi plus d'actions pour le même investissement."
+  },
+  "automatic-renewal-clause": {
+    "title": "Clause de reconduction tacite",
+    "explanation": "Une clause de reconduction tacite (également appelée clause de prolongation) prolonge un contrat pour des périodes supplémentaires à moins qu'une partie ne donne un préavis de résiliation dans un délai spécifié. Celles-ci sont courantes dans les accords de service, les abonnements, les baux et les licences logicielles. Bien qu'elles assurent la continuité et la commodité, elles peuvent piéger les parties dans des prolongations non désirées si la fenêtre d'annulation est manquée."
+  },
+  "best-efforts-clause": {
+    "title": "Clause de meilleurs efforts",
+    "explanation": "Une clause de meilleurs efforts exige d'une partie qu'elle s'efforce autant que possible de remplir une obligation, sans garantir absolument un résultat spécifique. C'est un standard plus élevé que les 'efforts raisonnables' ou les 'efforts commercialement raisonnables', mais moins qu'une garantie absolue. Ces clauses sont courantes lorsque l'exécution dépend de facteurs partiellement indépendants de la volonté d'une partie, tels que l'obtention d'une approbation réglementaire, l'obtention de financement ou la réalisation d'objectifs de vente."
+  },
+  "choice-of-forum-clause": {
+    "title": "Clause d'élection de for",
+    "explanation": "Une clause d'élection de for (également appelée clause attributive de juridiction) désigne le tribunal ou le lieu spécifique où les litiges doivent ou peuvent être portés. Elle diffère d'une clause de choix de loi, qui détermine les lois de quelle juridiction s'appliquent. Un contrat peut spécifier la loi du Delaware (choix de loi) mais exiger que le litige soit porté devant les tribunaux de New York (élection de for). Ces clauses réduisent l'incertitude et évitent les courses au tribunal."
+  },
+  "clawback-clause": {
+    "title": "Clause de récupération (clawback)",
+    "explanation": "Une clause de récupération (clawback clause) permet à une partie de récupérer une rémunération, des bonus ou des distributions précédemment versés dans certaines circonstances, telles qu'une rectification financière, une faute professionnelle ou le non-respect d'objectifs de performance. Ces clauses sont devenues importantes après les scandales d'entreprise et la crise financière de 2008. Le Dodd-Frank Act et les réglementations de la SEC exigent désormais des entreprises publiques qu'elles adoptent des politiques de récupération pour la rémunération des dirigeants."
+  },
+  "change-of-control-clause": {
+    "title": "Clause de changement de contrôle",
+    "explanation": "Une clause de changement de contrôle régit ce qu'il advient d'un contrat lorsqu'une partie subit un changement significatif de propriété, tel qu'une fusion, une acquisition ou un transfert d'une participation majoritaire. Ces clauses peuvent accorder des droits de résiliation, déclencher des exigences de consentement ou activer des dispositions spéciales comme des paiements accélérés ou des compensations de type « parachute doré »."
+  },
+  "compliance-clause": {
+    "title": "Clause de conformité",
+    "explanation": "Une clause de conformité exige d'une ou des deux parties qu'elles respectent les lois, réglementations, normes industrielles et directives éthiques applicables dans l'exécution de leurs obligations en vertu du contrat. Ces clauses sont devenues de plus en plus importantes avec la complexité réglementaire croissante, l'application des lois anticorruption (FCPA, UK Bribery Act), les lois sur la protection des données (RGPD, CCPA) et les régimes de sanctions."
+  },
+  "cross-default-clause": {
+    "title": "Clause de défaut croisé",
+    "explanation": "Une clause de défaut croisé stipule qu'un défaut en vertu d'un accord entre les parties (ou d'accords connexes) constitue automatiquement un défaut en vertu du présent accord. Cela empêche un emprunteur de manquer sélectivement à ses obligations et garantit que les créanciers peuvent se protéger lorsque la santé financière d'un emprunteur se détériore. Les clauses de défaut croisé sont courantes dans les contrats de prêt, les contrats d'émission d'obligations et les arrangements de financement complexes."
+  },
+  "cure-period-clause": {
+    "title": "Clause de période de remède",
+    "explanation": "Une clause de période de remède accorde à une partie un délai spécifié pour corriger (remédier) une infraction ou un défaut avant que l'autre partie ne puisse exercer des recours tels que la résiliation ou l'accélération. Ces clauses équilibrent les intérêts des deux parties, donnant à la partie défaillante une juste opportunité de corriger ses erreurs tout en préservant le droit de la partie non défaillante d'agir si les problèmes ne sont pas résolus."
+  },
+  "drag-along-clause": {
+    "title": "Clause d'entraînement (drag-along)",
+    "explanation": "Une clause d'entraînement (drag-along) donne aux actionnaires majoritaires le droit de forcer les actionnaires minoritaires à vendre leurs actions en cas de vente ou d'acquisition de la société. Cela empêche les actionnaires minoritaires de bloquer une transaction que la majorité souhaite réaliser. Les actionnaires minoritaires doivent vendre aux mêmes termes et conditions que la majorité. Les droits d'entraînement sont courants dans les pactes d'actionnaires et les term sheets de capital-risque."
+  },
+  "exclusivity-clause": {
+    "title": "Clause d'exclusivité",
+    "explanation": "Une clause d'exclusivité accorde à une partie le droit exclusif de fournir des services, de distribuer des produits ou de négocier un accord dans un périmètre défini. Ces clauses sont courantes dans les accords de distribution, les contrats de licence, les négociations de fusions-acquisitions et les contrats de service. Elles offrent une sécurité à la partie exclusive mais limitent la flexibilité de l'autre partie."
+  },
+  "first-right-of-refusal-clause": {
+    "title": "Clause de droit de première offre (ROFR)",
+    "explanation": "Un droit de première offre (ROFR) donne à une partie le droit d'égaler toute offre que l'autre partie reçoit d'un tiers avant que l'autre partie ne puisse l'accepter. Si le titulaire du ROFR égale l'offre, la transaction lui est attribuée. S'il refuse, l'autre partie est libre de procéder avec le tiers. Les ROFR sont courants dans les baux immobiliers, les pactes d'actionnaires et les contrats commerciaux."
+  },
+  "holdback-clause": {
+    "title": "Clause de retenue",
+    "explanation": "Une clause de retenue conserve une partie d'un montant de paiement pendant une période spécifiée pour se protéger contre d'éventuelles réclamations, insuffisances ou ajustements. Dans les transactions de fusions-acquisitions, un pourcentage du prix d'achat est généralement retenu en séquestre pour couvrir d'éventuelles demandes d'indemnisation. Dans la construction, les retenues garantissent que les entrepreneurs complètent les éléments de la liste des réserves."
+  },
+  "indemnity-cap-clause": {
+    "title": "Clause de plafonnement de l'indemnisation",
+    "explanation": "Un plafonnement de l'indemnisation limite le montant maximal qu'une partie peut être tenue de payer en vertu des dispositions d'indemnisation d'un contrat. Sans plafonnement, la responsabilité d'indemnisation d'une partie pourrait théoriquement être illimitée. Les plafonds sont généralement définis comme un pourcentage de la valeur du contrat, du total des frais payés ou un montant fixe en dollars. Il s'agit d'un outil essentiel de répartition des risques dans pratiquement tous les contrats commerciaux."
+  },
+  "integration-clause": {
+    "title": "Clause d'intégration",
+    "explanation": "Une clause d'intégration (également appelée clause d'intégralité de l'accord ou clause de fusion) stipule que le contrat écrit représente l'accord complet et final entre les parties, annulant toutes les négociations, discussions et accords antérieurs. Cela empêche l'une ou l'autre partie de prétendre ultérieurement que des promesses orales ou des projets antérieurs font partie de l'accord. C'est l'une des clauses standard les plus importantes de tout contrat."
+  },
+  "key-person-clause": {
+    "title": "Clause de personne clé",
+    "explanation": "Une clause de personne clé (également appelée clause d'homme clé) donne à une partie des droits spécifiques – généralement la suspension, la résiliation ou une renégociation – si une personne nommée et essentielle à l'exécution du contrat n'est plus impliquée. Ces clauses sont courantes dans les contrats de services professionnels, les accords de gestion de fonds et les contrats de divertissement où la valeur dépend fortement d'individus spécifiques."
+  },
+  "material-adverse-change-clause": {
+    "title": "Clause de changement défavorable significatif (MAC)",
+    "explanation": "Une clause de changement défavorable significatif (MAC) (également appelée clause d'effet négatif significatif ou MAE) permet à une partie de se désengager ou de renégocier un accord si un événement négatif important se produit qui affecte fondamentalement la valeur, les opérations ou la situation financière de l'autre partie. Les clauses MAC sont essentielles dans les accords de fusions-acquisitions, les engagements de prêt et les contrats commerciaux majeurs."
+  },
+  "most-favored-nation-clause": {
+    "title": "Clause de la nation la plus favorisée",
+    "explanation": "Une clause de la nation la plus favorisée (NPF) garantit qu'une partie recevra des conditions au moins aussi favorables que celles offertes à toute autre partie. Si le fournisseur offre des prix, des conditions ou des modalités plus avantageux à un autre client, le titulaire de la clause NPF a automatiquement droit aux mêmes conditions. Ces clauses ont leur origine dans les traités commerciaux internationaux et sont désormais courantes dans les accords d'approvisionnement commerciaux, les contrats de licence et les contrats d'assurance."
+  },
+  "no-shop-clause": {
+    "title": "Clause de non-sollicitation (no-shop)",
+    "explanation": "Une clause de non-sollicitation (no-shop) interdit à une partie (généralement un vendeur dans une transaction de fusions-acquisitions) de solliciter, d'encourager ou de négocier avec d'autres acheteurs potentiels pendant une période spécifiée. Cela donne à l'acheteur potentiel la confiance nécessaire pour investir du temps et des ressources dans la diligence raisonnable sans craindre d'être surenchéri. Les clauses de non-sollicitation sont courantes dans les lettres d'intention, les accords de fusion et les périodes de négociation exclusive."
+  },
+  "non-disparagement-clause": {
+    "title": "Clause de non-dénigrement",
+    "explanation": "Une clause de non-dénigrement interdit à une ou aux deux parties de faire des déclarations négatives, critiques ou préjudiciables concernant l'autre partie. Ces clauses sont courantes dans les accords de règlement, les indemnités de départ et les contrats de travail. Elles protègent la réputation et empêchent les anciens partenaires commerciaux ou employés de se critiquer publiquement une fois la relation terminée."
+  },
+  "penalty-clause": {
+    "title": "Clause pénale",
+    "explanation": "Une clause pénale impose une obligation de paiement à une partie qui viole un contrat, le montant étant destiné à punir la partie défaillante plutôt qu'à compenser les pertes réelles. En common law, les clauses pénales sont généralement inapplicables – les tribunaux les annuleront et les remplaceront par des dommages et intérêts réels. Cela les distingue des clauses de dommages-intérêts liquidés, qui estiment une compensation pré-convenue authentique."
+  },
+  "price-adjustment-clause": {
+    "title": "Clause d'ajustement des prix",
+    "explanation": "Une clause d'ajustement des prix permet au prix du contrat de changer pendant la durée en fonction de déclencheurs ou de formules définis. Les mécanismes courants incluent les ajustements au coût de la vie (COLA) liés à l'IPC, les indices des prix des matières premières, les fluctuations monétaires ou les révisions périodiques des taux du marché. Ces clauses sont essentielles dans les contrats à long terme pour éviter que l'une ou l'autre partie ne soit bloquée par des prix qui deviendraient commercialement déraisonnables."
+  },
+  "right-to-audit-clause": {
+    "title": "Clause de droit d'audit",
+    "explanation": "Une clause de droit d'audit donne à une partie le droit d'examiner les livres, les registres et les opérations de l'autre partie pour vérifier la conformité aux termes du contrat. Ces clauses sont essentielles dans les contrats à prix de revient majoré (cost-plus), les accords de redevances, les contrats de franchise et tout arrangement où les paiements sont basés sur des chiffres déclarés. Elles servent à la fois de moyen de dissuasion contre la fraude et de mécanisme pour garantir l'exactitude."
+  },
+  "right-of-first-offer-clause": {
+    "title": "Clause de droit de première offre (ROFO)",
+    "explanation": "Un droit de première offre (ROFO) exige qu'une partie offre un actif ou une opportunité au titulaire du ROFO avant de chercher des offres auprès de tiers. Contrairement à un droit de première offre (où le titulaire égale une offre de tiers), un ROFO exige que le vendeur donne au titulaire la première opportunité de faire une offre. Si le titulaire refuse ou si les parties ne peuvent pas s'entendre sur les conditions, le vendeur peut alors chercher des offres auprès de tiers."
+  },
+  "survival-clause": {
+    "title": "Clause de survie",
+    "explanation": "Une clause de survie spécifie quelles dispositions d'un contrat continuent d'être efficaces après la résiliation ou l'expiration du contrat. Sans clause de survie, tous les droits et obligations prennent généralement fin avec le contrat. Les dispositions couramment survivantes incluent la confidentialité, l'indemnisation, la limitation de responsabilité, la propriété intellectuelle, les obligations de non-concurrence et le règlement des litiges."
+  },
+  "tag-along-clause": {
+    "title": "Clause de droit de sortie conjointe (tag-along)",
+    "explanation": "Une clause de droit de sortie conjointe (tag-along, également appelée droit de co-vente) donne aux actionnaires minoritaires le droit de se joindre à une vente lorsqu'un actionnaire majoritaire vend ses actions. Si l'actionnaire majoritaire trouve un acheteur, les actionnaires minoritaires peuvent « se joindre » (tag along) et vendre leurs actions aux mêmes termes et conditions. Cela protège les actionnaires minoritaires d'être laissés pour compte dans une société avec de nouveaux propriétaires contrôlants potentiellement défavorables."
+  },
+  "time-is-of-the-essence-clause": {
+    "title": "Clause « le temps est un élément essentiel »",
+    "explanation": "Une clause « le temps est un élément essentiel » fait de la stricte conformité aux délais une condition matérielle du contrat. Sans cette clause, les tribunaux accordent généralement aux parties une flexibilité raisonnable en matière de délais, et des retards mineurs ne constituent pas une violation matérielle. Avec elle, tout non-respect d'un délai – même d'un seul jour – donne à la partie non défaillante le droit de résilier et de demander des dommages et intérêts."
+  },
+  "tolling-clause": {
+    "title": "Clause de suspension des délais",
+    "explanation": "Une clause de suspension des délais suspend (met en pause) le cours du délai de prescription ou d'autres délais contractuels pendant une période spécifiée ou pendant certains événements. Les accords de suspension sont courants lorsque les parties négocient un règlement et souhaitent préserver leurs droits de litige sans la pression d'un délai expirant. Ils peuvent également apparaître dans les contrats pour prolonger les délais en cas de force majeure ou de litiges."
+  },
+  "venue-clause": {
+    "title": "Clause de Compétence Territoriale",
+    "explanation": "Une clause de compétence territoriale spécifie le lieu géographique (ville, comté ou État) où les procédures judiciaires doivent ou peuvent être engagées. Bien que similaire à une clause d'élection de for, la compétence territoriale concerne spécifiquement le lieu géographique, tandis que l'élection de for peut également désigner un type de tribunal (fédéral ou étatique). Les clauses de compétence territoriale réduisent les coûts de litige et l'incertitude en empêchant que les litiges ne soient portés dans des lieux inattendus ou inopportuns."
+  }
+}

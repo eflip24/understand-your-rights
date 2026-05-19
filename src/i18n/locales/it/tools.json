@@ -1,1 +1,567 @@
-{}
+{
+  "reading-time": {
+    "name": "Calcolatore del Tempo di Lettura del Contratto",
+    "description": "Incolla il testo del tuo contratto e ottieni un tempo di lettura stimato basato sul conteggio delle parole e sulla complessità legale. Ti aiuta a pianificare quanto tempo ci vorrà per rivedere un documento.",
+    "shortDescription": "Stima quanto tempo ci vuole per leggere un contratto."
+  },
+  "word-counter": {
+    "name": "Contatore Parole Contratto",
+    "description": "Ottieni statistiche dettagliate sul tuo contratto, inclusi conteggio parole, conteggio caratteri, conteggio frasi, conteggio paragrafi e pagine stimate.",
+    "shortDescription": "Ottieni statistiche dettagliate su parole e caratteri."
+  },
+  "jargon-translator": {
+    "name": "Traduttore di Gergo Legale",
+    "description": "Cerca termini legali comuni e ottieni spiegazioni in linguaggio semplice. Cerca nel nostro dizionario di oltre 100 termini legali per capire cosa dice effettivamente il tuo contratto.",
+    "shortDescription": "Traduci termini legali in linguaggio semplice."
+  },
+  "clause-finder": {
+    "name": "Ricerca Clausole Contrattuali",
+    "description": "Incolla il tuo contratto e cerca tipi di clausole comuni come indennizzo, risoluzione, non concorrenza, riservatezza e altro ancora. Trova rapidamente le sezioni più importanti.",
+    "shortDescription": "Trova clausole specifiche nei tuoi contratti."
+  },
+  "cancellation-deadline": {
+    "name": "Calcolatore Scadenza di Annullamento",
+    "description": "Calcola la tua scadenza di annullamento basata sulla data di iscrizione e sul periodo di ripensamento. Sai esattamente quando scade il tuo diritto di annullare.",
+    "shortDescription": "Calcola quando si chiude la finestra di annullamento."
+  },
+  "notice-period": {
+    "name": "Calcolatore del Periodo di Preavviso",
+    "description": "Calcola la data di fine del tuo periodo di preavviso basata sulla data di inizio e sui termini di preavviso. Funziona per accordi di lavoro, locazione e servizi.",
+    "shortDescription": "Calcola quando termina il tuo periodo di preavviso."
+  },
+  "late-fee": {
+    "name": "Calcolatore Commissione per Ritardo",
+    "description": "Calcola la commissione totale per ritardo su un pagamento in scadenza. Inserisci l'importo principale, la percentuale della commissione e il numero di giorni di ritardo per vedere quanto devi o ti è dovuto.",
+    "shortDescription": "Calcola le commissioni di mora sui pagamenti in scadenza."
+  },
+  "refund-checker": {
+    "name": "Verificatore Idoneità al Rimborso",
+    "description": "Rispondi a qualche semplice domanda sul tuo acquisto e sulla situazione per verificare se potresti avere diritto a un rimborso. Copre scenari comuni dei consumatori.",
+    "shortDescription": "Verifica se hai diritto a un rimborso."
+  },
+  "non-compete": {
+    "name": "Verificatore Durata Clausola di Non Concorrenza",
+    "description": "Inserisci la durata della clausola di non concorrenza e lo stato per vedere informazioni generali sull'applicabilità. Alcuni stati limitano o vietano completamente le clausole di non concorrenza.",
+    "shortDescription": "Verifica l'applicabilità della clausola di non concorrenza per stato."
+  },
+  "freelance-rate": {
+    "name": "Calcolatore Tariffe Freelance",
+    "description": "Converti tra tariffe orarie, onorari per progetto e reddito annuo. Considera tasse, spese e ore fatturabili per trovare la tua vera tariffa da freelance.",
+    "shortDescription": "Converti tra tariffe orarie, per progetto e annuali."
+  },
+  "invoice-interest": {
+    "name": "Calcolatore Interessi di Mora Fattura",
+    "description": "Calcola gli interessi dovuti sui pagamenti di fatture in ritardo. Inserisci l'importo della fattura, il tasso di interesse e i giorni di ritardo per determinare l'importo totale dovuto.",
+    "shortDescription": "Calcola gli interessi sulle fatture non pagate."
+  },
+  "nda-generator": {
+    "name": "Generatore Modelli NDA",
+    "description": "Genera un Accordo di Non Divulgazione di base compilando un semplice modulo. Personalizza le parti, la durata, l'ambito e la giurisdizione.",
+    "shortDescription": "Genera un NDA di base da un modulo."
+  },
+  "privacy-generator": {
+    "name": "Generatore di Informativa sulla Privacy",
+    "description": "Genera un'informativa sulla privacy per il tuo sito web o app. Rispondi alle domande sulle tue pratiche di gestione dei dati e ottieni un documento di policy formattato.",
+    "shortDescription": "Crea un'informativa sulla privacy per il tuo sito web."
+  },
+  "complaint-generator": {
+    "name": "Generatore Lettera di Reclamo",
+    "description": "Genera una lettera di reclamo formale. Inserisci i dettagli del tuo problema e ottieni una lettera formattata professionalmente pronta per essere inviata.",
+    "shortDescription": "Crea una lettera di reclamo formale."
+  },
+  "tos-generator": {
+    "name": "Generatore Termini di Servizio",
+    "description": "Genera i termini di servizio per il tuo sito web o applicazione. Copre accordi utente, limitazioni di responsabilità e disposizioni legali standard.",
+    "shortDescription": "Crea i termini di servizio per il tuo sito."
+  },
+  "red-flag-scanner": {
+    "name": "Scanner Segnalazioni Critiche nel Contratto",
+    "description": "Incolla il tuo contratto e lascia che l'IA identifichi clausole rischiose, termini iniqui e potenziali problemi legali con valutazioni di gravità e raccomandazioni.",
+    "shortDescription": "L'IA scansiona i contratti per clausole rischiose."
+  },
+  "nda-fairness": {
+    "name": "Punteggio Equità NDA",
+    "description": "Incolla un NDA e ottieni un punteggio di equità da 0 a 100, con una ripartizione di punti di forza, preoccupazioni e raccomandazioni per la negoziazione.",
+    "shortDescription": "Valuta l'equità del tuo NDA da 0 a 100."
+  },
+  "lease-analyzer": {
+    "name": "Analizzatore Contratto di Locazione",
+    "description": "Incolla il tuo contratto di locazione e ottieni un riepilogo dei termini chiave, dei rischi nascosti e delle raccomandazioni. Perfetto per gli inquilini che rivedono un nuovo contratto di locazione.",
+    "shortDescription": "Analizza i contratti di locazione per i rischi."
+  },
+  "terms-summarizer": {
+    "name": "Riassuntore Termini & Condizioni",
+    "description": "Incolla qualsiasi Termini & Condizioni o documento legale e ottieni un riassunto in linguaggio semplice organizzato per argomento, con le sezioni preoccupanti evidenziate.",
+    "shortDescription": "Riassumi T&C in linguaggio semplice."
+  },
+  "contract-comparison": {
+    "name": "Strumento di Confronto Contratti",
+    "description": "Incolla due contratti fianco a fianco e ottieni un confronto basato sull'IA che evidenzia le differenze chiave, i termini modificati e quale versione favorisce quale parte.",
+    "shortDescription": "Confronta due contratti fianco a fianco."
+  },
+  "clause-explainer": {
+    "name": "Spiegatore di Clausole",
+    "description": "Incolla qualsiasi clausola legale e ottieni una spiegazione in linguaggio semplice, una valutazione del rischio, implicazioni pratiche e suggerimenti per la negoziazione.",
+    "shortDescription": "Ottieni spiegazioni di clausole in linguaggio semplice."
+  },
+  "contract-expiration": {
+    "name": "Tracciatore Scadenza Contratto",
+    "description": "Inserisci le date dei tuoi contratti e traccia le scadenze in un unico posto. Vedi quali contratti stanno per scadere, sono attivi o sono già scaduti.",
+    "shortDescription": "Traccia le date di scadenza dei contratti."
+  },
+  "signature-block": {
+    "name": "Generatore Blocco Firma",
+    "description": "Genera blocchi firma formattati correttamente per individui, società per azioni, LLC e partnership. Copia e incolla nei tuoi contratti.",
+    "shortDescription": "Genera blocchi firma corretti."
+  },
+  "contract-checklist": {
+    "name": "Generatore Lista di Controllo Contratto",
+    "description": "Seleziona il tipo di contratto e ottieni una lista di controllo di revisione completa. Traccia gli elementi che hai rivisto con una barra di avanzamento interattiva.",
+    "shortDescription": "Genera una lista di controllo per la revisione del contratto."
+  },
+  "amendment-drafter": {
+    "name": "Redattore Emendamenti Contrattuali",
+    "description": "Genera un emendamento contrattuale di base compilando i dettagli del contratto originale e descrivendo le modifiche. Crea un documento di emendamento formattato.",
+    "shortDescription": "Redigi un emendamento contrattuale da un modulo."
+  },
+  "contract-value": {
+    "name": "Calcolatore del Valore del Contratto",
+    "description": "Calcola il valore totale di un contratto includendo rinnovi e tassi di escalation annuali. Visualizza il valore del termine iniziale, il valore di rinnovo e le medie mensili.",
+    "shortDescription": "Calcola il valore totale del contratto con i rinnovi."
+  },
+  "warranty-tracker": {
+    "name": "Calcolatore Scadenza Garanzia",
+    "description": "Tieni traccia delle date di scadenza della garanzia per i tuoi acquisti. Inserisci i dettagli del prodotto e la durata della garanzia per vedere quali garanzie sono ancora attive.",
+    "shortDescription": "Tieni traccia delle date di fine garanzia per gli acquisti."
+  },
+  "statute-of-limitations": {
+    "name": "Ricerca Termini di Prescrizione",
+    "description": "Cerca i termini di prescrizione per le comuni azioni legali per stato. Scopri quanto tempo hai per presentare ricorso per controversie contrattuali, lesioni personali, frode e altro ancora.",
+    "shortDescription": "Cerca le scadenze di presentazione per stato."
+  },
+  "small-claims-limit": {
+    "name": "Verificatore Limite Tribunale per Controversie di Modesta Entità",
+    "description": "Controlla l'importo massimo che puoi richiedere in un tribunale per controversie di modesta entità nel tuo stato. Inserisci l'importo della tua richiesta per vedere se è idonea.",
+    "shortDescription": "Controlla i limiti di $ per le controversie di modesta entità per stato."
+  },
+  "consumer-rights-quiz": {
+    "name": "Quiz sui Diritti del Consumatore",
+    "description": "Metti alla prova la tua conoscenza dei diritti di protezione dei consumatori con il nostro quiz interattivo. Scopri le politiche di reso, le garanzie, le controversie di fatturazione e altro ancora.",
+    "shortDescription": "Metti alla prova la tua conoscenza dei diritti del consumatore."
+  },
+  "dispute-letter": {
+    "name": "Generatore di Lettere di Contestazione",
+    "description": "Genera una lettera di contestazione formale per errori di fatturazione, inesattezze nel rapporto di credito, reclami sui servizi o problemi di prodotto. Include riferimenti legali pertinenti.",
+    "shortDescription": "Genera lettere di contestazione formali."
+  },
+  "salary-converter": {
+    "name": "Convertitore Salario Annuale/Orario",
+    "description": "Converti tra salario annuale e tariffa oraria. Considera i costi aggiuntivi dei benefit, le ore settimanali e le settimane annuali per vedere il vero costo dell'impiego.",
+    "shortDescription": "Converti il salario in tariffa oraria e viceversa."
+  },
+  "pto-calculator": {
+    "name": "Calcolatore PTO",
+    "description": "Calcola il tuo tempo libero retribuito (PTO) accumulato in base al tuo tasso di maturazione, anzianità lavorativa e giorni già utilizzati. Visualizza il PTO rimanente in giorni e ore.",
+    "shortDescription": "Calcola il saldo del PTO accumulato."
+  },
+  "wrongful-termination": {
+    "name": "Lista di Controllo Licenziamento Illegittimo",
+    "description": "Rispondi a domande sul tuo licenziamento e ottieni una valutazione dei potenziali indicatori di licenziamento illegittimo, inclusi discriminazione e ritorsioni.",
+    "shortDescription": "Valuta un potenziale licenziamento illegittimo."
+  },
+  "minimum-wage": {
+    "name": "Ricerca Salario Minimo",
+    "description": "Cerca le attuali aliquote federali e statali del salario minimo, incluso il salario minimo per i lavoratori che ricevono mance. Confronta l'aliquota del tuo stato con il minimo federale.",
+    "shortDescription": "Cerca il salario minimo per stato."
+  },
+  "employment-checklist": {
+    "name": "Lista di Controllo Contratto di Lavoro",
+    "description": "Una checklist interattiva completa di tutto ciò che devi cercare in un contratto di lavoro — retribuzione, benefit, clausole restrittive, termini di risoluzione e altro ancora.",
+    "shortDescription": "Rivedi la lista di controllo per i contratti di lavoro."
+  },
+  "cease-desist": {
+    "name": "Generatore di Lettere di Diffida",
+    "description": "Genera una lettera formale di diffida per molestie, diffamazione, violazione della proprietà intellettuale, violazione di contratto o problemi di recupero crediti.",
+    "shortDescription": "Genera lettere di diffida per scenari comuni."
+  },
+  "poa-generator": {
+    "name": "Generatore di Procura",
+    "description": "Genera un documento di Procura di base. Scegli tra Procura generale, limitata, duratura o finanziaria con termini personalizzabili e blocco notarile.",
+    "shortDescription": "Genera un documento di Procura di base."
+  },
+  "ic-agreement": {
+    "name": "Generatore di Contratto per Collaboratore Autonomo",
+    "description": "Genera un contratto completo per collaboratore autonomo che copre l'ambito di lavoro, la retribuzione, i diritti di proprietà intellettuale, la riservatezza e i termini di risoluzione.",
+    "shortDescription": "Genera un contratto per collaboratore autonomo da un modulo."
+  },
+  "promissory-note": {
+    "name": "Generatore di Pagamento Promissorio",
+    "description": "Genera una promessa di pagamento di base con termini personalizzabili inclusi l'importo principale, il tasso di interesse, il programma di pagamento e le disposizioni di default.",
+    "shortDescription": "Genera una promessa di pagamento di base."
+  },
+  "security-deposit": {
+    "name": "Calcolatore Deposito Cauzionale",
+    "description": "Cerca le regole sul deposito cauzionale per stato, inclusi gli importi massimi del deposito, i requisiti di interesse e le scadenze di restituzione dopo il trasloco.",
+    "shortDescription": "Controlla le regole sul deposito cauzionale per stato."
+  },
+  "rent-increase": {
+    "name": "Calcolatore Aumento Affitto",
+    "description": "Calcola la percentuale di aumento dell'affitto e l'impatto annuale. Controlla rispetto ai limiti di controllo dell'affitto nelle principali giurisdizioni.",
+    "shortDescription": "Controlla se un aumento dell'affitto è legale."
+  },
+  "lease-comparison": {
+    "name": "Confronto Termini di Locazione",
+    "description": "Confronta due offerte di locazione fianco a fianco, inclusi affitto, deposito, utenze e costo totale. Scopri quale locazione ti offre il miglior valore.",
+    "shortDescription": "Confronta due offerte di locazione fianco a fianco."
+  },
+  "moveout-checklist": {
+    "name": "Generatore di Lista di Controllo per il Trasloco",
+    "description": "Genera una lista di controllo personalizzata per il trasloco in base al tipo e alle caratteristiche della tua proprietà. Tieni traccia dei progressi con una lista di controllo interattiva.",
+    "shortDescription": "Genera una lista di controllo personalizzata per il trasloco."
+  },
+  "rental-agreement": {
+    "name": "Generatore di Contratto di Locazione",
+    "description": "Genera un contratto di locazione residenziale di base compilando i dettagli del proprietario, dell'inquilino, della proprietà e finanziari. Include disposizioni legali standard.",
+    "shortDescription": "Genera un contratto di locazione residenziale di base."
+  },
+  "business-name": {
+    "name": "Verificatore Nome Aziendale",
+    "description": "Controlla il nome della tua attività proposto per lunghezza, caratteri speciali, suffisso dell'entità, unicità e potenziale di dominio. Include suggerimenti per la ricerca di marchi.",
+    "shortDescription": "Verifica le considerazioni sulla denominazione aziendale."
+  },
+  "contractor-vs-employee": {
+    "name": "Verificatore Collaboratore vs Dipendente",
+    "description": "Rispondi a 10 domande basate sui fattori di classificazione dell'IRS (Internal Revenue Service, l'agenzia delle entrate statunitense) per determinare se un lavoratore è probabilmente un dipendente o un collaboratore autonomo.",
+    "shortDescription": "Classifica il lavoratore come dipendente o collaboratore."
+  },
+  "severance-pay": {
+    "name": "Calcolatore Indennità di Licenziamento",
+    "description": "Stima l'indennità di licenziamento tipica in base allo stipendio, agli anni di servizio e al livello del settore. Visualizza stime basse e alte per la negoziazione.",
+    "shortDescription": "Stima l'intervallo dell'indennità di licenziamento."
+  },
+  "overtime-calc": {
+    "name": "Calcolatore Straordinari",
+    "description": "Calcola la retribuzione degli straordinari in base alla tariffa oraria, alle ore normali, alle ore di straordinario e al moltiplicatore. Visualizza il dettaglio della retribuzione e il tasso effettivo.",
+    "shortDescription": "Calcola il dettaglio della retribuzione degli straordinari."
+  },
+  "partnership-split": {
+    "name": "Calcolatore Ripartizione Partnership",
+    "description": "Calcola la ripartizione suggerita di capitale e profitti per le partnership in base ai conferimenti di capitale, agli impegni di tempo e alla ponderazione personalizzabile.",
+    "shortDescription": "Calcola le ripartizioni di capitale delle partnership."
+  },
+  "business-expense": {
+    "name": "Modello di monitoraggio delle spese aziendali",
+    "description": "Genera un modello formattato per il monitoraggio delle spese, personalizzato per il tuo tipo di attività. Include le categorie di spesa pertinenti e i tassi di rimborso chilometrico dell'IRS (Internal Revenue Service).",
+    "shortDescription": "Genera un modello per il monitoraggio delle spese."
+  },
+  "crypto-tax": {
+    "name": "Calcolatore delle tasse sulle criptovalute",
+    "description": "Calcola le plusvalenze o le minusvalenze sulle transazioni di criptovalute. Stima l'imposta a breve termine rispetto a quella a lungo termine in base al periodo di detenzione e alla fascia fiscale.",
+    "shortDescription": "Stima l'imposta sulle plusvalenze da criptovalute."
+  },
+  "dca-calculator": {
+    "name": "Calcolatore DCA",
+    "description": "Simula una strategia di dollar-cost averaging (DCA). Visualizza il costo medio di acquisto, le unità totali acquisite e il rendimento basato su investimenti periodici regolari.",
+    "shortDescription": "Simula i rendimenti del dollar-cost averaging."
+  },
+  "position-size": {
+    "name": "Calcolatore della dimensione della posizione",
+    "description": "Calcola la dimensione ottimale della posizione in base alla dimensione del tuo conto, alla tolleranza al rischio e alla distanza dello stop loss. Essenziale per una corretta gestione del rischio.",
+    "shortDescription": "Calcola la dimensione ottimale della posizione di trading."
+  },
+  "profit-loss": {
+    "name": "Calcolatore di profitti e perdite",
+    "description": "Calcola il tuo profitto o la tua perdita su una transazione, inclusi leva finanziaria e commissioni di trading. Visualizza P&L lordo, P&L netto e percentuale di rendimento.",
+    "shortDescription": "Calcola profitto/perdita di trading con commissioni."
+  },
+  "compound-interest": {
+    "name": "Calcolatore di interesse composto",
+    "description": "Proietta la crescita del tuo investimento con l'interesse composto. Considera il capitale iniziale, il tasso di interesse, la frequenza di capitalizzazione e i contributi mensili.",
+    "shortDescription": "Proietta la crescita degli investimenti nel tempo."
+  },
+  "margin-call": {
+    "name": "Calcolatore di margin call",
+    "description": "Determina a quale prezzo il tuo broker emetterà una margin call. Inserisci il tuo capitale, l'importo preso in prestito e il requisito di margine di mantenimento.",
+    "shortDescription": "Calcola il prezzo di attivazione della tua margin call."
+  },
+  "breakeven-calc": {
+    "name": "Calcolatore del punto di pareggio per il trading",
+    "description": "Calcola il prezzo di pareggio esatto per una transazione, tenendo conto delle commissioni di trading di andata e ritorno e della leva finanziaria. Conosci il movimento minimo necessario per realizzare un profitto.",
+    "shortDescription": "Trova il tuo prezzo di pareggio dopo le commissioni."
+  },
+  "risk-reward": {
+    "name": "Calcolatore Rischio/Rendimento",
+    "description": "Analizza il rapporto rischio-rendimento di una transazione. Inserisci il tuo punto di ingresso, stop loss e take profit per vedere se vale la pena effettuare la transazione.",
+    "shortDescription": "Analizza il rapporto rischio-rendimento di una transazione."
+  },
+  "crypto-converter": {
+    "name": "Convertitore di criptovalute",
+    "description": "Converti tra le principali criptovalute utilizzando i prezzi di riferimento. Visualizza i valori equivalenti tra BTC, ETH, SOL e altri asset popolari.",
+    "shortDescription": "Converti tra asset crittografici."
+  },
+  "loan-payment": {
+    "name": "Calcolatore del pagamento del prestito",
+    "description": "Calcola i pagamenti mensili del prestito utilizzando l'ammortamento standard. Visualizza il tuo pagamento mensile, il totale degli interessi pagati e il costo totale del prestito.",
+    "shortDescription": "Calcola i pagamenti mensili del prestito."
+  },
+  "grant-budget": {
+    "name": "Calcolatore del budget della sovvenzione",
+    "description": "Assegna i fondi della sovvenzione tra le categorie di bilancio come personale, attrezzature, viaggi e costi indiretti. Tieni traccia dei fondi rimanenti e ricevi avvisi quando le assegnazioni superano l'importo totale della sovvenzione.",
+    "shortDescription": "Assegna e monitora la spesa del budget della sovvenzione."
+  },
+  "grant-deadline": {
+    "name": "Tracker delle scadenze delle sovvenzioni",
+    "description": "Tieni traccia delle scadenze delle domande di sovvenzione, delle date di scadenza dei rapporti e delle tappe fondamentali. Visualizza i timer per il conto alla rovescia, i badge di urgenza e una timeline ordinata di tutti gli obblighi imminenti.",
+    "shortDescription": "Tieni traccia delle scadenze delle sovvenzioni e delle date di segnalazione."
+  },
+  "grant-compliance": {
+    "name": "Checklist di conformità alle sovvenzioni",
+    "description": "Genera una checklist di conformità basata sul tipo di sovvenzione — federale, statale, fondazione o aziendale. Copre i requisiti di segnalazione, audit, appalti, fondi di contropartita e tenuta dei registri.",
+    "shortDescription": "Checklist di conformità per tipo di sovvenzione."
+  },
+  "vesting-schedule": {
+    "name": "Calcolatore del piano di vesting",
+    "description": "Calcola la tua timeline di vesting azionario in base al numero totale di azioni, al periodo di vesting, al cliff e alla frequenza. Visualizza una tabella dettagliata delle azioni maturate per periodo con i totali cumulativi.",
+    "shortDescription": "Calcola le timeline di vesting azionario."
+  },
+  "stock-option-tax": {
+    "name": "Calcolatore delle imposte sulle stock option",
+    "description": "Stima le imposte sull'esercizio delle stock option per ISO (Incentive Stock Options) e NSO (Non-qualified Stock Options). Calcola l'imposta sul reddito ordinario, l'imposta sulle plusvalenze e l'esposizione all'AMT (Alternative Minimum Tax) in base al periodo di detenzione e alla fascia fiscale.",
+    "shortDescription": "Stima le imposte sull'esercizio delle stock option."
+  },
+  "equity-dilution": {
+    "name": "Calcolatore della diluizione azionaria",
+    "description": "Calcola come i round di finanziamento e le espansioni del pool di opzioni influenzano la tua percentuale di proprietà. Visualizza la proprietà pre e post-diluizione affiancata con l'impatto totale della diluizione.",
+    "shortDescription": "Calcola la diluizione azionaria dai round di finanziamento."
+  },
+  "solar-roi": {
+    "name": "Calcolatore del ROI dei pannelli solari",
+    "description": "Calcola il ritorno sull'investimento per l'installazione di pannelli solari. Inserisci il costo del sistema, la produzione di energia, il costo dell'elettricità e gli incentivi per visualizzare il periodo di ammortamento, i risparmi a 25 anni e la percentuale di ROI.",
+    "shortDescription": "Calcola il periodo di ammortamento e il ROI dei pannelli solari."
+  },
+  "solar-incentive": {
+    "name": "Stimatore di incentivi solari e crediti d'imposta",
+    "description": "Stima gli incentivi solari federali e statali, incluso l'ITC (Investment Tax Credit) del 30% (credito d'imposta sugli investimenti), i rimborsi statali e i valori SREC (Solar Renewable Energy Credits). Visualizza il tuo costo netto dopo tutti gli incentivi disponibili.",
+    "shortDescription": "Stima i crediti d'imposta solari e i rimborsi statali."
+  },
+  "energy-savings": {
+    "name": "Calcolatore del risparmio energetico",
+    "description": "Calcola quanto puoi risparmiare sull'elettricità passando al solare. Inserisci la tua bolletta attuale, la percentuale di copertura solare e il costo del sistema per visualizzare i risparmi mensili, annuali e a vita.",
+    "shortDescription": "Calcola i risparmi sull'elettricità derivanti dall'energia solare."
+  },
+  "carbon-footprint": {
+    "name": "Calcolatore di compensazione dell'impronta di carbonio",
+    "description": "Calcola le emissioni di CO₂ che puoi evitare passando all'energia rinnovabile. Visualizza gli equivalenti in alberi piantati e miglia di guida compensate in base alla tua fonte e al tuo utilizzo di energia.",
+    "shortDescription": "Calcola i risparmi di CO₂ passando alle energie rinnovabili."
+  },
+  "green-lease": {
+    "name": "Verificatore di clausole di locazione verde",
+    "description": "Valuta il tuo contratto di locazione commerciale per le disposizioni verdi. Verifica quali clausole di sostenibilità sono presenti e ottieni un punteggio con raccomandazioni per le disposizioni essenziali mancanti.",
+    "shortDescription": "Verifica le clausole verdi nei contratti di locazione commerciale."
+  },
+  "ev-vs-gas": {
+    "name": "Confronto costi EV vs Gas",
+    "description": "Confronta i costi annuali del carburante per la guida di un veicolo elettrico rispetto a un veicolo a benzina. Visualizza i costi affiancati, i risparmi annuali e i risparmi proiettati a 10 anni.",
+    "shortDescription": "Confronta i costi del carburante per veicoli elettrici e a benzina."
+  },
+  "home-energy-audit": {
+    "name": "Checklist per l'audit energetico domestico",
+    "description": "Genera una checklist prioritaria di miglioramenti energetici per la tua casa. Seleziona il tipo e l'età della tua casa per visualizzare gli aggiornamenti applicabili con intervalli di risparmio stimati.",
+    "shortDescription": "Ottieni una checklist personalizzata per il miglioramento energetico domestico."
+  },
+  "ppa-calculator": {
+    "name": "Calcolatore del contratto di acquisto di energia (PPA)",
+    "description": "Confronta il costo totale di un contratto di acquisto di energia (PPA) rispetto all'elettricità di servizio pubblico per tutta la durata del contratto. Visualizza le ripartizioni dei costi anno per anno, incluse le escalation delle tariffe.",
+    "shortDescription": "Confronta i costi del PPA rispetto all'elettricità di servizio pubblico."
+  },
+  "income-tax": {
+    "name": "Stimatore dell'Imposta sul Reddito",
+    "description": "Stima la tua imposta federale sul reddito in base allo stato di dichiarazione, al reddito lordo e alle detrazioni. Visualizza una ripartizione per scaglioni, l'aliquota fiscale effettiva e la retribuzione netta.",
+    "shortDescription": "Stima l'imposta federale sul reddito per scaglione."
+  },
+  "auto-loan": {
+    "name": "Calcolatore di Prestito Auto",
+    "description": "Calcola la tua rata mensile del prestito auto includendo l'acconto e il valore di permuta. Visualizza gli interessi totali pagati e il costo reale dell'acquisto del tuo veicolo.",
+    "shortDescription": "Calcola le rate mensili del prestito auto."
+  },
+  "debt-payoff": {
+    "name": "Calcolatore di Estinzione Debito",
+    "description": "Scopri quanto tempo ci vuole per estinguere un debito con pagamenti minimi contro pagamenti extra. Confronta gli interessi totali pagati e il tempo risparmiato pagando di più ogni mese.",
+    "shortDescription": "Calcola il tempo di estinzione del debito e i risparmi sugli interessi."
+  },
+  "net-worth": {
+    "name": "Calcolatore del Patrimonio Netto",
+    "description": "Calcola il tuo patrimonio netto elencando le tue attività e passività. Tieni traccia di contanti, investimenti, proprietà e debiti per vedere la tua posizione finanziaria complessiva.",
+    "shortDescription": "Calcola le attività totali meno le passività."
+  },
+  "paycheck-calc": {
+    "name": "Calcolatore della Busta Paga",
+    "description": "Stima il tuo stipendio netto per busta paga. Inserisci lo stipendio o la tariffa oraria, lo stato di dichiarazione e la frequenza di pagamento per vedere le ritenute fiscali federali, della Social Security (previdenza sociale) e di Medicare (assistenza sanitaria).",
+    "shortDescription": "Stima lo stipendio netto per busta paga."
+  },
+  "settlement-estimator": {
+    "name": "Stimatore del Valore di Transazione",
+    "description": "Stima il valore della tua transazione per lesioni personali o incidenti automobilistici. Inserisci le spese mediche, il salario perso e la gravità delle lesioni per ottenere un intervallo basato sul metodo del moltiplicatore.",
+    "shortDescription": "Stima gli intervalli di transazione per lesioni personali/incidenti auto."
+  },
+  "insurance-quote-comparison": {
+    "name": "Strumento di Confronto Preventivi Assicurativi",
+    "description": "Confronta preventivi di assicurazione auto, casa e vita fianco a fianco. Inserisci i preventivi di più compagnie e scopri quale offre il miglior rapporto qualità-prezzo.",
+    "shortDescription": "Confronta i preventivi assicurativi fianco a fianco."
+  },
+  "accident-damage": {
+    "name": "Calcolatore Danni da Incidente",
+    "description": "Calcola i danni totali da un incidente includendo spese mediche, danni alla proprietà, salario perso e dolore e sofferenza. Visualizza una ripartizione completa.",
+    "shortDescription": "Calcola i danni totali da incidente."
+  },
+  "attorney-fee": {
+    "name": "Calcolatore delle Spese Legali",
+    "description": "Calcola le spese legali per accordi di success fee e orari. Scopri quanto guadagnerà il tuo avvocato e quale sarà la tua transazione netta.",
+    "shortDescription": "Calcola le spese legali per success fee e orarie."
+  },
+  "insurance-premium": {
+    "name": "Stimatore del Premio Assicurativo",
+    "description": "Stima i premi assicurativi mensili per auto, casa, affittuari e assicurazione sulla vita in base alla tua età, credito, posizione e livello di copertura.",
+    "shortDescription": "Stima i premi assicurativi mensili."
+  },
+  "force-majeure-checker": {
+    "name": "Verificatore delle Clausole di Forza Maggiore",
+    "description": "Incolla il tuo contratto e scopri immediatamente se la clausola di forza maggiore è forte, ristretta o mancante. Rileva eventi coperti, clausole 'catch-all', requisiti di notifica e clausole di obbligo di mitigazione.",
+    "shortDescription": "Rileva e valuta le clausole di forza maggiore."
+  },
+  "auto-renewal-detector": {
+    "name": "Rilevatore di Clausole di Rinnovo Automatico",
+    "description": "Trova clausole di evergreen (a tempo indeterminato) e di rinnovo automatico in qualsiasi contratto. Evidenzia la finestra di preavviso per non perdere una scadenza di cancellazione.",
+    "shortDescription": "Rileva trappole di rinnovo automatico nei contratti."
+  },
+  "governing-law-id": {
+    "name": "Identificatore della Legge Applicabile",
+    "description": "Estrai in pochi secondi la legge applicabile, il foro competente, l'arbitrato, le rinunce al processo con giuria e le rinunce alle class action da qualsiasi contratto.",
+    "shortDescription": "Estrai clausole di giurisdizione e arbitrato."
+  },
+  "plain-english-rewriter": {
+    "name": "Riscrivi in Linguaggio Semplice",
+    "description": "Converti il linguaggio giuridico in inglese semplice. Sostituisce frasi legali arcaiche (heretofore, pursuant to, notwithstanding) con equivalenti moderni e chiari.",
+    "shortDescription": "Riscrivi il linguaggio giuridico in inglese semplice."
+  },
+  "chargeback-checker": {
+    "name": "Verificatore Idoneità al Chargeback",
+    "description": "Rispondi a qualche domanda per vedere se sei probabilmente idoneo per un chargeback sulla carta di credito ai sensi del Fair Credit Billing Act (Legge sulla Fatturazione Equa del Credito).",
+    "shortDescription": "Verifica se puoi vincere un chargeback."
+  },
+  "lemon-law-qualifier": {
+    "name": "Qualificatore Legge del Limone",
+    "description": "Verifica se il tuo veicolo difettoso rientra probabilmente nella legge del limone (lemon law) del tuo stato in base ai tentativi di riparazione, ai giorni fuori servizio, all'età e al chilometraggio.",
+    "shortDescription": "Verifica se il tuo veicolo si qualifica come ‘limone’."
+  },
+  "subscription-cancel-letter": {
+    "name": "Lettera di Disdetta Abbonamento",
+    "description": "Genera una lettera di disdetta scritta per qualsiasi abbonamento (palestra, SaaS, rivista) che richieda una notifica scritta.",
+    "shortDescription": "Genera una lettera di disdetta scritta."
+  },
+  "data-breach-checklist": {
+    "name": "Checklist di Risposta alla Violazione dei Dati",
+    "description": "Checklist passo-passo su cosa fare dopo aver ricevuto una notifica di violazione dei dati – dal cambio delle password alla compilazione del modulo IRS 14039.",
+    "shortDescription": "Passi da intraprendere dopo una violazione dei dati."
+  },
+  "final-paycheck-lookup": {
+    "name": "Ricerca Scadenza Ultima Busta Paga",
+    "description": "Quando è legalmente dovuta la tua ultima busta paga? Ricerca per stato per scenari di licenziamento e dimissioni.",
+    "shortDescription": "Quando è legalmente dovuta la tua ultima busta paga."
+  },
+  "unemployment-estimator": {
+    "name": "Stimatore Benefici di Disoccupazione",
+    "description": "Stima il tuo beneficio settimanale di disoccupazione in base al tuo salario precedente e al limite statale.",
+    "shortDescription": "Stima i benefici settimanali di disoccupazione."
+  },
+  "nda-vs-noncompete": {
+    "name": "NDA vs. Non-Concorrenza Confrontatore",
+    "description": "Confronto fianco a fianco di NDA (Non-Disclosure Agreements) e non-compete (accordi di non concorrenza) – scopo, portata, durata, applicabilità e segnali di allarme.",
+    "shortDescription": "Confronta NDA e non-compete fianco a fianco."
+  },
+  "discrimination-checklist": {
+    "name": "Checklist Reclamo Discriminazione sul Lavoro",
+    "description": "Preparati a presentare una denuncia all'EEOC (Equal Employment Opportunity Commission) – documentazione, analisi comparativa, segnalazione interna e tracciamento delle ritorsioni.",
+    "shortDescription": "Prepara un reclamo per discriminazione all'EEOC."
+  },
+  "eviction-notice-lookup": {
+    "name": "Ricerca Periodo Preavviso di Sfratto",
+    "description": "Ricerca il periodo di preavviso di sfratto legalmente richiesto per stato e motivo – mancato pagamento, violazione del contratto di locazione o risoluzione senza colpa.",
+    "shortDescription": "Periodi di preavviso di sfratto per stato."
+  },
+  "habitability-tracker": {
+    "name": "Generatore Richiesta di Riparazione Abitabilità",
+    "description": "Genera una richiesta di riparazione scritta invocando la garanzia implicita di abitabilità – la base per la sospensione del canone o i rimedi di riparazione e deduzione.",
+    "shortDescription": "Genera una richiesta di riparazione di abitabilità scritta."
+  },
+  "mortgage-affordability": {
+    "name": "Calcolatore di Accessibilità Mutuo",
+    "description": "Calcola il prezzo massimo della tua casa utilizzando la regola del 36% del rapporto debito/reddito, tenendo conto di tasse, assicurazioni e debiti esistenti.",
+    "shortDescription": "Calcola il prezzo massimo accessibile della tua casa."
+  },
+  "operating-agreement-llc": {
+    "name": "Generatore di Contratto Operativo LLC",
+    "description": "Genera un contratto operativo (operating agreement) di base per una LLC (Limited Liability Company - società a responsabilità limitata) che copra soci, capitale, profitti, gestione e scioglimento.",
+    "shortDescription": "Genera un contratto operativo di base per una LLC."
+  },
+  "founders-agreement": {
+    "name": "Generatore di Accordo tra Fondatori",
+    "description": "Redigi un accordo tra fondatori che copra la ripartizione del capitale, il vesting (con cliff di 1 anno e 4 anni), l'assegnazione della proprietà intellettuale, i ruoli e la cessazione del rapporto.",
+    "shortDescription": "Redigi un accordo tra fondatori con vesting e IP."
+  },
+  "dmca-generator": {
+    "name": "Generatore di Notifica di Rimozione DMCA",
+    "description": "Genera una notifica di rimozione DMCA (Digital Millennium Copyright Act) che soddisfi i requisiti del 17 U.S.C. § 512(c) per la rimozione di contenuti in violazione.",
+    "shortDescription": "Genera una notifica di rimozione DMCA."
+  },
+  "emergency-fund": {
+    "name": "Calcolatore Fondo di Emergenza",
+    "description": "Calcola quanto ti serve in un fondo di emergenza e quanto tempo ci vorrà per raggiungere il tuo obiettivo al tuo attuale tasso di risparmio.",
+    "shortDescription": "Calcola l'obiettivo del tuo fondo di emergenza."
+  },
+  "tip-splitter": {
+    "name": "Divisore Mancia e Costo del Servizio",
+    "description": "Dividi un conto del ristorante tra più persone includendo tasse e mance — con gestione degli addebiti obbligatori per il servizio (che legalmente non sono mance).",
+    "shortDescription": "Dividi i conti con tasse, mance e costi di servizio."
+  },
+  "net-metering": {
+    "name": "Stimatore Risparmi Net Metering",
+    "description": "Stima i risparmi annuali derivanti dal net metering solare — compensazione della produzione più crediti per l'energia in eccesso esportata nella rete.",
+    "shortDescription": "Stima i risparmi del net metering solare."
+  },
+  "child-support": {
+    "name": "Calcolatore Assegno di Mantenimento per Figli",
+    "description": "Stima gli obblighi mensili di assegno di mantenimento per figli utilizzando le linee guida del tuo stato basate sulla condivisione del reddito o sulla percentuale del reddito. Supporta California, New York, Texas, Florida, Illinois e un'opzione generica di fallback.",
+    "shortDescription": "Stima l'assegno di mantenimento mensile per figli per stato."
+  },
+  "alimony-calc": {
+    "name": "Calcolatore Assegno di Mantenimento / Coniugale",
+    "description": "Stima l'assegno di mantenimento mensile (assegno divorzile / mantenimento coniugale) e la probabile durata in base ai redditi, alla durata del matrimonio e alle linee guida statali.",
+    "shortDescription": "Stima l'importo e la durata dell'assegno di mantenimento."
+  },
+  "divorce-cost": {
+    "name": "Stimatore Costi di Divorzio",
+    "description": "Stima il costo totale di un divorzio includendo le spese di deposito, le ore dell'avvocato, la mediazione e le spese giudiziarie — sia per casi controversi che non controversi.",
+    "shortDescription": "Stima il costo totale di un divorzio."
+  },
+  "sol-deadline": {
+    "name": "Calcolatore Termine di Prescrizione",
+    "description": "Inserisci la data in cui è sorto il tuo reclamo e il tuo stato — ottieni la data esatta di scadenza per il deposito e quanti giorni ti rimangono per fare causa. Copre contratti, lesioni personali, frodi e danni alla proprietà.",
+    "shortDescription": "Trova la data esatta di scadenza per il deposito per data."
+  },
+  "wrongful-term-value": {
+    "name": "Stimatore Valore Caso di Licenziamento Illegittimo",
+    "description": "Stima il potenziale valore di un reclamo per licenziamento illegittimo includendo salari persi, benefici persi, danni per sofferenza emotiva e onorari dell'avvocato.",
+    "shortDescription": "Stima il valore del tuo caso di licenziamento illegittimo."
+  },
+  "severance-fairness": {
+    "name": "Punteggio di Equità dell'Offerta di Liquidazione",
+    "description": "Valuta la tua offerta di liquidazione da 0 a 100 rispetto ai benchmark del settore per il tuo ruolo, anzianità e livello salariale. Ottieni una valutazione di equità e consigli per la negoziazione.",
+    "shortDescription": "Valuta la tua offerta di liquidazione rispetto ai benchmark."
+  },
+  "lease-break-penalty": {
+    "name": "Calcolatore Penalità di Recesso Anticipato del Contratto di Locazione",
+    "description": "Stima la penalità finanziaria per la risoluzione anticipata del tuo contratto di locazione — inclusi i mesi rimanenti, la mitigazione da parte del tuo locatore e i limiti di responsabilità specifici dello stato.",
+    "shortDescription": "Stima il costo della risoluzione del tuo contratto di locazione."
+  }
+}

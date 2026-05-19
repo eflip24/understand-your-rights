@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useBlogPosts, useBlogCategories } from "@/hooks/useBlogPosts";
-import Head from "@/components/seo/Head";
+import Tier3Head from "@/components/seo/Tier3Head";
 import { format } from "date-fns";
 
 export default function BlogPage() {
@@ -15,7 +15,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <Head
+      <Tier3Head
         title="Blog — LegallySpoken"
         description="Legal insights, guides, and analysis from LegallySpoken. Stay informed about your rights and the law."
       />

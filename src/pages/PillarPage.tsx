@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Head from "@/components/seo/Head";
+import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import SmartLocalLink from "@/components/seo/SmartLocalLink";
@@ -32,7 +32,7 @@ export default function PillarPage({ data }: PillarPageProps) {
 
   return (
     <div className="container py-8 max-w-4xl">
-      <Head
+      <Tier3Head
         title={data.pillarMetaTitle}
         description={data.pillarMetaDescription}
       />

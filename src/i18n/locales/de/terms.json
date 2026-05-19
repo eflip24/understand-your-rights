@@ -1,1 +1,512 @@
-{}
+{
+  "indemnification": {
+    "term": "Schadensersatzverpflichtung / Freistellung",
+    "definition": "Eine vertragliche Verpflichtung, bei der sich eine Partei bereit erklärt, eine andere für Verluste oder Schäden zu entschädigen.",
+    "example": "\"Der Auftragnehmer hat den Auftraggeber von allen Ansprüchen freizustellen, die sich aus der Arbeit des Auftragnehmers ergeben.\""
+  },
+  "arbitration": {
+    "term": "Schiedsverfahren",
+    "definition": "Eine Methode zur Beilegung von Streitigkeiten außerhalb eines Gerichts, bei der ein unabhängiger Schiedsrichter eine bindende Entscheidung trifft.",
+    "example": "\"Alle Streitigkeiten werden durch ein bindendes Schiedsverfahren in New York gelöst.\""
+  },
+  "force-majeure": {
+    "term": "Höhere Gewalt",
+    "definition": "Eine Klausel, die beide Parteien von der Verpflichtung befreit, wenn ein außergewöhnliches Ereignis eintritt, das außerhalb ihrer Kontrolle liegt (z.B. Naturkatastrophe, Krieg).",
+    "example": "\"Keine der Parteien haftet für Leistungsausfälle aufgrund von Ereignissen höherer Gewalt.\""
+  },
+  "liability": {
+    "term": "Haftung",
+    "definition": "Gesetzliche Verantwortung für eigene Handlungen oder Unterlassungen. Kann je nach Vertrag begrenzt oder unbegrenzt sein.",
+    "example": "\"Die Gesamthaftung des Unternehmens darf den im Rahmen dieser Vereinbarung gezahlten Betrag nicht übersteigen.\""
+  },
+  "non-compete": {
+    "term": "Wettbewerbsverbot",
+    "definition": "Eine Klausel, die einer Partei untersagt, nach Beendigung der Vereinbarung für einen bestimmten Zeitraum und in einem bestimmten geografischen Gebiet wettbewerbliche Aktivitäten auszuüben.",
+    "example": "\"Der Mitarbeiter erklärt sich damit einverstanden, innerhalb von 12 Monaten nicht für ein konkurrierendes Unternehmen im Umkreis von 50 Meilen zu arbeiten.\""
+  },
+  "non-disclosure": {
+    "term": "Vertraulichkeitsvereinbarung",
+    "definition": "Eine Vereinbarung, bestimmte Informationen vertraulich zu behandeln und nicht an Dritte weiterzugeben.",
+    "example": "\"Alle während der Zusammenarbeit ausgetauschten geschützten Informationen bleiben vertraulich.\""
+  },
+  "severability": {
+    "term": "Salvatorische Klausel",
+    "definition": "Eine Klausel, die besagt, dass, wenn ein Teil des Vertrags für ungültig befunden wird, der Rest durchsetzbar bleibt.",
+    "example": "\"Sollte eine Bestimmung für ungültig befunden werden, bleiben die übrigen Bestimmungen in vollem Umfang in Kraft.\""
+  },
+  "waiver": {
+    "term": "Verzicht",
+    "definition": "Die freiwillige Aufgabe eines bekannten Rechts. Ein Verzicht auf eine Vertragsverletzung bedeutet keinen Verzicht auf zukünftige Verletzungen.",
+    "example": "\"Das Versäumnis, eine Bestimmung durchzusetzen, stellt keinen Verzicht auf zukünftige Durchsetzung dar.\""
+  },
+  "breach": {
+    "term": "Vertragsbruch",
+    "definition": "Eine Verletzung einer vertraglichen Verpflichtung. Kann wesentlich (erheblich) oder geringfügig sein.",
+    "example": "\"Ein wesentlicher Verstoß gegen diese Vereinbarung berechtigt die nicht verletzende Partei zur Kündigung.\""
+  },
+  "consideration": {
+    "term": "Gegenleistung",
+    "definition": "Etwas Wertvolles, das zwischen den Parteien ausgetauscht wird, um einen Vertrag rechtlich bindend zu machen (Geld, Dienstleistungen, Waren).",
+    "example": "\"Als Gegenleistung für 10.000 US-Dollar erklärt sich der Berater bereit, Dienstleistungen zu erbringen.\""
+  },
+  "jurisdiction": {
+    "term": "Gerichtsstand",
+    "definition": "Die Zuständigkeit eines Gerichts, einen Fall zu verhandeln und zu entscheiden. Verträge legen oft fest, welcher Gerichtsstand maßgeblich ist.",
+    "example": "\"Diese Vereinbarung unterliegt den Gesetzen des Staates Delaware.\""
+  },
+  "statute-of-limitations": {
+    "term": "Verjährungsfrist",
+    "definition": "Der maximale Zeitraum nach einem Ereignis, innerhalb dessen rechtliche Schritte eingeleitet werden können.",
+    "example": "Übliche Fristen: Körperverletzung (2-3 Jahre), Vertragsbruch (4-6 Jahre), Betrug (3-6 Jahre)."
+  },
+  "due-diligence": {
+    "term": "Due Diligence (Sorgfaltsprüfung)",
+    "definition": "Die Untersuchung oder Sorgfalt, die eine vernünftige Person oder ein Unternehmen vor Abschluss einer Vereinbarung erwarten kann.",
+    "example": "\"Der Käufer hat 30 Tage Zeit, um die Sorgfaltsprüfung der Immobilie durchzuführen.\""
+  },
+  "fiduciary": {
+    "term": "Treuhänder(isch)",
+    "definition": "Eine Person oder Organisation, die im Namen einer anderen handelt und deren Interessen über die eigenen stellt. Bringt einen hohen Sorgfaltsmaßstab mit sich.",
+    "example": "\"Der Treuhänder hat eine treuhänderische Pflicht, im besten Interesse der Begünstigten zu handeln.\""
+  },
+  "negligence": {
+    "term": "Fahrlässigkeit",
+    "definition": "Das Versäumnis, die Sorgfalt walten zu lassen, die eine vernünftige Person unter ähnlichen Umständen walten lassen würde, was zu Schaden führt.",
+    "example": "\"Der Kläger muss Pflichtverletzung, Verursachung und Schaden nachweisen, um Fahrlässigkeit festzustellen.\""
+  },
+  "tort": {
+    "term": "Unerlaubte Handlung",
+    "definition": "Eine rechtswidrige Handlung (außer Vertragsbruch), die zu einer Verletzung oder einem Schaden führt und zivilrechtliche Haftung nach sich zieht.",
+    "example": "Häufige unerlaubte Handlungen sind Fahrlässigkeit, Verleumdung und Hausfriedensbruch."
+  },
+  "plaintiff": {
+    "term": "Kläger",
+    "definition": "Die Person oder Partei, die eine Klage einreicht, indem sie eine Beschwerde bei Gericht einreicht.",
+    "example": "\"Der Kläger behauptet, dass der Beklagte den Vertrag gebrochen hat.\""
+  },
+  "defendant": {
+    "term": "Beklagter",
+    "definition": "Die Person oder Partei, die in einem Gerichtsverfahren verklagt oder beschuldigt wird.",
+    "example": "\"Der Beklagte bestreitet alle Anschuldigungen in der Klage.\""
+  },
+  "deposition": {
+    "term": "Eidesstattliche Zeugenaussage (außerhalb des Gerichts)",
+    "definition": "Eine beeidigte, außergerichtliche Zeugenaussage, die von einem Zeugen abgelegt wird, um Informationen vor dem Prozess zu sammeln.",
+    "example": "\"Die Zeugenaussage des Zeugen wird am 15. März im Büro des Anwalts aufgenommen.\""
+  },
+  "escrow": {
+    "term": "Treuhandkonto",
+    "definition": "Eine finanzielle Vereinbarung, bei der ein Dritter Gelder hält, bis bestimmte Bedingungen erfüllt sind.",
+    "example": "\"Die Anzahlung des Käufers wird bis zum Abschluss auf einem Treuhandkonto gehalten.\""
+  },
+  "lien": {
+    "term": "Pfandrecht",
+    "definition": "Ein gesetzliches Recht oder Interesse, das ein Gläubiger an der Immobilie des Schuldners hat und das so lange besteht, bis die Schuld beglichen ist.",
+    "example": "\"Der Bauunternehmer hat ein Bauhandwerkerpfandrecht an der Immobilie für unbezahlte Arbeiten eingereicht.\""
+  },
+  "power-of-attorney": {
+    "term": "Vollmacht",
+    "definition": "Ein Rechtsdokument, das einer Person die Befugnis erteilt, im Namen einer anderen Person in rechtlichen oder finanziellen Angelegenheiten zu handeln.",
+    "example": "\"Sie erteilte ihrer Tochter eine Vollmacht zur Verwaltung ihrer Finanzen.\""
+  },
+  "affidavit": {
+    "term": "Eidesstattliche Versicherung",
+    "definition": "Eine schriftliche Erklärung, die durch Eid oder Affirmation bestätigt und als Beweismittel vor Gericht verwendet wird.",
+    "example": "\"Der Zeuge reichte eine eidesstattliche Versicherung ein, die den Zeitplan der Ereignisse bestätigte.\""
+  },
+  "addendum": {
+    "term": "Nachtrag",
+    "definition": "Eine Ergänzung oder ein Zusatz zu einem bestehenden Dokument oder Vertrag, das neue Bedingungen hinzufügt oder bestehende ändert.",
+    "example": "\"Die Parteien einigten sich auf einen Nachtrag, der den Vertrag um sechs Monate verlängert.\""
+  },
+  "amendment": {
+    "term": "Änderung",
+    "definition": "Eine formelle Änderung oder Modifikation eines bestehenden Gesetzes, Vertrages oder Dokuments.",
+    "example": "\"Diese Änderung ersetzt Abschnitt 5.2 der ursprünglichen Vereinbarung.\""
+  },
+  "assignee": {
+    "term": "Abtretungsempfänger",
+    "definition": "Eine Person, an die ein Recht oder Eigentum rechtlich übertragen wird.",
+    "example": "\"Der Abtretungsempfänger übernimmt alle Verpflichtungen aus dem ursprünglichen Vertrag.\""
+  },
+  "boilerplate": {
+    "term": "Boilerplate-Klauseln (Standardklauseln)",
+    "definition": "Standardisierte, oft nicht verhandelbare Klauseln, die typischerweise in Verträgen enthalten sind (z. B. Salvatorische Klausel, anwendbares Recht, gesamte Vereinbarung).",
+    "example": "Der Boilerplate-Abschnitt erscheint typischerweise am Ende eines Vertrags."
+  },
+  "cease-and-desist": {
+    "term": "Unterlassungsaufforderung",
+    "definition": "Eine formelle Aufforderung, eine Aktivität einzustellen (z.B. Verletzung, Belästigung) unter Androhung rechtlicher Schritte.",
+    "example": "\"Unser Mandant fordert Sie auf, die Nutzung der Marke unverzüglich einzustellen und zu unterlassen.\""
+  },
+  "covenant": {
+    "term": "Vertragsbestimmung / Verpflichtung",
+    "definition": "Ein förmliches Versprechen oder eine Vereinbarung, oft in Eigentums- oder Arbeitsverträgen zu finden.",
+    "example": "\"Der Mitarbeiter erklärt sich bereit, für 12 Monate keine Kunden abzuwerben.\""
+  },
+  "damages": {
+    "term": "Schadensersatz",
+    "definition": "Geld, das von einem Gericht zur Entschädigung für Verlust oder Verletzung zugesprochen wird. Kann kompensatorisch (Schadensausgleich), punitiv (Strafschadensersatz) oder nominell (symbolisch) sein.",
+    "example": "\"Die Jury sprach 50.000 Dollar als kompensatorischen Schadensersatz zu.\""
+  },
+  "default": {
+    "term": "Verzug / Nichterfüllung",
+    "definition": "Nichterfüllung einer rechtlichen Verpflichtung, insbesondere die Nichterbringung einer erforderlichen Zahlung.",
+    "example": "\"Gerät der Kreditnehmer in Verzug, kann der Kreditgeber den gesamten Darlehensbetrag fällig stellen.\""
+  },
+  "discovery": {
+    "term": "Beweismittelermittlung (Discovery)",
+    "definition": "Die vorprozessuale Phase, in der Parteien relevante Informationen und Beweismittel austauschen.",
+    "example": "\"Während der Discovery musste das Unternehmen alle relevanten E-Mails vorlegen.\""
+  },
+  "encumbrance": {
+    "term": "Belastung / Last",
+    "definition": "Ein Anspruch oder eine Verbindlichkeit, die an eine Immobilie gebunden ist und deren Übertragbarkeit beeinträchtigen kann (z.B. Hypothek, Pfandrecht, Dienstbarkeit).",
+    "example": "\"Die Titelprüfung (Eigentumsprüfung) ergab keine Belastungen auf dem Grundstück.\""
+  },
+  "estoppel": {
+    "term": "Estoppel (Verwirkungseinwand)",
+    "definition": "Ein Rechtsgrundsatz, der jemanden daran hindert, etwas zu behaupten, das seinen früheren Äußerungen oder Handlungen widerspricht.",
+    "example": "\"Die Lehre des Estoppel hindert den Vermieter daran, die Verlängerung des Mietvertrags zu leugnen.\""
+  },
+  "good-faith": {
+    "term": "Treu und Glauben / Redlichkeit",
+    "definition": "Ehrlichkeit und Fairness im Umgang. Die meisten Verträge beinhalten eine implizite Pflicht nach Treu und Glauben und fairem Handeln.",
+    "example": "\"Beide Parteien erklären sich bereit, ihre Verpflichtungen nach Treu und Glauben zu erfüllen.\""
+  },
+  "guarantor": {
+    "term": "Bürge",
+    "definition": "Eine Person, die verspricht, eine Schuld zu bezahlen oder eine Verpflichtung zu erfüllen, falls die Hauptpartei dies nicht tut.",
+    "example": "\"Das Elternteil bürgte für den Mietvertrag der Studentenwohnung.\""
+  },
+  "injunction": {
+    "term": "Gerichtliche Anordnung / Unterlassungsanordnung",
+    "definition": "Ein Gerichtsbeschluss, der jemanden auffordert, eine bestimmte Handlung auszuführen oder zu unterlassen.",
+    "example": "\"Das Gericht erließ eine einstweilige Verfügung, die den Verkauf der Immobilie verhinderte.\""
+  },
+  "intellectual-property": {
+    "term": "Geistiges Eigentum",
+    "definition": "Schöpfungen des Geistes (Erfindungen, Designs, Markennamen, künstlerische Werke), die durch Patente, Urheberrechte und Marken gesetzlich geschützt sind.",
+    "example": "\"Alles während der Anstellung geschaffene geistige Eigentum gehört dem Unternehmen.\""
+  },
+  "joint-and-several-liability": {
+    "term": "Gesamtschuldnerische Haftung",
+    "definition": "Ein Rechtsgrundsatz, bei dem jede Partei unabhängig für den vollen Umfang der Verpflichtungen haftbar ist.",
+    "example": "\"Die Partner haften gesamtschuldnerisch für die Schulden des Unternehmens.\""
+  },
+  "material-breach": {
+    "term": "Wesentliche Vertragsverletzung",
+    "definition": "Ein erheblicher Verstoß gegen einen Vertrag, der der anderen Partei erlaubt, den Vertrag zu kündigen und Schadensersatz zu fordern.",
+    "example": "\"Die Nichtlieferung der Waren innerhalb von 30 Tagen stellt eine wesentliche Vertragsverletzung dar.\""
+  },
+  "mediation": {
+    "term": "Mediation",
+    "definition": "Eine Form der Streitbeilegung, bei der ein neutraler Dritter den Parteien hilft, eine freiwillige Einigung zu erzielen.",
+    "example": "\"Vor einem Schiedsverfahren einigen sich die Parteien darauf, in gutem Glauben eine Mediation zu versuchen.\""
+  },
+  "mutual-assent": {
+    "term": "Gegenseitige Zustimmung",
+    "definition": "Einigung beider Parteien über die Vertragsbedingungen, typischerweise durch Angebot und Annahme gezeigt.",
+    "example": "\"Ein Vertrag erfordert gegenseitige Zustimmung – eine Übereinstimmung der Willenserklärungen über die wesentlichen Bedingungen.\""
+  },
+  "notarization": {
+    "term": "Beglaubigung (durch Notar)",
+    "definition": "Der offizielle Prozess, bei dem ein Notar die Identität der Unterzeichner überprüft und die Unterzeichnung eines Dokuments bezeugt.",
+    "example": "\"Die Urkunde muss notariell beglaubigt werden, bevor sie eingetragen werden kann.\""
+  },
+  "precedent": {
+    "term": "Präzedenzfall",
+    "definition": "Eine frühere Gerichtsentscheidung, die als maßgebliche Regel für zukünftige ähnliche Fälle dient.",
+    "example": "\"Das Urteil des Obersten Gerichtshofs schuf einen Präzedenzfall für alle ähnlichen Fälle landesweit.\""
+  },
+  "pro-bono": {
+    "term": "Pro Bono (kostenlose Rechtsberatung)",
+    "definition": "Rechtsarbeit, die freiwillig und unentgeltlich erbracht wird, typischerweise für Personen, die sich keine Vertretung leisten können.",
+    "example": "\"Die Anwaltskanzlei übernimmt jährlich 50 Pro-Bono-Fälle.\""
+  },
+  "quitclaim-deed": {
+    "term": "Quitclaim Deed (Verzichtserklärung)",
+    "definition": "Eine Urkunde, die jegliches Interesse, das der Übertragende an einer Immobilie hat, ohne Garantien bezüglich des Titels überträgt.",
+    "example": "\"Sie unterzeichnete eine Quitclaim Deed und übertrug ihr Interesse am Haus an ihren Ex-Ehepartner.\""
+  },
+  "recourse": {
+    "term": "Rechtsbehelf / Regress",
+    "definition": "Das rechtliche Recht, Entschädigung oder Durchsetzung eines Rechts zu verlangen.",
+    "example": "\"Der Käufer hat keinen Regressanspruch, wenn das Produkt 'wie besehen' verkauft wird.\""
+  },
+  "subpoena": {
+    "term": "Vorladung",
+    "definition": "Ein rechtliches Dokument, das jemanden dazu anweist, vor Gericht zu erscheinen oder Dokumente vorzulegen.",
+    "example": "\"Der Zeuge wurde mit einer Vorladung zur Aussage vor Gericht zugestellt.\""
+  },
+  "termination": {
+    "term": "Beendigung / Kündigung",
+    "definition": "Das Ende eines Vertrages, entweder durch Erfüllung der Verpflichtungen, gegenseitige Vereinbarung oder Vertragsbruch.",
+    "example": "\"Jede Partei kann diese Vereinbarung mit einer Frist von 30 Tagen schriftlich kündigen.\""
+  },
+  "tort-reform": {
+    "term": "Schadenersatzrechtsreform (Tort Reform)",
+    "definition": "Änderungen am zivilrechtlichen System, die darauf abzielen, die Möglichkeit zur Einreichung von Schadenersatzklagen oder die Begrenzung von Schadenersatzsummen zu reduzieren.",
+    "example": "\"Der Staat verabschiedete eine Tort Reform-Gesetzgebung, die Obergrenzen für den Schadenersatz bei ärztlicher Kunstfehler festlegte.\""
+  },
+  "unconscionable": {
+    "term": "Sittenwidrig / Wucherisch",
+    "definition": "Ein Vertrag oder eine Klausel, die so unfair oder einseitig ist, dass ein Gericht die Durchsetzung verweigern kann.",
+    "example": "\"Das Gericht befand den Zinssatz von 500 % für sittenwidrig.\""
+  },
+  "venue": {
+    "term": "Gerichtsstand",
+    "definition": "Der geografische Ort, an dem ein Rechtsfall verhandelt wird. Unterscheidet sich von der Zuständigkeit.",
+    "example": "\"Der Vertrag legt den Gerichtsstand in Los Angeles County, Kalifornien, fest.\""
+  },
+  "void-voidable": {
+    "term": "Nichtig / Anfechtbar",
+    "definition": "Ein nichtiger Vertrag hat von Anfang an keine rechtliche Wirkung. Ein anfechtbarer Vertrag ist gültig, kann aber von einer Partei annulliert werden.",
+    "example": "\"Unter Zwang geschlossene Verträge sind nach Wahl der unter Druck gesetzten Partei anfechtbar.\""
+  },
+  "warranty": {
+    "term": "Garantie / Gewährleistung",
+    "definition": "Eine Zusicherung oder ein Versprechen bezüglich der Qualität, des Zustands oder der Leistung eines Produkts oder einer Dienstleistung.",
+    "example": "\"Der Verkäufer gewährleistet, dass die Ware 12 Monate lang frei von Mängeln ist.\""
+  },
+  "writ": {
+    "term": "Gerichtliche Anordnung / Schriftlicher Befehl",
+    "definition": "Ein formeller schriftlicher Befehl eines Gerichts, der jemanden auffordert, etwas zu tun oder zu unterlassen.",
+    "example": "\"Das Gericht erließ einen Vollstreckungsbefehl zur Durchsetzung des Urteils.\""
+  },
+  "zoning": {
+    "term": "Bauleitplanung / Flächennutzungsplanung",
+    "definition": "Staatliche Vorschriften, die die Nutzung von Grundstücken in bestimmten Gebieten (Wohn-, Gewerbe-, Industriegebiete) regeln.",
+    "example": "\"Das Grundstück ist ausschließlich für die gewerbliche Nutzung vorgesehen.\""
+  },
+  "accord-and-satisfaction": {
+    "term": "Vergleich / Erlassvertrag",
+    "definition": "Eine Vereinbarung, etwas anderes (in der Regel weniger) als das ursprünglich Geschuldete zu akzeptieren, wodurch die ursprüngliche Verpflichtung erlischt.",
+    "example": "\"Die Parteien erzielten einen Vergleich und beglichen die Forderung von 10.000 US-Dollar mit 7.000 US-Dollar.\""
+  },
+  "bailment": {
+    "term": "Verwahrung / Leihe",
+    "definition": "Die vorübergehende Übergabe von persönlichem Eigentum an eine andere Person zu einem bestimmten Zweck, wobei das Eigentum zurückzugeben ist.",
+    "example": "\"Wenn Sie Ihr Auto beim Valet-Service abgeben, entsteht ein Verwahrverhältnis.\""
+  },
+  "bona-fide": {
+    "term": "Bona Fide / Gutgläubig",
+    "definition": "In gutem Glauben; echt; ohne Betrug oder Täuschung.",
+    "example": "\"Der Käufer unterbreitete ein gutgläubiges Angebot für die Immobilie.\""
+  },
+  "chattel": {
+    "term": "Fahrnis / Bewegliche Sache",
+    "definition": "Bewegliches persönliches Eigentum (im Gegensatz zu unbeweglichem Vermögen/Immobilien).",
+    "example": "\"Der Mietvertrag umfasst das Gebäude, nicht aber die darin befindlichen Fahrnisse.\""
+  },
+  "collateral": {
+    "term": "Sicherheit",
+    "definition": "Eigentum, das als Sicherheit für einen Kredit verpfändet wird. Wenn der Kreditnehmer in Verzug gerät, kann der Kreditgeber die Sicherheit beschlagnahmen.",
+    "example": "\"Der Kreditnehmer bot sein Haus als Sicherheit für den Geschäftskredit an.\""
+  },
+  "contingency": {
+    "term": "Bedingung / Vorbehalt",
+    "definition": "Eine Bedingung, die erfüllt sein muss, bevor ein Vertrag verbindlich wird.",
+    "example": "\"Der Verkauf ist davon abhängig, dass der Käufer innerhalb von 30 Tagen eine Finanzierung erhält.\""
+  },
+  "deed": {
+    "term": "Urkunde / Eigentumsurkunde",
+    "definition": "Ein Rechtsdokument, das das Eigentum an einer Immobilie von einer Partei auf eine andere überträgt.",
+    "example": "\"Die Urkunde wurde nach Abschluss beim Grundbuchamt eingetragen.\""
+  },
+  "duress": {
+    "term": "Zwang / Nötigung",
+    "definition": "Drohungen, Gewalt oder Druck, die angewendet werden, um jemanden zu einer Vereinbarung zu zwingen. Unter Zwang geschlossene Verträge sind anfechtbar.",
+    "example": "\"Er behauptete, der Vertrag sei unter Zwang geschlossen worden und müsse für nichtig erklärt werden.\""
+  },
+  "easement": {
+    "term": "Wegerecht / Dienstbarkeit",
+    "definition": "Das Recht, das Land einer anderen Person für einen bestimmten Zweck zu nutzen (z. B. einen Weg oder eine Versorgungsleitung).",
+    "example": "\"Das Versorgungsunternehmen hat ein Wegerecht, um Stromleitungen über das Grundstück zu warten.\""
+  },
+  "ex-parte": {
+    "term": "Ex Parte / Einseitig",
+    "definition": "Ein Gerichtsverfahren oder eine Kommunikation, die nur eine Partei betrifft, ohne dass die andere Partei anwesend ist.",
+    "example": "\"Der Richter erließ eine einstweilige Verfügung ex parte auf der Grundlage des Notantrags des Klägers.\""
+  },
+  "felony": {
+    "term": "Verbrechen (schwerwiegende Straftat)",
+    "definition": "Eine schwerwiegende Straftat, die in der Regel mit einer Freiheitsstrafe von mehr als einem Jahr geahndet wird.",
+    "example": "\"Großer Diebstahl wird in den meisten Gerichtsbarkeiten als Verbrechen eingestuft.\""
+  },
+  "garnishment": {
+    "term": "Pfändung",
+    "definition": "Ein gerichtlich angeordnetes Verfahren, bei dem Geld vom Lohn oder Bankkonto eines Schuldners zur Begleichung einer Schuld eingezogen wird.",
+    "example": "\"Der Gläubiger erwirkte einen Lohnpfändungsbeschluss für 25 % des Einkommens des Schuldners.\""
+  },
+  "habeas-corpus": {
+    "term": "Habeas Corpus",
+    "definition": "Eine gerichtliche Klage, die verlangt, dass eine verhaftete Person einem Richter vorgeführt wird, um festzustellen, ob die Haft rechtmäßig ist.",
+    "example": "\"Der Gefangene reichte einen Habeas-Corpus-Schriftsatz ein, um seine Haft anzufechten.\""
+  },
+  "hold-harmless": {
+    "term": "Freistellungsklausel / Haftungsausschluss",
+    "definition": "Eine Klausel, in der eine Partei zustimmt, die andere Partei nicht für bestimmte Risiken oder Verbindlichkeiten verantwortlich zu machen.",
+    "example": "\"Der Mieter erklärt sich bereit, den Vermieter von Ansprüchen freizustellen, die sich aus der Nutzung durch den Mieter ergeben.\""
+  },
+  "in-camera": {
+    "term": "In Camera / Unter Ausschluss der Öffentlichkeit",
+    "definition": "Eine Gerichtsverhandlung, die im Privaten, in den Richtersitzungszimmern und nicht vor offenem Gericht stattfindet.",
+    "example": "\"Der Richter überprüfte die sensiblen Dokumente in camera.\""
+  },
+  "indemnity": {
+    "term": "Entschädigung / Schadloshaltung",
+    "definition": "Absicherung oder Schutz vor einem Verlust oder einer anderen finanziellen Belastung; Schadenersatz.",
+    "example": "\"Die Versicherungspolice bietet eine Entschädigung für Sachschäden bis zu 500.000 US-Dollar.\""
+  },
+  "liquidated-damages": {
+    "term": "Vertragsstrafen / Pauschalierter Schadensersatz",
+    "definition": "Ein im Vertrag festgelegter vorab bestimmter Betrag, der bei Vertragsbruch durch eine Partei zu zahlen ist.",
+    "example": "\"Der Vertrag enthält eine Vertragsstrafe von 500 US-Dollar pro Tag bei verspäteter Lieferung.\""
+  },
+  "malfeasance": {
+    "term": "Dienstvergehen / Amtsmissbrauch",
+    "definition": "Fehlverhalten oder illegale Aktivitäten, insbesondere durch einen öffentlichen Amtsträger.",
+    "example": "\"Der Bürgermeister wurde wegen Amtsmissbrauchs aufgrund der Veruntreuung öffentlicher Gelder angeklagt.\""
+  },
+  "misdemeanor": {
+    "term": "Vergehen (leichte Straftat)",
+    "definition": "Eine Straftat, die weniger schwerwiegend ist als ein Verbrechen und in der Regel mit Geldstrafen oder einer Freiheitsstrafe von weniger als einem Jahr geahndet wird.",
+    "example": "\"Kleindiebstahl unter 500 US-Dollar wird in der Regel als Vergehen eingestuft.\""
+  },
+  "novation": {
+    "term": "Novation",
+    "definition": "Der Ersatz eines bestehenden Vertrags oder einer Verpflichtung durch einen neuen, mit Zustimmung aller Parteien.",
+    "example": "\"Als das Geschäft verkauft wurde, wurden die Verträge durch Novation übertragen.\""
+  },
+  "perjury": {
+    "term": "Meineid",
+    "definition": "Die Straftat des Lügens unter Eid in einem Gerichtsverfahren oder einem beeidigten Dokument.",
+    "example": "\"Der Zeuge wurde wegen Meineids angeklagt, nachdem er seiner beeidigten Aussage widersprochen hatte.\""
+  },
+  "privity": {
+    "term": "Privity (Vertragsbeziehung)",
+    "definition": "Eine direkte Vertragsbeziehung zwischen Parteien. Im Allgemeinen können nur Parteien mit einer solchen Beziehung einen Vertrag durchsetzen.",
+    "example": "\"Ohne Privity of Contract kann der Dritte keine Klage aufgrund der Vereinbarung erheben.\""
+  },
+  "remedy": {
+    "term": "Rechtsbehelf",
+    "definition": "Die Mittel, mit denen ein Recht durchgesetzt oder ein Unrecht behoben wird. Kann monetär (Schadensersatz) oder billigkeitsrechtlich (Unterlassungsanspruch) sein.",
+    "example": "\"Das Gericht kann als Rechtsbehelf eine spezifische Leistung (specific performance) anordnen, wenn Schadensersatz unzureichend ist.\""
+  },
+  "rescission": {
+    "term": "Rücktritt (vom Vertrag)",
+    "definition": "Die Aufhebung eines Vertrags, wobei beide Parteien in ihre Lage vor Vertragsabschluss zurückversetzt werden.",
+    "example": "\"Der Käufer beantragte den Rücktritt vom Vertrag aufgrund der falschen Angaben des Verkäufers.\""
+  },
+  "retainer": {
+    "term": "Vorschuss/Honorarvorschuss",
+    "definition": "Eine im Voraus an einen Anwalt gezahlte Gebühr, um seine Dienste zu sichern. Kann eine Pauschalgebühr sein oder auf ein Treuhandkonto eingezahlt werden.",
+    "example": "\"Der Anwalt verlangte einen Vorschuss von 5.000 $ bevor er mit der Bearbeitung des Falls begann.\""
+  },
+  "standing": {
+    "term": "Klagebefugnis",
+    "definition": "Das rechtliche Recht, eine Klage zu erheben. Eine Partei muss nachweisen, dass sie direkt von dem Problem betroffen war.",
+    "example": "\"Das Gericht wies die Klage ab, weil dem Kläger die Klagebefugnis fehlte.\""
+  },
+  "subrogation": {
+    "term": "Subrogation (Forderungsübergang)",
+    "definition": "Das Recht einer Partei (üblicherweise eines Versicherers), an die Stelle einer anderen zu treten, um eine Forderung zu verfolgen.",
+    "example": "\"Nach Zahlung des Schadensersatzes verfolgte die Versicherungsgesellschaft die Subrogation gegen den schuldigen Fahrer.\""
+  },
+  "surety": {
+    "term": "Bürge",
+    "definition": "Eine Person oder ein Unternehmen, das die Verantwortung für die Schulden oder Verpflichtungen eines anderen übernimmt.",
+    "example": "\"Die Bürgschaft (surety bond) garantiert, dass der Auftragnehmer das Projekt abschließen wird.\""
+  },
+  "title": {
+    "term": "Eigentum / Rechtstitel",
+    "definition": "Das rechtliche Eigentum an einer Sache oder das Dokument, das das Eigentum beweist.",
+    "example": "\"Die Eigentumsprüfung bestätigte das klare Eigentum an der Immobilie.\""
+  },
+  "unjust-enrichment": {
+    "term": "Ungerechtfertigte Bereicherung",
+    "definition": "Ein Rechtsprinzip, das verhindert, dass jemand auf Kosten eines anderen unrechtmäßig und ohne Ausgleich profitiert.",
+    "example": "\"Das Gericht ordnete die Restitution basierend auf ungerechtfertigter Bereicherung an.\""
+  },
+  "usury": {
+    "term": "Wucher",
+    "definition": "Die Erhebung eines unrechtmäßig hohen oder übermäßigen Zinssatzes für ein Darlehen.",
+    "example": "\"Das Darlehen wurde für nichtig erklärt, da der effektive Jahreszins von 300% gegen die staatlichen Wuchergesetze verstieß.\""
+  },
+  "adhesion-contract": {
+    "term": "Adhäsionsvertrag",
+    "definition": "Ein standardisierter Vertrag, der von einer Partei mit überlegener Verhandlungsmacht auf der Basis „friss oder stirb“ angeboten wird.",
+    "example": "\"Der Mobilfunkvertrag ist ein Adhäsionsvertrag – Sie können die Bedingungen nicht verhandeln.\""
+  },
+  "anti-assignment-clause": {
+    "term": "Abtretungsverbot",
+    "definition": "Eine Klausel, die einem Vertragspartner die Übertragung seiner Rechte oder Pflichten aus einem Vertrag untersagt oder einschränkt.",
+    "example": "\"Diese Vereinbarung darf ohne vorherige schriftliche Zustimmung nicht abgetreten werden.\""
+  },
+  "bilateral-contract": {
+    "term": "Zweiseitiger Vertrag",
+    "definition": "Ein Vertrag, bei dem beide Parteien gegenseitig versprechen, eine Leistung zu erbringen.",
+    "example": "\"Ein zweiseitiger Vertrag kommt zustande, wenn der Käufer verspricht zu zahlen und der Verkäufer verspricht zu liefern.\""
+  },
+  "capacity": {
+    "term": "Geschäftsfähigkeit",
+    "definition": "Die rechtliche Fähigkeit, einen bindenden Vertrag abzuschließen. Minderjährige und Personen mit eingeschränkter geistiger Leistungsfähigkeit können geschäftsunfähig sein.",
+    "example": "\"Der Vertrag wurde für nichtig erklärt, weil der Unterzeichner nicht geschäftsfähig war.\""
+  },
+  "class-action": {
+    "term": "Sammelklage",
+    "definition": "Eine von einem oder mehreren Klägern im Namen einer größeren Gruppe von Personen mit ähnlichen Ansprüchen eingereichte Klage.",
+    "example": "\"Eine Sammelklage wurde im Namen aller Kunden eingereicht, die von der Datenpanne betroffen waren.\""
+  },
+  "comparative-negligence": {
+    "term": "Mitverschulden (Comparative Negligence)",
+    "definition": "Eine Rechtslehre, die die Schuld unter den Parteien entsprechend ihrem jeweiligen Grad der Fahrlässigkeit aufteilt.",
+    "example": "\"Aufgrund des Mitverschuldens wurden die Schadensersatzansprüche des Klägers um 30% gekürzt.\""
+  },
+  "consequential-damages": {
+    "term": "Folgeschäden",
+    "definition": "Indirekte Schäden, die aus einer Vertragsverletzung resultieren, über den direkten Verlust hinaus.",
+    "example": "\"Gewinnverluste aus der verspäteten Lieferung wurden als Folgeschäden geltend gemacht.\""
+  },
+  "constructive-notice": {
+    "term": "Fiktive Kenntnis (Constructive Notice)",
+    "definition": "Die rechtliche Annahme, dass eine Person Kenntnis von Informationen hat, weil diese öffentlich zugänglich oder ordnungsgemäß registriert sind.",
+    "example": "\"Die Eintragung der Urkunde bewirkt eine fiktive Kenntnis des Eigentums gegenüber der Welt.\""
+  },
+  "counterpart": {
+    "term": "Gegenstück/Ausfertigung",
+    "definition": "Eine doppelte Ausfertigung eines Rechtsdokuments; Verträge können in mehreren Ausfertigungen unterzeichnet werden, wobei jede als Original gilt.",
+    "example": "\"Diese Vereinbarung kann in mehreren Ausfertigungen unterzeichnet werden, von denen jede als Original gilt.\""
+  },
+  "cross-default": {
+    "term": "Cross-Default (Kreuzverzugsklausel)",
+    "definition": "Eine Bestimmung, wonach ein Verzug unter einer Vereinbarung einen Verzug unter einer anderen damit verbundenen Vereinbarung auslöst.",
+    "example": "\"Eine Cross-Default-Klausel führte dazu, dass der Verstoß des Unternehmens gegen ein Darlehen den Verzug bei allen Darlehen auslöste.\""
+  },
+  "de-facto": {
+    "term": "De Facto",
+    "definition": "Tatsächlich oder in der Praxis bestehend, wenn auch nicht notwendigerweise gesetzlich festgelegt.",
+    "example": "\"Obwohl sie nicht offiziell ernannt wurde, fungierte sie de facto als Managerin.\""
+  },
+  "forum-selection": {
+    "term": "Gerichtsstandsvereinbarung",
+    "definition": "Eine vertragliche Klausel, die das Gericht oder den Ort festlegt, an dem Streitigkeiten verhandelt werden müssen.",
+    "example": "\"Die Gerichtsstandsvereinbarung schreibt vor, dass alle Streitigkeiten vor Gerichten in Delaware verhandelt werden müssen.\""
+  },
+  "motion-to-dismiss": {
+    "term": "Antrag auf Abweisung einer Klage (Motion to Dismiss)",
+    "definition": "Ein Antrag an ein Gericht, eine Klage abzuweisen, weil die Klageschrift rechtlich unzureichend ist, selbst wenn die behaupteten Tatsachen wahr sind.",
+    "example": "\"Der Beklagte reichte einen Antrag auf Abweisung wegen mangelnder Begründung der Klage ein.\""
+  },
+  "statute-of-frauds": {
+    "term": "Schriftformerfordernis (Statute of Frauds)",
+    "definition": "Ein Gesetz, das vorschreibt, dass bestimmte Arten von Verträgen schriftlich abgeschlossen werden müssen, um durchsetzbar zu sein.",
+    "example": "\"Die mündliche Vereinbarung zum Verkauf des Hauses war gemäß dem Schriftformerfordernis (Statute of Frauds) nicht durchsetzbar.\""
+  },
+  "strict-liability": {
+    "term": "Gefährdungshaftung (Strict Liability)",
+    "definition": "Haftung, die ohne Nachweis von Fahrlässigkeit oder Absicht entsteht; der Beklagte haftet allein deshalb, weil der Schaden eingetreten ist.",
+    "example": "\"Hersteller haften unabhängig von einem Verschulden gefähdungshaftend für fehlerhafte Produkte.\""
+  }
+}

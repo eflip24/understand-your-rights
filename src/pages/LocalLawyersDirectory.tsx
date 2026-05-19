@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight, Users, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Head from "@/components/seo/Head";
+import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, itemListSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import { practiceAreas } from "@/data/localLawyers";
@@ -12,7 +12,7 @@ const SITE = "https://legallyspoken.com";
 export default function LocalLawyersDirectory() {
   return (
     <div className="container py-8 max-w-4xl">
-      <Head
+      <Tier3Head
         title="Find a Lawyer Near You — Free Attorney Directory | LegallySpoken"
         description="Browse verified lawyers by practice area. Find personal injury, car accident, employment, insurance, and other lawyers near you."
       />

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, Scale, MapPin } from "lucide-react";
-import Head from "@/components/seo/Head";
+import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, breadcrumbSchema, itemListSchema } from "@/components/seo/JsonLd";
 import { statuteTopics, allStateSlugs, allStateNames } from "@/data/statutes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,7 +10,7 @@ export default function StatuteLibraryDirectory() {
   const url = "https://legallyspoken.com/laws";
   return (
     <div className="container py-10 max-w-5xl">
-      <Head
+      <Tier3Head
         title="Statute Library — State-by-State Plain-English Legal Guides | LegallySpoken"
         description="Browse plain-English summaries of state laws on security deposits, eviction notice periods, minimum wage, and more — for all 50 states."
       />

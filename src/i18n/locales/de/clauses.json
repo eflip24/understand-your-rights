@@ -1,0 +1,206 @@
+{
+  "non-compete-clause": {
+    "title": "Wettbewerbsverbot",
+    "explanation": "Eine Wettbewerbsverbotsklausel untersagt es einem Arbeitnehmer oder Auftragnehmer, nach dem Ausscheiden aus einem Unternehmen für Wettbewerber zu arbeiten oder ein konkurrierendes Geschäft zu gründen. Diese Klauseln sollen Geschäftsgeheimnisse, Kundenbeziehungen und Wettbewerbsvorteile schützen. Sie werden jedoch zunehmend von Gerichten und Gesetzgebern kritisch geprüft, die übermäßig weitreichende Wettbewerbsverbote als unfaire Einschränkungen der Erwerbsfähigkeit von Arbeitnehmern ansehen."
+  },
+  "confidentiality-clause": {
+    "title": "Vertraulichkeitsklausel",
+    "explanation": "Eine Vertraulichkeitsklausel (auch als Geheimhaltungsklausel bekannt) verpflichtet eine oder beide Parteien, bestimmte Informationen geheim zu halten. Diese Klauseln definieren, welche Informationen als vertraulich gelten, wie sie geschützt werden müssen, was eine zulässige Offenlegung darstellt und wie lange die Verpflichtung besteht. Sie finden sich in praktisch jeder Art von Geschäftsvereinbarung."
+  },
+  "indemnification-clause": {
+    "title": "Schadensersatzklausel",
+    "explanation": "Eine Schadensersatzklausel verteilt das Risiko zwischen den Parteien, indem sie eine Partei (den Entschädiger) dazu verpflichtet, die andere Partei (den Geschädigten) für bestimmte Verluste, Schäden oder Verbindlichkeiten zu entschädigen. Diese Klauseln gehören zu den am meisten verhandelten in jedem Vertrag, da sie direkt bestimmen, wer zahlt, wenn etwas schiefgeht."
+  },
+  "limitation-of-liability": {
+    "title": "Haftungsbeschränkungsklausel",
+    "explanation": "Eine Haftungsbeschränkungsklausel begrenzt den Gesamtbetrag, den eine Partei im Falle einer Vertragsverletzung oder eines anderen Anspruchs von der anderen zurückfordern kann. Diese Klauseln schließen üblicherweise auch bestimmte Arten von Schäden (wie Folgeschäden, beiläufige Schäden oder Strafschadensersatz) aus. Sie gehören zu den wichtigsten risikoverteilenden Bestimmungen in jedem Vertrag."
+  },
+  "termination-clause": {
+    "title": "Kündigungsklausel",
+    "explanation": "Eine Kündigungsklausel definiert die Umstände, unter denen eine oder beide Parteien den Vertrag vor seinem natürlichen Ablauf beenden können. Sie legt die verfügbaren Kündigungsarten fest (aus wichtigem Grund, zur Bequemlichkeit oder beides), die Kündigungsfristen, die Nachfrist zur Behebung von Vertragsverletzungen und was nach der Kündigung geschieht (Rückgabe von Materialien, Bezahlung für geleistete Arbeit, fortbestehende Verpflichtungen)."
+  },
+  "force-majeure-clause": {
+    "title": "Höhere-Gewalt-Klausel",
+    "explanation": "Eine Höhere-Gewalt-Klausel befreit eine oder beide Parteien von der Erfüllung ihrer vertraglichen Verpflichtungen, wenn außergewöhnliche, außerhalb ihrer Kontrolle liegende Ereignisse die Erfüllung unmöglich oder undurchführbar machen. Diese Ereignisse umfassen typischerweise Naturkatastrophen, Kriege, Pandemien, behördliche Maßnahmen und andere unvorhersehbare Umstände. Die COVID-19-Pandemie hat die Aufmerksamkeit auf diese Klauseln dramatisch erhöht."
+  },
+  "arbitration-clause": {
+    "title": "Schiedsklausel",
+    "explanation": "Eine Schiedsklausel verpflichtet die Parteien, Streitigkeiten durch private Schiedsverfahren statt durch Gerichtsverfahren zu lösen. Diese Klauseln legen die Schiedsregeln, die Anzahl der Schiedsrichter, den Ort des Schiedsverfahrens und die Verbindlichkeit des Schiedsspruchs fest. Sie sind in Arbeitsverträgen, Verbraucherverträgen und Handelsverträgen üblich."
+  },
+  "governing-law-clause": {
+    "title": "Rechtswahlklausel",
+    "explanation": "Eine Rechtswahlklausel (auch genannt 'choice of law clause') legt fest, welche Gesetze einer Rechtsordnung zur Auslegung des Vertrags und zur Beilegung von Streitigkeiten herangezogen werden. Dies ist besonders wichtig bei Verträgen zwischen Parteien in verschiedenen Bundesstaaten oder Ländern, da unterschiedliche Jurisdiktionen dieselbe Vertragssprache unterschiedlich auslegen können."
+  },
+  "intellectual-property-clause": {
+    "title": "Klausel zum geistigen Eigentum",
+    "explanation": "Eine Klausel zum geistigen Eigentum (IP-Klausel) definiert Eigentum, Rechte und Beschränkungen in Bezug auf geistiges Eigentum, das im Rahmen des Vertrags erstellt, genutzt oder ausgetauscht wird. Diese Klauseln regeln, wem das Arbeitsergebnis gehört, welche Lizenzen erteilt werden, wie mit vorbestehendem geistigem Eigentum umgegangen wird und was mit den IP-Rechten geschieht, wenn der Vertrag endet."
+  },
+  "payment-terms-clause": {
+    "title": "Zahlungsbedingungen Klausel",
+    "explanation": "Eine Zahlungsbedingungen-Klausel definiert, wie, wann und wie viel die zahlende Partei zahlen muss. Sie umfasst den Gesamtbetrag oder Satz, den Zahlungsplan, akzeptable Zahlungsmethoden, Verzugszinsen, Kostenerstattungen und Streitbeilegungsverfahren. Klare Zahlungsbedingungen verhindern die meisten zahlungsbezogenen Streitigkeiten."
+  },
+  "entire-agreement-clause": {
+    "title": "Gesamte-Vereinbarung-Klausel (Merger Klausel)",
+    "explanation": "Eine 'Entire Agreement'-Klausel (auch als 'Merger' oder 'Integrationsklausel' bezeichnet) besagt, dass der schriftliche Vertrag die vollständige und endgültige Vereinbarung zwischen den Parteien darstellt und alle früheren Verhandlungen, Diskussionen und Vereinbarungen ersetzt. Sie verhindert, dass eine Partei behauptet, zusätzliche Versprechen oder Vereinbarungen existierten außerhalb des schriftlichen Vertrags."
+  },
+  "assignment-clause": {
+    "title": "Abtretungsklausel",
+    "explanation": "Eine Abtretungsklausel regelt, ob und wie eine Partei ihre Rechte und Pflichten aus dem Vertrag an einen Dritten übertragen kann. Diese Klauseln können die Abtretung vollständig verbieten, mit Zustimmung zulassen oder frei gestatten. Sie sind wichtig bei M&A-Transaktionen, Unternehmensumstrukturierungen und Unterauftragsvereinbarungen."
+  },
+  "warranty-clause": {
+    "title": "Gewährleistungsklausel",
+    "explanation": "Eine Gewährleistungsklausel enthält Versprechungen über die Qualität, den Zustand oder die Leistung von Waren, Dienstleistungen oder anderen Vertragsgegenständen. Gewährleistungen können ausdrücklich (explizit genannt) oder stillschweigend (gesetzlich vorgeschrieben) sein. Gewährleistungsklauseln enthalten auch häufig Gewährleistungsausschlüsse, die bestimmte Gewährleistungen einschränken oder ausschließen."
+  },
+  "notice-clause": {
+    "title": "Mitteilungsklausel",
+    "explanation": "Eine Mitteilungsklausel legt fest, wie formelle Mitteilungen zwischen den Parteien zugestellt werden müssen. Dies umfasst die erforderliche Zustellungsmethode (Post, E-Mail, Kurier), die Adressen für Mitteilungen und wann eine Mitteilung als zugestellt gilt. Eine ordnungsgemäße Mitteilung ist oft Voraussetzung für die Ausübung von Rechten aus dem Vertrag, wie z.B. Kündigung oder Geltendmachung einer Vertragsverletzung."
+  },
+  "severability-clause": {
+    "title": "Salvatorische Klausel",
+    "explanation": "Eine salvatorische Klausel schützt den Gesamtvertrag, falls eine oder mehrere Bestimmungen für ungültig, rechtswidrig oder undurchsetzbar befunden werden. Ohne diese Klausel könnte ein Gericht den gesamten Vertrag wegen einer problematischen Bestimmung für null und nichtig erklären. Sie gilt als Standardklausel, erfüllt aber eine wirklich wichtige Schutzfunktion."
+  },
+  "dispute-resolution-clause": {
+    "title": "Streitbeilegungsklausel",
+    "explanation": "Eine Streitbeilegungsklausel legt den Prozess fest, dem die Parteien zur Beilegung von Meinungsverschiedenheiten folgen müssen. Sie kann einen mehrstufigen Prozess umfassen, der mit informellen Verhandlungen beginnt, über Mediation eskaliert und schließlich zu Schiedsverfahren oder Gerichtsverfahren führt. Diese Klauseln zielen darauf ab, Streitigkeiten effizient und mit geringstmöglichen Kosten zu lösen."
+  },
+  "non-solicitation-clause": {
+    "title": "Abwerbeverbot",
+    "explanation": "Eine Abwerbeverbotsklausel verbietet einem ausscheidenden Mitarbeiter oder Auftragnehmer, die Kunden oder Mitarbeiter des Unternehmens für einen bestimmten Zeitraum nach dem Ausscheiden abzuwerben. Im Gegensatz zu Wettbewerbsverboten, die den Arbeitsort einschränken, beschränken Abwerbeverbote, wen Sie kontaktieren dürfen. Sie sind in der Regel besser durchsetzbar als Wettbewerbsverbote, da sie einen kleineren Anwendungsbereich haben."
+  },
+  "data-protection-clause": {
+    "title": "Datenschutzklausel",
+    "explanation": "Eine Datenschutzklausel regelt, wie personenbezogene Daten im Rahmen des Vertrags erhoben, verarbeitet, gespeichert und geschützt werden. Mit der Verbreitung von Datenschutzvorschriften (DSGVO, CCPA usw.) sind diese Klauseln in praktisch jedem Vertrag, der personenbezogene Daten betrifft, unerlässlich geworden."
+  },
+  "insurance-clause": {
+    "title": "Versicherungsklausel",
+    "explanation": "Eine Versicherungsklausel verlangt von einer oder beiden Parteien, während der Vertragslaufzeit bestimmte Arten und Höhen von Versicherungsschutz aufrechtzuerhalten. Diese Klauseln verteilen das Risiko, indem sie sicherstellen, dass eine ausreichende Versicherung zur Deckung potenzieller Verluste vorhanden ist, wodurch die Abhängigkeit von reinen Freistellungsklauseln reduziert wird."
+  },
+  "representations-warranties-clause": {
+    "title": "Zusicherungen und Gewährleistungen Klausel",
+    "explanation": "Zusicherungen ('Representations') und Gewährleistungen ('Warranties') sind tatsächliche Aussagen einer oder beider Parteien über den aktuellen Sachverhalt. Zusicherungen sind Behauptungen über vergangene oder gegenwärtige Fakten. Gewährleistungen sind Versprechen über die Richtigkeit dieser Fakten. Erweist sich eine Zusicherung oder Gewährleistung als falsch, kann die andere Partei einen Anspruch wegen Vertragsverletzung und möglicherweise Betrug haben."
+  },
+  "waiver-of-jury-trial": {
+    "title": "Verzicht auf Jury-Verfahren Klausel",
+    "explanation": "Eine Klausel über den Verzicht auf ein Jury-Verfahren besagt, dass die Parteien vereinbaren, Streitigkeiten von einem Richter (Richterbankverfahren) statt von einer Jury entscheiden zu lassen. Diese Klauseln sind in Handelsverträgen üblich, da Richterbankverfahren oft schneller, kostengünstiger und vorhersehbarer sind als Jury-Verfahren, insbesondere bei komplexen Handelsstreitigkeiten."
+  },
+  "acceleration-clause": {
+    "title": "Beschleunigungsklausel",
+    "explanation": "Eine Beschleunigungsklausel ermöglicht es einem Kreditgeber, die sofortige Rückzahlung des gesamten ausstehenden Darlehensbetrags zu verlangen, wenn der Kreditnehmer bestimmte Bedingungen verletzt, meist durch das Ausbleiben von Zahlungen. Ohne diese Klausel könnte ein Kreditgeber nur jede ausgebliebene Zahlung einzeln einklagen. Beschleunigungsklauseln sind Standard bei Hypotheken, Autokrediten und kommerziellen Kreditverträgen. Sie verschaffen Kreditgebern einen starken Hebel, um pünktliche Zahlungen durchzusetzen und ihre Investition zu schützen."
+  },
+  "anti-dilution-clause": {
+    "title": "Verwässerungsschutz-Klausel",
+    "explanation": "Eine Verwässerungsschutz-Klausel schützt Investoren davor, dass ihr Eigentumsanteil reduziert wird, wenn ein Unternehmen neue Aktien zu einem niedrigeren Preis ausgibt, als der Investor ursprünglich bezahlt hat. Diese Klauseln sind Standard in Venture Capital- und Private-Equity-Deals. Sie passen den Wandlungspreis des Investors nach unten an, um den verwässernden Effekt der Neuemission auszugleichen, wodurch sie effektiv mehr Aktien für dieselbe Investition erhalten."
+  },
+  "automatic-renewal-clause": {
+    "title": "Klausel zur automatischen Verlängerung",
+    "explanation": "Eine Klausel zur automatischen Verlängerung (auch als 'Evergreen-Klausel' bezeichnet) verlängert einen Vertrag um weitere Perioden, es sei denn, eine Partei kündigt innerhalb eines festgelegten Zeitraums. Diese sind üblich in Dienstleistungsverträgen, Abonnements, Mietverträgen und Softwarelizenzen. Sie bieten zwar Kontinuität und Bequemlichkeit, können Parteien aber in unerwünschte Verlängerungen drängen, wenn das Kündigungsfenster verpasst wird."
+  },
+  "best-efforts-clause": {
+    "title": "Best-Efforts-Klausel (Bemühungserfordernis-Klausel)",
+    "explanation": "Eine Best-Efforts-Klausel verlangt von einer Partei, sich so intensiv wie möglich um die Erfüllung einer Verpflichtung zu bemühen, ohne ein bestimmtes Ergebnis absolut zu garantieren. Dies ist ein höherer Standard als 'vernünftige Bemühungen' ('reasonable efforts') oder 'wirtschaftlich zumutbare Bemühungen' ('commercially reasonable efforts'), aber weniger als eine absolute Garantie. Diese Klauseln sind üblich, wenn die Leistung von Faktoren abhängt, die teilweise außerhalb der Kontrolle einer Partei liegen, wie z. B. die Einholung behördlicher Genehmigungen, die Sicherung von Finanzierungen oder das Erreichen von Verkaufszielen."
+  },
+  "choice-of-forum-clause": {
+    "title": "Gerichtsstandsklausel",
+    "explanation": "Eine Gerichtsstandsklausel (auch Forum-Selection-Klausel genannt) legt das spezifische Gericht oder den Ort fest, an dem Streitigkeiten verhandelt werden müssen oder dürfen. Sie unterscheidet sich von einer Rechtswahlklausel, die bestimmt, welches Recht Anwendung findet. Ein Vertrag könnte das Recht von Delaware festlegen (Rechtswahl), aber die Verhandlung vor Gerichten in New York vorschreiben (Gerichtsstandswahl). Diese Klauseln reduzieren die Unsicherheit und verhindern Wettläufe zum Gericht."
+  },
+  "clawback-clause": {
+    "title": "Clawback-Klausel (Rückforderungsklausel)",
+    "explanation": "Eine Clawback-Klausel erlaubt einer Partei, zuvor gezahlte Vergütungen, Boni oder Ausschüttungen unter bestimmten Umständen zurückzufordern – wie bei einer finanziellen Neudarstellung, Fehlverhalten oder Nichterfüllung von Leistungszielen. Diese Klauseln wurden nach Unternehmensskandalen und der Finanzkrise von 2008 prominent. Der Dodd-Frank Act und die SEC-Regeln verlangen nun von börsennotierten Unternehmen, Clawback-Richtlinien für Vorstandsvergütungen einzuführen."
+  },
+  "change-of-control-clause": {
+    "title": "Change-of-Control-Klausel (Kontrollwechselklausel)",
+    "explanation": "Eine Change-of-Control-Klausel regelt, was mit einem Vertrag geschieht, wenn eine Partei einen maßgeblichen Inhaberwechsel erfährt – wie eine Fusion, Übernahme oder die Übertragung einer beherrschenden Beteiligung. Diese Klauseln können Kündigungsrechte gewähren, Zustimmungserfordernisse auslösen oder spezielle Bestimmungen wie beschleunigte Zahlungen oder Golden-Parachute-Abfindungen aktivieren."
+  },
+  "compliance-clause": {
+    "title": "Compliance-Klausel (Einhaltungsklausel)",
+    "explanation": "Eine Compliance-Klausel verpflichtet eine oder beide Parteien, bei der Erfüllung ihrer vertraglichen Pflichten die geltenden Gesetze, Vorschriften, Industriestandards und Ethikrichtlinien einzuhalten. Diese Klauseln sind mit der zunehmenden Regulierungskomplexität, der Durchsetzung von Anti-Korruptionsgesetzen (FCPA, UK Bribery Act), Datenschutzgesetzen (DSGVO, CCPA) und Sanktionsregimen immer wichtiger geworden."
+  },
+  "cross-default-clause": {
+    "title": "Cross-Default-Klausel (Verzugsklausel für andere Verträge)",
+    "explanation": "Eine Cross-Default-Klausel besagt, dass ein Verzug unter einem anderen Vertrag zwischen den Parteien (oder verbundenen Verträgen) automatisch einen Verzug unter dem aktuellen Vertrag darstellt. Dies verhindert, dass ein Kreditnehmer selektiv Verpflichtungen nicht erfüllt, und stellt sicher, dass Gläubiger sich schützen können, wenn die finanzielle Gesundheit eines Kreditnehmers sich verschlechtert. Cross-Default-Klauseln sind Standard in Darlehensverträgen, Anleihebedingungen und komplexen Finanzierungsvereinbarungen."
+  },
+  "cure-period-clause": {
+    "title": "Mängelbeseitigungsfrist-Klausel (Nachfristklausel)",
+    "explanation": "Eine Mängelbeseitigungsfrist-Klausel gewährt einer Partei eine bestimmte Frist, um einen Vertragsbruch oder Verzug zu beheben (zu heilen), bevor die andere Partei Abhilfemaßnahmen wie Kündigung oder Beschleunigung geltend machen kann. Diese Klauseln gleichen die Interessen beider Parteien aus – sie geben der vertragsbrüchigen Partei eine faire Chance, Fehler zu korrigieren, während sie gleichzeitig das Recht der nicht-brechenden Partei auf Maßnahmen wahrt, falls Probleme nicht gelöst werden."
+  },
+  "drag-along-clause": {
+    "title": "Drag-Along-Klausel (Mitverkaufspflichtklausel)",
+    "explanation": "Eine Drag-Along-Klausel gibt den Mehrheitsaktionären das Recht, Minderheitsaktionäre im Falle eines Unternehmensverkaufs oder einer Übernahme zum Verkauf ihrer Anteile zu zwingen. Dies verhindert, dass Minderheitsaktionäre ein Geschäft blockieren, das die Mehrheit anstrebt. Die Minderheitsaktionäre müssen zu denselben Bedingungen verkaufen wie die Mehrheit. Drag-Along-Rechte sind Standard in Aktionärsvereinbarungen und Venture-Capital-Term Sheets."
+  },
+  "exclusivity-clause": {
+    "title": "Exklusivitätsklausel",
+    "explanation": "Eine Exklusivitätsklausel gewährt einer Partei das ausschließliche Recht, Dienstleistungen zu erbringen, Produkte zu vertreiben oder einen Deal innerhalb eines definierten Rahmens zu verhandeln. Diese Klauseln sind üblich in Vertriebsvereinbarungen, Lizenzverträgen, M&A-Verhandlungen und Dienstleistungsverträgen. Sie bieten der exklusiven Partei Sicherheit, schränken aber die Flexibilität der anderen Partei ein."
+  },
+  "first-right-of-refusal-clause": {
+    "title": "Vorkaufsrechtklausel",
+    "explanation": "Ein Vorkaufsrecht (ROFR) gibt einer Partei das Recht, jedes Angebot, das die andere Partei von einem Dritten erhält, anzunehmen, bevor die andere Partei es akzeptieren kann. Wenn der ROFR-Inhaber das Angebot annimmt, geht die Transaktion stattdessen an ihn. Lehnt er ab, steht es der anderen Partei frei, mit dem Dritten fortzufahren. ROFRs sind üblich in Immobilienmietverträgen, Aktionärsvereinbarungen und kommerziellen Verträgen."
+  },
+  "holdback-clause": {
+    "title": "Rückbehaltklausel",
+    "explanation": "Eine Rückbehaltklausel hält einen Teil eines Zahlungsbetrags für einen bestimmten Zeitraum zurück, um sich gegen potenzielle Ansprüche, Mängel oder Anpassungen abzusichern. Bei M&A-Transaktionen wird typischerweise ein Prozentsatz des Kaufpreises auf einem Treuhandkonto zurückgehalten, um potenzielle Entschädigungsansprüche abzudecken. Im Bauwesen stellen Rückbehalte (auch Retainage genannt) sicher, dass Bauunternehmer Restposten vollständig erledigen."
+  },
+  "indemnity-cap-clause": {
+    "title": "Obergrenze für Freistellungsansprüche (Indemnity-Cap-Klausel)",
+    "explanation": "Eine Indemnity-Cap-Klausel begrenzt den Höchstbetrag, den eine Partei aufgrund der Freistellungsbestimmungen eines Vertrags zahlen muss. Ohne eine Obergrenze könnte die Haftung einer Partei für Entschädigungen theoretisch unbegrenzt sein. Obergrenzen werden typischerweise als Prozentsatz des Vertragswerts, der insgesamt gezahlten Gebühren oder als fixer Dollarbetrag festgelegt. Sie sind ein kritisches Risikoverteilungsinstrument in praktisch allen kommerziellen Verträgen."
+  },
+  "integration-clause": {
+    "title": "Integrationsklausel (Gesamtvereinbarungsklausel)",
+    "explanation": "Eine Integrationsklausel (auch als Gesamtvereinbarung oder Merger-Klausel bezeichnet) besagt, dass der schriftliche Vertrag die vollständige und endgültige Vereinbarung zwischen den Parteien darstellt und alle vorherigen Verhandlungen, Diskussionen und Vereinbarungen ersetzt. Dies verhindert, dass eine Partei später behauptet, mündliche Versprechen oder frühere Entwürfe seien Teil des Geschäfts. Sie ist eine der wichtigsten Standardklauseln in jedem Vertrag."
+  },
+  "key-person-clause": {
+    "title": "Key-Person-Klausel (Schlüsselpersonen-Klausel)",
+    "explanation": "Eine Key-Person-Klausel (auch Key-Man-Klausel genannt) gewährt einer Partei bestimmte Rechte – üblicherweise die Aussetzung, Beendigung oder Neuverhandlung – wenn eine namentlich genannte Person, die für die Vertragserfüllung unerlässlich ist, nicht mehr beteiligt ist. Diese Klauseln sind üblich in Verträgen über professionelle Dienstleistungen, Fondsmanagementvereinbarungen und Unterhaltungsgeschäften, bei denen der Wert stark von bestimmten Individuen abhängt."
+  },
+  "material-adverse-change-clause": {
+    "title": "Material Adverse Change-Klausel (Klausel über wesentliche nachteilige Änderung)",
+    "explanation": "Eine Material Adverse Change (MAC)-Klausel (auch Material Adverse Effect oder MAE-Klausel genannt) erlaubt einer Partei, von einem Geschäft zurückzutreten oder es neu zu verhandeln, wenn ein erhebliches negatives Ereignis eintritt, das den Wert, die Geschäftstätigkeit oder die finanzielle Lage der anderen Partei grundlegend beeinflusst. MAC-Klauseln sind entscheidend in M&A-Vereinbarungen, Kreditengagements und wichtigen kommerziellen Verträgen."
+  },
+  "most-favored-nation-clause": {
+    "title": "Meistbegünstigungsklausel",
+    "explanation": "Eine Meistbegünstigungsklausel (MFN) garantiert, dass eine Partei Bedingungen erhält, die mindestens so günstig sind wie die, die jeder anderen Partei angeboten wurden. Wenn der Anbieter einem anderen Kunden bessere Preise, Konditionen oder Bedingungen anbietet, hat der MFN-Inhaber automatisch Anspruch auf dieselben Bedingungen. Diese Klauseln entstanden in internationalen Handelsverträgen und sind heute in kommerziellen Lieferverträgen, Lizenzverträgen und Versicherungsverträgen üblich."
+  },
+  "no-shop-clause": {
+    "title": "No-Shop-Klausel (Abwerbeverbot-Klausel)",
+    "explanation": "Eine No-Shop-Klausel verbietet einer Partei (üblicherweise einem Verkäufer bei einer M&A-Transaktion), während eines bestimmten Zeitraums andere potenzielle Käufer anzusprechen, zu ermutigen oder mit ihnen zu verhandeln. Dies gibt dem potenziellen Käufer die Gewissheit, Zeit und Ressourcen in die Due Diligence zu investieren, ohne befürchten zu müssen, überboten zu werden. No-Shop-Klauseln sind Standard in Absichtserklärungen, Fusionsvereinbarungen und exklusiven Verhandlungsperioden."
+  },
+  "non-disparagement-clause": {
+    "title": "Non-Disparagement-Klausel (Schutz vor Rufschädigung)",
+    "explanation": "Eine Non-Disparagement-Klausel verbietet einer oder beiden Parteien, negative, kritische oder schädigende Äußerungen über die andere Partei zu machen. Diese Klauseln sind üblich in Vergleichsvereinbarungen, Abfindungspaketen und Arbeitsverträgen. Sie schützen den Ruf und verhindern, dass ehemalige Geschäftspartner oder Mitarbeiter sich nach Beendigung der Beziehung öffentlich gegenseitig kritisieren."
+  },
+  "penalty-clause": {
+    "title": "Vertragsstrafeklausel",
+    "explanation": "Eine Vertragsstrafeklausel auferlegt einer Partei, die einen Vertrag verletzt, eine Zahlungsverpflichtung, wobei der Betrag darauf ausgelegt ist, die vertragsbrüchige Partei zu bestrafen, anstatt tatsächliche Verluste auszugleichen. Im Common Law sind Vertragsstrafeklauseln im Allgemeinen nicht durchsetzbar – Gerichte werden sie für unwirksam erklären und stattdessen tatsächlichen Schadenersatz festsetzen. Dies unterscheidet sie von Liquidated-Damages-Klauseln, die eine echte, zuvor vereinbarte Entschädigung schätzen."
+  },
+  "price-adjustment-clause": {
+    "title": "Preisanpassungsklausel",
+    "explanation": "Eine Preisanpassungsklausel ermöglicht es, dass sich der Vertragspreis während der Laufzeit aufgrund definierter Auslöser oder Formeln ändert. Gängige Mechanismen sind Kostenanpassungen (COLA), die an den Verbraucherpreisindex gebunden sind, Rohstoffpreisindizes, Währungsschwankungen oder periodische Marktpreisüberprüfungen. Diese Klauseln sind in langfristigen Verträgen unerlässlich, um zu verhindern, dass eine Partei an Preise gebunden ist, die kommerziell unzumutbar werden."
+  },
+  "right-to-audit-clause": {
+    "title": "Prüfungsrechtklausel",
+    "explanation": "Eine Prüfungsrechtklausel gibt einer Partei das Recht, die Bücher, Aufzeichnungen und Vorgänge der anderen Partei zu prüfen, um die Einhaltung der Vertragsbedingungen zu überprüfen. Diese Klauseln sind unerlässlich in Kosten-plus-Verträgen, Lizenzvereinbarungen, Franchiseverträgen und allen Vereinbarungen, bei denen Zahlungen auf gemeldeten Zahlen basieren. Sie dienen sowohl als Abschreckung gegen Betrug als auch als Mechanismus zur Sicherstellung der Richtigkeit."
+  },
+  "right-of-first-offer-clause": {
+    "title": "First-Offer-Rechtklausel (Erstangebotsrechtklausel)",
+    "explanation": "Ein First-Offer-Recht (ROFO) verlangt von einer Partei, ein Vermögenswert oder eine Gelegenheit dem ROFO-Inhaber anzubieten, bevor Angebote von Dritten eingeholt werden. Anders als bei einem Vorkaufsrecht (bei dem der Inhaber ein Drittangebot annimmt), verlangt ein ROFO, dass der Verkäufer dem Inhaber die erste Gelegenheit gibt, ein Angebot zu machen. Lehnt der Inhaber ab oder können sich die Parteien nicht auf Bedingungen einigen, kann der Verkäufer Drittangebote einholen."
+  },
+  "survival-clause": {
+    "title": "Fortbestandsklausel (Survival-Klausel)",
+    "explanation": "Eine Fortbestandsklausel legt fest, welche Bestimmungen eines Vertrags auch nach Beendigung oder Ablauf des Vertrags wirksam bleiben. Ohne eine Fortbestandsklausel enden alle Rechte und Pflichten im Allgemeinen mit dem Vertragsende. Häufig fortbestehende Bestimmungen umfassen Vertraulichkeit, Freistellung, Haftungsbeschränkung, geistiges Eigentum, Wettbewerbsverbote und Streitbeilegung."
+  },
+  "tag-along-clause": {
+    "title": "Tag-Along-Klausel (Mitverkaufsrechtklausel)",
+    "explanation": "Eine Tag-Along-Klausel (auch Mitverkaufsrecht genannt) gibt Minderheitsaktionären das Recht, sich einem Verkauf anzuschließen, wenn ein Mehrheitsaktionär seine Anteile verkauft. Findet der Mehrheitsaktionär einen Käufer, können die Minderheitsaktionäre 'mitschleifen' und ihre Anteile zu denselben Bedingungen verkaufen. Dies schützt Minderheitsaktionäre davor, in einem Unternehmen mit neuen, potenziell ungünstigen Kontrollinhabern zurückgelassen zu werden."
+  },
+  "time-is-of-the-essence-clause": {
+    "title": "Zeit ist wesentlich-Klausel",
+    "explanation": "Eine 'Zeit ist wesentlich'-Klausel (time is of the essence) macht die strikte Einhaltung von Fristen zu einem wesentlichen Bestandteil des Vertrags. Ohne diese Klausel gewähren Gerichte den Parteien im Allgemeinen eine angemessene Flexibilität bei der Einhaltung von Fristen, und geringfügige Verzögerungen stellen keinen wesentlichen Vertragsbruch dar. Mit dieser Klausel berechtigt jede Nichteinhaltung einer Frist – selbst um einen einzigen Tag – die nicht-brechende Partei zur Kündigung und Geltendmachung von Schadenersatz."
+  },
+  "tolling-clause": {
+    "title": "Verjährungsunterbrechungsklausel",
+    "explanation": "Eine Verjährungsunterbrechungsklausel setzt den Lauf der Verjährungsfrist oder anderer vertraglicher Fristen für einen bestimmten Zeitraum oder während bestimmter Ereignisse aus (pausiert). Unterbrechungsvereinbarungen sind üblich, wenn Parteien eine Einigung verhandeln und ihre Prozessrechte ohne den Druck einer ablaufenden Frist wahren möchten. Sie können auch in Verträgen erscheinen, um Fristen bei Fällen höherer Gewalt oder Streitigkeiten zu verlängern."
+  },
+  "venue-clause": {
+    "title": "Gerichtsstandsvereinbarung",
+    "explanation": "Eine Gerichtsstandsvereinbarung legt den geografischen Ort (Stadt, Landkreis oder Bundesstaat) fest, an dem ein Gerichtsverfahren eingeleitet werden muss oder kann. Während sie einer Forumswahlklausel ähnelt, bezieht sich der Gerichtsstand spezifisch auf den geografischen Ort, während die Forumswahl auch eine Art von Gericht (Bundes- vs. Landesgericht) bestimmen kann. Gerichtsstandsvereinbarungen reduzieren Prozesskosten und Unsicherheiten, indem sie verhindern, dass Streitigkeiten an unerwarteten oder unpraktischen Orten eingeleitet werden."
+  }
+}

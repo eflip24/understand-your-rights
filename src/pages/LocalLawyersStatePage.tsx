@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { ChevronRight, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Head from "@/components/seo/Head";
+import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, breadcrumbSchema, itemListSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import { practiceAreas } from "@/data/localLawyers";
@@ -28,7 +28,7 @@ export default function LocalLawyersStatePage() {
 
   return (
     <div className="container py-8 max-w-4xl">
-      <Head
+      <Tier3Head
         title={`${practiceArea.shortTitle} Lawyers in ${stateInfo.name} | LegallySpoken`}
         description={`Find ${practiceArea.shortTitle.toLowerCase()} lawyers in ${stateInfo.name}. ${stateInfo.name} statute of limitations: ${stateInfo.personalInjurySOL}. Free courthouse info and settlement calculator.`}
       />

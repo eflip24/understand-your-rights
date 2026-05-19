@@ -1,1 +1,567 @@
-{}
+{
+  "reading-time": {
+    "name": "Contract Reading Time Calculator",
+    "description": "Paste your contract text and get an estimated reading time based on word count and legal complexity. Helps you plan how long it will take to review a document.",
+    "shortDescription": "Estimate how long it takes to read a contract."
+  },
+  "word-counter": {
+    "name": "Contract Word Counter",
+    "description": "Get detailed statistics about your contract including word count, character count, sentence count, paragraph count, and estimated pages.",
+    "shortDescription": "Get detailed word and character statistics."
+  },
+  "jargon-translator": {
+    "name": "Legal Jargon Translator",
+    "description": "Look up common legal terms and get plain-English explanations. Search our dictionary of 100+ legal terms to understand what your contract actually says.",
+    "shortDescription": "Translate legal terms to plain English."
+  },
+  "clause-finder": {
+    "name": "Contract Clause Finder",
+    "description": "Paste your contract and search for common clause types like indemnification, termination, non-compete, confidentiality, and more. Quickly find the sections that matter most.",
+    "shortDescription": "Find specific clauses in your contracts."
+  },
+  "cancellation-deadline": {
+    "name": "Cancellation Deadline Calculator",
+    "description": "Calculate your cancellation deadline based on your signup date and cooling-off period. Know exactly when your right to cancel expires.",
+    "shortDescription": "Calculate when your cancellation window closes."
+  },
+  "notice-period": {
+    "name": "Notice Period Calculator",
+    "description": "Calculate your notice period end date based on your start date and notice terms. Works for employment, rental, and service agreements.",
+    "shortDescription": "Calculate when your notice period ends."
+  },
+  "late-fee": {
+    "name": "Late Fee Calculator",
+    "description": "Calculate the total late fee on an overdue payment. Enter the principal amount, fee rate, and number of days late to see what you owe or are owed.",
+    "shortDescription": "Calculate late fees on overdue payments."
+  },
+  "refund-checker": {
+    "name": "Refund Eligibility Checker",
+    "description": "Answer a few simple questions about your purchase and situation to check if you might be eligible for a refund. Covers common consumer scenarios.",
+    "shortDescription": "Check if you qualify for a refund."
+  },
+  "non-compete": {
+    "name": "Non-Compete Duration Checker",
+    "description": "Enter your non-compete clause duration and state to see general enforceability information. Some states restrict or ban non-competes entirely.",
+    "shortDescription": "Check non-compete enforceability by state."
+  },
+  "freelance-rate": {
+    "name": "Freelance Rate Calculator",
+    "description": "Convert between hourly rates, project fees, and annual income. Factor in taxes, expenses, and billable hours to find your true freelance rate.",
+    "shortDescription": "Convert between hourly, project, and annual rates."
+  },
+  "invoice-interest": {
+    "name": "Invoice Late Interest Calculator",
+    "description": "Calculate the interest owed on late invoice payments. Enter the invoice amount, interest rate, and days overdue to determine the total amount due.",
+    "shortDescription": "Calculate interest on unpaid invoices."
+  },
+  "nda-generator": {
+    "name": "NDA Template Generator",
+    "description": "Generate a basic Non-Disclosure Agreement by filling out a simple form. Customize parties, duration, scope, and jurisdiction.",
+    "shortDescription": "Generate a basic NDA from a form."
+  },
+  "privacy-generator": {
+    "name": "Privacy Policy Generator",
+    "description": "Generate a privacy policy for your website or app. Answer questions about your data practices and get a formatted policy document.",
+    "shortDescription": "Create a privacy policy for your website."
+  },
+  "complaint-generator": {
+    "name": "Complaint Letter Generator",
+    "description": "Generate a formal complaint letter. Fill in the details about your issue and get a professionally formatted letter ready to send.",
+    "shortDescription": "Create a formal complaint letter."
+  },
+  "tos-generator": {
+    "name": "Terms of Service Generator",
+    "description": "Generate terms of service for your website or application. Covers user agreements, liability limitations, and standard legal provisions.",
+    "shortDescription": "Create terms of service for your site."
+  },
+  "red-flag-scanner": {
+    "name": "Contract Red Flag Scanner",
+    "description": "Paste your contract and let AI identify risky clauses, unfair terms, and potential legal issues with severity ratings and recommendations.",
+    "shortDescription": "AI scans contracts for risky clauses."
+  },
+  "nda-fairness": {
+    "name": "NDA Fairness Score",
+    "description": "Paste an NDA and get a fairness score from 0-100, with a breakdown of strengths, concerns, and recommendations for negotiation.",
+    "shortDescription": "Score your NDA's fairness 0-100."
+  },
+  "lease-analyzer": {
+    "name": "Lease Agreement Analyzer",
+    "description": "Paste your lease agreement and get a summary of key terms, hidden risks, and recommendations. Perfect for renters reviewing a new lease.",
+    "shortDescription": "Analyze lease agreements for risks."
+  },
+  "terms-summarizer": {
+    "name": "Terms & Conditions Summarizer",
+    "description": "Paste any Terms & Conditions or legal document and get a plain-English summary organized by topic, with concerning sections highlighted.",
+    "shortDescription": "Summarize T&C in plain English."
+  },
+  "contract-comparison": {
+    "name": "Contract Comparison Tool",
+    "description": "Paste two contracts side by side and get an AI-powered comparison highlighting key differences, changed terms, and which version favors which party.",
+    "shortDescription": "Compare two contracts side-by-side."
+  },
+  "clause-explainer": {
+    "name": "Clause Explainer",
+    "description": "Paste any legal clause and get a plain-English explanation, risk assessment, practical implications, and negotiation tips.",
+    "shortDescription": "Get plain-English clause explanations."
+  },
+  "contract-expiration": {
+    "name": "Contract Expiration Tracker",
+    "description": "Enter your contract dates and track expirations in one place. See which contracts are expiring soon, active, or already expired.",
+    "shortDescription": "Track contract expiration dates."
+  },
+  "signature-block": {
+    "name": "Signature Block Generator",
+    "description": "Generate properly formatted signature blocks for individuals, corporations, LLCs, and partnerships. Copy and paste into your contracts.",
+    "shortDescription": "Generate proper signature blocks."
+  },
+  "contract-checklist": {
+    "name": "Contract Checklist Generator",
+    "description": "Select your contract type and get a comprehensive review checklist. Track which items you've reviewed with an interactive progress bar.",
+    "shortDescription": "Generate a contract review checklist."
+  },
+  "amendment-drafter": {
+    "name": "Contract Amendment Drafter",
+    "description": "Generate a basic contract amendment by filling in the original contract details and describing the changes. Creates a formatted amendment document.",
+    "shortDescription": "Draft a contract amendment from a form."
+  },
+  "contract-value": {
+    "name": "Contract Value Calculator",
+    "description": "Calculate the total value of a contract including renewals and annual escalation rates. See initial term value, renewal value, and monthly averages.",
+    "shortDescription": "Calculate total contract value with renewals."
+  },
+  "warranty-tracker": {
+    "name": "Warranty Expiration Calculator",
+    "description": "Track warranty expiration dates for your purchases. Enter product details and warranty length to see which warranties are still active.",
+    "shortDescription": "Track warranty end dates for purchases."
+  },
+  "statute-of-limitations": {
+    "name": "Statute of Limitations Lookup",
+    "description": "Look up the statute of limitations for common legal claims by state. Find out how long you have to file for contract disputes, personal injury, fraud, and more.",
+    "shortDescription": "Look up filing deadlines by state."
+  },
+  "small-claims-limit": {
+    "name": "Small Claims Court Limit Checker",
+    "description": "Check the maximum dollar amount you can sue for in small claims court in your state. Enter your claim amount to see if it qualifies.",
+    "shortDescription": "Check small claims $ limits by state."
+  },
+  "consumer-rights-quiz": {
+    "name": "Consumer Rights Quiz",
+    "description": "Test your knowledge of consumer protection rights with our interactive quiz. Learn about return policies, warranties, billing disputes, and more.",
+    "shortDescription": "Test your consumer rights knowledge."
+  },
+  "dispute-letter": {
+    "name": "Dispute Letter Generator",
+    "description": "Generate a formal dispute letter for billing errors, credit report inaccuracies, service complaints, or product issues. Includes relevant legal references.",
+    "shortDescription": "Generate formal dispute letters."
+  },
+  "salary-converter": {
+    "name": "Salary to Hourly Converter",
+    "description": "Convert between annual salary and hourly rate. Factor in benefits overhead, hours per week, and weeks per year to see the true cost of employment.",
+    "shortDescription": "Convert salary to hourly rate and back."
+  },
+  "pto-calculator": {
+    "name": "PTO Calculator",
+    "description": "Calculate your accrued paid time off based on your accrual rate, employment tenure, and days already used. See remaining PTO in days and hours.",
+    "shortDescription": "Calculate accrued PTO balance."
+  },
+  "wrongful-termination": {
+    "name": "Wrongful Termination Checklist",
+    "description": "Answer questions about your termination and get an assessment of potential wrongful termination indicators, including discrimination and retaliation flags.",
+    "shortDescription": "Assess potential wrongful termination."
+  },
+  "minimum-wage": {
+    "name": "Minimum Wage Lookup",
+    "description": "Look up current federal and state minimum wage rates, including tipped minimum wage. Compare your state's rate to the federal minimum.",
+    "shortDescription": "Look up minimum wage by state."
+  },
+  "employment-checklist": {
+    "name": "Employment Contract Checklist",
+    "description": "A comprehensive interactive checklist of everything to look for in an employment contract — compensation, benefits, restrictive covenants, termination terms, and more.",
+    "shortDescription": "Review checklist for employment contracts."
+  },
+  "cease-desist": {
+    "name": "Cease and Desist Letter Generator",
+    "description": "Generate a formal cease and desist letter for harassment, defamation, IP infringement, contract breach, or debt collection issues.",
+    "shortDescription": "Generate C&D letters for common scenarios."
+  },
+  "poa-generator": {
+    "name": "Power of Attorney Generator",
+    "description": "Generate a basic Power of Attorney document. Choose between general, limited, durable, or financial POA with customizable terms and notarization block.",
+    "shortDescription": "Generate a basic POA document."
+  },
+  "ic-agreement": {
+    "name": "Independent Contractor Agreement Generator",
+    "description": "Generate a comprehensive independent contractor agreement covering scope of work, compensation, IP rights, confidentiality, and termination terms.",
+    "shortDescription": "Generate an IC agreement from a form."
+  },
+  "promissory-note": {
+    "name": "Promissory Note Generator",
+    "description": "Generate a basic promissory note with customizable terms including principal amount, interest rate, payment schedule, and default provisions.",
+    "shortDescription": "Generate a basic promissory note."
+  },
+  "security-deposit": {
+    "name": "Security Deposit Calculator",
+    "description": "Look up security deposit rules by state including maximum deposit amounts, interest requirements, and return deadlines after move-out.",
+    "shortDescription": "Check security deposit rules by state."
+  },
+  "rent-increase": {
+    "name": "Rent Increase Calculator",
+    "description": "Calculate your rent increase percentage and annual impact. Check against rent control caps in major jurisdictions.",
+    "shortDescription": "Check if a rent increase is legal."
+  },
+  "lease-comparison": {
+    "name": "Lease Term Comparison",
+    "description": "Compare two lease offers side by side including rent, deposit, utilities, and total cost. See which lease gives you the best value.",
+    "shortDescription": "Compare two lease offers side-by-side."
+  },
+  "moveout-checklist": {
+    "name": "Move-Out Checklist Generator",
+    "description": "Generate a customized move-out checklist based on your property type and features. Track progress with an interactive checklist.",
+    "shortDescription": "Generate a customized move-out checklist."
+  },
+  "rental-agreement": {
+    "name": "Rental Agreement Generator",
+    "description": "Generate a basic residential lease agreement by filling in landlord, tenant, property, and financial details. Includes standard legal provisions.",
+    "shortDescription": "Generate a basic residential lease."
+  },
+  "business-name": {
+    "name": "Business Name Checker",
+    "description": "Check your proposed business name for length, special characters, entity suffix, uniqueness, and domain potential. Includes trademark search tips.",
+    "shortDescription": "Check business naming considerations."
+  },
+  "contractor-vs-employee": {
+    "name": "Contractor vs. Employee Checker",
+    "description": "Answer 10 questions based on IRS classification factors to determine if a worker is likely an employee or independent contractor.",
+    "shortDescription": "Classify worker as employee or contractor."
+  },
+  "severance-pay": {
+    "name": "Severance Pay Calculator",
+    "description": "Estimate typical severance pay based on salary, years of service, and industry level. See low and high estimates for negotiation.",
+    "shortDescription": "Estimate severance pay range."
+  },
+  "overtime-calc": {
+    "name": "Overtime Calculator",
+    "description": "Calculate overtime pay based on hourly rate, regular hours, overtime hours, and multiplier. See detailed pay breakdown and effective rate.",
+    "shortDescription": "Calculate overtime pay breakdown."
+  },
+  "partnership-split": {
+    "name": "Partnership Split Calculator",
+    "description": "Calculate suggested equity and profit splits for partnerships based on capital contributions, time commitments, and customizable weighting.",
+    "shortDescription": "Calculate partnership equity splits."
+  },
+  "business-expense": {
+    "name": "Business Expense Tracker Template",
+    "description": "Generate a formatted expense tracking template customized for your business type. Includes relevant expense categories and IRS mileage rates.",
+    "shortDescription": "Generate an expense tracking template."
+  },
+  "crypto-tax": {
+    "name": "Crypto Tax Calculator",
+    "description": "Calculate capital gains or losses on cryptocurrency trades. Estimates short-term vs long-term tax based on your holding period and tax bracket.",
+    "shortDescription": "Estimate crypto capital gains tax."
+  },
+  "dca-calculator": {
+    "name": "DCA Calculator",
+    "description": "Simulate a dollar-cost averaging strategy. See your average cost basis, total units acquired, and return based on regular periodic investments.",
+    "shortDescription": "Simulate dollar-cost averaging returns."
+  },
+  "position-size": {
+    "name": "Position Size Calculator",
+    "description": "Calculate the optimal position size based on your account size, risk tolerance, and stop loss distance. Essential for proper risk management.",
+    "shortDescription": "Calculate optimal trade position size."
+  },
+  "profit-loss": {
+    "name": "Profit & Loss Calculator",
+    "description": "Calculate your profit or loss on a trade including leverage and trading fees. See gross P&L, net P&L, and percentage return.",
+    "shortDescription": "Calculate trade profit/loss with fees."
+  },
+  "compound-interest": {
+    "name": "Compound Interest Calculator",
+    "description": "Project the growth of your investment with compound interest. Factor in initial principal, interest rate, compounding frequency, and monthly contributions.",
+    "shortDescription": "Project investment growth over time."
+  },
+  "margin-call": {
+    "name": "Margin Call Calculator",
+    "description": "Determine at what price your broker will issue a margin call. Input your equity, borrowed amount, and maintenance margin requirement.",
+    "shortDescription": "Calculate your margin call trigger price."
+  },
+  "breakeven-calc": {
+    "name": "Trade Breakeven Calculator",
+    "description": "Calculate the exact breakeven price for a trade accounting for round-trip trading fees and leverage. Know the minimum move needed to profit.",
+    "shortDescription": "Find your breakeven price after fees."
+  },
+  "risk-reward": {
+    "name": "Risk/Reward Calculator",
+    "description": "Analyze the risk-to-reward ratio of a trade. Input your entry, stop loss, and take profit to see if the trade is worth taking.",
+    "shortDescription": "Analyze trade risk-to-reward ratio."
+  },
+  "crypto-converter": {
+    "name": "Crypto Converter",
+    "description": "Convert between major cryptocurrencies using reference prices. See equivalent values across BTC, ETH, SOL, and other popular assets.",
+    "shortDescription": "Convert between crypto assets."
+  },
+  "loan-payment": {
+    "name": "Loan Payment Calculator",
+    "description": "Calculate monthly loan payments using standard amortization. See your monthly payment, total interest paid, and total cost of the loan.",
+    "shortDescription": "Calculate monthly loan payments."
+  },
+  "grant-budget": {
+    "name": "Grant Budget Calculator",
+    "description": "Allocate grant funds across budget categories like personnel, equipment, travel, and indirect costs. Track remaining funds and get warnings when allocations exceed the total grant amount.",
+    "shortDescription": "Allocate and track grant budget spending."
+  },
+  "grant-deadline": {
+    "name": "Grant Deadline Tracker",
+    "description": "Track grant application deadlines, reporting due dates, and milestones. See countdown timers, urgency badges, and a sorted timeline of all upcoming obligations.",
+    "shortDescription": "Track grant deadlines and reporting dates."
+  },
+  "grant-compliance": {
+    "name": "Grant Compliance Checklist",
+    "description": "Generate a compliance checklist based on your grant type — federal, state, foundation, or corporate. Covers reporting, audits, procurement, matching funds, and record-keeping requirements.",
+    "shortDescription": "Compliance checklist by grant type."
+  },
+  "vesting-schedule": {
+    "name": "Vesting Schedule Calculator",
+    "description": "Calculate your equity vesting timeline based on total shares, vesting period, cliff, and frequency. See a detailed table of vested shares per period with cumulative totals.",
+    "shortDescription": "Calculate equity vesting timelines."
+  },
+  "stock-option-tax": {
+    "name": "Stock Option Tax Calculator",
+    "description": "Estimate taxes on stock option exercises for ISOs and NSOs. Calculates ordinary income tax, capital gains tax, and AMT exposure based on your holding period and tax bracket.",
+    "shortDescription": "Estimate taxes on stock option exercises."
+  },
+  "equity-dilution": {
+    "name": "Equity Dilution Calculator",
+    "description": "Calculate how funding rounds and option pool expansions affect your ownership percentage. See pre- and post-dilution ownership side by side with the total dilution impact.",
+    "shortDescription": "Calculate equity dilution from funding rounds."
+  },
+  "solar-roi": {
+    "name": "Solar Panel ROI Calculator",
+    "description": "Calculate the return on investment for solar panel installation. Input system cost, energy production, electricity rate, and incentives to see payback period, 25-year savings, and ROI percentage.",
+    "shortDescription": "Calculate solar panel payback period and ROI."
+  },
+  "solar-incentive": {
+    "name": "Solar Incentive & Tax Credit Estimator",
+    "description": "Estimate federal and state solar incentives including the 30% Investment Tax Credit (ITC), state rebates, and SREC values. See your net cost after all available incentives.",
+    "shortDescription": "Estimate solar tax credits and state rebates."
+  },
+  "energy-savings": {
+    "name": "Energy Savings Calculator",
+    "description": "Calculate how much you can save on electricity by going solar. Input your current bill, solar coverage percentage, and system cost to see monthly, annual, and lifetime savings.",
+    "shortDescription": "Calculate electricity savings from solar power."
+  },
+  "carbon-footprint": {
+    "name": "Carbon Footprint Offset Calculator",
+    "description": "Calculate the CO₂ emissions you can avoid by switching to renewable energy. See equivalents in trees planted and driving miles offset based on your energy source and usage.",
+    "shortDescription": "Calculate CO₂ savings from switching to renewables."
+  },
+  "green-lease": {
+    "name": "Green Lease Clause Checker",
+    "description": "Evaluate your commercial lease for green provisions. Check which sustainability clauses are present and get a score with recommendations for missing essential provisions.",
+    "shortDescription": "Check green clauses in commercial leases."
+  },
+  "ev-vs-gas": {
+    "name": "EV vs Gas Cost Comparison",
+    "description": "Compare the annual fuel costs of driving an electric vehicle versus a gas vehicle. See side-by-side costs, annual savings, and 10-year projected savings.",
+    "shortDescription": "Compare EV and gas vehicle fuel costs."
+  },
+  "home-energy-audit": {
+    "name": "Home Energy Audit Checklist",
+    "description": "Generate a prioritized checklist of energy improvements for your home. Select your home type and age to see applicable upgrades with estimated savings ranges.",
+    "shortDescription": "Get a personalized home energy improvement checklist."
+  },
+  "ppa-calculator": {
+    "name": "Power Purchase Agreement Calculator",
+    "description": "Compare the total cost of a Power Purchase Agreement (PPA) versus utility electricity over the contract term. See year-by-year cost breakdowns including rate escalations.",
+    "shortDescription": "Compare PPA costs vs utility electricity."
+  },
+  "income-tax": {
+    "name": "Income Tax Estimator",
+    "description": "Estimate your federal income tax based on filing status, gross income, and deductions. See a bracket-by-bracket breakdown, effective tax rate, and take-home pay.",
+    "shortDescription": "Estimate federal income tax by bracket."
+  },
+  "auto-loan": {
+    "name": "Auto Loan Calculator",
+    "description": "Calculate your monthly auto loan payment including down payment and trade-in value. See total interest paid and the true cost of your vehicle purchase.",
+    "shortDescription": "Calculate monthly car loan payments."
+  },
+  "debt-payoff": {
+    "name": "Debt Payoff Calculator",
+    "description": "See how long it takes to pay off debt with minimum payments vs extra payments. Compare total interest paid and time saved by paying more each month.",
+    "shortDescription": "Calculate debt payoff time and interest savings."
+  },
+  "net-worth": {
+    "name": "Net Worth Calculator",
+    "description": "Calculate your net worth by listing your assets and liabilities. Track cash, investments, property, and debts to see your overall financial position.",
+    "shortDescription": "Calculate total assets minus liabilities."
+  },
+  "paycheck-calc": {
+    "name": "Paycheck Calculator",
+    "description": "Estimate your take-home pay per paycheck. Enter salary or hourly rate, filing status, and pay frequency to see federal tax, Social Security, and Medicare withholdings.",
+    "shortDescription": "Estimate take-home pay per paycheck."
+  },
+  "settlement-estimator": {
+    "name": "Settlement Value Estimator",
+    "description": "Estimate your personal injury or auto accident settlement value. Enter medical bills, lost wages, and injury severity to get a range based on the multiplier method.",
+    "shortDescription": "Estimate PI/auto accident settlement ranges."
+  },
+  "insurance-quote-comparison": {
+    "name": "Insurance Quote Comparison Tool",
+    "description": "Compare auto, home, and life insurance quotes side by side. Enter quotes from multiple companies and see which offers the best value.",
+    "shortDescription": "Compare insurance quotes side by side."
+  },
+  "accident-damage": {
+    "name": "Accident Damage Calculator",
+    "description": "Calculate the total damages from an accident including medical bills, property damage, lost wages, and pain and suffering. See a complete breakdown.",
+    "shortDescription": "Calculate total accident damages."
+  },
+  "attorney-fee": {
+    "name": "Attorney Fee Calculator",
+    "description": "Calculate attorney fees for contingency and hourly arrangements. See how much your lawyer will earn and what your take-home settlement will be.",
+    "shortDescription": "Calculate contingency & hourly legal fees."
+  },
+  "insurance-premium": {
+    "name": "Insurance Premium Estimator",
+    "description": "Estimate monthly insurance premiums for auto, home, renters, and life insurance based on your age, credit, location, and coverage level.",
+    "shortDescription": "Estimate monthly insurance premiums."
+  },
+  "force-majeure-checker": {
+    "name": "Force Majeure Clause Checker",
+    "description": "Paste your contract and instantly see whether the force majeure clause is strong, narrow, or missing. Detects covered events, catch-all language, notice requirements, and duty-to-mitigate clauses.",
+    "shortDescription": "Detect and rate force majeure clauses."
+  },
+  "auto-renewal-detector": {
+    "name": "Auto-Renewal Clause Detector",
+    "description": "Find evergreen and auto-renewal language in any contract. Surfaces the notice window so you don't miss a cancellation deadline.",
+    "shortDescription": "Detect auto-renewal traps in contracts."
+  },
+  "governing-law-id": {
+    "name": "Governing Law Identifier",
+    "description": "Extract governing law, venue, arbitration, jury-trial waivers and class-action waivers from any contract in seconds.",
+    "shortDescription": "Extract jurisdiction & arbitration clauses."
+  },
+  "plain-english-rewriter": {
+    "name": "Plain English Rewriter",
+    "description": "Convert legalese into plain English. Replaces archaic legal phrases (heretofore, pursuant to, notwithstanding) with clear modern equivalents.",
+    "shortDescription": "Rewrite legalese into plain English."
+  },
+  "chargeback-checker": {
+    "name": "Chargeback Eligibility Checker",
+    "description": "Answer a few questions to see whether you're likely eligible for a credit-card chargeback under the Fair Credit Billing Act.",
+    "shortDescription": "Check if you can win a chargeback."
+  },
+  "lemon-law-qualifier": {
+    "name": "Lemon Law Qualifier",
+    "description": "Check whether your defective vehicle likely qualifies under your state's lemon law based on repair attempts, days out of service, age, and mileage.",
+    "shortDescription": "Check if your vehicle qualifies as a lemon."
+  },
+  "subscription-cancel-letter": {
+    "name": "Subscription Cancellation Letter",
+    "description": "Generate a written cancellation letter for any subscription (gym, SaaS, magazine) that requires written notice.",
+    "shortDescription": "Generate a written cancellation letter."
+  },
+  "data-breach-checklist": {
+    "name": "Data Breach Response Checklist",
+    "description": "Step-by-step checklist for what to do after receiving a data-breach notification — from changing passwords to filing IRS Form 14039.",
+    "shortDescription": "Steps to take after a data breach."
+  },
+  "final-paycheck-lookup": {
+    "name": "Final Paycheck Deadline Lookup",
+    "description": "When is your last paycheck legally due? Lookup by state for both termination and resignation scenarios.",
+    "shortDescription": "When your final paycheck is legally due."
+  },
+  "unemployment-estimator": {
+    "name": "Unemployment Benefits Estimator",
+    "description": "Estimate your weekly unemployment benefit based on your prior wages and state cap.",
+    "shortDescription": "Estimate weekly unemployment benefits."
+  },
+  "nda-vs-noncompete": {
+    "name": "NDA vs. Non-Compete Comparator",
+    "description": "Side-by-side comparison of NDAs and non-competes — purpose, scope, duration, enforceability, and red flags.",
+    "shortDescription": "Compare NDAs and non-competes side by side."
+  },
+  "discrimination-checklist": {
+    "name": "Workplace Discrimination Claim Checklist",
+    "description": "Prepare to file an EEOC charge — documentation, comparator analysis, internal reporting, and retaliation tracking.",
+    "shortDescription": "Prepare an EEOC discrimination claim."
+  },
+  "eviction-notice-lookup": {
+    "name": "Eviction Notice Period Lookup",
+    "description": "Look up the legally required eviction notice period by state and reason — non-payment, lease violation, or no-fault termination.",
+    "shortDescription": "Eviction notice periods by state."
+  },
+  "habitability-tracker": {
+    "name": "Habitability Repair Request Generator",
+    "description": "Generate a written repair request invoking the implied warranty of habitability — the foundation for rent withholding or repair-and-deduct remedies.",
+    "shortDescription": "Generate a written habitability repair request."
+  },
+  "mortgage-affordability": {
+    "name": "Mortgage Affordability Calculator",
+    "description": "Calculate your maximum home price using the 36% debt-to-income rule, accounting for taxes, insurance, and existing debts.",
+    "shortDescription": "Calculate your max affordable home price."
+  },
+  "operating-agreement-llc": {
+    "name": "LLC Operating Agreement Generator",
+    "description": "Generate a basic LLC operating agreement covering members, capital, profits, management, and dissolution.",
+    "shortDescription": "Generate a basic LLC operating agreement."
+  },
+  "founders-agreement": {
+    "name": "Founders Agreement Generator",
+    "description": "Draft a founders agreement covering equity splits, vesting (1-year cliff, 4-year), IP assignment, roles, and departure.",
+    "shortDescription": "Draft a founders agreement with vesting & IP."
+  },
+  "dmca-generator": {
+    "name": "DMCA Takedown Notice Generator",
+    "description": "Generate a DMCA takedown notice that meets the 17 U.S.C. § 512(c) requirements for removing infringing content.",
+    "shortDescription": "Generate a DMCA takedown notice."
+  },
+  "emergency-fund": {
+    "name": "Emergency Fund Calculator",
+    "description": "Calculate how much you need in an emergency fund and how long it will take to reach your goal at your current savings rate.",
+    "shortDescription": "Calculate your emergency fund goal."
+  },
+  "tip-splitter": {
+    "name": "Tip & Service Charge Splitter",
+    "description": "Split a restaurant bill across multiple people including tax and tip — with handling for mandatory service charges (which are not legally tips).",
+    "shortDescription": "Split bills with tax, tip, and service charges."
+  },
+  "net-metering": {
+    "name": "Net Metering Savings Estimator",
+    "description": "Estimate annual savings from solar net metering — production offset plus credits for excess energy exported to the grid.",
+    "shortDescription": "Estimate solar net-metering savings."
+  },
+  "child-support": {
+    "name": "Child Support Calculator",
+    "description": "Estimate monthly child support obligations using your state's income shares or percentage-of-income guideline. Supports California, New York, Texas, Florida, Illinois, and a generic fallback.",
+    "shortDescription": "Estimate monthly child support by state."
+  },
+  "alimony-calc": {
+    "name": "Alimony / Spousal Support Calculator",
+    "description": "Estimate monthly alimony (spousal support / maintenance) and likely duration based on incomes, length of marriage, and state guidelines.",
+    "shortDescription": "Estimate alimony amount and duration."
+  },
+  "divorce-cost": {
+    "name": "Divorce Cost Estimator",
+    "description": "Estimate the total cost of a divorce including filing fees, attorney hours, mediation, and court costs — for both contested and uncontested cases.",
+    "shortDescription": "Estimate the total cost of a divorce."
+  },
+  "sol-deadline": {
+    "name": "Statute of Limitations Deadline Calculator",
+    "description": "Enter the date your claim arose and your state — get the exact filing deadline and how many days you have left to sue. Covers contracts, personal injury, fraud, and property damage.",
+    "shortDescription": "Find your exact filing deadline by date."
+  },
+  "wrongful-term-value": {
+    "name": "Wrongful Termination Case Value Estimator",
+    "description": "Estimate the potential value of a wrongful termination claim including lost wages, lost benefits, emotional distress damages, and attorney fees.",
+    "shortDescription": "Estimate your wrongful termination case value."
+  },
+  "severance-fairness": {
+    "name": "Severance Offer Fairness Score",
+    "description": "Score your severance offer 0–100 against industry benchmarks for your role, tenure, and salary level. Get a fairness rating and negotiation guidance.",
+    "shortDescription": "Score your severance offer against benchmarks."
+  },
+  "lease-break-penalty": {
+    "name": "Lease Break / Early Termination Penalty Calculator",
+    "description": "Estimate the financial penalty for breaking your lease early — including months remaining, mitigation by your landlord, and state-specific caps on liability.",
+    "shortDescription": "Estimate the cost of breaking your lease."
+  }
+}

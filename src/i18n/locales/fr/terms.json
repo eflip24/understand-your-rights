@@ -1,1 +1,512 @@
-{}
+{
+  "indemnification": {
+    "term": "Indemnisation",
+    "definition": "Une obligation contractuelle par laquelle une partie accepte de dédommager une autre pour des pertes ou des dommages.",
+    "example": "\"L'entrepreneur indemnisera le client contre toutes les réclamations découlant du travail de l'entrepreneur.\""
+  },
+  "arbitration": {
+    "term": "Arbitrage",
+    "definition": "Une méthode de résolution des litiges en dehors des tribunaux, où un arbitre indépendant rend une décision contraignante.",
+    "example": "\"Tout litige sera résolu par arbitrage exécutoire à New York.\""
+  },
+  "force-majeure": {
+    "term": "Force Majeure",
+    "definition": "Une clause qui libère les deux parties de leurs obligations lorsqu'un événement extraordinaire échappant à leur contrôle se produit (par exemple, catastrophe naturelle, guerre).",
+    "example": "\"Aucune des parties ne sera tenue responsable de l'inexécution due à des événements de force majeure.\""
+  },
+  "liability": {
+    "term": "Responsabilité",
+    "definition": "Responsabilité légale pour ses actions ou omissions. Peut être limitée ou illimitée selon le contrat.",
+    "example": "\"La responsabilité totale de la société ne dépassera pas le montant payé en vertu du présent accord.\""
+  },
+  "non-compete": {
+    "term": "Non-concurrence",
+    "definition": "Une clause empêchant une partie de se livrer à des activités concurrentes pendant une période et une zone géographique spécifiées après la fin de l'accord.",
+    "example": "\"L'employé s'engage à ne pas travailler pour une entreprise concurrente dans un rayon de 50 miles pendant 12 mois.\""
+  },
+  "non-disclosure": {
+    "term": "Non-divulgation",
+    "definition": "Un accord pour garder certaines informations confidentielles et ne pas les partager avec des tiers.",
+    "example": "\"Toutes les informations propriétaires partagées pendant l'engagement resteront confidentielles.\""
+  },
+  "severability": {
+    "term": "Divisibilité",
+    "definition": "Une clause stipulant que si une partie du contrat est jugée invalide, le reste demeure exécutoire.",
+    "example": "\"Si une disposition est jugée invalide, les dispositions restantes resteront pleinement en vigueur.\""
+  },
+  "waiver": {
+    "term": "Renonciation",
+    "definition": "Le renoncement volontaire à un droit connu. Une renonciation à une violation ne vaut pas renonciation aux violations futures.",
+    "example": "\"Le fait de ne pas faire appliquer une disposition ne constitue pas une renonciation à l'application future.\""
+  },
+  "breach": {
+    "term": "Violation",
+    "definition": "Une violation d'une obligation contractuelle. Peut être substantielle (significative) ou mineure.",
+    "example": "\"Une violation substantielle du présent accord donnera le droit à la partie non fautive de résilier.\" "
+  },
+  "consideration": {
+    "term": "Contrepartie",
+    "definition": "Quelque chose de valeur échangé entre les parties pour rendre un contrat juridiquement contraignant (argent, services, biens).",
+    "example": "\"En contrepartie de 10 000 $, le consultant accepte de fournir des services.\""
+  },
+  "jurisdiction": {
+    "term": "Juridiction",
+    "definition": "L'autorité d'un tribunal pour instruire et juger une affaire. Les contrats spécifient souvent la juridiction qui régit.",
+    "example": "\"Le présent accord sera régi par les lois de l'État du Delaware.\""
+  },
+  "statute-of-limitations": {
+    "term": "Délai de prescription",
+    "definition": "La période maximale après un événement pendant laquelle des poursuites judiciaires peuvent être engagées.",
+    "example": "Périodes courantes : préjudice corporel (2-3 ans), rupture de contrat (4-6 ans), fraude (3-6 ans)."
+  },
+  "due-diligence": {
+    "term": "Diligence raisonnable",
+    "definition": "L'enquête ou l'exercice de soins qu'une personne ou une entreprise raisonnable est censée prendre avant de conclure un accord.",
+    "example": "\"L'acheteur disposera de 30 jours pour effectuer une diligence raisonnable sur la propriété.\""
+  },
+  "fiduciary": {
+    "term": "Fiduciaire",
+    "definition": "Une personne ou une organisation qui agit au nom d'une autre, plaçant les intérêts de l'autre au-dessus des siens. Comporte un niveau de diligence élevé.",
+    "example": "\"Le fiduciaire a une obligation fiduciaire d'agir dans le meilleur intérêt des bénéficiaires.\""
+  },
+  "negligence": {
+    "term": "Négligence",
+    "definition": "Le manquement à exercer le niveau de diligence qu'une personne raisonnable exercerait dans des circonstances similaires, entraînant un préjudice.",
+    "example": "\"Le demandeur doit prouver le devoir, le manquement, la causalité et les dommages pour établir la négligence.\""
+  },
+  "tort": {
+    "term": "Délit",
+    "definition": "Un acte illicite (autre qu'une rupture de contrat) qui entraîne des blessures ou un préjudice et conduit à une responsabilité civile.",
+    "example": "Les délits courants incluent la négligence, la diffamation et l'intrusion."
+  },
+  "plaintiff": {
+    "term": "Demandeur",
+    "definition": "La personne ou la partie qui intente une action en justice en déposant une plainte devant un tribunal.",
+    "example": "\"Le demandeur allègue que le défendeur a violé le contrat.\""
+  },
+  "defendant": {
+    "term": "Défendeur",
+    "definition": "La personne ou la partie poursuivie ou accusée dans une procédure judiciaire.",
+    "example": "\"Le défendeur nie toutes les allégations dans la plainte.\""
+  },
+  "deposition": {
+    "term": "Déposition",
+    "definition": "Un témoignage sous serment, hors cour, donné par un témoin, utilisé pour recueillir des informations avant le procès.",
+    "example": "\"La déposition du témoin sera prise le 15 mars au bureau de l'avocat.\""
+  },
+  "escrow": {
+    "term": "Séquestre",
+    "definition": "Un arrangement financier où un tiers détient des fonds jusqu'à ce que des conditions spécifiées soient remplies.",
+    "example": "\"L'acompte de l'acheteur sera détenu en séquestre jusqu'à la clôture.\""
+  },
+  "lien": {
+    "term": "Privilège",
+    "definition": "Un droit légal ou un intérêt qu'un créancier a sur la propriété du débiteur, tant que la dette n'est pas acquittée.",
+    "example": "\"L'entrepreneur a déposé un privilège de mécanicien sur la propriété pour travaux impayés.\""
+  },
+  "power-of-attorney": {
+    "term": "Procuration",
+    "definition": "Un document juridique donnant à une personne l'autorité d'agir au nom d'une autre en matière juridique ou financière.",
+    "example": "\"Elle a accordé à sa fille une procuration pour gérer ses finances.\""
+  },
+  "affidavit": {
+    "term": "Affidavit",
+    "definition": "Une déclaration écrite confirmée par serment ou affirmation, utilisée comme preuve devant un tribunal.",
+    "example": "\"Le témoin a soumis un affidavit confirmant la chronologie des événements.\""
+  },
+  "addendum": {
+    "term": "Addendum",
+    "definition": "Un ajout ou un supplément à un document ou un contrat existant qui ajoute de nouvelles dispositions ou modifie les dispositions existantes.",
+    "example": "\"Les parties ont convenu d'un addendum prolongeant le contrat de six mois.\""
+  },
+  "amendment": {
+    "term": "Amendement",
+    "definition": "Un changement ou une modification formelle à une loi, un contrat ou un document existant.",
+    "example": "\"Cet amendement remplace la section 5.2 de l'accord original.\""
+  },
+  "assignee": {
+    "term": "Cessionnaire",
+    "definition": "Personne à qui un droit ou une propriété est légalement transféré.",
+    "example": "\"Le cessionnaire assumera toutes les obligations découlant du contrat original.\""
+  },
+  "boilerplate": {
+    "term": "Clauses types",
+    "definition": "Clauses standard, souvent non négociables, couramment trouvées dans les contrats (par exemple, divisibilité, loi applicable, intégralité de l'accord).",
+    "example": "La section des clauses types apparaît généralement à la fin d'un contrat."
+  },
+  "cease-and-desist": {
+    "term": "Cesser et s'abstenir",
+    "definition": "Une demande formelle d'arrêter une activité (par exemple, contrefaçon, harcèlement) sous peine de poursuites judiciaires.",
+    "example": "\"Notre client exige que vous cessiez et vous absteniez immédiatement de toute utilisation de la marque.\""
+  },
+  "covenant": {
+    "term": "Engagement",
+    "definition": "Une promesse ou un accord formel, souvent trouvé dans les contrats de propriété ou d'emploi.",
+    "example": "\"L'employé s'engage à ne pas solliciter de clients pendant 12 mois.\""
+  },
+  "damages": {
+    "term": "Dommages-intérêts",
+    "definition": "Argent accordé par un tribunal en compensation d'une perte ou d'un préjudice. Peut être compensatoire, punitif ou nominal.",
+    "example": "\"Le jury a accordé 50 000 $ de dommages-intérêts compensatoires.\""
+  },
+  "default": {
+    "term": "Défaut",
+    "definition": "Manquement à une obligation légale, notamment au paiement requis.",
+    "example": "\"Si l'emprunteur fait défaut, le prêteur peut exiger le remboursement anticipé du solde total du prêt.\""
+  },
+  "discovery": {
+    "term": "Discovery (Communication de documents)",
+    "definition": "Phase préalable au procès où les parties échangent des informations et des preuves pertinentes.",
+    "example": "\"Pendant la phase de 'discovery', l'entreprise a été tenue de produire tous les e-mails pertinents.\""
+  },
+  "encumbrance": {
+    "term": "Charge",
+    "definition": "Une créance ou une responsabilité attachée à un bien qui peut affecter sa transférabilité (par exemple, hypothèque, privilège, servitude).",
+    "example": "\"La recherche de titres n'a révélé aucune charge sur la propriété.\""
+  },
+  "estoppel": {
+    "term": "Estoppel (Préclusion)",
+    "definition": "Un principe juridique empêchant quelqu'un de contester ce qui est contraire à ses déclarations ou actions antérieures.",
+    "example": "\"La doctrine de l'estoppel empêche le propriétaire de nier le renouvellement du bail.\""
+  },
+  "good-faith": {
+    "term": "Bonne foi",
+    "definition": "Honnêteté et équité dans les transactions. La plupart des contrats incluent un devoir implicite de bonne foi et de loyauté.",
+    "example": "\"Les deux parties conviennent d'exécuter leurs obligations de bonne foi.\""
+  },
+  "guarantor": {
+    "term": "Garant",
+    "definition": "Personne qui promet de payer une dette ou de remplir une obligation si la partie principale n'y parvient pas.",
+    "example": "\"Le parent s'est porté garant pour le bail de l'appartement de l'étudiant.\""
+  },
+  "injunction": {
+    "term": "Injonction",
+    "definition": "Une ordonnance du tribunal exigeant de quelqu'un de faire ou de cesser de faire une action spécifique.",
+    "example": "\"Le tribunal a émis une injonction temporaire empêchant la vente de la propriété.\""
+  },
+  "intellectual-property": {
+    "term": "Propriété Intellectuelle",
+    "definition": "Créations de l'esprit (inventions, designs, noms de marque, œuvres artistiques) protégées par la loi via les brevets, les droits d'auteur et les marques de commerce.",
+    "example": "\"Toute propriété intellectuelle créée pendant l'emploi appartient à l'entreprise.\""
+  },
+  "joint-and-several-liability": {
+    "term": "Responsabilité solidaire et conjointe",
+    "definition": "Une doctrine juridique selon laquelle chaque partie est indépendamment responsable de l'étendue totale des obligations.",
+    "example": "\"Les partenaires sont solidairement et conjointement responsables des dettes de l'entreprise.\""
+  },
+  "material-breach": {
+    "term": "Manquement substantiel",
+    "definition": "Une violation significative d'un contrat qui permet à l'autre partie de résilier et de demander des dommages-intérêts.",
+    "example": "\"Le défaut de livrer les marchandises dans les 30 jours constitue un manquement substantiel.\""
+  },
+  "mediation": {
+    "term": "Médiation",
+    "definition": "Une forme de résolution des litiges où un tiers neutre aide les parties à parvenir à un accord volontaire.",
+    "example": "\"Avant l'arbitrage, les parties conviennent de tenter une médiation de bonne foi.\""
+  },
+  "mutual-assent": {
+    "term": "Consentement mutuel",
+    "definition": "Accord des deux parties sur les termes d'un contrat, généralement démontré par une offre et une acceptation.",
+    "example": "\"Un contrat nécessite un consentement mutuel – une rencontre des volontés sur les termes essentiels.\""
+  },
+  "notarization": {
+    "term": "Notarisation",
+    "definition": "Le processus officiel par lequel un notaire public vérifie l'identité des signataires et atteste de la signature d'un document.",
+    "example": "\"L'acte doit être notarié avant de pouvoir être enregistré.\""
+  },
+  "precedent": {
+    "term": "Précédent",
+    "definition": "Une décision judiciaire antérieure qui sert de règle faisant autorité dans des affaires similaires futures.",
+    "example": "\"La décision de la Cour suprême a créé un précédent pour toutes les affaires similaires à l'échelle nationale.\""
+  },
+  "pro-bono": {
+    "term": "Pro Bono",
+    "definition": "Travail juridique effectué volontairement et sans rémunération, généralement pour des personnes qui n'ont pas les moyens de se faire représenter.",
+    "example": "\"Le cabinet d'avocats prend en charge 50 dossiers pro bono par an.\""
+  },
+  "quitclaim-deed": {
+    "term": "Acte de renonciation",
+    "definition": "Un acte qui transfère tout intérêt que le cédant a dans une propriété sans garanties quant au titre de propriété.",
+    "example": "\"Elle a signé un 'quitclaim deed' transférant son intérêt dans la maison à son ex-conjoint.\""
+  },
+  "recourse": {
+    "term": "Recours",
+    "definition": "Le droit légal d'exiger une compensation ou l'application d'un droit.",
+    "example": "\"L'acheteur n'a aucun recours si le produit est vendu 'en l'état'.\""
+  },
+  "subpoena": {
+    "term": "Citation à comparaître",
+    "definition": "Un document juridique ordonnant à quelqu'un de se présenter au tribunal ou de produire des documents.",
+    "example": "\"Le témoin a reçu une citation à comparaître pour témoigner au procès.\""
+  },
+  "termination": {
+    "term": "Résiliation",
+    "definition": "La fin d'un contrat, soit par l'exécution des obligations, un accord mutuel ou une violation.",
+    "example": "\"Chaque partie peut résilier cet accord avec un préavis écrit de 30 jours.\""
+  },
+  "tort-reform": {
+    "term": "Réforme de la responsabilité délictuelle",
+    "definition": "Modifications du système de justice civile visant à réduire la capacité de déposer des poursuites en responsabilité délictuelle ou à limiter les dommages-intérêts.",
+    "example": "\"L'État a adopté une législation de réforme de la responsabilité délictuelle plafonnant les dommages-intérêts pour faute professionnelle médicale.\""
+  },
+  "unconscionable": {
+    "term": "Déraisonnable",
+    "definition": "Un contrat ou une clause si inéquitable ou déséquilibrée qu'un tribunal pourrait refuser de l'appliquer.",
+    "example": "\"Le tribunal a jugé le taux d'intérêt de 500 % déraisonnable.\""
+  },
+  "venue": {
+    "term": "Lieu de l'action",
+    "definition": "L'emplacement géographique où une affaire juridique est entendue. Différent de la compétence.",
+    "example": "\"Le contrat spécifie le lieu de l'action dans le comté de Los Angeles, Californie.\""
+  },
+  "void-voidable": {
+    "term": "Nul / Annulable",
+    "definition": "Un contrat nul n'a aucun effet juridique dès le départ. Un contrat annulable est valide mais peut être résilié par une partie.",
+    "example": "\"Les contrats signés sous la contrainte sont annulables à l'option de la partie sous pression.\""
+  },
+  "warranty": {
+    "term": "Garantie",
+    "definition": "Une assurance ou une promesse concernant la qualité, l'état ou la performance d'un produit ou service.",
+    "example": "\"Le vendeur garantit que les marchandises sont exemptes de défauts pendant 12 mois.\""
+  },
+  "writ": {
+    "term": "Ordonnance",
+    "definition": "Un ordre écrit formel émis par un tribunal, commandant à quelqu'un de faire ou de cesser de faire quelque chose.",
+    "example": "\"Le tribunal a émis une ordonnance d'exécution pour faire appliquer le jugement.\""
+  },
+  "zoning": {
+    "term": "Zonage",
+    "definition": "Réglementations gouvernementales contrôlant la manière dont les terrains dans des zones spécifiques peuvent être utilisés (résidentiel, commercial, industriel).",
+    "example": "\"La propriété est zonée pour un usage commercial uniquement.\""
+  },
+  "accord-and-satisfaction": {
+    "term": "Accord et Satisfaction",
+    "definition": "Un accord pour accepter quelque chose de différent (généralement moins) que ce qui était initialement dû, éteignant l'obligation originale.",
+    "example": "\"Les parties ont conclu un accord et une satisfaction, réglant la dette de 10 000 $ pour 7 000 $.\""
+  },
+  "bailment": {
+    "term": "Dépôt (baillement)",
+    "definition": "Le transfert temporaire de biens personnels à une autre personne dans un but précis, la propriété devant être restituée.",
+    "example": "\"Laisser votre voiture à un voiturier crée une relation de dépôt.\""
+  },
+  "bona-fide": {
+    "term": "De bonne foi",
+    "definition": "En toute bonne foi ; authentique ; sans fraude ni tromperie.",
+    "example": "\"L'acheteur a fait une offre de bonne foi sur la propriété.\""
+  },
+  "chattel": {
+    "term": "Bien meuble",
+    "definition": "Propriété personnelle qui est mobile (par opposition à la propriété immobilière/biens immobiliers).",
+    "example": "\"Le bail couvre le bâtiment mais pas les biens meubles qu'il contient.\""
+  },
+  "collateral": {
+    "term": "Garantie",
+    "definition": "Bien mis en gage en garantie d'un prêt. En cas de défaut de paiement de l'emprunteur, le prêteur peut saisir la garantie.",
+    "example": "\"L'emprunteur a offert sa maison comme garantie pour le prêt commercial.\""
+  },
+  "contingency": {
+    "term": "Condition suspensive",
+    "definition": "Une condition qui doit être remplie avant qu'un contrat ne devienne contraignant.",
+    "example": "\"La vente est subordonnée à l'obtention d'un financement par l'acheteur dans les 30 jours.\""
+  },
+  "deed": {
+    "term": "Acte de propriété",
+    "definition": "Un document juridique qui transfère la propriété d'un bien immobilier d'une partie à l'autre.",
+    "example": "\"L'acte de propriété a été enregistré au bureau d'enregistrement du comté après la clôture.\""
+  },
+  "duress": {
+    "term": "Contrainte",
+    "definition": "Menaces, violence ou pression utilisées pour forcer quelqu'un à conclure un accord. Les contrats signés sous contrainte sont annulables.",
+    "example": "\"Il a affirmé que le contrat avait été signé sous contrainte et devrait être annulé.\""
+  },
+  "easement": {
+    "term": "Servitude",
+    "definition": "Un droit d'utiliser le terrain d'une autre personne dans un but spécifique (par exemple, un chemin ou une ligne de service public).",
+    "example": "\"La compagnie d'électricité a une servitude pour entretenir les lignes électriques sur la propriété.\""
+  },
+  "ex-parte": {
+    "term": "Ex Parte",
+    "definition": "Une procédure juridique ou une communication impliquant une seule partie, sans la présence de l'autre partie.",
+    "example": "\"Le juge a accordé une ordonnance restrictive ex parte basée sur la requête d'urgence du plaignant.\""
+  },
+  "felony": {
+    "term": "Crime",
+    "definition": "Une infraction pénale grave généralement passible d'une peine d'emprisonnement de plus d'un an.",
+    "example": "\"Le vol qualifié est classé comme un crime dans la plupart des juridictions.\""
+  },
+  "garnishment": {
+    "term": "Saisie-arrêt",
+    "definition": "Une procédure ordonnée par un tribunal par laquelle de l'argent est prélevé sur le salaire ou le compte bancaire d'un débiteur pour payer une dette.",
+    "example": "\"Le créancier a obtenu une ordonnance de saisie-arrêt sur salaire pour 25 % des revenus du débiteur.\""
+  },
+  "habeas-corpus": {
+    "term": "Habeas Corpus",
+    "definition": "Une action en justice exigeant qu'une personne en état d'arrestation soit présentée devant un juge pour déterminer si sa détention est légale.",
+    "example": "\"Le prisonnier a déposé un bref d'habeas corpus contestant sa détention.\""
+  },
+  "hold-harmless": {
+    "term": "Clause d'indemnisation",
+    "definition": "Une clause par laquelle une partie accepte de ne pas tenir l'autre partie responsable de certains risques ou responsabilités.",
+    "example": "\"Le locataire accepte de décharger le propriétaire de toute responsabilité en cas de réclamations résultant de l'utilisation par le locataire.\""
+  },
+  "in-camera": {
+    "term": "À huis clos (in camera)",
+    "definition": "Une procédure juridique tenue en privé, dans le bureau du juge plutôt qu'en audience publique.",
+    "example": "\"Le juge a examiné les documents sensibles à huis clos.\""
+  },
+  "indemnity": {
+    "term": "Indemnité",
+    "definition": "Sécurité ou protection contre une perte ou une autre charge financière ; compensation pour dommages.",
+    "example": "\"La police d'assurance offre une indemnité contre les dommages matériels jusqu'à 500 000 $.\""
+  },
+  "liquidated-damages": {
+    "term": "Dommages-intérêts liquidés",
+    "definition": "Un montant de compensation prédéterminé spécifié dans un contrat à payer si une partie enfreint l'accord.",
+    "example": "\"Le contrat prévoit des dommages-intérêts liquidés de 500 $ par jour pour un retard de livraison.\""
+  },
+  "malfeasance": {
+    "term": "Malversation",
+    "definition": "Une conduite illégale ou une activité illicite, en particulier de la part d'un fonctionnaire public.",
+    "example": "\"Le maire a été accusé de malversation pour avoir détourné des fonds publics.\""
+  },
+  "misdemeanor": {
+    "term": "Délit",
+    "definition": "Une infraction pénale moins grave qu'un crime, généralement passible d'amendes ou d'un emprisonnement de moins d'un an.",
+    "example": "\"Le vol à l'étalage de moins de 500 $ est généralement classé comme un délit.\""
+  },
+  "novation": {
+    "term": "Novation",
+    "definition": "Le remplacement d'un contrat ou d'une obligation existant(e) par un nouveau, avec le consentement de toutes les parties.",
+    "example": "\"Lors de la vente de l'entreprise, les contrats ont été transférés par novation.\""
+  },
+  "perjury": {
+    "term": "Parjure",
+    "definition": "L'infraction pénale de mentir sous serment dans une procédure judiciaire ou un document sous serment.",
+    "example": "\"Le témoin a été accusé de parjure après avoir contredit sa déclaration sous serment.\""
+  },
+  "privity": {
+    "term": "Relative des contrats",
+    "definition": "Une relation contractuelle directe entre les parties. Généralement, seules les parties ayant une relative des contrats peuvent faire exécuter un contrat.",
+    "example": "\"Sans relative des contrats, le tiers ne peut pas intenter de poursuite en vertu de l'accord.\""
+  },
+  "remedy": {
+    "term": "Rémède",
+    "definition": "Le moyen par lequel un droit est appliqué ou une erreur corrigée. Il peut être monétaire (dommages et intérêts) ou équitable (injonction).",
+    "example": "\"Le tribunal peut accorder l'exécution spécifique comme remède si les dommages et intérêts sont insuffisants.\""
+  },
+  "rescission": {
+    "term": "Résiliation",
+    "definition": "L'annulation d'un contrat, ramenant les deux parties à leur position d'avant le contrat.",
+    "example": "\"L'acheteur a demandé la résiliation du contrat en raison de la fausse déclaration du vendeur.\""
+  },
+  "retainer": {
+    "term": "Provision",
+    "definition": "Des honoraires payés à l'avance à un avocat pour garantir ses services. Il peut s'agir d'un forfait ou d'un dépôt sur un compte fiduciaire.",
+    "example": "\"L'avocat a exigé une provision de 5 000 $ avant de commencer le travail sur l'affaire.\""
+  },
+  "standing": {
+    "term": "Intérêt à agir",
+    "definition": "Le droit légal d'intenter une action en justice. Une partie doit démontrer qu'elle a été directement affectée par la question.",
+    "example": "\"Le tribunal a classé l'affaire parce que le plaignant n'avait pas d'intérêt à agir.\""
+  },
+  "subrogation": {
+    "term": "Subrogation",
+    "definition": "Le droit d'une partie (généralement un assureur) de se substituer à une autre pour faire valoir une réclamation.",
+    "example": "\"Après avoir payé la réclamation, la compagnie d'assurance a exercé la subrogation contre le conducteur fautif.\""
+  },
+  "surety": {
+    "term": "Caution",
+    "definition": "Une personne ou une entreprise qui assume la responsabilité de la dette ou de l'obligation d'une autre.",
+    "example": "\"Le cautionnement garantit que l'entrepreneur achèvera le projet.\""
+  },
+  "title": {
+    "term": "Titre",
+    "definition": "La propriété légale d'un bien, ou le document prouvant cette propriété.",
+    "example": "\"La recherche de titre a confirmé la propriété claire du bien.\""
+  },
+  "unjust-enrichment": {
+    "term": "Enrichissement sans cause",
+    "definition": "Un principe juridique empêchant quiconque de bénéficier injustement des dépenses d'autrui sans compensation.",
+    "example": "\"Le tribunal a ordonné une restitution fondée sur l'enrichissement sans cause.\""
+  },
+  "usury": {
+    "term": "Usure",
+    "definition": "Le fait de facturer un taux d'intérêt illégalement élevé ou excessif sur un prêt.",
+    "example": "\"Le prêt a été annulé parce que le TAEG de 300 % violait les lois sur l'usure de l'État.\""
+  },
+  "adhesion-contract": {
+    "term": "Contrat d'adhésion",
+    "definition": "Un contrat standardisé proposé tel quel par une partie ayant un pouvoir de négociation supérieur.",
+    "example": "\"Le forfait de téléphonie mobile est un contrat d'adhésion – vous ne pouvez pas négocier les conditions.\""
+  },
+  "anti-assignment-clause": {
+    "term": "Clause anti-cession",
+    "definition": "Une clause qui interdit ou restreint à une partie de transférer ses droits ou obligations en vertu d'un contrat.",
+    "example": "\"Le présent Accord ne peut être cédé sans consentement écrit préalable.\""
+  },
+  "bilateral-contract": {
+    "term": "Contrat synallagmatique",
+    "definition": "Un contrat dans lequel les deux parties échangent des promesses mutuelles d'exécution.",
+    "example": "\"Un contrat synallagmatique est formé lorsque l'acheteur promet de payer et le vendeur promet de livrer.\""
+  },
+  "capacity": {
+    "term": "Capacité",
+    "definition": "La capacité juridique de conclure un contrat contraignant. Les mineurs et les personnes mentalement incapables peuvent ne pas avoir cette capacité.",
+    "example": "\"Le contrat a été annulé parce que le signataire n'avait pas la capacité juridique.\""
+  },
+  "class-action": {
+    "term": "Action collective",
+    "definition": "Un procès intenté par un ou plusieurs plaignants au nom d'un groupe plus large de personnes ayant des réclamations similaires.",
+    "example": "\"Une action collective a été intentée au nom de tous les clients affectés par la violation de données.\""
+  },
+  "comparative-negligence": {
+    "term": "Négligence comparative",
+    "definition": "Une doctrine juridique qui répartit la faute entre les parties en fonction de leurs degrés respectifs de négligence.",
+    "example": "\"En vertu de la négligence comparative, les dommages du plaignant ont été réduits de 30 % pour sa propre faute.\""
+  },
+  "consequential-damages": {
+    "term": "Dommages indirects",
+    "definition": "Des dommages indirects résultant d'une rupture de contrat, au-delà de la perte directe.",
+    "example": "\"Les pertes de profits dues au retard de l'expédition ont été réclamées comme dommages indirects.\""
+  },
+  "constructive-notice": {
+    "term": "Notification implicite",
+    "definition": "Présomption légale qu'une personne a connaissance d'informations parce qu'elles sont publiquement disponibles ou dûment enregistrées.",
+    "example": "\"L'enregistrement de l'acte constitue une notification implicite de propriété au monde entier.\""
+  },
+  "counterpart": {
+    "term": "Homologue",
+    "definition": "Une copie duplicata d'un document juridique ; les contrats peuvent être signés en homologues, chacun étant traité comme un original.",
+    "example": "\"Le présent Accord peut être exécuté en homologues, chacun étant considéré comme un original.\""
+  },
+  "cross-default": {
+    "term": "Déchéance croisée",
+    "definition": "Une disposition selon laquelle un défaut en vertu d'un accord déclenche un défaut en vertu d'un autre accord connexe.",
+    "example": "\"Une clause de déchéance croisée a fait que le manquement de la société à un prêt a déclenché le défaut de tous les prêts.\""
+  },
+  "de-facto": {
+    "term": "De facto",
+    "definition": "Existant en fait ou en pratique, bien que non nécessairement établi par la loi.",
+    "example": "\"Bien que non officiellement nommée, elle a agi comme directrice de facto.\""
+  },
+  "forum-selection": {
+    "term": "Clause attributive de juridiction",
+    "definition": "Une clause contractuelle désignant le tribunal ou le lieu où les litiges doivent être traités.",
+    "example": "\"La clause attributive de juridiction exige que tous les litiges soient entendus devant les tribunaux du Delaware.\""
+  },
+  "motion-to-dismiss": {
+    "term": "Requête en irrecevabilité",
+    "definition": "Une demande à un tribunal de classer une affaire parce que la plainte est juridiquement insuffisante, même si les faits allégués sont vrais.",
+    "example": "\"Le défendeur a déposé une requête en irrecevabilité pour absence de cause d'action.\""
+  },
+  "statute-of-frauds": {
+    "term": "Statut des fraudes",
+    "definition": "Une loi exigeant que certains types de contrats soient écrits pour être exécutoires.",
+    "example": "\"L'accord verbal de vente de la maison était inapplicable en vertu du statut des fraudes.\""
+  },
+  "strict-liability": {
+    "term": "Responsabilité stricte",
+    "definition": "Responsabilité imposée sans preuve de négligence ou d'intention ; le défendeur est responsable simplement parce que le dommage est survenu.",
+    "example": "\"Les fabricants sont soumis à une responsabilité stricte pour les produits défectueux, quelle que soit la faute.\""
+  }
+}

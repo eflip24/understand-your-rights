@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { ChevronRight, ExternalLink, Scale } from "lucide-react";
-import Head from "@/components/seo/Head";
+import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, breadcrumbSchema, faqSchema, articleSchema } from "@/components/seo/JsonLd";
 import { statuteTopicsBySlug, getStatuteValues, allStateNames, statuteTopics } from "@/data/statutes";
 import { getStateBySlug } from "@/data/locations/stateData";
@@ -28,7 +28,7 @@ export default function StatutePage() {
 
   return (
     <div className="container py-8 max-w-4xl">
-      <Head title={`${title} | LegallySpoken`} description={description} />
+      <Tier3Head title={`${title} | LegallySpoken`} description={description} />
       <JsonLdGraph
         schemas={[
           breadcrumbSchema([

@@ -1,0 +1,78 @@
+{
+  "nda": {
+    "title": "Acuerdo de Confidencialidad (NDA)",
+    "description": "Un Acuerdo de Confidencialidad (NDA por sus siglas en inglés) es un contrato legalmente vinculante que establece una relación confidencial entre las partes. La parte que recibe información confidencial se compromete a no divulgarla a terceros y a usarla solo para los fines acordados. Los NDA se utilizan antes de discutir acuerdos comerciales, contratar a contratistas, compartir secretos comerciales y durante negociaciones de fusiones."
+  },
+  "employment-contract": {
+    "title": "Contrato de Trabajo",
+    "description": "Un contrato de trabajo es un acuerdo entre un empleador y un empleado que define los términos y condiciones de empleo. Cubre la compensación, los beneficios, las responsabilidades laborales, las condiciones de rescisión y las restricciones posteriores al empleo. Aunque el empleo \"at-will\" (a voluntad) es el predeterminado en la mayoría de los estados de EE. UU., los contratos de trabajo escritos brindan claridad y protección a ambas partes."
+  },
+  "freelance-agreement": {
+    "title": "Acuerdo de Freelance / Contratista Independiente",
+    "description": "Un acuerdo de freelance (o acuerdo de contratista independiente) define la relación entre un cliente y un contratista independiente. Es fundamental para establecer que el trabajador es un contratista, no un empleado, una distinción que afecta los impuestos, los beneficios, la responsabilidad y los derechos legales."
+  },
+  "lease-agreement": {
+    "title": "Contrato de Arrendamiento",
+    "description": "Un contrato de arrendamiento es un contrato entre el propietario de una propiedad (arrendador) y un inquilino que otorga al inquilino el derecho a usar la propiedad por un período específico a cambio de una renta. Los contratos de arrendamiento pueden cubrir propiedades residenciales, comerciales o industriales, cada una con diferentes requisitos legales y disposiciones comunes."
+  },
+  "saas-agreement": {
+    "title": "Acuerdo SaaS (Software como Servicio)",
+    "description": "Un acuerdo SaaS rige el uso de servicios de software basados en la nube. A diferencia de las licencias de software tradicionales, donde el cliente compra e instala el software, los acuerdos SaaS proporcionan acceso a software alojado mediante suscripción. El proveedor mantiene el software, la infraestructura y la seguridad de los datos."
+  },
+  "consulting-agreement": {
+    "title": "Acuerdo de Consultoría",
+    "description": "Un acuerdo de consultoría define los términos bajo los cuales un consultor proporciona asesoramiento experto, análisis o servicios especializados a un cliente. A diferencia de los contratos de trabajo, los acuerdos de consultoría establecen una relación de contratista independiente donde el consultor mantiene el control sobre cómo se realiza el trabajo."
+  },
+  "partnership-agreement": {
+    "title": "Acuerdo de Sociedad",
+    "description": "Un acuerdo de sociedad define los términos de una asociación comercial, incluidos los derechos, responsabilidades, contribuciones y la participación de cada socio en las ganancias y pérdidas. Sin un acuerdo de sociedad escrito, los socios están sujetos a las reglas predeterminadas según la ley estatal, que pueden no alinearse con sus intenciones."
+  },
+  "purchase-agreement": {
+    "title": "Contrato de Compraventa (Venta de Bienes)",
+    "description": "Un contrato de compraventa rige la venta de bienes entre un comprador y un vendedor. Define los bienes que se venden, el precio, los términos de entrega, los términos de pago, las garantías y los derechos y recursos de cada parte. Para compras significativas, un acuerdo bien redactado protege a ambas partes de disputas sobre lo que se prometió."
+  },
+  "service-agreement": {
+    "title": "Acuerdo de Servicios",
+    "description": "Un acuerdo de servicios define los términos bajo los cuales una parte proporciona servicios a otra. Cubre el alcance de los servicios, los estándares de rendimiento, los precios, el cronograma, los derechos de propiedad intelectual, la responsabilidad y la rescisión. Los acuerdos de servicios van desde documentos simples de una página hasta acuerdos maestros de servicios (MSA) completos con múltiples declaraciones de trabajo (SOW)."
+  },
+  "licensing-agreement": {
+    "title": "Acuerdo de Licencia",
+    "description": "Un acuerdo de licencia otorga a una parte (el licenciatario) el derecho a usar la propiedad intelectual de otra parte (el licenciante), como patentes, marcas comerciales, derechos de autor o secretos comerciales, bajo condiciones específicas. El licenciante conserva la propiedad mientras que el licenciatario obtiene los derechos de uso."
+  },
+  "terms-of-service": {
+    "title": "Términos de Servicio (ToS)",
+    "description": "Los Términos de Servicio (también llamados Términos de Uso o Términos y Condiciones) son las reglas y pautas que los usuarios deben aceptar para usar un sitio web, una aplicación o un servicio. Crean un acuerdo legalmente vinculante entre el proveedor de servicios y sus usuarios, definiendo el uso aceptable, los derechos de propiedad intelectual, las limitaciones de responsabilidad y la resolución de disputas."
+  },
+  "privacy-policy": {
+    "title": "Política de Privacidad",
+    "description": "Una política de privacidad es un documento legal que explica cómo una organización recopila, usa, almacena, comparte y protege la información personal. Las políticas de privacidad son legalmente requeridas por numerosas regulaciones, incluyendo GDPR (UE), CCPA (California) y varias otras leyes de privacidad estatales e internacionales."
+  },
+  "joint-venture-agreement": {
+    "title": "Acuerdo de Joint Venture",
+    "description": "Un acuerdo de joint venture establece un acuerdo de colaboración empresarial entre dos o más partes que acuerdan aunar recursos para un proyecto o actividad comercial específica, manteniendo sus identidades separadas. A diferencia de una sociedad, una joint venture suele tener un alcance y una duración limitados."
+  },
+  "real-estate-purchase": {
+    "title": "Contrato de Comprqaventa de Bienes Inmuebles",
+    "description": "Un contrato de compraventa de bienes inmuebles es un contrato entre un comprador y un vendedor para la venta de una propiedad inmueble. Es uno de los contratos más importantes que la mayoría de las personas firmarán, cubriendo el precio de compra, los términos de financiación, las contingencias, los procedimientos de cierre y las representaciones sobre el estado de la propiedad."
+  },
+  "loan-agreement": {
+    "title": "Acuerdo de Préstamo",
+    "description": "Un acuerdo de préstamo es un contrato entre un prestamista y un prestatario que establece los términos de un préstamo, incluyendo el capital, la tasa de interés, el calendario de pagos, los requisitos de garantía y las disposiciones por incumplimiento. Los acuerdos de préstamo van desde pagarés simples para préstamos personales hasta facilidades de crédito complejas para prestatarios corporativos."
+  },
+  "non-solicitation-agreement": {
+    "title": "Acuerdo de No Solicitud",
+    "description": "Un acuerdo de no solicitud impide que un empleado o contratista que se va solicite a los clientes, la clientela o los empleados de la empresa durante un período específico. Es más limitado que un acuerdo de no competencia (que restringe dónde se puede trabajar) y se centra específicamente en proteger las relaciones comerciales."
+  },
+  "shareholder-agreement": {
+    "title": "Acuerdo de Accionistas",
+    "description": "Un acuerdo de accionistas es un contrato entre los accionistas de una empresa que define sus derechos, obligaciones y las reglas que rigen la empresa. Complementa los estatutos de constitución de la empresa y los estatutos con disposiciones más detalladas sobre la administración, las transferencias de acciones y la resolución de disputas."
+  },
+  "commercial-lease": {
+    "title": "Contrato de Arrendamiento Comercial",
+    "description": "Un contrato de arrendamiento comercial es un acuerdo entre un propietario y un inquilino comercial para el uso de una propiedad comercial (espacio de oficina, minorista, industrial o de almacén). A diferencia de los arrendamientos residenciales, los arrendamientos comerciales están en gran medida no regulados y son muy negociados, y sus términos afectan significativamente las operaciones comerciales y los costos del inquilino."
+  },
+  "website-terms": {
+    "title": "Términos y Condiciones del Sitio Web",
+    "description": "Los términos y condiciones del sitio web (también llamados Términos de Uso) establecen las reglas para usar un sitio web. Protegen al propietario del sitio web de la responsabilidad, establecen expectativas para el comportamiento del usuario, abordan los derechos de propiedad intelectual y establecen el marco legal para la relación entre el usuario y el sitio web."
+  }
+}
