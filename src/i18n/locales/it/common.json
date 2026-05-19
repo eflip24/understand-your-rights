@@ -61,6 +61,7 @@
     "definition": "Definizione:",
     "whatDoesMean": "Cosa significa \"{{term}}\"?",
     "exampleClause": "Clausola d'esempio",
-    "definitionExamplesSuffix": "Definizione ed esempi | LegallySpoken"
+    "definitionExamplesSuffix": "Definizione ed esempi | LegallySpoken",
+    "englishOnlyNotice": "Questa guida è attualmente disponibile solo in inglese."
   }
 }
