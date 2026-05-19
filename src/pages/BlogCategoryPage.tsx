@@ -7,7 +7,7 @@ import {
   Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { useBlogPosts, useBlogCategories } from "@/hooks/useBlogPosts";
-import Head from "@/components/seo/Head";
+import Tier3Head from "@/components/seo/Tier3Head";
 import { format } from "date-fns";
 
 function decodeHtml(html: string) {

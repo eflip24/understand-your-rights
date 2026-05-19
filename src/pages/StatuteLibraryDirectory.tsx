@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, Scale, MapPin } from "lucide-react";
-import Head from "@/components/seo/Head";
+import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, breadcrumbSchema, itemListSchema } from "@/components/seo/JsonLd";
 import { statuteTopics, allStateSlugs, allStateNames } from "@/data/statutes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

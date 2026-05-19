@@ -3,7 +3,7 @@ import { ChevronRight, MapPin, Scale, Shield, Clock, AlertTriangle } from "lucid
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import Head from "@/components/seo/Head";
+import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import SmartLocalLink from "@/components/seo/SmartLocalLink";
@@ -40,7 +40,7 @@ export default function StateClusterArticlePage() {
 
   return (
     <div className="container py-8 max-w-4xl">
-      <Head title={metaTitle} description={metaDescription} ogType="article" />
+      <Tier3Head title={metaTitle} description={metaDescription} ogType="article" />
       <JsonLdGraph schemas={[
         articleSchema(stateTitle, metaDescription, url),
         breadcrumbSchema([
