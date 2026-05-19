@@ -1,1 +1,78 @@
-{}
+{
+  "nda": {
+    "title": "Geheimhaltungsvereinbarung (NDA)",
+    "description": "Eine Geheimhaltungsvereinbarung (Non-Disclosure Agreement, NDA) ist ein rechtlich bindender Vertrag, der eine Vertraulichkeitsbeziehung zwischen Parteien begründet. Die Partei, die vertrauliche Informationen erhält, verpflichtet sich, diese nicht an Dritte weiterzugeben und sie nur für vereinbarte Zwecke zu verwenden. NDAs werden vor Geschäftsverhandlungen, der Beauftragung von Auftragnehmern, der Weitergabe von Geschäftsgeheimnissen und während Fusionsverhandlungen eingesetzt."
+  },
+  "employment-contract": {
+    "title": "Arbeitsvertrag",
+    "description": "Ein Arbeitsvertrag ist eine Vereinbarung zwischen einem Arbeitgeber und einem Arbeitnehmer, die die Bedingungen des Arbeitsverhältnisses regelt. Er umfasst Vergütung, Leistungen, Aufgaben, Kündigungsbedingungen und nachvertragliche Beschränkungen. Obwohl in den meisten US-Bundesstaaten die freie Kündbarkeit (at-will employment) der Standard ist, bieten schriftliche Arbeitsverträge beiden Parteien Klarheit und Schutz."
+  },
+  "freelance-agreement": {
+    "title": "Freiberufler- / Freier Mitarbeiter-Vertrag",
+    "description": "Ein Freiberufler-Vertrag (oder unabhängiger Auftragnehmer-Vertrag) definiert die Beziehung zwischen einem Auftraggeber und einem freien Mitarbeiter (Independent Contractor). Er ist entscheidend, um festzulegen, dass der Arbeitnehmer ein Auftragnehmer und kein Angestellter ist – eine Unterscheidung, die sich auf Steuern, Leistungen, Haftung und gesetzliche Rechte auswirkt."
+  },
+  "lease-agreement": {
+    "title": "Mietvertrag / Pachtvertrag",
+    "description": "Ein Mietvertrag ist ein Vertrag zwischen einem Immobilieneigentümer (Vermieter) und einem Mieter, der dem Mieter das Recht einräumt, die Immobilie für einen bestimmten Zeitraum gegen Zahlung einer Miete zu nutzen. Mietverträge können Wohn-, Gewerbe- oder Industrieimmobilien betreffen, jeweils mit unterschiedlichen rechtlichen Anforderungen und üblichen Bestimmungen."
+  },
+  "saas-agreement": {
+    "title": "SaaS (Software as a Service) Vertrag",
+    "description": "Ein SaaS-Vertrag regelt die Nutzung von cloudbasierten Softwarediensten. Im Gegensatz zu traditionellen Softwarelizenzen, bei denen der Kunde Software kauft und installiert, bieten SaaS-Verträge den Zugang zu gehosteter Software auf Abonnementbasis. Der Anbieter wartet die Software, die Infrastruktur und die Datensicherheit."
+  },
+  "consulting-agreement": {
+    "title": "Beratungsvertrag",
+    "description": "Ein Beratungsvertrag legt die Bedingungen fest, unter denen ein Berater einem Kunden Fachwissen, Analysen oder spezialisierte Dienstleistungen zur Verfügung stellt. Im Gegensatz zu Arbeitsverträgen begründen Beratungsverträge ein unabhängiges Auftragnehmerverhältnis, bei dem der Berater die Kontrolle über die Art und Weise der Leistungserbringung behält."
+  },
+  "partnership-agreement": {
+    "title": "Partnerschaftsvertrag / Gesellschaftsvertrag (für Personengesellschaften)",
+    "description": "Ein Partnerschaftsvertrag definiert die Bedingungen einer Geschäftspartnerschaft, einschließlich der Rechte, Pflichten, Beiträge und des Anteils am Gewinn und Verlust jedes Partners. Ohne einen schriftlichen Partnerschaftsvertrag unterliegen Partner den gesetzlichen Standardregeln des jeweiligen Bundesstaates, die möglicherweise nicht ihren Absichten entsprechen."
+  },
+  "purchase-agreement": {
+    "title": "Kaufvertrag (Warenkauf)",
+    "description": "Ein Kaufvertrag regelt den Verkauf von Waren zwischen Käufer und Verkäufer. Er definiert die verkauften Waren, den Preis, Lieferbedingungen, Zahlungsbedingungen, Gewährleistungen sowie die Rechte und Rechtsmittel jeder Partei. Bei bedeutenden Käufen schützt ein gut ausgearbeiteter Vertrag beide Parteien vor Streitigkeiten über das, was versprochen wurde."
+  },
+  "service-agreement": {
+    "title": "Dienstleistungsvertrag",
+    "description": "Ein Dienstleistungsvertrag definiert die Bedingungen, unter denen eine Partei der anderen Dienstleistungen erbringt. Er umfasst den Leistungsumfang, Leistungsstandards, Preisgestaltung, Zeitplan, Rechte an geistigem Eigentum, Haftung und Kündigung. Dienstleistungsverträge reichen von einfachen einseitigen Dokumenten bis hin zu umfassenden Rahmenverträgen (Master Service Agreements, MSAs) mit mehreren Leistungsbeschreibungen (Statements of Work, SOWs)."
+  },
+  "licensing-agreement": {
+    "title": "Lizenzvertrag",
+    "description": "Ein Lizenzvertrag gewährt einer Partei (dem Lizenznehmer) das Recht, das geistige Eigentum einer anderen Partei (dem Lizenzgeber) – wie Patente, Marken, Urheberrechte oder Geschäftsgeheimnisse – unter bestimmten Bedingungen zu nutzen. Der Lizenzgeber behält das Eigentum, während der Lizenznehmer Nutzungsrechte erhält."
+  },
+  "terms-of-service": {
+    "title": "Nutzungsbedingungen (ToS)",
+    "description": "Nutzungsbedingungen (auch Allgemeine Geschäftsbedingungen genannt) sind die Regeln und Richtlinien, denen Nutzer zustimmen müssen, um eine Website, App oder einen Dienst nutzen zu können. Sie begründen eine rechtlich bindende Vereinbarung zwischen dem Dienstanbieter und seinen Nutzern, in der die zulässige Nutzung, Rechte an geistigem Eigentum, Haftungsbeschränkungen und Streitbeilegung festgelegt sind."
+  },
+  "privacy-policy": {
+    "title": "Datenschutzerklärung",
+    "description": "Eine Datenschutzerklärung ist ein rechtliches Dokument, das erläutert, wie eine Organisation personenbezogene Daten sammelt, verwendet, speichert, weitergibt und schützt. Datenschutzerklärungen sind durch zahlreiche Vorschriften, einschließlich der DSGVO (EU), CCPA (Kalifornien) und verschiedene andere staatliche und internationale Datenschutzgesetze, gesetzlich vorgeschrieben."
+  },
+  "joint-venture-agreement": {
+    "title": "Joint-Venture-Vereinbarung",
+    "description": "Eine Joint-Venture-Vereinbarung begründet eine kooperative Geschäftsbeziehung zwischen zwei oder mehr Parteien, die vereinbaren, Ressourcen für ein bestimmtes Projekt oder eine Geschäftsaktivität zu bündeln, während sie ihre eigene Identität bewahren. Im Gegensatz zu einer Partnerschaft ist ein Joint Venture typischerweise in Umfang und Dauer begrenzt."
+  },
+  "real-estate-purchase": {
+    "title": "Immobilienkaufvertrag",
+    "description": "Ein Immobilienkaufvertrag ist ein Vertrag zwischen einem Käufer und Verkäufer über den Verkauf von Immobilien. Er ist einer der wichtigsten Verträge, die die meisten Menschen jemals unterzeichnen werden, und umfasst den Kaufpreis, Finanzierungsbedingungen, Eventualitäten, Abschlussverfahren und Zusicherungen bezüglich des Zustands der Immobilie."
+  },
+  "loan-agreement": {
+    "title": "Darlehensvertrag",
+    "description": "Ein Darlehensvertrag ist ein Vertrag zwischen einem Kreditgeber und einem Kreditnehmer, der die Bedingungen eines Darlehens festlegt, einschließlich des Hauptbetrags, des Zinssatzes, des Tilgungsplans, der Sicherheitenanforderungen und der Bestimmungen für den Verzug. Darlehensverträge reichen von einfachen Schuldscheinen für Privatdarlehen bis zu komplexen Kreditfazilitäten für Firmenkunden."
+  },
+  "non-solicitation-agreement": {
+    "title": "Abwerbeverbot / Kundenschutzvereinbarung",
+    "description": "Ein Abwerbeverbot hindert einen ausscheidenden Arbeitnehmer oder Auftragnehmer daran, Kunden, Klienten oder Mitarbeiter des Unternehmens für einen bestimmten Zeitraum abzuwerben. Es ist enger gefasst als ein Wettbewerbsverbot (das einschränkt, wo man arbeiten kann) und konzentriert sich speziell auf den Schutz von Geschäftsbeziehungen."
+  },
+  "shareholder-agreement": {
+    "title": "Aktionärsvereinbarung / Gesellschaftervereinbarung",
+    "description": "Eine Aktionärsvereinbarung ist ein Vertrag zwischen den Aktionären eines Unternehmens, der deren Rechte, Pflichten und die Regeln für die Führung des Unternehmens festlegt. Er ergänzt die Satzung (Articles of Incorporation) und die Geschäftsordnung (Bylaws) des Unternehmens um detailliertere Bestimmungen zur Geschäftsführung, Anteilsübertragungen und Streitbeilegung."
+  },
+  "commercial-lease": {
+    "title": "Gewerbemietvertrag",
+    "description": "Ein Gewerbemietvertrag ist eine Vereinbarung zwischen einem Vermieter und einem gewerblichen Mieter über die Nutzung einer Gewerbeimmobilie (Büro-, Einzelhandels-, Industrie- oder Lagerfläche). Im Gegensatz zu Wohnmietverträgen sind Gewerbemietverträge weitgehend unreguliert und werden stark verhandelt, wobei die Bedingungen die Geschäftsabläufe und Kosten des Mieters erheblich beeinflussen."
+  },
+  "website-terms": {
+    "title": "Website-Nutzungsbedingungen",
+    "description": "Website-Nutzungsbedingungen (auch Nutzungsbedingungen genannt) legen die Regeln für die Nutzung einer Website fest. Sie schützen den Website-Betreiber vor Haftung, legen Erwartungen an das Nutzerverhalten fest, regeln Rechte an geistigem Eigentum und bilden den rechtlichen Rahmen für die Beziehung zwischen Nutzer und Website."
+  }
+}

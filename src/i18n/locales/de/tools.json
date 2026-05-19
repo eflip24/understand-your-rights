@@ -1,1 +1,567 @@
-{}
+{
+  "reading-time": {
+    "name": "Rechner für die Lesedauer von Verträgen",
+    "description": "Fügen Sie Ihren Vertragstext ein und erhalten Sie eine geschätzte Lesedauer basierend auf der Wortanzahl und der rechtlichen Komplexität. Hilft Ihnen bei der Planung, wie lange die Überprüfung eines Dokuments dauern wird.",
+    "shortDescription": "Schätzen Sie die Lesedauer eines Vertrags."
+  },
+  "word-counter": {
+    "name": "Wortzähler für Verträge",
+    "description": "Erhalten Sie detaillierte Statistiken zu Ihrem Vertrag, einschließlich Wortanzahl, Zeichenanzahl, Satzanzahl, Absatzanzahl und geschätzter Seitenzahl.",
+    "shortDescription": "Erhalten Sie detaillierte Wort- und Zeichenstatistiken."
+  },
+  "jargon-translator": {
+    "name": "Übersetzer für juristische Fachsprache",
+    "description": "Schlagen Sie gängige juristische Begriffe nach und erhalten Sie einfache Erklärungen. Durchsuchen Sie unser Wörterbuch mit über 100 juristischen Begriffen, um zu verstehen, was Ihr Vertrag tatsächlich aussagt.",
+    "shortDescription": "Übersetzen Sie juristische Begriffe in einfache Sprache."
+  },
+  "clause-finder": {
+    "name": "Vertragsklausel-Finder",
+    "description": "Fügen Sie Ihren Vertrag ein und suchen Sie nach gängigen Klauseltypen wie Freistellung, Kündigung, Wettbewerbsverbot, Vertraulichkeit und mehr. Finden Sie schnell die Abschnitte, die am wichtigsten sind.",
+    "shortDescription": "Finden Sie spezifische Klauseln in Ihren Verträgen."
+  },
+  "cancellation-deadline": {
+    "name": "Rechner für Kündigungsfristen",
+    "description": "Berechnen Sie Ihre Kündigungsfrist basierend auf Ihrem Anmeldedatum und der Widerrufsfrist (cooling-off period). Wissen Sie genau, wann Ihr Kündigungsrecht abläuft.",
+    "shortDescription": "Berechnen Sie, wann Ihre Kündigungsfrist endet."
+  },
+  "notice-period": {
+    "name": "Rechner für Kündigungsfristen",
+    "description": "Berechnen Sie das Enddatum Ihrer Kündigungsfrist basierend auf Ihrem Startdatum und den Kündigungsbedingungen. Funktioniert für Arbeits-, Miet- und Dienstleistungsverträge.",
+    "shortDescription": "Berechnen Sie, wann Ihre Kündigungsfrist endet."
+  },
+  "late-fee": {
+    "name": "Rechner für Verzugsgebühren",
+    "description": "Berechnen Sie die gesamten Verzugsgebühren für eine überfällige Zahlung. Geben Sie den Hauptbetrag, den Gebührensatz und die Anzahl der Verzugstage ein, um zu sehen, was Sie schulden oder Ihnen geschuldet wird.",
+    "shortDescription": "Berechnen Sie Verzugsgebühren für überfällige Zahlungen."
+  },
+  "refund-checker": {
+    "name": "Rückerstattungsberechtigungs-Prüfer",
+    "description": "Beantworten Sie ein paar einfache Fragen zu Ihrem Kauf und Ihrer Situation, um zu prüfen, ob Sie möglicherweise Anspruch auf eine Rückerstattung haben. Deckt gängige Verbraucherszenarien ab.",
+    "shortDescription": "Prüfen Sie, ob Sie Anspruch auf eine Rückerstattung haben."
+  },
+  "non-compete": {
+    "name": "Dauerprüfer für Wettbewerbsverbote",
+    "description": "Geben Sie die Dauer und den Staat Ihrer Wettbewerbsverbotsklausel ein, um allgemeine Informationen zur Durchsetzbarkeit zu erhalten. Einige Staaten schränken Wettbewerbsverbote vollständig ein oder verbieten sie.",
+    "shortDescription": "Prüfen Sie die Durchsetzbarkeit von Wettbewerbsverboten nach Bundesstaat."
+  },
+  "freelance-rate": {
+    "name": "Rechner für Freelancer-Tarife",
+    "description": "Rechnen Sie zwischen Stundensätzen, Projektgebühren und jährlichem Einkommen um. Berücksichtigen Sie Steuern, Ausgaben und abrechenbare Stunden, um Ihren wahren Freelancer-Tarif zu ermitteln.",
+    "shortDescription": "Rechnen Sie zwischen Stunden-, Projekt- und Jahressätzen um."
+  },
+  "invoice-interest": {
+    "name": "Rechner für Verzugszinsen bei Rechnungen",
+    "description": "Berechnen Sie die Zinsen, die für überfällige Rechnungszahlungen geschuldet werden. Geben Sie den Rechnungsbetrag, den Zinssatz und die überfälligen Tage ein, um den fälligen Gesamtbetrag zu ermitteln.",
+    "shortDescription": "Berechnen Sie Zinsen für unbezahlte Rechnungen."
+  },
+  "nda-generator": {
+    "name": "NDA-Vorlagen-Generator",
+    "description": "Erstellen Sie eine einfache Geheimhaltungsvereinbarung, indem Sie ein einfaches Formular ausfüllen. Passen Sie Parteien, Dauer, Umfang und Gerichtsstand an.",
+    "shortDescription": "Erstellen Sie eine grundlegende NDA aus einem Formular."
+  },
+  "privacy-generator": {
+    "name": "Datenschutzerklärung-Generator",
+    "description": "Erstellen Sie eine Datenschutzerklärung für Ihre Website oder App. Beantworten Sie Fragen zu Ihren Datenpraktiken und erhalten Sie ein formatiertes Dokument zur Datenschutzerklärung.",
+    "shortDescription": "Erstellen Sie eine Datenschutzerklärung für Ihre Website."
+  },
+  "complaint-generator": {
+    "name": "Beschwerdebrief-Generator",
+    "description": "Erstellen Sie einen formellen Beschwerdebrief. Füllen Sie die Details zu Ihrem Anliegen aus und erhalten Sie einen professionell formatierten Brief, der versandfertig ist.",
+    "shortDescription": "Erstellen Sie einen formellen Beschwerdebrief."
+  },
+  "tos-generator": {
+    "name": "AGB-Generator",
+    "description": "Erstellen Sie Allgemeine Geschäftsbedingungen (AGB) für Ihre Website oder Anwendung. Umfasst Benutzervereinbarungen, Haftungsbeschränkungen und Standard-Rechtsbestimmungen.",
+    "shortDescription": "Erstellen Sie AGB für Ihre Website."
+  },
+  "red-flag-scanner": {
+    "name": "Vertrags-Red-Flag-Scanner",
+    "description": "Fügen Sie Ihren Vertrag ein und lassen Sie die KI riskante Klauseln, unfaire Bedingungen und potenzielle rechtliche Probleme mit Schweregraden und Empfehlungen identifizieren.",
+    "shortDescription": "KI scannt Verträge nach riskanten Klauseln."
+  },
+  "nda-fairness": {
+    "name": "NDA-Fairness-Score",
+    "description": "Fügen Sie eine NDA ein und erhalten Sie einen Fairness-Score von 0-100, mit einer Aufschlüsselung der Stärken, Bedenken und Empfehlungen für Verhandlungen.",
+    "shortDescription": "Bewerten Sie die Fairness Ihrer NDA von 0-100."
+  },
+  "lease-analyzer": {
+    "name": "Mietvertrag-Analysator",
+    "description": "Fügen Sie Ihren Mietvertrag ein und erhalten Sie eine Zusammenfassung der wichtigsten Bedingungen, versteckten Risiken und Empfehlungen. Perfekt für Mieter, die einen neuen Mietvertrag prüfen.",
+    "shortDescription": "Analysieren Sie Mietverträge auf Risiken."
+  },
+  "terms-summarizer": {
+    "name": "AGB-Zusammenfasser",
+    "description": "Fügen Sie beliebige Allgemeine Geschäftsbedingungen (AGB) oder juristische Dokumente ein und erhalten Sie eine Zusammenfassung in einfacher Sprache, nach Themen geordnet und mit hervorgehobenen bedenklichen Abschnitten.",
+    "shortDescription": "Fassen Sie AGB in einfacher Sprache zusammen."
+  },
+  "contract-comparison": {
+    "name": "Vertragsvergleichstool",
+    "description": "Fügen Sie zwei Verträge nebeneinander ein und erhalten Sie einen KI-gestützten Vergleich, der wichtige Unterschiede, geänderte Bedingungen und welche Version welche Partei begünstigt, hervorhebt.",
+    "shortDescription": "Vergleichen Sie zwei Verträge direkt miteinander."
+  },
+  "clause-explainer": {
+    "name": "Klauselerklärer",
+    "description": "Fügen Sie eine beliebige Rechtsklausel ein und erhalten Sie eine Erklärung in einfacher Sprache, eine Risikobewertung, praktische Auswirkungen und Verhandlungstipps.",
+    "shortDescription": "Erhalten Sie Klauselerklärungen in einfacher Sprache."
+  },
+  "contract-expiration": {
+    "name": "Vertragsablauf-Tracker",
+    "description": "Geben Sie Ihre Vertragsdaten ein und verfolgen Sie Abläufe an einem Ort. Sehen Sie, welche Verträge bald ablaufen, aktiv sind oder bereits abgelaufen sind.",
+    "shortDescription": "Verfolgen Sie Vertragsablaufdaten."
+  },
+  "signature-block": {
+    "name": "Signaturblock-Generator",
+    "description": "Erstellen Sie korrekt formatierte Signaturblöcke für Einzelpersonen, Kapitalgesellschaften, LLCs und Personengesellschaften. Kopieren Sie diese und fügen Sie sie in Ihre Verträge ein.",
+    "shortDescription": "Erstellen Sie korrekte Signaturblöcke."
+  },
+  "contract-checklist": {
+    "name": "Vertragsprüflisten-Generator",
+    "description": "Wählen Sie Ihren Vertragstyp aus und erhalten Sie eine umfassende Prüfliste. Verfolgen Sie mit einem interaktiven Fortschrittsbalken, welche Punkte Sie überprüft haben.",
+    "shortDescription": "Erstellen Sie eine Vertragsprüfliste."
+  },
+  "amendment-drafter": {
+    "name": "Vertragsänderungsentwurf",
+    "description": "Erstellen Sie eine grundlegende Vertragsänderung, indem Sie die Details des ursprünglichen Vertrags eingeben und die Änderungen beschreiben. Erstellt ein formatiertes Änderungsdokument.",
+    "shortDescription": "Entwerfen Sie eine Vertragsänderung aus einem Formular."
+  },
+  "contract-value": {
+    "name": "Vertragswert-Rechner",
+    "description": "Berechnen Sie den Gesamtwert eines Vertrags einschließlich Verlängerungen und jährlicher Eskalationsraten. Sehen Sie den Wert der ursprünglichen Laufzeit, den Verlängerungswert und die monatlichen Durchschnitte.",
+    "shortDescription": "Gesamtvertragswert mit Verlängerungen berechnen."
+  },
+  "warranty-tracker": {
+    "name": "Garantieablauf-Rechner",
+    "description": "Verfolgen Sie die Garantieablaufdaten für Ihre Einkäufe. Geben Sie Produktdetails und Garantielänge ein, um zu sehen, welche Garantien noch aktiv sind.",
+    "shortDescription": "Garantieablaufdaten für Einkäufe verfolgen."
+  },
+  "statute-of-limitations": {
+    "name": "Verjährungsfristen-Suche",
+    "description": "Suchen Sie die Verjährungsfristen für gängige Rechtsansprüche nach Bundesstaaten auf. Finden Sie heraus, wie lange Sie Zeit haben, um Klagen wegen Vertragsstreitigkeiten, Personenschäden, Betrug und mehr einzureichen.",
+    "shortDescription": "Fristen für Klagen nach Bundesstaaten suchen."
+  },
+  "small-claims-limit": {
+    "name": "Prüfer für den Höchstbetrag für Bagatellklagen",
+    "description": "Prüfen Sie den Höchstbetrag, auf den Sie in Ihrem Bundesstaat vor einem Gericht für Bagatellklagen klagen können. Geben Sie Ihren Anspruchsbetrag ein, um zu sehen, ob er qualifiziert ist.",
+    "shortDescription": "Höchstbeträge für Bagatellklagen nach Bundesstaaten prüfen."
+  },
+  "consumer-rights-quiz": {
+    "name": "Verbraucherrechte-Quiz",
+    "description": "Testen Sie Ihr Wissen über Verbraucherschutzrechte mit unserem interaktiven Quiz. Erfahren Sie mehr über Rückgaberichtlinien, Garantien, Rechnungsstreitigkeiten und mehr.",
+    "shortDescription": "Testen Sie Ihr Wissen über Verbraucherrechte."
+  },
+  "dispute-letter": {
+    "name": "Generator für Einspruchsschreiben",
+    "description": "Erstellen Sie ein formelles Einspruchsschreiben für Abrechnungsfehler, Ungenauigkeiten in Kreditberichten, Servicebeschwerden oder Produktprobleme. Enthält relevante rechtliche Verweise.",
+    "shortDescription": "Formelle Einspruchsschreiben erstellen."
+  },
+  "salary-converter": {
+    "name": "Gehalt zu Stundenlohn Umwandler",
+    "description": "Rechnen Sie zwischen Jahresgehalt und Stundenlohn um. Berücksichtigen Sie die Gemeinkosten für Leistungen, Wochenstunden und Wochen pro Jahr, um die wahren Kosten der Beschäftigung zu sehen.",
+    "shortDescription": "Gehalt in Stundenlohn umrechnen und umgekehrt."
+  },
+  "pto-calculator": {
+    "name": "PTO-Rechner (bezahlte Freistellung)",
+    "description": "Berechnen Sie Ihre angesammelte bezahlte Freistellung basierend auf Ihrer Ansparquote, Ihrer Betriebszugehörigkeit und bereits genutzten Tagen. Sehen Sie die verbleibende PTO in Tagen und Stunden.",
+    "shortDescription": "Berechnen Sie den angesammelten PTO-Restbetrag."
+  },
+  "wrongful-termination": {
+    "name": "Checkliste für unrechtmäßige Kündigung",
+    "description": "Beantworten Sie Fragen zu Ihrer Kündigung und erhalten Sie eine Einschätzung potenzieller Indikatoren für eine unrechtmäßige Kündigung, einschließlich Diskriminierungs- und Retorsionsmerkmale.",
+    "shortDescription": "Potenziell unrechtmäßige Kündigung bewerten."
+  },
+  "minimum-wage": {
+    "name": "Mindestlohn-Suche",
+    "description": "Suchen Sie die aktuellen bundesstaatlichen und staatlichen Mindestlohnsätze, einschließlich des Mindestlohns für Trinkgeldempfänger. Vergleichen Sie den Satz Ihres Bundesstaates mit dem bundesweiten Mindestlohn.",
+    "shortDescription": "Mindestlohn nach Bundesstaat suchen."
+  },
+  "employment-checklist": {
+    "name": "Checkliste für Arbeitsverträge",
+    "description": "Eine umfassende interaktive Checkliste für alles, worauf in einem Arbeitsvertrag zu achten ist – Vergütung, Leistungen, Wettbewerbsverbote, Kündigungsbedingungen und mehr.",
+    "shortDescription": "Checkliste für Arbeitsverträge überprüfen."
+  },
+  "cease-desist": {
+    "name": "Generator für Unterlassungserklärungen",
+    "description": "Erstellen Sie eine formelle Unterlassungserklärung bei Belästigung, Verleumdung, IP-Rechtsverletzungen, Vertragsbruch oder Problemen mit der Schuldeintreibung.",
+    "shortDescription": "Unterlassungserklärungen für gängige Szenarien generieren."
+  },
+  "poa-generator": {
+    "name": "Vollmacht-Generator",
+    "description": "Erstellen Sie eine einfache Vollmachtsurkunde. Wählen Sie zwischen einer allgemeinen, beschränkten, dauerhaften oder finanziellen Vollmacht mit anpassbaren Bedingungen und einem Notarvermerk.",
+    "shortDescription": "Eine einfache Vollmacht erstellen."
+  },
+  "ic-agreement": {
+    "name": "Generator für freiberufliche Mitarbeiterverträge",
+    "description": "Erstellen Sie einen umfassenden Vertrag für freiberufliche Mitarbeiter, der den Arbeitsumfang, die Vergütung, IP-Rechte, Vertraulichkeit und Kündigungsbedingungen abdeckt.",
+    "shortDescription": "Einen Vertrag für freiberufliche Mitarbeiter aus einem Formular generieren."
+  },
+  "promissory-note": {
+    "name": "Schuldschein-Generator",
+    "description": "Erstellen Sie einen einfachen Schuldschein mit anpassbaren Bedingungen, einschließlich Hauptbetrag, Zinssatz, Zahlungsplan und Bestimmungen bei Verzug.",
+    "shortDescription": "Einen einfachen Schuldschein erstellen."
+  },
+  "security-deposit": {
+    "name": "Kaution-Rechner",
+    "description": "Suchen Sie Kaution-Regeln nach Bundesstaaten, einschließlich Höchstbeträge für Kaution, Zinsanforderungen und Rückgabefristen nach dem Auszug.",
+    "shortDescription": "Kaution-Regeln nach Bundesstaat prüfen."
+  },
+  "rent-increase": {
+    "name": "Mieterhöhungsrechner",
+    "description": "Berechnen Sie Ihren Mieterhöhungsprozentsatz und die jährlichen Auswirkungen. Vergleichen Sie dies mit den Mietpreisobergrenzen in wichtigen Gerichtsbarkeiten.",
+    "shortDescription": "Prüfen, ob eine Mieterhöhung rechtmäßig ist."
+  },
+  "lease-comparison": {
+    "name": "Mietvertragsvergleich",
+    "description": "Vergleichen Sie zwei Mietangebote nebeneinander, einschließlich Miete, Kaution, Nebenkosten und Gesamtkosten. Sehen Sie, welcher Mietvertrag Ihnen das beste Preis-Leistungs-Verhältnis bietet.",
+    "shortDescription": "Zwei Mietangebote nebeneinander vergleichen."
+  },
+  "moveout-checklist": {
+    "name": "Checkliste für den Umzug (Auszug) Generator",
+    "description": "Erstellen Sie eine individuelle Checkliste für den Umzug (Auszug) basierend auf Ihrem Immobilientyp und Ihren Merkmalen. Verfolgen Sie den Fortschritt mit einer interaktiven Checkliste.",
+    "shortDescription": "Eine individuelle Checkliste für den Auszug erstellen."
+  },
+  "rental-agreement": {
+    "name": "Mietvertragsgenerator",
+    "description": "Erstellen Sie einen einfachen Wohnungsmietvertrag, indem Sie Vermieter-, Mieter-, Immobilien- und Finanzdaten eingeben. Enthält Standardrechtsvorschriften.",
+    "shortDescription": "Einen einfachen Wohnungsmietvertrag erstellen."
+  },
+  "business-name": {
+    "name": "Unternehmensnamen-Prüfer",
+    "description": "Prüfen Sie Ihren vorgeschlagenen Firmennamen auf Länge, Sonderzeichen, Rechtsform-Suffix, Einzigartigkeit und Domain-Potenzial. Enthält Tipps zur Markenrecherche.",
+    "shortDescription": "Überlegungen zur Unternehmensnamensgebung prüfen."
+  },
+  "contractor-vs-employee": {
+    "name": "Arbeitnehmer vs. unabhängiger Unternehmer Prüfer",
+    "description": "Beantworten Sie 10 Fragen basierend auf IRS-Klassifikationsfaktoren, um festzustellen, ob ein Arbeitnehmer wahrscheinlich ein Arbeitnehmer oder ein unabhängiger Unternehmer ist.",
+    "shortDescription": "Mitarbeiter als Angestellten oder Auftragnehmer klassifizieren."
+  },
+  "severance-pay": {
+    "name": "Abfindungsrechner",
+    "description": "Schätzen Sie die typische Abfindung basierend auf Gehalt, Dienstjahren und Branchenniveau. Sehen Sie niedrige und hohe Schätzungen für Verhandlungen.",
+    "shortDescription": "Abfindungsbereich schätzen."
+  },
+  "overtime-calc": {
+    "name": "Überstundenrechner",
+    "description": "Berechnen Sie die Überstundenvergütung basierend auf Stundenlohn, regulären Stunden, Überstunden und Multiplikator. Sehen Sie eine detaillierte Aufschlüsselung der Bezahlung und den effektiven Satz.",
+    "shortDescription": "Aufschlüsselung der Überstundenvergütung berechnen."
+  },
+  "partnership-split": {
+    "name": "Partnerschaftsaufteilungsrechner",
+    "description": "Berechnen Sie die vorgeschlagenen Eigenkapital- und Gewinnaufteilungen für Partnerschaften basierend auf Kapitaleinlagen, Zeitaufwand und anpassbarer Gewichtung.",
+    "shortDescription": "Eigenkapitalaufteilung von Partnerschaften berechnen."
+  },
+  "business-expense": {
+    "name": "Geschäftskostentracker-Vorlage",
+    "description": "Erstellen Sie eine formatierte Spesenabrechnungsvorlage, die auf Ihren Geschäftstyp zugeschnitten ist. Enthält relevante Spesenkategorien und IRS-Kilometersätze.",
+    "shortDescription": "Erstellen Sie eine Spesenabrechnungsvorlage."
+  },
+  "crypto-tax": {
+    "name": "Krypto-Steuerrechner",
+    "description": "Berechnen Sie Kapitalgewinne oder -verluste bei Kryptowährungstransaktionen. Schätzt kurzfristige vs. langfristige Steuern basierend auf Ihrer Haltedauer und Steuerklasse.",
+    "shortDescription": "Schätzen Sie die Kapitalertragssteuer für Krypto."
+  },
+  "dca-calculator": {
+    "name": "DCA-Rechner",
+    "description": "Simulieren Sie eine Dollar-Cost-Averaging (Durchschnittskosten-Methode)-Strategie. Sehen Sie Ihre durchschnittlichen Anschaffungskosten, die gesamte erworbene Stückzahl und die Rendite basierend auf regelmäßigen periodischen Investitionen.",
+    "shortDescription": "Simulieren Sie die Renditen des Dollar-Cost-Averaging."
+  },
+  "position-size": {
+    "name": "Positionsgrößenrechner",
+    "description": "Berechnen Sie die optimale Positionsgröße basierend auf Ihrer Kontogröße, Risikotoleranz und Stop-Loss-Distanz. Essenziell für ein gutes Risikomanagement.",
+    "shortDescription": "Berechnen Sie die optimale Handelspositionsgröße."
+  },
+  "profit-loss": {
+    "name": "Gewinn- und Verlustrechner",
+    "description": "Berechnen Sie Ihren Gewinn oder Verlust bei einem Trade, einschließlich Hebelwirkung und Handelsgebühren. Sehen Sie Brutto-GuV, Netto-GuV und prozentuale Rendite.",
+    "shortDescription": "Berechnen Sie den Handelsgewinn/-verlust mit Gebühren."
+  },
+  "compound-interest": {
+    "name": "Zinseszinsrechner",
+    "description": "Prognostizieren Sie das Wachstum Ihrer Investition mit Zinseszins. Berücksichtigen Sie das Anfangskapital, den Zinssatz, die Häufigkeit der Zinseszinsberechnung und monatliche Beiträge.",
+    "shortDescription": "Prognostizieren Sie das Investitionswachstum im Zeitverlauf."
+  },
+  "margin-call": {
+    "name": "Nachschussrechner (Margin Call Rechner)",
+    "description": "Bestimmen Sie, zu welchem Preis Ihr Broker einen Nachschuss („Margin Call\") auslösen wird. Geben Sie Ihr Eigenkapital, den geliehenen Betrag und die Wartungsmargenanforderung ein.",
+    "shortDescription": "Berechnen Sie Ihren Nachschuss-Auslösepreis."
+  },
+  "breakeven-calc": {
+    "name": "Handels-Break-Even-Rechner",
+    "description": "Berechnen Sie den genauen Break-Even-Preis für einen Trade unter Berücksichtigung von Hin- und Rückhandelsgebühren und Hebelwirkung. Kennen Sie die minimale Bewegung, die für einen Gewinn erforderlich ist.",
+    "shortDescription": "Finden Sie Ihren Break-Even-Preis nach Gebühren."
+  },
+  "risk-reward": {
+    "name": "Risiko-Rendite-Rechner",
+    "description": "Analysieren Sie das Risiko-Rendite-Verhältnis eines Trades. Geben Sie Ihren Einstieg, Stop-Loss und Take-Profit ein, um zu sehen, ob sich der Trade lohnt.",
+    "shortDescription": "Analysieren Sie das Risiko-Rendite-Verhältnis des Handels."
+  },
+  "crypto-converter": {
+    "name": "Krypto-Umrechner",
+    "description": "Konvertieren Sie zwischen wichtigen Kryptowährungen mithilfe von Referenzpreisen. Sehen Sie äquivalente Werte für BTC, ETH, SOL und andere beliebte Assets.",
+    "shortDescription": "Konvertieren Sie zwischen Krypto-Assets."
+  },
+  "loan-payment": {
+    "name": "Kreditratenrechner",
+    "description": "Berechnen Sie monatliche Kreditraten mithilfe der Standard-Tilgung. Sehen Sie Ihre monatliche Rate, die gesamten gezahlten Zinsen und die Gesamtkosten des Kredits.",
+    "shortDescription": "Berechnen Sie monatliche Kreditraten."
+  },
+  "grant-budget": {
+    "name": "Zuschussbudgetrechner",
+    "description": "Verteilen Sie Zuschussgelder auf Budgetkategorien wie Personal, Ausrüstung, Reisen und indirekte Kosten. Verfolgen Sie verbleibende Mittel und erhalten Sie Warnungen, wenn die Zuweisungen den gesamten Zuschussbetrag übersteigen.",
+    "shortDescription": "Zuweisen und Verfolgen der Ausgaben für Zuschussbudgets."
+  },
+  "grant-deadline": {
+    "name": "Fristen-Tracker für Zuschüsse",
+    "description": "Verfolgen Sie Fristen für Zuschussanträge, Berichtsfristen und Meilensteine. Sehen Sie Countdown-Timer, Dringlichkeitssymbole und eine sortierte Zeittafel aller bevorstehenden Verpflichtungen.",
+    "shortDescription": "Verfolgen Sie Fristen und Berichtstermine für Zuschüsse."
+  },
+  "grant-compliance": {
+    "name": "Compliance-Checkliste für Zuschüsse",
+    "description": "Erstellen Sie eine Compliance-Checkliste basierend auf Ihrem Zuschusstyp – Bund, Länder, Stiftung oder Unternehmen. Deckt Berichterstattung, Audits, Beschaffung, Matching Funds und Aufzeichnungspflichten ab.",
+    "shortDescription": "Compliance-Checkliste nach Zuschusstyp."
+  },
+  "vesting-schedule": {
+    "name": "Unverfallbarkeitsplan-Rechner (Vesting Schedule Calculator)",
+    "description": "Berechnen Sie Ihren Zeitplan für die Unverfallbarkeit von Anteilen (Vesting) basierend auf der Gesamtzahl der Anteile, der Vesting-Periode, der Wartefrist (Cliff) und der Häufigkeit. Sehen Sie eine detaillierte Tabelle der unverfallbaren Anteile pro Periode mit kumulierten Gesamtsummen.",
+    "shortDescription": "Berechnen Sie die Zeitpläne für die Unverfallbarkeit von Anteilen."
+  },
+  "stock-option-tax": {
+    "name": "Aktienoptions-Steuerrechner",
+    "description": "Schätzen Sie die Steuern auf die Ausübung von Aktienoptionen für ISOs (Incentive Stock Options) und NSOs (Non-Qualified Stock Options). Berechnet die Einkommensteuer, die Kapitalertragssteuer und das AMT (Alternative Minimum Tax)-Risiko basierend auf Ihrer Haltedauer und Steuerklasse.",
+    "shortDescription": "Schätzen Sie Steuern auf die Ausübung von Aktienoptionen."
+  },
+  "equity-dilution": {
+    "name": "Aktienverwässerungsrechner",
+    "description": "Berechnen Sie, wie Finanzierungsrunden und Erweiterungen des Optionspools Ihren Eigentumsanteil beeinflussen. Sehen Sie pre- und post-Dilution-Anteile nebeneinander mit dem gesamten Verwässerungseffekt.",
+    "shortDescription": "Berechnen Sie die Aktienverwässerung durch Finanzierungsrunden."
+  },
+  "solar-roi": {
+    "name": "Solarpanel-ROI-Rechner",
+    "description": "Berechnen Sie die Kapitalrendite (ROI) für die Installation von Solarmodulen. Geben Sie Systemkosten, Energieproduktion, Strompreis und Anreize ein, um Amortisationszeit, 25-Jahres-Einsparungen und ROI-Prozentsatz zu sehen.",
+    "shortDescription": "Berechnen Sie die Amortisationszeit und den ROI für Solarmodule."
+  },
+  "solar-incentive": {
+    "name": "Schätzung von Solar-Förderungen und Steuergutschriften",
+    "description": "Schätzen Sie Bundes- und Landes-Solarförderungen einschließlich der 30%igen Investitionssteuergutschrift (Investment Tax Credit, ITC), staatlicher Rabatte und SREC (Solar Renewable Energy Credit)-Werte. Sehen Sie Ihre Netto-Kosten nach allen verfügbaren Anreizen.",
+    "shortDescription": "Schätzen Sie Solarsteuergutschriften und staatliche Rabatte."
+  },
+  "energy-savings": {
+    "name": "Energiesparrechner",
+    "description": "Berechnen Sie, wie viel Sie durch den Umstieg auf Solarenergie bei Stromkosten sparen können. Geben Sie Ihre aktuelle Rechnung, den Solardeckungsanteil und die Systemkosten ein, um monatliche, jährliche und lebenslange Einsparungen zu sehen.",
+    "shortDescription": "Berechnen Sie Stromersparnisse durch Solarenergie."
+  },
+  "carbon-footprint": {
+    "name": "CO₂-Fußabdruck-Ausgleichsrechner",
+    "description": "Berechnen Sie die CO₂-Emissionen, die Sie durch den Umstieg auf erneuerbare Energien vermeiden können. Sehen Sie Äquivalente in gepflanzten Bäumen und ausgeglichenen Fahrkilometern basierend auf Ihrer Energiequelle und Ihrem Verbrauch.",
+    "shortDescription": "Berechnen Sie CO₂-Einsparungen durch den Umstieg auf erneuerbare Energien."
+  },
+  "green-lease": {
+    "name": "Check für grüne Mietklauseln",
+    "description": "Bewerten Sie Ihren Gewerbemietvertrag auf grüne Bestimmungen. Prüfen Sie, welche Nachhaltigkeitsklauseln vorhanden sind, und erhalten Sie eine Bewertung mit Empfehlungen für fehlende wesentliche Bestimmungen.",
+    "shortDescription": "Prüfen Sie grüne Klauseln in Gewerbemietverträgen."
+  },
+  "ev-vs-gas": {
+    "name": "Kostenvergleich Elektrofahrzeug vs. Benziner",
+    "description": "Vergleichen Sie die jährlichen Kraftstoffkosten des Fahrens eines Elektrofahrzeugs mit denen eines Benziners. Sehen Sie die Kosten direkt nebeneinander, jährliche Einsparungen und prognostizierte Einsparungen über 10 Jahre.",
+    "shortDescription": "Vergleichen Sie die Kraftstoffkosten von Elektro- und Benzinfahrzeugen."
+  },
+  "home-energy-audit": {
+    "name": "Checkliste für die Energieprüfung zu Hause",
+    "description": "Erstellen Sie eine priorisierte Checkliste für Energieverbesserungen in Ihrem Zuhause. Wählen Sie Ihren Haustyp und Ihr Alter aus, um anwendbare Upgrades mit geschätzten Einsparungsbereichen zu sehen.",
+    "shortDescription": "Erhalten Sie eine personalisierte Checkliste für die Energieverbesserung zu Hause."
+  },
+  "ppa-calculator": {
+    "name": "Strombezugsvertrag (PPA)-Rechner",
+    "description": "Vergleichen Sie die Gesamtkosten eines Strombezugsvertrags (PPA) mit den Stromkosten eines Versorgungsunternehmens über die Vertragslaufzeit. Sehen Sie jährliche Kostenaufschlüsselungen einschließlich Ratenerhöhungen.",
+    "shortDescription": "Vergleichen Sie PPA-Kosten mit Stromkosten des Versorgungsunternehmens."
+  },
+  "income-tax": {
+    "name": "Einkommensteuer-Schätzer",
+    "description": "Schätzen Sie Ihre bundesstaatliche Einkommensteuer basierend auf Ihrem Familienstand, Bruttoeinkommen und Abzügen. Sehen Sie eine detaillierte Aufschlüsselung nach Steuerklassen, den effektiven Steuersatz und Ihr Nettoeinkommen.",
+    "shortDescription": "Schätzen Sie die bundesstaatliche Einkommensteuer nach Steuerklassen."
+  },
+  "auto-loan": {
+    "name": "Autokreditrechner",
+    "description": "Berechnen Sie Ihre monatliche Autokreditrate einschließlich Anzahlung und Inzahlungnahmewert. Sehen Sie die insgesamt gezahlten Zinsen und die wahren Kosten Ihres Fahrzeugkaufs.",
+    "shortDescription": "Berechnen Sie monatliche Autokreditraten."
+  },
+  "debt-payoff": {
+    "name": "Schuldentilgungsrechner",
+    "description": "Sehen Sie, wie lange es dauert, Schulden mit Mindestzahlungen im Vergleich zu zusätzlichen Zahlungen zu tilgen. Vergleichen Sie die insgesamt gezahlten Zinsen und die eingesparte Zeit, indem Sie jeden Monat mehr bezahlen.",
+    "shortDescription": "Berechnen Sie die Schuldentilgungszeit und Zinseinsparungen."
+  },
+  "net-worth": {
+    "name": "Vermögensrechner",
+    "description": "Berechnen Sie Ihr Nettovermögen, indem Sie Ihre Vermögenswerte und Verbindlichkeiten auflisten. Verfolgen Sie Bargeld, Investitionen, Eigentum und Schulden, um Ihre gesamte finanzielle Lage zu sehen.",
+    "shortDescription": "Berechnen Sie Gesamtvermögen minus Verbindlichkeiten."
+  },
+  "paycheck-calc": {
+    "name": "Gehaltsrechner",
+    "description": "Schätzen Sie Ihr Nettoeinkommen pro Gehaltsscheck. Geben Sie Gehalt oder Stundenlohn, Familienstand und Zahlungsfrequenz ein, um die Abzüge für Bundessteuern, Sozialversicherung und Medicare zu sehen.",
+    "shortDescription": "Schätzen Sie das Nettoeinkommen pro Gehaltsscheck."
+  },
+  "settlement-estimator": {
+    "name": "Schadensersatzschätzer",
+    "description": "Schätzen Sie den Wert Ihrer Personenschaden- oder Autounfallregulierung. Geben Sie Arztrechnungen, Lohnausfall und Verletzungsschwere ein, um eine Spanne basierend auf der Multiplikatormethode zu erhalten.",
+    "shortDescription": "Schätzen Sie die Spannen für Personenschaden-/Autounfallregulierungen."
+  },
+  "insurance-quote-comparison": {
+    "name": "Vergleichstool für Versicherungsangebote",
+    "description": "Vergleichen Sie Angebote für Auto-, Hausrat- und Lebensversicherungen nebeneinander. Geben Sie Angebote von mehreren Unternehmen ein und sehen Sie, welches das beste Preis-Leistungs-Verhältnis bietet.",
+    "shortDescription": "Vergleichen Sie Versicherungsangebote nebeneinander."
+  },
+  "accident-damage": {
+    "name": "Unfallschadenrechner",
+    "description": "Berechnen Sie die Gesamtschäden aus einem Unfall, einschließlich Arztrechnungen, Sachschäden, Lohnausfall sowie Schmerzensgeld. Sehen Sie eine vollständige Aufschlüsselung.",
+    "shortDescription": "Berechnen Sie die gesamten Unfallschäden."
+  },
+  "attorney-fee": {
+    "name": "Anwaltsgebührenrechner",
+    "description": "Berechnen Sie Anwaltsgebühren für Erfolgshonorar- und Stundenvereinbarungen. Sehen Sie, wie viel Ihr Anwalt verdienen wird und wie hoch Ihre Auszahlung sein wird.",
+    "shortDescription": "Berechnen Sie Anwaltsgebühren nach Erfolgshonorar & Stunden."
+  },
+  "insurance-premium": {
+    "name": "Versicherungsprämien-Schätzer",
+    "description": "Schätzen Sie monatliche Versicherungsprämien für Auto-, Hausrat-, Mieter- und Lebensversicherungen basierend auf Ihrem Alter, Ihrer Bonität, Ihrem Standort und Ihrem Deckungsniveau.",
+    "shortDescription": "Schätzen Sie monatliche Versicherungsprämien."
+  },
+  "force-majeure-checker": {
+    "name": "Klauselprüfer Höhere Gewalt",
+    "description": "Fügen Sie Ihren Vertrag ein und sehen Sie sofort, ob die Klausel zur höheren Gewalt (Force Majeure) stark, eng gefasst oder fehlend ist. Erkennt abgedeckte Ereignisse, Auffangklauseln, Mitteilungspflichten und Schadensminderungspflichten.",
+    "shortDescription": "Erkennt und bewertet Klauseln zur höheren Gewalt."
+  },
+  "auto-renewal-detector": {
+    "name": "Detektor für automatische Verlängerungsklauseln",
+    "description": "Finden Sie unbefristete und automatische Verlängerungsklauseln in jedem Vertrag. Zeigt das Kündigungsfenster an, damit Sie keine Kündigungsfrist verpassen.",
+    "shortDescription": "Erkennt automatische Verlängerungsfallen in Verträgen."
+  },
+  "governing-law-id": {
+    "name": "Identifikator für anwendbares Recht",
+    "description": "Extrahiert in Sekundenschnelle anwendbares Recht, Gerichtsstand, Schiedsgerichtsbarkeit, Gerichtsstandsverzicht und Sammelklagenverzicht aus jedem Vertrag.",
+    "shortDescription": "Extrahiert Gerichtsstand & Schiedsklauseln."
+  },
+  "plain-english-rewriter": {
+    "name": "Umschreiber für einfache Sprache",
+    "description": "Wandelt Juristendeutsch in einfache Sprache um. Ersetzt archaische juristische Phrasen (z. B. „hiervor“, „gemäß“, „ungeachtet dessen“) durch klare, moderne Entsprechungen.",
+    "shortDescription": "Schreibt Juristendeutsch in einfache Sprache um."
+  },
+  "chargeback-checker": {
+    "name": "Rückbuchungsberechtigungs-Checker",
+    "description": "Beantworten Sie einige Fragen, um zu sehen, ob Sie wahrscheinlich gemäß dem Fair Credit Billing Act (ein US-Bundesgesetz, das Verbraucher bei Kreditkartenabrechnungsfehlern schützt) Anspruch auf eine Kreditkartenrückbuchung haben.",
+    "shortDescription": "Prüfen Sie, ob Sie eine Rückbuchung gewinnen können."
+  },
+  "lemon-law-qualifier": {
+    "name": "Qualifikationsprüfer für 'Lemon Laws'",
+    "description": "Prüfen Sie, ob Ihr defektes Fahrzeug wahrscheinlich unter die 'Lemon Laws' (Gesetze zum Schutz vor mangelhaften Fahrzeugen) Ihres Bundesstaates fällt, basierend auf Reparaturversuchen, Ausfalltagen, Alter und Kilometerstand.",
+    "shortDescription": "Prüfen Sie, ob Ihr Fahrzeug als 'Montagsauto' gilt."
+  },
+  "subscription-cancel-letter": {
+    "name": "Kündigungsschreiben für Abonnements",
+    "description": "Erstellen Sie ein schriftliches Kündigungsschreiben für jedes Abonnement (Fitnessstudio, SaaS, Zeitschrift), das eine schriftliche Kündigung erfordert.",
+    "shortDescription": "Erstellen Sie ein schriftliches Kündigungsschreiben."
+  },
+  "data-breach-checklist": {
+    "name": "Checkliste zur Reaktion auf Datenschutzverletzungen",
+    "description": "Schritt-für-Schritt-Checkliste, was nach Erhalt einer Benachrichtigung über eine Datenschutzverletzung zu tun ist – vom Ändern von Passwörtern bis zum Ausfüllen des IRS-Formulars 14039.",
+    "shortDescription": "Maßnahmen nach einer Datenschutzverletzung."
+  },
+  "final-paycheck-lookup": {
+    "name": "Nachschlagen der Frist für den letzten Gehaltsscheck",
+    "description": "Wann ist Ihr letzter Gehaltsscheck gesetzlich fällig? Nach Bundesstaat suchen, sowohl für Kündigungs- als auch für Rücktrittsszenarien.",
+    "shortDescription": "Wann Ihr letzter Gehaltsscheck gesetzlich fällig ist."
+  },
+  "unemployment-estimator": {
+    "name": "Arbeitslosenleistungen-Schätzer",
+    "description": "Schätzen Sie Ihre wöchentliche Arbeitslosenleistung basierend auf Ihren früheren Löhnen und der Obergrenze Ihres Bundesstaates.",
+    "shortDescription": "Schätzen Sie die wöchentlichen Arbeitslosenleistungen."
+  },
+  "nda-vs-noncompete": {
+    "name": "NDA vs. Wettbewerbsverbot Vergleich",
+    "description": "Gegenüberstellung von Geheimhaltungsvereinbarungen (NDAs) und Wettbewerbsverboten – Zweck, Umfang, Dauer, Durchsetzbarkeit und rote Flaggen.",
+    "shortDescription": "Vergleichen Sie NDAs und Wettbewerbsverbote nebeneinander."
+  },
+  "discrimination-checklist": {
+    "name": "Checkliste für Diskriminierungsansprüche am Arbeitsplatz",
+    "description": "Bereiten Sie sich auf die Einreichung einer EEOC-Klage (U.S. Equal Employment Opportunity Commission) vor – Dokumentation, Vergleiche, interne Berichterstattung und Verfolgung von Vergeltungsmaßnahmen.",
+    "shortDescription": "Bereiten Sie einen EEOC-Diskriminierungsanspruch vor."
+  },
+  "eviction-notice-lookup": {
+    "name": "Nachschlagen der Kündigungsfrist bei Räumung",
+    "description": "Suchen Sie die gesetzlich vorgeschriebene Kündigungsfrist für Räumungen nach Bundesstaat und Grund – Nichtzahlung, Vertragsverletzung oder fristlose Kündigung ohne Verschulden.",
+    "shortDescription": "Kündigungsfristen für Räumungen nach Bundesstaat."
+  },
+  "habitability-tracker": {
+    "name": "Generator für Mängelanzeigen zur Bewohnbarkeit",
+    "description": "Erstellen Sie eine schriftliche Reparaturanforderung unter Berufung auf die stillschweigende Gewährleistung der Bewohnbarkeit – die Grundlage für Mietminderung oder Reparatur- und Abzugsansprüche (repair-and-deduct remedies).",
+    "shortDescription": "Erstellen Sie eine schriftliche Reparaturanforderung zur Bewohnbarkeit."
+  },
+  "mortgage-affordability": {
+    "name": "Hypotheken-Erschwinglichkeitsrechner",
+    "description": "Berechnen Sie Ihren maximalen Hauspreis mithilfe der 36%-Schulden-Einkommen-Regel unter Berücksichtigung von Steuern, Versicherungen und bestehenden Schulden.",
+    "shortDescription": "Berechnen Sie Ihren maximal erschwinglichen Hauspreis."
+  },
+  "operating-agreement-llc": {
+    "name": "LLC-Gesellschaftsvertrag-Generator",
+    "description": "Erstellen Sie einen grundlegenden LLC-Gesellschaftsvertrag (Gesellschaft mit beschränkter Haftung) für Mitglieder, Kapital, Gewinne, Geschäftsführung und Auflösung.",
+    "shortDescription": "Erstellen Sie einen grundlegenden LLC-Gesellschaftsvertrag."
+  },
+  "founders-agreement": {
+    "name": "Gründungsvertrags-Generator",
+    "description": "Entwerfen Sie einen Gründungsvertrag, der Kapitalbeteiligungen, Vesting (mit Sperrfrist und 4-Jahre-Zeitraum), IP-Übertragung (Geistiges Eigentum), Rollen und Ausscheiden regelt.",
+    "shortDescription": "Entwerfen Sie einen Gründungsvertrag mit Vesting & IP."
+  },
+  "dmca-generator": {
+    "name": "DMCA-Takedown-Notice-Generator",
+    "description": "Erstellen Sie eine DMCA-Takedown-Notice (Entfernungsaufforderung gemäß Digital Millennium Copyright Act), die die Anforderungen von 17 U.S.C. § 512(c) für die Entfernung rechtsverletzender Inhalte erfüllt.",
+    "shortDescription": "Erstellen Sie eine DMCA-Takedown-Notice."
+  },
+  "emergency-fund": {
+    "name": "Notfallfonds-Rechner",
+    "description": "Berechnen Sie, wie viel Sie in einem Notfallfonds benötigen und wie lange es dauern wird, Ihr Ziel bei Ihrer aktuellen Sparquote zu erreichen.",
+    "shortDescription": "Berechnen Sie Ihr Notfallfonds-Ziel."
+  },
+  "tip-splitter": {
+    "name": "Trinkgeld- & Servicegebühren-Teilung",
+    "description": "Teilen Sie eine Restaurantrechnung auf mehrere Personen auf, einschließlich Steuern und Trinkgeld – mit Berücksichtigung obligatorischer Servicegebühren (die rechtlich keine Trinkgelder sind).",
+    "shortDescription": "Rechnungen mit Steuern, Trinkgeld und Servicegebühren aufteilen."
+  },
+  "net-metering": {
+    "name": "Schätzung der Net-Metering-Einsparungen",
+    "description": "Schätzen Sie die jährlichen Einsparungen durch solares Net-Metering – Produzentenüberschuss plus Gutschriften für überschüssige Energie, die ins Netz eingespeist wird.",
+    "shortDescription": "Schätzen Sie die Einsparungen durch solares Net-Metering."
+  },
+  "child-support": {
+    "name": "Kindesunterhalts-Rechner",
+    "description": "Schätzen Sie die monatlichen Kindesunterhaltspflichten anhand der Einkommensaufteilung oder des Prozentsatzes des Einkommens Ihres Bundesstaates. Unterstützt Kalifornien, New York, Texas, Florida, Illinois und einen generischen Fallback.",
+    "shortDescription": "Schätzen Sie den monatlichen Kindesunterhalt nach Bundesstaat."
+  },
+  "alimony-calc": {
+    "name": "Alimony- / Ehegattenunterhalts-Rechner",
+    "description": "Schätzen Sie den monatlichen Ehegattenunterhalt (Alimony / Spousal Support / Maintenance) und die voraussichtliche Dauer basierend auf Einkommen, Ehedauer und staatlichen Richtlinien.",
+    "shortDescription": "Schätzen Sie Betrag und Dauer des Ehegattenunterhalts."
+  },
+  "divorce-cost": {
+    "name": "Scheidungskosten-Schätzer",
+    "description": "Schätzen Sie die Gesamtkosten einer Scheidung, einschließlich Gerichtsgebühren, Anwaltsstunden, Mediation und Gerichtskosten – sowohl für strittige als auch für einverständliche Fälle.",
+    "shortDescription": "Schätzen Sie die Gesamtkosten einer Scheidung."
+  },
+  "sol-deadline": {
+    "name": "Fristenrechner für Verjährungsfristen",
+    "description": "Geben Sie das Datum an, an dem Ihr Anspruch entstand, und Ihren Bundesstaat – erhalten Sie die genaue Einreichungsfrist und wie viele Tage Sie noch Zeit haben, Klage zu erheben. Deckt Verträge, Personenschäden, Betrug und Sachschäden ab.",
+    "shortDescription": "Finden Sie Ihre genaue Einreichungsfrist nach Datum."
+  },
+  "wrongful-term-value": {
+    "name": "Schadensschätzer für unrechtmäßige Kündigung",
+    "description": "Schätzen Sie den potenziellen Wert eines Anspruchs wegen unrechtmäßiger Kündigung, einschließlich entgangener Löhne, entgangener Leistungen, Schmerzensgelder und Anwaltsgebühren.",
+    "shortDescription": "Schätzen Sie den Wert Ihres Falls bei unrechtmäßiger Kündigung."
+  },
+  "severance-fairness": {
+    "name": "Bewertung der Fairness von Abfindungsangeboten",
+    "description": "Bewerten Sie Ihr Abfindungsangebot im Vergleich zu Branchen-Benchmarks für Ihre Rolle, Dienstzeit und Gehaltsstufe auf einer Skala von 0–100. Erhalten Sie eine Fairness-Bewertung und Verhandlungsleitfäden.",
+    "shortDescription": "Bewerten Sie Ihr Abfindungsangebot anhand von Benchmarks."
+  },
+  "lease-break-penalty": {
+    "name": "Rechner für Vertragsbruch / vorzeitige Kündigung von Mietverträgen",
+    "description": "Schätzen Sie die finanzielle Strafe für die vorzeitige Kündigung Ihres Mietvertrags – einschließlich verbleibender Monate, Schadensminderungspflicht Ihres Vermieters und bundesstaatspezifischer Haftungshöchstgrenzen.",
+    "shortDescription": "Schätzen Sie die Kosten für die vorzeitige Kündigung Ihres Mietvertrags."
+  }
+}
