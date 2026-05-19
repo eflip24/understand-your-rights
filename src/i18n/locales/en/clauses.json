@@ -1,0 +1,206 @@
+{
+  "non-compete-clause": {
+    "title": "Non-Compete Clause",
+    "explanation": "A non-compete clause restricts an employee or contractor from working for competitors or starting a competing business after leaving a company. These clauses are designed to protect trade secrets, client relationships, and competitive advantages. However, they're increasingly scrutinized by courts and legislators who view overly broad non-competes as unfair restraints on workers' ability to earn a living."
+  },
+  "confidentiality-clause": {
+    "title": "Confidentiality Clause",
+    "explanation": "A confidentiality clause (also known as a non-disclosure provision) obligates one or both parties to keep specified information secret. These clauses define what information is considered confidential, how it must be protected, what constitutes permitted disclosure, and how long the obligation lasts. They're found in virtually every type of business agreement."
+  },
+  "indemnification-clause": {
+    "title": "Indemnification Clause",
+    "explanation": "An indemnification clause allocates risk between the parties by requiring one party (the indemnitor) to compensate the other (the indemnitee) for certain losses, damages, or liabilities. These clauses are among the most heavily negotiated in any contract because they directly determine who pays when things go wrong."
+  },
+  "limitation-of-liability": {
+    "title": "Limitation of Liability Clause",
+    "explanation": "A limitation of liability clause caps the total amount one party can recover from the other in the event of a breach or other claim. These clauses also commonly exclude certain types of damages (like consequential, incidental, or punitive damages). They're among the most important risk allocation provisions in any contract."
+  },
+  "termination-clause": {
+    "title": "Termination Clause",
+    "explanation": "A termination clause defines the circumstances under which one or both parties can end the contract before its natural expiration. It specifies the types of termination available (for cause, for convenience, or both), the notice requirements, the cure period for breaches, and what happens after termination (return of materials, payment for work done, surviving obligations)."
+  },
+  "force-majeure-clause": {
+    "title": "Force Majeure Clause",
+    "explanation": "A force majeure clause excuses one or both parties from performing their contractual obligations when extraordinary events beyond their control make performance impossible or impracticable. These events typically include natural disasters, wars, pandemics, government actions, and other unforeseeable circumstances. The COVID-19 pandemic dramatically increased attention to these clauses."
+  },
+  "arbitration-clause": {
+    "title": "Arbitration Clause",
+    "explanation": "An arbitration clause requires the parties to resolve disputes through private arbitration rather than litigation in court. These clauses specify the arbitration rules, the number of arbitrators, the location of arbitration, and whether the arbitration is binding. They're common in employment contracts, consumer agreements, and commercial contracts."
+  },
+  "governing-law-clause": {
+    "title": "Governing Law Clause",
+    "explanation": "A governing law clause (also called a choice of law clause) specifies which jurisdiction's laws will be used to interpret the contract and resolve disputes. This is particularly important in contracts between parties in different states or countries, as different jurisdictions may interpret the same contract language differently."
+  },
+  "intellectual-property-clause": {
+    "title": "Intellectual Property Clause",
+    "explanation": "An intellectual property (IP) clause defines ownership, rights, and restrictions related to intellectual property created, used, or exchanged under the contract. These clauses address who owns work product, what licenses are granted, how pre-existing IP is treated, and what happens to IP rights when the contract ends."
+  },
+  "payment-terms-clause": {
+    "title": "Payment Terms Clause",
+    "explanation": "A payment terms clause defines how, when, and how much the paying party must pay. It covers the total amount or rate, payment schedule, acceptable payment methods, late payment penalties, expense reimbursement, and dispute procedures. Clear payment terms prevent most payment-related disputes."
+  },
+  "entire-agreement-clause": {
+    "title": "Entire Agreement (Merger) Clause",
+    "explanation": "An entire agreement clause (also called a merger or integration clause) states that the written contract is the complete and final agreement between the parties, superseding all prior negotiations, discussions, and agreements. It prevents either party from claiming that additional promises or agreements exist outside the written contract."
+  },
+  "assignment-clause": {
+    "title": "Assignment Clause",
+    "explanation": "An assignment clause governs whether and how a party can transfer its rights and obligations under the contract to a third party. These clauses may prohibit assignment entirely, allow it with consent, or permit it freely. They're important in M&A transactions, business reorganizations, and subcontracting arrangements."
+  },
+  "warranty-clause": {
+    "title": "Warranty Clause",
+    "explanation": "A warranty clause contains promises about the quality, condition, or performance of goods, services, or other subject matter of the contract. Warranties can be express (explicitly stated) or implied (imposed by law). Warranty clauses also commonly include warranty disclaimers limiting or excluding certain warranties."
+  },
+  "notice-clause": {
+    "title": "Notice Clause",
+    "explanation": "A notice clause specifies how formal communications between the parties must be delivered. This includes the required delivery method (mail, email, courier), the addresses for notice, and when notice is considered received. Proper notice is often a prerequisite for exercising rights under the contract, such as termination or claiming a breach."
+  },
+  "severability-clause": {
+    "title": "Severability Clause",
+    "explanation": "A severability clause protects the overall contract if one or more provisions are found to be invalid, illegal, or unenforceable. Without this clause, a court might void the entire contract because of one problematic provision. It's considered standard boilerplate but serves a genuinely important protective function."
+  },
+  "dispute-resolution-clause": {
+    "title": "Dispute Resolution Clause",
+    "explanation": "A dispute resolution clause establishes the process parties must follow to resolve disagreements. It may include a multi-step process starting with informal negotiation, escalating to mediation, and finally to arbitration or litigation. These clauses aim to resolve disputes efficiently and at the lowest possible cost."
+  },
+  "non-solicitation-clause": {
+    "title": "Non-Solicitation Clause",
+    "explanation": "A non-solicitation clause prevents a departing employee or contractor from soliciting the company's clients, customers, or employees for a specified period after leaving. Unlike non-competes, which restrict where you can work, non-solicitation clauses restrict who you can contact. They're generally more enforceable than non-competes because they're narrower in scope."
+  },
+  "data-protection-clause": {
+    "title": "Data Protection Clause",
+    "explanation": "A data protection clause addresses how personal data will be collected, processed, stored, and protected under the contract. With the proliferation of data privacy regulations (GDPR, CCPA, etc.), these clauses have become essential in virtually any contract involving personal information."
+  },
+  "insurance-clause": {
+    "title": "Insurance Clause",
+    "explanation": "An insurance clause requires one or both parties to maintain specified types and amounts of insurance coverage during the contract term. These clauses allocate risk by ensuring that adequate insurance is available to cover potential losses, reducing reliance on indemnification provisions alone."
+  },
+  "representations-warranties-clause": {
+    "title": "Representations and Warranties Clause",
+    "explanation": "Representations and warranties are statements of fact made by one or both parties about the current state of affairs. Representations are assertions about past or present facts. Warranties are promises about the truth of those facts. If a representation or warranty turns out to be false, the other party may have a claim for breach of contract and potentially fraud."
+  },
+  "waiver-of-jury-trial": {
+    "title": "Waiver of Jury Trial Clause",
+    "explanation": "A waiver of jury trial clause provides that the parties agree to have any disputes decided by a judge (bench trial) rather than a jury. These clauses are common in commercial contracts because bench trials are often faster, less expensive, and more predictable than jury trials, particularly for complex commercial disputes."
+  },
+  "acceleration-clause": {
+    "title": "Acceleration Clause",
+    "explanation": "An acceleration clause allows a lender to demand immediate repayment of the entire outstanding loan balance if the borrower violates certain terms, most commonly by missing payments. Without this clause, a lender could only sue for each missed payment individually. Acceleration clauses are standard in mortgages, auto loans, and commercial lending agreements. They give lenders powerful leverage to enforce timely payment and protect their investment."
+  },
+  "anti-dilution-clause": {
+    "title": "Anti-Dilution Clause",
+    "explanation": "An anti-dilution clause protects investors from having their ownership percentage reduced when a company issues new shares at a lower price than what the investor originally paid. These clauses are standard in venture capital and private equity deals. They adjust the investor's conversion price downward to compensate for the dilutive effect of the new issuance, effectively giving them more shares for the same investment."
+  },
+  "automatic-renewal-clause": {
+    "title": "Automatic Renewal Clause",
+    "explanation": "An automatic renewal clause (also called an evergreen clause) extends a contract for additional periods unless one party provides notice of termination within a specified timeframe. These are common in service agreements, subscriptions, leases, and software licenses. While they provide continuity and convenience, they can trap parties into unwanted extensions if the cancellation window is missed."
+  },
+  "best-efforts-clause": {
+    "title": "Best Efforts Clause",
+    "explanation": "A best efforts clause requires a party to try as hard as possible to fulfill an obligation, without absolutely guaranteeing a specific result. It's a higher standard than 'reasonable efforts' or 'commercially reasonable efforts' but less than an absolute guarantee. These clauses are common when performance depends on factors partially outside a party's control, such as obtaining regulatory approval, securing financing, or achieving sales targets."
+  },
+  "choice-of-forum-clause": {
+    "title": "Choice of Forum Clause",
+    "explanation": "A choice of forum clause (also called a forum selection clause) designates the specific court or location where disputes must or may be litigated. It differs from a choice of law clause, which determines which jurisdiction's laws apply. A contract might specify Delaware law (choice of law) but require litigation in New York courts (choice of forum). These clauses reduce uncertainty and prevent races to the courthouse."
+  },
+  "clawback-clause": {
+    "title": "Clawback Clause",
+    "explanation": "A clawback clause allows one party to reclaim compensation, bonuses, or distributions previously paid under certain circumstances — such as financial restatement, misconduct, or failure to meet performance targets. These clauses became prominent after corporate scandals and the 2008 financial crisis. The Dodd-Frank Act and SEC rules now require public companies to adopt clawback policies for executive compensation."
+  },
+  "change-of-control-clause": {
+    "title": "Change of Control Clause",
+    "explanation": "A change of control clause addresses what happens to a contract when one party undergoes a significant ownership change — such as a merger, acquisition, or transfer of a controlling interest. These clauses may grant termination rights, trigger consent requirements, or activate special provisions like accelerated payments or golden parachute compensation."
+  },
+  "compliance-clause": {
+    "title": "Compliance Clause",
+    "explanation": "A compliance clause requires one or both parties to adhere to applicable laws, regulations, industry standards, and ethical guidelines in performing their obligations under the contract. These clauses have become increasingly important with growing regulatory complexity, anti-corruption enforcement (FCPA, UK Bribery Act), data privacy laws (GDPR, CCPA), and sanctions regimes."
+  },
+  "cross-default-clause": {
+    "title": "Cross-Default Clause",
+    "explanation": "A cross-default clause provides that a default under one agreement between the parties (or related agreements) automatically constitutes a default under the current agreement. This prevents a borrower from selectively defaulting on obligations and ensures creditors can protect themselves when a borrower's financial health deteriorates. Cross-default clauses are standard in loan agreements, bond indentures, and complex financing arrangements."
+  },
+  "cure-period-clause": {
+    "title": "Cure Period Clause",
+    "explanation": "A cure period clause gives a party a specified amount of time to fix (cure) a breach or default before the other party can exercise remedies like termination or acceleration. These clauses balance the interests of both parties — giving the breaching party a fair opportunity to correct mistakes while preserving the non-breaching party's right to act if problems aren't resolved."
+  },
+  "drag-along-clause": {
+    "title": "Drag-Along Clause",
+    "explanation": "A drag-along clause gives majority shareholders the right to force minority shareholders to sell their shares in the event of a company sale or acquisition. This prevents minority shareholders from blocking a deal that the majority wants to pursue. The minority shareholders must sell on the same terms and conditions as the majority. Drag-along rights are standard in shareholders' agreements and venture capital term sheets."
+  },
+  "exclusivity-clause": {
+    "title": "Exclusivity Clause",
+    "explanation": "An exclusivity clause grants one party the exclusive right to provide services, distribute products, or negotiate a deal within a defined scope. These clauses are common in distribution agreements, licensing deals, M&A negotiations, and service contracts. They provide security to the exclusive party but limit the other party's flexibility."
+  },
+  "first-right-of-refusal-clause": {
+    "title": "First Right of Refusal Clause",
+    "explanation": "A right of first refusal (ROFR) gives one party the right to match any offer that the other party receives from a third party before the other party can accept it. If the ROFR holder matches the offer, the transaction goes to them instead. If they decline, the other party is free to proceed with the third party. ROFRs are common in real estate leases, shareholders' agreements, and commercial contracts."
+  },
+  "holdback-clause": {
+    "title": "Holdback Clause",
+    "explanation": "A holdback clause retains a portion of a payment amount for a specified period to protect against potential claims, deficiencies, or adjustments. In M&A transactions, a percentage of the purchase price is typically held back in escrow to cover potential indemnification claims. In construction, holdbacks (also called retainage) ensure contractors complete punch list items."
+  },
+  "indemnity-cap-clause": {
+    "title": "Indemnity Cap Clause",
+    "explanation": "An indemnity cap limits the maximum amount one party can be required to pay under the indemnification provisions of a contract. Without a cap, a party's indemnification liability could theoretically be unlimited. Caps are typically set as a percentage of the contract value, the total fees paid, or a fixed dollar amount. They are a critical risk allocation tool in virtually all commercial contracts."
+  },
+  "integration-clause": {
+    "title": "Integration Clause",
+    "explanation": "An integration clause (also called an entire agreement or merger clause) states that the written contract represents the complete and final agreement between the parties, superseding all prior negotiations, discussions, and agreements. This prevents either party from later claiming that oral promises or earlier drafts are part of the deal. It's one of the most important boilerplate clauses in any contract."
+  },
+  "key-person-clause": {
+    "title": "Key Person Clause",
+    "explanation": "A key person clause (also called key man clause) gives one party specific rights — usually suspension, termination, or renegotiation — if a named individual who is essential to the contract's performance is no longer involved. These clauses are common in professional services contracts, fund management agreements, and entertainment deals where the value depends heavily on specific individuals."
+  },
+  "material-adverse-change-clause": {
+    "title": "Material Adverse Change Clause",
+    "explanation": "A material adverse change (MAC) clause (also called material adverse effect or MAE clause) allows a party to walk away from or renegotiate a deal if a significant negative event occurs that fundamentally affects the value, operations, or financial condition of the other party. MAC clauses are critical in M&A agreements, loan commitments, and major commercial contracts."
+  },
+  "most-favored-nation-clause": {
+    "title": "Most Favored Nation Clause",
+    "explanation": "A most favored nation (MFN) clause guarantees that one party will receive terms at least as favorable as those offered to any other party. If the provider offers better pricing, terms, or conditions to another customer, the MFN holder is automatically entitled to the same terms. These clauses originated in international trade treaties and are now common in commercial supply agreements, licensing deals, and insurance contracts."
+  },
+  "no-shop-clause": {
+    "title": "No-Shop Clause",
+    "explanation": "A no-shop clause prohibits one party (usually a seller in an M&A transaction) from soliciting, encouraging, or negotiating with other potential buyers during a specified period. This gives the prospective buyer confidence to invest time and resources in due diligence without worrying about being outbid. No-shop clauses are standard in letters of intent, merger agreements, and exclusive negotiation periods."
+  },
+  "non-disparagement-clause": {
+    "title": "Non-Disparagement Clause",
+    "explanation": "A non-disparagement clause prohibits one or both parties from making negative, critical, or damaging statements about the other party. These clauses are common in settlement agreements, severance packages, and employment contracts. They protect reputation and prevent former business partners or employees from publicly criticizing each other after the relationship ends."
+  },
+  "penalty-clause": {
+    "title": "Penalty Clause",
+    "explanation": "A penalty clause imposes a payment obligation on a party who breaches a contract, where the amount is designed to punish the breaching party rather than to compensate for actual losses. Under common law, penalty clauses are generally unenforceable — courts will strike them down and substitute actual damages. This distinguishes them from liquidated damages clauses, which estimate genuine pre-agreed compensation."
+  },
+  "price-adjustment-clause": {
+    "title": "Price Adjustment Clause",
+    "explanation": "A price adjustment clause allows the contract price to change during the term based on defined triggers or formulas. Common mechanisms include cost-of-living adjustments (COLA) tied to CPI, raw material price indexes, currency fluctuations, or periodic market rate reviews. These clauses are essential in long-term contracts to prevent either party from being locked into pricing that becomes commercially unreasonable."
+  },
+  "right-to-audit-clause": {
+    "title": "Right to Audit Clause",
+    "explanation": "A right to audit clause gives one party the right to examine the other party's books, records, and operations to verify compliance with the contract terms. These clauses are essential in cost-plus contracts, royalty agreements, franchise agreements, and any arrangement where payments are based on reported figures. They serve as both a deterrent against fraud and a mechanism for ensuring accuracy."
+  },
+  "right-of-first-offer-clause": {
+    "title": "Right of First Offer Clause",
+    "explanation": "A right of first offer (ROFO) requires a party to offer an asset or opportunity to the ROFO holder before seeking offers from third parties. Unlike a right of first refusal (where the holder matches a third-party offer), a ROFO requires the seller to give the holder the first opportunity to make an offer. If the holder declines or the parties can't agree on terms, the seller can then seek third-party offers."
+  },
+  "survival-clause": {
+    "title": "Survival Clause",
+    "explanation": "A survival clause specifies which provisions of a contract continue to be effective after the contract terminates or expires. Without a survival clause, all rights and obligations generally end when the contract ends. Commonly surviving provisions include confidentiality, indemnification, limitation of liability, intellectual property ownership, non-compete obligations, and dispute resolution."
+  },
+  "tag-along-clause": {
+    "title": "Tag-Along Clause",
+    "explanation": "A tag-along clause (also called co-sale right) gives minority shareholders the right to join a sale when a majority shareholder sells their shares. If the majority shareholder finds a buyer, the minority shareholders can 'tag along' and sell their shares on the same terms and conditions. This protects minority shareholders from being left behind in a company with new, potentially unfavorable controlling owners."
+  },
+  "time-is-of-the-essence-clause": {
+    "title": "Time Is of the Essence Clause",
+    "explanation": "A 'time is of the essence' clause makes strict compliance with deadlines a material term of the contract. Without this clause, courts generally allow parties reasonable flexibility with timing, and minor delays don't constitute a material breach. With it, any failure to meet a deadline — even by a single day — gives the non-breaching party the right to terminate and seek damages."
+  },
+  "tolling-clause": {
+    "title": "Tolling Clause",
+    "explanation": "A tolling clause suspends (pauses) the running of the statute of limitations or other contractual deadlines for a specified period or during certain events. Tolling agreements are common when parties are negotiating a settlement and want to preserve their litigation rights without the pressure of an expiring deadline. They can also appear in contracts to extend deadlines during force majeure events or disputes."
+  },
+  "venue-clause": {
+    "title": "Venue Clause",
+    "explanation": "A venue clause specifies the geographic location (city, county, or state) where legal proceedings must or may be filed. While similar to a forum selection clause, venue is specifically about geographic location, while forum selection can also designate a type of court (federal vs. state). Venue clauses reduce litigation costs and uncertainty by preventing disputes from being filed in unexpected or inconvenient locations."
+  }
+}

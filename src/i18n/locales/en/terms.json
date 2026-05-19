@@ -1,1 +1,512 @@
-{}
+{
+  "indemnification": {
+    "term": "Indemnification",
+    "definition": "A contractual obligation where one party agrees to compensate another for losses or damages.",
+    "example": "\"The contractor shall indemnify the client against all claims arising from the contractor's work.\""
+  },
+  "arbitration": {
+    "term": "Arbitration",
+    "definition": "A method of resolving disputes outside of court, where an independent arbitrator makes a binding decision.",
+    "example": "\"Any disputes shall be resolved through binding arbitration in New York.\""
+  },
+  "force-majeure": {
+    "term": "Force Majeure",
+    "definition": "A clause that frees both parties from obligation when an extraordinary event beyond their control occurs (e.g., natural disaster, war).",
+    "example": "\"Neither party shall be liable for failure to perform due to force majeure events.\""
+  },
+  "liability": {
+    "term": "Liability",
+    "definition": "Legal responsibility for one's actions or omissions. Can be limited or unlimited depending on the contract.",
+    "example": "\"The company's total liability shall not exceed the amount paid under this agreement.\""
+  },
+  "non-compete": {
+    "term": "Non-Compete",
+    "definition": "A clause preventing a party from engaging in competing activities for a specified period and geographic area after the agreement ends.",
+    "example": "\"Employee agrees not to work for a competing company within 50 miles for 12 months.\""
+  },
+  "non-disclosure": {
+    "term": "Non-Disclosure",
+    "definition": "An agreement to keep certain information confidential and not share it with third parties.",
+    "example": "\"All proprietary information shared during the engagement shall remain confidential.\""
+  },
+  "severability": {
+    "term": "Severability",
+    "definition": "A clause stating that if one part of the contract is found invalid, the rest remains enforceable.",
+    "example": "\"If any provision is held invalid, the remaining provisions shall continue in full force.\""
+  },
+  "waiver": {
+    "term": "Waiver",
+    "definition": "The voluntary relinquishment of a known right. A waiver of one breach doesn't waive future breaches.",
+    "example": "\"Failure to enforce any provision shall not constitute a waiver of future enforcement.\""
+  },
+  "breach": {
+    "term": "Breach",
+    "definition": "A violation of a contractual obligation. Can be material (significant) or minor.",
+    "example": "\"A material breach of this agreement shall entitle the non-breaching party to terminate.\""
+  },
+  "consideration": {
+    "term": "Consideration",
+    "definition": "Something of value exchanged between parties to make a contract legally binding (money, services, goods).",
+    "example": "\"In consideration of $10,000, the consultant agrees to provide services.\""
+  },
+  "jurisdiction": {
+    "term": "Jurisdiction",
+    "definition": "The authority of a court to hear and decide a case. Contracts often specify which jurisdiction governs.",
+    "example": "\"This agreement shall be governed by the laws of the State of Delaware.\""
+  },
+  "statute-of-limitations": {
+    "term": "Statute of Limitations",
+    "definition": "The maximum time period after an event within which legal proceedings may be initiated.",
+    "example": "Common periods: personal injury (2-3 years), breach of contract (4-6 years), fraud (3-6 years)."
+  },
+  "due-diligence": {
+    "term": "Due Diligence",
+    "definition": "The investigation or exercise of care that a reasonable person or business is expected to take before entering an agreement.",
+    "example": "\"Buyer shall have 30 days to conduct due diligence on the property.\""
+  },
+  "fiduciary": {
+    "term": "Fiduciary",
+    "definition": "A person or organization that acts on behalf of another, putting the other's interests above their own. Carries a high standard of care.",
+    "example": "\"The trustee has a fiduciary duty to act in the best interests of the beneficiaries.\""
+  },
+  "negligence": {
+    "term": "Negligence",
+    "definition": "Failure to exercise the level of care that a reasonable person would in similar circumstances, resulting in harm.",
+    "example": "\"The plaintiff must prove duty, breach, causation, and damages to establish negligence.\""
+  },
+  "tort": {
+    "term": "Tort",
+    "definition": "A wrongful act (other than breach of contract) that results in injury or harm and leads to civil liability.",
+    "example": "Common torts include negligence, defamation, and trespass."
+  },
+  "plaintiff": {
+    "term": "Plaintiff",
+    "definition": "The person or party who initiates a lawsuit by filing a complaint in court.",
+    "example": "\"The plaintiff alleges that the defendant breached the contract.\""
+  },
+  "defendant": {
+    "term": "Defendant",
+    "definition": "The person or party being sued or accused in a court proceeding.",
+    "example": "\"The defendant denies all allegations in the complaint.\""
+  },
+  "deposition": {
+    "term": "Deposition",
+    "definition": "A sworn, out-of-court testimony given by a witness, used to gather information before trial.",
+    "example": "\"The witness's deposition will be taken on March 15th at the attorney's office.\""
+  },
+  "escrow": {
+    "term": "Escrow",
+    "definition": "A financial arrangement where a third party holds funds until specified conditions are met.",
+    "example": "\"The buyer's deposit shall be held in escrow until closing.\""
+  },
+  "lien": {
+    "term": "Lien",
+    "definition": "A legal right or interest that a creditor has in the debtor's property, lasting until the debt is satisfied.",
+    "example": "\"The contractor filed a mechanic's lien on the property for unpaid work.\""
+  },
+  "power-of-attorney": {
+    "term": "Power of Attorney",
+    "definition": "A legal document giving one person the authority to act on behalf of another in legal or financial matters.",
+    "example": "\"She granted her daughter power of attorney to manage her finances.\""
+  },
+  "affidavit": {
+    "term": "Affidavit",
+    "definition": "A written statement confirmed by oath or affirmation, used as evidence in court.",
+    "example": "\"The witness submitted an affidavit confirming the timeline of events.\""
+  },
+  "addendum": {
+    "term": "Addendum",
+    "definition": "An addition or supplement to an existing document or contract that adds new terms or modifies existing ones.",
+    "example": "\"The parties agreed to an addendum extending the contract by six months.\""
+  },
+  "amendment": {
+    "term": "Amendment",
+    "definition": "A formal change or modification to an existing law, contract, or document.",
+    "example": "\"This amendment supersedes Section 5.2 of the original agreement.\""
+  },
+  "assignee": {
+    "term": "Assignee",
+    "definition": "A person to whom a right or property is legally transferred.",
+    "example": "\"The assignee shall assume all obligations under the original contract.\""
+  },
+  "boilerplate": {
+    "term": "Boilerplate",
+    "definition": "Standard, often non-negotiable clauses commonly found in contracts (e.g., severability, governing law, entire agreement).",
+    "example": "The boilerplate section typically appears at the end of a contract."
+  },
+  "cease-and-desist": {
+    "term": "Cease and Desist",
+    "definition": "A formal demand to stop an activity (e.g., infringement, harassment) with the threat of legal action.",
+    "example": "\"Our client demands that you cease and desist all use of the trademark immediately.\""
+  },
+  "covenant": {
+    "term": "Covenant",
+    "definition": "A formal promise or agreement, often found in property or employment contracts.",
+    "example": "\"The employee agrees to a covenant not to solicit clients for 12 months.\""
+  },
+  "damages": {
+    "term": "Damages",
+    "definition": "Money awarded by a court to compensate for loss or injury. Can be compensatory, punitive, or nominal.",
+    "example": "\"The jury awarded $50,000 in compensatory damages.\""
+  },
+  "default": {
+    "term": "Default",
+    "definition": "Failure to fulfill a legal obligation, especially failure to make a required payment.",
+    "example": "\"If the borrower defaults, the lender may accelerate the full loan balance.\""
+  },
+  "discovery": {
+    "term": "Discovery",
+    "definition": "The pre-trial phase where parties exchange relevant information and evidence.",
+    "example": "\"During discovery, the company was required to produce all relevant emails.\""
+  },
+  "encumbrance": {
+    "term": "Encumbrance",
+    "definition": "A claim or liability attached to property that may affect its transferability (e.g., mortgage, lien, easement).",
+    "example": "\"The title search revealed no encumbrances on the property.\""
+  },
+  "estoppel": {
+    "term": "Estoppel",
+    "definition": "A legal principle preventing someone from arguing something contrary to their previous statements or actions.",
+    "example": "\"The doctrine of estoppel prevents the landlord from denying the lease extension.\""
+  },
+  "good-faith": {
+    "term": "Good Faith",
+    "definition": "Honesty and fairness in dealings. Most contracts include an implied duty of good faith and fair dealing.",
+    "example": "\"Both parties agree to perform their obligations in good faith.\""
+  },
+  "guarantor": {
+    "term": "Guarantor",
+    "definition": "A person who promises to pay a debt or fulfill an obligation if the primary party fails to do so.",
+    "example": "\"The parent signed as guarantor for the student's apartment lease.\""
+  },
+  "injunction": {
+    "term": "Injunction",
+    "definition": "A court order requiring someone to do or stop doing a specific action.",
+    "example": "\"The court issued a temporary injunction preventing the sale of the property.\""
+  },
+  "intellectual-property": {
+    "term": "Intellectual Property",
+    "definition": "Creations of the mind (inventions, designs, brand names, artistic works) protected by law through patents, copyrights, and trademarks.",
+    "example": "\"All intellectual property created during employment belongs to the company.\""
+  },
+  "joint-and-several-liability": {
+    "term": "Joint and Several Liability",
+    "definition": "A legal doctrine where each party is independently liable for the full extent of the obligations.",
+    "example": "\"The partners are jointly and severally liable for the company's debts.\""
+  },
+  "material-breach": {
+    "term": "Material Breach",
+    "definition": "A significant violation of a contract that permits the other party to terminate and seek damages.",
+    "example": "\"Failure to deliver the goods within 30 days constitutes a material breach.\""
+  },
+  "mediation": {
+    "term": "Mediation",
+    "definition": "A form of dispute resolution where a neutral third party helps parties reach a voluntary agreement.",
+    "example": "\"Before arbitration, the parties agree to attempt mediation in good faith.\""
+  },
+  "mutual-assent": {
+    "term": "Mutual Assent",
+    "definition": "Agreement by both parties to the terms of a contract, typically shown through offer and acceptance.",
+    "example": "\"A contract requires mutual assent—a meeting of the minds on essential terms.\""
+  },
+  "notarization": {
+    "term": "Notarization",
+    "definition": "The official process of having a notary public verify the identity of signers and witness the signing of a document.",
+    "example": "\"The deed must be notarized before it can be recorded.\""
+  },
+  "precedent": {
+    "term": "Precedent",
+    "definition": "A previous court decision that serves as an authoritative rule in future similar cases.",
+    "example": "\"The Supreme Court's ruling set a precedent for all similar cases nationwide.\""
+  },
+  "pro-bono": {
+    "term": "Pro Bono",
+    "definition": "Legal work done voluntarily and without payment, typically for individuals who cannot afford representation.",
+    "example": "\"The law firm takes on 50 pro bono cases per year.\""
+  },
+  "quitclaim-deed": {
+    "term": "Quitclaim Deed",
+    "definition": "A deed that transfers any interest the grantor has in a property without guarantees about the title.",
+    "example": "\"She signed a quitclaim deed transferring her interest in the house to her ex-spouse.\""
+  },
+  "recourse": {
+    "term": "Recourse",
+    "definition": "The legal right to demand compensation or enforcement of a right.",
+    "example": "\"The buyer has no recourse if the product is sold 'as is.'\""
+  },
+  "subpoena": {
+    "term": "Subpoena",
+    "definition": "A legal document ordering someone to attend court or produce documents.",
+    "example": "\"The witness was served with a subpoena to testify at trial.\""
+  },
+  "termination": {
+    "term": "Termination",
+    "definition": "The ending of a contract, either by fulfillment of obligations, mutual agreement, or breach.",
+    "example": "\"Either party may terminate this agreement with 30 days' written notice.\""
+  },
+  "tort-reform": {
+    "term": "Tort Reform",
+    "definition": "Changes to the civil justice system aimed at reducing the ability to file tort lawsuits or limiting damages.",
+    "example": "\"The state passed tort reform legislation capping medical malpractice damages.\""
+  },
+  "unconscionable": {
+    "term": "Unconscionable",
+    "definition": "A contract or clause so unfair or one-sided that a court may refuse to enforce it.",
+    "example": "\"The court found the 500% interest rate to be unconscionable.\""
+  },
+  "venue": {
+    "term": "Venue",
+    "definition": "The geographic location where a legal case is heard. Different from jurisdiction.",
+    "example": "\"The contract specifies venue in Los Angeles County, California.\""
+  },
+  "void-voidable": {
+    "term": "Void / Voidable",
+    "definition": "A void contract has no legal effect from the start. A voidable contract is valid but can be canceled by one party.",
+    "example": "\"Contracts signed under duress are voidable at the option of the pressured party.\""
+  },
+  "warranty": {
+    "term": "Warranty",
+    "definition": "A guarantee or promise about the quality, condition, or performance of a product or service.",
+    "example": "\"The seller warrants that the goods are free from defects for 12 months.\""
+  },
+  "writ": {
+    "term": "Writ",
+    "definition": "A formal written order issued by a court commanding someone to do or stop doing something.",
+    "example": "\"The court issued a writ of execution to enforce the judgment.\""
+  },
+  "zoning": {
+    "term": "Zoning",
+    "definition": "Government regulations controlling how land in specific areas can be used (residential, commercial, industrial).",
+    "example": "\"The property is zoned for commercial use only.\""
+  },
+  "accord-and-satisfaction": {
+    "term": "Accord and Satisfaction",
+    "definition": "An agreement to accept something different (usually less) than what was originally owed, discharging the original obligation.",
+    "example": "\"The parties reached an accord and satisfaction, settling the $10,000 debt for $7,000.\""
+  },
+  "bailment": {
+    "term": "Bailment",
+    "definition": "The temporary transfer of personal property to another person for a specific purpose, with the property to be returned.",
+    "example": "\"Leaving your car at a valet creates a bailment relationship.\""
+  },
+  "bona-fide": {
+    "term": "Bona Fide",
+    "definition": "In good faith; genuine; without fraud or deceit.",
+    "example": "\"The buyer made a bona fide offer on the property.\""
+  },
+  "chattel": {
+    "term": "Chattel",
+    "definition": "Personal property that is movable (as opposed to real property/real estate).",
+    "example": "\"The lease covers the building but not the chattel within it.\""
+  },
+  "collateral": {
+    "term": "Collateral",
+    "definition": "Property pledged as security for a loan. If the borrower defaults, the lender can seize the collateral.",
+    "example": "\"The borrower offered their home as collateral for the business loan.\""
+  },
+  "contingency": {
+    "term": "Contingency",
+    "definition": "A condition that must be met before a contract becomes binding.",
+    "example": "\"The sale is contingent upon the buyer obtaining financing within 30 days.\""
+  },
+  "deed": {
+    "term": "Deed",
+    "definition": "A legal document that transfers ownership of real property from one party to another.",
+    "example": "\"The deed was recorded at the county recorder's office after closing.\""
+  },
+  "duress": {
+    "term": "Duress",
+    "definition": "Threats, violence, or pressure used to force someone into an agreement. Contracts signed under duress are voidable.",
+    "example": "\"He claimed the contract was signed under duress and should be voided.\""
+  },
+  "easement": {
+    "term": "Easement",
+    "definition": "A right to use another person's land for a specific purpose (e.g., a path or utility line).",
+    "example": "\"The utility company has an easement to maintain power lines across the property.\""
+  },
+  "ex-parte": {
+    "term": "Ex Parte",
+    "definition": "A legal proceeding or communication involving only one party, without the other party present.",
+    "example": "\"The judge granted an ex parte restraining order based on the plaintiff's emergency petition.\""
+  },
+  "felony": {
+    "term": "Felony",
+    "definition": "A serious criminal offense typically punishable by imprisonment for more than one year.",
+    "example": "\"Grand theft is classified as a felony in most jurisdictions.\""
+  },
+  "garnishment": {
+    "term": "Garnishment",
+    "definition": "A court-ordered process where money is taken from a debtor's wages or bank account to pay a debt.",
+    "example": "\"The creditor obtained a wage garnishment order for 25% of the debtor's earnings.\""
+  },
+  "habeas-corpus": {
+    "term": "Habeas Corpus",
+    "definition": "A legal action requiring a person under arrest to be brought before a judge to determine if detention is lawful.",
+    "example": "\"The prisoner filed a writ of habeas corpus challenging his detention.\""
+  },
+  "hold-harmless": {
+    "term": "Hold Harmless",
+    "definition": "A clause where one party agrees not to hold the other party responsible for certain risks or liabilities.",
+    "example": "\"The tenant agrees to hold the landlord harmless from claims arising from the tenant's use.\""
+  },
+  "in-camera": {
+    "term": "In Camera",
+    "definition": "A legal proceeding held in private, in the judge's chambers rather than in open court.",
+    "example": "\"The judge reviewed the sensitive documents in camera.\""
+  },
+  "indemnity": {
+    "term": "Indemnity",
+    "definition": "Security or protection against a loss or other financial burden; compensation for damages.",
+    "example": "\"The insurance policy provides indemnity against property damage up to $500,000.\""
+  },
+  "liquidated-damages": {
+    "term": "Liquidated Damages",
+    "definition": "A predetermined amount of compensation specified in a contract to be paid if a party breaches the agreement.",
+    "example": "\"The contract includes liquidated damages of $500 per day for late delivery.\""
+  },
+  "malfeasance": {
+    "term": "Malfeasance",
+    "definition": "Wrongful conduct or illegal activity, especially by a public official.",
+    "example": "\"The mayor was charged with malfeasance for misusing public funds.\""
+  },
+  "misdemeanor": {
+    "term": "Misdemeanor",
+    "definition": "A criminal offense less serious than a felony, typically punishable by fines or imprisonment for less than one year.",
+    "example": "\"Petty theft under $500 is usually classified as a misdemeanor.\""
+  },
+  "novation": {
+    "term": "Novation",
+    "definition": "The replacement of an existing contract or obligation with a new one, with the consent of all parties.",
+    "example": "\"When the business was sold, the contracts were transferred by novation.\""
+  },
+  "perjury": {
+    "term": "Perjury",
+    "definition": "The criminal offense of lying under oath in a court proceeding or sworn document.",
+    "example": "\"The witness was charged with perjury after contradicting her sworn statement.\""
+  },
+  "privity": {
+    "term": "Privity",
+    "definition": "A direct contractual relationship between parties. Generally, only parties in privity can enforce a contract.",
+    "example": "\"Without privity of contract, the third party cannot sue under the agreement.\""
+  },
+  "remedy": {
+    "term": "Remedy",
+    "definition": "The means by which a right is enforced or a wrong is corrected. Can be monetary (damages) or equitable (injunction).",
+    "example": "\"The court may grant specific performance as a remedy if damages are inadequate.\""
+  },
+  "rescission": {
+    "term": "Rescission",
+    "definition": "The cancellation of a contract, returning both parties to their pre-contract positions.",
+    "example": "\"The buyer sought rescission of the contract due to the seller's misrepresentation.\""
+  },
+  "retainer": {
+    "term": "Retainer",
+    "definition": "A fee paid to a lawyer in advance to secure their services. May be a flat fee or deposited into a trust account.",
+    "example": "\"The attorney required a $5,000 retainer before beginning work on the case.\""
+  },
+  "standing": {
+    "term": "Standing",
+    "definition": "The legal right to bring a lawsuit. A party must show they have been directly affected by the issue.",
+    "example": "\"The court dismissed the case because the plaintiff lacked standing.\""
+  },
+  "subrogation": {
+    "term": "Subrogation",
+    "definition": "The right of one party (usually an insurer) to step into the shoes of another to pursue a claim.",
+    "example": "\"After paying the claim, the insurance company pursued subrogation against the at-fault driver.\""
+  },
+  "surety": {
+    "term": "Surety",
+    "definition": "A person or company that assumes responsibility for another's debt or obligation.",
+    "example": "\"The surety bond guarantees the contractor will complete the project.\""
+  },
+  "title": {
+    "term": "Title",
+    "definition": "Legal ownership of property, or the document proving ownership.",
+    "example": "\"The title search confirmed clear ownership of the property.\""
+  },
+  "unjust-enrichment": {
+    "term": "Unjust Enrichment",
+    "definition": "A legal principle preventing someone from unfairly benefiting at another's expense without compensation.",
+    "example": "\"The court ordered restitution based on unjust enrichment.\""
+  },
+  "usury": {
+    "term": "Usury",
+    "definition": "Charging an illegally high or excessive interest rate on a loan.",
+    "example": "\"The loan was voided because the 300% APR violated state usury laws.\""
+  },
+  "adhesion-contract": {
+    "term": "Adhesion Contract",
+    "definition": "A standardized contract offered on a take-it-or-leave-it basis by a party with superior bargaining power.",
+    "example": "\"The cell phone plan is an adhesion contract — you can't negotiate the terms.\""
+  },
+  "anti-assignment-clause": {
+    "term": "Anti-Assignment Clause",
+    "definition": "A clause that prohibits or restricts one party from transferring their rights or obligations under a contract.",
+    "example": "\"This Agreement may not be assigned without prior written consent.\""
+  },
+  "bilateral-contract": {
+    "term": "Bilateral Contract",
+    "definition": "A contract in which both parties exchange mutual promises to perform.",
+    "example": "\"A bilateral contract is formed when the buyer promises to pay and the seller promises to deliver.\""
+  },
+  "capacity": {
+    "term": "Capacity",
+    "definition": "The legal ability to enter into a binding contract. Minors and mentally incapacitated persons may lack capacity.",
+    "example": "\"The contract was voided because the signer lacked legal capacity.\""
+  },
+  "class-action": {
+    "term": "Class Action",
+    "definition": "A lawsuit filed by one or more plaintiffs on behalf of a larger group of people with similar claims.",
+    "example": "\"A class action was filed on behalf of all customers affected by the data breach.\""
+  },
+  "comparative-negligence": {
+    "term": "Comparative Negligence",
+    "definition": "A legal doctrine that allocates fault among parties based on their respective degrees of negligence.",
+    "example": "\"Under comparative negligence, the plaintiff's damages were reduced by 30% for their own fault.\""
+  },
+  "consequential-damages": {
+    "term": "Consequential Damages",
+    "definition": "Indirect damages that result from a breach of contract, beyond the direct loss.",
+    "example": "\"Lost profits from the delayed shipment were claimed as consequential damages.\""
+  },
+  "constructive-notice": {
+    "term": "Constructive Notice",
+    "definition": "Legal presumption that a person has knowledge of information because it is publicly available or properly recorded.",
+    "example": "\"Recording the deed provides constructive notice of ownership to the world.\""
+  },
+  "counterpart": {
+    "term": "Counterpart",
+    "definition": "A duplicate copy of a legal document; contracts may be signed in counterparts, each treated as an original.",
+    "example": "\"This Agreement may be executed in counterparts, each of which shall be deemed an original.\""
+  },
+  "cross-default": {
+    "term": "Cross-Default",
+    "definition": "A provision that a default under one agreement triggers a default under another related agreement.",
+    "example": "\"A cross-default clause caused the company's breach of one loan to trigger default on all loans.\""
+  },
+  "de-facto": {
+    "term": "De Facto",
+    "definition": "Existing in fact or practice, though not necessarily established by law.",
+    "example": "\"Although not officially appointed, she served as the de facto manager.\""
+  },
+  "forum-selection": {
+    "term": "Forum Selection",
+    "definition": "A contractual clause designating the court or location where disputes must be litigated.",
+    "example": "\"The forum selection clause requires all disputes to be heard in Delaware courts.\""
+  },
+  "motion-to-dismiss": {
+    "term": "Motion to Dismiss",
+    "definition": "A request to a court to dismiss a case because the complaint is legally insufficient, even if the facts alleged are true.",
+    "example": "\"The defendant filed a motion to dismiss for failure to state a claim.\""
+  },
+  "statute-of-frauds": {
+    "term": "Statute of Frauds",
+    "definition": "A law requiring certain types of contracts to be in writing to be enforceable.",
+    "example": "\"The oral agreement to sell the house was unenforceable under the statute of frauds.\""
+  },
+  "strict-liability": {
+    "term": "Strict Liability",
+    "definition": "Liability imposed without proof of negligence or intent; the defendant is liable simply because the harm occurred.",
+    "example": "\"Manufacturers face strict liability for defective products regardless of fault.\""
+  }
+}

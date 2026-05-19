@@ -1,0 +1,78 @@
+{
+  "nda": {
+    "title": "Non-Disclosure Agreement (NDA)",
+    "description": "A Non-Disclosure Agreement (NDA) is a legally binding contract that establishes a confidential relationship between parties. The party receiving confidential information agrees not to disclose it to third parties and to use it only for agreed purposes. NDAs are used before discussing business deals, hiring contractors, sharing trade secrets, and during merger negotiations."
+  },
+  "employment-contract": {
+    "title": "Employment Contract",
+    "description": "An employment contract is an agreement between an employer and employee that defines the terms and conditions of employment. It covers compensation, benefits, job responsibilities, termination conditions, and post-employment restrictions. While at-will employment is the default in most U.S. states, written employment contracts provide clarity and protection for both parties."
+  },
+  "freelance-agreement": {
+    "title": "Freelance / Independent Contractor Agreement",
+    "description": "A freelance agreement (or independent contractor agreement) defines the relationship between a client and an independent contractor. It's critical for establishing that the worker is a contractor, not an employee — a distinction that affects taxes, benefits, liability, and legal rights."
+  },
+  "lease-agreement": {
+    "title": "Lease Agreement",
+    "description": "A lease agreement is a contract between a property owner (landlord) and a tenant that grants the tenant the right to use the property for a specified period in exchange for rent. Lease agreements can cover residential, commercial, or industrial properties, each with different legal requirements and common provisions."
+  },
+  "saas-agreement": {
+    "title": "SaaS (Software as a Service) Agreement",
+    "description": "A SaaS agreement governs the use of cloud-based software services. Unlike traditional software licenses where the customer buys and installs software, SaaS agreements provide access to hosted software on a subscription basis. The provider maintains the software, infrastructure, and data security."
+  },
+  "consulting-agreement": {
+    "title": "Consulting Agreement",
+    "description": "A consulting agreement defines the terms under which a consultant provides expert advice, analysis, or specialized services to a client. Unlike employment contracts, consulting agreements establish an independent contractor relationship where the consultant maintains control over how the work is performed."
+  },
+  "partnership-agreement": {
+    "title": "Partnership Agreement",
+    "description": "A partnership agreement defines the terms of a business partnership, including each partner's rights, responsibilities, contributions, and share of profits and losses. Without a written partnership agreement, partners are subject to default rules under state law, which may not align with their intentions."
+  },
+  "purchase-agreement": {
+    "title": "Purchase Agreement (Sale of Goods)",
+    "description": "A purchase agreement governs the sale of goods between a buyer and seller. It defines the goods being sold, the price, delivery terms, payment terms, warranties, and the rights and remedies of each party. For significant purchases, a well-drafted agreement protects both parties from disputes about what was promised."
+  },
+  "service-agreement": {
+    "title": "Service Agreement",
+    "description": "A service agreement defines the terms under which one party provides services to another. It covers the scope of services, performance standards, pricing, timeline, intellectual property rights, liability, and termination. Service agreements range from simple one-page documents to comprehensive master service agreements (MSAs) with multiple statements of work (SOWs)."
+  },
+  "licensing-agreement": {
+    "title": "Licensing Agreement",
+    "description": "A licensing agreement grants one party (the licensee) the right to use another party's (the licensor's) intellectual property — such as patents, trademarks, copyrights, or trade secrets — under specified conditions. The licensor retains ownership while the licensee gains usage rights."
+  },
+  "terms-of-service": {
+    "title": "Terms of Service (ToS)",
+    "description": "Terms of Service (also called Terms of Use or Terms and Conditions) are the rules and guidelines that users must agree to in order to use a website, app, or service. They create a legally binding agreement between the service provider and its users, defining acceptable use, intellectual property rights, liability limitations, and dispute resolution."
+  },
+  "privacy-policy": {
+    "title": "Privacy Policy",
+    "description": "A privacy policy is a legal document that explains how an organization collects, uses, stores, shares, and protects personal information. Privacy policies are legally required by numerous regulations including GDPR (EU), CCPA (California), and various other state and international privacy laws."
+  },
+  "joint-venture-agreement": {
+    "title": "Joint Venture Agreement",
+    "description": "A joint venture agreement establishes a collaborative business arrangement between two or more parties who agree to pool resources for a specific project or business activity while maintaining their separate identities. Unlike a partnership, a joint venture is typically limited in scope and duration."
+  },
+  "real-estate-purchase": {
+    "title": "Real Estate Purchase Agreement",
+    "description": "A real estate purchase agreement is a contract between a buyer and seller for the sale of real property. It's one of the most significant contracts most people will ever sign, covering the purchase price, financing terms, contingencies, closing procedures, and representations about the property's condition."
+  },
+  "loan-agreement": {
+    "title": "Loan Agreement",
+    "description": "A loan agreement is a contract between a lender and borrower that sets out the terms of a loan, including the principal amount, interest rate, repayment schedule, collateral requirements, and default provisions. Loan agreements range from simple promissory notes for personal loans to complex credit facilities for corporate borrowers."
+  },
+  "non-solicitation-agreement": {
+    "title": "Non-Solicitation Agreement",
+    "description": "A non-solicitation agreement prevents a departing employee or contractor from soliciting the company's clients, customers, or employees for a specified period. It's narrower than a non-compete (which restricts where you can work) and focuses specifically on protecting business relationships."
+  },
+  "shareholder-agreement": {
+    "title": "Shareholder Agreement",
+    "description": "A shareholder agreement is a contract among the shareholders of a company that defines their rights, obligations, and the rules governing the company. It supplements the company's articles of incorporation and bylaws with more detailed provisions about management, share transfers, and dispute resolution."
+  },
+  "commercial-lease": {
+    "title": "Commercial Lease",
+    "description": "A commercial lease is an agreement between a landlord and a business tenant for the use of commercial property (office, retail, industrial, or warehouse space). Unlike residential leases, commercial leases are largely unregulated and heavily negotiated, with terms significantly affecting the tenant's business operations and costs."
+  },
+  "website-terms": {
+    "title": "Website Terms and Conditions",
+    "description": "Website terms and conditions (also called Terms of Use) establish the rules for using a website. They protect the website owner from liability, set expectations for user behavior, address intellectual property rights, and establish the legal framework for the user-website relationship."
+  }
+}
