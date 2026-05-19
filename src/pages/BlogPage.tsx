@@ -15,7 +15,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <Head
+      <Tier3Head
         title="Blog — LegallySpoken"
         description="Legal insights, guides, and analysis from LegallySpoken. Stay informed about your rights and the law."
       />

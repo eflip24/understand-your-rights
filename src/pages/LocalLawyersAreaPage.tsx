@@ -17,7 +17,7 @@ export default function LocalLawyersAreaPage() {
 
   return (
     <div className="container py-8 max-w-4xl">
-      <Head
+      <Tier3Head
         title={practiceArea.metaTitle}
         description={practiceArea.metaDescription}
       />

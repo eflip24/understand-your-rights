@@ -12,7 +12,7 @@ const SITE = "https://legallyspoken.com";
 export default function LocalLawyersDirectory() {
   return (
     <div className="container py-8 max-w-4xl">
-      <Head
+      <Tier3Head
         title="Find a Lawyer Near You — Free Attorney Directory | LegallySpoken"
         description="Browse verified lawyers by practice area. Find personal injury, car accident, employment, insurance, and other lawyers near you."
       />

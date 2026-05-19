@@ -10,7 +10,7 @@ export default function StatuteLibraryDirectory() {
   const url = "https://legallyspoken.com/laws";
   return (
     <div className="container py-10 max-w-5xl">
-      <Head
+      <Tier3Head
         title="Statute Library — State-by-State Plain-English Legal Guides | LegallySpoken"
         description="Browse plain-English summaries of state laws on security deposits, eviction notice periods, minimum wage, and more — for all 50 states."
       />

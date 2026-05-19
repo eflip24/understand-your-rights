@@ -24,7 +24,7 @@ export default function BlogCategoryPage() {
 
   return (
     <>
-      <Head
+      <Tier3Head
         title={`${categoryName} — Blog — LegallySpoken`}
         description={`Read articles about ${categoryName} on LegallySpoken.`}
       />

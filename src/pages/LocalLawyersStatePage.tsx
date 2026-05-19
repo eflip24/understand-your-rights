@@ -28,7 +28,7 @@ export default function LocalLawyersStatePage() {
 
   return (
     <div className="container py-8 max-w-4xl">
-      <Head
+      <Tier3Head
         title={`${practiceArea.shortTitle} Lawyers in ${stateInfo.name} | LegallySpoken`}
         description={`Find ${practiceArea.shortTitle.toLowerCase()} lawyers in ${stateInfo.name}. ${stateInfo.name} statute of limitations: ${stateInfo.personalInjurySOL}. Free courthouse info and settlement calculator.`}
       />

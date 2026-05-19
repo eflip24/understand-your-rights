@@ -32,7 +32,7 @@ export default function PillarPage({ data }: PillarPageProps) {
 
   return (
     <div className="container py-8 max-w-4xl">
-      <Head
+      <Tier3Head
         title={data.pillarMetaTitle}
         description={data.pillarMetaDescription}
       />

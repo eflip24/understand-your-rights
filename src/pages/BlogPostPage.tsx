@@ -148,7 +148,7 @@ export default function BlogPostPage() {
 
   return (
     <>
-      <Head
+      <Tier3Head
         title={`${title} — LegallySpoken`}
         description={post.excerpt}
         ogImage={post.featured_image_url || undefined}
