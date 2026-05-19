@@ -1,1 +1,78 @@
-{}
+{
+  "nda": {
+    "title": "Accord de non-divulgation (NDA)",
+    "description": "Un accord de non-divulgation (NDA) est un contrat juridiquement contraignant qui établit une relation confidentielle entre les parties. La partie recevant des informations confidentielles s'engage à ne pas les divulguer à des tiers et à ne les utiliser qu'aux fins convenues. Les NDA sont utilisés avant de discuter d'accords commerciaux, d'embaucher des entrepreneurs, de partager des secrets commerciaux et lors de négociations de fusion."
+  },
+  "employment-contract": {
+    "title": "Contrat de travail",
+    "description": "Un contrat de travail est un accord entre un employeur et un employé qui définit les termes et conditions d'emploi. Il couvre la rémunération, les avantages sociaux, les responsabilités professionnelles, les conditions de résiliation et les restrictions post-emploi. Bien que l'emploi \"at-will\" (emploi à volonté) soit le régime par défaut dans la plupart des États américains, les contrats de travail écrits apportent de la clarté et une protection aux deux parties."
+  },
+  "freelance-agreement": {
+    "title": "Contrat de freelance / Collaborateur indépendant",
+    "description": "Un contrat de freelance (ou contrat de collaborateur indépendant) définit la relation entre un client et un prestataire indépendant. Il est essentiel pour établir que le travailleur est un prestataire, et non un employé – une distinction qui affecte les impôts, les avantages sociaux, la responsabilité et les droits légaux."
+  },
+  "lease-agreement": {
+    "title": "Contrat de location",
+    "description": "Un contrat de location est un contrat entre un propriétaire (bailleur) et un locataire qui accorde au locataire le droit d'utiliser la propriété pendant une période spécifiée en échange d'un loyer. Les contrats de location peuvent couvrir des propriétés résidentielles, commerciales ou industrielles, chacune ayant des exigences légales et des dispositions communes différentes."
+  },
+  "saas-agreement": {
+    "title": "Contrat SaaS (Software as a Service)",
+    "description": "Un contrat SaaS régit l'utilisation des services logiciels basés sur le cloud. Contrairement aux licences logicielles traditionnelles où le client achète et installe le logiciel, les contrats SaaS donnent accès à un logiciel hébergé sur la base d'un abonnement. Le fournisseur assure la maintenance du logiciel, de l'infrastructure et de la sécurité des données."
+  },
+  "consulting-agreement": {
+    "title": "Contrat de conseil",
+    "description": "Un contrat de conseil définit les conditions dans lesquelles un consultant fournit des conseils d'expert, des analyses ou des services spécialisés à un client. Contrairement aux contrats de travail, les contrats de conseil établissent une relation d'entrepreneur indépendant où le consultant conserve le contrôle sur la manière dont le travail est effectué."
+  },
+  "partnership-agreement": {
+    "title": "Contrat de partenariat",
+    "description": "Un contrat de partenariat définit les termes d'un partenariat commercial, y compris les droits, responsabilités, contributions et la part des bénéfices et des pertes de chaque partenaire. Sans un contrat de partenariat écrit, les partenaires sont soumis aux règles par défaut en vertu du droit de l'État, qui peuvent ne pas correspondre à leurs intentions."
+  },
+  "purchase-agreement": {
+    "title": "Contrat d'achat (Vente de biens)",
+    "description": "Un contrat d'achat régit la vente de biens entre un acheteur et un vendeur. Il définit les biens vendus, le prix, les conditions de livraison, les conditions de paiement, les garanties, ainsi que les droits et recours de chaque partie. Pour les achats importants, un accord bien rédigé protège les deux parties contre les litiges concernant ce qui a été promis."
+  },
+  "service-agreement": {
+    "title": "Contrat de service",
+    "description": "Un contrat de service définit les termes selon lesquels une partie fournit des services à une autre. Il couvre la portée des services, les normes de performance, la tarification, le calendrier, les droits de propriété intellectuelle, la responsabilité et la résiliation. Les contrats de service vont des simples documents d'une page aux contrats de services maîtres (MSA) complets avec plusieurs \"statements of work\" (SOW - déclarations de travail)."
+  },
+  "licensing-agreement": {
+    "title": "Contrat de licence",
+    "description": "Un contrat de licence accorde à une partie (le titulaire de licence) le droit d'utiliser la propriété intellectuelle d'une autre partie (le concédant) — telle que les brevets, marques, droits d'auteur ou secrets commerciaux — selon des conditions spécifiées. Le concédant conserve la propriété tandis que le titulaire de licence acquiert les droits d'utilisation."
+  },
+  "terms-of-service": {
+    "title": "Conditions Générales de Service (CGS)",
+    "description": "Les Conditions Générales de Service (également appelées Conditions d'Utilisation ou Termes et Conditions) sont les règles et lignes directrices que les utilisateurs doivent accepter pour utiliser un site web, une application ou un service. Elles créent un accord juridiquement contraignant entre le fournisseur de services et ses utilisateurs, définissant l'utilisation acceptable, les droits de propriété intellectuelle, les limitations de responsabilité et la résolution des litiges."
+  },
+  "privacy-policy": {
+    "title": "Politique de confidentialité",
+    "description": "Une politique de confidentialité est un document juridique qui explique comment une organisation collecte, utilise, stocke, partage et protège les informations personnelles. Les politiques de confidentialité sont légalement requises par de nombreuses réglementations, y compris le RGPD (UE), le CCPA (Californie) et diverses autres lois nationales et internationales sur la protection de la vie privée."
+  },
+  "joint-venture-agreement": {
+    "title": "Contrat de coentreprise",
+    "description": "Un contrat de coentreprise établit un arrangement commercial collaboratif entre deux ou plusieurs parties qui conviennent de mettre en commun des ressources pour un projet ou une activité commerciale spécifique tout en conservant leurs identités distinctes. Contrairement à un partenariat, une coentreprise est généralement limitée en portée et en durée."
+  },
+  "real-estate-purchase": {
+    "title": "Contrat d'achat immobilier",
+    "description": "Un contrat d'achat immobilier est un contrat entre un acheteur et un vendeur pour la vente d'un bien immobilier. C'est l'un des contrats les plus importants que la plupart des gens signeront, couvrant le prix d'achat, les conditions de financement, les contingences, les procédures de clôture et les déclarations concernant l'état de la propriété."
+  },
+  "loan-agreement": {
+    "title": "Contrat de prêt",
+    "description": "Un contrat de prêt est un contrat entre un prêteur et un emprunteur qui établit les conditions d'un prêt, y compris le montant principal, le taux d'intérêt, le calendrier de remboursement, les exigences en matière de garanties et les dispositions de défaut. Les contrats de prêt vont des simples billets à ordre (promissory notes) pour les prêts personnels aux facilités de crédit complexes pour les emprunteurs commerciaux."
+  },
+  "non-solicitation-agreement": {
+    "title": "Accord de non-sollicitation",
+    "description": "Un accord de non-sollicitation empêche un employé ou un prestataire sortant de solliciter les clients ou les employés de l'entreprise pendant une période spécifiée. Il est plus restrictif qu'un accord de non-concurrence (qui limite l'endroit où vous pouvez travailler) et se concentre spécifiquement sur la protection des relations commerciales."
+  },
+  "shareholder-agreement": {
+    "title": "Pacte d'actionnaires",
+    "description": "Un pacte d'actionnaires est un contrat entre les actionnaires d'une société qui définit leurs droits, obligations et les règles régissant la société. Il complète les statuts et règlements de l'entreprise avec des dispositions plus détaillées concernant la gestion, les transferts d'actions et la résolution des litiges."
+  },
+  "commercial-lease": {
+    "title": "Bail commercial",
+    "description": "Un bail commercial est un accord entre un propriétaire et un locataire commercial pour l'utilisation d'une propriété commerciale (bureaux, commerces de détail, espaces industriels ou d'entrepôt). Contrairement aux baux résidentiels, les baux commerciaux sont largement non réglementés et fortement négociés, avec des conditions qui affectent considérablement les opérations et les coûts de l'entreprise du locataire."
+  },
+  "website-terms": {
+    "title": "Conditions Générales d'Utilisation du Site Web",
+    "description": "Les conditions générales d'utilisation d'un site web (également appelées \"Terms of Use\") établissent les règles d'utilisation d'un site web. Elles protègent le propriétaire du site web contre la responsabilité, définissent les attentes en matière de comportement de l'utilisateur, traitent des droits de propriété intellectuelle et établissent le cadre juridique de la relation entre l'utilisateur et le site web."
+  }
+}
