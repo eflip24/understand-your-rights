@@ -333,7 +333,7 @@ Deno.serve(async (req) => {
   if (type === "tools-i18n") return new Response(buildToolsI18n(), { headers: h });
   if (type === "legal-terms-i18n") return new Response(buildLegalTermsI18n(), { headers: h });
   if (type === "guides-i18n") return new Response(buildGuidesI18n(), { headers: h });
-  if (type === "lawyers-i18n") return new Response(buildLawyersI18n(), { headers: h });
+  
   if (type === "blog") {
     const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!);
     return new Response(await buildBlog(sb), { headers: h });
