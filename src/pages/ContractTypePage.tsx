@@ -1,4 +1,5 @@
 import { useParams, Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { getContractTypeBySlug } from "@/data/contractTypes";
 import ContentPageLayout from "@/components/layout/ContentPageLayout";
 import NotFound from "@/pages/NotFound";
@@ -10,49 +11,54 @@ import { JsonLdGraph, articleSchema, faqSchema } from "@/components/seo/JsonLd";
 export default function ContractTypePage() {
   const { slug } = useParams<{ slug: string }>();
   const location = useLocation();
+  const { t } = useTranslation(["contracts", "common"]);
   if (!slug) return <NotFound />;
 
   const contractType = getContractTypeBySlug(slug);
   if (!contractType) return <NotFound />;
 
+  const title = t(`contracts:${slug}.title`, { defaultValue: contractType.title }) as string;
+  const description = t(`contracts:${slug}.description`, { defaultValue: contractType.description }) as string;
+  const summary = description.slice(0, 155);
+
   const url = `https://legallyspoken.com${location.pathname}`;
   const schemas = [
-    articleSchema(contractType.title, contractType.description.slice(0, 155), url),
+    articleSchema(title, summary, url),
     ...(contractType.faqs?.length ? [faqSchema(contractType.faqs)] : []),
   ];
 
   return (
     <ContentPageLayout
-      title={contractType.title}
+      title={title}
       category={contractType.category}
       breadcrumbs={[
-        { label: "Contract Types", href: "/contract-types" },
-        { label: contractType.title },
+        { label: t("common:nav.resources.contracts", { defaultValue: "Contract Types" }) as string, href: "/contract-types" },
+        { label: title },
       ]}
       relatedToolIds={contractType.relatedToolIds}
       relatedClauseSlugs={contractType.keyClauseSlugs}
       faqs={contractType.faqs}
-      metaTitle={`${contractType.title} — Guide & Key Clauses | LegallySpoken`}
-      metaDescription={contractType.description.slice(0, 155) + "..."}
+      metaTitle={`${title} — ${t("common:contractTypePage.metaSuffix", { defaultValue: "Guide & Key Clauses | LegallySpoken" })}`}
+      metaDescription={summary + "..."}
     >
       <JsonLdGraph schemas={schemas} />
 
       {/* Description */}
       <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">Overview</h2>
-        {contractType.description.split("\n\n").map((para, i) => (
+        <h2 className="text-2xl font-bold mb-4">{t("common:contractTypePage.overview", { defaultValue: "Overview" })}</h2>
+        {description.split("\n\n").map((para, i) => (
           <p key={i} className="text-muted-foreground leading-relaxed mb-4">{para}</p>
         ))}
       </div>
 
       {/* Key Clauses */}
       <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">Key Clauses Typically Found</h2>
+        <h2 className="text-2xl font-bold mb-4">{t("common:contractTypePage.keyClauses", { defaultValue: "Key Clauses Typically Found" })}</h2>
         <div className="flex flex-wrap gap-2">
-          {contractType.keyClauseSlugs.map((slug) => (
-            <Link key={slug} to={`/legal-clauses/${slug}`}>
+          {contractType.keyClauseSlugs.map((s) => (
+            <Link key={s} to={`/legal-clauses/${s}`}>
               <Badge variant="secondary" className="hover:bg-accent/20 transition-colors cursor-pointer capitalize text-sm py-1.5 px-3">
-                {slug.replace(/-clause$/, "").replace(/-/g, " ")}
+                {s.replace(/-clause$/, "").replace(/-/g, " ")}
               </Badge>
             </Link>
           ))}
@@ -62,7 +68,7 @@ export default function ContractTypePage() {
       {/* Common Risks */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-          <AlertTriangle className="h-5 w-5 text-destructive" /> Common Risks
+          <AlertTriangle className="h-5 w-5 text-destructive" /> {t("common:contractTypePage.commonRisks", { defaultValue: "Common Risks" })}
         </h2>
         <Card className="border-destructive/20">
           <CardContent className="p-6">

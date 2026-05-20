@@ -63,5 +63,38 @@
     "exampleClause": "Cláusula de ejemplo",
     "definitionExamplesSuffix": "Definición y ejemplos | LegallySpoken",
     "englishOnlyNotice": "Esta guía está disponible actualmente solo en inglés."
+  },
+  "contractTypePage": {
+    "metaSuffix": "Guía y Cláusulas Clave | LegallySpoken",
+    "overview": "Resumen",
+    "keyClauses": "Cláusulas Clave Habituales",
+    "commonRisks": "Riesgos Comunes"
+  },
+  "legalClausePage": {
+    "metaSuffix": "Guía y Ejemplos | LegallySpoken",
+    "whatIs": "¿Qué es una {{title}}?",
+    "exampleLanguage": "Ejemplo de Redacción",
+    "redFlags": "Señales de Alerta",
+    "enforceability": "Notas de Aplicabilidad"
+  },
+  "contractTypesDirectory": {
+    "metaTitle": "Guía de Tipos de Contrato — Acuerdos Comunes Explicados | LegallySpoken",
+    "metaDescription": "Explora los tipos de contrato más comunes con sus cláusulas clave, riesgos y preguntas frecuentes. NDA, arrendamientos, contratos laborales y más.",
+    "title": "Guía de Tipos de Contrato",
+    "subtitle": "{{count}} tipos de contrato comunes con cláusulas clave y riesgos.",
+    "searchPlaceholder": "Buscar tipos de contrato...",
+    "all": "Todos",
+    "stats": "{{clauses}} cláusulas clave • {{risks}} riesgos",
+    "empty": "No se encontraron tipos de contrato para tu búsqueda."
+  },
+  "legalClausesDirectory": {
+    "metaTitle": "Guía de Cláusulas Legales — Cláusulas Contractuales Comunes Explicadas | LegallySpoken",
+    "metaDescription": "Explora cláusulas contractuales comunes con ejemplos, notas de aplicabilidad y señales de alerta. Entiende qué significa cada cláusula antes de firmar.",
+    "title": "Guía de Cláusulas Legales",
+    "subtitle": "{{count}} cláusulas contractuales comunes explicadas con ejemplos y señales de alerta.",
+    "searchPlaceholder": "Buscar cláusulas...",
+    "all": "Todas",
+    "stats": "{{examples}} ejemplos • {{flags}} señales de alerta",
+    "empty": "No se encontraron cláusulas para tu búsqueda."
   }
 }

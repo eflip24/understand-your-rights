@@ -63,5 +63,38 @@
     "exampleClause": "Example Clause",
     "definitionExamplesSuffix": "Definition & Examples | LegallySpoken",
     "englishOnlyNotice": "This guide is currently available in English only."
+  },
+  "contractTypePage": {
+    "metaSuffix": "Guide & Key Clauses | LegallySpoken",
+    "overview": "Overview",
+    "keyClauses": "Key Clauses Typically Found",
+    "commonRisks": "Common Risks"
+  },
+  "legalClausePage": {
+    "metaSuffix": "Guide & Examples | LegallySpoken",
+    "whatIs": "What Is a {{title}}?",
+    "exampleLanguage": "Example Clause Language",
+    "redFlags": "Red Flags to Watch For",
+    "enforceability": "Enforceability Notes"
+  },
+  "contractTypesDirectory": {
+    "metaTitle": "Contract Types Guide — Common Agreements Explained | LegallySpoken",
+    "metaDescription": "Explore common contract types with key clauses, risks, and FAQs. Understand NDAs, leases, employment contracts, and more.",
+    "title": "Contract Types Guide",
+    "subtitle": "{{count}} common contract types with key clauses and risks.",
+    "searchPlaceholder": "Search contract types...",
+    "all": "All",
+    "stats": "{{clauses}} key clauses • {{risks}} risks",
+    "empty": "No contract types found matching your search."
+  },
+  "legalClausesDirectory": {
+    "metaTitle": "Legal Clauses Guide — Common Contract Clauses Explained | LegallySpoken",
+    "metaDescription": "Explore common contract clauses with examples, enforceability notes, and red flags. Understand what each clause means before you sign.",
+    "title": "Legal Clauses Guide",
+    "subtitle": "{{count}} common contract clauses explained with examples and red flags.",
+    "searchPlaceholder": "Search clauses...",
+    "all": "All",
+    "stats": "{{examples}} examples • {{flags}} red flags",
+    "empty": "No clauses found matching your search."
   }
 }

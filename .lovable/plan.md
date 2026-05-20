@@ -1,82 +1,55 @@
-## Phase A6 — Tier 2/3 Rollout
+## Finish Phase A6 — translation wiring + sitemap hreflang cleanup
 
-Bulk-populate AI translations for the long-tail content namespaces scaffolded in Phase A4, and lock in Tier 3 (English-only) handling so nothing renders as broken/empty in non-English locales.
+Two leftovers from Phase A6: (1) make `ContractTypePage`, `LegalClausePage`, and their two directory pages actually *consume* the AI-translated `contracts.json` / `clauses.json` values, and (2) stop the sitemap from advertising localized alternates for English-only (Tier-3) routes.
 
-### Tier 2 — bulk AI translation (4 EU locales: ES, FR, DE, IT)
+### 1. Translation wiring (contracts + clauses)
 
-Translate the following from English source data into `src/i18n/locales/{es,fr,de,it}/<ns>.json`. Keys = English source slug/id.
+Pattern: keep the existing English data in `src/data/*` as the source of truth (slugs, categories, FAQs, structural fields), and use `t()` with `defaultValue` to overlay translated `name` / `summary` / `description` / `explanation` per locale, falling back to English when a key is missing.
 
-| Namespace | Source | Items | Fields translated |
-|---|---|---|---|
-| `tools.json` | `src/data/tools.ts` | ~100 tools | `name`, `description`, `shortDescription` |
-| `terms.json` | `src/data/legalTerms.ts` + `src/data/legalTermPages.ts` | ~80 terms | `term`, `definition`, `explanation`, `exampleClause` |
-| `contracts.json` (NEW) | `src/data/contractTypes.ts` | ~25 contract types | `name`, `summary`, `whenToUse` |
-| `clauses.json` (NEW) | `src/data/legalClauses.ts` | ~40 clauses | `name`, `plainEnglish`, `whenItMatters` |
+**`ContractTypePage.tsx`**
+- Add `useTranslation("contracts")`.
+- Resolve `title = t(`${slug}.name`, { defaultValue: contractType.title })`.
+- Resolve `description = t(`${slug}.description`, { defaultValue: contractType.description })` (long form) and `summary = t(`${slug}.summary`, { defaultValue: contractType.description.slice(0, 155) })`.
+- Use `title` / `description` in the `<h2>Overview</h2>` body, breadcrumbs, `ContentPageLayout` `title`, `metaTitle`, `metaDescription`, and `articleSchema(...)`.
+- Heading "Key Clauses Typically Found" / "Common Risks" → move strings into `common.json` under `contractTypePage.*` and translate the 6 locales (short labels only; risk items stay English data).
 
-**Pipeline**: One-off Python via the `ai-gateway` skill (`/tmp/lovable_ai.py`), model `google/gemini-3-flash-preview`, batched by namespace × locale (16 runs). System prompt enforces:
-- preserve JSON keys exactly
-- preserve `{{var}}` placeholders and inline HTML
-- keep US-specific terms-of-art untranslated (e.g. "Miranda rights", "1099", "LLC")
-- never invent statutes or citations
-- output valid JSON only
+**`LegalClausePage.tsx`**
+- Add `useTranslation("clauses")`.
+- Resolve `title = t(`${slug}.name`, { defaultValue: clause.title })` and `explanation = t(`${slug}.explanation`, { defaultValue: clause.explanation })`.
+- Wire into `ContentPageLayout`, breadcrumbs, JSON-LD, "What is a {title}?" heading, body paragraph, `metaTitle`, `metaDescription`.
+- Section headings ("Example Clause Language", "Red Flags to Watch For", "Enforceability Notes") → `common.json` under `legalClausePage.*`, 6 locales.
 
-Output committed straight to repo. No runtime cost.
+**`ContractTypesDirectory.tsx`**
+- Add `useTranslation(["contracts","common"])`.
+- In the `filtered` `useMemo`, replace `ct.title` / `ct.description` reads with `t(`${ct.slug}.name`, { defaultValue: ct.title })` etc., so search matches the visible (translated) values.
+- Card `<h3>` shows translated `name`; `<p>` shows translated `summary` (falls back to `description`).
+- Page `<h1>`, intro text, "All", search placeholder, "X key clauses • Y risks", empty-state copy → `common.json` `contractTypesDirectory.*`.
 
-### Tier 3 — English-only content (4 EU locales)
+**`LegalClausesDirectory.tsx`** — mirror of the above using `clauses` namespace and `legalClausesDirectory.*` in `common.json`.
 
-Content that stays English even on `/es/`, `/fr/`, `/de/`, `/it/` routes:
-- Blog posts (WP-sourced)
-- US state legal guides (`stateData.ts`, state cluster articles)
-- Lawyer directory (city/state/area pages, listings)
-- Statutes (`statutes.ts`) — US code only
+**Locale JSON additions (6 files × ~10 keys):** add `contractTypePage`, `legalClausePage`, `contractTypesDirectory`, `legalClausesDirectory` sub-objects to each `common.json`. The bulk-translated item bodies are already present in `contracts.json` / `clauses.json` from the previous phase, so no new translation calls are required.
 
-**Wiring for Tier 3**:
-1. **`<Head>` noindex on non-EN locales** for these route patterns so Google doesn't index thin/duplicate English content under `/es/blog/*` etc. Add `noindex` prop driven by `locale !== "en"` in:
-   - `BlogPage`, `BlogPostPage`, `BlogCategoryPage`
-   - `LocalLawyersDirectory`, `LocalLawyersStatePage`, `LocalLawyersCityPage`, `LocalLawyersAreaPage`
-   - `StatePillarPage`, `StateClusterArticlePage`
-   - `StatutePage`, `StatuteLibraryDirectory`
-2. **Sitemap**: update `supabase/functions/generate-sitemap` so these Tier-3 routes only emit the `en` URL (drop hreflang alternates for them) — prevents Google from being told 4 alt languages exist when the content is English.
-3. **Locale banner**: small dismissible callout at top of Tier-3 pages when `locale !== "en"`: "This guide is currently available in English only." Translated string lives in `common.json` → `page.englishOnlyNotice`.
+### 2. Sitemap: drop hreflang alternates for Tier-3 routes
 
-### Wiring updates (consume new namespaces)
+In `supabase/functions/generate-sitemap/index.ts`:
 
-| Component | Change |
-|---|---|
-| `src/i18n/config.ts` | Register `contracts`, `clauses` namespaces |
-| `ContractTypePage.tsx` | `t(\`contracts:${slug}.name\`, { defaultValue: ct.name })` pattern |
-| `ContractTypesDirectory.tsx` | Same fallback for list items |
-| `LegalClausePage.tsx` | `t(\`clauses:${slug}.name\`, { defaultValue: cl.name })` pattern |
-| `LegalClausesDirectory.tsx` | Same |
-| `ToolsDirectory.tsx` | Already wired via `tools:` namespace — verify list view uses `t()` |
-| `LegalTermsDirectory.tsx` | Same for `terms:` namespace |
+- **Remove `/lawyer-near-me` from `corePaths`** (line 207). Lawyer directory is Tier-3 — it's already emitted with `u()` (no alternates) by `buildCore` and `buildLawyers`.
+- **Delete the `buildLawyersI18n` shard entirely** (lines 237–242). Area-level lawyer pages are Tier-3; the English versions are already covered by `buildLawyers`.
+- **Remove `"lawyers-i18n"` from the `sitemapIndex()` `types` array** (line 192) so the index stops pointing at a now-empty shard.
+- Leave `buildBlog`, `buildStateGuides`, `buildStatutes`, `buildLawyers` untouched — they already use `u()` and emit only English URLs without `<xhtml:link>` alternates, which is the desired Tier-3 behavior.
 
-### QA pass
+Net effect: only Tier-1 (`core-i18n`) and Tier-2 (`tools-i18n`, `legal-terms-i18n`, `guides-i18n`) shards carry hreflang alternates. Tier-3 URLs appear once, English-only.
 
-- Spot-check 5 random tools per locale on `/de/tools/contract/<slug>` etc.
-- Verify Tier-3 pages render with English content + locale banner + `noindex` on `/fr/blog/*`, `/es/lawyer-near-me/*`.
-- Confirm no missing-key console warnings.
-- Confirm sitemap output for a Tier-3 URL has no `<xhtml:link>` alternates.
+### Acceptance criteria
 
-### Out of scope
+- `/fr/contract-types/nda` renders the French `name` + `summary` from `fr/contracts.json` in the title bar, breadcrumb, `<h2>Overview</h2>` body, and `<meta description>`; English used only when a key is missing.
+- `/de/legal-clauses/non-compete-clause` shows German `name` + `explanation` similarly.
+- `/es/contract-types` directory cards display Spanish titles/descriptions; search matches against Spanish text.
+- `curl …/generate-sitemap?type=core-i18n` no longer contains `<loc>…/lawyer-near-me</loc>` with `<xhtml:link>` alternates.
+- `curl …/generate-sitemap` (index) no longer references `lawyers-i18n`.
+- `curl …/generate-sitemap?type=lawyers` still lists `/lawyer-near-me/{area}` as a single English URL with no hreflang alternates.
 
-- Human review of AI translations (per user: pure AI).
-- Portuguese — locale stays scaffold-only.
-- Translating blog posts, state guides, lawyer listings (Tier 3 by design).
-- Cookie banner copy (deferred until all phases complete, per user).
+### Files touched
 
-### Acceptance
-
-- `/de/tools/contract/word-counter` shows German `name` + `description`, no English fallback.
-- `/fr/legal-terms/force-majeure` shows French `term` + `definition` + `explanation`.
-- `/es/contract-types/nda` shows Spanish `name` + `summary`.
-- `/fr/blog/*` returns English content with `<meta name="robots" content="noindex, nofollow">` and a dismissible banner.
-- Sitemap `/sitemap.xml` for `/blog/*` URLs contains only the EN entry.
-
-### Files to touch
-
-- **Edit**: `src/i18n/config.ts`, `src/components/seo/Head.tsx` (no changes needed — already supports `noindex`), `ContractTypePage.tsx`, `ContractTypesDirectory.tsx`, `LegalClausePage.tsx`, `LegalClausesDirectory.tsx`, `BlogPage.tsx`, `BlogPostPage.tsx`, `BlogCategoryPage.tsx`, `LocalLawyers*.tsx` (4 files), `StateClusterArticlePage.tsx`, `PillarPage.tsx` (state variant), `StatutePage.tsx`, `StatuteLibraryDirectory.tsx`, all 6 `common.json` (add `page.englishOnlyNotice`), `supabase/functions/generate-sitemap/index.ts`
-- **Create**: `src/i18n/locales/{en,es,fr,de,it,pt}/contracts.json` (en + pt empty scaffolds)
-- **Create**: `src/i18n/locales/{en,es,fr,de,it,pt}/clauses.json` (en + pt empty scaffolds)
-- **Populate via AI**: `tools.json`, `terms.json`, `contracts.json`, `clauses.json` for ES/FR/DE/IT (16 files)
-- **Edit**: `.lovable/plan.md`
+- **Edit:** `src/pages/ContractTypePage.tsx`, `src/pages/LegalClausePage.tsx`, `src/pages/ContractTypesDirectory.tsx`, `src/pages/LegalClausesDirectory.tsx`, all six `src/i18n/locales/{en,es,fr,de,it,pt}/common.json`, `supabase/functions/generate-sitemap/index.ts`, `.lovable/plan.md`.
+- **No new files.** No new AI translation calls (item-level translations already exist from Phase A6).

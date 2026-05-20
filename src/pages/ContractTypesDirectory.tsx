@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -8,40 +9,62 @@ import { contractTypes, getContractTypeCategories } from "@/data/contractTypes";
 import Head from "@/components/seo/Head";
 
 export default function ContractTypesDirectory() {
+  const { t } = useTranslation(["contracts", "common"]);
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const categories = getContractTypeCategories();
 
+  const localized = useMemo(
+    () =>
+      contractTypes.map((c) => ({
+        ...c,
+        title: t(`contracts:${c.slug}.title`, { defaultValue: c.title }) as string,
+        description: t(`contracts:${c.slug}.description`, { defaultValue: c.description }) as string,
+      })),
+    [t],
+  );
+
   const filtered = useMemo(() => {
-    let result = contractTypes;
+    let result = localized;
     if (selectedCategory) result = result.filter((c) => c.category === selectedCategory);
     if (search) {
       const q = search.toLowerCase();
       result = result.filter((c) => c.title.toLowerCase().includes(q) || c.description.toLowerCase().includes(q));
     }
-    return result.sort((a, b) => a.title.localeCompare(b.title));
-  }, [search, selectedCategory]);
+    return [...result].sort((a, b) => a.title.localeCompare(b.title));
+  }, [search, selectedCategory, localized]);
 
   return (
     <div className="container py-8 max-w-5xl">
       <Head
         title="Contract Types Guide — Common Agreements Explained | LegallySpoken"
         description={`Explore ${contractTypes.length} common contract types with key clauses, risks, and FAQs. Understand NDAs, leases, employment contracts, and more.`}
+        titleKey="common:contractTypesDirectory.metaTitle"
+        descriptionKey="common:contractTypesDirectory.metaDescription"
       />
       <div className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-2">Contract Types Guide</h1>
-        <p className="text-muted-foreground text-lg">{contractTypes.length} common contract types with key clauses and risks.</p>
+        <h1 className="text-3xl md:text-4xl font-bold mb-2">{t("common:contractTypesDirectory.title", { defaultValue: "Contract Types Guide" })}</h1>
+        <p className="text-muted-foreground text-lg">
+          {t("common:contractTypesDirectory.subtitle", { defaultValue: "{{count}} common contract types with key clauses and risks.", count: contractTypes.length }) as string}
+        </p>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Search contract types..." value={search} onChange={(e) => setSearch(e.target.value)} className="pl-9" />
+          <Input
+            placeholder={t("common:contractTypesDirectory.searchPlaceholder", { defaultValue: "Search contract types..." }) as string}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="pl-9"
+          />
         </div>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-8">
-        <Badge variant={selectedCategory === null ? "default" : "outline"} className="cursor-pointer" onClick={() => setSelectedCategory(null)}>All</Badge>
+        <Badge variant={selectedCategory === null ? "default" : "outline"} className="cursor-pointer" onClick={() => setSelectedCategory(null)}>
+          {t("common:contractTypesDirectory.all", { defaultValue: "All" })}
+        </Badge>
         {categories.map((cat) => (
           <Badge key={cat} variant={selectedCategory === cat ? "default" : "outline"} className="cursor-pointer" onClick={() => setSelectedCategory(cat)}>{cat}</Badge>
         ))}
@@ -58,7 +81,11 @@ export default function ContractTypesDirectory() {
                 </div>
                 <p className="text-sm text-muted-foreground line-clamp-3">{ct.description}</p>
                 <div className="mt-3 flex items-center gap-1 text-xs text-accent">
-                  {ct.keyClauseSlugs.length} key clauses • {ct.commonRisks.length} risks
+                  {t("common:contractTypesDirectory.stats", {
+                    defaultValue: "{{clauses}} key clauses • {{risks}} risks",
+                    clauses: ct.keyClauseSlugs.length,
+                    risks: ct.commonRisks.length,
+                  }) as string}
                 </div>
               </CardContent>
             </Card>
@@ -67,7 +94,9 @@ export default function ContractTypesDirectory() {
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-center text-muted-foreground py-12">No contract types found matching your search.</p>
+        <p className="text-center text-muted-foreground py-12">
+          {t("common:contractTypesDirectory.empty", { defaultValue: "No contract types found matching your search." })}
+        </p>
       )}
     </div>
   );

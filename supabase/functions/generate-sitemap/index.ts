@@ -189,7 +189,7 @@ function sitemapIndex(): string {
   const BASE = "https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap";
   const types = [
     "core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes",
-    "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n","lawyers-i18n",
+    "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n",
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${BASE}?type=${t}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
 }
@@ -204,7 +204,7 @@ const corePaths: [string, string, string][] = [
   ["/auto-accident-law","weekly","0.8"], ["/personal-injury-law","weekly","0.8"],
   ["/insurance-law","weekly","0.8"], ["/employment-law","weekly","0.8"],
   ["/criminal-law","weekly","0.8"], ["/landlord-tenant-law","weekly","0.8"],
-  ["/ai-tech-law","weekly","0.8"], ["/lawyer-near-me","weekly","0.8"],
+  ["/ai-tech-law","weekly","0.8"],
 ];
 
 function buildCoreI18n(): string {
@@ -234,12 +234,7 @@ function buildGuidesI18n(): string {
   for (const s of aiTechLawSlugs) e.push(uL(`/ai-tech-law/${s}`, "monthly", "0.7"));
   return wrapUrlset(e);
 }
-function buildLawyersI18n(): string {
-  // Area-level only (state/city long-tail stays English-only)
-  const e: string[] = [];
-  for (const a of lawyerAreaSlugs) e.push(uL(`/lawyer-near-me/${a}`, "monthly", "0.6"));
-  return wrapUrlset(e);
-}
+// Lawyer routes are Tier-3 (English-only) — see buildLawyers() for the EN-only emission.
 
 const statuteTopicSlugs = ["security-deposit-limits", "eviction-notice-period", "minimum-wage"];
 
@@ -338,7 +333,7 @@ Deno.serve(async (req) => {
   if (type === "tools-i18n") return new Response(buildToolsI18n(), { headers: h });
   if (type === "legal-terms-i18n") return new Response(buildLegalTermsI18n(), { headers: h });
   if (type === "guides-i18n") return new Response(buildGuidesI18n(), { headers: h });
-  if (type === "lawyers-i18n") return new Response(buildLawyersI18n(), { headers: h });
+  
   if (type === "blog") {
     const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!);
     return new Response(await buildBlog(sb), { headers: h });
