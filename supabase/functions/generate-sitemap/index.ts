@@ -234,12 +234,7 @@ function buildGuidesI18n(): string {
   for (const s of aiTechLawSlugs) e.push(uL(`/ai-tech-law/${s}`, "monthly", "0.7"));
   return wrapUrlset(e);
 }
-function buildLawyersI18n(): string {
-  // Area-level only (state/city long-tail stays English-only)
-  const e: string[] = [];
-  for (const a of lawyerAreaSlugs) e.push(uL(`/lawyer-near-me/${a}`, "monthly", "0.6"));
-  return wrapUrlset(e);
-}
+// Lawyer routes are Tier-3 (English-only) — see buildLawyers() for the EN-only emission.
 
 const statuteTopicSlugs = ["security-deposit-limits", "eviction-notice-period", "minimum-wage"];
 
