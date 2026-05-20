@@ -63,5 +63,38 @@
     "exampleClause": "Beispielklausel",
     "definitionExamplesSuffix": "Definition & Beispiele | LegallySpoken",
     "englishOnlyNotice": "Dieser Leitfaden ist derzeit nur auf Englisch verfügbar."
+  },
+  "contractTypePage": {
+    "metaSuffix": "Leitfaden & Schlüsselklauseln | LegallySpoken",
+    "overview": "Überblick",
+    "keyClauses": "Typische Schlüsselklauseln",
+    "commonRisks": "Häufige Risiken"
+  },
+  "legalClausePage": {
+    "metaSuffix": "Leitfaden & Beispiele | LegallySpoken",
+    "whatIs": "Was ist eine {{title}}?",
+    "exampleLanguage": "Beispielformulierung",
+    "redFlags": "Warnsignale",
+    "enforceability": "Hinweise zur Durchsetzbarkeit"
+  },
+  "contractTypesDirectory": {
+    "metaTitle": "Leitfaden zu Vertragsarten — Häufige Vereinbarungen Erklärt | LegallySpoken",
+    "metaDescription": "Entdecken Sie häufige Vertragsarten mit Schlüsselklauseln, Risiken und FAQs. Verstehen Sie NDAs, Mietverträge, Arbeitsverträge und mehr.",
+    "title": "Leitfaden zu Vertragsarten",
+    "subtitle": "{{count}} häufige Vertragsarten mit Schlüsselklauseln und Risiken.",
+    "searchPlaceholder": "Vertragsarten suchen...",
+    "all": "Alle",
+    "stats": "{{clauses}} Schlüsselklauseln • {{risks}} Risiken",
+    "empty": "Keine Vertragsarten für Ihre Suche gefunden."
+  },
+  "legalClausesDirectory": {
+    "metaTitle": "Leitfaden zu Rechtsklauseln — Häufige Vertragsklauseln Erklärt | LegallySpoken",
+    "metaDescription": "Entdecken Sie häufige Vertragsklauseln mit Beispielen, Hinweisen zur Durchsetzbarkeit und Warnsignalen. Verstehen Sie, was jede Klausel bedeutet, bevor Sie unterschreiben.",
+    "title": "Leitfaden zu Rechtsklauseln",
+    "subtitle": "{{count}} häufige Vertragsklauseln mit Beispielen und Warnsignalen erklärt.",
+    "searchPlaceholder": "Klauseln suchen...",
+    "all": "Alle",
+    "stats": "{{examples}} Beispiele • {{flags}} Warnsignale",
+    "empty": "Keine Klauseln für Ihre Suche gefunden."
   }
 }

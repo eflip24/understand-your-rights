@@ -63,5 +63,38 @@
     "exampleClause": "Clausola d'esempio",
     "definitionExamplesSuffix": "Definizione ed esempi | LegallySpoken",
     "englishOnlyNotice": "Questa guida è attualmente disponibile solo in inglese."
+  },
+  "contractTypePage": {
+    "metaSuffix": "Guida e Clausole Chiave | LegallySpoken",
+    "overview": "Panoramica",
+    "keyClauses": "Clausole Chiave Tipiche",
+    "commonRisks": "Rischi Comuni"
+  },
+  "legalClausePage": {
+    "metaSuffix": "Guida ed Esempi | LegallySpoken",
+    "whatIs": "Cos'è una {{title}}?",
+    "exampleLanguage": "Esempio di Formulazione",
+    "redFlags": "Segnali d'Allarme",
+    "enforceability": "Note sull'Applicabilità"
+  },
+  "contractTypesDirectory": {
+    "metaTitle": "Guida ai Tipi di Contratto — Accordi Comuni Spiegati | LegallySpoken",
+    "metaDescription": "Esplora i tipi di contratto più comuni con clausole chiave, rischi e FAQ. Comprendi NDA, contratti di locazione, contratti di lavoro e altro.",
+    "title": "Guida ai Tipi di Contratto",
+    "subtitle": "{{count}} tipi di contratto comuni con clausole chiave e rischi.",
+    "searchPlaceholder": "Cerca tipi di contratto...",
+    "all": "Tutti",
+    "stats": "{{clauses}} clausole chiave • {{risks}} rischi",
+    "empty": "Nessun tipo di contratto trovato per la tua ricerca."
+  },
+  "legalClausesDirectory": {
+    "metaTitle": "Guida alle Clausole Legali — Clausole Contrattuali Comuni Spiegate | LegallySpoken",
+    "metaDescription": "Esplora le clausole contrattuali comuni con esempi, note sull'applicabilità e segnali d'allarme. Comprendi cosa significa ogni clausola prima di firmare.",
+    "title": "Guida alle Clausole Legali",
+    "subtitle": "{{count}} clausole contrattuali comuni spiegate con esempi e segnali d'allarme.",
+    "searchPlaceholder": "Cerca clausole...",
+    "all": "Tutte",
+    "stats": "{{examples}} esempi • {{flags}} segnali d'allarme",
+    "empty": "Nessuna clausola trovata per la tua ricerca."
   }
 }

@@ -63,5 +63,38 @@
     "exampleClause": "Exemple de Clause",
     "definitionExamplesSuffix": "Définition & Exemples | LegallySpoken",
     "englishOnlyNotice": "Ce guide n'est actuellement disponible qu'en anglais."
+  },
+  "contractTypePage": {
+    "metaSuffix": "Guide et Clauses Clés | LegallySpoken",
+    "overview": "Aperçu",
+    "keyClauses": "Clauses Clés Habituelles",
+    "commonRisks": "Risques Courants"
+  },
+  "legalClausePage": {
+    "metaSuffix": "Guide et Exemples | LegallySpoken",
+    "whatIs": "Qu'est-ce qu'une {{title}} ?",
+    "exampleLanguage": "Exemple de Rédaction",
+    "redFlags": "Signaux d'Alerte",
+    "enforceability": "Notes d'Applicabilité"
+  },
+  "contractTypesDirectory": {
+    "metaTitle": "Guide des Types de Contrat — Accords Courants Expliqués | LegallySpoken",
+    "metaDescription": "Explorez les types de contrat les plus courants avec leurs clauses clés, risques et FAQ. NDA, baux, contrats de travail et plus.",
+    "title": "Guide des Types de Contrat",
+    "subtitle": "{{count}} types de contrat courants avec clauses clés et risques.",
+    "searchPlaceholder": "Rechercher des types de contrat...",
+    "all": "Tous",
+    "stats": "{{clauses}} clauses clés • {{risks}} risques",
+    "empty": "Aucun type de contrat trouvé pour votre recherche."
+  },
+  "legalClausesDirectory": {
+    "metaTitle": "Guide des Clauses Juridiques — Clauses Contractuelles Courantes Expliquées | LegallySpoken",
+    "metaDescription": "Explorez les clauses contractuelles courantes avec des exemples, des notes d'applicabilité et des signaux d'alerte. Comprenez ce que signifie chaque clause avant de signer.",
+    "title": "Guide des Clauses Juridiques",
+    "subtitle": "{{count}} clauses contractuelles courantes expliquées avec exemples et signaux d'alerte.",
+    "searchPlaceholder": "Rechercher des clauses...",
+    "all": "Toutes",
+    "stats": "{{examples}} exemples • {{flags}} signaux d'alerte",
+    "empty": "Aucune clause trouvée pour votre recherche."
   }
 }

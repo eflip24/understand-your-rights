@@ -63,5 +63,38 @@
     "exampleClause": "Example Clause",
     "definitionExamplesSuffix": "Definition & Examples | LegallySpoken",
     "englishOnlyNotice": "Este guia está disponível atualmente apenas em inglês."
+  },
+  "contractTypePage": {
+    "metaSuffix": "Guia e Cláusulas-Chave | LegallySpoken",
+    "overview": "Visão Geral",
+    "keyClauses": "Cláusulas-Chave Típicas",
+    "commonRisks": "Riscos Comuns"
+  },
+  "legalClausePage": {
+    "metaSuffix": "Guia e Exemplos | LegallySpoken",
+    "whatIs": "O que é uma {{title}}?",
+    "exampleLanguage": "Exemplo de Redação",
+    "redFlags": "Sinais de Alerta",
+    "enforceability": "Notas de Aplicabilidade"
+  },
+  "contractTypesDirectory": {
+    "metaTitle": "Guia de Tipos de Contrato — Acordos Comuns Explicados | LegallySpoken",
+    "metaDescription": "Explore os tipos de contrato mais comuns com cláusulas-chave, riscos e perguntas frequentes. Entenda NDAs, arrendamentos, contratos de trabalho e mais.",
+    "title": "Guia de Tipos de Contrato",
+    "subtitle": "{{count}} tipos de contrato comuns com cláusulas-chave e riscos.",
+    "searchPlaceholder": "Pesquisar tipos de contrato...",
+    "all": "Todos",
+    "stats": "{{clauses}} cláusulas-chave • {{risks}} riscos",
+    "empty": "Nenhum tipo de contrato encontrado para a sua pesquisa."
+  },
+  "legalClausesDirectory": {
+    "metaTitle": "Guia de Cláusulas Legais — Cláusulas Contratuais Comuns Explicadas | LegallySpoken",
+    "metaDescription": "Explore cláusulas contratuais comuns com exemplos, notas de aplicabilidade e sinais de alerta. Entenda o que cada cláusula significa antes de assinar.",
+    "title": "Guia de Cláusulas Legais",
+    "subtitle": "{{count}} cláusulas contratuais comuns explicadas com exemplos e sinais de alerta.",
+    "searchPlaceholder": "Pesquisar cláusulas...",
+    "all": "Todas",
+    "stats": "{{examples}} exemplos • {{flags}} sinais de alerta",
+    "empty": "Nenhuma cláusula encontrada para a sua pesquisa."
   }
 }
