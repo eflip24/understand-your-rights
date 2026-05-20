@@ -189,7 +189,7 @@ function sitemapIndex(): string {
   const BASE = "https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap";
   const types = [
     "core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes",
-    "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n","lawyers-i18n",
+    "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n",
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${BASE}?type=${t}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
 }
