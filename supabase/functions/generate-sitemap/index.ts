@@ -204,7 +204,7 @@ const corePaths: [string, string, string][] = [
   ["/auto-accident-law","weekly","0.8"], ["/personal-injury-law","weekly","0.8"],
   ["/insurance-law","weekly","0.8"], ["/employment-law","weekly","0.8"],
   ["/criminal-law","weekly","0.8"], ["/landlord-tenant-law","weekly","0.8"],
-  ["/ai-tech-law","weekly","0.8"], ["/lawyer-near-me","weekly","0.8"],
+  ["/ai-tech-law","weekly","0.8"],
 ];
 
 function buildCoreI18n(): string {
