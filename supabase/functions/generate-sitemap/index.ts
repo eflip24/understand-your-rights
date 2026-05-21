@@ -446,6 +446,8 @@ Deno.serve(async (req) => {
   if (type === "tools-i18n") return new Response(buildToolsI18n(), { headers: h });
   if (type === "legal-terms-i18n") return new Response(buildLegalTermsI18n(), { headers: h });
   if (type === "guides-i18n") return new Response(buildGuidesI18n(), { headers: h });
+  if (type === "lawyers-eu-i18n") return new Response(buildLawyersEuI18n(), { headers: h });
+  
   
   if (type === "blog") {
     const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!);
