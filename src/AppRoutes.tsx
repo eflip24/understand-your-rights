@@ -129,6 +129,10 @@ export default function AppRoutes() {
       <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
       <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
       <Route path="/lawyer-near-me/:area/:state/:city" element={<LocalLawyersCityPage />} />
+      <Route path="/lawyer-eu" element={<EuLawyersHub />} />
+      <Route path="/lawyer-eu/:country" element={<EuLawyersCountryPage />} />
+      <Route path="/lawyer-eu/:country/:area" element={<EuLawyersAreaPage />} />
+      <Route path="/lawyer-eu/:country/:area/:city" element={<EuLawyersCityPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/laws" element={<StatuteLibraryDirectory />} />
       <Route path="/laws/:state/:topic" element={<StatutePage />} />
