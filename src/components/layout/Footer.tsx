@@ -34,6 +34,7 @@ export default function Footer() {
     { label: t("nav.resources.clauses"), href: lp("/legal-clauses") },
     { label: t("nav.resources.contracts"), href: lp("/contract-types") },
     { label: t("nav.findLawyer"), href: lp("/lawyer-near-me") },
+    { label: "Find a Lawyer (Europe)", href: lp("/lawyer-eu") },
     { label: t("nav.resources.blog"), href: lp("/blog") },
     { label: t("nav.resources.about"), href: lp("/about") },
   ];
