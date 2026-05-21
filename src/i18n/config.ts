@@ -56,6 +56,12 @@ import frClauses from "./locales/fr/clauses.json";
 import deClauses from "./locales/de/clauses.json";
 import ptClauses from "./locales/pt/clauses.json";
 import itClauses from "./locales/it/clauses.json";
+import enEuLawyer from "./locales/en/eu-lawyer.json";
+import esEuLawyer from "./locales/es/eu-lawyer.json";
+import frEuLawyer from "./locales/fr/eu-lawyer.json";
+import deEuLawyer from "./locales/de/eu-lawyer.json";
+import ptEuLawyer from "./locales/pt/eu-lawyer.json";
+import itEuLawyer from "./locales/it/eu-lawyer.json";
 
 export const SUPPORTED_LOCALES = ["en", "es", "fr", "de", "pt", "it"] as const;
 export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
