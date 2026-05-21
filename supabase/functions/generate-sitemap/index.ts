@@ -189,7 +189,7 @@ function sitemapIndex(): string {
   const BASE = "https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap";
   const types = [
     "core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes",
-    "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n",
+    "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n","lawyers-eu-i18n",
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${BASE}?type=${t}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
 }
@@ -235,6 +235,119 @@ function buildGuidesI18n(): string {
   return wrapUrlset(e);
 }
 // Lawyer routes are Tier-3 (English-only) — see buildLawyers() for the EN-only emission.
+
+// === EU lawyer directory (Phase B1) — localized slugs per locale ===
+// Mirrors src/data/eu/* registry. Keep in sync if those files change.
+type EuLoc = "en" | "es" | "fr" | "de" | "pt" | "it";
+const EU_BASE = "lawyer-eu";
+
+const EU_COUNTRY_SLUGS: Record<string, Record<EuLoc, string>> = {
+  fr: { en: "france", es: "francia", fr: "france", de: "frankreich", pt: "franca", it: "francia" },
+  de: { en: "germany", es: "alemania", fr: "allemagne", de: "deutschland", pt: "alemanha", it: "germania" },
+  es: { en: "spain", es: "espana", fr: "espagne", de: "spanien", pt: "espanha", it: "spagna" },
+  it: { en: "italy", es: "italia", fr: "italie", de: "italien", pt: "italia", it: "italia" },
+  pt: { en: "portugal", es: "portugal", fr: "portugal", de: "portugal", pt: "portugal", it: "portogallo" },
+};
+
+const EU_AREA_SLUGS: Record<string, Record<EuLoc, string>> = {
+  "employment": { en: "employment", es: "derecho-laboral", fr: "droit-du-travail", de: "arbeitsrecht", pt: "direito-do-trabalho", it: "diritto-del-lavoro" },
+  "family": { en: "family", es: "derecho-de-familia", fr: "droit-de-la-famille", de: "familienrecht", pt: "direito-da-familia", it: "diritto-di-famiglia" },
+  "criminal-defense": { en: "criminal-defense", es: "defensa-penal", fr: "droit-penal", de: "strafrecht", pt: "direito-penal", it: "diritto-penale" },
+  "personal-injury": { en: "personal-injury", es: "danos-personales", fr: "dommages-corporels", de: "personenschaeden", pt: "danos-pessoais", it: "danni-alla-persona" },
+  "immigration": { en: "immigration", es: "inmigracion", fr: "droit-des-etrangers", de: "auslaenderrecht", pt: "direito-de-imigracao", it: "diritto-immigrazione" },
+  "tax": { en: "tax", es: "derecho-fiscal", fr: "droit-fiscal", de: "steuerrecht", pt: "direito-fiscal", it: "diritto-tributario" },
+  "real-estate": { en: "real-estate", es: "derecho-inmobiliario", fr: "droit-immobilier", de: "immobilienrecht", pt: "direito-imobiliario", it: "diritto-immobiliare" },
+  "contract": { en: "contract", es: "derecho-contractual", fr: "droit-des-contrats", de: "vertragsrecht", pt: "direito-dos-contratos", it: "diritto-contrattuale" },
+  "consumer": { en: "consumer", es: "derecho-del-consumidor", fr: "droit-de-la-consommation", de: "verbraucherrecht", pt: "direito-do-consumidor", it: "diritto-dei-consumatori" },
+  "intellectual-property": { en: "intellectual-property", es: "propiedad-intelectual", fr: "propriete-intellectuelle", de: "geistiges-eigentum", pt: "propriedade-intelectual", it: "proprieta-intellettuale" },
+  "data-protection-gdpr": { en: "data-protection-gdpr", es: "proteccion-de-datos-rgpd", fr: "protection-des-donnees-rgpd", de: "datenschutz-dsgvo", pt: "protecao-de-dados-rgpd", it: "protezione-dati-gdpr" },
+  "business": { en: "business", es: "derecho-mercantil", fr: "droit-des-affaires", de: "wirtschaftsrecht", pt: "direito-comercial", it: "diritto-commerciale" },
+};
+
+const EU_CITY_SLUGS: Record<string, Record<string, Record<EuLoc, string>>> = {
+  fr: {
+    paris: { en: "paris", es: "paris", fr: "paris", de: "paris", pt: "paris", it: "parigi" },
+    lyon: { en: "lyon", es: "lyon", fr: "lyon", de: "lyon", pt: "lyon", it: "lione" },
+    marseille: { en: "marseille", es: "marsella", fr: "marseille", de: "marseille", pt: "marselha", it: "marsiglia" },
+  },
+  de: {
+    berlin: { en: "berlin", es: "berlin", fr: "berlin", de: "berlin", pt: "berlim", it: "berlino" },
+    munich: { en: "munich", es: "munich", fr: "munich", de: "muenchen", pt: "munique", it: "monaco-di-baviera" },
+    hamburg: { en: "hamburg", es: "hamburgo", fr: "hambourg", de: "hamburg", pt: "hamburgo", it: "amburgo" },
+  },
+  es: {
+    madrid: { en: "madrid", es: "madrid", fr: "madrid", de: "madrid", pt: "madrid", it: "madrid" },
+    barcelona: { en: "barcelona", es: "barcelona", fr: "barcelone", de: "barcelona", pt: "barcelona", it: "barcellona" },
+    valencia: { en: "valencia", es: "valencia", fr: "valence", de: "valencia", pt: "valencia", it: "valencia" },
+  },
+  it: {
+    rome: { en: "rome", es: "roma", fr: "rome", de: "rom", pt: "roma", it: "roma" },
+    milan: { en: "milan", es: "milan", fr: "milan", de: "mailand", pt: "milao", it: "milano" },
+    naples: { en: "naples", es: "napoles", fr: "naples", de: "neapel", pt: "napoles", it: "napoli" },
+  },
+  pt: {
+    lisbon: { en: "lisbon", es: "lisboa", fr: "lisbonne", de: "lissabon", pt: "lisboa", it: "lisbona" },
+    porto: { en: "porto", es: "oporto", fr: "porto", de: "porto", pt: "porto", it: "porto" },
+    braga: { en: "braga", es: "braga", fr: "braga", de: "braga", pt: "braga", it: "braga" },
+  },
+};
+
+function euLocaleUrl(loc: EuLoc, path: string): string {
+  return loc === DEFAULT_LOCALE ? `${SITE}${path}` : `${SITE}/${loc}${path}`;
+}
+
+/** Emit 6 <url> entries (one per locale) for the same canonical EU tuple,
+ *  each carrying full cross-locale hreflang alternates with LOCALIZED paths. */
+function uLEu(
+  pathsByLocale: Record<EuLoc, string>, freq: string, pri: string,
+): string {
+  const altLinks = (LOCALES as readonly string[]).map(
+    (l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${euLocaleUrl(l as EuLoc, pathsByLocale[l as EuLoc])}"/>`,
+  );
+  altLinks.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${euLocaleUrl(DEFAULT_LOCALE as EuLoc, pathsByLocale[DEFAULT_LOCALE as EuLoc])}"/>`);
+  const alts = altLinks.join("\n");
+  return (LOCALES as readonly string[]).map((l) =>
+    `  <url>\n    <loc>${euLocaleUrl(l as EuLoc, pathsByLocale[l as EuLoc])}</loc>\n${alts}\n    <changefreq>${freq}</changefreq>\n    <priority>${pri}</priority>\n  </url>`,
+  ).join("\n");
+}
+
+function buildLawyersEuI18n(): string {
+  const entries: string[] = [];
+
+  // Hub
+  const hubPaths = Object.fromEntries(
+    (LOCALES as readonly string[]).map((l) => [l, `/${EU_BASE}`]),
+  ) as Record<EuLoc, string>;
+  entries.push(uLEu(hubPaths, "weekly", "0.8"));
+
+  for (const [countryCode, countrySlugs] of Object.entries(EU_COUNTRY_SLUGS)) {
+    // Country page
+    const countryPaths = Object.fromEntries(
+      (LOCALES as readonly string[]).map((l) => [l, `/${EU_BASE}/${countrySlugs[l as EuLoc]}`]),
+    ) as Record<EuLoc, string>;
+    entries.push(uLEu(countryPaths, "weekly", "0.7"));
+
+    for (const [areaCanonical, areaSlugs] of Object.entries(EU_AREA_SLUGS)) {
+      // Area-in-country page
+      const areaPaths = Object.fromEntries(
+        (LOCALES as readonly string[]).map((l) => [l, `/${EU_BASE}/${countrySlugs[l as EuLoc]}/${areaSlugs[l as EuLoc]}`]),
+      ) as Record<EuLoc, string>;
+      entries.push(uLEu(areaPaths, "monthly", "0.6"));
+
+      const cities = EU_CITY_SLUGS[countryCode] ?? {};
+      for (const [cityCanonical, citySlugs] of Object.entries(cities)) {
+        const cityPaths = Object.fromEntries(
+          (LOCALES as readonly string[]).map((l) => [l, `/${EU_BASE}/${countrySlugs[l as EuLoc]}/${areaSlugs[l as EuLoc]}/${citySlugs[l as EuLoc]}`]),
+        ) as Record<EuLoc, string>;
+        entries.push(uLEu(cityPaths, "monthly", "0.5"));
+        void cityCanonical;
+      }
+      void areaCanonical;
+    }
+  }
+
+  return wrapUrlset(entries);
+}
 
 const statuteTopicSlugs = ["security-deposit-limits", "eviction-notice-period", "minimum-wage"];
 
@@ -333,6 +446,8 @@ Deno.serve(async (req) => {
   if (type === "tools-i18n") return new Response(buildToolsI18n(), { headers: h });
   if (type === "legal-terms-i18n") return new Response(buildLegalTermsI18n(), { headers: h });
   if (type === "guides-i18n") return new Response(buildGuidesI18n(), { headers: h });
+  if (type === "lawyers-eu-i18n") return new Response(buildLawyersEuI18n(), { headers: h });
+  
   
   if (type === "blog") {
     const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!);
