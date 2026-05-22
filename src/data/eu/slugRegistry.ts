@@ -18,7 +18,8 @@ import {
 export const EU_LAWYER_BASE = "lawyer-eu";
 
 export interface EuRouteCanonical {
-  country: EuCountryCode;
+  /** Omit for the hub page (/{locale?}/lawyer-eu). */
+  country?: EuCountryCode;
   area?: EuAreaCanonicalSlug;
   city?: string; // canonical city slug
 }
@@ -28,7 +29,7 @@ export function resolveEuRoute(
   locale: LocaleCode,
   params: { country?: string; area?: string; city?: string },
 ): EuRouteCanonical | null {
-  if (!params.country) return null;
+  if (!params.country) return {}; // hub
 
   const country = euCountries.find((c) => c.slug[locale] === params.country);
   if (!country) return null;
@@ -57,12 +58,15 @@ export function resolveEuRoute(
 /** Build a localized URL path for the given canonical tuple. */
 export function buildEuPath(
   locale: LocaleCode,
-  canonical: EuRouteCanonical | { country: EuCountryCode; area?: EuAreaCanonicalSlug; city?: string },
+  canonical: EuRouteCanonical,
 ): string {
-  const country = getEuCountry(canonical.country);
-  if (!country) return `/${EU_LAWYER_BASE}`;
+  const base = locale === "en" ? `/${EU_LAWYER_BASE}` : `/${locale}/${EU_LAWYER_BASE}`;
+  if (!canonical.country) return base;
 
-  const parts = [EU_LAWYER_BASE, country.slug[locale]];
+  const country = getEuCountry(canonical.country);
+  if (!country) return base;
+
+  const parts = [country.slug[locale]];
 
   if (canonical.area) {
     const area = getEuAreaByCanonical(canonical.area);
@@ -74,8 +78,7 @@ export function buildEuPath(
     if (city) parts.push(city.slug[locale]);
   }
 
-  const path = "/" + parts.join("/");
-  return locale === "en" ? path : `/${locale}${path}`;
+  return `${base}/${parts.join("/")}`;
 }
 
 /** Build the localized path map (one entry per supported locale). */

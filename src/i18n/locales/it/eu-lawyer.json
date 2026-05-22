@@ -1,11 +1,58 @@
 {
   "hub": {
     "title": "Trova un avvocato in Europa",
-    "intro": "Consulta avvocati verificati in Francia, Germania, Spagna, Italia e Portogallo."
+    "intro": "Sfoglia avvocati verificati in Francia, Germania, Spagna, Italia e Portogallo. Scegli un Paese per visualizzare le aree di competenza e le città.",
+    "browseByCountry": "Sfoglia per Paese",
+    "metaDescription": "Elenco di avvocati europei che copre Francia, Germania, Spagna, Italia e Portogallo. Sfoglia per Paese, area di competenza e città."
+  },
+  "country": {
+    "heading": "Avvocati in {{country}}",
+    "intro": "Trova consulenza legale in {{country}}. Scegli un'area di competenza per filtrare gli elenchi, o scorri per una panoramica delle città principali.",
+    "practiceAreas": "Aree di competenza",
+    "cities": "Città principali",
+    "metaTitle": "Trova un avvocato in {{country}}",
+    "metaDescription": "Sfoglia avvocati in {{country}} per area di competenza e città. Elenchi verificati e riferimenti degli ordini degli avvocati."
+  },
+  "area": {
+    "heading": "Avvocati specializzati in {{area}} in {{country}}",
+    "intro": "Avvocati specializzati in {{area}} in {{country}}. Scegli una città per visualizzare gli elenchi locali e i dettagli di contatto.",
+    "browseByCity": "Sfoglia per città",
+    "faqHeading": "Domande frequenti",
+    "metaTitle": "Avvocati specializzati in {{area}} in {{country}}",
+    "metaDescription": "Avvocati specializzati in {{area}} in {{country}}. Sfoglia per città, visualizza i dettagli di contatto e verifica le credenziali presso l'ordine degli avvocati nazionale.",
+    "faq": {
+      "q1": "Come posso trovare un avvocato qualificato in {{area}} in {{country}}?",
+      "a1": "Inizia sfogliando la città più comoda per te. Ogni annuncio include l'indirizzo legale dello studio, le informazioni di contatto e il numero di iscrizione all'ordine, dove disponibile. Verifica sempre le credenziali presso l'ordine nazionale degli avvocati prima di conferire un incarico.",
+      "q2": "Quanto costa solitamente una consulenza in materia di {{area}}?",
+      "a2": "Il costo delle consulenze iniziali varia a seconda dello studio e della complessità della questione. Molti studi legali in {{country}} offrono una prima breve chiamata gratuita o un incontro iniziale a tariffa fissa. Conferma gli onorari per iscritto prima di conferire l'incarico allo studio.",
+      "q3": "Posso incaricare un avvocato abilitato in un altro Paese dell'UE?",
+      "a3": "Sì, secondo le norme dell'UE, gli avvocati abilitati in uno Stato membro possono prestare i loro servizi in tutta l'Unione, sebbene per la rappresentanza in tribunale possa essere richiesta un'iscrizione locale. Gli studi legali transfrontalieri solitamente indicano questa informazione sui loro siti web."
+    }
+  },
+  "city": {
+    "heading": "Avvocati specializzati in {{area}} a {{city}}",
+    "intro": "Studi legali verificati specializzati in {{area}} a {{city}}, {{country}}. Visualizza le sedi sulla mappa e contatta direttamente gli studi.",
+    "listings": "Studi elencati",
+    "noListings": "Nessun annuncio verificato per {{city}} al momento — torna a controllare presto o contatta l'ordine nazionale degli avvocati per ottenere dei riferimenti.",
+    "mapTitle": "Mappa",
+    "barAssociation": "Verifica le credenziali di qualsiasi avvocato presso",
+    "faqHeading": "Domande frequenti",
+    "metaTitle": "Avvocati specializzati in {{area}} a {{city}}, {{country}}",
+    "metaDescription": "Avvocati specializzati in {{area}} a {{city}}, {{country}}. Mappa, dettagli di contatto e riferimento all'ordine degli avvocati.",
+    "faq": {
+      "q1": "Come posso verificare le credenziali di un avvocato in {{country}}?",
+      "a1": "Ogni avvocato che esercita la professione in {{country}} è iscritto all'ordine nazionale. Utilizza l'albo ufficiale dell'ordine per confermare il numero di iscrizione indicato di seguito prima di conferire l'incarico a uno studio.",
+      "q2": "Cosa dovrei portare a una prima consulenza?",
+      "a2": "Porti un documento d'identità, eventuali contratti o lettere relativi alla Sua questione, una cronologia degli eventi e un elenco di domande scritte. Più chiaro è il Suo fascicolo, più utile sarà la consulenza."
+    }
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "findLawyer": "Trova un avvocato (Europa)"
   },
   "comingSoon": "Prossimamente",
-  "browse": "Esplora",
-  "practiceAreas": "Aree di pratica",
+  "browse": "Sfoglia",
+  "practiceAreas": "Aree di competenza",
   "cities": "Città",
-  "disclaimer": "Verifica le credenziali presso l'ordine forense nazionale competente prima di conferire l'incarico."
+  "disclaimer": "Questo elenco è fornito solo a scopo informativo e non costituisce una consulenza legale. Verificare le credenziali presso l'ordine nazionale degli avvocati competente prima di conferire un incarico."
 }

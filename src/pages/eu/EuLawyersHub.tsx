@@ -1,43 +1,59 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ChevronRight, MapPin, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import EuLawyerHead from "@/components/seo/EuLawyerHead";
+import { JsonLdGraph, breadcrumbSchema, itemListSchema } from "@/components/seo/JsonLd";
 import { euCountries } from "@/data/eu/countries";
 import { useLocaleFromUrl } from "@/i18n/LocaleSync";
 import { buildEuPath } from "@/lib/eu/resolveRoute";
 
+const SITE = "https://legallyspoken.com";
+
 export default function EuLawyersHub() {
   const locale = useLocaleFromUrl();
+  const { t } = useTranslation("eu-lawyer");
+  const hubPath = buildEuPath(locale, {});
+
+  const schemas = [
+    breadcrumbSchema([
+      { name: t("breadcrumbs.home"), url: SITE },
+      { name: t("breadcrumbs.findLawyer"), url: `${SITE}${hubPath}` },
+    ]),
+    itemListSchema(
+      t("hub.browseByCountry"),
+      euCountries.map((c) => ({
+        url: `${SITE}${buildEuPath(locale, { country: c.code })}`,
+        name: c.name[locale],
+      })),
+    ),
+  ];
 
   return (
     <div className="container py-8 max-w-4xl">
-      {/* Hub uses the first country as canonical anchor; full hub canonicalization
-          comes in B3 with the dedicated multi-country JSON-LD graph. */}
       <EuLawyerHead
-        title="Find a Lawyer in Europe — LegallySpoken"
-        description="Browse verified lawyers across France, Germany, Spain, Italy, and Portugal. Search by country, practice area, and city."
-        canonicalRoute={{ country: "fr" }}
-        noindex
+        title={`${t("hub.title")} | LegallySpoken`}
+        description={t("hub.metaDescription")}
+        canonicalRoute={{}}
       />
+      <JsonLdGraph schemas={schemas} />
 
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">
-        <Link to={locale === "en" ? "/" : `/${locale}`} className="hover:text-foreground transition-colors">Home</Link>
+        <Link to={locale === "en" ? "/" : `/${locale}`} className="hover:text-foreground transition-colors">
+          {t("breadcrumbs.home")}
+        </Link>
         <ChevronRight className="h-3 w-3" />
-        <span className="text-foreground">Find a Lawyer (Europe)</span>
+        <span className="text-foreground">{t("breadcrumbs.findLawyer")}</span>
       </nav>
 
       <div className="mb-8">
-        <Badge variant="secondary" className="mb-3">Coming soon — Phase B</Badge>
         <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-2">
-          Find a Lawyer in Europe
+          {t("hub.title")}
         </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl">
-          European lawyer directory covering France, Germany, Spain, Italy and Portugal.
-          Information architecture is live; lawyer listings are populated in a later phase.
-        </p>
+        <p className="text-lg text-muted-foreground max-w-2xl">{t("hub.intro")}</p>
       </div>
 
+      <h2 className="text-2xl font-bold mb-3">{t("hub.browseByCountry")}</h2>
       <div className="grid gap-4 sm:grid-cols-2">
         {euCountries.map((c) => (
           <Link key={c.code} to={buildEuPath(locale, { country: c.code })}>
@@ -52,7 +68,7 @@ export default function EuLawyersHub() {
               </CardHeader>
               <CardContent>
                 <span className="text-xs text-accent font-medium inline-flex items-center gap-1">
-                  Browse <ArrowRight className="h-3 w-3" />
+                  {t("browse")} <ArrowRight className="h-3 w-3" />
                 </span>
               </CardContent>
             </Card>
@@ -62,7 +78,7 @@ export default function EuLawyersHub() {
 
       <div className="border-t pt-6 mt-8">
         <p className="text-xs text-muted-foreground">
-          <strong>Disclaimer:</strong> This directory is for informational purposes only. Verify credentials with the relevant national bar association before retaining counsel.
+          <strong>Disclaimer:</strong> {t("disclaimer")}
         </p>
       </div>
     </div>
