@@ -1,11 +1,11 @@
 {
   "hub": {
-    "title": "Find a Lawyer in Europe",
-    "intro": "Browse verified lawyers across France, Germany, Spain, Italy and Portugal."
+    "title": "Anwalt in Europa finden",
+    "intro": "Geprüfte Anwälte in Frankreich, Deutschland, Spanien, Italien und Portugal durchsuchen."
   },
-  "comingSoon": "Coming soon",
-  "browse": "Browse",
-  "practiceAreas": "Practice areas",
-  "cities": "Cities",
-  "disclaimer": "Verify credentials with the relevant national bar association before retaining counsel."
+  "comingSoon": "Demnächst verfügbar",
+  "browse": "Durchsuchen",
+  "practiceAreas": "Rechtsgebiete",
+  "cities": "Städte",
+  "disclaimer": "Überprüfen Sie die Zulassung bei der zuständigen nationalen Rechtsanwaltskammer, bevor Sie einen Anwalt beauftragen."
 }
