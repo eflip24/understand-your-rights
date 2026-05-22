@@ -50,8 +50,21 @@ registries, routing, and sitemap shard. Page templates and listings come in B2+.
 - Sitemap index now references `lawyers-eu-i18n` alongside existing shards.
 - US `/lawyer-near-me/*` routes and `lawyers` shard unchanged.
 
+## Phase B2 — Translations & national city coverage ✅
+
+- **Translations**: `eu-lawyer.json` translated into es/fr/de/pt/it (hub title,
+  intro, browse, comingSoon, practiceAreas, cities, disclaimer). English file
+  unchanged.
+- **Cities**: `cities.ts` expanded from 15 seed entries → **145 cities**
+  (FR 30, DE 30, ES 30, IT 30, PT 25) via a `city()` constructor that defaults
+  all locales to the canonical English name + ASCII slug, with per-locale
+  overrides only where the name materially differs (Munich/München, Naples/
+  Napoli, Seville/Sevilla, Cologne/Köln, etc.). Population tier set per city.
+- All entries flow through existing `resolveEuRoute` / `buildEuPath` and the
+  `lawyers-eu-i18n` sitemap shard with no further changes — sitemap URL count
+  grows automatically.
+
 ### Next phases
 
-- **B2**: AI-translate `eu-lawyer.json` strings; expand `cities.ts` to full national coverage.
 - **B3**: Replace page stubs with real templates (country directory, area pages with FAQ schema, city pages with LocalBusiness JSON-LD, map embed).
 - **B4**: Populate `lawyerListings.eu.ts` per city; flip noindex off.
