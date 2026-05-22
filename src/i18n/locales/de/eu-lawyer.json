@@ -1,11 +1,58 @@
 {
   "hub": {
-    "title": "Anwalt in Europa finden",
-    "intro": "Geprüfte Anwälte in Frankreich, Deutschland, Spanien, Italien und Portugal durchsuchen."
+    "title": "Finden Sie einen Anwalt in Europa",
+    "intro": "Durchsuchen Sie geprüfte Anwälte in Frankreich, Deutschland, Spanien, Italien und Portugal. Wählen Sie ein Land aus, um Rechtsgebiete und Städte anzuzeigen.",
+    "browseByCountry": "Nach Land durchsuchen",
+    "metaDescription": "Europäisches Anwaltsverzeichnis für Frankreich, Deutschland, Spanien, Italien und Portugal. Suchen Sie nach Land, Rechtsgebiet und Stadt."
+  },
+  "country": {
+    "heading": "Rechtsanwälte in {{country}}",
+    "intro": "Finden Sie Rechtsbeistand in {{country}}. Wählen Sie ein Rechtsgebiet, um die Einträge zu filtern, oder scrollen Sie nach unten für eine Übersicht der größten Städte.",
+    "practiceAreas": "Rechtsgebiete",
+    "cities": "Große Städte",
+    "metaTitle": "Finden Sie einen Anwalt in {{country}}",
+    "metaDescription": "Durchsuchen Sie Anwälte in {{country}} nach Rechtsgebiet und Stadt. Geprüfte Einträge und Verweise auf die Rechtsanwaltskammer."
+  },
+  "area": {
+    "heading": "Rechtsanwälte für {{area}} in {{country}}",
+    "intro": "Rechtsanwälte für {{area}} in {{country}}. Wählen Sie eine Stadt aus, um lokale Einträge und Kontaktdaten anzuzeigen.",
+    "browseByCity": "Nach Stadt durchsuchen",
+    "faqHeading": "Häufig gestellte Fragen",
+    "metaTitle": "Rechtsanwälte für {{area}} in {{country}}",
+    "metaDescription": "Rechtsanwälte für {{area}} in {{country}}. Suchen Sie nach Stadt, sehen Sie Kontaktdaten ein und überprüfen Sie die Zulassung bei der nationalen Rechtsanwaltskammer.",
+    "faq": {
+      "q1": "Wie finde ich einen qualifizierten Rechtsanwalt für {{area}} in {{country}}?",
+      "a1": "Beginnen Sie mit der Suche in der für Sie am besten geeigneten Stadt. Jeder Eintrag enthält die registrierte Adresse der Kanzlei, Kontaktinformationen und, falls verfügbar, die Zulassungsnummer bei der Anwaltskammer. Überprüfen Sie die Zulassung immer bei der nationalen Rechtsanwaltskammer, bevor Sie einen Anwalt mandatieren.",
+      "q2": "Was kostet eine Erstberatung im Bereich {{area}} normalerweise?",
+      "a2": "Die Kosten für eine Erstberatung variieren je nach Kanzlei und Komplexität des Falles. Viele Kanzleien in {{country}} bieten ein kurzes, kostenloses Erstgespräch oder eine Erstberatung zu einem Pauschalpreis an. Bestätigen Sie die Gebühren schriftlich, bevor Sie die Kanzlei beauftragen.",
+      "q3": "Kann ich einen in einem anderen EU-Land zugelassenen Rechtsanwalt beauftragen?",
+      "a3": "Ja – gemäß den EU-Vorschriften dürfen in einem Mitgliedstaat zugelassene Rechtsanwälte ihre Dienstleistungen in der gesamten Union erbringen, obwohl für die Vertretung vor Gericht eine lokale Registrierung erforderlich sein kann. Grenzüberschreitend tätige Kanzleien weisen auf ihren Webseiten in der Regel darauf hin."
+    }
+  },
+  "city": {
+    "heading": "Rechtsanwälte für {{area}} in {{city}}",
+    "intro": "Geprüfte Kanzleien für {{area}} in {{city}}, {{country}}. Sehen Sie sich die Standorte auf der Karte an und kontaktieren Sie die Kanzleien direkt.",
+    "listings": "Gelistete Kanzleien",
+    "noListings": "Noch keine geprüften Einträge für {{city}} – schauen Sie bald wieder vorbei oder kontaktieren Sie die nationale Rechtsanwaltskammer für Empfehlungen.",
+    "mapTitle": "Karte",
+    "barAssociation": "Überprüfen Sie die Zulassung eines Anwalts bei",
+    "faqHeading": "Häufig gestellte Fragen",
+    "metaTitle": "Rechtsanwälte für {{area}} in {{city}}, {{country}}",
+    "metaDescription": "Rechtsanwälte für {{area}} in {{city}}, {{country}}. Karte, Kontaktdaten und Verweis auf die Rechtsanwaltskammer.",
+    "faq": {
+      "q1": "Wie überprüfe ich die Zulassung eines Rechtsanwalts in {{country}}?",
+      "a1": "Jeder praktizierende Rechtsanwalt in {{country}} ist bei der nationalen Rechtsanwaltskammer registriert. Nutzen Sie das offizielle Verzeichnis der Kammer, um die unten aufgeführte Zulassungsnummer zu bestätigen, bevor Sie eine Kanzlei beauftragen.",
+      "q2": "Was sollte ich zu einer Erstberatung mitbringen?",
+      "a2": "Bringen Sie einen Ausweis, alle Verträge oder Schreiben zu Ihrer Angelegenheit, einen chronologischen Ablauf der Ereignisse und eine schriftliche Liste mit Fragen mit. Je klarer Ihre Unterlagen sind, desto nützlicher ist die Beratung."
+    }
+  },
+  "breadcrumbs": {
+    "home": "Startseite",
+    "findLawyer": "Anwaltssuche (Europa)"
   },
   "comingSoon": "Demnächst verfügbar",
   "browse": "Durchsuchen",
   "practiceAreas": "Rechtsgebiete",
   "cities": "Städte",
-  "disclaimer": "Überprüfen Sie die Zulassung bei der zuständigen nationalen Rechtsanwaltskammer, bevor Sie einen Anwalt beauftragen."
+  "disclaimer": "Dieses Verzeichnis dient nur zu Informationszwecken und stellt keine Rechtsberatung dar. Überprüfen Sie die Zulassung bei der zuständigen nationalen Rechtsanwaltskammer, bevor Sie einen Rechtsbeistand mandatieren."
 }

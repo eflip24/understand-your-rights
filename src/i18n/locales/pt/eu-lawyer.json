@@ -1,11 +1,58 @@
 {
   "hub": {
-    "title": "Encontrar um advogado na Europa",
-    "intro": "Consulte advogados verificados em França, Alemanha, Espanha, Itália e Portugal."
+    "title": "Encontre um Advogado na Europa",
+    "intro": "Procure advogados verificados em França, Alemanha, Espanha, Itália e Portugal. Escolha um país para ver as áreas de prática e as cidades.",
+    "browseByCountry": "Pesquisar por país",
+    "metaDescription": "Diretório de advogados europeu que abrange França, Alemanha, Espanha, Itália e Portugal. Pesquise por país, área de prática e cidade."
   },
-  "comingSoon": "Em breve",
-  "browse": "Explorar",
+  "country": {
+    "heading": "Advogados em {{country}}",
+    "intro": "Encontre aconselhamento jurídico em {{country}}. Escolha uma área de prática para filtrar os resultados ou navegue para ver uma panorâmica das principais metrópoles.",
+    "practiceAreas": "Áreas de prática",
+    "cities": "Principais cidades",
+    "metaTitle": "Encontre um Advogado em {{country}}",
+    "metaDescription": "Procure advogados em {{country}} por área de prática e cidade. Listagens verificadas e referências da ordem dos advogados."
+  },
+  "area": {
+    "heading": "Advogados de {{area}} em {{country}}",
+    "intro": "Advogados de {{area}} em {{country}}. Escolha uma cidade para ver as listas locais e os dados de contacto.",
+    "browseByCity": "Pesquisar por cidade",
+    "faqHeading": "Perguntas frequentes",
+    "metaTitle": "Advogados de {{area}} em {{country}}",
+    "metaDescription": "Advogados de {{area}} em {{country}}. Pesquise por cidade, veja os dados de contacto e verifique as credenciais na ordem dos advogados nacional.",
+    "faq": {
+      "q1": "Como encontro um advogado de {{area}} qualificado em {{country}}?",
+      "a1": "Comece por pesquisar a cidade mais conveniente para si. Cada listagem inclui a morada registada da sociedade, informações de contacto e o número de cédula profissional, quando disponível. Verifique sempre as credenciais junto da Ordem dos Advogados nacional antes de contratar um advogado.",
+      "q2": "Qual é o custo habitual de uma consulta de {{area}}?",
+      "a2": "O custo das consultas iniciais varia consoante a sociedade e a complexidade do assunto. Muitas sociedades em {{country}} oferecem uma primeira chamada curta e gratuita ou uma reunião inicial com um custo fixo. Confirme os honorários por escrito antes de mandatar a sociedade.",
+      "q3": "Posso mandatar um advogado inscrito noutro país da UE?",
+      "a3": "Sim — ao abrigo das regras da UE, os advogados inscritos num Estado-Membro podem prestar serviços em toda a União, embora possa ser necessária uma inscrição local para representação em tribunal. As sociedades transfronteiriças costumam indicar esta informação nos seus websites."
+    }
+  },
+  "city": {
+    "heading": "Advogados de {{area}} em {{city}}",
+    "intro": "Sociedades de advogados de {{area}} verificadas em {{city}}, {{country}}. Veja as localizações no mapa e contacte as sociedades diretamente.",
+    "listings": "Sociedades listadas",
+    "noListings": "Ainda não existem listagens verificadas para {{city}} — volte em breve ou contacte a Ordem dos Advogados nacional para obter referências.",
+    "mapTitle": "Mapa",
+    "barAssociation": "Verifique as credenciais de qualquer advogado junto da",
+    "faqHeading": "Perguntas frequentes",
+    "metaTitle": "Advogados de {{area}} em {{city}}, {{country}}",
+    "metaDescription": "Advogados de {{area}} em {{city}}, {{country}}. Mapa, dados de contacto e referência da ordem dos advogados.",
+    "faq": {
+      "q1": "Como posso verificar as credenciais de um advogado em {{country}}?",
+      "a1": "Todos os advogados em exercício em {{country}} estão inscritos na Ordem dos Advogados nacional. Utilize a lista oficial da Ordem para confirmar o número de cédula profissional indicado abaixo antes de mandatar uma sociedade.",
+      "q2": "O que devo levar para uma primeira consulta?",
+      "a2": "Leve um documento de identificação, quaisquer contratos ou cartas relacionadas com o seu assunto, uma cronologia dos acontecimentos e uma lista de perguntas por escrito. Quanto mais organizado estiver o seu processo, mais útil será a consulta."
+    }
+  },
+  "breadcrumbs": {
+    "home": "Início",
+    "findLawyer": "Encontrar Advogado (Europa)"
+  },
+  "comingSoon": "Brevemente",
+  "browse": "Pesquisar",
   "practiceAreas": "Áreas de prática",
   "cities": "Cidades",
-  "disclaimer": "Verifique as credenciais junto da ordem dos advogados nacional competente antes de contratar."
+  "disclaimer": "Este diretório destina-se apenas a fins informativos e não constitui aconselhamento jurídico. Verifique as credenciais junto da respetiva Ordem dos Advogados nacional antes de contratar um advogado."
 }

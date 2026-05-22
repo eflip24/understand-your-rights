@@ -1,0 +1,58 @@
+{
+  "hub": {
+    "title": "Trouver un avocat en Europe",
+    "intro": "Parcourez les profils d'avocats vérifiés en France, en Allemagne, en Espagne, en Italie et au Portugal. Choisissez un pays pour consulter les domaines de compétence et les villes.",
+    "browseByCountry": "Recherche par pays",
+    "metaDescription": "Annuaire d'avocats européens couvrant la France, l'Allemagne, l'Espagne, l'Italie et le Portugal. Recherche par pays, domaine de compétence et ville."
+  },
+  "country": {
+    "heading": "Avocats en {{country}}",
+    "intro": "Trouvez un conseil juridique en {{country}}. Choisissez un domaine de compétence pour filtrer les résultats ou faites défiler la page pour un aperçu des principales métropoles.",
+    "practiceAreas": "Domaines de compétence",
+    "cities": "Villes principales",
+    "metaTitle": "Trouver un avocat en {{country}}",
+    "metaDescription": "Parcourez les profils d'avocats en {{country}} par domaine de compétence et par ville. Coordonnées vérifiées et références aux barreaux nationaux."
+  },
+  "area": {
+    "heading": "Avocats en {{area}} en {{country}}",
+    "intro": "Avocats spécialisés en {{area}} en {{country}}. Choisissez une ville pour consulter les listes locales et les coordonnées.",
+    "browseByCity": "Recherche par ville",
+    "faqHeading": "Questions fréquentes",
+    "metaTitle": "Avocats en {{area}} en {{country}}",
+    "metaDescription": "Avocats spécialisés en {{area}} en {{country}}. Recherche par ville, consultation des coordonnées et vérification des qualifications auprès du barreau national.",
+    "faq": {
+      "q1": "Comment trouver un avocat qualifié en {{area}} en {{country}} ?",
+      "a1": "Commencez par rechercher la ville qui vous convient le mieux. Chaque inscription inclut l'adresse enregistrée du cabinet, ses coordonnées et, le cas échéant, son numéro d'inscription au barreau. Vérifiez toujours les qualifications auprès du barreau national avant de mandater un avocat.",
+      "q2": "Quel est le coût habituel d'une consultation en {{area}} ?",
+      "a2": "Le coût des consultations initiales varie selon le cabinet et la complexité du dossier. De nombreux cabinets en {{country}} proposent un premier appel court et gratuit ou un premier rendez-vous à tarif forfaitaire. Confirmez les honoraires par écrit avant de mandater le cabinet.",
+      "q3": "Puis-je mandater un avocat inscrit au barreau d'un autre pays de l'UE ?",
+      "a3": "Oui, conformément aux règles de l'UE, les avocats inscrits dans un État membre peuvent fournir leurs services dans toute l'Union, bien qu'une inscription locale puisse être requise pour la représentation en justice. Les cabinets transfrontaliers l'indiquent généralement sur leur site web."
+    }
+  },
+  "city": {
+    "heading": "Avocats en {{area}} à {{city}}",
+    "intro": "Cabinets spécialisés en {{area}} et vérifiés à {{city}}, {{country}}. Consultez les emplacements sur la carte et contactez directement les cabinets.",
+    "listings": "Cabinets répertoriés",
+    "noListings": "Aucun cabinet vérifié pour {{city}} pour le moment. Veuillez consulter cette page ultérieurement ou contacter le barreau national pour obtenir des recommandations.",
+    "mapTitle": "Carte",
+    "barAssociation": "Vérifiez les qualifications de tout avocat auprès de",
+    "faqHeading": "Questions fréquentes",
+    "metaTitle": "Avocats en {{area}} à {{city}}, {{country}}",
+    "metaDescription": "Avocats en {{area}} à {{city}}, {{country}}. Carte, coordonnées et référence au barreau.",
+    "faq": {
+      "q1": "Comment vérifier les qualifications d'un avocat en {{country}} ?",
+      "a1": "Chaque avocat exerçant en {{country}} est inscrit au barreau national. Utilisez l'annuaire officiel du barreau pour confirmer le numéro d'inscription indiqué ci-dessous avant de mandater un cabinet.",
+      "q2": "Que dois-je apporter lors d'une première consultation ?",
+      "a2": "Apportez une pièce d'identité, tout contrat ou courrier relatif à votre dossier, une chronologie des événements et une liste de questions écrites. Plus votre dossier sera clair, plus la consultation sera utile."
+    }
+  },
+  "breadcrumbs": {
+    "home": "Accueil",
+    "findLawyer": "Trouver un avocat (Europe)"
+  },
+  "comingSoon": "Prochainement",
+  "browse": "Parcourir",
+  "practiceAreas": "Domaines de compétence",
+  "cities": "Villes",
+  "disclaimer": "Cet annuaire est fourni à titre informatif uniquement et ne constitue pas un conseil juridique. Vérifiez les qualifications auprès du barreau national compétent avant de mandater un avocat."
+}
