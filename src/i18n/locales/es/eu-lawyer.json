@@ -1,11 +1,60 @@
+```json
 {
   "hub": {
-    "title": "Encuentra un abogado en Europa",
-    "intro": "Consulta abogados verificados en Francia, Alemania, España, Italia y Portugal."
+    "title": "Encuentre un abogado en Europa",
+    "intro": "Busque abogados verificados en Francia, Alemania, España, Italia y Portugal. Seleccione un país para ver las áreas de práctica y las ciudades.",
+    "browseByCountry": "Buscar por país",
+    "metaDescription": "Directorio de abogados en Europa que cubre Francia, Alemania, España, Italia y Portugal. Busque por país, área de práctica y ciudad."
+  },
+  "country": {
+    "heading": "Abogados en {{country}}",
+    "intro": "Encuentre asesoramiento legal en {{country}}. Seleccione un área de práctica para filtrar los listados, o desplácese para ver un resumen de las principales ciudades.",
+    "practiceAreas": "Áreas de práctica",
+    "cities": "Principales ciudades",
+    "metaTitle": "Encuentre un abogado en {{country}}",
+    "metaDescription": "Busque abogados en {{country}} por área de práctica y ciudad. Listados verificados y referencias de colegios de abogados."
+  },
+  "area": {
+    "heading": "Abogados de {{area}} en {{country}}",
+    "intro": "Abogados especialistas en {{area}} en {{country}}. Seleccione una ciudad para ver los listados locales y los datos de contacto.",
+    "browseByCity": "Buscar por ciudad",
+    "faqHeading": "Preguntas frecuentes",
+    "metaTitle": "Abogados de {{area}} en {{country}}",
+    "metaDescription": "Abogados de {{area}} en {{country}}. Busque por ciudad, consulte los datos de contacto y verifique las credenciales con el colegio de abogados nacional.",
+    "faq": {
+      "q1": "¿Cómo encuentro un abogado cualificado de {{area}} en {{country}}?",
+      "a1": "Comience por buscar la ciudad que le resulte más conveniente. Cada listado incluye la dirección registrada del bufete, la información de contacto y el número de colegiado cuando esté disponible. Verifique siempre las credenciales con el colegio de abogados nacional antes de contratar sus servicios.",
+      "q2": "¿Cuánto suele costar una consulta de {{area}}?",
+      "a2": "El coste de las consultas iniciales varía según el bufete y la complejidad del asunto. Muchos bufetes en {{country}} ofrecen una primera llamada breve gratuita o una primera reunión con una tarifa fija. Confirme los honorarios por escrito antes de contratar al bufete.",
+      "q3": "¿Puedo contratar a un abogado colegiado en otro país de la UE?",
+      "a3": "Sí, según la normativa de la UE, los abogados colegiados en un Estado miembro pueden prestar servicios en toda la Unión, aunque puede ser necesario un registro local para la representación ante los tribunales. Los bufetes transfronterizos suelen indicarlo en sus sitios web."
+    }
+  },
+  "city": {
+    "heading": "Abogados de {{area}} en {{city}}",
+    "intro": "Bufetes de {{area}} verificados en {{city}}, {{country}}. Vea las ubicaciones en el mapa y contacte directamente con los bufetes.",
+    "listings": "Bufetes listados",
+    "noListings": "Aún no hay listados verificados para {{city}}. Vuelva a consultar pronto o póngase en contacto con el colegio de abogados nacional para obtener referencias.",
+    "mapTitle": "Mapa",
+    "barAssociation": "Verifique las credenciales de cualquier abogado en",
+    "faqHeading": "Preguntas frecuentes",
+    "metaTitle": "Abogados de {{area}} en {{city}}, {{country}}",
+    "metaDescription": "Abogados de {{area}} en {{city}}, {{country}}. Mapa, datos de contacto y referencia del colegio de abogados.",
+    "faq": {
+      "q1": "¿Cómo verifico las credenciales de un abogado en {{country}}?",
+      "a1": "Todo abogado en ejercicio en {{country}} está inscrito en el colegio de abogados nacional. Utilice el censo oficial del colegio para confirmar el número de colegiado que figura a continuación antes de contratar a un bufete.",
+      "q2": "¿Qué debo llevar a la primera consulta?",
+      "a2": "Traiga un documento de identidad, cualquier contrato o carta relacionada con su asunto, un resumen cronológico de los hechos y una lista de preguntas por escrito. Cuanto más claro sea su expediente, más útil será la consulta."
+    }
+  },
+  "breadcrumbs": {
+    "home": "Inicio",
+    "findLawyer": "Encontrar un abogado (Europa)"
   },
   "comingSoon": "Próximamente",
-  "browse": "Explorar",
+  "browse": "Buscar",
   "practiceAreas": "Áreas de práctica",
   "cities": "Ciudades",
-  "disclaimer": "Verifica las credenciales con el colegio de abogados nacional correspondiente antes de contratar."
+  "disclaimer": "Este directorio tiene únicamente fines informativos y no constituye asesoramiento legal. Verifique las credenciales con el colegio de abogados nacional correspondiente antes de contratar los servicios de un abogado."
 }
+```
