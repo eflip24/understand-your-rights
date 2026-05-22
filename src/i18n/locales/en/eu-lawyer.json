@@ -1,11 +1,58 @@
 {
   "hub": {
     "title": "Find a Lawyer in Europe",
-    "intro": "Browse verified lawyers across France, Germany, Spain, Italy and Portugal."
+    "intro": "Browse verified lawyers across France, Germany, Spain, Italy and Portugal. Choose a country to see practice areas and cities.",
+    "browseByCountry": "Browse by country",
+    "metaDescription": "European lawyer directory covering France, Germany, Spain, Italy and Portugal. Browse by country, practice area and city."
+  },
+  "country": {
+    "heading": "Lawyers in {{country}}",
+    "intro": "Find legal counsel across {{country}}. Choose a practice area to filter listings, or scroll for an overview of major metros.",
+    "practiceAreas": "Practice areas",
+    "cities": "Major cities",
+    "metaTitle": "Find a Lawyer in {{country}}",
+    "metaDescription": "Browse lawyers across {{country}} by practice area and city. Verified listings and bar association references."
+  },
+  "area": {
+    "heading": "{{area}} lawyers in {{country}}",
+    "intro": "{{area}} attorneys across {{country}}. Choose a city to view local listings and contact details.",
+    "browseByCity": "Browse by city",
+    "faqHeading": "Frequently asked questions",
+    "metaTitle": "{{area}} Lawyers in {{country}}",
+    "metaDescription": "{{area}} lawyers across {{country}}. Browse by city, view contact details and verify credentials with the national bar.",
+    "faq": {
+      "q1": "How do I find a qualified {{area}} lawyer in {{country}}?",
+      "a1": "Start by browsing the city most convenient for you. Each listing includes the firm's registered address, contact information, and bar registration number where available. Always verify credentials with the national bar association before retaining counsel.",
+      "q2": "What does a {{area}} consultation typically cost?",
+      "a2": "Initial consultations vary by firm and complexity of the matter. Many firms in {{country}} offer a short first call free of charge or a fixed-fee initial meeting. Confirm fees in writing before instructing the firm.",
+      "q3": "Can I instruct a lawyer admitted in another EU country?",
+      "a3": "Yes — under EU rules lawyers admitted in one member state may provide services across the union, though local registration may be required for court representation. Cross-border firms usually state this on their websites."
+    }
+  },
+  "city": {
+    "heading": "{{area}} lawyers in {{city}}",
+    "intro": "Verified {{area}} firms in {{city}}, {{country}}. View locations on the map and contact firms directly.",
+    "listings": "Listed firms",
+    "noListings": "No verified listings for {{city}} yet — check back soon or contact the national bar association for referrals.",
+    "mapTitle": "Map",
+    "barAssociation": "Verify any lawyer's credentials with",
+    "faqHeading": "Frequently asked questions",
+    "metaTitle": "{{area}} Lawyers in {{city}}, {{country}}",
+    "metaDescription": "{{area}} lawyers in {{city}}, {{country}}. Map, contact details, and bar association reference.",
+    "faq": {
+      "q1": "How do I verify a lawyer's credentials in {{country}}?",
+      "a1": "Every practicing lawyer in {{country}} is registered with the national bar. Use the bar's official roll to confirm the registration number listed below before instructing a firm.",
+      "q2": "What should I bring to a first consultation?",
+      "a2": "Bring identification, any contracts or letters related to your matter, a chronological timeline of events, and a written list of questions. The clearer your file, the more useful the consultation."
+    }
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "findLawyer": "Find a Lawyer (Europe)"
   },
   "comingSoon": "Coming soon",
   "browse": "Browse",
   "practiceAreas": "Practice areas",
   "cities": "Cities",
-  "disclaimer": "Verify credentials with the relevant national bar association before retaining counsel."
+  "disclaimer": "This directory is for informational purposes only and does not constitute legal advice. Verify credentials with the relevant national bar association before retaining counsel."
 }
