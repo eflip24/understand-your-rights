@@ -64,7 +64,26 @@ registries, routing, and sitemap shard. Page templates and listings come in B2+.
   `lawyers-eu-i18n` sitemap shard with no further changes — sitemap URL count
   grows automatically.
 
-### Next phases
+## Phase B3 — Templates, JSON-LD, FAQ, map ✅
 
-- **B3**: Replace page stubs with real templates (country directory, area pages with FAQ schema, city pages with LocalBusiness JSON-LD, map embed).
-- **B4**: Populate `lawyerListings.eu.ts` per city; flip noindex off.
+- **i18n schema expanded** in `eu-lawyer.json` (hub/country/area/city sections,
+  metaTitle/metaDescription, FAQ entries with {{country}}/{{area}}/{{city}}
+  Mustache placeholders). EN authored, AI-translated to es/fr/de/pt/it via the
+  AI gateway with JSON validation + fence stripping.
+- **slugRegistry**: `EuRouteCanonical.country` now optional → hub canonical
+  builds to `/{locale?}/lawyer-eu` cleanly; `resolveEuRoute` returns `{}` for
+  the hub.
+- **Hub**: BreadcrumbList + ItemList(countries) JSON-LD, i18n strings, indexable.
+- **Country**: BreadcrumbList + ItemList(areas) JSON-LD, areas linked, cities
+  shown with primary-tier badge, indexable.
+- **Area**: BreadcrumbList + ItemList(cities) + FAQPage JSON-LD with 3 Q/A
+  using Accordion UI, cities linked, indexable.
+- **City**: BreadcrumbList + per-listing LegalService JSON-LD + FAQPage,
+  lazy-loaded LocalMap centered on city coords with markers per listing,
+  empty-state card when listings absent, bar-association reference.
+
+### Next phase
+
+- **B4**: Populate `lawyerListings.eu.ts` per city (hand-curated, mirroring US
+  listings shape); seed a handful per major metro to validate the LocalBusiness
+  JSON-LD chain end-to-end.
