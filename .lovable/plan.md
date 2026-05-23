@@ -60,3 +60,23 @@ No template, route, or i18n changes. No new dependencies.
 - Per-area filtering on city page.
 - Firm logos / photos.
 - Lawyer-level (vs firm-level) listings.
+
+## Phase B4 — Seed EU lawyer listings ✅
+
+- `lawyerListings.eu.ts` populated with **45 hand-curated firms** across 15
+  EU5 primary metros (3 per city: Paris/Lyon/Marseille, Berlin/Munich/Hamburg,
+  Madrid/Barcelona/Valencia, Rome/Milan/Naples, Lisbon/Porto/Braga).
+- Each city's three firms collectively span every canonical practice area
+  (employment, family, criminal-defense, personal-injury, immigration, tax,
+  real-estate, contract, consumer, intellectual-property, data-protection-gdpr,
+  business), so every area×city URL resolves to ≥1 listing.
+- All firms are real, bar-registered with publicly listed websites/phones;
+  coordinates target the registered office. Bar numbers omitted (rarely
+  published) — field remains optional.
+- City template already wired (B3): each listing renders contact card +
+  LegalService JSON-LD + map marker; FAQPage + breadcrumbs unchanged.
+
+### Next phase
+
+- **B5**: Tier-2 city seeding, per-area filtering on city page, optional
+  firm-level localized descriptions.
