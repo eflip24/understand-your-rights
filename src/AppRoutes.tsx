@@ -68,6 +68,7 @@ const EuLawyersHub = React.lazy(() => import("@/pages/eu/EuLawyersHub"));
 const EuLawyersCountryPage = React.lazy(() => import("@/pages/eu/EuLawyersCountryPage"));
 const EuLawyersAreaPage = React.lazy(() => import("@/pages/eu/EuLawyersAreaPage"));
 const EuLawyersCityPage = React.lazy(() => import("@/pages/eu/EuLawyersCityPage"));
+const ImpressumPage = React.lazy(() => import("@/pages/legal/ImpressumPage"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
@@ -139,6 +140,14 @@ export default function AppRoutes() {
       <Route path="/disclaimer" element={<DisclaimerPage />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+      {/* EU compliance: locale-specific Impressum/Mentions légales/etc.
+          Each route forces the correct locale regardless of URL prefix. */}
+      <Route path="/legal-notice" element={<ImpressumPage forceLocale="en" />} />
+      <Route path="/impressum" element={<ImpressumPage forceLocale="de" />} />
+      <Route path="/mentions-legales" element={<ImpressumPage forceLocale="fr" />} />
+      <Route path="/aviso-legal" element={<ImpressumPage forceLocale="es" />} />
+      <Route path="/note-legali" element={<ImpressumPage forceLocale="it" />} />
+      <Route path="/informacao-legal" element={<ImpressumPage forceLocale="pt" />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
