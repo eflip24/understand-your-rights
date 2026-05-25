@@ -4,10 +4,22 @@ import { useTranslation } from "react-i18next";
 import { openConsentSettings } from "@/lib/consent";
 import LangSwitcher from "@/components/layout/LangSwitcher";
 import { useLocalizedPath } from "@/i18n/paths";
+import { IMPRESSUM_ROUTES, type ImpressumLocale } from "@/data/eu/impressumData";
+
+const IMPRESSUM_LABEL: Record<ImpressumLocale, string> = {
+  en: "Legal Notice",
+  de: "Impressum",
+  fr: "Mentions légales",
+  es: "Aviso legal",
+  it: "Note legali",
+  pt: "Informação legal",
+};
 
 export default function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const lp = useLocalizedPath();
+  const lang = (i18n.language || "en").split("-")[0] as ImpressumLocale;
+  const impressumLocale: ImpressumLocale = lang in IMPRESSUM_ROUTES ? lang : "en";
 
   const toolLinks = [
     { label: t("nav.tools.allTools"), href: lp("/tools") },
@@ -43,6 +55,7 @@ export default function Footer() {
     { label: t("footer.links.disclaimer"), href: lp("/disclaimer") },
     { label: t("footer.links.privacy"), href: lp("/privacy-policy") },
     { label: t("footer.links.terms"), href: lp("/terms-of-service") },
+    { label: IMPRESSUM_LABEL[impressumLocale], href: IMPRESSUM_ROUTES[impressumLocale] },
   ];
 
   return (

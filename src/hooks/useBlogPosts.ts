@@ -12,6 +12,7 @@ export interface BlogPost {
   published_at: string | null;
   author_name: string;
   created_at: string | null;
+  ai_generated?: boolean;
   categories?: BlogCategory[];
 }
 

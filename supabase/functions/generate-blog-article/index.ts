@@ -165,6 +165,9 @@ Respond with a JSON object (no markdown code fences) with these fields:
     }
 
     const article = JSON.parse(toolCall.function.arguments);
+    // Mark output as AI-assisted so the front-end can render the
+    // "AI-assisted article — reviewed by editors" badge (EU AI Act art. 50).
+    article.ai_generated = true;
 
     return new Response(JSON.stringify(article), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
