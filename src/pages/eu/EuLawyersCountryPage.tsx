@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import EuLawyerHead from "@/components/seo/EuLawyerHead";
+import BarDisclaimerNotice from "@/components/eu/BarDisclaimerNotice";
 import { JsonLdGraph, breadcrumbSchema, itemListSchema } from "@/components/seo/JsonLd";
 import { useLocaleFromUrl } from "@/i18n/LocaleSync";
 import { resolveEuRoute, buildEuPath } from "@/lib/eu/resolveRoute";
@@ -70,6 +71,8 @@ export default function EuLawyersCountryPage() {
           {t("country.intro", { country: country.name[locale] })}
         </p>
       </div>
+
+      <BarDisclaimerNotice country={canonical.country} locale={locale} />
 
       <h2 className="text-2xl font-bold mb-3">{t("country.practiceAreas")}</h2>
       <div className="grid gap-2 sm:grid-cols-2 mb-8">

@@ -108,12 +108,11 @@ export const BAR_DISCLAIMERS: Record<EuCountryCode, BarDisclaimer> = {
   it: disclaimer("https://www.consiglionazionaleforense.it", {
     en: "Consiglio Nazionale Forense (CNF)",
     it: "Consiglio Nazionale Forense (CNF)",
-    en_fallback: "Consiglio Nazionale Forense (CNF)",
     fr: "Consiglio Nazionale Forense (CNF)",
     de: "Consiglio Nazionale Forense (CNF)",
     es: "Consiglio Nazionale Forense (CNF)",
     pt: "Consiglio Nazionale Forense (CNF)",
-  } as Partial<Record<SupportedLocale, string>> & { en: string }),
+  }),
   pt: disclaimer("https://portal.oa.pt", {
     en: "Ordem dos Advogados",
     pt: "Ordem dos Advogados",

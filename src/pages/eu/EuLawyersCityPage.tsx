@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import EuLawyerHead from "@/components/seo/EuLawyerHead";
+import BarDisclaimerNotice from "@/components/eu/BarDisclaimerNotice";
 import { JsonLdGraph, breadcrumbSchema, localBusinessSchema, faqSchema } from "@/components/seo/JsonLd";
 import type { MapMarker } from "@/components/maps/LocalMap";
 import { useLocaleFromUrl } from "@/i18n/LocaleSync";
@@ -96,6 +97,8 @@ export default function EuLawyersCityPage() {
         <p className="text-lg text-muted-foreground max-w-2xl">{t("city.intro", ctx)}</p>
       </div>
 
+      <BarDisclaimerNotice country={canonical.country} locale={locale} />
+
       {listings.length > 0 ? (
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-3">{t("city.listings")}</h2>
@@ -140,9 +143,14 @@ export default function EuLawyersCityPage() {
 
       <section className="mb-8">
         <h2 className="text-2xl font-bold mb-3">{t("city.mapTitle")}</h2>
-        <Suspense fallback={<Skeleton className="h-[300px] md:h-[400px] w-full rounded-lg" />}>
-          <LocalMap center={[city.lat, city.lng]} markers={markers} />
-        </Suspense>
+        <div aria-hidden="true">
+          <Suspense fallback={<Skeleton className="h-[300px] md:h-[400px] w-full rounded-lg" />}>
+            <LocalMap center={[city.lat, city.lng]} markers={markers} />
+          </Suspense>
+        </div>
+        <p className="sr-only">
+          Map of {listings.length} listed firms in {city.name[locale]}. Use the list above for accessible navigation.
+        </p>
       </section>
 
       <section className="mb-8">

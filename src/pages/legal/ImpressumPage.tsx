@@ -1,9 +1,8 @@
-import { Helmet } from "react-helmet-async";
+import Head from "@/components/seo/Head";
 import { useLocaleFromUrl } from "@/i18n/LocaleSync";
 import {
   OPERATOR,
   IMPRESSUM_COPY,
-  IMPRESSUM_ROUTES,
   type ImpressumLocale,
 } from "@/data/eu/impressumData";
 
@@ -12,22 +11,14 @@ interface Props {
   forceLocale?: ImpressumLocale;
 }
 
-const SITE = "https://legallyspoken.com";
-
 export default function ImpressumPage({ forceLocale }: Props) {
   const detected = useLocaleFromUrl() as ImpressumLocale;
   const locale: ImpressumLocale = forceLocale ?? (detected in IMPRESSUM_COPY ? detected : "en");
   const copy = IMPRESSUM_COPY[locale];
-  const path = IMPRESSUM_ROUTES[locale];
 
   return (
     <div className="container max-w-3xl py-12">
-      <Helmet>
-        <title>{copy.metaTitle}</title>
-        <meta name="description" content={copy.metaDescription} />
-        <link rel="canonical" href={`${SITE}${path}`} />
-        <meta name="robots" content="index, follow" />
-      </Helmet>
+      <Head title={copy.metaTitle} description={copy.metaDescription} />
 
       <h1 className="font-serif text-3xl md:text-4xl font-bold mb-2">{copy.heading}</h1>
       <p className="text-muted-foreground mb-8">{copy.intro}</p>
