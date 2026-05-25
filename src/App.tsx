@@ -10,7 +10,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import LegalChatWidget from "@/components/chat/LegalChatWidget";
-import CookieConsent from "@/components/consent/CookieConsent";
 import AppRoutes from "@/AppRoutes";
 import LocaleSync from "@/i18n/LocaleSync";
 import "@/i18n/config";
@@ -61,7 +60,7 @@ const App = () => (
               <Footer />
             </div>
             <LegalChatWidget />
-            <CookieConsent />
+            {/* Cookie consent now handled by Google Funding Choices (TCF v2.2) loaded in index.html */}
           </BrowserRouter>
         </TooltipProvider>
       </AuthProvider>

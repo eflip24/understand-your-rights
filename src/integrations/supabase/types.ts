@@ -80,6 +80,7 @@ export type Database = {
       }
       blog_posts: {
         Row: {
+          ai_generated: boolean
           author_name: string
           content: string
           created_at: string | null
@@ -93,6 +94,7 @@ export type Database = {
           wp_id: number
         }
         Insert: {
+          ai_generated?: boolean
           author_name?: string
           content?: string
           created_at?: string | null
@@ -106,6 +108,7 @@ export type Database = {
           wp_id: number
         }
         Update: {
+          ai_generated?: boolean
           author_name?: string
           content?: string
           created_at?: string | null

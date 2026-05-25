@@ -235,6 +235,13 @@ export default function BlogPostPage() {
               {title}
             </h1>
 
+            {post.ai_generated && (
+              <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs text-foreground/80">
+                <span aria-hidden="true">✦</span>
+                AI-assisted article — reviewed by editors
+              </div>
+            )}
+
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5">
                 <User className="h-4 w-4" />

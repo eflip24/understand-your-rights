@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import EuLawyerHead from "@/components/seo/EuLawyerHead";
+import BarDisclaimerNotice from "@/components/eu/BarDisclaimerNotice";
 import { JsonLdGraph, breadcrumbSchema, itemListSchema, faqSchema } from "@/components/seo/JsonLd";
 import { useLocaleFromUrl } from "@/i18n/LocaleSync";
 import { resolveEuRoute, buildEuPath } from "@/lib/eu/resolveRoute";
@@ -75,6 +76,8 @@ export default function EuLawyersAreaPage() {
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl">{t("area.intro", ctx)}</p>
       </div>
+
+      <BarDisclaimerNotice country={canonical.country} locale={locale} />
 
       <h2 className="text-2xl font-bold mb-3">{t("area.browseByCity")}</h2>
       <div className="grid gap-2 sm:grid-cols-3 mb-8">
