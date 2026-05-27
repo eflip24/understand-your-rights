@@ -60,7 +60,13 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Testing
+
+- `npm test` — unit/component tests via Vitest.
+- `npm run test:a11y` — audits key routes against WCAG 2.1 AA via axe-core (`scripts/axe-audit.mjs`).
+
 ## How can I deploy this project?
+
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
