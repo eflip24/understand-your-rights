@@ -80,7 +80,8 @@ export default function EuLawyersRegionPage() {
         title={`${t("region.metaTitle", { ...ctx, defaultValue: `Lawyers in ${region.name[locale]}, ${country.name[locale]}` })} | LegallySpoken`}
         description={
           intro?.text.slice(0, 158) ??
-          t("region.metaDescription", ctx, {
+          t("region.metaDescription", {
+            ...ctx,
             defaultValue: `Find lawyers and legal information for ${region.name[locale]} in ${country.name[locale]}.`,
           })
         }
