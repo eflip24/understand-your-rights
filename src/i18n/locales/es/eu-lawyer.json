@@ -54,5 +54,15 @@
   "browse": "Buscar",
   "practiceAreas": "Áreas de práctica",
   "cities": "Ciudades",
-  "disclaimer": "Este directorio tiene únicamente fines informativos y no constituye asesoramiento jurídico. Verifique las credenciales en el colegio de abogados nacional correspondiente antes de contratar sus servicios."
+  "disclaimer": "Este directorio tiene únicamente fines informativos y no constituye asesoramiento jurídico. Verifique las credenciales en el colegio de abogados nacional correspondiente antes de contratar sus servicios.",
+  "pillar": {
+    "legalSystem": "Sistema jurídico",
+    "howToFindLawyer": "Cómo encontrar un abogado en {{country}}",
+    "feesAndAid": "Honorarios y asistencia jurídica",
+    "barAssociation": "Colegio de abogados",
+    "crossBorderEU": "Ejercicio transfronterizo en la UE",
+    "faq": "Preguntas frecuentes",
+    "lastReviewed": "Última revisión",
+    "aiAssisted": "Artículo asistido por IA — revisado por editores"
+  }
 }

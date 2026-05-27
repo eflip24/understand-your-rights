@@ -54,5 +54,15 @@
   "browse": "Browse",
   "practiceAreas": "Practice areas",
   "cities": "Cities",
-  "disclaimer": "This directory is for informational purposes only and does not constitute legal advice. Verify credentials with the relevant national bar association before retaining counsel."
+  "disclaimer": "This directory is for informational purposes only and does not constitute legal advice. Verify credentials with the relevant national bar association before retaining counsel.",
+  "pillar": {
+    "legalSystem": "Legal system",
+    "howToFindLawyer": "How to find a lawyer in {{country}}",
+    "feesAndAid": "Fees & legal aid",
+    "barAssociation": "Bar association",
+    "crossBorderEU": "Cross-border practice in the EU",
+    "faq": "Frequently asked questions",
+    "lastReviewed": "Last reviewed",
+    "aiAssisted": "AI-assisted article — reviewed by editors"
+  }
 }

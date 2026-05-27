@@ -1,137 +1,106 @@
-## Phase B5 — EU Compliance Bundle
+## Phase B6 — Country Pillar Content (E-E-A-T Moat)
 
-Ship the legal + accessibility groundwork required before sending real EU traffic to the `/lawyer-eu/*` tree. Five workstreams, each independently shippable; recommend merging in the order below.
+Goal: turn each `/lawyer-eu/{country}` page from a thin index into a substantial pillar page that ranks for head terms like "avocat France", "Rechtsanwalt Deutschland", "abogado España". Mirrors what `/auto-accident-law` etc. do for US.
 
----
+### Scope
+5 countries × 1 pillar each = **5 pillar pages**, plus a structured data file per country. No new routes (reuse `EuLawyersCountryPage.tsx`, upgrade in place). No DB changes.
 
-### B5.1 — Impressum + legal-pages tree
+### B6.1 — Country pillar content model
 
-Germany (TMG §5) and Austria (ECG §5) legally require an "Impressum" reachable in ≤2 clicks from every page. France (LCEN art. 6) requires equivalent "Mentions légales". Without these, German hosts can issue Abmahnungen (formal cease-letters with cost orders) within weeks of indexing.
+New file `src/data/eu/countryPillars.ts` exporting a typed registry keyed by `EuCountryCode`:
 
-**Routes (locale-prefixed, mounted in `AppRoutes.tsx`):**
-- `/impressum` (DE/AT) — operator name, address, contact, responsible person per §55 RStV, EU ODR link
-- `/mentions-legales` (FR) — éditeur, hébergeur, directeur de publication, RCS/SIRET if applicable
-- `/aviso-legal` (ES), `/note-legali` (IT), `/informacao-legal` (PT) — equivalent boilerplate
-- All six render the same `<LegalImpressumPage locale="…" />` component with locale-specific copy
+```ts
+interface CountryPillar {
+  hero: { tagline: LocalizedString; lede: LocalizedString };
+  legalSystem: LocalizedString;          // 2-3 paras: civil law tradition, court hierarchy
+  howToFindLawyer: LocalizedString;       // step-by-step, locale-appropriate
+  feesAndAid: LocalizedString;            // typical fee structures + legal aid eligibility
+  barAssociation: {                       // expanded from existing barDisclaimers
+    name: LocalizedString;
+    verifyUrl: string;
+    membershipRules: LocalizedString;
+  };
+  crossBorderEU: LocalizedString;         // Establishment Directive 98/5/EC + Services Directive
+  faqs: Array<{ q: LocalizedString; a: LocalizedString }>;  // 6 per country
+  lastReviewed: string;                   // ISO date — drives `dateModified` schema
+}
+```
 
-**Footer:** add a dedicated "Legal / Rechtliches" column that surfaces the locale-appropriate page based on `i18n.language`. Currently `Footer.tsx` only links Privacy/Terms/Disclaimer — extend it.
+Content split per locale: each country authored primarily in its **own** language (DE in `de`, FR in `fr` …) with `en` translations for hub crawlability; other locales fall back to `en` to keep cost down (B8 covers full locale fan-out).
 
-**Data:** new `src/data/eu/impressumData.ts` with operator details (entity name, registered address, email, EU ODR `https://ec.europa.eu/consumers/odr/`). Single source of truth — user must fill operator-identity fields before shipping; ship with `TODO:` placeholders gated by a build-time check.
+### B6.2 — Pillar page upgrade
 
-### B5.2 — Per-country bar-association disclaimers
+Refactor `EuLawyersCountryPage.tsx` from "areas + cities grid" to a long-form pillar:
 
-Each EU bar regulates non-lawyer publication of attorney info differently. The current generic disclaimer string in `eu-lawyer.json` (`disclaimer: "This directory is for informational purposes only..."`) is not sufficient for DE (BRAO §43b, RIN), FR (RIN art. 10), or IT (CNF deontology).
+```
+[Bar disclaimer]               ← existing
+[Hero: H1 + tagline + lede]    ← new
+[Legal-system primer]          ← new
+[How to find a lawyer in X]    ← new
+[Fees & legal aid]             ← new
+[Bar association card]         ← upgraded
+[Cross-border / EU rights]     ← new
+[Practice areas grid]          ← existing
+[Cities grid]                  ← existing
+[FAQ accordion (6 Q&A)]        ← new (reuses shadcn Accordion)
+[Last reviewed: {date}]        ← new
+```
 
-**Implementation:**
-- New `src/data/eu/barDisclaimers.ts` keyed by `EuCountryCode` → `{ bodyKey, referenceUrl, verifyUrl }`
-- Each country gets a dedicated disclaimer block (i18n key `eu-lawyer.barDisclaimer.{country}`) added to all 6 locale files
-- Rendered as a bordered notice at the top of every `EuLawyersCountryPage`, `EuLawyersAreaPage`, `EuLawyersCityPage`, and as a small footnote under each listing card on the City page
-- Includes: "We are not a law firm. Listings are sourced from public bar-association registries. Verify any lawyer's credentials at {barAssociationUrl} before engaging."
-- DE/AT additionally: explicit "Werbung durch Rechtsanwälte" notice referencing BRAO §43b
-- FR additionally: "Annuaire non officiel — consultez l'annuaire du CNB" link
+Word target: **1,800–2,400 words** per country (matches what US pillars do). All text from `countryPillars.ts`, no hardcoded copy in the component.
 
-**No DB.** Pure static data + i18n strings.
+### B6.3 — Schema upgrades
 
-### B5.3 — TCF v2.2 CMP swap
+`EuLawyersCountryPage` JSON-LD `@graph` adds:
+- **`Article`** (or `Guide`) with `headline`, `inLanguage`, `author: { @type: Organization, name: 'Legally Spoken' }`, `dateModified` from `lastReviewed`.
+- **`FAQPage`** built from the 6 FAQs.
+- Existing `BreadcrumbList` + `ItemList` kept.
 
-Current `CookieConsent.tsx` is a homegrown banner storing `{analytics, advertising}` in localStorage and flipping `requestNonPersonalizedAds`. **This is not TCF v2.2 compliant.** Google AdSense requires a Google-certified CMP for all EEA/UK/CH traffic since Jan 16, 2024 — non-compliant sites get ads disabled in those regions.
+Single `JsonLdGraph` call as today.
 
-**Approach:** integrate a Google-certified CMP. Two viable options, recommend Option A:
+### B6.4 — Internal linking
 
-- **Option A (recommended): Funding Choices** — Google's own free CMP, configured in the AdSense dashboard, loaded via a single script tag in `index.html`. Zero per-page code. Replaces our custom banner entirely.
-- **Option B: Self-hosted (Klaro, CookieConsent v3)** — more design control but requires writing a TCF v2.2 stub and consent-string encoder; substantially more work.
+- Each pillar links **out** to its area pages (already) + 2-3 cluster blog posts when present (`useBlogPosts({ country: 'de' })` — already supports filter).
+- Hub `/lawyer-eu` page upgrades country cards with a 1-sentence intro pulled from `countryPillars[code].hero.tagline`.
+- Footer adds a "European Legal Guides" column linking the 5 pillars (locale-aware).
 
-**Plan assumes Option A:**
-- Add Funding Choices loader to `index.html` (script + `<meta name="google-adsense-account">` already present)
-- Delete `src/components/consent/CookieConsent.tsx` and the `openConsentSettings` call sites in `Footer.tsx`
-- Keep `src/lib/consent.ts` but rewrite `useConsent()` to read the IAB TCF `__tcfapi` `getTCData` purposes (purpose 1 = storage, purpose 3+4 = ads personalization) instead of localStorage
-- `AdSlot.tsx` continues to gate on `consentDecided`, just sourced from TCF now
-- Keep a "Cookie settings" footer link that calls `__tcfapi('displayConsentUi', 2, cb)` to re-open Funding Choices
+### B6.5 — Content generation strategy
 
-**Risk:** Funding Choices UI is Google-styled, not ours — minor brand inconsistency, acceptable trade for cert + zero maintenance.
+5 countries × ~2,000 words × 2 primary locales (native + EN) ≈ 20K words. Two paths:
 
-### B5.4 — AI-content labels
+**Path A — Lovable AI (default)** via a new admin-only script `scripts/generate-country-pillar.mjs` calling `generate-blog-article`-style prompt against `google/gemini-3-flash-preview`. Outputs `countryPillars.ts` patches per country. Each generation reviewed by user, marked `ai_generated: true` (B5.4 badge surfaces automatically).
 
-The EU AI Act (art. 50, in force Aug 2026) requires "clear and distinguishable" disclosure when content is generated or substantially assisted by AI. Our blog uses `generate-blog-article` edge function (Lovable AI / Gemini). The Legal Chat widget is also AI. Both currently lack explicit AI-generated labels.
+**Path B — AI credit fallback** if Lovable AI credits exhaust mid-generation:
+- **Google AI Studio (Gemini API)** — free tier: 15 RPM / 1M tokens-per-day on `gemini-2.5-flash`. Plenty for 5 pillars. Key from https://aistudio.google.com/apikey.
+- **Groq** — free tier on `llama-3.3-70b-versatile`, 30 RPM. Good fallback.
+- **Mistral La Plateforme** — free experimental tier on `mistral-small-latest`, EU-hosted (bonus for EU content authenticity).
 
-**Implementation:**
-- **Blog posts** generated via the edge function: add `ai_generated boolean default false` column to `blog_posts` (migration), set `true` from `generate-blog-article`. Surface in `BlogPostPage.tsx` as a small badge above the title: "AI-assisted article — reviewed by editors" (i18n key `blog.aiAssistedBadge`).
-- **Legal Chat widget**: prepend a one-line disclosure to the opening message: "Responses are generated by AI and are not legal advice." (already says "not legal advice"; add "generated by AI" explicitly). Update `LegalChatWidget.tsx` greeting + the JSON-LD `WebApplication` schema in `Head.tsx` to mark `applicationCategory: "AI-assisted legal information"`.
-- **EU lawyer pages**: add a one-line footnote "Listings curated by our team; descriptions may be AI-summarized from public sources." under the existing `disclaimer` block on `EuLawyersCityPage`.
-- New i18n keys in `common.json` (`ai.assistedBadge`, `ai.generatedDisclosure`, `ai.summarizedFootnote`) across all 6 locales.
+Add a `--provider {lovable|gemini|groq|mistral}` flag to the script; gemini/groq/mistral providers read a secret (`GEMINI_API_KEY` / `GROQ_API_KEY` / `MISTRAL_API_KEY`) added via `add_secret` only when needed. All four return OpenAI-compatible chat completions, so one adapter handles all.
 
-**DB migration:** single column add, RLS unchanged (already public-read).
+Recommend starting with Lovable AI; switch only on 402.
 
-### B5.5 — axe-core accessibility audit (EAA)
+### B6.6 — Out of scope (deferred)
 
-The European Accessibility Act applies to commercial services serving EU consumers from June 28, 2025. Effectively WCAG 2.1 AA on customer-facing flows. Lawyer directory + chat widget are in scope.
+- Per-city pillar content (B7).
+- Region-tier pages (B9).
+- Full 6-locale translation of every pillar (B8).
+- Lawyer claim/verify flow (B10).
 
-**Process:**
-1. Install `@axe-core/cli` as a dev dep
-2. Add `scripts/axe-audit.mjs` that crawls a representative URL list (home, /lawyer-near-me, /lawyer-eu, /lawyer-eu/deutschland, /lawyer-eu/deutschland/familienrecht/berlin, /blog, /tools, /legal-health-check, plus each new Impressum route) using a headless Puppeteer driver
-3. Run once, capture findings JSON to `.lovable/axe-baseline.json`
-4. Fix critical + serious violations in-place. Expected hotspots based on current code:
-   - `LegalChatWidget` floating button — confirm `aria-label`, focus trap on open, ESC to close
-   - `LangSwitcher` dropdown — keyboard nav (probably already correct via shadcn)
-   - Map markers in `LocalMap` — Leaflet markers need accessible names or the map needs a parallel text list (the city page already renders a card list, so mark the map `aria-hidden="true"` and keep cards as the canonical control)
-   - Cookie banner removal (B5.3) eliminates several existing focus-trap issues
-   - Color-contrast: spot-check navy-on-gold and gold-on-navy combos against WCAG AA 4.5:1 — current palette is borderline on small text
-5. Re-run, target zero critical/serious. Document remaining moderate items in `.lovable/a11y-known.md`.
+### Files
 
-**No runtime dep added** — `@axe-core/cli` stays in `devDependencies`.
+**New**
+- `src/data/eu/countryPillars.ts` — content registry (typed scaffolding + 1 fully-authored country, others stubbed for incremental fill)
+- `src/components/eu/CountryPillarSections.tsx` — presentational long-form sections
+- `scripts/generate-country-pillar.mjs` — multi-provider generator
 
----
+**Edited**
+- `src/pages/eu/EuLawyersCountryPage.tsx` — render pillar sections, FAQ, Article+FAQ schema
+- `src/pages/eu/EuLawyersHub.tsx` — country cards with taglines
+- `src/components/layout/Footer.tsx` — European Legal Guides column
+- `src/components/seo/JsonLd.tsx` — add `articleSchema` + `faqSchema` helpers if missing
+- All 6 `eu-lawyer.json` — section headings ("Legal system", "How to find a lawyer", "Fees & legal aid", "Cross-border", "FAQ", "Last reviewed")
 
-### File-level summary
+### Open questions
 
-**New:**
-- `src/pages/legal/ImpressumPage.tsx`
-- `src/data/eu/impressumData.ts`
-- `src/data/eu/barDisclaimers.ts`
-- `src/components/eu/BarDisclaimerNotice.tsx`
-- `scripts/axe-audit.mjs`
-- `.lovable/axe-baseline.json`, `.lovable/a11y-known.md`
-
-**Edited:**
-- `src/AppRoutes.tsx` — 6 new Impressum-equivalent routes
-- `src/components/layout/Footer.tsx` — new Legal column, remove custom-consent trigger, add TCF re-open link
-- `index.html` — Funding Choices script
-- `src/lib/consent.ts` — rewrite to read TCF API
-- `src/components/ads/AdSlot.tsx` — minor: source consent from TCF
-- `src/components/chat/LegalChatWidget.tsx` — AI disclosure in greeting
-- `src/pages/BlogPostPage.tsx` — AI badge
-- `src/pages/eu/EuLawyersCountryPage.tsx`, `EuLawyersAreaPage.tsx`, `EuLawyersCityPage.tsx` — render `BarDisclaimerNotice`
-- All 6 `src/i18n/locales/{lang}/eu-lawyer.json` — `barDisclaimer.{country}` keys
-- All 6 `src/i18n/locales/{lang}/common.json` — `ai.*` + legal-page nav keys
-- `.lovable/plan.md` — completion notes
-
-**Deleted:**
-- `src/components/consent/CookieConsent.tsx`
-
-**DB migration:** `ALTER TABLE blog_posts ADD COLUMN ai_generated boolean DEFAULT false;` + update `generate-blog-article` edge function to write `true`.
-
-**New deps:** `@axe-core/cli`, `puppeteer` (devDependencies only). Funding Choices = script tag, no npm dep.
-
-### Verification
-
-- Visit `/impressum`, `/mentions-legales`, etc. — each renders with operator details
-- Footer shows correct legal link per active locale
-- Disable JS → custom banner gone; reload with JS → Funding Choices shows EU consent UI for EEA IP, nothing for US IP (test via VPN)
-- `view-source:/blog/{ai-post}` → AI badge renders
-- `node scripts/axe-audit.mjs` → 0 critical, 0 serious
-- AdSense dashboard "EEA + UK consent" status → "Compliant"
-
-### Out of scope (defer to later phases)
-
-- Lawyer claim/verify flow + `lawyer_listings` DB table (B10)
-- Country pillar content (B6)
-- Tier-2 city expansion (B7)
-- Region tier in URL (B9)
-- Belgium/Switzerland multi-lang-per-country (B8)
-- AI Act art. 50 watermarking of generated images (not yet shipping AI-image content)
-
-### Open questions for the user before build mode
-
-1. **Operator identity for Impressum** — what entity/name/address/email should appear? (Required before DE/AT pages can ship.)
-2. **CMP choice** — Funding Choices (recommended) or self-hosted Klaro?
-3. **AI badge wording** — "AI-assisted article — reviewed by editors" assumes editors actually review. If posts publish unreviewed, the honest label is "AI-generated — not reviewed by editors." Which is true today?
+1. **Authoring order** — which country should I fully write first (DE recommended: highest CPC + strictest legal context, sets template), then stub the other 4?
+2. **AI provider for fallback** — want me to wire all three fallbacks (Gemini / Groq / Mistral) or just Gemini? Gemini free tier alone covers the full job.
+3. **Last-reviewed cadence** — show exact date ("Last reviewed 27 May 2026") or relative ("Reviewed this month")? Exact is stronger E-E-A-T signal but requires honest re-review.

@@ -54,5 +54,15 @@
   "browse": "Pesquisar",
   "practiceAreas": "Áreas de prática",
   "cities": "Cidades",
-  "disclaimer": "Este diretório destina-se apenas a fins informativos e não constitui aconselhamento jurídico. Verifique as credenciais junto da respetiva Ordem dos Advogados nacional antes de contratar um advogado."
+  "disclaimer": "Este diretório destina-se apenas a fins informativos e não constitui aconselhamento jurídico. Verifique as credenciais junto da respetiva Ordem dos Advogados nacional antes de contratar um advogado.",
+  "pillar": {
+    "legalSystem": "Sistema jurídico",
+    "howToFindLawyer": "Como encontrar um advogado em {{country}}",
+    "feesAndAid": "Honorários e apoio judiciário",
+    "barAssociation": "Ordem dos advogados",
+    "crossBorderEU": "Exercício transfronteiriço na UE",
+    "faq": "Perguntas frequentes",
+    "lastReviewed": "Última revisão",
+    "aiAssisted": "Artigo assistido por IA — revisto pela redação"
+  }
 }

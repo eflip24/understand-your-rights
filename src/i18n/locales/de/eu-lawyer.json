@@ -54,5 +54,15 @@
   "browse": "Durchsuchen",
   "practiceAreas": "Rechtsgebiete",
   "cities": "Städte",
-  "disclaimer": "Dieses Verzeichnis dient nur zu Informationszwecken und stellt keine Rechtsberatung dar. Überprüfen Sie die Zulassung bei der zuständigen nationalen Rechtsanwaltskammer, bevor Sie einen Rechtsbeistand mandatieren."
+  "disclaimer": "Dieses Verzeichnis dient nur zu Informationszwecken und stellt keine Rechtsberatung dar. Überprüfen Sie die Zulassung bei der zuständigen nationalen Rechtsanwaltskammer, bevor Sie einen Rechtsbeistand mandatieren.",
+  "pillar": {
+    "legalSystem": "Rechtssystem",
+    "howToFindLawyer": "Anwaltssuche in {{country}}",
+    "feesAndAid": "Vergütung & Prozesskostenhilfe",
+    "barAssociation": "Anwaltskammer",
+    "crossBorderEU": "Grenzüberschreitende Tätigkeit in der EU",
+    "faq": "Häufig gestellte Fragen",
+    "lastReviewed": "Zuletzt geprüft",
+    "aiAssisted": "KI-gestützter Artikel — redaktionell geprüft"
+  }
 }
