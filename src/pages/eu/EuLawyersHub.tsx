@@ -56,25 +56,29 @@ export default function EuLawyersHub() {
 
       <h2 className="text-2xl font-bold mb-3">{t("hub.browseByCountry")}</h2>
       <div className="grid gap-4 sm:grid-cols-2">
-        {euCountries.map((c) => (
-          <Link key={c.code} to={buildEuPath(locale, { country: c.code })}>
-            <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all group">
-              <CardHeader className="pb-2">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
-                    <MapPin className="h-5 w-5 text-accent" />
+        {euCountries.map((c) => {
+          const tagline = pickPillarLocale(COUNTRY_PILLARS[c.code].hero.tagline, locale);
+          return (
+            <Link key={c.code} to={buildEuPath(locale, { country: c.code })}>
+              <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all group">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
+                      <MapPin className="h-5 w-5 text-accent" />
+                    </div>
+                    <CardTitle className="text-base">{c.name[locale]}</CardTitle>
                   </div>
-                  <CardTitle className="text-base">{c.name[locale]}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <span className="text-xs text-accent font-medium inline-flex items-center gap-1">
-                  {t("browse")} <ArrowRight className="h-3 w-3" />
-                </span>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 mb-2 line-clamp-2">{tagline}</p>
+                  <span className="text-xs text-accent font-medium inline-flex items-center gap-1">
+                    {t("browse")} <ArrowRight className="h-3 w-3" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
+          );
+        })}
       </div>
 
       <div className="border-t pt-6 mt-8">
