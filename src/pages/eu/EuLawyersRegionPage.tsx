@@ -61,7 +61,7 @@ export default function EuLawyersRegionPage() {
     },
     cities.length > 0 && defaultArea
       ? itemListSchema(
-          t("region.citiesIn", ctx, { defaultValue: `Cities in ${region.name[locale]}` }),
+          t("region.citiesIn", { ...ctx, defaultValue: `Cities in ${region.name[locale]}` }),
           cities.map((c) => ({
             url: `${SITE}${buildEuPath(locale, {
               country: canonical.country,
@@ -77,7 +77,7 @@ export default function EuLawyersRegionPage() {
   return (
     <div className="container py-8 max-w-4xl">
       <EuLawyerHead
-        title={`${t("region.metaTitle", ctx, { defaultValue: `Lawyers in ${region.name[locale]}, ${country.name[locale]}` })} | LegallySpoken`}
+        title={`${t("region.metaTitle", { ...ctx, defaultValue: `Lawyers in ${region.name[locale]}, ${country.name[locale]}` })} | LegallySpoken`}
         description={
           intro?.text.slice(0, 158) ??
           t("region.metaDescription", ctx, {
@@ -106,7 +106,7 @@ export default function EuLawyersRegionPage() {
 
       <div className="mb-6">
         <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-2">
-          {t("region.heading", ctx, { defaultValue: `Lawyers in ${region.name[locale]}` })}
+          {t("region.heading", { ...ctx, defaultValue: `Lawyers in ${region.name[locale]}` })}
         </h1>
         <p className="text-sm text-muted-foreground">
           {country.name[locale]}
@@ -187,7 +187,7 @@ export default function EuLawyersRegionPage() {
       {cities.length > 0 && defaultArea && (
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-3">
-            {t("region.citiesIn", ctx, { defaultValue: `Cities in ${region.name[locale]}` })}
+            {t("region.citiesIn", { ...ctx, defaultValue: `Cities in ${region.name[locale]}` })}
           </h2>
           <div className="grid gap-2 sm:grid-cols-3">
             {cities.map((c) => (
@@ -232,7 +232,7 @@ export default function EuLawyersRegionPage() {
           to={countryPath}
           className="text-sm text-accent hover:underline inline-flex items-center gap-1"
         >
-          ← {t("region.backToCountry", ctx, { defaultValue: `Back to ${country.name[locale]}` })}
+          ← {t("region.backToCountry", { ...ctx, defaultValue: `Back to ${country.name[locale]}` })}
         </Link>
       </div>
 
