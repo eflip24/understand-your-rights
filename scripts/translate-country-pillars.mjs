@@ -235,8 +235,9 @@ async function callLovable(system, user) {
 }
 
 async function callGemini(system, user) {
-  // Google AI Studio free tier — gemini-2.0-flash has the highest free RPM.
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`;
+  // Google AI Studio free tier — gemini-1.5-flash has the widest free-tier coverage.
+  const model = process.env.GEMINI_MODEL || "gemini-1.5-flash-latest";
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_KEY}`;
   const body = {
     systemInstruction: { parts: [{ text: system }] },
     contents: [{ role: "user", parts: [{ text: user }] }],
