@@ -236,7 +236,7 @@ async function callLovable(system, user) {
 
 async function callGemini(system, user) {
   // Google AI Studio free tier — gemini-1.5-flash has the widest free-tier coverage.
-  const model = process.env.GEMINI_MODEL || "gemini-1.5-flash-latest";
+  const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_KEY}`;
   const body = {
     systemInstruction: { parts: [{ text: system }] },
