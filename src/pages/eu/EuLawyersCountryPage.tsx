@@ -105,6 +105,12 @@ export default function EuLawyersCountryPage() {
 
       <BarDisclaimerNotice country={canonical.country} locale={locale} />
 
+      <PillarLocaleFallbackBanner
+        country={canonical.country}
+        countryName={country.name[locale]}
+        locale={locale}
+      />
+
       <CountryPillarSections pillar={pillar} locale={locale} labels={pillarLabels} />
 
       <h2 className="text-2xl font-bold mb-3">{t("country.practiceAreas")}</h2>
@@ -119,16 +125,31 @@ export default function EuLawyersCountryPage() {
       </div>
 
       <h2 className="text-2xl font-bold mb-3">{t("country.cities")}</h2>
-      <div className="grid gap-2 sm:grid-cols-3 mb-8">
-        {cities.map((c) => (
-          <Card key={c.canonical}>
-            <CardContent className="p-3 text-sm font-medium flex items-center justify-between">
-              <span>{c.name[locale]}</span>
-              {c.tier === "primary" && <Badge variant="outline" className="text-xs">★</Badge>}
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+      {(["primary", "secondary", "tertiary"] as const).map((tier) => {
+        const group = cities.filter((c) => c.tier === tier);
+        if (group.length === 0) return null;
+        const groupLabel = t(`country.cityTier.${tier}`, {
+          defaultValue: tier === "primary" ? "Major metros" : tier === "secondary" ? "Regional centres" : "Other cities",
+        });
+        return (
+          <div key={tier} className="mb-6">
+            <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+              {groupLabel}
+            </h3>
+            <div className="grid gap-2 sm:grid-cols-3">
+              {group.map((c) => (
+                <Card key={c.canonical}>
+                  <CardContent className="p-3 text-sm font-medium flex items-center justify-between">
+                    <span>{c.name[locale]}</span>
+                    {tier === "primary" && <Badge variant="outline" className="text-xs">★</Badge>}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+
 
       <div className="border-t pt-6">
         <p className="text-xs text-muted-foreground">
