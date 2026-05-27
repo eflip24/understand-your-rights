@@ -54,5 +54,15 @@
   "browse": "Parcourir",
   "practiceAreas": "Domaines de compétence",
   "cities": "Villes",
-  "disclaimer": "Cet annuaire est fourni à titre informatif uniquement et ne constitue pas un conseil juridique. Vérifiez les qualifications auprès du barreau national compétent avant de mandater un avocat."
+  "disclaimer": "Cet annuaire est fourni à titre informatif uniquement et ne constitue pas un conseil juridique. Vérifiez les qualifications auprès du barreau national compétent avant de mandater un avocat.",
+  "pillar": {
+    "legalSystem": "Système juridique",
+    "howToFindLawyer": "Comment trouver un avocat en {{country}}",
+    "feesAndAid": "Honoraires et aide juridictionnelle",
+    "barAssociation": "Ordre des avocats",
+    "crossBorderEU": "Exercice transfrontalier dans l'UE",
+    "faq": "Questions fréquentes",
+    "lastReviewed": "Dernière révision",
+    "aiAssisted": "Article assisté par IA — relu par la rédaction"
+  }
 }

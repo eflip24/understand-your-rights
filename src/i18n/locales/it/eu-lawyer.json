@@ -54,5 +54,15 @@
   "browse": "Sfoglia",
   "practiceAreas": "Aree di competenza",
   "cities": "Città",
-  "disclaimer": "Questo elenco è fornito solo a scopo informativo e non costituisce una consulenza legale. Verificare le credenziali presso l'ordine nazionale degli avvocati competente prima di conferire un incarico."
+  "disclaimer": "Questo elenco è fornito solo a scopo informativo e non costituisce una consulenza legale. Verificare le credenziali presso l'ordine nazionale degli avvocati competente prima di conferire un incarico.",
+  "pillar": {
+    "legalSystem": "Sistema giuridico",
+    "howToFindLawyer": "Come trovare un avvocato in {{country}}",
+    "feesAndAid": "Onorari e patrocinio gratuito",
+    "barAssociation": "Ordine forense",
+    "crossBorderEU": "Esercizio transfrontaliero nell'UE",
+    "faq": "Domande frequenti",
+    "lastReviewed": "Ultima revisione",
+    "aiAssisted": "Articolo assistito da IA — rivisto dalla redazione"
+  }
 }
