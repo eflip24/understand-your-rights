@@ -15,19 +15,22 @@ interface Props {
   country: EuCountryCode;
   countryName: string;
   locale: LocaleCode;
+  /** When true, suppress the banner — every field has a localised value. */
+  fullyLocalized?: boolean;
 }
 
 /**
  * Shown on EU country pillar pages when the active locale is neither English
- * nor the country's own language. Explains that long-form prose currently
- * falls back to English while native translations are in progress.
+ * nor the country's own language AND at least one field still falls back to
+ * English. Post-B8 this rarely fires.
  */
-export default function PillarLocaleFallbackBanner({ country, countryName, locale }: Props) {
+export default function PillarLocaleFallbackBanner({ country, countryName, locale, fullyLocalized }: Props) {
   const { t } = useTranslation("eu-lawyer");
   const [dismissed, setDismissed] = useState(false);
 
   if (dismissed) return null;
   if (locale === "en" || locale === country) return null;
+  if (fullyLocalized) return null;
 
   const language = LANGUAGE_LABEL[country][locale];
 

@@ -10,6 +10,7 @@
  */
 
 import type { EuCountryCode, LocaleCode } from "./countries";
+import { GENERATED_PILLAR_TRANSLATIONS, type GeneratedPillar } from "./countryPillarsGenerated";
 
 export type PillarLocalized = Partial<Record<LocaleCode, string>> & { en: string };
 
@@ -41,6 +42,55 @@ export interface CountryPillar {
 
 export function pickPillarLocale<T extends PillarLocalized>(field: T, locale: LocaleCode): string {
   return field[locale] ?? field.en;
+}
+
+/** Merge AI-generated translations into a hand-authored pillar.
+ *  Authored values always win; generated values only fill gaps. */
+function mergePillar(base: CountryPillar, gen: GeneratedPillar): CountryPillar {
+  const mergeField = <T extends PillarLocalized>(b: T, g?: Partial<Record<LocaleCode, string>>): T => {
+    if (!g) return b;
+    const out = { ...b } as T;
+    (Object.keys(g) as LocaleCode[]).forEach((loc) => {
+      if (out[loc] == null && g[loc]) (out as Record<string, string>)[loc] = g[loc] as string;
+    });
+    return out;
+  };
+  return {
+    ...base,
+    hero: {
+      tagline: mergeField(base.hero.tagline, gen.hero?.tagline),
+      lede: mergeField(base.hero.lede, gen.hero?.lede),
+    },
+    legalSystem: mergeField(base.legalSystem, gen.legalSystem),
+    howToFindLawyer: mergeField(base.howToFindLawyer, gen.howToFindLawyer),
+    feesAndAid: mergeField(base.feesAndAid, gen.feesAndAid),
+    barAssociation: {
+      ...base.barAssociation,
+      membershipRules: mergeField(base.barAssociation.membershipRules, gen.barAssociation?.membershipRules),
+    },
+    crossBorderEU: mergeField(base.crossBorderEU, gen.crossBorderEU),
+    faqs: base.faqs.map((faq, i) => ({
+      q: mergeField(faq.q, gen.faqs?.[i]?.q),
+      a: mergeField(faq.a, gen.faqs?.[i]?.a),
+    })),
+  };
+}
+
+/** True when every long-form pillar field has a value for `locale`
+ *  (either hand-authored or generated). Drives the fallback banner. */
+export function isPillarFullyLocalized(pillar: CountryPillar, locale: LocaleCode): boolean {
+  if (locale === "en") return true;
+  const fields: PillarLocalized[] = [
+    pillar.hero.tagline,
+    pillar.hero.lede,
+    pillar.legalSystem,
+    pillar.howToFindLawyer,
+    pillar.feesAndAid,
+    pillar.barAssociation.membershipRules,
+    pillar.crossBorderEU,
+    ...pillar.faqs.flatMap((f) => [f.q, f.a]),
+  ];
+  return fields.every((f) => typeof f[locale] === "string" && (f[locale] as string).length > 0);
 }
 
 /* ------------------------------------------------------------------ */
@@ -347,10 +397,12 @@ const PT: CountryPillar = {
   aiAssisted: true,
 };
 
+const AUTHORED: Record<EuCountryCode, CountryPillar> = { de: DE, fr: FR, es: ES, it: IT, pt: PT };
+
 export const COUNTRY_PILLARS: Record<EuCountryCode, CountryPillar> = {
-  de: DE,
-  fr: FR,
-  es: ES,
-  it: IT,
-  pt: PT,
+  de: mergePillar(AUTHORED.de, GENERATED_PILLAR_TRANSLATIONS.de),
+  fr: mergePillar(AUTHORED.fr, GENERATED_PILLAR_TRANSLATIONS.fr),
+  es: mergePillar(AUTHORED.es, GENERATED_PILLAR_TRANSLATIONS.es),
+  it: mergePillar(AUTHORED.it, GENERATED_PILLAR_TRANSLATIONS.it),
+  pt: mergePillar(AUTHORED.pt, GENERATED_PILLAR_TRANSLATIONS.pt),
 };
