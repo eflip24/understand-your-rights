@@ -16,7 +16,8 @@
       "primary": "Grandes metrópolis",
       "secondary": "Centros regionales",
       "tertiary": "Otras ciudades"
-    }
+    },
+    "regions": "Regiones"
   },
   "area": {
     "heading": "Abogados de {{area}} en {{country}}",
@@ -70,5 +71,16 @@
     "lastReviewed": "Última revisión",
     "aiAssisted": "Artículo asistido por IA — revisado por editores"
   },
-  "pillarLocaleFallback": "La guía detallada para {{country}} se muestra actualmente en inglés. Las traducciones al {{language}} están en camino."
+  "pillarLocaleFallback": "La guía detallada para {{country}} se muestra actualmente en inglés. Las traducciones al {{language}} están en camino.",
+  "region": {
+    "heading": "Abogados en {{region}}",
+    "metaTitle": "Abogados en {{region}}, {{country}}",
+    "metaDescription": "Encuentra abogados, tribunales e información colegial para {{region}}, {{country}}. Ciudades, áreas de práctica y contexto jurídico regional.",
+    "citiesIn": "Ciudades de {{region}}",
+    "capital": "Capital regional",
+    "courtOfAppeal": "Tribunal Superior de Justicia",
+    "barChamber": "Colegio de la abogacía",
+    "backToCountry": "Volver a {{country}}",
+    "shownInEnglish": "Este resumen regional se muestra actualmente en inglés; pronto estará disponible una versión localizada."
+  }
 }

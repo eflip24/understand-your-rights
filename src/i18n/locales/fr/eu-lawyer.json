@@ -16,7 +16,8 @@
       "primary": "Grandes métropoles",
       "secondary": "Centres régionaux",
       "tertiary": "Autres villes"
-    }
+    },
+    "regions": "Régions"
   },
   "area": {
     "heading": "Avocats en {{area}} en {{country}}",
@@ -70,5 +71,16 @@
     "lastReviewed": "Dernière révision",
     "aiAssisted": "Article assisté par IA — relu par la rédaction"
   },
-  "pillarLocaleFallback": "Le guide détaillé pour {{country}} est actuellement affiché en anglais. Une traduction {{language}} est en cours."
+  "pillarLocaleFallback": "Le guide détaillé pour {{country}} est actuellement affiché en anglais. Une traduction {{language}} est en cours.",
+  "region": {
+    "heading": "Avocats en {{region}}",
+    "metaTitle": "Avocats en {{region}}, {{country}}",
+    "metaDescription": "Trouvez des avocats, des juridictions et les informations ordinales pour {{region}}, {{country}}. Villes, domaines de pratique et contexte juridique régional.",
+    "citiesIn": "Villes en {{region}}",
+    "capital": "Chef-lieu régional",
+    "courtOfAppeal": "Cour d'appel",
+    "barChamber": "Ordre des avocats",
+    "backToCountry": "Retour à {{country}}",
+    "shownInEnglish": "Cette présentation régionale est actuellement affichée en anglais ; une version localisée est en cours de préparation."
+  }
 }
