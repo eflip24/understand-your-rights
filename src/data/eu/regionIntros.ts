@@ -10,6 +10,7 @@
  */
 
 import type { EuCountryCode, LocaleCode } from "./countries";
+import { GENERATED_REGION_INTROS } from "./regionIntrosGenerated";
 
 export interface RegionIntro {
   /** Required: English baseline. Other locales fall back to this. */
@@ -281,7 +282,9 @@ export function pickRegionIntro(
 ): { text: string; locale: LocaleCode } | null {
   const intro = REGION_INTROS[country]?.[region];
   if (!intro) return null;
-  const text = intro[locale];
-  if (text) return { text, locale };
+  const authored = intro[locale];
+  if (authored) return { text: authored, locale };
+  const generated = GENERATED_REGION_INTROS[country]?.[region]?.[locale];
+  if (generated) return { text: generated, locale };
   return { text: intro.en, locale: "en" };
 }
