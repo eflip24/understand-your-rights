@@ -65,6 +65,19 @@ This project is built with:
 - `npm test` — unit/component tests via Vitest.
 - `npm run test:a11y` — audits key routes against WCAG 2.1 AA via axe-core (`scripts/axe-audit.mjs`).
 
+## Translating EU country pillars
+
+Long-form copy on `/lawyer-eu/{country}` pillar pages is authored in English plus the country's native language; the other 4 EU locales are filled by an AI-assisted translation pass.
+
+```
+bun scripts/translate-country-pillars.mjs                          # all gaps, Lovable AI first
+bun scripts/translate-country-pillars.mjs --provider=gemini        # use Google AI Studio (free tier)
+bun scripts/translate-country-pillars.mjs --country=fr --locale=es # single combo
+bun scripts/translate-country-pillars.mjs --dry                    # show what would run
+```
+
+The script is idempotent — it only fills missing locale entries and writes to `src/data/eu/countryPillarsGenerated.ts`. Requires `LOVABLE_API_KEY` and/or `GEMINI_API_KEY` in the environment. On a 402 (Lovable credits exhausted) or 429 it auto-falls back to Gemini when both keys are present.
+
 ## How can I deploy this project?
 
 
