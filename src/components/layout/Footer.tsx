@@ -5,6 +5,7 @@ import { openConsentSettings } from "@/lib/consent";
 import LangSwitcher from "@/components/layout/LangSwitcher";
 import { useLocalizedPath } from "@/i18n/paths";
 import { IMPRESSUM_ROUTES, type ImpressumLocale } from "@/data/eu/impressumData";
+import { euCountries, type EuCountryCode, type LocaleCode } from "@/data/eu/countries";
 
 const IMPRESSUM_LABEL: Record<ImpressumLocale, string> = {
   en: "Legal Notice",
@@ -14,6 +15,8 @@ const IMPRESSUM_LABEL: Record<ImpressumLocale, string> = {
   it: "Note legali",
   pt: "Informação legal",
 };
+
+const EU_PILLAR_ORDER: EuCountryCode[] = ["de", "fr", "es", "it", "pt"];
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
