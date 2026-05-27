@@ -11,7 +11,12 @@
     "practiceAreas": "Practice areas",
     "cities": "Major cities",
     "metaTitle": "Find a Lawyer in {{country}}",
-    "metaDescription": "Browse lawyers across {{country}} by practice area and city. Verified listings and bar association references."
+    "metaDescription": "Browse lawyers across {{country}} by practice area and city. Verified listings and bar association references.",
+    "cityTier": {
+      "primary": "Major metros",
+      "secondary": "Regional centres",
+      "tertiary": "Other cities"
+    }
   },
   "area": {
     "heading": "{{area}} lawyers in {{country}}",
@@ -64,5 +69,6 @@
     "faq": "Frequently asked questions",
     "lastReviewed": "Last reviewed",
     "aiAssisted": "AI-assisted article — reviewed by editors"
-  }
+  },
+  "pillarLocaleFallback": "Detailed guidance for {{country}} is currently shown in English. Native {{language}} translations are on the way."
 }

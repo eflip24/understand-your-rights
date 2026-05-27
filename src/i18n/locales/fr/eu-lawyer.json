@@ -11,7 +11,12 @@
     "practiceAreas": "Domaines de compétence",
     "cities": "Villes principales",
     "metaTitle": "Trouver un avocat en {{country}}",
-    "metaDescription": "Parcourez les profils d'avocats en {{country}} par domaine de compétence et par ville. Coordonnées vérifiées et références aux barreaux nationaux."
+    "metaDescription": "Parcourez les profils d'avocats en {{country}} par domaine de compétence et par ville. Coordonnées vérifiées et références aux barreaux nationaux.",
+    "cityTier": {
+      "primary": "Grandes métropoles",
+      "secondary": "Centres régionaux",
+      "tertiary": "Autres villes"
+    }
   },
   "area": {
     "heading": "Avocats en {{area}} en {{country}}",
@@ -64,5 +69,6 @@
     "faq": "Questions fréquentes",
     "lastReviewed": "Dernière révision",
     "aiAssisted": "Article assisté par IA — relu par la rédaction"
-  }
+  },
+  "pillarLocaleFallback": "Le guide détaillé pour {{country}} est actuellement affiché en anglais. Une traduction {{language}} est en cours."
 }
