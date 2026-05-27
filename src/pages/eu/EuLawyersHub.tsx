@@ -7,6 +7,7 @@ import { JsonLdGraph, breadcrumbSchema, itemListSchema } from "@/components/seo/
 import { euCountries } from "@/data/eu/countries";
 import { useLocaleFromUrl } from "@/i18n/LocaleSync";
 import { buildEuPath } from "@/lib/eu/resolveRoute";
+import { COUNTRY_PILLARS, pickPillarLocale } from "@/data/eu/countryPillars";
 
 const SITE = "https://legallyspoken.com";
 
