@@ -16,7 +16,8 @@
       "primary": "Großstädte",
       "secondary": "Regionale Zentren",
       "tertiary": "Weitere Städte"
-    }
+    },
+    "regions": "Regionen"
   },
   "area": {
     "heading": "Rechtsanwälte für {{area}} in {{country}}",
@@ -70,5 +71,16 @@
     "lastReviewed": "Zuletzt geprüft",
     "aiAssisted": "KI-gestützter Artikel — redaktionell geprüft"
   },
-  "pillarLocaleFallback": "Ausführliche Informationen zu {{country}} werden derzeit auf Englisch angezeigt. {{language}}sprachige Übersetzungen folgen."
+  "pillarLocaleFallback": "Ausführliche Informationen zu {{country}} werden derzeit auf Englisch angezeigt. {{language}}sprachige Übersetzungen folgen.",
+  "region": {
+    "heading": "Anwälte in {{region}}",
+    "metaTitle": "Anwälte in {{region}}, {{country}}",
+    "metaDescription": "Finden Sie Anwälte, Gerichte und Kammerinformationen für {{region}}, {{country}}. Städte, Tätigkeitsschwerpunkte und regionaler rechtlicher Kontext.",
+    "citiesIn": "Städte in {{region}}",
+    "capital": "Regionale Hauptstadt",
+    "courtOfAppeal": "Oberlandesgericht",
+    "barChamber": "Rechtsanwaltskammer",
+    "backToCountry": "Zurück zu {{country}}",
+    "shownInEnglish": "Diese regionale Übersicht wird derzeit auf Englisch angezeigt; eine lokalisierte Fassung ist in Vorbereitung."
+  }
 }

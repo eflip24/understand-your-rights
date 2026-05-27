@@ -16,7 +16,8 @@
       "primary": "Major metros",
       "secondary": "Regional centres",
       "tertiary": "Other cities"
-    }
+    },
+    "regions": "Regions"
   },
   "area": {
     "heading": "{{area}} lawyers in {{country}}",
@@ -70,5 +71,16 @@
     "lastReviewed": "Last reviewed",
     "aiAssisted": "AI-assisted article — reviewed by editors"
   },
-  "pillarLocaleFallback": "Detailed guidance for {{country}} is currently shown in English. Native {{language}} translations are on the way."
+  "pillarLocaleFallback": "Detailed guidance for {{country}} is currently shown in English. Native {{language}} translations are on the way.",
+  "region": {
+    "heading": "Lawyers in {{region}}",
+    "metaTitle": "Lawyers in {{region}}, {{country}}",
+    "metaDescription": "Find lawyers, courts and bar information for {{region}}, {{country}}. Cities, practice areas and regional legal context.",
+    "citiesIn": "Cities in {{region}}",
+    "capital": "Regional capital",
+    "courtOfAppeal": "Court of appeal",
+    "barChamber": "Bar chamber",
+    "backToCountry": "Back to {{country}}",
+    "shownInEnglish": "This regional overview is currently shown in English; a localised version is being prepared."
+  }
 }

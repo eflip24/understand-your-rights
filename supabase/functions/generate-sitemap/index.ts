@@ -292,6 +292,98 @@ const EU_CITY_SLUGS: Record<string, Record<string, Record<EuLoc, string>>> = {
   },
 };
 
+// === EU regions (B9) — slug per locale per region ===
+// Mirrors src/data/eu/regions.ts. Same-as-canonical slugs are written explicitly
+// so the per-locale URL builder stays uniform with cities/areas.
+const sameForAll = (slug: string): Record<EuLoc, string> => ({
+  en: slug, es: slug, fr: slug, de: slug, pt: slug, it: slug,
+});
+const EU_REGION_SLUGS: Record<string, Record<string, Record<EuLoc, string>>> = {
+  fr: {
+    "ile-de-france": sameForAll("ile-de-france"),
+    "auvergne-rhone-alpes": sameForAll("auvergne-rhone-alpes"),
+    "provence-alpes-cote-dazur": sameForAll("provence-alpes-cote-dazur"),
+    "occitanie": sameForAll("occitanie"),
+    "nouvelle-aquitaine": sameForAll("nouvelle-aquitaine"),
+    "hauts-de-france": sameForAll("hauts-de-france"),
+    "grand-est": sameForAll("grand-est"),
+    "pays-de-la-loire": sameForAll("pays-de-la-loire"),
+    "bretagne": sameForAll("bretagne"),
+    "normandie": sameForAll("normandie"),
+    "bourgogne-franche-comte": sameForAll("bourgogne-franche-comte"),
+    "centre-val-de-loire": sameForAll("centre-val-de-loire"),
+    "corse": sameForAll("corse"),
+  },
+  de: {
+    "baden-wuerttemberg": sameForAll("baden-wuerttemberg"),
+    "bayern": sameForAll("bayern"),
+    "berlin-region": sameForAll("berlin-region"),
+    "brandenburg": sameForAll("brandenburg"),
+    "bremen-region": sameForAll("bremen-region"),
+    "hamburg-region": sameForAll("hamburg-region"),
+    "hessen": sameForAll("hessen"),
+    "mecklenburg-vorpommern": sameForAll("mecklenburg-vorpommern"),
+    "niedersachsen": sameForAll("niedersachsen"),
+    "nordrhein-westfalen": sameForAll("nordrhein-westfalen"),
+    "rheinland-pfalz": sameForAll("rheinland-pfalz"),
+    "saarland": sameForAll("saarland"),
+    "sachsen": sameForAll("sachsen"),
+    "sachsen-anhalt": sameForAll("sachsen-anhalt"),
+    "schleswig-holstein": sameForAll("schleswig-holstein"),
+    "thueringen": sameForAll("thueringen"),
+  },
+  es: {
+    "andalucia": sameForAll("andalucia"),
+    "aragon": sameForAll("aragon"),
+    "asturias": sameForAll("asturias"),
+    "baleares": sameForAll("baleares"),
+    "canarias": sameForAll("canarias"),
+    "cantabria": sameForAll("cantabria"),
+    "castilla-la-mancha": sameForAll("castilla-la-mancha"),
+    "castilla-y-leon": sameForAll("castilla-y-leon"),
+    "cataluna": sameForAll("cataluna"),
+    "extremadura": sameForAll("extremadura"),
+    "galicia": sameForAll("galicia"),
+    "la-rioja": sameForAll("la-rioja"),
+    "madrid-region": sameForAll("madrid-region"),
+    "murcia-region": sameForAll("murcia-region"),
+    "navarra": sameForAll("navarra"),
+    "pais-vasco": sameForAll("pais-vasco"),
+    "comunidad-valenciana": sameForAll("comunidad-valenciana"),
+  },
+  it: {
+    "abruzzo": sameForAll("abruzzo"),
+    "basilicata": sameForAll("basilicata"),
+    "calabria": sameForAll("calabria"),
+    "campania": sameForAll("campania"),
+    "emilia-romagna": sameForAll("emilia-romagna"),
+    "friuli-venezia-giulia": sameForAll("friuli-venezia-giulia"),
+    "lazio": sameForAll("lazio"),
+    "liguria": sameForAll("liguria"),
+    "lombardia": sameForAll("lombardia"),
+    "marche": sameForAll("marche"),
+    "molise": sameForAll("molise"),
+    "piemonte": sameForAll("piemonte"),
+    "puglia": sameForAll("puglia"),
+    "sardegna": sameForAll("sardegna"),
+    "sicilia": sameForAll("sicilia"),
+    "toscana": sameForAll("toscana"),
+    "trentino-alto-adige": sameForAll("trentino-alto-adige"),
+    "umbria": sameForAll("umbria"),
+    "valle-daosta": sameForAll("valle-daosta"),
+    "veneto": sameForAll("veneto"),
+  },
+  pt: {
+    "norte": sameForAll("norte"),
+    "centro": sameForAll("centro"),
+    "lisboa-region": sameForAll("lisboa-region"),
+    "alentejo": sameForAll("alentejo"),
+    "algarve": sameForAll("algarve"),
+    "acores": sameForAll("acores"),
+    "madeira": sameForAll("madeira"),
+  },
+};
+
 function euLocaleUrl(loc: EuLoc, path: string): string {
   return loc === DEFAULT_LOCALE ? `${SITE}${path}` : `${SITE}/${loc}${path}`;
 }
@@ -326,6 +418,17 @@ function buildLawyersEuI18n(): string {
       (LOCALES as readonly string[]).map((l) => [l, `/${EU_BASE}/${countrySlugs[l as EuLoc]}`]),
     ) as Record<EuLoc, string>;
     entries.push(uLEu(countryPaths, "weekly", "0.7"));
+
+    // Region pages (B9) — /{country}/region/{region}
+    const regions = EU_REGION_SLUGS[countryCode] ?? {};
+    for (const [regionCanonical, regionSlugs] of Object.entries(regions)) {
+      const regionPaths = Object.fromEntries(
+        (LOCALES as readonly string[]).map((l) => [l, `/${EU_BASE}/${countrySlugs[l as EuLoc]}/region/${regionSlugs[l as EuLoc]}`]),
+      ) as Record<EuLoc, string>;
+      entries.push(uLEu(regionPaths, "monthly", "0.6"));
+      void regionCanonical;
+    }
+
 
     for (const [areaCanonical, areaSlugs] of Object.entries(EU_AREA_SLUGS)) {
       // Area-in-country page

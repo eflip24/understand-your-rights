@@ -13,6 +13,7 @@ import { resolveEuRoute, buildEuPath } from "@/lib/eu/resolveRoute";
 import { getEuCountry } from "@/data/eu/countries";
 import { euAreasForCountry } from "@/data/eu/practiceAreas";
 import { euCitiesForCountry } from "@/data/eu/cities";
+import { euRegionsForCountry } from "@/data/eu/regions";
 import { COUNTRY_PILLARS, pickPillarLocale, isPillarFullyLocalized } from "@/data/eu/countryPillars";
 
 const SITE = "https://legallyspoken.com";
@@ -28,6 +29,7 @@ export default function EuLawyersCountryPage() {
   const country = getEuCountry(canonical.country)!;
   const areas = euAreasForCountry(canonical.country);
   const cities = euCitiesForCountry(canonical.country);
+  const regions = euRegionsForCountry(canonical.country);
   const countryPath = buildEuPath(locale, { country: canonical.country });
   const pillar = COUNTRY_PILLARS[canonical.country];
   const countryUrl = `${SITE}${countryPath}`;
@@ -124,6 +126,26 @@ export default function EuLawyersCountryPage() {
           </Link>
         ))}
       </div>
+
+      {regions.length > 0 && (
+        <>
+          <h2 className="text-2xl font-bold mb-3">
+            {t("country.regions", { defaultValue: "Regions" })}
+          </h2>
+          <div className="grid gap-2 sm:grid-cols-2 mb-8">
+            {regions.map((r) => (
+              <Link
+                key={r.canonical}
+                to={buildEuPath(locale, { country: canonical.country, region: r.canonical })}
+              >
+                <Card className="hover:shadow-sm hover:border-accent/30 transition-all">
+                  <CardContent className="p-3 text-sm font-medium">{r.name[locale]}</CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
 
       <h2 className="text-2xl font-bold mb-3">{t("country.cities")}</h2>
       {(["primary", "secondary", "tertiary"] as const).map((tier) => {
