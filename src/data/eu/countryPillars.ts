@@ -134,46 +134,11 @@ const DE: CountryPillar = {
 };
 
 /* ------------------------------------------------------------------ */
-/* Stubs for FR / ES / IT / PT — taglines only, full content via       */
-/* scripts/generate-country-pillar.mjs.                                */
+/* FR / ES / IT / PT — fully authored below in their native locale +  */
+/* English. Other locales fall back to English via pickPillarLocale.  */
 /* ------------------------------------------------------------------ */
 
-function stub(opts: {
-  taglineEn: string;
-  taglineNative?: { locale: LocaleCode; text: string };
-  ledeEn: string;
-  ledeNative?: { locale: LocaleCode; text: string };
-  bar: { en: string; verifyUrl: string };
-}): CountryPillar {
-  const tagline: PillarLocalized = { en: opts.taglineEn };
-  const lede: PillarLocalized = { en: opts.ledeEn };
-  if (opts.taglineNative) tagline[opts.taglineNative.locale] = opts.taglineNative.text;
-  if (opts.ledeNative) lede[opts.ledeNative.locale] = opts.ledeNative.text;
-  return {
-    hero: { tagline, lede },
-    legalSystem: { en: `${opts.ledeEn} Detailed legal-system primer coming soon — see the practice areas and cities below in the meantime.` },
-    howToFindLawyer: { en: "Identify the practice area, verify the lawyer with the national bar register, and request a written fee estimate before instructing the firm. Many EU jurisdictions cap initial consultation fees by statute." },
-    feesAndAid: { en: "Most EU countries operate statutory fee schedules for litigation and means-tested legal aid for low-income clients. Confirm fees in writing before engaging counsel." },
-    barAssociation: {
-      name: { en: opts.bar.en },
-      verifyUrl: opts.bar.verifyUrl,
-      membershipRules: { en: "All practising lawyers must be admitted to the national bar and carry mandatory professional indemnity insurance. Advertising rules are set by the national deontological code." },
-    },
-    crossBorderEU: { en: "Under the Establishment Directive 98/5/EC and the Services Directive 77/249/EEC, lawyers admitted in any EU member state may provide cross-border services and, after registration, establish a permanent practice." },
-    faqs: [
-      {
-        q: { en: "How do I verify a lawyer's admission?" },
-        a: { en: `Use the official registry at ${opts.bar.verifyUrl}. Every admitted lawyer is listed there.` },
-      },
-      {
-        q: { en: "Can I hire a lawyer admitted in another EU country?" },
-        a: { en: "Yes — EU rules allow cross-border services. For permanent establishment, the lawyer must register with the national bar." },
-      },
-    ],
-    lastReviewed: "2026-05-27",
-    aiAssisted: false,
-  };
-}
+
 
 /* ------------------------------------------------------------------ */
 /* FRANCE — fully authored (FR + EN).                                 */
