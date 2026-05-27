@@ -5,6 +5,7 @@ import { openConsentSettings } from "@/lib/consent";
 import LangSwitcher from "@/components/layout/LangSwitcher";
 import { useLocalizedPath } from "@/i18n/paths";
 import { IMPRESSUM_ROUTES, type ImpressumLocale } from "@/data/eu/impressumData";
+import { euCountries, type EuCountryCode, type LocaleCode } from "@/data/eu/countries";
 
 const IMPRESSUM_LABEL: Record<ImpressumLocale, string> = {
   en: "Legal Notice",
@@ -14,6 +15,8 @@ const IMPRESSUM_LABEL: Record<ImpressumLocale, string> = {
   it: "Note legali",
   pt: "Informação legal",
 };
+
+const EU_PILLAR_ORDER: EuCountryCode[] = ["de", "fr", "es", "it", "pt"];
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
@@ -58,10 +61,19 @@ export default function Footer() {
     { label: IMPRESSUM_LABEL[impressumLocale], href: IMPRESSUM_ROUTES[impressumLocale] },
   ];
 
+  const localeKey = (lang in IMPRESSUM_ROUTES ? lang : "en") as LocaleCode;
+  const euGuideLinks = EU_PILLAR_ORDER.map((code) => {
+    const c = euCountries.find((x) => x.code === code)!;
+    return {
+      label: c.name[localeKey],
+      href: lp(`/lawyer-eu/${c.slug[localeKey]}`),
+    };
+  });
+
   return (
     <footer className="border-t bg-primary text-primary-foreground">
       <div className="container py-12">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-6">
           {/* Brand */}
           <div className="space-y-3 sm:col-span-2 lg:col-span-1">
             <Link to={lp("/")} className="flex items-center gap-2">
@@ -76,8 +88,10 @@ export default function Footer() {
           <FooterColumn title={t("footer.tools")} links={toolLinks} />
           <FooterColumn title={t("footer.guides")} links={guideLinks} />
           <FooterColumn title={t("footer.resources")} links={resourceLinks} />
+          <FooterColumn title={t("footer.euGuides", { defaultValue: "European Legal Guides" })} links={euGuideLinks} />
           <FooterColumn title={t("footer.legal")} links={legalLinks} />
         </div>
+
 
         <div className="mt-10 pt-6 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">

@@ -11,7 +11,12 @@
     "practiceAreas": "Aree di competenza",
     "cities": "Città principali",
     "metaTitle": "Trova un avvocato in {{country}}",
-    "metaDescription": "Sfoglia avvocati in {{country}} per area di competenza e città. Elenchi verificati e riferimenti degli ordini degli avvocati."
+    "metaDescription": "Sfoglia avvocati in {{country}} per area di competenza e città. Elenchi verificati e riferimenti degli ordini degli avvocati.",
+    "cityTier": {
+      "primary": "Grandi metropoli",
+      "secondary": "Centri regionali",
+      "tertiary": "Altre città"
+    }
   },
   "area": {
     "heading": "Avvocati specializzati in {{area}} in {{country}}",
@@ -64,5 +69,6 @@
     "faq": "Domande frequenti",
     "lastReviewed": "Ultima revisione",
     "aiAssisted": "Articolo assistito da IA — rivisto dalla redazione"
-  }
+  },
+  "pillarLocaleFallback": "La guida dettagliata per {{country}} è attualmente mostrata in inglese. Le traduzioni in {{language}} sono in arrivo."
 }

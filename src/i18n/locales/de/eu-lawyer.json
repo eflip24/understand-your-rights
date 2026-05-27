@@ -11,7 +11,12 @@
     "practiceAreas": "Rechtsgebiete",
     "cities": "Große Städte",
     "metaTitle": "Finden Sie einen Anwalt in {{country}}",
-    "metaDescription": "Durchsuchen Sie Anwälte in {{country}} nach Rechtsgebiet und Stadt. Geprüfte Einträge und Verweise auf die Rechtsanwaltskammer."
+    "metaDescription": "Durchsuchen Sie Anwälte in {{country}} nach Rechtsgebiet und Stadt. Geprüfte Einträge und Verweise auf die Rechtsanwaltskammer.",
+    "cityTier": {
+      "primary": "Großstädte",
+      "secondary": "Regionale Zentren",
+      "tertiary": "Weitere Städte"
+    }
   },
   "area": {
     "heading": "Rechtsanwälte für {{area}} in {{country}}",
@@ -64,5 +69,6 @@
     "faq": "Häufig gestellte Fragen",
     "lastReviewed": "Zuletzt geprüft",
     "aiAssisted": "KI-gestützter Artikel — redaktionell geprüft"
-  }
+  },
+  "pillarLocaleFallback": "Ausführliche Informationen zu {{country}} werden derzeit auf Englisch angezeigt. {{language}}sprachige Übersetzungen folgen."
 }
