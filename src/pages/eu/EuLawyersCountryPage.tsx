@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import EuLawyerHead from "@/components/seo/EuLawyerHead";
 import BarDisclaimerNotice from "@/components/eu/BarDisclaimerNotice";
 import CountryPillarSections from "@/components/eu/CountryPillarSections";
+import PillarLocaleFallbackBanner from "@/components/eu/PillarLocaleFallbackBanner";
 import { JsonLdGraph, breadcrumbSchema, itemListSchema, faqSchema } from "@/components/seo/JsonLd";
 import { useLocaleFromUrl } from "@/i18n/LocaleSync";
 import { resolveEuRoute, buildEuPath } from "@/lib/eu/resolveRoute";
