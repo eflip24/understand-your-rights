@@ -302,116 +302,401 @@ export const GENERATED_PILLAR_TRANSLATIONS: Record<EuCountryCode, GeneratedPilla
       "tagline": {
         "de": "Finden Sie einen registrierten Abogado in ganz Spanien – verifiziert durch den Generalrat der spanischen Anwaltschaft.",
         "fr": "Trouvez un abogado inscrit dans toute l'Espagne — vérifié par le Conseil Général des Avocats Espagnols.",
-        "it": "Trova un abogado registrato in tutta la Spagna — verificato tramite il Consiglio Generale degli Avvocati Spagnoli."
+        "it": "Trova un abogado registrato in tutta la Spagna — verificato tramite il Consiglio Generale degli Avvocati Spagnoli.",
+        "pt": "Encontre um abogado registado em toda a Espanha — verificado através do Conselho Geral da Advocacia Espanhola."
       },
       "lede": {
         "de": "Spanien hat über 150.000 praktizierende Abogados, die in 83 regionalen Colegios de la Abogacía unter dem Consejo General de la Abogacía Española (CGAE) organisiert sind. Dieser Leitfaden behandelt die Struktur des spanischen Justizsystems, wie man einen Abogado beauftragt, die Regeln für Gebühren und Prozesskostenhilfe (justicia gratuita) sowie die grenzüberschreitende Tätigkeit von EU-Anwälten.",
         "fr": "L'Espagne compte plus de 150,000 abogados en exercice, organisés en 83 Colegios de la Abogacía provinciaux sous l'égide du Consejo General de la Abogacía Española (CGAE). Ce guide couvre la structure du système judiciaire espagnol, la manière de mandater un abogado, les règles relatives aux honoraires et à l'aide juridictionnelle (justicia gratuita), ainsi que la pratique transfrontalière des avocats de l'UE.",
-        "it": "La Spagna conta più di 150.000 abogados praticanti, organizzati in 83 Colegios de la Abogacía provinciali sotto il Consejo General de la Abogacía Española (CGAE). Questa guida illustra la struttura del sistema giudiziario spagnolo, come incaricare un abogado, le norme in materia di onorari e patrocinio a spese dello Stato (justicia gratuita), e la pratica transfrontaliera degli avvocati dell'UE."
+        "it": "La Spagna conta più di 150.000 abogados praticanti, organizzati in 83 Colegios de la Abogacía provinciali sotto il Consejo General de la Abogacía Española (CGAE). Questa guida illustra la struttura del sistema giudiziario spagnolo, come incaricare un abogado, le norme in materia di onorari e patrocinio a spese dello Stato (justicia gratuita), e la pratica transfrontaliera degli avvocati dell'UE.",
+        "pt": "A Espanha tem mais de 150.000 abogados em exercício, organizados em 83 Colegios de la Abogacía provinciais sob o Consejo General de la Abogacía Española (CGAE). Este guia abrange a estrutura do sistema judicial espanhol, como contratar um abogado, as regras sobre honorários e apoio judiciário (justicia gratuita), e a prática transfronteiriça de advogados da UE."
       }
     },
     "legalSystem": {
       "de": "Spanien ist ein Zivilrechtssystem, dessen Hauptgesetze der Código Civil, der Código Penal, die Ley de Enjuiciamiento Civil und die Ley de Enjuiciamiento Criminal sind. Die Justiz ist sachlich in vier Gerichtsbarkeiten unterteilt – Zivil-, Straf-, Verwaltungs- (contencioso-administrativo) und Sozialrecht (labour) – die jeweils über Juzgado → Audiencia Provincial (oder Äquivalent) → Tribunal Superior de Justicia der autonomen Gemeinschaft → Tribunal Supremo aufsteigen. Das Tribunal Constitucional prüft Verfassungsrechte mittels des recurso de amparo. Die Prozessvertretung erfordert in der Regel sowohl einen Abogado (Rechtsbeistand) als auch einen Procurador (Gerichtsbevollmächtigten) vor höheren Gerichten, obwohl seit der Reform von 2009 ein einziger Abogado für viele erstinstanzliche Angelegenheiten ausreicht.",
       "fr": "L'Espagne est une juridiction de droit civil dont les principaux codes sont le Código Civil, le Código Penal, la Ley de Enjuiciamiento Civil et la Ley de Enjuiciamiento Criminal. Le pouvoir judiciaire est divisé par matière en quatre ordres — civil, pénal, contencioso-administrativo et social (travail) — chacun progressant de Juzgado → Audiencia Provincial (ou équivalent) → Tribunal Superior de Justicia de la communauté autonome → Tribunal Supremo. Le Tribunal Constitucional examine les droits constitutionnels via le recurso de amparo. La représentation procédurale requiert généralement à la fois un abogado (défense juridique) et un procurador (agent judiciaire) devant les juridictions supérieures, bien qu'un seul abogado suffise pour de nombreuses affaires de première instance depuis la réforme de 2009.",
-      "it": "La Spagna è una giurisdizione di diritto civile i cui codici principali sono il Código Civil, il Código Penal, la Ley de Enjuiciamiento Civil e la Ley de Enjuiciamiento Criminal. La magistratura è suddivisa per materia in quattro ordini — civile, penale, contencioso-administrativo e sociale (lavoro) — ciascuno con un'organizzazione gerarchica che va dal Juzgado → Audiencia Provincial (o equivalente) → Tribunal Superior de Justicia della comunità autonoma → Tribunal Supremo. Il Tribunal Constitucional esamina i diritti costituzionali tramite il recurso de amparo. La rappresentanza processuale richiede tipicamente sia un abogado (rappresentanza legale) che un procurador (agente di tribunale) dinanzi ai tribunali superiori, sebbene un singolo abogado sia sufficiente per molte questioni di primo grado dalla riforma del 2009."
+      "it": "La Spagna è una giurisdizione di diritto civile i cui codici principali sono il Código Civil, il Código Penal, la Ley de Enjuiciamiento Civil e la Ley de Enjuiciamiento Criminal. La magistratura è suddivisa per materia in quattro ordini — civile, penale, contencioso-administrativo e sociale (lavoro) — ciascuno con un'organizzazione gerarchica che va dal Juzgado → Audiencia Provincial (o equivalente) → Tribunal Superior de Justicia della comunità autonoma → Tribunal Supremo. Il Tribunal Constitucional esamina i diritti costituzionali tramite il recurso de amparo. La rappresentanza processuale richiede tipicamente sia un abogado (rappresentanza legale) che un procurador (agente di tribunale) dinanzi ai tribunali superiori, sebbene un singolo abogado sia sufficiente per molte questioni di primo grado dalla riforma del 2009.",
+      "pt": "A Espanha é uma jurisdição de direito civil cujos principais códigos são o Código Civil, o Código Penal, a Ley de Enjuiciamiento Civil e a Ley de Enjuiciamiento Criminal. O poder judicial está dividido por matéria em quatro ordens — civil, criminal, contencioso-administrativo e social (laboral) — cada uma subindo através de Juzgado → Audiencia Provincial (ou equivalente) → Tribunal Superior de Justicia da comunidade autónoma → Tribunal Supremo. O Tribunal Constitucional revê os direitos constitucionais através do recurso de amparo. A representação processual exige tipicamente tanto um abogado (defesa legal) como um procurador (agente judicial) perante os tribunais superiores, embora um único abogado seja suficiente para muitas questões de primeira instância desde a reforma de 2009."
     },
     "howToFindLawyer": {
       "de": "Beginnen Sie mit der Identifizierung des Rechtsgebiets und überprüfen Sie die Registrierung des Abogados im Censo de Letrados seines Colegio (z.B. ICAM für Madrid, ICAB für Barcelona). Die meisten Colegios veröffentlichen eine kostenlose Online-Suche; der CGAE konsolidiert die Einträge unter https://www.abogacia.es. Erstberatungen kosten üblicherweise zwischen €60 und €200, und der Abogado muss Ihnen gemäß Artikel 13 des Estatuto General de la Abogacía Española (Real Decreto 135/2021) einen presupuesto (schriftlicher Kostenvoranschlag) und eine hoja de encargo (Mandatsvereinbarung) aushändigen. Viele Colegios betreiben einen Servicio de Orientación Jurídica (SOJ), wo Bürger kostenlose vorläufige Beratung erhalten können, bevor sie justicia gratuita beantragen.",
       "fr": "Commencez par identifier le domaine de pratique et vérifiez l'inscription de l'abogado dans le Censo de Letrados de son Colegio (par exemple, ICAM pour Madrid, ICAB pour Barcelone). La plupart des colegios publient un annuaire en ligne gratuit ; le CGAE consolide les listes sur https://www.abogacia.es. Les consultations initiales sont généralement tarifées entre €60 et €200 et l'abogado doit vous fournir un presupuesto (estimation écrite des honoraires) et une hoja de encargo (lettre de mission) en vertu de l'article 13 de l'Estatuto General de la Abogacía Española (Real Decreto 135/2021). De nombreux colegios gèrent un Servicio de Orientación Jurídica (SOJ) où les citoyens peuvent obtenir des conseils préliminaires gratuits avant de demander la justicia gratuita.",
-      "it": "Inizia identificando l'area di pratica e verifica l'iscrizione dell'abogado nel Censo de Letrados del loro Colegio (es. ICAM per Madrid, ICAB per Barcellona). La maggior parte dei colegios pubblica una ricerca online gratuita; il CGAE consolida gli elenchi su https://www.abogacia.es. Le consultazioni iniziali sono comunemente prezzate tra €60 e €200 e l'abogado deve fornirti un presupuesto (preventivo scritto degli onorari) e un'hoja de encargo (lettera di incarico) ai sensi dell'articolo 13 dello Estatuto General de la Abogacía Española (Real Decreto 135/2021). Molti colegios gestiscono un Servicio de Orientación Jurídica (SOJ) dove i cittadini possono ottenere una consulenza preliminare gratuita prima di richiedere la justicia gratuita."
+      "it": "Inizia identificando l'area di pratica e verifica l'iscrizione dell'abogado nel Censo de Letrados del loro Colegio (es. ICAM per Madrid, ICAB per Barcellona). La maggior parte dei colegios pubblica una ricerca online gratuita; il CGAE consolida gli elenchi su https://www.abogacia.es. Le consultazioni iniziali sono comunemente prezzate tra €60 e €200 e l'abogado deve fornirti un presupuesto (preventivo scritto degli onorari) e un'hoja de encargo (lettera di incarico) ai sensi dell'articolo 13 dello Estatuto General de la Abogacía Española (Real Decreto 135/2021). Molti colegios gestiscono un Servicio de Orientación Jurídica (SOJ) dove i cittadini possono ottenere una consulenza preliminare gratuita prima di richiedere la justicia gratuita.",
+      "pt": "Comece por identificar a área de prática e verifique o registo do abogado no Censo de Letrados do seu Colegio (por exemplo, ICAM para Madrid, ICAB para Barcelona). A maioria dos colegios publica uma pesquisa online gratuita; o CGAE consolida as listas em https://www.abogacia.es. As consultas iniciais são geralmente cobradas entre €60 e €200 e o abogado deve fornecer-lhe um presupuesto (estimativa de honorários por escrito) e uma hoja de encargo (carta de contratação) nos termos do artigo 13 do Estatuto General de la Abogacía Española (Real Decreto 135/2021). Muitos colegios gerem um Servicio de Orientación Jurídica (SOJ) onde os cidadãos podem obter orientação preliminar gratuita antes de solicitar a justicia gratuita."
     },
     "feesAndAid": {
       "de": "Gebühren werden in Spanien seit der Abschaffung der verbindlichen Gebührentabellen durch die Ley Ómnibus 25/2009 frei vereinbart; es verbleiben lediglich orientative Kriterien (criterios orientadores), die hauptsächlich zur Kostenfestsetzung (tasación de costas) herangezogen werden. Stundensätze reichen von €100 in regionalen Kanzleien bis zu €450+ in Wirtschaftskanzleien in Madrid und Barcelona. Justicia gratuita (Ley 1/1996) bietet bedürftigkeitsgeprüfte Prozesskostenhilfe, die Abogado-, Procurador- und Gerichtsgebühren abdeckt: Ab 2026 liegt die Schwelle bei etwa dem Doppelten des IPREM (rund €1.200 pro Monat für einen alleinstehenden Erwachsenen), mit höheren Obergrenzen für größere Familien oder Opfer von geschlechtsspezifischer Gewalt, Terrorismus oder Menschenhandel, die unabhängig vom Einkommen qualifiziert sind. Anträge werden bei der örtlichen Comisión de Asistencia Jurídica Gratuita über das Colegio eingereicht.",
       "fr": "Les honoraires sont librement convenus en Espagne depuis que la Ley Ómnibus 25/2009 a aboli les barèmes obligatoires des barreaux ; seuls des critères orientatifs (criterios orientadores) subsistent, utilisés principalement pour la taxation des frais (tasación de costas). Les taux horaires varient de €100 dans les cabinets régionaux à €450+ dans les cabinets d'affaires de Madrid et Barcelone. La justicia gratuita (Ley 1/1996) offre une aide juridictionnelle sous conditions de ressources couvrant les honoraires d'abogado, de procurador et les frais de justice : à partir de 2026, le seuil est d'environ deux fois l'IPREM (environ €1,200 par mois pour un adulte seul), avec des plafonds plus élevés pour les familles nombreuses ou les victimes de violence de genre, de terrorisme ou de traite des êtres humains, qui sont éligibles quel que soit leur revenu. Les demandes sont déposées auprès de la Comisión de Asistencia Jurídica Gratuita locale par l'intermédiaire du colegio.",
-      "it": "Gli onorari sono liberamente concordati in Spagna da quando la Ley Ómnibus 25/2009 ha abolito le tariffe forensi obbligatorie; rimangono solo criteri orientativi (criterios orientadores), utilizzati principalmente per la tassazione delle spese (tasación de costas). Le tariffe orarie vanno da €100 negli studi regionali a €450+ negli studi d'affari di Madrid e Barcellona. La Justicia gratuita (Ley 1/1996) fornisce assistenza legale basata sul reddito che copre le spese di abogado, procurador e tribunale: a partire dal 2026 la soglia è circa il doppio dell'IPREM (circa €1.200 al mese per un adulto single), con massimali più elevati per famiglie più numerose o vittime di violenza di genere, terrorismo o tratta di esseri umani, che si qualificano indipendentemente dal reddito. Le domande vengono presentate alla Comisión de Asistencia Jurídica Gratuita locale tramite il colegio."
+      "it": "Gli onorari sono liberamente concordati in Spagna da quando la Ley Ómnibus 25/2009 ha abolito le tariffe forensi obbligatorie; rimangono solo criteri orientativi (criterios orientadores), utilizzati principalmente per la tassazione delle spese (tasación de costas). Le tariffe orarie vanno da €100 negli studi regionali a €450+ negli studi d'affari di Madrid e Barcellona. La Justicia gratuita (Ley 1/1996) fornisce assistenza legale basata sul reddito che copre le spese di abogado, procurador e tribunale: a partire dal 2026 la soglia è circa il doppio dell'IPREM (circa €1.200 al mese per un adulto single), con massimali più elevati per famiglie più numerose o vittime di violenza di genere, terrorismo o tratta di esseri umani, che si qualificano indipendentemente dal reddito. Le domande vengono presentate alla Comisión de Asistencia Jurídica Gratuita locale tramite il colegio.",
+      "pt": "Os honorários são livremente acordados em Espanha desde que a Ley Ómnibus 25/2009 aboliu as tabelas obrigatórias da Ordem; apenas permanecem critérios orientadores (criterios orientadores), utilizados principalmente para a tributação de custas (tasación de costas). As taxas horárias variam de €100 em escritórios regionais a €450+ em escritórios de negócios em Madrid e Barcelona. A Justicia gratuita (Ley 1/1996) oferece apoio judiciário com base nos rendimentos, cobrindo honorários de abogado, procurador e custas judiciais: a partir de 2026, o limiar é aproximadamente o dobro do IPREM (cerca de €1.200 por mês para um adulto solteiro), com tetos mais altos para famílias maiores ou vítimas de violência de género, terrorismo ou tráfico de seres humanos, que se qualificam independentemente do rendimento. Os pedidos são apresentados à Comisión de Asistencia Jurídica Gratuita local através do colegio."
     },
     "barAssociation": {
       "membershipRules": {
         "de": "Jeder praktizierende Abogado muss den Máster Universitario de Acceso a la Abogacía besitzen, das staatliche Examen de Acceso bestehen, in einem Colegio vereidigt werden und eine obligatorische Berufshaftpflichtversicherung abschließen. Das Estatuto General de la Abogacía Española (RD 135/2021) und der Código Deontológico regeln Ethik, Interessenkonflikte und Werbung. Werbung ist erlaubt, muss aber wahrheitsgemäß sein und die Würde des Berufsstandes respektieren; vergleichende oder reißerische Werbung bleibt verboten.",
         "fr": "Tout abogado en exercice doit être titulaire du Máster Universitario de Acceso a la Abogacía, réussir l'Examen de Acceso d'État, prêter serment devant un Colegio et souscrire une assurance responsabilité civile professionnelle obligatoire. L'Estatuto General de la Abogacía Española (RD 135/2021) et le Código Deontológico régissent l'éthique, les conflits d'intérêts et la publicité. La publicité est autorisée mais doit être véridique et respecter la dignité de la profession ; la publicité comparative ou sensationnaliste reste interdite.",
-        "it": "Ogni abogado praticante deve possedere il Máster Universitario de Acceso a la Abogacía, superare l'Examen de Acceso statale, prestare giuramento presso un Colegio e avere un'assicurazione obbligatoria di responsabilità civile professionale. Lo Estatuto General de la Abogacía Española (RD 135/2021) e il Código Deontológico regolano l'etica, i conflitti e la pubblicità. La pubblicità è consentita ma deve essere veritiera e rispettare la dignità della professione; la pubblicità comparativa o sensazionalistica rimane proibita."
+        "it": "Ogni abogado praticante deve possedere il Máster Universitario de Acceso a la Abogacía, superare l'Examen de Acceso statale, prestare giuramento presso un Colegio e avere un'assicurazione obbligatoria di responsabilità civile professionale. Lo Estatuto General de la Abogacía Española (RD 135/2021) e il Código Deontológico regolano l'etica, i conflitti e la pubblicità. La pubblicità è consentita ma deve essere veritiera e rispettare la dignità della professione; la pubblicità comparativa o sensazionalistica rimane proibita.",
+        "pt": "Todo abogado em exercício deve possuir o Máster Universitario de Acceso a la Abogacía, passar no Examen de Acceso estatal, prestar juramento num Colegio e ter seguro de responsabilidade civil profissional obrigatório. O Estatuto General de la Abogacía Española (RD 135/2021) e o Código Deontológico regem a ética, os conflitos e a publicidade. A publicidade é permitida, mas deve ser verdadeira e respeitar a dignidade da profissão; a publicidade comparativa ou sensacionalista continua proibida."
       }
     },
     "crossBorderEU": {
       "de": "Gemäß der Niederlassungsrichtlinie 98/5/EG, umgesetzt durch Real Decreto 936/2001 (jetzt konsolidiert in RD 135/2021), dürfen in der EU zugelassene Anwälte in Spanien unter ihrer Herkunftsbezeichnung praktizieren, nachdem sie sich bei einem spanischen Colegio registriert haben. Nach drei Jahren effektiver und regelmäßiger Praxis im spanischen Recht können sie die vollständige Integration als Abogado beantragen, ohne die staatliche Zugangsprüfung ablegen zu müssen. Kurzfristige grenzüberschreitende Dienstleistungen unterliegen der Richtlinie 77/249/EWG und den entsprechenden spanischen Vorschriften: Ein portugiesischer advogado oder französischer avocat kann beispielsweise in einer einzelnen spanischen Anhörung unter seiner Herkunftsbezeichnung auftreten und, wo vorgeschrieben, mit einem lokalen colegiado zusammenarbeiten.",
       "fr": "En vertu de la Directive d'établissement 98/5/CE, transposée par le Real Decreto 936/2001 (désormais consolidé dans le RD 135/2021), les avocats admis dans l'UE peuvent exercer en Espagne sous leur titre d'origine après s'être inscrits auprès d'un Colegio espagnol. Après trois ans de pratique effective et régulière du droit espagnol, ils peuvent demander leur pleine intégration en tant qu'abogado sans passer l'examen d'accès d'État. Les services transfrontaliers à court terme sont régis par la Directive 77/249/CEE et les règles espagnoles correspondantes : un advogado portugais ou un avocat français peut, par exemple, comparaître à une seule audience espagnole sous son titre d'origine, en collaboration avec un colegiado local lorsque cela est obligatoire.",
-      "it": "Ai sensi della Direttiva di Stabilimento 98/5/CE, recepita dal Real Decreto 936/2001 (ora consolidato nel RD 135/2021), gli avvocati ammessi nell'UE possono esercitare in Spagna con il loro titolo di origine dopo essersi registrati presso un Colegio spagnolo. Dopo tre anni di pratica effettiva e regolare nel diritto spagnolo possono richiedere la piena integrazione come abogado senza sostenere l'esame di accesso statale. I servizi transfrontalieri a breve termine sono regolati dalla Direttiva 77/249/CEE e dalle corrispondenti norme spagnole: un advogado portoghese o un avocat francese possono, ad esempio, comparire in una singola udienza spagnola con il loro titolo di origine, lavorando con un colegiado locale dove obbligatorio."
+      "it": "Ai sensi della Direttiva di Stabilimento 98/5/CE, recepita dal Real Decreto 936/2001 (ora consolidato nel RD 135/2021), gli avvocati ammessi nell'UE possono esercitare in Spagna con il loro titolo di origine dopo essersi registrati presso un Colegio spagnolo. Dopo tre anni di pratica effettiva e regolare nel diritto spagnolo possono richiedere la piena integrazione come abogado senza sostenere l'esame di accesso statale. I servizi transfrontalieri a breve termine sono regolati dalla Direttiva 77/249/CEE e dalle corrispondenti norme spagnole: un advogado portoghese o un avocat francese possono, ad esempio, comparire in una singola udienza spagnola con il loro titolo di origine, lavorando con un colegiado locale dove obbligatorio.",
+      "pt": "Nos termos da Diretiva de Estabelecimento 98/5/CE, transposta pelo Real Decreto 936/2001 (agora consolidado no RD 135/2021), advogados admitidos na UE podem exercer em Espanha com o seu título de origem após se registarem num Colegio espanhol. Após três anos de prática efetiva e regular em direito espanhol, podem solicitar a integração plena como abogado sem prestar o exame de acesso estatal. Os serviços transfronteiriços de curta duração são regidos pela Diretiva 77/249/CEE e pelas correspondentes regras espanholas: um advogado português ou um avocat francês pode, por exemplo, comparecer numa única audiência espanhola com o seu título de origem, trabalhando com um colegiado local onde seja obrigatório."
     },
     "faqs": [
       {
         "q": {
           "de": "Wie bestätige ich, dass ein Abogado tatsächlich registriert ist?",
           "fr": "Comment puis-je confirmer qu'un abogado est réellement inscrit ?",
-          "it": "Come posso confermare che un abogado è effettivamente registrato?"
+          "it": "Come posso confermare che un abogado è effettivamente registrato?",
+          "pt": "Como confirmo que um abogado está realmente registado?"
         },
         "a": {
           "de": "Suchen Sie im konsolidierten CGAE-Verzeichnis unter abogacia.es oder im censo des jeweiligen Colegio (ICAM, ICAB usw.). Alle praktizierenden Abogados müssen colegiados ejercientes sein.",
           "fr": "Recherchez dans le recensement consolidé du CGAE sur abogacia.es ou dans le censo du Colegio pertinent (ICAM, ICAB, etc.). Tous les abogados en exercice doivent être colegiados ejercientes.",
-          "it": "Cerca nel censimento consolidato del CGAE su abogacia.es o nel censo del Colegio pertinente (ICAM, ICAB, ecc.). Tutti gli abogados praticanti devono essere colegiados ejercientes."
+          "it": "Cerca nel censimento consolidato del CGAE su abogacia.es o nel censo del Colegio pertinente (ICAM, ICAB, ecc.). Tutti gli abogados praticanti devono essere colegiados ejercientes.",
+          "pt": "Pesquise o censo consolidado do CGAE em abogacia.es ou o censo do Colegio relevante (ICAM, ICAB, etc.). Todos os abogados em exercício devem ser colegiados ejercientes."
         }
       },
       {
         "q": {
           "de": "Ist eine schriftliche Mandatsvereinbarung erforderlich?",
           "fr": "Une lettre de mission écrite est-elle requise ?",
-          "it": "È richiesta una lettera di incarico scritta?"
+          "it": "È richiesta una lettera di incarico scritta?",
+          "pt": "É necessária uma carta de contratação por escrito?"
         },
         "a": {
           "de": "Ja. Artikel 13 des Estatuto General de la Abogacía Española (RD 135/2021) verlangt eine schriftliche hoja de encargo und einen presupuesto für jedes Mandat mit einem Verbraucher.",
           "fr": "Oui. L'article 13 de l'Estatuto General de la Abogacía Española (RD 135/2021) exige une hoja de encargo et un presupuesto écrits pour toute mission avec un consommateur.",
-          "it": "Sì. L'articolo 13 dello Estatuto General de la Abogacía Española (RD 135/2021) richiede un'hoja de encargo e un presupuesto scritti per qualsiasi incarico con un consumatore."
+          "it": "Sì. L'articolo 13 dello Estatuto General de la Abogacía Española (RD 135/2021) richiede un'hoja de encargo e un presupuesto scritti per qualsiasi incarico con un consumatore.",
+          "pt": "Sim. O artigo 13 do Estatuto General de la Abogacía Española (RD 135/2021) exige uma hoja de encargo e um presupuesto por escrito para qualquer contratação com um consumidor."
         }
       },
       {
         "q": {
           "de": "Wer hat Anspruch auf justicia gratuita?",
           "fr": "Qui est éligible à la justicia gratuita ?",
-          "it": "Chi si qualifica per la justicia gratuita?"
+          "it": "Chi si qualifica per la justicia gratuita?",
+          "pt": "Quem se qualifica para a justicia gratuita?"
         },
         "a": {
           "de": "Haushalte, deren Einkommen unter etwa dem Doppelten des IPREM liegt (~€1.200/Monat für einen alleinstehenden Erwachsenen im Jahr 2026), sind qualifiziert; Opfer von geschlechtsspezifischer Gewalt, Terrorismus oder Menschenhandel sind unabhängig vom Einkommen qualifiziert.",
           "fr": "Les ménages dont les revenus sont inférieurs à environ deux fois l'IPREM (environ €1,200/mois pour un adulte seul en 2026) sont éligibles ; les victimes de violence de genre, de terrorisme ou de traite des êtres humains sont éligibles quel que soit leur revenu.",
-          "it": "Si qualificano i nuclei familiari al di sotto di circa il doppio dell'IPREM (circa €1.200/mese per un adulto single nel 2026); le vittime di violenza di genere, terrorismo o tratta si qualificano indipendentemente dal reddito."
+          "it": "Si qualificano i nuclei familiari al di sotto di circa il doppio dell'IPREM (circa €1.200/mese per un adulto single nel 2026); le vittime di violenza di genere, terrorismo o tratta si qualificano indipendentemente dal reddito.",
+          "pt": "Agregados familiares abaixo de aproximadamente o dobro do IPREM (~€1.200/mês para um adulto solteiro em 2026) qualificam-se; vítimas de violência de género, terrorismo ou tráfico qualificam-se independentemente do rendimento."
         }
       },
       {
         "q": {
           "de": "Benötige ich sowohl einen Abogado als auch einen Procurador?",
           "fr": "Ai-je besoin à la fois d'un abogado et d'un procurador ?",
-          "it": "Ho bisogno sia di un abogado che di un procurador?"
+          "it": "Ho bisogno sia di un abogado che di un procurador?",
+          "pt": "Preciso de um abogado e de um procurador?"
         },
         "a": {
           "de": "Für die meisten Berufungs- und Verfassungsverfahren ja. Für viele erstinstanzliche Zivil- und Arbeitsrechtssachen reicht seit der Verfahrensreform von 2009 ein einziger Abogado aus.",
           "fr": "Pour la plupart des procédures d'appel et constitutionnelles, oui. Pour de nombreuses affaires civiles et sociales de première instance, un seul abogado suffit depuis la réforme procédurale de 2009.",
-          "it": "Per la maggior parte dei procedimenti d'appello e costituzionali, sì. Per molti casi civili e di lavoro di primo grado un singolo abogado è sufficiente dalla riforma processuale del 2009."
+          "it": "Per la maggior parte dei procedimenti d'appello e costituzionali, sì. Per molti casi civili e di lavoro di primo grado un singolo abogado è sufficiente dalla riforma processuale del 2009.",
+          "pt": "Para a maioria dos processos de recurso e constitucionais, sim. Para muitos casos civis e laborais de primeira instância, um único abogado é suficiente desde a reforma processual de 2009."
         }
       },
       {
         "q": {
           "de": "Kann ich einen in einem anderen EU-Land zugelassenen Anwalt beauftragen?",
           "fr": "Puis-je engager un avocat admis dans un autre pays de l'UE ?",
-          "it": "Posso assumere un avvocato abilitato in un altro paese dell'UE?"
+          "it": "Posso assumere un avvocato abilitato in un altro paese dell'UE?",
+          "pt": "Posso contratar um advogado admitido noutro país da UE?"
         },
         "a": {
           "de": "Ja. Die Niederlassungs- und Dienstleistungsrichtlinien erlauben die grenzüberschreitende Praxis. Für eine dauerhafte Niederlassung muss sich der Anwalt bei einem spanischen Colegio registrieren.",
           "fr": "Oui. Les Directives sur l'établissement et les services autorisent la pratique transfrontalière. Pour un établissement permanent, l'avocat doit s'inscrire auprès d'un Colegio espagnol.",
-          "it": "Sì. Le Direttive di Stabilimento e Servizi consentono la pratica transfrontaliera. Per lo stabilimento permanente l'avvocato deve registrarsi presso un Colegio spagnolo."
+          "it": "Sì. Le Direttive di Stabilimento e Servizi consentono la pratica transfrontaliera. Per lo stabilimento permanente l'avvocato deve registrarsi presso un Colegio spagnolo.",
+          "pt": "Sim. As Diretivas de Estabelecimento e Serviços permitem a prática transfronteiriça. Para o estabelecimento permanente, o advogado deve registar-se num Colegio espanhol."
         }
       },
       {
         "q": {
           "de": "Sind Erfolgshonorare in Spanien erlaubt?",
           "fr": "Les honoraires de résultat sont-ils autorisés en Espagne ?",
-          "it": "Le parcelle di successo sono consentite in Spagna?"
+          "it": "Le parcelle di successo sono consentite in Spagna?",
+          "pt": "As quotas litis são permitidas em Espanha?"
         },
         "a": {
           "de": "Ja. Nach dem Urteil des Tribunal Supremo von 2008 (sentencia 4 nov. 2008) ist die cuota litis zulässig, sofern sie schriftlich frei vereinbart wird und die Grundsätze des Código Deontológico respektiert.",
           "fr": "Oui. Après l'arrêt de 2008 du Tribunal Supremo (sentencia 4 nov. 2008), la cuota litis est autorisée, à condition qu'elle soit librement convenue par écrit et qu'elle respecte les principes du Código Deontológico.",
-          "it": "Sì. Dopo la sentenza del Tribunal Supremo del 2008 (sentencia 4 nov. 2008) la cuota litis è consentita, a condizione che sia liberamente concordata per iscritto e rispetti i principi del Código Deontológico."
+          "it": "Sì. Dopo la sentenza del Tribunal Supremo del 2008 (sentencia 4 nov. 2008) la cuota litis è consentita, a condizione che sia liberamente concordata per iscritto e rispetti i principi del Código Deontológico.",
+          "pt": "Sim. Após a decisão de 2008 do Tribunal Supremo (sentencia 4 nov. 2008), a cuota litis é permitida, desde que seja livremente acordada por escrito e respeite os princípios do Código Deontológico."
         }
       }
     ]
   },
-  "it": {},
-  "pt": {}
+  "it": {
+    "hero": {
+      "tagline": {
+        "de": "Finden Sie einen registrierten Avvocato in ganz Italien – verifiziert durch den Consiglio Nazionale Forense.",
+        "fr": "Trouvez un avvocato inscrit dans toute l'Italie — vérifié par le Consiglio Nazionale Forense.",
+        "es": "Encuentre un avvocato registrado en toda Italia — verificado a través del Consiglio Nazionale Forense.",
+        "pt": "Encontre um avvocato registado em toda a Itália — verificado através do Consiglio Nazionale Forense."
+      },
+      "lede": {
+        "de": "Italien hat etwa 240.000 Avvocati, die bei einem der 140 Ordini circondariali unter dem Consiglio Nazionale Forense (CNF) zugelassen sind. Dieser Leitfaden erläutert die Struktur des italienischen Rechtssystems, wie man einen Avvocato beauftragt, die Gebührenregelungen (parametri forensi) und das patrocinio a spese dello Stato (staatlich finanzierte Prozesskostenhilfe) sowie die grenzüberschreitende Tätigkeit von EU-Anwälten.",
+        "fr": "L'Italie compte environ 240 000 avvocati admis à l'un des 140 Ordini circondariali sous l'égide du Consiglio Nazionale Forense (CNF). Ce guide explique la structure du système juridique italien, comment mandater un avvocato, les règles relatives aux honoraires (parametri forensi) et au patrocinio a spese dello Stato (aide juridictionnelle financée par l'État), ainsi que la pratique transfrontalière des avocats de l'UE.",
+        "es": "Italia cuenta con aproximadamente 240.000 avvocati admitidos en uno de los 140 Ordini circondariali bajo el Consiglio Nazionale Forense (CNF). Esta guía explica la estructura del sistema legal italiano, cómo contratar a un avvocato, las normas sobre honorarios (parametri forensi) y patrocinio a spese dello Stato (asistencia jurídica financiada por el Estado), y la práctica transfronteriza de los abogados de la UE.",
+        "pt": "A Itália tem aproximadamente 240.000 avvocati admitidos num dos 140 Ordini circondariali sob o Consiglio Nazionale Forense (CNF). Este guia explica a estrutura do sistema jurídico italiano, como contratar um avvocato, as regras sobre honorários (parametri forensi) e patrocinio a spese dello Stato (apoio jurídico financiado pelo Estado), e a prática transfronteiriça de advogados da UE."
+      }
+    },
+    "legalSystem": {
+      "de": "Italien ist eine Zivilrechtsordnung, deren Hauptgesetzbücher der Codice civile, der Codice penale, der Codice di procedura civile und der Codice di procedura penale sind. Gewöhnliche Zivil- und Strafstreitigkeiten durchlaufen den Giudice di Pace oder Tribunale → Corte d'Appello → Corte di Cassazione. Verwaltungsstreitigkeiten werden vom Tribunale Amministrativo Regionale (TAR) und dem Consiglio di Stato verhandelt. Steuersachen gehen an die Corti di Giustizia Tributaria (di primo e secondo grado) und weiter an die Corte di Cassazione. Die Verfassungsgerichtsbarkeit ist der Corte Costituzionale vorbehalten. Die Vertretung vor der Cassazione erfordert einen avvocato cassazionista – eine separate Liste, die 12 Jahre Berufserfahrung oder eine spezielle Prüfung voraussetzt.",
+      "fr": "L'Italie est une juridiction de droit civil dont les principaux codes sont le Codice civile, le Codice penale, le Codice di procedura civile et le Codice di procedura penale. Les litiges civils et pénaux ordinaires passent par le Giudice di Pace ou le Tribunale → Corte d'Appello → Corte di Cassazione. Les litiges administratifs sont entendus par le Tribunale Amministrativo Regionale (TAR) et le Consiglio di Stato. Les affaires fiscales sont traitées par les Corti di Giustizia Tributaria (di primo e secondo grado) et ensuite par la Corte di Cassazione. Le contrôle constitutionnel est réservé à la Corte Costituzionale. La représentation devant la Cassazione requiert un avvocato cassazionista — un rôle distinct exigeant 12 ans de pratique ou un examen spécifique.",
+      "es": "Italia es una jurisdicción de derecho civil cuyos códigos principales son el Codice civile, el Codice penale, el Codice di procedura civile y el Codice di procedura penale. Los litigios civiles y penales ordinarios se tramitan a través del Giudice di Pace o Tribunale → Corte d'Appello → Corte di Cassazione. Los litigios administrativos son competencia del Tribunale Amministrativo Regionale (TAR) y del Consiglio di Stato. Los asuntos fiscales se dirigen a las Corti di Giustizia Tributaria (di primo e secondo grado) y, posteriormente, a la Corte di Cassazione. La revisión constitucional está reservada a la Corte Costituzionale. La representación ante la Cassazione requiere un avvocato cassazionista — un registro separado que exige 12 años de práctica o un examen específico.",
+      "pt": "A Itália é uma jurisdição de direito civil cujos principais códigos são o Codice civile, o Codice penale, o Codice di procedura civile e o Codice di procedura penale. Os litígios civis e criminais comuns tramitam através do Giudice di Pace ou Tribunale → Corte d'Appello → Corte di Cassazione. Os litígios administrativos são julgados pelo Tribunale Amministrativo Regionale (TAR) e pelo Consiglio di Stato. As questões fiscais vão para as Corti di Giustizia Tributaria (di primo e secondo grado) e depois para a Corte di Cassazione. A revisão constitucional é reservada à Corte Costituzionale. A representação perante a Cassazione exige um avvocato cassazionista — uma lista separada que exige 12 anos de prática ou um exame específico."
+    },
+    "howToFindLawyer": {
+      "de": "Ermitteln Sie das Rechtsgebiet und überprüfen Sie den Avvocato im Albo Unico Nazionale, das vom CNF unter https://www.consiglionazionaleforense.it geführt wird. Italien erkennt formale Spezialisierungen (specializzazioni forensi) gemäß DM 144/2015 an – zum Beispiel diritto del lavoro, diritto di famiglia, diritto tributario – die nach einem zweijährigen Kurs oder nachgewiesener Erfahrung plus einer Bewertung verliehen werden. Erstberatungen kosten typischerweise 70–200 € und der Avvocato muss Ihnen gemäß Artikel 13 des Gesetzes 247/2012 einen schriftlichen preventivo (Kostenvoranschlag) aushändigen. Die Beauftragung wird durch eine procura alle liti (Vollmacht) und ein mandato professionale formalisiert; Gebührenvereinbarungen sind formfrei, aber die parametri forensi (DM 55/2014, aktualisiert durch DM 147/2022) liefern Referenzwerte sowohl für Verhandlungen als auch für die gerichtliche Kostenfestsetzung.",
+      "fr": "Identifiez le domaine de pratique et vérifiez l'avvocato dans l'Albo Unico Nazionale tenu par le CNF à l'adresse https://www.consiglionazionaleforense.it. L'Italie reconnaît les spécialisations formelles (specializzazioni forensi) en vertu du DM 144/2015 — par exemple diritto del lavoro, diritto di famiglia, diritto tributario — attribuées après un cours de deux ans ou une expérience avérée plus une évaluation. Les consultations initiales coûtent généralement entre €70 et €200 et l'avvocato doit vous fournir un preventivo (devis) écrit en vertu de l'article 13 de la loi 247/2012. L'engagement est formalisé par une procura alle liti (procuration) et un mandato professionale; les conventions d'honoraires sont libres dans leur forme mais les parametri forensi (DM 55/2014, mis à jour par le DM 147/2022) fournissent des valeurs de référence pour la négociation et la liquidation judiciaire des coûts.",
+      "es": "Identifique el área de práctica y verifique al avvocato en el Albo Unico Nazionale mantenido por el CNF en https://www.consiglionazionaleforense.it. Italia reconoce especializaciones formales (specializzazioni forensi) bajo el DM 144/2015 — por ejemplo, diritto del lavoro, diritto di famiglia, diritto tributario — otorgadas después de un curso de dos años o experiencia probada más una evaluación. Las consultas iniciales suelen costar €70–€200 y el avvocato debe entregarle un preventivo (presupuesto) por escrito según el artículo 13 de la Ley 247/2012. La contratación se formaliza mediante una procura alle liti (poder notarial) y un mandato professionale; los acuerdos de honorarios son de forma libre, pero los parametri forensi (DM 55/2014, actualizado por DM 147/2022) proporcionan valores de referencia tanto para la negociación como para la liquidación judicial de costes.",
+      "pt": "Identifique a área de prática e verifique o avvocato no Albo Unico Nazionale mantido pelo CNF em https://www.consiglionazionaleforense.it. A Itália reconhece especializações formais (specializzazioni forensi) sob o DM 144/2015 — por exemplo, diritto del lavoro, diritto di famiglia, diritto tributario — concedidas após um curso de dois anos ou experiência comprovada mais uma avaliação. As consultas iniciais custam tipicamente €70–€200 e o avvocato deve fornecer-lhe um preventivo (estimativa de custos) por escrito, nos termos do artigo 13 da Law 247/2012. O contrato é formalizado através de uma procura alle liti (procuração) e um mandato professionale; os acordos de honorários são de forma livre, mas os parametri forensi (DM 55/2014, atualizado pelo DM 147/2022) fornecem valores de referência tanto para a negociação quanto para a liquidação judicial de custos."
+    },
+    "feesAndAid": {
+      "de": "Gebühren können seit der Bersani-Liberalisierung 2006 frei vereinbart werden, aber jede Beauftragung erfordert einen schriftlichen preventivo. Pattuizioni a quota lite (reine Erfolgshonorare) sind gemäß Artikel 13 des Gesetzes 247/2012 verboten; ergebnisabhängige Zuschläge zusätzlich zu einer Grundgebühr sind erlaubt. Die parametri forensi (DM 55/2014, zuletzt aktualisiert 2022) liefern Referenzwerte, die von Richtern bei der Kostenfestsetzung verwendet werden. Patrocinio a spese dello Stato (DPR 115/2002) deckt Zivil-, Straf- und Verwaltungsverfahren für Personen mit einem zu versteuernden Einkommen unterhalb der gesetzlichen Schwelle ab – 12.838,01 € im Jahr 2026, erhöht um 1.032,91 € pro zusätzlichem Haushaltsmitglied in Zivilfällen. Anträge werden beim zuständigen Consiglio dell'Ordine eingereicht, der innerhalb von 10 Tagen eine vorläufige Zulassung erteilt.",
+      "fr": "Les honoraires sont librement convenus depuis la libéralisation Bersani de 2006, mais chaque mandat requiert un preventivo écrit. Les pattuizioni a quota lite (honoraires de résultat purs) sont interdites par l'article 13 de la loi 247/2012; les compléments basés sur le résultat en plus d'un honoraire de base sont autorisés. Les parametri forensi (DM 55/2014, dernière mise à jour 2022) fournissent des valeurs de référence utilisées par les juges lors de la liquidation des coûts. Le Patrocinio a spese dello Stato (DPR 115/2002) couvre les procédures civiles, pénales et administratives pour les personnes dont le revenu imposable est inférieur au seuil légal — €12,838.01 en 2026, augmenté de €1,032.91 par membre supplémentaire du foyer dans les affaires civiles. Les demandes sont déposées auprès du Consiglio dell'Ordine compétent, qui délivre une admission provisoire dans les 10 jours.",
+      "es": "Los honorarios se acuerdan libremente desde la liberalización de Bersani de 2006, pero cada encargo requiere un preventivo por escrito. Las pattuizioni a quota lite (contingencia pura) están prohibidas por el artículo 13 de la Ley 247/2012; se permiten los suplementos basados en resultados además de una tarifa base. Los parametri forensi (DM 55/2014, última actualización 2022) proporcionan valores de referencia utilizados por los jueces al liquidar los costes. El Patrocinio a spese dello Stato (DPR 115/2002) cubre los procedimientos civiles, penales y administrativos para personas con una renta imponible inferior al umbral legal — €12,838.01 en 2026, aumentado en €1,032.91 por cada miembro adicional del hogar en casos civiles. Las solicitudes se presentan ante el Consiglio dell'Ordine competente, que emite una admisión provisional en un plazo de 10 días.",
+      "pt": "Os honorários são livremente acordados desde a liberalização Bersani de 2006, mas cada contrato exige um preventivo por escrito. Pattuizioni a quota lite (contingência pura) são proibidas pelo artigo 13 da Law 247/2012; suplementos baseados em resultados, além de uma taxa base, são permitidos. Os parametri forensi (DM 55/2014, última atualização 2022) fornecem valores de referência utilizados pelos juízes na liquidação de custos. O Patrocinio a spese dello Stato (DPR 115/2002) cobre processos civis, criminais e administrativos para indivíduos com um rendimento tributável abaixo do limite legal — €12,838.01 em 2026, aumentado em €1,032.91 por membro adicional do agregado familiar em casos civis. As candidaturas são apresentadas ao Consiglio dell'Ordine competente, que emite uma admissão provisória no prazo de 10 dias."
+    },
+    "barAssociation": {
+      "membershipRules": {
+        "de": "Jeder praktizierende Avvocato muss einen Laurea Magistrale in Giurisprudenza besitzen, ein 18-monatiges tirocinio (Referendariat) absolvieren, das Esame di Stato bestehen, vor der örtlichen Corte d'Appello vereidigt werden und sich in einem Ordine einschreiben. Obligatorische kontinuierliche berufliche Weiterbildung (CPD) und Berufshaftpflichtversicherung gemäß Artikel 12 des Gesetzes 247/2012 sind erforderlich. Der Codice Deontologico Forense regelt Ethik, Interessenkonflikte und Werbung; informative Werbung ist erlaubt, vergleichende oder lobende Werbung bleibt jedoch verboten.",
+        "fr": "Tout avvocato en exercice doit être titulaire d'une Laurea Magistrale in Giurisprudenza, effectuer un tirocinio (apprentissage) de 18 mois, réussir l'Esame di Stato, prêter serment devant la Corte d'Appello locale et s'inscrire à un Ordine. Une formation professionnelle continue (FPC) obligatoire et une assurance responsabilité civile professionnelle en vertu de l'article 12 de la loi 247/2012 sont requises. Le Codice Deontologico Forense réglemente l'éthique, les conflits et la publicité; la publicité informative est autorisée, mais la publicité comparative ou laudative reste interdite.",
+        "es": "Todo avvocato en ejercicio debe poseer una Laurea Magistrale en Giurisprudenza, completar un tirocinio (prácticas) de 18 meses, aprobar el Esame di Stato, jurar ante la Corte d'Appello local e inscribirse en un Ordine. Se exige la formación profesional continua (CPD) obligatoria y el seguro de responsabilidad civil profesional según el artículo 12 de la Ley 247/2012. El Codice Deontologico Forense regula la ética, los conflictos y la publicidad; se permite la publicidad informativa, pero la publicidad comparativa o laudatoria sigue estando prohibida.",
+        "pt": "Todo avvocato em exercício deve possuir uma Laurea Magistrale in Giurisprudenza, completar um tirocinio (estágio) de 18 meses, passar no Esame di Stato, prestar juramento perante a Corte d'Appello local e inscrever-se num Ordine. São exigidos desenvolvimento profissional contínuo (CPD) obrigatório e seguro de responsabilidade civil profissional nos termos do artigo 12 da Law 247/2012. O Codice Deontologico Forense regulamenta a ética, conflitos e publicidade; a publicidade informativa é permitida, mas a publicidade comparativa ou laudatória permanece proibida."
+      }
+    },
+    "crossBorderEU": {
+      "de": "Gemäß der Niederlassungsrichtlinie 98/5/EG, umgesetzt durch das Gesetzesdekret 96/2001, dürfen in der EU zugelassene Anwälte in Italien unter ihrer Heimatbezeichnung praktizieren, nachdem sie sich in der sezione speciale eines Ordine registriert haben. Nach drei Jahren effektiver und regelmäßiger Praxis im italienischen Recht können sie die vollständige Integration als Avvocato beantragen, ohne das Esame di Stato ablegen zu müssen. Kurzfristige grenzüberschreitende Dienstleistungen folgen der Richtlinie 77/249/EWG und dem Gesetz 31/1982: Ein EU-Anwalt kann beispielsweise eine einzelne italienische Anhörung unter seiner Heimatbezeichnung führen, in Abstimmung mit einem italienischen Avvocato, wo eine obligatorische Vertretung gilt.",
+      "fr": "En vertu de la Directive d'établissement 98/5/CE, transposée par le Décret législatif 96/2001, les avocats admis dans l'UE peuvent exercer en Italie sous leur titre d'origine après s'être inscrits dans la sezione speciale d'un Ordine. Après trois ans de pratique effective et régulière du droit italien, ils peuvent demander une pleine intégration en tant qu'avvocato sans passer l'Esame di Stato. Les services transfrontaliers à court terme suivent la Directive 77/249/CEE et la loi 31/1982: un avocat de l'UE peut, par exemple, plaider une seule audience italienne sous son titre d'origine, en coordination avec un avvocato italien lorsque la représentation obligatoire s'applique.",
+      "es": "Según la Directiva de Establecimiento 98/5/CE, transpuesta por el Decreto Legislativo 96/2001, los abogados admitidos en la UE pueden ejercer en Italia con su título de origen tras registrarse en la sezione speciale de un Ordine. Después de tres años de práctica efectiva y regular en derecho italiano, pueden solicitar la plena integración como avvocato sin necesidad de realizar el Esame di Stato. Los servicios transfronterizos a corto plazo siguen la Directiva 77/249/CEE y la Ley 31/1982: un abogado de la UE puede, por ejemplo, intervenir en una única audiencia italiana con su título de origen, en coordinación con un avvocato italiano cuando sea obligatoria la representación.",
+      "pt": "Nos termos da Diretiva de Estabelecimento 98/5/EC, transposta pelo Decreto Legislativo 96/2001, advogados admitidos na UE podem exercer em Itália sob o seu título de origem após se registarem na sezione speciale de um Ordine. Após três anos de prática efetiva e regular em direito italiano, podem solicitar a integração plena como avvocato sem prestar o Esame di Stato. Os serviços transfronteiriços de curta duração seguem a Diretiva 77/249/EEC e a Law 31/1982: um advogado da UE pode, por exemplo, defender uma única audiência italiana sob o seu título de origem, em coordenação com um avvocato italiano onde a representação obrigatória se aplica."
+    },
+    "faqs": [
+      {
+        "q": {
+          "de": "Wie überprüfe ich, ob ein italienischer Anwalt tatsächlich ein Avvocato ist?",
+          "fr": "Comment vérifier qu'un avocat italien est bien un avvocato?",
+          "es": "¿Cómo verifico que un abogado italiano es realmente un avvocato?",
+          "pt": "Como verifico se um advogado italiano é realmente um avvocato?"
+        },
+        "a": {
+          "de": "Nutzen Sie das Albo Unico Nazionale auf der CNF-Website (consiglionazionaleforense.it). Jeder praktizierende Avvocato ist dort mit seinem Ordine der Einschreibung aufgeführt.",
+          "fr": "Utilisez l'Albo Unico Nazionale sur le site du CNF (consiglionazionaleforense.it). Chaque avvocato en exercice y est répertorié avec son Ordine d'inscription.",
+          "es": "Utilice el Albo Unico Nazionale en el sitio del CNF (consiglionazionaleforense.it). Cada avvocato en ejercicio figura con su Ordine de inscripción.",
+          "pt": "Utilize o Albo Unico Nazionale no site do CNF (consiglionazionaleforense.it). Todo avvocato em exercício está listado com o seu Ordine de inscrição."
+        }
+      },
+      {
+        "q": {
+          "de": "Ist ein schriftlicher Kostenvoranschlag obligatorisch?",
+          "fr": "Un devis écrit est-il obligatoire?",
+          "es": "¿Es obligatorio un presupuesto por escrito?",
+          "pt": "É obrigatória uma estimativa de custos por escrito?"
+        },
+        "a": {
+          "de": "Ja. Artikel 13 des Gesetzes 247/2012 verlangt vom Avvocato, dem Mandanten zum Zeitpunkt der Beauftragung einen schriftlichen preventivo auszuhändigen.",
+          "fr": "Oui. L'article 13 de la loi 247/2012 exige que l'avvocato fournisse un preventivo écrit au client au moment de l'engagement.",
+          "es": "Sí. El artículo 13 de la Ley 247/2012 exige al avvocato proporcionar un preventivo por escrito al cliente en el momento de la contratación.",
+          "pt": "Sim. O artigo 13 da Law 247/2012 exige que o avvocato forneça um preventivo por escrito ao cliente no momento da contratação."
+        }
+      },
+      {
+        "q": {
+          "de": "Wer hat Anspruch auf patrocinio a spese dello Stato?",
+          "fr": "Qui est éligible au patrocinio a spese dello Stato?",
+          "es": "¿Quién califica para el patrocinio a spese dello Stato?",
+          "pt": "Quem se qualifica para o patrocinio a spese dello Stato?"
+        },
+        "a": {
+          "de": "Personen mit einem zu versteuernden Einkommen unter 12.838,01 € (Schwelle 2026), erhöht um 1.032,91 € pro Mitbewohner in Zivilfällen. In Strafsachen gelten höhere Schwellenwerte.",
+          "fr": "Les personnes dont le revenu imposable est inférieur à €12,838.01 (seuil 2026), augmenté de €1,032.91 par cohabitant dans les affaires civiles. Des seuils plus élevés s'appliquent en matière pénale.",
+          "es": "Personas con una renta imponible inferior a €12,838.01 (umbral de 2026), aumentada en €1,032.91 por conviviente en casos civiles. Se aplican umbrales más altos en asuntos penales.",
+          "pt": "Indivíduos com um rendimento tributável inferior a €12,838.01 (limite de 2026), aumentado em €1,032.91 por coabitante em casos civis. Limites mais elevados aplicam-se em matéria penal."
+        }
+      },
+      {
+        "q": {
+          "de": "Dürfen Avvocati ein Erfolgshonorar verlangen?",
+          "fr": "Les avvocati peuvent-ils facturer des honoraires de résultat?",
+          "es": "¿Pueden los avvocati cobrar honorarios de contingencia?",
+          "pt": "Os avvocati podem cobrar honorários de contingência?"
+        },
+        "a": {
+          "de": "Nein. Der patto di quota lite ist gemäß Artikel 13 des Gesetzes 247/2012 verboten. Ergebnisabhängige Zuschläge zusätzlich zu einer Grundgebühr sind zulässig.",
+          "fr": "Non. Le patto di quota lite est interdit par l'article 13 de la loi 247/2012. Les compléments basés sur le résultat ajoutés à un honoraire de base sont admis.",
+          "es": "No. El patto di quota lite está prohibido por el artículo 13 de la Ley 247/2012. Se admiten los suplementos basados en resultados añadidos a una tarifa base.",
+          "pt": "Não. O patto di quota lite é proibido pelo artigo 13 da Law 247/2012. Suplementos baseados em resultados adicionados a uma taxa base são admitidos."
+        }
+      },
+      {
+        "q": {
+          "de": "Benötige ich einen avvocato cassazionista, um beim Kassationsgerichtshof Berufung einzulegen?",
+          "fr": "Ai-je besoin d'un avvocato cassazionista pour faire appel devant la Cour de Cassation?",
+          "es": "¿Necesito un avvocato cassazionista para apelar ante el Tribunal de Casación?",
+          "pt": "Preciso de um avvocato cassazionista para recorrer ao Tribunal de Cassação?"
+        },
+        "a": {
+          "de": "Ja. Nur Anwälte, die im Albo Speciale dei Cassazionisti eingetragen sind, dürfen Parteien vor der Corte di Cassazione, dem Consiglio di Stato und den höheren Verfassungsgerichten vertreten.",
+          "fr": "Oui. Seuls les avocats inscrits à l'Albo Speciale dei Cassazionisti peuvent représenter les parties devant la Corte di Cassazione, le Consiglio di Stato et les hautes cours constitutionnelles.",
+          "es": "Sí. Solo los abogados inscritos en el Albo Speciale dei Cassazionisti pueden representar a las partes ante la Corte di Cassazione, el Consiglio di Stato y los tribunales constitucionales superiores.",
+          "pt": "Sim. Apenas advogados inscritos no Albo Speciale dei Cassazionisti podem representar partes perante a Corte di Cassazione, o Consiglio di Stato e os tribunais constitucionais superiores."
+        }
+      },
+      {
+        "q": {
+          "de": "Kann ich einen in einem anderen EU-Land zugelassenen Anwalt beauftragen?",
+          "fr": "Puis-je engager un avocat admis dans un autre pays de l'UE?",
+          "es": "¿Puedo contratar a un abogado admitido en otro país de la UE?",
+          "pt": "Posso contratar um advogado admitido noutro país da UE?"
+        },
+        "a": {
+          "de": "Ja. Die Niederlassungs- und Dienstleistungsrichtlinien erlauben die grenzüberschreitende Praxis; für eine dauerhafte Niederlassung muss sich der Anwalt in der sezione speciale eines italienischen Ordine registrieren.",
+          "fr": "Oui. Les Directives d'établissement et de services autorisent la pratique transfrontalière; pour un établissement permanent, l'avocat doit s'inscrire dans la sezione speciale d'un Ordine italien.",
+          "es": "Sí. Las Directivas de Establecimiento y Servicios permiten la práctica transfronteriza; para el establecimiento permanente, el abogado debe registrarse en la sezione speciale de un Ordine italiano.",
+          "pt": "Sim. As Diretivas de Estabelecimento e Serviços permitem a prática transfronteiriça; para estabelecimento permanente, o advogado deve registar-se na sezione speciale de um Ordine italiano."
+        }
+      }
+    ]
+  },
+  "pt": {
+    "hero": {
+      "tagline": {
+        "de": "Finden Sie einen registrierten Advogado in ganz Portugal — verifiziert durch die Ordem dos Advogados.",
+        "fr": "Trouvez un advogado inscrit dans tout le Portugal — vérifié par l'Ordem dos Advogados.",
+        "es": "Encuentre un advogado colegiado en todo Portugal — verificado a través de la Ordem dos Advogados.",
+        "it": "Trova un avvocato registrato in tutto il Portogallo — verificato tramite l'Ordem dos Advogados."
+      },
+      "lede": {
+        "de": "Portugal hat rund 33.000 Advogados, die gemäß dem Estatuto da Ordem dos Advogados (Gesetz 145/2015) bei der Ordem dos Advogados zugelassen sind. Dieser Leitfaden erläutert den Aufbau des portugiesischen Rechtssystems, wie man einen Advogado beauftragt, die Gebührenregelungen und die protecção jurídica (Prozesskostenhilfe gemäß Gesetz 34/2004) sowie die grenzüberschreitende Tätigkeit von EU-Anwälten.",
+        "fr": "Le Portugal compte environ 33 000 advogados inscrits à l'Ordem dos Advogados en vertu de l'Estatuto da Ordem dos Advogados (Loi 145/2015). Ce guide explique l'organisation du système juridique portugais, comment mandater un advogado, les règles relatives aux honoraires et à la protecção jurídica (aide juridique en vertu de la Loi 34/2004), ainsi que la pratique transfrontalière des avocats de l'UE.",
+        "es": "Portugal cuenta con aproximadamente 33.000 advogados admitidos en la Ordem dos Advogados bajo el Estatuto da Ordem dos Advogados (Ley 145/2015). Esta guía explica cómo se organiza el sistema legal portugués, cómo contratar a un advogado, las normas sobre honorarios y protecção jurídica (asistencia jurídica gratuita según la Ley 34/2004), y la práctica transfronteriza de abogados de la UE.",
+        "it": "Il Portogallo conta circa 33.000 advogados iscritti all'Ordem dos Advogados ai sensi dello Estatuto da Ordem dos Advogados (Legge 145/2015). Questa guida spiega come è organizzato il sistema legale portoghese, come incaricare un advogado, le regole sulle parcelle e sulla protecção jurídica (assistenza legale ai sensi della Legge 34/2004), e la pratica transfrontaliera degli avvocati dell'UE."
+      }
+    },
+    "legalSystem": {
+      "de": "Portugal ist eine Zivilrechtsordnung, deren Hauptgesetze der Código Civil, der Código Penal, der Código de Processo Civil und der Código de Processo Penal sind. Die ordentlichen Gerichte gliedern sich vom Tribunal de Comarca → Tribunal da Relação (Lissabon, Porto, Coimbra, Évora, Guimarães) → Supremo Tribunal de Justiça. Verwaltungs- und Steuerangelegenheiten werden über die Tribunais Administrativos e Fiscais → Tribunais Centrais Administrativos → Supremo Tribunal Administrativo verhandelt. Die Verfassungsprüfung ist dem Tribunal Constitucional vorbehalten. Die Vertretung durch einen Advogado ist bei Zivilklagen über €5.000 und bei allen Berufungs- und Revisionsverfahren obligatorisch.",
+      "fr": "Le Portugal est une juridiction de droit civil dont les principaux codes sont le Código Civil, le Código Penal, le Código de Processo Civil et le Código de Processo Penal. Les tribunaux ordinaires procèdent du Tribunal de Comarca → Tribunal da Relação (Lisbon, Porto, Coimbra, Évora, Guimarães) → Supremo Tribunal de Justiça. Les affaires administratives et fiscales relèvent des Tribunais Administrativos e Fiscais → Tribunais Centrais Administrativos → Supremo Tribunal Administrativo. Le contrôle de constitutionnalité est réservé au Tribunal Constitucional. La représentation par un advogado est obligatoire pour les litiges civils supérieurs à €5,000 et pour toutes les procédures d'appel et de cour suprême.",
+      "es": "Portugal es una jurisdicción de derecho civil cuyos códigos principales son el Código Civil, el Código Penal, el Código de Processo Civil y el Código de Processo Penal. Los tribunales ordinarios proceden del Tribunal de Comarca → Tribunal da Relação (Lisboa, Oporto, Coimbra, Évora, Guimarães) → Supremo Tribunal de Justiça. Los asuntos administrativos y fiscales se tramitan a través de los Tribunais Administrativos e Fiscais → Tribunais Centrais Administrativos → Supremo Tribunal Administrativo. La revisión constitucional está reservada al Tribunal Constitucional. La representación por un advogado es obligatoria para reclamaciones civiles superiores a €5.000 y para todos los procedimientos de apelación y ante el tribunal supremo.",
+      "it": "Il Portogallo è una giurisdizione di diritto civile i cui codici principali sono il Código Civil, il Código Penal, il Código de Processo Civil e il Código de Processo Penal. I tribunali ordinari procedono dal Tribunal de Comarca → Tribunal da Relação (Lisbon, Porto, Coimbra, Évora, Guimarães) → Supremo Tribunal de Justiça. Le questioni amministrative e fiscali passano attraverso i Tribunais Administrativos e Fiscais → Tribunais Centrais Administrativos → Supremo Tribunal Administrativo. Il controllo di costituzionalità è riservato al Tribunal Constitucional. La rappresentanza da parte di un advogado è obbligatoria per le cause civili superiori a €5,000 e per tutti i procedimenti di appello e di cassazione."
+    },
+    "howToFindLawyer": {
+      "de": "Ermitteln Sie das Rechtsgebiet und überprüfen Sie den Advogado im Register der Ordem dos Advogados unter https://portal.oa.pt. Jedes Mitglied besitzt eine einzigartige cédula profissional, die die Kanzlei anzeigen sollte. Portugal erkennt formelle Spezialisierungen (especialidades) an, darunter direito do trabalho, direito da família e menores, direito fiscal und direito administrativo, die von der Ordem nach spezifischer Ausbildung und Prüfung verliehen werden. Erstberatungen kosten in der Regel €60–€180. Der Advogado muss die Gebühren schriftlich vereinbaren (Artikel 105 des Estatuto da Ordem dos Advogados) und für jede Zahlung einen recibo ausstellen. Das Mandat wird durch eine bei Gericht eingereichte procuração forense formalisiert.",
+      "fr": "Identifiez le domaine de pratique et vérifiez l'advogado dans le registre de l'Ordem dos Advogados à l'adresse https://portal.oa.pt. Chaque membre possède une cédula profissional unique que le cabinet doit afficher. Le Portugal reconnaît des spécialisations formelles (especialidades) incluant le direito do trabalho, le direito da família e menores, le direito fiscal et le direito administrativo, décernées par l'Ordem après une formation et une évaluation spécifiques. Les consultations initiales coûtent généralement €60–€180. L'advogado doit convenir des honoraires par écrit (article 105 de l'Estatuto da Ordem dos Advogados) et émettre un recibo pour chaque paiement. Le mandat est formalisé par une procuração forense déposée auprès du tribunal.",
+      "es": "Identifique el área de práctica y verifique al advogado en el registro de la Ordem dos Advogados en https://portal.oa.pt. Cada miembro tiene una cédula profissional única que el despacho debe exhibir. Portugal reconoce especializaciones formales (especialidades) que incluyen direito do trabalho, direito da família e menores, direito fiscal y direito administrativo, otorgadas por la Ordem después de formación y evaluación específicas. Las consultas iniciales suelen costar entre €60 y €180. El advogado debe acordar los honorarios por escrito (artículo 105 del Estatuto da Ordem dos Advogados) y emitir un recibo por cada pago. El mandato se formaliza mediante una procuração forense presentada ante el tribunal.",
+      "it": "Identificare l'area di pratica e verificare l'advogado nel registro dell'Ordem dos Advogados all'indirizzo https://portal.oa.pt. Ogni membro ha una cédula profissional unica che lo studio dovrebbe esporre. Il Portogallo riconosce specializzazioni formali (especialidades) tra cui direito do trabalho, direito da família e menores, direito fiscal e direito administrativo, conferite dall'Ordem dopo una formazione e valutazione specifiche. Le consultazioni iniziali di solito costano €60–€180. L'advogado deve concordare le parcelle per iscritto (articolo 105 dello Estatuto da Ordem dos Advogados) ed emettere una recibo per ogni pagamento. Il mandato è formalizzato da una procuração forense depositata presso il tribunale."
+    },
+    "feesAndAid": {
+      "de": "Anwaltsgebühren werden frei verhandelt. Artikel 105 des Estatuto fordert Fairness und Verhältnismäßigkeit unter Berücksichtigung des Zeitaufwands, der Komplexität, der Dringlichkeit, des Streitwerts und des Ergebnisses. Reine Erfolgshonorare (quota litis) sind verboten; erfolgsabhängige Zuschläge zusätzlich zu einem Basishonorar sind zulässig. Protecção jurídica (Gesetz 34/2004) wird vom Instituto da Segurança Social verwaltet und umfasst Beratung, gerichtliche Vertretung und die Befreiung von Gerichtsgebühren. Die Berechtigung richtet sich nach dem rendimento relevante des Haushalts; grob gesagt qualifizieren sich Antragsteller, deren Haushaltseinkommen dem IAS (€522.50 im Jahr 2025, mit jährlichen Anpassungen) entspricht oder darunter liegt, für volle Unterstützung, mit gestaffelter teilweiser Unterstützung bis zu höheren Schwellenwerten.",
+      "fr": "Les honoraires d'avocat sont librement négociés. L'article 105 de l'Estatuto exige équité et proportionnalité eu égard au temps passé, à la complexité, à l'urgence, à l'enjeu et au résultat. La pure contingence (quota litis) est interdite ; des compléments basés sur le succès, en sus d'un honoraire de base, sont autorisés. La Protecção jurídica (Loi 34/2004) est administrée par l'Instituto da Segurança Social et couvre la consultation, la représentation judiciaire et la dispense des frais de justice. L'éligibilité utilise le rendimento relevante pour le ménage ; à titre indicatif, les demandeurs dont le revenu du ménage est égal ou inférieur à l'IAS (€522.50 en 2025, avec des mises à jour annuelles) sont éligibles à l'aide complète, avec une aide partielle dégressive jusqu'à des seuils plus élevés.",
+      "es": "Los honorarios del abogado se negocian libremente. El artículo 105 del Estatuto exige equidad y proporcionalidad teniendo en cuenta el tiempo dedicado, la complejidad, la urgencia, el valor en juego y el resultado. La contingencia pura (quota litis) está prohibida; se permiten suplementos basados en el éxito además de una tarifa base. La Protecção jurídica (Ley 34/2004) es administrada por el Instituto da Segurança Social y cubre la consulta, la representación judicial y la exención de tasas judiciales. La elegibilidad utiliza el rendimento relevante para el hogar; como guía aproximada, los solicitantes cuyo ingreso familiar esté en o por debajo del IAS (€522.50 en 2025, con actualizaciones anuales) califican para ayuda completa, con ayuda parcial de escala móvil hasta umbrales más altos.",
+      "it": "Le parcelle degli avvocati sono liberamente negoziate. L'articolo 105 dello Estatuto richiede equità e proporzionalità in relazione al tempo impiegato, alla complessità, all'urgenza, al valore in gioco e all'esito. La pura quota litis è proibita; sono ammessi supplementi basati sul successo oltre a una parcella base. La Protecção jurídica (Legge 34/2004) è amministrata dall'Instituto da Segurança Social e copre la consulenza, la rappresentanza giudiziale e l'esenzione dalle spese processuali. L'idoneità si basa sul rendimento relevante del nucleo familiare; come guida approssimativa, i richiedenti il cui reddito familiare è pari o inferiore all'IAS (€522.50 nel 2025, con aggiornamenti annuali) hanno diritto all'assistenza completa, con assistenza parziale su scala mobile fino a soglie più elevate."
+    },
+    "barAssociation": {
+      "membershipRules": {
+        "de": "Jeder praktizierende Advogado muss einen juristischen Abschluss (licenciatura oder mestrado em Direito) besitzen, ein 18-monatiges estágio (Praktikum) unter Aufsicht eines patrono absolvieren, die Exame Nacional de Acesso bestehen und sich mit einer cédula profissional bei der Ordem einschreiben. Eine obligatorische Berufshaftpflichtversicherung und fortlaufende Weiterbildung sind vorgeschrieben. Das Estatuto da Ordem dos Advogados (Gesetz 145/2015) und der Código Deontológico regeln Ethik, Interessenkonflikte und Werbung; objektive und wahrheitsgemäße Werbung ist erlaubt, während vergleichende, sensationslüsterne oder testimonial-basierte Werbung verboten bleibt.",
+        "fr": "Tout advogado en exercice doit être titulaire d'un diplôme de droit (licenciatura ou mestrado em Direito), effectuer un estágio de 18 mois (apprentissage) supervisé par un patrono, réussir l'Exame Nacional de Acesso, et s'inscrire à l'Ordem avec une cédula profissional. Une assurance responsabilité civile professionnelle obligatoire et une formation continue s'appliquent. L'Estatuto da Ordem dos Advogados (Loi 145/2015) et le Código Deontológico régissent l'éthique, les conflits et la publicité ; la publicité objective et véridique est autorisée, tandis que la publicité comparative, sensationnaliste ou testimoniale reste interdite.",
+        "es": "Todo advogado en ejercicio debe poseer un título de derecho (licenciatura o mestrado em Direito), completar un estágio de 18 meses (prácticas) supervisado por un patrono, aprobar el Exame Nacional de Acesso y colegiarse en la Ordem con una cédula profissional. Se aplican el seguro de responsabilidad civil profesional obligatorio y la formación continua. El Estatuto da Ordem dos Advogados (Ley 145/2015) y el Código Deontológico rigen la ética, los conflictos y la publicidad; se permite la publicidad objetiva y veraz, mientras que la publicidad comparativa, sensacionalista o testimonial sigue prohibida.",
+        "it": "Ogni advogado praticante deve possedere una laurea in giurisprudenza (licenciatura o mestrado em Direito), completare un estágio di 18 mesi (apprendistato) supervisionato da un patrono, superare l'Exame Nacional de Acesso e iscriversi all'Ordem con una cédula profissional. Si applicano l'assicurazione di responsabilità civile professionale obbligatoria e la formazione continua. Lo Estatuto da Ordem dos Advogados (Legge 145/2015) e il Código Deontológico regolano l'etica, i conflitti e la pubblicità; la pubblicità oggettiva e veritiera è consentita, mentre la pubblicità comparativa, sensazionalistica o testimoniale rimane proibita."
+      }
+    },
+    "crossBorderEU": {
+      "de": "Gemäß der Niederlassungsrichtlinie 98/5/EG, umgesetzt durch Gesetz 9/2009, dürfen in der EU zugelassene Anwälte in Portugal unter ihrer Heimatbezeichnung praktizieren, nachdem sie sich bei der Ordem dos Advogados registriert haben. Nach drei Jahren effektiver und regelmäßiger Praxis im portugiesischen Recht können sie die vollständige Integration als Advogado beantragen, ohne die Exame Nacional de Acesso ablegen zu müssen. Kurzfristige grenzüberschreitende Dienstleistungen folgen der Richtlinie 77/249/EWG: Ein spanischer abogado oder französischer avocat kann beispielsweise eine einzelne portugiesische Anhörung unter seinem Heimattitel führen, in Abstimmung mit einem lokal eingeschriebenen Advogado, wo eine obligatorische Vertretung vorgeschrieben ist.",
+      "fr": "En vertu de la Directive d'établissement 98/5/CE, transposée par la Loi 9/2009, les avocats admis dans l'UE peuvent exercer au Portugal sous leur titre d'origine après s'être inscrits auprès de l'Ordem dos Advogados. Après trois ans de pratique effective et régulière du droit portugais, ils peuvent demander une pleine intégration en tant qu'advogado sans passer l'Exame Nacional de Acesso. Les services transfrontaliers à court terme suivent la Directive 77/249/CEE : un abogado espagnol ou un avocat français peut, par exemple, plaider une seule audience portugaise sous son titre d'origine, en coordination avec un advogado inscrit localement lorsque la représentation obligatoire s'applique.",
+      "es": "Según la Directiva de Establecimiento 98/5/CE, transpuesta por la Ley 9/2009, los abogados admitidos en la UE pueden ejercer en Portugal bajo su título de origen después de registrarse en la Ordem dos Advogados. Después de tres años de práctica efectiva y regular en derecho portugués, pueden solicitar la integración plena como advogado sin tener que presentarse al Exame Nacional de Acesso. Los servicios transfronterizos a corto plazo siguen la Directiva 77/249/CEE: un abogado español o un avocat francés pueden, por ejemplo, defender una única audiencia portuguesa bajo su título de origen, en coordinación con un advogado inscrito localmente cuando la representación obligatoria sea aplicable.",
+      "it": "Ai sensi della Direttiva di Stabilimento 98/5/CE, recepita dalla Legge 9/2009, gli avvocati ammessi nell'UE possono esercitare in Portogallo con il loro titolo professionale del paese d'origine dopo essersi registrati presso l'Ordem dos Advogados. Dopo tre anni di pratica effettiva e regolare nel diritto portoghese, possono richiedere la piena integrazione come advogado senza sostenere l'Exame Nacional de Acesso. I servizi transfrontalieri a breve termine seguono la Direttiva 77/249/CEE: un abogado spagnolo o un avocat francese possono, ad esempio, patrocinare una singola udienza portoghese con il loro titolo d'origine, in coordinamento con un advogado iscritto localmente laddove sia obbligatoria la rappresentanza."
+    },
+    "faqs": [
+      {
+        "q": {
+          "de": "Wie überprüfe ich, ob ein portugiesischer Anwalt tatsächlich registriert ist?",
+          "fr": "Comment vérifier qu'un avocat portugais est réellement inscrit ?",
+          "es": "¿Cómo verifico que un abogado portugués está realmente colegiado?",
+          "it": "Come verifico che un avvocato portoghese sia effettivamente registrato?"
+        },
+        "a": {
+          "de": "Nutzen Sie das Portal der Ordem dos Advogados unter portal.oa.pt. Jeder praktizierende Advogado hat dort eine einzigartige cédula profissional aufgeführt.",
+          "fr": "Utilisez le portail de l'Ordem dos Advogados à portal.oa.pt. Chaque advogado en exercice y a une cédula profissional unique.",
+          "es": "Utilice el portal de la Ordem dos Advogados en portal.oa.pt. Todo advogado en ejercicio tiene una cédula profissional única allí registrada.",
+          "it": "Utilizzare il portale dell'Ordem dos Advogados all'indirizzo portal.oa.pt. Ogni advogado praticante ha una cédula profissional unica lì elencata."
+        }
+      },
+      {
+        "q": {
+          "de": "Ist eine schriftliche Honorarvereinbarung obligatorisch?",
+          "fr": "Un accord d'honoraires écrit est-il obligatoire ?",
+          "es": "¿Es obligatorio un acuerdo de honorarios por escrito?",
+          "it": "È obbligatorio un accordo scritto sulle parcelle?"
+        },
+        "a": {
+          "de": "Artikel 105 des Estatuto da Ordem verlangt, dass honorários schriftlich vereinbart und begründbar sind, wobei für jede Zahlung eine Quittung auszustellen ist.",
+          "fr": "L'article 105 de l'Estatuto da Ordem exige que les honorários soient convenus et justifiables par écrit, avec un recibo émis pour chaque paiement.",
+          "es": "El artículo 105 del Estatuto da Ordem exige que los honorários sean acordados y justificables por escrito, con un recibo emitido por cada pago.",
+          "it": "L'articolo 105 dello Estatuto da Ordem richiede che gli honorários siano concordati e giustificabili per iscritto, con una ricevuta emessa per ogni pagamento."
+        }
+      },
+      {
+        "q": {
+          "de": "Wer hat Anspruch auf protecção jurídica?",
+          "fr": "Qui est éligible à la protecção jurídica ?",
+          "es": "¿Quién califica para la protecção jurídica?",
+          "it": "Chi ha diritto alla protecção jurídica?"
+        },
+        "a": {
+          "de": "Haushalte unterhalb der durch Gesetz 34/2004 festgelegten Schwelle des rendimento relevante (weitgehend an den IAS gekoppelt) sind berechtigt, mit vollständiger oder teilweiser Unterstützung, die Beratung, Vertretung und Gerichtsgebühren abdeckt.",
+          "fr": "Les ménages dont le rendimento relevante est inférieur au seuil fixé par la Loi 34/2004 (largement indexé à l'IAS) sont éligibles, avec une aide complète ou partielle couvrant la consultation, la représentation et les frais de justice.",
+          "es": "Los hogares por debajo del umbral de rendimento relevante establecido por la Ley 34/2004 (generalmente indexado al IAS) califican, con ayuda total o parcial que cubre consulta, representación y tasas judiciales.",
+          "it": "I nuclei familiari al di sotto della soglia di rendimento relevante stabilita dalla Legge 34/2004 (ampiamente indicizzata all'IAS) hanno diritto, con assistenza totale o parziale, a copertura di consulenza, rappresentanza e spese processuali."
+        }
+      },
+      {
+        "q": {
+          "de": "Benötige ich für jede Klage einen Advogado?",
+          "fr": "Ai-je besoin d'un advogado pour chaque litige ?",
+          "es": "¿Necesito un advogado para cada reclamación?",
+          "it": "Ho bisogno di un advogado per ogni causa?"
+        },
+        "a": {
+          "de": "Die Vertretung durch einen Advogado ist bei Zivilklagen über €5.000 und bei allen Berufungs- und Revisionsverfahren obligatorisch. Darunter können Parteien persönlich handeln.",
+          "fr": "La représentation par un advogado est obligatoire pour les litiges civils supérieurs à €5,000 et pour toutes les procédures d'appel et de cour suprême. En dessous de ce seuil, les parties peuvent agir en personne.",
+          "es": "La representación por un advogado es obligatoria para reclamaciones civiles superiores a €5.000 y para todos los procedimientos de apelación y ante el tribunal supremo. Por debajo de ese umbral, las partes pueden actuar en persona.",
+          "it": "La rappresentanza da parte di un advogado è obbligatoria per le cause civili superiori a €5,000 e per tutti i procedimenti di appello e di cassazione. Al di sotto di tale importo, le parti possono agire personalmente."
+        }
+      },
+      {
+        "q": {
+          "de": "Kann ich einen in einem anderen EU-Land zugelassenen Anwalt beauftragen?",
+          "fr": "Puis-je mandater un avocat admis dans un autre pays de l'UE ?",
+          "es": "¿Puedo contratar a un abogado admitido en otro país de la UE?",
+          "it": "Posso incaricare un avvocato ammesso in un altro paese dell'UE?"
+        },
+        "a": {
+          "de": "Ja. EU-Vorschriften (Richtlinien 77/249/EWG und 98/5/EG, umgesetzt durch Gesetz 9/2009) erlauben grenzüberschreitende Dienstleistungen und, nach Registrierung bei der Ordem, eine dauerhafte Praxis.",
+          "fr": "Oui. Les règles de l'UE (Directives 77/249/CEE et 98/5/CE, transposées par la Loi 9/2009) autorisent les services transfrontaliers et, après inscription auprès de l'Ordem, la pratique permanente.",
+          "es": "Sí. Las normas de la UE (Directivas 77/249/CEE y 98/5/CE, transpuestas por la Ley 9/2009) permiten los servicios transfronterizos y, tras el registro en la Ordem, la práctica permanente.",
+          "it": "Sì. Le norme dell'UE (Direttive 77/249/CEE e 98/5/CE, recepite dalla Legge 9/2009) consentono i servizi transfrontalieri e, dopo la registrazione presso l'Ordem, la pratica permanente."
+        }
+      },
+      {
+        "q": {
+          "de": "Sind Erfolgshonorare in Portugal erlaubt?",
+          "fr": "Les honoraires de résultat sont-ils autorisés au Portugal ?",
+          "es": "¿Se permiten los honorarios de contingencia en Portugal?",
+          "it": "Le parcelle di successo sono ammesse in Portogallo?"
+        },
+        "a": {
+          "de": "Nein. Die quota litis ist durch den Código Deontológico verboten. Ein erfolgsabhängiger Zuschlag darf nur zusätzlich zu einem Basishonorar vereinbart werden.",
+          "fr": "Non. La quota litis est interdite par le Código Deontológico. Un complément basé sur le succès ne peut être convenu qu'en sus d'un honoraire de base.",
+          "es": "No. La quota litis está prohibida por el Código Deontológico. Solo se puede acordar un suplemento basado en el éxito además de una tarifa base.",
+          "it": "No. La quota litis è proibita dal Código Deontológico. Un supplemento basato sul successo può essere concordato solo in aggiunta a una parcella base."
+        }
+      }
+    ]
+  }
 };
