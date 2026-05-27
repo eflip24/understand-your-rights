@@ -13,7 +13,7 @@ import { resolveEuRoute, buildEuPath } from "@/lib/eu/resolveRoute";
 import { getEuCountry } from "@/data/eu/countries";
 import { euAreasForCountry } from "@/data/eu/practiceAreas";
 import { euCitiesForCountry } from "@/data/eu/cities";
-import { COUNTRY_PILLARS, pickPillarLocale } from "@/data/eu/countryPillars";
+import { COUNTRY_PILLARS, pickPillarLocale, isPillarFullyLocalized } from "@/data/eu/countryPillars";
 
 const SITE = "https://legallyspoken.com";
 
@@ -109,6 +109,7 @@ export default function EuLawyersCountryPage() {
         country={canonical.country}
         countryName={country.name[locale]}
         locale={locale}
+        fullyLocalized={isPillarFullyLocalized(pillar, locale)}
       />
 
       <CountryPillarSections pillar={pillar} locale={locale} labels={pillarLabels} />
