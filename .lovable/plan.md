@@ -122,3 +122,17 @@ Add to `src/i18n/locales/{en,de,fr,es,it,pt}/eu-lawyer.json`:
 - Region slugs collide with future content if not namespaced — solved by literal `region/` segment.
 - 78 regions × ~120 words each ≈ 10K English tokens, 40K translated tokens — well within the Gemini free-tier daily quota now that the pipeline supports it.
 - Existing area routes must keep working; verify with a smoke test that `/lawyer-eu/de/arbeitsrecht` still resolves after adding the region route.
+
+---
+
+## B9 — Shipped
+
+- 73 regions across FR (13), DE (16), ES (17), IT (20), PT (7) with name+slug per 6 locales, capital, court of appeal, and (where relevant) bar chamber.
+- New route `/lawyer-eu/{country}/region/{region}` (literal `region` segment, ordered before the area route).
+- `EuLawyersRegionPage` with breadcrumbs, region intro (English baseline + a few native-language drafts; falls back to English with a notice), capital/court/bar chamber cards, cities grid linking back through the default practice area, practice-area grid with `?region=` analytics tag.
+- Country page now lists Regions above the cities grid.
+- Sitemap edge function emits 73 region URLs × 6 locales (~438 new entries) with full hreflang alternates.
+- i18n strings added to all 6 `eu-lawyer.json` files.
+- Type-check passes.
+
+Deferred (B9.5+): `/region/{region}/{city}` second URL for cities; Gemini fan-out of `regionIntros` to the remaining 5 locales using the B8 pipeline.
