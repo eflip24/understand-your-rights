@@ -2,7 +2,16 @@
  * Slug registry — translates localized URL slugs ↔ canonical keys for
  * the EU lawyer directory, and emits localized paths for hreflang.
  *
- * URL shape: /[locale/]lawyer-eu/{countrySlug}/{areaSlug}/{citySlug}
+ * URL shapes:
+ *   /[locale/]lawyer-eu                                  (hub)
+ *   /[locale/]lawyer-eu/{countrySlug}                    (country)
+ *   /[locale/]lawyer-eu/{countrySlug}/{areaSlug}         (country+area)
+ *   /[locale/]lawyer-eu/{countrySlug}/{areaSlug}/{citySlug}
+ *   /[locale/]lawyer-eu/{countrySlug}/region/{regionSlug} (Phase B9)
+ *
+ * The literal "region" segment namespaces region URLs to avoid colliding
+ * with the existing `{country}/{area}` shape (area and region slugs would
+ * otherwise overlap).
  */
 
 import {
@@ -14,20 +23,27 @@ import {
 import {
   euCities, getEuCityByCanonical, type EuCity,
 } from "./cities";
+import {
+  euRegions, getEuRegion, type EuRegion,
+} from "./regions";
 
 export const EU_LAWYER_BASE = "lawyer-eu";
+/** Literal URL segment that namespaces region pages. Locale-invariant for now. */
+export const EU_REGION_SEGMENT = "region";
 
 export interface EuRouteCanonical {
   /** Omit for the hub page (/{locale?}/lawyer-eu). */
   country?: EuCountryCode;
   area?: EuAreaCanonicalSlug;
   city?: string; // canonical city slug
+  /** Canonical region slug (mutually exclusive with `area`/`city` in URLs). */
+  region?: string;
 }
 
 /** Resolve a (locale, params) tuple to canonical keys. Returns null on miss. */
 export function resolveEuRoute(
   locale: LocaleCode,
-  params: { country?: string; area?: string; city?: string },
+  params: { country?: string; area?: string; city?: string; region?: string },
 ): EuRouteCanonical | null {
   if (!params.country) return {}; // hub
 
@@ -35,6 +51,15 @@ export function resolveEuRoute(
   if (!country) return null;
 
   const out: EuRouteCanonical = { country: country.code };
+
+  if (params.region) {
+    const region = euRegions.find(
+      (r) => r.country === country.code && r.slug[locale] === params.region,
+    );
+    if (!region) return null;
+    out.region = region.canonical;
+    return out;
+  }
 
   if (params.area) {
     const area = euPracticeAreas.find(
@@ -68,6 +93,14 @@ export function buildEuPath(
 
   const parts = [country.slug[locale]];
 
+  if (canonical.region) {
+    const region = getEuRegion(canonical.country, canonical.region);
+    if (region) {
+      parts.push(EU_REGION_SEGMENT, region.slug[locale]);
+      return `${base}/${parts.join("/")}`;
+    }
+  }
+
   if (canonical.area) {
     const area = getEuAreaByCanonical(canonical.area);
     if (area) parts.push(area.slug[locale]);
@@ -92,5 +125,5 @@ export function buildEuPathsByLocale(
 }
 
 /** Helpers exported for consumers. */
-export { euCountries, euPracticeAreas, euCities };
-export type { EuCity, EuPracticeArea };
+export { euCountries, euPracticeAreas, euCities, euRegions };
+export type { EuCity, EuPracticeArea, EuRegion };

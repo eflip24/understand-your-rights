@@ -68,6 +68,7 @@ const EuLawyersHub = React.lazy(() => import("@/pages/eu/EuLawyersHub"));
 const EuLawyersCountryPage = React.lazy(() => import("@/pages/eu/EuLawyersCountryPage"));
 const EuLawyersAreaPage = React.lazy(() => import("@/pages/eu/EuLawyersAreaPage"));
 const EuLawyersCityPage = React.lazy(() => import("@/pages/eu/EuLawyersCityPage"));
+const EuLawyersRegionPage = React.lazy(() => import("@/pages/eu/EuLawyersRegionPage"));
 const ImpressumPage = React.lazy(() => import("@/pages/legal/ImpressumPage"));
 
 /**
@@ -132,6 +133,9 @@ export default function AppRoutes() {
       <Route path="/lawyer-near-me/:area/:state/:city" element={<LocalLawyersCityPage />} />
       <Route path="/lawyer-eu" element={<EuLawyersHub />} />
       <Route path="/lawyer-eu/:country" element={<EuLawyersCountryPage />} />
+      {/* B9: region route MUST precede the area route — the literal "region"
+          segment is matched as :area otherwise. The component disambiguates. */}
+      <Route path="/lawyer-eu/:country/region/:region" element={<EuLawyersRegionPage />} />
       <Route path="/lawyer-eu/:country/:area" element={<EuLawyersAreaPage />} />
       <Route path="/lawyer-eu/:country/:area/:city" element={<EuLawyersCityPage />} />
       <Route path="/about" element={<AboutPage />} />
