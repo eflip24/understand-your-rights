@@ -3,7 +3,7 @@
  *
  * Phase B8 — Full 6-locale fan-out. Holds AI-translated copies of every
  * PillarLocalized field for the 4 non-native, non-English locales per country.
- * Merged into COUNTRY_PILLARS at module load via deepMergePillar().
+ * Merged into COUNTRY_PILLARS at module load via mergePillar() in countryPillars.ts.
  *
  * Reruns of the generator only fill missing keys; native + English copy in
  * countryPillars.ts always wins.
@@ -29,9 +29,256 @@ export interface GeneratedPillar {
 }
 
 export const GENERATED_PILLAR_TRANSLATIONS: Record<EuCountryCode, GeneratedPillar> = {
-  de: {},
-  fr: {},
-  es: {},
-  it: {},
-  pt: {},
+  "de": {
+    "hero": {
+      "tagline": {
+        "fr": "Trouvez un Rechtsanwalt qualifié dans toute l'Allemagne — vérifié auprès du registre fédéral des avocats.",
+        "es": "Encuentre un Rechtsanwalt cualificado en toda Alemania — verificado en el registro federal de abogados.",
+        "it": "Trova un Rechtsanwalt qualificato in tutta la Germania — verificato rispetto all'albo federale.",
+        "pt": "Encontre um Rechtsanwalt qualificado em toda a Alemanha — verificado no registo federal de advogados."
+      },
+      "lede": {
+        "fr": "L'Allemagne compte environ 165 000 avocats agréés (Rechtsanwälte), tous réglementés par la Bundesrechtsanwaltsordnung (BRAO) et organisés en 27 chambres régionales d'avocats sous la Bundesrechtsanwaltskammer (BRAK) fédérale. Ce guide explique comment le système juridique allemand est structuré, comment trouver et mandater un avocat, quels honoraires attendre en vertu du RVG, et comment les avocats agréés dans l'UE peuvent exercer au-delà des frontières.",
+        "es": "Alemania cuenta con aproximadamente 165.000 abogados colegiados (Rechtsanwälte), todos regulados por la Bundesrechtsanwaltsordnung (BRAO) y organizados en 27 colegios de abogados regionales bajo la Bundesrechtsanwaltskammer (BRAK) federal. Esta guía explica cómo se estructura el sistema legal alemán, cómo encontrar y contratar a un abogado, qué honorarios esperar según la RVG y cómo los abogados admitidos en la UE pueden ejercer en Alemania.",
+        "it": "La Germania conta circa 165.000 avvocati abilitati (Rechtsanwälte), tutti regolamentati dalla Bundesrechtsanwaltsordnung (BRAO) e organizzati in 27 ordini regionali sotto la Bundesrechtsanwaltskammer (BRAK) federale. Questa guida spiega come è strutturato il sistema legale tedesco, come trovare e incaricare un avvocato, quali onorari aspettarsi ai sensi del RVG e come gli avvocati abilitati nell'UE possono esercitare la professione oltre confine.",
+        "pt": "A Alemanha tem aproximadamente 165.000 advogados admitidos (Rechtsanwälte), todos regulados pela Bundesrechtsanwaltsordnung (BRAO) e organizados em 27 câmaras regionais de advogados sob a Bundesrechtsanwaltskammer (BRAK) federal. Este guia explica como o sistema jurídico alemão está estruturado, como encontrar e contratar um advogado, que honorários esperar sob o RVG e como os advogados admitidos na UE podem exercer a profissão além-fronteiras."
+      }
+    },
+    "legalSystem": {
+      "fr": "L'Allemagne est une juridiction de droit civil avec des statuts codifiés tels que le Bürgerliches Gesetzbuch (BGB) pour les affaires civiles, le Strafgesetzbuch (StGB) pour les affaires pénales, et le Handelsgesetzbuch (HGB) pour les affaires commerciales. La hiérarchie des tribunaux est divisée par sujet : les affaires civiles et pénales ordinaires passent par l'Amtsgericht → Landgericht → Oberlandesgericht → Bundesgerichtshof (BGH). Les branches spécialisées comprennent les tribunaux du travail (Arbeitsgericht), administratifs (Verwaltungsgericht), sociaux (Sozialgericht) et fiscaux (Finanzgericht), chacun avec sa propre cour fédérale suprême. Les questions constitutionnelles sont traitées par le Bundesverfassungsgericht à Karlsruhe. Les avocats agréés en Allemagne peuvent comparaître devant tous les tribunaux, à l'exception du BGH en matière civile, ce qui nécessite une Singularzulassung distincte.",
+      "es": "Alemania es una jurisdicción de derecho civil con estatutos codificados como el Bürgerliches Gesetzbuch (BGB) para asuntos civiles, el Strafgesetzbuch (StGB) para asuntos penales y el Handelsgesetzbuch (HGB) para asuntos comerciales. La jerarquía judicial se divide por materia: los casos civiles y penales ordinarios pasan por Amtsgericht → Landgericht → Oberlandesgericht → Bundesgerichtshof (BGH). Las ramas especializadas incluyen los tribunales de Arbeitsgericht (laboral), Verwaltungsgericht (administrativo), Sozialgericht (social) y Finanzgericht (fiscal), cada uno con su propio tribunal federal supremo. Las cuestiones constitucionales van al Bundesverfassungsgericht en Karlsruhe. Los abogados admitidos en Alemania pueden comparecer ante todos los tribunales, excepto el BGH en asuntos civiles, que requiere una Singularzulassung separada.",
+      "it": "La Germania è una giurisdizione di diritto civile con statuti codificati come il Bürgerliches Gesetzbuch (BGB) per le questioni civili, lo Strafgesetzbuch (StGB) per le questioni penali e l'Handelsgesetzbuch (HGB) per le questioni commerciali. La gerarchia dei tribunali è suddivisa per materia: i casi civili e penali ordinari passano attraverso Amtsgericht → Landgericht → Oberlandesgericht → Bundesgerichtshof (BGH). I rami specialistici includono i tribunali del lavoro (Arbeitsgericht), amministrativi (Verwaltungsgericht), sociali (Sozialgericht) e fiscali (Finanzgericht), ciascuno con il proprio tribunale federale di vertice. Le questioni costituzionali vanno al Bundesverfassungsgericht a Karlsruhe. Gli avvocati abilitati in Germania possono comparire dinanzi a tutti i tribunali, eccetto il BGH in materia civile, che richiede una separata Singularzulassung.",
+      "pt": "A Alemanha é uma jurisdição de direito civil com estatutos codificados, como o Bürgerliches Gesetzbuch (BGB) para assuntos civis, o Strafgesetzbuch (StGB) para assuntos criminais e o Handelsgesetzbuch (HGB) para assuntos comerciais. A hierarquia dos tribunais é dividida por assunto: casos civis e criminais ordinários tramitam através de Amtsgericht → Landgericht → Oberlandesgericht → Bundesgerichtshof (BGH). Os ramos especializados incluem os tribunais de trabalho (Arbeitsgericht), administrativos (Verwaltungsgericht), sociais (Sozialgericht) e fiscais (Finanzgericht), cada um com o seu próprio tribunal federal de cúpula. As questões constitucionais vão para o Bundesverfassungsgericht em Karlsruhe. Os advogados admitidos na Alemanha podem comparecer perante todos os tribunais, exceto o BGH em matéria civil, que exige uma Singularzulassung separada."
+    },
+    "howToFindLawyer": {
+      "fr": "Commencez par identifier le domaine de pratique pertinent — le droit allemand des avocats permet aux avocats de faire de la publicité pour des spécialisations (Fachanwalt) seulement après avoir réussi un examen distinct et démontré une expérience de cas, donc une désignation 'Fachanwalt für Familienrecht' ou 'Fachanwalt für Arbeitsrecht' est un signal fort. Vérifiez tout candidat par rapport au Bundesweites Amtliches Anwaltsverzeichnis officiel à l'adresse https://www.rechtsanwaltsregister.org. La plupart des cabinets allemands proposent une Erstberatung (consultation initiale) payante plafonnée à 190 € plus TVA par le §34 RVG, bien que beaucoup renoncent ou réduisent les honoraires pour les affaires claires. Apportez des documents écrits et une chronologie. Après la réunion, vous recevrez normalement une Vollmacht (procuration) et une convention d'honoraires (Vergütungsvereinbarung) à signer avant que le travail ne commence.",
+      "es": "Comience identificando el área de práctica relevante — la ley de colegios de abogados alemana permite a los abogados anunciar especializaciones (Fachanwalt) solo después de aprobar un examen separado y demostrar experiencia en casos, por lo que una designación de 'Fachanwalt für Familienrecht' o 'Fachanwalt für Arbeitsrecht' es una señal fuerte. Verifique a cualquier candidato en el Bundesweites Amtliches Anwaltsverzeichnis oficial en https://www.rechtsanwaltsregister.org. La mayoría de las firmas alemanas ofrecen una Erstberatung (consulta inicial) pagada con un tope de 190 € más IVA según el §34 RVG, aunque muchas eximen o reducen la tarifa para asuntos claros. Traiga documentos escritos y una cronología. Después de la reunión, normalmente recibirá una Vollmacht (poder notarial) y un acuerdo de honorarios (Vergütungsvereinbarung) para firmar antes de que comience el trabajo.",
+      "it": "Inizia identificando l'area di pratica pertinente — la legge tedesca sull'avvocatura consente agli avvocati di pubblicizzare specializzazioni (Fachanwalt) solo dopo aver superato un esame separato e aver dimostrato esperienza pratica, quindi la designazione di 'Fachanwalt für Familienrecht' o 'Fachanwalt für Arbeitsrecht' è un forte segnale. Verifica ogni candidato rispetto al Bundesweites Amtliches Anwaltsverzeichnis ufficiale all'indirizzo https://www.rechtsanwaltsregister.org. La maggior parte degli studi tedeschi offre una Erstberatung (consultazione iniziale) a pagamento, limitata a €190 più IVA ai sensi del §34 RVG, sebbene molti rinuncino o riducano la tariffa per questioni chiare. Porta documenti scritti e una cronologia. Dopo l'incontro riceverai normalmente una Vollmacht (procura) e un accordo sugli onorari (Vergütungsvereinbarung) da firmare prima che il lavoro inizi.",
+      "pt": "Comece por identificar a área de prática relevante — a lei alemã de advogados permite que os advogados anunciem especializações (Fachanwalt) apenas após passarem num exame separado e demonstrarem experiência em casos, pelo que uma designação 'Fachanwalt für Familienrecht' ou 'Fachanwalt für Arbeitsrecht' é um forte sinal. Verifique qualquer candidato no Bundesweites Amtliches Anwaltsverzeichnis oficial em https://www.rechtsanwaltsregister.org. A maioria das firmas alemãs oferece uma Erstberatung (consulta inicial) paga, limitada a €190 mais IVA pelo §34 RVG, embora muitas dispensem ou reduzam a taxa para assuntos claros. Traga documentos escritos e uma cronologia. Após a reunião, normalmente receberá uma Vollmacht (procuração) e um acordo de honorários (Vergütungsvereinbarung) para assinar antes do início do trabalho."
+    },
+    "feesAndAid": {
+      "fr": "Les honoraires d'avocat en Allemagne sont régis par le Rechtsanwaltsvergütungsgesetz (RVG). Les honoraires statutaires varient en fonction de la valeur de l'affaire (Gegenstandswert) et sont prévisibles — utile pour la budgétisation des litiges. Les avocats peuvent convenir d'honoraires plus élevés par écrit (Vergütungsvereinbarung), mais devant le tribunal, ils ne peuvent pas être inférieurs au taux du RVG. Les honoraires de succès sont largement interdits et ne sont autorisés que dans des cas étroits où le client ne pourrait pas autrement faire valoir une créance. Deux programmes d'aide basés sur les ressources existent : la Beratungshilfe couvre les conseils extrajudiciaires pour les clients à faible revenu avec un Berechtigungsschein de l'Amtsgericht, et la Prozesskostenhilfe (PKH) couvre les frais de justice et les honoraires d'avocat une fois qu'un procès est intenté. L'assurance de protection juridique (Rechtsschutzversicherung) est courante en Allemagne et de nombreuses polices couvrent les litiges du travail, de la circulation et de la location.",
+      "es": "Los honorarios de los abogados en Alemania se rigen por la Rechtsanwaltsvergütungsgesetz (RVG). Los honorarios legales se ajustan al valor del asunto (Gegenstandswert) y son predecibles, lo que es útil para la presupuestación de litigios. Los abogados pueden acordar honorarios más altos por escrito (Vergütungsvereinbarung), pero en los tribunales no pueden ser inferiores a la tarifa de la RVG. Los honorarios condicionales están en gran medida prohibidos y solo se permiten en casos específicos en los que el cliente no podría hacer valer una reclamación de otra manera. Existen dos programas de ayuda basados en los recursos económicos: Beratungshilfe cubre el asesoramiento extrajudicial para clientes de bajos ingresos con un Berechtigungsschein del Amtsgericht, y Prozesskostenhilfe (PKH) cubre los costos judiciales y los honorarios de los abogados una vez que se presenta una demanda. El seguro de gastos legales (Rechtsschutzversicherung) es común en Alemania y muchas pólizas cubren disputas laborales, de tráfico y de arrendamiento.",
+      "it": "Gli onorari degli avvocati in Germania sono regolati dal Rechtsanwaltsvergütungsgesetz (RVG). Le tariffe legali sono proporzionali al valore della controversia (Gegenstandswert) e sono prevedibili — utili per la pianificazione del budget del contenzioso. Gli avvocati possono concordare onorari più elevati per iscritto (Vergütungsvereinbarung), ma in tribunale non possono scendere al di sotto della tariffa RVG. Le parcelle di successo sono in gran parte proibite e consentite solo in casi specifici in cui il cliente non potrebbe altrimenti far valere un credito. Esistono due programmi di assistenza basati sul reddito: la Beratungshilfe copre la consulenza extragiudiziale per i clienti a basso reddito con un Berechtigungsschein dell'Amtsgericht, e la Prozesskostenhilfe (PKH) copre le spese processuali e gli onorari dell'avvocato una volta avviata una causa. L'assicurazione di tutela legale (Rechtsschutzversicherung) è comune in Germania e molte polizze coprono controversie in materia di lavoro, traffico e locazione.",
+      "pt": "Os honorários dos advogados na Alemanha são regidos pela Rechtsanwaltsvergütungsgesetz (RVG). Os honorários estatutários aumentam com o valor da matéria (Gegenstandswert) e são previsíveis — úteis para o orçamento de litígios. Os advogados podem acordar honorários mais elevados por escrito (Vergütungsvereinbarung), mas em tribunal não podem ser inferiores à taxa RVG. Os honorários de contingência são largamente proibidos e só são permitidos em casos restritos onde o cliente não conseguiria, de outra forma, fazer valer uma reclamação. Existem dois programas de ajuda baseados em rendimentos: o Beratungshilfe cobre aconselhamento extrajudicial para clientes de baixos rendimentos com um Berechtigungsschein do Amtsgericht, e o Prozesskostenhilfe (PKH) cobre custos judiciais e honorários de advogados uma vez que um processo seja iniciado. O seguro de despesas legais (Rechtsschutzversicherung) é comum na Alemanha e muitas apólices cobrem disputas laborais, de trânsito e de arrendamento."
+    },
+    "barAssociation": {
+      "membershipRules": {
+        "fr": "Chaque avocat allemand doit appartenir à l'une des 27 Rechtsanwaltskammern régionales, qui à leur tour constituent la BRAK. L'admission exige les premier et deuxième examens d'État en droit (ou une qualification étrangère reconnue équivalente) ainsi qu'une preuve d'assurance responsabilité civile professionnelle obligatoire d'au moins 250 000 €. Le Berufsordnung (BORA) et le §43b BRAO limitent la publicité aux informations objectives et professionnelles — la publicité sensationnaliste ou comparative est illégale.",
+        "es": "Todo abogado alemán debe pertenecer a una de las 27 Rechtsanwaltskammern regionales, que a su vez forman la BRAK. La admisión requiere los Primer y Segundo Exámenes Estatales de derecho (o una cualificación extranjera reconocida equivalente) más la prueba de un seguro de responsabilidad profesional obligatorio de al menos 250.000 €. La Berufsordnung (BORA) y el §43b BRAO restringen la publicidad a información objetiva y relacionada con la profesión; la publicidad sensacionalista o comparativa es ilegal.",
+        "it": "Ogni avvocato tedesco deve appartenere a una delle 27 Rechtsanwaltskammern regionali, che a loro volta costituiscono la BRAK. L'ammissione richiede il Primo e il Secondo Esame di Stato in giurisprudenza (o una qualifica straniera equivalente riconosciuta) più la prova di un'assicurazione obbligatoria di responsabilità civile professionale di almeno €250.000. La Berufsordnung (BORA) e il §43b BRAO limitano la pubblicità a informazioni oggettive e professionali — la pubblicità sensazionalistica o comparativa è illegale.",
+        "pt": "Todo advogado alemão deve pertencer a uma das 27 Rechtsanwaltskammern regionais, que por sua vez compõem a BRAK. A admissão exige os Primeiros e Segundos Exames Estatais em direito (ou uma qualificação estrangeira equivalente reconhecida), além de prova de seguro de responsabilidade profissional obrigatório de pelo menos €250.000. A Berufsordnung (BORA) e o §43b BRAO restringem a publicidade a informações objetivas e relacionadas com a profissão — publicidade sensacionalista ou comparativa é ilegal."
+      }
+    },
+    "crossBorderEU": {
+      "fr": "En vertu de la directive d'établissement 98/5/CE, les avocats admis dans tout État membre de l'UE peuvent exercer en Allemagne sous leur titre professionnel national (par exemple, 'avocat' ou 'abogado') après s'être inscrits auprès d'une Rechtsanwaltskammer régionale. Après trois ans de pratique effective et régulière du droit allemand, ils peuvent demander une admission complète en tant que Rechtsanwalt sans repasser l'examen d'État allemand. Les services transfrontaliers à court terme sont couverts par la directive sur les services 77/249/CEE — un avocat français peut, par exemple, comparaître à une seule audience allemande sous son titre national sans s'inscrire, à condition de travailler aux côtés d'un Einvernehmensanwalt admis localement lorsque le droit procédural l'exige.",
+      "es": "Según la Directiva de Establecimiento 98/5/EC, los abogados admitidos en cualquier estado miembro de la UE pueden ejercer en Alemania bajo su título profesional de origen (por ejemplo, 'avocat' o 'abogado') después de registrarse en una Rechtsanwaltskammer regional. Después de tres años de práctica efectiva y regular en derecho alemán, pueden solicitar la admisión plena como Rechtsanwalt sin volver a presentarse al examen estatal alemán. Los servicios transfronterizos a corto plazo están cubiertos por la Directiva de Servicios 77/249/EEC; un avocat francés puede, por ejemplo, comparecer en una única audiencia alemana bajo su título de origen sin registrarse, siempre que trabaje junto a un Einvernehmensanwalt admitido localmente cuando lo exija la ley procesal.",
+      "it": "Ai sensi della Direttiva di stabilimento 98/5/CE, gli avvocati abilitati in qualsiasi Stato membro dell'UE possono esercitare la professione in Germania con il loro titolo professionale del paese d'origine (ad esempio 'avocat' o 'abogado') dopo essersi registrati presso una Rechtsanwaltskammer regionale. Dopo tre anni di pratica effettiva e regolare nel diritto tedesco, possono richiedere la piena ammissione come Rechtsanwalt senza dover sostenere nuovamente l'esame di stato tedesco. I servizi transfrontalieri a breve termine sono coperti dalla Direttiva sui servizi 77/249/CEE — un avocat francese può, ad esempio, comparire in una singola udienza tedesca con il suo titolo d'origine senza registrarsi, a condizione che lavori a fianco di un Einvernehmensanwalt ammesso localmente, ove richiesto dal diritto processuale.",
+      "pt": "Ao abrigo da Diretiva de Estabelecimento 98/5/CE, os advogados admitidos em qualquer Estado-Membro da UE podem exercer a profissão na Alemanha sob o seu título profissional de origem (por exemplo, 'avocat' ou 'abogado') após se registarem numa Rechtsanwaltskammer regional. Após três anos de prática efetiva e regular em direito alemão, podem solicitar a admissão plena como Rechtsanwalt sem repetir o exame estatal alemão. Os serviços transfronteiriços de curta duração são abrangidos pela Diretiva de Serviços 77/249/CEE — um avocat francês pode, por exemplo, comparecer numa única audiência alemã sob o seu título de origem sem se registar, desde que trabalhe em conjunto com um Einvernehmensanwalt admitido localmente, quando exigido pela lei processual."
+    },
+    "faqs": [
+      {
+        "q": {
+          "fr": "Comment vérifier si un avocat allemand est réellement admis ?",
+          "es": "¿Cómo puedo verificar si un abogado alemán está realmente colegiado?",
+          "it": "Come posso verificare se un avvocato tedesco è effettivamente abilitato?",
+          "pt": "Como verifico se um advogado alemão está realmente admitido?"
+        },
+        "a": {
+          "fr": "Recherchez dans le Bundesweites Amtliches Anwaltsverzeichnis officiel à l'adresse rechtsanwaltsregister.org. Chaque Rechtsanwalt admis y est répertorié avec son adhésion à la Kammer et les tribunaux où il est admis.",
+          "es": "Busque en el Bundesweites Amtliches Anwaltsverzeichnis oficial en rechtsanwaltsregister.org. Todo Rechtsanwalt colegiado figura allí con su membresía en la Kammer y los tribunales admitidos.",
+          "it": "Cerca nel Bundesweites Amtliches Anwaltsverzeichnis ufficiale su rechtsanwaltsregister.org. Ogni Rechtsanwalt abilitato è elencato lì con la sua appartenenza alla Kammer e i tribunali ammessi.",
+          "pt": "Pesquise no Bundesweites Amtliches Anwaltsverzeichnis oficial em rechtsanwaltsregister.org. Todo Rechtsanwalt admitido está listado lá com a sua filiação na Kammer e os tribunais admitidos."
+        }
+      },
+      {
+        "q": {
+          "fr": "Combien coûte généralement une consultation initiale ?",
+          "es": "¿Cuánto cuesta normalmente una consulta inicial?",
+          "it": "Quanto costa tipicamente una consultazione iniziale?",
+          "pt": "Quanto custa tipicamente uma consulta inicial?"
+        },
+        "a": {
+          "fr": "Selon le §34 RVG, le plafond statutaire pour une consultation initiale avec un consommateur est de 190 € plus TVA. De nombreux cabinets facturent moins ou déduisent ces frais des travaux ultérieurs.",
+          "es": "Según el §34 RVG, el límite legal para una consulta inicial con un consumidor es de 190 € más IVA. Muchas firmas cobran menos o acreditan la tarifa contra trabajos posteriores.",
+          "it": "Ai sensi del §34 RVG, il limite legale per una consultazione iniziale con un consumatore è di €190 più IVA. Molti studi applicano tariffe inferiori o accreditano la tariffa su lavori successivi.",
+          "pt": "Pelo §34 RVG, o limite estatutário para uma consulta inicial com um consumidor é de €190 mais IVA. Muitas firmas cobram menos ou creditam a taxa em trabalhos posteriores."
+        }
+      },
+      {
+        "q": {
+          "fr": "Puis-je engager un avocat admis dans un autre pays de l'UE ?",
+          "es": "¿Puedo contratar a un abogado admitido en otro país de la UE?",
+          "it": "Posso assumere un avvocato abilitato in un altro paese dell'UE?",
+          "pt": "Posso contratar um advogado admitido noutro país da UE?"
+        },
+        "a": {
+          "fr": "Oui. Les avocats admis dans l'UE peuvent fournir des services transfrontaliers en Allemagne sous leur titre national (Dir. 77/249/CEE). Pour un établissement continu, ils s'inscrivent auprès d'une Rechtsanwaltskammer allemande en vertu de la Dir. 98/5/CE.",
+          "es": "Sí. Los abogados admitidos en la UE pueden prestar servicios transfronterizos en Alemania bajo su título de origen (Dir. 77/249/EEC). Para el establecimiento continuo, se registran en una Rechtsanwaltskammer alemana según la Dir. 98/5/EC.",
+          "it": "Sì. Gli avvocati abilitati nell'UE possono fornire servizi transfrontalieri in Germania con il loro titolo d'origine (Dir. 77/249/CEE). Per l'insediamento continuativo si registrano presso una Rechtsanwaltskammer tedesca ai sensi della Dir. 98/5/CE.",
+          "pt": "Sim. Advogados admitidos na UE podem prestar serviços transfronteiriços na Alemanha sob o seu título de origem (Dir. 77/249/CEE). Para estabelecimento contínuo, registam-se numa Rechtsanwaltskammer alemã ao abrigo da Dir. 98/5/CE."
+        }
+      },
+      {
+        "q": {
+          "fr": "Qu'est-ce qu'un Fachanwalt et vaut-il la peine d'en choisir un ?",
+          "es": "¿Qué es un Fachanwalt y vale la pena elegir uno?",
+          "it": "Cos'è un Fachanwalt e vale la pena sceglierne uno?",
+          "pt": "O que é um Fachanwalt e vale a pena escolher um?"
+        },
+        "a": {
+          "fr": "Un Fachanwalt est un titre de spécialiste réglementé par la FAO. Il exige une formation supplémentaire, un examen écrit et la preuve d'une pratique substantielle dans le domaine — un signal fort de la profondeur des connaissances en la matière.",
+          "es": "Un Fachanwalt es un título de especialista regulado por la FAO. Requiere formación adicional, un examen escrito y prueba de una práctica sustancial en el campo, una fuerte señal de profundidad en la materia.",
+          "it": "Un Fachanwalt è un titolo specialistico regolato dalla FAO. Richiede formazione aggiuntiva, un esame scritto e la prova di una pratica sostanziale nel campo — un forte segnale di profonda conoscenza della materia.",
+          "pt": "Um Fachanwalt é um título de especialista regulado pela FAO. Exige formação adicional, um exame escrito e prova de prática substancial de casos na área — um forte sinal de profundidade na matéria."
+        }
+      },
+      {
+        "q": {
+          "fr": "Mon assurance de protection juridique paiera-t-elle directement l'avocat ?",
+          "es": "¿Mi seguro de gastos legales pagará directamente al abogado?",
+          "it": "La mia assicurazione di tutela legale pagherà direttamente l'avvocato?",
+          "pt": "O meu seguro de despesas legais pagará diretamente ao advogado?"
+        },
+        "a": {
+          "fr": "La plupart des polices d'assurance Rechtsschutz allemandes délivrent une Deckungszusage (confirmation de couverture) sur demande et paient directement les honoraires RVG de l'avocat dans les limites convenues, sous réserve de la franchise de la police.",
+          "es": "La mayoría de las pólizas de Rechtsschutz alemanas emiten una Deckungszusage (confirmación de cobertura) previa solicitud y pagan directamente los honorarios de la RVG del abogado dentro del alcance acordado, sujeto a la franquicia de la póliza.",
+          "it": "La maggior parte delle polizze tedesche di Rechtsschutz rilascia una Deckungszusage (conferma di copertura) su richiesta e paga direttamente gli onorari RVG dell'avvocato entro l'ambito concordato, soggetto alla franchigia della polizza.",
+          "pt": "A maioria das apólices de Rechtsschutz alemãs emite uma Deckungszusage (confirmação de cobertura) a pedido e paga os honorários RVG do advogado diretamente dentro do âmbito acordado, sujeito à franquia da apólice."
+        }
+      },
+      {
+        "q": {
+          "fr": "Ai-je besoin d'un avocat pour les petites créances civiles ?",
+          "es": "¿Necesito un abogado para reclamaciones civiles menores?",
+          "it": "Ho bisogno di un avvocato per piccole controversie civili?",
+          "pt": "Preciso de um advogado para pequenas ações cíveis?"
+        },
+        "a": {
+          "fr": "Non. Devant l'Amtsgericht (créances jusqu'à 5 000 €), les parties peuvent comparaître sans avocat. Devant le Landgericht et les tribunaux supérieurs, la représentation par un Rechtsanwalt admis est obligatoire (Anwaltszwang).",
+          "es": "No. Ante el Amtsgericht (reclamaciones de hasta 5.000 €), las partes pueden comparecer sin abogado. Ante el Landgericht y los tribunales superiores, la representación por un Rechtsanwalt colegiado es obligatoria (Anwaltszwang).",
+          "it": "No. Davanti all'Amtsgericht (controversie fino a €5.000) le parti possono comparire senza avvocato. Davanti al Landgericht e ai tribunali superiori la rappresentanza da parte di un Rechtsanwalt abilitato è obbligatoria (Anwaltszwang).",
+          "pt": "Não. Perante o Amtsgericht (ações até €5.000), as partes podem comparecer sem advogado. Perante o Landgericht e tribunais superiores, a representação por um Rechtsanwalt admitido é obrigatória (Anwaltszwang)."
+        }
+      }
+    ]
+  },
+  "fr": {
+    "hero": {
+      "tagline": {
+        "de": "Finden Sie einen registrierten Anwalt in ganz Frankreich – überprüft anhand der nationalen Liste des CNB.",
+        "es": "Encuentre un avocat colegiado en toda Francia — verificado en el registro nacional del CNB.",
+        "it": "Trova un avvocato iscritto in tutta la Francia — verificato rispetto all'albo nazionale del CNB."
+      },
+      "lede": {
+        "de": "Frankreich hat ungefähr 75.000 Anwälte, die alle Mitglieder einer der 164 lokalen Anwaltskammern (barreaux) sind und national vom Conseil National des Barreaux (CNB) vertreten werden. Dieser Leitfaden erklärt, wie das französische Rechtssystem strukturiert ist, wie man einen Anwalt beauftragt, welche Gebühren und Prozesskostenhilfe (aide juridictionnelle) Sie erwarten können und wie in der EU zugelassene Anwälte in Frankreich praktizieren können.",
+        "es": "Francia cuenta con aproximadamente 75.000 avocats, todos ellos miembros de uno de los 164 colegios de abogados locales (barreaux) y representados a nivel nacional por el Conseil National des Barreaux (CNB). Esta guía explica cómo está estructurado el sistema legal francés, cómo contratar a un avocat, qué honorarios y asistencia jurídica gratuita (aide juridictionnelle) puede esperar, y cómo los abogados admitidos en la UE pueden ejercer en Francia.",
+        "it": "La Francia conta circa 75.000 avvocati, tutti membri di uno dei 164 ordini locali (barreaux) e rappresentati a livello nazionale dal Conseil National des Barreaux (CNB). Questa guida spiega come è strutturato il sistema legale francese, come incaricare un avvocato, quali onorari e assistenza legale (aide juridictionnelle) ci si può aspettare e come gli avvocati ammessi nell'UE possono esercitare in Francia."
+      }
+    },
+    "legalSystem": {
+      "de": "Frankreich ist eine Zivilrechtsordnung, die auf kodifizierten Texten basiert – der Code civil, Code de commerce, Code pénal und Code du travail sind die am häufigsten zitierten in der täglichen Praxis. Die Gerichtsordnung (ordre judiciaire) behandelt Zivil- und Strafsachen über das Tribunal judiciaire → Cour d'appel → Cour de cassation. Eine parallele Verwaltungsordnung (ordre administratif) entscheidet über Streitigkeiten gegen den Staat über Tribunal administratif → Cour administrative d'appel → Conseil d'État. Der Conseil constitutionnel prüft Verfassungsfragen, und das Tribunal des conflits löst Zuständigkeitskonflikte zwischen den beiden Ordnungen. Anwälte dürfen vor jedem erstinstanzlichen und Berufungsgericht plädieren, aber eine separate Gruppe – avocats au Conseil d'État et à la Cour de cassation – hat das Monopol auf die Vertretung vor diesen beiden obersten Gerichten.",
+      "es": "Francia es una jurisdicción de derecho civil estructurada en torno a textos codificados — siendo el Code civil, el Code de commerce, el Code pénal y el Code du travail los más citados en la práctica diaria. El orden judicial (ordre judiciaire) tramita casos civiles y penales a través del Tribunal judiciaire → Cour d'appel → Cour de cassation. Un orden administrativo paralelo (ordre administratif) conoce de los litigios contra el Estado a través del Tribunal administratif → Cour administrative d'appel → Conseil d'État. El Conseil constitutionnel revisa las cuestiones constitucionales, y el Tribunal des conflits resuelve los conflictos de jurisdicción entre los dos órdenes. Los avocats pueden litigar ante todos los tribunales de primera instancia y de apelación, pero un grupo separado — avocats au Conseil d'État et à la Cour de cassation — ostenta el monopolio de la representación ante esos dos tribunales superiores.",
+      "it": "La Francia è una giurisdizione di diritto civile strutturata attorno a testi codificati — il Code civil, il Code de commerce, il Code pénal e il Code du travail sono i più citati nella pratica quotidiana. L'ordine giudiziario (ordre judiciaire) gestisce i casi civili e penali attraverso il Tribunal judiciaire → Cour d'appel → Cour de cassation. Un ordine amministrativo parallelo (ordre administratif) si occupa delle controversie contro lo Stato tramite il Tribunal administratif → Cour administrative d'appel → Conseil d'État. Il Conseil constitutionnel esamina le questioni costituzionali e il Tribunal des conflits risolve i conflitti di giurisdizione tra i due ordini. Gli avvocati possono patrocinare dinanzi a ogni tribunale di primo grado e d'appello, ma una coorte separata — avocats au Conseil d'État et à la Cour de cassation — detiene il monopolio della rappresentanza dinanzi a queste due corti supreme."
+    },
+    "howToFindLawyer": {
+      "de": "Beginnen Sie mit der Identifizierung des Rechtsgebiets und wählen Sie, wo möglich, einen Anwalt mit einer anerkannten mention de spécialisation (z.B. droit du travail, droit de la famille, droit fiscal) – diese Spezialisierungen werden vom CNB nach vierjähriger Praxis und einer Fachprüfung verliehen. Überprüfen Sie jeden Kandidaten über das Online-Verzeichnis des CNB unter https://www.cnb.avocat.fr/fr/annuaire-des-avocats-de-france. Eine Erstberatung (consultation initiale) kostet typischerweise zwischen 80 € und 250 € und muss Gegenstand einer schriftlichen Honorarvereinbarung (convention d'honoraires) sein, die nun gemäß Artikel 10 des Loi du 31 décembre 1971 obligatorisch ist. Der Anwalt wird normalerweise eine Vollmacht (mandat ad litem) und entweder ein Pauschalhonorar, einen Stundensatz oder ein teilweises Erfolgshonorar (honoraire de résultat) verlangen, das in Frankreich als Ergänzung zu einem Basishonorar, aber nicht als alleinige Vergütung zulässig ist.",
+      "es": "Comience identificando el área de práctica y, cuando sea posible, elija un avocat que posea una mention de spécialisation reconocida (por ejemplo, droit du travail, droit de la famille, droit fiscal) — estas especializaciones son otorgadas por el CNB después de cuatro años de práctica y un examen de especialista. Verifique a cualquier candidato a través del annuaire en línea del CNB en https://www.cnb.avocat.fr/fr/annuaire-des-avocats-de-france. Una primera consulta (consultation initiale) suele tener un precio de entre 80 y 250 euros y debe ser objeto de un acuerdo de honorarios por escrito (convention d'honoraires), ahora obligatorio según el artículo 10 de la Loi du 31 décembre 1971. El avocat normalmente solicitará un poder (mandat ad litem) y, o bien una tarifa fija, una tarifa por hora, o una tarifa de éxito parcial (honoraire de résultat), que está permitida en Francia como complemento a una tarifa base pero no como única compensación.",
+      "it": "Inizia identificando l'area di pratica e, ove possibile, scegli un avvocato in possesso di una mention de spécialisation riconosciuta (es. droit du travail, droit de la famille, droit fiscal) — queste specializzazioni sono rilasciate dal CNB dopo quattro anni di pratica e un esame specialistico. Verifica qualsiasi candidato tramite l'annuario online del CNB all'indirizzo https://www.cnb.avocat.fr/fr/annuaire-des-avocats-de-france. Una prima consultazione (consultation initiale) ha tipicamente un costo compreso tra €80 e €250 e deve essere oggetto di un accordo scritto sugli onorari (convention d'honoraires), ora obbligatorio ai sensi dell'articolo 10 della Loi du 31 décembre 1971. L'avvocato richiederà normalmente una procura (mandat ad litem) e un onorario fisso, una tariffa oraria o un onorario di successo parziale (honoraire de résultat), che è consentito in Francia come complemento a un onorario base ma non come unica remunerazione."
+    },
+    "feesAndAid": {
+      "de": "Anwaltsgebühren in Frankreich werden frei verhandelt, müssen aber in einer schriftlichen convention d'honoraires aufgeführt sein. Stundensätze liegen typischerweise zwischen 150 € in regionalen Kanzleien und über 600 € in Pariser Wirtschaftskanzleien. Reine Erfolgshonorare (pacte de quota litis) sind verboten; teilweise Erfolgshonorare sind erlaubt. Aide juridictionnelle ist das einkommensabhängige Prozesskostenhilfesystem: Ab 2026 gilt die volle Deckung bis zu einem Referenzeinkommen von etwa 1.074 € pro Monat für einen alleinstehenden Erwachsenen, mit teilweiser Deckung auf einer gleitenden Skala bis zu etwa 1.612 €. Der Antrag (formulaire Cerfa 16146) wird beim bureau d'aide juridictionnelle des zuständigen tribunal judiciaire eingereicht. Rechtsschutzversicherungen – häufig in Haus- oder Autoversicherungen gebündelt – finanzieren auch viele Arbeits-, Verbraucher- und Nachbarschaftsstreitigkeiten.",
+      "es": "Los honorarios de los avocats en Francia se negocian libremente, pero deben figurar en una convention d'honoraires por escrito. Las tarifas por hora suelen oscilar entre 150 euros en despachos regionales y más de 600 euros en despachos de negocios de París. La contingencia pura (pacte de quota litis) está prohibida; se permiten las tarifas de resultado parcial. La aide juridictionnelle es el sistema de asistencia jurídica gratuita basado en los recursos económicos: a partir de 2026, la cobertura total se aplica hasta un ingreso de referencia de alrededor de 1.074 euros al mes para un adulto soltero, con cobertura parcial en una escala móvil hasta aproximadamente 1.612 euros. La solicitud (formulaire Cerfa 16146) se presenta en la bureau d'aide juridictionnelle del tribunal judiciaire competente. Las pólizas de protection juridique —frecuentemente incluidas en los seguros de hogar o de coche— también financian muchos litigios laborales, de consumo y vecinales.",
+      "it": "Gli onorari degli avvocati in Francia sono liberamente negoziati ma devono figurare in una convention d'honoraires scritta. Le tariffe orarie variano tipicamente da €150 negli studi regionali a oltre €600 negli studi di affari di Parigi. La pura contingenza (pacte de quota litis) è proibita; gli onorari di risultato parziale sono consentiti. L'aide juridictionnelle è il regime di assistenza legale basato sul reddito: a partire dal 2026, la copertura completa si applica fino a un reddito di riferimento di circa €1.074 al mese per un adulto single, con copertura parziale su scala mobile fino a circa €1.612. La domanda (formulaire Cerfa 16146) viene presentata presso il bureau d'aide juridictionnelle del tribunale giudiziario competente. Le polizze di protection juridique — spesso abbinate all'assicurazione sulla casa o sull'auto — finanziano anche molte controversie in materia di lavoro, consumo e vicinato."
+    },
+    "barAssociation": {
+      "membershipRules": {
+        "de": "Jeder praktizierende Anwalt muss bei einer der 164 barreaux eingeschrieben sein und eine obligatorische Berufshaftpflichtversicherung (RC professionnelle) sowie eine finanzielle Garantie für Klientengelder (garantie de représentation des fonds) besitzen. Das Règlement Intérieur National (RIN) regelt Ethik, Interessenkonflikte, Werbung und das strenge Berufsgeheimnis (secret professionnel), das gemäß Artikel 226-13 des Code pénal strafrechtlich geschützt ist. Werbung ist gemäß Artikel 10.2 des RIN erlaubt, sofern sie würdevoll, korrekt ist und keine Kundenreferenzen enthält.",
+        "es": "Todo avocat en ejercicio debe estar inscrito en uno de los 164 barreaux y contar con un seguro de responsabilidad profesional obligatorio (RC professionnelle) más una garantía financiera para los fondos de los clientes (garantie de représentation des fonds). El Règlement Intérieur National (RIN) rige la ética, los conflictos de intereses, la publicidad y el estricto secreto profesional (secret professionnel) que, según el artículo 226-13 del Code pénal, está protegido penalmente. La publicidad está permitida según el artículo 10.2 del RIN siempre que sea digna, precisa y no incluya testimonios de clientes.",
+        "it": "Ogni avvocato praticante deve essere iscritto a uno dei 164 barreaux e avere un'assicurazione obbligatoria di responsabilità civile professionale (RC professionnelle) più una garanzia finanziaria per i fondi dei clienti (garantie de représentation des fonds). Il Règlement Intérieur National (RIN) disciplina l'etica, i conflitti di interesse, la pubblicità e il rigoroso segreto professionale (secret professionnel) che, ai sensi dell'articolo 226-13 del Code pénal, è penalmente protetto. La pubblicità è consentita ai sensi dell'articolo 10.2 del RIN a condizione che sia dignitosa, accurata e non includa testimonianze di clienti."
+      }
+    },
+    "crossBorderEU": {
+      "de": "Gemäß der Niederlassungsrichtlinie 98/5/EG, umgesetzt durch das Loi du 31 décembre 1971 (Art. 83 ff.), dürfen in der EU zugelassene Anwälte in Frankreich unter ihrem Heimattitel (z.B. Rechtsanwalt, abogado, avvocato) praktizieren, nachdem sie sich bei einer französischen barreau registriert haben. Nach drei Jahren effektiver und regelmäßiger Praxis im französischen Recht können sie die volle Zulassung als avocat beantragen, ohne die CAPA erneut ablegen zu müssen. Kurzfristige grenzüberschreitende Dienstleistungen werden durch die Richtlinie 77/249/EWG abgedeckt: Ein ausländischer EU-Anwalt kann beispielsweise eine einzelne Anhörung in Frankreich unter seinem Heimattitel in Absprache mit einem lokal eingeschriebenen Anwalt durchführen, wo eine obligatorische Vertretung gilt.",
+      "es": "Según la Directiva de Establecimiento 98/5/CE, transpuesta por la Loi du 31 décembre 1971 (art. 83 y ss.), los abogados admitidos en la UE pueden ejercer en Francia con su título de origen (por ejemplo, Rechtsanwalt, abogado, avvocato) después de registrarse en un barreau francés. Después de tres años de práctica efectiva y regular en derecho francés, pueden solicitar la admisión plena como avocat sin volver a presentarse al CAPA. Los servicios transfronterizos a corto plazo están cubiertos por la Directiva 77/249/CEE: un abogado extranjero de la UE puede, por ejemplo, litigar en una única audiencia en Francia con su título de origen, en coordinación con un avocat inscrito localmente cuando la representación sea obligatoria.",
+      "it": "Ai sensi della Direttiva di stabilimento 98/5/CE, recepita dalla Loi du 31 décembre 1971 (art. 83 e segg.), gli avvocati ammessi nell'UE possono esercitare in Francia con il loro titolo di origine (es. Rechtsanwalt, abogado, avvocato) dopo essersi registrati presso un barreau francese. Dopo tre anni di pratica effettiva e regolare nel diritto francese, possono richiedere la piena ammissione come avocat senza ripetere il CAPA. I servizi transfrontalieri a breve termine sono coperti dalla Direttiva 77/249/CEE: un avvocato straniero dell'UE può, ad esempio, patrocinare una singola udienza in Francia con il proprio titolo di origine, in coordinamento con un avvocato iscritto localmente laddove sia obbligatoria la rappresentanza."
+    },
+    "faqs": [
+      {
+        "q": {
+          "de": "Wie überprüfe ich, ob ein französischer Anwalt tatsächlich ein avocat ist?",
+          "es": "¿Cómo verifico que un abogado francés es realmente un avocat?",
+          "it": "Come posso verificare che un avvocato francese sia effettivamente un avocat?"
+        },
+        "a": {
+          "de": "Suchen Sie im nationalen Verzeichnis des CNB unter cnb.avocat.fr. Jeder praktizierende Anwalt ist dort mit seiner barreau und eventuellen Spezialisierungen aufgeführt.",
+          "es": "Busque en el annuaire nacional del CNB en cnb.avocat.fr. Todo avocat en ejercicio figura con su barreau y cualquier especialización.",
+          "it": "Cerca nell'annuario nazionale del CNB su cnb.avocat.fr. Ogni avvocato praticante è elencato con il proprio barreau e le eventuali specializzazioni."
+        }
+      },
+      {
+        "q": {
+          "de": "Ist eine schriftliche Honorarvereinbarung obligatorisch?",
+          "es": "¿Es obligatorio un acuerdo de honorarios por escrito?",
+          "it": "È obbligatorio un accordo scritto sugli onorari?"
+        },
+        "a": {
+          "de": "Ja. Seit 2015 verlangt Artikel 10 des Loi du 31 décembre 1971 eine schriftliche convention d'honoraires für jedes Mandat, außer in dringenden Angelegenheiten.",
+          "es": "Sí. Desde 2015, el artículo 10 de la Loi du 31 décembre 1971 exige una convention d'honoraires por escrito para cada encargo, salvo en asuntos urgentes.",
+          "it": "Sì. Dal 2015 l'articolo 10 della Loi du 31 décembre 1971 richiede una convention d'honoraires scritta per ogni incarico, salvo per questioni urgenti."
+        }
+      },
+      {
+        "q": {
+          "de": "Wer hat Anspruch auf aide juridictionnelle?",
+          "es": "¿Quién puede optar a la aide juridictionnelle?",
+          "it": "Chi ha diritto all'aide juridictionnelle?"
+        },
+        "a": {
+          "de": "Haushalte, deren revenu fiscal de référence unter dem gesetzlichen Schwellenwert liegt – etwa 1.074 €/Monat für einen alleinstehenden Erwachsenen im Jahr 2026 – haben Anspruch auf volle Hilfe, mit teilweiser Hilfe auf einer gleitenden Skala.",
+          "es": "Los hogares por debajo del umbral legal de revenu fiscal de référence —alrededor de 1.074 €/mes para un adulto soltero en 2026— pueden optar a la ayuda completa, con ayuda parcial en una escala móvil.",
+          "it": "I nuclei familiari al di sotto della soglia legale di revenu fiscal de référence — circa €1.074/mese per un adulto single nel 2026 — hanno diritto all'assistenza completa, con assistenza parziale su scala mobile."
+        }
+      },
+      {
+        "q": {
+          "de": "Kann ich einen in einem anderen EU-Land zugelassenen Anwalt beauftragen?",
+          "es": "¿Puedo contratar a un abogado admitido en otro país de la UE?",
+          "it": "Posso incaricare un avvocato ammesso in un altro paese dell'UE?"
+        },
+        "a": {
+          "de": "Ja. Die EU-Vorschriften (Richtlinien 77/249/EWG und 98/5/EG) erlauben grenzüberschreitende Dienstleistungen und, nach Registrierung bei einer französischen barreau, eine dauerhafte Praxis.",
+          "es": "Sí. Las normas de la UE (Directivas 77/249/CEE y 98/5/CE) permiten los servicios transfronterizos y, tras el registro en un barreau francés, la práctica permanente.",
+          "it": "Sì. Le norme dell'UE (Direttive 77/249/CEE e 98/5/CE) consentono servizi transfrontalieri e, dopo la registrazione presso un barreau francese, la pratica permanente."
+        }
+      },
+      {
+        "q": {
+          "de": "Benötige ich für jedes Gericht einen Anwalt?",
+          "es": "¿Necesito un avocat para cada tribunal?",
+          "it": "Ho bisogno di un avocat per ogni tribunale?"
+        },
+        "a": {
+          "de": "Nein. Die Vertretung ist vor dem conseil de prud'hommes, tribunaux de proximité (unter 10.000 €) und einigen Handelsangelegenheiten optional, aber vor dem tribunal judiciaire über 10.000 € und vor allen Berufungsgerichten obligatorisch.",
+          "es": "No. La representación es opcional ante el conseil de prud'hommes, los tribunaux de proximité (menos de 10.000 €) y algunos asuntos comerciales, pero obligatoria ante el tribunal judiciaire por encima de 10.000 € y ante todos los tribunales de apelación.",
+          "it": "No. La rappresentanza è facoltativa dinanzi al conseil de prud'hommes, ai tribunaux de proximité (sotto i €10.000) e in alcune questioni commerciali, ma obbligatoria dinanzi al tribunal judiciaire sopra i €10.000 e dinanzi a tutte le corti d'appello."
+        }
+      },
+      {
+        "q": {
+          "de": "Können Anwälte ein Erfolgshonorar verlangen?",
+          "es": "¿Pueden los avocats cobrar una tarifa de éxito?",
+          "it": "Gli avocats possono addebitare un onorario di successo?"
+        },
+        "a": {
+          "de": "Ja, aber nur als Ergänzung zu einem Basishonorar. Eine rein erfolgsabhängige Vereinbarung (pacte de quota litis) ist nach Artikel 10 des Gesetzes von 1971 verboten.",
+          "es": "Sí, pero solo como complemento a una tarifa base. Un acuerdo puramente contingente (pacte de quota litis) está prohibido por el artículo 10 de la ley de 1971.",
+          "it": "Sì, ma solo come complemento a un onorario base. Un accordo puramente basato sulla contingenza (pacte de quota litis) è proibito dall'articolo 10 della legge del 1971."
+        }
+      }
+    ]
+  },
+  "es": {},
+  "it": {},
+  "pt": {}
 };
