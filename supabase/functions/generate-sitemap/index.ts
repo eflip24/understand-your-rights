@@ -419,6 +419,17 @@ function buildLawyersEuI18n(): string {
     ) as Record<EuLoc, string>;
     entries.push(uLEu(countryPaths, "weekly", "0.7"));
 
+    // Region pages (B9) — /{country}/region/{region}
+    const regions = EU_REGION_SLUGS[countryCode] ?? {};
+    for (const [regionCanonical, regionSlugs] of Object.entries(regions)) {
+      const regionPaths = Object.fromEntries(
+        (LOCALES as readonly string[]).map((l) => [l, `/${EU_BASE}/${countrySlugs[l as EuLoc]}/region/${regionSlugs[l as EuLoc]}`]),
+      ) as Record<EuLoc, string>;
+      entries.push(uLEu(regionPaths, "monthly", "0.6"));
+      void regionCanonical;
+    }
+
+
     for (const [areaCanonical, areaSlugs] of Object.entries(EU_AREA_SLUGS)) {
       // Area-in-country page
       const areaPaths = Object.fromEntries(
