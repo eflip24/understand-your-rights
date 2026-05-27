@@ -17,8 +17,9 @@
  * Requires LOVABLE_API_KEY in the environment.
  */
 
-import { writeFileSync, readFileSync, existsSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { callAiJson, hasAnyKey } from "./_aiTranslate.mjs";
 
 const ROOT = resolve(import.meta.dirname ?? ".", "..");
 const GENERATED_PATH = resolve(ROOT, "src/data/eu/countryPillarsGenerated.ts");
@@ -44,11 +45,9 @@ const args = Object.fromEntries(
 const ONLY_COUNTRY = args.country;
 const ONLY_LOCALE = args.locale;
 const DRY = !!args.dry;
-const FORCE_PROVIDER = args.provider; // "lovable" | "gemini" | undefined (auto)
+const FORCE_PROVIDER = args.provider; // "lovable" | "gemini" | undefined
 
-const API_KEY = process.env.LOVABLE_API_KEY;
-const GEMINI_KEY = process.env.GEMINI_API_KEY;
-if (!API_KEY && !GEMINI_KEY) {
+if (!hasAnyKey()) {
   console.error("Need LOVABLE_API_KEY or GEMINI_API_KEY in the environment.");
   process.exit(1);
 }
@@ -181,94 +180,8 @@ async function translate(missing, country, locale) {
   };
   const user = JSON.stringify(userPayload);
 
-  const wantLovable = FORCE_PROVIDER !== "gemini" && !!API_KEY;
-  const wantGemini = FORCE_PROVIDER !== "lovable" && !!GEMINI_KEY;
-
-  let parsed;
-  let lastErr;
-  if (wantLovable) {
-    try {
-      parsed = await callLovable(system, user);
-    } catch (err) {
-      lastErr = err;
-      const msg = String(err.message || err);
-      // 402 = no credits, 429 = rate; both warrant Gemini fallback.
-      const fallbackable = msg.includes("402") || msg.includes("429");
-      if (!fallbackable || !wantGemini) throw err;
-      console.log(`  ↪ Lovable AI ${msg.match(/\d{3}/)?.[0] ?? "error"} — falling back to Gemini`);
-    }
-  }
-  if (!parsed && wantGemini) {
-    parsed = await callGemini(system, user);
-  }
-  if (!parsed) throw lastErr ?? new Error("No provider available");
+  const parsed = await callAiJson({ system, user, provider: FORCE_PROVIDER });
   return { parsed, locale };
-}
-
-async function callLovable(system, user) {
-  const body = {
-    model: "google/gemini-2.5-flash",
-    temperature: 0.2,
-    response_format: { type: "json_object" },
-    messages: [
-      { role: "system", content: system },
-      { role: "user", content: user },
-    ],
-  };
-  const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Lovable-API-Key": API_KEY,
-      "X-Lovable-AIG-SDK": "vercel-ai-sdk",
-    },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Gateway ${res.status}: ${text.slice(0, 400)}`);
-  }
-  const json = await res.json();
-  const content = json.choices?.[0]?.message?.content;
-  if (!content) throw new Error("Lovable: empty content");
-  return JSON.parse(content);
-}
-
-async function callGemini(system, user) {
-  // Google AI Studio free tier.
-  const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_KEY}`;
-  const body = {
-    systemInstruction: { parts: [{ text: system }] },
-    contents: [{ role: "user", parts: [{ text: user }] }],
-    generationConfig: {
-      temperature: 0.2,
-      responseMimeType: "application/json",
-    },
-  };
-  const maxAttempts = 5;
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
-    if (res.ok) {
-      const json = await res.json();
-      const content = json.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!content) throw new Error("Gemini: empty content " + JSON.stringify(json).slice(0, 300));
-      return JSON.parse(content);
-    }
-    const text = await res.text();
-    const retryable = res.status === 429 || res.status === 503 || res.status === 500;
-    if (!retryable || attempt === maxAttempts) {
-      throw new Error(`Gemini ${res.status}: ${text.slice(0, 400)}`);
-    }
-    const wait = Math.min(30, 4 * attempt) * 1000;
-    console.log(`  ↪ Gemini ${res.status} — retry ${attempt}/${maxAttempts - 1} in ${wait / 1000}s`);
-    await new Promise((r) => setTimeout(r, wait));
-  }
-  throw new Error("Gemini: exhausted retries");
 }
 
 function mergeInto(existing, { parsed, locale }) {
