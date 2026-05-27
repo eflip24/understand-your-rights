@@ -235,8 +235,8 @@ async function callLovable(system, user) {
 }
 
 async function callGemini(system, user) {
-  // Google AI Studio free tier — gemini-1.5-flash has the widest free-tier coverage.
-  const model = process.env.GEMINI_MODEL || "gemini-1.5-flash-latest";
+  // Google AI Studio free tier.
+  const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_KEY}`;
   const body = {
     systemInstruction: { parts: [{ text: system }] },
@@ -246,19 +246,29 @@ async function callGemini(system, user) {
       responseMimeType: "application/json",
     },
   };
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) {
+  const maxAttempts = 5;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (res.ok) {
+      const json = await res.json();
+      const content = json.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!content) throw new Error("Gemini: empty content " + JSON.stringify(json).slice(0, 300));
+      return JSON.parse(content);
+    }
     const text = await res.text();
-    throw new Error(`Gemini ${res.status}: ${text.slice(0, 400)}`);
+    const retryable = res.status === 429 || res.status === 503 || res.status === 500;
+    if (!retryable || attempt === maxAttempts) {
+      throw new Error(`Gemini ${res.status}: ${text.slice(0, 400)}`);
+    }
+    const wait = Math.min(30, 4 * attempt) * 1000;
+    console.log(`  ↪ Gemini ${res.status} — retry ${attempt}/${maxAttempts - 1} in ${wait / 1000}s`);
+    await new Promise((r) => setTimeout(r, wait));
   }
-  const json = await res.json();
-  const content = json.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!content) throw new Error("Gemini: empty content " + JSON.stringify(json).slice(0, 300));
-  return JSON.parse(content);
+  throw new Error("Gemini: exhausted retries");
 }
 
 function mergeInto(existing, { parsed, locale }) {
