@@ -168,117 +168,250 @@ export const GENERATED_PILLAR_TRANSLATIONS: Record<EuCountryCode, GeneratedPilla
       "tagline": {
         "de": "Finden Sie einen registrierten Anwalt in ganz Frankreich – überprüft anhand der nationalen Liste des CNB.",
         "es": "Encuentre un avocat colegiado en toda Francia — verificado en el registro nacional del CNB.",
-        "it": "Trova un avvocato iscritto in tutta la Francia — verificato rispetto all'albo nazionale del CNB."
+        "it": "Trova un avvocato iscritto in tutta la Francia — verificato rispetto all'albo nazionale del CNB.",
+        "pt": "Encontre um advogado registado em toda a França — verificado no registo nacional do CNB."
       },
       "lede": {
         "de": "Frankreich hat ungefähr 75.000 Anwälte, die alle Mitglieder einer der 164 lokalen Anwaltskammern (barreaux) sind und national vom Conseil National des Barreaux (CNB) vertreten werden. Dieser Leitfaden erklärt, wie das französische Rechtssystem strukturiert ist, wie man einen Anwalt beauftragt, welche Gebühren und Prozesskostenhilfe (aide juridictionnelle) Sie erwarten können und wie in der EU zugelassene Anwälte in Frankreich praktizieren können.",
         "es": "Francia cuenta con aproximadamente 75.000 avocats, todos ellos miembros de uno de los 164 colegios de abogados locales (barreaux) y representados a nivel nacional por el Conseil National des Barreaux (CNB). Esta guía explica cómo está estructurado el sistema legal francés, cómo contratar a un avocat, qué honorarios y asistencia jurídica gratuita (aide juridictionnelle) puede esperar, y cómo los abogados admitidos en la UE pueden ejercer en Francia.",
-        "it": "La Francia conta circa 75.000 avvocati, tutti membri di uno dei 164 ordini locali (barreaux) e rappresentati a livello nazionale dal Conseil National des Barreaux (CNB). Questa guida spiega come è strutturato il sistema legale francese, come incaricare un avvocato, quali onorari e assistenza legale (aide juridictionnelle) ci si può aspettare e come gli avvocati ammessi nell'UE possono esercitare in Francia."
+        "it": "La Francia conta circa 75.000 avvocati, tutti membri di uno dei 164 ordini locali (barreaux) e rappresentati a livello nazionale dal Conseil National des Barreaux (CNB). Questa guida spiega come è strutturato il sistema legale francese, come incaricare un avvocato, quali onorari e assistenza legale (aide juridictionnelle) ci si può aspettare e come gli avvocati ammessi nell'UE possono esercitare in Francia.",
+        "pt": "A França tem aproximadamente 75.000 advogados, todos membros de uma das 164 ordens locais (barreaux) e representados nacionalmente pelo Conseil National des Barreaux (CNB). Este guia explica como o sistema jurídico francês está estruturado, como contratar um advogado, que honorários e assistência jurídica (aide juridictionnelle) pode esperar, e como os advogados admitidos na UE podem exercer em França."
       }
     },
     "legalSystem": {
       "de": "Frankreich ist eine Zivilrechtsordnung, die auf kodifizierten Texten basiert – der Code civil, Code de commerce, Code pénal und Code du travail sind die am häufigsten zitierten in der täglichen Praxis. Die Gerichtsordnung (ordre judiciaire) behandelt Zivil- und Strafsachen über das Tribunal judiciaire → Cour d'appel → Cour de cassation. Eine parallele Verwaltungsordnung (ordre administratif) entscheidet über Streitigkeiten gegen den Staat über Tribunal administratif → Cour administrative d'appel → Conseil d'État. Der Conseil constitutionnel prüft Verfassungsfragen, und das Tribunal des conflits löst Zuständigkeitskonflikte zwischen den beiden Ordnungen. Anwälte dürfen vor jedem erstinstanzlichen und Berufungsgericht plädieren, aber eine separate Gruppe – avocats au Conseil d'État et à la Cour de cassation – hat das Monopol auf die Vertretung vor diesen beiden obersten Gerichten.",
       "es": "Francia es una jurisdicción de derecho civil estructurada en torno a textos codificados — siendo el Code civil, el Code de commerce, el Code pénal y el Code du travail los más citados en la práctica diaria. El orden judicial (ordre judiciaire) tramita casos civiles y penales a través del Tribunal judiciaire → Cour d'appel → Cour de cassation. Un orden administrativo paralelo (ordre administratif) conoce de los litigios contra el Estado a través del Tribunal administratif → Cour administrative d'appel → Conseil d'État. El Conseil constitutionnel revisa las cuestiones constitucionales, y el Tribunal des conflits resuelve los conflictos de jurisdicción entre los dos órdenes. Los avocats pueden litigar ante todos los tribunales de primera instancia y de apelación, pero un grupo separado — avocats au Conseil d'État et à la Cour de cassation — ostenta el monopolio de la representación ante esos dos tribunales superiores.",
-      "it": "La Francia è una giurisdizione di diritto civile strutturata attorno a testi codificati — il Code civil, il Code de commerce, il Code pénal e il Code du travail sono i più citati nella pratica quotidiana. L'ordine giudiziario (ordre judiciaire) gestisce i casi civili e penali attraverso il Tribunal judiciaire → Cour d'appel → Cour de cassation. Un ordine amministrativo parallelo (ordre administratif) si occupa delle controversie contro lo Stato tramite il Tribunal administratif → Cour administrative d'appel → Conseil d'État. Il Conseil constitutionnel esamina le questioni costituzionali e il Tribunal des conflits risolve i conflitti di giurisdizione tra i due ordini. Gli avvocati possono patrocinare dinanzi a ogni tribunale di primo grado e d'appello, ma una coorte separata — avocats au Conseil d'État et à la Cour de cassation — detiene il monopolio della rappresentanza dinanzi a queste due corti supreme."
+      "it": "La Francia è una giurisdizione di diritto civile strutturata attorno a testi codificati — il Code civil, il Code de commerce, il Code pénal e il Code du travail sono i più citati nella pratica quotidiana. L'ordine giudiziario (ordre judiciaire) gestisce i casi civili e penali attraverso il Tribunal judiciaire → Cour d'appel → Cour de cassation. Un ordine amministrativo parallelo (ordre administratif) si occupa delle controversie contro lo Stato tramite il Tribunal administratif → Cour administrative d'appel → Conseil d'État. Il Conseil constitutionnel esamina le questioni costituzionali e il Tribunal des conflits risolve i conflitti di giurisdizione tra i due ordini. Gli avvocati possono patrocinare dinanzi a ogni tribunale di primo grado e d'appello, ma una coorte separata — avocats au Conseil d'État et à la Cour de cassation — detiene il monopolio della rappresentanza dinanzi a queste due corti supreme.",
+      "pt": "A França é uma jurisdição de direito civil estruturada em torno de textos codificados — sendo o Code civil, Code de commerce, Code pénal e Code du travail os mais citados na prática diária. A ordem judicial (ordre judiciaire) trata de casos civis e criminais através do Tribunal judiciaire → Cour d'appel → Cour de cassation. Uma ordem administrativa paralela (ordre administratif) ouve litígios contra o Estado via Tribunal administratif → Cour administrative d'appel → Conseil d'État. O Conseil constitutionnel revê questões constitucionais, e o Tribunal des conflits resolve conflitos de jurisdição entre as duas ordens. Os advogados podem pleitear perante todos os tribunais de primeira instância e de recurso, mas um grupo separado — avocats au Conseil d'État et à la Cour de cassation — detém o monopólio da representação perante esses dois tribunais superiores."
     },
     "howToFindLawyer": {
       "de": "Beginnen Sie mit der Identifizierung des Rechtsgebiets und wählen Sie, wo möglich, einen Anwalt mit einer anerkannten mention de spécialisation (z.B. droit du travail, droit de la famille, droit fiscal) – diese Spezialisierungen werden vom CNB nach vierjähriger Praxis und einer Fachprüfung verliehen. Überprüfen Sie jeden Kandidaten über das Online-Verzeichnis des CNB unter https://www.cnb.avocat.fr/fr/annuaire-des-avocats-de-france. Eine Erstberatung (consultation initiale) kostet typischerweise zwischen 80 € und 250 € und muss Gegenstand einer schriftlichen Honorarvereinbarung (convention d'honoraires) sein, die nun gemäß Artikel 10 des Loi du 31 décembre 1971 obligatorisch ist. Der Anwalt wird normalerweise eine Vollmacht (mandat ad litem) und entweder ein Pauschalhonorar, einen Stundensatz oder ein teilweises Erfolgshonorar (honoraire de résultat) verlangen, das in Frankreich als Ergänzung zu einem Basishonorar, aber nicht als alleinige Vergütung zulässig ist.",
       "es": "Comience identificando el área de práctica y, cuando sea posible, elija un avocat que posea una mention de spécialisation reconocida (por ejemplo, droit du travail, droit de la famille, droit fiscal) — estas especializaciones son otorgadas por el CNB después de cuatro años de práctica y un examen de especialista. Verifique a cualquier candidato a través del annuaire en línea del CNB en https://www.cnb.avocat.fr/fr/annuaire-des-avocats-de-france. Una primera consulta (consultation initiale) suele tener un precio de entre 80 y 250 euros y debe ser objeto de un acuerdo de honorarios por escrito (convention d'honoraires), ahora obligatorio según el artículo 10 de la Loi du 31 décembre 1971. El avocat normalmente solicitará un poder (mandat ad litem) y, o bien una tarifa fija, una tarifa por hora, o una tarifa de éxito parcial (honoraire de résultat), que está permitida en Francia como complemento a una tarifa base pero no como única compensación.",
-      "it": "Inizia identificando l'area di pratica e, ove possibile, scegli un avvocato in possesso di una mention de spécialisation riconosciuta (es. droit du travail, droit de la famille, droit fiscal) — queste specializzazioni sono rilasciate dal CNB dopo quattro anni di pratica e un esame specialistico. Verifica qualsiasi candidato tramite l'annuario online del CNB all'indirizzo https://www.cnb.avocat.fr/fr/annuaire-des-avocats-de-france. Una prima consultazione (consultation initiale) ha tipicamente un costo compreso tra €80 e €250 e deve essere oggetto di un accordo scritto sugli onorari (convention d'honoraires), ora obbligatorio ai sensi dell'articolo 10 della Loi du 31 décembre 1971. L'avvocato richiederà normalmente una procura (mandat ad litem) e un onorario fisso, una tariffa oraria o un onorario di successo parziale (honoraire de résultat), che è consentito in Francia come complemento a un onorario base ma non come unica remunerazione."
+      "it": "Inizia identificando l'area di pratica e, ove possibile, scegli un avvocato in possesso di una mention de spécialisation riconosciuta (es. droit du travail, droit de la famille, droit fiscal) — queste specializzazioni sono rilasciate dal CNB dopo quattro anni di pratica e un esame specialistico. Verifica qualsiasi candidato tramite l'annuario online del CNB all'indirizzo https://www.cnb.avocat.fr/fr/annuaire-des-avocats-de-france. Una prima consultazione (consultation initiale) ha tipicamente un costo compreso tra €80 e €250 e deve essere oggetto di un accordo scritto sugli onorari (convention d'honoraires), ora obbligatorio ai sensi dell'articolo 10 della Loi du 31 décembre 1971. L'avvocato richiederà normalmente una procura (mandat ad litem) e un onorario fisso, una tariffa oraria o un onorario di successo parziale (honoraire de résultat), che è consentito in Francia come complemento a un onorario base ma non come unica remunerazione.",
+      "pt": "Comece por identificar a área de prática e, sempre que possível, escolha um advogado com uma mention de spécialisation reconhecida (e.g. droit du travail, droit de la famille, droit fiscal) — estas especializações são atribuídas pelo CNB após quatro anos de prática e um exame de especialista. Verifique qualquer candidato através do annuaire online do CNB em https://www.cnb.avocat.fr/fr/annuaire-des-avocats-de-france. Uma primeira consulta (consultation initiale) tem um preço típico entre €80 e €250 e deve ser objeto de um acordo de honorários por escrito (convention d'honoraires), agora obrigatório nos termos do artigo 10 da Loi du 31 décembre 1971. O advogado normalmente solicitará uma procuração (mandat ad litem) e honorários fixos, uma taxa horária, ou uma taxa de sucesso parcial (honoraire de résultat), que é permitida em França como complemento a uma taxa base, mas não como única compensação."
     },
     "feesAndAid": {
       "de": "Anwaltsgebühren in Frankreich werden frei verhandelt, müssen aber in einer schriftlichen convention d'honoraires aufgeführt sein. Stundensätze liegen typischerweise zwischen 150 € in regionalen Kanzleien und über 600 € in Pariser Wirtschaftskanzleien. Reine Erfolgshonorare (pacte de quota litis) sind verboten; teilweise Erfolgshonorare sind erlaubt. Aide juridictionnelle ist das einkommensabhängige Prozesskostenhilfesystem: Ab 2026 gilt die volle Deckung bis zu einem Referenzeinkommen von etwa 1.074 € pro Monat für einen alleinstehenden Erwachsenen, mit teilweiser Deckung auf einer gleitenden Skala bis zu etwa 1.612 €. Der Antrag (formulaire Cerfa 16146) wird beim bureau d'aide juridictionnelle des zuständigen tribunal judiciaire eingereicht. Rechtsschutzversicherungen – häufig in Haus- oder Autoversicherungen gebündelt – finanzieren auch viele Arbeits-, Verbraucher- und Nachbarschaftsstreitigkeiten.",
       "es": "Los honorarios de los avocats en Francia se negocian libremente, pero deben figurar en una convention d'honoraires por escrito. Las tarifas por hora suelen oscilar entre 150 euros en despachos regionales y más de 600 euros en despachos de negocios de París. La contingencia pura (pacte de quota litis) está prohibida; se permiten las tarifas de resultado parcial. La aide juridictionnelle es el sistema de asistencia jurídica gratuita basado en los recursos económicos: a partir de 2026, la cobertura total se aplica hasta un ingreso de referencia de alrededor de 1.074 euros al mes para un adulto soltero, con cobertura parcial en una escala móvil hasta aproximadamente 1.612 euros. La solicitud (formulaire Cerfa 16146) se presenta en la bureau d'aide juridictionnelle del tribunal judiciaire competente. Las pólizas de protection juridique —frecuentemente incluidas en los seguros de hogar o de coche— también financian muchos litigios laborales, de consumo y vecinales.",
-      "it": "Gli onorari degli avvocati in Francia sono liberamente negoziati ma devono figurare in una convention d'honoraires scritta. Le tariffe orarie variano tipicamente da €150 negli studi regionali a oltre €600 negli studi di affari di Parigi. La pura contingenza (pacte de quota litis) è proibita; gli onorari di risultato parziale sono consentiti. L'aide juridictionnelle è il regime di assistenza legale basato sul reddito: a partire dal 2026, la copertura completa si applica fino a un reddito di riferimento di circa €1.074 al mese per un adulto single, con copertura parziale su scala mobile fino a circa €1.612. La domanda (formulaire Cerfa 16146) viene presentata presso il bureau d'aide juridictionnelle del tribunale giudiziario competente. Le polizze di protection juridique — spesso abbinate all'assicurazione sulla casa o sull'auto — finanziano anche molte controversie in materia di lavoro, consumo e vicinato."
+      "it": "Gli onorari degli avvocati in Francia sono liberamente negoziati ma devono figurare in una convention d'honoraires scritta. Le tariffe orarie variano tipicamente da €150 negli studi regionali a oltre €600 negli studi di affari di Parigi. La pura contingenza (pacte de quota litis) è proibita; gli onorari di risultato parziale sono consentiti. L'aide juridictionnelle è il regime di assistenza legale basato sul reddito: a partire dal 2026, la copertura completa si applica fino a un reddito di riferimento di circa €1.074 al mese per un adulto single, con copertura parziale su scala mobile fino a circa €1.612. La domanda (formulaire Cerfa 16146) viene presentata presso il bureau d'aide juridictionnelle del tribunale giudiziario competente. Le polizze di protection juridique — spesso abbinate all'assicurazione sulla casa o sull'auto — finanziano anche molte controversie in materia di lavoro, consumo e vicinato.",
+      "pt": "Os honorários dos advogados em França são livremente negociados, mas devem constar de uma convention d'honoraires por escrito. As taxas horárias variam tipicamente de €150 em escritórios regionais a mais de €600 em escritórios de negócios em Paris. A contingência pura (pacte de quota litis) é proibida; as taxas de resultado parciais são permitidas. A Aide juridictionnelle é o regime de assistência jurídica com base nos rendimentos: a partir de 2026, a cobertura total aplica-se até um rendimento de referência de cerca de €1.074 por mês para um adulto solteiro, com cobertura parcial numa escala progressiva até aproximadamente €1.612. O pedido (formulaire Cerfa 16146) é apresentado no bureau d'aide juridictionnelle do tribunal judiciaire competente. As apólices de protection juridique — frequentemente incluídas em seguros de casa ou automóvel — também financiam muitos litígios laborais, de consumo e de vizinhança."
     },
     "barAssociation": {
       "membershipRules": {
         "de": "Jeder praktizierende Anwalt muss bei einer der 164 barreaux eingeschrieben sein und eine obligatorische Berufshaftpflichtversicherung (RC professionnelle) sowie eine finanzielle Garantie für Klientengelder (garantie de représentation des fonds) besitzen. Das Règlement Intérieur National (RIN) regelt Ethik, Interessenkonflikte, Werbung und das strenge Berufsgeheimnis (secret professionnel), das gemäß Artikel 226-13 des Code pénal strafrechtlich geschützt ist. Werbung ist gemäß Artikel 10.2 des RIN erlaubt, sofern sie würdevoll, korrekt ist und keine Kundenreferenzen enthält.",
         "es": "Todo avocat en ejercicio debe estar inscrito en uno de los 164 barreaux y contar con un seguro de responsabilidad profesional obligatorio (RC professionnelle) más una garantía financiera para los fondos de los clientes (garantie de représentation des fonds). El Règlement Intérieur National (RIN) rige la ética, los conflictos de intereses, la publicidad y el estricto secreto profesional (secret professionnel) que, según el artículo 226-13 del Code pénal, está protegido penalmente. La publicidad está permitida según el artículo 10.2 del RIN siempre que sea digna, precisa y no incluya testimonios de clientes.",
-        "it": "Ogni avvocato praticante deve essere iscritto a uno dei 164 barreaux e avere un'assicurazione obbligatoria di responsabilità civile professionale (RC professionnelle) più una garanzia finanziaria per i fondi dei clienti (garantie de représentation des fonds). Il Règlement Intérieur National (RIN) disciplina l'etica, i conflitti di interesse, la pubblicità e il rigoroso segreto professionale (secret professionnel) che, ai sensi dell'articolo 226-13 del Code pénal, è penalmente protetto. La pubblicità è consentita ai sensi dell'articolo 10.2 del RIN a condizione che sia dignitosa, accurata e non includa testimonianze di clienti."
+        "it": "Ogni avvocato praticante deve essere iscritto a uno dei 164 barreaux e avere un'assicurazione obbligatoria di responsabilità civile professionale (RC professionnelle) più una garanzia finanziaria per i fondi dei clienti (garantie de représentation des fonds). Il Règlement Intérieur National (RIN) disciplina l'etica, i conflitti di interesse, la pubblicità e il rigoroso segreto professionale (secret professionnel) che, ai sensi dell'articolo 226-13 del Code pénal, è penalmente protetto. La pubblicità è consentita ai sensi dell'articolo 10.2 del RIN a condizione che sia dignitosa, accurata e non includa testimonianze di clienti.",
+        "pt": "Todo advogado em exercício deve estar inscrito num dos 164 barreaux e possuir seguro de responsabilidade civil profissional obrigatório (RC professionnelle), além de uma garantia financeira para fundos de clientes (garantie de représentation des fonds). O Règlement Intérieur National (RIN) rege a ética, conflitos de interesse, publicidade e o rigoroso segredo profissional (secret professionnel) que, nos termos do artigo 226-13 do Code pénal, é criminalmente protegido. A publicidade é permitida nos termos do artigo 10.2 do RIN, desde que seja digna, precisa e não inclua testemunhos de clientes."
       }
     },
     "crossBorderEU": {
       "de": "Gemäß der Niederlassungsrichtlinie 98/5/EG, umgesetzt durch das Loi du 31 décembre 1971 (Art. 83 ff.), dürfen in der EU zugelassene Anwälte in Frankreich unter ihrem Heimattitel (z.B. Rechtsanwalt, abogado, avvocato) praktizieren, nachdem sie sich bei einer französischen barreau registriert haben. Nach drei Jahren effektiver und regelmäßiger Praxis im französischen Recht können sie die volle Zulassung als avocat beantragen, ohne die CAPA erneut ablegen zu müssen. Kurzfristige grenzüberschreitende Dienstleistungen werden durch die Richtlinie 77/249/EWG abgedeckt: Ein ausländischer EU-Anwalt kann beispielsweise eine einzelne Anhörung in Frankreich unter seinem Heimattitel in Absprache mit einem lokal eingeschriebenen Anwalt durchführen, wo eine obligatorische Vertretung gilt.",
       "es": "Según la Directiva de Establecimiento 98/5/CE, transpuesta por la Loi du 31 décembre 1971 (art. 83 y ss.), los abogados admitidos en la UE pueden ejercer en Francia con su título de origen (por ejemplo, Rechtsanwalt, abogado, avvocato) después de registrarse en un barreau francés. Después de tres años de práctica efectiva y regular en derecho francés, pueden solicitar la admisión plena como avocat sin volver a presentarse al CAPA. Los servicios transfronterizos a corto plazo están cubiertos por la Directiva 77/249/CEE: un abogado extranjero de la UE puede, por ejemplo, litigar en una única audiencia en Francia con su título de origen, en coordinación con un avocat inscrito localmente cuando la representación sea obligatoria.",
-      "it": "Ai sensi della Direttiva di stabilimento 98/5/CE, recepita dalla Loi du 31 décembre 1971 (art. 83 e segg.), gli avvocati ammessi nell'UE possono esercitare in Francia con il loro titolo di origine (es. Rechtsanwalt, abogado, avvocato) dopo essersi registrati presso un barreau francese. Dopo tre anni di pratica effettiva e regolare nel diritto francese, possono richiedere la piena ammissione come avocat senza ripetere il CAPA. I servizi transfrontalieri a breve termine sono coperti dalla Direttiva 77/249/CEE: un avvocato straniero dell'UE può, ad esempio, patrocinare una singola udienza in Francia con il proprio titolo di origine, in coordinamento con un avvocato iscritto localmente laddove sia obbligatoria la rappresentanza."
+      "it": "Ai sensi della Direttiva di stabilimento 98/5/CE, recepita dalla Loi du 31 décembre 1971 (art. 83 e segg.), gli avvocati ammessi nell'UE possono esercitare in Francia con il loro titolo di origine (es. Rechtsanwalt, abogado, avvocato) dopo essersi registrati presso un barreau francese. Dopo tre anni di pratica effettiva e regolare nel diritto francese, possono richiedere la piena ammissione come avocat senza ripetere il CAPA. I servizi transfrontalieri a breve termine sono coperti dalla Direttiva 77/249/CEE: un avvocato straniero dell'UE può, ad esempio, patrocinare una singola udienza in Francia con il proprio titolo di origine, in coordinamento con un avvocato iscritto localmente laddove sia obbligatoria la rappresentanza.",
+      "pt": "Nos termos da Diretiva de Estabelecimento 98/5/CE, transposta pela Loi du 31 décembre 1971 (art. 83 e segs.), os advogados admitidos na UE podem exercer em França sob o seu título de origem (e.g. Rechtsanwalt, abogado, avvocato) após se registarem num barreau francês. Após três anos de prática efetiva e regular em direito francês, podem solicitar a admissão plena como advogado sem repetir o CAPA. Os serviços transfronteiriços de curta duração são abrangidos pela Diretiva 77/249/CEE: um advogado estrangeiro da UE pode, por exemplo, pleitear numa única audiência em França sob o seu título de origem, em coordenação com um advogado inscrito localmente onde a representação obrigatória se aplica."
     },
     "faqs": [
       {
         "q": {
           "de": "Wie überprüfe ich, ob ein französischer Anwalt tatsächlich ein avocat ist?",
           "es": "¿Cómo verifico que un abogado francés es realmente un avocat?",
-          "it": "Come posso verificare che un avvocato francese sia effettivamente un avocat?"
+          "it": "Come posso verificare che un avvocato francese sia effettivamente un avocat?",
+          "pt": "Como verifico se um advogado francês é realmente um avocat?"
         },
         "a": {
           "de": "Suchen Sie im nationalen Verzeichnis des CNB unter cnb.avocat.fr. Jeder praktizierende Anwalt ist dort mit seiner barreau und eventuellen Spezialisierungen aufgeführt.",
           "es": "Busque en el annuaire nacional del CNB en cnb.avocat.fr. Todo avocat en ejercicio figura con su barreau y cualquier especialización.",
-          "it": "Cerca nell'annuario nazionale del CNB su cnb.avocat.fr. Ogni avvocato praticante è elencato con il proprio barreau e le eventuali specializzazioni."
+          "it": "Cerca nell'annuario nazionale del CNB su cnb.avocat.fr. Ogni avvocato praticante è elencato con il proprio barreau e le eventuali specializzazioni.",
+          "pt": "Pesquise o annuaire nacional do CNB em cnb.avocat.fr. Todo advogado em exercício está listado com o seu barreau e quaisquer especializações."
         }
       },
       {
         "q": {
           "de": "Ist eine schriftliche Honorarvereinbarung obligatorisch?",
           "es": "¿Es obligatorio un acuerdo de honorarios por escrito?",
-          "it": "È obbligatorio un accordo scritto sugli onorari?"
+          "it": "È obbligatorio un accordo scritto sugli onorari?",
+          "pt": "É obrigatório um acordo de honorários por escrito?"
         },
         "a": {
           "de": "Ja. Seit 2015 verlangt Artikel 10 des Loi du 31 décembre 1971 eine schriftliche convention d'honoraires für jedes Mandat, außer in dringenden Angelegenheiten.",
           "es": "Sí. Desde 2015, el artículo 10 de la Loi du 31 décembre 1971 exige una convention d'honoraires por escrito para cada encargo, salvo en asuntos urgentes.",
-          "it": "Sì. Dal 2015 l'articolo 10 della Loi du 31 décembre 1971 richiede una convention d'honoraires scritta per ogni incarico, salvo per questioni urgenti."
+          "it": "Sì. Dal 2015 l'articolo 10 della Loi du 31 décembre 1971 richiede una convention d'honoraires scritta per ogni incarico, salvo per questioni urgenti.",
+          "pt": "Sim. Desde 2015, o artigo 10 da Loi du 31 décembre 1971 exige uma convention d'honoraires por escrito para cada mandato, exceto em casos urgentes."
         }
       },
       {
         "q": {
           "de": "Wer hat Anspruch auf aide juridictionnelle?",
           "es": "¿Quién puede optar a la aide juridictionnelle?",
-          "it": "Chi ha diritto all'aide juridictionnelle?"
+          "it": "Chi ha diritto all'aide juridictionnelle?",
+          "pt": "Quem se qualifica para a aide juridictionnelle?"
         },
         "a": {
           "de": "Haushalte, deren revenu fiscal de référence unter dem gesetzlichen Schwellenwert liegt – etwa 1.074 €/Monat für einen alleinstehenden Erwachsenen im Jahr 2026 – haben Anspruch auf volle Hilfe, mit teilweiser Hilfe auf einer gleitenden Skala.",
           "es": "Los hogares por debajo del umbral legal de revenu fiscal de référence —alrededor de 1.074 €/mes para un adulto soltero en 2026— pueden optar a la ayuda completa, con ayuda parcial en una escala móvil.",
-          "it": "I nuclei familiari al di sotto della soglia legale di revenu fiscal de référence — circa €1.074/mese per un adulto single nel 2026 — hanno diritto all'assistenza completa, con assistenza parziale su scala mobile."
+          "it": "I nuclei familiari al di sotto della soglia legale di revenu fiscal de référence — circa €1.074/mese per un adulto single nel 2026 — hanno diritto all'assistenza completa, con assistenza parziale su scala mobile.",
+          "pt": "Agregados familiares abaixo do limiar legal de revenu fiscal de référence — cerca de €1.074/mês para um adulto solteiro em 2026 — qualificam-se para assistência total, com assistência parcial numa escala progressiva."
         }
       },
       {
         "q": {
           "de": "Kann ich einen in einem anderen EU-Land zugelassenen Anwalt beauftragen?",
           "es": "¿Puedo contratar a un abogado admitido en otro país de la UE?",
-          "it": "Posso incaricare un avvocato ammesso in un altro paese dell'UE?"
+          "it": "Posso incaricare un avvocato ammesso in un altro paese dell'UE?",
+          "pt": "Posso contratar um advogado admitido noutro país da UE?"
         },
         "a": {
           "de": "Ja. Die EU-Vorschriften (Richtlinien 77/249/EWG und 98/5/EG) erlauben grenzüberschreitende Dienstleistungen und, nach Registrierung bei einer französischen barreau, eine dauerhafte Praxis.",
           "es": "Sí. Las normas de la UE (Directivas 77/249/CEE y 98/5/CE) permiten los servicios transfronterizos y, tras el registro en un barreau francés, la práctica permanente.",
-          "it": "Sì. Le norme dell'UE (Direttive 77/249/CEE e 98/5/CE) consentono servizi transfrontalieri e, dopo la registrazione presso un barreau francese, la pratica permanente."
+          "it": "Sì. Le norme dell'UE (Direttive 77/249/CEE e 98/5/CE) consentono servizi transfrontalieri e, dopo la registrazione presso un barreau francese, la pratica permanente.",
+          "pt": "Sim. As regras da UE (Diretivas 77/249/CEE e 98/5/CE) permitem serviços transfronteiriços e, após o registo num barreau francês, a prática permanente."
         }
       },
       {
         "q": {
           "de": "Benötige ich für jedes Gericht einen Anwalt?",
           "es": "¿Necesito un avocat para cada tribunal?",
-          "it": "Ho bisogno di un avocat per ogni tribunale?"
+          "it": "Ho bisogno di un avocat per ogni tribunale?",
+          "pt": "Preciso de um advogado para todos os tribunais?"
         },
         "a": {
           "de": "Nein. Die Vertretung ist vor dem conseil de prud'hommes, tribunaux de proximité (unter 10.000 €) und einigen Handelsangelegenheiten optional, aber vor dem tribunal judiciaire über 10.000 € und vor allen Berufungsgerichten obligatorisch.",
           "es": "No. La representación es opcional ante el conseil de prud'hommes, los tribunaux de proximité (menos de 10.000 €) y algunos asuntos comerciales, pero obligatoria ante el tribunal judiciaire por encima de 10.000 € y ante todos los tribunales de apelación.",
-          "it": "No. La rappresentanza è facoltativa dinanzi al conseil de prud'hommes, ai tribunaux de proximité (sotto i €10.000) e in alcune questioni commerciali, ma obbligatoria dinanzi al tribunal judiciaire sopra i €10.000 e dinanzi a tutte le corti d'appello."
+          "it": "No. La rappresentanza è facoltativa dinanzi al conseil de prud'hommes, ai tribunaux de proximité (sotto i €10.000) e in alcune questioni commerciali, ma obbligatoria dinanzi al tribunal judiciaire sopra i €10.000 e dinanzi a tutte le corti d'appello.",
+          "pt": "Não. A representação é opcional perante o conseil de prud'hommes, tribunaux de proximité (abaixo de €10.000) e algumas questões comerciais, mas obrigatória perante o tribunal judiciaire acima de €10.000 e perante todos os tribunais de recurso."
         }
       },
       {
         "q": {
           "de": "Können Anwälte ein Erfolgshonorar verlangen?",
           "es": "¿Pueden los avocats cobrar una tarifa de éxito?",
-          "it": "Gli avocats possono addebitare un onorario di successo?"
+          "it": "Gli avocats possono addebitare un onorario di successo?",
+          "pt": "Os advogados podem cobrar uma taxa de sucesso?"
         },
         "a": {
           "de": "Ja, aber nur als Ergänzung zu einem Basishonorar. Eine rein erfolgsabhängige Vereinbarung (pacte de quota litis) ist nach Artikel 10 des Gesetzes von 1971 verboten.",
           "es": "Sí, pero solo como complemento a una tarifa base. Un acuerdo puramente contingente (pacte de quota litis) está prohibido por el artículo 10 de la ley de 1971.",
-          "it": "Sì, ma solo come complemento a un onorario base. Un accordo puramente basato sulla contingenza (pacte de quota litis) è proibito dall'articolo 10 della legge del 1971."
+          "it": "Sì, ma solo come complemento a un onorario base. Un accordo puramente basato sulla contingenza (pacte de quota litis) è proibito dall'articolo 10 della legge del 1971.",
+          "pt": "Sim, mas apenas como complemento a uma taxa base. Um acordo puramente baseado em contingência (pacte de quota litis) é proibido pelo artigo 10 da lei de 1971."
         }
       }
     ]
   },
-  "es": {},
+  "es": {
+    "hero": {
+      "tagline": {
+        "de": "Finden Sie einen registrierten Abogado in ganz Spanien – verifiziert durch den Generalrat der spanischen Anwaltschaft.",
+        "fr": "Trouvez un abogado inscrit dans toute l'Espagne — vérifié par le Conseil Général des Avocats Espagnols.",
+        "it": "Trova un abogado registrato in tutta la Spagna — verificato tramite il Consiglio Generale degli Avvocati Spagnoli."
+      },
+      "lede": {
+        "de": "Spanien hat über 150.000 praktizierende Abogados, die in 83 regionalen Colegios de la Abogacía unter dem Consejo General de la Abogacía Española (CGAE) organisiert sind. Dieser Leitfaden behandelt die Struktur des spanischen Justizsystems, wie man einen Abogado beauftragt, die Regeln für Gebühren und Prozesskostenhilfe (justicia gratuita) sowie die grenzüberschreitende Tätigkeit von EU-Anwälten.",
+        "fr": "L'Espagne compte plus de 150,000 abogados en exercice, organisés en 83 Colegios de la Abogacía provinciaux sous l'égide du Consejo General de la Abogacía Española (CGAE). Ce guide couvre la structure du système judiciaire espagnol, la manière de mandater un abogado, les règles relatives aux honoraires et à l'aide juridictionnelle (justicia gratuita), ainsi que la pratique transfrontalière des avocats de l'UE.",
+        "it": "La Spagna conta più di 150.000 abogados praticanti, organizzati in 83 Colegios de la Abogacía provinciali sotto il Consejo General de la Abogacía Española (CGAE). Questa guida illustra la struttura del sistema giudiziario spagnolo, come incaricare un abogado, le norme in materia di onorari e patrocinio a spese dello Stato (justicia gratuita), e la pratica transfrontaliera degli avvocati dell'UE."
+      }
+    },
+    "legalSystem": {
+      "de": "Spanien ist ein Zivilrechtssystem, dessen Hauptgesetze der Código Civil, der Código Penal, die Ley de Enjuiciamiento Civil und die Ley de Enjuiciamiento Criminal sind. Die Justiz ist sachlich in vier Gerichtsbarkeiten unterteilt – Zivil-, Straf-, Verwaltungs- (contencioso-administrativo) und Sozialrecht (labour) – die jeweils über Juzgado → Audiencia Provincial (oder Äquivalent) → Tribunal Superior de Justicia der autonomen Gemeinschaft → Tribunal Supremo aufsteigen. Das Tribunal Constitucional prüft Verfassungsrechte mittels des recurso de amparo. Die Prozessvertretung erfordert in der Regel sowohl einen Abogado (Rechtsbeistand) als auch einen Procurador (Gerichtsbevollmächtigten) vor höheren Gerichten, obwohl seit der Reform von 2009 ein einziger Abogado für viele erstinstanzliche Angelegenheiten ausreicht.",
+      "fr": "L'Espagne est une juridiction de droit civil dont les principaux codes sont le Código Civil, le Código Penal, la Ley de Enjuiciamiento Civil et la Ley de Enjuiciamiento Criminal. Le pouvoir judiciaire est divisé par matière en quatre ordres — civil, pénal, contencioso-administrativo et social (travail) — chacun progressant de Juzgado → Audiencia Provincial (ou équivalent) → Tribunal Superior de Justicia de la communauté autonome → Tribunal Supremo. Le Tribunal Constitucional examine les droits constitutionnels via le recurso de amparo. La représentation procédurale requiert généralement à la fois un abogado (défense juridique) et un procurador (agent judiciaire) devant les juridictions supérieures, bien qu'un seul abogado suffise pour de nombreuses affaires de première instance depuis la réforme de 2009.",
+      "it": "La Spagna è una giurisdizione di diritto civile i cui codici principali sono il Código Civil, il Código Penal, la Ley de Enjuiciamiento Civil e la Ley de Enjuiciamiento Criminal. La magistratura è suddivisa per materia in quattro ordini — civile, penale, contencioso-administrativo e sociale (lavoro) — ciascuno con un'organizzazione gerarchica che va dal Juzgado → Audiencia Provincial (o equivalente) → Tribunal Superior de Justicia della comunità autonoma → Tribunal Supremo. Il Tribunal Constitucional esamina i diritti costituzionali tramite il recurso de amparo. La rappresentanza processuale richiede tipicamente sia un abogado (rappresentanza legale) che un procurador (agente di tribunale) dinanzi ai tribunali superiori, sebbene un singolo abogado sia sufficiente per molte questioni di primo grado dalla riforma del 2009."
+    },
+    "howToFindLawyer": {
+      "de": "Beginnen Sie mit der Identifizierung des Rechtsgebiets und überprüfen Sie die Registrierung des Abogados im Censo de Letrados seines Colegio (z.B. ICAM für Madrid, ICAB für Barcelona). Die meisten Colegios veröffentlichen eine kostenlose Online-Suche; der CGAE konsolidiert die Einträge unter https://www.abogacia.es. Erstberatungen kosten üblicherweise zwischen €60 und €200, und der Abogado muss Ihnen gemäß Artikel 13 des Estatuto General de la Abogacía Española (Real Decreto 135/2021) einen presupuesto (schriftlicher Kostenvoranschlag) und eine hoja de encargo (Mandatsvereinbarung) aushändigen. Viele Colegios betreiben einen Servicio de Orientación Jurídica (SOJ), wo Bürger kostenlose vorläufige Beratung erhalten können, bevor sie justicia gratuita beantragen.",
+      "fr": "Commencez par identifier le domaine de pratique et vérifiez l'inscription de l'abogado dans le Censo de Letrados de son Colegio (par exemple, ICAM pour Madrid, ICAB pour Barcelone). La plupart des colegios publient un annuaire en ligne gratuit ; le CGAE consolide les listes sur https://www.abogacia.es. Les consultations initiales sont généralement tarifées entre €60 et €200 et l'abogado doit vous fournir un presupuesto (estimation écrite des honoraires) et une hoja de encargo (lettre de mission) en vertu de l'article 13 de l'Estatuto General de la Abogacía Española (Real Decreto 135/2021). De nombreux colegios gèrent un Servicio de Orientación Jurídica (SOJ) où les citoyens peuvent obtenir des conseils préliminaires gratuits avant de demander la justicia gratuita.",
+      "it": "Inizia identificando l'area di pratica e verifica l'iscrizione dell'abogado nel Censo de Letrados del loro Colegio (es. ICAM per Madrid, ICAB per Barcellona). La maggior parte dei colegios pubblica una ricerca online gratuita; il CGAE consolida gli elenchi su https://www.abogacia.es. Le consultazioni iniziali sono comunemente prezzate tra €60 e €200 e l'abogado deve fornirti un presupuesto (preventivo scritto degli onorari) e un'hoja de encargo (lettera di incarico) ai sensi dell'articolo 13 dello Estatuto General de la Abogacía Española (Real Decreto 135/2021). Molti colegios gestiscono un Servicio de Orientación Jurídica (SOJ) dove i cittadini possono ottenere una consulenza preliminare gratuita prima di richiedere la justicia gratuita."
+    },
+    "feesAndAid": {
+      "de": "Gebühren werden in Spanien seit der Abschaffung der verbindlichen Gebührentabellen durch die Ley Ómnibus 25/2009 frei vereinbart; es verbleiben lediglich orientative Kriterien (criterios orientadores), die hauptsächlich zur Kostenfestsetzung (tasación de costas) herangezogen werden. Stundensätze reichen von €100 in regionalen Kanzleien bis zu €450+ in Wirtschaftskanzleien in Madrid und Barcelona. Justicia gratuita (Ley 1/1996) bietet bedürftigkeitsgeprüfte Prozesskostenhilfe, die Abogado-, Procurador- und Gerichtsgebühren abdeckt: Ab 2026 liegt die Schwelle bei etwa dem Doppelten des IPREM (rund €1.200 pro Monat für einen alleinstehenden Erwachsenen), mit höheren Obergrenzen für größere Familien oder Opfer von geschlechtsspezifischer Gewalt, Terrorismus oder Menschenhandel, die unabhängig vom Einkommen qualifiziert sind. Anträge werden bei der örtlichen Comisión de Asistencia Jurídica Gratuita über das Colegio eingereicht.",
+      "fr": "Les honoraires sont librement convenus en Espagne depuis que la Ley Ómnibus 25/2009 a aboli les barèmes obligatoires des barreaux ; seuls des critères orientatifs (criterios orientadores) subsistent, utilisés principalement pour la taxation des frais (tasación de costas). Les taux horaires varient de €100 dans les cabinets régionaux à €450+ dans les cabinets d'affaires de Madrid et Barcelone. La justicia gratuita (Ley 1/1996) offre une aide juridictionnelle sous conditions de ressources couvrant les honoraires d'abogado, de procurador et les frais de justice : à partir de 2026, le seuil est d'environ deux fois l'IPREM (environ €1,200 par mois pour un adulte seul), avec des plafonds plus élevés pour les familles nombreuses ou les victimes de violence de genre, de terrorisme ou de traite des êtres humains, qui sont éligibles quel que soit leur revenu. Les demandes sont déposées auprès de la Comisión de Asistencia Jurídica Gratuita locale par l'intermédiaire du colegio.",
+      "it": "Gli onorari sono liberamente concordati in Spagna da quando la Ley Ómnibus 25/2009 ha abolito le tariffe forensi obbligatorie; rimangono solo criteri orientativi (criterios orientadores), utilizzati principalmente per la tassazione delle spese (tasación de costas). Le tariffe orarie vanno da €100 negli studi regionali a €450+ negli studi d'affari di Madrid e Barcellona. La Justicia gratuita (Ley 1/1996) fornisce assistenza legale basata sul reddito che copre le spese di abogado, procurador e tribunale: a partire dal 2026 la soglia è circa il doppio dell'IPREM (circa €1.200 al mese per un adulto single), con massimali più elevati per famiglie più numerose o vittime di violenza di genere, terrorismo o tratta di esseri umani, che si qualificano indipendentemente dal reddito. Le domande vengono presentate alla Comisión de Asistencia Jurídica Gratuita locale tramite il colegio."
+    },
+    "barAssociation": {
+      "membershipRules": {
+        "de": "Jeder praktizierende Abogado muss den Máster Universitario de Acceso a la Abogacía besitzen, das staatliche Examen de Acceso bestehen, in einem Colegio vereidigt werden und eine obligatorische Berufshaftpflichtversicherung abschließen. Das Estatuto General de la Abogacía Española (RD 135/2021) und der Código Deontológico regeln Ethik, Interessenkonflikte und Werbung. Werbung ist erlaubt, muss aber wahrheitsgemäß sein und die Würde des Berufsstandes respektieren; vergleichende oder reißerische Werbung bleibt verboten.",
+        "fr": "Tout abogado en exercice doit être titulaire du Máster Universitario de Acceso a la Abogacía, réussir l'Examen de Acceso d'État, prêter serment devant un Colegio et souscrire une assurance responsabilité civile professionnelle obligatoire. L'Estatuto General de la Abogacía Española (RD 135/2021) et le Código Deontológico régissent l'éthique, les conflits d'intérêts et la publicité. La publicité est autorisée mais doit être véridique et respecter la dignité de la profession ; la publicité comparative ou sensationnaliste reste interdite.",
+        "it": "Ogni abogado praticante deve possedere il Máster Universitario de Acceso a la Abogacía, superare l'Examen de Acceso statale, prestare giuramento presso un Colegio e avere un'assicurazione obbligatoria di responsabilità civile professionale. Lo Estatuto General de la Abogacía Española (RD 135/2021) e il Código Deontológico regolano l'etica, i conflitti e la pubblicità. La pubblicità è consentita ma deve essere veritiera e rispettare la dignità della professione; la pubblicità comparativa o sensazionalistica rimane proibita."
+      }
+    },
+    "crossBorderEU": {
+      "de": "Gemäß der Niederlassungsrichtlinie 98/5/EG, umgesetzt durch Real Decreto 936/2001 (jetzt konsolidiert in RD 135/2021), dürfen in der EU zugelassene Anwälte in Spanien unter ihrer Herkunftsbezeichnung praktizieren, nachdem sie sich bei einem spanischen Colegio registriert haben. Nach drei Jahren effektiver und regelmäßiger Praxis im spanischen Recht können sie die vollständige Integration als Abogado beantragen, ohne die staatliche Zugangsprüfung ablegen zu müssen. Kurzfristige grenzüberschreitende Dienstleistungen unterliegen der Richtlinie 77/249/EWG und den entsprechenden spanischen Vorschriften: Ein portugiesischer advogado oder französischer avocat kann beispielsweise in einer einzelnen spanischen Anhörung unter seiner Herkunftsbezeichnung auftreten und, wo vorgeschrieben, mit einem lokalen colegiado zusammenarbeiten.",
+      "fr": "En vertu de la Directive d'établissement 98/5/CE, transposée par le Real Decreto 936/2001 (désormais consolidé dans le RD 135/2021), les avocats admis dans l'UE peuvent exercer en Espagne sous leur titre d'origine après s'être inscrits auprès d'un Colegio espagnol. Après trois ans de pratique effective et régulière du droit espagnol, ils peuvent demander leur pleine intégration en tant qu'abogado sans passer l'examen d'accès d'État. Les services transfrontaliers à court terme sont régis par la Directive 77/249/CEE et les règles espagnoles correspondantes : un advogado portugais ou un avocat français peut, par exemple, comparaître à une seule audience espagnole sous son titre d'origine, en collaboration avec un colegiado local lorsque cela est obligatoire.",
+      "it": "Ai sensi della Direttiva di Stabilimento 98/5/CE, recepita dal Real Decreto 936/2001 (ora consolidato nel RD 135/2021), gli avvocati ammessi nell'UE possono esercitare in Spagna con il loro titolo di origine dopo essersi registrati presso un Colegio spagnolo. Dopo tre anni di pratica effettiva e regolare nel diritto spagnolo possono richiedere la piena integrazione come abogado senza sostenere l'esame di accesso statale. I servizi transfrontalieri a breve termine sono regolati dalla Direttiva 77/249/CEE e dalle corrispondenti norme spagnole: un advogado portoghese o un avocat francese possono, ad esempio, comparire in una singola udienza spagnola con il loro titolo di origine, lavorando con un colegiado locale dove obbligatorio."
+    },
+    "faqs": [
+      {
+        "q": {
+          "de": "Wie bestätige ich, dass ein Abogado tatsächlich registriert ist?",
+          "fr": "Comment puis-je confirmer qu'un abogado est réellement inscrit ?",
+          "it": "Come posso confermare che un abogado è effettivamente registrato?"
+        },
+        "a": {
+          "de": "Suchen Sie im konsolidierten CGAE-Verzeichnis unter abogacia.es oder im censo des jeweiligen Colegio (ICAM, ICAB usw.). Alle praktizierenden Abogados müssen colegiados ejercientes sein.",
+          "fr": "Recherchez dans le recensement consolidé du CGAE sur abogacia.es ou dans le censo du Colegio pertinent (ICAM, ICAB, etc.). Tous les abogados en exercice doivent être colegiados ejercientes.",
+          "it": "Cerca nel censimento consolidato del CGAE su abogacia.es o nel censo del Colegio pertinente (ICAM, ICAB, ecc.). Tutti gli abogados praticanti devono essere colegiados ejercientes."
+        }
+      },
+      {
+        "q": {
+          "de": "Ist eine schriftliche Mandatsvereinbarung erforderlich?",
+          "fr": "Une lettre de mission écrite est-elle requise ?",
+          "it": "È richiesta una lettera di incarico scritta?"
+        },
+        "a": {
+          "de": "Ja. Artikel 13 des Estatuto General de la Abogacía Española (RD 135/2021) verlangt eine schriftliche hoja de encargo und einen presupuesto für jedes Mandat mit einem Verbraucher.",
+          "fr": "Oui. L'article 13 de l'Estatuto General de la Abogacía Española (RD 135/2021) exige une hoja de encargo et un presupuesto écrits pour toute mission avec un consommateur.",
+          "it": "Sì. L'articolo 13 dello Estatuto General de la Abogacía Española (RD 135/2021) richiede un'hoja de encargo e un presupuesto scritti per qualsiasi incarico con un consumatore."
+        }
+      },
+      {
+        "q": {
+          "de": "Wer hat Anspruch auf justicia gratuita?",
+          "fr": "Qui est éligible à la justicia gratuita ?",
+          "it": "Chi si qualifica per la justicia gratuita?"
+        },
+        "a": {
+          "de": "Haushalte, deren Einkommen unter etwa dem Doppelten des IPREM liegt (~€1.200/Monat für einen alleinstehenden Erwachsenen im Jahr 2026), sind qualifiziert; Opfer von geschlechtsspezifischer Gewalt, Terrorismus oder Menschenhandel sind unabhängig vom Einkommen qualifiziert.",
+          "fr": "Les ménages dont les revenus sont inférieurs à environ deux fois l'IPREM (environ €1,200/mois pour un adulte seul en 2026) sont éligibles ; les victimes de violence de genre, de terrorisme ou de traite des êtres humains sont éligibles quel que soit leur revenu.",
+          "it": "Si qualificano i nuclei familiari al di sotto di circa il doppio dell'IPREM (circa €1.200/mese per un adulto single nel 2026); le vittime di violenza di genere, terrorismo o tratta si qualificano indipendentemente dal reddito."
+        }
+      },
+      {
+        "q": {
+          "de": "Benötige ich sowohl einen Abogado als auch einen Procurador?",
+          "fr": "Ai-je besoin à la fois d'un abogado et d'un procurador ?",
+          "it": "Ho bisogno sia di un abogado che di un procurador?"
+        },
+        "a": {
+          "de": "Für die meisten Berufungs- und Verfassungsverfahren ja. Für viele erstinstanzliche Zivil- und Arbeitsrechtssachen reicht seit der Verfahrensreform von 2009 ein einziger Abogado aus.",
+          "fr": "Pour la plupart des procédures d'appel et constitutionnelles, oui. Pour de nombreuses affaires civiles et sociales de première instance, un seul abogado suffit depuis la réforme procédurale de 2009.",
+          "it": "Per la maggior parte dei procedimenti d'appello e costituzionali, sì. Per molti casi civili e di lavoro di primo grado un singolo abogado è sufficiente dalla riforma processuale del 2009."
+        }
+      },
+      {
+        "q": {
+          "de": "Kann ich einen in einem anderen EU-Land zugelassenen Anwalt beauftragen?",
+          "fr": "Puis-je engager un avocat admis dans un autre pays de l'UE ?",
+          "it": "Posso assumere un avvocato abilitato in un altro paese dell'UE?"
+        },
+        "a": {
+          "de": "Ja. Die Niederlassungs- und Dienstleistungsrichtlinien erlauben die grenzüberschreitende Praxis. Für eine dauerhafte Niederlassung muss sich der Anwalt bei einem spanischen Colegio registrieren.",
+          "fr": "Oui. Les Directives sur l'établissement et les services autorisent la pratique transfrontalière. Pour un établissement permanent, l'avocat doit s'inscrire auprès d'un Colegio espagnol.",
+          "it": "Sì. Le Direttive di Stabilimento e Servizi consentono la pratica transfrontaliera. Per lo stabilimento permanente l'avvocato deve registrarsi presso un Colegio spagnolo."
+        }
+      },
+      {
+        "q": {
+          "de": "Sind Erfolgshonorare in Spanien erlaubt?",
+          "fr": "Les honoraires de résultat sont-ils autorisés en Espagne ?",
+          "it": "Le parcelle di successo sono consentite in Spagna?"
+        },
+        "a": {
+          "de": "Ja. Nach dem Urteil des Tribunal Supremo von 2008 (sentencia 4 nov. 2008) ist die cuota litis zulässig, sofern sie schriftlich frei vereinbart wird und die Grundsätze des Código Deontológico respektiert.",
+          "fr": "Oui. Après l'arrêt de 2008 du Tribunal Supremo (sentencia 4 nov. 2008), la cuota litis est autorisée, à condition qu'elle soit librement convenue par écrit et qu'elle respecte les principes du Código Deontológico.",
+          "it": "Sì. Dopo la sentenza del Tribunal Supremo del 2008 (sentencia 4 nov. 2008) la cuota litis è consentita, a condizione che sia liberamente concordata per iscritto e rispetti i principi del Código Deontológico."
+        }
+      }
+    ]
+  },
   "it": {},
   "pt": {}
 };
