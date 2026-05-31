@@ -1,19 +1,20 @@
-## Plan: Resume B9.5 region-intro translation run
+## Plan: Finish B9.5 Gemini free-tier re-run
 
-Re-run the idempotent translator to fill the remaining ~210 region/locale gaps in `src/data/eu/regionIntrosGenerated.ts`.
+Resume the idempotent translator until the Gemini free-tier quota blocks again, then report status.
 
 ### Steps
 
-1. Run `bun scripts/translate-region-intros.mjs --provider=gemini` (forces Gemini free-tier; bypasses Lovable Gateway).
-2. The script auto-skips entries already in `regionIntrosGenerated.ts`, so it resumes from where the last run stopped (currently FR: Île-de-France + Auvergne-Rhône-Alpes done in de/es/it/pt).
-3. Stream progress; the script writes the overlay file after every successful translation, so partial progress is preserved even if Gemini's 20 req/day quota cuts us off again.
-4. After the run completes (or hits quota), report:
-   - Count of newly filled entries this run
-   - Total filled vs. remaining (out of ~219 target slots)
-   - Any country/region still missing for follow-up
+1. Run `bun scripts/translate-region-intros.mjs --provider=gemini`.
+2. The script skips entries already present in `src/data/eu/regionIntrosGenerated.ts`, so it picks up after the ~27 entries currently filled.
+3. The script writes the overlay file after each successful translation, so partial progress survives a 429 cutoff.
+4. If the 60s exec timeout cuts the run mid-stream, re-invoke the same command — it resumes from disk.
+5. When the run ends (completion or 429 quota), report:
+   - newly filled entries this session
+   - total filled vs. ~219 target slots
+   - countries/regions still outstanding for the next daily run
 
 ### Notes
 
-- No code changes — execution only.
-- If Gemini quota blocks early, the run is safely resumable tomorrow with the same command.
-- 60s per-call exec timeout may force a few sequential `code--exec` invocations; each picks up where the previous left off thanks to idempotency.
+- Execution only — no code changes.
+- If quota blocks early, the remaining gaps are safely resumable tomorrow with the same command.
+- English fallback + banner means missing locales don't break pages; this just improves locale quality.

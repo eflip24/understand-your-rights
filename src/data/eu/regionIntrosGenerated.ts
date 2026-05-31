@@ -52,7 +52,41 @@ export const GENERATED_REGION_INTROS: GeneratedRegionIntros = {
     "grand-est": {
       "de": "Grand Est umfasst Straßburg, Reims, Metz und Nancy. Die Anwaltskammer von Straßburg ist einzigartig in Frankreich: Anwälte können vor dem Europäischen Gerichtshof für Menschenrechte plädieren, und lokale Gerichte wenden ein besonderes droit local d'Alsace-Moselle an, das vom deutschen Bürgerlichen Gesetzbuch in Bas-Rhin, Haut-Rhin und Moselle ererbt wurde.",
       "it": "Il Grand Est comprende Strasburgo, Reims, Metz e Nancy. L'ordine degli avvocati di Strasburgo è unico in Francia: gli avvocati possono patrocinare dinanzi alla Corte europea dei diritti dell'uomo, e i tribunali locali applicano un particolare droit local d'Alsace-Moselle ereditato dal codice civile tedesco nel Basso Reno, nell'Alto Reno e nella Mosella.",
-      "pt": "Grand Est abrange Estrasburgo, Reims, Metz e Nancy. A Ordem dos Advogados de Estrasburgo é única na França: advogados podem advogar perante o Tribunal Europeu dos Direitos Humanos, e os tribunais locais aplicam um direito local particular da Alsácia-Mosela, herdado do código civil alemão em Bas-Rhin, Haut-Rhin e Moselle."
+      "pt": "Grand Est abrange Estrasburgo, Reims, Metz e Nancy. A Ordem dos Advogados de Estrasburgo é única na França: advogados podem advogar perante o Tribunal Europeu dos Direitos Humanos, e os tribunais locais aplicam um direito local particular da Alsácia-Mosela, herdado do código civil alemão em Bas-Rhin, Haut-Rhin e Moselle.",
+      "es": "Grand Est abarca Estrasburgo, Reims, Metz y Nancy. El colegio de abogados de Estrasburgo es único en Francia: los abogados pueden litigar ante el Tribunal Europeo de Derechos Humanos, y los tribunales locales aplican un particular droit local d'Alsace-Moselle heredado del código civil alemán en Bajo Rin, Alto Rin y Mosela."
+    },
+    "pays-de-la-loire": {
+      "de": "Pays de la Loire ist durch Nantes und Angers geprägt. Die Cour d'appel de Rennes deckt die Region zusammen mit der Bretagne ab. Starke Spezialisierungen in den Bereichen Schifffahrt, Agrarwirtschaft und Herstellung von Luft- und Raumfahrtkomponenten.",
+      "es": "Pays de la Loire está anclada por Nantes y Angers. La Cour d'appel de Rennes cubre la región junto con Bretaña. Fuertes especializaciones en transporte marítimo, agronegocios y fabricación de componentes aeroespaciales.",
+      "it": "I Paesi della Loira sono caratterizzati da Nantes e Angers. La Cour d'appel de Rennes copre la regione insieme alla Bretagna. Forti specializzazioni nel settore marittimo, nell'agroalimentare e nella produzione di componenti aerospaziali.",
+      "pt": "Pays de la Loire é ancorada por Nantes e Angers. A Cour d'appel de Rennes abrange a região juntamente com a Bretanha. Fortes especializações em transporte marítimo, agronegócio e fabricação de componentes aeroespaciais."
+    },
+    "bretagne": {
+      "de": "Die Bretagne umfasst Rennes, Brest, Quimper und Saint-Brieuc. Die Cour d'appel de Rennes ist das regionale Berufungsgericht; die Anwaltskammer von Rennes bearbeitet eine hohe Anzahl von Fällen im Öffentlichen Recht und in der Universitätsforschung, während Brest sich auf See- und Marineangelegenheiten spezialisiert hat.",
+      "es": "Bretaña (Bretagne) abarca Rennes, Brest, Quimper y Saint-Brieuc. La Cour d'appel de Rennes es el tribunal de apelación regional; el Colegio de Abogados de Rennes gestiona una gran carga de casos de derecho público e investigación universitaria, mientras que Brest se especializa en asuntos marítimos y navales.",
+      "it": "La Bretagna (Bretagne) comprende Rennes, Brest, Quimper e Saint-Brieuc. La Cour d'appel de Rennes è la corte d'appello regionale; il foro di Rennes gestisce un carico significativo di casi di diritto pubblico e controversie legate alla ricerca universitaria, mentre Brest è specializzata in questioni marittime e navali.",
+      "pt": "A Bretanha (Bretagne) inclui Rennes, Brest, Quimper e Saint-Brieuc. A Cour d'appel de Rennes é o tribunal de apelação regional. A ordem dos advogados de Rennes lida com muitos casos de direito público e pesquisa universitária, enquanto Brest se foca em assuntos marítimos e navais."
+    },
+    "normandie": {
+      "de": "Die Normandie umfasst Rouen, Caen und Le Havre. Die Cour d'appel de Rouen bearbeitet Handels- und Seerechtliche Berufungen; Le Havre ist einer der größten Containerhäfen Frankreichs, was zu erheblichen Transport- und Zollstreitigkeiten führt.",
+      "es": "Normandía (Normandie) abarca Rouen, Caen y Le Havre. La Cour d'appel de Rouen gestiona apelaciones comerciales y marítimas; Le Havre es uno de los puertos de contenedores más grandes de Francia, generando litigios significativos en transporte y aduanas.",
+      "it": "La Normandia comprende Rouen, Caen e Le Havre. La Cour d'appel de Rouen gestisce gli appelli commerciali e marittimi; Le Havre è uno dei porti container più grandi della Francia, generando un contenzioso significativo in materia di trasporti e dogane.",
+      "pt": "A Normandia abrange Rouen, Caen e Le Havre. A Cour d'appel de Rouen trata de recursos comerciais e marítimos; Le Havre é um dos maiores portos de contentores da França, gerando litígios significativos de transporte e alfandegários."
+    },
+    "bourgogne-franche-comte": {
+      "de": "Bourgogne-Franche-Comté vereint die Regionen Burgund und Franche-Comté um Dijon und Besançon. Die Cour d'appel de Dijon ist für den Großteil des Gebiets zuständig, wobei Streitigkeiten im Weinbau, in der Uhrmacherei (nahe der Schweizer Grenze) und an Universitäten die Falllisten dominieren.",
+      "es": "Bourgogne-Franche-Comté une las regiones de Borgoña y Franco Condado en torno a Dijon y Besançon. La Cour d'appel de Dijon atiende la mayor parte del territorio, con disputas relacionadas con la viticultura, la relojería (cerca de la frontera suiza) y las universidades dominando la lista de casos.",
+      "it": "La Bourgogne-Franche-Comté unisce le regioni della Borgogna e della Franca Contea attorno a Digione e Besançon. La Cour d'appel de Dijon serve la maggior parte del territorio, con controversie legate alla viticoltura, all'orologeria (vicino al confine svizzero) e all'università che dominano il ruolo.",
+      "pt": "Bourgogne-Franche-Comté une as regiões da Borgonha e do Franco-Condado em torno de Dijon e Besançon. A Cour d'appel de Dijon atende a maior parte do território, com disputas relacionadas à viticultura, relojoaria (perto da fronteira suíça) e questões universitárias dominando a pauta."
+    },
+    "centre-val-de-loire": {
+      "de": "Centre-Val de Loire (Orléans, Tours, Bourges) untersteht der Cour d'appel d'Orléans. Kleinere Kammern bearbeiten Agrarwirtschaft, Pharma (Tours) und Immobilienstreitigkeiten um Loire-Schlösser.",
+      "es": "Centre-Val de Loire (Orléans, Tours, Bourges) está servido por la Cour d'appel d'Orléans. Colegios de abogados más pequeños gestionan agronegocios, productos farmacéuticos (Tours) y disputas de propiedad de monumentos históricos en torno a los castillos del Valle del Loira.",
+      "it": "Il Centre-Val de Loire (Orléans, Tours, Bourges) è servito dalla Cour d'appel d'Orléans. Studi legali più piccoli si occupano di agroalimentare, prodotti farmaceutici (Tours) e controversie immobiliari relative a monumenti storici intorno ai châteaux della Valle della Loira.",
+      "pt": "Centre-Val de Loire (Orléans, Tours, Bourges) é servido pela Cour d'appel d'Orléans. Pequenas ordens de advogados lidam com agronegócio, produtos farmacêuticos (Tours) e litígios de propriedade de monumentos históricos em torno dos châteaux do Vale do Loire."
+    },
+    "corse": {
+      "es": "Córcega (Corse) tiene su propia Cour d'appel de Bastia. Los colegios de abogados locales en Ajaccio y Bastia gestionan una alta proporción de asuntos inmobiliarios y de derecho de familia vinculados a la historia de la tenencia de la tierra de la isla (el 'arrêté Miot' y la indivisión continuada)."
     }
   }
 };
