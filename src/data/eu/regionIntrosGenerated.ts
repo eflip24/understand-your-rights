@@ -88,5 +88,30 @@ export const GENERATED_REGION_INTROS: GeneratedRegionIntros = {
     "corse": {
       "es": "Córcega (Corse) tiene su propia Cour d'appel de Bastia. Los colegios de abogados locales en Ajaccio y Bastia gestionan una alta proporción de asuntos inmobiliarios y de derecho de familia vinculados a la historia de la tenencia de la tierra de la isla (el 'arrêté Miot' y la indivisión continuada)."
     }
+  },
+  "de": {
+    "baden-wuerttemberg": {
+      "fr": "Le Bade-Wurtemberg couvre Stuttgart, Karlsruhe, Mannheim et Fribourg. L'Oberlandesgericht Stuttgart connaît des appels pour la majeure partie de l'État, Karlsruhe abritant en outre le Bundesgerichtshof (Cour fédérale de justice) et le Bundesverfassungsgericht (Cour constitutionnelle fédérale).",
+      "es": "Baden-Württemberg abarca Stuttgart, Karlsruhe, Mannheim y Freiburg. El Oberlandesgericht Stuttgart conoce de los recursos de apelación para la mayor parte del estado, y Karlsruhe alberga además tanto el Bundesgerichtshof (Tribunal Federal de Justicia) como el Bundesverfassungsgericht (Tribunal Constitucional Federal).",
+      "it": "Il Baden-Württemberg copre Stoccarda, Karlsruhe, Mannheim e Friburgo. L'Oberlandesgericht Stuttgart esamina gli appelli per la maggior parte dello stato, con Karlsruhe che ospita inoltre sia il Bundesgerichtshof (Corte Federale di Giustizia) che il Bundesverfassungsgericht (Corte Costituzionale Federale).",
+      "pt": "Baden-Württemberg abrange Stuttgart, Karlsruhe, Mannheim e Freiburg. O Oberlandesgericht Stuttgart julga recursos para a maior parte do estado, com Karlsruhe adicionalmente a acolher tanto o Bundesgerichtshof como o Bundesverfassungsgericht."
+    },
+    "bayern": {
+      "fr": "La Bavière (Bayern) est ancrée par Munich, Nuremberg et Augsbourg. L'Oberlandesgericht München traite les appels de Haute-Bavière, avec des OLG distincts à Nuremberg et Bamberg. Munich abrite l'Office allemand des brevets et des marques et le Bundespatentgericht, conférant au barreau de Munich une expertise approfondie en propriété intellectuelle.",
+      "es": "Baviera (Bayern) está anclada por Múnich, Núremberg y Augsburgo. El Oberlandesgericht München gestiona las apelaciones de la Alta Baviera, con OLGs separados en Núremberg y Bamberg. Múnich alberga la Oficina Alemana de Patentes y Marcas y el Bundespatentgericht, lo que confiere al colegio de abogados de Múnich una profunda experiencia en PI.",
+      "it": "La Baviera (Bayern) ha come centri principali Monaco di Baviera, Norimberga e Augusta. L'Oberlandesgericht München gestisce gli appelli dell'Alta Baviera, con OLG separati a Norimberga e Bamberga. Monaco di Baviera ospita il Deutsches Patent- und Markenamt e il Bundespatentgericht, conferendo all'ordine degli avvocati di Monaco una profonda esperienza in materia di IP.",
+      "pt": "A Baviera (Bayern) é ancorada por Munique, Nuremberga e Augsburgo. O Oberlandesgericht München lida com apelações da Alta Baviera, com OLGs separados em Nuremberga e Bamberg. Munique acolhe o Deutsches Patent- und Markenamt e o Bundespatentgericht, conferindo à advocacia de Munique profunda experiência em PI."
+    },
+    "berlin-region": {
+      "fr": "Berlin fonctionne à la fois comme une ville et un Bundesland. Le Kammergericht est sa cour d'appel (conservant de manière unique son nom historique). Le barreau de Berlin est le deuxième plus grand d'Allemagne et se spécialise dans les affaires administratives, constitutionnelles et de start-up.",
+      "es": "Berlín funciona tanto como ciudad como como Bundesland. El Kammergericht es su tribunal de apelación (conservando de forma única su nombre histórico). El Colegio de Abogados de Berlín es el segundo más grande de Alemania y se especializa en asuntos administrativos, constitucionales y de start-ups.",
+      "it": "Berlino opera sia come città che come Bundesland. Il Kammergericht è la sua corte d'appello (che conserva in modo unico il nome storico). L'ordine degli avvocati di Berlino è il secondo più grande in Germania e si specializza in questioni di diritto amministrativo, costituzionale e di start-up.",
+      "pt": "Berlim funciona tanto como cidade quanto como Bundesland. O Kammergericht é o seu tribunal de apelação (mantendo unicamente o nome histórico). A Ordem dos Advogados de Berlim é a segunda maior da Alemanha e especializa-se em questões administrativas, constitucionais e de start-ups."
+    },
+    "brandenburg": {
+      "fr": "Le Brandebourg entoure Berlin et est desservi par le Brandenburgisches Oberlandesgericht à Brandebourg-sur-la-Havel. Le barreau de Potsdam traite de nombreux dossiers transfrontaliers avec des contreparties polonaises étant donné la frontière orientale de la région.",
+      "es": "Brandeburgo rodea Berlín y es atendido por el Brandenburgisches Oberlandesgericht en Brandenburg an der Havel. El colegio de abogados de Potsdam gestiona muchos casos transfronterizos con contrapartes polacas dada la frontera oriental de la región.",
+      "it": "Il Brandeburgo circonda Berlino ed è servito dal Brandenburgisches Oberlandesgericht a Brandenburg an der Havel. L'ordine degli avvocati di Potsdam gestisce molti casi transfrontalieri con controparti polacche data la frontiera orientale della regione."
+    }
   }
 };
