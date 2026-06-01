@@ -144,6 +144,36 @@ export type Database = {
         }
         Relationships: []
       }
+      region_intros_runtime: {
+        Row: {
+          country: string
+          created_at: string
+          id: string
+          locale: string
+          region_canonical: string
+          text: string
+          updated_at: string
+        }
+        Insert: {
+          country: string
+          created_at?: string
+          id?: string
+          locale: string
+          region_canonical: string
+          text: string
+          updated_at?: string
+        }
+        Update: {
+          country?: string
+          created_at?: string
+          id?: string
+          locale?: string
+          region_canonical?: string
+          text?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       saved_analyses: {
         Row: {
           created_at: string | null
@@ -171,6 +201,33 @@ export type Database = {
           tool_name?: string
           tool_slug?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      translation_cron_state: {
+        Row: {
+          id: string
+          last_filled_count: number | null
+          last_run_at: string | null
+          last_run_status: string | null
+          next_country: string
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          last_filled_count?: number | null
+          last_run_at?: string | null
+          last_run_status?: string | null
+          next_country: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          last_filled_count?: number | null
+          last_run_at?: string | null
+          last_run_status?: string | null
+          next_country?: string
+          updated_at?: string
         }
         Relationships: []
       }

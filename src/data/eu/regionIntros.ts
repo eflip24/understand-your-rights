@@ -272,6 +272,27 @@ export const REGION_INTROS: Record<EuCountryCode, RegionIntroMap> = {
 };
 
 /**
+ * Runtime overlay populated by the daily cron edge function and loaded once
+ * at app start via `loadRuntimeRegionIntros()`. Looked up after the static
+ * overlay but before falling back to English.
+ */
+const RUNTIME_REGION_INTROS: Partial<
+  Record<EuCountryCode, Partial<Record<string, Partial<Record<LocaleCode, string>>>>>
+> = {};
+
+export function setRuntimeRegionIntros(
+  rows: Array<{ country: string; region_canonical: string; locale: string; text: string }>,
+) {
+  for (const row of rows) {
+    const c = row.country as EuCountryCode;
+    if (!RUNTIME_REGION_INTROS[c]) RUNTIME_REGION_INTROS[c] = {};
+    const byRegion = RUNTIME_REGION_INTROS[c]!;
+    if (!byRegion[row.region_canonical]) byRegion[row.region_canonical] = {};
+    byRegion[row.region_canonical]![row.locale as LocaleCode] = row.text;
+  }
+}
+
+/**
  * Pick the best-available locale intro, falling back to English.
  * Returns `{ text, locale }` so the page can render a "shown in English" note.
  */
@@ -286,5 +307,8 @@ export function pickRegionIntro(
   if (authored) return { text: authored, locale };
   const generated = GENERATED_REGION_INTROS[country]?.[region]?.[locale];
   if (generated) return { text: generated, locale };
+  const runtime = RUNTIME_REGION_INTROS[country]?.[region]?.[locale];
+  if (runtime) return { text: runtime, locale };
   return { text: intro.en, locale: "en" };
 }
+

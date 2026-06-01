@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,7 +12,10 @@ import ScrollToTop from "@/components/ScrollToTop";
 import LegalChatWidget from "@/components/chat/LegalChatWidget";
 import AppRoutes from "@/AppRoutes";
 import LocaleSync from "@/i18n/LocaleSync";
+import { supabase } from "@/integrations/supabase/client";
+import { setRuntimeRegionIntros } from "@/data/eu/regionIntros";
 import "@/i18n/config";
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,7 +33,19 @@ const PageLoader = () => (
   </div>
 );
 
-const App = () => (
+const App = () => {
+  useEffect(() => {
+    let cancelled = false;
+    supabase
+      .from("region_intros_runtime")
+      .select("country, region_canonical, locale, text")
+      .then(({ data }) => {
+        if (!cancelled && data) setRuntimeRegionIntros(data);
+      });
+    return () => { cancelled = true; };
+  }, []);
+  return (
+
   <QueryClientProvider client={queryClient}>
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <AuthProvider>
@@ -66,6 +81,8 @@ const App = () => (
       </AuthProvider>
     </ThemeProvider>
   </QueryClientProvider>
-);
+  );
+};
+
 
 export default App;
