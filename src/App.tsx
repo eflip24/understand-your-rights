@@ -33,7 +33,19 @@ const PageLoader = () => (
   </div>
 );
 
-const App = () => (
+const App = () => {
+  useEffect(() => {
+    let cancelled = false;
+    supabase
+      .from("region_intros_runtime")
+      .select("country, region_canonical, locale, text")
+      .then(({ data }) => {
+        if (!cancelled && data) setRuntimeRegionIntros(data);
+      });
+    return () => { cancelled = true; };
+  }, []);
+  return (
+
   <QueryClientProvider client={queryClient}>
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <AuthProvider>
