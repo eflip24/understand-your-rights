@@ -1,0 +1,951 @@
+[
+  {
+    "country": "fr",
+    "canonical": "ile-de-france",
+    "source": "Île-de-France is France's economic and judicial heart, home to the Paris Bar (the largest in Europe with ~32,000 avocats) and the Cour d'appel de Paris, which hears commercial, IP and high-profile criminal appeals from across the region. Most international firms and specialised counsel for finance, M&A and arbitration are based here.",
+    "names": {
+      "en": "Île-de-France",
+      "es": "Île-de-France",
+      "fr": "Île-de-France",
+      "de": "Île-de-France",
+      "pt": "Île-de-France",
+      "it": "Île-de-France"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "auvergne-rhone-alpes",
+    "source": "Auvergne-Rhône-Alpes spans Lyon, Grenoble, Saint-Étienne and Clermont-Ferrand. The Cour d'appel de Lyon serves the Rhône-Alpes part, while Riom covers Auvergne. Strong local bars in Lyon and Grenoble specialise in industrial, pharma and tech disputes tied to the region's manufacturing and research clusters.",
+    "names": {
+      "en": "Auvergne-Rhône-Alpes",
+      "es": "Auvergne-Rhône-Alpes",
+      "fr": "Auvergne-Rhône-Alpes",
+      "de": "Auvergne-Rhône-Alpes",
+      "pt": "Auvergne-Rhône-Alpes",
+      "it": "Auvergne-Rhône-Alpes"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "provence-alpes-cote-dazur",
+    "source": "Provence-Alpes-Côte d'Azur (PACA) covers Marseille, Nice, Toulon and Aix-en-Provence. The Cour d'appel d'Aix-en-Provence is among the busiest in France, with significant maritime, real-estate and cross-border family caseload driven by the Mediterranean coast and the Italian border.",
+    "names": {
+      "en": "Provence-Alpes-Côte d'Azur",
+      "es": "Provence-Alpes-Côte d'Azur",
+      "fr": "Provence-Alpes-Côte d'Azur",
+      "de": "Provence-Alpes-Côte d'Azur",
+      "pt": "Provence-Alpes-Côte d'Azur",
+      "it": "Provence-Alpes-Côte d'Azur"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "occitanie",
+    "source": "Occitanie groups Toulouse, Montpellier, Nîmes and Perpignan. Toulouse hosts an active bar serving the aerospace and digital sectors; Montpellier specialises in agricultural and environmental law. The Cours d'appel de Toulouse, Montpellier and Nîmes share the region's judicial workload.",
+    "names": {
+      "en": "Occitanie",
+      "es": "Occitanie",
+      "fr": "Occitanie",
+      "de": "Occitanie",
+      "pt": "Occitanie",
+      "it": "Occitanie"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "nouvelle-aquitaine",
+    "source": "Nouvelle-Aquitaine, with Bordeaux as its anchor, runs from the Atlantic to the Spanish border. The Cour d'appel de Bordeaux handles wine-industry, cross-border family and Spanish-tied commercial disputes. Limoges and Pau host secondary appellate jurisdictions.",
+    "names": {
+      "en": "Nouvelle-Aquitaine",
+      "es": "Nouvelle-Aquitaine",
+      "fr": "Nouvelle-Aquitaine",
+      "de": "Nouvelle-Aquitaine",
+      "pt": "Nouvelle-Aquitaine",
+      "it": "Nouvelle-Aquitaine"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "hauts-de-france",
+    "source": "Hauts-de-France (Lille, Amiens) sits at the Belgian border and the Channel. The Cour d'appel de Douai is the regional appellate court; the Lille bar is the largest outside Île-de-France and handles heavy logistics, transport and cross-Channel commercial litigation.",
+    "names": {
+      "en": "Hauts-de-France",
+      "es": "Hauts-de-France",
+      "fr": "Hauts-de-France",
+      "de": "Hauts-de-France",
+      "pt": "Hauts-de-France",
+      "it": "Hauts-de-France"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "grand-est",
+    "source": "Grand Est covers Strasbourg, Reims, Metz and Nancy. Strasbourg's bar is unique in France: avocats can plead before the European Court of Human Rights, and local courts apply a particular droit local d'Alsace-Moselle inherited from the German civil code in Bas-Rhin, Haut-Rhin and Moselle.",
+    "names": {
+      "en": "Grand Est",
+      "es": "Grand Est",
+      "fr": "Grand Est",
+      "de": "Grand Est",
+      "pt": "Grand Est",
+      "it": "Grand Est"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "pays-de-la-loire",
+    "source": "Pays de la Loire is anchored by Nantes and Angers. The Cour d'appel de Rennes covers the region together with Brittany. Strong specialisms in shipping, agribusiness and aerospace component manufacturing.",
+    "names": {
+      "en": "Pays de la Loire",
+      "es": "Pays de la Loire",
+      "fr": "Pays de la Loire",
+      "de": "Pays de la Loire",
+      "pt": "Pays de la Loire",
+      "it": "Pays de la Loire"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "bretagne",
+    "source": "Brittany (Bretagne) covers Rennes, Brest, Quimper and Saint-Brieuc. The Cour d'appel de Rennes is the regional appellate court; the Rennes bar handles a heavy public-law and university-research caseload, while Brest specialises in maritime and naval matters.",
+    "names": {
+      "en": "Brittany",
+      "es": "Bretaña",
+      "fr": "Bretagne",
+      "de": "Bretagne",
+      "pt": "Bretanha",
+      "it": "Bretagna"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "normandie",
+    "source": "Normandy (Normandie) spans Rouen, Caen and Le Havre. The Cour d'appel de Rouen handles commercial and maritime appeals; Le Havre is one of France's largest container ports, generating significant transport and customs litigation.",
+    "names": {
+      "en": "Normandy",
+      "es": "Normandía",
+      "fr": "Normandie",
+      "de": "Normandie",
+      "pt": "Normandia",
+      "it": "Normandia"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "bourgogne-franche-comte",
+    "source": "Bourgogne-Franche-Comté joins the Burgundy and Franche-Comté regions around Dijon and Besançon. The Cour d'appel de Dijon serves most of the territory, with viticulture, watchmaking (near the Swiss border) and university disputes dominating the docket.",
+    "names": {
+      "en": "Bourgogne-Franche-Comté",
+      "es": "Bourgogne-Franche-Comté",
+      "fr": "Bourgogne-Franche-Comté",
+      "de": "Bourgogne-Franche-Comté",
+      "pt": "Bourgogne-Franche-Comté",
+      "it": "Bourgogne-Franche-Comté"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "centre-val-de-loire",
+    "source": "Centre-Val de Loire (Orléans, Tours, Bourges) is served by the Cour d'appel d'Orléans. Smaller bars handle agribusiness, pharmaceuticals (Tours) and historic-monument property disputes around the Loire valley châteaux.",
+    "names": {
+      "en": "Centre-Val de Loire",
+      "es": "Centre-Val de Loire",
+      "fr": "Centre-Val de Loire",
+      "de": "Centre-Val de Loire",
+      "pt": "Centre-Val de Loire",
+      "it": "Centre-Val de Loire"
+    }
+  },
+  {
+    "country": "fr",
+    "canonical": "corse",
+    "source": "Corsica (Corse) has its own Cour d'appel de Bastia. Local bars in Ajaccio and Bastia handle a high proportion of real-estate and family-law matters tied to the island's land-tenure history (the 'arrêté Miot' and continuing indivision).",
+    "names": {
+      "en": "Corsica",
+      "es": "Córcega",
+      "fr": "Corse",
+      "de": "Korsika",
+      "pt": "Córsega",
+      "it": "Corsica"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "baden-wuerttemberg",
+    "source": "Baden-Württemberg covers Stuttgart, Karlsruhe, Mannheim and Freiburg. The Oberlandesgericht Stuttgart hears appeals for most of the state, with Karlsruhe additionally hosting both the Bundesgerichtshof (Federal Court of Justice) and the Bundesverfassungsgericht (Federal Constitutional Court).",
+    "names": {
+      "en": "Baden-Württemberg",
+      "es": "Baden-Württemberg",
+      "fr": "Baden-Württemberg",
+      "de": "Baden-Württemberg",
+      "pt": "Baden-Württemberg",
+      "it": "Baden-Württemberg"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "bayern",
+    "source": "Bavaria (Bayern) is anchored by Munich, Nuremberg and Augsburg. The Oberlandesgericht München handles upper-Bavarian appeals, with separate OLGs in Nuremberg and Bamberg. Munich hosts the German Patent and Trademark Office and the Bundespatentgericht, giving the Munich bar deep IP expertise.",
+    "names": {
+      "en": "Bavaria",
+      "es": "Baviera",
+      "fr": "Bavière",
+      "de": "Bayern",
+      "pt": "Baviera",
+      "it": "Baviera"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "berlin-region",
+    "source": "Berlin operates as both a city and a Bundesland. The Kammergericht is its appellate court (uniquely retaining the historic name). The Berlin bar is the second-largest in Germany and specialises in administrative, constitutional and start-up matters.",
+    "names": {
+      "en": "Berlin",
+      "es": "Berlin",
+      "fr": "Berlin",
+      "de": "Berlin",
+      "pt": "Berlin",
+      "it": "Berlin"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "brandenburg",
+    "source": "Brandenburg surrounds Berlin and is served by the Brandenburgisches Oberlandesgericht in Brandenburg an der Havel. The Potsdam bar handles many cross-border cases with Polish counterparties given the region's eastern frontier.",
+    "names": {
+      "en": "Brandenburg",
+      "es": "Brandeburgo",
+      "fr": "Brandebourg",
+      "de": "Brandenburg",
+      "pt": "Brandemburgo",
+      "it": "Brandeburgo"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "bremen-region",
+    "source": "Bremen (with Bremerhaven) is one of Germany's three city-states. The Hanseatisches Oberlandesgericht in Bremen has long-standing maritime and trade-law expertise tied to the historic Hanseatic port.",
+    "names": {
+      "en": "Bremen",
+      "es": "Bremen",
+      "fr": "Brême",
+      "de": "Bremen",
+      "pt": "Bremen",
+      "it": "Brema"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "hamburg-region",
+    "source": "Hamburg is a city-state and Germany's largest port. The Hanseatisches Oberlandesgericht Hamburg leads on maritime, transport and media-law matters; the Hamburg bar is among the country's most active in shipping and intellectual property.",
+    "names": {
+      "en": "Hamburg",
+      "es": "Hamburgo",
+      "fr": "Hambourg",
+      "de": "Hamburg",
+      "pt": "Hamburgo",
+      "it": "Amburgo"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "hessen",
+    "source": "Hesse (Hessen) is dominated by Frankfurt am Main, Germany's financial capital. The Oberlandesgericht Frankfurt handles a heavy banking, securities and corporate caseload; the European Central Bank and Deutsche Börse are headquartered here.",
+    "names": {
+      "en": "Hesse",
+      "es": "Hesse",
+      "fr": "Hesse",
+      "de": "Hessen",
+      "pt": "Hesse",
+      "it": "Assia"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "mecklenburg-vorpommern",
+    "source": "Mecklenburg-Vorpommern, on Germany's Baltic coast, is served by the Oberlandesgericht Rostock. The Rostock bar specialises in maritime, tourism and renewable-energy matters tied to offshore wind farms.",
+    "names": {
+      "en": "Mecklenburg-Western Pomerania",
+      "es": "Mecklenburg-Vorpommern",
+      "fr": "Mecklenburg-Vorpommern",
+      "de": "Mecklenburg-Vorpommern",
+      "pt": "Mecklenburg-Vorpommern",
+      "it": "Mecklenburg-Vorpommern"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "niedersachsen",
+    "source": "Lower Saxony (Niedersachsen) is anchored by Hannover, Braunschweig and Osnabrück. The Oberlandesgericht Celle and the OLG Braunschweig divide the appellate workload; automotive (Volkswagen) and agricultural disputes dominate.",
+    "names": {
+      "en": "Lower Saxony",
+      "es": "Baja Sajonia",
+      "fr": "Basse-Saxe",
+      "de": "Niedersachsen",
+      "pt": "Baixa Saxônia",
+      "it": "Bassa Sassonia"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "nordrhein-westfalen",
+    "source": "North Rhine-Westphalia is Germany's most populous state, covering Cologne, Düsseldorf, Dortmund and the Ruhr conurbation. It hosts three Oberlandesgerichte (Düsseldorf, Köln, Hamm); Düsseldorf is especially strong in patent litigation, with the busiest patent docket in Europe.",
+    "names": {
+      "en": "North Rhine-Westphalia",
+      "es": "Renania del Norte-Westfalia",
+      "fr": "Rhénanie-du-Nord-Westphalie",
+      "de": "Nordrhein-Westfalen",
+      "pt": "Renânia do Norte-Vestfália",
+      "it": "Renania Settentrionale-Vestfalia"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "rheinland-pfalz",
+    "source": "Rhineland-Palatinate (Rheinland-Pfalz) covers Mainz, Koblenz and Trier. The Oberlandesgericht Koblenz handles appeals; the region's specialisms include viticulture, chemicals (BASF in Ludwigshafen is just over the border) and luxury manufacturing.",
+    "names": {
+      "en": "Rhineland-Palatinate",
+      "es": "Renania-Palatinado",
+      "fr": "Rhénanie-Palatinat",
+      "de": "Rheinland-Pfalz",
+      "pt": "Rheinland-Pfalz",
+      "it": "Renania-Palatinato"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "saarland",
+    "source": "Saarland borders France and shares strong cross-border legal practice with Lorraine. The Saarländisches Oberlandesgericht in Saarbrücken handles regional appeals; many local avocats and Rechtsanwälte hold dual qualifications.",
+    "names": {
+      "en": "Saarland",
+      "es": "Saarland",
+      "fr": "Sarre",
+      "de": "Saarland",
+      "pt": "Saarland",
+      "it": "Saarland"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "sachsen",
+    "source": "Saxony (Sachsen) covers Dresden, Leipzig and Chemnitz. The Oberlandesgericht Dresden is the regional appellate court; Leipzig hosts the Bundesverwaltungsgericht (Federal Administrative Court) and the Federal Court of Justice's fifth criminal senate.",
+    "names": {
+      "en": "Saxony",
+      "es": "Sajonia",
+      "fr": "Saxe",
+      "de": "Sachsen",
+      "pt": "Saxônia",
+      "it": "Sassonia"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "sachsen-anhalt",
+    "source": "Saxony-Anhalt (Magdeburg, Halle) is served by the Oberlandesgericht Naumburg. Local bars handle agribusiness, chemicals (Leuna-Buna industrial cluster) and post-reunification property matters.",
+    "names": {
+      "en": "Saxony-Anhalt",
+      "es": "Sachsen-Anhalt",
+      "fr": "Sachsen-Anhalt",
+      "de": "Sachsen-Anhalt",
+      "pt": "Sachsen-Anhalt",
+      "it": "Sachsen-Anhalt"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "schleswig-holstein",
+    "source": "Schleswig-Holstein, on the Danish border, is served by the Schleswig-Holsteinisches Oberlandesgericht in Schleswig. Kiel hosts the Federal Audit Office and specialises in maritime, shipbuilding and Danish cross-border family disputes.",
+    "names": {
+      "en": "Schleswig-Holstein",
+      "es": "Schleswig-Holstein",
+      "fr": "Schleswig-Holstein",
+      "de": "Schleswig-Holstein",
+      "pt": "Schleswig-Holstein",
+      "it": "Schleswig-Holstein"
+    }
+  },
+  {
+    "country": "de",
+    "canonical": "thueringen",
+    "source": "Thuringia (Thüringen) covers Erfurt, Jena and Weimar. The Thüringer Oberlandesgericht in Jena handles appeals; Erfurt additionally hosts the Bundesarbeitsgericht (Federal Labour Court), giving the Erfurt bar deep employment-law expertise.",
+    "names": {
+      "en": "Thuringia",
+      "es": "Turingia",
+      "fr": "Thuringe",
+      "de": "Thüringen",
+      "pt": "Turíngia",
+      "it": "Turingia"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "andalucia",
+    "source": "Andalusia (Andalucía) is Spain's most populous autonomous community, with major bars in Seville, Málaga, Granada and Córdoba. The Tribunal Superior de Justicia de Andalucía sits in Granada and acts as final regional authority on Andalusian civil and administrative matters.",
+    "names": {
+      "en": "Andalusia",
+      "es": "Andalucía",
+      "fr": "Andalousie",
+      "de": "Andalucía",
+      "pt": "Andaluzia",
+      "it": "Andalusia"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "aragon",
+    "source": "Aragón centres on Zaragoza. The Tribunal Superior de Justicia de Aragón applies both the Código civil and the distinctive Derecho civil aragonés (with its own rules on family, succession and matrimonial property).",
+    "names": {
+      "en": "Aragón",
+      "es": "Aragón",
+      "fr": "Aragón",
+      "de": "Aragón",
+      "pt": "Aragón",
+      "it": "Aragón"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "asturias",
+    "source": "Asturias is served by the Tribunal Superior de Justicia in Oviedo. The Oviedo and Gijón bars specialise in mining-legacy, industrial and rural-property matters tied to the principality's traditional economy.",
+    "names": {
+      "en": "Asturias",
+      "es": "Asturias",
+      "fr": "Asturies",
+      "de": "Asturias",
+      "pt": "Asturias",
+      "it": "Asturias"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "baleares",
+    "source": "The Balearic Islands (Mallorca, Menorca, Ibiza, Formentera) host the Tribunal Superior de Justicia de las Islas Baleares in Palma. Mallorca's bar handles a high volume of tourism, real-estate and cross-border (German and British) inheritance work.",
+    "names": {
+      "en": "Balearic Islands",
+      "es": "Islas Baleares",
+      "fr": "Îles Baléares",
+      "de": "Balearen",
+      "pt": "Ilhas Baleares",
+      "it": "Isole Baleari"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "canarias",
+    "source": "The Canary Islands are served by the Tribunal Superior de Justicia de Canarias, split between Las Palmas de Gran Canaria and Santa Cruz de Tenerife. The Canaries operate under the Régimen Económico y Fiscal (REF), creating specialised tax and customs practice.",
+    "names": {
+      "en": "Canary Islands",
+      "es": "Islas Canarias",
+      "fr": "Îles Canaries",
+      "de": "Kanarische Inseln",
+      "pt": "Ilhas Canárias",
+      "it": "Isole Canarie"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "cantabria",
+    "source": "Cantabria (Santander) is served by the Tribunal Superior de Justicia de Cantabria. The Santander bar specialises in banking and shipping matters tied to the regional port and the historic seat of Banco Santander.",
+    "names": {
+      "en": "Cantabria",
+      "es": "Cantabria",
+      "fr": "Cantabrie",
+      "de": "Cantabria",
+      "pt": "Cantabria",
+      "it": "Cantabria"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "castilla-la-mancha",
+    "source": "Castilla-La Mancha (Toledo, Albacete, Ciudad Real) is served by the Tribunal Superior de Justicia in Albacete. Regional bars handle agricultural, renewable-energy (solar and wind) and Manchego designation-of-origin disputes.",
+    "names": {
+      "en": "Castilla-La Mancha",
+      "es": "Castilla-La Mancha",
+      "fr": "Castilla-La Mancha",
+      "de": "Castilla-La Mancha",
+      "pt": "Castilla-La Mancha",
+      "it": "Castilla-La Mancha"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "castilla-y-leon",
+    "source": "Castilla y León is Spain's largest community by area. The Tribunal Superior de Justicia sits in Burgos. Valladolid, Salamanca and Burgos all host active bars with university-town academic and administrative-law specialisms.",
+    "names": {
+      "en": "Castilla y León",
+      "es": "Castilla y León",
+      "fr": "Castilla y León",
+      "de": "Castilla y León",
+      "pt": "Castilla y León",
+      "it": "Castilla y León"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "cataluna",
+    "source": "Catalonia (Cataluña) has its own Tribunal Superior de Justicia in Barcelona and applies a distinctive Derecho civil catalán covering family, succession and contracts. The Barcelona bar (Il·lustre Col·legi de l'Advocacia de Barcelona) is among Europe's largest.",
+    "names": {
+      "en": "Catalonia",
+      "es": "Cataluña",
+      "fr": "Catalogne",
+      "de": "Katalonien",
+      "pt": "Catalunha",
+      "it": "Catalogna"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "extremadura",
+    "source": "Extremadura (Mérida, Badajoz, Cáceres) is served by the Tribunal Superior de Justicia in Cáceres. The regional bars handle a substantial agricultural, environmental and Portuguese cross-border caseload.",
+    "names": {
+      "en": "Extremadura",
+      "es": "Extremadura",
+      "fr": "Estrémadure",
+      "de": "Extremadura",
+      "pt": "Extremadura",
+      "it": "Extremadura"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "galicia",
+    "source": "Galicia is served by the Tribunal Superior de Justicia in A Coruña. The region applies its own Derecho civil de Galicia (especially for foros, montes vecinales and succession). The Vigo and A Coruña bars specialise in fisheries, shipping and Portuguese cross-border matters.",
+    "names": {
+      "en": "Galicia",
+      "es": "Galicia",
+      "fr": "Galice",
+      "de": "Galicia",
+      "pt": "Galiza",
+      "it": "Galizia"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "la-rioja",
+    "source": "La Rioja (Logroño) is served by the Tribunal Superior de Justicia de La Rioja. The Logroño bar handles a heavy viticulture, designation-of-origin and agricultural caseload.",
+    "names": {
+      "en": "La Rioja",
+      "es": "La Rioja",
+      "fr": "La Rioja",
+      "de": "La Rioja",
+      "pt": "La Rioja",
+      "it": "La Rioja"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "madrid-region",
+    "source": "The Community of Madrid is Spain's economic and judicial centre. The Tribunal Superior de Justicia de Madrid sits in the capital, alongside the Tribunal Supremo, the Audiencia Nacional and most major institutional regulators. The Madrid bar (ICAM) is the country's largest.",
+    "names": {
+      "en": "Community of Madrid",
+      "es": "Comunidad de Madrid",
+      "fr": "Communauté de Madrid",
+      "de": "Madrid",
+      "pt": "Comunidade de Madrid",
+      "it": "Comunità di Madrid"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "murcia-region",
+    "source": "The Region of Murcia is served by the Tribunal Superior de Justicia de Murcia. Local bars handle agribusiness (huerta), petrochemicals (Cartagena) and Mar Menor environmental litigation.",
+    "names": {
+      "en": "Region of Murcia",
+      "es": "Región de Murcia",
+      "fr": "Région de Murcie",
+      "de": "Región de Murcia",
+      "pt": "Región de Murcia",
+      "it": "Región de Murcia"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "navarra",
+    "source": "Navarra applies its own Fuero Nuevo (Compilación del Derecho Civil Foral de Navarra), one of the most extensive forales in Spain. The Tribunal Superior de Justicia de Navarra sits in Pamplona and frequently applies these distinctive succession and family rules.",
+    "names": {
+      "en": "Navarre",
+      "es": "Navarra",
+      "fr": "Navarre",
+      "de": "Navarra",
+      "pt": "Navarra",
+      "it": "Navarra"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "pais-vasco",
+    "source": "The Basque Country (País Vasco / Euskadi) is served by the Tribunal Superior de Justicia del País Vasco in Bilbao. The region applies its own Derecho civil foral vasco (Fuero Civil de Bizkaia y Álava) and operates under a distinctive Concierto Económico tax regime.",
+    "names": {
+      "en": "Basque Country",
+      "es": "País Vasco",
+      "fr": "Pays basque",
+      "de": "Baskenland",
+      "pt": "País Basco",
+      "it": "Paesi Baschi"
+    }
+  },
+  {
+    "country": "es",
+    "canonical": "comunidad-valenciana",
+    "source": "The Valencian Community covers Valencia, Alicante, Elche and Castellón. The Tribunal Superior de Justicia de la Comunidad Valenciana sits in Valencia. Strong specialisms in real-estate (especially British and Northern-European retiree property), agricultural and tourism law.",
+    "names": {
+      "en": "Valencian Community",
+      "es": "Comunidad Valenciana",
+      "fr": "Communauté valencienne",
+      "de": "Comunidad Valenciana",
+      "pt": "Comunidade Valenciana",
+      "it": "Comunità Valenciana"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "abruzzo",
+    "source": "Abruzzo (L'Aquila, Pescara, Chieti) is served by the Corte d'Appello dell'Aquila. Local bars handle a substantial post-earthquake reconstruction and public-procurement caseload alongside agribusiness and tourism matters.",
+    "names": {
+      "en": "Abruzzo",
+      "es": "Abruzzo",
+      "fr": "Abruzzo",
+      "de": "Abruzzo",
+      "pt": "Abruzzo",
+      "it": "Abruzzo"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "basilicata",
+    "source": "Basilicata (Potenza, Matera) is served by the Corte d'Appello di Potenza. Local advocates specialise in energy (Val d'Agri oil), agricultural and UNESCO heritage-site property disputes around Matera.",
+    "names": {
+      "en": "Basilicata",
+      "es": "Basilicata",
+      "fr": "Basilicata",
+      "de": "Basilicata",
+      "pt": "Basilicata",
+      "it": "Basilicata"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "calabria",
+    "source": "Calabria is served by the Corte d'Appello di Catanzaro, with sezioni distaccate at Reggio Calabria. The regional bars handle significant anti-mafia, public-procurement and agricultural litigation.",
+    "names": {
+      "en": "Calabria",
+      "es": "Calabria",
+      "fr": "Calabre",
+      "de": "Calabria",
+      "pt": "Calabria",
+      "it": "Calabria"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "campania",
+    "source": "Campania, anchored by Naples and Salerno, is served by the Corti d'Appello di Napoli e Salerno. The Naples bar is one of Italy's largest and traditionally strong in civil, commercial and criminal litigation.",
+    "names": {
+      "en": "Campania",
+      "es": "Campania",
+      "fr": "Campanie",
+      "de": "Campania",
+      "pt": "Campania",
+      "it": "Campania"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "emilia-romagna",
+    "source": "Emilia-Romagna (Bologna, Parma, Modena, Reggio Emilia, Ravenna, Rimini, Ferrara) is served by the Corte d'Appello di Bologna. The regional bars are highly specialised in food-and-wine (parmigiano, prosciutto, Lambrusco) and ceramic-tile industrial disputes.",
+    "names": {
+      "en": "Emilia-Romagna",
+      "es": "Emilia-Romagna",
+      "fr": "Emilia-Romagna",
+      "de": "Emilia-Romagna",
+      "pt": "Emilia-Romagna",
+      "it": "Emilia-Romagna"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "friuli-venezia-giulia",
+    "source": "Friuli-Venezia Giulia (Trieste, Udine) is served by the Corte d'Appello di Trieste. The Trieste bar handles maritime, insurance and Central-European cross-border matters tied to the historic Habsburg trade routes.",
+    "names": {
+      "en": "Friuli-Venezia Giulia",
+      "es": "Friuli-Venezia Giulia",
+      "fr": "Frioul-Vénétie julienne",
+      "de": "Friuli-Venezia Giulia",
+      "pt": "Friuli-Venezia Giulia",
+      "it": "Friuli-Venezia Giulia"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "lazio",
+    "source": "Lazio, dominated by Rome, hosts the Corte d'Appello di Roma alongside the Corte Suprema di Cassazione, the Consiglio di Stato and most major regulators. The Rome bar (Ordine degli Avvocati di Roma) is Italy's largest with over 25,000 members.",
+    "names": {
+      "en": "Lazio",
+      "es": "Lazio",
+      "fr": "Latium",
+      "de": "Lazio",
+      "pt": "Lazio",
+      "it": "Lazio"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "liguria",
+    "source": "Liguria (Genoa, La Spezia, Savona) is served by the Corte d'Appello di Genova. The Genoese bar has deep specialisms in maritime, insurance and port-logistics law, befitting Italy's largest seaport.",
+    "names": {
+      "en": "Liguria",
+      "es": "Liguria",
+      "fr": "Ligurie",
+      "de": "Liguria",
+      "pt": "Liguria",
+      "it": "Liguria"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "lombardia",
+    "source": "Lombardy (Milan, Brescia, Bergamo) is Italy's economic powerhouse. The Corte d'Appello di Milano handles a heavy banking, M&A, IP and competition caseload; the Milan bar is the country's centre for international commercial and arbitration practice.",
+    "names": {
+      "en": "Lombardy",
+      "es": "Lombardía",
+      "fr": "Lombardie",
+      "de": "Lombardei",
+      "pt": "Lombardia",
+      "it": "Lombardia"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "marche",
+    "source": "Marche (Ancona, Pesaro, Macerata) is served by the Corte d'Appello di Ancona. Local advocates specialise in footwear, white-goods and fishing-industry matters tied to the region's industrial districts.",
+    "names": {
+      "en": "Marche",
+      "es": "Marche",
+      "fr": "Marches",
+      "de": "Marche",
+      "pt": "Marche",
+      "it": "Marche"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "molise",
+    "source": "Molise (Campobasso, Isernia) is served by the Corte d'Appello di Campobasso. As Italy's second-smallest region, the bar is correspondingly compact, with a focus on agricultural and public-administration matters.",
+    "names": {
+      "en": "Molise",
+      "es": "Molise",
+      "fr": "Molise",
+      "de": "Molise",
+      "pt": "Molise",
+      "it": "Molise"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "piemonte",
+    "source": "Piedmont (Turin, Alessandria, Novara) is served by the Corte d'Appello di Torino. Strong specialisms in automotive (FCA/Stellantis), aerospace and luxury food-and-wine (Barolo, Barbaresco) sectors.",
+    "names": {
+      "en": "Piedmont",
+      "es": "Piamonte",
+      "fr": "Piémont",
+      "de": "Piemonte",
+      "pt": "Piemonte",
+      "it": "Piemonte"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "puglia",
+    "source": "Apulia (Puglia) covers Bari, Taranto, Foggia and Lecce. The Corte d'Appello di Bari handles most appeals, with a sezione distaccata in Taranto. Heavy specialisms in steel-industry (Ilva/Acciaierie d'Italia) and agricultural disputes.",
+    "names": {
+      "en": "Apulia",
+      "es": "Apulia",
+      "fr": "Pouilles",
+      "de": "Puglia",
+      "pt": "Puglia",
+      "it": "Puglia"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "sardegna",
+    "source": "Sardinia (Sardegna) is served by the Corte d'Appello di Cagliari, with a sezione distaccata in Sassari. The regional bars handle tourism, mining-legacy and a distinctive Sardinian-statute land-tenure caseload.",
+    "names": {
+      "en": "Sardinia",
+      "es": "Cerdeña",
+      "fr": "Sardaigne",
+      "de": "Sardinien",
+      "pt": "Sardenha",
+      "it": "Sardegna"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "sicilia",
+    "source": "Sicily (Sicilia) covers Palermo, Catania and Messina. The Corte d'Appello di Palermo handles western-Sicily appeals; Catania and Messina serve the east. Sicily operates under a special statute (Statuto Siciliano) with additional regional legislative powers.",
+    "names": {
+      "en": "Sicily",
+      "es": "Sicilia",
+      "fr": "Sicile",
+      "de": "Sizilien",
+      "pt": "Sicília",
+      "it": "Sicilia"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "toscana",
+    "source": "Tuscany (Toscana) is served by the Corte d'Appello di Firenze. The Florence and Pisa bars handle art-law, wine-industry and historic-property restoration disputes characteristic of the region.",
+    "names": {
+      "en": "Tuscany",
+      "es": "Toscana",
+      "fr": "Toscane",
+      "de": "Toskana",
+      "pt": "Toscana",
+      "it": "Toscana"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "trentino-alto-adige",
+    "source": "Trentino-Alto Adige / Südtirol is a bilingual autonomous region served by the Corte d'Appello di Trento, with a sezione distaccata in Bolzano. South Tyrolean lawyers practise in both Italian and German under a distinctive linguistic-parity statute.",
+    "names": {
+      "en": "Trentino-Alto Adige",
+      "es": "Trentino-Alto Adige",
+      "fr": "Trentino-Alto Adige",
+      "de": "Trentino-Alto Adige",
+      "pt": "Trentino-Alto Adige",
+      "it": "Trentino-Alto Adige"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "umbria",
+    "source": "Umbria (Perugia, Terni) is served by the Corte d'Appello di Perugia. Local bars specialise in agribusiness, religious-foundation (Assisi) and historic-property matters.",
+    "names": {
+      "en": "Umbria",
+      "es": "Umbría",
+      "fr": "Ombrie",
+      "de": "Umbria",
+      "pt": "Umbria",
+      "it": "Umbria"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "valle-daosta",
+    "source": "Valle d'Aosta / Vallée d'Aoste is a bilingual autonomous region; appeals are heard by the Corte d'Appello di Torino. The local bar in Aosta operates in both Italian and French and handles distinctive cross-border (French) family and succession matters.",
+    "names": {
+      "en": "Aosta Valley",
+      "es": "Valle d'Aosta",
+      "fr": "Vallée d'Aoste",
+      "de": "Valle d'Aosta",
+      "pt": "Valle d'Aosta",
+      "it": "Valle d'Aosta"
+    }
+  },
+  {
+    "country": "it",
+    "canonical": "veneto",
+    "source": "Veneto (Venice, Verona, Padua, Vicenza, Treviso) is served by the Corte d'Appello di Venezia. The regional bars handle a heavy fashion (Benetton, Diesel), wine (Prosecco, Amarone) and port-Adriatic caseload.",
+    "names": {
+      "en": "Veneto",
+      "es": "Véneto",
+      "fr": "Vénétie",
+      "de": "Veneto",
+      "pt": "Veneto",
+      "it": "Veneto"
+    }
+  },
+  {
+    "country": "pt",
+    "canonical": "norte",
+    "source": "Northern Portugal (Norte) covers Porto, Braga, Guimarães, Viana do Castelo and Bragança. The Tribunal da Relação do Porto is the regional appellate court; the Ordem dos Advogados Conselho Regional do Porto is the second-largest in the country and specialises in textiles, wine (Vinho Verde, Port) and Spanish cross-border matters.",
+    "names": {
+      "en": "Norte (Northern Portugal)",
+      "es": "Norte (Portugal)",
+      "fr": "Nord (Portugal)",
+      "de": "Norte",
+      "pt": "Norte",
+      "it": "Nord (Portogallo)"
+    }
+  },
+  {
+    "country": "pt",
+    "canonical": "centro",
+    "source": "Central Portugal (Centro) covers Coimbra, Aveiro, Leiria and Viseu. The Tribunal da Relação de Coimbra serves the region; Coimbra's historic law faculty (founded 1290) continues to shape Portuguese legal academia and the regional bar.",
+    "names": {
+      "en": "Centro (Central Portugal)",
+      "es": "Centro (Portugal)",
+      "fr": "Centre (Portugal)",
+      "de": "Centro",
+      "pt": "Centro",
+      "it": "Centro (Portogallo)"
+    }
+  },
+  {
+    "country": "pt",
+    "canonical": "lisboa-region",
+    "source": "The Lisbon Metropolitan Area is Portugal's judicial and economic capital. The Tribunal da Relação de Lisboa, the Supremo Tribunal de Justiça and the Tribunal Constitucional are all based here. The Conselho Regional de Lisboa da Ordem dos Advogados is the country's largest.",
+    "names": {
+      "en": "Lisbon Metropolitan Area",
+      "es": "Área Metropolitana de Lisboa",
+      "fr": "Aire métropolitaine de Lisbonne",
+      "de": "Metropolregion Lissabon",
+      "pt": "Área Metropolitana de Lisboa",
+      "it": "Area Metropolitana di Lisbona"
+    }
+  },
+  {
+    "country": "pt",
+    "canonical": "alentejo",
+    "source": "The Alentejo (Évora, Beja, Portalegre) is served by the Tribunal da Relação de Évora. Local advocates handle a heavy agricultural, cork-industry and Spanish cross-border caseload, given the region's long border with Extremadura.",
+    "names": {
+      "en": "Alentejo",
+      "es": "Alentejo",
+      "fr": "Alentejo",
+      "de": "Alentejo",
+      "pt": "Alentejo",
+      "it": "Alentejo"
+    }
+  },
+  {
+    "country": "pt",
+    "canonical": "algarve",
+    "source": "The Algarve (Faro, Portimão, Albufeira) is served by the Tribunal da Relação de Évora. Local bars handle a high volume of tourism, real-estate and cross-border (British, Dutch, Irish) inheritance and rental disputes.",
+    "names": {
+      "en": "Algarve",
+      "es": "Algarve",
+      "fr": "Algarve",
+      "de": "Algarve",
+      "pt": "Algarve",
+      "it": "Algarve"
+    }
+  },
+  {
+    "country": "pt",
+    "canonical": "acores",
+    "source": "The Azores (Açores) is an autonomous region served by the Tribunal da Relação de Lisboa with a comarca structure across the nine islands. The Ponta Delgada bar handles distinctive fisheries, tourism and US-tied (large Azorean diaspora) family matters.",
+    "names": {
+      "en": "Azores",
+      "es": "Azores",
+      "fr": "Açores",
+      "de": "Azoren",
+      "pt": "Açores",
+      "it": "Azzorre"
+    }
+  },
+  {
+    "country": "pt",
+    "canonical": "madeira",
+    "source": "Madeira is an autonomous region. Appellate matters reach the Tribunal da Relação de Lisboa. The Funchal bar specialises in tourism, shipping (Madeira International Ship Register) and the International Business Centre tax-regime work.",
+    "names": {
+      "en": "Madeira",
+      "es": "Madeira",
+      "fr": "Madeira",
+      "de": "Madeira",
+      "pt": "Madeira",
+      "it": "Madeira"
+    }
+  }
+]
