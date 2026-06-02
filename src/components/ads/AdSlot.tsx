@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { ADSENSE_CLIENT, AD_SLOT_IDS } from "@/lib/adsense";
 import { useConsent } from "@/lib/consent";
 
@@ -15,6 +16,36 @@ const slotStyles: Record<string, string> = {
   "sidebar": "min-h-[250px] md:min-h-[600px]",
   "in-feed": "min-h-[120px]",
 };
+
+// Keep AdSense off thin/auto-generated/utility pages so the network only
+// sees us monetizing substantive content. This is the main "low value
+// content" guard for AdSense review.
+const AD_DENY_PREFIXES = [
+  "/login", "/signup", "/forgot-password", "/reset-password",
+  "/dashboard", "/admin",
+  "/lawyer-near-me", "/lawyer-eu",
+  "/tools", "/legal-terms", "/legal-clauses", "/contract-types",
+  "/blog", "/laws",
+];
+
+// Detail pages under denied prefixes that DO carry rich content and should
+// still monetize. These win over the deny list.
+const AD_ALLOW_PATTERNS: RegExp[] = [
+  /^\/tools\/[^/]+\/[^/]+\/?$/,
+  /^\/legal-terms\/[^/]+\/?$/,
+  /^\/legal-clauses\/[^/]+\/?$/,
+  /^\/contract-types\/[^/]+\/?$/,
+  /^\/blog\/(?!category\/)[^/]+\/?$/,
+  /^\/laws\/[^/]+\/[^/]+\/?$/,
+];
+
+function shouldShowAds(pathname: string): boolean {
+  const bare = pathname.replace(/^\/(?:en|fr|de|es|it|pt)(?=\/|$)/, "") || "/";
+  if (AD_ALLOW_PATTERNS.some((re) => re.test(bare))) return true;
+  if (AD_DENY_PREFIXES.some((p) => bare === p || bare.startsWith(p + "/"))) return false;
+  return true;
+}
+
 
 export default function AdSlot({ slot, className = "" }: AdSlotProps) {
   const consent = useConsent();
