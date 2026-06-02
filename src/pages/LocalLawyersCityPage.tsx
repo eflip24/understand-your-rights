@@ -83,6 +83,7 @@ export default function LocalLawyersCityPage() {
       <Tier3Head
         title={`${pageTitle} | LegallySpoken`}
         description={`Find ${practiceArea.shortTitle.toLowerCase()} lawyers in ${cityInfo.name}, ${stateInfo.name}. ${stateInfo.name} statute of limitations: ${stateInfo.personalInjurySOL}. Free local courthouse info and settlement calculator.`}
+        noindex={lawyers.length === 0}
       />
       <JsonLdGraph schemas={schemas} />
 

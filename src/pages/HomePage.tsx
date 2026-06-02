@@ -85,6 +85,48 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Unique site intro — written so the page carries substantive text
+          even before any tool, card, or AI-translated content loads. */}
+      <section className="container py-12 md:py-14 max-w-4xl">
+        <div className="space-y-5 text-foreground/90 leading-relaxed">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+            What LegallySpoken actually does for you
+          </h2>
+          <p>
+            LegallySpoken is a free, no-signup library of more than 100 plain-English legal
+            tools and reference guides built for non-lawyers. Instead of selling you a
+            subscription or a downloadable PDF pack, every calculator, contract analyzer,
+            risk checker, deadline calendar, and document generator on this site runs
+            instantly in your browser — and stays free.
+          </p>
+          <p>
+            We cover the everyday legal situations people actually search for: reading a
+            lease before you sign it, working out a personal-injury settlement range,
+            calculating an employment-law deadline, spotting risky clauses in a contract,
+            understanding a small-claims notice, comparing insurance offers, or finding a
+            local attorney. Our state-by-state guides cover all 50 US states, and our
+            European section covers Germany, France, Spain, Italy, and Portugal in each
+            country&apos;s own language.
+          </p>
+          <p>
+            Drafts are produced with AI assistance and then reviewed by a human editor
+            against primary sources (statutes, regulations, agency guidance). We are
+            transparent about that workflow — see our{" "}
+            <Link to={lp("/editorial-standards")} className="text-accent hover:underline">
+              editorial standards
+            </Link>{" "}
+            for exactly how we research, write, review, and update each page, and our{" "}
+            <Link to={lp("/about")} className="text-accent hover:underline">about page</Link>{" "}
+            for who we are.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            LegallySpoken is not a law firm and nothing here is legal advice. Use our tools
+            to get oriented, then talk to a licensed attorney about decisions that matter.
+          </p>
+        </div>
+      </section>
+
+
       <QuizAndPopularToolsSection />
 
       {/* Categories */}

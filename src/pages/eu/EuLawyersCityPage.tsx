@@ -74,6 +74,7 @@ export default function EuLawyersCityPage() {
         title={`${t("city.metaTitle", ctx)} | LegallySpoken`}
         description={t("city.metaDescription", ctx)}
         canonicalRoute={canonical}
+        noindex={listings.length === 0}
       />
       <JsonLdGraph schemas={schemas} />
 

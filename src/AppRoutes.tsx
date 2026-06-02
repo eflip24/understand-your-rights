@@ -62,6 +62,8 @@ const LocalLawyersStatePage = React.lazy(() => import("@/pages/LocalLawyersState
 const LocalLawyersCityPage = React.lazy(() => import("@/pages/LocalLawyersCityPage"));
 const StateClusterArticlePage = React.lazy(() => import("@/pages/StateClusterArticlePage"));
 const AboutPage = React.lazy(() => import("@/pages/AboutPage"));
+const ContactPage = React.lazy(() => import("@/pages/ContactPage"));
+const EditorialStandardsPage = React.lazy(() => import("@/pages/EditorialStandardsPage"));
 const StatuteLibraryDirectory = React.lazy(() => import("@/pages/StatuteLibraryDirectory"));
 const StatutePage = React.lazy(() => import("@/pages/StatutePage"));
 const EuLawyersHub = React.lazy(() => import("@/pages/eu/EuLawyersHub"));
@@ -139,6 +141,8 @@ export default function AppRoutes() {
       <Route path="/lawyer-eu/:country/:area" element={<EuLawyersAreaPage />} />
       <Route path="/lawyer-eu/:country/:area/:city" element={<EuLawyersCityPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/editorial-standards" element={<EditorialStandardsPage />} />
       <Route path="/laws" element={<StatuteLibraryDirectory />} />
       <Route path="/laws/:state/:topic" element={<StatutePage />} />
       <Route path="/disclaimer" element={<DisclaimerPage />} />

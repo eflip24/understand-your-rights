@@ -35,7 +35,47 @@
 </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static SEO fallback. Replaced by React on hydration; visible to
+           crawlers that do not execute JavaScript (including the AdSense
+           crawler on first visit). Keep it short, factual, and unique. -->
+      <main style="max-width:760px;margin:0 auto;padding:48px 24px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1a1f36;line-height:1.55;">
+        <h1 style="font-size:2rem;margin:0 0 12px;">LegallySpoken — Free Legal Tools for Everyday People</h1>
+        <p style="font-size:1.05rem;color:#525f7f;margin:0 0 20px;">
+          More than 100 plain-English legal calculators, contract analyzers, risk checkers,
+          deadline calendars, and document generators. No signup, no credit card, no paywall.
+          Coverage spans all 50 US states and the major EU jurisdictions (Germany, France,
+          Spain, Italy, Portugal) in each country&rsquo;s own language.
+        </p>
+        <h2 style="font-size:1.25rem;margin:24px 0 8px;">What you can do here</h2>
+        <ul style="margin:0 0 20px;padding-left:20px;">
+          <li>Run a contract through our red-flag scanner and get a plain-English summary.</li>
+          <li>Estimate a personal-injury settlement range or an auto-accident claim value.</li>
+          <li>Calculate a statute-of-limitations deadline for any US state.</li>
+          <li>Read pillar guides on auto accidents, personal injury, insurance, employment,
+              criminal, landlord&ndash;tenant, and AI &amp; tech law.</li>
+          <li>Find a licensed attorney in your city across the US or the EU.</li>
+          <li>Browse a dictionary of common legal terms and clause templates.</li>
+        </ul>
+        <h2 style="font-size:1.25rem;margin:24px 0 8px;">How we work</h2>
+        <p style="margin:0 0 16px;">
+          Content is drafted with AI assistance and reviewed by a human editor against primary
+          sources (statutes, regulations, official agency guidance). Every page carries a
+          last-updated date and a clear disclaimer that we are not a law firm and nothing on
+          the site is legal advice. See our editorial standards page for the full process.
+        </p>
+        <p style="font-size:0.9rem;color:#697386;">
+          Loading the interactive site&hellip; If it does not appear, please enable JavaScript.
+        </p>
+        <noscript>
+          <p style="font-size:0.9rem;color:#697386;">
+            This site requires JavaScript to use its tools. Static pages and pillar guides
+            remain readable; please enable JavaScript for the calculators and analyzers.
+          </p>
+        </noscript>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
+

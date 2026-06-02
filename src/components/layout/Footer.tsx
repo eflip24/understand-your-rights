@@ -52,6 +52,8 @@ export default function Footer() {
     { label: "Find a Lawyer (Europe)", href: lp("/lawyer-eu") },
     { label: t("nav.resources.blog"), href: lp("/blog") },
     { label: t("nav.resources.about"), href: lp("/about") },
+    { label: "Editorial Standards", href: lp("/editorial-standards") },
+    { label: "Contact", href: lp("/contact") },
   ];
 
   const legalLinks = [
