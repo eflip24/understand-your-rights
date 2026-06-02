@@ -49,13 +49,13 @@ function shouldShowAds(pathname: string): boolean {
 
 export default function AdSlot({ slot, className = "" }: AdSlotProps) {
   const consent = useConsent();
+  const location = useLocation();
   const pushed = useRef(false);
   const insRef = useRef<HTMLModElement | null>(null);
 
-  // Decision: only render ads after the user has made a consent choice
-  // (banner blocks ads by default until decided). Personalized vs not
-  // is handled inside setConsent() via requestNonPersonalizedAds.
   const consentDecided = consent !== null;
+  const allowedHere = shouldShowAds(location.pathname);
+
 
   useEffect(() => {
     if (!consentDecided) return;
