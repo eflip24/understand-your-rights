@@ -58,7 +58,7 @@ export default function AdSlot({ slot, className = "" }: AdSlotProps) {
 
 
   useEffect(() => {
-    if (!consentDecided) return;
+    if (!consentDecided || !allowedHere) return;
     if (pushed.current) return;
     if (typeof window === "undefined") return;
     try {
@@ -67,12 +67,17 @@ export default function AdSlot({ slot, className = "" }: AdSlotProps) {
     } catch {
       // AdSense not loaded yet (script may be blocked); silently ignore.
     }
-  }, [consentDecided]);
+  }, [consentDecided, allowedHere]);
+
+  // Page is on the deny list — render nothing (not even a placeholder) so
+  // AdSense crawlers never see an ad slot on thin pages.
+  if (!allowedHere) return null;
 
   if (!consentDecided) {
     // Reserve space to prevent CLS without showing an ad container.
     return <div className={`w-full ${slotStyles[slot] || ""} ${className}`} aria-hidden="true" />;
   }
+
 
   const slotId = AD_SLOT_IDS[slot] || "";
 
