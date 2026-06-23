@@ -124,11 +124,19 @@ export default function AdminBlogEditor() {
     }
     setAiGenerating(true);
     try {
+      if (!session?.access_token) {
+        toast({ title: "You must be signed in as admin", variant: "destructive" });
+        setAiGenerating(false);
+        return;
+      }
       const res = await fetch(
         `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate-blog-article`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${session.access_token}`,
+          },
           body: JSON.stringify({
             topic: aiTopic,
             target_keyword: aiKeyword,

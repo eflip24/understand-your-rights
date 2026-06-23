@@ -58,6 +58,43 @@ async function callGemini(apiKey: string, system: string, user: string): Promise
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
+  // Auth: shared cron secret OR admin JWT
+  const cronSecret = Deno.env.get("CRON_SECRET");
+  const providedCron = req.headers.get("x-cron-secret");
+  const authHeader = req.headers.get("Authorization") ?? "";
+  let authorized = !!(cronSecret && providedCron && providedCron === cronSecret);
+  if (!authorized) {
+    if (!authHeader.startsWith("Bearer ")) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const sbAuth = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_ANON_KEY")!,
+      { global: { headers: { Authorization: authHeader } } }
+    );
+    const token = authHeader.slice("Bearer ".length);
+    const { data: claimsData, error: claimsErr } = await sbAuth.auth.getClaims(token);
+    const uid = claimsData?.claims?.sub;
+    if (claimsErr || !uid) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const adminCheck = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
+    );
+    const { data: roleRow } = await adminCheck
+      .from("user_roles").select("role").eq("user_id", uid).eq("role", "admin").maybeSingle();
+    if (!roleRow) {
+      return new Response(JSON.stringify({ error: "Forbidden" }), {
+        status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+  }
+
   const geminiKey = Deno.env.get("GEMINI_API_KEY");
   if (!geminiKey) {
     return new Response(JSON.stringify({ error: "GEMINI_API_KEY missing" }), {
