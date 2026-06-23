@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import i18n from "./config";
 import { supabase } from "@/integrations/supabase/client";
 
 type ToolOverride = {
@@ -51,11 +51,15 @@ async function loadOverrides(locale: string): Promise<LocaleOverrides> {
  * static i18n JSON was last regenerated.
  */
 export function useToolTranslationOverrides() {
-  const { i18n } = useTranslation();
-  const locale = (i18n.language || "en").split("-")[0];
+  const [locale, setLocale] = useState<string>(() => (i18n.language || "en").split("-")[0]);
   const [overrides, setOverrides] = useState<LocaleOverrides>(
     () => cache.get(locale) ?? { tools: {}, categories: {} },
   );
+  useEffect(() => {
+    const handler = (lng: string) => setLocale((lng || "en").split("-")[0]);
+    i18n.on("languageChanged", handler);
+    return () => { i18n.off("languageChanged", handler); };
+  }, []);
   useEffect(() => {
     if (locale === "en") {
       setOverrides({ tools: {}, categories: {} });
