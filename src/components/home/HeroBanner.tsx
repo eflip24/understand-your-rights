@@ -82,22 +82,22 @@ export default function HeroBanner() {
 
       <div className="container relative py-20 sm:py-24 lg:py-28">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center lg:mx-0 lg:max-w-3xl lg:items-start lg:text-left">
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-gold/25 bg-navy-dark/70 px-4 py-2 shadow-lg shadow-gold/5 backdrop-blur-md animate-fade-in">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-gold/25 bg-navy-dark/70 px-4 py-2 shadow-lg shadow-gold/5 backdrop-blur-md">
             <span className="h-2 w-2 rounded-full bg-gold shadow-[0_0_18px_hsl(var(--gold))]" />
             <span className="font-sans text-xs font-semibold tracking-wide text-gold-light sm:text-sm">
               {t("hero.badge")}
             </span>
           </div>
 
-          <h1 className="font-sans text-5xl font-extrabold leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl animate-fade-in" style={{ animationDelay: "0.08s" }}>
+          <h1 className="font-sans text-5xl font-extrabold leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl">
             {t("hero.titleStart")} <span className="text-gold">{t("hero.titleAccent")}</span>
           </h1>
 
-          <p className="mt-6 max-w-2xl font-sans text-lg leading-8 text-white/72 sm:text-xl animate-fade-in" style={{ animationDelay: "0.16s" }}>
+          <p className="mt-6 max-w-2xl font-sans text-lg leading-8 text-white/72 sm:text-xl">
             {t("hero.subtitle")}
           </p>
 
-          <form onSubmit={handleSearch} className="mt-10 w-full max-w-2xl animate-fade-in" style={{ animationDelay: "0.24s" }}>
+          <form onSubmit={handleSearch} className="mt-10 w-full max-w-2xl">
             <div className="group rounded-2xl border border-white/15 bg-white/[0.08] p-2 shadow-2xl shadow-navy-dark/40 backdrop-blur-xl transition-all duration-300 focus-within:border-gold/55 focus-within:shadow-gold/15">
               <div className="flex flex-col gap-2 sm:flex-row">
                 <div className="relative min-w-0 flex-1">
@@ -120,7 +120,7 @@ export default function HeroBanner() {
             </div>
           </form>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:justify-start animate-fade-in" style={{ animationDelay: "0.32s" }}>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:justify-start">
             {trustSignals.map((text) => (
               <div
                 key={text}
