@@ -12,6 +12,7 @@ import { getCityBySlug } from "@/data/locations/cityData";
 import { getLawyerListings } from "@/data/locations/lawyerListings";
 import type { MapMarker } from "@/components/maps/LocalMap";
 import SettlementEstimator from "@/components/tools/SettlementEstimator";
+import { useLocalizedPath } from "@/i18n/paths";
 
 const LocalMap = React.lazy(() => import("@/components/maps/LocalMap"));
 
@@ -22,8 +23,9 @@ export default function LocalLawyersCityPage() {
   const practiceArea = practiceAreas.find((pa) => pa.slug === area);
   const stateInfo = state ? getStateBySlug(state) : undefined;
   const cityInfo = state && city ? getCityBySlug(state, city) : undefined;
+  const lp = useLocalizedPath();
 
-  if (!practiceArea || !stateInfo || !cityInfo) return <Navigate to="/lawyer-near-me" replace />;
+  if (!practiceArea || !stateInfo || !cityInfo) return <Navigate to={lp("/lawyer-near-me")} replace />;
 
   const lawyers = getLawyerListings(stateInfo.slug, cityInfo.slug);
 
@@ -89,13 +91,13 @@ export default function LocalLawyersCityPage() {
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
-        <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+        <Link to={lp("/")} className="hover:text-foreground transition-colors">Home</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to="/lawyer-near-me" className="hover:text-foreground transition-colors">Find a Lawyer</Link>
+        <Link to={lp("/lawyer-near-me")} className="hover:text-foreground transition-colors">Find a Lawyer</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={`/lawyer-near-me/${practiceArea.slug}`} className="hover:text-foreground transition-colors">{practiceArea.shortTitle}</Link>
+        <Link to={lp(`/lawyer-near-me/${practiceArea.slug}`)} className="hover:text-foreground transition-colors">{practiceArea.shortTitle}</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={`/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}`} className="hover:text-foreground transition-colors">{stateInfo.name}</Link>
+        <Link to={lp(`/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}`)} className="hover:text-foreground transition-colors">{stateInfo.name}</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">{cityInfo.name}</span>
       </nav>
@@ -297,7 +299,7 @@ export default function LocalLawyersCityPage() {
         <div className="mb-8 p-4 rounded-lg bg-accent/5 border border-accent/20">
           <p className="text-sm text-muted-foreground">
             Want to learn more about {practiceArea.shortTitle.toLowerCase()} law?{" "}
-            <Link to={practiceArea.relatedPillarPath} className="text-accent font-medium hover:underline">
+            <Link to={lp(practiceArea.relatedPillarPath)} className="text-accent font-medium hover:underline">
               Read our comprehensive guide →
             </Link>
           </p>

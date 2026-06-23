@@ -5,9 +5,11 @@ import { JsonLdGraph, breadcrumbSchema, itemListSchema } from "@/components/seo/
 import { statuteTopics, allStateSlugs, allStateNames } from "@/data/statutes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useLocalizedPath } from "@/i18n/paths";
 
 export default function StatuteLibraryDirectory() {
   const url = "https://legallyspoken.com/laws";
+  const lp = useLocalizedPath();
   return (
     <div className="container py-10 max-w-5xl">
       <Tier3Head
@@ -28,7 +30,7 @@ export default function StatuteLibraryDirectory() {
       />
 
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">
-        <Link to="/" className="hover:text-foreground">Home</Link>
+        <Link to={lp("/")} className="hover:text-foreground">Home</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">Statute Library</span>
       </nav>
@@ -61,7 +63,7 @@ export default function StatuteLibraryDirectory() {
                   {allStateSlugs.map((slug) => (
                     <Link
                       key={slug}
-                      to={`/laws/${slug}/${topic.slug}`}
+                      to={lp(`/laws/${slug}/${topic.slug}`)}
                       className="text-sm px-3 py-1.5 rounded border border-border hover:border-accent hover:bg-accent/5 transition-colors"
                     >
                       {allStateNames[slug]}

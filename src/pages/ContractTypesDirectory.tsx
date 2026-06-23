@@ -7,12 +7,14 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { contractTypes, getContractTypeCategories } from "@/data/contractTypes";
 import Head from "@/components/seo/Head";
+import { useLocalizedPath } from "@/i18n/paths";
 
 export default function ContractTypesDirectory() {
   const { t } = useTranslation(["contracts", "common"]);
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const categories = getContractTypeCategories();
+  const lp = useLocalizedPath();
 
   const localized = useMemo(
     () =>
@@ -72,7 +74,7 @@ export default function ContractTypesDirectory() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         {filtered.map((ct) => (
-          <Link key={ct.slug} to={`/contract-types/${ct.slug}`}>
+          <Link key={ct.slug} to={lp(`/contract-types/${ct.slug}`)}>
             <Card className="hover:shadow-md hover:border-accent/30 transition-all h-full">
               <CardContent className="p-5">
                 <div className="flex items-start justify-between gap-2 mb-2">

@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { useLocalizedPath } from "@/i18n/paths";
 import { ChevronRight, ThumbsUp, ThumbsDown, Calculator } from "lucide-react";
 import { useState } from "react";
 import { tools } from "@/data/tools";
@@ -21,10 +22,11 @@ interface ClusterArticlePageProps {
 export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
   const { slug } = useParams<{ slug: string }>();
   const [helpful, setHelpful] = useState<boolean | null>(null);
+  const lp = useLocalizedPath();
   const SITE = "https://legallyspoken.com";
 
   const article = data.clusters.find((c) => c.slug === slug);
-  if (!article) return <Navigate to={data.basePath} replace />;
+  if (!article) return <Navigate to={lp(data.basePath)} replace />;
 
   const relatedTools = tools.filter((t) => article.relatedToolIds.includes(t.id));
   const linkedContent = linkifyLegalContent(article.content);
@@ -53,9 +55,9 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
-        <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+        <Link to={lp("/")} className="hover:text-foreground transition-colors">Home</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={data.basePath} className="hover:text-foreground transition-colors">{data.category}</Link>
+        <Link to={lp(data.basePath)} className="hover:text-foreground transition-colors">{data.category}</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">{article.title}</span>
       </nav>
@@ -83,7 +85,7 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
 
       {/* CTA Banner */}
       {ctaTool && (
-        <Link to={`/tools/${ctaTool.category}/${ctaTool.slug}`}>
+        <Link to={lp(`/tools/${ctaTool.category}/${ctaTool.slug}`)}>
           <Card className="border-accent/30 bg-accent/5 hover:bg-accent/10 hover:shadow-md transition-all group mb-10">
             <CardContent className="p-6 flex items-center gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
@@ -107,7 +109,7 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
           <h2 className="text-xl font-bold mb-3">Related Legal Terms</h2>
           <div className="flex flex-wrap gap-2">
             {article.relatedTermSlugs.map((termSlug) => (
-              <Link key={termSlug} to={`/legal-terms/${termSlug}`}>
+              <Link key={termSlug} to={lp(`/legal-terms/${termSlug}`)}>
                 <Badge variant="outline" className="hover:bg-accent/10 transition-colors cursor-pointer capitalize">
                   {termSlug.replace(/-/g, " ")}
                 </Badge>
@@ -138,7 +140,7 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
           <h2 className="text-2xl font-bold mb-4">Related Tools</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {relatedTools.map((tool) => (
-              <Link key={tool.id} to={`/tools/${tool.category}/${tool.slug}`}>
+              <Link key={tool.id} to={lp(`/tools/${tool.category}/${tool.slug}`)}>
                 <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all">
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
@@ -161,7 +163,7 @@ export default function ClusterArticlePage({ data }: ClusterArticlePageProps) {
         <h2 className="text-xl font-bold mb-3">Read This Guide for Your State</h2>
         <div className="flex flex-wrap gap-2">
           {stateData.map((s) => (
-            <Link key={s.slug} to={`${data.basePath}/${s.slug}/${article.slug}`}>
+            <Link key={s.slug} to={lp(`${data.basePath}/${s.slug}/${article.slug}`)}>
               <Badge variant="outline" className="hover:bg-accent/10 transition-colors cursor-pointer text-xs">{s.abbreviation}</Badge>
             </Link>
           ))}

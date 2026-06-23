@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, Trash2, FileText, Scale } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { useLocalizedPath } from "@/i18n/paths";
 
 interface SavedAnalysis {
   id: string;
@@ -20,6 +21,7 @@ export default function DashboardPage() {
   const navigate = useNavigate();
   const [analyses, setAnalyses] = useState<SavedAnalysis[]>([]);
   const [loading, setLoading] = useState(true);
+  const lp = useLocalizedPath();
 
   useEffect(() => {
     document.title = "Dashboard | LegallySpoken";
@@ -86,7 +88,7 @@ export default function DashboardPage() {
             <p>No saved analyses yet.</p>
             <p className="text-sm mt-1">Use our AI tools and save the results to see them here.</p>
             <Button asChild variant="outline" className="mt-4">
-              <Link to="/tools/ai">Browse AI Tools</Link>
+              <Link to={lp("/tools/ai")}>Browse AI Tools</Link>
             </Button>
           </CardContent>
         </Card>

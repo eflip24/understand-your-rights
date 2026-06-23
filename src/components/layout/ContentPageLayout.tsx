@@ -9,6 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Head from "@/components/seo/Head";
 import AdSlot from "@/components/ads/AdSlot";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
+import { useLocalizedPath } from "@/i18n/paths";
 
 interface Breadcrumb {
   label: string;
@@ -50,6 +51,7 @@ export default function ContentPageLayout({
   const [helpful, setHelpful] = useState<boolean | null>(null);
   const relatedTools = tools.filter((t) => relatedToolIds.includes(t.id));
   const { toolName, toolShortDescription } = useLocalizedTools();
+  const lp = useLocalizedPath();
 
 
 
@@ -61,12 +63,12 @@ export default function ContentPageLayout({
       />
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
-        <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+        <Link to={lp("/")} className="hover:text-foreground transition-colors">Home</Link>
         {breadcrumbs.map((crumb, i) => (
           <span key={i} className="flex items-center gap-1">
             <ChevronRight className="h-3 w-3" />
             {crumb.href ? (
-              <Link to={crumb.href} className="hover:text-foreground transition-colors">{crumb.label}</Link>
+              <Link to={lp(crumb.href)} className="hover:text-foreground transition-colors">{crumb.label}</Link>
             ) : (
               <span className="text-foreground">{crumb.label}</span>
             )}
@@ -94,7 +96,7 @@ export default function ContentPageLayout({
           <h2 className="text-xl font-bold mb-3">Related Legal Terms</h2>
           <div className="flex flex-wrap gap-2">
             {relatedTermSlugs.map((slug) => (
-              <Link key={slug} to={`/legal-terms/${slug}`}>
+              <Link key={slug} to={lp(`/legal-terms/${slug}`)}>
                 <Badge variant="outline" className="hover:bg-accent/10 transition-colors cursor-pointer capitalize">
                   {slug.replace(/-/g, " ")}
                 </Badge>
@@ -110,7 +112,7 @@ export default function ContentPageLayout({
           <h2 className="text-xl font-bold mb-3">Related Clauses</h2>
           <div className="flex flex-wrap gap-2">
             {relatedClauseSlugs.map((slug) => (
-              <Link key={slug} to={`/legal-clauses/${slug}`}>
+              <Link key={slug} to={lp(`/legal-clauses/${slug}`)}>
                 <Badge variant="outline" className="hover:bg-accent/10 transition-colors cursor-pointer capitalize">
                   {slug.replace(/-/g, " ")}
                 </Badge>
@@ -141,7 +143,7 @@ export default function ContentPageLayout({
           <h2 className="text-2xl font-bold mb-4">Related Tools</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {relatedTools.map((tool) => (
-              <Link key={tool.id} to={`/tools/${tool.category}/${tool.slug}`}>
+              <Link key={tool.id} to={lp(`/tools/${tool.category}/${tool.slug}`)}>
                 <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all">
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">

@@ -9,6 +9,7 @@ import {
 import { useBlogPosts, useBlogCategories } from "@/hooks/useBlogPosts";
 import Tier3Head from "@/components/seo/Tier3Head";
 import { format } from "date-fns";
+import { useLocalizedPath } from "@/i18n/paths";
 
 function decodeHtml(html: string) {
   return html.replace(/&amp;/g, "&").replace(/&#8217;/g, "\u2019").replace(/&#8211;/g, "\u2013").replace(/&#8220;/g, "\u201c").replace(/&#8221;/g, "\u201d");
@@ -18,6 +19,7 @@ export default function BlogCategoryPage() {
   const { slug } = useParams<{ slug: string }>();
   const { data: posts, isLoading } = useBlogPosts(slug);
   const { data: categories } = useBlogCategories();
+  const lp = useLocalizedPath();
 
   const category = categories?.find((c) => c.slug === slug);
   const categoryName = category?.name || slug || "Category";
@@ -34,11 +36,11 @@ export default function BlogCategoryPage() {
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
               <BreadcrumbItem>
-                <BreadcrumbLink asChild><Link to="/" className="text-primary-foreground/70">Home</Link></BreadcrumbLink>
+                <BreadcrumbLink asChild><Link to={lp("/")} className="text-primary-foreground/70">Home</Link></BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-primary-foreground/40" />
               <BreadcrumbItem>
-                <BreadcrumbLink asChild><Link to="/blog" className="text-primary-foreground/70">Blog</Link></BreadcrumbLink>
+                <BreadcrumbLink asChild><Link to={lp("/blog")} className="text-primary-foreground/70">Blog</Link></BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-primary-foreground/40" />
               <BreadcrumbItem>
@@ -66,12 +68,12 @@ export default function BlogCategoryPage() {
         ) : !posts?.length ? (
           <div className="text-center py-20 text-muted-foreground">
             <p className="text-lg mb-4">No posts in this category yet.</p>
-            <Button asChild><Link to="/blog">View all posts</Link></Button>
+            <Button asChild><Link to={lp("/blog")}>View all posts</Link></Button>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
-              <Link key={post.id} to={`/blog/${post.slug}`}>
+              <Link key={post.id} to={lp(`/blog/${post.slug}`)}>
                 <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                   {post.featured_image_url && (
                     <div className="h-52 overflow-hidden">
@@ -101,7 +103,7 @@ export default function BlogCategoryPage() {
 
         <div className="mt-12">
           <Button variant="outline" asChild>
-            <Link to="/blog" className="gap-2"><ArrowLeft className="h-4 w-4" />All Posts</Link>
+            <Link to={lp("/blog")} className="gap-2"><ArrowLeft className="h-4 w-4" />All Posts</Link>
           </Button>
         </div>
       </div>

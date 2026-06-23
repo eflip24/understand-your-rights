@@ -1,4 +1,5 @@
 import { useParams, useLocation, Link, Navigate } from "react-router-dom";
+import { useLocalizedPath } from "@/i18n/paths";
 import { ChevronRight, MapPin, Scale, Shield, Clock, AlertTriangle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,15 +15,16 @@ import { tools } from "@/data/tools";
 export default function StateClusterArticlePage() {
   const { state, slug } = useParams<{ state: string; slug: string }>();
   const location = useLocation();
+  const lp = useLocalizedPath();
   const SITE = "https://legallyspoken.com";
 
   // Extract pillar slug from the URL path (e.g., "/auto-accident-law/california/slug" → "auto-accident-law")
   const pillar = location.pathname.split("/")[1];
 
-  if (!pillar || !state || !slug) return <Navigate to="/" replace />;
+  if (!pillar || !state || !slug) return <Navigate to={lp("/")} replace />;
 
   const variant = getStateVariant(pillar, state, slug);
-  if (!variant) return <Navigate to={`/${pillar}`} replace />;
+  if (!variant) return <Navigate to={lp(`/${pillar}`)} replace />;
 
   const { state: stateInfo, pillar: pillarData, article } = variant;
   const stateName = stateInfo.name;
@@ -53,11 +55,11 @@ export default function StateClusterArticlePage() {
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
-        <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+        <Link to={lp("/")} className="hover:text-foreground transition-colors">Home</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={pillarData.basePath} className="hover:text-foreground transition-colors">{pillarData.category}</Link>
+        <Link to={lp(pillarData.basePath)} className="hover:text-foreground transition-colors">{pillarData.category}</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={`${pillarData.basePath}/${slug}`} className="hover:text-foreground transition-colors">{article.title}</Link>
+        <Link to={lp(`${pillarData.basePath}/${slug}`)} className="hover:text-foreground transition-colors">{article.title}</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">{stateName}</span>
       </nav>
@@ -150,7 +152,7 @@ export default function StateClusterArticlePage() {
           <h2 className="text-2xl font-bold mb-4">Related Tools</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {relatedTools.map((tool) => (
-              <Link key={tool.id} to={`/tools/${tool.category}/${tool.slug}`}>
+              <Link key={tool.id} to={lp(`/tools/${tool.category}/${tool.slug}`)}>
                 <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all">
                   <CardContent className="p-4">
                     <div className="flex items-center gap-2 mb-1">
@@ -171,11 +173,11 @@ export default function StateClusterArticlePage() {
         <h2 className="text-xl font-bold mb-3">Read This Guide for Other States</h2>
         <div className="flex flex-wrap gap-2">
           {nearbyStates.map((s) => (
-            <Link key={s.slug} to={`/${pillar}/${s.slug}/${slug}`}>
+            <Link key={s.slug} to={lp(`/${pillar}/${s.slug}/${slug}`)}>
               <Badge variant="outline" className="hover:bg-accent/10 transition-colors cursor-pointer">{s.name}</Badge>
             </Link>
           ))}
-          <Link to={`${pillarData.basePath}/${slug}`}>
+          <Link to={lp(`${pillarData.basePath}/${slug}`)}>
             <Badge variant="secondary" className="hover:bg-accent/10 transition-colors cursor-pointer">View all states →</Badge>
           </Link>
         </div>

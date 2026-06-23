@@ -7,6 +7,7 @@ import { tools, categories, searchTools, type ToolCategory } from "@/data/tools"
 import { Button } from "@/components/ui/button";
 import Head from "@/components/seo/Head";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
+import { useLocalizedPath } from "@/i18n/paths";
 
 export default function ToolsDirectory() {
   const [searchParams] = useSearchParams();
@@ -14,6 +15,7 @@ export default function ToolsDirectory() {
   const [query, setQuery] = useState(initialQuery);
   const [activeCategory, setActiveCategory] = useState<ToolCategory | "all">("all");
   const { toolName, toolShortDescription, toolCategoryLabel, catLabel } = useLocalizedTools();
+  const lp = useLocalizedPath();
 
   const filtered = useMemo(() => {
     let result = query ? searchTools(query) : tools;
@@ -75,7 +77,7 @@ export default function ToolsDirectory() {
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((tool) => (
-            <Link key={tool.id} to={`/tools/${tool.category}/${tool.slug}`}>
+            <Link key={tool.id} to={lp(`/tools/${tool.category}/${tool.slug}`)}>
               <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all group">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">

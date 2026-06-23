@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { tools, type Tool, type ToolCategory } from "@/data/tools";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
+import { useLocalizedPath } from "@/i18n/paths";
 
 const FEATURED_SLUGS = [
   "reading-time-calculator",
@@ -43,6 +44,7 @@ const CATEGORY_STYLES: Record<ToolCategory, { tile: string; icon: string; badge:
 export default function PopularToolsSection() {
   const [active, setActive] = useState<FilterKey>("all");
   const { toolName, toolShortDescription, toolCategoryLabel } = useLocalizedTools();
+  const lp = useLocalizedPath();
 
   const featured = useMemo(
     () => FEATURED_SLUGS.map((s) => tools.find((t) => t.slug === s)).filter((t): t is Tool => Boolean(t)),
@@ -101,7 +103,7 @@ export default function PopularToolsSection() {
             return (
               <Link
                 key={tool.id}
-                to={`/tools/${tool.category}/${tool.slug}`}
+                to={lp(`/tools/${tool.category}/${tool.slug}`)}
                 className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 md:p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-teal/30 transition-all duration-300"
               >
                 <div className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl ${styles.tile}`}>
@@ -132,7 +134,7 @@ export default function PopularToolsSection() {
 
         {/* Browse all CTA */}
         <div className="text-center mt-12">
-          <Link to="/tools">
+          <Link to={lp("/tools")}>
             <Button
               size="lg"
               className="rounded-xl bg-navy text-white hover:bg-navy-dark px-8 h-12 text-base font-semibold gap-2 shadow-md"

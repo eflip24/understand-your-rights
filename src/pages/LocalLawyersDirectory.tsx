@@ -6,10 +6,12 @@ import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, itemListSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import { practiceAreas } from "@/data/localLawyers";
+import { useLocalizedPath } from "@/i18n/paths";
 
 const SITE = "https://legallyspoken.com";
 
 export default function LocalLawyersDirectory() {
+  const lp = useLocalizedPath();
   return (
     <div className="container py-8 max-w-4xl">
       <Tier3Head
@@ -29,7 +31,7 @@ export default function LocalLawyersDirectory() {
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">
-        <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+        <Link to={lp("/")} className="hover:text-foreground transition-colors">Home</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">Find a Lawyer</span>
       </nav>
@@ -48,7 +50,7 @@ export default function LocalLawyersDirectory() {
       {/* Practice Areas Grid */}
       <div className="grid gap-4 sm:grid-cols-2">
         {practiceAreas.map((area) => (
-          <Link key={area.slug} to={`/lawyer-near-me/${area.slug}`}>
+          <Link key={area.slug} to={lp(`/lawyer-near-me/${area.slug}`)}>
             <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all group">
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-3">

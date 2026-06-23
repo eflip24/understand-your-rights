@@ -6,11 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { legalTermPages, getLegalTermCategories } from "@/data/legalTermPages";
 import Head from "@/components/seo/Head";
+import { useLocalizedPath } from "@/i18n/paths";
 
 export default function LegalTermsDirectory() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const categories = getLegalTermCategories();
+  const lp = useLocalizedPath();
 
   const filtered = useMemo(() => {
     let result = legalTermPages;
@@ -80,7 +82,7 @@ export default function LegalTermsDirectory() {
             <h2 className="text-2xl font-bold text-accent mb-3 border-b pb-1">{letter}</h2>
             <div className="grid gap-3 sm:grid-cols-2">
               {termsForLetter.map((term) => (
-                <Link key={term.slug} to={`/legal-terms/${term.slug}`}>
+                <Link key={term.slug} to={lp(`/legal-terms/${term.slug}`)}>
                   <Card className="hover:shadow-md hover:border-accent/30 transition-all h-full">
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between gap-2">

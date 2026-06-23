@@ -4,11 +4,13 @@ import { categories, getToolsByCategory, type ToolCategory } from "@/data/tools"
 import NotFound from "@/pages/NotFound";
 import Head from "@/components/seo/Head";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
+import { useLocalizedPath } from "@/i18n/paths";
 
 export default function CategoryPage() {
   const { category } = useParams<{ category: string }>();
   const catInfo = categories.find((c) => c.id === category);
   const { toolName, toolShortDescription, catLabel, catDescription } = useLocalizedTools();
+  const lp = useLocalizedPath();
   if (!catInfo) return <NotFound />;
 
   const catTools = getToolsByCategory(category as ToolCategory);
@@ -31,7 +33,7 @@ export default function CategoryPage() {
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {catTools.map((tool) => (
-          <Link key={tool.id} to={`/tools/${tool.category}/${tool.slug}`}>
+          <Link key={tool.id} to={lp(`/tools/${tool.category}/${tool.slug}`)}>
             <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all group">
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-3">

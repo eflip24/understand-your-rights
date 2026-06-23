@@ -1,5 +1,6 @@
 import { useParams, Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useLocalizedPath } from "@/i18n/paths";
 import { getContractTypeBySlug } from "@/data/contractTypes";
 import ContentPageLayout from "@/components/layout/ContentPageLayout";
 import NotFound from "@/pages/NotFound";
@@ -12,6 +13,7 @@ export default function ContractTypePage() {
   const { slug } = useParams<{ slug: string }>();
   const location = useLocation();
   const { t } = useTranslation(["contracts", "common"]);
+  const lp = useLocalizedPath();
   if (!slug) return <NotFound />;
 
   const contractType = getContractTypeBySlug(slug);
@@ -56,7 +58,7 @@ export default function ContractTypePage() {
         <h2 className="text-2xl font-bold mb-4">{t("common:contractTypePage.keyClauses", { defaultValue: "Key Clauses Typically Found" })}</h2>
         <div className="flex flex-wrap gap-2">
           {contractType.keyClauseSlugs.map((s) => (
-            <Link key={s} to={`/legal-clauses/${s}`}>
+            <Link key={s} to={lp(`/legal-clauses/${s}`)}>
               <Badge variant="secondary" className="hover:bg-accent/20 transition-colors cursor-pointer capitalize text-sm py-1.5 px-3">
                 {s.replace(/-clause$/, "").replace(/-/g, " ")}
               </Badge>
