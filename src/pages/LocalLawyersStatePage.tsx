@@ -8,6 +8,7 @@ import AdSlot from "@/components/ads/AdSlot";
 import { practiceAreas } from "@/data/localLawyers";
 import { getStateBySlug, stateData } from "@/data/locations/stateData";
 import { getCitiesByState } from "@/data/locations/cityData";
+import { useLocalizedPath } from "@/i18n/paths";
 
 const SITE = "https://legallyspoken.com";
 
@@ -15,8 +16,9 @@ export default function LocalLawyersStatePage() {
   const { area, state } = useParams<{ area: string; state: string }>();
   const practiceArea = practiceAreas.find((pa) => pa.slug === area);
   const stateInfo = state ? getStateBySlug(state) : undefined;
+  const lp = useLocalizedPath();
 
-  if (!practiceArea || !stateInfo) return <Navigate to="/lawyer-near-me" replace />;
+  if (!practiceArea || !stateInfo) return <Navigate to={lp("/lawyer-near-me")} replace />;
 
   const cities = getCitiesByState(stateInfo.slug);
 
@@ -50,11 +52,11 @@ export default function LocalLawyersStatePage() {
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
-        <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+        <Link to={lp("/")} className="hover:text-foreground transition-colors">Home</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to="/lawyer-near-me" className="hover:text-foreground transition-colors">Find a Lawyer</Link>
+        <Link to={lp("/lawyer-near-me")} className="hover:text-foreground transition-colors">Find a Lawyer</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to={`/lawyer-near-me/${practiceArea.slug}`} className="hover:text-foreground transition-colors">{practiceArea.shortTitle}</Link>
+        <Link to={lp(`/lawyer-near-me/${practiceArea.slug}`)} className="hover:text-foreground transition-colors">{practiceArea.shortTitle}</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">{stateInfo.name}</span>
       </nav>
@@ -102,7 +104,7 @@ export default function LocalLawyersStatePage() {
           <h2 className="text-2xl font-bold mb-4">Browse by City</h2>
           <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3">
             {cities.map((city) => (
-              <Link key={city.slug} to={`/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}/${city.slug}`}>
+              <Link key={city.slug} to={lp(`/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}/${city.slug}`)}>
                 <Card className="hover:shadow-sm hover:border-accent/30 transition-all cursor-pointer">
                   <CardContent className="p-3 flex items-center gap-2">
                     <MapPin className="h-3.5 w-3.5 text-accent flex-shrink-0" />
@@ -123,7 +125,7 @@ export default function LocalLawyersStatePage() {
         <div className="mt-8 p-4 rounded-lg bg-accent/5 border border-accent/20">
           <p className="text-sm text-muted-foreground">
             📚 Want to learn more?{" "}
-            <Link to={practiceArea.relatedPillarPath} className="text-accent font-medium hover:underline">
+            <Link to={lp(practiceArea.relatedPillarPath)} className="text-accent font-medium hover:underline">
               Read our free {practiceArea.shortTitle} law guide →
             </Link>
           </p>

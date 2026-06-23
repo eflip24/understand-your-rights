@@ -3,6 +3,7 @@ import { Gift, UserCheck, MessageSquare, MapPin, Wrench, Bot, Map, BookOpen, Hea
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Head from "@/components/seo/Head";
+import { useLocalizedPath } from "@/i18n/paths";
 
 const trustBadges = [
   { icon: Gift, label: "Free Forever" },
@@ -47,6 +48,7 @@ const promises = [
 ];
 
 export default function AboutPage() {
+  const lp = useLocalizedPath();
   return (
     <>
       <Head
@@ -67,7 +69,7 @@ export default function AboutPage() {
             Free Legal Tools for Everyday People
           </p>
           <Button asChild size="lg" className="mt-4">
-            <Link to="/tools">Explore All Tools</Link>
+            <Link to={lp("/tools")}>Explore All Tools</Link>
           </Button>
         </div>
       </section>
@@ -187,10 +189,10 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" variant="secondary">
-              <Link to="/legal-health-check">Start Your Legal Health Check</Link>
+              <Link to={lp("/legal-health-check")}>Start Your Legal Health Check</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-              <Link to="/tools">Browse 100+ Tools</Link>
+              <Link to={lp("/tools")}>Browse 100+ Tools</Link>
             </Button>
           </div>
           <p className="text-xs text-primary-foreground/50 mt-8">

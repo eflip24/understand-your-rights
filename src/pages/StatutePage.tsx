@@ -8,13 +8,15 @@ import { tools } from "@/data/tools";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useLocalizedPath } from "@/i18n/paths";
 
 export default function StatutePage() {
   const { state: stateSlug = "", topic: topicSlug = "" } = useParams();
   const topic = statuteTopicsBySlug[topicSlug];
   const stateInfo = getStateBySlug(stateSlug);
+  const lp = useLocalizedPath();
 
-  if (!topic || !stateInfo) return <Navigate to="/laws" replace />;
+  if (!topic || !stateInfo) return <Navigate to={lp("/laws")} replace />;
 
   const stateName = stateInfo.name;
   const values = getStatuteValues(topic, stateSlug);
@@ -44,9 +46,9 @@ export default function StatutePage() {
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 flex-wrap">
-        <Link to="/" className="hover:text-foreground">Home</Link>
+        <Link to={lp("/")} className="hover:text-foreground">Home</Link>
         <ChevronRight className="h-3 w-3" />
-        <Link to="/laws" className="hover:text-foreground">Statute Library</Link>
+        <Link to={lp("/laws")} className="hover:text-foreground">Statute Library</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">{stateName} — {topic.shortLabel}</span>
       </nav>
@@ -122,7 +124,7 @@ export default function StatutePage() {
           <h2 className="text-2xl font-bold mb-4">Related Free Tools</h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {relatedTools.map((t) => (
-              <Link key={t.id} to={`/tools/${t.category}/${t.slug}`}>
+              <Link key={t.id} to={lp(`/tools/${t.category}/${t.slug}`)}>
                 <Card className="h-full hover:border-accent/40 transition-colors">
                   <CardContent className="p-4">
                     <div className="flex items-center gap-2 mb-1">
@@ -145,7 +147,7 @@ export default function StatutePage() {
           {otherTopicsForState.map((t) => (
             <Link
               key={t.slug}
-              to={`/laws/${stateSlug}/${t.slug}`}
+              to={lp(`/laws/${stateSlug}/${t.slug}`)}
               className="text-sm px-3 py-1.5 rounded border border-border hover:border-accent hover:bg-accent/5 transition-colors"
             >
               {t.shortLabel}
@@ -161,13 +163,13 @@ export default function StatutePage() {
           {Object.entries(allStateNames).filter(([slug]) => slug !== stateSlug).slice(0, 15).map(([slug, name]) => (
             <Link
               key={slug}
-              to={`/laws/${slug}/${topicSlug}`}
+              to={lp(`/laws/${slug}/${topicSlug}`)}
               className="text-sm px-2 py-1 rounded hover:text-accent transition-colors"
             >
               {name}
             </Link>
           ))}
-          <Link to="/laws" className="text-sm px-2 py-1 text-accent hover:underline">View all →</Link>
+          <Link to={lp("/laws")} className="text-sm px-2 py-1 text-accent hover:underline">View all →</Link>
         </div>
       </div>
 

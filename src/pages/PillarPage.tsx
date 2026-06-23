@@ -8,6 +8,7 @@ import AdSlot from "@/components/ads/AdSlot";
 import SmartLocalLink from "@/components/seo/SmartLocalLink";
 import { tools } from "@/data/tools";
 import type { PillarData } from "@/data/autoAccidentLaw";
+import { useLocalizedPath } from "@/i18n/paths";
 
 interface PillarPageProps {
   data: PillarData;
@@ -26,6 +27,7 @@ const POPULAR_TOOL_IDS = ["settlement-estimator", "accident-damage", "insurance-
 
 export default function PillarPage({ data }: PillarPageProps) {
   const SITE = "https://legallyspoken.com";
+  const lp = useLocalizedPath();
 
   const relatedPillars = PILLAR_PAGES.filter((p) => p.path !== data.basePath);
   const popularTools = tools.filter((t) => POPULAR_TOOL_IDS.includes(t.id));
@@ -46,7 +48,7 @@ export default function PillarPage({ data }: PillarPageProps) {
 
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">
-        <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+        <Link to={lp("/")} className="hover:text-foreground transition-colors">Home</Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">{data.category}</span>
       </nav>
@@ -65,7 +67,7 @@ export default function PillarPage({ data }: PillarPageProps) {
         <h2 className="text-2xl font-bold mb-4">In This Guide</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {data.clusters.map((cluster, i) => (
-            <Link key={cluster.slug} to={`${data.basePath}/${cluster.slug}`}>
+            <Link key={cluster.slug} to={lp(`${data.basePath}/${cluster.slug}`)}>
               <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all group">
                 <CardHeader className="pb-2">
                   <CardTitle className="text-base flex items-center gap-2">
@@ -92,7 +94,7 @@ export default function PillarPage({ data }: PillarPageProps) {
         <h2 className="text-2xl font-bold mb-4">Popular Tools</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {popularTools.map((tool) => (
-            <Link key={tool.id} to={`/tools/${tool.category}/${tool.slug}`}>
+            <Link key={tool.id} to={lp(`/tools/${tool.category}/${tool.slug}`)}>
               <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-2">
@@ -114,7 +116,7 @@ export default function PillarPage({ data }: PillarPageProps) {
         <h2 className="text-2xl font-bold mb-4">Related Guides</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {relatedPillars.map((pillar) => (
-            <Link key={pillar.path} to={pillar.path}>
+            <Link key={pillar.path} to={lp(pillar.path)}>
               <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all group">
                 <CardContent className="p-6 flex items-center gap-3">
                   <div className="flex-1">
