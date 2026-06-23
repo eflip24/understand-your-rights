@@ -7,11 +7,13 @@ import { Button } from "@/components/ui/button";
 import { useBlogPosts, useBlogCategories } from "@/hooks/useBlogPosts";
 import Tier3Head from "@/components/seo/Tier3Head";
 import { format } from "date-fns";
+import { useLocalizedPath } from "@/i18n/paths";
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState<string | undefined>();
   const { data: posts, isLoading } = useBlogPosts(activeCategory);
   const { data: categories } = useBlogCategories();
+  const lp = useLocalizedPath();
 
   return (
     <>
@@ -83,7 +85,7 @@ export default function BlogPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
-              <Link key={post.id} to={`/blog/${post.slug}`}>
+              <Link key={post.id} to={lp(`/blog/${post.slug}`)}>
                 <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                   {post.featured_image_url && (
                     <div className="h-52 overflow-hidden">

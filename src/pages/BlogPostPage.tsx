@@ -21,6 +21,7 @@ import blogDefaultImage from "@/assets/blog-default.jpg";
 import { linkifyLegalContent } from "@/lib/linkifyContent";
 import { tools } from "@/data/tools";
 import AdSlot from "@/components/ads/AdSlot";
+import { useLocalizedPath } from "@/i18n/paths";
 
 function decodeHtml(html: string) {
   return html
@@ -77,6 +78,7 @@ export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const { data: post, isLoading } = useBlogPost(slug || "");
   const { data: related = [] } = useRelatedPosts(post?.id);
+  const lp = useLocalizedPath();
 
   const processedContent = useMemo(() => {
     if (!post?.content) return "";
@@ -135,7 +137,7 @@ export default function BlogPostPage() {
       <div className="container py-20 text-center">
         <h1 className="font-serif text-3xl font-bold mb-4">Post not found</h1>
         <Button asChild>
-          <Link to="/blog">Back to Blog</Link>
+          <Link to={lp("/blog")}>Back to Blog</Link>
         </Button>
       </div>
     );
@@ -200,13 +202,13 @@ export default function BlogPostPage() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/">Home</Link>
+                <Link to={lp("/")}>Home</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/blog">Blog</Link>
+                <Link to={lp("/blog")}>Blog</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -222,7 +224,7 @@ export default function BlogPostPage() {
             {post.categories && post.categories.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.categories.map((cat) => (
-                  <Link key={cat.id} to={`/blog/category/${cat.slug}`}>
+                  <Link key={cat.id} to={lp(`/blog/category/${cat.slug}`)}>
                     <Badge variant="secondary" className="hover:bg-accent hover:text-accent-foreground transition-colors">
                       {cat.name}
                     </Badge>
@@ -307,7 +309,7 @@ export default function BlogPostPage() {
             <h2 className="font-serif text-2xl font-bold mb-8">More Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {related.map((rp) => (
-                <Link key={rp.id} to={`/blog/${rp.slug}`}>
+                <Link key={rp.id} to={lp(`/blog/${rp.slug}`)}>
                   <Card className="overflow-hidden group hover:shadow-lg transition-all h-full">
                     {rp.featured_image_url && (
                       <div className="h-40 overflow-hidden">
@@ -342,7 +344,7 @@ export default function BlogPostPage() {
             <h2 className="font-serif text-2xl font-bold mb-6">Related Tools</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {suggestedTools.map((tool) => (
-                <Link key={tool.id} to={`/tools/${tool.category}/${tool.slug}`}>
+                <Link key={tool.id} to={lp(`/tools/${tool.category}/${tool.slug}`)}>
                   <Card className="h-full hover:shadow-md hover:border-accent/30 transition-all group">
                     <CardHeader className="pb-2">
                       <div className="flex items-center gap-2">
@@ -362,7 +364,7 @@ export default function BlogPostPage() {
 
         <div className="mt-12">
           <Button variant="outline" asChild>
-            <Link to="/blog" className="gap-2">
+            <Link to={lp("/blog")} className="gap-2">
               <ArrowLeft className="h-4 w-4" />
               Back to Blog
             </Link>
