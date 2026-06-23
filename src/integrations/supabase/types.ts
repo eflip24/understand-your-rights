@@ -204,6 +204,27 @@ export type Database = {
         }
         Relationships: []
       }
+      tool_translations: {
+        Row: {
+          data: Json
+          locale: string
+          tool_id: string
+          updated_at: string
+        }
+        Insert: {
+          data: Json
+          locale: string
+          tool_id: string
+          updated_at?: string
+        }
+        Update: {
+          data?: Json
+          locale?: string
+          tool_id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       translation_cron_state: {
         Row: {
           id: string

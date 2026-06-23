@@ -8,6 +8,7 @@ import { JsonLdGraph, webApplicationSchema, faqSchema } from "@/components/seo/J
 import Head from "@/components/seo/Head";
 import AdSlot from "@/components/ads/AdSlot";
 import { useLocalizedPath } from "@/i18n/paths";
+import { useLocalizedTools } from "@/i18n/useLocalizedTools";
 
 interface ToolPageLayoutProps {
   tool: Tool;
@@ -17,17 +18,18 @@ interface ToolPageLayoutProps {
 export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) {
   const { t } = useTranslation(["tools", "common"]);
   const lp = useLocalizedPath();
+  const { toolName, toolDescription, toolShortDescription, toolCategoryLabel, toolFaqs } = useLocalizedTools();
   const relatedTools = getRelatedTools(tool.id);
   const location = useLocation();
   const url = `https://legallyspoken.com${location.pathname}`;
 
-  const localizedName = t(`tools:${tool.id}.name`, { defaultValue: tool.name });
-  const localizedDesc = t(`tools:${tool.id}.description`, { defaultValue: tool.description });
-  const localizedShort = (rt: Tool) => t(`tools:${rt.id}.shortDescription`, { defaultValue: rt.shortDescription });
+  const localizedName = toolName(tool);
+  const localizedDesc = toolDescription(tool);
+  const localizedFaqs = toolFaqs(tool);
 
   const schemas = [
     webApplicationSchema(localizedName, localizedDesc, url),
-    ...(tool.faqs?.length ? [faqSchema(tool.faqs)] : []),
+    ...(localizedFaqs.length ? [faqSchema(localizedFaqs)] : []),
   ];
   return (
     <div className="container py-8 max-w-4xl">
@@ -41,7 +43,7 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
         <Link to={lp("/tools")} className="hover:text-foreground transition-colors">{t("common:page.tools")}</Link>
         <ChevronRight className="h-3 w-3" />
         <Link to={lp(`/tools/${tool.category}`)} className="hover:text-foreground transition-colors">
-          {tool.categoryLabel}
+          {toolCategoryLabel(tool)}
         </Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-foreground">{localizedName}</span>
@@ -54,7 +56,7 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
             <tool.icon className="h-6 w-6 text-accent" />
           </div>
           <div>
-            <span className="text-xs font-medium text-accent uppercase tracking-wider">{tool.categoryLabel}</span>
+            <span className="text-xs font-medium text-accent uppercase tracking-wider">{toolCategoryLabel(tool)}</span>
             <h1 className="text-3xl font-bold text-foreground leading-tight">{localizedName}</h1>
           </div>
         </div>
@@ -71,11 +73,11 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
       <AdSlot slot="post-result" className="mb-10" />
 
       {/* FAQ */}
-      {tool.faqs.length > 0 && (
+      {localizedFaqs.length > 0 && (
         <div className="mb-10">
           <h2 className="text-2xl font-bold mb-4">{t("common:page.faq")}</h2>
           <Accordion type="single" collapsible className="w-full">
-            {tool.faqs.map((faq, i) => (
+            {localizedFaqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
                 <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
@@ -96,11 +98,11 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
                       <rt.icon className="h-4 w-4 text-accent" />
-                      <CardTitle className="text-base">{t(`tools:${rt.id}.name`, { defaultValue: rt.name })}</CardTitle>
+                      <CardTitle className="text-base">{toolName(rt)}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">{localizedShort(rt)}</p>
+                    <p className="text-sm text-muted-foreground">{toolShortDescription(rt)}</p>
                   </CardContent>
                 </Card>
               </Link>
