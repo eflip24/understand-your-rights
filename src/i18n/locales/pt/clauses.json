@@ -1,1 +1,206 @@
-{}
+{
+  "non-compete-clause": {
+    "title": "Cláusula de Não Concorrência",
+    "explanation": "Uma cláusula de não concorrência restringe um funcionário ou contratado de trabalhar para concorrentes ou iniciar um negócio concorrente após deixar uma empresa. Estas cláusulas são concebidas para proteger segredos comerciais, relações com clientes e vantagens competitivas. No entanto, são cada vez mais escrutinadas por tribunais e legisladores que veem as cláusulas de não concorrência excessivamente amplas como restrições injustas à capacidade dos trabalhadores de ganhar a vida."
+  },
+  "confidentiality-clause": {
+    "title": "Cláusula de Confidencialidade",
+    "explanation": "Uma cláusula de confidencialidade (também conhecida como disposição de não divulgação) obriga uma ou ambas as partes a manter informações específicas em segredo. Estas cláusulas definem que informações são consideradas confidenciais, como devem ser protegidas, o que constitui divulgação permitida e por quanto tempo a obrigação dura. São encontradas em praticamente todos os tipos de acordos comerciais."
+  },
+  "indemnification-clause": {
+    "title": "Cláusula de Indemnização",
+    "explanation": "Uma cláusula de indemnização aloca o risco entre as partes, exigindo que uma parte (o indemnizador) compense a outra (o indemnizado) por certas perdas, danos ou responsabilidades. Estas cláusulas estão entre as mais negociadas em qualquer contrato porque determinam diretamente quem paga quando as coisas correm mal."
+  },
+  "limitation-of-liability": {
+    "title": "Cláusula de Limitação de Responsabilidade",
+    "explanation": "Uma cláusula de limitação de responsabilidade estabelece um limite máximo para o montante total que uma parte pode recuperar da outra em caso de incumprimento ou outra reclamação. Estas cláusulas também excluem comumente certos tipos de danos (como danos consequenciais, incidentais ou punitivos). Estão entre as disposições mais importantes de alocação de risco em qualquer contrato."
+  },
+  "termination-clause": {
+    "title": "Cláusula de Rescisão",
+    "explanation": "Uma cláusula de rescisão define as circunstâncias em que uma ou ambas as partes podem terminar o contrato antes da sua expiração natural. Especifica os tipos de rescisão disponíveis (por justa causa, por conveniência, ou ambos), os requisitos de aviso prévio, o período de correção para incumprimentos e o que acontece após a rescisão (devolução de materiais, pagamento por trabalho realizado, obrigações remanescentes)."
+  },
+  "force-majeure-clause": {
+    "title": "Cláusula de Força Maior",
+    "explanation": "Uma cláusula de força maior isenta uma ou ambas as partes de cumprir as suas obrigações contratuais quando eventos extraordinários fora do seu controlo tornam o cumprimento impossível ou impraticável. Estes eventos tipicamente incluem desastres naturais, guerras, pandemias, ações governamentais e outras circunstâncias imprevisíveis. A pandemia de COVID-19 aumentou dramaticamente a atenção a estas cláusulas."
+  },
+  "arbitration-clause": {
+    "title": "Cláusula de Arbitragem",
+    "explanation": "Uma cláusula de arbitragem exige que as partes resolvam disputas através de arbitragem privada em vez de litígio em tribunal. Estas cláusulas especificam as regras de arbitragem, o número de árbitros, o local da arbitragem e se a arbitragem é vinculativa. São comuns em contratos de trabalho, acordos de consumo e contratos comerciais."
+  },
+  "governing-law-clause": {
+    "title": "Cláusula de Lei Aplicável",
+    "explanation": "Uma cláusula de lei aplicável (também chamada cláusula de escolha de lei) especifica quais leis de jurisdição serão usadas para interpretar o contrato e resolver disputas. Isto é particularmente importante em contratos entre partes em diferentes estados ou países, pois diferentes jurisdições podem interpretar a mesma linguagem contratual de forma diferente."
+  },
+  "intellectual-property-clause": {
+    "title": "Cláusula de Propriedade Intelectual",
+    "explanation": "Uma cláusula de propriedade intelectual (PI) define a titularidade, direitos e restrições relacionadas com a propriedade intelectual criada, usada ou trocada sob o contrato. Estas cláusulas abordam quem é o proprietário do produto de trabalho, que licenças são concedidas, como a PI pré-existente é tratada e o que acontece aos direitos de PI quando o contrato termina."
+  },
+  "payment-terms-clause": {
+    "title": "Cláusula de Condições de Pagamento",
+    "explanation": "Uma cláusula de condições de pagamento define como, quando e quanto a parte pagadora deve pagar. Abrange o montante total ou a taxa, o cronograma de pagamento, os métodos de pagamento aceitáveis, as penalidades por atraso no pagamento, o reembolso de despesas e os procedimentos de disputa. Condições de pagamento claras previnem a maioria das disputas relacionadas com pagamentos."
+  },
+  "entire-agreement-clause": {
+    "title": "Cláusula de Acordo Integral (Fusão)",
+    "explanation": "Uma cláusula de acordo integral (também chamada cláusula de fusão ou integração) estabelece que o contrato escrito é o acordo completo e final entre as partes, substituindo todas as negociações, discussões e acordos anteriores. Impede que qualquer uma das partes alegue que existem promessas ou acordos adicionais fora do contrato escrito."
+  },
+  "assignment-clause": {
+    "title": "Cláusula de Cessão",
+    "explanation": "Uma cláusula de cessão rege se e como uma parte pode transferir os seus direitos e obrigações sob o contrato para um terceiro. Estas cláusulas podem proibir a cessão totalmente, permiti-la com consentimento ou permiti-la livremente. São importantes em transações de fusões e aquisições, reorganizações empresariais e acordos de subcontratação."
+  },
+  "warranty-clause": {
+    "title": "Cláusula de Garantia",
+    "explanation": "Uma cláusula de garantia contém promessas sobre a qualidade, condição ou desempenho de bens, serviços ou outro objeto do contrato. As garantias podem ser expressas (explicitamente declaradas) ou implícitas (impostas por lei). As cláusulas de garantia também incluem comumente isenções de garantia que limitam ou excluem certas garantias."
+  },
+  "notice-clause": {
+    "title": "Cláusula de Notificação",
+    "explanation": "Uma cláusula de notificação especifica como as comunicações formais entre as partes devem ser entregues. Isso inclui o método de entrega exigido (correio, e-mail, estafeta), os endereços para notificação e quando a notificação é considerada recebida. A notificação adequada é frequentemente um pré-requisito para exercer direitos sob o contrato, como rescisão ou alegação de incumprimento."
+  },
+  "severability-clause": {
+    "title": "Cláusula de Divisibilidade",
+    "explanation": "Uma cláusula de divisibilidade protege o contrato global se uma ou mais disposições forem consideradas inválidas, ilegais ou inexequíveis. Sem esta cláusula, um tribunal poderia anular todo o contrato devido a uma disposição problemática. É considerada uma cláusula padrão, mas serve uma função protetora genuinamente importante."
+  },
+  "dispute-resolution-clause": {
+    "title": "Cláusula de Resolução de Disputas",
+    "explanation": "Uma cláusula de resolução de disputas estabelece o processo que as partes devem seguir para resolver desacordos. Pode incluir um processo de várias etapas, começando com negociação informal, escalando para mediação e, finalmente, para arbitragem ou litígio. Estas cláusulas visam resolver disputas de forma eficiente e ao menor custo possível."
+  },
+  "non-solicitation-clause": {
+    "title": "Cláusula de Não Solicitação",
+    "explanation": "Uma cláusula de não solicitação impede que um funcionário ou contratado que sai solicite clientes, consumidores ou funcionários da empresa por um período especificado após a saída. Ao contrário das cláusulas de não concorrência, que restringem onde se pode trabalhar, as cláusulas de não solicitação restringem quem se pode contactar. Geralmente são mais aplicáveis do que as cláusulas de não concorrência porque são mais restritas no âmbito."
+  },
+  "data-protection-clause": {
+    "title": "Cláusula de Proteção de Dados",
+    "explanation": "Uma cláusula de proteção de dados aborda como os dados pessoais serão recolhidos, processados, armazenados e protegidos sob o contrato. Com a proliferação de regulamentações de privacidade de dados (RGPD, CCPA, etc.), estas cláusulas tornaram-se essenciais em praticamente qualquer contrato que envolva informações pessoais."
+  },
+  "insurance-clause": {
+    "title": "Cláusula de Seguro",
+    "explanation": "Uma cláusula de seguro exige que uma ou ambas as partes mantenham tipos e montantes especificados de cobertura de seguro durante o prazo do contrato. Estas cláusulas alocam o risco, garantindo que um seguro adequado esteja disponível para cobrir perdas potenciais, reduzindo a dependência apenas de disposições de indemnização."
+  },
+  "representations-warranties-clause": {
+    "title": "Cláusula de Declarações e Garantias",
+    "explanation": "Declarações e garantias são afirmações de facto feitas por uma ou ambas as partes sobre o estado atual das coisas. As declarações são afirmações sobre factos passados ou presentes. As garantias são promessas sobre a veracidade desses factos. Se uma declaração ou garantia se revelar falsa, a outra parte pode ter uma reclamação por incumprimento de contrato e, potencialmente, fraude."
+  },
+  "waiver-of-jury-trial": {
+    "title": "Cláusula de Renúncia a Julgamento por Júri",
+    "explanation": "Uma cláusula de renúncia a julgamento por júri prevê que as partes concordam em ter quaisquer disputas decididas por um juiz (julgamento sem júri) em vez de um júri. Estas cláusulas são comuns em contratos comerciais porque os julgamentos sem júri são frequentemente mais rápidos, menos dispendiosos e mais previsíveis do que os julgamentos por júri, particularmente para disputas comerciais complexas."
+  },
+  "acceleration-clause": {
+    "title": "Cláusula de Aceleração",
+    "explanation": "Uma cláusula de aceleração permite que um credor exija o reembolso imediato de todo o saldo devedor do empréstimo se o mutuário violar certos termos, mais comumente ao falhar pagamentos. Sem esta cláusula, um credor só poderia processar por cada pagamento em falta individualmente. As cláusulas de aceleração são padrão em hipotecas, empréstimos automóveis e acordos de empréstimo comercial. Elas dão aos credores uma poderosa alavancagem para impor o pagamento atempado e proteger o seu investimento."
+  },
+  "anti-dilution-clause": {
+    "title": "Cláusula Anti-Diluição",
+    "explanation": "Uma cláusula anti-diluição protege os investidores de terem a sua percentagem de propriedade reduzida quando uma empresa emite novas ações a um preço inferior ao que o investidor pagou originalmente. Estas cláusulas são padrão em negócios de capital de risco e private equity. Elas ajustam o preço de conversão do investidor para baixo para compensar o efeito diluidor da nova emissão, dando-lhes efetivamente mais ações pelo mesmo investimento."
+  },
+  "automatic-renewal-clause": {
+    "title": "Cláusula de Renovação Automática",
+    "explanation": "Uma cláusula de renovação automática (também chamada cláusula de renovação perpétua) estende um contrato por períodos adicionais, a menos que uma das partes notifique a rescisão dentro de um prazo especificado. Estas são comuns em acordos de serviço, subscrições, arrendamentos e licenças de software. Embora proporcionem continuidade e conveniência, podem prender as partes em extensões indesejadas se a janela de cancelamento for perdida."
+  },
+  "best-efforts-clause": {
+    "title": "Cláusula de Melhores Esforços",
+    "explanation": "Uma cláusula de melhores esforços exige que uma parte se esforce ao máximo para cumprir uma obrigação, sem garantir absolutamente um resultado específico. É um padrão mais elevado do que 'esforços razoáveis' ou 'esforços comercialmente razoáveis', mas menos do que uma garantia absoluta. Estas cláusulas são comuns quando o desempenho depende de fatores parcialmente fora do controlo de uma parte, como a obtenção de aprovação regulamentar, a obtenção de financiamento ou o alcance de metas de vendas."
+  },
+  "choice-of-forum-clause": {
+    "title": "Cláusula de Escolha de Foro",
+    "explanation": "Uma cláusula de escolha de foro (também chamada cláusula de seleção de foro) designa o tribunal ou local específico onde as disputas devem ou podem ser litigadas. Difere de uma cláusula de escolha de lei, que determina quais leis de jurisdição se aplicam. Um contrato pode especificar a lei de Delaware (escolha de lei), mas exigir litígio nos tribunais de Nova Iorque (escolha de foro). Estas cláusulas reduzem a incerteza e previnem corridas ao tribunal."
+  },
+  "clawback-clause": {
+    "title": "Cláusula de Clawback",
+    "explanation": "Uma cláusula de clawback permite que uma parte recupere compensações, bónus ou distribuições pagas anteriormente sob certas circunstâncias — como reajuste financeiro, má conduta ou falha em atingir metas de desempenho. Estas cláusulas tornaram-se proeminentes após escândalos corporativos e a crise financeira de 2008. A Lei Dodd-Frank e as regras da SEC agora exigem que as empresas públicas adotem políticas de clawback para a remuneração executiva."
+  },
+  "change-of-control-clause": {
+    "title": "Cláusula de Alteração de Controlo",
+    "explanation": "Uma cláusula de alteração de controlo aborda o que acontece a um contrato quando uma das partes sofre uma alteração significativa na sua propriedade — como uma fusão, aquisição ou transferência de uma participação de controlo. Estas cláusulas podem conceder direitos de rescisão, desencadear requisitos de consentimento ou ativar disposições especiais, como pagamentos acelerados ou compensações de \"golden parachute\"."
+  },
+  "compliance-clause": {
+    "title": "Cláusula de Conformidade",
+    "explanation": "Uma cláusula de conformidade exige que uma ou ambas as partes adiram às leis, regulamentos, normas da indústria e diretrizes éticas aplicáveis no cumprimento das suas obrigações contratuais. Estas cláusulas tornaram-se cada vez mais importantes com a crescente complexidade regulatória, a aplicação de leis anticorrupção (FCPA, UK Bribery Act), leis de privacidade de dados (GDPR, CCPA) e regimes de sanções."
+  },
+  "cross-default-clause": {
+    "title": "Cláusula de Incumprimento Cruzado",
+    "explanation": "Uma cláusula de incumprimento cruzado estipula que um incumprimento de um acordo entre as partes (ou acordos relacionados) constitui automaticamente um incumprimento do acordo atual. Isto impede que um mutuário incumprimento seletivamente as obrigações e garante que os credores podem proteger-se quando a saúde financeira de um mutuário se deteriora. As cláusulas de incumprimento cruzado são padrão em acordos de empréstimo, obrigações e acordos de financiamento complexos."
+  },
+  "cure-period-clause": {
+    "title": "Cláusula de Período de Cura",
+    "explanation": "Uma cláusula de período de cura concede a uma parte um período de tempo especificado para corrigir (curar) uma violação ou incumprimento antes que a outra parte possa exercer recursos como a rescisão ou aceleração. Estas cláusulas equilibram os interesses de ambas as partes — dando à parte infratora uma oportunidade justa para corrigir erros, enquanto preservam o direito da parte não infratora de agir se os problemas não forem resolvidos."
+  },
+  "drag-along-clause": {
+    "title": "Cláusula Drag-Along",
+    "explanation": "Uma cláusula drag-along confere aos acionistas maioritários o direito de forçar os acionistas minoritários a vender as suas ações no caso de uma venda ou aquisição da empresa. Isto impede que os acionistas minoritários bloqueiem um negócio que a maioria deseja prosseguir. Os acionistas minoritários devem vender nas mesmas condições que a maioria. Os direitos drag-along são padrão em acordos de acionistas e termos de investimento de capital de risco."
+  },
+  "exclusivity-clause": {
+    "title": "Cláusula de Exclusividade",
+    "explanation": "Uma cláusula de exclusividade concede a uma parte o direito exclusivo de fornecer serviços, distribuir produtos ou negociar um acordo dentro de um âmbito definido. Estas cláusulas são comuns em acordos de distribuição, acordos de licenciamento, negociações de M&A e contratos de serviço. Elas proporcionam segurança à parte exclusiva, mas limitam a flexibilidade da outra parte."
+  },
+  "first-right-of-refusal-clause": {
+    "title": "Cláusula de Direito de Preferência",
+    "explanation": "Um direito de preferência (ROFR) confere a uma parte o direito de igualar qualquer oferta que a outra parte receba de um terceiro antes que a outra parte possa aceitá-la. Se o titular do ROFR igualar a oferta, a transação é feita com ele. Se ele recusar, a outra parte está livre para prosseguir com o terceiro. Os ROFRs são comuns em arrendamentos imobiliários, acordos de acionistas e contratos comerciais."
+  },
+  "holdback-clause": {
+    "title": "Cláusula de Retenção",
+    "explanation": "Uma cláusula de retenção retém uma parte de um valor de pagamento por um período especificado para proteger contra potenciais reclamações, deficiências ou ajustamentos. Em transações de M&A, uma percentagem do preço de compra é tipicamente retida em caução para cobrir potenciais reclamações de indemnização. Na construção, as retenções (também chamadas de retenção de pagamentos) garantem que os empreiteiros concluam os itens da lista de pendências."
+  },
+  "indemnity-cap-clause": {
+    "title": "Cláusula de Limite de Indemnização",
+    "explanation": "Um limite de indemnização restringe o valor máximo que uma parte pode ser obrigada a pagar ao abrigo das disposições de indemnização de um contrato. Sem um limite, a responsabilidade de indemnização de uma parte poderia, teoricamente, ser ilimitada. Os limites são tipicamente definidos como uma percentagem do valor do contrato, do total de taxas pagas ou de um valor fixo em euros. São uma ferramenta crítica de alocação de risco em praticamente todos os contratos comerciais."
+  },
+  "integration-clause": {
+    "title": "Cláusula de Integração",
+    "explanation": "Uma cláusula de integração (também chamada de acordo integral ou cláusula de fusão) estabelece que o contrato escrito representa o acordo completo e final entre as partes, substituindo todas as negociações, discussões e acordos anteriores. Isso impede que qualquer uma das partes alegue posteriormente que promessas orais ou rascunhos anteriores fazem parte do acordo. É uma das cláusulas padrão mais importantes em qualquer contrato."
+  },
+  "key-person-clause": {
+    "title": "Cláusula de Pessoa Chave",
+    "explanation": "Uma cláusula de pessoa chave (também chamada de cláusula de \"key man\") concede a uma parte direitos específicos — geralmente suspensão, rescisão ou renegociação — se um indivíduo nomeado que é essencial para o cumprimento do contrato deixar de estar envolvido. Estas cláusulas são comuns em contratos de serviços profissionais, acordos de gestão de fundos e acordos de entretenimento onde o valor depende fortemente de indivíduos específicos."
+  },
+  "material-adverse-change-clause": {
+    "title": "Cláusula de Alteração Material Adversa",
+    "explanation": "Uma cláusula de alteração material adversa (MAC) (também chamada de efeito material adverso ou cláusula MAE) permite que uma parte desista ou renegocie um negócio se ocorrer um evento negativo significativo que afete fundamentalmente o valor, as operações ou a condição financeira da outra parte. As cláusulas MAC são críticas em acordos de M&A, compromissos de empréstimo e grandes contratos comerciais."
+  },
+  "most-favored-nation-clause": {
+    "title": "Cláusula de Nação Mais Favorecida",
+    "explanation": "Uma cláusula de nação mais favorecida (MFN) garante que uma parte receberá termos pelo menos tão favoráveis quanto os oferecidos a qualquer outra parte. Se o fornecedor oferecer preços, termos ou condições melhores a outro cliente, o titular da MFN tem automaticamente direito aos mesmos termos. Estas cláusulas tiveram origem em tratados de comércio internacional e são agora comuns em acordos de fornecimento comercial, acordos de licenciamento e contratos de seguro."
+  },
+  "no-shop-clause": {
+    "title": "Cláusula \"No-Shop\"",
+    "explanation": "Uma cláusula \"no-shop\" proíbe uma parte (geralmente um vendedor numa transação de M&A) de solicitar, encorajar ou negociar com outros potenciais compradores durante um período especificado. Isso dá ao potencial comprador confiança para investir tempo e recursos na \"due diligence\" sem se preocupar em ser superado. As cláusulas \"no-shop\" são padrão em cartas de intenção, acordos de fusão e períodos de negociação exclusiva."
+  },
+  "non-disparagement-clause": {
+    "title": "Cláusula de Não Denegrir",
+    "explanation": "Uma cláusula de não denegrir proíbe uma ou ambas as partes de fazer declarações negativas, críticas ou prejudiciais sobre a outra parte. Estas cláusulas são comuns em acordos de liquidação, pacotes de rescisão e contratos de trabalho. Elas protegem a reputação e impedem que antigos parceiros de negócios ou funcionários critiquem publicamente uns aos outros após o fim da relação."
+  },
+  "penalty-clause": {
+    "title": "Cláusula Penal",
+    "explanation": "Uma cláusula penal impõe uma obrigação de pagamento a uma parte que viola um contrato, onde o valor é projetado para punir a parte infratora, em vez de compensar as perdas reais. De acordo com o direito comum, as cláusulas penais são geralmente inexequíveis — os tribunais as anularão e substituirão por danos reais. Isso as distingue das cláusulas de danos liquidados, que estimam uma compensação genuína pré-acordada."
+  },
+  "price-adjustment-clause": {
+    "title": "Cláusula de Ajuste de Preço",
+    "explanation": "Uma cláusula de ajuste de preço permite que o preço do contrato mude durante o prazo com base em gatilhos ou fórmulas definidas. Os mecanismos comuns incluem ajustes de custo de vida (COLA) ligados ao IPC, índices de preços de matérias-primas, flutuações cambiais ou revisões periódicas das taxas de mercado. Estas cláusulas são essenciais em contratos de longo prazo para evitar que qualquer uma das partes fique presa a preços que se tornem comercialmente irrazoáveis."
+  },
+  "right-to-audit-clause": {
+    "title": "Cláusula de Direito de Auditoria",
+    "explanation": "Uma cláusula de direito de auditoria confere a uma parte o direito de examinar os livros, registos e operações da outra parte para verificar o cumprimento dos termos do contrato. Estas cláusulas são essenciais em contratos de custo mais, acordos de royalties, acordos de franquia e qualquer arranjo em que os pagamentos sejam baseados em valores reportados. Elas servem tanto como um impedimento contra fraudes quanto como um mecanismo para garantir a precisão."
+  },
+  "right-of-first-offer-clause": {
+    "title": "Cláusula de Direito de Primeira Oferta",
+    "explanation": "Um direito de primeira oferta (ROFO) exige que uma parte ofereça um ativo ou oportunidade ao titular do ROFO antes de procurar ofertas de terceiros. Ao contrário de um direito de preferência (onde o titular iguala uma oferta de terceiros), um ROFO exige que o vendedor dê ao titular a primeira oportunidade de fazer uma oferta. Se o titular recusar ou as partes não chegarem a um acordo sobre os termos, o vendedor pode então procurar ofertas de terceiros."
+  },
+  "survival-clause": {
+    "title": "Cláusula de Sobrevivência",
+    "explanation": "Uma cláusula de sobrevivência especifica quais as disposições de um contrato que continuam a ser eficazes após a rescisão ou expiração do contrato. Sem uma cláusula de sobrevivência, todos os direitos e obrigações geralmente terminam quando o contrato termina. As disposições que comumente sobrevivem incluem confidencialidade, indemnização, limitação de responsabilidade, propriedade intelectual, obrigações de não concorrência e resolução de litígios."
+  },
+  "tag-along-clause": {
+    "title": "Cláusula Tag-Along",
+    "explanation": "Uma cláusula tag-along (também chamada de direito de co-venda) confere aos acionistas minoritários o direito de se juntarem a uma venda quando um acionista maioritário vende as suas ações. Se o acionista maioritário encontrar um comprador, os acionistas minoritários podem \"tag along\" e vender as suas ações nas mesmas condições. Isso protege os acionistas minoritários de serem deixados para trás numa empresa com novos proprietários controladores, potencialmente desfavoráveis."
+  },
+  "time-is-of-the-essence-clause": {
+    "title": "Cláusula \"O Tempo é Essencial\"",
+    "explanation": "Uma cláusula \"o tempo é essencial\" torna o cumprimento rigoroso dos prazos um termo material do contrato. Sem esta cláusula, os tribunais geralmente permitem às partes flexibilidade razoável com o tempo, e pequenos atrasos não constituem uma violação material. Com ela, qualquer falha em cumprir um prazo — mesmo por um único dia — confere à parte não infratora o direito de rescindir e procurar indemnização."
+  },
+  "tolling-clause": {
+    "title": "Cláusula de Suspensão de Prazo",
+    "explanation": "Uma cláusula de suspensão de prazo suspende (pausa) a contagem do prazo de prescrição ou outros prazos contratuais por um período especificado ou durante certos eventos. Os acordos de suspensão são comuns quando as partes estão a negociar um acordo e querem preservar os seus direitos de litígio sem a pressão de um prazo a expirar. Também podem aparecer em contratos para estender prazos durante eventos de força maior ou disputas."
+  },
+  "venue-clause": {
+    "title": "Cláusula de Foro",
+    "explanation": "Uma cláusula de foro especifica a localização geográfica (cidade, concelho ou estado) onde os processos legais devem ou podem ser apresentados. Embora semelhante a uma cláusula de seleção de foro, o foro refere-se especificamente à localização geográfica, enquanto a seleção de foro também pode designar um tipo de tribunal (federal vs. estadual). As cláusulas de foro reduzem os custos de litígio e a incerteza, impedindo que as disputas sejam apresentadas em locais inesperados ou inconvenientes."
+  }
+}

@@ -1,1 +1,47 @@
-{}
+{
+  "header": "Verificação de Saúde Legal",
+  "questionLabel": "Pergunta {{step}} de {{total}}",
+  "back": "Voltar",
+  "next": "Próximo",
+  "seeResults": "Ver Resultados",
+  "retake": "Refazer Questionário",
+  "browseAll": "Ver Todas as Ferramentas",
+  "disclaimer": "Esta é apenas uma ferramenta de recomendação geral. Não é aconselhamento jurídico.",
+  "resultsReady": "Resultados Prontos",
+  "resultsTitle": "Aqui está o que recomendamos para si",
+  "resultsIntroBase": "Com base nas suas respostas",
+  "resultsIntroInState": " em {{state}}",
+  "resultsIntroSituation": ", parece que está a lidar com uma situação de {{situation}}.",
+  "resultsIntroTail": " Aqui estão as ferramentas gratuitas mais úteis:",
+  "relatedTitle": "Ferramentas Relacionadas Que Poderão Ser do Seu Interesse",
+  "poweredBy": "Desenvolvido pelas mais de 100 ferramentas gratuitas da LegallySpoken • Sempre grátis • Não é aconselhamento jurídico — consulte um profissional se necessário.",
+  "stateSelectPlaceholder": "Selecione o seu estado...",
+  "textPlaceholder": "Opcional — partilhe quaisquer detalhes que nos possam ajudar a recomendar melhores ferramentas...",
+  "situationCarAccident": "acidente de carro / seguro",
+  "questions": {
+    "situation": "Qual é a principal situação com que está a lidar neste momento?",
+    "state": "Onde se localiza?",
+    "urgency": "Qual a urgência disto?",
+    "hasDocuments": "Tem algum documento relacionado com isto?",
+    "goal": "Qual é o seu principal objetivo?",
+    "freeText": "Mais alguma coisa que devamos saber?"
+  },
+  "options": {
+    "renting": "Arrendamento ou aluguer",
+    "employment": "Emprego ou local de trabalho",
+    "contracts": "Assinar ou rever um contrato",
+    "accident": "Acidente de carro, lesão ou seguro",
+    "money": "Dinheiro, dívidas ou impostos",
+    "business": "Iniciar ou gerir um negócio",
+    "other": "Outra coisa",
+    "urgent": "Preciso de ajuda imediatamente",
+    "important": "Importante, mas não urgente",
+    "planning": "Apenas a planear com antecedência",
+    "yes": "Sim (contrato, arrendamento, carta, etc.)",
+    "no": "Não, ainda não",
+    "rights": "Compreender os meus direitos",
+    "calculate": "Calcular algo específico",
+    "risk": "Verificar se algo parece arriscado",
+    "guidance": "Obter orientação para os próximos passos"
+  }
+}

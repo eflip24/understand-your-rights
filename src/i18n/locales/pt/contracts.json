@@ -1,1 +1,78 @@
-{}
+{
+  "nda": {
+    "title": "Acordo de Não Divulgação (NDA)",
+    "description": "Um Acordo de Não Divulgação (NDA) é um contrato legalmente vinculativo que estabelece uma relação confidencial entre as partes. A parte que recebe informações confidenciais concorda em não as divulgar a terceiros e em usá-las apenas para os fins acordados. Os NDAs são usados antes de discutir negócios, contratar prestadores de serviços, partilhar segredos comerciais e durante negociações de fusão."
+  },
+  "employment-contract": {
+    "title": "Contrato de Trabalho",
+    "description": "Um contrato de trabalho é um acordo entre um empregador e um empregado que define os termos e condições de emprego. Abrange remuneração, benefícios, responsabilidades do cargo, condições de rescisão e restrições pós-emprego. Embora o emprego à vontade seja o padrão na maioria dos estados dos EUA, os contratos de trabalho escritos proporcionam clareza e proteção para ambas as partes."
+  },
+  "freelance-agreement": {
+    "title": "Acordo de Freelancer / Prestador de Serviços Independente",
+    "description": "Um acordo de freelancer (ou acordo de prestador de serviços independente) define a relação entre um cliente e um prestador de serviços independente. É fundamental para estabelecer que o trabalhador é um prestador de serviços, e não um empregado — uma distinção que afeta impostos, benefícios, responsabilidade e direitos legais."
+  },
+  "lease-agreement": {
+    "title": "Contrato de Arrendamento",
+    "description": "Um contrato de arrendamento é um contrato entre o proprietário de um imóvel (senhorio) e um inquilino que concede ao inquilino o direito de usar o imóvel por um período especificado em troca de renda. Os contratos de arrendamento podem abranger propriedades residenciais, comerciais ou industriais, cada um com diferentes requisitos legais e disposições comuns."
+  },
+  "saas-agreement": {
+    "title": "Acordo SaaS (Software como Serviço)",
+    "description": "Um acordo SaaS rege o uso de serviços de software baseados na nuvem. Ao contrário das licenças de software tradicionais, onde o cliente compra e instala o software, os acordos SaaS fornecem acesso a software alojado numa base de subscrição. O fornecedor mantém o software, a infraestrutura e a segurança dos dados."
+  },
+  "consulting-agreement": {
+    "title": "Acordo de Consultoria",
+    "description": "Um acordo de consultoria define os termos sob os quais um consultor fornece aconselhamento especializado, análise ou serviços especializados a um cliente. Ao contrário dos contratos de trabalho, os acordos de consultoria estabelecem uma relação de prestador de serviços independente, onde o consultor mantém o controlo sobre a forma como o trabalho é executado."
+  },
+  "partnership-agreement": {
+    "title": "Acordo de Parceria",
+    "description": "Um acordo de parceria define os termos de uma parceria comercial, incluindo os direitos, responsabilidades, contribuições e participação nos lucros e perdas de cada parceiro. Sem um acordo de parceria escrito, os parceiros estão sujeitos às regras padrão da lei estadual, que podem não estar alinhadas com as suas intenções."
+  },
+  "purchase-agreement": {
+    "title": "Contrato de Compra e Venda (Bens)",
+    "description": "Um contrato de compra e venda rege a venda de bens entre um comprador e um vendedor. Define os bens a serem vendidos, o preço, os termos de entrega, os termos de pagamento, as garantias e os direitos e recursos de cada parte. Para compras significativas, um contrato bem redigido protege ambas as partes de disputas sobre o que foi prometido."
+  },
+  "service-agreement": {
+    "title": "Contrato de Prestação de Serviços",
+    "description": "Um contrato de prestação de serviços define os termos sob os quais uma parte fornece serviços a outra. Abrange o âmbito dos serviços, padrões de desempenho, preços, prazos, direitos de propriedade intelectual, responsabilidade e rescisão. Os contratos de prestação de serviços variam de documentos simples de uma página a acordos-quadro de serviços (MSAs) abrangentes com múltiplas declarações de trabalho (SOWs)."
+  },
+  "licensing-agreement": {
+    "title": "Acordo de Licenciamento",
+    "description": "Um acordo de licenciamento concede a uma parte (o licenciado) o direito de usar a propriedade intelectual de outra parte (o licenciador) — como patentes, marcas registadas, direitos de autor ou segredos comerciais — sob condições especificadas. O licenciador mantém a propriedade enquanto o licenciado obtém os direitos de uso."
+  },
+  "terms-of-service": {
+    "title": "Termos de Serviço (ToS)",
+    "description": "Os Termos de Serviço (também chamados Termos de Uso ou Termos e Condições) são as regras e diretrizes que os utilizadores devem aceitar para usar um website, aplicação ou serviço. Criam um acordo legalmente vinculativo entre o fornecedor de serviços e os seus utilizadores, definindo o uso aceitável, direitos de propriedade intelectual, limitações de responsabilidade e resolução de disputas."
+  },
+  "privacy-policy": {
+    "title": "Política de Privacidade",
+    "description": "Uma política de privacidade é um documento legal que explica como uma organização recolhe, usa, armazena, partilha e protege informações pessoais. As políticas de privacidade são legalmente exigidas por inúmeras regulamentações, incluindo o RGPD (UE), CCPA (Califórnia) e várias outras leis de privacidade estaduais e internacionais."
+  },
+  "joint-venture-agreement": {
+    "title": "Acordo de Joint Venture",
+    "description": "Um acordo de joint venture estabelece um arranjo de colaboração empresarial entre duas ou mais partes que concordam em unir recursos para um projeto ou atividade comercial específica, mantendo as suas identidades separadas. Ao contrário de uma parceria, uma joint venture é tipicamente limitada em âmbito e duração."
+  },
+  "real-estate-purchase": {
+    "title": "Contrato de Compra e Venda de Imóvel",
+    "description": "Um contrato de compra e venda de imóvel é um contrato entre um comprador e um vendedor para a venda de bens imóveis. É um dos contratos mais significativos que a maioria das pessoas assinará, abrangendo o preço de compra, termos de financiamento, contingências, procedimentos de fecho e representações sobre a condição do imóvel."
+  },
+  "loan-agreement": {
+    "title": "Contrato de Empréstimo",
+    "description": "Um contrato de empréstimo é um contrato entre um credor e um mutuário que estabelece os termos de um empréstimo, incluindo o montante principal, taxa de juro, cronograma de reembolso, requisitos de garantia e disposições de incumprimento. Os contratos de empréstimo variam de simples notas promissórias para empréstimos pessoais a complexas linhas de crédito para mutuários corporativos."
+  },
+  "non-solicitation-agreement": {
+    "title": "Acordo de Não Solicitação",
+    "description": "Um acordo de não solicitação impede um empregado ou prestador de serviços que sai de solicitar os clientes ou empregados da empresa por um período especificado. É mais restrito do que um acordo de não concorrência (que restringe onde se pode trabalhar) e foca-se especificamente na proteção das relações comerciais."
+  },
+  "shareholder-agreement": {
+    "title": "Acordo de Acionistas",
+    "description": "Um acordo de acionistas é um contrato entre os acionistas de uma empresa que define os seus direitos, obrigações e as regras que regem a empresa. Complementa os estatutos e regulamentos da empresa com disposições mais detalhadas sobre gestão, transferências de ações e resolução de disputas."
+  },
+  "commercial-lease": {
+    "title": "Contrato de Arrendamento Comercial",
+    "description": "Um contrato de arrendamento comercial é um acordo entre um senhorio e um inquilino comercial para o uso de propriedade comercial (escritório, retalho, industrial ou espaço de armazém). Ao contrário dos arrendamentos residenciais, os arrendamentos comerciais são em grande parte não regulamentados e fortemente negociados, com termos que afetam significativamente as operações e custos do negócio do inquilino."
+  },
+  "website-terms": {
+    "title": "Termos e Condições do Website",
+    "description": "Os termos e condições do website (também chamados Termos de Uso) estabelecem as regras para usar um website. Protegem o proprietário do website da responsabilidade, definem as expectativas para o comportamento do utilizador, abordam os direitos de propriedade intelectual e estabelecem o quadro legal para a relação utilizador-website."
+  }
+}
