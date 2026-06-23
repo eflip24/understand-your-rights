@@ -1,102 +1,135 @@
 
-# Multilingual completion plan
+# Phase A — Tools translation (ES/FR/DE/PT/IT) + cron continuation
 
-Three workstreams. The first is fast, the second is verification, the third is the heavy lift and needs phasing to control AI credit spend.
-
----
-
-## 1. Portuguese UI — fill the 7 empty namespace files
-
-Today PT has 7 of 10 namespace JSON files as `{}` (3 bytes each), so Portuguese visitors see English fallbacks for almost every label, button, tool name, etc.
-
-**Files to populate (matched 1:1 with the English source):**
-- `src/i18n/locales/pt/clauses.json`
-- `src/i18n/locales/pt/contracts.json`
-- `src/i18n/locales/pt/home.json`
-- `src/i18n/locales/pt/legal.json`
-- `src/i18n/locales/pt/quiz.json`
-- `src/i18n/locales/pt/terms.json`
-- `src/i18n/locales/pt/tools.json`
-
-**Method:** reuse the existing `scripts/_aiTranslate.mjs` helper (already used for ES/FR/DE/IT) via the Lovable AI Gateway with `google/gemini-3-flash-preview`. For each empty PT namespace, load the EN JSON, translate every leaf string, preserve keys/placeholders (`{{var}}`), write back to `pt/`. Run once, commit results.
-
-**Validation:** automated diff — every PT file must have the same key structure as its EN counterpart; no missing/extra keys. Spot-check 3 random strings per namespace.
+Translate all ~100 tool definitions into the 5 non-English locales, with a credit-aware fallback that resumes via cron if free tier quota runs out mid-run.
 
 ---
 
-## 2. Sitemap hreflang — audit + minor fix pass
+## 1. Translation target
 
-Current state (already in place — no rebuild needed):
-- `Head.tsx` emits per-page `hreflang` + `x-default` + per-locale canonicals.
-- `supabase/functions/generate-sitemap/index.ts` emits `<xhtml:link rel="alternate" hreflang="…">` per URL, including a dedicated `core-i18n` shard, and EU lawyer URLs use localized paths.
+In `src/data/tools.ts`, the user-facing strings per `Tool` are:
+- `name`, `shortDescription`, `description`
+- `categoryLabel` (derived from `categories[].label`)
+- `faqs[].question`, `faqs[].answer`
 
-**What I'll check & fix:**
-- Curl each shard URL and confirm `xhtml:link` tags render for every locale, including `x-default`.
-- Confirm `og:locale:alternate` tags are present per page (smoke-test home + a tool page + an EU lawyer page via the live preview).
-- Verify the `core-i18n` shard covers all static routes the SPA exposes (`/tools`, `/legal-terms`, `/contracts`, `/clauses`, `/blog`, `/health-check`, etc.). Add any missing paths.
-- Fix any locale-prefix double-slash or trailing-slash inconsistencies between `Head.tsx` and the sitemap (must match exactly or Google ignores the alternates).
+And in `categories[]`: `label`, `description`.
 
-**No new infra** — this is verify, patch small gaps.
+**Not translated:** `id`, `slug`, `category`, `icon`, `color`, `popular`, `relatedToolIds`, `faqs` array shape.
 
----
-
-## 3. Data-driven content translation (tools, terms, clauses, statutes, blog)
-
-This is the largest piece. Today, even when a user visits `/es/tools/contract-analyzer`, the chrome is Spanish but the tool definition (name, description, fields, output labels) is English because it lives in `src/data/*.ts`.
-
-### Scope (volumes)
-
-| Source | Items | Where |
-|---|---|---|
-| Tools | ~100 | `src/data/tools.ts` (1.8k lines) |
-| Legal terms | ~120 entries | `src/data/legalTerms.ts` |
-| Legal clauses | ~80 entries | `src/data/legalClauses.ts` |
-| Statutes | ~50 entries | `src/data/statutes.ts` |
-| Blog posts | 48 published | `blog_posts` table |
-| State/city guides | static data | `src/data/locations/*` |
-
-Multiplied by 5 target locales (ES, FR, DE, PT, IT) → roughly **2,000+ translation units**. This is real AI credit spend; we phase it.
-
-### Architecture (one approach — confirm before I implement)
-
-**For static `src/data/*.ts` entries:**
-- Add a sibling `src/data/i18n/<locale>/<source>.ts` per locale containing only the translated text fields (slug stays canonical English so URLs and routing don't fork).
-- Each data-consuming component reads via a `useLocalizedEntry(entry)` hook that merges the English base with the active-locale overlay; missing locale = English fallback with a small banner ("This page is shown in English — translation in progress").
-- Translation is generated offline by a new `scripts/translateData.mjs` that mirrors `_aiTranslate.mjs`: per locale, per source file, leaf-string translation with key preservation, written to `src/data/i18n/<locale>/`. Re-runnable; skips already-translated keys.
-
-**For `blog_posts` (DB):**
-- New table `blog_post_translations` (`post_id`, `locale`, `title`, `excerpt`, `content_html`, `created_at`) with RLS mirroring `blog_posts`.
-- `useBlogPosts` resolves to the locale row when present, English row otherwise.
-- One-shot script: for each post × locale, translate `title` + `excerpt` + `content_html` via the AI Gateway and insert. Re-runnable per (post_id, locale) idempotency key.
-- Admin blog editor gets a tab per locale so future edits can override AI output.
-
-### Phasing (credit-aware)
-
-I'll execute in this order, pausing after each phase so you can review quality before approving the next:
-
-1. **Phase A** — Tools only (highest user value). 100 entries × 5 locales.
-2. **Phase B** — Legal terms + clauses + statutes. ~250 entries × 5 locales.
-3. **Phase C** — Blog posts (DB-backed). 48 posts × 5 locales.
-4. **Phase D** — State/city guide static data (large, lowest priority).
-
-### Out of scope (this plan)
-- Translating lawyer listings (geographic data, mostly proper nouns).
-- Translating dynamically AI-generated content at request time (already locale-aware via prompt language).
-- SSR for social-preview crawlers (existing client-side Helmet limit; called out in `head-meta` knowledge).
+Roughly 100 tools × ~10 strings + 10 category strings ≈ **1,010 strings × 5 locales = ~5,050 leaves**.
 
 ---
 
-## Execution order I'll follow once you approve
+## 2. Storage architecture — per-locale overlay JSON
 
-1. Workstream 1 (PT UI) — one shot, ~1 turn.
-2. Workstream 2 (sitemap audit) — one shot, ~1 turn.
-3. Workstream 3 Phase A (Tools) — schema/loader/hook + translation script + first run, ~2–3 turns. Stop for your review.
-4. Phases B → D on your go-ahead.
+New directory: `src/data/i18n/tools/`
+- `tools.es.json`, `tools.fr.json`, `tools.de.json`, `tools.pt.json`, `tools.it.json`
+- `categories.es.json`, ... `categories.it.json`
+
+Each file is a flat dictionary keyed by `id`:
+```json
+{
+  "contract-analyzer": {
+    "name": "Analizador de contratos",
+    "shortDescription": "...",
+    "description": "...",
+    "faqs": [{ "question": "...", "answer": "..." }]
+  }
+}
+```
+
+`categoryLabel` and category descriptions live in `categories.<locale>.json` keyed by category id.
+
+**Why JSON not TS:** decouples translation churn from code; the overlay file can be regenerated/rewritten by the cron edge function without code-mod risk; dynamic `import()` keeps non-active locales out of the main bundle.
+
+---
+
+## 3. Runtime loader + hook
+
+New file: `src/data/i18n/useLocalizedTool.ts` exporting:
+- `useLocalizedTool(tool: Tool): Tool` — merges EN base with overlay for the active locale; missing overlay → EN fallback.
+- `useLocalizedCategory(cat: CategoryInfo): CategoryInfo`
+- `useLocalizedTools(): Tool[]` and `useLocalizedCategories(): CategoryInfo[]` for list pages.
+
+The hook dynamically imports `tools.<locale>.json` once per locale change, caches in module-level memo. EN returns input unchanged. Strings missing from overlay fall back to EN per-field.
+
+**Consumer wiring** (8 files): `ToolsDirectory`, `CategoryPage`, `ToolPage`, `PopularToolsSection`, `HomePage`, `ToolPageLayout`, `ContentPageLayout`, `LegalHealthCheckQuiz`. Each swap from `tools` / `categories` to the localized variant. Pure read-side change.
+
+**Untouched:** slug/routing, `quizData.ts`, `BlogPostPage`, `StatutePage`, pillar/cluster pages — they reference tools by id only.
+
+---
+
+## 4. Offline translation script
+
+New: `scripts/translate-tools.mjs`
+- Reads `src/data/tools.ts` via a tiny extractor (re-uses the file's TS by running it through `tsx` to import the `tools`/`categories` arrays).
+- For each target locale, batches tools in groups of ~10 (small enough for one AI call), translates only the user-facing fields, writes to `src/data/i18n/tools/tools.<locale>.json`.
+- **Idempotent:** loads existing overlay, skips tool ids already present, appends only new/missing translations. Re-runnable any time.
+- Uses `_aiTranslate.mjs` helper → Lovable AI Gateway first, Gemini free tier fallback. On 402/429 from both, exits cleanly leaving partial overlay in place.
+- Validates shape (same keys, same `faqs` length) before writing.
+
+Run order locally: `node scripts/translate-tools.mjs --locale es`, then fr, de, pt, it. CLI also supports `--all`.
+
+---
+
+## 5. Cron continuation — edge function + pg_cron
+
+When the local script hits Lovable 402/Gemini 429 free-tier daily quota, the user can either re-run tomorrow or rely on the cron path below to grind through remaining items automatically.
+
+**New edge function:** `supabase/functions/translate-tools-cron/index.ts`
+- Reads a static manifest of tools/categories (embedded at build via `scripts/_build-edge-source.mjs` — same pattern as `translate-region-intros`).
+- Reads pointer from existing `translation_cron_state` (we'll reuse it with a new `id = "tools"` row; existing `singleton` row stays untouched). Pointer fields: `next_country` repurposed as `next_locale`; `last_run_status` for `ok` / `quota_hit` / `done` / `error`; `last_filled_count` for items translated this run.
+- Each invocation: pick next un-translated (locale, tool_id) batch (up to 20 items), call Lovable AI then Gemini, write results to a new DB table.
+- On 402/429: persist progress, set `last_run_status = "quota_hit"`, return 200 (don't fail cron).
+- On all done: `last_run_status = "done"`.
+
+**New table:** `tool_translations` (`tool_id text`, `locale text`, `data jsonb`, `updated_at`, PK = `(tool_id, locale)`). Grants: `SELECT` to `anon` + `authenticated`, `ALL` to `service_role`. RLS: anyone can read, no client writes.
+
+**Why DB not JSON file for cron path:** edge functions can't write to `public/` or `src/`. So the cron writes to the DB; the runtime loader (#3) reads from `tool_translations` via Supabase when an overlay JSON is missing for a tool. Two-tier resolution per field:
+1. Static overlay JSON (preferred — zero round-trip)
+2. DB `tool_translations` (cron-filled, fetched once per locale switch and cached)
+3. EN fallback
+
+When you're satisfied with quality, an admin "export DB → JSON" button later flattens the DB rows back into the static JSON files (out of scope for this plan, mentioned for context).
+
+**pg_cron schedule:** every 6 hours. SQL inserted via `supabase--insert` tool so the function URL + anon key aren't checked into a migration:
+```sql
+select cron.schedule(
+  'translate-tools-every-6h',
+  '0 */6 * * *',
+  $$ select net.http_post(
+       url := '<edge-function-url>',
+       headers := '{"Content-Type":"application/json","apikey":"<anon>"}'::jsonb,
+       body := '{}'::jsonb
+     ); $$
+);
+```
+
+Enable `pg_cron` + `pg_net` extensions in the migration that creates `tool_translations`.
+
+---
+
+## 6. Execution order
+
+I'll run the work in this order, stopping only if I hit credit quota or an unexpected error:
+
+1. Migration: create `tool_translations`, enable extensions.
+2. Build runtime loader (`useLocalizedTool` hook).
+3. Wire 8 consumer files to use localized variants.
+4. Write `scripts/translate-tools.mjs` and run it for all 5 locales. Lovable AI primary; Gemini fallback. Log progress, persist what completes.
+5. Write `translate-tools-cron` edge function + register pg_cron schedule.
+6. Smoke-test: switch site to ES/PT, visit `/tools` and a tool page, confirm localized strings render and fall back gracefully when an overlay key is missing.
+
+If step 4 partially completes, step 5 will fill the rest on schedule with no manual intervention.
+
+---
 
 ## Technical details
 
-- AI model: `google/gemini-3-flash-preview` via Lovable AI Gateway. JSON-mode output for structural safety.
-- Translation script reuses `scripts/_aiTranslate.mjs` patterns; adds a manifest file per locale to make runs idempotent.
-- Per-locale data overlays loaded with dynamic `import()` so non-active locales don't bloat the main bundle.
-- `blog_post_translations` migration includes GRANTs (`SELECT` to anon, full to service_role/authenticated) and RLS policies matching `blog_posts`.
-- No changes to routing, locale detection, or the existing `hreflang` machinery.
+- **Model**: `google/gemini-2.5-flash` via Lovable AI Gateway (the helper's current default); Gemini direct fallback for 402/429.
+- **Batch size**: 10 tools per AI call. Smaller for safety; ~50 calls per locale; 250 calls total. With Lovable AI fast-flash this is small.
+- **Bundle impact**: 5 overlay JSONs × ~50 KB each = 250 KB total; only the active locale is fetched (dynamic import). EN users see zero overhead.
+- **Type safety**: overlay typed as `Partial<Pick<Tool, "name"|"shortDescription"|"description"|"faqs">>` with strict TS.
+- **DB writes**: `tool_translations.data` is a jsonb of the same `Partial<Tool>` shape; loader merges identically to the static overlay.
+- **No changes** to existing PT i18n UI translations, sitemap, routing, or auth.
+- **Out of scope**: admin UI to edit translations, blog post translation (Phase C), state/city guides (Phase D), legal terms/clauses/statutes (Phase B).

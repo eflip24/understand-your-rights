@@ -2,566 +2,2190 @@
   "reading-time": {
     "name": "Calculateur de temps de lecture de contrat",
     "description": "Collez le texte de votre contrat et obtenez une estimation du temps de lecture basée sur le nombre de mots et la complexité juridique. Vous aide à planifier le temps nécessaire pour examiner un document.",
-    "shortDescription": "Estime le temps de lecture d'un contrat."
+    "shortDescription": "Estime le temps de lecture d'un contrat.",
+    "faqs": [
+      {
+        "question": "Comment le temps de lecture est-il calculé ?",
+        "answer": "Nous utilisons une vitesse de lecture moyenne de 200 mots par minute pour les textes juridiques, ce qui est plus lent que pour les textes ordinaires en raison de leur complexité."
+      },
+      {
+        "question": "La complexité affecte-t-elle l'estimation ?",
+        "answer": "Oui, la densité du jargon juridique ajoute du temps supplémentaire pour tenir compte de la relecture et de la compréhension."
+      },
+      {
+        "question": "Est-ce précis pour tous les contrats ?",
+        "answer": "C'est une estimation. Les contrats financiers ou techniques complexes peuvent prendre plus de temps."
+      }
+    ]
   },
   "word-counter": {
     "name": "Compteur de mots de contrat",
     "description": "Obtenez des statistiques détaillées sur votre contrat, y compris le nombre de mots, le nombre de caractères, le nombre de phrases, le nombre de paragraphes et le nombre de pages estimé.",
-    "shortDescription": "Obtenez des statistiques détaillées sur les mots et les caractères."
+    "shortDescription": "Obtenez des statistiques détaillées sur les mots et les caractères.",
+    "faqs": [
+      {
+        "question": "Comment les pages sont-elles estimées ?",
+        "answer": "Nous estimons 250 mots par page pour les documents juridiques standard."
+      },
+      {
+        "question": "Compte-t-il les en-têtes et les pieds de page ?",
+        "answer": "Il compte tout le texte que vous collez dans l'outil."
+      },
+      {
+        "question": "Puis-je l'utiliser pour des documents non juridiques ?",
+        "answer": "Absolument ! Le compteur de mots fonctionne pour n'importe quel texte."
+      }
+    ]
   },
   "jargon-translator": {
     "name": "Traducteur de jargon juridique",
     "description": "Recherchez des termes juridiques courants et obtenez des explications en langage clair. Parcourez notre dictionnaire de plus de 100 termes juridiques pour comprendre ce que dit réellement votre contrat.",
-    "shortDescription": "Traduit les termes juridiques en langage clair."
+    "shortDescription": "Traduit les termes juridiques en langage clair.",
+    "faqs": [
+      {
+        "question": "Combien de termes sont dans le dictionnaire ?",
+        "answer": "Nous avons actuellement plus de 100 termes juridiques courants avec des définitions en langage clair."
+      },
+      {
+        "question": "Est-ce un conseil juridique ?",
+        "answer": "Non. Cet outil fournit des explications générales. Consultez toujours un avocat pour des questions juridiques spécifiques."
+      },
+      {
+        "question": "Puis-je suggérer de nouveaux termes ?",
+        "answer": "Nous élargissons constamment notre dictionnaire. Contactez-nous avec vos suggestions."
+      }
+    ]
   },
   "clause-finder": {
     "name": "Chercheur de clauses contractuelles",
     "description": "Collez votre contrat et recherchez les types de clauses courants tels que l'indemnisation, la résiliation, la non-concurrence, la confidentialité, et plus encore. Trouvez rapidement les sections les plus importantes.",
-    "shortDescription": "Trouve des clauses spécifiques dans vos contrats."
+    "shortDescription": "Trouve des clauses spécifiques dans vos contrats.",
+    "faqs": [
+      {
+        "question": "Quels types de clauses peut-il trouver ?",
+        "answer": "Il recherche plus de 15 types de clauses courantes, y compris l'indemnisation, la résiliation, la non-concurrence, la confidentialité, la responsabilité, et plus encore."
+      },
+      {
+        "question": "Quelle est la précision du détecteur ?",
+        "answer": "Il utilise la correspondance de mots-clés pour identifier les emplacements probables des clauses. Examinez le contexte pour confirmer."
+      },
+      {
+        "question": "Fonctionne-t-il avec n'importe quel format de contrat ?",
+        "answer": "Oui, tant que vous collez le contenu textuel de votre contrat."
+      }
+    ]
   },
   "cancellation-deadline": {
     "name": "Calculateur de date limite d'annulation",
     "description": "Calculez votre date limite d'annulation en fonction de votre date d'inscription et de votre période de rétractation. Sachez exactement quand votre droit d'annuler expire.",
-    "shortDescription": "Calcule la date de fin de votre fenêtre d'annulation."
+    "shortDescription": "Calcule la date de fin de votre fenêtre d'annulation.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'un délai de rétractation ?",
+        "answer": "Un délai de rétractation est une période après la signature d'un contrat pendant laquelle vous pouvez annuler sans pénalité."
+      },
+      {
+        "question": "Les délais de rétractation sont-ils les mêmes partout ?",
+        "answer": "Non, ils varient selon la juridiction et le type de contrat. Les périodes courantes sont de 3, 7, 14 et 30 jours."
+      },
+      {
+        "question": "Cela inclut-il les week-ends ?",
+        "answer": "Vous pouvez choisir de compter uniquement les jours ouvrables ou les jours calendaires."
+      }
+    ]
   },
   "notice-period": {
     "name": "Calculateur de délai de préavis",
     "description": "Calculez la date de fin de votre délai de préavis en fonction de votre date de début et des conditions de préavis. Fonctionne pour les contrats de travail, de location et de service.",
-    "shortDescription": "Calcule la date de fin de votre période de préavis."
+    "shortDescription": "Calcule la date de fin de votre période de préavis.",
+    "faqs": [
+      {
+        "question": "Quels sont les délais de préavis courants ?",
+        "answer": "Les délais courants incluent 2 semaines, 30 jours, 60 jours et 90 jours selon le type d'accord."
+      },
+      {
+        "question": "Tient-il compte des week-ends ?",
+        "answer": "Vous pouvez basculer entre les jours calendaires et les jours ouvrables."
+      },
+      {
+        "question": "Puis-je l'utiliser pour les contrats de location ?",
+        "answer": "Oui ! Il fonctionne pour tout accord avec un délai de préavis."
+      }
+    ]
   },
   "late-fee": {
     "name": "Calculateur de frais de retard",
     "description": "Calculez le total des frais de retard sur un paiement en souffrance. Saisissez le montant principal, le taux des frais et le nombre de jours de retard pour voir ce que vous devez ou ce qui vous est dû.",
-    "shortDescription": "Calcule les frais de retard sur les paiements en souffrance."
+    "shortDescription": "Calcule les frais de retard sur les paiements en souffrance.",
+    "faqs": [
+      {
+        "question": "Comment les frais de retard sont-ils généralement calculés ?",
+        "answer": "La plupart des frais de retard sont soit un montant forfaitaire, soit un pourcentage du solde impayé, facturés quotidiennement ou mensuellement."
+      },
+      {
+        "question": "Existe-t-il des limites légales aux frais de retard ?",
+        "answer": "Oui, de nombreuses juridictions plafonnent les frais de retard. Vérifiez vos lois locales."
+      },
+      {
+        "question": "Puis-je l'utiliser pour les factures ?",
+        "answer": "Oui, il fonctionne pour tout type de paiement en souffrance."
+      }
+    ]
   },
   "refund-checker": {
     "name": "Vérificateur d'éligibilité au remboursement",
     "description": "Répondez à quelques questions simples sur votre achat et votre situation pour vérifier si vous pourriez être éligible à un remboursement. Couvre les scénarios courants de protection du consommateur.",
-    "shortDescription": "Vérifie si vous êtes éligible à un remboursement."
+    "shortDescription": "Vérifie si vous êtes éligible à un remboursement.",
+    "faqs": [
+      {
+        "question": "Le résultat est-il juridiquement contraignant ?",
+        "answer": "Non. Ceci fournit des conseils généraux basés sur les règles courantes de protection des consommateurs. Vérifiez toujours votre contrat spécifique et les lois locales."
+      },
+      {
+        "question": "Quels scénarios couvre-t-il ?",
+        "answer": "Il couvre les achats en ligne, les achats en magasin, les services, les abonnements et les produits défectueux."
+      },
+      {
+        "question": "Varie-t-il selon les pays ?",
+        "answer": "Le vérificateur fournit des conseils généraux. Les droits spécifiques varient selon la juridiction."
+      }
+    ]
   },
   "non-compete": {
     "name": "Vérificateur de durée de clause de non-concurrence",
     "description": "Saisissez la durée de votre clause de non-concurrence et l'État pour obtenir des informations générales sur son applicabilité. Certains États restreignent ou interdisent entièrement les clauses de non-concurrence.",
-    "shortDescription": "Vérifie l'applicabilité de la non-concurrence par État."
+    "shortDescription": "Vérifie l'applicabilité de la non-concurrence par État.",
+    "faqs": [
+      {
+        "question": "Les clauses de non-concurrence sont-elles exécutoires ?",
+        "answer": "Cela varie considérablement selon les États. Certains États, comme la Californie, ne les appliquent généralement pas."
+      },
+      {
+        "question": "Quelle est la durée typique d'une clause de non-concurrence ?",
+        "answer": "La plupart des tribunaux considèrent qu'une durée de 1 à 2 ans est raisonnable. Les périodes plus longues sont plus difficiles à faire appliquer."
+      },
+      {
+        "question": "Dois-je signer une clause de non-concurrence ?",
+        "answer": "Consultez un avocat spécialisé en droit du travail avant de signer. Cet outil fournit uniquement des informations générales."
+      }
+    ]
   },
   "freelance-rate": {
     "name": "Calculateur de taux freelance",
     "description": "Convertissez entre les taux horaires, les frais de projet et le revenu annuel. Tenez compte des impôts, des dépenses et des heures facturables pour trouver votre véritable taux de freelance.",
-    "shortDescription": "Convertit entre les taux horaires, de projet et annuels."
+    "shortDescription": "Convertit entre les taux horaires, de projet et annuels.",
+    "faqs": [
+      {
+        "question": "Comment calculer mon taux horaire ?",
+        "answer": "Commencez par votre revenu annuel souhaité, ajoutez les impôts et les dépenses, puis divisez par vos heures facturables estimées."
+      },
+      {
+        "question": "Quelles sont les heures facturables typiques ?",
+        "answer": "La plupart des freelances facturent 1 000 à 1 500 heures par an sur un total de 2 080 heures de travail."
+      },
+      {
+        "question": "Dois-je inclure les coûts des avantages sociaux ?",
+        "answer": "Oui ! Tenez compte de l'assurance maladie, de la retraite et des autres avantages que vous auriez en tant qu'employé."
+      }
+    ]
   },
   "invoice-interest": {
     "name": "Calculateur d'intérêts de retard de facture",
     "description": "Calculez les intérêts dus sur les paiements de factures en retard. Saisissez le montant de la facture, le taux d'intérêt et les jours de retard pour déterminer le montant total dû.",
-    "shortDescription": "Calcule les intérêts sur les factures impayées."
+    "shortDescription": "Calcule les intérêts sur les factures impayées.",
+    "faqs": [
+      {
+        "question": "Quel taux d'intérêt dois-je facturer ?",
+        "answer": "Les taux courants sont de 1 à 1,5 % par mois. Vérifiez les termes de votre contrat et les réglementations locales."
+      },
+      {
+        "question": "Puis-je légalement facturer des intérêts sur les paiements en retard ?",
+        "answer": "Dans la plupart des cas, oui, si cela est spécifié dans votre contrat ou les conditions de votre facture."
+      },
+      {
+        "question": "Comment l'intérêt journalier est-il calculé ?",
+        "answer": "Taux annuel divisé par 365, multiplié par le nombre de jours de retard et le montant principal."
+      }
+    ]
   },
   "nda-generator": {
     "name": "Générateur de modèle de NDA",
     "description": "Générez un accord de non-divulgation de base en remplissant un simple formulaire. Personnalisez les parties, la durée, la portée et la juridiction.",
-    "shortDescription": "Génère un NDA de base à partir d'un formulaire."
+    "shortDescription": "Génère un NDA de base à partir d'un formulaire.",
+    "faqs": [
+      {
+        "question": "Cette NDA est-elle juridiquement contraignante ?",
+        "answer": "Ceci génère un modèle. Faites-le examiner par un avocat avant de l'utiliser pour des accords importants."
+      },
+      {
+        "question": "Quel type de NDA est généré ?",
+        "answer": "Une NDA mutuelle ou unilatérale selon votre sélection, couvrant les conditions de confidentialité standard."
+      },
+      {
+        "question": "Puis-je personnaliser le modèle ?",
+        "answer": "Oui, le texte généré peut être copié et modifié selon les besoins."
+      }
+    ]
   },
   "privacy-generator": {
     "name": "Générateur de politique de confidentialité",
     "description": "Générez une politique de confidentialité pour votre site web ou votre application. Répondez aux questions sur vos pratiques en matière de données et obtenez un document de politique formaté.",
-    "shortDescription": "Crée une politique de confidentialité pour votre site web."
+    "shortDescription": "Crée une politique de confidentialité pour votre site web.",
+    "faqs": [
+      {
+        "question": "Est-ce conforme au RGPD ?",
+        "answer": "Il inclut des dispositions courantes du RGPD mais doit être examiné par un professionnel du droit pour une conformité totale."
+      },
+      {
+        "question": "Puis-je l'utiliser pour mon application ?",
+        "answer": "Oui, le générateur couvre à la fois les sites web et les applications mobiles."
+      },
+      {
+        "question": "À quelle fréquence dois-je mettre à jour ma politique de confidentialité ?",
+        "answer": "Mettez à jour chaque fois que vos pratiques en matière de données changent, ou au moins annuellement."
+      }
+    ]
   },
   "complaint-generator": {
     "name": "Générateur de lettre de plainte",
     "description": "Générez une lettre de plainte formelle. Remplissez les détails concernant votre problème et obtenez une lettre formatée professionnellement, prête à être envoyée.",
-    "shortDescription": "Crée une lettre de plainte formelle."
+    "shortDescription": "Crée une lettre de plainte formelle.",
+    "faqs": [
+      {
+        "question": "Quels types de plaintes cela couvre-t-il ?",
+        "answer": "Problèmes de produits, plaintes de service, litiges de facturation et plaintes générales de consommateurs."
+      },
+      {
+        "question": "Dois-je envoyer la lettre par courrier ou par e-mail ?",
+        "answer": "Pour les plaintes formelles, le courrier recommandé fournit une preuve de livraison. L'e-mail est plus rapide pour le contact initial."
+      },
+      {
+        "question": "Que dois-je inclure avec ma lettre ?",
+        "answer": "Incluez des copies de reçus, de contrats, de photos ou de toute preuve étayant votre plainte."
+      }
+    ]
   },
   "tos-generator": {
     "name": "Générateur de conditions d'utilisation",
     "description": "Générez des conditions d'utilisation pour votre site web ou application. Couvre les accords d'utilisateur, les limitations de responsabilité et les dispositions légales standard.",
-    "shortDescription": "Crée des conditions d'utilisation pour votre site."
+    "shortDescription": "Crée des conditions d'utilisation pour votre site.",
+    "faqs": [
+      {
+        "question": "Ai-je légalement besoin de conditions d'utilisation ?",
+        "answer": "Bien que non toujours légalement requises, elles protègent votre entreprise et définissent les attentes des utilisateurs."
+      },
+      {
+        "question": "Quelle est la différence entre les CGU et une politique de confidentialité ?",
+        "answer": "Les CGU régissent le comportement de l'utilisateur et votre responsabilité. La politique de confidentialité couvre la collecte et l'utilisation des données."
+      },
+      {
+        "question": "Les utilisateurs peuvent-ils accepter en utilisant mon site ?",
+        "answer": "Les accords de type 'browsewrap' sont plus faibles que les 'clickwrap'. Envisagez d'exiger un accord explicite."
+      }
+    ]
   },
   "red-flag-scanner": {
     "name": "Scanner des drapeaux rouges de contrat",
     "description": "Collez votre contrat et laissez l'IA identifier les clauses risquées, les conditions inéquitables et les problèmes juridiques potentiels avec des évaluations de gravité et des recommandations.",
-    "shortDescription": "L'IA scanne les contrats pour les clauses risquées."
+    "shortDescription": "L'IA scanne les contrats pour les clauses risquées.",
+    "faqs": [
+      {
+        "question": "Comment fonctionne le scanner ?",
+        "answer": "Il utilise l'IA pour analyser le texte de votre contrat et identifier les clauses qui pourraient être problématiques, unilatérales ou contenir des risques cachés."
+      },
+      {
+        "question": "Est-ce un conseil juridique ?",
+        "answer": "Non. Il s'agit d'un outil d'analyse alimenté par l'IA à des fins éducatives. Consultez toujours un avocat pour les décisions juridiques."
+      },
+      {
+        "question": "Combien de temps prend l'analyse ?",
+        "answer": "Généralement 5 à 15 secondes selon la longueur du contrat."
+      }
+    ]
   },
   "nda-fairness": {
     "name": "Score d'équité du NDA",
     "description": "Collez un NDA et obtenez un score d'équité de 0 à 100, avec une ventilation des points forts, des préoccupations et des recommandations pour la négociation.",
-    "shortDescription": "Évalue l'équité de votre NDA de 0 à 100."
+    "shortDescription": "Évalue l'équité de votre NDA de 0 à 100.",
+    "faqs": [
+      {
+        "question": "Que signifie le score ?",
+        "answer": "Un score de 70+ indique une NDA généralement équitable. En dessous de 40 suggère des termes significativement unilatéraux qui devraient être négociés."
+      },
+      {
+        "question": "Fonctionne-t-il pour les NDA mutuelles ?",
+        "answer": "Oui, il analyse les NDA mutuelles et unilatérales et évalue si les obligations sont équilibrées."
+      },
+      {
+        "question": "Puis-je l'utiliser avant de signer ?",
+        "answer": "Absolument — c'est le cas d'utilisation idéal. Examinez le score et les préoccupations avant de signer toute NDA."
+      }
+    ]
   },
   "lease-analyzer": {
     "name": "Analyseur de contrat de location",
     "description": "Collez votre contrat de location et obtenez un résumé des conditions clés, des risques cachés et des recommandations. Parfait pour les locataires qui examinent un nouveau bail.",
-    "shortDescription": "Analyse les contrats de location pour les risques."
+    "shortDescription": "Analyse les contrats de location pour les risques.",
+    "faqs": [
+      {
+        "question": "Quels types de baux analyse-t-il ?",
+        "answer": "Les baux résidentiels et commerciaux. Il identifie les termes clés comme le loyer, le dépôt de garantie, la durée et les obligations d'entretien."
+      },
+      {
+        "question": "Détectera-t-il les frais cachés ?",
+        "answer": "L'IA recherche les frais inhabituels, les clauses d'escalade et les frais qui peuvent ne pas être évidents à la première lecture."
+      },
+      {
+        "question": "Dois-je faire entièrement confiance à l'analyse ?",
+        "answer": "Utilisez-le comme point de départ. Pour les engagements de location importants, faites toujours examiner le document complet par un avocat."
+      }
+    ]
   },
   "terms-summarizer": {
     "name": "Résumeur de conditions générales",
     "description": "Collez toutes conditions générales ou tout document juridique et obtenez un résumé en langage clair organisé par sujet, avec les sections préoccupantes mises en évidence.",
-    "shortDescription": "Résume les CG en langage clair."
+    "shortDescription": "Résume les CG en langage clair.",
+    "faqs": [
+      {
+        "question": "Quelle peut être la longueur du document ?",
+        "answer": "Il fonctionne mieux avec des documents de moins de 10 000 mots. Pour les documents plus longs, collez les sections les plus pertinentes."
+      },
+      {
+        "question": "Que signifie 'Préoccupation' ?",
+        "answer": "Les sections signalées comme préoccupations contiennent des termes inhabituels, potentiellement défavorables ou qui méritent une attention particulière."
+      },
+      {
+        "question": "Puis-je l'utiliser pour les politiques de confidentialité ?",
+        "answer": "Oui ! Il fonctionne pour tout document juridique — CGU, politiques de confidentialité, CLUF, et plus encore."
+      }
+    ]
   },
   "contract-comparison": {
     "name": "Outil de comparaison de contrats",
     "description": "Collez deux contrats côte à côte et obtenez une comparaison basée sur l'IA mettant en évidence les différences clés, les termes modifiés et quelle version favorise quelle partie.",
-    "shortDescription": "Compare deux contrats côte à côte."
+    "shortDescription": "Compare deux contrats côte à côte.",
+    "faqs": [
+      {
+        "question": "Que dois-je comparer ?",
+        "answer": "Comparez différentes versions du même contrat, des offres concurrentes, ou un contrat proposé par rapport à un modèle standard."
+      },
+      {
+        "question": "Montre-t-il les différences de texte exactes ?",
+        "answer": "Il met en évidence les différences sémantiques — les changements de sens, de portée et d'obligations — plutôt que les différences mot par mot."
+      },
+      {
+        "question": "Puis-je comparer différents types de contrats ?",
+        "answer": "Vous le pouvez, mais les comparaisons les plus utiles sont entre des types de contrats similaires (par exemple, deux contrats de travail)."
+      }
+    ]
   },
   "clause-explainer": {
     "name": "Explicateur de clause",
     "description": "Collez toute clause juridique et obtenez une explication en langage clair, une évaluation des risques, des implications pratiques et des conseils de négociation.",
-    "shortDescription": "Obtenez des explications de clauses en langage clair."
+    "shortDescription": "Obtenez des explications de clauses en langage clair.",
+    "faqs": [
+      {
+        "question": "Quel type de clauses puis-je expliquer ?",
+        "answer": "Toute clause juridique de tout type de contrat — emploi, bail, NDA, conditions de service ou tout autre accord."
+      },
+      {
+        "question": "L'explication est-elle juridiquement exacte ?",
+        "answer": "L'IA fournit des interprétations générales. Pour les clauses ayant des implications financières ou juridiques importantes, consultez un avocat."
+      },
+      {
+        "question": "Puis-je coller plusieurs clauses ?",
+        "answer": "Pour de meilleurs résultats, collez une clause à la fois. Cela garantit des explications ciblées et détaillées."
+      }
+    ]
   },
   "contract-expiration": {
     "name": "Suivi d'expiration de contrat",
     "description": "Saisissez les dates de vos contrats et suivez les expirations en un seul endroit. Voyez quels contrats expirent bientôt, sont actifs ou sont déjà expirés.",
-    "shortDescription": "Suivi des dates d'expiration des contrats."
+    "shortDescription": "Suivi des dates d'expiration des contrats.",
+    "faqs": [
+      {
+        "question": "Puis-je suivre plusieurs contrats ?",
+        "answer": "Oui, ajoutez autant de contrats que nécessaire et voyez-les triés par date d'expiration."
+      },
+      {
+        "question": "Envoie-t-il des notifications ?",
+        "answer": "Ceci est un suivi manuel. Vérifiez périodiquement pour examiner vos expirations à venir."
+      },
+      {
+        "question": "Qu'est-ce qui est considéré comme 'expirant bientôt' ?",
+        "answer": "Les contrats expirant dans les 30 jours sont signalés comme expirant bientôt."
+      }
+    ]
   },
   "signature-block": {
     "name": "Générateur de bloc de signature",
     "description": "Générez des blocs de signature correctement formatés pour les individus, les sociétés, les SARL et les partenariats. Copiez et collez dans vos contrats.",
-    "shortDescription": "Génère des blocs de signature appropriés."
+    "shortDescription": "Génère des blocs de signature appropriés.",
+    "faqs": [
+      {
+        "question": "Quels types d'entités sont pris en charge ?",
+        "answer": "Blocs de signature pour individu, société, SARL et partenariat."
+      },
+      {
+        "question": "Le format est-il légalement standard ?",
+        "answer": "Oui, les blocs générés suivent les conventions de formatage juridique courantes."
+      },
+      {
+        "question": "Puis-je l'utiliser pour n'importe quel contrat ?",
+        "answer": "Oui, les blocs de signature sont standard pour tous les types de contrats."
+      }
+    ]
   },
   "contract-checklist": {
     "name": "Générateur de liste de contrôle de contrat",
     "description": "Sélectionnez votre type de contrat et obtenez une liste de contrôle d'examen complète. Suivez les éléments que vous avez examinés avec une barre de progression interactive.",
-    "shortDescription": "Génère une liste de contrôle d'examen de contrat."
+    "shortDescription": "Génère une liste de contrôle d'examen de contrat.",
+    "faqs": [
+      {
+        "question": "Quels types de contrats sont couverts ?",
+        "answer": "Contrats de travail, NDA, contrats de location et contrats de service."
+      },
+      {
+        "question": "Puis-je sauvegarder ma progression ?",
+        "answer": "Actuellement, la liste de contrôle se réinitialise lorsque vous quittez la page. Copiez les éléments pour vos dossiers."
+      },
+      {
+        "question": "Est-ce un substitut à un examen juridique ?",
+        "answer": "Non, utilisez-le comme point de départ pour identifier les éléments clés avant de consulter un avocat."
+      }
+    ]
   },
   "amendment-drafter": {
     "name": "Rédacteur d'avenant de contrat",
     "description": "Générez un avenant de contrat de base en remplissant les détails du contrat original et en décrivant les changements. Crée un document d'avenant formaté.",
-    "shortDescription": "Rédige un avenant de contrat à partir d'un formulaire."
+    "shortDescription": "Rédige un avenant de contrat à partir d'un formulaire.",
+    "faqs": [
+      {
+        "question": "Cet amendement est-il juridiquement contraignant ?",
+        "answer": "Ceci génère un modèle. Faites-le examiner par un avocat avant de l'utiliser."
+      },
+      {
+        "question": "Puis-je modifier n'importe quel type de contrat ?",
+        "answer": "Oui, le format de l'amendement est standard et fonctionne pour la plupart des types de contrats."
+      },
+      {
+        "question": "Que faire si j'ai besoin de plusieurs amendements ?",
+        "answer": "Générez un nouvel amendement pour chaque ensemble de modifications, en incrémentant le numéro de l'amendement."
+      }
+    ]
   },
   "contract-value": {
     "name": "Calculateur de valeur de contrat",
     "description": "Calculez la valeur totale d'un contrat, y compris les renouvellements et les taux d'escalation annuels. Visualisez la valeur du terme initial, la valeur de renouvellement et les moyennes mensuelles.",
-    "shortDescription": "Calcule la valeur totale d'un contrat avec renouvellements."
+    "shortDescription": "Calcule la valeur totale d'un contrat avec renouvellements.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'un taux d'escalade ?",
+        "answer": "Une augmentation annuelle en pourcentage appliquée aux paiements, généralement de 2 à 5 % par an."
+      },
+      {
+        "question": "Gère-t-il différentes fréquences de paiement ?",
+        "answer": "Oui — calendriers de paiement hebdomadaires, mensuels, trimestriels et annuels."
+      },
+      {
+        "question": "Comment les renouvellements sont-ils calculés ?",
+        "answer": "Chaque période de renouvellement utilise la même durée que la période initiale, avec une escalade continue."
+      }
+    ]
   },
   "warranty-tracker": {
     "name": "Calculateur d'expiration de garantie",
     "description": "Suivez les dates d'expiration de garantie pour vos achats. Entrez les détails du produit et la durée de la garantie pour voir quelles garanties sont toujours actives.",
-    "shortDescription": "Suivez les dates de fin de garantie des achats."
+    "shortDescription": "Suivez les dates de fin de garantie des achats.",
+    "faqs": [
+      {
+        "question": "Puis-je suivre plusieurs produits ?",
+        "answer": "Oui, ajoutez autant de produits que nécessaire."
+      },
+      {
+        "question": "Quelles unités de garantie sont prises en charge ?",
+        "answer": "Jours, mois et années."
+      },
+      {
+        "question": "Fonctionne-t-il pour les garanties prolongées ?",
+        "answer": "Oui, il suffit d'entrer la période de garantie totale, y compris les extensions."
+      }
+    ]
   },
   "statute-of-limitations": {
     "name": "Recherche de prescription",
     "description": "Recherchez la prescription (statute of limitations) pour les actions en justice courantes par État. Découvrez combien de temps vous avez pour déposer des litiges contractuels, des dommages corporels, des fraudes, et plus encore.",
-    "shortDescription": "Recherchez les délais de dépôt par État."
+    "shortDescription": "Recherchez les délais de dépôt par État.",
+    "faqs": [
+      {
+        "question": "Quels types de réclamations sont couverts ?",
+        "answer": "Contrats écrits, contrats oraux, préjudices corporels, dommages matériels et fraude."
+      },
+      {
+        "question": "S'agit-il de délais exacts ?",
+        "answer": "Ce sont des lignes directrices générales. Les règles de découverte et la suspension peuvent prolonger les délais. Consultez un avocat."
+      },
+      {
+        "question": "Tous les États ont-ils les mêmes limites ?",
+        "answer": "Non, le délai de prescription varie considérablement selon l'État et le type de réclamation."
+      }
+    ]
   },
   "small-claims-limit": {
     "name": "Vérificateur de limite de la cour des petites créances",
     "description": "Vérifiez le montant maximal que vous pouvez réclamer devant la cour des petites créances dans votre État. Entrez le montant de votre réclamation pour voir si elle est éligible.",
-    "shortDescription": "Vérifiez les limites $ des petites créances par État."
+    "shortDescription": "Vérifiez les limites $ des petites créances par État.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'un tribunal des petites créances ?",
+        "answer": "Un tribunal simplifié pour résoudre les litiges impliquant de petites sommes d'argent, sans avoir besoin d'un avocat."
+      },
+      {
+        "question": "Puis-je déposer une réclamation au-delà de la limite ?",
+        "answer": "Vous pouvez réduire votre réclamation pour qu'elle corresponde à la limite (en renonçant à l'excédent) ou déposer une réclamation devant un tribunal supérieur."
+      },
+      {
+        "question": "Ces limites sont-elles à jour ?",
+        "answer": "Nous mettons à jour les limites régulièrement, mais vérifiez auprès de votre tribunal local car les limites peuvent changer."
+      }
+    ]
   },
   "consumer-rights-quiz": {
     "name": "Quiz sur les droits des consommateurs",
     "description": "Testez vos connaissances sur les droits de la protection des consommateurs grâce à notre quiz interactif. Apprenez-en davantage sur les politiques de retour, les garanties, les litiges de facturation, et plus encore.",
-    "shortDescription": "Testez vos connaissances sur les droits des consommateurs."
+    "shortDescription": "Testez vos connaissances sur les droits des consommateurs.",
+    "faqs": [
+      {
+        "question": "Combien y a-t-il de questions ?",
+        "answer": "Le quiz comporte 8 questions couvrant divers sujets relatifs aux droits des consommateurs."
+      },
+      {
+        "question": "Est-ce basé sur le droit américain ?",
+        "answer": "Oui, les questions sont principalement basées sur les lois fédérales et étatiques américaines sur la protection des consommateurs."
+      },
+      {
+        "question": "Puis-je refaire le quiz ?",
+        "answer": "Oui, vous pouvez recommencer le quiz autant de fois que vous le souhaitez."
+      }
+    ]
   },
   "dispute-letter": {
     "name": "Générateur de lettre de contestation",
     "description": "Générez une lettre de contestation formelle pour les erreurs de facturation, les inexactitudes de rapport de crédit, les plaintes de service ou les problèmes de produit. Inclut des références légales pertinentes.",
-    "shortDescription": "Générez des lettres de contestation formelles."
+    "shortDescription": "Générez des lettres de contestation formelles.",
+    "faqs": [
+      {
+        "question": "Quels types de litiges sont pris en charge ?",
+        "answer": "Litiges de facturation, litiges de rapport de crédit, litiges de service et litiges de produit."
+      },
+      {
+        "question": "Dois-je envoyer ceci par courrier ou par e-mail ?",
+        "answer": "Pour les litiges de facturation et de crédit, le courrier recommandé fournit une preuve de livraison et déclenche des protections légales."
+      },
+      {
+        "question": "Cette lettre est-elle juridiquement suffisante ?",
+        "answer": "Elle suit les formats standard de lettre de litige. Personnalisez-la à votre situation pour de meilleurs résultats."
+      }
+    ]
   },
   "salary-converter": {
     "name": "Convertisseur Salaire en Taux Horaire",
     "description": "Convertissez un salaire annuel en taux horaire et vice-versa. Tenez compte des frais généraux liés aux avantages sociaux, du nombre d'heures par semaine et du nombre de semaines par an pour voir le coût réel de l'emploi.",
-    "shortDescription": "Convertir le salaire en taux horaire et inversement."
+    "shortDescription": "Convertir le salaire en taux horaire et inversement.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que les frais généraux liés aux avantages sociaux ?",
+        "answer": "Le coût supplémentaire d'employer quelqu'un au-delà du salaire — généralement 25 à 40 % pour l'assurance maladie, la retraite, les impôts, etc."
+      },
+      {
+        "question": "Pourquoi utiliser 52 semaines ?",
+        "answer": "52 semaines est la norme pour une année complète. Réduisez pour les congés non payés."
+      },
+      {
+        "question": "Cela inclut-il les impôts ?",
+        "answer": "Le pourcentage des frais généraux liés aux avantages sociaux peut inclure les impôts payés par l'employeur comme le FICA."
+      }
+    ]
   },
   "pto-calculator": {
     "name": "Calculateur de Jours de Congés Payés (PTO)",
     "description": "Calculez vos congés payés acquis en fonction de votre taux d'acquisition, de votre ancienneté et des jours déjà utilisés. Visualisez le solde de PTO en jours et en heures.",
-    "shortDescription": "Calcule le solde des PTO accumulés."
+    "shortDescription": "Calcule le solde des PTO accumulés.",
+    "faqs": [
+      {
+        "question": "Quel est un taux d'accumulation typique ?",
+        "answer": "Les taux courants sont de 1 à 2 jours par mois, ou de 4 à 6 heures par période de paie."
+      },
+      {
+        "question": "Qu'est-ce qu'un plafond de congés payés (PTO) ?",
+        "answer": "De nombreuses entreprises plafonnent le total des congés payés que vous pouvez accumuler. Une fois le plafond atteint, vous cessez d'accumuler jusqu'à ce que vous en utilisiez."
+      },
+      {
+        "question": "Les jours de maladie sont-ils inclus ?",
+        "answer": "Cela dépend de votre entreprise. Certaines ont des congés de maladie distincts ; d'autres combinent tous les congés en PTO."
+      }
+    ]
   },
   "wrongful-termination": {
     "name": "Liste de contrôle pour licenciement abusif",
     "description": "Répondez à des questions sur votre licenciement et obtenez une évaluation des indicateurs potentiels de licenciement abusif, y compris les signaux de discrimination et de représailles.",
-    "shortDescription": "Évalue un licenciement abusif potentiel."
+    "shortDescription": "Évalue un licenciement abusif potentiel.",
+    "faqs": [
+      {
+        "question": "S'agit-il d'un conseil juridique ?",
+        "answer": "Non. Ceci fournit des informations générales pour vous aider à décider si la consultation d'un avocat spécialisé en droit du travail est justifiée."
+      },
+      {
+        "question": "Qu'est-ce qui constitue un licenciement abusif ?",
+        "answer": "Un licenciement fondé sur la discrimination, les représailles, la rupture de contrat ou la violation de l'ordre public."
+      },
+      {
+        "question": "Devrais-je consulter un avocat ?",
+        "answer": "Si vous constatez plusieurs signaux d'alarme, il est fortement recommandé de consulter un avocat spécialisé en droit du travail."
+      }
+    ]
   },
   "minimum-wage": {
     "name": "Recherche de salaire minimum",
     "description": "Recherchez les taux de salaire minimum fédéraux et étatiques actuels, y compris le salaire minimum avec pourboires. Comparez le taux de votre État au minimum fédéral.",
-    "shortDescription": "Recherchez le salaire minimum par État."
+    "shortDescription": "Recherchez le salaire minimum par État.",
+    "faqs": [
+      {
+        "question": "Quel taux s'applique — fédéral ou étatique ?",
+        "answer": "Les employeurs doivent payer le plus élevé des deux. Si le taux de votre État est plus élevé, c'est celui-ci qui s'applique."
+      },
+      {
+        "question": "Qu'en est-il des employés à pourboire ?",
+        "answer": "Certains États autorisent un salaire minimum inférieur pour les travailleurs à pourboire. Les pourboires plus les salaires doivent être au moins égaux au salaire minimum standard."
+      },
+      {
+        "question": "Ces taux sont-ils à jour ?",
+        "answer": "Nous mettons à jour régulièrement, mais les taux changent. Vérifiez auprès du département du travail de votre État."
+      }
+    ]
   },
   "employment-checklist": {
     "name": "Liste de contrôle du contrat de travail",
     "description": "Une liste de contrôle interactive complète de tout ce qu'il faut rechercher dans un contrat de travail — rémunération, avantages sociaux, clauses restrictives, conditions de résiliation, et plus encore.",
-    "shortDescription": "Liste de contrôle pour les contrats de travail."
+    "shortDescription": "Liste de contrôle pour les contrats de travail.",
+    "faqs": [
+      {
+        "question": "Combien d'éléments figurent sur la liste de contrôle ?",
+        "answer": "Plus de 30 éléments répartis dans 6 catégories couvrant tous les aspects majeurs des contrats de travail."
+      },
+      {
+        "question": "Puis-je sauvegarder ma progression ?",
+        "answer": "La progression est réinitialisée lorsque vous quittez. Utilisez-la en parallèle de votre examen de contrat."
+      },
+      {
+        "question": "Est-ce pour les employés ou les employeurs ?",
+        "answer": "Principalement conçu pour les employés qui examinent un contrat avant de le signer."
+      }
+    ]
   },
   "cease-desist": {
     "name": "Générateur de Lettre de Cessement et d'Abstention",
     "description": "Générez une lettre formelle de mise en demeure pour harcèlement, diffamation, contrefaçon de propriété intellectuelle, rupture de contrat ou problèmes de recouvrement de dettes.",
-    "shortDescription": "Générez des lettres de C&A pour les scénarios courants."
+    "shortDescription": "Générez des lettres de C&A pour les scénarios courants.",
+    "faqs": [
+      {
+        "question": "Une lettre de mise en demeure est-elle juridiquement contraignante ?",
+        "answer": "Une lettre de mise en demeure en soi n'est pas une ordonnance du tribunal, mais elle crée un dossier et met le destinataire formellement en demeure."
+      },
+      {
+        "question": "Dois-je l'envoyer par courrier ou par e-mail ?",
+        "answer": "Le courrier recommandé avec accusé de réception fournit une preuve de livraison, ce qui est important pour les procédures judiciaires."
+      },
+      {
+        "question": "Que se passe-t-il s'ils l'ignorent ?",
+        "answer": "S'il est ignoré, vous devrez peut-être passer à l'étape de l'introduction d'une action en justice ou de la demande d'une ordonnance du tribunal."
+      }
+    ]
   },
   "poa-generator": {
     "name": "Générateur de procuration",
     "description": "Générez un document de procuration (Power of Attorney - POA) de base. Choisissez entre POA générale, limitée, durable ou financière avec des termes personnalisables et un bloc de notarisation.",
-    "shortDescription": "Générez un document POA de base."
+    "shortDescription": "Générez un document POA de base.",
+    "faqs": [
+      {
+        "question": "Quelle est la différence entre les types de procurations ?",
+        "answer": "La procuration générale couvre tout, la procuration limitée est pour des tâches spécifiques, la procuration durable survit à l'incapacité, la procuration financière couvre les questions d'argent."
+      },
+      {
+        "question": "Doit-elle être notariée ?",
+        "answer": "La plupart des États exigent une notarisation. Le modèle comprend un bloc de notarisation."
+      },
+      {
+        "question": "Puis-je révoquer une procuration ?",
+        "answer": "Oui, vous pouvez révoquer une procuration à tout moment en fournissant un avis écrit à l'agent et à tout tiers."
+      }
+    ]
   },
   "ic-agreement": {
     "name": "Générateur d'accord d'entrepreneur indépendant",
     "description": "Générez un accord complet d'entrepreneur indépendant couvrant l'étendue des travaux, la rémunération, les droits de propriété intellectuelle, la confidentialité et les conditions de résiliation.",
-    "shortDescription": "Générez un accord de CI à partir d'un formulaire."
+    "shortDescription": "Générez un accord de CI à partir d'un formulaire.",
+    "faqs": [
+      {
+        "question": "Pourquoi est-ce important ?",
+        "answer": "Un accord de CI approprié aide à établir la relation avec l'entrepreneur et à éviter les problèmes de classification erronée."
+      },
+      {
+        "question": "Qu'est-ce qui est inclus ?",
+        "answer": "Portée des services, rémunération, cession de propriété intellectuelle, confidentialité, non-sollicitation, indemnisation et résiliation."
+      },
+      {
+        "question": "Est-ce pour les entrepreneurs 1099 ?",
+        "answer": "Oui, ceci est conçu pour les relations d'entrepreneur indépendant (1099), pas pour les employés (W-2)."
+      }
+    ]
   },
   "promissory-note": {
     "name": "Générateur de billet à ordre",
     "description": "Générez un billet à ordre (promissory note) de base avec des termes personnalisables incluant le montant principal, le taux d'intérêt, le calendrier de paiement et les dispositions de défaut.",
-    "shortDescription": "Générez un billet à ordre de base."
+    "shortDescription": "Générez un billet à ordre de base.",
+    "faqs": [
+      {
+        "question": "Cette note est-elle juridiquement contraignante ?",
+        "answer": "Ceci génère un modèle. Faites-le examiner par un avocat et envisagez la notarisation pour son applicabilité."
+      },
+      {
+        "question": "Quel taux d'intérêt devrais-je utiliser ?",
+        "answer": "Les taux varient. Vérifiez les lois sur l'usure de votre État pour les taux maximaux autorisés. Les taux courants sont de 3 à 10 %."
+      },
+      {
+        "question": "Doit-elle être notariée ?",
+        "answer": "Bien que ce ne soit pas toujours obligatoire, la notarisation ajoute une couche supplémentaire d'authenticité."
+      }
+    ]
   },
   "security-deposit": {
     "name": "Calculateur de dépôt de garantie",
     "description": "Recherchez les règles de dépôt de garantie par État, y compris les montants maximums de dépôt, les exigences en matière d'intérêts et les délais de restitution après le déménagement.",
-    "shortDescription": "Vérifiez les règles de dépôt de garantie par État."
+    "shortDescription": "Vérifiez les règles de dépôt de garantie par État.",
+    "faqs": [
+      {
+        "question": "Tous les États limitent-ils les dépôts de garantie ?",
+        "answer": "Non. Certains États, comme le Texas, n'ont pas de limite légale sur les montants des dépôts de garantie."
+      },
+      {
+        "question": "Mon propriétaire me doit-il des intérêts ?",
+        "answer": "Certains États exigent des propriétaires qu'ils paient des intérêts sur les dépôts de garantie. Vérifiez les règles de votre État."
+      },
+      {
+        "question": "Combien de temps pour récupérer mon dépôt de garantie ?",
+        "answer": "Les délais de restitution varient de 14 à 45 jours selon l'État."
+      }
+    ]
   },
   "rent-increase": {
     "name": "Calculateur d'augmentation de loyer",
     "description": "Calculez votre pourcentage d'augmentation de loyer et l'impact annuel. Vérifiez par rapport aux plafonds des loyers dans les principales juridictions.",
-    "shortDescription": "Vérifiez si une augmentation de loyer est légale."
+    "shortDescription": "Vérifiez si une augmentation de loyer est légale.",
+    "faqs": [
+      {
+        "question": "Y a-t-il une limite aux augmentations de loyer ?",
+        "answer": "La plupart des juridictions américaines n'ont pas de limite, mais certaines villes et États ont des lois de contrôle des loyers."
+      },
+      {
+        "question": "Quelle est une augmentation annuelle typique ?",
+        "answer": "Les moyennes du marché sont de 3 à 5 % par an, mais cela varie selon l'emplacement."
+      },
+      {
+        "question": "Mon propriétaire peut-il augmenter le loyer en cours de bail ?",
+        "answer": "Généralement non, à moins que votre bail ne l'autorise spécifiquement. Les augmentations s'appliquent généralement au renouvellement."
+      }
+    ]
   },
   "lease-comparison": {
     "name": "Comparaison de termes de bail",
     "description": "Comparez deux offres de location côte à côte, y compris le loyer, le dépôt de garantie, les charges et le coût total. Voyez quel bail vous offre la meilleure valeur.",
-    "shortDescription": "Comparez deux offres de bail côte à côte."
+    "shortDescription": "Comparez deux offres de bail côte à côte.",
+    "faqs": [
+      {
+        "question": "Quels facteurs dois-je comparer ?",
+        "answer": "Considérez le coût total incluant le loyer, les services publics, le stationnement, les dépôts de garantie et tous les frais d'emménagement."
+      },
+      {
+        "question": "Moins cher signifie-t-il toujours mieux ?",
+        "answer": "Pas nécessairement. Considérez l'emplacement, les commodités, la flexibilité du bail et la réputation du propriétaire."
+      },
+      {
+        "question": "Qu'en est-il des coûts cachés ?",
+        "answer": "Tenez compte des services publics, des frais pour animaux de compagnie, du stationnement, de la lessive et de toute assurance requise."
+      }
+    ]
   },
   "moveout-checklist": {
     "name": "Générateur de liste de contrôle de déménagement",
     "description": "Générez une liste de contrôle de déménagement personnalisée en fonction du type et des caractéristiques de votre propriété. Suivez les progrès avec une liste de contrôle interactive.",
-    "shortDescription": "Générez une liste de contrôle de déménagement personnalisée."
+    "shortDescription": "Générez une liste de contrôle de déménagement personnalisée.",
+    "faqs": [
+      {
+        "question": "Pourquoi ai-je besoin d'une liste de contrôle de déménagement ?",
+        "answer": "Un déménagement minutieux augmente vos chances de récupérer l'intégralité de votre dépôt de garantie."
+      },
+      {
+        "question": "Dois-je prendre des photos ?",
+        "answer": "Absolument. Documentez l'état de chaque pièce avant et après le nettoyage."
+      },
+      {
+        "question": "Combien de préavis dois-je donner ?",
+        "answer": "Vérifiez votre bail. La plupart exigent un préavis écrit de 30 à 60 jours."
+      }
+    ]
   },
   "rental-agreement": {
     "name": "Générateur de contrat de location",
     "description": "Générez un contrat de bail résidentiel de base en remplissant les détails concernant le propriétaire, le locataire, la propriété et les finances. Inclut les dispositions légales standard.",
-    "shortDescription": "Générez un bail résidentiel de base."
+    "shortDescription": "Générez un bail résidentiel de base.",
+    "faqs": [
+      {
+        "question": "Ce bail est-il juridiquement contraignant ?",
+        "answer": "Ceci génère un modèle. Faites-le examiner par un avocat spécialisé en immobilier avant de l'utiliser."
+      },
+      {
+        "question": "Est-il conforme aux lois de mon État ?",
+        "answer": "Il inclut des dispositions communes, mais les exigences spécifiques à chaque État varient. Consultez les réglementations locales."
+      },
+      {
+        "question": "Puis-je personnaliser le modèle ?",
+        "answer": "Oui, copiez le texte généré et modifiez les termes si nécessaire."
+      }
+    ]
   },
   "business-name": {
     "name": "Vérificateur de nom d'entreprise",
     "description": "Vérifiez votre proposition de nom d'entreprise en termes de longueur, de caractères spéciaux, de suffixe d'entité, d'unicité et de potentiel de domaine. Inclut des conseils de recherche de marque.",
-    "shortDescription": "Vérifiez les considérations de dénomination d'entreprise."
+    "shortDescription": "Vérifiez les considérations de dénomination d'entreprise.",
+    "faqs": [
+      {
+        "question": "Vérifie-t-il si le nom est déjà pris ?",
+        "answer": "Il fournit une analyse et des conseils. Vérifiez le registre des entreprises de votre État et l'USPTO pour la disponibilité."
+      },
+      {
+        "question": "Ai-je besoin d'un suffixe d'entité ?",
+        "answer": "La plupart des États exigent un suffixe d'entité (LLC, Inc, etc.) dans votre nom commercial officiel."
+      },
+      {
+        "question": "Comment déposer une marque pour un nom commercial ?",
+        "answer": "Recherchez d'abord dans la base de données TESS de l'USPTO, puis déposez une demande de marque."
+      }
+    ]
   },
   "contractor-vs-employee": {
     "name": "Vérificateur Entrepreneur vs. Employé",
     "description": "Répondez à 10 questions basées sur les facteurs de classification de l'IRS (Internal Revenue Service) pour déterminer si un travailleur est susceptible d'être un employé ou un entrepreneur indépendant.",
-    "shortDescription": "Classifiez un travailleur comme employé ou entrepreneur."
+    "shortDescription": "Classifiez un travailleur comme employé ou entrepreneur.",
+    "faqs": [
+      {
+        "question": "Pourquoi la classification est-elle importante ?",
+        "answer": "Une mauvaise classification peut entraîner des arriérés d'impôts, des pénalités et une responsabilité pour les avantages sociaux."
+      },
+      {
+        "question": "Quels facteurs l'IRS prend-il en compte ?",
+        "answer": "Le contrôle comportemental, le contrôle financier et le type de relation entre les parties."
+      },
+      {
+        "question": "Est-ce définitif ?",
+        "answer": "Non. Ceci est une ligne directrice. L'IRS et les tribunaux considèrent la totalité des circonstances."
+      }
+    ]
   },
   "severance-pay": {
     "name": "Calculateur d'indemnités de départ",
     "description": "Estimez les indemnités de départ typiques en fonction du salaire, des années de service et du niveau du secteur. Visualisez les estimations basses et hautes pour la négociation.",
-    "shortDescription": "Estimez la fourchette d'indemnités de départ."
+    "shortDescription": "Estimez la fourchette d'indemnités de départ.",
+    "faqs": [
+      {
+        "question": "Les indemnités de licenciement sont-elles légalement obligatoires ?",
+        "answer": "Généralement non aux États-Unis, sauf si requis par contrat ou par la politique de l'entreprise."
+      },
+      {
+        "question": "Quelle est l'indemnité de licenciement typique ?",
+        "answer": "La fourchette courante est de 1 à 2 semaines de salaire par année de service pour les employés standards."
+      },
+      {
+        "question": "Puis-je négocier les indemnités de licenciement ?",
+        "answer": "Oui. Les indemnités de licenciement sont presque toujours négociables, surtout pour les postes de direction."
+      }
+    ]
   },
   "overtime-calc": {
     "name": "Calculateur d'heures supplémentaires",
     "description": "Calculez la rémunération des heures supplémentaires en fonction du taux horaire, des heures régulières, des heures supplémentaires et du multiplicateur. Visualisez la répartition détaillée de la paie et le taux effectif.",
-    "shortDescription": "Calculez la répartition des heures supplémentaires."
+    "shortDescription": "Calculez la répartition des heures supplémentaires.",
+    "faqs": [
+      {
+        "question": "Quel est le taux standard des heures supplémentaires ?",
+        "answer": "La loi fédérale exige 1,5 fois le taux normal pour les heures travaillées au-delà de 40 heures par semaine."
+      },
+      {
+        "question": "Tous les travailleurs sont-ils éligibles aux heures supplémentaires ?",
+        "answer": "Non. Les travailleurs salariés répondant à certains critères peuvent être exemptés en vertu de la FLSA."
+      },
+      {
+        "question": "Mon État a-t-il des règles différentes ?",
+        "answer": "Certains États ont des règles plus strictes en matière d'heures supplémentaires. La Californie exige des heures supplémentaires quotidiennes après 8 heures."
+      }
+    ]
   },
   "partnership-split": {
     "name": "Calculateur de répartition de partenariat",
     "description": "Calculez les répartitions suggérées des capitaux propres et des bénéfices pour les partenariats en fonction des apports en capital, des engagements de temps et d'une pondération personnalisable.",
-    "shortDescription": "Calculez les répartitions des capitaux propres des partenariats."
+    "shortDescription": "Calculez les répartitions des capitaux propres des partenariats.",
+    "faqs": [
+      {
+        "question": "Comment devrions-nous partager les capitaux propres ?",
+        "answer": "Considérez les apports en capital, l'engagement de temps, l'expertise et la tolérance au risque."
+      },
+      {
+        "question": "Le partage des bénéfices doit-il correspondre aux capitaux propres ?",
+        "answer": "Pas nécessairement. Certains partenaires peuvent recevoir un salaire plus une part de bénéfices plus petite."
+      },
+      {
+        "question": "Avons-nous besoin d'un accord de partenariat ?",
+        "answer": "Absolument. Formalisez toujours les partages dans un accord de partenariat écrit."
+      }
+    ]
   },
   "business-expense": {
     "name": "Modèle de suivi des dépenses commerciales",
     "description": "Générer un modèle de suivi des dépenses formaté et personnalisé pour votre type d'entreprise. Comprend les catégories de dépenses pertinentes et les taux de kilométrage de l'IRS.",
-    "shortDescription": "Générer un modèle de suivi des dépenses."
+    "shortDescription": "Générer un modèle de suivi des dépenses.",
+    "faqs": [
+      {
+        "question": "Quels types d'entreprises sont couverts ?",
+        "answer": "Freelance, commerce de détail, restauration, services professionnels et construction/métiers."
+      },
+      {
+        "question": "Puis-je personnaliser les catégories ?",
+        "answer": "Oui, sélectionnez des catégories spécifiques ou utilisez le modèle complet pour votre type d'entreprise."
+      },
+      {
+        "question": "Quels documents dois-je conserver ?",
+        "answer": "Conservez les reçus pour toutes les dépenses de plus de 75 $ et tenez un journal de kilométrage pour les déductions de véhicule."
+      }
+    ]
   },
   "crypto-tax": {
     "name": "Calculateur d'impôts sur les cryptomonnaies",
     "description": "Calcule les gains ou les pertes en capital sur les transactions de cryptomonnaies. Estime l'impôt à court terme vs long terme en fonction de votre période de détention et de votre tranche d'imposition.",
-    "shortDescription": "Estimer l'impôt sur les plus-values cryptographiques."
+    "shortDescription": "Estimer l'impôt sur les plus-values cryptographiques.",
+    "faqs": [
+      {
+        "question": "Comment la crypto est-elle imposée ?",
+        "answer": "Aux États-Unis, la crypto est imposée comme une propriété. Les gains à court terme (détenus < 1 an) sont imposés comme un revenu ordinaire ; les gains à long terme bénéficient de taux préférentiels."
+      },
+      {
+        "question": "Quel est le taux d'imposition des gains en capital à long terme ?",
+        "answer": "La plupart des contribuables paient 15 % sur les gains à long terme. Les revenus plus élevés peuvent payer 20 %."
+      },
+      {
+        "question": "Dois-je des impôts sur les pertes ?",
+        "answer": "Non, mais vous pouvez utiliser les pertes pour compenser les gains et déduire jusqu'à 3 000 $ sur le revenu ordinaire."
+      }
+    ]
   },
   "dca-calculator": {
     "name": "Calculateur DCA (Dollar-Cost Averaging)",
     "description": "Simule une stratégie de coût moyen pondéré (dollar-cost averaging). Visualisez votre prix de revient moyen, le nombre total d'unités acquises et le rendement basé sur des investissements périodiques réguliers.",
-    "shortDescription": "Simuler les rendements de la moyenne des coûts."
+    "shortDescription": "Simuler les rendements de la moyenne des coûts.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que la moyenne des coûts ?",
+        "answer": "La DCA signifie investir un montant fixe à intervalles réguliers, quel que soit le prix, réduisant ainsi l'impact de la volatilité."
+      },
+      {
+        "question": "La DCA est-elle meilleure que le versement forfaitaire ?",
+        "answer": "Historiquement, le versement forfaitaire surperforme environ 2/3 du temps, mais la DCA réduit les risques et la prise de décision émotionnelle."
+      },
+      {
+        "question": "Utilise-t-il des prix réels ?",
+        "answer": "Il simule un chemin de prix linéaire entre vos prix de début et de fin à des fins d'estimation."
+      }
+    ]
   },
   "position-size": {
     "name": "Calculateur de taille de position",
     "description": "Calcule la taille de position optimale en fonction de la taille de votre compte, de votre tolérance au risque et de la distance de votre stop loss. Indispensable pour une bonne gestion des risques.",
-    "shortDescription": "Calculer la taille de position de trading optimale."
+    "shortDescription": "Calculer la taille de position de trading optimale.",
+    "faqs": [
+      {
+        "question": "Combien devrais-je risquer par transaction ?",
+        "answer": "La plupart des traders professionnels risquent 1 à 2 % de leur compte par transaction pour survivre aux séries de pertes."
+      },
+      {
+        "question": "Qu'est-ce qu'un stop loss ?",
+        "answer": "Un stop loss est un prix prédéterminé auquel vous sortez d'une transaction perdante pour limiter votre perte."
+      },
+      {
+        "question": "Cela fonctionne-t-il pour la crypto ?",
+        "answer": "Oui, le dimensionnement de la position s'applique aux actions, à la crypto, au forex et à tout actif négociable."
+      }
+    ]
   },
   "profit-loss": {
     "name": "Calculateur de profits et pertes",
     "description": "Calcule votre profit ou perte sur une transaction, y compris l'effet de levier et les frais de trading. Visualisez le P&L brut, le P&L net et le pourcentage de rendement.",
-    "shortDescription": "Calculer le profit/perte de trading avec les frais."
+    "shortDescription": "Calculer le profit/perte de trading avec les frais.",
+    "faqs": [
+      {
+        "question": "Comment l'effet de levier affecte-t-il le P&L ?",
+        "answer": "L'effet de levier multiplie à la fois les gains et les pertes. Un effet de levier de 10× signifie qu'un mouvement de 1 % entraîne un gain ou une perte de 10 %."
+      },
+      {
+        "question": "Quels sont les frais de trading typiques ?",
+        "answer": "Les principales bourses facturent 0,04 à 0,1 % pour les makers et 0,06 à 0,2 % pour les takers par transaction."
+      },
+      {
+        "question": "Les frais sont-ils appliqués par côté ?",
+        "answer": "Oui, vous payez des frais à l'ouverture et à la clôture d'une position (aller-retour)."
+      }
+    ]
   },
   "compound-interest": {
     "name": "Calculateur d'intérêts composés",
     "description": "Projette la croissance de votre investissement avec des intérêts composés. Tenez compte du capital initial, du taux d'intérêt, de la fréquence de composition et des contributions mensuelles.",
-    "shortDescription": "Projeter la croissance des investissements au fil du temps."
+    "shortDescription": "Projeter la croissance des investissements au fil du temps.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que l'intérêt composé ?",
+        "answer": "L'intérêt composé est l'intérêt gagné à la fois sur le capital initial et sur les intérêts accumulés précédemment — « l'intérêt sur l'intérêt »."
+      },
+      {
+        "question": "À quelle fréquence les intérêts devraient-ils être composés ?",
+        "answer": "Une composition plus fréquente génère des rendements plus élevés. Une composition quotidienne rapporte légèrement plus qu'une composition mensuelle ou trimestrielle."
+      },
+      {
+        "question": "Est-ce la même chose que l'APY ?",
+        "answer": "L'APY (rendement annuel en pourcentage) tient déjà compte de la composition. Le taux que vous entrez ici est le taux annuel nominal."
+      }
+    ]
   },
   "margin-call": {
     "name": "Calculateur d'appel de marge",
     "description": "Déterminez à quel prix votre courtier émettra un appel de marge. Saisissez votre capitaux propres, le montant emprunté et l'exigence de marge de maintien.",
-    "shortDescription": "Calculer le prix de déclenchement de votre appel de marge."
+    "shortDescription": "Calculer le prix de déclenchement de votre appel de marge.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'un appel de marge ?",
+        "answer": "Un appel de marge se produit lorsque les capitaux propres de votre compte tombent en dessous de l'exigence de marge de maintien, vous obligeant à déposer plus de fonds ou à vendre des actifs."
+      },
+      {
+        "question": "Quelle est la marge de maintien typique ?",
+        "answer": "La FINRA exige une marge de maintien minimale de 25 %, mais la plupart des courtiers exigent 30 à 40 %."
+      },
+      {
+        "question": "Que se passe-t-il si je ne peux pas répondre à un appel de marge ?",
+        "answer": "Votre courtier peut liquider vos positions au prix du marché pour ramener votre compte au niveau de marge requis."
+      }
+    ]
   },
   "breakeven-calc": {
     "name": "Calculateur de seuil de rentabilité commercial",
     "description": "Calcule le prix de seuil de rentabilité exact pour une transaction en tenant compte des frais de transaction aller-retour et de l'effet de levier. Connaissez le mouvement minimum nécessaire pour réaliser un profit.",
-    "shortDescription": "Trouvez votre seuil de rentabilité après les frais."
+    "shortDescription": "Trouvez votre seuil de rentabilité après les frais.",
+    "faqs": [
+      {
+        "question": "Pourquoi le seuil de rentabilité est-il différent du prix d'entrée ?",
+        "answer": "Les frais de transaction signifient que le prix doit évoluer légèrement en votre faveur juste pour atteindre le seuil de rentabilité."
+      },
+      {
+        "question": "Comment les frais évoluent-ils avec l'effet de levier ?",
+        "answer": "Les frais sont généralement facturés sur la taille totale de la position à effet de levier, donc un effet de levier plus élevé signifie des coûts de frais absolus plus élevés."
+      },
+      {
+        "question": "Dois-je tenir compte du spread ?",
+        "answer": "Oui, le spread bid-ask est un coût supplémentaire. Ce calculateur se concentre sur les frais d'échange."
+      }
+    ]
   },
   "risk-reward": {
     "name": "Calculateur de risque/récompense",
     "description": "Analysez le ratio risque/récompense d'une transaction. Saisissez votre entrée, votre stop loss et votre prise de profit pour voir si la transaction vaut la peine d'être effectuée.",
-    "shortDescription": "Analyser le ratio risque/récompense du trading."
+    "shortDescription": "Analyser le ratio risque/récompense du trading.",
+    "faqs": [
+      {
+        "question": "Quel est un bon ratio risque/récompense ?",
+        "answer": "La plupart des traders visent au moins 1:2 (risquer 1 $ pour en gagner 2 $). Des ratios plus élevés permettent une rentabilité avec des taux de réussite plus faibles."
+      },
+      {
+        "question": "Que signifie le taux de réussite requis ?",
+        "answer": "C'est le pourcentage minimum de transactions que vous devez gagner pour atteindre le seuil de rentabilité à ce ratio R:R."
+      },
+      {
+        "question": "Chaque transaction doit-elle avoir un bon R:R ?",
+        "answer": "Idéalement oui, mais certaines stratégies utilisent un R:R serré avec des taux de réussite élevés. La cohérence compte plus que toute transaction individuelle."
+      }
+    ]
   },
   "crypto-converter": {
     "name": "Convertisseur de cryptomonnaies",
     "description": "Convertissez entre les principales cryptomonnaies en utilisant les prix de référence. Visualisez les valeurs équivalentes entre BTC, ETH, SOL et d'autres actifs populaires.",
-    "shortDescription": "Convertir entre les actifs cryptographiques."
+    "shortDescription": "Convertir entre les actifs cryptographiques.",
+    "faqs": [
+      {
+        "question": "Ces prix sont-ils en temps réel ?",
+        "answer": "Non, cet outil utilise des prix de référence statiques à des fins de démonstration. Utilisez un échange en direct pour les prix de trading réels."
+      },
+      {
+        "question": "Quelles cryptomonnaies sont prises en charge ?",
+        "answer": "BTC, ETH, SOL, BNB, XRP, ADA, DOGE et DOT sont actuellement pris en charge."
+      },
+      {
+        "question": "Puis-je l'utiliser pour les calculs fiscaux ?",
+        "answer": "À des fins fiscales, utilisez les prix de transaction réels de vos relevés d'échange."
+      }
+    ]
   },
   "loan-payment": {
     "name": "Calculateur de paiement de prêt",
     "description": "Calculez les paiements mensuels de prêt à l'aide de l'amortissement standard. Visualisez votre paiement mensuel, le total des intérêts payés et le coût total du prêt.",
-    "shortDescription": "Calculer les paiements mensuels de prêt."
+    "shortDescription": "Calculer les paiements mensuels de prêt.",
+    "faqs": [
+      {
+        "question": "Comment le paiement mensuel est-il calculé ?",
+        "answer": "En utilisant la formule d'amortissement standard : M = P[r(1+r)^n] / [(1+r)^n - 1], où P est le capital, r est le taux mensuel, n est le nombre de paiements."
+      },
+      {
+        "question": "Cela inclut-il les taxes et l'assurance ?",
+        "answer": "Non, cela calcule uniquement le capital et les intérêts. Votre paiement total de logement peut inclure les taxes, l'assurance et l'IMR."
+      },
+      {
+        "question": "Puis-je l'utiliser pour les prêts automobiles ?",
+        "answer": "Oui, cela fonctionne pour tout prêt amortissable à taux fixe — prêts hypothécaires, prêts automobiles, prêts personnels, etc."
+      }
+    ]
   },
   "grant-budget": {
     "name": "Calculateur de budget de subvention",
     "description": "Allouez les fonds de subvention entre les catégories budgétaires comme le personnel, l'équipement, les voyages et les coûts indirects. Suivez les fonds restants et recevez des avertissements lorsque les allocations dépassent le montant total de la subvention.",
-    "shortDescription": "Allouer et suivre les dépenses du budget de subvention."
+    "shortDescription": "Allouer et suivre les dépenses du budget de subvention.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'un taux de coûts indirects ?",
+        "answer": "Un taux de coûts indirects couvre les frais généraux (installations, administration) non directement liés au projet de subvention. Il est appliqué en pourcentage des coûts directs."
+      },
+      {
+        "question": "Quelles sont les catégories budgétaires courantes ?",
+        "answer": "Le personnel, l'équipement, les voyages, les fournitures, les services contractuels et les autres coûts directs sont des catégories standard pour la plupart des subventions fédérales et étatiques."
+      },
+      {
+        "question": "Que se passe-t-il si je dépasse le budget ?",
+        "answer": "Le calculateur vous avertira. En pratique, le dépassement des budgets approuvés peut nécessiter une demande formelle de modification budgétaire auprès de l'organisme subventionnaire."
+      }
+    ]
   },
   "grant-deadline": {
     "name": "Suivi des délais de subvention",
     "description": "Suivez les délais de candidature aux subventions, les dates limites de soumission des rapports et les étapes importantes. Affichez les comptes à rebours, les badges d'urgence et une chronologie triée de toutes les obligations à venir.",
-    "shortDescription": "Suivre les délais de subvention et les dates de rapport."
+    "shortDescription": "Suivre les délais de subvention et les dates de rapport.",
+    "faqs": [
+      {
+        "question": "Quels types de délais dois-je suivre ?",
+        "answer": "Les délais de candidature, les rapports d'avancement, les rapports financiers, les rapports finaux et toutes les étapes intermédiaires requises par l'organisme subventionnaire."
+      },
+      {
+        "question": "Que se passe-t-il si je manque un délai de rapport ?",
+        "answer": "Le non-respect des délais peut entraîner la suspension du financement, l'exigence de plans d'action correctifs ou la disqualification des futures subventions."
+      },
+      {
+        "question": "Ces données sont-elles sauvegardées ?",
+        "answer": "Actuellement, le suivi est basé sur la session. Un rafraîchissement effacera les entrées. Créez un compte pour enregistrer les analyses pour référence future."
+      }
+    ]
   },
   "grant-compliance": {
     "name": "Liste de contrôle de conformité aux subventions",
     "description": "Générez une liste de contrôle de conformité basée sur votre type de subvention — fédérale, étatique, fondation ou entreprise. Couvre les exigences de rapport, d'audit, d'approvisionnement, de fonds de contrepartie et de tenue de registres.",
-    "shortDescription": "Liste de contrôle de conformité par type de subvention."
+    "shortDescription": "Liste de contrôle de conformité par type de subvention.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que le 2 CFR 200 ?",
+        "answer": "La Uniform Guidance (2 CFR Part 200) établit les exigences administratives, de coûts et d'audit pour les subventions fédérales aux entités non fédérales."
+      },
+      {
+        "question": "Quand un audit unique est-il requis ?",
+        "answer": "Les organisations dépensant 750 000 $ ou plus en subventions fédérales au cours d'un exercice fiscal doivent faire réaliser un audit unique."
+      },
+      {
+        "question": "Les subventions de fondation ont-elles des exigences de conformité ?",
+        "answer": "Oui, bien que généralement moins complexes que les subventions fédérales. Les exigences courantes incluent des rapports narratifs, des résumés financiers et des restrictions d'utilisation des fonds."
+      }
+    ]
   },
   "vesting-schedule": {
     "name": "Calculateur de calendrier d'acquisition",
     "description": "Calculez votre calendrier d'acquisition d'actions en fonction du nombre total d'actions, de la période d'acquisition, du seuil et de la fréquence. Voir un tableau détaillé des actions acquises par période avec les totaux cumulatifs.",
-    "shortDescription": "Calculer les calendriers d'acquisition d'actions."
+    "shortDescription": "Calculer les calendriers d'acquisition d'actions.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'une période de falaise (cliff period) ?",
+        "answer": "Une falaise est la période initiale (généralement 12 mois) avant que les actions ne soient acquises. Après la falaise, un montant forfaitaire est acquis et le reste est acquis selon un calendrier régulier."
+      },
+      {
+        "question": "Quel est un calendrier d'acquisition typique ?",
+        "answer": "Le plus courant est un calendrier de 4 ans avec une falaise d'un an et une acquisition mensuelle par la suite (connu sous le nom de '4 ans avec une falaise d'un an')."
+      },
+      {
+        "question": "Que se passe-t-il si je pars avant la falaise ?",
+        "answer": "Vous perdez toutes les actions non acquises. Si vous partez avant la falaise, vous ne recevez aucune action."
+      }
+    ]
   },
   "stock-option-tax": {
     "name": "Calculateur d'impôt sur les options d'achat d'actions",
     "description": "Estime les impôts sur l'exercice des options d'achat d'actions (ISO et NSO). Calcule l'impôt sur le revenu ordinaire, l'impôt sur les plus-values et l'exposition à l'AMT en fonction de votre période de détention et de votre tranche d'imposition.",
-    "shortDescription": "Estimer les impôts sur l'exercice des options d'achat d'actions."
+    "shortDescription": "Estimer les impôts sur l'exercice des options d'achat d'actions.",
+    "faqs": [
+      {
+        "question": "Quelle est la différence entre ISO et NSO ?",
+        "answer": "Les ISO (Incentive Stock Options) offrent des avantages fiscaux potentiels si les exigences de période de détention sont respectées. Les NSO (Non-Qualified Stock Options) sont imposées comme un revenu ordinaire lors de l'exercice."
+      },
+      {
+        "question": "Qu'est-ce que l'AMT ?",
+        "answer": "L'Alternative Minimum Tax (Impôt Minimum Alternatif) est un système fiscal parallèle. Pour les ISO, l'élément de négociation lors de l'exercice est un élément de préférence AMT qui peut déclencher une obligation fiscale supplémentaire."
+      },
+      {
+        "question": "Qu'est-ce qu'une disposition qualifiante pour les ISO ?",
+        "answer": "Vous devez détenir les actions pendant au moins 1 an après l'exercice ET 2 ans après la date d'attribution pour bénéficier du traitement des gains en capital à long terme."
+      }
+    ]
   },
   "equity-dilution": {
     "name": "Calculateur de dilution du capital",
     "description": "Calcule comment les tours de financement et les expansions de pool d'options affectent votre pourcentage de participation. Visualisez votre participation avant et après dilution côte à côte avec l'impact total de la dilution.",
-    "shortDescription": "Calculer la dilution du capital due aux tours de financement."
+    "shortDescription": "Calculer la dilution du capital due aux tours de financement.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que la dilution du capital ?",
+        "answer": "La dilution se produit lorsque de nouvelles actions sont émises (par le biais de rondes de financement ou de pools d'options), réduisant le pourcentage de propriété des actionnaires existants, même si leur nombre d'actions reste le même."
+      },
+      {
+        "question": "La dilution est-elle toujours mauvaise ?",
+        "answer": "Pas nécessairement. Si le nouvel investissement augmente considérablement la valorisation de l'entreprise, votre pourcentage plus petit peut valoir plus en termes de dollars absolus."
+      },
+      {
+        "question": "Qu'est-ce qu'un pool d'options ?",
+        "answer": "Une réserve d'actions mise de côté pour les futures attributions d'actions aux employés. Les investisseurs exigent souvent qu'un pool d'options soit créé ou étendu avant le financement."
+      }
+    ]
   },
   "solar-roi": {
     "name": "Calculateur de RCI de panneaux solaires",
     "description": "Calculez le retour sur investissement des installations de panneaux solaires. Saisissez le coût du système, la production d'énergie, le tarif de l'électricité et les incitations pour voir la période de récupération, les économies sur 25 ans et le pourcentage de RCI.",
-    "shortDescription": "Calculer la période de récupération et le RCI des panneaux solaires."
+    "shortDescription": "Calculer la période de récupération et le RCI des panneaux solaires.",
+    "faqs": [
+      {
+        "question": "Combien de temps faut-il pour que les panneaux solaires soient rentables ?",
+        "answer": "Généralement 6 à 10 ans, selon le coût du système, les tarifs d'électricité locaux et les incitations disponibles. Après le remboursement, l'électricité produite est essentiellement gratuite."
+      },
+      {
+        "question": "Qu'est-ce qui affecte le plus le retour sur investissement solaire ?",
+        "answer": "Les facteurs les plus importants sont le coût du système, les tarifs d'électricité locaux, les incitations/remises disponibles et la quantité de soleil que votre emplacement reçoit annuellement."
+      },
+      {
+        "question": "Les panneaux solaires augmentent-ils la valeur d'une maison ?",
+        "answer": "Des études montrent que les panneaux solaires peuvent augmenter la valeur d'une maison de 3 à 4 % en moyenne, offrant un retour sur investissement supplémentaire au-delà des économies d'énergie."
+      }
+    ]
   },
   "solar-incentive": {
     "name": "Estimateur d'incitations solaires et de crédits d'impôt",
     "description": "Estime les incitations solaires fédérales et étatiques, y compris le crédit d'impôt à l'investissement (ITC) de 30 %, les remises d'État et les valeurs SREC. Visualisez votre coût net après toutes les incitations disponibles.",
-    "shortDescription": "Estimer les crédits d'impôt solaires et les remises d'État."
+    "shortDescription": "Estimer les crédits d'impôt solaires et les remises d'État.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que le crédit d'impôt fédéral à l'investissement solaire (ITC) ?",
+        "answer": "Le crédit d'impôt à l'investissement vous permet de déduire 30 % du coût d'installation d'un système d'énergie solaire de vos impôts fédéraux. Ce taux est disponible jusqu'en 2032."
+      },
+      {
+        "question": "Que sont les SREC ?",
+        "answer": "Les certificats d'énergie renouvelable solaire (SREC) représentent les avantages environnementaux de l'électricité solaire. Dans certains États, vous pouvez vendre des SREC pour un revenu supplémentaire."
+      },
+      {
+        "question": "Puis-je combiner les incitations fédérales et étatiques ?",
+        "answer": "Oui, l'ITC fédéral peut être combiné avec les remises d'État et les SREC. Cependant, certaines incitations d'État peuvent réduire la base de coût pour le crédit fédéral."
+      }
+    ]
   },
   "energy-savings": {
     "name": "Calculateur d'économies d'énergie",
     "description": "Calculez combien vous pouvez économiser sur l'électricité en passant au solaire. Saisissez votre facture actuelle, le pourcentage de couverture solaire et le coût du système pour voir les économies mensuelles, annuelles et à vie.",
-    "shortDescription": "Calculer les économies d'électricité grâce à l'énergie solaire."
+    "shortDescription": "Calculer les économies d'électricité grâce à l'énergie solaire.",
+    "faqs": [
+      {
+        "question": "Quel pourcentage de couverture solaire devrais-je viser ?",
+        "answer": "La plupart des propriétaires visent une couverture de 80 à 100 %. Dépasser 100 % peut ne pas être rentable à moins que votre fournisseur d'électricité n'offre une facturation nette favorable."
+      },
+      {
+        "question": "Les économies solaires augmentent-elles avec le temps ?",
+        "answer": "Oui, comme les tarifs des services publics augmentent généralement de 3 à 4 % par an, vos économies augmentent chaque année tandis que vos coûts de production solaire restent fixes."
+      },
+      {
+        "question": "Qu'est-ce qui est inclus dans le calcul du seuil de rentabilité ?",
+        "answer": "Le seuil de rentabilité tient compte du coût total du système moins les économies mensuelles jusqu'à ce que les économies cumulées égalent l'investissement initial."
+      }
+    ]
   },
   "carbon-footprint": {
     "name": "Calculateur de compensation d'empreinte carbone",
     "description": "Calculez les émissions de CO₂ que vous pouvez éviter en passant aux énergies renouvelables. Visualisez les équivalents en arbres plantés et en kilomètres de conduite compensés en fonction de votre source et de votre consommation d'énergie.",
-    "shortDescription": "Calculer les économies de CO₂ en passant aux énergies renouvelables."
+    "shortDescription": "Calculer les économies de CO₂ en passant aux énergies renouvelables.",
+    "faqs": [
+      {
+        "question": "Combien de CO₂ une maison américaine moyenne produit-elle ?",
+        "answer": "Une maison américaine moyenne produit environ 7,5 tonnes métriques de CO₂ par an à partir de la consommation d'électricité, bien que cela varie considérablement selon la source d'énergie."
+      },
+      {
+        "question": "Comment les équivalents arbres sont-ils calculés ?",
+        "answer": "Un arbre mature absorbe environ 22 kg (0,022 tonne métrique) de CO₂ par an. Nous divisons vos émissions évitées par ce facteur."
+      },
+      {
+        "question": "Quelle source d'énergie a l'empreinte carbone la plus élevée ?",
+        "answer": "Le charbon a les émissions les plus élevées, soit environ 0,95 kg de CO₂/kWh, suivi du pétrole (0,72) et du gaz naturel (0,42). La moyenne du réseau américain est d'environ 0,39 kg de CO₂/kWh."
+      }
+    ]
   },
   "green-lease": {
     "name": "Vérificateur de clauses de bail vert",
     "description": "Évaluez votre bail commercial pour les dispositions vertes. Vérifiez quelles clauses de développement durable sont présentes et obtenez un score avec des recommandations pour les dispositions essentielles manquantes.",
-    "shortDescription": "Vérifier les clauses vertes dans les baux commerciaux."
+    "shortDescription": "Vérifier les clauses vertes dans les baux commerciaux.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'un bail vert ?",
+        "answer": "Un bail vert comprend des dispositions qui alignent les incitations du propriétaire et du locataire en matière d'efficacité énergétique, de durabilité et de performance environnementale dans les bâtiments commerciaux."
+      },
+      {
+        "question": "Pourquoi les clauses de référence énergétique sont-elles importantes ?",
+        "answer": "L'analyse comparative de l'énergie est requise par la loi dans de nombreuses villes et aide à suivre la performance des bâtiments au fil du temps, identifiant les opportunités d'amélioration de l'efficacité."
+      },
+      {
+        "question": "Qu'est-ce qu'une clause de partage des coûts ?",
+        "answer": "Les clauses de partage des coûts définissent comment les coûts d'amélioration de l'efficacité énergétique et les économies qui en résultent sont partagés entre le propriétaire et le locataire, résolvant le problème de l'« incitation divisée »."
+      }
+    ]
   },
   "ev-vs-gas": {
     "name": "Comparaison des coûts VÉ vs essence",
     "description": "Comparez les coûts annuels de carburant pour la conduite d'un véhicule électrique par rapport à un véhicule à essence. Voir les coûts côte à côte, les économies annuelles et les économies projetées sur 10 ans.",
-    "shortDescription": "Comparer les coûts de carburant des VÉ et des véhicules à essence."
+    "shortDescription": "Comparer les coûts de carburant des VÉ et des véhicules à essence.",
+    "faqs": [
+      {
+        "question": "Combien coûte-t-il de moins de conduire un VE ?",
+        "answer": "En moyenne, les VE coûtent 50 à 70 % moins cher en carburant que les véhicules à essence, selon les prix locaux de l'électricité et de l'essence."
+      },
+      {
+        "question": "Comment l'efficacité des VE est-elle mesurée ?",
+        "answer": "L'efficacité des VE est généralement mesurée en kWh pour 100 miles. La plupart des VE modernes varient de 25 à 35 kWh pour 100 miles."
+      },
+      {
+        "question": "Cela inclut-il les économies d'entretien ?",
+        "answer": "Ce calculateur se concentre uniquement sur les coûts de carburant. Les VE permettent également d'économiser généralement 500 à 1000 $/an sur l'entretien grâce à un nombre réduit de pièces mobiles."
+      }
+    ]
   },
   "home-energy-audit": {
     "name": "Liste de contrôle d'audit énergétique résidentiel",
     "description": "Générez une liste de contrôle priorisée des améliorations énergétiques pour votre maison. Sélectionnez votre type et âge de maison pour voir les améliorations applicables avec des estimations de plages d'économies.",
-    "shortDescription": "Obtenez une liste de contrôle personnalisée des améliorations énergétiques à domicile."
+    "shortDescription": "Obtenez une liste de contrôle personnalisée des améliorations énergétiques à domicile.",
+    "faqs": [
+      {
+        "question": "Quelle est l'amélioration énergétique la plus efficace ?",
+        "answer": "Pour la plupart des maisons, l'isolation des combles et l'étanchéité à l'air offrent le meilleur retour sur investissement, réduisant les coûts de chauffage/climatisation de 10 à 20 %."
+      },
+      {
+        "question": "Dois-je faire réaliser un audit énergétique professionnel ?",
+        "answer": "Oui, un audit professionnel avec test d'infiltrométrie peut identifier les fuites d'air cachées et les lacunes d'isolation que l'inspection visuelle ne détecte pas."
+      },
+      {
+        "question": "Ces estimations d'économies incluent-elles les remises ?",
+        "answer": "Les économies affichées proviennent uniquement de la réduction des factures d'énergie. De nombreuses améliorations sont également éligibles à des remises fédérales ou étatiques, améliorant encore le retour sur investissement."
+      }
+    ]
   },
   "ppa-calculator": {
     "name": "Calculateur de contrat d'achat d'électricité (PPA)",
     "description": "Comparez le coût total d'un contrat d'achat d'électricité (PPA) par rapport à l'électricité du service public sur la durée du contrat. Visualisez les détails des coûts année par année, y compris les augmentations de tarifs.",
-    "shortDescription": "Comparer les coûts de PPA et d'électricité des services publics."
+    "shortDescription": "Comparer les coûts de PPA et d'électricité des services publics.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'un PPA ?",
+        "answer": "Un contrat d'achat d'électricité (Power Purchase Agreement) est un contrat par lequel un fournisseur solaire installe des panneaux sur votre propriété et vous vend l'électricité à un tarif fixe, généralement inférieur aux tarifs des services publics."
+      },
+      {
+        "question": "Quel est le taux d'escalade typique d'un PPA ?",
+        "answer": "Les taux d'escalade des PPA varient généralement de 1 à 3 % par an, comparativement aux augmentations des tarifs des services publics de 3 à 5 % par an historiquement."
+      },
+      {
+        "question": "Qui est propriétaire des panneaux dans un PPA ?",
+        "answer": "Le fournisseur solaire est propriétaire et entretient les panneaux. À la fin de la durée du contrat (généralement 15 à 25 ans), vous pouvez avoir la possibilité d'acheter le système ou de le faire retirer."
+      }
+    ]
   },
   "income-tax": {
     "name": "Estimateur d'impôt sur le revenu",
     "description": "Estimez votre impôt fédéral sur le revenu en fonction de votre statut de déclaration, de votre revenu brut et de vos déductions. Obtenez une ventilation par tranche, le taux d'imposition effectif et le salaire net.",
-    "shortDescription": "Estimer l'impôt fédéral sur le revenu par tranche."
+    "shortDescription": "Estimer l'impôt fédéral sur le revenu par tranche.",
+    "faqs": [
+      {
+        "question": "Quelle année fiscale est utilisée ?",
+        "answer": "Il utilise les tranches d'imposition fédérales et les montants de déduction standard de 2024."
+      },
+      {
+        "question": "Cela inclut-il les impôts d'État ?",
+        "answer": "Non, ceci estime uniquement l'impôt fédéral sur le revenu. Les impôts d'État varient selon l'emplacement."
+      },
+      {
+        "question": "Que se passe-t-il si je détaille mes déductions ?",
+        "answer": "Saisissez le total de vos déductions détaillées dans le champ des déductions au lieu d'utiliser la déduction standard."
+      }
+    ]
   },
   "auto-loan": {
     "name": "Calculateur de prêt automobile",
     "description": "Calculez votre paiement mensuel de prêt automobile, y compris l'acompte et la valeur de reprise. Voyez le total des intérêts payés et le coût réel de l'achat de votre véhicule.",
-    "shortDescription": "Calculer les paiements mensuels de prêt automobile."
+    "shortDescription": "Calculer les paiements mensuels de prêt automobile.",
+    "faqs": [
+      {
+        "question": "Quel est un bon taux d'intérêt pour un prêt automobile ?",
+        "answer": "Les taux varient en fonction du score de crédit. Un excellent crédit peut obtenir 4-6 %, tandis qu'un crédit moyen peut voir 7-12 %."
+      },
+      {
+        "question": "Dois-je faire un acompte plus important ?",
+        "answer": "Un acompte plus important réduit le montant de votre prêt, votre paiement mensuel et le total des intérêts payés."
+      },
+      {
+        "question": "Comment la valeur de reprise affecte-t-elle le prêt ?",
+        "answer": "La valeur de reprise est soustraite du prix du véhicule, réduisant le montant que vous devez financer."
+      }
+    ]
   },
   "debt-payoff": {
     "name": "Calculateur de remboursement de dettes",
     "description": "Voyez combien de temps il faut pour rembourser une dette avec des paiements minimums vs des paiements supplémentaires. Comparez le total des intérêts payés et le temps économisé en payant plus chaque mois.",
-    "shortDescription": "Calculer le temps de remboursement de la dette et les économies d'intérêts."
+    "shortDescription": "Calculer le temps de remboursement de la dette et les économies d'intérêts.",
+    "faqs": [
+      {
+        "question": "Combien de plus devrais-je payer ?",
+        "answer": "Même 50 à 100 $ supplémentaires par mois peuvent économiser des milliers d'intérêts et des années de paiements sur des dettes à taux d'intérêt élevé."
+      },
+      {
+        "question": "Dois-je rembourser d'abord les dettes à taux d'intérêt élevé ?",
+        "answer": "La méthode de l'avalanche (taux le plus élevé en premier) permet d'économiser le plus d'argent. La méthode de la boule de neige (plus petit solde en premier) offre des victoires plus rapides."
+      },
+      {
+        "question": "Cela fonctionne-t-il pour les cartes de crédit ?",
+        "answer": "Oui, cela fonctionne pour toute dette avec un taux d'intérêt fixe et des paiements réguliers."
+      }
+    ]
   },
   "net-worth": {
     "name": "Calculateur de valeur nette",
     "description": "Calculez votre valeur nette en listant vos actifs et passifs. Suivez vos liquidités, investissements, propriétés et dettes pour voir votre situation financière globale.",
-    "shortDescription": "Calculer les actifs totaux moins les passifs."
+    "shortDescription": "Calculer les actifs totaux moins les passifs.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qui compte comme un actif ?",
+        "answer": "Argent liquide, épargne, investissements, comptes de retraite, biens immobiliers, véhicules et tout autre bien de valeur."
+      },
+      {
+        "question": "À quelle fréquence dois-je calculer ma valeur nette ?",
+        "answer": "Un suivi mensuel ou trimestriel vous aide à voir vos progrès financiers et à identifier les tendances."
+      },
+      {
+        "question": "Une valeur nette négative est-elle mauvaise ?",
+        "answer": "C'est courant au début de la vie (prêts étudiants, hypothèque). Concentrez-vous sur la tendance – elle devrait s'améliorer avec le temps."
+      }
+    ]
   },
   "paycheck-calc": {
     "name": "Calculateur de salaire net",
     "description": "Estimez votre salaire net par fiche de paie. Saisissez le salaire ou le taux horaire, le statut de déclaration et la fréquence de paie pour voir les retenues d'impôt fédéral, de sécurité sociale et de Medicare.",
-    "shortDescription": "Estimer le salaire net par fiche de paie."
+    "shortDescription": "Estimer le salaire net par fiche de paie.",
+    "faqs": [
+      {
+        "question": "Cela inclut-il les impôts d'État ?",
+        "answer": "Non, ceci estime uniquement les retenues fédérales. Votre salaire réel peut également avoir des impôts d'État et locaux déduits."
+      },
+      {
+        "question": "Qu'en est-il des déductions avant impôt ?",
+        "answer": "Ceci ne tient pas compte des 401(k), de l'assurance maladie ou d'autres déductions avant impôt qui réduiraient votre revenu imposable."
+      },
+      {
+        "question": "Le paiement bi-hebdomadaire est-il le même que le paiement semi-mensuel ?",
+        "answer": "Non. Bi-hebdomadaire signifie toutes les deux semaines (26 chèques de paie/an). Semi-mensuel signifie deux fois par mois (24 chèques de paie/an)."
+      }
+    ]
   },
   "settlement-estimator": {
     "name": "Estimateur de valeur de règlement",
     "description": "Estimez la valeur de votre règlement pour blessures corporelles ou accident de voiture. Saisissez les frais médicaux, les salaires perdus et la gravité de la blessure pour obtenir une fourchette basée sur la méthode du multiplicateur.",
-    "shortDescription": "Estimer les fourchettes de règlement pour blessures corporelles/accidents de voiture."
+    "shortDescription": "Estimer les fourchettes de règlement pour blessures corporelles/accidents de voiture.",
+    "faqs": [
+      {
+        "question": "Quelle est la précision de l'estimateur de règlement?",
+        "answer": "Il fournit une fourchette approximative en utilisant la méthode du multiplicateur couramment utilisée par les compagnies d'assurance. Les règlements réels dépendent de nombreux facteurs, y compris la faute, la juridiction et l'assureur."
+      },
+      {
+        "question": "Qu'est-ce que la méthode du multiplicateur?",
+        "answer": "Les dommages économiques (frais médicaux, salaires perdus) sont multipliés par un facteur de 1,5 à 10 en fonction de la gravité de la blessure pour estimer l'indemnisation totale."
+      },
+      {
+        "question": "Dois-je me fier à cela pour mon cas?",
+        "answer": "Non. Utilisez ceci comme point de départ pour comprendre la valeur potentielle. Consultez un avocat spécialisé dans les dommages corporels pour une évaluation précise de votre cas."
+      }
+    ]
   },
   "insurance-quote-comparison": {
     "name": "Outil de comparaison de devis d'assurance",
     "description": "Comparez côte à côte les devis d'assurance auto, habitation et vie. Saisissez les devis de plusieurs compagnies et voyez quel est celui qui offre le meilleur rapport qualité-prix.",
-    "shortDescription": "Comparer les devis d'assurance côte à côte."
+    "shortDescription": "Comparer les devis d'assurance côte à côte.",
+    "faqs": [
+      {
+        "question": "Combien de devis dois-je comparer?",
+        "answer": "Au moins 3 à 5 devis de différentes compagnies. Les tarifs peuvent varier de centaines de dollars pour la même couverture."
+      },
+      {
+        "question": "Qu'est-ce que le coût effectif?",
+        "answer": "Le coût effectif combine votre prime annuelle avec votre franchise, donnant une image plus complète du coût total potentiel."
+      },
+      {
+        "question": "Cet outil fournit-il des devis réels?",
+        "answer": "Non. Vous saisissez les devis que vous avez reçus des compagnies d'assurance. Cet outil vous aide à les organiser et à les comparer."
+      }
+    ]
   },
   "accident-damage": {
     "name": "Calculateur de dommages d'accident",
     "description": "Calculez le total des dommages résultant d'un accident, y compris les frais médicaux, les dommages matériels, les salaires perdus et la douleur et la souffrance. Obtenez une ventilation complète.",
-    "shortDescription": "Calculer le total des dommages d'accident."
+    "shortDescription": "Calculer le total des dommages d'accident.",
+    "faqs": [
+      {
+        "question": "Que sont les dommages économiques et non économiques?",
+        "answer": "Les dommages économiques sont des pertes quantifiables (frais médicaux, salaires perdus, dommages matériels). Les dommages non économiques sont subjectifs (douleur, souffrance, détresse émotionnelle)."
+      },
+      {
+        "question": "Comment estimer la douleur et la souffrance?",
+        "answer": "Une méthode courante consiste à multiplier vos frais médicaux par 1,5 à 5, selon la gravité de la blessure. Les blessures plus graves justifient des multiplicateurs plus élevés."
+      },
+      {
+        "question": "Cela inclut-il les dommages punitifs?",
+        "answer": "Non. Les dommages punitifs sont rares et ne sont accordés que pour punir une conduite extrême. Ce calculateur se concentre sur les dommages compensatoires."
+      }
+    ]
   },
   "attorney-fee": {
     "name": "Calculateur d'honoraires d'avocat",
     "description": "Calculez les honoraires d'avocat pour les arrangements au pourcentage et horaires. Voyez combien votre avocat gagnera et quel sera votre règlement net.",
-    "shortDescription": "Calculer les honoraires d'avocat au pourcentage et horaires."
+    "shortDescription": "Calculer les honoraires d'avocat au pourcentage et horaires.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'une commission de contingence typique?",
+        "answer": "La plupart des avocats spécialisés dans les dommages corporels facturent 33 % pour les règlements avant litige et 40 % si l'affaire va en procès."
+      },
+      {
+        "question": "Les frais de dossier sont-ils distincts des honoraires?",
+        "answer": "Généralement oui. Les frais de dépôt, les témoins experts et les coûts des dossiers médicaux sont généralement déduits séparément de votre règlement."
+      },
+      {
+        "question": "Puis-je négocier le pourcentage des honoraires?",
+        "answer": "Oui, les honoraires de contingence sont négociables. Les affaires de grande valeur avec une responsabilité claire peuvent justifier un pourcentage plus faible."
+      }
+    ]
   },
   "insurance-premium": {
     "name": "Estimateur de prime d'assurance",
     "description": "Estimez les primes d'assurance mensuelles pour l'assurance auto, habitation, locataire et vie en fonction de votre âge, crédit, lieu et niveau de couverture.",
-    "shortDescription": "Estimer les primes d'assurance mensuelles."
+    "shortDescription": "Estimer les primes d'assurance mensuelles.",
+    "faqs": [
+      {
+        "question": "Quelle est la précision de cette estimation?",
+        "answer": "Ceci fournit une estimation approximative basée sur les moyennes nationales et les facteurs de taux courants. Les primes réelles dépendent de votre profil spécifique et de l'assureur."
+      },
+      {
+        "question": "Le score de crédit affecte-t-il vraiment l'assurance?",
+        "answer": "Dans la plupart des États, oui. Les assureurs utilisent les scores d'assurance basés sur le crédit pour fixer les tarifs. Un meilleur crédit signifie généralement des primes plus basses."
+      },
+      {
+        "question": "Quel est le facteur le plus important dans le coût de l'assurance?",
+        "answer": "Pour l'auto : dossier de conduite et âge. Pour la maison : emplacement et valeur de la propriété. Pour la vie : âge et état de santé."
+      }
+    ]
   },
   "force-majeure-checker": {
     "name": "Vérificateur de clause de force majeure",
     "description": "Collez votre contrat et voyez instantanément si la clause de force majeure est forte, restrictive ou manquante. Détecte les événements couverts, les clauses générales, les exigences de notification et les clauses d'obligation d'atténuer.",
-    "shortDescription": "Détecter et évaluer les clauses de force majeure."
+    "shortDescription": "Détecter et évaluer les clauses de force majeure.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que la force majeure?",
+        "answer": "Une clause excusant l'exécution lorsque des événements extraordinaires (guerre, pandémie, catastrophes naturelles) la rendent impossible."
+      },
+      {
+        "question": "Pourquoi la force est-elle importante?",
+        "answer": "Des clauses étroites peuvent ne pas couvrir l'événement réel, vous laissant en infraction."
+      },
+      {
+        "question": "Dois-je ajouter une clause générale?",
+        "answer": "Un langage général ('tout événement échappant à un contrôle raisonnable') élargit considérablement la protection."
+      }
+    ]
   },
   "auto-renewal-detector": {
     "name": "Détecteur de clause de renouvellement automatique",
     "description": "Trouvez les clauses de pérennité et de renouvellement automatique dans n'importe quel contrat. Met en évidence la fenêtre de notification pour que vous ne manquiez pas une date limite d'annulation.",
-    "shortDescription": "Détecter les pièges de renouvellement automatique dans les contrats."
+    "shortDescription": "Détecter les pièges de renouvellement automatique dans les contrats.",
+    "faqs": [
+      {
+        "question": "Pourquoi les renouvellements automatiques sont-ils risqués?",
+        "answer": "Beaucoup exigent un préavis écrit de 30 à 90 jours, sinon vous êtes engagé pour une année supplémentaire."
+      },
+      {
+        "question": "Les clauses de renouvellement automatique sont-elles légales?",
+        "answer": "Oui, mais plusieurs États exigent une divulgation claire et visible pour les contrats de consommation."
+      },
+      {
+        "question": "Que dois-je faire si j'en trouve une?",
+        "answer": "Définissez immédiatement un rappel de calendrier pour la date limite de notification."
+      }
+    ]
   },
   "governing-law-id": {
     "name": "Identificateur de loi applicable",
     "description": "Extrayez les clauses de loi applicable, de juridiction, d'arbitrage, de renonciation au jury et de renonciation aux recours collectifs de n'importe quel contrat en quelques secondes.",
-    "shortDescription": "Extraire les clauses de juridiction et d'arbitrage."
+    "shortDescription": "Extraire les clauses de juridiction et d'arbitrage.",
+    "faqs": [
+      {
+        "question": "Pourquoi la loi applicable est-elle importante?",
+        "answer": "Elle détermine quelles lois de l'État s'appliquent et où vous devriez intenter une action en justice."
+      },
+      {
+        "question": "Qu'est-ce qu'une renonciation au jury?",
+        "answer": "Une clause obligeant les litiges à être tranchés par un juge plutôt que par un jury."
+      },
+      {
+        "question": "Puis-je négocier le lieu de juridiction?",
+        "answer": "Souvent oui, surtout avec les fournisseurs. Des lieux de juridiction peu pratiques peuvent augmenter considérablement les coûts de litige."
+      }
+    ]
   },
   "plain-english-rewriter": {
     "name": "Reformulateur en langage clair",
     "description": "Convertissez le langage juridique (legalese) en langage clair. Remplace les phrases juridiques archaïques (ci-devant, conformément à, nonobstant) par des équivalents modernes clairs.",
-    "shortDescription": "Reformuler le langage juridique en langage clair."
+    "shortDescription": "Reformuler le langage juridique en langage clair.",
+    "faqs": [
+      {
+        "question": "La réécriture est-elle juridiquement exacte ?",
+        "answer": "Elle préserve le sens en échangeant des termes équivalents. Vérifiez toujours avec un avocat pour les contrats critiques."
+      },
+      {
+        "question": "Qu'est-ce qui est réécrit ?",
+        "answer": "Les phrases archaïques courantes — 'shall' devient 'doit', 'pursuant to' devient 'en vertu de', etc."
+      },
+      {
+        "question": "Explique-t-il les termes juridiques ?",
+        "answer": "Oui, il extrait les définitions de notre dictionnaire juridique pour tout terme spécialisé trouvé."
+      }
+    ]
   },
   "chargeback-checker": {
     "name": "Vérificateur d'éligibilité au rétrofacturation (chargeback)",
     "description": "Répondez à quelques questions pour voir si vous êtes susceptible d'être éligible à un rétrofacturation par carte de crédit en vertu du Fair Credit Billing Act (Loi sur la facturation équitable du crédit).",
-    "shortDescription": "Vérifier si vous pouvez gagner un rétrofacturation."
+    "shortDescription": "Vérifier si vous pouvez gagner un rétrofacturation.",
+    "faqs": [
+      {
+        "question": "Combien de temps ai-je pour contester ?",
+        "answer": "60 jours à compter de la date du relevé en vertu de la loi fédérale ; de nombreux émetteurs autorisent 120 jours."
+      },
+      {
+        "question": "Quelle est la différence par rapport à un remboursement ?",
+        "answer": "Une rétrofacturation est déposée auprès de votre banque, et non du commerçant. La banque annule le débit pendant son enquête."
+      },
+      {
+        "question": "Le commerçant peut-il le contester ?",
+        "answer": "Oui. Une documentation solide améliore considérablement vos chances."
+      }
+    ]
   },
   "lemon-law-qualifier": {
     "name": "Qualificateur de la loi sur les vices cachés (Lemon Law)",
     "description": "Vérifiez si votre véhicule défectueux est susceptible de remplir les conditions de la loi sur les vices cachés (Lemon Law) de votre État en fonction des tentatives de réparation, des jours d'immobilisation, de l'âge et du kilométrage.",
-    "shortDescription": "Vérifier si votre véhicule est un « lemon » (véhicule avec vice caché)."
+    "shortDescription": "Vérifier si votre véhicule est un « lemon » (véhicule avec vice caché).",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'un 'lemon' ?",
+        "answer": "Un véhicule présentant un défaut substantiel qui ne peut être réparé après un nombre raisonnable de tentatives."
+      },
+      {
+        "question": "Seuils courants ?",
+        "answer": "Généralement 3 à 4 tentatives de réparation pour le même problème ou plus de 30 jours d'immobilisation."
+      },
+      {
+        "question": "Les voitures d'occasion sont-elles éligibles ?",
+        "answer": "Certains États étendent la protection de la loi sur les vices cachés aux voitures d'occasion ; beaucoup ne le font pas."
+      }
+    ]
   },
   "subscription-cancel-letter": {
     "name": "Lettre de résiliation d'abonnement",
     "description": "Générez une lettre d'annulation écrite pour tout abonnement (gymnase, SaaS, magazine) qui nécessite un avis écrit.",
-    "shortDescription": "Générer une lettre d'annulation écrite."
+    "shortDescription": "Générer une lettre d'annulation écrite.",
+    "faqs": [
+      {
+        "question": "Pourquoi envoyer une lettre écrite ?",
+        "answer": "De nombreux contrats d'abonnement n'honorent que les annulations écrites et ignorent les demandes téléphoniques."
+      },
+      {
+        "question": "Dois-je envoyer par courrier recommandé ?",
+        "answer": "Pour les annulations de grande valeur ou contestées, oui — pour la preuve de livraison."
+      },
+      {
+        "question": "Cela arrête-t-il les frais immédiatement ?",
+        "answer": "Selon le libellé de la lettre, vous demandez une annulation immédiate, mais vérifiez votre contrat pour les délais de préavis requis."
+      }
+    ]
   },
   "data-breach-checklist": {
     "name": "Liste de contrôle de réponse à une violation de données",
     "description": "Liste de contrôle étape par étape sur ce qu'il faut faire après avoir reçu une notification de violation de données – de la modification des mots de passe au dépôt du formulaire IRS 14039.",
-    "shortDescription": "Étapes à suivre après une violation de données."
+    "shortDescription": "Étapes à suivre après une violation de données.",
+    "faqs": [
+      {
+        "question": "Dois-je geler mon crédit ?",
+        "answer": "Oui — les gels de crédit sont gratuits dans les 50 États et bien plus protecteurs que les alertes de fraude."
+      },
+      {
+        "question": "La surveillance gratuite est-elle suffisante ?",
+        "answer": "C'est utile mais cela n'empêche pas la fraude. Combinez-la avec un gel."
+      },
+      {
+        "question": "Dois-je faire quelque chose si le numéro de sécurité sociale n'a pas été exposé ?",
+        "answer": "Changez toujours les mots de passe et activez l'authentification à deux facteurs. Les violations d'e-mail + mot de passe permettent les prises de contrôle de compte."
+      }
+    ]
   },
   "final-paycheck-lookup": {
     "name": "Recherche de la date limite du dernier chèque de paie",
     "description": "Quand votre dernier chèque de paie est-il légalement dû ? Recherche par État pour les scénarios de licenciement et de démission.",
-    "shortDescription": "Quand votre dernier chèque de paie est légalement dû."
+    "shortDescription": "Quand votre dernier chèque de paie est légalement dû.",
+    "faqs": [
+      {
+        "question": "Que se passe-t-il si mon employeur est en retard ?",
+        "answer": "De nombreux États imposent des pénalités de temps d'attente — parfois un salaire journalier complet par jour de retard."
+      },
+      {
+        "question": "Cela inclut-il les congés payés non utilisés ?",
+        "answer": "Dans la plupart des États, les congés accumulés doivent être payés. Les congés de maladie n'ont souvent pas à l'être."
+      },
+      {
+        "question": "Qu'en est-il des commissions ?",
+        "answer": "Les commissions gagnées sont des salaires et doivent être payées sur le dernier chèque."
+      }
+    ]
   },
   "unemployment-estimator": {
     "name": "Estimateur de prestations de chômage",
     "description": "Estimez votre prestation de chômage hebdomadaire en fonction de vos salaires antérieurs et du plafond de l'État.",
-    "shortDescription": "Estimer les prestations de chômage hebdomadaires."
+    "shortDescription": "Estimer les prestations de chômage hebdomadaires.",
+    "faqs": [
+      {
+        "question": "Qui est éligible ?",
+        "answer": "Généralement les travailleurs licenciés sans faute de leur part qui remplissent les exigences de salaire et d'historique de travail d'un État."
+      },
+      {
+        "question": "L'estimation est-elle exacte ?",
+        "answer": "Non — les prestations réelles dépendent des revenus trimestriels pendant une période de base définie par l'État."
+      },
+      {
+        "question": "Combien de temps durent les prestations ?",
+        "answer": "Jusqu'à 26 semaines dans la plupart des États ; certains États sont plus courts ou prolongés pendant les récessions."
+      }
+    ]
   },
   "nda-vs-noncompete": {
     "name": "Comparateur NDA vs. Non-concurrence",
     "description": "Comparaison côte à côte des accords de non-divulgation (NDA) et des clauses de non-concurrence — objectif, portée, durée, applicabilité et signaux d'alarme.",
-    "shortDescription": "Comparer les NDA et les clauses de non-concurrence côte à côte."
+    "shortDescription": "Comparer les NDA et les clauses de non-concurrence côte à côte.",
+    "faqs": [
+      {
+        "question": "Puis-je être obligé de signer les deux ?",
+        "answer": "Oui. Ils servent des objectifs différents et de nombreux employeurs utilisent les deux."
+      },
+      {
+        "question": "Les clauses de non-concurrence sont-elles toujours exécutoires ?",
+        "answer": "Non. La Californie, le Dakota du Nord, l'Oklahoma et le Minnesota les interdisent largement. La FTC a proposé une interdiction nationale."
+      },
+      {
+        "question": "Qu'est-ce qui rend un accord de confidentialité équitable ?",
+        "answer": "Définition raisonnable des informations confidentielles, durée raisonnable et exclusions claires pour les connaissances publiques."
+      }
+    ]
   },
   "discrimination-checklist": {
     "name": "Liste de contrôle des plaintes pour discrimination en milieu de travail",
     "description": "Préparez-vous à déposer une plainte auprès de l'EEOC — documentation, analyse comparative, signalement interne et suivi des représailles.",
-    "shortDescription": "Préparer une plainte pour discrimination auprès de l'EEOC."
+    "shortDescription": "Préparer une plainte pour discrimination auprès de l'EEOC.",
+    "faqs": [
+      {
+        "question": "Quel est le délai de l'EEOC ?",
+        "answer": "180 jours à compter de l'acte discriminatoire (300 jours dans les États ayant leur propre agence anti-discrimination)."
+      },
+      {
+        "question": "Ai-je besoin d'un avocat ?",
+        "answer": "Pas pour déposer une plainte auprès de l'EEOC, mais fortement recommandé avant de signer tout accord ou quittance."
+      },
+      {
+        "question": "La rétorsion est-elle illégale ?",
+        "answer": "Oui — exercer des représailles contre une personne pour avoir déposé ou soutenu une plainte pour discrimination est en soi illégal."
+      }
+    ]
   },
   "eviction-notice-lookup": {
     "name": "Recherche de période de préavis d'expulsion",
     "description": "Recherchez la période de préavis d'expulsion légalement requise par État et par motif — non-paiement, violation de bail ou résiliation sans faute.",
-    "shortDescription": "Périodes de préavis d'expulsion par État."
+    "shortDescription": "Périodes de préavis d'expulsion par État.",
+    "faqs": [
+      {
+        "question": "Un propriétaire peut-il ignorer l'avis ?",
+        "answer": "Non. Ignorer l'avis et déposer immédiatement une plainte est un motif de rejet."
+      },
+      {
+        "question": "Les règles locales diffèrent-elles ?",
+        "answer": "Oui. Les villes avec contrôle des loyers exigent souvent des préavis plus longs et une «juste cause»."
+      },
+      {
+        "question": "Que se passe-t-il si le locataire remédie à la situation ?",
+        "answer": "Si l'avis est un «remédier ou quitter» et que le locataire remédie à la situation (paie le loyer ou corrige la violation), l'expulsion ne peut généralement pas avoir lieu."
+      }
+    ]
   },
   "habitability-tracker": {
     "name": "Générateur de demande de réparation d'habitabilité",
     "description": "Générez une demande de réparation écrite invoquant la garantie implicite d'habitabilité — la base pour la rétention de loyer ou les recours de réparation et de déduction.",
-    "shortDescription": "Générer une demande de réparation d'habitabilité écrite."
+    "shortDescription": "Générer une demande de réparation d'habitabilité écrite.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que la garantie implicite d'habitabilité ?",
+        "answer": "Une exigence de common law (et dans de nombreux États, statutaire) selon laquelle les locations doivent être sûres et habitables."
+      },
+      {
+        "question": "Puis-je retenir le loyer ?",
+        "answer": "Parfois — mais seulement après un avis écrit et une période de remède raisonnable, et la procédure varie selon les États."
+      },
+      {
+        "question": "Qu'est-ce qui constitue un problème d'habitabilité ?",
+        "answer": "Pas de chauffage, pas d'eau chaude, pas d'eau courante, défauts structurels, vermine, moisissure ou câblage dangereux."
+      }
+    ]
   },
   "mortgage-affordability": {
     "name": "Calculateur d'abordabilité hypothécaire",
     "description": "Calculez le prix maximum de votre maison en utilisant la règle des 36 % de ratio dette/revenu, en tenant compte des impôts, des assurances et des dettes existantes.",
-    "shortDescription": "Calculez le prix maximum abordable de votre maison."
+    "shortDescription": "Calculez le prix maximum abordable de votre maison.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que le DTI ?",
+        "answer": "Ratio dette/revenu — le pourcentage de votre revenu brut mensuel qui est consacré aux paiements de dettes."
+      },
+      {
+        "question": "Pourquoi 36 % ?",
+        "answer": "Les limites de souscription conventionnelles limitent le total des dettes mensuelles (y compris le nouveau prêt hypothécaire) à environ 36 % du revenu brut."
+      },
+      {
+        "question": "Cela inclut-il l'assurance hypothécaire privée (PMI) ?",
+        "answer": "La PMI s'applique si vous versez moins de 20 % d'acompte et ajoute environ 0,5 à 1 % du prêt annuellement. Non calculé séparément ici."
+      }
+    ]
   },
   "operating-agreement-llc": {
     "name": "Générateur d'accord d'exploitation de SARL",
     "description": "Générer un accord d'exploitation de SARL (LLC) de base couvrant les membres, le capital, les profits, la gestion et la dissolution.",
-    "shortDescription": "Générer un accord d'exploitation de SARL de base."
+    "shortDescription": "Générer un accord d'exploitation de SARL de base.",
+    "faqs": [
+      {
+        "question": "Ai-je besoin d'un accord d'exploitation ?",
+        "answer": "La plupart des États n'en exigent pas un mais le recommandent fortement — et quelques-uns (CA, DE, NY, MO, ME) l'exigent."
+      },
+      {
+        "question": "Puis-je le personnaliser plus tard ?",
+        "answer": "Oui. C'est un modèle de départ. Modifiez-le au fur et à mesure que votre entreprise se développe."
+      },
+      {
+        "question": "Est-ce un substitut à un avocat ?",
+        "answer": "Non. Pour les SARL à plusieurs membres ou un capital important, faites examiner par un avocat."
+      }
+    ]
   },
   "founders-agreement": {
     "name": "Générateur d'accord de fondateurs",
     "description": "Rédiger un accord de fondateurs couvrant la répartition des capitaux propres, le vesting (période d'acquisition d'un an, attribution sur 4 ans), la cession de propriété intellectuelle, les rôles et le départ.",
-    "shortDescription": "Rédiger un accord de fondateurs avec vesting et propriété intellectuelle."
+    "shortDescription": "Rédiger un accord de fondateurs avec vesting et propriété intellectuelle.",
+    "faqs": [
+      {
+        "question": "Pourquoi le vesting pour les fondateurs ?",
+        "answer": "Protège l'équipe si un cofondateur part tôt. Sans vesting, il conserve la totalité de ses parts."
+      },
+      {
+        "question": "Qu'est-ce qu'un «cliff» d'un an ?",
+        "answer": "Si un fondateur part au cours de la première année, il ne reçoit aucune action. Après la première année, les actions sont acquises progressivement."
+      },
+      {
+        "question": "Cela remplace-t-il l'incorporation ?",
+        "answer": "Non — c'est un accord annexe. Vous devez toujours déposer les documents auprès de l'État pour former l'entité."
+      }
+    ]
   },
   "dmca-generator": {
     "name": "Générateur d'avis de retrait DMCA",
     "description": "Générer un avis de retrait DMCA (Digital Millennium Copyright Act) qui répond aux exigences du 17 U.S.C. § 512(c) pour le retrait de contenu contrefaisant.",
-    "shortDescription": "Générer un avis de retrait DMCA."
+    "shortDescription": "Générer un avis de retrait DMCA.",
+    "faqs": [
+      {
+        "question": "Où dois-je l'envoyer ?",
+        "answer": "À l'agent DMCA désigné de la plateforme (indiqué dans leurs conditions ou sur copyright.gov)."
+      },
+      {
+        "question": "Que se passe-t-il s'il s'agit d'une fausse déclaration ?",
+        "answer": "Le dépôt d'un avis DMCA sciemment faux vous expose à des poursuites pour parjure et à une responsabilité civile."
+      },
+      {
+        "question": "L'utilisateur peut-il riposter ?",
+        "answer": "Oui — il peut déposer une contre-notification, et le contenu peut être restauré dans les 10 à 14 jours."
+      }
+    ]
   },
   "emergency-fund": {
     "name": "Calculateur de fonds d'urgence",
     "description": "Calculer de combien vous avez besoin dans un fonds d'urgence et combien de temps il faudra pour atteindre votre objectif à votre taux d'épargne actuel.",
-    "shortDescription": "Calculer votre objectif de fonds d'urgence."
+    "shortDescription": "Calculer votre objectif de fonds d'urgence.",
+    "faqs": [
+      {
+        "question": "Combien de mois dois-je économiser ?",
+        "answer": "3 mois pour les ménages à double revenu avec des emplois stables ; 6 mois et plus pour un revenu unique ou un revenu variable."
+      },
+      {
+        "question": "Où dois-je le conserver ?",
+        "answer": "Un compte d'épargne à rendement élevé — accessible mais séparé du compte courant."
+      },
+      {
+        "question": "Qu'est-ce qui compte comme «dépenses» ?",
+        "answer": "Les essentiels uniquement : logement, nourriture, services publics, assurance, paiements minimaux de dettes, transport."
+      }
+    ]
   },
   "tip-splitter": {
     "name": "Répartiteur de pourboires et frais de service",
     "description": "Répartir une note de restaurant entre plusieurs personnes, y compris les taxes et le pourboire — avec gestion des frais de service obligatoires (qui ne sont pas légalement des pourboires).",
-    "shortDescription": "Répartir les factures avec taxes, pourboires et frais de service."
+    "shortDescription": "Répartir les factures avec taxes, pourboires et frais de service.",
+    "faqs": [
+      {
+        "question": "Une \"charge de service\" est-elle un pourboire ?",
+        "answer": "Non. Les frais de service sont des revenus du restaurant et peuvent ne pas être versés au personnel ; les pourboires doivent l'être légalement."
+      },
+      {
+        "question": "Dois-je donner un pourboire en plus des frais de service ?",
+        "answer": "Généralement non — mais demandez, car les politiques varient."
+      },
+      {
+        "question": "Est-ce que je donne un pourboire sur la taxe ?",
+        "answer": "La plupart des gens donnent un pourboire sur le sous-total avant impôts. Ce calculateur fait de même."
+      }
+    ]
   },
   "net-metering": {
     "name": "Estimateur d'économies de comptage net",
     "description": "Estimer les économies annuelles du comptage solaire net — déduction de la production plus crédits pour l'excédent d'énergie exporté vers le réseau.",
-    "shortDescription": "Estimer les économies de comptage net solaire."
+    "shortDescription": "Estimer les économies de comptage net solaire.",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que la facturation nette (net metering) ?",
+        "answer": "Un arrangement de facturation où vous obtenez un crédit pour l'excès d'énergie solaire que vous envoyez au réseau."
+      },
+      {
+        "question": "Facturation nette (net metering) ou facturation nette (net billing) ?",
+        "answer": "La facturation nette (net metering) vous crédite aux tarifs de détail ; la facturation nette (net billing) paie un tarif de gros inférieur. La politique dépend de votre État et de votre fournisseur."
+      },
+      {
+        "question": "Y a-t-il des plafonds ?",
+        "answer": "Certains fournisseurs plafonnent la valeur annuelle du crédit ou la reportent à l'année suivante uniquement avec une réduction."
+      }
+    ]
   },
   "child-support": {
     "name": "Calculateur de pension alimentaire pour enfants",
     "description": "Estimer les obligations mensuelles de pension alimentaire pour enfants en utilisant la directive du revenu partagé ou du pourcentage de revenu de votre État. Prend en charge la Californie, New York, le Texas, la Floride, l'Illinois et un cas générique de repli.",
-    "shortDescription": "Estimer la pension alimentaire mensuelle par État."
+    "shortDescription": "Estimer la pension alimentaire mensuelle par État.",
+    "faqs": [
+      {
+        "question": "Quelle est la précision de cette estimation ?",
+        "answer": "Elle applique la formule de directive d'État publiée aux données que vous fournissez. Les ordonnances réelles peuvent varier en fonction des arrangements de garde, des coûts des soins de santé et de la discrétion judiciaire."
+      },
+      {
+        "question": "Tient-il compte de la garde partagée ?",
+        "answer": "Partiellement — de nombreux États ajustent le soutien en fonction du nombre de nuitées. Ce calculateur donne une base de référence ; votre ordonnance finale peut être réduite pour le temps de parentalité partagé."
+      },
+      {
+        "question": "Le résultat est-il juridiquement contraignant ?",
+        "answer": "Non. Il s'agit d'une estimation à des fins de planification uniquement. Les ordonnances de soutien définitives sont émises par un tribunal."
+      }
+    ]
   },
   "alimony-calc": {
     "name": "Calculateur de pension alimentaire / soutien conjugal",
     "description": "Estimer la pension alimentaire mensuelle (soutien conjugal / maintenance) et la durée probable en fonction des revenus, de la durée du mariage et des directives de l'État.",
-    "shortDescription": "Estimer le montant et la durée de la pension alimentaire."
+    "shortDescription": "Estimer le montant et la durée de la pension alimentaire.",
+    "faqs": [
+      {
+        "question": "Comment l'indemnité de conjoint est-elle calculée ?",
+        "answer": "La plupart des États utilisent une formule basée sur la différence de revenus des conjoints plus la durée du mariage. Certains, comme la Californie (après jugement) et le Texas, accordent aux juges une grande discrétion."
+      },
+      {
+        "question": "Combien de temps dure l'indemnité de conjoint ?",
+        "answer": "Souvent 30 à 50 % de la durée du mariage. Les mariages de plus de 20 ans peuvent recevoir un soutien indéfini dans certains États."
+      },
+      {
+        "question": "Le montant peut-il changer plus tard ?",
+        "answer": "Oui — la plupart des ordonnances d'indemnité de conjoint peuvent être modifiées s'il y a un changement substantiel de revenu, un remariage ou une cohabitation."
+      }
+    ]
   },
   "divorce-cost": {
     "name": "Estimateur des coûts de divorce",
     "description": "Estimer le coût total d'un divorce, y compris les frais de dépôt, les heures d'avocat, la médiation et les frais de justice — pour les cas contestés et non contestés.",
-    "shortDescription": "Estimer le coût total d'un divorce."
+    "shortDescription": "Estimer le coût total d'un divorce.",
+    "faqs": [
+      {
+        "question": "Quel est le coût moyen d'un divorce ?",
+        "answer": "Non contesté : 500 $ à 2 500 $. Contesté : 15 000 $ à 30 000 $+ par conjoint. Les coûts augmentent avec les actifs, les litiges de garde et la durée du procès."
+      },
+      {
+        "question": "Puis-je éviter les honoraires d'avocat ?",
+        "answer": "Oui — les dépôts DIY fonctionnent pour les divorces simples et non contestés sans enfants ni biens partagés. La plupart des tribunaux ont des dossiers d'auto-assistance."
+      },
+      {
+        "question": "Le perdant paie-t-il les frais ?",
+        "answer": "Rarement. La plupart des tribunaux américains exigent que chaque conjoint paie son propre avocat à moins qu'une partie n'ait agi de mauvaise foi."
+      }
+    ]
   },
   "sol-deadline": {
     "name": "Calculateur de date limite de prescription",
     "description": "Entrez la date à laquelle votre réclamation est née et votre État — obtenez la date limite de dépôt exacte et le nombre de jours qu'il vous reste pour intenter une action en justice. Couvre les contrats, les dommages corporels, la fraude et les dommages matériels.",
-    "shortDescription": "Trouvez votre date limite de dépôt exacte par date."
+    "shortDescription": "Trouvez votre date limite de dépôt exacte par date.",
+    "faqs": [
+      {
+        "question": "Que se passe-t-il si ma date limite est déjà passée ?",
+        "answer": "Votre réclamation est probablement prescrite. Certaines exceptions étroites (règle de la découverte, dissimulation frauduleuse, plaignants mineurs) peuvent s'appliquer — parlez-en immédiatement à un avocat."
+      },
+      {
+        "question": "Quand le compte à rebours commence-t-il ?",
+        "answer": "Généralement à la date de la blessure, de la rupture ou de la découverte du préjudice — selon la réclamation et l'État."
+      },
+      {
+        "question": "La date limite peut-elle être suspendue ?",
+        "answer": "Oui — la 'suspension' peut arrêter le compte à rebours pour les mineurs, l'incapacité mentale ou l'absence du défendeur de l'État."
+      }
+    ]
   },
   "wrongful-term-value": {
     "name": "Estimateur de la valeur d'une affaire de licenciement abusif",
     "description": "Estimer la valeur potentielle d'une réclamation pour licenciement abusif, y compris les salaires perdus, les avantages perdus, les dommages-intérêts pour détresse émotionnelle et les honoraires d'avocat.",
-    "shortDescription": "Estimer la valeur de votre affaire de licenciement abusif."
+    "shortDescription": "Estimer la valeur de votre affaire de licenciement abusif.",
+    "faqs": [
+      {
+        "question": "Quels sont les dommages typiques ?",
+        "answer": "Arriérés de salaire (salaires de la résiliation au règlement), salaire futur (pertes de revenus futures), avantages sociaux, et dans certains cas, détresse émotionnelle et dommages punitifs."
+      },
+      {
+        "question": "Dois-je atténuer les dommages ?",
+        "answer": "Oui — vous devez faire des efforts raisonnables pour trouver un nouvel emploi. Les salaires d'un nouvel emploi compensent les arriérés de salaire."
+      },
+      {
+        "question": "Quel est un règlement typique ?",
+        "answer": "La plupart des cas de licenciement abusif se règlent pour 6 à 12 mois de salaire. Les cas très médiatisés ou de discrimination peuvent atteindre plus de 500 000 $."
+      }
+    ]
   },
   "severance-fairness": {
     "name": "Score d'équité de l'offre d'indemnité de départ",
     "description": "Évaluez votre offre d'indemnité de départ de 0 à 100 par rapport aux références de l'industrie pour votre rôle, votre ancienneté et votre niveau de salaire. Obtenez une évaluation d'équité et des conseils de négociation.",
-    "shortDescription": "Évaluez votre offre d'indemnité de départ par rapport aux références."
+    "shortDescription": "Évaluez votre offre d'indemnité de départ par rapport aux références.",
+    "faqs": [
+      {
+        "question": "L'indemnité de départ est-elle exigée par la loi ?",
+        "answer": "Non — la plupart des employeurs américains ne sont pas tenus d'offrir une indemnité de départ, sauf si elle est promise dans un contrat ou une politique. Beaucoup le font par bonne volonté ou en échange d'une renonciation aux réclamations."
+      },
+      {
+        "question": "Dois-je négocier ?",
+        "answer": "Presque toujours oui. Les offres initiales sont généralement inférieures de 20 à 40 % à ce que les employeurs paieront s'ils sont poussés, en particulier pour le personnel expérimenté ou de haut niveau."
+      },
+      {
+        "question": "Que dois-je rechercher ?",
+        "answer": "Le montant de l'indemnité de départ, la continuation des soins de santé, les services de reclassement, l'équilibre de non-dénigrement et l'étendue de la renonciation aux réclamations."
+      }
+    ]
   },
   "lease-break-penalty": {
     "name": "Calculateur de pénalité de rupture de bail / résiliation anticipée",
     "description": "Estimer la pénalité financière pour avoir rompu votre bail de manière anticipée — y compris les mois restants, l'atténuation par votre propriétaire et les plafonds de responsabilité spécifiques à l'État.",
-    "shortDescription": "Estimer le coût de la rupture de votre bail."
+    "shortDescription": "Estimer le coût de la rupture de votre bail.",
+    "faqs": [
+      {
+        "question": "Puis-je simplement partir ?",
+        "answer": "Pas sans conséquences. La plupart des baux permettent aux propriétaires de poursuivre en justice pour les loyers impayés jusqu'à la fin du terme, plus les frais de publicité et de relocation."
+      },
+      {
+        "question": "Mon propriétaire doit-il trouver un nouveau locataire ?",
+        "answer": "Dans la plupart des États, oui – les propriétaires ont un « devoir d'atténuation » en essayant de relouer le logement. Une fois reloué, votre responsabilité prend fin."
+      },
+      {
+        "question": "Existe-t-il des raisons légales de rompre un bail ?",
+        "answer": "Le service militaire actif (SCRA), la violence domestique (spécifique à l'État), les conditions inhabitables et le harcèlement du propriétaire sont des raisons protégées courantes."
+      }
+    ]
+  },
+  "_categories": {
+    "contract": {
+      "label": "Outils Contractuels",
+      "description": "Analysez, comprenez et travaillez avec les contrats et accords."
+    },
+    "consumer": {
+      "label": "Outils Consommateur",
+      "description": "Calculez les délais, les frais et vérifiez vos droits de consommateur."
+    },
+    "employment": {
+      "label": "Outils d'Emploi",
+      "description": "Naviguez dans les contrats de travail, les taux et les obligations."
+    },
+    "generators": {
+      "label": "Générateurs de Documents",
+      "description": "Générez des documents juridiques à partir de formulaires simples."
+    },
+    "ai": {
+      "label": "Outils d'Analyse IA",
+      "description": "Analyse, notation et comparaison de contrats basées sur l'IA."
+    },
+    "realestate": {
+      "label": "Outils Immobiliers",
+      "description": "Calculatrices et générateurs pour les accords de location et de propriété."
+    },
+    "business": {
+      "label": "Outils Commerciaux",
+      "description": "Outils pour la création d'entreprise, la classification et la planification financière."
+    },
+    "finance": {
+      "label": "Finance & Trading",
+      "description": "Calculatrices pour le trading, la crypto, l'investissement et les finances personnelles."
+    },
+    "energy": {
+      "label": "Énergie Verte & Solaire",
+      "description": "Calculatrices de ROI solaire, outils d'économie d'énergie et vérificateurs de baux verts."
+    },
+    "family": {
+      "label": "Outils de Droit de la Famille",
+      "description": "Calculatrices pour la pension alimentaire pour enfants, la pension alimentaire, les coûts de divorce et les estimations juridiques liées à la famille."
+    }
   }
 }

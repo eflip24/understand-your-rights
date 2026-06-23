@@ -2,566 +2,2190 @@
   "reading-time": {
     "name": "Rechner für die Lesedauer von Verträgen",
     "description": "Fügen Sie Ihren Vertragstext ein und erhalten Sie eine geschätzte Lesedauer basierend auf der Wortanzahl und der rechtlichen Komplexität. Hilft Ihnen bei der Planung, wie lange die Überprüfung eines Dokuments dauern wird.",
-    "shortDescription": "Schätzen Sie die Lesedauer eines Vertrags."
+    "shortDescription": "Schätzen Sie die Lesedauer eines Vertrags.",
+    "faqs": [
+      {
+        "question": "Wie wird die Lesezeit berechnet?",
+        "answer": "Wir verwenden eine durchschnittliche Lesegeschwindigkeit von 200 Wörtern pro Minute für Rechtstexte, die aufgrund ihrer Komplexität langsamer ist als bei normalen Texten."
+      },
+      {
+        "question": "Beeinflusst die Komplexität die Schätzung?",
+        "answer": "Ja, die Dichte des juristischen Fachjargons erfordert zusätzliche Zeit, um das erneute Lesen und Verstehen zu berücksichtigen."
+      },
+      {
+        "question": "Ist dies für alle Verträge genau?",
+        "answer": "Es ist eine Schätzung. Komplexe Finanz- oder technische Verträge können länger dauern."
+      }
+    ]
   },
   "word-counter": {
     "name": "Wortzähler für Verträge",
     "description": "Erhalten Sie detaillierte Statistiken zu Ihrem Vertrag, einschließlich Wortanzahl, Zeichenanzahl, Satzanzahl, Absatzanzahl und geschätzter Seitenzahl.",
-    "shortDescription": "Erhalten Sie detaillierte Wort- und Zeichenstatistiken."
+    "shortDescription": "Erhalten Sie detaillierte Wort- und Zeichenstatistiken.",
+    "faqs": [
+      {
+        "question": "Wie werden Seiten geschätzt?",
+        "answer": "Wir schätzen 250 Wörter pro Seite für Standard-Rechtsdokumente."
+      },
+      {
+        "question": "Werden Kopf- und Fußzeilen gezählt?",
+        "answer": "Es zählt den gesamten Text, den Sie in das Tool einfügen."
+      },
+      {
+        "question": "Kann ich dies für nicht-juristische Dokumente verwenden?",
+        "answer": "Absolut! Der Wortzähler funktioniert für jeden Text."
+      }
+    ]
   },
   "jargon-translator": {
     "name": "Übersetzer für juristische Fachsprache",
     "description": "Schlagen Sie gängige juristische Begriffe nach und erhalten Sie einfache Erklärungen. Durchsuchen Sie unser Wörterbuch mit über 100 juristischen Begriffen, um zu verstehen, was Ihr Vertrag tatsächlich aussagt.",
-    "shortDescription": "Übersetzen Sie juristische Begriffe in einfache Sprache."
+    "shortDescription": "Übersetzen Sie juristische Begriffe in einfache Sprache.",
+    "faqs": [
+      {
+        "question": "Wie viele Begriffe sind im Wörterbuch enthalten?",
+        "answer": "Wir haben derzeit über 100 gängige juristische Begriffe mit einfachen Erklärungen in englischer Sprache."
+      },
+      {
+        "question": "Ist dies eine Rechtsberatung?",
+        "answer": "Nein. Dieses Tool bietet allgemeine Erklärungen. Konsultieren Sie immer einen Anwalt für spezifische Rechtsfragen."
+      },
+      {
+        "question": "Kann ich neue Begriffe vorschlagen?",
+        "answer": "Wir erweitern unser Wörterbuch ständig. Kontaktieren Sie uns mit Vorschlägen."
+      }
+    ]
   },
   "clause-finder": {
     "name": "Vertragsklausel-Finder",
     "description": "Fügen Sie Ihren Vertrag ein und suchen Sie nach gängigen Klauseltypen wie Freistellung, Kündigung, Wettbewerbsverbot, Vertraulichkeit und mehr. Finden Sie schnell die Abschnitte, die am wichtigsten sind.",
-    "shortDescription": "Finden Sie spezifische Klauseln in Ihren Verträgen."
+    "shortDescription": "Finden Sie spezifische Klauseln in Ihren Verträgen.",
+    "faqs": [
+      {
+        "question": "Welche Klauseltypen kann es finden?",
+        "answer": "Es sucht nach über 15 gängigen Klauseltypen, einschließlich Freistellung, Kündigung, Wettbewerbsverbot, Vertraulichkeit, Haftung und mehr."
+      },
+      {
+        "question": "Wie genau ist der Finder?",
+        "answer": "Es verwendet Schlüsselwortabgleich, um wahrscheinliche Klauselpositionen zu identifizieren. Überprüfen Sie den Kontext zur Bestätigung."
+      },
+      {
+        "question": "Funktioniert es mit jedem Vertragsformat?",
+        "answer": "Ja, solange Sie den Textinhalt Ihres Vertrags einfügen."
+      }
+    ]
   },
   "cancellation-deadline": {
     "name": "Rechner für Kündigungsfristen",
     "description": "Berechnen Sie Ihre Kündigungsfrist basierend auf Ihrem Anmeldedatum und der Widerrufsfrist (cooling-off period). Wissen Sie genau, wann Ihr Kündigungsrecht abläuft.",
-    "shortDescription": "Berechnen Sie, wann Ihre Kündigungsfrist endet."
+    "shortDescription": "Berechnen Sie, wann Ihre Kündigungsfrist endet.",
+    "faqs": [
+      {
+        "question": "Was ist eine Widerrufsfrist?",
+        "answer": "Eine Widerrufsfrist ist ein Zeitfenster nach Vertragsunterzeichnung, innerhalb dessen Sie ohne Vertragsstrafe kündigen können."
+      },
+      {
+        "question": "Sind Widerrufsfristen überall gleich?",
+        "answer": "Nein, sie variieren je nach Gerichtsbarkeit und Vertragsart. Gängige Fristen sind 3, 7, 14 und 30 Tage."
+      },
+      {
+        "question": "Sind Wochenenden inbegriffen?",
+        "answer": "Sie können wählen, ob nur Werktage oder Kalendertage gezählt werden sollen."
+      }
+    ]
   },
   "notice-period": {
     "name": "Rechner für Kündigungsfristen",
     "description": "Berechnen Sie das Enddatum Ihrer Kündigungsfrist basierend auf Ihrem Startdatum und den Kündigungsbedingungen. Funktioniert für Arbeits-, Miet- und Dienstleistungsverträge.",
-    "shortDescription": "Berechnen Sie, wann Ihre Kündigungsfrist endet."
+    "shortDescription": "Berechnen Sie, wann Ihre Kündigungsfrist endet.",
+    "faqs": [
+      {
+        "question": "Welche Kündigungsfristen sind üblich?",
+        "answer": "Übliche Fristen sind 2 Wochen, 30 Tage, 60 Tage und 90 Tage, abhängig von der Art der Vereinbarung."
+      },
+      {
+        "question": "Berücksichtigt es Wochenenden?",
+        "answer": "Sie können zwischen Kalendertagen und Werktagen wechseln."
+      },
+      {
+        "question": "Kann ich dies für Mietverträge verwenden?",
+        "answer": "Ja! Es funktioniert für jede Vereinbarung mit einer Kündigungsfrist."
+      }
+    ]
   },
   "late-fee": {
     "name": "Rechner für Verzugsgebühren",
     "description": "Berechnen Sie die gesamten Verzugsgebühren für eine überfällige Zahlung. Geben Sie den Hauptbetrag, den Gebührensatz und die Anzahl der Verzugstage ein, um zu sehen, was Sie schulden oder Ihnen geschuldet wird.",
-    "shortDescription": "Berechnen Sie Verzugsgebühren für überfällige Zahlungen."
+    "shortDescription": "Berechnen Sie Verzugsgebühren für überfällige Zahlungen.",
+    "faqs": [
+      {
+        "question": "Wie werden Verzugsgebühren typischerweise berechnet?",
+        "answer": "Die meisten Verzugsgebühren sind entweder ein Pauschalbetrag oder ein Prozentsatz des ausstehenden Betrags, der täglich oder monatlich berechnet wird."
+      },
+      {
+        "question": "Gibt es gesetzliche Beschränkungen für Verzugsgebühren?",
+        "answer": "Ja, viele Gerichtsbarkeiten begrenzen Verzugsgebühren. Überprüfen Sie Ihre lokalen Gesetze."
+      },
+      {
+        "question": "Kann ich dies für Rechnungen verwenden?",
+        "answer": "Ja, es funktioniert für jede Art von überfälliger Zahlung."
+      }
+    ]
   },
   "refund-checker": {
     "name": "Rückerstattungsberechtigungs-Prüfer",
     "description": "Beantworten Sie ein paar einfache Fragen zu Ihrem Kauf und Ihrer Situation, um zu prüfen, ob Sie möglicherweise Anspruch auf eine Rückerstattung haben. Deckt gängige Verbraucherszenarien ab.",
-    "shortDescription": "Prüfen Sie, ob Sie Anspruch auf eine Rückerstattung haben."
+    "shortDescription": "Prüfen Sie, ob Sie Anspruch auf eine Rückerstattung haben.",
+    "faqs": [
+      {
+        "question": "Ist das Ergebnis rechtsverbindlich?",
+        "answer": "Nein. Dies bietet allgemeine Hinweise basierend auf gängigen Verbraucherschutzregeln. Überprüfen Sie immer Ihren spezifischen Vertrag und die lokalen Gesetze."
+      },
+      {
+        "question": "Welche Szenarien deckt es ab?",
+        "answer": "Es deckt Online-Käufe, Einkäufe im Geschäft, Dienstleistungen, Abonnements und fehlerhafte Produkte ab."
+      },
+      {
+        "question": "Variiert es je nach Land?",
+        "answer": "Der Checker bietet allgemeine Hinweise. Spezifische Rechte variieren je nach Gerichtsbarkeit."
+      }
+    ]
   },
   "non-compete": {
     "name": "Dauerprüfer für Wettbewerbsverbote",
     "description": "Geben Sie die Dauer und den Staat Ihrer Wettbewerbsverbotsklausel ein, um allgemeine Informationen zur Durchsetzbarkeit zu erhalten. Einige Staaten schränken Wettbewerbsverbote vollständig ein oder verbieten sie.",
-    "shortDescription": "Prüfen Sie die Durchsetzbarkeit von Wettbewerbsverboten nach Bundesstaat."
+    "shortDescription": "Prüfen Sie die Durchsetzbarkeit von Wettbewerbsverboten nach Bundesstaat.",
+    "faqs": [
+      {
+        "question": "Sind Wettbewerbsverbote durchsetzbar?",
+        "answer": "Dies variiert stark je nach Bundesstaat. Einige Staaten wie Kalifornien setzen sie im Allgemeinen nicht durch."
+      },
+      {
+        "question": "Was ist eine typische Dauer eines Wettbewerbsverbots?",
+        "answer": "Die meisten Gerichte halten 1-2 Jahre für angemessen. Längere Zeiträume sind schwerer durchzusetzen."
+      },
+      {
+        "question": "Sollte ich ein Wettbewerbsverbot unterzeichnen?",
+        "answer": "Konsultieren Sie vor der Unterzeichnung einen Arbeitsrechtsanwalt. Dieses Tool bietet nur allgemeine Informationen."
+      }
+    ]
   },
   "freelance-rate": {
     "name": "Rechner für Freelancer-Tarife",
     "description": "Rechnen Sie zwischen Stundensätzen, Projektgebühren und jährlichem Einkommen um. Berücksichtigen Sie Steuern, Ausgaben und abrechenbare Stunden, um Ihren wahren Freelancer-Tarif zu ermitteln.",
-    "shortDescription": "Rechnen Sie zwischen Stunden-, Projekt- und Jahressätzen um."
+    "shortDescription": "Rechnen Sie zwischen Stunden-, Projekt- und Jahressätzen um.",
+    "faqs": [
+      {
+        "question": "Wie berechne ich meinen Stundensatz?",
+        "answer": "Beginnen Sie mit Ihrem gewünschten Jahreseinkommen, addieren Sie Steuern und Ausgaben und teilen Sie dann durch Ihre geschätzten abrechenbaren Stunden."
+      },
+      {
+        "question": "Was sind typische abrechenbare Stunden?",
+        "answer": "Die meisten Freiberufler berechnen 1.000-1.500 Stunden pro Jahr von insgesamt 2.080 Arbeitsstunden."
+      },
+      {
+        "question": "Sollte ich die Kosten für Sozialleistungen berücksichtigen?",
+        "answer": "Ja! Berücksichtigen Sie Krankenversicherung, Altersvorsorge und andere Leistungen, die Sie als Angestellter erhalten würden."
+      }
+    ]
   },
   "invoice-interest": {
     "name": "Rechner für Verzugszinsen bei Rechnungen",
     "description": "Berechnen Sie die Zinsen, die für überfällige Rechnungszahlungen geschuldet werden. Geben Sie den Rechnungsbetrag, den Zinssatz und die überfälligen Tage ein, um den fälligen Gesamtbetrag zu ermitteln.",
-    "shortDescription": "Berechnen Sie Zinsen für unbezahlte Rechnungen."
+    "shortDescription": "Berechnen Sie Zinsen für unbezahlte Rechnungen.",
+    "faqs": [
+      {
+        "question": "Welchen Zinssatz sollte ich berechnen?",
+        "answer": "Übliche Sätze liegen bei 1-1,5 % pro Monat. Überprüfen Sie Ihre Vertragsbedingungen und lokalen Vorschriften."
+      },
+      {
+        "question": "Kann ich rechtlich Zinsen für verspätete Zahlungen berechnen?",
+        "answer": "In den meisten Fällen ja, wenn dies in Ihrem Vertrag oder Ihren Rechnungsbedingungen festgelegt ist."
+      },
+      {
+        "question": "Wie werden Tageszinsen berechnet?",
+        "answer": "Jahressatz geteilt durch 365, multipliziert mit der Anzahl der überfälligen Tage und dem Kapitalbetrag."
+      }
+    ]
   },
   "nda-generator": {
     "name": "NDA-Vorlagen-Generator",
     "description": "Erstellen Sie eine einfache Geheimhaltungsvereinbarung, indem Sie ein einfaches Formular ausfüllen. Passen Sie Parteien, Dauer, Umfang und Gerichtsstand an.",
-    "shortDescription": "Erstellen Sie eine grundlegende NDA aus einem Formular."
+    "shortDescription": "Erstellen Sie eine grundlegende NDA aus einem Formular.",
+    "faqs": [
+      {
+        "question": "Ist diese NDA rechtlich bindend?",
+        "answer": "Dies generiert eine Vorlage. Lassen Sie sie von einem Anwalt überprüfen, bevor Sie sie für wichtige Vereinbarungen verwenden."
+      },
+      {
+        "question": "Welche Art von NDA wird generiert?",
+        "answer": "Eine gegenseitige oder einseitige NDA, je nach Ihrer Auswahl, die Standard-Vertraulichkeitsbedingungen abdeckt."
+      },
+      {
+        "question": "Kann ich die Vorlage anpassen?",
+        "answer": "Ja, der generierte Text kann kopiert und bei Bedarf bearbeitet werden."
+      }
+    ]
   },
   "privacy-generator": {
     "name": "Datenschutzerklärung-Generator",
     "description": "Erstellen Sie eine Datenschutzerklärung für Ihre Website oder App. Beantworten Sie Fragen zu Ihren Datenpraktiken und erhalten Sie ein formatiertes Dokument zur Datenschutzerklärung.",
-    "shortDescription": "Erstellen Sie eine Datenschutzerklärung für Ihre Website."
+    "shortDescription": "Erstellen Sie eine Datenschutzerklärung für Ihre Website.",
+    "faqs": [
+      {
+        "question": "Entspricht dies der DSGVO?",
+        "answer": "Es enthält gängige DSGVO-Bestimmungen, sollte aber von einem Juristen auf vollständige Einhaltung überprüft werden."
+      },
+      {
+        "question": "Kann ich dies für meine App verwenden?",
+        "answer": "Ja, der Generator deckt sowohl Websites als auch mobile Anwendungen ab."
+      },
+      {
+        "question": "Wie oft sollte ich meine Datenschutzerklärung aktualisieren?",
+        "answer": "Aktualisieren Sie sie, wann immer sich Ihre Datenpraktiken ändern, oder mindestens jährlich."
+      }
+    ]
   },
   "complaint-generator": {
     "name": "Beschwerdebrief-Generator",
     "description": "Erstellen Sie einen formellen Beschwerdebrief. Füllen Sie die Details zu Ihrem Anliegen aus und erhalten Sie einen professionell formatierten Brief, der versandfertig ist.",
-    "shortDescription": "Erstellen Sie einen formellen Beschwerdebrief."
+    "shortDescription": "Erstellen Sie einen formellen Beschwerdebrief.",
+    "faqs": [
+      {
+        "question": "Welche Arten von Beschwerden deckt dies ab?",
+        "answer": "Produktprobleme, Servicebeschwerden, Rechnungsstreitigkeiten und allgemeine Verbraucherbeschwerden."
+      },
+      {
+        "question": "Soll ich den Brief per Post oder E-Mail senden?",
+        "answer": "Für formelle Beschwerden bietet ein Einschreiben einen Zustellnachweis. E-Mails sind für die erste Kontaktaufnahme schneller."
+      },
+      {
+        "question": "Was sollte ich meinem Brief beifügen?",
+        "answer": "Fügen Sie Kopien von Quittungen, Verträgen, Fotos oder andere Beweismittel bei, die Ihre Beschwerde stützen."
+      }
+    ]
   },
   "tos-generator": {
     "name": "AGB-Generator",
     "description": "Erstellen Sie Allgemeine Geschäftsbedingungen (AGB) für Ihre Website oder Anwendung. Umfasst Benutzervereinbarungen, Haftungsbeschränkungen und Standard-Rechtsbestimmungen.",
-    "shortDescription": "Erstellen Sie AGB für Ihre Website."
+    "shortDescription": "Erstellen Sie AGB für Ihre Website.",
+    "faqs": [
+      {
+        "question": "Benötige ich rechtlich gesehen Allgemeine Geschäftsbedingungen?",
+        "answer": "Obwohl nicht immer gesetzlich vorgeschrieben, schützen sie Ihr Unternehmen und legen die Erwartungen der Benutzer fest."
+      },
+      {
+        "question": "Was ist der Unterschied zwischen AGB und einer Datenschutzerklärung?",
+        "answer": "AGB regeln das Benutzerverhalten und Ihre Haftung. Die Datenschutzerklärung behandelt die Datenerfassung und -nutzung."
+      },
+      {
+        "question": "Können Benutzer durch die Nutzung meiner Website zustimmen?",
+        "answer": "Browsewrap-Vereinbarungen sind schwächer als Clickwrap. Erwägen Sie, eine explizite Zustimmung zu verlangen."
+      }
+    ]
   },
   "red-flag-scanner": {
     "name": "Vertrags-Red-Flag-Scanner",
     "description": "Fügen Sie Ihren Vertrag ein und lassen Sie die KI riskante Klauseln, unfaire Bedingungen und potenzielle rechtliche Probleme mit Schweregraden und Empfehlungen identifizieren.",
-    "shortDescription": "KI scannt Verträge nach riskanten Klauseln."
+    "shortDescription": "KI scannt Verträge nach riskanten Klauseln.",
+    "faqs": [
+      {
+        "question": "Wie funktioniert der Scanner?",
+        "answer": "Er verwendet KI, um Ihren Vertragstext zu analysieren und Klauseln zu identifizieren, die problematisch, einseitig oder versteckte Risiken enthalten könnten."
+      },
+      {
+        "question": "Ist dies Rechtsberatung?",
+        "answer": "Nein. Dies ist ein KI-gestütztes Analysetool zu Bildungszwecken. Konsultieren Sie immer einen Anwalt für rechtliche Entscheidungen."
+      },
+      {
+        "question": "Wie lange dauert die Analyse?",
+        "answer": "Typischerweise 5-15 Sekunden, abhängig von der Länge des Vertrags."
+      }
+    ]
   },
   "nda-fairness": {
     "name": "NDA-Fairness-Score",
     "description": "Fügen Sie eine NDA ein und erhalten Sie einen Fairness-Score von 0-100, mit einer Aufschlüsselung der Stärken, Bedenken und Empfehlungen für Verhandlungen.",
-    "shortDescription": "Bewerten Sie die Fairness Ihrer NDA von 0-100."
+    "shortDescription": "Bewerten Sie die Fairness Ihrer NDA von 0-100.",
+    "faqs": [
+      {
+        "question": "Was bedeutet die Bewertung?",
+        "answer": "Eine Bewertung von 70+ deutet auf ein generell faires NDA hin. Unter 40 deutet auf signifikante einseitige Bedingungen hin, die verhandelt werden sollten."
+      },
+      {
+        "question": "Funktioniert es auch für gegenseitige NDAs?",
+        "answer": "Ja, es analysiert sowohl gegenseitige als auch einseitige NDAs und berücksichtigt, ob die Verpflichtungen ausgewogen sind."
+      },
+      {
+        "question": "Kann ich dies vor der Unterzeichnung verwenden?",
+        "answer": "Absolut – das ist der ideale Anwendungsfall. Überprüfen Sie die Bewertung und die Bedenken, bevor Sie ein NDA unterzeichnen."
+      }
+    ]
   },
   "lease-analyzer": {
     "name": "Mietvertrag-Analysator",
     "description": "Fügen Sie Ihren Mietvertrag ein und erhalten Sie eine Zusammenfassung der wichtigsten Bedingungen, versteckten Risiken und Empfehlungen. Perfekt für Mieter, die einen neuen Mietvertrag prüfen.",
-    "shortDescription": "Analysieren Sie Mietverträge auf Risiken."
+    "shortDescription": "Analysieren Sie Mietverträge auf Risiken.",
+    "faqs": [
+      {
+        "question": "Welche Arten von Mietverträgen werden analysiert?",
+        "answer": "Wohn- und Gewerbemietverträge. Es identifiziert Schlüsselbegriffe wie Miete, Kaution, Dauer und Wartungspflichten."
+      },
+      {
+        "question": "Werden versteckte Gebühren erkannt?",
+        "answer": "Die KI sucht nach ungewöhnlichen Gebühren, Eskalationsklauseln und Kosten, die auf den ersten Blick möglicherweise nicht offensichtlich sind."
+      },
+      {
+        "question": "Sollte ich der Analyse vollständig vertrauen?",
+        "answer": "Nutzen Sie es als Ausgangspunkt. Bei wichtigen Mietverpflichtungen sollten Sie das vollständige Dokument immer von einem Anwalt überprüfen lassen."
+      }
+    ]
   },
   "terms-summarizer": {
     "name": "AGB-Zusammenfasser",
     "description": "Fügen Sie beliebige Allgemeine Geschäftsbedingungen (AGB) oder juristische Dokumente ein und erhalten Sie eine Zusammenfassung in einfacher Sprache, nach Themen geordnet und mit hervorgehobenen bedenklichen Abschnitten.",
-    "shortDescription": "Fassen Sie AGB in einfacher Sprache zusammen."
+    "shortDescription": "Fassen Sie AGB in einfacher Sprache zusammen.",
+    "faqs": [
+      {
+        "question": "Wie lang darf das Dokument sein?",
+        "answer": "Es funktioniert am besten mit Dokumenten unter 10.000 Wörtern. Bei längeren Dokumenten fügen Sie die relevantesten Abschnitte ein."
+      },
+      {
+        "question": "Was bedeutet 'Bedenken'?",
+        "answer": "Als Bedenken gekennzeichnete Abschnitte enthalten Bedingungen, die ungewöhnlich, potenziell ungünstig oder besonders beachtenswert sind."
+      },
+      {
+        "question": "Kann ich dies für Datenschutzrichtlinien verwenden?",
+        "answer": "Ja! Es funktioniert für jedes Rechtsdokument – AGB, Datenschutzrichtlinien, EULAs und mehr."
+      }
+    ]
   },
   "contract-comparison": {
     "name": "Vertragsvergleichstool",
     "description": "Fügen Sie zwei Verträge nebeneinander ein und erhalten Sie einen KI-gestützten Vergleich, der wichtige Unterschiede, geänderte Bedingungen und welche Version welche Partei begünstigt, hervorhebt.",
-    "shortDescription": "Vergleichen Sie zwei Verträge direkt miteinander."
+    "shortDescription": "Vergleichen Sie zwei Verträge direkt miteinander.",
+    "faqs": [
+      {
+        "question": "Was sollte ich vergleichen?",
+        "answer": "Vergleichen Sie verschiedene Versionen desselben Vertrags, konkurrierende Angebote oder einen vorgeschlagenen Vertrag mit einer Standardvorlage."
+      },
+      {
+        "question": "Zeigt es genaue Textunterschiede an?",
+        "answer": "Es hebt semantische Unterschiede hervor – Änderungen in Bedeutung, Umfang und Verpflichtungen – anstatt wortweise Unterschiede."
+      },
+      {
+        "question": "Kann ich verschiedene Vertragsarten vergleichen?",
+        "answer": "Das können Sie, aber die nützlichsten Vergleiche sind zwischen ähnlichen Vertragsarten (z.B. zwei Arbeitsverträge)."
+      }
+    ]
   },
   "clause-explainer": {
     "name": "Klauselerklärer",
     "description": "Fügen Sie eine beliebige Rechtsklausel ein und erhalten Sie eine Erklärung in einfacher Sprache, eine Risikobewertung, praktische Auswirkungen und Verhandlungstipps.",
-    "shortDescription": "Erhalten Sie Klauselerklärungen in einfacher Sprache."
+    "shortDescription": "Erhalten Sie Klauselerklärungen in einfacher Sprache.",
+    "faqs": [
+      {
+        "question": "Welche Art von Klauseln kann ich erklären?",
+        "answer": "Jede Rechtsklausel aus jeder Art von Vertrag – Arbeitsvertrag, Mietvertrag, NDA, Nutzungsbedingungen oder jede andere Vereinbarung."
+      },
+      {
+        "question": "Ist die Erklärung rechtlich korrekt?",
+        "answer": "Die KI liefert allgemeine Interpretationen. Bei Klauseln mit erheblichen finanziellen oder rechtlichen Auswirkungen konsultieren Sie einen Anwalt."
+      },
+      {
+        "question": "Kann ich mehrere Klauseln einfügen?",
+        "answer": "Für die besten Ergebnisse fügen Sie jeweils eine Klausel ein. Dies gewährleistet fokussierte, detaillierte Erklärungen."
+      }
+    ]
   },
   "contract-expiration": {
     "name": "Vertragsablauf-Tracker",
     "description": "Geben Sie Ihre Vertragsdaten ein und verfolgen Sie Abläufe an einem Ort. Sehen Sie, welche Verträge bald ablaufen, aktiv sind oder bereits abgelaufen sind.",
-    "shortDescription": "Verfolgen Sie Vertragsablaufdaten."
+    "shortDescription": "Verfolgen Sie Vertragsablaufdaten.",
+    "faqs": [
+      {
+        "question": "Kann ich mehrere Verträge verfolgen?",
+        "answer": "Ja, fügen Sie so viele Verträge hinzu, wie Sie benötigen, und sehen Sie sie nach Ablaufdatum sortiert."
+      },
+      {
+        "question": "Sendet es Benachrichtigungen?",
+        "answer": "Dies ist ein manueller Tracker. Überprüfen Sie regelmäßig Ihre bevorstehenden Abläufe."
+      },
+      {
+        "question": "Was zählt als 'läuft bald ab'?",
+        "answer": "Verträge, die innerhalb von 30 Tagen ablaufen, werden als 'läuft bald ab' gekennzeichnet."
+      }
+    ]
   },
   "signature-block": {
     "name": "Signaturblock-Generator",
     "description": "Erstellen Sie korrekt formatierte Signaturblöcke für Einzelpersonen, Kapitalgesellschaften, LLCs und Personengesellschaften. Kopieren Sie diese und fügen Sie sie in Ihre Verträge ein.",
-    "shortDescription": "Erstellen Sie korrekte Signaturblöcke."
+    "shortDescription": "Erstellen Sie korrekte Signaturblöcke.",
+    "faqs": [
+      {
+        "question": "Welche Entitätstypen werden unterstützt?",
+        "answer": "Unterschriftsblöcke für Einzelpersonen, Kapitalgesellschaften, GmbHs und Personengesellschaften."
+      },
+      {
+        "question": "Ist das Format rechtlich standardisiert?",
+        "answer": "Ja, die generierten Blöcke folgen gängigen rechtlichen Formatierungskonventionen."
+      },
+      {
+        "question": "Kann ich dies für jeden Vertrag verwenden?",
+        "answer": "Ja, Unterschriftsblöcke sind standardmäßig in allen Vertragsarten."
+      }
+    ]
   },
   "contract-checklist": {
     "name": "Vertragsprüflisten-Generator",
     "description": "Wählen Sie Ihren Vertragstyp aus und erhalten Sie eine umfassende Prüfliste. Verfolgen Sie mit einem interaktiven Fortschrittsbalken, welche Punkte Sie überprüft haben.",
-    "shortDescription": "Erstellen Sie eine Vertragsprüfliste."
+    "shortDescription": "Erstellen Sie eine Vertragsprüfliste.",
+    "faqs": [
+      {
+        "question": "Welche Vertragsarten werden abgedeckt?",
+        "answer": "Arbeitsverträge, NDAs, Mietverträge und Dienstleistungsverträge."
+      },
+      {
+        "question": "Kann ich meinen Fortschritt speichern?",
+        "answer": "Derzeit wird die Checkliste zurückgesetzt, wenn Sie die Seite verlassen. Kopieren Sie die Elemente für Ihre Unterlagen."
+      },
+      {
+        "question": "Ist dies ein Ersatz für eine rechtliche Überprüfung?",
+        "answer": "Nein, nutzen Sie es als Ausgangspunkt, um wichtige Punkte zu identifizieren, bevor Sie einen Anwalt konsultieren."
+      }
+    ]
   },
   "amendment-drafter": {
     "name": "Vertragsänderungsentwurf",
     "description": "Erstellen Sie eine grundlegende Vertragsänderung, indem Sie die Details des ursprünglichen Vertrags eingeben und die Änderungen beschreiben. Erstellt ein formatiertes Änderungsdokument.",
-    "shortDescription": "Entwerfen Sie eine Vertragsänderung aus einem Formular."
+    "shortDescription": "Entwerfen Sie eine Vertragsänderung aus einem Formular.",
+    "faqs": [
+      {
+        "question": "Ist dieser Zusatz rechtsverbindlich?",
+        "answer": "Dies erzeugt eine Vorlage. Lassen Sie sie vor der Verwendung von einem Anwalt prüfen."
+      },
+      {
+        "question": "Kann ich jede Art von Vertrag ändern?",
+        "answer": "Ja, das Änderungsformat ist Standard und funktioniert für die meisten Vertragsarten."
+      },
+      {
+        "question": "Was, wenn ich mehrere Änderungen benötige?",
+        "answer": "Erstellen Sie für jede Reihe von Änderungen eine neue Ergänzung und erhöhen Sie die Ergänzungsnummer."
+      }
+    ]
   },
   "contract-value": {
     "name": "Vertragswert-Rechner",
     "description": "Berechnen Sie den Gesamtwert eines Vertrags einschließlich Verlängerungen und jährlicher Eskalationsraten. Sehen Sie den Wert der ursprünglichen Laufzeit, den Verlängerungswert und die monatlichen Durchschnitte.",
-    "shortDescription": "Gesamtvertragswert mit Verlängerungen berechnen."
+    "shortDescription": "Gesamtvertragswert mit Verlängerungen berechnen.",
+    "faqs": [
+      {
+        "question": "Was ist eine Eskalationsrate?",
+        "answer": "Eine jährliche prozentuale Erhöhung der Zahlungen, üblicherweise 2-5% pro Jahr."
+      },
+      {
+        "question": "Werden unterschiedliche Zahlungsfrequenzen berücksichtigt?",
+        "answer": "Ja – wöchentliche, monatliche, vierteljährliche und jährliche Zahlungspläne."
+      },
+      {
+        "question": "Wie werden Verlängerungen berechnet?",
+        "answer": "Jeder Verlängerungszeitraum hat die gleiche Dauer wie die ursprüngliche Laufzeit, wobei die Eskalation fortgesetzt wird."
+      }
+    ]
   },
   "warranty-tracker": {
     "name": "Garantieablauf-Rechner",
     "description": "Verfolgen Sie die Garantieablaufdaten für Ihre Einkäufe. Geben Sie Produktdetails und Garantielänge ein, um zu sehen, welche Garantien noch aktiv sind.",
-    "shortDescription": "Garantieablaufdaten für Einkäufe verfolgen."
+    "shortDescription": "Garantieablaufdaten für Einkäufe verfolgen.",
+    "faqs": [
+      {
+        "question": "Kann ich mehrere Produkte verfolgen?",
+        "answer": "Ja, fügen Sie so viele Produkte hinzu, wie Sie benötigen."
+      },
+      {
+        "question": "Welche Garantieeinheiten werden unterstützt?",
+        "answer": "Tage, Monate und Jahre."
+      },
+      {
+        "question": "Funktioniert es für erweiterte Garantien?",
+        "answer": "Ja, geben Sie einfach die gesamte Garantiezeit einschließlich etwaiger Verlängerungen ein."
+      }
+    ]
   },
   "statute-of-limitations": {
     "name": "Verjährungsfristen-Suche",
     "description": "Suchen Sie die Verjährungsfristen für gängige Rechtsansprüche nach Bundesstaaten auf. Finden Sie heraus, wie lange Sie Zeit haben, um Klagen wegen Vertragsstreitigkeiten, Personenschäden, Betrug und mehr einzureichen.",
-    "shortDescription": "Fristen für Klagen nach Bundesstaaten suchen."
+    "shortDescription": "Fristen für Klagen nach Bundesstaaten suchen.",
+    "faqs": [
+      {
+        "question": "Welche Anspruchsarten werden abgedeckt?",
+        "answer": "Schriftliche Verträge, mündliche Verträge, Personenschäden, Sachschäden und Betrug."
+      },
+      {
+        "question": "Sind dies genaue Fristen?",
+        "answer": "Dies sind allgemeine Richtlinien. Entdeckungsregeln und Hemmung können Fristen verlängern. Konsultieren Sie einen Anwalt."
+      },
+      {
+        "question": "Haben alle Staaten die gleichen Fristen?",
+        "answer": "Nein, die Verjährungsfristen variieren erheblich je nach Bundesstaat und Anspruchsart."
+      }
+    ]
   },
   "small-claims-limit": {
     "name": "Prüfer für den Höchstbetrag für Bagatellklagen",
     "description": "Prüfen Sie den Höchstbetrag, auf den Sie in Ihrem Bundesstaat vor einem Gericht für Bagatellklagen klagen können. Geben Sie Ihren Anspruchsbetrag ein, um zu sehen, ob er qualifiziert ist.",
-    "shortDescription": "Höchstbeträge für Bagatellklagen nach Bundesstaaten prüfen."
+    "shortDescription": "Höchstbeträge für Bagatellklagen nach Bundesstaaten prüfen.",
+    "faqs": [
+      {
+        "question": "Was ist ein Bagatellgericht?",
+        "answer": "Ein vereinfachtes Gericht zur Beilegung von Streitigkeiten über kleinere Geldbeträge, ohne dass ein Anwalt benötigt wird."
+      },
+      {
+        "question": "Kann ich über dem Limit klagen?",
+        "answer": "Sie können Ihren Anspruch reduzieren, um das Limit einzuhalten (auf den Überschuss verzichten) oder bei einem höheren Gericht klagen."
+      },
+      {
+        "question": "Sind diese Limits aktuell?",
+        "answer": "Wir aktualisieren die Limits regelmäßig, aber überprüfen Sie diese bei Ihrem örtlichen Gericht, da sich die Limits ändern können."
+      }
+    ]
   },
   "consumer-rights-quiz": {
     "name": "Verbraucherrechte-Quiz",
     "description": "Testen Sie Ihr Wissen über Verbraucherschutzrechte mit unserem interaktiven Quiz. Erfahren Sie mehr über Rückgaberichtlinien, Garantien, Rechnungsstreitigkeiten und mehr.",
-    "shortDescription": "Testen Sie Ihr Wissen über Verbraucherrechte."
+    "shortDescription": "Testen Sie Ihr Wissen über Verbraucherrechte.",
+    "faqs": [
+      {
+        "question": "Wie viele Fragen gibt es?",
+        "answer": "Das Quiz hat 8 Fragen zu verschiedenen Verbraucherrechtsthemen."
+      },
+      {
+        "question": "Basiert dies auf US-Recht?",
+        "answer": "Ja, die Fragen basieren hauptsächlich auf US-amerikanischen Bundes- und Landesverbraucherschutzgesetzen."
+      },
+      {
+        "question": "Kann ich das Quiz wiederholen?",
+        "answer": "Ja, Sie können das Quiz beliebig oft neu starten."
+      }
+    ]
   },
   "dispute-letter": {
     "name": "Generator für Einspruchsschreiben",
     "description": "Erstellen Sie ein formelles Einspruchsschreiben für Abrechnungsfehler, Ungenauigkeiten in Kreditberichten, Servicebeschwerden oder Produktprobleme. Enthält relevante rechtliche Verweise.",
-    "shortDescription": "Formelle Einspruchsschreiben erstellen."
+    "shortDescription": "Formelle Einspruchsschreiben erstellen.",
+    "faqs": [
+      {
+        "question": "Welche Arten von Streitigkeiten werden unterstützt?",
+        "answer": "Rechnungsstreitigkeiten, Kreditberichtstreitigkeiten, Dienstleistungsstreitigkeiten und Produktstreitigkeiten."
+      },
+      {
+        "question": "Sollte ich dies per Post oder E-Mail senden?",
+        "answer": "Bei Rechnungs- und Kreditstreitigkeiten bietet ein Einschreiben einen Zustellnachweis und löst rechtliche Schutzmaßnahmen aus."
+      },
+      {
+        "question": "Ist dieser Brief rechtlich ausreichend?",
+        "answer": "Er folgt den Standardformaten für Streitbriefe. Passen Sie ihn für die besten Ergebnisse an Ihre Situation an."
+      }
+    ]
   },
   "salary-converter": {
     "name": "Gehalt zu Stundenlohn Umwandler",
     "description": "Rechnen Sie zwischen Jahresgehalt und Stundenlohn um. Berücksichtigen Sie die Gemeinkosten für Leistungen, Wochenstunden und Wochen pro Jahr, um die wahren Kosten der Beschäftigung zu sehen.",
-    "shortDescription": "Gehalt in Stundenlohn umrechnen und umgekehrt."
+    "shortDescription": "Gehalt in Stundenlohn umrechnen und umgekehrt.",
+    "faqs": [
+      {
+        "question": "Was sind Sozialleistungen?",
+        "answer": "Die zusätzlichen Kosten für die Beschäftigung einer Person über das Gehalt hinaus – typischerweise 25-40% für Krankenversicherung, Altersvorsorge, Steuern usw."
+      },
+      {
+        "question": "Warum 52 Wochen verwenden?",
+        "answer": "52 Wochen sind Standard für ein ganzes Jahr. Reduzieren Sie für unbezahlte Freistellung."
+      },
+      {
+        "question": "Sind Steuern enthalten?",
+        "answer": "Der Prozentsatz der Sozialleistungen kann vom Arbeitgeber gezahlte Steuern wie FICA umfassen."
+      }
+    ]
   },
   "pto-calculator": {
     "name": "PTO-Rechner (bezahlte Freistellung)",
     "description": "Berechnen Sie Ihre angesammelte bezahlte Freistellung basierend auf Ihrer Ansparquote, Ihrer Betriebszugehörigkeit und bereits genutzten Tagen. Sehen Sie die verbleibende PTO in Tagen und Stunden.",
-    "shortDescription": "Berechnen Sie den angesammelten PTO-Restbetrag."
+    "shortDescription": "Berechnen Sie den angesammelten PTO-Restbetrag.",
+    "faqs": [
+      {
+        "question": "Was ist eine typische Anrechnungsrate?",
+        "answer": "Übliche Raten sind 1-2 Tage pro Monat oder 4-6 Stunden pro Abrechnungszeitraum."
+      },
+      {
+        "question": "Was ist eine PTO-Obergrenze?",
+        "answer": "Viele Unternehmen begrenzen die Gesamt-PTO, die Sie ansammeln können. Sobald Sie die Obergrenze erreicht haben, sammeln Sie keine weiteren PTO an, bis Sie einen Teil davon genutzt haben."
+      },
+      {
+        "question": "Sind Krankheitstage inbegriffen?",
+        "answer": "Das hängt von Ihrem Unternehmen ab. Einige haben separate Krankheitsurlaube; andere fassen alle Freistellungen in PTO zusammen."
+      }
+    ]
   },
   "wrongful-termination": {
     "name": "Checkliste für unrechtmäßige Kündigung",
     "description": "Beantworten Sie Fragen zu Ihrer Kündigung und erhalten Sie eine Einschätzung potenzieller Indikatoren für eine unrechtmäßige Kündigung, einschließlich Diskriminierungs- und Retorsionsmerkmale.",
-    "shortDescription": "Potenziell unrechtmäßige Kündigung bewerten."
+    "shortDescription": "Potenziell unrechtmäßige Kündigung bewerten.",
+    "faqs": [
+      {
+        "question": "Ist dies eine Rechtsberatung?",
+        "answer": "Nein. Dies bietet allgemeine Informationen, die Ihnen helfen sollen zu entscheiden, ob die Konsultation eines Arbeitsrechtsanwalts gerechtfertigt ist."
+      },
+      {
+        "question": "Was gilt als unrechtmäßige Kündigung?",
+        "answer": "Kündigung aufgrund von Diskriminierung, Vergeltung, Vertragsbruch oder Verletzung der öffentlichen Ordnung."
+      },
+      {
+        "question": "Sollte ich einen Anwalt konsultieren?",
+        "answer": "Wenn Sie mehrere Warnsignale sehen, wird dringend empfohlen, einen Arbeitsrechtsanwalt zu konsultieren."
+      }
+    ]
   },
   "minimum-wage": {
     "name": "Mindestlohn-Suche",
     "description": "Suchen Sie die aktuellen bundesstaatlichen und staatlichen Mindestlohnsätze, einschließlich des Mindestlohns für Trinkgeldempfänger. Vergleichen Sie den Satz Ihres Bundesstaates mit dem bundesweiten Mindestlohn.",
-    "shortDescription": "Mindestlohn nach Bundesstaat suchen."
+    "shortDescription": "Mindestlohn nach Bundesstaat suchen.",
+    "faqs": [
+      {
+        "question": "Welcher Satz gilt — Bundes- oder Landesebene?",
+        "answer": "Arbeitgeber müssen den höheren der beiden Sätze zahlen. Wenn Ihr Landessatz höher ist, gilt dieser."
+      },
+      {
+        "question": "Was ist mit Trinkgeldempfängern?",
+        "answer": "Einige Staaten erlauben einen niedrigeren Mindestlohn für Arbeitnehmer, die Trinkgeld erhalten. Trinkgelder plus Löhne müssen mindestens dem Standardmindestlohn entsprechen."
+      },
+      {
+        "question": "Sind diese Sätze aktuell?",
+        "answer": "Wir aktualisieren regelmäßig, aber die Sätze ändern sich. Überprüfen Sie dies bei Ihrer staatlichen Arbeitsbehörde."
+      }
+    ]
   },
   "employment-checklist": {
     "name": "Checkliste für Arbeitsverträge",
     "description": "Eine umfassende interaktive Checkliste für alles, worauf in einem Arbeitsvertrag zu achten ist – Vergütung, Leistungen, Wettbewerbsverbote, Kündigungsbedingungen und mehr.",
-    "shortDescription": "Checkliste für Arbeitsverträge überprüfen."
+    "shortDescription": "Checkliste für Arbeitsverträge überprüfen.",
+    "faqs": [
+      {
+        "question": "Wie viele Punkte enthält die Checkliste?",
+        "answer": "Über 30 Punkte in 6 Kategorien, die alle wichtigen Aspekte von Arbeitsverträgen abdecken."
+      },
+      {
+        "question": "Kann ich meinen Fortschritt speichern?",
+        "answer": "Der Fortschritt wird zurückgesetzt, wenn Sie die Seite verlassen. Verwenden Sie sie zusammen mit Ihrer Vertragsprüfung."
+      },
+      {
+        "question": "Ist dies für Arbeitnehmer oder Arbeitgeber?",
+        "answer": "Primär für Arbeitnehmer konzipiert, die einen Vertrag vor der Unterzeichnung prüfen."
+      }
+    ]
   },
   "cease-desist": {
     "name": "Generator für Unterlassungserklärungen",
     "description": "Erstellen Sie eine formelle Unterlassungserklärung bei Belästigung, Verleumdung, IP-Rechtsverletzungen, Vertragsbruch oder Problemen mit der Schuldeintreibung.",
-    "shortDescription": "Unterlassungserklärungen für gängige Szenarien generieren."
+    "shortDescription": "Unterlassungserklärungen für gängige Szenarien generieren.",
+    "faqs": [
+      {
+        "question": "Ist ein Unterlassungsschreiben (C&D) rechtlich bindend?",
+        "answer": "Ein C&D-Schreiben selbst ist kein Gerichtsbeschluss, aber es schafft einen Nachweis und setzt den Empfänger formell in Kenntnis."
+      },
+      {
+        "question": "Soll ich es per Post oder E-Mail senden?",
+        "answer": "Ein Einschreiben mit Rückschein bietet einen Zustellnachweis, der für rechtliche Verfahren wichtig ist."
+      },
+      {
+        "question": "Was, wenn sie es ignorieren?",
+        "answer": "Wenn es ignoriert wird, müssen Sie möglicherweise eine Klage einreichen oder einen Gerichtsbeschluss beantragen."
+      }
+    ]
   },
   "poa-generator": {
     "name": "Vollmacht-Generator",
     "description": "Erstellen Sie eine einfache Vollmachtsurkunde. Wählen Sie zwischen einer allgemeinen, beschränkten, dauerhaften oder finanziellen Vollmacht mit anpassbaren Bedingungen und einem Notarvermerk.",
-    "shortDescription": "Eine einfache Vollmacht erstellen."
+    "shortDescription": "Eine einfache Vollmacht erstellen.",
+    "faqs": [
+      {
+        "question": "Was ist der Unterschied zwischen den POA-Typen?",
+        "answer": "General deckt alles ab, Limited ist für spezifische Aufgaben, Durable überdauert die Geschäftsunfähigkeit, Financial deckt Geldangelegenheiten ab."
+      },
+      {
+        "question": "Muss es notariell beglaubigt werden?",
+        "answer": "Die meisten Staaten verlangen eine notarielle Beglaubigung. Die Vorlage enthält einen Notarblock."
+      },
+      {
+        "question": "Kann ich eine POA widerrufen?",
+        "answer": "Ja, Sie können eine POA jederzeit widerrufen, indem Sie dem Bevollmächtigten und Dritten eine schriftliche Mitteilung zukommen lassen."
+      }
+    ]
   },
   "ic-agreement": {
     "name": "Generator für freiberufliche Mitarbeiterverträge",
     "description": "Erstellen Sie einen umfassenden Vertrag für freiberufliche Mitarbeiter, der den Arbeitsumfang, die Vergütung, IP-Rechte, Vertraulichkeit und Kündigungsbedingungen abdeckt.",
-    "shortDescription": "Einen Vertrag für freiberufliche Mitarbeiter aus einem Formular generieren."
+    "shortDescription": "Einen Vertrag für freiberufliche Mitarbeiter aus einem Formular generieren.",
+    "faqs": [
+      {
+        "question": "Warum ist das wichtig?",
+        "answer": "Ein ordnungsgemäßer IC-Vertrag hilft, die Auftragnehmerbeziehung zu etablieren und Probleme bei der Fehlklassifizierung zu vermeiden."
+      },
+      {
+        "question": "Was ist enthalten?",
+        "answer": "Leistungsumfang, Vergütung, IP-Abtretung, Vertraulichkeit, Abwerbeverbot, Freistellung und Kündigung."
+      },
+      {
+        "question": "Ist dies für 1099-Auftragnehmer?",
+        "answer": "Ja, dies ist für unabhängige Auftragnehmer (1099) Beziehungen konzipiert, nicht für Angestellte (W-2)."
+      }
+    ]
   },
   "promissory-note": {
     "name": "Schuldschein-Generator",
     "description": "Erstellen Sie einen einfachen Schuldschein mit anpassbaren Bedingungen, einschließlich Hauptbetrag, Zinssatz, Zahlungsplan und Bestimmungen bei Verzug.",
-    "shortDescription": "Einen einfachen Schuldschein erstellen."
+    "shortDescription": "Einen einfachen Schuldschein erstellen.",
+    "faqs": [
+      {
+        "question": "Ist dieser Schuldschein rechtlich bindend?",
+        "answer": "Dies erzeugt eine Vorlage. Lassen Sie sie von einem Anwalt prüfen und ziehen Sie eine notarielle Beglaubigung für die Durchsetzbarkeit in Betracht."
+      },
+      {
+        "question": "Welchen Zinssatz sollte ich verwenden?",
+        "answer": "Die Zinssätze variieren. Überprüfen Sie die Wuchergesetze Ihres Staates auf die maximal zulässigen Zinssätze. Übliche Zinssätze liegen zwischen 3-10%."
+      },
+      {
+        "question": "Muss es notariell beglaubigt werden?",
+        "answer": "Obwohl nicht immer erforderlich, verleiht eine notarielle Beglaubigung eine zusätzliche Ebene der Authentizität."
+      }
+    ]
   },
   "security-deposit": {
     "name": "Kaution-Rechner",
     "description": "Suchen Sie Kaution-Regeln nach Bundesstaaten, einschließlich Höchstbeträge für Kaution, Zinsanforderungen und Rückgabefristen nach dem Auszug.",
-    "shortDescription": "Kaution-Regeln nach Bundesstaat prüfen."
+    "shortDescription": "Kaution-Regeln nach Bundesstaat prüfen.",
+    "faqs": [
+      {
+        "question": "Begrenzen alle Staaten Kautionen?",
+        "answer": "Nein. Einige Staaten wie Texas haben keine gesetzliche Begrenzung der Höhe von Kautionen."
+      },
+      {
+        "question": "Schuldet mir mein Vermieter Zinsen?",
+        "answer": "Einige Staaten verlangen von Vermietern, Zinsen auf Kautionen zu zahlen. Überprüfen Sie die Regeln Ihres Staates."
+      },
+      {
+        "question": "Wie lange dauert es, meine Kaution zurückzubekommen?",
+        "answer": "Die Rückgabefristen liegen je nach Bundesstaat zwischen 14 und 45 Tagen."
+      }
+    ]
   },
   "rent-increase": {
     "name": "Mieterhöhungsrechner",
     "description": "Berechnen Sie Ihren Mieterhöhungsprozentsatz und die jährlichen Auswirkungen. Vergleichen Sie dies mit den Mietpreisobergrenzen in wichtigen Gerichtsbarkeiten.",
-    "shortDescription": "Prüfen, ob eine Mieterhöhung rechtmäßig ist."
+    "shortDescription": "Prüfen, ob eine Mieterhöhung rechtmäßig ist.",
+    "faqs": [
+      {
+        "question": "Gibt es eine Begrenzung für Mieterhöhungen?",
+        "answer": "Die meisten US-Gerichtsbarkeiten haben keine Begrenzung, aber einige Städte und Staaten haben Mietpreisbremsen."
+      },
+      {
+        "question": "Was ist eine typische jährliche Erhöhung?",
+        "answer": "Der Marktdurchschnitt liegt bei 3-5 % jährlich, dies variiert jedoch je nach Standort."
+      },
+      {
+        "question": "Kann mein Vermieter die Miete während des Mietvertrags erhöhen?",
+        "answer": "Im Allgemeinen nein, es sei denn, Ihr Mietvertrag erlaubt dies ausdrücklich. Erhöhungen gelten typischerweise bei der Verlängerung."
+      }
+    ]
   },
   "lease-comparison": {
     "name": "Mietvertragsvergleich",
     "description": "Vergleichen Sie zwei Mietangebote nebeneinander, einschließlich Miete, Kaution, Nebenkosten und Gesamtkosten. Sehen Sie, welcher Mietvertrag Ihnen das beste Preis-Leistungs-Verhältnis bietet.",
-    "shortDescription": "Zwei Mietangebote nebeneinander vergleichen."
+    "shortDescription": "Zwei Mietangebote nebeneinander vergleichen.",
+    "faqs": [
+      {
+        "question": "Welche Faktoren sollte ich vergleichen?",
+        "answer": "Berücksichtigen Sie die Gesamtkosten einschließlich Miete, Nebenkosten, Parkplatz, Kautionen und eventueller Umzugsgebühren."
+      },
+      {
+        "question": "Bedeutet billiger immer besser?",
+        "answer": "Nicht unbedingt. Berücksichtigen Sie Lage, Ausstattung, Flexibilität des Mietvertrags und den Ruf des Vermieters."
+      },
+      {
+        "question": "Was ist mit versteckten Kosten?",
+        "answer": "Berücksichtigen Sie Nebenkosten, Haustiergebühren, Parkplatz, Wäscherei und eventuell erforderliche Versicherungen."
+      }
+    ]
   },
   "moveout-checklist": {
     "name": "Checkliste für den Umzug (Auszug) Generator",
     "description": "Erstellen Sie eine individuelle Checkliste für den Umzug (Auszug) basierend auf Ihrem Immobilientyp und Ihren Merkmalen. Verfolgen Sie den Fortschritt mit einer interaktiven Checkliste.",
-    "shortDescription": "Eine individuelle Checkliste für den Auszug erstellen."
+    "shortDescription": "Eine individuelle Checkliste für den Auszug erstellen.",
+    "faqs": [
+      {
+        "question": "Warum brauche ich eine Auszugs-Checkliste?",
+        "answer": "Ein gründlicher Auszug erhöht Ihre Chancen, Ihre volle Kaution zurückzuerhalten."
+      },
+      {
+        "question": "Sollte ich Fotos machen?",
+        "answer": "Absolut. Dokumentieren Sie den Zustand jedes Zimmers vor und nach der Reinigung."
+      },
+      {
+        "question": "Wie viel Kündigungsfrist muss ich geben?",
+        "answer": "Überprüfen Sie Ihren Mietvertrag. Die meisten verlangen eine schriftliche Kündigungsfrist von 30-60 Tagen."
+      }
+    ]
   },
   "rental-agreement": {
     "name": "Mietvertragsgenerator",
     "description": "Erstellen Sie einen einfachen Wohnungsmietvertrag, indem Sie Vermieter-, Mieter-, Immobilien- und Finanzdaten eingeben. Enthält Standardrechtsvorschriften.",
-    "shortDescription": "Einen einfachen Wohnungsmietvertrag erstellen."
+    "shortDescription": "Einen einfachen Wohnungsmietvertrag erstellen.",
+    "faqs": [
+      {
+        "question": "Ist dieser Mietvertrag rechtsverbindlich?",
+        "answer": "Dies erzeugt eine Vorlage. Lassen Sie sie vor der Verwendung von einem Immobilienanwalt überprüfen."
+      },
+      {
+        "question": "Entspricht er den Gesetzen meines Staates?",
+        "answer": "Er enthält gängige Bestimmungen, aber die staatsspezifischen Anforderungen variieren. Konsultieren Sie die lokalen Vorschriften."
+      },
+      {
+        "question": "Kann ich die Vorlage anpassen?",
+        "answer": "Ja, kopieren Sie den generierten Text und ändern Sie die Bedingungen nach Bedarf."
+      }
+    ]
   },
   "business-name": {
     "name": "Unternehmensnamen-Prüfer",
     "description": "Prüfen Sie Ihren vorgeschlagenen Firmennamen auf Länge, Sonderzeichen, Rechtsform-Suffix, Einzigartigkeit und Domain-Potenzial. Enthält Tipps zur Markenrecherche.",
-    "shortDescription": "Überlegungen zur Unternehmensnamensgebung prüfen."
+    "shortDescription": "Überlegungen zur Unternehmensnamensgebung prüfen.",
+    "faqs": [
+      {
+        "question": "Prüft dies, ob der Name bereits vergeben ist?",
+        "answer": "Es bietet Analysen und Tipps. Überprüfen Sie das Handelsregister Ihres Staates und das USPTO auf Verfügbarkeit."
+      },
+      {
+        "question": "Benötige ich einen Rechtsformzusatz?",
+        "answer": "Die meisten Staaten verlangen einen Rechtsformzusatz (LLC, Inc. usw.) in Ihrem offiziellen Firmennamen."
+      },
+      {
+        "question": "Wie melde ich einen Firmennamen als Marke an?",
+        "answer": "Suchen Sie zuerst in der USPTO TESS-Datenbank und reichen Sie dann einen Markenantrag ein."
+      }
+    ]
   },
   "contractor-vs-employee": {
     "name": "Arbeitnehmer vs. unabhängiger Unternehmer Prüfer",
     "description": "Beantworten Sie 10 Fragen basierend auf IRS-Klassifikationsfaktoren, um festzustellen, ob ein Arbeitnehmer wahrscheinlich ein Arbeitnehmer oder ein unabhängiger Unternehmer ist.",
-    "shortDescription": "Mitarbeiter als Angestellten oder Auftragnehmer klassifizieren."
+    "shortDescription": "Mitarbeiter als Angestellten oder Auftragnehmer klassifizieren.",
+    "faqs": [
+      {
+        "question": "Warum ist die Klassifizierung wichtig?",
+        "answer": "Eine falsche Klassifizierung kann zu Nachzahlungen von Steuern, Strafen und Haftung für Leistungen führen."
+      },
+      {
+        "question": "Welche Faktoren berücksichtigt die IRS?",
+        "answer": "Verhaltenskontrolle, finanzielle Kontrolle und die Art der Beziehung zwischen den Parteien."
+      },
+      {
+        "question": "Ist dies endgültig?",
+        "answer": "Nein. Dies ist eine Richtlinie. Die IRS und die Gerichte berücksichtigen die Gesamtheit der Umstände."
+      }
+    ]
   },
   "severance-pay": {
     "name": "Abfindungsrechner",
     "description": "Schätzen Sie die typische Abfindung basierend auf Gehalt, Dienstjahren und Branchenniveau. Sehen Sie niedrige und hohe Schätzungen für Verhandlungen.",
-    "shortDescription": "Abfindungsbereich schätzen."
+    "shortDescription": "Abfindungsbereich schätzen.",
+    "faqs": [
+      {
+        "question": "Ist eine Abfindung gesetzlich vorgeschrieben?",
+        "answer": "In den USA im Allgemeinen nicht, es sei denn, dies ist vertraglich oder durch Unternehmensrichtlinien vorgeschrieben."
+      },
+      {
+        "question": "Was ist eine typische Abfindung?",
+        "answer": "Der übliche Bereich liegt bei 1-2 Wochen Gehalt pro Dienstjahr für Standardmitarbeiter."
+      },
+      {
+        "question": "Kann ich eine Abfindung aushandeln?",
+        "answer": "Ja. Abfindungen sind fast immer verhandelbar, insbesondere für höhere Positionen."
+      }
+    ]
   },
   "overtime-calc": {
     "name": "Überstundenrechner",
     "description": "Berechnen Sie die Überstundenvergütung basierend auf Stundenlohn, regulären Stunden, Überstunden und Multiplikator. Sehen Sie eine detaillierte Aufschlüsselung der Bezahlung und den effektiven Satz.",
-    "shortDescription": "Aufschlüsselung der Überstundenvergütung berechnen."
+    "shortDescription": "Aufschlüsselung der Überstundenvergütung berechnen.",
+    "faqs": [
+      {
+        "question": "Wie hoch ist der normale Überstundensatz?",
+        "answer": "Das Bundesgesetz schreibt das 1,5-fache des regulären Satzes für Stunden vor, die 40 Stunden pro Woche überschreiten."
+      },
+      {
+        "question": "Haben alle Arbeitnehmer Anspruch auf Überstundenvergütung?",
+        "answer": "Nein. Angestellte mit festem Gehalt, die bestimmte Kriterien erfüllen, können gemäß FLSA ausgenommen sein."
+      },
+      {
+        "question": "Gibt es in meinem Bundesstaat andere Regeln?",
+        "answer": "Einige Bundesstaaten haben strengere Überstundenregeln. Kalifornien verlangt tägliche Überstunden nach 8 Stunden."
+      }
+    ]
   },
   "partnership-split": {
     "name": "Partnerschaftsaufteilungsrechner",
     "description": "Berechnen Sie die vorgeschlagenen Eigenkapital- und Gewinnaufteilungen für Partnerschaften basierend auf Kapitaleinlagen, Zeitaufwand und anpassbarer Gewichtung.",
-    "shortDescription": "Eigenkapitalaufteilung von Partnerschaften berechnen."
+    "shortDescription": "Eigenkapitalaufteilung von Partnerschaften berechnen.",
+    "faqs": [
+      {
+        "question": "Wie sollen wir die Anteile aufteilen?",
+        "answer": "Berücksichtigen Sie Kapitaleinlagen, Zeitaufwand, Fachwissen und Risikobereitschaft."
+      },
+      {
+        "question": "Sollte die Gewinnaufteilung den Anteilen entsprechen?",
+        "answer": "Nicht unbedingt. Einige Partner erhalten möglicherweise ein Gehalt plus einen kleineren Gewinnanteil."
+      },
+      {
+        "question": "Benötigen wir einen Partnerschaftsvertrag?",
+        "answer": "Absolut. Formalisieren Sie Aufteilungen immer in einem schriftlichen Partnerschaftsvertrag."
+      }
+    ]
   },
   "business-expense": {
     "name": "Geschäftskostentracker-Vorlage",
     "description": "Erstellen Sie eine formatierte Spesenabrechnungsvorlage, die auf Ihren Geschäftstyp zugeschnitten ist. Enthält relevante Spesenkategorien und IRS-Kilometersätze.",
-    "shortDescription": "Erstellen Sie eine Spesenabrechnungsvorlage."
+    "shortDescription": "Erstellen Sie eine Spesenabrechnungsvorlage.",
+    "faqs": [
+      {
+        "question": "Welche Geschäftsarten sind abgedeckt?",
+        "answer": "Freiberufler, Einzelhandel, Gastronomie, professionelle Dienstleistungen und Bau/Handwerk."
+      },
+      {
+        "question": "Kann ich die Kategorien anpassen?",
+        "answer": "Ja, wählen Sie bestimmte Kategorien aus oder verwenden Sie die vollständige Vorlage für Ihren Geschäftstyp."
+      },
+      {
+        "question": "Welche Aufzeichnungen sollte ich führen?",
+        "answer": "Bewahren Sie Belege für alle Ausgaben über 75 $ auf und führen Sie ein Fahrtenbuch für Fahrzeugabzüge."
+      }
+    ]
   },
   "crypto-tax": {
     "name": "Krypto-Steuerrechner",
     "description": "Berechnen Sie Kapitalgewinne oder -verluste bei Kryptowährungstransaktionen. Schätzt kurzfristige vs. langfristige Steuern basierend auf Ihrer Haltedauer und Steuerklasse.",
-    "shortDescription": "Schätzen Sie die Kapitalertragssteuer für Krypto."
+    "shortDescription": "Schätzen Sie die Kapitalertragssteuer für Krypto.",
+    "faqs": [
+      {
+        "question": "Wie wird Krypto besteuert?",
+        "answer": "In den USA wird Krypto als Eigentum besteuert. Kurzfristige Gewinne (weniger als 1 Jahr gehalten) werden als ordentliches Einkommen besteuert; langfristige Gewinne erhalten Vorzugssätze."
+      },
+      {
+        "question": "Wie hoch ist der Steuersatz für langfristige Kapitalgewinne?",
+        "answer": "Die meisten Steuerzahler zahlen 15 % auf langfristige Gewinne. Höhere Einkommen können 20 % zahlen."
+      },
+      {
+        "question": "Muss ich Steuern auf Verluste zahlen?",
+        "answer": "Nein, aber Sie können Verluste nutzen, um Gewinne auszugleichen und bis zu 3.000 $ gegen das ordentliche Einkommen abzuziehen."
+      }
+    ]
   },
   "dca-calculator": {
     "name": "DCA-Rechner",
     "description": "Simulieren Sie eine Dollar-Cost-Averaging (Durchschnittskosten-Methode)-Strategie. Sehen Sie Ihre durchschnittlichen Anschaffungskosten, die gesamte erworbene Stückzahl und die Rendite basierend auf regelmäßigen periodischen Investitionen.",
-    "shortDescription": "Simulieren Sie die Renditen des Dollar-Cost-Averaging."
+    "shortDescription": "Simulieren Sie die Renditen des Dollar-Cost-Averaging.",
+    "faqs": [
+      {
+        "question": "Was ist Dollar-Cost Averaging?",
+        "answer": "DCA bedeutet, einen festen Betrag in regelmäßigen Abständen zu investieren, unabhängig vom Preis, wodurch die Auswirkungen der Volatilität reduziert werden."
+      },
+      {
+        "question": "Ist DCA besser als eine Pauschalzahlung?",
+        "answer": "Historisch gesehen übertrifft die Pauschalzahlung etwa 2/3 der Zeit, aber DCA reduziert das Risiko und emotionale Entscheidungen."
+      },
+      {
+        "question": "Verwendet dies reale Preise?",
+        "answer": "Es simuliert einen linearen Preisverlauf zwischen Ihren Start- und Endpreisen zu Schätzungszwecken."
+      }
+    ]
   },
   "position-size": {
     "name": "Positionsgrößenrechner",
     "description": "Berechnen Sie die optimale Positionsgröße basierend auf Ihrer Kontogröße, Risikotoleranz und Stop-Loss-Distanz. Essenziell für ein gutes Risikomanagement.",
-    "shortDescription": "Berechnen Sie die optimale Handelspositionsgröße."
+    "shortDescription": "Berechnen Sie die optimale Handelspositionsgröße.",
+    "faqs": [
+      {
+        "question": "Wie viel sollte ich pro Trade riskieren?",
+        "answer": "Die meisten professionellen Trader riskieren 1-2 % ihres Kontos pro Trade, um Verlustserien zu überstehen."
+      },
+      {
+        "question": "Was ist ein Stop-Loss?",
+        "answer": "Ein Stop-Loss ist ein vorher festgelegter Preis, bei dem Sie einen Verlusttrade beenden, um Ihren Verlust zu begrenzen."
+      },
+      {
+        "question": "Funktioniert das für Krypto?",
+        "answer": "Ja, Positionsgrößenbestimmung gilt für Aktien, Krypto, Forex und jedes handelbare Asset."
+      }
+    ]
   },
   "profit-loss": {
     "name": "Gewinn- und Verlustrechner",
     "description": "Berechnen Sie Ihren Gewinn oder Verlust bei einem Trade, einschließlich Hebelwirkung und Handelsgebühren. Sehen Sie Brutto-GuV, Netto-GuV und prozentuale Rendite.",
-    "shortDescription": "Berechnen Sie den Handelsgewinn/-verlust mit Gebühren."
+    "shortDescription": "Berechnen Sie den Handelsgewinn/-verlust mit Gebühren.",
+    "faqs": [
+      {
+        "question": "Wie beeinflusst Hebelwirkung Gewinn und Verlust?",
+        "answer": "Hebelwirkung multipliziert sowohl Gewinne als auch Verluste. 10-fache Hebelwirkung bedeutet, dass eine 1%ige Bewegung zu einem 10%igen Gewinn oder Verlust führt."
+      },
+      {
+        "question": "Was sind typische Handelsgebühren?",
+        "answer": "Große Börsen berechnen 0,04-0,1 % für Maker und 0,06-0,2 % für Taker pro Trade."
+      },
+      {
+        "question": "Wird die Gebühr pro Seite angewendet?",
+        "answer": "Ja, Sie zahlen Gebühren sowohl beim Eröffnen als auch beim Schließen einer Position (Round-Trip)."
+      }
+    ]
   },
   "compound-interest": {
     "name": "Zinseszinsrechner",
     "description": "Prognostizieren Sie das Wachstum Ihrer Investition mit Zinseszins. Berücksichtigen Sie das Anfangskapital, den Zinssatz, die Häufigkeit der Zinseszinsberechnung und monatliche Beiträge.",
-    "shortDescription": "Prognostizieren Sie das Investitionswachstum im Zeitverlauf."
+    "shortDescription": "Prognostizieren Sie das Investitionswachstum im Zeitverlauf.",
+    "faqs": [
+      {
+        "question": "Was ist Zinseszins?",
+        "answer": "Zinseszins sind Zinsen, die sowohl auf das ursprüngliche Kapital als auch auf zuvor angesammelte Zinsen verdient werden – 'Zinsen auf Zinsen'."
+      },
+      {
+        "question": "Wie oft sollten Zinsen verzinst werden?",
+        "answer": "Häufigere Zinseszinsberechnungen führen zu höheren Renditen. Tägliche Zinseszinsberechnung bringt etwas mehr als monatliche oder vierteljährliche."
+      },
+      {
+        "question": "Ist das dasselbe wie APY?",
+        "answer": "APY (Annual Percentage Yield) berücksichtigt bereits die Zinseszinsberechnung. Der hier eingegebene Zinssatz ist der nominale Jahreszinssatz."
+      }
+    ]
   },
   "margin-call": {
     "name": "Nachschussrechner (Margin Call Rechner)",
     "description": "Bestimmen Sie, zu welchem Preis Ihr Broker einen Nachschuss („Margin Call\") auslösen wird. Geben Sie Ihr Eigenkapital, den geliehenen Betrag und die Wartungsmargenanforderung ein.",
-    "shortDescription": "Berechnen Sie Ihren Nachschuss-Auslösepreis."
+    "shortDescription": "Berechnen Sie Ihren Nachschuss-Auslösepreis.",
+    "faqs": [
+      {
+        "question": "Was ist ein Margin Call?",
+        "answer": "Ein Margin Call tritt auf, wenn Ihr Kontoguthaben unter die Mindesteinschussanforderung fällt, wodurch Sie gezwungen sind, zusätzliche Gelder einzuzahlen oder Vermögenswerte zu verkaufen."
+      },
+      {
+        "question": "Was ist die typische Mindesteinschussanforderung?",
+        "answer": "FINRA verlangt eine Mindesteinschussanforderung von 25 %, aber die meisten Broker verlangen 30-40 %."
+      },
+      {
+        "question": "Was passiert, wenn ich einen Margin Call nicht erfüllen kann?",
+        "answer": "Ihr Broker kann Ihre Positionen zum Marktpreis liquidieren, um Ihr Konto wieder auf das erforderliche Margin-Niveau zu bringen."
+      }
+    ]
   },
   "breakeven-calc": {
     "name": "Handels-Break-Even-Rechner",
     "description": "Berechnen Sie den genauen Break-Even-Preis für einen Trade unter Berücksichtigung von Hin- und Rückhandelsgebühren und Hebelwirkung. Kennen Sie die minimale Bewegung, die für einen Gewinn erforderlich ist.",
-    "shortDescription": "Finden Sie Ihren Break-Even-Preis nach Gebühren."
+    "shortDescription": "Finden Sie Ihren Break-Even-Preis nach Gebühren.",
+    "faqs": [
+      {
+        "question": "Warum unterscheidet sich der Break-Even-Punkt vom Einstiegspreis?",
+        "answer": "Aufgrund von Handelsgebühren muss sich der Preis leicht zu Ihren Gunsten entwickeln, nur um den Break-Even-Punkt zu erreichen."
+      },
+      {
+        "question": "Wie skalieren Gebühren mit dem Hebel?",
+        "answer": "Gebühren werden typischerweise auf die volle gehebelte Positionsgröße erhoben, daher bedeuten höhere Hebel höhere absolute Gebührenkosten."
+      },
+      {
+        "question": "Sollte ich den Spread berücksichtigen?",
+        "answer": "Ja, der Bid-Ask-Spread ist ein zusätzlicher Kostenfaktor. Dieser Rechner konzentriert sich auf Börsengebühren."
+      }
+    ]
   },
   "risk-reward": {
     "name": "Risiko-Rendite-Rechner",
     "description": "Analysieren Sie das Risiko-Rendite-Verhältnis eines Trades. Geben Sie Ihren Einstieg, Stop-Loss und Take-Profit ein, um zu sehen, ob sich der Trade lohnt.",
-    "shortDescription": "Analysieren Sie das Risiko-Rendite-Verhältnis des Handels."
+    "shortDescription": "Analysieren Sie das Risiko-Rendite-Verhältnis des Handels.",
+    "faqs": [
+      {
+        "question": "Was ist ein gutes Risiko-Rendite-Verhältnis?",
+        "answer": "Die meisten Trader streben mindestens 1:2 an (Risiko von 1 $ für einen Gewinn von 2 $). Höhere Verhältnisse ermöglichen Rentabilität bei geringeren Gewinnraten."
+      },
+      {
+        "question": "Was bedeutet die erforderliche Gewinnrate?",
+        "answer": "Es ist der minimale Prozentsatz an Trades, die Sie gewinnen müssen, um bei diesem R:R-Verhältnis den Break-Even zu erreichen."
+      },
+      {
+        "question": "Sollte jeder Trade ein gutes R:R haben?",
+        "answer": "Idealerweise ja, aber einige Strategien verwenden ein enges R:R mit hohen Gewinnraten. Konsistenz ist wichtiger als jeder einzelne Trade."
+      }
+    ]
   },
   "crypto-converter": {
     "name": "Krypto-Umrechner",
     "description": "Konvertieren Sie zwischen wichtigen Kryptowährungen mithilfe von Referenzpreisen. Sehen Sie äquivalente Werte für BTC, ETH, SOL und andere beliebte Assets.",
-    "shortDescription": "Konvertieren Sie zwischen Krypto-Assets."
+    "shortDescription": "Konvertieren Sie zwischen Krypto-Assets.",
+    "faqs": [
+      {
+        "question": "Sind dies Echtzeitpreise?",
+        "answer": "Nein, dieses Tool verwendet statische Referenzpreise zur Demonstration. Verwenden Sie eine Live-Börse für tatsächliche Handelspreise."
+      },
+      {
+        "question": "Welche Kryptowährungen werden unterstützt?",
+        "answer": "BTC, ETH, SOL, BNB, XRP, ADA, DOGE und DOT werden derzeit unterstützt."
+      },
+      {
+        "question": "Kann ich dies für Steuerberechnungen verwenden?",
+        "answer": "Für Steuerzwecke verwenden Sie die tatsächlichen Transaktionspreise aus Ihren Börsenaufzeichnungen."
+      }
+    ]
   },
   "loan-payment": {
     "name": "Kreditratenrechner",
     "description": "Berechnen Sie monatliche Kreditraten mithilfe der Standard-Tilgung. Sehen Sie Ihre monatliche Rate, die gesamten gezahlten Zinsen und die Gesamtkosten des Kredits.",
-    "shortDescription": "Berechnen Sie monatliche Kreditraten."
+    "shortDescription": "Berechnen Sie monatliche Kreditraten.",
+    "faqs": [
+      {
+        "question": "Wie wird die monatliche Zahlung berechnet?",
+        "answer": "Mit der Standard-Amortisationsformel: M = P[r(1+r)^n] / [(1+r)^n - 1], wobei P der Kapitalbetrag, r der monatliche Zinssatz und n die Anzahl der Zahlungen ist."
+      },
+      {
+        "question": "Sind Steuern und Versicherungen enthalten?",
+        "answer": "Nein, dies berechnet nur Kapital und Zinsen. Ihre gesamte Wohnungszahlung kann Steuern, Versicherungen und PMI umfassen."
+      },
+      {
+        "question": "Kann ich dies für Autokredite verwenden?",
+        "answer": "Ja, es funktioniert für alle festverzinslichen Annuitätendarlehen – Hypotheken, Autokredite, Privatkredite usw."
+      }
+    ]
   },
   "grant-budget": {
     "name": "Zuschussbudgetrechner",
     "description": "Verteilen Sie Zuschussgelder auf Budgetkategorien wie Personal, Ausrüstung, Reisen und indirekte Kosten. Verfolgen Sie verbleibende Mittel und erhalten Sie Warnungen, wenn die Zuweisungen den gesamten Zuschussbetrag übersteigen.",
-    "shortDescription": "Zuweisen und Verfolgen der Ausgaben für Zuschussbudgets."
+    "shortDescription": "Zuweisen und Verfolgen der Ausgaben für Zuschussbudgets.",
+    "faqs": [
+      {
+        "question": "Was ist eine indirekte Kostenquote?",
+        "answer": "Eine indirekte Kostenquote deckt Gemeinkosten (Einrichtungen, Verwaltung) ab, die nicht direkt mit dem Förderprojekt verbunden sind. Sie wird als Prozentsatz der direkten Kosten angewendet."
+      },
+      {
+        "question": "Was sind gängige Budgetkategorien?",
+        "answer": "Personal, Ausrüstung, Reisen, Verbrauchsmaterialien, vertragliche Dienstleistungen und andere direkte Kosten sind Standardkategorien für die meisten Bundes- und Landesförderungen."
+      },
+      {
+        "question": "Was passiert, wenn ich das Budget überschreite?",
+        "answer": "Der Rechner wird Sie warnen. In der Praxis kann die Überschreitung genehmigter Budgets eine formelle Budgetänderungsanfrage an den Fördergeber erfordern."
+      }
+    ]
   },
   "grant-deadline": {
     "name": "Fristen-Tracker für Zuschüsse",
     "description": "Verfolgen Sie Fristen für Zuschussanträge, Berichtsfristen und Meilensteine. Sehen Sie Countdown-Timer, Dringlichkeitssymbole und eine sortierte Zeittafel aller bevorstehenden Verpflichtungen.",
-    "shortDescription": "Verfolgen Sie Fristen und Berichtstermine für Zuschüsse."
+    "shortDescription": "Verfolgen Sie Fristen und Berichtstermine für Zuschüsse.",
+    "faqs": [
+      {
+        "question": "Welche Arten von Fristen sollte ich verfolgen?",
+        "answer": "Antragsfristen, Fortschrittsberichte, Finanzberichte, Abschlussberichte und alle vom Fördergeber geforderten Zwischenmeilensteine."
+      },
+      {
+        "question": "Was passiert, wenn ich eine Berichtsfrist verpasse?",
+        "answer": "Das Verpassen von Fristen kann zur Aussetzung der Finanzierung, zu erforderlichen Korrekturmaßnahmenplänen oder zur Disqualifikation von zukünftigen Förderungen führen."
+      },
+      {
+        "question": "Werden diese Daten gespeichert?",
+        "answer": "Der Tracker ist derzeit sitzungsbasiert. Eine Aktualisierung löscht die Einträge. Erstellen Sie ein Konto, um Analysen für zukünftige Referenzzwecke zu speichern."
+      }
+    ]
   },
   "grant-compliance": {
     "name": "Compliance-Checkliste für Zuschüsse",
     "description": "Erstellen Sie eine Compliance-Checkliste basierend auf Ihrem Zuschusstyp – Bund, Länder, Stiftung oder Unternehmen. Deckt Berichterstattung, Audits, Beschaffung, Matching Funds und Aufzeichnungspflichten ab.",
-    "shortDescription": "Compliance-Checkliste nach Zuschusstyp."
+    "shortDescription": "Compliance-Checkliste nach Zuschusstyp.",
+    "faqs": [
+      {
+        "question": "Was ist 2 CFR 200?",
+        "answer": "Die Uniform Guidance (2 CFR Part 200) legt administrative, Kosten- und Prüfanforderungen für Bundesmittel an nicht-föderale Einrichtungen fest."
+      },
+      {
+        "question": "Wann ist eine Einzelprüfung erforderlich?",
+        "answer": "Organisationen, die in einem Geschäftsjahr 750.000 $ oder mehr an Bundesmitteln ausgeben, müssen eine Einzelprüfung durchführen lassen."
+      },
+      {
+        "question": "Haben Stiftungszuschüsse Compliance-Anforderungen?",
+        "answer": "Ja, obwohl diese typischerweise weniger komplex sind als Bundesmittel. Gängige Anforderungen umfassen narrative Berichte, Finanzübersichten und Beschränkungen der Mittelverwendung."
+      }
+    ]
   },
   "vesting-schedule": {
     "name": "Unverfallbarkeitsplan-Rechner (Vesting Schedule Calculator)",
     "description": "Berechnen Sie Ihren Zeitplan für die Unverfallbarkeit von Anteilen (Vesting) basierend auf der Gesamtzahl der Anteile, der Vesting-Periode, der Wartefrist (Cliff) und der Häufigkeit. Sehen Sie eine detaillierte Tabelle der unverfallbaren Anteile pro Periode mit kumulierten Gesamtsummen.",
-    "shortDescription": "Berechnen Sie die Zeitpläne für die Unverfallbarkeit von Anteilen."
+    "shortDescription": "Berechnen Sie die Zeitpläne für die Unverfallbarkeit von Anteilen.",
+    "faqs": [
+      {
+        "question": "Was ist eine Cliff-Periode?",
+        "answer": "Ein Cliff ist die anfängliche Periode (normalerweise 12 Monate), bevor Anteile unverfallbar werden. Nach dem Cliff wird ein Pauschalbetrag unverfallbar, und der Rest wird nach einem regelmäßigen Zeitplan unverfallbar."
+      },
+      {
+        "question": "Was ist ein typischer Vesting-Zeitplan?",
+        "answer": "Am häufigsten ist ein 4-Jahres-Zeitplan mit einem 1-Jahres-Cliff und danach monatlicher Unverfallbarkeit (bekannt als '4-Jahres mit 1-Jahres-Cliff')."
+      },
+      {
+        "question": "Was passiert, wenn ich vor dem Cliff ausscheide?",
+        "answer": "Sie verlieren alle unverfallbaren Anteile. Wenn Sie vor dem Cliff ausscheiden, erhalten Sie überhaupt keine Anteile."
+      }
+    ]
   },
   "stock-option-tax": {
     "name": "Aktienoptions-Steuerrechner",
     "description": "Schätzen Sie die Steuern auf die Ausübung von Aktienoptionen für ISOs (Incentive Stock Options) und NSOs (Non-Qualified Stock Options). Berechnet die Einkommensteuer, die Kapitalertragssteuer und das AMT (Alternative Minimum Tax)-Risiko basierend auf Ihrer Haltedauer und Steuerklasse.",
-    "shortDescription": "Schätzen Sie Steuern auf die Ausübung von Aktienoptionen."
+    "shortDescription": "Schätzen Sie Steuern auf die Ausübung von Aktienoptionen.",
+    "faqs": [
+      {
+        "question": "Was ist der Unterschied zwischen ISO und NSO?",
+        "answer": "ISOs (Incentive Stock Options) bieten potenzielle Steuervorteile, wenn die Haltefristanforderungen erfüllt sind. NSOs (Non-Qualified Stock Options) werden bei Ausübung als gewöhnliches Einkommen besteuert."
+      },
+      {
+        "question": "Was ist AMT?",
+        "answer": "Die Alternative Mindeststeuer (Alternative Minimum Tax) ist ein paralleles Steuersystem. Bei ISOs ist der 'Bargain Element' bei Ausübung ein AMT-Präferenzposten, der zusätzliche Steuerpflichten auslösen kann."
+      },
+      {
+        "question": "Was ist eine qualifizierende Veräußerung für ISOs?",
+        "answer": "Sie müssen die Anteile mindestens 1 Jahr nach Ausübung UND 2 Jahre nach dem Gewährungsdatum halten, um für die langfristige Kapitalertragsbehandlung in Frage zu kommen."
+      }
+    ]
   },
   "equity-dilution": {
     "name": "Aktienverwässerungsrechner",
     "description": "Berechnen Sie, wie Finanzierungsrunden und Erweiterungen des Optionspools Ihren Eigentumsanteil beeinflussen. Sehen Sie pre- und post-Dilution-Anteile nebeneinander mit dem gesamten Verwässerungseffekt.",
-    "shortDescription": "Berechnen Sie die Aktienverwässerung durch Finanzierungsrunden."
+    "shortDescription": "Berechnen Sie die Aktienverwässerung durch Finanzierungsrunden.",
+    "faqs": [
+      {
+        "question": "Was ist Eigenkapitalverwässerung?",
+        "answer": "Eine Verwässerung tritt auf, wenn neue Aktien ausgegeben werden (durch Finanzierungsrunden oder Optionspools), wodurch der prozentuale Anteil bestehender Aktionäre reduziert wird, obwohl ihre Aktienanzahl gleich bleibt."
+      },
+      {
+        "question": "Ist Verwässerung immer schlecht?",
+        "answer": "Nicht unbedingt. Wenn die neue Investition die Bewertung des Unternehmens erheblich steigert, kann Ihr kleinerer Prozentsatz in absoluten Dollarbeträgen mehr wert sein."
+      },
+      {
+        "question": "Was ist ein Optionspool?",
+        "answer": "Eine Reserve von Aktien, die für zukünftige Mitarbeiterbeteiligungen zurückgelegt wird. Investoren verlangen oft, dass ein Optionspool vor der Finanzierung eingerichtet oder erweitert wird."
+      }
+    ]
   },
   "solar-roi": {
     "name": "Solarpanel-ROI-Rechner",
     "description": "Berechnen Sie die Kapitalrendite (ROI) für die Installation von Solarmodulen. Geben Sie Systemkosten, Energieproduktion, Strompreis und Anreize ein, um Amortisationszeit, 25-Jahres-Einsparungen und ROI-Prozentsatz zu sehen.",
-    "shortDescription": "Berechnen Sie die Amortisationszeit und den ROI für Solarmodule."
+    "shortDescription": "Berechnen Sie die Amortisationszeit und den ROI für Solarmodule.",
+    "faqs": [
+      {
+        "question": "Wie lange dauert es, bis sich Solarmodule amortisieren?",
+        "answer": "Typischerweise 6–10 Jahre, abhängig von den Systemkosten, den lokalen Strompreisen und verfügbaren Anreizen. Nach der Amortisation ist der erzeugte Strom im Wesentlichen kostenlos."
+      },
+      {
+        "question": "Was beeinflusst den Solar-ROI am meisten?",
+        "answer": "Die größten Faktoren sind die Systemkosten, die lokalen Strompreise, verfügbare Anreize/Rabatte und wie viel Sonne Ihr Standort jährlich erhält."
+      },
+      {
+        "question": "Steigern Solarmodule den Wert eines Hauses?",
+        "answer": "Studien zeigen, dass Solarmodule den Wert eines Hauses im Durchschnitt um 3-4% steigern können, was einen zusätzlichen ROI über die Energieeinsparungen hinaus bietet."
+      }
+    ]
   },
   "solar-incentive": {
     "name": "Schätzung von Solar-Förderungen und Steuergutschriften",
     "description": "Schätzen Sie Bundes- und Landes-Solarförderungen einschließlich der 30%igen Investitionssteuergutschrift (Investment Tax Credit, ITC), staatlicher Rabatte und SREC (Solar Renewable Energy Credit)-Werte. Sehen Sie Ihre Netto-Kosten nach allen verfügbaren Anreizen.",
-    "shortDescription": "Schätzen Sie Solarsteuergutschriften und staatliche Rabatte."
+    "shortDescription": "Schätzen Sie Solarsteuergutschriften und staatliche Rabatte.",
+    "faqs": [
+      {
+        "question": "Was ist der bundesweite Solar-ITC?",
+        "answer": "Der Investment Tax Credit (ITC) ermöglicht es Ihnen, 30% der Kosten für die Installation einer Solaranlage von Ihren Bundessteuern abzuziehen. Dieser Satz ist bis 2032 verfügbar."
+      },
+      {
+        "question": "Was sind SRECs?",
+        "answer": "Solar Renewable Energy Certificates (SRECs) repräsentieren die Umweltvorteile von Solarstrom. In einigen Staaten können Sie SRECs für zusätzliches Einkommen verkaufen."
+      },
+      {
+        "question": "Kann ich bundesstaatliche und staatliche Anreize kombinieren?",
+        "answer": "Ja, der bundesweite ITC kann mit staatlichen Rabatten und SRECs kombiniert werden. Einige staatliche Anreize können jedoch die Kostenbasis für den Bundeskredit reduzieren."
+      }
+    ]
   },
   "energy-savings": {
     "name": "Energiesparrechner",
     "description": "Berechnen Sie, wie viel Sie durch den Umstieg auf Solarenergie bei Stromkosten sparen können. Geben Sie Ihre aktuelle Rechnung, den Solardeckungsanteil und die Systemkosten ein, um monatliche, jährliche und lebenslange Einsparungen zu sehen.",
-    "shortDescription": "Berechnen Sie Stromersparnisse durch Solarenergie."
+    "shortDescription": "Berechnen Sie Stromersparnisse durch Solarenergie.",
+    "faqs": [
+      {
+        "question": "Welchen Solarabdeckungsgrad sollte ich anstreben?",
+        "answer": "Die meisten Hausbesitzer streben eine Abdeckung von 80-100% an. Eine Abdeckung über 100% ist möglicherweise nicht kosteneffektiv, es sei denn, Ihr Versorgungsunternehmen bietet eine günstige Netto-Messung an."
+      },
+      {
+        "question": "Steigen die Solareinsparungen im Laufe der Zeit?",
+        "answer": "Ja, da die Strompreise typischerweise jährlich um 3-4% steigen, wachsen Ihre Einsparungen jedes Jahr, während Ihre Solarenergiekosten fest bleiben."
+      },
+      {
+        "question": "Was ist in der Break-Even-Berechnung enthalten?",
+        "answer": "Die Break-Even-Berechnung berücksichtigt die gesamten Systemkosten abzüglich der monatlichen Einsparungen, bis die kumulierten Einsparungen die ursprüngliche Investition erreichen."
+      }
+    ]
   },
   "carbon-footprint": {
     "name": "CO₂-Fußabdruck-Ausgleichsrechner",
     "description": "Berechnen Sie die CO₂-Emissionen, die Sie durch den Umstieg auf erneuerbare Energien vermeiden können. Sehen Sie Äquivalente in gepflanzten Bäumen und ausgeglichenen Fahrkilometern basierend auf Ihrer Energiequelle und Ihrem Verbrauch.",
-    "shortDescription": "Berechnen Sie CO₂-Einsparungen durch den Umstieg auf erneuerbare Energien."
+    "shortDescription": "Berechnen Sie CO₂-Einsparungen durch den Umstieg auf erneuerbare Energien.",
+    "faqs": [
+      {
+        "question": "Wie viel CO₂ produziert ein durchschnittlicher US-Haushalt?",
+        "answer": "Ein durchschnittlicher US-Haushalt produziert etwa 7,5 Tonnen CO₂ pro Jahr durch Stromverbrauch, obwohl dies je nach Energiequelle erheblich variiert."
+      },
+      {
+        "question": "Wie werden Baum-Äquivalente berechnet?",
+        "answer": "Ein ausgewachsener Baum absorbiert etwa 22 kg (0,022 Tonnen) CO₂ pro Jahr. Wir teilen Ihre vermiedenen Emissionen durch diesen Faktor."
+      },
+      {
+        "question": "Welche Energiequelle hat den höchsten CO₂-Fußabdruck?",
+        "answer": "Kohle hat die höchsten Emissionen mit etwa 0,95 kg CO₂/kWh, gefolgt von Öl (0,72) und Erdgas (0,42). Der US-Netzdurchschnitt liegt bei etwa 0,39 kg CO₂/kWh."
+      }
+    ]
   },
   "green-lease": {
     "name": "Check für grüne Mietklauseln",
     "description": "Bewerten Sie Ihren Gewerbemietvertrag auf grüne Bestimmungen. Prüfen Sie, welche Nachhaltigkeitsklauseln vorhanden sind, und erhalten Sie eine Bewertung mit Empfehlungen für fehlende wesentliche Bestimmungen.",
-    "shortDescription": "Prüfen Sie grüne Klauseln in Gewerbemietverträgen."
+    "shortDescription": "Prüfen Sie grüne Klauseln in Gewerbemietverträgen.",
+    "faqs": [
+      {
+        "question": "Was ist ein Green Lease?",
+        "answer": "Ein Green Lease enthält Bestimmungen, die die Anreize von Vermietern und Mietern für Energieeffizienz, Nachhaltigkeit und Umweltleistung in Gewerbegebäuden aufeinander abstimmen."
+      },
+      {
+        "question": "Warum sind Energie-Benchmarking-Klauseln wichtig?",
+        "answer": "Energie-Benchmarking ist in vielen Städten gesetzlich vorgeschrieben und hilft, die Gebäudeleistung im Laufe der Zeit zu verfolgen und Möglichkeiten zur Effizienzverbesserung zu identifizieren."
+      },
+      {
+        "question": "Was ist eine Kostenbeteiligungsklausel?",
+        "answer": "Kostenbeteiligungsklauseln legen fest, wie die Kosten für Energieeffizienz-Upgrades und die daraus resultierenden Einsparungen zwischen Vermieter und Mieter aufgeteilt werden, wodurch das Problem des 'Split Incentive' gelöst wird."
+      }
+    ]
   },
   "ev-vs-gas": {
     "name": "Kostenvergleich Elektrofahrzeug vs. Benziner",
     "description": "Vergleichen Sie die jährlichen Kraftstoffkosten des Fahrens eines Elektrofahrzeugs mit denen eines Benziners. Sehen Sie die Kosten direkt nebeneinander, jährliche Einsparungen und prognostizierte Einsparungen über 10 Jahre.",
-    "shortDescription": "Vergleichen Sie die Kraftstoffkosten von Elektro- und Benzinfahrzeugen."
+    "shortDescription": "Vergleichen Sie die Kraftstoffkosten von Elektro- und Benzinfahrzeugen.",
+    "faqs": [
+      {
+        "question": "Wie viel günstiger ist es, ein Elektrofahrzeug zu fahren?",
+        "answer": "Im Durchschnitt sind Elektrofahrzeuge 50-70 % günstiger im Betrieb als Benzinfahrzeuge, abhängig von den lokalen Strom- und Benzinpreisen."
+      },
+      {
+        "question": "Womit wird die Effizienz von Elektrofahrzeugen gemessen?",
+        "answer": "Die Effizienz von Elektrofahrzeugen wird typischerweise in kWh pro 100 Meilen gemessen. Die meisten modernen Elektrofahrzeuge liegen zwischen 25-35 kWh pro 100 Meilen."
+      },
+      {
+        "question": "Sind Wartungseinsparungen enthalten?",
+        "answer": "Dieser Rechner konzentriert sich nur auf die Kraftstoffkosten. Elektrofahrzeuge sparen aufgrund weniger beweglicher Teile typischerweise auch 500-1000 $/Jahr bei der Wartung."
+      }
+    ]
   },
   "home-energy-audit": {
     "name": "Checkliste für die Energieprüfung zu Hause",
     "description": "Erstellen Sie eine priorisierte Checkliste für Energieverbesserungen in Ihrem Zuhause. Wählen Sie Ihren Haustyp und Ihr Alter aus, um anwendbare Upgrades mit geschätzten Einsparungsbereichen zu sehen.",
-    "shortDescription": "Erhalten Sie eine personalisierte Checkliste für die Energieverbesserung zu Hause."
+    "shortDescription": "Erhalten Sie eine personalisierte Checkliste für die Energieverbesserung zu Hause.",
+    "faqs": [
+      {
+        "question": "Was ist die wirkungsvollste Energieverbesserung?",
+        "answer": "Für die meisten Haushalte bieten Dachbodendämmung und Luftabdichtung den besten ROI und reduzieren die Heiz-/Kühlkosten um 10-20 %."
+      },
+      {
+        "question": "Sollte ich eine professionelle Energieberatung in Anspruch nehmen?",
+        "answer": "Ja, eine professionelle Prüfung mit Blower-Door-Test kann versteckte Luftlecks und Isolationslücken identifizieren, die bei einer visuellen Inspektion übersehen werden."
+      },
+      {
+        "question": "Sind diese Einsparungsschätzungen inklusive Rabatte?",
+        "answer": "Die gezeigten Einsparungen resultieren nur aus reduzierten Energiekosten. Viele Verbesserungen qualifizieren sich auch für staatliche oder bundesstaatliche Rabatte, was den ROI weiter verbessert."
+      }
+    ]
   },
   "ppa-calculator": {
     "name": "Strombezugsvertrag (PPA)-Rechner",
     "description": "Vergleichen Sie die Gesamtkosten eines Strombezugsvertrags (PPA) mit den Stromkosten eines Versorgungsunternehmens über die Vertragslaufzeit. Sehen Sie jährliche Kostenaufschlüsselungen einschließlich Ratenerhöhungen.",
-    "shortDescription": "Vergleichen Sie PPA-Kosten mit Stromkosten des Versorgungsunternehmens."
+    "shortDescription": "Vergleichen Sie PPA-Kosten mit Stromkosten des Versorgungsunternehmens.",
+    "faqs": [
+      {
+        "question": "Was ist ein PPA?",
+        "answer": "Ein Power Purchase Agreement (Stromabnahmevertrag) ist ein Vertrag, bei dem ein Solaranbieter Solarmodule auf Ihrem Grundstück installiert und Ihnen den Strom zu einem festen Tarif verkauft, der typischerweise niedriger ist als die Tarife der Versorgungsunternehmen."
+      },
+      {
+        "question": "Was ist eine typische PPA-Eskalationsrate?",
+        "answer": "PPA-Eskalationsraten liegen typischerweise bei 1-3 % jährlich, verglichen mit historischen Erhöhungen der Versorgungsunternehmen von 3-5 % pro Jahr."
+      },
+      {
+        "question": "Wem gehören die Module in einem PPA?",
+        "answer": "Der Solaranbieter besitzt und wartet die Module. Am Ende der Vertragslaufzeit (normalerweise 15-25 Jahre) haben Sie möglicherweise die Option, das System zu kaufen oder entfernen zu lassen."
+      }
+    ]
   },
   "income-tax": {
     "name": "Einkommensteuer-Schätzer",
     "description": "Schätzen Sie Ihre bundesstaatliche Einkommensteuer basierend auf Ihrem Familienstand, Bruttoeinkommen und Abzügen. Sehen Sie eine detaillierte Aufschlüsselung nach Steuerklassen, den effektiven Steuersatz und Ihr Nettoeinkommen.",
-    "shortDescription": "Schätzen Sie die bundesstaatliche Einkommensteuer nach Steuerklassen."
+    "shortDescription": "Schätzen Sie die bundesstaatliche Einkommensteuer nach Steuerklassen.",
+    "faqs": [
+      {
+        "question": "Welches Steuerjahr wird hier verwendet?",
+        "answer": "Es werden die Bundessteuerklassen und Standardabzugsbeträge von 2024 verwendet."
+      },
+      {
+        "question": "Sind staatliche Steuern enthalten?",
+        "answer": "Nein, dies schätzt nur die Bundes-Einkommensteuer. Staatliche Steuern variieren je nach Standort."
+      },
+      {
+        "question": "Was ist, wenn ich Abzüge detailliert aufliste?",
+        "answer": "Geben Sie Ihre gesamten detaillierten Abzüge im Feld für Abzüge ein, anstatt den Standardabzug zu verwenden."
+      }
+    ]
   },
   "auto-loan": {
     "name": "Autokreditrechner",
     "description": "Berechnen Sie Ihre monatliche Autokreditrate einschließlich Anzahlung und Inzahlungnahmewert. Sehen Sie die insgesamt gezahlten Zinsen und die wahren Kosten Ihres Fahrzeugkaufs.",
-    "shortDescription": "Berechnen Sie monatliche Autokreditraten."
+    "shortDescription": "Berechnen Sie monatliche Autokreditraten.",
+    "faqs": [
+      {
+        "question": "Was ist ein guter Zinssatz für einen Autokredit?",
+        "answer": "Die Zinssätze variieren je nach Kreditwürdigkeit. Eine ausgezeichnete Kreditwürdigkeit kann 4-6 % erhalten, während eine durchschnittliche Kreditwürdigkeit 7-12 % sehen kann."
+      },
+      {
+        "question": "Sollte ich eine größere Anzahlung leisten?",
+        "answer": "Eine größere Anzahlung reduziert Ihren Kreditbetrag, die monatliche Rate und die insgesamt gezahlten Zinsen."
+      },
+      {
+        "question": "Wie beeinflusst der Inzahlungnahmewert den Kredit?",
+        "answer": "Der Inzahlungnahmewert wird vom Fahrzeugpreis abgezogen, wodurch der zu finanzierende Betrag reduziert wird."
+      }
+    ]
   },
   "debt-payoff": {
     "name": "Schuldentilgungsrechner",
     "description": "Sehen Sie, wie lange es dauert, Schulden mit Mindestzahlungen im Vergleich zu zusätzlichen Zahlungen zu tilgen. Vergleichen Sie die insgesamt gezahlten Zinsen und die eingesparte Zeit, indem Sie jeden Monat mehr bezahlen.",
-    "shortDescription": "Berechnen Sie die Schuldentilgungszeit und Zinseinsparungen."
+    "shortDescription": "Berechnen Sie die Schuldentilgungszeit und Zinseinsparungen.",
+    "faqs": [
+      {
+        "question": "Wie viel extra sollte ich zahlen?",
+        "answer": "Schon 50-100 $ extra pro Monat können Tausende an Zinsen und Jahre an Zahlungen bei hochverzinslichen Schulden einsparen."
+      },
+      {
+        "question": "Sollte ich zuerst hochverzinsliche Schulden abbezahlen?",
+        "answer": "Die Lawinenmethode (höchster Zinssatz zuerst) spart am meisten Geld. Die Schneeballmethode (kleinster Saldo zuerst) führt zu schnelleren Erfolgen."
+      },
+      {
+        "question": "Funktioniert das für Kreditkarten?",
+        "answer": "Ja, es funktioniert für jede Schuld mit einem festen Zinssatz und regelmäßigen Zahlungen."
+      }
+    ]
   },
   "net-worth": {
     "name": "Vermögensrechner",
     "description": "Berechnen Sie Ihr Nettovermögen, indem Sie Ihre Vermögenswerte und Verbindlichkeiten auflisten. Verfolgen Sie Bargeld, Investitionen, Eigentum und Schulden, um Ihre gesamte finanzielle Lage zu sehen.",
-    "shortDescription": "Berechnen Sie Gesamtvermögen minus Verbindlichkeiten."
+    "shortDescription": "Berechnen Sie Gesamtvermögen minus Verbindlichkeiten.",
+    "faqs": [
+      {
+        "question": "Was zählt als Vermögenswert?",
+        "answer": "Bargeld, Ersparnisse, Investitionen, Altersvorsorgekonten, Immobilien, Fahrzeuge und jedes andere Eigentum mit Wert."
+      },
+      {
+        "question": "Wie oft sollte ich das Nettovermögen berechnen?",
+        "answer": "Eine monatliche oder vierteljährliche Verfolgung hilft Ihnen, den finanziellen Fortschritt zu sehen und Trends zu erkennen."
+      },
+      {
+        "question": "Ist ein negatives Nettovermögen schlecht?",
+        "answer": "Es ist am Anfang des Lebens üblich (Studentendarlehen, Hypothek). Konzentrieren Sie sich auf den Trend – er sollte sich im Laufe der Zeit verbessern."
+      }
+    ]
   },
   "paycheck-calc": {
     "name": "Gehaltsrechner",
     "description": "Schätzen Sie Ihr Nettoeinkommen pro Gehaltsscheck. Geben Sie Gehalt oder Stundenlohn, Familienstand und Zahlungsfrequenz ein, um die Abzüge für Bundessteuern, Sozialversicherung und Medicare zu sehen.",
-    "shortDescription": "Schätzen Sie das Nettoeinkommen pro Gehaltsscheck."
+    "shortDescription": "Schätzen Sie das Nettoeinkommen pro Gehaltsscheck.",
+    "faqs": [
+      {
+        "question": "Sind staatliche Steuern enthalten?",
+        "answer": "Nein, dies schätzt nur die Bundeseinbehaltungen. Von Ihrem tatsächlichen Gehalt können auch staatliche und lokale Steuern abgezogen werden."
+      },
+      {
+        "question": "Was ist mit Abzügen vor Steuern?",
+        "answer": "Dies berücksichtigt keine 401(k), Krankenversicherung oder andere Abzüge vor Steuern, die Ihr zu versteuerndes Einkommen reduzieren würden."
+      },
+      {
+        "question": "Ist zweiwöchentlich dasselbe wie halbmonatlich?",
+        "answer": "Nein. Zweiwöchentlich bedeutet alle zwei Wochen (26 Gehaltsschecks/Jahr). Halbmonatlich bedeutet zweimal im Monat (24 Gehaltsschecks/Jahr)."
+      }
+    ]
   },
   "settlement-estimator": {
     "name": "Schadensersatzschätzer",
     "description": "Schätzen Sie den Wert Ihrer Personenschaden- oder Autounfallregulierung. Geben Sie Arztrechnungen, Lohnausfall und Verletzungsschwere ein, um eine Spanne basierend auf der Multiplikatormethode zu erhalten.",
-    "shortDescription": "Schätzen Sie die Spannen für Personenschaden-/Autounfallregulierungen."
+    "shortDescription": "Schätzen Sie die Spannen für Personenschaden-/Autounfallregulierungen.",
+    "faqs": [
+      {
+        "question": "Wie genau ist der Vergleichsrechner?",
+        "answer": "Er liefert eine grobe Spanne unter Verwendung der Multiplikatormethode, die üblicherweise von Versicherungsgesellschaften verwendet wird. Tatsächliche Vergleichszahlungen hängen von vielen Faktoren ab, einschließlich Verschulden, Gerichtsbarkeit und Versicherer."
+      },
+      {
+        "question": "Was ist die Multiplikatormethode?",
+        "answer": "Wirtschaftliche Schäden (Arztrechnungen, Lohnausfall) werden je nach Schwere der Verletzung mit einem Faktor von 1,5 bis 10 multipliziert, um die Gesamtentschädigung zu schätzen."
+      },
+      {
+        "question": "Sollte ich mich für meinen Fall darauf verlassen?",
+        "answer": "Nein. Nutzen Sie dies als Ausgangspunkt, um den potenziellen Wert zu verstehen. Konsultieren Sie einen Anwalt für Personenschäden für eine genaue Fallbewertung."
+      }
+    ]
   },
   "insurance-quote-comparison": {
     "name": "Vergleichstool für Versicherungsangebote",
     "description": "Vergleichen Sie Angebote für Auto-, Hausrat- und Lebensversicherungen nebeneinander. Geben Sie Angebote von mehreren Unternehmen ein und sehen Sie, welches das beste Preis-Leistungs-Verhältnis bietet.",
-    "shortDescription": "Vergleichen Sie Versicherungsangebote nebeneinander."
+    "shortDescription": "Vergleichen Sie Versicherungsangebote nebeneinander.",
+    "faqs": [
+      {
+        "question": "Wie viele Angebote sollte ich vergleichen?",
+        "answer": "Mindestens 3-5 Angebote von verschiedenen Unternehmen. Die Tarife können für die gleiche Deckung um Hunderte von Dollar variieren."
+      },
+      {
+        "question": "Was sind effektive Kosten?",
+        "answer": "Effektive Kosten kombinieren Ihre jährliche Prämie mit Ihrem Selbstbehalt und geben so ein vollständigeres Bild der gesamten potenziellen Kosten."
+      },
+      {
+        "question": "Bietet dieses Tool tatsächliche Angebote?",
+        "answer": "Nein. Sie geben Angebote ein, die Sie von Versicherungsgesellschaften erhalten haben. Dieses Tool hilft Ihnen, diese zu organisieren und zu vergleichen."
+      }
+    ]
   },
   "accident-damage": {
     "name": "Unfallschadenrechner",
     "description": "Berechnen Sie die Gesamtschäden aus einem Unfall, einschließlich Arztrechnungen, Sachschäden, Lohnausfall sowie Schmerzensgeld. Sehen Sie eine vollständige Aufschlüsselung.",
-    "shortDescription": "Berechnen Sie die gesamten Unfallschäden."
+    "shortDescription": "Berechnen Sie die gesamten Unfallschäden.",
+    "faqs": [
+      {
+        "question": "Was sind wirtschaftliche vs. nicht-wirtschaftliche Schäden?",
+        "answer": "Wirtschaftliche Schäden sind quantifizierbare Verluste (Arztrechnungen, Lohnausfall, Sachschäden). Nicht-wirtschaftliche Schäden sind subjektiv (Schmerz, Leid, emotionaler Stress)."
+      },
+      {
+        "question": "Wie schätze ich Schmerz und Leid ein?",
+        "answer": "Eine gängige Methode ist das 1,5- bis 5-fache Ihrer Arztrechnungen, abhängig von der Schwere der Verletzung. Schwerere Verletzungen rechtfertigen höhere Multiplikatoren."
+      },
+      {
+        "question": "Beinhaltet dies Strafschadenersatz?",
+        "answer": "Nein. Strafschadenersatz ist selten und wird nur zur Bestrafung extremen Fehlverhaltens vergeben. Dieser Rechner konzentriert sich auf Ausgleichsschäden."
+      }
+    ]
   },
   "attorney-fee": {
     "name": "Anwaltsgebührenrechner",
     "description": "Berechnen Sie Anwaltsgebühren für Erfolgshonorar- und Stundenvereinbarungen. Sehen Sie, wie viel Ihr Anwalt verdienen wird und wie hoch Ihre Auszahlung sein wird.",
-    "shortDescription": "Berechnen Sie Anwaltsgebühren nach Erfolgshonorar & Stunden."
+    "shortDescription": "Berechnen Sie Anwaltsgebühren nach Erfolgshonorar & Stunden.",
+    "faqs": [
+      {
+        "question": "Was ist eine typische Erfolgshonorarvereinbarung?",
+        "answer": "Die meisten Anwälte für Personenschäden berechnen 33 % für außergerichtliche Vergleiche und 40 %, wenn der Fall vor Gericht geht."
+      },
+      {
+        "question": "Sind Fallkosten getrennt vom Honorar?",
+        "answer": "Normalerweise ja. Gerichtsgebühren, Sachverständige und Kosten für medizinische Unterlagen werden in der Regel separat von Ihrer Vergleichszahlung abgezogen."
+      },
+      {
+        "question": "Kann ich den Prozentsatz des Honorars verhandeln?",
+        "answer": "Ja, Erfolgshonorare sind verhandelbar. Fälle mit hohem Wert und klarer Haftung können einen niedrigeren Prozentsatz rechtfertigen."
+      }
+    ]
   },
   "insurance-premium": {
     "name": "Versicherungsprämien-Schätzer",
     "description": "Schätzen Sie monatliche Versicherungsprämien für Auto-, Hausrat-, Mieter- und Lebensversicherungen basierend auf Ihrem Alter, Ihrer Bonität, Ihrem Standort und Ihrem Deckungsniveau.",
-    "shortDescription": "Schätzen Sie monatliche Versicherungsprämien."
+    "shortDescription": "Schätzen Sie monatliche Versicherungsprämien.",
+    "faqs": [
+      {
+        "question": "Wie genau ist diese Schätzung?",
+        "answer": "Dies ist eine grobe Schätzung, die auf nationalen Durchschnittswerten und gängigen Tariffaktoren basiert. Die tatsächlichen Prämien hängen von Ihrem spezifischen Profil und Versicherer ab."
+      },
+      {
+        "question": "Beeinflusst die Kreditwürdigkeit wirklich die Versicherung?",
+        "answer": "In den meisten Staaten ja. Versicherer verwenden kreditbasierte Versicherungsscores, um Tarife festzulegen. Eine bessere Kreditwürdigkeit bedeutet in der Regel niedrigere Prämien."
+      },
+      {
+        "question": "Was ist der größte Faktor bei den Versicherungskosten?",
+        "answer": "Für Auto: Fahrbericht und Alter. Für Haus: Standort und Immobilienwert. Für Leben: Alter und Gesundheitszustand."
+      }
+    ]
   },
   "force-majeure-checker": {
     "name": "Klauselprüfer Höhere Gewalt",
     "description": "Fügen Sie Ihren Vertrag ein und sehen Sie sofort, ob die Klausel zur höheren Gewalt (Force Majeure) stark, eng gefasst oder fehlend ist. Erkennt abgedeckte Ereignisse, Auffangklauseln, Mitteilungspflichten und Schadensminderungspflichten.",
-    "shortDescription": "Erkennt und bewertet Klauseln zur höheren Gewalt."
+    "shortDescription": "Erkennt und bewertet Klauseln zur höheren Gewalt.",
+    "faqs": [
+      {
+        "question": "Was ist höhere Gewalt?",
+        "answer": "Eine Klausel, die die Leistung entschuldigt, wenn außergewöhnliche Ereignisse (Krieg, Pandemie, Naturkatastrophen) diese unmöglich machen."
+      },
+      {
+        "question": "Warum ist die Stärke wichtig?",
+        "answer": "Enge Klauseln decken das tatsächliche Ereignis möglicherweise nicht ab, wodurch Sie vertragsbrüchig werden."
+      },
+      {
+        "question": "Sollte ich eine Auffangklausel hinzufügen?",
+        "answer": "Eine Auffangklausel ('jedes Ereignis außerhalb der zumutbaren Kontrolle') erweitert den Schutz erheblich."
+      }
+    ]
   },
   "auto-renewal-detector": {
     "name": "Detektor für automatische Verlängerungsklauseln",
     "description": "Finden Sie unbefristete und automatische Verlängerungsklauseln in jedem Vertrag. Zeigt das Kündigungsfenster an, damit Sie keine Kündigungsfrist verpassen.",
-    "shortDescription": "Erkennt automatische Verlängerungsfallen in Verträgen."
+    "shortDescription": "Erkennt automatische Verlängerungsfallen in Verträgen.",
+    "faqs": [
+      {
+        "question": "Warum sind automatische Verlängerungen riskant?",
+        "answer": "Viele erfordern eine schriftliche Kündigung 30–90 Tage im Voraus, sonst sind Sie für ein weiteres Jahr gebunden."
+      },
+      {
+        "question": "Sind automatische Verlängerungsklauseln legal?",
+        "answer": "Ja, aber mehrere Staaten verlangen eine klare, auffällige Offenlegung für Verbraucherverträge."
+      },
+      {
+        "question": "Was soll ich tun, wenn ich eine finde?",
+        "answer": "Stellen Sie sofort eine Kalendererinnerung für die Kündigungsfrist ein."
+      }
+    ]
   },
   "governing-law-id": {
     "name": "Identifikator für anwendbares Recht",
     "description": "Extrahiert in Sekundenschnelle anwendbares Recht, Gerichtsstand, Schiedsgerichtsbarkeit, Gerichtsstandsverzicht und Sammelklagenverzicht aus jedem Vertrag.",
-    "shortDescription": "Extrahiert Gerichtsstand & Schiedsklauseln."
+    "shortDescription": "Extrahiert Gerichtsstand & Schiedsklauseln.",
+    "faqs": [
+      {
+        "question": "Warum ist das anwendbare Recht wichtig?",
+        "answer": "Es bestimmt, welche Gesetze des Staates gelten und wo Sie klagen müssten."
+      },
+      {
+        "question": "Was ist ein Jury-Verzicht?",
+        "answer": "Eine Klausel, die Streitigkeiten zwingt, von einem Richter statt einer Jury entschieden zu werden."
+      },
+      {
+        "question": "Kann ich den Gerichtsstand verhandeln?",
+        "answer": "Oft ja, besonders bei Anbietern. Unbequeme Gerichtsstände können die Prozesskosten dramatisch erhöhen."
+      }
+    ]
   },
   "plain-english-rewriter": {
     "name": "Umschreiber für einfache Sprache",
     "description": "Wandelt Juristendeutsch in einfache Sprache um. Ersetzt archaische juristische Phrasen (z. B. „hiervor“, „gemäß“, „ungeachtet dessen“) durch klare, moderne Entsprechungen.",
-    "shortDescription": "Schreibt Juristendeutsch in einfache Sprache um."
+    "shortDescription": "Schreibt Juristendeutsch in einfache Sprache um.",
+    "faqs": [
+      {
+        "question": "Ist die Umformulierung rechtlich korrekt?",
+        "answer": "Sie bewahrt die Bedeutung, indem sie gleichwertige Begriffe austauscht. Überprüfen Sie kritische Verträge immer mit einem Anwalt."
+      },
+      {
+        "question": "Was wird umformuliert?",
+        "answer": "Gängige archaische Phrasen – „shall“ wird zu „must“, „pursuant to“ wird zu „under“ usw."
+      },
+      {
+        "question": "Werden juristische Begriffe erklärt?",
+        "answer": "Ja, es werden Definitionen aus unserem Rechtswörterbuch für alle gefundenen Fachbegriffe herangezogen."
+      }
+    ]
   },
   "chargeback-checker": {
     "name": "Rückbuchungsberechtigungs-Checker",
     "description": "Beantworten Sie einige Fragen, um zu sehen, ob Sie wahrscheinlich gemäß dem Fair Credit Billing Act (ein US-Bundesgesetz, das Verbraucher bei Kreditkartenabrechnungsfehlern schützt) Anspruch auf eine Kreditkartenrückbuchung haben.",
-    "shortDescription": "Prüfen Sie, ob Sie eine Rückbuchung gewinnen können."
+    "shortDescription": "Prüfen Sie, ob Sie eine Rückbuchung gewinnen können.",
+    "faqs": [
+      {
+        "question": "Wie lange habe ich Zeit, um Einspruch zu erheben?",
+        "answer": "60 Tage ab dem Kontoauszugsdatum gemäß Bundesgesetz; viele Aussteller erlauben 120 Tage."
+      },
+      {
+        "question": "Was ist der Unterschied zu einer Rückerstattung?",
+        "answer": "Eine Rückbuchung wird bei Ihrer Bank eingereicht, nicht beim Händler. Die Bank storniert die Belastung, während sie den Fall untersucht."
+      },
+      {
+        "question": "Kann der Händler dagegen vorgehen?",
+        "answer": "Ja. Eine starke Dokumentation verbessert Ihre Chancen erheblich."
+      }
+    ]
   },
   "lemon-law-qualifier": {
     "name": "Qualifikationsprüfer für 'Lemon Laws'",
     "description": "Prüfen Sie, ob Ihr defektes Fahrzeug wahrscheinlich unter die 'Lemon Laws' (Gesetze zum Schutz vor mangelhaften Fahrzeugen) Ihres Bundesstaates fällt, basierend auf Reparaturversuchen, Ausfalltagen, Alter und Kilometerstand.",
-    "shortDescription": "Prüfen Sie, ob Ihr Fahrzeug als 'Montagsauto' gilt."
+    "shortDescription": "Prüfen Sie, ob Ihr Fahrzeug als 'Montagsauto' gilt.",
+    "faqs": [
+      {
+        "question": "Was ist eine „Montagskarre“?",
+        "answer": "Ein Fahrzeug mit einem wesentlichen Mangel, der nach einer angemessenen Anzahl von Versuchen nicht behoben werden kann."
+      },
+      {
+        "question": "Gängige Schwellenwerte?",
+        "answer": "Typischerweise 3–4 Reparaturversuche für dasselbe Problem oder mehr als 30 Tage außer Betrieb."
+      },
+      {
+        "question": "Qualifizieren sich Gebrauchtwagen?",
+        "answer": "Einige Staaten erweitern den Schutz des „Lemon Law“ auf Gebrauchtwagen; viele nicht."
+      }
+    ]
   },
   "subscription-cancel-letter": {
     "name": "Kündigungsschreiben für Abonnements",
     "description": "Erstellen Sie ein schriftliches Kündigungsschreiben für jedes Abonnement (Fitnessstudio, SaaS, Zeitschrift), das eine schriftliche Kündigung erfordert.",
-    "shortDescription": "Erstellen Sie ein schriftliches Kündigungsschreiben."
+    "shortDescription": "Erstellen Sie ein schriftliches Kündigungsschreiben.",
+    "faqs": [
+      {
+        "question": "Warum sollte man einen schriftlichen Brief senden?",
+        "answer": "Viele Abonnementverträge erkennen nur schriftliche Kündigungen an und ignorieren telefonische Anfragen."
+      },
+      {
+        "question": "Sollte ich per Einschreiben versenden?",
+        "answer": "Bei hochwertigen oder umstrittenen Kündigungen ja – wegen des Zustellnachweises."
+      },
+      {
+        "question": "Stoppt dies die Gebühren sofort?",
+        "answer": "Gemäß dem Wortlaut des Briefes beantragen Sie eine sofortige Kündigung, aber überprüfen Sie Ihren Vertrag auf erforderliche Kündigungsfristen."
+      }
+    ]
   },
   "data-breach-checklist": {
     "name": "Checkliste zur Reaktion auf Datenschutzverletzungen",
     "description": "Schritt-für-Schritt-Checkliste, was nach Erhalt einer Benachrichtigung über eine Datenschutzverletzung zu tun ist – vom Ändern von Passwörtern bis zum Ausfüllen des IRS-Formulars 14039.",
-    "shortDescription": "Maßnahmen nach einer Datenschutzverletzung."
+    "shortDescription": "Maßnahmen nach einer Datenschutzverletzung.",
+    "faqs": [
+      {
+        "question": "Sollte ich meine Kreditwürdigkeit einfrieren?",
+        "answer": "Ja – Kredit-Sperren sind in allen 50 Staaten kostenlos und bieten einen weitaus besseren Schutz als Betrugswarnungen."
+      },
+      {
+        "question": "Reicht die kostenlose Überwachung aus?",
+        "answer": "Sie ist hilfreich, verhindert aber keinen Betrug. Kombinieren Sie sie mit einer Sperre."
+      },
+      {
+        "question": "Muss ich etwas tun, wenn meine Sozialversicherungsnummer nicht offengelegt wurde?",
+        "answer": "Ändern Sie trotzdem Passwörter und aktivieren Sie die 2FA. E-Mail- und Passwort-Verletzungen ermöglichen Kontoübernahmen."
+      }
+    ]
   },
   "final-paycheck-lookup": {
     "name": "Nachschlagen der Frist für den letzten Gehaltsscheck",
     "description": "Wann ist Ihr letzter Gehaltsscheck gesetzlich fällig? Nach Bundesstaat suchen, sowohl für Kündigungs- als auch für Rücktrittsszenarien.",
-    "shortDescription": "Wann Ihr letzter Gehaltsscheck gesetzlich fällig ist."
+    "shortDescription": "Wann Ihr letzter Gehaltsscheck gesetzlich fällig ist.",
+    "faqs": [
+      {
+        "question": "Was ist, wenn mein Arbeitgeber zu spät ist?",
+        "answer": "Viele Staaten verhängen Wartezeitstrafen – manchmal einen vollen Tageslohn pro Tag Verspätung."
+      },
+      {
+        "question": "Beinhaltet dies ungenutzte PTO?",
+        "answer": "In den meisten Staaten muss angesammelter Urlaub ausgezahlt werden. Krankheitsurlaub muss oft nicht ausgezahlt werden."
+      },
+      {
+        "question": "Was ist mit Provisionen?",
+        "answer": "Verdiente Provisionen sind Lohn und müssen im letzten Scheck ausgezahlt werden."
+      }
+    ]
   },
   "unemployment-estimator": {
     "name": "Arbeitslosenleistungen-Schätzer",
     "description": "Schätzen Sie Ihre wöchentliche Arbeitslosenleistung basierend auf Ihren früheren Löhnen und der Obergrenze Ihres Bundesstaates.",
-    "shortDescription": "Schätzen Sie die wöchentlichen Arbeitslosenleistungen."
+    "shortDescription": "Schätzen Sie die wöchentlichen Arbeitslosenleistungen.",
+    "faqs": [
+      {
+        "question": "Wer qualifiziert sich?",
+        "answer": "Im Allgemeinen Arbeitnehmer, die unverschuldet entlassen wurden und die Lohn- und Arbeitszeitanforderungen eines Staates erfüllen."
+      },
+      {
+        "question": "Ist die Schätzung exakt?",
+        "answer": "Nein – die tatsächlichen Leistungen hängen von den vierteljährlichen Einnahmen während eines staatlich definierten Basiszeitraums ab."
+      },
+      {
+        "question": "Wie lange dauern die Leistungen?",
+        "answer": "Bis zu 26 Wochen in den meisten Staaten; einige Staaten sind kürzer oder werden während Rezessionen verlängert."
+      }
+    ]
   },
   "nda-vs-noncompete": {
     "name": "NDA vs. Wettbewerbsverbot Vergleich",
     "description": "Gegenüberstellung von Geheimhaltungsvereinbarungen (NDAs) und Wettbewerbsverboten – Zweck, Umfang, Dauer, Durchsetzbarkeit und rote Flaggen.",
-    "shortDescription": "Vergleichen Sie NDAs und Wettbewerbsverbote nebeneinander."
+    "shortDescription": "Vergleichen Sie NDAs und Wettbewerbsverbote nebeneinander.",
+    "faqs": [
+      {
+        "question": "Kann ich verpflichtet werden, beides zu unterschreiben?",
+        "answer": "Ja. Sie dienen unterschiedlichen Zwecken und viele Arbeitgeber verwenden beides."
+      },
+      {
+        "question": "Sind Wettbewerbsverbote immer durchsetzbar?",
+        "answer": "Nein. Kalifornien, North Dakota, Oklahoma und Minnesota verbieten sie weitgehend. Die FTC hat ein nationales Verbot vorgeschlagen."
+      },
+      {
+        "question": "Was macht eine NDA fair?",
+        "answer": "Angemessene Definition vertraulicher Informationen, angemessene Dauer und klare Ausschlüsse für öffentliches Wissen."
+      }
+    ]
   },
   "discrimination-checklist": {
     "name": "Checkliste für Diskriminierungsansprüche am Arbeitsplatz",
     "description": "Bereiten Sie sich auf die Einreichung einer EEOC-Klage (U.S. Equal Employment Opportunity Commission) vor – Dokumentation, Vergleiche, interne Berichterstattung und Verfolgung von Vergeltungsmaßnahmen.",
-    "shortDescription": "Bereiten Sie einen EEOC-Diskriminierungsanspruch vor."
+    "shortDescription": "Bereiten Sie einen EEOC-Diskriminierungsanspruch vor.",
+    "faqs": [
+      {
+        "question": "Was ist die EEOC-Frist?",
+        "answer": "180 Tage ab dem diskriminierenden Akt (300 Tage in Staaten mit eigener Antidiskriminierungsbehörde)."
+      },
+      {
+        "question": "Brauche ich einen Anwalt?",
+        "answer": "Nicht, um bei der EEOC einzureichen, aber dringend empfohlen, bevor Sie eine Vergleichsvereinbarung oder Freigabe unterzeichnen."
+      },
+      {
+        "question": "Ist Vergeltung illegal?",
+        "answer": "Ja – Vergeltung gegen jemanden, der eine Diskriminierungsbeschwerde eingereicht oder unterstützt hat, ist selbst rechtswidrig."
+      }
+    ]
   },
   "eviction-notice-lookup": {
     "name": "Nachschlagen der Kündigungsfrist bei Räumung",
     "description": "Suchen Sie die gesetzlich vorgeschriebene Kündigungsfrist für Räumungen nach Bundesstaat und Grund – Nichtzahlung, Vertragsverletzung oder fristlose Kündigung ohne Verschulden.",
-    "shortDescription": "Kündigungsfristen für Räumungen nach Bundesstaat."
+    "shortDescription": "Kündigungsfristen für Räumungen nach Bundesstaat.",
+    "faqs": [
+      {
+        "question": "Kann ein Vermieter die Kündigung überspringen?",
+        "answer": "Nein. Das Umgehen der Kündigung und sofortige Einreichung ist ein Grund für die Abweisung."
+      },
+      {
+        "question": "Gibt es Unterschiede bei den lokalen Regeln?",
+        "answer": "Ja. Städte mit Mietpreisbindung verlangen oft längere Kündigungsfristen und einen 'gerechten Grund'."
+      },
+      {
+        "question": "Was passiert, wenn der Mieter Abhilfe schafft?",
+        "answer": "Wenn die Kündigung eine 'Heilung oder Kündigung' ist und der Mieter Abhilfe schafft (Miete zahlt oder den Verstoß behebt), kann die Räumung normalerweise nicht fortgesetzt werden."
+      }
+    ]
   },
   "habitability-tracker": {
     "name": "Generator für Mängelanzeigen zur Bewohnbarkeit",
     "description": "Erstellen Sie eine schriftliche Reparaturanforderung unter Berufung auf die stillschweigende Gewährleistung der Bewohnbarkeit – die Grundlage für Mietminderung oder Reparatur- und Abzugsansprüche (repair-and-deduct remedies).",
-    "shortDescription": "Erstellen Sie eine schriftliche Reparaturanforderung zur Bewohnbarkeit."
+    "shortDescription": "Erstellen Sie eine schriftliche Reparaturanforderung zur Bewohnbarkeit.",
+    "faqs": [
+      {
+        "question": "Was ist die stillschweigende Gewährleistung der Bewohnbarkeit?",
+        "answer": "Eine Common-Law- (und in vielen Staaten gesetzliche) Anforderung, dass Mietobjekte sicher und bewohnbar sein müssen."
+      },
+      {
+        "question": "Kann ich die Miete zurückhalten?",
+        "answer": "Manchmal – aber nur nach schriftlicher Mitteilung und einer angemessenen Frist zur Abhilfe, und das Verfahren variiert je nach Bundesstaat."
+      },
+      {
+        "question": "Was zählt als Bewohnbarkeitsproblem?",
+        "answer": "Keine Heizung, kein warmes Wasser, kein fließendes Wasser, strukturelle Mängel, Ungeziefer, Schimmel oder unsichere Verkabelung."
+      }
+    ]
   },
   "mortgage-affordability": {
     "name": "Hypotheken-Erschwinglichkeitsrechner",
     "description": "Berechnen Sie Ihren maximalen Hauspreis mithilfe der 36%-Schulden-Einkommen-Regel unter Berücksichtigung von Steuern, Versicherungen und bestehenden Schulden.",
-    "shortDescription": "Berechnen Sie Ihren maximal erschwinglichen Hauspreis."
+    "shortDescription": "Berechnen Sie Ihren maximal erschwinglichen Hauspreis.",
+    "faqs": [
+      {
+        "question": "Was ist DTI?",
+        "answer": "Schuld-Einkommens-Verhältnis – der Prozentsatz Ihres monatlichen Bruttoeinkommens, der für Schuldendienstleistungen verwendet wird."
+      },
+      {
+        "question": "Warum 36%?",
+        "answer": "Konventionelle Underwriting-Grenzen für die gesamte monatliche Verschuldung (einschließlich der neuen Hypothek) liegen bei etwa 36% des Bruttoeinkommens."
+      },
+      {
+        "question": "Beinhaltet dies PMI?",
+        "answer": "PMI fällt an, wenn Sie weniger als 20% anzahlen, und erhöht das Darlehen jährlich um etwa 0,5–1%. Hier nicht separat berechnet."
+      }
+    ]
   },
   "operating-agreement-llc": {
     "name": "LLC-Gesellschaftsvertrag-Generator",
     "description": "Erstellen Sie einen grundlegenden LLC-Gesellschaftsvertrag (Gesellschaft mit beschränkter Haftung) für Mitglieder, Kapital, Gewinne, Geschäftsführung und Auflösung.",
-    "shortDescription": "Erstellen Sie einen grundlegenden LLC-Gesellschaftsvertrag."
+    "shortDescription": "Erstellen Sie einen grundlegenden LLC-Gesellschaftsvertrag.",
+    "faqs": [
+      {
+        "question": "Brauche ich einen Gesellschaftsvertrag?",
+        "answer": "Die meisten Staaten verlangen keinen, empfehlen ihn aber dringend – und einige wenige (CA, DE, NY, MO, ME) verlangen einen."
+      },
+      {
+        "question": "Kann ich ihn später anpassen?",
+        "answer": "Ja. Dies ist eine Ausgangsvorlage. Passen Sie sie an, wenn Ihr Unternehmen wächst."
+      },
+      {
+        "question": "Ist dies ein Ersatz für einen Anwalt?",
+        "answer": "Nein. Für LLCs mit mehreren Mitgliedern oder erheblichem Kapital sollten Sie einen Anwalt hinzuziehen."
+      }
+    ]
   },
   "founders-agreement": {
     "name": "Gründungsvertrags-Generator",
     "description": "Entwerfen Sie einen Gründungsvertrag, der Kapitalbeteiligungen, Vesting (mit Sperrfrist und 4-Jahre-Zeitraum), IP-Übertragung (Geistiges Eigentum), Rollen und Ausscheiden regelt.",
-    "shortDescription": "Entwerfen Sie einen Gründungsvertrag mit Vesting & IP."
+    "shortDescription": "Entwerfen Sie einen Gründungsvertrag mit Vesting & IP.",
+    "faqs": [
+      {
+        "question": "Warum Vesting für Gründer?",
+        "answer": "Schützt das Team, wenn ein Mitgründer frühzeitig ausscheidet. Ohne Vesting behalten sie ihre volle Beteiligung."
+      },
+      {
+        "question": "Was ist eine 1-Jahres-Cliff?",
+        "answer": "Wenn ein Gründer innerhalb des ersten Jahres ausscheidet, erhält er keine Anteile. Nach dem ersten Jahr werden die Anteile schrittweise unverfallbar."
+      },
+      {
+        "question": "Ersetzt dies die Gründung?",
+        "answer": "Nein – es ist eine Nebenvereinbarung. Sie müssen sich weiterhin beim Staat anmelden, um die juristische Person zu gründen."
+      }
+    ]
   },
   "dmca-generator": {
     "name": "DMCA-Takedown-Notice-Generator",
     "description": "Erstellen Sie eine DMCA-Takedown-Notice (Entfernungsaufforderung gemäß Digital Millennium Copyright Act), die die Anforderungen von 17 U.S.C. § 512(c) für die Entfernung rechtsverletzender Inhalte erfüllt.",
-    "shortDescription": "Erstellen Sie eine DMCA-Takedown-Notice."
+    "shortDescription": "Erstellen Sie eine DMCA-Takedown-Notice.",
+    "faqs": [
+      {
+        "question": "Wohin sende ich es?",
+        "answer": "An den benannten DMCA-Agenten der Plattform (auf deren Bedingungen oder unter copyright.gov aufgeführt)."
+      },
+      {
+        "question": "Was ist, wenn es eine falsche Behauptung ist?",
+        "answer": "Das Einreichen einer wissentlich falschen DMCA-Mitteilung setzt Sie dem Risiko von Meineid und zivilrechtlicher Haftung aus."
+      },
+      {
+        "question": "Kann der Benutzer sich wehren?",
+        "answer": "Ja – er kann eine Gegendarstellung einreichen, und der Inhalt kann innerhalb von 10–14 Tagen wiederhergestellt werden."
+      }
+    ]
   },
   "emergency-fund": {
     "name": "Notfallfonds-Rechner",
     "description": "Berechnen Sie, wie viel Sie in einem Notfallfonds benötigen und wie lange es dauern wird, Ihr Ziel bei Ihrer aktuellen Sparquote zu erreichen.",
-    "shortDescription": "Berechnen Sie Ihr Notfallfonds-Ziel."
+    "shortDescription": "Berechnen Sie Ihr Notfallfonds-Ziel.",
+    "faqs": [
+      {
+        "question": "Wie viele Monate sollte ich sparen?",
+        "answer": "3 Monate für Haushalte mit zwei Einkommen und stabilen Arbeitsplätzen; 6+ Monate für Alleinverdiener oder variable Einkommen."
+      },
+      {
+        "question": "Wo sollte ich es aufbewahren?",
+        "answer": "Auf einem hochverzinslichen Sparkonto – zugänglich, aber getrennt vom Girokonto."
+      },
+      {
+        "question": "Was zählt als 'Ausgaben'?",
+        "answer": "Nur das Wesentliche: Wohnen, Essen, Nebenkosten, Versicherungen, minimale Schuldendienstleistungen, Transport."
+      }
+    ]
   },
   "tip-splitter": {
     "name": "Trinkgeld- & Servicegebühren-Teilung",
     "description": "Teilen Sie eine Restaurantrechnung auf mehrere Personen auf, einschließlich Steuern und Trinkgeld – mit Berücksichtigung obligatorischer Servicegebühren (die rechtlich keine Trinkgelder sind).",
-    "shortDescription": "Rechnungen mit Steuern, Trinkgeld und Servicegebühren aufteilen."
+    "shortDescription": "Rechnungen mit Steuern, Trinkgeld und Servicegebühren aufteilen.",
+    "faqs": [
+      {
+        "question": "Ist eine Servicegebühr ein Trinkgeld?",
+        "answer": "Nein. Servicegebühren sind Einnahmen des Restaurants und dürfen nicht an das Personal gehen; Trinkgelder müssen dies gesetzlich."
+      },
+      {
+        "question": "Sollte ich zusätzlich zur Servicegebühr Trinkgeld geben?",
+        "answer": "Im Allgemeinen nein – aber fragen Sie nach, da die Richtlinien variieren."
+      },
+      {
+        "question": "Gebe ich Trinkgeld auf die Steuer?",
+        "answer": "Die meisten Leute geben Trinkgeld auf den Vorsteuer-Zwischensumme. Dieser Rechner macht dasselbe."
+      }
+    ]
   },
   "net-metering": {
     "name": "Schätzung der Net-Metering-Einsparungen",
     "description": "Schätzen Sie die jährlichen Einsparungen durch solares Net-Metering – Produzentenüberschuss plus Gutschriften für überschüssige Energie, die ins Netz eingespeist wird.",
-    "shortDescription": "Schätzen Sie die Einsparungen durch solares Net-Metering."
+    "shortDescription": "Schätzen Sie die Einsparungen durch solares Net-Metering.",
+    "faqs": [
+      {
+        "question": "Was ist Net-Metering?",
+        "answer": "Eine Abrechnungsvereinbarung, bei der Sie eine Gutschrift für überschüssigen Solarstrom erhalten, den Sie ins Netz einspeisen."
+      },
+      {
+        "question": "Net-Metering vs. Net-Billing?",
+        "answer": "Net-Metering schreibt Ihnen den Strom zu Einzelhandelspreisen gut; Net-Billing zahlt einen niedrigeren Großhandelspreis. Die Politik hängt von Ihrem Bundesstaat und Versorgungsunternehmen ab."
+      },
+      {
+        "question": "Gibt es Obergrenzen?",
+        "answer": "Einige Versorgungsunternehmen begrenzen den jährlichen Gutschriftwert oder übertragen ihn nur mit einem Abschlag auf das nächste Jahr."
+      }
+    ]
   },
   "child-support": {
     "name": "Kindesunterhalts-Rechner",
     "description": "Schätzen Sie die monatlichen Kindesunterhaltspflichten anhand der Einkommensaufteilung oder des Prozentsatzes des Einkommens Ihres Bundesstaates. Unterstützt Kalifornien, New York, Texas, Florida, Illinois und einen generischen Fallback.",
-    "shortDescription": "Schätzen Sie den monatlichen Kindesunterhalt nach Bundesstaat."
+    "shortDescription": "Schätzen Sie den monatlichen Kindesunterhalt nach Bundesstaat.",
+    "faqs": [
+      {
+        "question": "Wie genau ist diese Schätzung?",
+        "answer": "Sie wendet die veröffentlichte staatliche Richtlinienformel auf die von Ihnen bereitgestellten Eingaben an. Tatsächliche Anordnungen können je nach Sorgerechtsvereinbarungen, Gesundheitskosten und richterlichem Ermessen variieren."
+      },
+      {
+        "question": "Berücksichtigt es geteiltes Sorgerecht?",
+        "answer": "Teilweise – viele Staaten passen den Unterhalt basierend auf Übernachtungen an. Dieser Rechner liefert eine Basislinie; Ihre endgültige Anordnung kann für geteilte Elternzeit reduziert werden."
+      },
+      {
+        "question": "Ist das Ergebnis rechtsverbindlich?",
+        "answer": "Nein. Es handelt sich lediglich um eine Schätzung zu Planungszwecken. Endgültige Unterhaltsanordnungen werden von einem Gericht erlassen."
+      }
+    ]
   },
   "alimony-calc": {
     "name": "Alimony- / Ehegattenunterhalts-Rechner",
     "description": "Schätzen Sie den monatlichen Ehegattenunterhalt (Alimony / Spousal Support / Maintenance) und die voraussichtliche Dauer basierend auf Einkommen, Ehedauer und staatlichen Richtlinien.",
-    "shortDescription": "Schätzen Sie Betrag und Dauer des Ehegattenunterhalts."
+    "shortDescription": "Schätzen Sie Betrag und Dauer des Ehegattenunterhalts.",
+    "faqs": [
+      {
+        "question": "Wie wird der Ehegattenunterhalt berechnet?",
+        "answer": "Die meisten Staaten verwenden eine Formel, die auf der Differenz der Ehepartner-Einkommen plus der Ehedauer basiert. Einige, wie Kalifornien (nach dem Urteil) und Texas, gewähren Richtern einen weiten Ermessensspielraum."
+      },
+      {
+        "question": "Wie lange dauert der Ehegattenunterhalt?",
+        "answer": "Oft 30–50 % der Ehedauer. Ehen von über 20 Jahren können in einigen Staaten unbefristeten Unterhalt erhalten."
+      },
+      {
+        "question": "Kann sich der Betrag später ändern?",
+        "answer": "Ja – die meisten Unterhaltsanordnungen können geändert werden, wenn sich das Einkommen wesentlich ändert, eine Wiederheirat erfolgt oder eine Lebensgemeinschaft besteht."
+      }
+    ]
   },
   "divorce-cost": {
     "name": "Scheidungskosten-Schätzer",
     "description": "Schätzen Sie die Gesamtkosten einer Scheidung, einschließlich Gerichtsgebühren, Anwaltsstunden, Mediation und Gerichtskosten – sowohl für strittige als auch für einverständliche Fälle.",
-    "shortDescription": "Schätzen Sie die Gesamtkosten einer Scheidung."
+    "shortDescription": "Schätzen Sie die Gesamtkosten einer Scheidung.",
+    "faqs": [
+      {
+        "question": "Was sind die durchschnittlichen Kosten einer Scheidung?",
+        "answer": "Einvernehmlich: 500–2.500 $. Umstritten: 15.000–30.000 $+ pro Ehepartner. Die Kosten steigen mit Vermögenswerten, Sorgerechtsstreitigkeiten und der Dauer des Verfahrens."
+      },
+      {
+        "question": "Kann ich Anwaltskosten vermeiden?",
+        "answer": "Ja – DIY-Anträge funktionieren für einfache, einvernehmliche Scheidungen ohne Kinder oder gemeinsames Vermögen. Die meisten Gerichte haben Selbsthilfe-Pakete."
+      },
+      {
+        "question": "Zahlt der Verlierer die Gebühren?",
+        "answer": "Selten. Die meisten US-Gerichte verlangen, dass jeder Ehepartner seinen eigenen Anwalt bezahlt, es sei denn, eine Partei hat in böser Absicht gehandelt."
+      }
+    ]
   },
   "sol-deadline": {
     "name": "Fristenrechner für Verjährungsfristen",
     "description": "Geben Sie das Datum an, an dem Ihr Anspruch entstand, und Ihren Bundesstaat – erhalten Sie die genaue Einreichungsfrist und wie viele Tage Sie noch Zeit haben, Klage zu erheben. Deckt Verträge, Personenschäden, Betrug und Sachschäden ab.",
-    "shortDescription": "Finden Sie Ihre genaue Einreichungsfrist nach Datum."
+    "shortDescription": "Finden Sie Ihre genaue Einreichungsfrist nach Datum.",
+    "faqs": [
+      {
+        "question": "Was ist, wenn meine Frist bereits abgelaufen ist?",
+        "answer": "Ihr Anspruch ist wahrscheinlich verjährt. Einige enge Ausnahmen (Discovery Rule, betrügerische Verschleierung, minderjährige Kläger) können zutreffen – sprechen Sie sofort mit einem Anwalt."
+      },
+      {
+        "question": "Wann beginnt die Frist?",
+        "answer": "Normalerweise am Datum der Verletzung, des Verstoßes oder der Entdeckung des Schadens – je nach Anspruch und Bundesstaat."
+      },
+      {
+        "question": "Kann die Frist unterbrochen werden?",
+        "answer": "Ja – 'Tolling' kann die Frist für Minderjährige, geistige Unfähigkeit oder Abwesenheit des Beklagten aus dem Bundesstaat unterbrechen."
+      }
+    ]
   },
   "wrongful-term-value": {
     "name": "Schadensschätzer für unrechtmäßige Kündigung",
     "description": "Schätzen Sie den potenziellen Wert eines Anspruchs wegen unrechtmäßiger Kündigung, einschließlich entgangener Löhne, entgangener Leistungen, Schmerzensgelder und Anwaltsgebühren.",
-    "shortDescription": "Schätzen Sie den Wert Ihres Falls bei unrechtmäßiger Kündigung."
+    "shortDescription": "Schätzen Sie den Wert Ihres Falls bei unrechtmäßiger Kündigung.",
+    "faqs": [
+      {
+        "question": "Welche Schäden sind typisch?",
+        "answer": "Nachzahlung (Gehälter von der Kündigung bis zur Einigung), Vorzahlung (zukünftiger Verdienstausfall), Leistungen und in einigen Fällen Schmerzensgeld und Strafschadenersatz."
+      },
+      {
+        "question": "Muss ich den Schaden mindern?",
+        "answer": "Ja – Sie müssen angemessene Anstrengungen unternehmen, um eine neue Arbeit zu finden. Gehälter aus einem neuen Job verrechnen sich mit der Nachzahlung."
+      },
+      {
+        "question": "Was ist eine typische Abfindung?",
+        "answer": "Die meisten Fälle von unrechtmäßiger Kündigung werden mit 6–12 Monatsgehältern abgefunden. Hochkarätige oder Diskriminierungsfälle können über 500.000 $ erreichen."
+      }
+    ]
   },
   "severance-fairness": {
     "name": "Bewertung der Fairness von Abfindungsangeboten",
     "description": "Bewerten Sie Ihr Abfindungsangebot im Vergleich zu Branchen-Benchmarks für Ihre Rolle, Dienstzeit und Gehaltsstufe auf einer Skala von 0–100. Erhalten Sie eine Fairness-Bewertung und Verhandlungsleitfäden.",
-    "shortDescription": "Bewerten Sie Ihr Abfindungsangebot anhand von Benchmarks."
+    "shortDescription": "Bewerten Sie Ihr Abfindungsangebot anhand von Benchmarks.",
+    "faqs": [
+      {
+        "question": "Ist eine Abfindung gesetzlich vorgeschrieben?",
+        "answer": "Nein – die meisten US-Arbeitgeber sind nicht verpflichtet, eine Abfindung anzubieten, es sei denn, dies ist in einem Vertrag oder einer Richtlinie versprochen. Viele tun dies aus Kulanz oder im Austausch für einen Verzicht auf Ansprüche."
+      },
+      {
+        "question": "Sollte ich verhandeln?",
+        "answer": "Fast immer ja. Erste Angebote liegen typischerweise 20–40 % unter dem, was Arbeitgeber zahlen werden, wenn sie unter Druck gesetzt werden, insbesondere bei langjährigen oder leitenden Mitarbeitern."
+      },
+      {
+        "question": "Worauf sollte ich achten?",
+        "answer": "Abfindungsbetrag, Fortsetzung der Krankenversicherung, Outplacement-Dienste, Ausgleich bei Nicht-Herabwürdigung und der Umfang des Verzichts auf Ansprüche."
+      }
+    ]
   },
   "lease-break-penalty": {
     "name": "Rechner für Vertragsbruch / vorzeitige Kündigung von Mietverträgen",
     "description": "Schätzen Sie die finanzielle Strafe für die vorzeitige Kündigung Ihres Mietvertrags – einschließlich verbleibender Monate, Schadensminderungspflicht Ihres Vermieters und bundesstaatspezifischer Haftungshöchstgrenzen.",
-    "shortDescription": "Schätzen Sie die Kosten für die vorzeitige Kündigung Ihres Mietvertrags."
+    "shortDescription": "Schätzen Sie die Kosten für die vorzeitige Kündigung Ihres Mietvertrags.",
+    "faqs": [
+      {
+        "question": "Kann ich einfach ausziehen?",
+        "answer": "Nicht ohne Konsequenzen. Die meisten Mietverträge erlauben es Vermietern, auf unbezahlte Miete bis zum Ende der Vertragslaufzeit sowie auf Werbe- und Neuvermietungskosten zu klagen."
+      },
+      {
+        "question": "Muss mein Vermieter einen neuen Mieter finden?",
+        "answer": "In den meisten Bundesstaaten ja – Vermieter haben eine 'Pflicht zur Schadensminderung', indem sie versuchen, die Einheit neu zu vermieten. Sobald die Einheit neu vermietet ist, endet Ihre Haftung."
+      },
+      {
+        "question": "Gibt es rechtliche Gründe, einen Mietvertrag zu brechen?",
+        "answer": "Aktiver Militärdienst (SCRA), häusliche Gewalt (staatsspezifisch), unbewohnbare Zustände und Belästigung durch den Vermieter sind häufig geschützte Gründe."
+      }
+    ]
+  },
+  "_categories": {
+    "contract": {
+      "label": "Vertragstools",
+      "description": "Verträge und Vereinbarungen analysieren, verstehen und bearbeiten."
+    },
+    "consumer": {
+      "label": "Verbrauchertools",
+      "description": "Fristen und Gebühren berechnen und Ihre Verbraucherrechte prüfen."
+    },
+    "employment": {
+      "label": "Arbeitsrechtstools",
+      "description": "Arbeitsverträge, Tarife und Pflichten verwalten."
+    },
+    "generators": {
+      "label": "Dokumentengeneratoren",
+      "description": "Rechtsdokumente aus einfachen Formularen erstellen."
+    },
+    "ai": {
+      "label": "KI-Analysetools",
+      "description": "KI-gestützte Vertragsanalyse, -bewertung und -vergleich."
+    },
+    "realestate": {
+      "label": "Immobilientools",
+      "description": "Rechner und Generatoren für Miet- und Immobilienverträge."
+    },
+    "business": {
+      "label": "Business-Tools",
+      "description": "Tools für Unternehmensgründung, Klassifizierung und Finanzplanung."
+    },
+    "finance": {
+      "label": "Finanzen & Handel",
+      "description": "Rechner für Handel, Krypto, Investitionen und persönliche Finanzen."
+    },
+    "energy": {
+      "label": "Grüne Energie & Solar",
+      "description": "Solar-ROI-Rechner, Energiespar-Tools und Prüfer für grüne Mietverträge."
+    },
+    "family": {
+      "label": "Familienrechtstools",
+      "description": "Rechner für Kindesunterhalt, Alimente, Scheidungskosten und familienbezogene Rechtskosten."
+    }
   }
 }

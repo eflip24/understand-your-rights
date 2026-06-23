@@ -2,566 +2,2190 @@
   "reading-time": {
     "name": "Calculadora de Tempo de Leitura de Contrato",
     "description": "Cole o texto do seu contrato e obtenha um tempo de leitura estimado com base na contagem de palavras e complexidade legal. Ajuda a planear quanto tempo demorará a rever um documento.",
-    "shortDescription": "Estime quanto tempo demora a ler um contrato."
+    "shortDescription": "Estime quanto tempo demora a ler um contrato.",
+    "faqs": [
+      {
+        "question": "Como é calculado o tempo de leitura?",
+        "answer": "Utilizamos uma velocidade média de leitura de 200 palavras por minuto para texto jurídico, que é mais lenta do que o texto normal devido à complexidade."
+      },
+      {
+        "question": "A complexidade afeta a estimativa?",
+        "answer": "Sim, a densidade do jargão jurídico adiciona tempo extra para contabilizar a releitura e a compreensão."
+      },
+      {
+        "question": "Isto é preciso para todos os contratos?",
+        "answer": "É uma estimativa. Contratos financeiros ou técnicos complexos podem demorar mais tempo."
+      }
+    ]
   },
   "word-counter": {
     "name": "Contador de Palavras de Contrato",
     "description": "Obtenha estatísticas detalhadas sobre o seu contrato, incluindo contagem de palavras, contagem de caracteres, contagem de frases, contagem de parágrafos e páginas estimadas.",
-    "shortDescription": "Obtenha estatísticas detalhadas de palavras e caracteres."
+    "shortDescription": "Obtenha estatísticas detalhadas de palavras e caracteres.",
+    "faqs": [
+      {
+        "question": "Como são estimadas as páginas?",
+        "answer": "Estimamos 250 palavras por página para documentos jurídicos padrão."
+      },
+      {
+        "question": "Conta cabeçalhos e rodapés?",
+        "answer": "Conta todo o texto que colar na ferramenta."
+      },
+      {
+        "question": "Posso usar isto para documentos não jurídicos?",
+        "answer": "Com certeza! O contador de palavras funciona para qualquer texto."
+      }
+    ]
   },
   "jargon-translator": {
     "name": "Tradutor de Jargão Jurídico",
     "description": "Procure termos jurídicos comuns e obtenha explicações em linguagem simples. Pesquise no nosso dicionário de mais de 100 termos jurídicos para entender o que o seu contrato realmente diz.",
-    "shortDescription": "Traduza termos jurídicos para linguagem simples."
+    "shortDescription": "Traduza termos jurídicos para linguagem simples.",
+    "faqs": [
+      {
+        "question": "Quantos termos estão no dicionário?",
+        "answer": "Atualmente, temos mais de 100 termos jurídicos comuns com definições em linguagem simples."
+      },
+      {
+        "question": "Isto é aconselhamento jurídico?",
+        "answer": "Não. Esta ferramenta fornece explicações gerais. Consulte sempre um advogado para questões jurídicas específicas."
+      },
+      {
+        "question": "Posso sugerir novos termos?",
+        "answer": "Estamos sempre a expandir o nosso dicionário. Contacte-nos com sugestões."
+      }
+    ]
   },
   "clause-finder": {
     "name": "Localizador de Cláusulas de Contrato",
     "description": "Cole o seu contrato e procure tipos de cláusulas comuns como indemnização, rescisão, não concorrência, confidencialidade e muito mais. Encontre rapidamente as secções mais importantes.",
-    "shortDescription": "Encontre cláusulas específicas nos seus contratos."
+    "shortDescription": "Encontre cláusulas específicas nos seus contratos.",
+    "faqs": [
+      {
+        "question": "Que tipos de cláusulas pode encontrar?",
+        "answer": "Pesquisa mais de 15 tipos de cláusulas comuns, incluindo indemnização, rescisão, não concorrência, confidencialidade, responsabilidade e muito mais."
+      },
+      {
+        "question": "Qual a precisão do localizador?",
+        "answer": "Utiliza a correspondência de palavras-chave para identificar prováveis localizações de cláusulas. Reveja o contexto para confirmar."
+      },
+      {
+        "question": "Funciona com qualquer formato de contrato?",
+        "answer": "Sim, desde que cole o conteúdo de texto do seu contrato."
+      }
+    ]
   },
   "cancellation-deadline": {
     "name": "Calculadora de Prazo de Cancelamento",
     "description": "Calcule o seu prazo de cancelamento com base na data de inscrição e no período de reflexão. Saiba exatamente quando o seu direito de cancelar expira.",
-    "shortDescription": "Calcule quando a sua janela de cancelamento se fecha."
+    "shortDescription": "Calcule quando a sua janela de cancelamento se fecha.",
+    "faqs": [
+      {
+        "question": "O que é um período de reflexão?",
+        "answer": "Um período de reflexão é um período de tempo após a assinatura de um contrato durante o qual pode cancelar sem penalização."
+      },
+      {
+        "question": "Os períodos de reflexão são iguais em todo o lado?",
+        "answer": "Não, variam consoante a jurisdição e o tipo de contrato. Os períodos comuns são de 3, 7, 14 e 30 dias."
+      },
+      {
+        "question": "Isto inclui fins de semana?",
+        "answer": "Pode escolher se conta apenas dias úteis ou dias de calendário."
+      }
+    ]
   },
   "notice-period": {
     "name": "Calculadora de Período de Aviso Prévio",
     "description": "Calcule a data de fim do seu período de aviso prévio com base na sua data de início e nos termos do aviso. Funciona para contratos de trabalho, arrendamento e serviços.",
-    "shortDescription": "Calcule quando o seu período de aviso prévio termina."
+    "shortDescription": "Calcule quando o seu período de aviso prévio termina.",
+    "faqs": [
+      {
+        "question": "Quais são os períodos de aviso prévio comuns?",
+        "answer": "Os períodos comuns incluem 2 semanas, 30 dias, 60 dias e 90 dias, dependendo do tipo de acordo."
+      },
+      {
+        "question": "Contabiliza os fins de semana?",
+        "answer": "Pode alternar entre dias de calendário e dias úteis."
+      },
+      {
+        "question": "Posso usar isto para contratos de arrendamento?",
+        "answer": "Sim! Funciona para qualquer acordo com um período de aviso prévio."
+      }
+    ]
   },
   "late-fee": {
     "name": "Calculadora de Multa por Atraso",
     "description": "Calcule a multa total por atraso num pagamento em atraso. Insira o valor principal, a taxa de multa e o número de dias de atraso para ver o que deve ou lhe é devido.",
-    "shortDescription": "Calcule multas por atraso em pagamentos em atraso."
+    "shortDescription": "Calcule multas por atraso em pagamentos em atraso.",
+    "faqs": [
+      {
+        "question": "Como são normalmente calculadas as taxas de atraso?",
+        "answer": "A maioria das taxas de atraso são um valor fixo ou uma percentagem do saldo em dívida, cobradas diária ou mensalmente."
+      },
+      {
+        "question": "Existem limites legais para as taxas de atraso?",
+        "answer": "Sim, muitas jurisdições limitam as taxas de atraso. Verifique as suas leis locais."
+      },
+      {
+        "question": "Posso usar isto para faturas?",
+        "answer": "Sim, funciona para qualquer tipo de pagamento em atraso."
+      }
+    ]
   },
   "refund-checker": {
     "name": "Verificador de Elegibilidade para Reembolso",
     "description": "Responda a algumas perguntas simples sobre a sua compra e situação para verificar se pode ser elegível para um reembolso. Abrange cenários comuns de consumo.",
-    "shortDescription": "Verifique se é elegível para um reembolso."
+    "shortDescription": "Verifique se é elegível para um reembolso.",
+    "faqs": [
+      {
+        "question": "O resultado é legalmente vinculativo?",
+        "answer": "Não. Isto fornece orientação geral com base nas regras comuns de proteção do consumidor. Verifique sempre o seu contrato específico e as leis locais."
+      },
+      {
+        "question": "Que cenários abrange?",
+        "answer": "Abrange compras online, compras em loja, serviços, subscrições e produtos defeituosos."
+      },
+      {
+        "question": "Varia de país para país?",
+        "answer": "O verificador fornece orientação geral. Os direitos específicos variam consoante a jurisdição."
+      }
+    ]
   },
   "non-compete": {
     "name": "Verificador de Duração de Não Concorrência",
     "description": "Insira a duração da sua cláusula de não concorrência e o estado para ver informações gerais de aplicabilidade. Alguns estados restringem ou proíbem totalmente as não concorrências.",
-    "shortDescription": "Verifique a aplicabilidade da não concorrência por estado."
+    "shortDescription": "Verifique a aplicabilidade da não concorrência por estado.",
+    "faqs": [
+      {
+        "question": "Os acordos de não concorrência são aplicáveis?",
+        "answer": "Varia muito de estado para estado. Alguns estados, como a Califórnia, geralmente não os aplicam."
+      },
+      {
+        "question": "Qual é a duração típica de um acordo de não concorrência?",
+        "answer": "A maioria dos tribunais considera 1-2 anos razoáveis. Períodos mais longos são mais difíceis de aplicar."
+      },
+      {
+        "question": "Devo assinar um acordo de não concorrência?",
+        "answer": "Consulte um advogado de direito do trabalho antes de assinar. Esta ferramenta fornece apenas informações gerais."
+      }
+    ]
   },
   "freelance-rate": {
     "name": "Calculadora de Tarifa Freelancer",
     "description": "Converta entre tarifas horárias, taxas de projeto e rendimento anual. Considere impostos, despesas e horas faturáveis para encontrar a sua verdadeira tarifa de freelancer.",
-    "shortDescription": "Converta entre tarifas horárias, de projeto e anuais."
+    "shortDescription": "Converta entre tarifas horárias, de projeto e anuais.",
+    "faqs": [
+      {
+        "question": "Como calculo a minha taxa horária?",
+        "answer": "Comece com o seu rendimento anual desejado, adicione impostos e despesas, depois divida pelas suas horas faturáveis estimadas."
+      },
+      {
+        "question": "Quais são as horas faturáveis típicas?",
+        "answer": "A maioria dos freelancers fatura 1.000-1.500 horas por ano, de um total de 2.080 horas de trabalho."
+      },
+      {
+        "question": "Devo incluir os custos dos benefícios?",
+        "answer": "Sim! Considere o seguro de saúde, reforma e outros benefícios que teria como empregado."
+      }
+    ]
   },
   "invoice-interest": {
     "name": "Calculadora de Juros de Atraso de Fatura",
     "description": "Calcule os juros devidos em pagamentos de faturas em atraso. Insira o valor da fatura, a taxa de juros e os dias de atraso para determinar o valor total devido.",
-    "shortDescription": "Calcule juros em faturas não pagas."
+    "shortDescription": "Calcule juros em faturas não pagas.",
+    "faqs": [
+      {
+        "question": "Que taxa de juro devo cobrar?",
+        "answer": "As taxas comuns são de 1-1,5% ao mês. Verifique os termos do seu contrato e os regulamentos locais."
+      },
+      {
+        "question": "Posso legalmente cobrar juros sobre pagamentos em atraso?",
+        "answer": "Na maioria dos casos, sim, se estiver especificado no seu contrato ou nos termos da fatura."
+      },
+      {
+        "question": "Como são calculados os juros diários?",
+        "answer": "Taxa anual dividida por 365, multiplicada pelo número de dias em atraso e pelo valor principal."
+      }
+    ]
   },
   "nda-generator": {
     "name": "Gerador de Modelo de NDA",
     "description": "Gere um Acordo de Não Divulgação básico preenchendo um formulário simples. Personalize as partes, duração, âmbito e jurisdição.",
-    "shortDescription": "Gere um NDA básico a partir de um formulário."
+    "shortDescription": "Gere um NDA básico a partir de um formulário.",
+    "faqs": [
+      {
+        "question": "Este NDA é legalmente vinculativo?",
+        "answer": "Isto gera um modelo. Peça a um advogado para o rever antes de o usar para acordos importantes."
+      },
+      {
+        "question": "Que tipo de NDA é gerado?",
+        "answer": "Um NDA mútuo ou unilateral, dependendo da sua seleção, cobrindo termos de confidencialidade padrão."
+      },
+      {
+        "question": "Posso personalizar o modelo?",
+        "answer": "Sim, o texto gerado pode ser copiado e editado conforme necessário."
+      }
+    ]
   },
   "privacy-generator": {
     "name": "Gerador de Política de Privacidade",
     "description": "Gere uma política de privacidade para o seu website ou aplicação. Responda a perguntas sobre as suas práticas de dados e obtenha um documento de política formatado.",
-    "shortDescription": "Crie uma política de privacidade para o seu website."
+    "shortDescription": "Crie uma política de privacidade para o seu website.",
+    "faqs": [
+      {
+        "question": "Isto está em conformidade com o RGPD?",
+        "answer": "Inclui disposições comuns do RGPD, mas deve ser revisto por um profissional jurídico para total conformidade."
+      },
+      {
+        "question": "Posso usar isto para a minha aplicação?",
+        "answer": "Sim, o gerador abrange tanto websites como aplicações móveis."
+      },
+      {
+        "question": "Com que frequência devo atualizar a minha política de privacidade?",
+        "answer": "Atualize sempre que as suas práticas de dados mudarem, ou pelo menos anualmente."
+      }
+    ]
   },
   "complaint-generator": {
     "name": "Gerador de Carta de Reclamação",
     "description": "Gere uma carta de reclamação formal. Preencha os detalhes sobre o seu problema e obtenha uma carta formatada profissionalmente pronta para enviar.",
-    "shortDescription": "Crie uma carta de reclamação formal."
+    "shortDescription": "Crie uma carta de reclamação formal.",
+    "faqs": [
+      {
+        "question": "Que tipos de reclamações isto abrange?",
+        "answer": "Problemas de produtos, reclamações de serviços, disputas de faturação e reclamações gerais de consumidores."
+      },
+      {
+        "question": "Devo enviar a carta por correio ou e-mail?",
+        "answer": "Para reclamações formais, o correio registado fornece prova de entrega. O e-mail é mais rápido para o contacto inicial."
+      },
+      {
+        "question": "O que devo incluir com a minha carta?",
+        "answer": "Inclua cópias de recibos, contratos, fotos ou qualquer prova que apoie a sua reclamação."
+      }
+    ]
   },
   "tos-generator": {
     "name": "Gerador de Termos de Serviço",
     "description": "Gere termos de serviço para o seu website ou aplicação. Abrange acordos de utilizador, limitações de responsabilidade e disposições legais padrão.",
-    "shortDescription": "Crie termos de serviço para o seu site."
+    "shortDescription": "Crie termos de serviço para o seu site.",
+    "faqs": [
+      {
+        "question": "Preciso legalmente de termos de serviço?",
+        "answer": "Embora nem sempre sejam legalmente exigidos, protegem o seu negócio e definem as expectativas do utilizador."
+      },
+      {
+        "question": "Qual é a diferença entre Termos de Serviço e uma política de privacidade?",
+        "answer": "Os Termos de Serviço regem o comportamento do utilizador e a sua responsabilidade. A política de privacidade abrange a recolha e uso de dados."
+      },
+      {
+        "question": "Os utilizadores podem concordar ao usar o meu site?",
+        "answer": "Os acordos 'browsewrap' são mais fracos do que os 'clickwrap'. Considere exigir um acordo explícito."
+      }
+    ]
   },
   "red-flag-scanner": {
     "name": "Scanner de Bandeiras Vermelhas de Contrato",
     "description": "Cole o seu contrato e deixe a IA identificar cláusulas de risco, termos injustos e potenciais problemas legais com classificações de gravidade e recomendações.",
-    "shortDescription": "A IA verifica contratos em busca de cláusulas de risco."
+    "shortDescription": "A IA verifica contratos em busca de cláusulas de risco.",
+    "faqs": [
+      {
+        "question": "Como funciona o scanner?",
+        "answer": "Usa IA para analisar o texto do seu contrato e identificar cláusulas que podem ser problemáticas, unilaterais ou conter riscos ocultos."
+      },
+      {
+        "question": "Isto é aconselhamento jurídico?",
+        "answer": "Não. Esta é uma ferramenta de análise alimentada por IA para fins educacionais. Consulte sempre um advogado para decisões legais."
+      },
+      {
+        "question": "Quanto tempo demora a análise?",
+        "answer": "Normalmente 5-15 segundos, dependendo da extensão do contrato."
+      }
+    ]
   },
   "nda-fairness": {
     "name": "Pontuação de Justiça de NDA",
     "description": "Cole um NDA e obtenha uma pontuação de justiça de 0-100, com uma análise de pontos fortes, preocupações e recomendações para negociação.",
-    "shortDescription": "Avalie a justiça do seu NDA de 0-100."
+    "shortDescription": "Avalie a justiça do seu NDA de 0-100.",
+    "faqs": [
+      {
+        "question": "O que significa a pontuação?",
+        "answer": "Uma pontuação de 70+ indica um NDA geralmente justo. Abaixo de 40 sugere termos significativamente unilaterais que devem ser negociados."
+      },
+      {
+        "question": "Funciona para NDAs mútuos?",
+        "answer": "Sim, analisa NDAs mútuos e unilaterais e considera se as obrigações estão equilibradas."
+      },
+      {
+        "question": "Posso usar isto antes de assinar?",
+        "answer": "Absolutamente — esse é o caso de uso ideal. Reveja a pontuação e as preocupações antes de assinar qualquer NDA."
+      }
+    ]
   },
   "lease-analyzer": {
     "name": "Analisador de Contrato de Arrendamento",
     "description": "Cole o seu contrato de arrendamento e obtenha um resumo dos termos chave, riscos ocultos e recomendações. Perfeito para inquilinos que revisam um novo arrendamento.",
-    "shortDescription": "Analise contratos de arrendamento em busca de riscos."
+    "shortDescription": "Analise contratos de arrendamento em busca de riscos.",
+    "faqs": [
+      {
+        "question": "Que tipos de arrendamentos analisa?",
+        "answer": "Arrendamentos residenciais e comerciais. Identifica termos chave como renda, caução, duração e obrigações de manutenção."
+      },
+      {
+        "question": "Irá detetar taxas ocultas?",
+        "answer": "A IA procura encargos incomuns, cláusulas de escalonamento e taxas que podem não ser óbvias à primeira leitura."
+      },
+      {
+        "question": "Devo confiar completamente na análise?",
+        "answer": "Use-o como um ponto de partida. Para compromissos de arrendamento significativos, peça sempre a um advogado para rever o documento completo."
+      }
+    ]
   },
   "terms-summarizer": {
     "name": "Resumidor de Termos e Condições",
     "description": "Cole quaisquer Termos e Condições ou documento legal e obtenha um resumo em linguagem simples organizado por tópico, com secções preocupantes destacadas.",
-    "shortDescription": "Resuma T&C em linguagem simples."
+    "shortDescription": "Resuma T&C em linguagem simples.",
+    "faqs": [
+      {
+        "question": "Qual o comprimento máximo do documento?",
+        "answer": "Funciona melhor com documentos com menos de 10.000 palavras. Para documentos mais longos, cole as secções mais relevantes."
+      },
+      {
+        "question": "O que significa 'Preocupação'?",
+        "answer": "As secções assinaladas como preocupações contêm termos que são incomuns, potencialmente desfavoráveis ou que merecem atenção extra."
+      },
+      {
+        "question": "Posso usar isto para políticas de privacidade?",
+        "answer": "Sim! Funciona para qualquer documento legal — Termos e Condições, políticas de privacidade, EULAs e muito mais."
+      }
+    ]
   },
   "contract-comparison": {
     "name": "Ferramenta de Comparação de Contratos",
     "description": "Cole dois contratos lado a lado e obtenha uma comparação alimentada por IA destacando as principais diferenças, termos alterados e qual versão favorece qual parte.",
-    "shortDescription": "Compare dois contratos lado a lado."
+    "shortDescription": "Compare dois contratos lado a lado.",
+    "faqs": [
+      {
+        "question": "O que devo comparar?",
+        "answer": "Compare diferentes versões do mesmo contrato, ofertas concorrentes ou um contrato proposto com um modelo padrão."
+      },
+      {
+        "question": "Mostra diferenças exatas no texto?",
+        "answer": "Destaca diferenças semânticas — alterações no significado, âmbito e obrigações — em vez de diferenças palavra por palavra."
+      },
+      {
+        "question": "Posso comparar diferentes tipos de contratos?",
+        "answer": "Pode, mas as comparações mais úteis são entre tipos de contratos semelhantes (por exemplo, dois contratos de trabalho)."
+      }
+    ]
   },
   "clause-explainer": {
     "name": "Explicador de Cláusulas",
     "description": "Cole qualquer cláusula legal e obtenha uma explicação em linguagem simples, avaliação de risco, implicações práticas e dicas de negociação.",
-    "shortDescription": "Obtenha explicações de cláusulas em linguagem simples."
+    "shortDescription": "Obtenha explicações de cláusulas em linguagem simples.",
+    "faqs": [
+      {
+        "question": "Que tipo de cláusulas posso explicar?",
+        "answer": "Qualquer cláusula legal de qualquer tipo de contrato — emprego, arrendamento, NDA, termos de serviço ou qualquer outro acordo."
+      },
+      {
+        "question": "A explicação é legalmente precisa?",
+        "answer": "A IA fornece interpretações gerais. Para cláusulas com implicações financeiras ou legais significativas, consulte um advogado."
+      },
+      {
+        "question": "Posso colar várias cláusulas?",
+        "answer": "Para melhores resultados, cole uma cláusula de cada vez. Isso garante explicações focadas e detalhadas."
+      }
+    ]
   },
   "contract-expiration": {
     "name": "Rastreador de Expiração de Contrato",
     "description": "Insira as datas dos seus contratos e rastreie as expirações num só lugar. Veja quais contratos estão a expirar em breve, ativos ou já expirados.",
-    "shortDescription": "Rastreie as datas de expiração do contrato."
+    "shortDescription": "Rastreie as datas de expiração do contrato.",
+    "faqs": [
+      {
+        "question": "Posso acompanhar vários contratos?",
+        "answer": "Sim, adicione quantos contratos precisar e veja-os ordenados por data de expiração."
+      },
+      {
+        "question": "Envia notificações?",
+        "answer": "Este é um rastreador manual. Verifique periodicamente para rever as suas próximas expirações."
+      },
+      {
+        "question": "O que conta como 'a expirar em breve'?",
+        "answer": "Contratos a expirar dentro de 30 dias são assinalados como a expirar em breve."
+      }
+    ]
   },
   "signature-block": {
     "name": "Gerador de Bloco de Assinatura",
     "description": "Gere blocos de assinatura formatados corretamente para indivíduos, corporações, LLCs e parcerias. Copie e cole nos seus contratos.",
-    "shortDescription": "Gere blocos de assinatura adequados."
+    "shortDescription": "Gere blocos de assinatura adequados.",
+    "faqs": [
+      {
+        "question": "Que tipos de entidades são suportados?",
+        "answer": "Blocos de assinatura para indivíduos, empresas, LLCs e parcerias."
+      },
+      {
+        "question": "O formato é legalmente padrão?",
+        "answer": "Sim, os blocos gerados seguem as convenções de formatação legal comuns."
+      },
+      {
+        "question": "Posso usar isto para qualquer contrato?",
+        "answer": "Sim, os blocos de assinatura são padrão em todos os tipos de contrato."
+      }
+    ]
   },
   "contract-checklist": {
     "name": "Gerador de Lista de Verificação de Contrato",
     "description": "Selecione o seu tipo de contrato e obtenha uma lista de verificação de revisão abrangente. Rastreie quais itens você revisou com uma barra de progresso interativa.",
-    "shortDescription": "Gere uma lista de verificação de revisão de contrato."
+    "shortDescription": "Gere uma lista de verificação de revisão de contrato.",
+    "faqs": [
+      {
+        "question": "Que tipos de contrato são abrangidos?",
+        "answer": "Contratos de trabalho, NDAs, contratos de arrendamento e contratos de serviço."
+      },
+      {
+        "question": "Posso guardar o meu progresso?",
+        "answer": "Atualmente, a lista de verificação é reiniciada quando sai da página. Copie os itens para os seus registos."
+      },
+      {
+        "question": "Isto substitui a revisão legal?",
+        "answer": "Não, use-o como um ponto de partida para identificar itens chave antes de consultar um advogado."
+      }
+    ]
   },
   "amendment-drafter": {
     "name": "Redator de Aditamento de Contrato",
     "description": "Gere um aditamento de contrato básico preenchendo os detalhes do contrato original e descrevendo as alterações. Cria um documento de aditamento formatado.",
-    "shortDescription": "Elabore um aditamento de contrato a partir de um formulário."
+    "shortDescription": "Elabore um aditamento de contrato a partir de um formulário.",
+    "faqs": [
+      {
+        "question": "Esta adenda é legalmente vinculativa?",
+        "answer": "Isto gera um modelo. Peça a um advogado para o rever antes de o utilizar."
+      },
+      {
+        "question": "Posso alterar qualquer tipo de contrato?",
+        "answer": "Sim, o formato da adenda é padrão e funciona para a maioria dos tipos de contrato."
+      },
+      {
+        "question": "E se eu precisar de várias adendas?",
+        "answer": "Gere uma nova adenda para cada conjunto de alterações, incrementando o número da adenda."
+      }
+    ]
   },
   "contract-value": {
     "name": "Calculadora de Valor de Contrato",
     "description": "Calcule o valor total de um contrato, incluindo renovações e taxas de escalonamento anuais. Veja o valor do prazo inicial, o valor da renovação e as médias mensais.",
-    "shortDescription": "Calcule o valor total do contrato com renovações."
+    "shortDescription": "Calcule o valor total do contrato com renovações.",
+    "faqs": [
+      {
+        "question": "O que é uma taxa de escalonamento?",
+        "answer": "Um aumento percentual anual aplicado aos pagamentos, geralmente 2-5% ao ano."
+      },
+      {
+        "question": "Lida com diferentes frequências de pagamento?",
+        "answer": "Sim — horários de pagamento semanais, mensais, trimestrais e anuais."
+      },
+      {
+        "question": "Como são calculadas as renovações?",
+        "answer": "Cada período de renovação usa a mesma duração do prazo inicial, com o escalonamento a continuar."
+      }
+    ]
   },
   "warranty-tracker": {
     "name": "Calculadora de Expiração de Garantia",
     "description": "Rastreie as datas de expiração da garantia para as suas compras. Insira os detalhes do produto e a duração da garantia para ver quais garantias ainda estão ativas.",
-    "shortDescription": "Rastreie as datas de fim da garantia para compras."
+    "shortDescription": "Rastreie as datas de fim da garantia para compras.",
+    "faqs": [
+      {
+        "question": "Posso rastrear vários produtos?",
+        "answer": "Sim, adicione quantos produtos precisar."
+      },
+      {
+        "question": "Que unidades de garantia são suportadas?",
+        "answer": "Dias, meses e anos."
+      },
+      {
+        "question": "Funciona para garantias estendidas?",
+        "answer": "Sim, basta inserir o período total da garantia, incluindo quaisquer extensões."
+      }
+    ]
   },
   "statute-of-limitations": {
     "name": "Consulta de Prazo de Prescrição",
     "description": "Consulte o prazo de prescrição para reclamações legais comuns por estado. Descubra quanto tempo tem para apresentar queixas por disputas contratuais, lesões pessoais, fraude e muito mais.",
-    "shortDescription": "Consulte os prazos de apresentação por estado."
+    "shortDescription": "Consulte os prazos de apresentação por estado.",
+    "faqs": [
+      {
+        "question": "Que tipos de reclamações são abrangidos?",
+        "answer": "Contratos escritos, contratos orais, danos pessoais, danos à propriedade e fraude."
+      },
+      {
+        "question": "São estes prazos exatos?",
+        "answer": "Estas são diretrizes gerais. As regras de descoberta e a suspensão podem estender os prazos. Consulte um advogado."
+      },
+      {
+        "question": "Todos os estados têm os mesmos limites?",
+        "answer": "Não, o prazo de prescrição varia significativamente por estado e tipo de reclamação."
+      }
+    ]
   },
   "small-claims-limit": {
     "name": "Verificador de Limite de Tribunal de Pequenas Causas",
     "description": "Verifique o valor máximo em dólares pelo qual pode processar no tribunal de pequenas causas no seu estado. Insira o valor da sua reclamação para ver se se qualifica.",
-    "shortDescription": "Verifique os limites de $ de pequenas causas por estado."
+    "shortDescription": "Verifique os limites de $ de pequenas causas por estado.",
+    "faqs": [
+      {
+        "question": "O que é o tribunal de pequenas causas?",
+        "answer": "Um tribunal simplificado para resolver disputas envolvendo pequenas quantias de dinheiro, sem a necessidade de um advogado."
+      },
+      {
+        "question": "Posso apresentar acima do limite?",
+        "answer": "Pode reduzir a sua reclamação para se ajustar ao limite (renunciando ao excesso) ou apresentar num tribunal superior."
+      },
+      {
+        "question": "Estes limites estão atualizados?",
+        "answer": "Atualizamos os limites regularmente, mas verifique com o seu tribunal local, pois os limites mudam."
+      }
+    ]
   },
   "consumer-rights-quiz": {
     "name": "Questionário de Direitos do Consumidor",
     "description": "Teste os seus conhecimentos sobre os direitos de proteção do consumidor com o nosso questionário interativo. Aprenda sobre políticas de devolução, garantias, disputas de faturação e muito mais.",
-    "shortDescription": "Teste os seus conhecimentos sobre direitos do consumidor."
+    "shortDescription": "Teste os seus conhecimentos sobre direitos do consumidor.",
+    "faqs": [
+      {
+        "question": "Quantas perguntas existem?",
+        "answer": "O questionário tem 8 perguntas que abrangem vários tópicos de direitos do consumidor."
+      },
+      {
+        "question": "Isto é baseado na lei dos EUA?",
+        "answer": "Sim, as perguntas são principalmente baseadas nas leis federais e estaduais de proteção ao consumidor dos EUA."
+      },
+      {
+        "question": "Posso refazer o questionário?",
+        "answer": "Sim, pode reiniciar o questionário quantas vezes quiser."
+      }
+    ]
   },
   "dispute-letter": {
     "name": "Gerador de Carta de Disputa",
     "description": "Gere uma carta de disputa formal para erros de faturação, imprecisões de relatórios de crédito, reclamações de serviço ou problemas de produto. Inclui referências legais relevantes.",
-    "shortDescription": "Gere cartas de disputa formais."
+    "shortDescription": "Gere cartas de disputa formais.",
+    "faqs": [
+      {
+        "question": "Que tipos de disputas são suportados?",
+        "answer": "Disputas de faturação, disputas de relatório de crédito, disputas de serviço e disputas de produto."
+      },
+      {
+        "question": "Devo enviar isto por correio ou e-mail?",
+        "answer": "Para disputas de faturação e crédito, o correio registado fornece prova de entrega e aciona proteções legais."
+      },
+      {
+        "question": "Esta carta é legalmente suficiente?",
+        "answer": "Segue os formatos padrão de carta de disputa. Personalize-a à sua situação para obter os melhores resultados."
+      }
+    ]
   },
   "salary-converter": {
     "name": "Conversor de Salário para Horário",
     "description": "Converta entre salário anual e taxa horária. Considere os custos indiretos de benefícios, horas por semana e semanas por ano para ver o verdadeiro custo do emprego.",
-    "shortDescription": "Converta salário para taxa horária e vice-versa."
+    "shortDescription": "Converta salário para taxa horária e vice-versa.",
+    "faqs": [
+      {
+        "question": "O que é o custo indireto de benefícios?",
+        "answer": "O custo adicional de empregar alguém além do salário — tipicamente 25-40% para seguro de saúde, reforma, impostos, etc."
+      },
+      {
+        "question": "Por que usar 52 semanas?",
+        "answer": "52 semanas é o padrão para um ano completo. Reduza para tempo não remunerado."
+      },
+      {
+        "question": "Isto inclui impostos?",
+        "answer": "A percentagem de custo indireto de benefícios pode incluir impostos pagos pelo empregador, como o FICA."
+      }
+    ]
   },
   "pto-calculator": {
     "name": "Calculadora de Férias Pagas (PTO)",
     "description": "Calcule as suas férias pagas acumuladas com base na sua taxa de acumulação, tempo de emprego e dias já utilizados. Veja o PTO restante em dias e horas.",
-    "shortDescription": "Calcule o saldo de PTO acumulado."
+    "shortDescription": "Calcule o saldo de PTO acumulado.",
+    "faqs": [
+      {
+        "question": "Qual é a taxa de acumulação típica?",
+        "answer": "As taxas comuns são de 1-2 dias por mês, ou 4-6 horas por período de pagamento."
+      },
+      {
+        "question": "O que é um limite de PTO?",
+        "answer": "Muitas empresas limitam o total de PTO que pode acumular. Assim que atingir o limite, deixa de acumular até usar algum."
+      },
+      {
+        "question": "Os dias de doença estão incluídos?",
+        "answer": "Depende da sua empresa. Algumas têm licença por doença separada; outras combinam todo o tempo livre em PTO."
+      }
+    ]
   },
   "wrongful-termination": {
     "name": "Lista de Verificação de Rescisão Injusta",
     "description": "Responda a perguntas sobre a sua rescisão e obtenha uma avaliação de potenciais indicadores de rescisão injusta, incluindo discriminação e sinalizadores de retaliação.",
-    "shortDescription": "Avalie potenciais rescisões injustas."
+    "shortDescription": "Avalie potenciais rescisões injustas.",
+    "faqs": [
+      {
+        "question": "Isto é aconselhamento jurídico?",
+        "answer": "Não. Isto fornece informações gerais para o ajudar a decidir se a consulta a um advogado de direito do trabalho é justificada."
+      },
+      {
+        "question": "O que é considerado despedimento sem justa causa?",
+        "answer": "Rescisão baseada em discriminação, retaliação, quebra de contrato ou violação da política pública."
+      },
+      {
+        "question": "Devo consultar um advogado?",
+        "answer": "Se vir vários sinais de alerta, é fortemente recomendado consultar um advogado de direito do trabalho."
+      }
+    ]
   },
   "minimum-wage": {
     "name": "Consulta de Salário Mínimo",
     "description": "Consulte as taxas atuais de salário mínimo federal e estadual, incluindo o salário mínimo com gorjetas. Compare a taxa do seu estado com o mínimo federal.",
-    "shortDescription": "Consulte o salário mínimo por estado."
+    "shortDescription": "Consulte o salário mínimo por estado.",
+    "faqs": [
+      {
+        "question": "Qual taxa se aplica — federal ou estadual?",
+        "answer": "Os empregadores devem pagar a mais alta das duas. Se a sua taxa estadual for mais alta, essa aplica-se."
+      },
+      {
+        "question": "E os funcionários que recebem gorjetas?",
+        "answer": "Alguns estados permitem um mínimo mais baixo para trabalhadores que recebem gorjetas. Gorjetas mais salários devem ser iguais a pelo menos o mínimo padrão."
+      },
+      {
+        "question": "Estas taxas estão atualizadas?",
+        "answer": "Atualizamos regularmente, mas as taxas mudam. Verifique com o departamento de trabalho do seu estado."
+      }
+    ]
   },
   "employment-checklist": {
     "name": "Lista de Verificação de Contrato de Trabalho",
     "description": "Uma lista de verificação interativa abrangente de tudo o que procurar num contrato de trabalho — compensação, benefícios, cláusulas restritivas, termos de rescisão e muito mais.",
-    "shortDescription": "Lista de verificação para contratos de trabalho."
+    "shortDescription": "Lista de verificação para contratos de trabalho.",
+    "faqs": [
+      {
+        "question": "Quantos itens estão na lista de verificação?",
+        "answer": "Mais de 30 itens em 6 categorias, cobrindo todos os principais aspetos dos contratos de trabalho."
+      },
+      {
+        "question": "Posso guardar o meu progresso?",
+        "answer": "O progresso é reiniciado quando sai. Use-o em conjunto com a revisão do seu contrato."
+      },
+      {
+        "question": "Isto é para funcionários ou empregadores?",
+        "answer": "Principalmente concebido para funcionários que revisam um contrato antes de assinar."
+      }
+    ]
   },
   "cease-desist": {
     "name": "Gerador de Carta de Cessação e Desistência",
     "description": "Gere uma carta formal de cessação e desistência para assédio, difamação, infração de propriedade intelectual, quebra de contrato ou problemas de cobrança de dívidas.",
-    "shortDescription": "Gere cartas de C&D para cenários comuns."
+    "shortDescription": "Gere cartas de C&D para cenários comuns.",
+    "faqs": [
+      {
+        "question": "Uma carta de C&D é legalmente vinculativa?",
+        "answer": "Uma carta de C&D em si não é uma ordem judicial, mas cria um registo e notifica formalmente o destinatário."
+      },
+      {
+        "question": "Devo enviá-la por correio ou e-mail?",
+        "answer": "Correio registado com aviso de receção fornece prova de entrega, o que é importante para processos legais."
+      },
+      {
+        "question": "E se eles a ignorarem?",
+        "answer": "Se for ignorada, poderá ser necessário escalar para a apresentação de uma ação judicial ou a procura de uma ordem judicial."
+      }
+    ]
   },
   "poa-generator": {
     "name": "Gerador de Procuração",
     "description": "Gere um documento básico de Procuração. Escolha entre POA geral, limitada, duradoura ou financeira com termos personalizáveis e bloco de reconhecimento de firma.",
-    "shortDescription": "Gere um documento básico de POA."
+    "shortDescription": "Gere um documento básico de POA.",
+    "faqs": [
+      {
+        "question": "Qual a diferença entre os tipos de POA?",
+        "answer": "Geral cobre tudo, Limitada é para tarefas específicas, Duradoura sobrevive à incapacidade, Financeira cobre assuntos monetários."
+      },
+      {
+        "question": "Precisa de ser autenticada?",
+        "answer": "A maioria dos estados exige autenticação. O modelo inclui um bloco de autenticação."
+      },
+      {
+        "question": "Posso revogar uma POA?",
+        "answer": "Sim, pode revogar uma POA a qualquer momento, fornecendo notificação por escrito ao agente e a quaisquer terceiros."
+      }
+    ]
   },
   "ic-agreement": {
     "name": "Gerador de Acordo de Contratante Independente",
     "description": "Gere um acordo abrangente de contratante independente cobrindo o âmbito do trabalho, compensação, direitos de propriedade intelectual, confidencialidade e termos de rescisão.",
-    "shortDescription": "Gere um acordo de IC a partir de um formulário."
+    "shortDescription": "Gere um acordo de IC a partir de um formulário.",
+    "faqs": [
+      {
+        "question": "Por que isto é importante?",
+        "answer": "Um contrato de IC adequado ajuda a estabelecer a relação com o contratado e a evitar problemas de classificação incorreta."
+      },
+      {
+        "question": "O que está incluído?",
+        "answer": "Âmbito dos serviços, compensação, atribuição de PI, confidencialidade, não-solicitação, indemnização e rescisão."
+      },
+      {
+        "question": "Isto é para contratados 1099?",
+        "answer": "Sim, isto é concebido para relações de contratado independente (1099), não para funcionários (W-2)."
+      }
+    ]
   },
   "promissory-note": {
     "name": "Gerador de Nota Promissória",
     "description": "Gere uma nota promissória básica com termos personalizáveis, incluindo valor principal, taxa de juros, cronograma de pagamento e disposições de incumprimento.",
-    "shortDescription": "Gere uma nota promissória básica."
+    "shortDescription": "Gere uma nota promissória básica.",
+    "faqs": [
+      {
+        "question": "Esta nota é legalmente vinculativa?",
+        "answer": "Isto gera um modelo. Peça a um advogado para o rever e considere a autenticação para a sua exequibilidade."
+      },
+      {
+        "question": "Que taxa de juro devo usar?",
+        "answer": "As taxas variam. Verifique as leis de usura do seu estado para as taxas máximas permitidas. As taxas comuns são de 3-10%."
+      },
+      {
+        "question": "Precisa de ser autenticada?",
+        "answer": "Embora nem sempre seja exigida, a autenticação adiciona uma camada extra de autenticidade."
+      }
+    ]
   },
   "security-deposit": {
     "name": "Calculadora de Caução",
     "description": "Consulte as regras de caução por estado, incluindo valores máximos de depósito, requisitos de juros e prazos de devolução após a saída.",
-    "shortDescription": "Verifique as regras de caução por estado."
+    "shortDescription": "Verifique as regras de caução por estado.",
+    "faqs": [
+      {
+        "question": "Todos os estados limitam os depósitos?",
+        "answer": "Não. Alguns estados, como o Texas, não têm um limite legal para os valores da caução."
+      },
+      {
+        "question": "O meu senhorio deve-me juros?",
+        "answer": "Alguns estados exigem que os senhorios paguem juros sobre os depósitos. Verifique as regras do seu estado."
+      },
+      {
+        "question": "Quanto tempo para receber o meu depósito de volta?",
+        "answer": "Os prazos de devolução variam de 14 a 45 dias, dependendo do estado."
+      }
+    ]
   },
   "rent-increase": {
     "name": "Calculadora de Aumento de Renda",
     "description": "Calcule a sua percentagem de aumento de renda e o impacto anual. Verifique em relação aos limites de controlo de renda nas principais jurisdições.",
-    "shortDescription": "Verifique se um aumento de renda é legal."
+    "shortDescription": "Verifique se um aumento de renda é legal.",
+    "faqs": [
+      {
+        "question": "Existe um limite para os aumentos de renda?",
+        "answer": "A maioria das jurisdições dos EUA não tem limite, mas algumas cidades e estados têm leis de controlo de rendas."
+      },
+      {
+        "question": "Qual é um aumento anual típico?",
+        "answer": "As médias de mercado são de 3-5% anualmente, mas isso varia de acordo com a localização."
+      },
+      {
+        "question": "O meu senhorio pode aumentar a renda a meio do contrato?",
+        "answer": "Geralmente não, a menos que o seu contrato de arrendamento o permita especificamente. Os aumentos geralmente aplicam-se na renovação."
+      }
+    ]
   },
   "lease-comparison": {
     "name": "Comparação de Termos de Arrendamento",
     "description": "Compare duas ofertas de arrendamento lado a lado, incluindo renda, depósito, utilidades e custo total. Veja qual arrendamento lhe oferece o melhor valor.",
-    "shortDescription": "Compare duas ofertas de arrendamento lado a lado."
+    "shortDescription": "Compare duas ofertas de arrendamento lado a lado.",
+    "faqs": [
+      {
+        "question": "Que fatores devo comparar?",
+        "answer": "Considere o custo total, incluindo renda, utilidades, estacionamento, depósitos e quaisquer taxas de mudança."
+      },
+      {
+        "question": "Mais barato significa sempre melhor?",
+        "answer": "Não necessariamente. Considere a localização, comodidades, flexibilidade do contrato e reputação do senhorio."
+      },
+      {
+        "question": "E os custos ocultos?",
+        "answer": "Considere as utilidades, taxas de animais de estimação, estacionamento, lavandaria e qualquer seguro obrigatório."
+      }
+    ]
   },
   "moveout-checklist": {
     "name": "Gerador de Lista de Verificação de Saída",
     "description": "Gere uma lista de verificação de saída personalizada com base no tipo e características da sua propriedade. Acompanhe o progresso com uma lista de verificação interativa.",
-    "shortDescription": "Gere uma lista de verificação de saída personalizada."
+    "shortDescription": "Gere uma lista de verificação de saída personalizada.",
+    "faqs": [
+      {
+        "question": "Por que preciso de uma lista de verificação de mudança?",
+        "answer": "Uma mudança completa aumenta a sua chance de receber de volta o seu depósito de segurança na íntegra."
+      },
+      {
+        "question": "Devo tirar fotos?",
+        "answer": "Absolutamente. Documente a condição de cada quarto antes e depois da limpeza."
+      },
+      {
+        "question": "Quanto aviso preciso dar?",
+        "answer": "Verifique o seu contrato de arrendamento. A maioria exige um aviso por escrito de 30 a 60 dias."
+      }
+    ]
   },
   "rental-agreement": {
     "name": "Gerador de Contrato de Arrendamento",
     "description": "Gere um contrato de arrendamento residencial básico preenchendo os detalhes do senhorio, inquilino, propriedade e financeiros. Inclui disposições legais padrão.",
-    "shortDescription": "Gere um contrato de arrendamento básico."
+    "shortDescription": "Gere um contrato de arrendamento básico.",
+    "faqs": [
+      {
+        "question": "Este contrato é legalmente vinculativo?",
+        "answer": "Isto gera um modelo. Peça para ser revisto por um advogado imobiliário antes de usar."
+      },
+      {
+        "question": "Está em conformidade com as leis do meu estado?",
+        "answer": "Inclui disposições comuns, mas os requisitos específicos de cada estado variam. Consulte os regulamentos locais."
+      },
+      {
+        "question": "Posso personalizar o modelo?",
+        "answer": "Sim, copie o texto gerado e modifique quaisquer termos conforme necessário."
+      }
+    ]
   },
   "business-name": {
     "name": "Verificador de Nome Comercial",
     "description": "Verifique o nome comercial proposto quanto ao comprimento, caracteres especiais, sufixo da entidade, exclusividade e potencial de domínio. Inclui dicas de pesquisa de marcas registadas.",
-    "shortDescription": "Verifique as considerações de nomeação comercial."
+    "shortDescription": "Verifique as considerações de nomeação comercial.",
+    "faqs": [
+      {
+        "question": "Isto verifica se o nome já está em uso?",
+        "answer": "Fornece análise e dicas. Verifique o registo comercial do seu estado e o USPTO para disponibilidade."
+      },
+      {
+        "question": "Preciso de um sufixo de entidade?",
+        "answer": "A maioria dos estados exige um sufixo de entidade (LLC, Inc., etc.) no seu nome comercial oficial."
+      },
+      {
+        "question": "Como faço para registar uma marca comercial de um nome comercial?",
+        "answer": "Pesquise primeiro na base de dados TESS do USPTO e depois apresente um pedido de registo de marca comercial."
+      }
+    ]
   },
   "contractor-vs-employee": {
     "name": "Verificador de Empreiteiro vs. Empregado",
     "description": "Responda a 10 perguntas com base nos fatores de classificação do IRS para determinar se um trabalhador é provavelmente um empregado ou um contratado independente.",
-    "shortDescription": "Classifique o trabalhador como empregado ou contratado."
+    "shortDescription": "Classifique o trabalhador como empregado ou contratado.",
+    "faqs": [
+      {
+        "question": "Por que a classificação é importante?",
+        "answer": "A classificação incorreta pode resultar em impostos em atraso, multas e responsabilidade por benefícios."
+      },
+      {
+        "question": "Que fatores o IRS considera?",
+        "answer": "Controlo comportamental, controlo financeiro e o tipo de relacionamento entre as partes."
+      },
+      {
+        "question": "Isto é definitivo?",
+        "answer": "Não. Esta é uma diretriz. O IRS e os tribunais consideram a totalidade das circunstâncias."
+      }
+    ]
   },
   "severance-pay": {
     "name": "Calculadora de Indemnização por Cessação de Contrato",
     "description": "Estime a indemnização por cessação de contrato típica com base no salário, anos de serviço e nível da indústria. Veja estimativas baixas e altas para negociação.",
-    "shortDescription": "Estime o intervalo da indemnização por cessação de contrato."
+    "shortDescription": "Estime o intervalo da indemnização por cessação de contrato.",
+    "faqs": [
+      {
+        "question": "A indemnização por cessação de contrato é legalmente exigida?",
+        "answer": "Geralmente não nos EUA, a menos que exigido por contrato ou política da empresa."
+      },
+      {
+        "question": "Qual é a indemnização típica?",
+        "answer": "A faixa comum é de 1-2 semanas de salário por ano de serviço para funcionários padrão."
+      },
+      {
+        "question": "Posso negociar a indemnização?",
+        "answer": "Sim. A indemnização é quase sempre negociável, especialmente para cargos de chefia."
+      }
+    ]
   },
   "overtime-calc": {
     "name": "Calculadora de Horas Extra",
     "description": "Calcule o pagamento de horas extra com base na taxa horária, horas regulares, horas extra e multiplicador. Veja o detalhe do pagamento e a taxa efetiva.",
-    "shortDescription": "Calcule o detalhe do pagamento de horas extra."
+    "shortDescription": "Calcule o detalhe do pagamento de horas extra.",
+    "faqs": [
+      {
+        "question": "Qual é a taxa padrão de horas extras?",
+        "answer": "A lei federal exige 1,5x a taxa regular para horas trabalhadas acima de 40 por semana."
+      },
+      {
+        "question": "Todos os trabalhadores são elegíveis para horas extras?",
+        "answer": "Não. Trabalhadores assalariados que preenchem certos critérios podem ser isentos sob a FLSA."
+      },
+      {
+        "question": "O meu estado tem regras diferentes?",
+        "answer": "Alguns estados têm regras de horas extras mais rigorosas. A Califórnia exige horas extras diárias após 8 horas."
+      }
+    ]
   },
   "partnership-split": {
     "name": "Calculadora de Divisão de Parceria",
     "description": "Calcule as divisões sugeridas de capital e lucros para parcerias com base em contribuições de capital, compromissos de tempo e ponderação personalizável.",
-    "shortDescription": "Calcule as divisões de capital de parceria."
+    "shortDescription": "Calcule as divisões de capital de parceria.",
+    "faqs": [
+      {
+        "question": "Como devemos dividir o capital?",
+        "answer": "Considere as contribuições de capital, o tempo de dedicação, a experiência e a tolerância ao risco."
+      },
+      {
+        "question": "A divisão de lucros deve corresponder ao capital?",
+        "answer": "Não necessariamente. Alguns parceiros podem receber um salário mais uma menor participação nos lucros."
+      },
+      {
+        "question": "Precisamos de um acordo de parceria?",
+        "answer": "Absolutamente. Formalize sempre as divisões num acordo de parceria por escrito."
+      }
+    ]
   },
   "business-expense": {
     "name": "Modelo de Registo de Despesas Comerciais",
     "description": "Gere um modelo formatado de registo de despesas personalizado para o seu tipo de negócio. Inclui categorias de despesas relevantes e taxas de quilometragem do IRS.",
-    "shortDescription": "Gere um modelo de registo de despesas."
+    "shortDescription": "Gere um modelo de registo de despesas.",
+    "faqs": [
+      {
+        "question": "Que tipos de negócios são abrangidos?",
+        "answer": "Freelance, retalho, restauração, serviços profissionais e construção/ofícios."
+      },
+      {
+        "question": "Posso personalizar as categorias?",
+        "answer": "Sim, selecione categorias específicas ou use o modelo completo para o seu tipo de negócio."
+      },
+      {
+        "question": "Que registos devo guardar?",
+        "answer": "Guarde os recibos de todas as despesas acima de 75€ e mantenha um registo de quilometragem para deduções de veículos."
+      }
+    ]
   },
   "crypto-tax": {
     "name": "Calculadora de Imposto Cripto",
     "description": "Calcule ganhos ou perdas de capital em transações de criptomoedas. Estima o imposto de curto prazo vs. longo prazo com base no seu período de detenção e escalão fiscal.",
-    "shortDescription": "Estime o imposto sobre ganhos de capital cripto."
+    "shortDescription": "Estime o imposto sobre ganhos de capital cripto.",
+    "faqs": [
+      {
+        "question": "Como é que as criptomoedas são tributadas?",
+        "answer": "Nos EUA, as criptomoedas são tributadas como propriedade. Ganhos de curto prazo (detidos < 1 ano) são tributados como rendimento ordinário; ganhos de longo prazo obtêm taxas preferenciais."
+      },
+      {
+        "question": "Qual é a taxa de ganhos de capital de longo prazo?",
+        "answer": "A maioria dos contribuintes paga 15% sobre os ganhos de longo prazo. Os que auferem rendimentos mais elevados podem pagar 20%."
+      },
+      {
+        "question": "Devo impostos sobre perdas?",
+        "answer": "Não, mas pode usar as perdas para compensar os ganhos e deduzir até 3.000€ contra o rendimento ordinário."
+      }
+    ]
   },
   "dca-calculator": {
     "name": "Calculadora DCA",
     "description": "Simule uma estratégia de custo médio ponderado (DCA). Veja o seu custo médio, unidades totais adquiridas e retorno com base em investimentos periódicos regulares.",
-    "shortDescription": "Simule retornos de custo médio ponderado."
+    "shortDescription": "Simule retornos de custo médio ponderado.",
+    "faqs": [
+      {
+        "question": "O que é a média de custo em dólar (DCA)?",
+        "answer": "DCA significa investir um montante fixo em intervalos regulares, independentemente do preço, reduzindo o impacto da volatilidade."
+      },
+      {
+        "question": "DCA é melhor do que um montante único?",
+        "answer": "Historicamente, o montante único supera em cerca de 2/3 das vezes, mas o DCA reduz o risco e a tomada de decisões emocionais."
+      },
+      {
+        "question": "Isto usa preços reais?",
+        "answer": "Simula um caminho de preço linear entre os seus preços de início e fim para fins de estimativa."
+      }
+    ]
   },
   "position-size": {
     "name": "Calculadora de Tamanho de Posição",
     "description": "Calcule o tamanho ideal da posição com base no tamanho da sua conta, tolerância ao risco e distância do stop loss. Essencial para uma gestão de risco adequada.",
-    "shortDescription": "Calcule o tamanho ideal da posição de negociação."
+    "shortDescription": "Calcule o tamanho ideal da posição de negociação.",
+    "faqs": [
+      {
+        "question": "Quanto devo arriscar por transação?",
+        "answer": "A maioria dos traders profissionais arrisca 1-2% da sua conta por transação para sobreviver a sequências de perdas."
+      },
+      {
+        "question": "O que é um stop loss?",
+        "answer": "Um stop loss é um preço predeterminado no qual você sai de uma transação perdedora para limitar a sua perda."
+      },
+      {
+        "question": "Isto funciona para criptomoedas?",
+        "answer": "Sim, o dimensionamento da posição aplica-se a ações, criptomoedas, forex e qualquer ativo negociável."
+      }
+    ]
   },
   "profit-loss": {
     "name": "Calculadora de Lucros e Perdas",
     "description": "Calcule o seu lucro ou perda numa transação, incluindo alavancagem e taxas de negociação. Veja o P&L bruto, P&L líquido e percentagem de retorno.",
-    "shortDescription": "Calcule o lucro/perda da transação com taxas."
+    "shortDescription": "Calcule o lucro/perda da transação com taxas.",
+    "faqs": [
+      {
+        "question": "Como a alavancagem afeta o P&L?",
+        "answer": "A alavancagem multiplica tanto os ganhos quanto as perdas. 10× de alavancagem significa que um movimento de 1% resulta num ganho ou perda de 10%."
+      },
+      {
+        "question": "Quais são as taxas de negociação típicas?",
+        "answer": "As principais bolsas cobram 0,04-0,1% para criadores de mercado e 0,06-0,2% para tomadores de mercado por transação."
+      },
+      {
+        "question": "A taxa é aplicada por lado?",
+        "answer": "Sim, você paga taxas tanto ao abrir quanto ao fechar uma posição (ida e volta)."
+      }
+    ]
   },
   "compound-interest": {
     "name": "Calculadora de Juros Compostos",
     "description": "Projete o crescimento do seu investimento com juros compostos. Fatorize o capital inicial, taxa de juro, frequência de capitalização e contribuições mensais.",
-    "shortDescription": "Projete o crescimento do investimento ao longo do tempo."
+    "shortDescription": "Projete o crescimento do investimento ao longo do tempo.",
+    "faqs": [
+      {
+        "question": "O que é juro composto?",
+        "answer": "Juro composto é o juro ganho tanto sobre o capital inicial quanto sobre o juro acumulado anteriormente — 'juro sobre juro'."
+      },
+      {
+        "question": "Com que frequência os juros devem ser capitalizados?",
+        "answer": "Uma capitalização mais frequente gera retornos mais altos. A capitalização diária rende um pouco mais do que a mensal ou trimestral."
+      },
+      {
+        "question": "Isto é o mesmo que APY?",
+        "answer": "APY (Annual Percentage Yield) já considera a capitalização. A taxa que você insere aqui é a taxa anual nominal."
+      }
+    ]
   },
   "margin-call": {
     "name": "Calculadora de Chamada de Margem",
     "description": "Determine a que preço o seu corretor emitirá uma chamada de margem. Insira o seu capital, valor emprestado e requisito de margem de manutenção.",
-    "shortDescription": "Calcule o preço de disparo da sua chamada de margem."
+    "shortDescription": "Calcule o preço de disparo da sua chamada de margem.",
+    "faqs": [
+      {
+        "question": "O que é uma chamada de margem?",
+        "answer": "Uma chamada de margem ocorre quando o capital da sua conta cai abaixo do requisito de margem de manutenção, forçando-o a depositar mais fundos ou a vender ativos."
+      },
+      {
+        "question": "Qual é a margem de manutenção típica?",
+        "answer": "A FINRA exige uma margem de manutenção mínima de 25%, mas a maioria dos corretores exige 30-40%."
+      },
+      {
+        "question": "O que acontece se eu não conseguir cumprir uma chamada de margem?",
+        "answer": "O seu corretor pode liquidar as suas posições ao preço de mercado para que a sua conta volte ao nível de margem exigido."
+      }
+    ]
   },
   "breakeven-calc": {
     "name": "Calculadora de Ponto de Equilíbrio de Negociação",
     "description": "Calcule o preço exato de equilíbrio para uma transação, considerando as taxas de negociação de ida e volta e a alavancagem. Saiba o movimento mínimo necessário para lucrar.",
-    "shortDescription": "Encontre o seu preço de equilíbrio após as taxas."
+    "shortDescription": "Encontre o seu preço de equilíbrio após as taxas.",
+    "faqs": [
+      {
+        "question": "Porque é que o ponto de equilíbrio é diferente do preço de entrada?",
+        "answer": "As taxas de negociação significam que o preço precisa de se mover ligeiramente a seu favor apenas para atingir o ponto de equilíbrio."
+      },
+      {
+        "question": "Como é que as taxas escalam com a alavancagem?",
+        "answer": "As taxas são geralmente cobradas sobre o tamanho total da posição alavancada, pelo que uma alavancagem mais alta significa custos de taxas absolutas mais elevados."
+      },
+      {
+        "question": "Devo considerar o spread?",
+        "answer": "Sim, o spread bid-ask é um custo adicional. Esta calculadora foca-se nas taxas de câmbio."
+      }
+    ]
   },
   "risk-reward": {
     "name": "Calculadora de Risco/Recompensa",
     "description": "Analise a relação risco-recompensa de uma transação. Insira a sua entrada, stop loss e take profit para ver se a transação vale a pena.",
-    "shortDescription": "Analise a relação risco-recompensa da transação."
+    "shortDescription": "Analise a relação risco-recompensa da transação.",
+    "faqs": [
+      {
+        "question": "O que é uma boa relação risco/recompensa?",
+        "answer": "A maioria dos traders visa pelo menos 1:2 (arriscar 1€ para ganhar 2€). Relações mais altas permitem rentabilidade com taxas de vitória mais baixas."
+      },
+      {
+        "question": "O que significa a taxa de vitória exigida?",
+        "answer": "É a percentagem mínima de negociações que precisa de ganhar para atingir o ponto de equilíbrio nesta relação R:R."
+      },
+      {
+        "question": "Cada negociação deve ter uma boa R:R?",
+        "answer": "Idealmente sim, mas algumas estratégias usam uma R:R apertada com altas taxas de vitória. A consistência importa mais do que qualquer negociação individual."
+      }
+    ]
   },
   "crypto-converter": {
     "name": "Conversor de Criptomoedas",
     "description": "Converta entre as principais criptomoedas usando preços de referência. Veja valores equivalentes em BTC, ETH, SOL e outros ativos populares.",
-    "shortDescription": "Converta entre ativos cripto."
+    "shortDescription": "Converta entre ativos cripto.",
+    "faqs": [
+      {
+        "question": "Estes são preços em tempo real?",
+        "answer": "Não, esta ferramenta usa preços de referência estáticos para demonstração. Use uma bolsa em tempo real para preços de negociação reais."
+      },
+      {
+        "question": "Quais criptomoedas são suportadas?",
+        "answer": "BTC, ETH, SOL, BNB, XRP, ADA, DOGE e DOT são atualmente suportadas."
+      },
+      {
+        "question": "Posso usar isto para cálculos fiscais?",
+        "answer": "Para fins fiscais, use os preços de transação reais dos seus registos de câmbio."
+      }
+    ]
   },
   "loan-payment": {
     "name": "Calculadora de Pagamento de Empréstimo",
     "description": "Calcule os pagamentos mensais do empréstimo usando amortização padrão. Veja o seu pagamento mensal, juros totais pagos e custo total do empréstimo.",
-    "shortDescription": "Calcule os pagamentos mensais do empréstimo."
+    "shortDescription": "Calcule os pagamentos mensais do empréstimo.",
+    "faqs": [
+      {
+        "question": "Como é calculado o pagamento mensal?",
+        "answer": "Usando a fórmula de amortização padrão: M = P[r(1+r)^n] / [(1+r)^n - 1], onde P é o capital, r é a taxa mensal, n é o número de pagamentos."
+      },
+      {
+        "question": "Isto inclui impostos e seguros?",
+        "answer": "Não, isto calcula apenas o capital e os juros. O seu pagamento total de habitação pode incluir impostos, seguros e PMI."
+      },
+      {
+        "question": "Posso usar isto para empréstimos automóveis?",
+        "answer": "Sim, funciona para qualquer empréstimo amortizável de taxa fixa — hipotecas, empréstimos automóveis, empréstimos pessoais, etc."
+      }
+    ]
   },
   "grant-budget": {
     "name": "Calculadora de Orçamento de Subvenção",
     "description": "Aloque fundos de subvenção em categorias orçamentárias como pessoal, equipamento, viagens e custos indiretos. Acompanhe os fundos restantes e receba avisos quando as alocações excederem o valor total da subvenção.",
-    "shortDescription": "Aloque e acompanhe os gastos do orçamento da subvenção."
+    "shortDescription": "Aloque e acompanhe os gastos do orçamento da subvenção.",
+    "faqs": [
+      {
+        "question": "O que é uma taxa de custo indireto?",
+        "answer": "Uma taxa de custo indireto cobre despesas gerais (instalações, administração) não diretamente ligadas ao projeto da subvenção. É aplicada como uma percentagem dos custos diretos."
+      },
+      {
+        "question": "Quais são as categorias orçamentais comuns?",
+        "answer": "Pessoal, equipamento, viagens, suprimentos, serviços contratuais e outros custos diretos são categorias padrão para a maioria das subvenções federais e estaduais."
+      },
+      {
+        "question": "O que acontece se eu exceder o orçamento?",
+        "answer": "A calculadora irá avisá-lo. Na prática, exceder os orçamentos aprovados pode exigir um pedido formal de modificação orçamental ao concedente."
+      }
+    ]
   },
   "grant-deadline": {
     "name": "Rastreador de Prazos de Subvenção",
     "description": "Acompanhe os prazos de candidatura a subvenções, datas de vencimento de relatórios e marcos. Veja temporizadores de contagem regressiva, distintivos de urgência e uma linha do tempo ordenada de todas as obrigações futuras.",
-    "shortDescription": "Acompanhe os prazos de subvenção e datas de relatórios."
+    "shortDescription": "Acompanhe os prazos de subvenção e datas de relatórios.",
+    "faqs": [
+      {
+        "question": "Que tipos de prazos devo acompanhar?",
+        "answer": "Prazos de candidatura, relatórios de progresso, relatórios financeiros, relatórios finais e quaisquer marcos intermédios exigidos pelo concedente."
+      },
+      {
+        "question": "O que acontece se eu perder um prazo de relatório?",
+        "answer": "Perder prazos pode resultar na suspensão do financiamento, planos de ação corretiva exigidos ou desqualificação de futuras subvenções."
+      },
+      {
+        "question": "Estes dados são guardados?",
+        "answer": "Atualmente, o rastreador é baseado na sessão. A atualização limpará as entradas. Crie uma conta para guardar análises para referência futura."
+      }
+    ]
   },
   "grant-compliance": {
     "name": "Lista de Verificação de Conformidade de Subvenção",
     "description": "Gere uma lista de verificação de conformidade com base no seu tipo de subvenção — federal, estadual, fundação ou corporativa. Abrange requisitos de relatórios, auditorias, aquisições, fundos de contrapartida e manutenção de registos.",
-    "shortDescription": "Lista de verificação de conformidade por tipo de subvenção."
+    "shortDescription": "Lista de verificação de conformidade por tipo de subvenção.",
+    "faqs": [
+      {
+        "question": "O que é 2 CFR 200?",
+        "answer": "A Uniform Guidance (2 CFR Parte 200) estabelece requisitos administrativos, de custo e de auditoria para prémios federais a entidades não federais."
+      },
+      {
+        "question": "Quando é exigida uma auditoria única?",
+        "answer": "Organizações que gastam 750.000 dólares ou mais em prémios federais num ano fiscal devem ter uma auditoria única realizada."
+      },
+      {
+        "question": "As subvenções de fundações têm requisitos de conformidade?",
+        "answer": "Sim, embora tipicamente menos complexos do que as subvenções federais. Os requisitos comuns incluem relatórios narrativos, resumos financeiros e restrições de uso de fundos."
+      }
+    ]
   },
   "vesting-schedule": {
     "name": "Calculadora de Cronograma de Vesting",
     "description": "Calcule o seu cronograma de vesting de capital com base no total de ações, período de vesting, cliff e frequência. Veja uma tabela detalhada de ações adquiridas por período com totais cumulativos.",
-    "shortDescription": "Calcule os cronogramas de vesting de capital."
+    "shortDescription": "Calcule os cronogramas de vesting de capital.",
+    "faqs": [
+      {
+        "question": "O que é um período de cliff?",
+        "answer": "Um cliff é o período inicial (geralmente 12 meses) antes de quaisquer ações serem adquiridas. Após o cliff, uma soma fixa é adquirida e o restante é adquirido num cronograma regular."
+      },
+      {
+        "question": "Qual é um cronograma de aquisição típico?",
+        "answer": "O mais comum é um cronograma de 4 anos com um cliff de 1 ano e aquisição mensal a partir daí (conhecido como '4 anos com cliff de 1 ano')."
+      },
+      {
+        "question": "O que acontece se eu sair antes do cliff?",
+        "answer": "Perde todas as ações não adquiridas. Se sair antes do cliff, não recebe ações."
+      }
+    ]
   },
   "stock-option-tax": {
     "name": "Calculadora de Imposto sobre Opções de Ações",
     "description": "Estime os impostos sobre o exercício de opções de ações para ISOs e NSOs. Calcula o imposto sobre o rendimento ordinário, imposto sobre ganhos de capital e exposição ao AMT com base no seu período de detenção e escalão fiscal.",
-    "shortDescription": "Estime os impostos sobre o exercício de opções de ações."
+    "shortDescription": "Estime os impostos sobre o exercício de opções de ações.",
+    "faqs": [
+      {
+        "question": "Qual é a diferença entre ISO e NSO?",
+        "answer": "As ISOs (Incentive Stock Options) oferecem potenciais vantagens fiscais se os requisitos de período de detenção forem cumpridos. As NSOs (Non-Qualified Stock Options) são tributadas como rendimento ordinário no momento do exercício."
+      },
+      {
+        "question": "O que é AMT?",
+        "answer": "O Imposto Mínimo Alternativo (Alternative Minimum Tax) é um sistema fiscal paralelo. Para as ISOs, o elemento de barganha no exercício é um item de preferência AMT que pode desencadear responsabilidade fiscal adicional."
+      },
+      {
+        "question": "O que é uma alienação qualificativa para ISOs?",
+        "answer": "Deve deter as ações por pelo menos 1 ano após o exercício E 2 anos após a data de concessão para se qualificar para o tratamento de ganhos de capital de longo prazo."
+      }
+    ]
   },
   "equity-dilution": {
     "name": "Calculadora de Diluição de Capital",
     "description": "Calcule como as rondas de financiamento e as expansões do pool de opções afetam a sua percentagem de propriedade. Veja a propriedade pré e pós-diluição lado a lado com o impacto total da diluição.",
-    "shortDescription": "Calcule a diluição de capital de rondas de financiamento."
+    "shortDescription": "Calcule a diluição de capital de rondas de financiamento.",
+    "faqs": [
+      {
+        "question": "O que é diluição de capital próprio?",
+        "answer": "A diluição ocorre quando novas ações são emitidas (através de rondas de financiamento ou pools de opções), reduzindo a percentagem de propriedade dos acionistas existentes, mesmo que o número de ações permaneça o mesmo."
+      },
+      {
+        "question": "A diluição é sempre má?",
+        "answer": "Não necessariamente. Se o novo investimento aumentar significativamente a avaliação da empresa, a sua percentagem menor pode valer mais em termos absolutos."
+      },
+      {
+        "question": "O que é um pool de opções?",
+        "answer": "Uma reserva de ações reservada para futuras concessões de capital próprio a funcionários. Os investidores frequentemente exigem que um pool de opções seja criado ou expandido antes do financiamento."
+      }
+    ]
   },
   "solar-roi": {
     "name": "Calculadora de ROI de Painéis Solares",
     "description": "Calcule o retorno do investimento para a instalação de painéis solares. Insira o custo do sistema, produção de energia, taxa de eletricidade e incentivos para ver o período de retorno, poupanças em 25 anos e percentagem de ROI.",
-    "shortDescription": "Calcule o período de retorno e ROI de painéis solares."
+    "shortDescription": "Calcule o período de retorno e ROI de painéis solares.",
+    "faqs": [
+      {
+        "question": "Quanto tempo demoram os painéis solares a pagar-se a si próprios?",
+        "answer": "Tipicamente 6-10 anos, dependendo do custo do sistema, das tarifas de eletricidade locais e dos incentivos disponíveis. Após o retorno, a eletricidade gerada é essencialmente gratuita."
+      },
+      {
+        "question": "O que mais afeta o ROI solar?",
+        "answer": "Os maiores fatores são o custo do sistema, as tarifas de eletricidade locais, os incentivos/descontos disponíveis e a quantidade de sol que a sua localização recebe anualmente."
+      },
+      {
+        "question": "Os painéis solares aumentam o valor da casa?",
+        "answer": "Estudos mostram que os painéis solares podem aumentar o valor da casa em 3-4% em média, proporcionando um ROI adicional para além das poupanças de energia."
+      }
+    ]
   },
   "solar-incentive": {
     "name": "Estimador de Incentivos Solares e Créditos Fiscais",
     "description": "Estime os incentivos solares federais e estaduais, incluindo o Crédito Fiscal de Investimento (ITC) de 30%, reembolsos estaduais e valores SREC. Veja o seu custo líquido após todos os incentivos disponíveis.",
-    "shortDescription": "Estime créditos fiscais solares e reembolsos estaduais."
+    "shortDescription": "Estime créditos fiscais solares e reembolsos estaduais.",
+    "faqs": [
+      {
+        "question": "O que é o ITC solar federal?",
+        "answer": "O Crédito Fiscal de Investimento (Investment Tax Credit) permite deduzir 30% do custo de instalação de um sistema de energia solar dos seus impostos federais. Esta taxa está disponível até 2032."
+      },
+      {
+        "question": "O que são SRECs?",
+        "answer": "Os Certificados de Energia Renovável Solar (Solar Renewable Energy Certificates) representam os benefícios ambientais da eletricidade solar. Em alguns estados, pode vender SRECs para obter rendimentos adicionais."
+      },
+      {
+        "question": "Posso combinar incentivos federais e estaduais?",
+        "answer": "Sim, o ITC federal pode ser combinado com descontos estaduais e SRECs. No entanto, alguns incentivos estaduais podem reduzir a base de custo para o crédito federal."
+      }
+    ]
   },
   "energy-savings": {
     "name": "Calculadora de Poupança de Energia",
     "description": "Calcule o quanto pode poupar em eletricidade ao optar por energia solar. Insira a sua fatura atual, percentagem de cobertura solar e custo do sistema para ver as poupanças mensais, anuais e vitalícias.",
-    "shortDescription": "Calcule as poupanças de eletricidade da energia solar."
+    "shortDescription": "Calcule as poupanças de eletricidade da energia solar.",
+    "faqs": [
+      {
+        "question": "Que percentagem de cobertura solar devo procurar?",
+        "answer": "A maioria dos proprietários visa uma cobertura de 80-100%. Ultrapassar os 100% pode não ser rentável, a menos que a sua empresa de serviços públicos ofereça medição líquida favorável."
+      },
+      {
+        "question": "As poupanças solares aumentam com o tempo?",
+        "answer": "Sim, como as tarifas de serviços públicos geralmente aumentam 3-4% anualmente, as suas poupanças crescem a cada ano, enquanto os seus custos de produção solar permanecem fixos."
+      },
+      {
+        "question": "O que está incluído no cálculo do ponto de equilíbrio?",
+        "answer": "O ponto de equilíbrio considera o custo total do sistema menos as poupanças mensais até que as poupanças acumuladas igualem o investimento inicial."
+      }
+    ]
   },
   "carbon-footprint": {
     "name": "Calculadora de Compensação de Pegada de Carbono",
     "description": "Calcule as emissões de CO₂ que pode evitar ao mudar para energias renováveis. Veja equivalentes em árvores plantadas e milhas de condução compensadas com base na sua fonte e uso de energia.",
-    "shortDescription": "Calcule as poupanças de CO₂ ao mudar para renováveis."
+    "shortDescription": "Calcule as poupanças de CO₂ ao mudar para renováveis.",
+    "faqs": [
+      {
+        "question": "Quanto CO₂ produz uma casa média nos EUA?",
+        "answer": "Uma casa média nos EUA produz cerca de 7,5 toneladas métricas de CO₂ por ano devido ao uso de eletricidade, embora isso varie significativamente por fonte de energia."
+      },
+      {
+        "question": "Como são calculados os equivalentes a árvores?",
+        "answer": "Uma árvore madura absorve aproximadamente 22 kg (0,022 toneladas métricas) de CO₂ por ano. Dividimos as suas emissões evitadas por este fator."
+      },
+      {
+        "question": "Qual fonte de energia tem a maior pegada de carbono?",
+        "answer": "O carvão tem as maiores emissões, cerca de 0,95 kg de CO₂/kWh, seguido pelo petróleo (0,72) e gás natural (0,42). A média da rede elétrica dos EUA é de cerca de 0,39 kg de CO₂/kWh."
+      }
+    ]
   },
   "green-lease": {
     "name": "Verificador de Cláusulas de Arrendamento Verde",
     "description": "Avalie o seu contrato de arrendamento comercial para disposições verdes. Verifique quais as cláusulas de sustentabilidade presentes e obtenha uma pontuação com recomendações para cláusulas essenciais em falta.",
-    "shortDescription": "Verifique as cláusulas verdes em arrendamentos comerciais."
+    "shortDescription": "Verifique as cláusulas verdes em arrendamentos comerciais.",
+    "faqs": [
+      {
+        "question": "O que é um contrato de arrendamento verde?",
+        "answer": "Um contrato de arrendamento verde inclui disposições que alinham os incentivos do senhorio e do inquilino para a eficiência energética, sustentabilidade e desempenho ambiental em edifícios comerciais."
+      },
+      {
+        "question": "Porque são importantes as cláusulas de benchmarking energético?",
+        "answer": "O benchmarking energético é exigido por lei em muitas cidades e ajuda a monitorizar o desempenho do edifício ao longo do tempo, identificando oportunidades de melhoria da eficiência."
+      },
+      {
+        "question": "O que é uma cláusula de partilha de custos?",
+        "answer": "As cláusulas de partilha de custos definem como os custos de melhoria da eficiência energética e as poupanças resultantes são divididos entre o senhorio e o inquilino, resolvendo o problema do 'incentivo dividido'."
+      }
+    ]
   },
   "ev-vs-gas": {
     "name": "Comparação de Custos EV vs. Gasolina",
     "description": "Compare os custos anuais de combustível de conduzir um veículo elétrico versus um veículo a gasolina. Veja os custos lado a lado, poupanças anuais e poupanças projetadas em 10 anos.",
-    "shortDescription": "Compare os custos de combustível de veículos elétricos e a gasolina."
+    "shortDescription": "Compare os custos de combustível de veículos elétricos e a gasolina.",
+    "faqs": [
+      {
+        "question": "Quanto mais barato é conduzir um veículo elétrico?",
+        "answer": "Em média, os veículos elétricos custam menos 50-70% para abastecer do que os veículos a gasolina, dependendo dos preços locais da eletricidade e da gasolina."
+      },
+      {
+        "question": "Como é medida a eficiência dos veículos elétricos?",
+        "answer": "A eficiência dos veículos elétricos é tipicamente medida em kWh por 100 milhas. A maioria dos veículos elétricos modernos varia entre 25-35 kWh por 100 milhas."
+      },
+      {
+        "question": "Isto inclui poupanças na manutenção?",
+        "answer": "Esta calculadora foca-se apenas nos custos de combustível. Os veículos elétricos também poupam tipicamente 500-1000 $/ano em manutenção devido a terem menos peças móveis."
+      }
+    ]
   },
   "home-energy-audit": {
     "name": "Lista de Verificação de Auditoria Energética Doméstica",
     "description": "Gere uma lista de verificação priorizada de melhorias energéticas para a sua casa. Selecione o tipo e idade da sua casa para ver as atualizações aplicáveis com intervalos de poupança estimados.",
-    "shortDescription": "Obtenha uma lista de verificação personalizada de melhorias energéticas domésticas."
+    "shortDescription": "Obtenha uma lista de verificação personalizada de melhorias energéticas domésticas.",
+    "faqs": [
+      {
+        "question": "Qual é a melhor melhoria energética?",
+        "answer": "Para a maioria das casas, o isolamento do sótão e a vedação de ar proporcionam o melhor ROI, reduzindo os custos de aquecimento/arrefecimento em 10-20%."
+      },
+      {
+        "question": "Devo fazer uma auditoria energética profissional?",
+        "answer": "Sim, uma auditoria profissional com teste de porta de sopro pode identificar fugas de ar ocultas e falhas de isolamento que a inspeção visual não deteta."
+      },
+      {
+        "question": "Estas estimativas de poupança incluem reembolsos?",
+        "answer": "As poupanças apresentadas são apenas da redução das contas de energia. Muitas melhorias também se qualificam para reembolsos federais ou estaduais, melhorando ainda mais o ROI."
+      }
+    ]
   },
   "ppa-calculator": {
     "name": "Calculadora de Acordo de Compra de Energia (PPA)",
     "description": "Compare o custo total de um Acordo de Compra de Energia (PPA) versus eletricidade da concessionária ao longo do prazo do contrato. Veja os detalhes dos custos ano a ano, incluindo escaladas de tarifas.",
-    "shortDescription": "Compare os custos de PPA vs. eletricidade da concessionária."
+    "shortDescription": "Compare os custos de PPA vs. eletricidade da concessionária.",
+    "faqs": [
+      {
+        "question": "O que é um PPA?",
+        "answer": "Um Acordo de Compra de Energia (PPA) é um contrato onde um fornecedor solar instala painéis na sua propriedade e lhe vende a eletricidade a uma taxa fixa, tipicamente inferior às taxas da concessionária."
+      },
+      {
+        "question": "Qual é a taxa de escalonamento típica de um PPA?",
+        "answer": "As taxas de escalonamento de PPA variam tipicamente de 1-3% anualmente, em comparação com os aumentos das taxas da concessionária de 3-5% ao ano historicamente."
+      },
+      {
+        "question": "Quem é o proprietário dos painéis num PPA?",
+        "answer": "O fornecedor solar é o proprietário e mantém os painéis. No final do prazo do contrato (geralmente 15-25 anos), poderá ter a opção de comprar o sistema ou de o remover."
+      }
+    ]
   },
   "income-tax": {
     "name": "Estimador de Imposto sobre o Rendimento",
     "description": "Estime o seu imposto sobre o rendimento federal com base no estado civil, rendimento bruto e deduções. Veja um detalhe escalão a escalão, taxa de imposto efetiva e salário líquido.",
-    "shortDescription": "Estime o imposto sobre o rendimento federal por escalão."
+    "shortDescription": "Estime o imposto sobre o rendimento federal por escalão.",
+    "faqs": [
+      {
+        "question": "Que ano fiscal é utilizado?",
+        "answer": "Utiliza as tabelas de imposto federal e os valores de dedução padrão de 2024."
+      },
+      {
+        "question": "Inclui impostos estaduais?",
+        "answer": "Não, isto estima apenas o imposto de renda federal. Os impostos estaduais variam por localização."
+      },
+      {
+        "question": "E se eu detalhar as deduções?",
+        "answer": "Introduza o total das suas deduções detalhadas no campo das deduções em vez de usar a dedução padrão."
+      }
+    ]
   },
   "auto-loan": {
     "name": "Calculadora de Empréstimo Automóvel",
     "description": "Calcule o seu pagamento mensal de empréstimo automóvel, incluindo o adiantamento e o valor de troca. Veja os juros totais pagos e o custo real da compra do seu veículo.",
-    "shortDescription": "Calcule os pagamentos mensais de empréstimo automóvel."
+    "shortDescription": "Calcule os pagamentos mensais de empréstimo automóvel.",
+    "faqs": [
+      {
+        "question": "Qual é uma boa taxa de juro para um empréstimo automóvel?",
+        "answer": "As taxas variam de acordo com a pontuação de crédito. Um crédito excelente pode obter 4-6%, enquanto um crédito médio pode ver 7-12%."
+      },
+      {
+        "question": "Devo fazer um pagamento inicial maior?",
+        "answer": "Um pagamento inicial maior reduz o valor do seu empréstimo, o pagamento mensal e o total de juros pagos."
+      },
+      {
+        "question": "Como o valor de troca afeta o empréstimo?",
+        "answer": "O valor de troca é subtraído do preço do veículo, reduzindo o valor que precisa de financiar."
+      }
+    ]
   },
   "debt-payoff": {
     "name": "Calculadora de Pagamento de Dívida",
     "description": "Veja quanto tempo leva para pagar a dívida com pagamentos mínimos vs. pagamentos extras. Compare os juros totais pagos e o tempo poupado ao pagar mais a cada mês.",
-    "shortDescription": "Calcule o tempo de pagamento da dívida e as poupanças de juros."
+    "shortDescription": "Calcule o tempo de pagamento da dívida e as poupanças de juros.",
+    "faqs": [
+      {
+        "question": "Quanto extra devo pagar?",
+        "answer": "Mesmo 50-100 $ extras por mês podem poupar milhares em juros e anos de pagamentos em dívidas de alto juro."
+      },
+      {
+        "question": "Devo pagar primeiro a dívida de alto juro?",
+        "answer": "O método da avalanche (taxa mais alta primeiro) poupa mais dinheiro. O método da bola de neve (saldo mais pequeno primeiro) proporciona vitórias mais rápidas."
+      },
+      {
+        "question": "Isto funciona para cartões de crédito?",
+        "answer": "Sim, funciona para qualquer dívida com uma taxa de juro fixa e pagamentos regulares."
+      }
+    ]
   },
   "net-worth": {
     "name": "Calculadora de Património Líquido",
     "description": "Calcule o seu património líquido listando os seus ativos e passivos. Acompanhe dinheiro, investimentos, propriedade e dívidas para ver a sua posição financeira geral.",
-    "shortDescription": "Calcule o total de ativos menos passivos."
+    "shortDescription": "Calcule o total de ativos menos passivos.",
+    "faqs": [
+      {
+        "question": "O que conta como um ativo?",
+        "answer": "Dinheiro, poupanças, investimentos, contas de reforma, imóveis, veículos e qualquer outra propriedade com valor."
+      },
+      {
+        "question": "Com que frequência devo calcular o património líquido?",
+        "answer": "O acompanhamento mensal ou trimestral ajuda a ver o progresso financeiro e a identificar tendências."
+      },
+      {
+        "question": "Um património líquido negativo é mau?",
+        "answer": "É comum no início da vida (empréstimos estudantis, hipoteca). Concentre-se na tendência — deve melhorar com o tempo."
+      }
+    ]
   },
   "paycheck-calc": {
     "name": "Calculadora de Salário Líquido",
     "description": "Estime o seu salário líquido por período de pagamento. Insira o salário ou taxa horária, estado civil e frequência de pagamento para ver as retenções federais, Segurança Social e Medicare.",
-    "shortDescription": "Estime o salário líquido por período de pagamento."
+    "shortDescription": "Estime o salário líquido por período de pagamento.",
+    "faqs": [
+      {
+        "question": "Isto inclui impostos estaduais?",
+        "answer": "Não, isto estima apenas as retenções federais. O seu salário real também pode ter impostos estaduais e locais deduzidos."
+      },
+      {
+        "question": "E as deduções pré-imposto?",
+        "answer": "Isto não contabiliza 401(k), seguro de saúde ou outras deduções pré-imposto que reduziriam o seu rendimento tributável."
+      },
+      {
+        "question": "Quinzenal é o mesmo que semi-mensal?",
+        "answer": "Não. Quinzenal significa a cada duas semanas (26 pagamentos/ano). Semi-mensal significa duas vezes por mês (24 pagamentos/ano)."
+      }
+    ]
   },
   "settlement-estimator": {
     "name": "Estimador de Valor de Acordo",
     "description": "Estime o valor do seu acordo de lesão pessoal ou acidente automóvel. Insira contas médicas, salários perdidos e gravidade da lesão para obter um intervalo com base no método do multiplicador.",
-    "shortDescription": "Estime os intervalos de acordo de PI/acidente automóvel."
+    "shortDescription": "Estime os intervalos de acordo de PI/acidente automóvel.",
+    "faqs": [
+      {
+        "question": "Qual é a precisão do estimador de indemnizações?",
+        "answer": "Fornece um intervalo aproximado usando o método multiplicador comummente utilizado pelas seguradoras. As indemnizações reais dependem de muitos fatores, incluindo culpa, jurisdição e seguradora."
+      },
+      {
+        "question": "O que é o método multiplicador?",
+        "answer": "Os danos económicos (despesas médicas, salários perdidos) são multiplicados por um fator de 1,5 a 10, com base na gravidade da lesão, para estimar a compensação total."
+      },
+      {
+        "question": "Devo confiar nisto para o meu caso?",
+        "answer": "Não. Use isto como um ponto de partida para entender o valor potencial. Consulte um advogado de danos pessoais para uma avaliação precisa do caso."
+      }
+    ]
   },
   "insurance-quote-comparison": {
     "name": "Ferramenta de Comparação de Cotações de Seguros",
     "description": "Compare cotações de seguros automóvel, casa e vida lado a lado. Insira cotações de várias empresas e veja qual oferece o melhor valor.",
-    "shortDescription": "Compare cotações de seguros lado a lado."
+    "shortDescription": "Compare cotações de seguros lado a lado.",
+    "faqs": [
+      {
+        "question": "Quantas cotações devo comparar?",
+        "answer": "Pelo menos 3-5 cotações de diferentes empresas. As taxas podem variar em centenas de euros para a mesma cobertura."
+      },
+      {
+        "question": "O que é custo efetivo?",
+        "answer": "O custo efetivo combina o seu prémio anual com a sua franquia, dando uma imagem mais completa do custo potencial total."
+      },
+      {
+        "question": "Esta ferramenta fornece cotações reais?",
+        "answer": "Não. Você insere as cotações que recebeu das seguradoras. Esta ferramenta ajuda-o a organizá-las e compará-las."
+      }
+    ]
   },
   "accident-damage": {
     "name": "Calculadora de Danos por Acidente",
     "description": "Calcule os danos totais de um acidente, incluindo contas médicas, danos materiais, salários perdidos e dor e sofrimento. Veja um detalhe completo.",
-    "shortDescription": "Calcule os danos totais de acidentes."
+    "shortDescription": "Calcule os danos totais de acidentes.",
+    "faqs": [
+      {
+        "question": "O que são danos económicos vs. não económicos?",
+        "answer": "Danos económicos são perdas quantificáveis (despesas médicas, salários perdidos, danos materiais). Danos não económicos são subjetivos (dor, sofrimento, angústia emocional)."
+      },
+      {
+        "question": "Como estimo a dor e o sofrimento?",
+        "answer": "Um método comum é 1,5-5x as suas despesas médicas, dependendo da gravidade da lesão. Lesões mais graves justificam multiplicadores mais altos."
+      },
+      {
+        "question": "Isto inclui danos punitivos?",
+        "answer": "Não. Os danos punitivos são raros e apenas concedidos para punir condutas extremas. Esta calculadora foca-se em danos compensatórios."
+      }
+    ]
   },
   "attorney-fee": {
     "name": "Calculadora de Honorários de Advogado",
     "description": "Calcule os honorários de advogado para acordos de contingência e horários. Veja quanto o seu advogado ganhará e qual será o seu acordo líquido.",
-    "shortDescription": "Calcule honorários legais de contingência e horários."
+    "shortDescription": "Calcule honorários legais de contingência e horários.",
+    "faqs": [
+      {
+        "question": "Qual é uma taxa de contingência típica?",
+        "answer": "A maioria dos advogados de danos pessoais cobra 33% para acordos pré-litigiosos e 40% se o caso for a julgamento."
+      },
+      {
+        "question": "As despesas do caso são separadas da taxa?",
+        "answer": "Geralmente sim. As custas judiciais, testemunhas periciais e custos de registos médicos são tipicamente deduzidos separadamente da sua indemnização."
+      },
+      {
+        "question": "Posso negociar a percentagem da taxa?",
+        "answer": "Sim, as taxas de contingência são negociáveis. Casos de alto valor com responsabilidade clara podem justificar uma percentagem mais baixa."
+      }
+    ]
   },
   "insurance-premium": {
     "name": "Estimador de Prémio de Seguro",
     "description": "Estime os prémios mensais de seguro automóvel, casa, inquilinos e vida com base na sua idade, crédito, localização e nível de cobertura.",
-    "shortDescription": "Estime os prémios mensais de seguro."
+    "shortDescription": "Estime os prémios mensais de seguro.",
+    "faqs": [
+      {
+        "question": "Qual a precisão desta estimativa?",
+        "answer": "Isto fornece uma estimativa aproximada com base nas médias nacionais e fatores de taxa comuns. Os prémios reais dependem do seu perfil específico e da seguradora."
+      },
+      {
+        "question": "O score de crédito realmente afeta o seguro?",
+        "answer": "Na maioria dos estados, sim. As seguradoras usam scores de seguro baseados em crédito para definir as taxas. Um melhor crédito geralmente significa prémios mais baixos."
+      },
+      {
+        "question": "Qual é o maior fator no custo do seguro?",
+        "answer": "Para automóvel: registo de condução e idade. Para casa: localização e valor da propriedade. Para vida: idade e estado de saúde."
+      }
+    ]
   },
   "force-majeure-checker": {
     "name": "Verificador de Cláusulas de Força Maior",
     "description": "Cole o seu contrato e veja instantaneamente se a cláusula de força maior é forte, restrita ou inexistente. Deteta eventos cobertos, linguagem abrangente, requisitos de aviso e cláusulas de dever de mitigar.",
-    "shortDescription": "Deteta e avalia cláusulas de força maior."
+    "shortDescription": "Deteta e avalia cláusulas de força maior.",
+    "faqs": [
+      {
+        "question": "O que é força maior?",
+        "answer": "Uma cláusula que desculpa o cumprimento quando eventos extraordinários (guerra, pandemia, desastres naturais) o tornam impossível."
+      },
+      {
+        "question": "Porque é que a força é importante?",
+        "answer": "Cláusulas restritas podem não cobrir o evento real, deixando-o em incumprimento."
+      },
+      {
+        "question": "Devo adicionar uma cláusula geral?",
+        "answer": "A linguagem abrangente ('qualquer evento além do controlo razoável') amplia significativamente a proteção."
+      }
+    ]
   },
   "auto-renewal-detector": {
     "name": "Detetor de Cláusulas de Renovação Automática",
     "description": "Encontre linguagem de renovação automática e perpétua em qualquer contrato. Apresenta a janela de aviso para que não perca um prazo de cancelamento.",
-    "shortDescription": "Deteta armadilhas de renovação automática em contratos."
+    "shortDescription": "Deteta armadilhas de renovação automática em contratos.",
+    "faqs": [
+      {
+        "question": "Porque são as renovações automáticas arriscadas?",
+        "answer": "Muitas exigem um aviso prévio por escrito de 30 a 90 dias, caso contrário, fica vinculado por mais um ano."
+      },
+      {
+        "question": "As cláusulas de renovação automática são legais?",
+        "answer": "Sim, mas vários estados exigem uma divulgação clara e visível para contratos de consumo."
+      },
+      {
+        "question": "O que devo fazer se encontrar uma?",
+        "answer": "Defina um lembrete no calendário para o prazo de aviso imediatamente."
+      }
+    ]
   },
   "governing-law-id": {
     "name": "Identificador de Lei Aplicável",
     "description": "Extraia a lei aplicável, foro, arbitragem, renúncias a julgamento por júri e renúncias a ações coletivas de qualquer contrato em segundos.",
-    "shortDescription": "Extraia cláusulas de jurisdição e arbitragem."
+    "shortDescription": "Extraia cláusulas de jurisdição e arbitragem.",
+    "faqs": [
+      {
+        "question": "Porque é que a lei aplicável é importante?",
+        "answer": "Determina quais as leis estaduais que se aplicam e onde teria de processar."
+      },
+      {
+        "question": "O que é uma renúncia a júri?",
+        "answer": "Uma cláusula que força as disputas a serem decididas por um juiz em vez de um júri."
+      },
+      {
+        "question": "Posso negociar o foro?",
+        "answer": "Muitas vezes sim, especialmente com fornecedores. Foros inconvenientes podem aumentar drasticamente os custos de litígio."
+      }
+    ]
   },
   "plain-english-rewriter": {
     "name": "Reescritor para Linguagem Simples",
     "description": "Converta o jargão jurídico em inglês simples. Substitui frases jurídicas arcaicas (doravante, nos termos de, não obstante) por equivalentes modernos claros.",
-    "shortDescription": "Reescreva o jargão jurídico em inglês simples."
+    "shortDescription": "Reescreva o jargão jurídico em inglês simples.",
+    "faqs": [
+      {
+        "question": "A reformulação é legalmente precisa?",
+        "answer": "Preserva o significado, trocando termos equivalentes. Verifique sempre com um advogado para contratos críticos."
+      },
+      {
+        "question": "O que é reescrito?",
+        "answer": "Frases arcaicas comuns — 'shall' torna-se 'must', 'pursuant to' torna-se 'under', etc."
+      },
+      {
+        "question": "Explica termos legais?",
+        "answer": "Sim, retira definições do nosso dicionário jurídico para quaisquer termos especializados encontrados."
+      }
+    ]
   },
   "chargeback-checker": {
     "name": "Verificador de Elegibilidade para Estorno",
     "description": "Responda a algumas perguntas para ver se é provável que seja elegível para um estorno de cartão de crédito ao abrigo da Lei de Faturação Justa de Crédito.",
-    "shortDescription": "Verifique se pode ganhar um estorno."
+    "shortDescription": "Verifique se pode ganhar um estorno.",
+    "faqs": [
+      {
+        "question": "Quanto tempo tenho para contestar?",
+        "answer": "60 dias a partir da data do extrato, de acordo com a lei federal; muitos emissores permitem 120 dias."
+      },
+      {
+        "question": "Qual a diferença vs. um reembolso?",
+        "answer": "Um estorno é registado junto do seu banco, não do comerciante. O banco reverte a cobrança enquanto investiga."
+      },
+      {
+        "question": "O comerciante pode contestar?",
+        "answer": "Sim. Uma documentação sólida melhora muito as suas hipóteses."
+      }
+    ]
   },
   "lemon-law-qualifier": {
     "name": "Qualificador de Lei do Limão",
     "description": "Verifique se o seu veículo defeituoso provavelmente se qualifica ao abrigo da lei do limão do seu estado com base nas tentativas de reparação, dias fora de serviço, idade e quilometragem.",
-    "shortDescription": "Verifique se o seu veículo se qualifica como um limão."
+    "shortDescription": "Verifique se o seu veículo se qualifica como um limão.",
+    "faqs": [
+      {
+        "question": "O que é um 'limão'?",
+        "answer": "Um veículo com um defeito substancial que não pode ser reparado após um número razoável de tentativas."
+      },
+      {
+        "question": "Limites comuns?",
+        "answer": "Tipicamente 3-4 tentativas de reparação para o mesmo problema ou 30+ dias fora de serviço."
+      },
+      {
+        "question": "Os carros usados qualificam-se?",
+        "answer": "Alguns estados estendem a proteção da lei do limão a carros usados; muitos não o fazem."
+      }
+    ]
   },
   "subscription-cancel-letter": {
     "name": "Carta de Cancelamento de Subscrição",
     "description": "Gere uma carta de cancelamento escrita para qualquer subscrição (ginásio, SaaS, revista) que exija aviso por escrito.",
-    "shortDescription": "Gere uma carta de cancelamento escrita."
+    "shortDescription": "Gere uma carta de cancelamento escrita.",
+    "faqs": [
+      {
+        "question": "Porquê enviar uma carta escrita?",
+        "answer": "Muitos contratos de subscrição apenas honram cancelamentos por escrito e ignoram pedidos por telefone."
+      },
+      {
+        "question": "Devo enviar por correio registado?",
+        "answer": "Para cancelamentos de alto valor ou contestados, sim — para prova de entrega."
+      },
+      {
+        "question": "Isto interrompe as cobranças imediatamente?",
+        "answer": "De acordo com a redação da carta, está a solicitar o cancelamento imediato, mas verifique o seu contrato para os prazos de aviso exigidos."
+      }
+    ]
   },
   "data-breach-checklist": {
     "name": "Lista de Verificação de Resposta a Violação de Dados",
     "description": "Lista de verificação passo a passo do que fazer após receber uma notificação de violação de dados — desde a alteração de palavras-passe até ao preenchimento do Formulário 14039 do IRS.",
-    "shortDescription": "Passos a seguir após uma violação de dados."
+    "shortDescription": "Passos a seguir após uma violação de dados.",
+    "faqs": [
+      {
+        "question": "Devo congelar o meu crédito?",
+        "answer": "Sim — os congelamentos de crédito são gratuitos em todos os 50 estados e muito mais protetores do que os alertas de fraude."
+      },
+      {
+        "question": "A monitorização gratuita é suficiente?",
+        "answer": "É útil, mas não previne a fraude. Combine-a com um congelamento."
+      },
+      {
+        "question": "Preciso de fazer alguma coisa se o SSN não foi exposto?",
+        "answer": "Mesmo assim, altere as palavras-passe e ative a 2FA. Violações de e-mail + palavra-passe permitem a apropriação de contas."
+      }
+    ]
   },
   "final-paycheck-lookup": {
     "name": "Consulta de Prazo de Último Cheque de Pagamento",
     "description": "Quando é que o seu último cheque de pagamento é legalmente devido? Consulte por estado para cenários de rescisão e demissão.",
-    "shortDescription": "Quando o seu último cheque de pagamento é legalmente devido."
+    "shortDescription": "Quando o seu último cheque de pagamento é legalmente devido.",
+    "faqs": [
+      {
+        "question": "E se o meu empregador estiver atrasado?",
+        "answer": "Muitos estados impõem penalidades por tempo de espera — por vezes um dia inteiro de salário por dia de atraso."
+      },
+      {
+        "question": "Isto inclui PTO não utilizado?",
+        "answer": "Na maioria dos estados, as férias acumuladas devem ser pagas. A licença por doença muitas vezes não precisa de ser."
+      },
+      {
+        "question": "E as comissões?",
+        "answer": "As comissões ganhas são salários e devem ser pagas no cheque final."
+      }
+    ]
   },
   "unemployment-estimator": {
     "name": "Estimador de Benefícios de Desemprego",
     "description": "Estime o seu benefício semanal de desemprego com base nos seus salários anteriores e no limite do estado.",
-    "shortDescription": "Estime os benefícios semanais de desemprego."
+    "shortDescription": "Estime os benefícios semanais de desemprego.",
+    "faqs": [
+      {
+        "question": "Quem se qualifica?",
+        "answer": "Geralmente trabalhadores despedidos sem culpa própria que cumprem os requisitos de salário e histórico de trabalho de um estado."
+      },
+      {
+        "question": "A estimativa é exata?",
+        "answer": "Não — os benefícios reais dependem dos ganhos trimestrais durante um período base definido pelo estado."
+      },
+      {
+        "question": "Quanto tempo duram os benefícios?",
+        "answer": "Até 26 semanas na maioria dos estados; alguns estados são mais curtos ou estendidos durante recessões."
+      }
+    ]
   },
   "nda-vs-noncompete": {
     "name": "Comparador de NDA vs. Não Concorrência",
     "description": "Comparação lado a lado de NDAs e não concorrência — propósito, âmbito, duração, aplicabilidade e sinais de alerta.",
-    "shortDescription": "Compare NDAs e não concorrência lado a lado."
+    "shortDescription": "Compare NDAs e não concorrência lado a lado.",
+    "faqs": [
+      {
+        "question": "Posso ser obrigado a assinar ambos?",
+        "answer": "Sim. Servem propósitos diferentes e muitos empregadores usam ambos."
+      },
+      {
+        "question": "As cláusulas de não concorrência são sempre aplicáveis?",
+        "answer": "Não. Califórnia, Dakota do Norte, Oklahoma e Minnesota proíbem-nas em grande parte. A FTC propôs uma proibição nacional."
+      },
+      {
+        "question": "O que torna um NDA justo?",
+        "answer": "Definição razoável de informações confidenciais, duração razoável e exclusões claras para conhecimento público."
+      }
+    ]
   },
   "discrimination-checklist": {
     "name": "Lista de Verificação de Reclamação de Discriminação no Local de Trabalho",
     "description": "Prepare-se para apresentar uma queixa à EEOC — documentação, análise comparativa, relatórios internos e acompanhamento de retaliação.",
-    "shortDescription": "Prepare uma queixa de discriminação da EEOC."
+    "shortDescription": "Prepare uma queixa de discriminação da EEOC.",
+    "faqs": [
+      {
+        "question": "Qual é o prazo da EEOC?",
+        "answer": "180 dias a partir do ato discriminatório (300 dias em estados com a sua própria agência anti-discriminação)."
+      },
+      {
+        "question": "Preciso de um advogado?",
+        "answer": "Não para apresentar queixa à EEOC, mas é fortemente recomendado antes de assinar qualquer acordo ou quitação."
+      },
+      {
+        "question": "A retaliação é ilegal?",
+        "answer": "Sim — retaliar alguém por apresentar ou apoiar uma queixa de discriminação é, por si só, ilegal."
+      }
+    ]
   },
   "eviction-notice-lookup": {
     "name": "Consulta de Período de Aviso de Despejo",
     "description": "Consulte o período de aviso de despejo legalmente exigido por estado e motivo — não pagamento, violação do contrato de arrendamento ou rescisão sem culpa.",
-    "shortDescription": "Períodos de aviso de despejo por estado."
+    "shortDescription": "Períodos de aviso de despejo por estado.",
+    "faqs": [
+      {
+        "question": "Pode um senhorio ignorar o aviso?",
+        "answer": "Não. Ignorar o aviso e apresentar a queixa imediatamente é motivo para indeferimento."
+      },
+      {
+        "question": "As regras locais diferem?",
+        "answer": "Sim. Cidades com controlo de rendas frequentemente exigem avisos mais longos e 'justa causa'."
+      },
+      {
+        "question": "E se o inquilino corrigir a situação?",
+        "answer": "Se o aviso for de 'corrigir ou sair' e o inquilino corrigir (pagar a renda ou resolver a violação), o despejo geralmente não pode prosseguir."
+      }
+    ]
   },
   "habitability-tracker": {
     "name": "Gerador de Pedido de Reparação de Habitabilidade",
     "description": "Gere um pedido de reparação por escrito invocando a garantia implícita de habitabilidade — a base para a retenção de renda ou soluções de reparação e dedução.",
-    "shortDescription": "Gere um pedido de reparação de habitabilidade por escrito."
+    "shortDescription": "Gere um pedido de reparação de habitabilidade por escrito.",
+    "faqs": [
+      {
+        "question": "O que é a garantia implícita de habitabilidade?",
+        "answer": "Um requisito de direito consuetudinário (e em muitos estados estatutário) de que os imóveis para arrendamento sejam seguros e habitáveis."
+      },
+      {
+        "question": "Posso reter a renda?",
+        "answer": "Às vezes — mas apenas após aviso por escrito e um período razoável para correção, e o procedimento varia de estado para estado."
+      },
+      {
+        "question": "O que conta como um problema de habitabilidade?",
+        "answer": "Falta de aquecimento, falta de água quente, falta de água corrente, defeitos estruturais, pragas, mofo ou fiação insegura."
+      }
+    ]
   },
   "mortgage-affordability": {
     "name": "Calculadora de Acessibilidade de Hipoteca",
     "description": "Calcule o seu preço máximo de casa usando a regra de 36% de dívida-rendimento, contabilizando impostos, seguros e dívidas existentes.",
-    "shortDescription": "Calcule o seu preço máximo de casa acessível."
+    "shortDescription": "Calcule o seu preço máximo de casa acessível.",
+    "faqs": [
+      {
+        "question": "O que é DTI?",
+        "answer": "Dívida-rendimento — a percentagem do seu rendimento bruto mensal que se destina ao pagamento de dívidas."
+      },
+      {
+        "question": "Porquê 36%?",
+        "answer": "A subscrição convencional limita o total da dívida mensal (incluindo a nova hipoteca) a cerca de 36% do rendimento bruto."
+      },
+      {
+        "question": "Isto inclui o PMI?",
+        "answer": "O PMI aplica-se se der menos de 20% de entrada e adiciona aproximadamente 0,5–1% do empréstimo anualmente. Não é calculado separadamente aqui."
+      }
+    ]
   },
   "operating-agreement-llc": {
     "name": "Gerador de Contrato Social de LLC",
     "description": "Gere um contrato social básico de LLC cobrindo membros, capital, lucros, gestão e dissolução.",
-    "shortDescription": "Gere um contrato social básico de LLC."
+    "shortDescription": "Gere um contrato social básico de LLC.",
+    "faqs": [
+      {
+        "question": "Preciso de um contrato de sociedade?",
+        "answer": "A maioria dos estados não exige um, mas recomenda-o fortemente — e alguns (CA, DE, NY, MO, ME) exigem-no."
+      },
+      {
+        "question": "Posso personalizá-lo mais tarde?",
+        "answer": "Sim. Este é um modelo inicial. Altere-o à medida que o seu negócio cresce."
+      },
+      {
+        "question": "Isto substitui um advogado?",
+        "answer": "Não. Para LLCs com vários membros ou capital significativo, peça a um advogado para rever."
+      }
+    ]
   },
   "founders-agreement": {
     "name": "Gerador de Acordo de Fundadores",
     "description": "Elabore um acordo de fundadores cobrindo divisões de capital, vesting (cliff de 1 ano, 4 anos), atribuição de IP, funções e saída.",
-    "shortDescription": "Elabore um acordo de fundadores com vesting e IP."
+    "shortDescription": "Elabore um acordo de fundadores com vesting e IP.",
+    "faqs": [
+      {
+        "question": "Porquê o vesting para fundadores?",
+        "answer": "Protege a equipa se um co-fundador sair cedo. Sem vesting, eles mantêm a sua participação total."
+      },
+      {
+        "question": "O que é um 'cliff' de 1 ano?",
+        "answer": "Se um fundador sair no primeiro ano, não recebe ações. Após o primeiro ano, as ações são adquiridas gradualmente."
+      },
+      {
+        "question": "Isto substitui a incorporação?",
+        "answer": "Não — é um acordo lateral. Ainda precisa de registar junto do estado para formar a entidade."
+      }
+    ]
   },
   "dmca-generator": {
     "name": "Gerador de Aviso de Remoção DMCA",
     "description": "Gere um aviso de remoção DMCA que cumpra os requisitos da 17 U.S.C. § 512(c) para remover conteúdo infrator.",
-    "shortDescription": "Gere um aviso de remoção DMCA."
+    "shortDescription": "Gere um aviso de remoção DMCA.",
+    "faqs": [
+      {
+        "question": "Para onde o devo enviar?",
+        "answer": "Para o agente DMCA designado da plataforma (listado nos seus termos ou em copyright.gov)."
+      },
+      {
+        "question": "E se for uma alegação falsa?",
+        "answer": "Apresentar um aviso DMCA conscientemente falso expõe-o a perjúrio e responsabilidade civil."
+      },
+      {
+        "question": "O utilizador pode contra-atacar?",
+        "answer": "Sim — pode apresentar uma contra-notificação, e o conteúdo pode ser restaurado dentro de 10–14 dias."
+      }
+    ]
   },
   "emergency-fund": {
     "name": "Calculadora de Fundo de Emergência",
     "description": "Calcule quanto precisa num fundo de emergência e quanto tempo levará para atingir o seu objetivo à sua taxa de poupança atual.",
-    "shortDescription": "Calcule o seu objetivo de fundo de emergência."
+    "shortDescription": "Calcule o seu objetivo de fundo de emergência.",
+    "faqs": [
+      {
+        "question": "Quantos meses devo poupar?",
+        "answer": "3 meses para agregados familiares com dois rendimentos e empregos estáveis; 6+ meses para rendimento único ou rendimento variável."
+      },
+      {
+        "question": "Onde o devo guardar?",
+        "answer": "Numa conta poupança de alto rendimento — acessível mas separada da conta à ordem."
+      },
+      {
+        "question": "O que conta como 'despesas'?",
+        "answer": "Apenas o essencial: habitação, alimentação, utilidades, seguro, pagamentos mínimos de dívidas, transporte."
+      }
+    ]
   },
   "tip-splitter": {
     "name": "Divisor de Gorjetas e Taxas de Serviço",
     "description": "Divida uma conta de restaurante entre várias pessoas, incluindo impostos e gorjetas — com tratamento para taxas de serviço obrigatórias (que não são legalmente gorjetas).",
-    "shortDescription": "Divida contas com impostos, gorjetas e taxas de serviço."
+    "shortDescription": "Divida contas com impostos, gorjetas e taxas de serviço.",
+    "faqs": [
+      {
+        "question": "Uma taxa de serviço é uma gorjeta?",
+        "answer": "Não. As taxas de serviço são receita do restaurante e podem não ir para os funcionários; as gorjetas, legalmente, devem ir."
+      },
+      {
+        "question": "Devo dar gorjeta além da taxa de serviço?",
+        "answer": "Geralmente não — mas pergunte, pois as políticas variam."
+      },
+      {
+        "question": "Dou gorjeta sobre o imposto?",
+        "answer": "A maioria das pessoas dá gorjeta sobre o subtotal antes dos impostos. Esta calculadora faz o mesmo."
+      }
+    ]
   },
   "net-metering": {
     "name": "Estimador de Poupança de Net Metering",
     "description": "Estime as poupanças anuais do net metering solar — compensação de produção mais créditos por excesso de energia exportada para a rede.",
-    "shortDescription": "Estime as poupanças de net metering solar."
+    "shortDescription": "Estime as poupanças de net metering solar.",
+    "faqs": [
+      {
+        "question": "O que é medição líquida (net metering)?",
+        "answer": "Um acordo de faturação onde obtém crédito pela energia solar excedente que envia para a rede."
+      },
+      {
+        "question": "Medição líquida vs. faturação líquida?",
+        "answer": "A medição líquida credita-o a taxas de retalho; a faturação líquida paga uma taxa grossista mais baixa. A política depende do seu estado e da sua empresa de serviços públicos."
+      },
+      {
+        "question": "Existem limites?",
+        "answer": "Algumas empresas de serviços públicos limitam o valor do crédito anual ou transferem-no para o ano seguinte apenas com um desconto."
+      }
+    ]
   },
   "child-support": {
     "name": "Calculadora de Pensão Alimentícia",
     "description": "Estime as obrigações mensais de pensão alimentícia usando as diretrizes de partilha de rendimentos ou percentagem de rendimentos do seu estado. Suporta Califórnia, Nova Iorque, Texas, Flórida, Illinois e um fallback genérico.",
-    "shortDescription": "Estime a pensão alimentícia mensal por estado."
+    "shortDescription": "Estime a pensão alimentícia mensal por estado.",
+    "faqs": [
+      {
+        "question": "Qual a precisão desta estimativa?",
+        "answer": "Aplica a fórmula da diretriz estadual publicada aos dados que fornece. As ordens reais podem variar com base nos acordos de custódia, custos de saúde e discrição judicial."
+      },
+      {
+        "question": "Considera a custódia partilhada?",
+        "answer": "Parcialmente — muitos estados ajustam o apoio com base nas noites. Esta calculadora fornece uma base; a sua ordem final pode ser reduzida para tempo de parentalidade partilhada."
+      },
+      {
+        "question": "O resultado é legalmente vinculativo?",
+        "answer": "Não. É uma estimativa apenas para fins de planeamento. As ordens finais de apoio são emitidas por um tribunal."
+      }
+    ]
   },
   "alimony-calc": {
     "name": "Calculadora de Pensão de Alimentos / Apoio Conjugal",
     "description": "Estime a pensão de alimentos mensal (apoio conjugal / manutenção) e a provável duração com base nos rendimentos, duração do casamento e diretrizes estaduais.",
-    "shortDescription": "Estime o valor e a duração da pensão de alimentos."
+    "shortDescription": "Estime o valor e a duração da pensão de alimentos.",
+    "faqs": [
+      {
+        "question": "Como é calculada a pensão de alimentos?",
+        "answer": "A maioria dos estados usa uma fórmula baseada na diferença de rendimentos dos cônjuges mais a duração do casamento. Alguns, como a Califórnia (pós-sentença) e o Texas, dão ampla discrição aos juízes."
+      },
+      {
+        "question": "Quanto tempo dura a pensão de alimentos?",
+        "answer": "Frequentemente 30–50% da duração do casamento. Casamentos de mais de 20 anos podem receber apoio indefinido em alguns estados."
+      },
+      {
+        "question": "O valor pode mudar mais tarde?",
+        "answer": "Sim — a maioria das ordens de pensão de alimentos pode ser modificada se houver uma alteração substancial nos rendimentos, novo casamento ou coabitação."
+      }
+    ]
   },
   "divorce-cost": {
     "name": "Estimador de Custo de Divórcio",
     "description": "Estime o custo total de um divórcio, incluindo taxas de processo, horas de advogado, mediação e custas judiciais — para casos contestados e não contestados.",
-    "shortDescription": "Estime o custo total de um divórcio."
+    "shortDescription": "Estime o custo total de um divórcio.",
+    "faqs": [
+      {
+        "question": "Qual o custo médio de um divórcio?",
+        "answer": "Não contestado: $500–$2.500. Contestado: $15.000–$30.000+ por cônjuge. Os custos aumentam com os bens, disputas de custódia e duração do julgamento."
+      },
+      {
+        "question": "Posso evitar honorários de advogado?",
+        "answer": "Sim — os processos DIY (faça você mesmo) funcionam para divórcios simples e não contestados, sem filhos ou bens partilhados. A maioria dos tribunais tem pacotes de autoajuda."
+      },
+      {
+        "question": "O perdedor paga as custas?",
+        "answer": "Raramente. A maioria dos tribunais dos EUA exige que cada cônjuge pague o seu próprio advogado, a menos que uma das partes tenha agido de má-fé."
+      }
+    ]
   },
   "sol-deadline": {
     "name": "Calculadora de Prazo de Prescrição",
     "description": "Insira a data em que a sua reclamação surgiu e o seu estado — obtenha o prazo exato para apresentação e quantos dias lhe restam para processar. Abrange contratos, danos pessoais, fraude e danos materiais.",
-    "shortDescription": "Encontre o seu prazo exato de apresentação por data."
+    "shortDescription": "Encontre o seu prazo exato de apresentação por data.",
+    "faqs": [
+      {
+        "question": "E se o meu prazo já passou?",
+        "answer": "A sua reclamação provavelmente está prescrita. Algumas exceções restritas (regra da descoberta, ocultação fraudulenta, autores menores) podem aplicar-se — fale com um advogado imediatamente."
+      },
+      {
+        "question": "Quando começa a contagem?",
+        "answer": "Geralmente na data da lesão, violação ou descoberta do dano — dependendo da reclamação e do estado."
+      },
+      {
+        "question": "O prazo pode ser suspenso?",
+        "answer": "Sim — a 'suspensão' pode parar a contagem para menores, incapacidade mental ou ausência do réu do estado."
+      }
+    ]
   },
   "wrongful-term-value": {
     "name": "Estimador de Valor de Caso de Rescisão Injusta",
     "description": "Estime o valor potencial de uma reclamação de rescisão injusta, incluindo salários perdidos, benefícios perdidos, danos por sofrimento emocional e honorários de advogado.",
-    "shortDescription": "Estime o valor do seu caso de rescisão injusta."
+    "shortDescription": "Estime o valor do seu caso de rescisão injusta.",
+    "faqs": [
+      {
+        "question": "Que danos são típicos?",
+        "answer": "Salários em atraso (salários desde a rescisão até ao acordo), salários futuros (perdas de rendimentos futuras), benefícios e, em alguns casos, sofrimento emocional e danos punitivos."
+      },
+      {
+        "question": "Tenho de mitigar os danos?",
+        "answer": "Sim — deve fazer esforços razoáveis para encontrar um novo emprego. Os salários de um novo emprego compensam os salários em atraso."
+      },
+      {
+        "question": "Qual é um acordo típico?",
+        "answer": "A maioria dos casos de rescisão indevida resolve-se por 6 a 12 meses de salário. Casos de alto perfil ou discriminação podem atingir mais de $500K."
+      }
+    ]
   },
   "severance-fairness": {
     "name": "Pontuação de Justeza da Oferta de Indemnização",
     "description": "Avalie a sua oferta de indemnização de 0 a 100 em relação aos benchmarks da indústria para a sua função, tempo de serviço e nível salarial. Obtenha uma classificação de justeza e orientação para negociação.",
-    "shortDescription": "Avalie a sua oferta de indemnização em relação aos benchmarks."
+    "shortDescription": "Avalie a sua oferta de indemnização em relação aos benchmarks.",
+    "faqs": [
+      {
+        "question": "A indemnização por cessação de contrato é exigida por lei?",
+        "answer": "Não — a maioria dos empregadores dos EUA não é obrigada a oferecer indemnização por cessação de contrato, a menos que prometido num contrato ou política. Muitos o fazem como boa vontade ou em troca de uma renúncia a reclamações."
+      },
+      {
+        "question": "Devo negociar?",
+        "answer": "Quase sempre sim. As ofertas iniciais são tipicamente 20–40% abaixo do que os empregadores pagarão se forem pressionados, especialmente para funcionários com mais tempo de casa ou seniores."
+      },
+      {
+        "question": "O que devo procurar?",
+        "answer": "Valor da indemnização, continuação dos cuidados de saúde, serviços de recolocação, equilíbrio de não-desvalorização e o âmbito da renúncia a reclamações."
+      }
+    ]
   },
   "lease-break-penalty": {
     "name": "Calculadora de Penalidade por Quebra de Contrato de Arrendamento / Rescisão Antecipada",
     "description": "Estime a penalidade financeira por quebrar o seu contrato de arrendamento antecipadamente — incluindo meses restantes, mitigação pelo seu senhorio e limites de responsabilidade específicos do estado.",
-    "shortDescription": "Estime o custo de quebrar o seu contrato de arrendamento."
+    "shortDescription": "Estime o custo de quebrar o seu contrato de arrendamento.",
+    "faqs": [
+      {
+        "question": "Posso simplesmente ir-me embora?",
+        "answer": "Não sem consequências. A maioria dos contratos de arrendamento permite que os senhorios processem por rendas não pagas até ao final do prazo, acrescidas de custos de publicidade e de novo arrendamento."
+      },
+      {
+        "question": "O meu senhorio tem de encontrar um novo inquilino?",
+        "answer": "Na maioria dos estados, sim — os senhorios têm o 'dever de mitigar' tentando arrendar novamente a unidade. Uma vez arrendada novamente, a sua responsabilidade termina."
+      },
+      {
+        "question": "Existem razões legais para rescindir um contrato de arrendamento?",
+        "answer": "Serviço militar ativo (SCRA), violência doméstica (específico do estado), condições inabitáveis e assédio por parte do senhorio são razões protegidas comuns."
+      }
+    ]
+  },
+  "_categories": {
+    "contract": {
+      "label": "Ferramentas de Contrato",
+      "description": "Analise, compreenda e trabalhe com contratos e acordos."
+    },
+    "consumer": {
+      "label": "Ferramentas do Consumidor",
+      "description": "Calcule prazos, taxas e verifique os seus direitos de consumidor."
+    },
+    "employment": {
+      "label": "Ferramentas de Emprego",
+      "description": "Navegue por contratos de trabalho, taxas e obrigações."
+    },
+    "generators": {
+      "label": "Geradores de Documentos",
+      "description": "Gere documentos legais a partir de formulários simples."
+    },
+    "ai": {
+      "label": "Ferramentas de Análise de IA",
+      "description": "Análise, pontuação e comparação de contratos com tecnologia de IA."
+    },
+    "realestate": {
+      "label": "Ferramentas Imobiliárias",
+      "description": "Calculadoras e geradores para acordos de arrendamento e propriedade."
+    },
+    "business": {
+      "label": "Ferramentas Empresariais",
+      "description": "Ferramentas para formação de empresas, classificação e planeamento financeiro."
+    },
+    "finance": {
+      "label": "Finanças e Negociação",
+      "description": "Calculadoras para negociação, criptomoedas, investimento e finanças pessoais."
+    },
+    "energy": {
+      "label": "Energia Verde e Solar",
+      "description": "Calculadoras de ROI solar, ferramentas de poupança de energia e verificadores de arrendamento verde."
+    },
+    "family": {
+      "label": "Ferramentas de Direito da Família",
+      "description": "Calculadoras para pensão de alimentos, custas de divórcio e estimativas legais relacionadas com a família."
+    }
   }
 }
