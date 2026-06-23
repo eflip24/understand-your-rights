@@ -11,6 +11,7 @@ import { JsonLdGraph, websiteSchema, organizationSchema } from "@/components/seo
 import Head from "@/components/seo/Head";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
 import { useLocalizedPath } from "@/i18n/paths";
+import { useLocalizedTools } from "@/i18n/useLocalizedTools";
 
 import catContract from "@/assets/cat-contract.png";
 import catConsumer from "@/assets/cat-consumer.png";
@@ -37,6 +38,7 @@ const categoryImages: Record<string, string> = {
 export default function HomePage() {
   const { t, i18n } = useTranslation(["home"]);
   const lp = useLocalizedPath();
+  const { catLabel, catDescription } = useLocalizedTools();
   const { data: blogPosts } = useBlogPosts();
   const latestPosts = blogPosts?.slice(0, 3) || [];
 
@@ -137,21 +139,24 @@ export default function HomePage() {
             <p className="text-muted-foreground">{t("home:categories.subtitle")}</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((cat) => (
-              <Link key={cat.id} to={lp(`/tools/${cat.id}`)}>
-                <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all text-center p-6 group">
-                  <div className="mx-auto w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors overflow-hidden">
-                    {categoryImages[cat.id] ? (
-                      <img src={categoryImages[cat.id]} alt={cat.label} className="w-14 h-14 object-contain" loading="lazy" />
-                    ) : (
-                      <cat.icon className="h-7 w-7 text-accent" />
-                    )}
-                  </div>
-                  <h3 className="font-serif font-bold text-lg mb-2">{cat.label}</h3>
-                  <p className="text-sm text-muted-foreground">{cat.description}</p>
-                </Card>
-              </Link>
-            ))}
+            {categories.map((cat) => {
+              const label = catLabel(cat);
+              return (
+                <Link key={cat.id} to={lp(`/tools/${cat.id}`)}>
+                  <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all text-center p-6 group">
+                    <div className="mx-auto w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors overflow-hidden">
+                      {categoryImages[cat.id] ? (
+                        <img src={categoryImages[cat.id]} alt={label} className="w-14 h-14 object-contain" loading="lazy" />
+                      ) : (
+                        <cat.icon className="h-7 w-7 text-accent" />
+                      )}
+                    </div>
+                    <h3 className="font-serif font-bold text-lg mb-2">{label}</h3>
+                    <p className="text-sm text-muted-foreground">{catDescription(cat)}</p>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

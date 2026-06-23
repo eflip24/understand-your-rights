@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { tools, type Tool, type ToolCategory } from "@/data/tools";
+import { useLocalizedTools } from "@/i18n/useLocalizedTools";
 
 const FEATURED_SLUGS = [
   "reading-time-calculator",
@@ -41,6 +42,7 @@ const CATEGORY_STYLES: Record<ToolCategory, { tile: string; icon: string; badge:
 
 export default function PopularToolsSection() {
   const [active, setActive] = useState<FilterKey>("all");
+  const { toolName, toolShortDescription, toolCategoryLabel } = useLocalizedTools();
 
   const featured = useMemo(
     () => FEATURED_SLUGS.map((s) => tools.find((t) => t.slug === s)).filter((t): t is Tool => Boolean(t)),
@@ -107,14 +109,14 @@ export default function PopularToolsSection() {
                 </div>
 
                 <span className={`mb-3 inline-flex w-fit items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${styles.badge}`}>
-                  {tool.categoryLabel.replace(" Tools", "").replace(" Analysis", "")}
+                  {toolCategoryLabel(tool).replace(" Tools", "").replace(" Analysis", "")}
                 </span>
 
                 <h3 className="font-serif text-lg font-bold text-navy leading-snug mb-2">
-                  {tool.name}
+                  {toolName(tool)}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-5">
-                  {tool.shortDescription}
+                  {toolShortDescription(tool)}
                 </p>
 
                 <div className="mt-auto pt-4 border-t border-border/60">

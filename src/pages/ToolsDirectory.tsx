@@ -3,15 +3,17 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { tools, categories, searchTools, getToolsByCategory, type ToolCategory } from "@/data/tools";
+import { tools, categories, searchTools, type ToolCategory } from "@/data/tools";
 import { Button } from "@/components/ui/button";
 import Head from "@/components/seo/Head";
+import { useLocalizedTools } from "@/i18n/useLocalizedTools";
 
 export default function ToolsDirectory() {
   const [searchParams] = useSearchParams();
   const initialQuery = searchParams.get("q") || "";
   const [query, setQuery] = useState(initialQuery);
   const [activeCategory, setActiveCategory] = useState<ToolCategory | "all">("all");
+  const { toolName, toolShortDescription, toolCategoryLabel, catLabel } = useLocalizedTools();
 
   const filtered = useMemo(() => {
     let result = query ? searchTools(query) : tools;
@@ -58,7 +60,7 @@ export default function ToolsDirectory() {
               size="sm"
               onClick={() => setActiveCategory(cat.id)}
             >
-              {cat.label}
+              {catLabel(cat)}
             </Button>
           ))}
         </div>
@@ -81,13 +83,13 @@ export default function ToolsDirectory() {
                       <tool.icon className="h-5 w-5 text-accent" />
                     </div>
                     <div>
-                      <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{tool.categoryLabel}</span>
-                      <CardTitle className="text-base">{tool.name}</CardTitle>
+                      <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{toolCategoryLabel(tool)}</span>
+                      <CardTitle className="text-base">{toolName(tool)}</CardTitle>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{tool.shortDescription}</p>
+                  <p className="text-sm text-muted-foreground">{toolShortDescription(tool)}</p>
                 </CardContent>
               </Card>
             </Link>

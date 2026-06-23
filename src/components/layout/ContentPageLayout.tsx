@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Head from "@/components/seo/Head";
 import AdSlot from "@/components/ads/AdSlot";
+import { useLocalizedTools } from "@/i18n/useLocalizedTools";
 
 interface Breadcrumb {
   label: string;
@@ -48,6 +49,9 @@ export default function ContentPageLayout({
 }: ContentPageLayoutProps) {
   const [helpful, setHelpful] = useState<boolean | null>(null);
   const relatedTools = tools.filter((t) => relatedToolIds.includes(t.id));
+  const { toolName, toolShortDescription } = useLocalizedTools();
+
+
 
   return (
     <div className="container py-8 max-w-4xl">
@@ -142,11 +146,11 @@ export default function ContentPageLayout({
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
                       <tool.icon className="h-4 w-4 text-accent" />
-                      <CardTitle className="text-base">{tool.name}</CardTitle>
+                      <CardTitle className="text-base">{toolName(tool)}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">{tool.shortDescription}</p>
+                    <p className="text-sm text-muted-foreground">{toolShortDescription(tool)}</p>
                   </CardContent>
                 </Card>
               </Link>
