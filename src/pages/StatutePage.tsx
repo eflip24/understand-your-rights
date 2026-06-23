@@ -22,15 +22,23 @@ export default function StatutePage() {
   const values = getStatuteValues(topic, stateSlug);
   const url = `https://legallyspoken.com/laws/${stateSlug}/${topicSlug}`;
   const title = topic.title(stateName);
-  const description = `${topic.shortLabel} in ${stateName}: ${topic.fields.map((f) => `${f.label} — ${values[f.key]}`).join("; ")}.`;
+  const rawDescription = `${topic.shortLabel} in ${stateName}: ${topic.fields.map((f) => `${f.label} — ${values[f.key]}`).join("; ")}.`;
+  // Keep meta description in the 50–160 char range for search snippets.
+  const description =
+    rawDescription.length <= 160
+      ? rawDescription
+      : `${rawDescription.slice(0, 157).replace(/\s+\S*$/, "")}…`;
   const reviewedDate = new Date().toISOString().split("T")[0];
 
   const relatedTools = tools.filter((t) => topic.relatedToolIds.includes(t.id));
   const otherTopicsForState = statuteTopics.filter((t) => t.slug !== topicSlug);
 
+  // Title kept under 60 chars by dropping " | LegallySpoken" suffix when needed.
+  const metaTitle = title.length + " | LegallySpoken".length <= 60 ? `${title} | LegallySpoken` : title.slice(0, 60);
+
   return (
     <div className="container py-8 max-w-4xl">
-      <Tier3Head title={`${title} | LegallySpoken`} description={description} />
+      <Tier3Head title={metaTitle} description={description} />
       <JsonLdGraph
         schemas={[
           breadcrumbSchema([
