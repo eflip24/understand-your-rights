@@ -96,7 +96,7 @@ export default function Footer() {
 
 
         <div className="mt-10 pt-6 border-t border-primary-foreground/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/80">
             <p>© {new Date().getFullYear()} LegallySpoken. {t("footer.rights")}</p>
             <div className="flex items-center gap-4">
               <LangSwitcher variant="footer" />
@@ -108,8 +108,8 @@ export default function Footer() {
                 {t("footer.cookieSettings")}
               </button>
             </div>
-            <p className="text-center md:text-right max-w-md">
-              <strong>{t("footer.disclaimer")}</strong> {t("footer.disclaimerBody")}
+            <p className="text-center md:text-right max-w-md text-primary-foreground/90">
+              <strong className="text-primary-foreground">{t("footer.disclaimer")}</strong> {t("footer.disclaimerBody")}
             </p>
           </div>
         </div>

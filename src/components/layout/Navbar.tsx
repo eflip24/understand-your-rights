@@ -85,10 +85,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
-      <div className="w-full px-6 flex h-14 items-center justify-between gap-4">
-        <Link to={lp("/")} className="flex items-center gap-2 shrink-0">
-          <Scale className="w-[28px] h-[28px] text-accent" />
-          <span className="font-serif text-xl font-bold text-foreground">
+      <div className="w-full px-3 sm:px-6 flex h-14 items-center justify-between gap-2 sm:gap-4">
+        <Link to={lp("/")} className="flex items-center gap-2 shrink-0 min-w-0">
+          <Scale className="w-7 h-7 text-accent shrink-0" />
+          <span className="font-serif text-lg sm:text-xl font-bold text-foreground truncate">
             Legally<span className="text-accent">Spoken</span>
           </span>
         </Link>
@@ -185,8 +185,10 @@ export default function Navbar() {
           )}
         </div>
 
-        <div className="flex items-center gap-1">
-          <LangSwitcher variant="navbar" />
+        <div className="flex items-center gap-0.5 sm:gap-1 shrink-0">
+          <div className="hidden sm:block">
+            <LangSwitcher variant="navbar" />
+          </div>
           <ThemeToggle />
 
           {/* Mobile menu */}
@@ -210,6 +212,9 @@ export default function Navbar() {
                     />
                   </div>
                 </form>
+                <div className="mt-4 sm:hidden">
+                  <LangSwitcher variant="navbar" />
+                </div>
                 <nav className="mt-6 flex flex-col gap-1">
                   <MobileAccordion title={t("nav.tools")} links={toolsLinks} onClose={() => setMobileOpen(false)} />
                   <MobileAccordion title={t("nav.guides")} links={guidesLinks} onClose={() => setMobileOpen(false)} />
