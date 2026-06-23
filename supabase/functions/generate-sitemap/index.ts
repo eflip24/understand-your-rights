@@ -200,6 +200,7 @@ const corePaths: [string, string, string][] = [
   ["/","weekly","1.0"], ["/tools","weekly","0.9"],
   ["/legal-terms","monthly","0.8"], ["/legal-clauses","monthly","0.8"],
   ["/contract-types","monthly","0.8"], ["/blog","daily","0.8"],
+  ["/legal-health-check","monthly","0.7"],
   ["/laws","weekly","0.9"],
   ["/auto-accident-law","weekly","0.8"], ["/personal-injury-law","weekly","0.8"],
   ["/insurance-law","weekly","0.8"], ["/employment-law","weekly","0.8"],

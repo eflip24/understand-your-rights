@@ -1,1 +1,74 @@
-{}
+{
+  "hero": {
+    "badge": "Mais de 100 Ferramentas Jurídicas Gratuitas — Sem Registo Necessário",
+    "titleStart": "Clareza jurídica,",
+    "titleAccent": "simplificada",
+    "subtitle": "Compreenda contratos, verifique riscos, calcule prazos e gere documentos — instantaneamente, de forma gratuita.",
+    "searchPlaceholder": "Pesquisar uma ferramenta jurídica...",
+    "searchAriaLabel": "Pesquisar uma ferramenta jurídica",
+    "searchButton": "Pesquisar",
+    "trustNoSignup": "Não é necessário registo",
+    "trustFree": "Gratuito para sempre",
+    "trustInstant": "Resultados instantâneos"
+  },
+  "stats": {
+    "tools": "Ferramentas Gratuitas",
+    "guides": "Guias Jurídicos",
+    "states": "Estados Abrangidos",
+    "pages": "Páginas Indexadas"
+  },
+  "categories": {
+    "title": "Categorias de Ferramentas",
+    "subtitle": "Navegue pelas ferramentas por categoria para encontrar o que precisa."
+  },
+  "guides": {
+    "title": "Guias Jurídicos",
+    "subtitle": "Guias aprofundados sobre tópicos jurídicos de alto impacto, escritos em linguagem simples.",
+    "autoAccident": {
+      "title": "Lei de Acidentes Automóveis",
+      "description": "Conheça os seus direitos após um acidente de carro. Guias sobre culpa, reclamações e compensação."
+    },
+    "personalInjury": {
+      "title": "Lei de Danos Pessoais",
+      "description": "Como funcionam as reclamações por danos pessoais, acordos e o que pode recuperar."
+    },
+    "insurance": {
+      "title": "Lei de Seguros",
+      "description": "Lute contra reclamações negadas, compreenda a sua apólice e conheça os seus direitos."
+    },
+    "employment": {
+      "title": "Lei do Trabalho",
+      "description": "Direitos no local de trabalho, despedimento injusto, horas extras e discriminação."
+    },
+    "criminal": {
+      "title": "Direito Penal",
+      "description": "Condução sob influência, detenções, crimes graves, contraordenações — o que esperar e os seus direitos."
+    },
+    "landlordTenant": {
+      "title": "Lei do Senhorio e Inquilino",
+      "description": "Regras de despejo, disputas de arrendamento, cauções e direitos do inquilino."
+    },
+    "aiTech": {
+      "title": "Lei de IA e Tecnologia",
+      "description": "Legalidade de conteúdo de IA, deepfakes, privacidade de dados e direitos digitais."
+    },
+    "findLawyer": {
+      "title": "Encontrar um Advogado",
+      "description": "Consulte o nosso diretório gratuito de advogados por área de prática perto de si."
+    }
+  },
+  "blog": {
+    "title": "Últimas do Blog",
+    "subtitle": "Novas perspetivas jurídicas e guias práticos.",
+    "viewAll": "Ver Todas as Publicações"
+  },
+  "cta": {
+    "title": "Pronto para Compreender os Seus Documentos Legais?",
+    "subtitle": "Comece a usar as nossas ferramentas gratuitas hoje. Sem registo, sem cartão de crédito, sem complicações.",
+    "button": "Explorar Todas as Ferramentas"
+  },
+  "meta": {
+    "title": "LegallySpoken — Ferramentas Jurídicas Gratuitas para Pessoas Comuns",
+    "description": "Mais de 100 ferramentas jurídicas gratuitas para compreender contratos, verificar riscos, calcular prazos e gerar documentos. Não é necessário advogado."
+  }
+}
