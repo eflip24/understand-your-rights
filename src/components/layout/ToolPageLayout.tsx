@@ -34,7 +34,13 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
   return (
     <div className="container py-8 max-w-4xl">
       <Head
-        title={`${localizedName} — ${t("common:page.freeToolSuffix")}`}
+        title={
+          (() => {
+            const suffix = ` — ${t("common:page.freeToolSuffix")}`;
+            const full = `${localizedName}${suffix}`;
+            return full.length <= 60 ? full : localizedName.slice(0, 60);
+          })()
+        }
         description={localizedDesc.slice(0, 155)}
       />
       <JsonLdGraph schemas={schemas} />
