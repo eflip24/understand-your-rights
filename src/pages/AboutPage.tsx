@@ -195,7 +195,7 @@ export default function AboutPage() {
               <Link to={lp("/tools")}>Browse 100+ Tools</Link>
             </Button>
           </div>
-          <p className="text-xs text-primary-foreground/50 mt-8">
+          <p className="text-xs text-primary-foreground/90 mt-8">
             <strong>Disclaimer:</strong> This site provides general legal information, not legal advice. Consult a qualified attorney for specific legal questions. Last updated March 2026.
           </p>
         </div>

@@ -38,11 +38,9 @@ export default function BlogCategoryPage() {
               <BreadcrumbItem>
                 <BreadcrumbLink asChild><Link to={lp("/")} className="text-primary-foreground/70">Home</Link></BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="text-primary-foreground/40" />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild><Link to={lp("/blog")} className="text-primary-foreground/70">Blog</Link></BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator className="text-primary-foreground/40" />
+              <BreadcrumbSeparator className="text-primary-foreground/80" />
+...
+              <BreadcrumbSeparator className="text-primary-foreground/80" />
               <BreadcrumbItem>
                 <BreadcrumbPage className="text-primary-foreground">{categoryName}</BreadcrumbPage>
               </BreadcrumbItem>
