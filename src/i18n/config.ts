@@ -62,6 +62,12 @@ import frEuLawyer from "./locales/fr/eu-lawyer.json";
 import deEuLawyer from "./locales/de/eu-lawyer.json";
 import ptEuLawyer from "./locales/pt/eu-lawyer.json";
 import itEuLawyer from "./locales/it/eu-lawyer.json";
+import enPages from "./locales/en/pages.json";
+import esPages from "./locales/es/pages.json";
+import frPages from "./locales/fr/pages.json";
+import dePages from "./locales/de/pages.json";
+import ptPages from "./locales/pt/pages.json";
+import itPages from "./locales/it/pages.json";
 
 export const SUPPORTED_LOCALES = ["en", "es", "fr", "de", "pt", "it"] as const;
 export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
@@ -85,17 +91,17 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { common: en, seo: enSeo, home: enHome, quiz: enQuiz, legal: enLegal, tools: enTools, terms: enTerms, contracts: enContracts, clauses: enClauses, "eu-lawyer": enEuLawyer },
-      es: { common: es, seo: esSeo, home: esHome, quiz: esQuiz, legal: esLegal, tools: esTools, terms: esTerms, contracts: esContracts, clauses: esClauses, "eu-lawyer": esEuLawyer },
-      fr: { common: fr, seo: frSeo, home: frHome, quiz: frQuiz, legal: frLegal, tools: frTools, terms: frTerms, contracts: frContracts, clauses: frClauses, "eu-lawyer": frEuLawyer },
-      de: { common: de, seo: deSeo, home: deHome, quiz: deQuiz, legal: deLegal, tools: deTools, terms: deTerms, contracts: deContracts, clauses: deClauses, "eu-lawyer": deEuLawyer },
-      pt: { common: pt, seo: ptSeo, home: ptHome, quiz: ptQuiz, legal: ptLegal, tools: ptTools, terms: ptTerms, contracts: ptContracts, clauses: ptClauses, "eu-lawyer": ptEuLawyer },
-      it: { common: it, seo: itSeo, home: itHome, quiz: itQuiz, legal: itLegal, tools: itTools, terms: itTerms, contracts: itContracts, clauses: itClauses, "eu-lawyer": itEuLawyer },
+      en: { common: en, seo: enSeo, home: enHome, quiz: enQuiz, legal: enLegal, tools: enTools, terms: enTerms, contracts: enContracts, clauses: enClauses, "eu-lawyer": enEuLawyer, pages: enPages },
+      es: { common: es, seo: esSeo, home: esHome, quiz: esQuiz, legal: esLegal, tools: esTools, terms: esTerms, contracts: esContracts, clauses: esClauses, "eu-lawyer": esEuLawyer, pages: esPages },
+      fr: { common: fr, seo: frSeo, home: frHome, quiz: frQuiz, legal: frLegal, tools: frTools, terms: frTerms, contracts: frContracts, clauses: frClauses, "eu-lawyer": frEuLawyer, pages: frPages },
+      de: { common: de, seo: deSeo, home: deHome, quiz: deQuiz, legal: deLegal, tools: deTools, terms: deTerms, contracts: deContracts, clauses: deClauses, "eu-lawyer": deEuLawyer, pages: dePages },
+      pt: { common: pt, seo: ptSeo, home: ptHome, quiz: ptQuiz, legal: ptLegal, tools: ptTools, terms: ptTerms, contracts: ptContracts, clauses: ptClauses, "eu-lawyer": ptEuLawyer, pages: ptPages },
+      it: { common: it, seo: itSeo, home: itHome, quiz: itQuiz, legal: itLegal, tools: itTools, terms: itTerms, contracts: itContracts, clauses: itClauses, "eu-lawyer": itEuLawyer, pages: itPages },
     },
     fallbackLng: DEFAULT_LOCALE,
     supportedLngs: SUPPORTED_LOCALES as unknown as string[],
     defaultNS: "common",
-    ns: ["common", "seo", "home", "quiz", "legal", "tools", "terms", "contracts", "clauses", "eu-lawyer"],
+    ns: ["common", "seo", "home", "quiz", "legal", "tools", "terms", "contracts", "clauses", "eu-lawyer", "pages"],
     interpolation: { escapeValue: false },
     detection: {
       order: ["localStorage", "navigator"],

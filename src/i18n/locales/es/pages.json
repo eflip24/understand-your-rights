@@ -1,0 +1,410 @@
+{
+  "notFound": {
+    "code": "404",
+    "message": "¡Vaya! Página no encontrada",
+    "home": "Volver a Inicio"
+  },
+  "disclaimer": {
+    "metaTitle": "Aviso Legal — LegallySpoken",
+    "metaDescription": "Lea el aviso legal de LegallySpoken. Nuestras herramientas proporcionan información legal general, no asesoramiento legal. Consulte a un abogado cualificado para preguntas legales específicas.",
+    "title": "Aviso Legal",
+    "subtitle": "Información importante sobre el uso de las herramientas y el contenido de LegallySpoken.",
+    "breadcrumb": "Aviso Legal",
+    "sections": [
+      {
+        "title": "Sin Asesoramiento Legal",
+        "body": "LegallySpoken proporciona información legal general y herramientas educativas. Nada en este sitio web constituye asesoramiento legal, y no se establece ninguna relación abogado-cliente al usar este sitio o sus herramientas. La información proporcionada es solo para fines informativos generales y no debe considerarse un sustituto del asesoramiento legal profesional."
+      },
+      {
+        "title": "Sin Relación Abogado-Cliente",
+        "body": "Su uso de LegallySpoken no crea una relación abogado-cliente, fiduciaria o profesional entre usted y LegallySpoken, sus propietarios, empleados o colaboradores. No debe actuar o abstenerse de actuar basándose en la información de este sitio sin buscar primero asesoramiento legal cualificado de un abogado con licencia en su jurisdicción."
+      },
+      {
+        "title": "Precisión de la Información",
+        "body": "Aunque nos esforzamos por mantener nuestras herramientas e información precisas y actualizadas, no ofrecemos garantías ni representaciones con respecto a la exactitud, integridad, fiabilidad o actualidad de cualquier contenido en este sitio. Las leyes, regulaciones y estándares legales varían según la jurisdicción y cambian con el tiempo. Nuestras herramientas utilizan reglas generales y pueden no reflejar las leyes específicas aplicables a su situación."
+      },
+      {
+        "title": "Herramientas Impulsadas por IA",
+        "body": "Algunas de nuestras herramientas utilizan inteligencia artificial para analizar texto y generar resultados. Las salidas generadas por IA pueden contener errores, omisiones o inexactitudes. Estos resultados se proporcionan como punto de partida para su propia investigación y siempre deben ser verificados por un profesional cualificado antes de ser utilizados para cualquier decisión legal, financiera o comercial."
+      },
+      {
+        "title": "Limitación de Responsabilidad",
+        "body": "En la máxima medida permitida por la ley, LegallySpoken, sus propietarios, empleados y colaboradores no serán responsables de ningún daño que surja de o en conexión con su uso de este sitio web o sus herramientas. Esto incluye, sin limitación, daños directos, indirectos, incidentales, consecuentes, punitivos o especiales, ya sea que hayamos sido advertidos o no de la posibilidad de tales daños."
+      },
+      {
+        "title": "Enlaces a Terceros",
+        "body": "Este sitio puede contener enlaces a sitios web o recursos de terceros. Estos enlaces se proporcionan solo para su conveniencia y no implican respaldo. No tenemos control ni asumimos responsabilidad por el contenido, las políticas de privacidad o las prácticas de ningún sitio de terceros."
+      },
+      {
+        "title": "Cambios en este Aviso Legal",
+        "body": "Nos reservamos el derecho de modificar este aviso legal en cualquier momento sin previo aviso. Su uso continuado del sitio después de cualquier cambio constituye la aceptación del aviso legal actualizado."
+      }
+    ],
+    "lastUpdated": "Última actualización: marzo de 2026"
+  },
+  "privacy": {
+    "metaTitle": "Política de Privacidad — LegallySpoken",
+    "metaDescription": "Descubre cómo LegallySpoken recopila, utiliza y protege tus datos. Respetamos tu privacidad y nunca vendemos tu información personal.",
+    "title": "Política de Privacidad",
+    "subtitle": "Cómo recopilamos, usamos y protegemos tu información.",
+    "breadcrumb": "Política de Privacidad",
+    "collect": {
+      "title": "Información que Recopilamos",
+      "intro": "Cuando utilizas LegallySpoken, podemos recopilar los siguientes tipos de información:",
+      "items": [
+        "Información de la cuenta: Si creas una cuenta, recopilamos tu dirección de correo electrónico y nombre de visualización. Esta información se utiliza únicamente para proporcionar funcionalidades de la cuenta, como guardar análisis.",
+        "Datos de uso: Recopilamos datos de uso anónimos, incluyendo páginas visitadas, herramientas utilizadas y patrones generales de interacción para mejorar nuestros servicios.",
+        "Entradas de herramientas: El texto y los datos que introduces en nuestras herramientas se procesan para generar resultados. Si decides guardar un análisis, los datos de entrada y salida se almacenan en tu cuenta.",
+        "Cookies: Utilizamos cookies esenciales para mantener tu sesión y preferencias. Con tu consentimiento, también utilizamos cookies de publicidad y análisis (consulta 'Publicidad y Cookies de Terceros' a continuación). Puedes cambiar tu elección en cualquier momento a través del enlace 'Configuración de Cookies' en nuestro pie de página."
+      ]
+    },
+    "ads": {
+      "title": "Publicidad y Cookies de Terceros (Google AdSense)",
+      "intro": "Utilizamos Google AdSense para mostrar anuncios en partes de LegallySpoken. Google y sus socios pueden utilizar cookies (incluida la cookie DoubleClick DART) y tecnologías similares para mostrar anuncios basados en tus visitas anteriores a este sitio u otros sitios web.",
+      "items": [
+        "El uso de cookies publicitarias por parte de Google permite a Google y a sus socios mostrar anuncios basados en tus visitas a este y otros sitios en Internet.",
+        "Puedes optar por no recibir publicidad personalizada visitando la Configuración de Anuncios de Google (google.com/settings/ads) o aboutads.info.",
+        "Si rechazas las cookies publicitarias en nuestro banner de consentimiento, indicamos a Google que solo muestre anuncios no personalizados.",
+        "La información procesada por los socios publicitarios puede incluir tu dirección IP, tipo de dispositivo, navegador y páginas visitadas."
+      ]
+    },
+    "ccpa": {
+      "title": "Tus Derechos de Privacidad en California (CCPA)",
+      "body": "Si eres residente de California, tienes derecho a saber qué información personal recopilamos, a solicitar su eliminación y a optar por no participar en la 'venta' o 'compartición' de información personal para publicidad conductual entre contextos. No vendemos tu información personal por dinero. Para optar por no recibir publicidad personalizada, utiliza el enlace 'Configuración de Cookies' en nuestro pie de página o los enlaces de exclusión de Google mencionados anteriormente."
+    },
+    "usage": {
+      "title": "Cómo Usamos Tu Información",
+      "intro": "Utilizamos la información que recopilamos para:",
+      "items": [
+        "Proporcionar y mantener nuestras herramientas y servicios",
+        "Guardar tus análisis y preferencias cuando tienes una cuenta",
+        "Mejorar y optimizar nuestro sitio web y herramientas",
+        "Responder a tus solicitudes o consultas",
+        "Proteger contra el acceso no autorizado o el uso indebido"
+      ]
+    },
+    "sections": [
+      {
+        "title": "Almacenamiento y Seguridad de Datos",
+        "body": "Tus datos se almacenan de forma segura utilizando infraestructura en la nube estándar de la industria con cifrado en reposo y en tránsito. Implementamos medidas técnicas y organizativas adecuadas para proteger tu información personal contra el acceso, alteración, divulgación o destrucción no autorizados."
+      },
+      {
+        "title": "No Vendemos Tus Datos",
+        "body": "No vendemos, comerciamos ni transferimos de ninguna otra forma tu información personal a terceros con fines de marketing o publicidad. Nunca monetizaremos tus datos de esta manera."
+      },
+      {
+        "title": "Datos Procesados por IA",
+        "body": "Algunas de nuestras herramientas utilizan inteligencia artificial para analizar el texto que proporcionas. Este texto se envía a servicios de procesamiento de IA únicamente con el fin de generar resultados. No utilizamos tus entradas para entrenar modelos de IA. Los datos procesados por IA no se retienen más allá de la duración de tu sesión a menos que guardes explícitamente el análisis en tu cuenta."
+      },
+      {
+        "title": "Retención de Datos",
+        "body": "Si tienes una cuenta, tus análisis guardados se retienen hasta que los elimines o cierres tu cuenta. Los datos de uso anónimos se retienen en forma agregada para fines analíticos. Puedes solicitar la eliminación de tu cuenta y los datos asociados en cualquier momento poniéndote en contacto con nosotros."
+      }
+    ],
+    "rights": {
+      "title": "Tus Derechos",
+      "intro": "Dependiendo de tu jurisdicción, puedes tener derecho a:",
+      "items": [
+        "Acceder a los datos personales que tenemos sobre ti",
+        "Solicitar la corrección de datos inexactos",
+        "Solicitar la eliminación de tus datos",
+        "Oponerte o restringir el procesamiento de tus datos",
+        "Solicitar la portabilidad de los datos"
+      ]
+    },
+    "closing": [
+      {
+        "title": "Privacidad de los Niños",
+        "body": "LegallySpoken no está dirigido a niños menores de 13 años. No recopilamos conscientemente información personal de niños. Si crees que hemos recopilado información de un niño, contáctanos para que podamos eliminarla rápidamente."
+      },
+      {
+        "title": "Cambios en Esta Política",
+        "body": "Podemos actualizar esta política de privacidad de vez en cuando. Notificaremos a los usuarios de cambios significativos publicando un aviso en nuestro sitio web. Tu uso continuado del sitio después de la publicación de los cambios constituye la aceptación de la política actualizada."
+      }
+    ],
+    "contact": {
+      "title": "Contáctanos",
+      "body": "Si tienes preguntas sobre esta política de privacidad o tus datos, contáctanos en privacy@legallyspoken.com."
+    },
+    "lastUpdated": "Última actualización: marzo de 2026"
+  },
+  "terms": {
+    "metaTitle": "Términos de Servicio — LegallySpoken",
+    "metaDescription": "Lea los términos de servicio de LegallySpoken. Al usar nuestro sitio, usted acepta estos términos que rigen el uso de nuestras herramientas y contenido legal.",
+    "title": "Términos de Servicio",
+    "subtitle": "Los términos y condiciones que rigen su uso de LegallySpoken.",
+    "breadcrumb": "Términos de Servicio",
+    "sections": [
+      {
+        "title": "Aceptación de los Términos",
+        "body": "Al acceder o utilizar LegallySpoken ('el Sitio'), usted acepta estar sujeto a estos Términos de Servicio. Si no está de acuerdo con estos términos, por favor no utilice el Sitio."
+      },
+      {
+        "title": "Descripción del Servicio",
+        "body": "LegallySpoken proporciona herramientas legales en línea gratuitas, calculadoras, generadores de documentos y contenido educativo. Estas herramientas están diseñadas para proporcionar información legal general y no deben considerarse un sustituto del asesoramiento legal profesional."
+      },
+      {
+        "title": "Cuentas de Usuario",
+        "body": "Algunas funciones requieren la creación de una cuenta. Usted es responsable de mantener la confidencialidad de las credenciales de su cuenta y de todas las actividades realizadas bajo su cuenta. Usted acepta proporcionar información precisa al crear su cuenta y notificarnos inmediatamente cualquier uso no autorizado."
+      }
+    ],
+    "acceptable": {
+      "title": "Uso Aceptable",
+      "intro": "Usted se compromete a no:",
+      "items": [
+        "Utilizar el Sitio para cualquier propósito ilegal o en violación de cualquier ley aplicable",
+        "Intentar obtener acceso no autorizado a cualquier parte del Sitio o sus sistemas",
+        "Utilizar herramientas automatizadas para raspar, rastrear o extraer datos del Sitio sin permiso",
+        "Interferir o interrumpir la infraestructura del Sitio o el acceso de otros usuarios",
+        "Subir contenido malicioso, virus o código dañino",
+        "Suplantar a cualquier persona o entidad, o tergiversar su afiliación"
+      ]
+    },
+    "sections2": [
+      {
+        "title": "Propiedad Intelectual",
+        "body": "Todo el contenido de LegallySpoken, incluyendo texto, gráficos, logotipos, diseños de herramientas y software, es propiedad de LegallySpoken o sus licenciantes y está protegido por derechos de autor y otras leyes de propiedad intelectual. Usted puede utilizar el Sitio para fines personales y no comerciales. Los documentos generados por nuestras herramientas son suyos para usar, pero las interfaces de las herramientas y el código subyacente siguen siendo de nuestra propiedad."
+      },
+      {
+        "title": "Contenido Generado",
+        "body": "Los documentos y análisis generados por nuestras herramientas se proporcionan como plantillas y puntos de partida. Usted es el único responsable de revisar, personalizar y verificar cualquier contenido generado antes de su uso. LegallySpoken no ofrece garantías con respecto a la validez legal o la aplicabilidad de los documentos generados."
+      },
+      {
+        "title": "Publicidad",
+        "body": "LegallySpoken se mantiene mediante publicidad. Mostramos anuncios servidos por Google AdSense y podemos incluir contenido patrocinado o enlaces de afiliados. No respaldamos los productos o servicios anunciados en el Sitio. Sus interacciones con los anunciantes se rigen por sus propios términos y políticas de privacidad."
+      },
+      {
+        "title": "Limitación de Responsabilidad",
+        "body": "En la máxima medida permitida por la ley, LegallySpoken y sus propietarios, empleados y colaboradores no serán responsables de ningún daño indirecto, incidental, especial, consecuente o punitivo que surja de su uso o incapacidad para usar el Sitio. Nuestra responsabilidad total por cualquier reclamo que surja de su uso del Sitio no excederá la cantidad que nos pagó, si la hubiera, en los 12 meses anteriores al reclamo."
+      },
+      {
+        "title": "Exención de Garantías",
+        "body": "El Sitio y sus herramientas se proporcionan 'tal cual' y 'según disponibilidad' sin garantías de ningún tipo, ya sean expresas o implícitas. Renunciamos a todas las garantías, incluidas, entre otras, las garantías implícitas de comerciabilidad, idoneidad para un propósito particular y no infracción."
+      },
+      {
+        "title": "Indemnización",
+        "body": "Usted acepta indemnizar y eximir de responsabilidad a LegallySpoken y a sus propietarios, empleados y colaboradores de cualquier reclamo, daño, pérdida o gasto que surja de su uso del Sitio, su violación de estos términos o su violación de los derechos de terceros."
+      },
+      {
+        "title": "Terminación",
+        "body": "Nos reservamos el derecho de suspender o terminar su acceso al Sitio en cualquier momento, con o sin causa, y con o sin previo aviso. Tras la terminación, su derecho a usar el Sitio cesa inmediatamente."
+      },
+      {
+        "title": "Ley Aplicable",
+        "body": "Estos Términos de Servicio se regirán e interpretarán de acuerdo con las leyes de los Estados Unidos, sin tener en cuenta los principios de conflicto de leyes. Cualquier disputa que surja bajo estos términos se resolverá en los tribunales de jurisdicción competente."
+      },
+      {
+        "title": "Cambios en Estos Términos",
+        "body": "Podemos revisar estos Términos de Servicio en cualquier momento. Los cambios entrarán en vigor cuando se publiquen en el Sitio. Su uso continuado del Sitio después de la publicación de los cambios constituye la aceptación de los términos revisados."
+      }
+    ],
+    "contact": {
+      "title": "Contacto",
+      "body": "¿Preguntas sobre estos términos? Contáctenos en legal@legallyspoken.com."
+    },
+    "lastUpdated": "Última actualización: marzo de 2026"
+  },
+  "contact": {
+    "metaTitle": "Contactar con LegallySpoken — Póngase en contacto",
+    "metaDescription": "Póngase en contacto con el equipo de LegallySpoken para enviar comentarios, correcciones, preguntas sobre colaboraciones o consultas de prensa. Nuestro objetivo es responder en un plazo de 2 días hábiles.",
+    "title": "Contacte con nosotros",
+    "subtitle": "Preguntas, correcciones, solicitudes de herramientas o consultas de colaboración: leemos todos los mensajes.",
+    "email": {
+      "heading": "Correo electrónico",
+      "body": "Preguntas generales, comentarios sobre el contenido, correcciones, sugerencias de nuevas herramientas o guías."
+    },
+    "responseTime": {
+      "heading": "Tiempo de respuesta",
+      "value": "En un plazo de 2 días hábiles",
+      "body": "De lunes a viernes, excepto festivos. Los asuntos legales urgentes deben tratarse con un abogado con licencia, no con nosotros."
+    },
+    "canHelp": {
+      "heading": "En qué podemos ayudarle",
+      "items": [
+        "Informar de un error o información desactualizada en una guía, herramienta o artículo.",
+        "Sugerir una nueva herramienta, calculadora o tema que le gustaría que cubriéramos.",
+        "Solicitudes de prensa, colaboración, inclusión en el directorio de abogados o sindicación de contenido.",
+        "Solicitudes de DMCA, retirada de contenido y privacidad (incluya la URL y una descripción).",
+        "Comentarios generales sobre el sitio, el diseño o las herramientas."
+      ]
+    },
+    "cannotHelp": {
+      "heading": "En qué no podemos ayudarle",
+      "body": "No somos un bufete de abogados. No podemos revisar su contrato, representarle ni ofrecerle asesoramiento legal sobre su situación específica. Para ello, consulte a un abogado cualificado con licencia en su jurisdicción. Nuestro directorio de abogados es un buen punto de partida.",
+      "directoryLink": "directorio de abogados"
+    },
+    "operator": {
+      "heading": "Operador y dirección postal",
+      "body": "Para los detalles del operador requeridos por la legislación de consumo de la UE, consulte nuestra página de Aviso Legal (también disponible como Impressum, Mentions légales, Note legali e Informação legal)."
+    },
+    "disclaimer": "Descargo de responsabilidad: El envío de un correo electrónico a LegallySpoken no crea una relación abogado-cliente. No incluya información legal confidencial o urgente en su mensaje."
+  },
+  "editorial": {
+    "metaTitle": "Estándares editoriales — Cómo LegallySpoken crea y revisa contenido",
+    "metaDescription": "Cómo LegallySpoken obtiene, redacta, revisa y actualiza sus herramientas y guías legales. Nuestra política sobre contenido asistido por IA, revisión por abogados, citas y correcciones.",
+    "title": "Estándares editoriales",
+    "subtitle": "Cómo investigamos, escribimos, revisamos y actualizamos todo lo que lees en LegallySpoken.",
+    "intro": [
+      "LegallySpoken publica herramientas legales gratuitas, calculadoras y guías en lenguaje sencillo que cubren la legislación federal y estatal de EE. UU., así como las principales jurisdicciones de la UE (Alemania, Francia, España, Italia, Portugal). Nuestro objetivo es proporcionar a los lectores puntos de partida fiables y bien documentados, no reemplazar una conversación con un abogado con licencia.",
+      "Los estándares a continuación describen exactamente cómo producimos ese contenido, cómo encaja la IA y cómo mantenemos la precisión a lo largo del tiempo."
+    ],
+    "pillars": [
+      {
+        "title": "Primero, lenguaje sencillo",
+        "body": "Cada guía y herramienta está escrita para no abogados. Traducimos el lenguaje jurídico a un lenguaje claro y práctico y añadimos ejemplos concretos siempre que es posible."
+      },
+      {
+        "title": "Basado en la ley primaria",
+        "body": "Los estatutos, reglamentos y normas judiciales citados en este sitio enlazan o parafrasean el texto oficial. No dependemos de resúmenes de segunda mano cuando hay una fuente primaria disponible."
+      },
+      {
+        "title": "Asistido por IA, revisado por humanos",
+        "body": "Utilizamos IA (incluidos los modelos Google Gemini y OpenAI) para redactar, traducir y estructurar contenido más rápido. Cada página publicada es revisada por un editor humano antes de ser publicada, y se corrige cuando los lectores señalan errores."
+      },
+      {
+        "title": "Contribución de abogados donde importa",
+        "body": "Las guías principales sobre temas de alto riesgo (accidentes automovilísticos, lesiones personales, empleo, derecho penal, arrendador-inquilino, seguros, IA y tecnología) se producen con la contribución de abogados en ejercicio con licencia."
+      },
+      {
+        "title": "Mantenido, no de usar y tirar",
+        "body": "Hacemos un seguimiento de los cambios en los principales estatutos y la jurisprudencia. Los artículos llevan una fecha de 'última actualización' y se actualizan al menos anualmente, o antes cuando la ley cambia sustancialmente."
+      },
+      {
+        "title": "Honestos sobre los límites",
+        "body": "No somos un bufete de abogados y no ofrecemos asesoramiento legal. Cada página que aborda un tema legal incluye una exención de responsabilidad que recuerda a los lectores que deben consultar a un abogado con licencia para su situación específica."
+      }
+    ],
+    "pipeline": {
+      "title": "Nuestro proceso de contenido",
+      "steps": [
+        {
+          "label": "Selección de temas.",
+          "body": "Elegimos temas basándonos en búsquedas reales de los lectores, actualizaciones estatutarias de EE. UU. y la UE, y lagunas en los recursos legales gratuitos existentes."
+        },
+        {
+          "label": "Investigación.",
+          "body": "Un editor recopila fuentes primarias: estatutos, reglamentos, normas judiciales y (cuando sea relevante) jurisprudencia principal y orientación oficial de agencias."
+        },
+        {
+          "label": "Redacción.",
+          "body": "El primer borrador es producido por un editor utilizando asistencia de IA para la estructura, ejemplos y traducción. La IA se limita a las notas de investigación; no improvisa la ley."
+        },
+        {
+          "label": "Revisión.",
+          "body": "Un editor humano verifica cada cita, elimina cualquier cosa que no podamos respaldar y reescribe cualquier pasaje que suene a prosa genérica de IA."
+        },
+        {
+          "label": "Publicación.",
+          "body": "La página se publica con una fecha visible de 'última actualización' y una exención de responsabilidad."
+        },
+        {
+          "label": "Bucle de retroalimentación.",
+          "body": "Los lectores pueden señalar errores desde el pie de página o a través de contact@legallyspoken.com. Las correcciones verificadas se aplican generalmente en un plazo de 2 días hábiles."
+        }
+      ]
+    },
+    "aiDisclosure": {
+      "title": "Divulgación de IA",
+      "intro": "Utilizamos la IA como herramienta de escritura y traducción, no como autoridad legal. Específicamente:",
+      "items": [
+        "Los borradores de blog y algunos textos explicativos se generan con la ayuda de grandes modelos de lenguaje (Google Gemini, OpenAI) y son editados por un humano antes de su publicación.",
+        "Las versiones localizadas de nuestras guías europeas se producen traduciendo una fuente en inglés revisada por un editor a través de un LLM, y luego son verificadas por un revisor humano.",
+        "Nuestras herramientas interactivas (analizador de contratos, verificador de riesgos, asistente de chat) indican explícitamente que su resultado es generado por IA y no es asesoramiento legal.",
+        "No republicamos la salida de la IA como si fuera escrita por un abogado, y no publicamos nada automáticamente sin revisión humana."
+      ]
+    },
+    "corrections": {
+      "title": "Política de correcciones",
+      "body": "Si detecta un error —una cita de estatuto incorrecta, un plazo desactualizado, una regla mal resumida— envíe un correo electrónico a hello@legallyspoken.com con la URL y una breve descripción. Verificaremos con las fuentes primarias y actualizaremos la página (indicando el cambio en la fecha de 'última actualización') o explicaremos por qué creemos que el original era correcto."
+    },
+    "disclaimer": "Descargo de responsabilidad: LegallySpoken no es un bufete de abogados. El contenido de este sitio es información legal general, no asesoramiento legal, y no crea una relación abogado-cliente. Consulte siempre a un abogado con licencia para obtener asesoramiento sobre su situación específica."
+  },
+  "about": {
+    "metaTitle": "Sobre Nosotros | LegallySpoken — Herramientas Legales Gratuitas para Todos",
+    "metaDescription": "Conozca la misión de LegallySpoken de proporcionar más de 100 herramientas legales gratuitas, guías en lenguaje sencillo y análisis impulsados por IA para personas comunes en los 50 estados.",
+    "hero": {
+      "titlePre": "Claridad legal,",
+      "titleAccent": "simplificada.",
+      "subtitle": "Herramientas Legales Gratuitas para Personas Comunes",
+      "cta": "Explorar Todas las Herramientas"
+    },
+    "trustBadges": [
+      "Gratis para Siempre",
+      "No Requiere Registro",
+      "Lenguaje Sencillo",
+      "Cubre los 50 Estados"
+    ],
+    "mission": {
+      "title": "Nuestra Misión",
+      "p1": "En LegallySpoken, creemos que todos merecen acceso a información legal clara y práctica, sin la confusión, los altos costos o las barreras que suelen acompañarla.",
+      "p2": "Creamos esta plataforma porque navegar asuntos legales cotidianos no debería sentirse abrumador ni requerir un título en derecho. Ya sea que esté revisando un contrato, lidiando con un problema de arrendamiento, verificando sus derechos laborales o tratando de entender una nueva ley, estamos aquí para ayudarle con herramientas simples y gratuitas que le brindan respuestas instantáneas.",
+      "p3": "Empoderar a las personas comunes con herramientas legales 100% gratuitas y sin registro, y recursos en lenguaje sencillo para que pueda comprender sus derechos, protegerse y tomar decisiones más inteligentes, de forma rápida y segura.",
+      "p4": "Eliminamos la jerga legal y brindamos ayuda práctica exactamente cuando la necesita."
+    },
+    "offerings": {
+      "title": "Lo que Ofrecemos",
+      "items": [
+        {
+          "title": "Más de 100 Herramientas Legales Gratuitas",
+          "description": "Calculadoras instantáneas, generadores, verificadores y analizadores de contratos, derechos del consumidor, empleo, bienes raíces, finanzas y más. Sin inicio de sesión, sin tarjeta de crédito, sin complicaciones."
+        },
+        {
+          "title": "Análisis Impulsado por IA",
+          "description": "Herramientas como nuestro Escáner de Banderas Rojas en Contratos y el Resumidor de Términos y Condiciones le ayudan a detectar rápidamente riesgos y comprender documentos complejos en lenguaje sencillo."
+        },
+        {
+          "title": "Guías Específicas por Estado",
+          "description": "Cubriendo los 50 estados con información práctica adaptada a su lugar de residencia."
+        },
+        {
+          "title": "Diccionario de Términos Legales",
+          "description": "Desglosando el lenguaje legal complicado en palabras cotidianas."
+        },
+        {
+          "title": "Recomendaciones Personalizadas",
+          "description": "Nuestro cuestionario de 60 segundos de Chequeo de Salud Legal le indica las herramientas exactas que necesita."
+        }
+      ],
+      "closing": "Todo en LegallySpoken está diseñado para ser rápido, compatible con dispositivos móviles y genuinamente útil."
+    },
+    "who": {
+      "title": "Quiénes Somos",
+      "p1": "LegallySpoken fue construido por un pequeño equipo apasionado por el acceso a la justicia. Nuestro contenido y herramientas se desarrollan con la aportación de abogados en ejercicio y se revisan regularmente para reflejar las leyes actuales (a partir de 2026).",
+      "p2": "No somos un bufete de abogados y no estamos aquí para reemplazar a su abogado. En cambio, actuamos como un punto de partida útil, brindándole el conocimiento y la confianza para manejar asuntos legales rutinarios por su cuenta o preparar mejores preguntas cuando consulte a un profesional."
+    },
+    "promise": {
+      "title": "Nuestra Promesa para Usted",
+      "items": [
+        {
+          "title": "Siempre Gratis",
+          "description": "Las herramientas y recursos principales seguirán siendo gratuitos para siempre."
+        },
+        {
+          "title": "Sin Tonterías",
+          "description": "Explicamos las cosas claramente, sin rodeos ni ventas adicionales."
+        },
+        {
+          "title": "Transparencia Primero",
+          "description": "Cada herramienta y guía incluye descargos de responsabilidad claros. Esta es solo información general, no asesoramiento legal personalizado."
+        },
+        {
+          "title": "Mejora Continua",
+          "description": "Actualizamos herramientas y contenido a medida que cambian las leyes y agregamos nuevos recursos basados en lo que la gente real está buscando."
+        }
+      ]
+    },
+    "why": {
+      "title": "¿Por qué \"Legally Spoken\"?",
+      "p1": "Porque los asuntos legales deben hablarse en un idioma que todos puedan entender. Convertimos la compleja jerga legal en información clara y procesable para que pueda concentrarse en lo que más importa: protegerse a sí mismo, a su familia o a su negocio.",
+      "p2": "Si alguna vez se ha sentido perdido al leer un contrato, confundido por un aviso legal o inseguro de sus derechos, usted es exactamente la razón por la que construimos LegallySpoken.",
+      "p3": "Estamos constantemente ampliando nuestra biblioteca de herramientas y guías. Si hay algo específico que le gustaría ver, nos encantaría saber de usted."
+    },
+    "cta": {
+      "title": "¿Listo para empezar?",
+      "body": "Gracias por confiar en nosotros con sus preguntas legales.\n— El Equipo de LegallySpoken",
+      "healthCheck": "Comience su Chequeo de Salud Legal",
+      "browse": "Explorar más de 100 Herramientas",
+      "disclaimer": "Descargo de responsabilidad: Este sitio proporciona información legal general, no asesoramiento legal. Consulte a un abogado calificado para preguntas legales específicas. Última actualización: marzo de 2026."
+    }
+  }
+}

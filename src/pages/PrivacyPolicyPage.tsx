@@ -1,152 +1,74 @@
+import { useTranslation } from "react-i18next";
 import Head from "@/components/seo/Head";
 import ContentPageLayout from "@/components/layout/ContentPageLayout";
 
 export default function PrivacyPolicyPage() {
+  const { t } = useTranslation("pages");
+  const collectItems = t("privacy.collect.items", { returnObjects: true }) as string[];
+  const adsItems = t("privacy.ads.items", { returnObjects: true }) as string[];
+  const usageItems = t("privacy.usage.items", { returnObjects: true }) as string[];
+  const rightsItems = t("privacy.rights.items", { returnObjects: true }) as string[];
+  const sections = t("privacy.sections", { returnObjects: true }) as Array<{ title: string; body: string }>;
+  const closing = t("privacy.closing", { returnObjects: true }) as Array<{ title: string; body: string }>;
   return (
     <>
-      <Head
-        title="Privacy Policy — LegallySpoken"
-        description="Learn how LegallySpoken collects, uses, and protects your data. We respect your privacy and never sell your personal information."
-      />
+      <Head title={t("privacy.metaTitle")} description={t("privacy.metaDescription")} />
       <ContentPageLayout
-        title="Privacy Policy"
-        subtitle="How we collect, use, and protect your information."
-        breadcrumbs={[{ label: "Privacy Policy" }]}
-        metaTitle="Privacy Policy — LegallySpoken"
-        metaDescription="Learn how LegallySpoken collects, uses, and protects your data."
+        title={t("privacy.title")}
+        subtitle={t("privacy.subtitle")}
+        breadcrumbs={[{ label: t("privacy.breadcrumb") }]}
+        metaTitle={t("privacy.metaTitle")}
+        metaDescription={t("privacy.metaDescription")}
       >
         <div className="prose dark:prose-invert max-w-none prose-headings:font-serif">
-          <h2>Information We Collect</h2>
-          <p>
-            When you use LegallySpoken, we may collect the following types of information:
-          </p>
+          <h2>{t("privacy.collect.title")}</h2>
+          <p>{t("privacy.collect.intro")}</p>
           <ul>
-            <li>
-              <strong>Account information:</strong> If you create an account, we collect your email address and
-              display name. This information is used solely to provide account functionality such as saving analyses.
-            </li>
-            <li>
-              <strong>Usage data:</strong> We collect anonymous usage data including pages visited, tools used, and
-              general interaction patterns to improve our services.
-            </li>
-            <li>
-              <strong>Tool inputs:</strong> Text and data you enter into our tools is processed to generate results.
-              If you choose to save an analysis, the input and output data is stored in your account.
-            </li>
-            <li>
-              <strong>Cookies:</strong> We use essential cookies to maintain your session and preferences. With
-              your consent, we also use advertising and analytics cookies (see "Advertising & Third-Party Cookies"
-              below). You can change your choice anytime via the "Cookie Settings" link in our footer.
-            </li>
+            {Array.isArray(collectItems) && collectItems.map((it, i) => <li key={i}>{it}</li>)}
           </ul>
 
-          <h2>Advertising &amp; Third-Party Cookies (Google AdSense)</h2>
-          <p>
-            We use Google AdSense to display ads on parts of LegallySpoken. Google and its partners may use cookies
-            (including the DoubleClick DART cookie) and similar technologies to serve ads based on your prior visits
-            to this site or other websites.
-          </p>
+          <h2>{t("privacy.ads.title")}</h2>
+          <p>{t("privacy.ads.intro")}</p>
           <ul>
-            <li>
-              Google's use of advertising cookies enables it and its partners to serve ads based on your visits to
-              this and other sites on the Internet.
-            </li>
-            <li>
-              You may opt out of personalized advertising by visiting{" "}
-              <a href="https://www.google.com/settings/ads" className="text-accent" target="_blank" rel="noreferrer">Google Ads Settings</a>{" "}
-              or{" "}
-              <a href="https://www.aboutads.info" className="text-accent" target="_blank" rel="noreferrer">aboutads.info</a>.
-            </li>
-            <li>
-              If you reject advertising cookies in our consent banner, we instruct Google to serve only
-              non-personalized ads.
-            </li>
-            <li>
-              Information processed by ad partners may include your IP address, device type, browser, and pages
-              visited.
-            </li>
+            {Array.isArray(adsItems) && adsItems.map((it, i) => <li key={i}>{it}</li>)}
           </ul>
 
-          <h2>Your California Privacy Rights (CCPA)</h2>
-          <p>
-            If you are a California resident, you have the right to know what personal information we collect, to
-            request deletion, and to opt out of the "sale" or "sharing" of personal information for cross-context
-            behavioral advertising. We do not sell your personal information for money. To opt out of personalized
-            advertising, use the "Cookie Settings" link in our footer or the Google opt-out links above.
-          </p>
+          <h2>{t("privacy.ccpa.title")}</h2>
+          <p>{t("privacy.ccpa.body")}</p>
 
-          <h2>How We Use Your Information</h2>
-          <p>We use the information we collect to:</p>
+          <h2>{t("privacy.usage.title")}</h2>
+          <p>{t("privacy.usage.intro")}</p>
           <ul>
-            <li>Provide and maintain our tools and services</li>
-            <li>Save your analyses and preferences when you have an account</li>
-            <li>Improve and optimize our website and tools</li>
-            <li>Respond to your requests or inquiries</li>
-            <li>Protect against unauthorized access or misuse</li>
+            {Array.isArray(usageItems) && usageItems.map((it, i) => <li key={i}>{it}</li>)}
           </ul>
 
-          <h2>Data Storage and Security</h2>
-          <p>
-            Your data is stored securely using industry-standard cloud infrastructure with encryption at rest and in
-            transit. We implement appropriate technical and organizational measures to protect your personal
-            information against unauthorized access, alteration, disclosure, or destruction.
-          </p>
+          {Array.isArray(sections) &&
+            sections.map((s) => (
+              <div key={s.title}>
+                <h2>{s.title}</h2>
+                <p>{s.body}</p>
+              </div>
+            ))}
 
-          <h2>We Do Not Sell Your Data</h2>
-          <p>
-            We do not sell, trade, or otherwise transfer your personal information to third parties for marketing or
-            advertising purposes. We will never monetize your data in this way.
-          </p>
-
-          <h2>AI-Processed Data</h2>
-          <p>
-            Some of our tools use artificial intelligence to analyze text you provide. This text is sent to AI
-            processing services solely for the purpose of generating results. We do not use your inputs to train AI
-            models. AI-processed data is not retained beyond the duration of your session unless you explicitly save
-            the analysis to your account.
-          </p>
-
-          <h2>Data Retention</h2>
-          <p>
-            If you have an account, your saved analyses are retained until you delete them or close your account.
-            Anonymous usage data is retained in aggregate form for analytics purposes. You can request deletion of
-            your account and associated data at any time by contacting us.
-          </p>
-
-          <h2>Your Rights</h2>
-          <p>Depending on your jurisdiction, you may have the right to:</p>
+          <h2>{t("privacy.rights.title")}</h2>
+          <p>{t("privacy.rights.intro")}</p>
           <ul>
-            <li>Access the personal data we hold about you</li>
-            <li>Request correction of inaccurate data</li>
-            <li>Request deletion of your data</li>
-            <li>Object to or restrict processing of your data</li>
-            <li>Request data portability</li>
+            {Array.isArray(rightsItems) && rightsItems.map((it, i) => <li key={i}>{it}</li>)}
           </ul>
 
-          <h2>Children's Privacy</h2>
-          <p>
-            LegallySpoken is not directed at children under 13. We do not knowingly collect personal information
-            from children. If you believe we have collected information from a child, please contact us so we can
-            promptly remove it.
-          </p>
+          {Array.isArray(closing) &&
+            closing.map((s) => (
+              <div key={s.title}>
+                <h2>{s.title}</h2>
+                <p>{s.body}</p>
+              </div>
+            ))}
 
-          <h2>Changes to This Policy</h2>
-          <p>
-            We may update this privacy policy from time to time. We will notify users of significant changes by
-            posting a notice on our website. Your continued use of the site after changes are posted constitutes
-            acceptance of the updated policy.
-          </p>
-
-          <h2>Contact Us</h2>
-          <p>
-            If you have questions about this privacy policy or your data, please contact us at{" "}
-            <a href="mailto:privacy@legallyspoken.com" className="text-accent">
-              privacy@legallyspoken.com
-            </a>.
-          </p>
+          <h2>{t("privacy.contact.title")}</h2>
+          <p>{t("privacy.contact.body")}</p>
 
           <p className="text-muted-foreground text-sm mt-8">
-            <em>Last updated: March 2026</em>
+            <em>{t("privacy.lastUpdated")}</em>
           </p>
         </div>
       </ContentPageLayout>
