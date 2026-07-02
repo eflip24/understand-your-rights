@@ -2187,5 +2187,212 @@
       "label": "Strumenti di Diritto di Famiglia",
       "description": "Calcolatori per il mantenimento dei figli, gli alimenti, i costi di divorzio e le stime legali relative alla famiglia."
     }
+  },
+  "internals": {
+    "wordCounter": {
+      "button": "Conteggio parole"
+    },
+    "readingTime": {
+      "button": "Calcola tempo di lettura"
+    },
+    "autoRenewal": {
+      "placeholder": "Incolla il contratto o i termini dell'abbonamento...",
+      "button": "Rileva rinnovo automatico",
+      "detected": "⚠ Rilevato linguaggio di rinnovo automatico",
+      "clean": "✓ Nessun linguaggio di rinnovo automatico trovato",
+      "matches": "Corrispondenze",
+      "noticeWindow": "Termine di preavviso",
+      "warnNoNotice": "Rinnovo automatico rilevato ma senza un chiaro termine di preavviso — rischioso.",
+      "warnLongNotice": "Termine di preavviso lungo ({{window}}) — imposta un promemoria sul calendario.",
+      "warnPerpetual": "Rilevato possibile linguaggio di durata perpetua."
+    },
+    "governingLaw": {
+      "placeholder": "Incolla il tuo contratto...",
+      "button": "Identifica legge applicabile",
+      "governingLaw": "Legge applicabile",
+      "venue": "Foro/Giurisdizione",
+      "arbitration": "Arbitrato",
+      "juryWaiver": "Rinuncia al processo con giuria",
+      "classWaiver": "Rinuncia alla Class Action",
+      "yes": "Sì ⚠",
+      "no": "No"
+    },
+    "dmca": {
+      "yourName": "Nome completo",
+      "contact": "Contatto (email/telefono)",
+      "original": "Opera originale",
+      "infringing": "URL in violazione",
+      "button": "Copia notifica"
+    },
+    "subscriptionCancel": {
+      "yourName": "Tuo nome",
+      "accountId": "ID account / email",
+      "serviceName": "Nome del servizio",
+      "date": "Data",
+      "button": "Copia lettera"
+    },
+    "dataBreach": {
+      "progress": "Avanzamento"
+    },
+    "discrimination": {
+      "complete": "completato"
+    },
+    "emergencyFund": {
+      "expenses": "Spese mensili ($)",
+      "months": "Mesi obiettivo",
+      "saved": "Già risparmiati ($)",
+      "contribution": "Contributo mensile ($)",
+      "button": "Calcola obiettivo",
+      "recommended": "Fondo di emergenza consigliato",
+      "stillNeed": "Ancora necessari",
+      "reachIn": "Con ${{contrib}}/mese, raggiungerai il tuo obiettivo in {{months}} mesi."
+    },
+    "finalPaycheck": {
+      "ifFired": "In caso di licenziamento:",
+      "ifQuit": "In caso di dimissioni:",
+      "footer": "L'ultima busta paga deve includere le ferie non godute nella maggior parte degli stati. Controlla il dipartimento del lavoro del tuo stato per i dettagli."
+    },
+    "unemployment": {
+      "wages": "Salario annuale (ultimi 12 mesi, $)",
+      "button": "Stima sussidi",
+      "perWeek": "/settimana",
+      "stateMax": "Massimo statale",
+      "maxPerWeek": "/settimana. Durata tipica: fino a {{weeks}} settimane.",
+      "footer": "Solo stima. Il sussidio effettivo è calcolato dall'ufficio per la disoccupazione del tuo stato utilizzando i salari del periodo di riferimento."
+    },
+    "overtime": {
+      "hourlyRate": "Tariffa oraria ($)",
+      "regularHours": "Ore ordinarie (settimanali)",
+      "overtimeHours": "Ore straordinarie",
+      "multiplier": "Moltiplicatore straordinari",
+      "mult15": "1.5x (Tempo e mezzo)",
+      "mult2": "2x (Doppio tempo)",
+      "mult25": "2.5x (Triplo tempo meno metà)",
+      "mult3": "3x (Triplo tempo)",
+      "breakdown": "Dettaglio paga",
+      "regularPay": "Paga ordinaria",
+      "overtimePay": "Paga straordinari",
+      "totalPay": "Paga totale",
+      "hrs": "ore",
+      "totalHours": "ore totali",
+      "otRate": "Tariffa straordinari:",
+      "otRateSuffix": "ordinaria",
+      "effectiveRate": "Tariffa oraria effettiva:",
+      "effectiveRateSuffix": "(mista)",
+      "otPremium": "Premio straordinari:",
+      "otPremiumSuffix": "extra"
+    },
+    "severance": {
+      "salary": "Salario annuale ($)",
+      "years": "Anni di servizio",
+      "level": "Livello di buonuscita",
+      "levelStandard": "Standard (1-2 settimane/anno)",
+      "levelGenerous": "Generoso (2-4 settimane/anno)",
+      "levelExecutive": "Executive (4-8 settimane/anno)",
+      "range": "Intervallo stima buonuscita",
+      "low": "Stima minima",
+      "high": "Stima massima",
+      "weeks": "settimane",
+      "weeklySalary": "Salario settimanale:",
+      "yearsService": "Anni di servizio:",
+      "levelLabel": "Livello:",
+      "footer": "La buonuscita non è obbligatoria per legge nella maggior parte degli stati USA. Queste stime riflettono le pratiche comuni del settore. Negozia sempre in base alla tua situazione specifica."
+    },
+    "refund": {
+      "q_type": "Cosa hai acquistato?",
+      "opt_physical": "Prodotto fisico",
+      "opt_digital": "Prodotto digitale",
+      "opt_service": "Servizio",
+      "opt_subscription": "Abbonamento",
+      "q_when": "Quando l'hai acquistato?",
+      "opt_lt14": "Meno di 14 giorni fa",
+      "opt_14_30": "14-30 giorni fa",
+      "opt_30_90": "30-90 giorni fa",
+      "opt_gt90": "Più di 90 giorni fa",
+      "q_issue": "Qual è il problema?",
+      "opt_defective": "Difettoso/rotto",
+      "opt_notdesc": "Non conforme alla descrizione",
+      "opt_changed": "Ho cambiato idea",
+      "opt_never": "Mai ricevuto",
+      "q_used": "È stato usato?",
+      "opt_unopened": "No, intatto",
+      "opt_slightly": "Poco usato",
+      "opt_heavily": "Molto usato",
+      "opt_na": "N/D (servizio/digitale)",
+      "button": "Verifica idoneità",
+      "likely": "Probabilmente idoneo",
+      "possibly": "Possibilmente idoneo",
+      "unlikely": "Improbabile",
+      "adviceLikely": "In base alle tue risposte, probabilmente hai diritto a un rimborso. Contatta il venditore e fai riferimento ai tuoi diritti come consumatore.",
+      "advicePossibly": "Potresti essere idoneo a seconda della politica di reso del venditore e delle leggi locali sulla tutela dei consumatori.",
+      "adviceUnlikely": "In base alle tue risposte, un rimborso potrebbe essere difficile. Controlla la politica del venditore o consulta i servizi di tutela dei consumatori."
+    },
+    "childSupport": {
+      "yourIncome": "Tuo reddito annuale ($)",
+      "otherIncome": "Reddito annuale altro genitore ($)",
+      "numChildren": "Numero di figli",
+      "yourRole": "Il tuo ruolo",
+      "roleObligor": "Pagherò il mantenimento (non affidatario)",
+      "roleRecipient": "Riceverò il mantenimento (affidatario)",
+      "estimated": "Stima mantenimento mensile figli",
+      "youPay": "Pagheresti",
+      "youReceive": "Riceveresti",
+      "perMonth": "al mese",
+      "model": "Modello:",
+      "guidelinePct": "% Linea guida:",
+      "guidelineText": "{{pct}}% del reddito combinato per {{n}} figli/o",
+      "statute": "Statuto:",
+      "footer": "Questa è una stima di base. Gli ordini finali dipendono dal tempo di custodia, costi sanitari, cura dei figli e discrezione giudiziaria. Non è una consulenza legale — consulta un avvocato divorzista."
+    },
+    "alimony": {
+      "higherIncome": "Reddito annuale coniuge più abbiente ($)",
+      "lowerIncome": "Reddito annuale coniuge meno abbiente ($)",
+      "marriageYears": "Durata del matrimonio (anni)",
+      "estimated": "Stima assegno di mantenimento",
+      "monthly": "Importo mensile",
+      "duration": "Durata probabile",
+      "longTerm": "Lungo termine",
+      "years": "anni",
+      "longMarriage": "(matrimonio oltre 20 anni)",
+      "stateGuideline": "Linea guida statale:",
+      "footer": "L'assegno di mantenimento è altamente discrezionale. I giudici valutano lo tenore di vita, l'età, la salute, i contributi al matrimonio e la capacità di reddito. Questa è solo una stima — non è una consulenza legale."
+    },
+    "smallClaims": {
+      "claimAmount": "Importo del tuo reclamo ($) (opzionale)",
+      "button": "Verifica limite",
+      "maxInState": "Importo massimo per 'small claims' in {{state}}",
+      "eligible": "✓ Il tuo reclamo di ${{amount}} rientra nel limite del tribunale per le controversie minori.",
+      "notEligible": "✗ Il tuo reclamo di ${{amount}} supera il limite previsto. Potrebbe essere necessario procedere in un tribunale superiore."
+    },
+    "sol": {
+      "claimType": "Tipo di reclamo",
+      "selectClaim": "Seleziona tipo di reclamo…",
+      "types.written": "Contratto scritto",
+      "types.oral": "Contratto verbale",
+      "types.pi": "Lesioni personali",
+      "types.property": "Danno alla proprietà",
+      "types.fraud": "Frode",
+      "yearsUnit": "Anno",
+      "yearsUnitPlural": "Anni",
+      "footer": "⚠️ Queste sono informazioni generali. Consulta un avvocato per la tua situazione specifica."
+    },
+    "nda": {
+      "label": "Incolla il testo del tuo NDA",
+      "placeholder": "Incolla il documento NDA completo…",
+      "button": "Valuta equità NDA",
+      "analyzing": "Analisi NDA in corso…",
+      "strengths": "✓ Punti di forza",
+      "concerns": "⚠ Criticità",
+      "recommendations": "Raccomandazioni"
+    },
+    "leaseAnalyzer": {
+      "label": "Incolla il tuo contratto di locazione",
+      "placeholder": "Incolla il testo completo del contratto di locazione…",
+      "button": "Analizza contratto",
+      "analyzing": "Analisi contratto in corso…",
+      "keyTerms": "Termini chiave",
+      "risks": "⚠ Rischi",
+      "recommendations": "Raccomandazioni"
+    }
   }
 }

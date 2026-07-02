@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const STEPS = [
   "Change passwords for the affected account and any account using the same password.",
@@ -18,12 +19,13 @@ const STEPS = [
 ];
 
 export default function DataBreachChecklist() {
+  const { t } = useTranslation(["tools", "common"]);
   const [done, setDone] = useState<Set<number>>(new Set());
   const toggle = (i: number) => { const s = new Set(done); s.has(i) ? s.delete(i) : s.add(i); setDone(s); };
 
   return (
     <Card><CardContent className="p-4 space-y-2">
-      <p className="text-sm text-muted-foreground mb-3">Progress: {done.size}/{STEPS.length}</p>
+      <p className="text-sm text-muted-foreground mb-3">{t("internals.dataBreach.progress")}: {done.size}/{STEPS.length}</p>
       {STEPS.map((s, i) => (
         <div key={i} className="flex items-start gap-2">
           <Checkbox checked={done.has(i)} onCheckedChange={() => toggle(i)} className="mt-1" />

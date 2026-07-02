@@ -2187,5 +2187,212 @@
       "label": "Familienrechtstools",
       "description": "Rechner für Kindesunterhalt, Alimente, Scheidungskosten und familienbezogene Rechtskosten."
     }
+  },
+  "internals": {
+    "wordCounter": {
+      "button": "Wörter zählen"
+    },
+    "readingTime": {
+      "button": "Lesezeit berechnen"
+    },
+    "autoRenewal": {
+      "placeholder": "Fügen Sie Ihren Vertrag oder Ihre Abonnementsbedingungen ein…",
+      "button": "Automatische Verlängerung erkennen",
+      "detected": "⚠ Klausel zur automatischen Verlängerung erkannt",
+      "clean": "✓ Keine automatische Verlängerungsklausel gefunden",
+      "matches": "Treffer",
+      "noticeWindow": "Kündigungsfrist",
+      "warnNoNotice": "Automatische Verlängerung erkannt, aber keine klare Kündigungsfrist — riskant.",
+      "warnLongNotice": "Lange Kündigungsfrist ({{window}}) — Kalendererinnerung einstellen.",
+      "warnPerpetual": "Mögliche Klausel für unbefristete Laufzeit erkannt."
+    },
+    "governingLaw": {
+      "placeholder": "Fügen Sie Ihren Vertrag ein…",
+      "button": "Anwendbares Recht identifizieren",
+      "governingLaw": "Anwendbares Recht",
+      "venue": "Gerichtsstand/Zuständigkeit",
+      "arbitration": "Schiedsgerichtsbarkeit",
+      "juryWaiver": "Verzicht auf Schwurgerichtsverfahren",
+      "classWaiver": "Verzicht auf Sammelklagen",
+      "yes": "Ja ⚠",
+      "no": "Nein"
+    },
+    "dmca": {
+      "yourName": "Ihr vollständiger Name",
+      "contact": "Kontakt (E-Mail/Telefon)",
+      "original": "Originalwerk",
+      "infringing": "Verletzende URLs",
+      "button": "Mitteilung kopieren"
+    },
+    "subscriptionCancel": {
+      "yourName": "Ihr Name",
+      "accountId": "Konto-ID / E-Mail",
+      "serviceName": "Name des Dienstes",
+      "date": "Datum",
+      "button": "Brief kopieren"
+    },
+    "dataBreach": {
+      "progress": "Fortschritt"
+    },
+    "discrimination": {
+      "complete": "abgeschlossen"
+    },
+    "emergencyFund": {
+      "expenses": "Monatliche Ausgaben ($)",
+      "months": "Zielmonate",
+      "saved": "Bereits gespart ($)",
+      "contribution": "Monatliche Einzahlung ($)",
+      "button": "Ziel berechnen",
+      "recommended": "Empfohlener Notgroschen",
+      "stillNeed": "Noch benötigt",
+      "reachIn": "Mit ${{contrib}}/Mon. erreichen Sie Ihr Ziel in {{months}} Monaten."
+    },
+    "finalPaycheck": {
+      "ifFired": "Bei Kündigung/Entlassung:",
+      "ifQuit": "Bei Eigenkündigung:",
+      "footer": "Die Abschlusszahlung muss in den meisten Bundesstaaten ungenutzten Urlaub enthalten. Informieren Sie sich beim zuständigen Arbeitsministerium über Einzelheiten."
+    },
+    "unemployment": {
+      "wages": "Jahresgehalt (letzte 12 Monate, $)",
+      "button": "Leistungen schätzen",
+      "perWeek": "/Woche",
+      "stateMax": "Staatlicher Höchstsatz",
+      "maxPerWeek": "/Woche. Typische Dauer: bis zu {{weeks}} Wochen.",
+      "footer": "Nur eine Schätzung. Die tatsächliche Leistung wird vom Arbeitsamt Ihres Bundesstaates auf Grundlage des Basiszeitraums berechnet."
+    },
+    "overtime": {
+      "hourlyRate": "Stundensatz ($)",
+      "regularHours": "Reguläre Stunden (pro Woche)",
+      "overtimeHours": "Überstunden",
+      "multiplier": "Überstunden-Multiplikator",
+      "mult15": "1,5x (Zeit anderthalb)",
+      "mult2": "2x (Doppelte Zeit)",
+      "mult25": "2,5x (Zweieinhalbfache Zeit)",
+      "mult3": "3x (Dreifache Zeit)",
+      "breakdown": "Lohnabrechnung",
+      "regularPay": "Regulärer Lohn",
+      "overtimePay": "Überstundenvergütung",
+      "totalPay": "Gesamtlohn",
+      "hrs": "Std.",
+      "totalHours": "Gesamtstunden",
+      "otRate": "Überstundensatz:",
+      "otRateSuffix": "regulär",
+      "effectiveRate": "Effektiver Stundensatz:",
+      "effectiveRateSuffix": "(gemischt)",
+      "otPremium": "OT-Prämie verdient:",
+      "otPremiumSuffix": "extra"
+    },
+    "severance": {
+      "salary": "Jahresgehalt ($)",
+      "years": "Dienstjahre",
+      "level": "Abfindungsniveau",
+      "levelStandard": "Standard (1-2 Wochen/Jahr)",
+      "levelGenerous": "Großzügig (2-4 Wochen/Jahr)",
+      "levelExecutive": "Executive (4-8 Wochen/Jahr)",
+      "range": "Geschätzte Abfindungsspanne",
+      "low": "Niedrige Schätzung",
+      "high": "Hohe Schätzung",
+      "weeks": "Wochen",
+      "weeklySalary": "Wochengehalt:",
+      "yearsService": "Dienstjahre:",
+      "levelLabel": "Niveau:",
+      "footer": "Abfindungen sind in den meisten US-Bundesstaaten gesetzlich nicht vorgeschrieben. Diese Schätzungen spiegeln gängige Branchenpraktiken wider. Verhandeln Sie immer basierend auf Ihrer spezifischen Situation."
+    },
+    "refund": {
+      "q_type": "Was haben Sie gekauft?",
+      "opt_physical": "Physisches Produkt",
+      "opt_digital": "Digitales Produkt",
+      "opt_service": "Dienstleistung",
+      "opt_subscription": "Abonnement",
+      "q_when": "Wann haben Sie es gekauft?",
+      "opt_lt14": "Vor weniger als 14 Tagen",
+      "opt_14_30": "Vor 14-30 Tagen",
+      "opt_30_90": "Vor 30-90 Tagen",
+      "opt_gt90": "Vor mehr als 90 Tagen",
+      "q_issue": "Was ist das Problem?",
+      "opt_defective": "Defekt/Beschädigt",
+      "opt_notdesc": "Nicht wie beschrieben",
+      "opt_changed": "Meinung geändert",
+      "opt_never": "Nie erhalten",
+      "q_used": "Wurde es benutzt?",
+      "opt_unopened": "Nein, ungeöffnet",
+      "opt_slightly": "Leicht benutzt",
+      "opt_heavily": "Stark benutzt",
+      "opt_na": "N/V (Dienstleistung/Digital)",
+      "button": "Anspruch prüfen",
+      "likely": "Wahrscheinlich berechtigt",
+      "possibly": "Möglicherweise berechtigt",
+      "unlikely": "Unwahrscheinlich",
+      "adviceLikely": "Basierend auf Ihren Antworten haben Sie wahrscheinlich Anspruch auf eine Rückerstattung. Kontaktieren Sie den Verkäufer und weisen Sie auf Ihre Verbraucherrechte hin.",
+      "advicePossibly": "Sie könnten je nach Rückgaberecht des Verkäufers und Ihren lokalen Verbraucherschutzgesetzen berechtigt sein.",
+      "adviceUnlikely": "Basierend auf Ihren Antworten könnte eine Rückerstattung schwierig sein. Prüfen Sie die Richtlinien des Verkäufers oder wenden Sie sich an den Verbraucherschutz."
+    },
+    "childSupport": {
+      "yourIncome": "Ihr Jahreseinkommen ($)",
+      "otherIncome": "Jahreseinkommen des anderen Elternteils ($)",
+      "numChildren": "Anzahl der Kinder",
+      "yourRole": "Ihre Rolle",
+      "roleObligor": "Ich zahle Unterhalt (nicht sorgeberechtigt)",
+      "roleRecipient": "Ich erhalte Unterhalt (sorgeberechtigt)",
+      "estimated": "Geschätzter monatlicher Kindesunterhalt",
+      "youPay": "Sie würden zahlen",
+      "youReceive": "Sie würden erhalten",
+      "perMonth": "pro Monat",
+      "model": "Modell:",
+      "guidelinePct": "Richtwert %:",
+      "guidelineText": "{{pct}}% des kombinierten Einkommens für {{n}} Kind(er)",
+      "statute": "Gesetz:",
+      "footer": "Dies ist eine Basisschätzung. Endgültige Anordnungen hängen von der Betreuungszeit, Gesundheitskosten, Kinderbetreuung und richterlichem Ermessen ab. Keine Rechtsberatung — konsultieren Sie einen Anwalt für Familienrecht für Ihre spezifische Situation."
+    },
+    "alimony": {
+      "higherIncome": "Jahreseinkommen Besserverdienende(r) ($)",
+      "lowerIncome": "Jahreseinkommen Geringverdienende(r) ($)",
+      "marriageYears": "Dauer der Ehe (Jahre)",
+      "estimated": "Geschätzter Unterhalt",
+      "monthly": "Monatlicher Betrag",
+      "duration": "Voraussichtliche Dauer",
+      "longTerm": "Langfristig",
+      "years": "Jahre",
+      "longMarriage": "(20+ Jahre Ehe)",
+      "stateGuideline": "Staatlicher Richtwert:",
+      "footer": "Unterhaltszahlungen liegen stark im Ermessen des Gerichts. Richter berücksichtigen Lebensstandard, Alter, Gesundheit, Beiträge zur Ehe und Erwerbsfähigkeit. Dies ist nur eine Schätzung — keine Rechtsberatung."
+    },
+    "smallClaims": {
+      "claimAmount": "Ihr Streitwert ($) (optional)",
+      "button": "Grenze prüfen",
+      "maxInState": "Höchstbetrag für Bagatellgerichte in {{state}}",
+      "eligible": "✓ Ihr Anspruch von ${{amount}} liegt innerhalb der Grenze für Bagatellklagen.",
+      "notEligible": "✗ Ihr Anspruch von ${{amount}} überschreitet die Grenze für Bagatellklagen. Sie müssen möglicherweise vor einem höheren Gericht klagen."
+    },
+    "sol": {
+      "claimType": "Art des Anspruchs",
+      "selectClaim": "Anspruchsart wählen…",
+      "types.written": "Schriftlicher Vertrag",
+      "types.oral": "Mündlicher Vertrag",
+      "types.pi": "Personenschaden",
+      "types.property": "Sachbeschädigung",
+      "types.fraud": "Betrug",
+      "yearsUnit": "Jahr",
+      "yearsUnitPlural": "Jahre",
+      "footer": "⚠️ Dies sind allgemeine Informationen. Konsultieren Sie einen Anwalt für Ihre spezifische Situation."
+    },
+    "nda": {
+      "label": "NDA-Text hier einfügen",
+      "placeholder": "Fügen Sie das vollständige NDA-Dokument ein…",
+      "button": "NDA-Fairness bewerten",
+      "analyzing": "NDA wird analysiert…",
+      "strengths": "✓ Stärken",
+      "concerns": "⚠ Bedenken",
+      "recommendations": "Empfehlungen"
+    },
+    "leaseAnalyzer": {
+      "label": "Mietvertrag hier einfügen",
+      "placeholder": "Fügen Sie den vollständigen Text des Mietvertrags ein…",
+      "button": "Mietvertrag analysieren",
+      "analyzing": "Mietvertrag wird analysiert…",
+      "keyTerms": "Kernbedingungen",
+      "risks": "⚠ Risiken",
+      "recommendations": "Empfehlungen"
+    }
   }
 }

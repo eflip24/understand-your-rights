@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const ITEMS = [
   "Identify the protected class involved (race, color, religion, sex, national origin, age 40+, disability, genetic info).",
@@ -16,11 +17,12 @@ const ITEMS = [
 ];
 
 export default function DiscriminationChecklist() {
+  const { t } = useTranslation(["tools", "common"]);
   const [done, setDone] = useState<Set<number>>(new Set());
   const toggle = (i: number) => { const s = new Set(done); s.has(i) ? s.delete(i) : s.add(i); setDone(s); };
   return (
     <Card><CardContent className="p-4 space-y-2">
-      <p className="text-sm text-muted-foreground mb-3">{done.size}/{ITEMS.length} complete</p>
+      <p className="text-sm text-muted-foreground mb-3">{done.size}/{ITEMS.length} {t("internals.discrimination.complete")}</p>
       {ITEMS.map((s, i) => (
         <div key={i} className="flex items-start gap-2">
           <Checkbox checked={done.has(i)} onCheckedChange={() => toggle(i)} className="mt-1" />

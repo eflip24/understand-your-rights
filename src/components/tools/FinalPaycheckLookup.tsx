@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const RULES: Record<string, { fired: string; quit: string }> = {
   "California": { fired: "Immediately", quit: "Within 72 hours (or immediately if 72hr+ notice given)" },
@@ -16,19 +17,20 @@ const RULES: Record<string, { fired: string; quit: string }> = {
 };
 
 export default function FinalPaycheckLookup() {
+  const { t } = useTranslation(["tools", "common"]);
   const [state, setState] = useState("");
   const r = RULES[state];
   return (
     <div className="space-y-4">
       <Select value={state} onValueChange={setState}>
-        <SelectTrigger><SelectValue placeholder="Select your state" /></SelectTrigger>
+        <SelectTrigger><SelectValue placeholder={t("common:fields.selectState")} /></SelectTrigger>
         <SelectContent>{Object.keys(RULES).map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
       </Select>
       {r && (
         <Card><CardContent className="p-4 space-y-3">
-          <div><p className="text-sm font-semibold">If terminated/fired:</p><p className="text-sm text-muted-foreground">{r.fired}</p></div>
-          <div><p className="text-sm font-semibold">If you quit:</p><p className="text-sm text-muted-foreground">{r.quit}</p></div>
-          <p className="text-xs text-muted-foreground italic">Final pay must include unused vacation in most states. Check your state labor department for specifics.</p>
+          <div><p className="text-sm font-semibold">{t("internals.finalPaycheck.ifFired")}</p><p className="text-sm text-muted-foreground">{r.fired}</p></div>
+          <div><p className="text-sm font-semibold">{t("internals.finalPaycheck.ifQuit")}</p><p className="text-sm text-muted-foreground">{r.quit}</p></div>
+          <p className="text-xs text-muted-foreground italic">{t("internals.finalPaycheck.footer")}</p>
         </CardContent></Card>
       )}
     </div>

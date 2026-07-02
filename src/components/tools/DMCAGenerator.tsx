@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function DMCAGenerator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [original, setOriginal] = useState("");
@@ -39,13 +41,13 @@ ${name || "[Your Name]"}`;
   return (
     <div className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-3">
-        <div><Label>Your full name</Label><Input value={name} onChange={e => setName(e.target.value)} /></div>
-        <div><Label>Contact (email/phone)</Label><Input value={contact} onChange={e => setContact(e.target.value)} /></div>
+        <div><Label>{t("internals.dmca.yourName")}</Label><Input value={name} onChange={e => setName(e.target.value)} /></div>
+        <div><Label>{t("internals.dmca.contact")}</Label><Input value={contact} onChange={e => setContact(e.target.value)} /></div>
       </div>
-      <div><Label>Original work</Label><Textarea value={original} onChange={e => setOriginal(e.target.value)} rows={3} /></div>
-      <div><Label>Infringing URLs</Label><Textarea value={infringing} onChange={e => setInfringing(e.target.value)} rows={3} /></div>
+      <div><Label>{t("internals.dmca.original")}</Label><Textarea value={original} onChange={e => setOriginal(e.target.value)} rows={3} /></div>
+      <div><Label>{t("internals.dmca.infringing")}</Label><Textarea value={infringing} onChange={e => setInfringing(e.target.value)} rows={3} /></div>
       <Textarea value={doc} readOnly rows={18} className="font-mono text-xs" />
-      <Button onClick={() => navigator.clipboard.writeText(doc)}>Copy Notice</Button>
+      <Button onClick={() => navigator.clipboard.writeText(doc)}>{t("internals.dmca.button")}</Button>
     </div>
   );
 }

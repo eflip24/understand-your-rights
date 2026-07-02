@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const limits: Record<string, { limit: number; notes: string }> = {
   "Alabama": { limit: 6000, notes: "District Court" },
@@ -59,6 +60,7 @@ const limits: Record<string, { limit: number; notes: string }> = {
 const stateNames = Object.keys(limits).sort();
 
 export default function SmallClaimsLimitChecker() {
+  const { t } = useTranslation(["tools", "common"]);
   const [state, setState] = useState("");
   const [claimAmount, setClaimAmount] = useState("");
   const [result, setResult] = useState<{ limit: number; notes: string; eligible: boolean } | null>(null);
@@ -74,35 +76,35 @@ export default function SmallClaimsLimitChecker() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>State</Label>
+          <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
-            <SelectTrigger><SelectValue placeholder="Select state..." /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("common:fields.selectState")} /></SelectTrigger>
             <SelectContent>
               {stateNames.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
             </SelectContent>
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Your Claim Amount ($) (optional)</Label>
+          <Label>{t("internals.smallClaims.claimAmount")}</Label>
           <input type="number" placeholder="5000" value={claimAmount} onChange={(e) => setClaimAmount(e.target.value)} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
         </div>
       </div>
       <Button onClick={check} disabled={!state} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Check Limit
+        {t("internals.smallClaims.button")}
       </Button>
       {result && (
         <div className="space-y-3 pt-2">
           <div className="p-6 rounded-lg bg-secondary text-center space-y-1">
             <p className="text-3xl font-bold font-serif">${result.limit.toLocaleString()}</p>
-            <p className="text-sm text-muted-foreground">Maximum small claims amount in {state}</p>
+            <p className="text-sm text-muted-foreground">{t("internals.smallClaims.maxInState", { state })}</p>
             <p className="text-xs text-muted-foreground">{result.notes}</p>
           </div>
           {claimAmount && (
             <div className={`p-4 rounded-lg text-center ${result.eligible ? "bg-green-50 border border-green-200 dark:bg-green-950/20 dark:border-green-800" : "bg-red-50 border border-red-200 dark:bg-red-950/20 dark:border-red-800"}`}>
               <p className={`text-sm font-medium ${result.eligible ? "text-green-800 dark:text-green-200" : "text-red-800 dark:text-red-200"}`}>
                 {result.eligible
-                  ? `✓ Your claim of $${parseFloat(claimAmount).toLocaleString()} is within the small claims limit.`
-                  : `✗ Your claim of $${parseFloat(claimAmount).toLocaleString()} exceeds the small claims limit. You may need to file in a higher court.`}
+                  ? t("internals.smallClaims.eligible", { amount: parseFloat(claimAmount).toLocaleString() })
+                  : t("internals.smallClaims.notEligible", { amount: parseFloat(claimAmount).toLocaleString() })}
               </p>
             </div>
           )}

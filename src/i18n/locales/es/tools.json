@@ -2187,5 +2187,212 @@
       "label": "Herramientas de Derecho Familiar",
       "description": "Calculadoras de manutención infantil, pensión alimenticia, costes de divorcio y estimaciones legales relacionadas con la familia."
     }
+  },
+  "internals": {
+    "wordCounter": {
+      "button": "Contar palabras"
+    },
+    "readingTime": {
+      "button": "Calcular tiempo de lectura"
+    },
+    "autoRenewal": {
+      "placeholder": "Pegue su contrato o los términos de suscripción…",
+      "button": "Detectar renovación automática",
+      "detected": "⚠ Se detectó lenguaje de renovación automática",
+      "clean": "✓ No se encontró lenguaje de renovación automática",
+      "matches": "Coincidencias",
+      "noticeWindow": "Plazo de notificación",
+      "warnNoNotice": "Renovación automática detectada pero sin un plazo de notificación claro: riesgoso.",
+      "warnLongNotice": "Plazo de notificación largo ({{window}}): establezca un recordatorio en su calendario.",
+      "warnPerpetual": "Se detectó posible lenguaje de vigencia perpetua."
+    },
+    "governingLaw": {
+      "placeholder": "Pegue su contrato…",
+      "button": "Identificar ley aplicable",
+      "governingLaw": "Ley aplicable",
+      "venue": "Lugar/Jurisdicción",
+      "arbitration": "Arbitraje",
+      "juryWaiver": "Renuncia a juicio por jurado",
+      "classWaiver": "Renuncia a demanda colectiva",
+      "yes": "Sí ⚠",
+      "no": "No"
+    },
+    "dmca": {
+      "yourName": "Nombre completo",
+      "contact": "Contacto (email/teléfono)",
+      "original": "Obra original",
+      "infringing": "URLs infractoras",
+      "button": "Copiar notificación"
+    },
+    "subscriptionCancel": {
+      "yourName": "Su nombre",
+      "accountId": "ID de cuenta / email",
+      "serviceName": "Nombre del servicio",
+      "date": "Fecha",
+      "button": "Copiar carta"
+    },
+    "dataBreach": {
+      "progress": "Progreso"
+    },
+    "discrimination": {
+      "complete": "completo"
+    },
+    "emergencyFund": {
+      "expenses": "Gastos mensuales ($)",
+      "months": "Meses objetivo",
+      "saved": "Ya ahorrado ($)",
+      "contribution": "Contribución mensual ($)",
+      "button": "Calcular meta",
+      "recommended": "Fondo de emergencia recomendado",
+      "stillNeed": "Falta por ahorrar",
+      "reachIn": "Con ${{contrib}}/mes, alcanzará su meta en {{months}} meses."
+    },
+    "finalPaycheck": {
+      "ifFired": "Si es despedido/cesado:",
+      "ifQuit": "Si usted renuncia:",
+      "footer": "El último pago debe incluir las vacaciones no utilizadas en la mayoría de los estados. Consulte con el departamento de trabajo de su estado para más detalles."
+    },
+    "unemployment": {
+      "wages": "Salario anual (últimos 12 meses, $)",
+      "button": "Estimar beneficios",
+      "perWeek": "/semana",
+      "stateMax": "Máximo estatal",
+      "maxPerWeek": "/semana. Duración típica: hasta {{weeks}} semanas.",
+      "footer": "Solo una estimación. El beneficio real es calculado por la oficina de desempleo de su estado utilizando los salarios del período base."
+    },
+    "overtime": {
+      "hourlyRate": "Tarifa por hora ($)",
+      "regularHours": "Horas regulares (por semana)",
+      "overtimeHours": "Horas extras",
+      "multiplier": "Multiplicador de horas extras",
+      "mult15": "1.5x (Tiempo y medio)",
+      "mult2": "2x (Tiempo doble)",
+      "mult25": "2.5x (Tiempo triple menos la mitad)",
+      "mult3": "3x (Tiempo triple)",
+      "breakdown": "Desglose de pago",
+      "regularPay": "Pago regular",
+      "overtimePay": "Pago de horas extras",
+      "totalPay": "Pago total",
+      "hrs": "hrs",
+      "totalHours": "total de horas",
+      "otRate": "Tarifa de horas extras:",
+      "otRateSuffix": "regular",
+      "effectiveRate": "Tarifa por hora efectiva:",
+      "effectiveRateSuffix": "(combinada)",
+      "otPremium": "Prima de horas extras ganada:",
+      "otPremiumSuffix": "adicional"
+    },
+    "severance": {
+      "salary": "Salario anual ($)",
+      "years": "Años de servicio",
+      "level": "Nivel de indemnización",
+      "levelStandard": "Estándar (1-2 semanas/año)",
+      "levelGenerous": "Generosa (2-4 semanas/año)",
+      "levelExecutive": "Ejecutiva (4-8 semanas/año)",
+      "range": "Rango de indemnización estimado",
+      "low": "Estimación baja",
+      "high": "Estimación alta",
+      "weeks": "semanas",
+      "weeklySalary": "Salario semanal:",
+      "yearsService": "Años de servicio:",
+      "levelLabel": "Nivel:",
+      "footer": "La indemnización por despido no es obligatoria legalmente en la mayoría de los estados de EE. UU. Estas estimaciones reflejan prácticas comunes de la industria. Siempre negocie en función de su situación específica."
+    },
+    "refund": {
+      "q_type": "¿Qué compró?",
+      "opt_physical": "Producto físico",
+      "opt_digital": "Producto digital",
+      "opt_service": "Servicio",
+      "opt_subscription": "Suscripción",
+      "q_when": "¿Cuándo lo compró?",
+      "opt_lt14": "Hace menos de 14 días",
+      "opt_14_30": "Hace 14-30 días",
+      "opt_30_90": "Hace 30-90 días",
+      "opt_gt90": "Hace más de 90 días",
+      "q_issue": "¿Cuál es el problema?",
+      "opt_defective": "Defectuoso/roto",
+      "opt_notdesc": "No es como se describió",
+      "opt_changed": "Cambié de opinión",
+      "opt_never": "Nunca lo recibí",
+      "q_used": "¿Ha sido utilizado?",
+      "opt_unopened": "No, sin abrir",
+      "opt_slightly": "Poco uso",
+      "opt_heavily": "Mucho uso",
+      "opt_na": "N/A (servicio/digital)",
+      "button": "Verificar elegibilidad",
+      "likely": "Probablemente elegible",
+      "possibly": "Posiblemente elegible",
+      "unlikely": "Poco probable",
+      "adviceLikely": "Según sus respuestas, es probable que califique para un reembolso. Contacte al vendedor y mencione sus derechos como consumidor.",
+      "advicePossibly": "Podría ser elegible dependiendo de la política de devoluciones del vendedor y las leyes locales de protección al consumidor.",
+      "adviceUnlikely": "Según sus respuestas, un reembolso podría ser difícil. Revise la política del vendedor o consulte a los servicios de protección al consumidor."
+    },
+    "childSupport": {
+      "yourIncome": "Su ingreso anual ($)",
+      "otherIncome": "Ingreso anual del otro progenitor ($)",
+      "numChildren": "Número de hijos",
+      "yourRole": "Su rol",
+      "roleObligor": "Yo pagaré la manutención (sin custodia)",
+      "roleRecipient": "Yo recibiré la manutención (con custodia)",
+      "estimated": "Manutención infantil mensual estimada",
+      "youPay": "Usted pagaría",
+      "youReceive": "Usted recibiría",
+      "perMonth": "por mes",
+      "model": "Modelo:",
+      "guidelinePct": "% de referencia:",
+      "guidelineText": "{{pct}}% de los ingresos combinados para {{n}} hijo(s)",
+      "statute": "Estatuto:",
+      "footer": "Esta es una estimación base. Las órdenes finales dependen del tiempo de custodia, costos de salud, cuidado infantil y discreción judicial. No es asesoramiento legal; consulte a un abogado de derecho familiar para su situación específica."
+    },
+    "alimony": {
+      "higherIncome": "Ingreso anual del que gana más ($)",
+      "lowerIncome": "Ingreso anual del que gana menos ($)",
+      "marriageYears": "Duración del matrimonio (años)",
+      "estimated": "Pensión alimenticia estimada",
+      "monthly": "Monto mensual",
+      "duration": "Duración probable",
+      "longTerm": "Largo plazo",
+      "years": "años",
+      "longMarriage": "(matrimonio de más de 20 años)",
+      "stateGuideline": "Referencia estatal:",
+      "footer": "La pensión alimenticia es altamente discrecional. Los jueces evalúan el nivel de vida, edad, salud, contribuciones al matrimonio y capacidad de ganancia. Esto es solo una estimación, no asesoramiento legal."
+    },
+    "smallClaims": {
+      "claimAmount": "Monto de su reclamo ($) (opcional)",
+      "button": "Verificar límite",
+      "maxInState": "Monto máximo para reclamos menores en {{state}}",
+      "eligible": "✓ Su reclamo de ${{amount}} está dentro del límite de reclamos menores.",
+      "notEligible": "✗ Su reclamo de ${{amount}} excede el límite de reclamos menores. Es posible que deba presentarlo en un tribunal superior."
+    },
+    "sol": {
+      "claimType": "Tipo de reclamo",
+      "selectClaim": "Seleccione tipo de reclamo…",
+      "types.written": "Contrato escrito",
+      "types.oral": "Contrato oral",
+      "types.pi": "Lesiones personales",
+      "types.property": "Daños a la propiedad",
+      "types.fraud": "Fraude",
+      "yearsUnit": "Año",
+      "yearsUnitPlural": "Años",
+      "footer": "⚠️ Esta es información general. Consulte a un abogado para su situación específica."
+    },
+    "nda": {
+      "label": "Pegue el texto de su NDA",
+      "placeholder": "Pegue el documento NDA completo…",
+      "button": "Calificar imparcialidad del NDA",
+      "analyzing": "Analizando NDA…",
+      "strengths": "✓ Fortalezas",
+      "concerns": "⚠ Preocupaciones",
+      "recommendations": "Recomendaciones"
+    },
+    "leaseAnalyzer": {
+      "label": "Pegue su contrato de arrendamiento",
+      "placeholder": "Pegue el texto completo del contrato de arrendamiento…",
+      "button": "Analizar contrato",
+      "analyzing": "Analizando contrato…",
+      "keyTerms": "Términos clave",
+      "risks": "⚠ Riesgos",
+      "recommendations": "Recomendaciones"
+    }
   }
 }
