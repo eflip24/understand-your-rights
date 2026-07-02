@@ -2187,5 +2187,212 @@
       "label": "Strumenti di Diritto di Famiglia",
       "description": "Calcolatori per il mantenimento dei figli, gli alimenti, i costi di divorzio e le stime legali relative alla famiglia."
     }
+  },
+  "internals": {
+    "wordCounter": {
+      "button": "Count Words"
+    },
+    "readingTime": {
+      "button": "Calculate Reading Time"
+    },
+    "autoRenewal": {
+      "placeholder": "Paste your contract or subscription terms…",
+      "button": "Detect Auto-Renewal",
+      "detected": "⚠ Auto-renewal language detected",
+      "clean": "✓ No auto-renewal language found",
+      "matches": "Matches",
+      "noticeWindow": "Notice window",
+      "warnNoNotice": "Auto-renewal detected but no clear notice window — risky.",
+      "warnLongNotice": "Long notice window ({{window}}) — set a calendar reminder.",
+      "warnPerpetual": "Possible perpetual term language detected."
+    },
+    "governingLaw": {
+      "placeholder": "Paste your contract…",
+      "button": "Identify Governing Law",
+      "governingLaw": "Governing Law",
+      "venue": "Venue/Jurisdiction",
+      "arbitration": "Arbitration",
+      "juryWaiver": "Jury Trial Waiver",
+      "classWaiver": "Class Action Waiver",
+      "yes": "Yes ⚠",
+      "no": "No"
+    },
+    "dmca": {
+      "yourName": "Your full name",
+      "contact": "Contact (email/phone)",
+      "original": "Original work",
+      "infringing": "Infringing URLs",
+      "button": "Copy Notice"
+    },
+    "subscriptionCancel": {
+      "yourName": "Your name",
+      "accountId": "Account ID / email",
+      "serviceName": "Service name",
+      "date": "Date",
+      "button": "Copy Letter"
+    },
+    "dataBreach": {
+      "progress": "Progress"
+    },
+    "discrimination": {
+      "complete": "complete"
+    },
+    "emergencyFund": {
+      "expenses": "Monthly expenses ($)",
+      "months": "Target months",
+      "saved": "Already saved ($)",
+      "contribution": "Monthly contribution ($)",
+      "button": "Calculate Goal",
+      "recommended": "Recommended emergency fund",
+      "stillNeed": "Still need",
+      "reachIn": "At ${{contrib}}/mo, you'll reach your goal in {{months}} months."
+    },
+    "finalPaycheck": {
+      "ifFired": "If terminated/fired:",
+      "ifQuit": "If you quit:",
+      "footer": "Final pay must include unused vacation in most states. Check your state labor department for specifics."
+    },
+    "unemployment": {
+      "wages": "Annual wages (last 12 months, $)",
+      "button": "Estimate Benefits",
+      "perWeek": "/week",
+      "stateMax": "State maximum",
+      "maxPerWeek": "/week. Typical duration: up to {{weeks}} weeks.",
+      "footer": "Estimate only. Actual benefit calculated by your state's unemployment office using base-period wages."
+    },
+    "overtime": {
+      "hourlyRate": "Hourly Rate ($)",
+      "regularHours": "Regular Hours (per week)",
+      "overtimeHours": "Overtime Hours",
+      "multiplier": "Overtime Multiplier",
+      "mult15": "1.5x (Time and a half)",
+      "mult2": "2x (Double time)",
+      "mult25": "2.5x (Triple time minus half)",
+      "mult3": "3x (Triple time)",
+      "breakdown": "Pay Breakdown",
+      "regularPay": "Regular Pay",
+      "overtimePay": "Overtime Pay",
+      "totalPay": "Total Pay",
+      "hrs": "hrs",
+      "totalHours": "total hours",
+      "otRate": "Overtime rate:",
+      "otRateSuffix": "regular",
+      "effectiveRate": "Effective hourly rate:",
+      "effectiveRateSuffix": "(blended)",
+      "otPremium": "OT premium earned:",
+      "otPremiumSuffix": "extra"
+    },
+    "severance": {
+      "salary": "Annual Salary ($)",
+      "years": "Years of Service",
+      "level": "Severance Level",
+      "levelStandard": "Standard (1-2 weeks/year)",
+      "levelGenerous": "Generous (2-4 weeks/year)",
+      "levelExecutive": "Executive (4-8 weeks/year)",
+      "range": "Estimated Severance Range",
+      "low": "Low Estimate",
+      "high": "High Estimate",
+      "weeks": "weeks",
+      "weeklySalary": "Weekly salary:",
+      "yearsService": "Years of service:",
+      "levelLabel": "Level:",
+      "footer": "Severance is not legally required in most US states. These estimates reflect common industry practices. Always negotiate based on your specific situation."
+    },
+    "refund": {
+      "q_type": "What did you purchase?",
+      "opt_physical": "Physical product",
+      "opt_digital": "Digital product",
+      "opt_service": "Service",
+      "opt_subscription": "Subscription",
+      "q_when": "When did you buy it?",
+      "opt_lt14": "Less than 14 days ago",
+      "opt_14_30": "14-30 days ago",
+      "opt_30_90": "30-90 days ago",
+      "opt_gt90": "More than 90 days ago",
+      "q_issue": "What's the issue?",
+      "opt_defective": "Defective/broken",
+      "opt_notdesc": "Not as described",
+      "opt_changed": "Changed my mind",
+      "opt_never": "Never received",
+      "q_used": "Has it been used?",
+      "opt_unopened": "No, unopened",
+      "opt_slightly": "Slightly used",
+      "opt_heavily": "Heavily used",
+      "opt_na": "N/A (service/digital)",
+      "button": "Check Eligibility",
+      "likely": "Likely Eligible",
+      "possibly": "Possibly Eligible",
+      "unlikely": "Unlikely",
+      "adviceLikely": "Based on your answers, you likely qualify for a refund. Contact the seller and reference your consumer rights.",
+      "advicePossibly": "You may be eligible depending on the seller's return policy and your local consumer protection laws.",
+      "adviceUnlikely": "Based on your answers, a refund may be difficult. Check the seller's policy or consult consumer protection services."
+    },
+    "childSupport": {
+      "yourIncome": "Your Annual Income ($)",
+      "otherIncome": "Other Parent's Annual Income ($)",
+      "numChildren": "Number of Children",
+      "yourRole": "Your Role",
+      "roleObligor": "I will pay support (non-custodial)",
+      "roleRecipient": "I will receive support (custodial)",
+      "estimated": "Estimated Monthly Child Support",
+      "youPay": "You would pay",
+      "youReceive": "You would receive",
+      "perMonth": "per month",
+      "model": "Model:",
+      "guidelinePct": "Guideline %:",
+      "guidelineText": "{{pct}}% of combined income for {{n}} child(ren)",
+      "statute": "Statute:",
+      "footer": "This is a baseline estimate. Final orders depend on custody time, healthcare costs, childcare, and judicial discretion. Not legal advice — consult a family law attorney for your specific situation."
+    },
+    "alimony": {
+      "higherIncome": "Higher Earner Annual Income ($)",
+      "lowerIncome": "Lower Earner Annual Income ($)",
+      "marriageYears": "Length of Marriage (years)",
+      "estimated": "Estimated Alimony",
+      "monthly": "Monthly Amount",
+      "duration": "Likely Duration",
+      "longTerm": "Long-term",
+      "years": "yrs",
+      "longMarriage": "(20+ year marriage)",
+      "stateGuideline": "State guideline:",
+      "footer": "Alimony is highly discretionary. Judges weigh standard of living, age, health, contributions to the marriage, and earning capacity. This is an estimate only — not legal advice."
+    },
+    "smallClaims": {
+      "claimAmount": "Your Claim Amount ($) (optional)",
+      "button": "Check Limit",
+      "maxInState": "Maximum small claims amount in {{state}}",
+      "eligible": "✓ Your claim of ${{amount}} is within the small claims limit.",
+      "notEligible": "✗ Your claim of ${{amount}} exceeds the small claims limit. You may need to file in a higher court."
+    },
+    "sol": {
+      "claimType": "Claim Type",
+      "selectClaim": "Select claim type…",
+      "types.written": "Written Contract",
+      "types.oral": "Oral Contract",
+      "types.pi": "Personal Injury",
+      "types.property": "Property Damage",
+      "types.fraud": "Fraud",
+      "yearsUnit": "Year",
+      "yearsUnitPlural": "Years",
+      "footer": "⚠️ This is general information. Consult a lawyer for your specific situation."
+    },
+    "nda": {
+      "label": "Paste your NDA text",
+      "placeholder": "Paste the full NDA document…",
+      "button": "Score NDA Fairness",
+      "analyzing": "Analyzing NDA…",
+      "strengths": "✓ Strengths",
+      "concerns": "⚠ Concerns",
+      "recommendations": "Recommendations"
+    },
+    "leaseAnalyzer": {
+      "label": "Paste your lease agreement",
+      "placeholder": "Paste the full lease agreement text…",
+      "button": "Analyze Lease",
+      "analyzing": "Analyzing Lease…",
+      "keyTerms": "Key Terms",
+      "risks": "⚠ Risks",
+      "recommendations": "Recommendations"
+    }
   }
 }
