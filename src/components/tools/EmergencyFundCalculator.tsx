@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function EmergencyFundCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [expenses, setExpenses] = useState("");
   const [months, setMonths] = useState("6");
   const [saving, setSaving] = useState("");
@@ -21,18 +23,18 @@ export default function EmergencyFundCalculator() {
   return (
     <div className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-3">
-        <div><Label>Monthly expenses ($)</Label><Input type="number" value={expenses} onChange={e => setExpenses(e.target.value)} /></div>
-        <div><Label>Target months</Label><Input type="number" value={months} onChange={e => setMonths(e.target.value)} /></div>
-        <div><Label>Already saved ($)</Label><Input type="number" value={current} onChange={e => setCurrent(e.target.value)} /></div>
-        <div><Label>Monthly contribution ($)</Label><Input type="number" value={saving} onChange={e => setSaving(e.target.value)} /></div>
+        <div><Label>{t("internals.emergencyFund.expenses")}</Label><Input type="number" value={expenses} onChange={e => setExpenses(e.target.value)} /></div>
+        <div><Label>{t("internals.emergencyFund.months")}</Label><Input type="number" value={months} onChange={e => setMonths(e.target.value)} /></div>
+        <div><Label>{t("internals.emergencyFund.saved")}</Label><Input type="number" value={current} onChange={e => setCurrent(e.target.value)} /></div>
+        <div><Label>{t("internals.emergencyFund.contribution")}</Label><Input type="number" value={saving} onChange={e => setSaving(e.target.value)} /></div>
       </div>
-      <Button onClick={calc} disabled={!expenses}>Calculate Goal</Button>
+      <Button onClick={calc} disabled={!expenses}>{t("internals.emergencyFund.button")}</Button>
       {result && (
         <Card><CardContent className="p-4 space-y-2">
           <p className="text-3xl font-bold">${result.goal.toLocaleString()}</p>
-          <p className="text-sm text-muted-foreground">Recommended emergency fund</p>
-          <p className="text-sm">Still need: <strong>${result.needed.toLocaleString()}</strong></p>
-          {result.monthsTo > 0 && <p className="text-sm">At ${saving}/mo, you'll reach your goal in <strong>{result.monthsTo} months</strong>.</p>}
+          <p className="text-sm text-muted-foreground">{t("internals.emergencyFund.recommended")}</p>
+          <p className="text-sm">{t("internals.emergencyFund.stillNeed")}: <strong>${result.needed.toLocaleString()}</strong></p>
+          {result.monthsTo > 0 && <p className="text-sm">{t("internals.emergencyFund.reachIn", { contrib: saving, months: result.monthsTo })}</p>}
         </CardContent></Card>
       )}
     </div>

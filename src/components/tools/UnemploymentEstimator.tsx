@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const MAX_BY_STATE: Record<string, number> = {
   "California": 450, "New York": 504, "Texas": 577, "Florida": 275, "Illinois": 542,
@@ -11,6 +12,7 @@ const MAX_BY_STATE: Record<string, number> = {
 };
 
 export default function UnemploymentEstimator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [wages, setWages] = useState("");
   const [state, setState] = useState("Other / National avg");
   const [result, setResult] = useState<{ weekly: number; max: number; weeks: number } | null>(null);
@@ -18,26 +20,25 @@ export default function UnemploymentEstimator() {
   const calc = () => {
     const w = parseFloat(wages);
     const max = MAX_BY_STATE[state];
-    // Most states: ~50% of weekly wage = quarterly highest / 26 ish. Approximation: annual / 52 * 0.5
     const weekly = Math.min(Math.round((w / 52) * 0.5), max);
     setResult({ weekly, max, weeks: 26 });
   };
 
   return (
     <div className="space-y-4">
-      <div><Label>State</Label>
+      <div><Label>{t("common:fields.state")}</Label>
         <Select value={state} onValueChange={setState}>
           <SelectTrigger><SelectValue /></SelectTrigger>
           <SelectContent>{Object.keys(MAX_BY_STATE).map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
         </Select>
       </div>
-      <div><Label>Annual wages (last 12 months, $)</Label><Input type="number" value={wages} onChange={e => setWages(e.target.value)} /></div>
-      <Button onClick={calc} disabled={!wages}>Estimate Benefits</Button>
+      <div><Label>{t("internals.unemployment.wages")}</Label><Input type="number" value={wages} onChange={e => setWages(e.target.value)} /></div>
+      <Button onClick={calc} disabled={!wages}>{t("internals.unemployment.button")}</Button>
       {result && (
         <Card><CardContent className="p-4 space-y-2">
-          <p className="text-3xl font-bold">${result.weekly}/week</p>
-          <p className="text-sm text-muted-foreground">State maximum: ${result.max}/week. Typical duration: up to {result.weeks} weeks.</p>
-          <p className="text-xs italic text-muted-foreground">Estimate only. Actual benefit calculated by your state's unemployment office using base-period wages.</p>
+          <p className="text-3xl font-bold">${result.weekly}{t("internals.unemployment.perWeek")}</p>
+          <p className="text-sm text-muted-foreground">{t("internals.unemployment.stateMax")}: ${result.max}{t("internals.unemployment.maxPerWeek", { weeks: result.weeks })}</p>
+          <p className="text-xs italic text-muted-foreground">{t("internals.unemployment.footer")}</p>
         </CardContent></Card>
       )}
     </div>

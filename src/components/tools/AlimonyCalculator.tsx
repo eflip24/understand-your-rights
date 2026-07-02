@@ -3,9 +3,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
-// Simplified state alimony formulas. Many states give judges full discretion;
-// where formulas exist (or commonly used by judges), we apply them.
 const STATE_FORMULAS: Record<string, { factor: number; durationPct: number; note: string }> = {
   "California": { factor: 0.40, durationPct: 0.50, note: "CA Fam. Code § 4320 — temporary support often = 40% of higher earner minus 50% of lower earner. Long-term is judicial discretion." },
   "New York": { factor: 0.30, durationPct: 0.40, note: "N.Y. Dom. Rel. Law § 236(B)(6) — formula based on income up to $228,000 income cap." },
@@ -16,6 +15,7 @@ const STATE_FORMULAS: Record<string, { factor: number; durationPct: number; note
 };
 
 export default function AlimonyCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [higherIncome, setHigherIncome] = useState("");
   const [lowerIncome, setLowerIncome] = useState("");
   const [years, setYears] = useState("");
@@ -36,11 +36,11 @@ export default function AlimonyCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
-        <div><Label>Higher Earner Annual Income ($)</Label><Input type="number" value={higherIncome} onChange={e => setHigherIncome(e.target.value)} placeholder="120000" /></div>
-        <div><Label>Lower Earner Annual Income ($)</Label><Input type="number" value={lowerIncome} onChange={e => setLowerIncome(e.target.value)} placeholder="40000" /></div>
-        <div><Label>Length of Marriage (years)</Label><Input type="number" value={years} onChange={e => setYears(e.target.value)} placeholder="10" step="0.5" /></div>
+        <div><Label>{t("internals.alimony.higherIncome")}</Label><Input type="number" value={higherIncome} onChange={e => setHigherIncome(e.target.value)} placeholder="120000" /></div>
+        <div><Label>{t("internals.alimony.lowerIncome")}</Label><Input type="number" value={lowerIncome} onChange={e => setLowerIncome(e.target.value)} placeholder="40000" /></div>
+        <div><Label>{t("internals.alimony.marriageYears")}</Label><Input type="number" value={years} onChange={e => setYears(e.target.value)} placeholder="10" step="0.5" /></div>
         <div>
-          <Label>State</Label>
+          <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>{Object.keys(STATE_FORMULAS).map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
@@ -51,23 +51,23 @@ export default function AlimonyCalculator() {
       {calculated && (
         <Card>
           <CardContent className="pt-6 space-y-4">
-            <h3 className="font-serif font-bold text-lg">Estimated Alimony</h3>
+            <h3 className="font-serif font-bold text-lg">{t("internals.alimony.estimated")}</h3>
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="p-4 bg-muted rounded-lg text-center">
-                <p className="text-sm text-muted-foreground">Monthly Amount</p>
+                <p className="text-sm text-muted-foreground">{t("internals.alimony.monthly")}</p>
                 <p className="text-3xl font-bold text-accent">${monthlyAlimony.toLocaleString("en-US", { maximumFractionDigits: 0 })}</p>
               </div>
               <div className="p-4 bg-muted rounded-lg text-center">
-                <p className="text-sm text-muted-foreground">Likely Duration</p>
-                <p className="text-3xl font-bold text-accent">{indefinite ? "Long-term" : `${durationYears.toFixed(1)} yrs`}</p>
-                {indefinite && <p className="text-xs text-muted-foreground">(20+ year marriage)</p>}
+                <p className="text-sm text-muted-foreground">{t("internals.alimony.duration")}</p>
+                <p className="text-3xl font-bold text-accent">{indefinite ? t("internals.alimony.longTerm") : `${durationYears.toFixed(1)} ${t("internals.alimony.years")}`}</p>
+                {indefinite && <p className="text-xs text-muted-foreground">{t("internals.alimony.longMarriage")}</p>}
               </div>
             </div>
             <div className="p-3 bg-muted rounded-lg text-sm">
-              <p className="font-medium mb-1">State guideline:</p>
+              <p className="font-medium mb-1">{t("internals.alimony.stateGuideline")}</p>
               <p className="text-muted-foreground">{data.note}</p>
             </div>
-            <p className="text-xs text-muted-foreground">Alimony is highly discretionary. Judges weigh standard of living, age, health, contributions to the marriage, and earning capacity. This is an estimate only — not legal advice.</p>
+            <p className="text-xs text-muted-foreground">{t("internals.alimony.footer")}</p>
           </CardContent>
         </Card>
       )}
