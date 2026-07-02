@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, Home } from "lucide-react";
 import { useContractAnalysis } from "@/hooks/useContractAnalysis";
+import { useTranslation } from "react-i18next";
 
 interface LeaseResult {
   summary: string;
@@ -14,6 +15,7 @@ interface LeaseResult {
 }
 
 export default function LeaseAnalyzer() {
+  const { t } = useTranslation(["tools", "common"]);
   const [text, setText] = useState("");
   const { result, isLoading, analyze } = useContractAnalysis<LeaseResult>("lease-analyzer");
 
@@ -25,9 +27,9 @@ export default function LeaseAnalyzer() {
   return (
     <div className="space-y-6">
       <div>
-        <label className="text-sm font-medium mb-2 block">Paste your lease agreement</label>
+        <label className="text-sm font-medium mb-2 block">{t("internals.leaseAnalyzer.label")}</label>
         <Textarea
-          placeholder="Paste the full lease agreement text..."
+          placeholder={t("internals.leaseAnalyzer.placeholder")}
           value={text}
           onChange={(e) => setText(e.target.value)}
           className="min-h-[200px]"
@@ -36,7 +38,7 @@ export default function LeaseAnalyzer() {
 
       <Button onClick={handleAnalyze} disabled={isLoading || text.trim().length < 50} className="w-full gap-2">
         {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Home className="h-4 w-4" />}
-        {isLoading ? "Analyzing Lease..." : "Analyze Lease"}
+        {isLoading ? t("internals.leaseAnalyzer.analyzing") : t("internals.leaseAnalyzer.button")}
       </Button>
 
       {result && (
@@ -50,7 +52,7 @@ export default function LeaseAnalyzer() {
           {result.keyTerms.length > 0 && (
             <Card>
               <CardContent className="p-4">
-                <h4 className="font-semibold text-sm mb-3">Key Terms</h4>
+                <h4 className="font-semibold text-sm mb-3">{t("internals.leaseAnalyzer.keyTerms")}</h4>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {result.keyTerms.map((term, i) => (
                     <div key={i} className="flex justify-between text-sm border-b border-muted pb-1">
@@ -66,7 +68,7 @@ export default function LeaseAnalyzer() {
           {result.risks.length > 0 && (
             <Card>
               <CardContent className="p-4">
-                <h4 className="font-semibold text-sm mb-2 text-destructive">⚠ Risks</h4>
+                <h4 className="font-semibold text-sm mb-2 text-destructive">{t("internals.leaseAnalyzer.risks")}</h4>
                 <ul className="space-y-1">
                   {result.risks.map((r, i) => <li key={i} className="text-sm text-muted-foreground">• {r}</li>)}
                 </ul>
@@ -77,7 +79,7 @@ export default function LeaseAnalyzer() {
           {result.recommendations.length > 0 && (
             <Card>
               <CardContent className="p-4">
-                <h4 className="font-semibold text-sm mb-2">Recommendations</h4>
+                <h4 className="font-semibold text-sm mb-2">{t("internals.leaseAnalyzer.recommendations")}</h4>
                 <ul className="space-y-1">
                   {result.recommendations.map((r, i) => <li key={i} className="text-sm text-muted-foreground">• {r}</li>)}
                 </ul>

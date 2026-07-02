@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const solData: Record<string, Record<string, { years: number; notes: string }>> = {
   "Written Contract": {
@@ -46,10 +47,19 @@ const solData: Record<string, Record<string, { years: number; notes: string }>> 
   },
 };
 
+const TYPE_LABEL_KEYS: Record<string, string> = {
+  "Written Contract": "internals.sol.types.written",
+  "Oral Contract": "internals.sol.types.oral",
+  "Personal Injury": "internals.sol.types.pi",
+  "Property Damage": "internals.sol.types.property",
+  "Fraud": "internals.sol.types.fraud",
+};
+
 const claimTypes = Object.keys(solData);
 const states = ["California", "New York", "Texas", "Florida", "Illinois", "Other"];
 
 export default function StatuteOfLimitationsLookup() {
+  const { t } = useTranslation(["tools", "common"]);
   const [claimType, setClaimType] = useState("");
   const [state, setState] = useState("");
   const [result, setResult] = useState<{ years: number; notes: string } | null>(null);
@@ -63,18 +73,18 @@ export default function StatuteOfLimitationsLookup() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Claim Type</Label>
+          <Label>{t("internals.sol.claimType")}</Label>
           <Select value={claimType} onValueChange={setClaimType}>
-            <SelectTrigger><SelectValue placeholder="Select claim type..." /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("internals.sol.selectClaim")} /></SelectTrigger>
             <SelectContent>
-              {claimTypes.map((t) => <SelectItem key={t} value={t}>{t}</SelectItem>)}
+              {claimTypes.map((ct) => <SelectItem key={ct} value={ct}>{t(TYPE_LABEL_KEYS[ct])}</SelectItem>)}
             </SelectContent>
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>State</Label>
+          <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
-            <SelectTrigger><SelectValue placeholder="Select state..." /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("common:fields.selectState")} /></SelectTrigger>
             <SelectContent>
               {states.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
             </SelectContent>
@@ -82,13 +92,13 @@ export default function StatuteOfLimitationsLookup() {
         </div>
       </div>
       <Button onClick={lookup} disabled={!claimType || !state} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Look Up
+        {t("common:actions.lookUp")}
       </Button>
       {result && (
         <div className="p-6 rounded-lg bg-secondary text-center space-y-2">
-          <p className="text-3xl font-bold font-serif">{result.years} Year{result.years !== 1 ? "s" : ""}</p>
+          <p className="text-3xl font-bold font-serif">{result.years} {result.years !== 1 ? t("internals.sol.yearsUnitPlural") : t("internals.sol.yearsUnit")}</p>
           <p className="text-sm text-muted-foreground">{result.notes}</p>
-          <p className="text-xs text-muted-foreground mt-2">⚠️ This is general information. Consult a lawyer for your specific situation.</p>
+          <p className="text-xs text-muted-foreground mt-2">{t("internals.sol.footer")}</p>
         </div>
       )}
     </div>
