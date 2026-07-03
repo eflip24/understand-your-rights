@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 const states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
 
 export default function RentalAgreementGenerator() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [landlord, setLandlord] = useState("");
   const [tenant, setTenant] = useState("");
   const [address, setAddress] = useState("");
@@ -110,22 +110,22 @@ Date: ________________`);
   return (
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
-        <div><Label>Landlord Name</Label><Input value={landlord} onChange={e => setLandlord(e.target.value)} placeholder="Property Owner LLC" /></div>
-        <div><Label>Tenant Name</Label><Input value={tenant} onChange={e => setTenant(e.target.value)} placeholder="Jane Doe" /></div>
-        <div><Label>Property Address</Label><Input value={address} onChange={e => setAddress(e.target.value)} placeholder="123 Main St, Apt 4" /></div>
-        <div><Label>City</Label><Input value={city} onChange={e => setCity(e.target.value)} placeholder="Los Angeles" /></div>
+        <div><Label>{t("internals.rentalAgreementGenerator.labels.landlordName")}</Label><Input value={landlord} onChange={e => setLandlord(e.target.value)} placeholder={t("internals.rentalAgreementGenerator.placeholders.propertyOwnerLlc")} /></div>
+        <div><Label>{t("internals.rentalAgreementGenerator.labels.tenantName")}</Label><Input value={tenant} onChange={e => setTenant(e.target.value)} placeholder={t("internals.rentalAgreementGenerator.placeholders.janeDoe")} /></div>
+        <div><Label>{t("internals.rentalAgreementGenerator.labels.propertyAddress")}</Label><Input value={address} onChange={e => setAddress(e.target.value)} placeholder={t("internals.rentalAgreementGenerator.placeholders.n123MainStApt4")} /></div>
+        <div><Label>{t("internals.rentalAgreementGenerator.labels.city")}</Label><Input value={city} onChange={e => setCity(e.target.value)} placeholder={t("internals.rentalAgreementGenerator.placeholders.losAngeles")} /></div>
         <div>
           <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
-            <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("internals.rentalAgreementGenerator.placeholders.selectState")} /></SelectTrigger>
             <SelectContent>{states.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
           </Select>
         </div>
-        <div><Label>Monthly Rent ($)</Label><Input type="number" value={rent} onChange={e => setRent(e.target.value)} placeholder="1500" /></div>
-        <div><Label>Security Deposit ($)</Label><Input type="number" value={deposit} onChange={e => setDeposit(e.target.value)} placeholder="1500" /></div>
-        <div><Label>Lease Term (Months)</Label><Input type="number" value={termMonths} onChange={e => setTermMonths(e.target.value)} placeholder="12" /></div>
+        <div><Label>{t("internals.rentalAgreementGenerator.labels.monthlyRentDollar")}</Label><Input type="number" value={rent} onChange={e => setRent(e.target.value)} placeholder="1500" /></div>
+        <div><Label>{t("internals.rentalAgreementGenerator.labels.securityDepositDollar")}</Label><Input type="number" value={deposit} onChange={e => setDeposit(e.target.value)} placeholder="1500" /></div>
+        <div><Label>{t("internals.rentalAgreementGenerator.labels.leaseTermMonths")}</Label><Input type="number" value={termMonths} onChange={e => setTermMonths(e.target.value)} placeholder="12" /></div>
       </div>
-      <Button onClick={generate} className="w-full">Generate Rental Agreement</Button>
+      <Button onClick={generate} className="w-full">{t("internals.rentalAgreementGenerator.buttons.generateRentalAgreement")}</Button>
       {result && (
         <Card>
           <CardContent className="pt-6">

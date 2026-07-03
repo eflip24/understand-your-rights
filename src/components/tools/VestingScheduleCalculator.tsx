@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function VestingScheduleCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [totalShares, setTotalShares] = useState("");
   const [vestingMonths, setVestingMonths] = useState("48");
   const [cliffMonths, setCliffMonths] = useState("12");
@@ -41,19 +43,19 @@ export default function VestingScheduleCalculator() {
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="space-y-2">
-          <Label>Total Shares / Units</Label>
-          <Input type="number" value={totalShares} onChange={(e) => setTotalShares(e.target.value)} placeholder="e.g. 10000" />
+          <Label>{t("internals.vestingScheduleCalculator.labels.totalSharesUnits")}</Label>
+          <Input type="number" value={totalShares} onChange={(e) => setTotalShares(e.target.value)} placeholder={t("internals.vestingScheduleCalculator.placeholders.eG10000")} />
         </div>
         <div className="space-y-2">
-          <Label>Vesting Period (months)</Label>
+          <Label>{t("internals.vestingScheduleCalculator.labels.vestingPeriodMonths")}</Label>
           <Input type="number" value={vestingMonths} onChange={(e) => setVestingMonths(e.target.value)} placeholder="48" />
         </div>
         <div className="space-y-2">
-          <Label>Cliff Period (months)</Label>
+          <Label>{t("internals.vestingScheduleCalculator.labels.cliffPeriodMonths")}</Label>
           <Input type="number" value={cliffMonths} onChange={(e) => setCliffMonths(e.target.value)} placeholder="12" />
         </div>
         <div className="space-y-2">
-          <Label>Vesting Frequency</Label>
+          <Label>{t("internals.vestingScheduleCalculator.labels.vestingFrequency")}</Label>
           <Select value={frequency} onValueChange={setFrequency}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>

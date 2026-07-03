@@ -30,7 +30,7 @@ const depositData: Record<string, { maxMonths: number; interestRequired: boolean
 };
 
 export default function SecurityDepositCalculator() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [state, setState] = useState("");
   const [monthlyRent, setMonthlyRent] = useState("");
 
@@ -43,11 +43,11 @@ export default function SecurityDepositCalculator() {
         <div>
           <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
-            <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("internals.securityDepositCalculator.placeholders.selectState")} /></SelectTrigger>
             <SelectContent>{Object.keys(depositData).sort().map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
           </Select>
         </div>
-        <div><Label>Monthly Rent ($)</Label><Input type="number" value={monthlyRent} onChange={e => setMonthlyRent(e.target.value)} placeholder="1500" /></div>
+        <div><Label>{t("internals.securityDepositCalculator.labels.monthlyRentDollar")}</Label><Input type="number" value={monthlyRent} onChange={e => setMonthlyRent(e.target.value)} placeholder="1500" /></div>
       </div>
       {data && (
         <Card>

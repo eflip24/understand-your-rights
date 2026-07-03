@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, GitCompare } from "lucide-react";
 import { useContractAnalysis } from "@/hooks/useContractAnalysis";
+import { useTranslation } from "react-i18next";
 
 interface Difference {
   topic: string;
@@ -20,6 +21,7 @@ interface ComparisonResult {
 }
 
 export default function ContractComparison() {
+  const { t } = useTranslation(["tools", "common"]);
   const [textA, setTextA] = useState("");
   const [textB, setTextB] = useState("");
   const { result, isLoading, analyze } = useContractAnalysis<ComparisonResult>("contract-comparison");
@@ -35,7 +37,7 @@ export default function ContractComparison() {
         <div>
           <label className="text-sm font-medium mb-2 block">Contract A</label>
           <Textarea
-            placeholder="Paste the first contract..."
+            placeholder={t("internals.contractComparison.placeholders.pasteTheFirstContract")}
             value={textA}
             onChange={(e) => setTextA(e.target.value)}
             className="min-h-[180px]"
@@ -44,7 +46,7 @@ export default function ContractComparison() {
         <div>
           <label className="text-sm font-medium mb-2 block">Contract B</label>
           <Textarea
-            placeholder="Paste the second contract..."
+            placeholder={t("internals.contractComparison.placeholders.pasteTheSecondContract")}
             value={textB}
             onChange={(e) => setTextB(e.target.value)}
             className="min-h-[180px]"

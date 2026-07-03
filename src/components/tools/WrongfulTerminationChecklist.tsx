@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 const questions = [
   { id: "notice", label: "Were you given a reason for termination?", options: ["Yes, a clear reason", "Vague or unclear reason", "No reason given", "I was told it was a layoff"] },
@@ -47,6 +48,7 @@ function assess(answers: Record<string, string>) {
 }
 
 export default function WrongfulTerminationChecklist() {
+  const { t } = useTranslation(["tools", "common"]);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [result, setResult] = useState<ReturnType<typeof assess> | null>(null);
 
@@ -58,16 +60,14 @@ export default function WrongfulTerminationChecklist() {
         <div key={q.id} className="space-y-2">
           <Label>{q.label}</Label>
           <Select value={answers[q.id] || ""} onValueChange={(v) => setAnswers({ ...answers, [q.id]: v })}>
-            <SelectTrigger><SelectValue placeholder="Select..." /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("internals.wrongfulTerminationChecklist.placeholders.select")} /></SelectTrigger>
             <SelectContent>
               {q.options.map((opt) => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
             </SelectContent>
           </Select>
         </div>
       ))}
-      <Button onClick={() => setResult(assess(answers))} disabled={!allAnswered} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Assess Situation
-      </Button>
+      <Button onClick={() => setResult(assess(answers))} disabled={!allAnswered} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.wrongfulTerminationChecklist.buttons.assessSituation")}</Button>
       {result && (
         <div className="space-y-3 pt-2">
           <div className="p-6 rounded-lg bg-secondary text-center space-y-2">

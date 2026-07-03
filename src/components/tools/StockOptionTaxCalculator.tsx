@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const TAX_BRACKETS = [
   { label: "10%", rate: 0.10 },
@@ -15,6 +16,7 @@ const TAX_BRACKETS = [
 ];
 
 export default function StockOptionTaxCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [optionType, setOptionType] = useState("iso");
   const [grantPrice, setGrantPrice] = useState("");
   const [exercisePrice, setExercisePrice] = useState("");
@@ -60,7 +62,7 @@ export default function StockOptionTaxCalculator() {
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div className="space-y-2">
-          <Label>Option Type</Label>
+          <Label>{t("internals.stockOptionTaxCalculator.labels.optionType")}</Label>
           <Select value={optionType} onValueChange={setOptionType}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -70,23 +72,23 @@ export default function StockOptionTaxCalculator() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Grant / Strike Price ($)</Label>
-          <Input type="number" value={grantPrice} onChange={(e) => setGrantPrice(e.target.value)} placeholder="e.g. 10" />
+          <Label>{t("internals.stockOptionTaxCalculator.labels.grantStrikePriceDollar")}</Label>
+          <Input type="number" value={grantPrice} onChange={(e) => setGrantPrice(e.target.value)} placeholder={t("internals.stockOptionTaxCalculator.placeholders.eG10")} />
         </div>
         <div className="space-y-2">
-          <Label>Fair Market Value at Exercise ($)</Label>
-          <Input type="number" value={exercisePrice} onChange={(e) => setExercisePrice(e.target.value)} placeholder="e.g. 25" />
+          <Label>{t("internals.stockOptionTaxCalculator.labels.fairMarketValueAtExerciseDollar")}</Label>
+          <Input type="number" value={exercisePrice} onChange={(e) => setExercisePrice(e.target.value)} placeholder={t("internals.stockOptionTaxCalculator.placeholders.eG25")} />
         </div>
         <div className="space-y-2">
-          <Label>Sale Price ($)</Label>
-          <Input type="number" value={sellPrice} onChange={(e) => setSellPrice(e.target.value)} placeholder="e.g. 50" />
+          <Label>{t("internals.stockOptionTaxCalculator.labels.salePriceDollar")}</Label>
+          <Input type="number" value={sellPrice} onChange={(e) => setSellPrice(e.target.value)} placeholder={t("internals.stockOptionTaxCalculator.placeholders.eG50")} />
         </div>
         <div className="space-y-2">
-          <Label>Number of Shares</Label>
-          <Input type="number" value={numShares} onChange={(e) => setNumShares(e.target.value)} placeholder="e.g. 1000" />
+          <Label>{t("internals.stockOptionTaxCalculator.labels.numberOfShares")}</Label>
+          <Input type="number" value={numShares} onChange={(e) => setNumShares(e.target.value)} placeholder={t("internals.stockOptionTaxCalculator.placeholders.eG1000")} />
         </div>
         <div className="space-y-2">
-          <Label>Holding Period</Label>
+          <Label>{t("internals.stockOptionTaxCalculator.labels.holdingPeriod")}</Label>
           <Select value={holdingPeriod} onValueChange={setHoldingPeriod}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -96,7 +98,7 @@ export default function StockOptionTaxCalculator() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Ordinary Income Tax Bracket</Label>
+          <Label>{t("internals.stockOptionTaxCalculator.labels.ordinaryIncomeTaxBracket")}</Label>
           <Select value={bracket} onValueChange={setBracket}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>

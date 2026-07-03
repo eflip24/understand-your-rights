@@ -3,8 +3,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export default function EnergySavingsCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [monthlyBill, setMonthlyBill] = useState("");
   const [coveragePercent, setCoveragePercent] = useState("");
   const [systemCost, setSystemCost] = useState("");
@@ -33,20 +35,20 @@ export default function EnergySavingsCalculator() {
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-3">
         <div>
-          <Label htmlFor="monthlyBill">Current Monthly Bill ($)</Label>
+          <Label htmlFor="monthlyBill">{t("internals.energySavingsCalculator.labels.currentMonthlyBillDollar")}</Label>
           <Input id="monthlyBill" type="number" placeholder="150" value={monthlyBill} onChange={(e) => setMonthlyBill(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="coverage">Solar Coverage (%)</Label>
+          <Label htmlFor="coverage">{t("internals.energySavingsCalculator.labels.solarCoveragePercent")}</Label>
           <Input id="coverage" type="number" placeholder="80" value={coveragePercent} onChange={(e) => setCoveragePercent(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="systemCost">System Cost ($)</Label>
+          <Label htmlFor="systemCost">{t("internals.energySavingsCalculator.labels.systemCostDollar")}</Label>
           <Input id="systemCost" type="number" placeholder="20000" value={systemCost} onChange={(e) => setSystemCost(e.target.value)} />
         </div>
       </div>
 
-      <Button onClick={calculate} className="w-full">Calculate Savings</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.energySavingsCalculator.buttons.calculateSavings")}</Button>
 
       {result && (
         <div className="grid gap-4 sm:grid-cols-2">

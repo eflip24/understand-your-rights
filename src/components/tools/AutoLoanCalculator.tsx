@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function AutoLoanCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [price, setPrice] = useState("");
   const [downPayment, setDownPayment] = useState("");
   const [tradeIn, setTradeIn] = useState("");
@@ -34,29 +36,27 @@ export default function AutoLoanCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <div className="space-y-2">
-          <Label>Vehicle Price ($)</Label>
+          <Label>{t("internals.autoLoanCalculator.labels.vehiclePriceDollar")}</Label>
           <Input type="number" placeholder="35000" value={price} onChange={(e) => setPrice(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Down Payment ($)</Label>
+          <Label>{t("internals.autoLoanCalculator.labels.downPaymentDollar")}</Label>
           <Input type="number" placeholder="5000" value={downPayment} onChange={(e) => setDownPayment(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Trade-In Value ($)</Label>
+          <Label>{t("internals.autoLoanCalculator.labels.tradeInValueDollar")}</Label>
           <Input type="number" placeholder="3000" value={tradeIn} onChange={(e) => setTradeIn(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Annual Interest Rate (%)</Label>
+          <Label>{t("internals.autoLoanCalculator.labels.annualInterestRatePercent")}</Label>
           <Input type="number" placeholder="6.5" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Loan Term (Months)</Label>
+          <Label>{t("internals.autoLoanCalculator.labels.loanTermMonths")}</Label>
           <Input type="number" placeholder="60" value={term} onChange={(e) => setTerm(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!price || !rate || !term} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Auto Loan
-      </Button>
+      <Button onClick={calculate} disabled={!price || !rate || !term} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.autoLoanCalculator.buttons.calculateAutoLoan")}</Button>
       {result && (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
           <div className="text-center p-4 bg-secondary rounded-lg">

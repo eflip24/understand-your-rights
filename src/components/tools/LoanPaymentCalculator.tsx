@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function LoanPaymentCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [principal, setPrincipal] = useState("");
   const [annualRate, setAnnualRate] = useState("");
   const [termMonths, setTermMonths] = useState("");
@@ -32,21 +34,19 @@ export default function LoanPaymentCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-3">
         <div className="space-y-2">
-          <Label>Loan Amount ($)</Label>
+          <Label>{t("internals.loanPaymentCalculator.labels.loanAmountDollar")}</Label>
           <Input type="number" placeholder="250000" value={principal} onChange={(e) => setPrincipal(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Annual Interest Rate (%)</Label>
+          <Label>{t("internals.loanPaymentCalculator.labels.annualInterestRatePercent")}</Label>
           <Input type="number" placeholder="6.5" step="0.1" value={annualRate} onChange={(e) => setAnnualRate(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Loan Term (Months)</Label>
+          <Label>{t("internals.loanPaymentCalculator.labels.loanTermMonths")}</Label>
           <Input type="number" placeholder="360" value={termMonths} onChange={(e) => setTermMonths(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!principal || !annualRate || !termMonths} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Payment
-      </Button>
+      <Button onClick={calculate} disabled={!principal || !annualRate || !termMonths} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.loanPaymentCalculator.buttons.calculatePayment")}</Button>
       {result && (
         <div className="grid grid-cols-3 gap-4 pt-2">
           <div className="text-center p-4 bg-accent/10 rounded-lg border border-accent/20">

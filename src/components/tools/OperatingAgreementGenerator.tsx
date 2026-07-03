@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useTranslation } from "react-i18next";
 
 export default function OperatingAgreementGenerator() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [llc, setLlc] = useState("");
   const [state, setState] = useState("");
   const [members, setMembers] = useState("");
@@ -45,13 +45,13 @@ Member Signature & Date`;
   return (
     <div className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-3">
-        <div><Label>LLC Name</Label><Input value={llc} onChange={e => setLlc(e.target.value)} /></div>
+        <div><Label>{t("internals.operatingAgreementGenerator.labels.llcName")}</Label><Input value={llc} onChange={e => setLlc(e.target.value)} /></div>
         <div><Label>{t("common:fields.state")}</Label><Input value={state} onChange={e => setState(e.target.value)} /></div>
-        <div className="sm:col-span-2"><Label>Members (name + ownership %)</Label><Textarea value={members} onChange={e => setMembers(e.target.value)} rows={3} placeholder="Jane Doe — 60%&#10;John Smith — 40%" /></div>
-        <div className="sm:col-span-2"><Label>Business purpose</Label><Input value={purpose} onChange={e => setPurpose(e.target.value)} /></div>
+        <div className="sm:col-span-2"><Label>{t("internals.operatingAgreementGenerator.labels.membersNameOwnershipPercent")}</Label><Textarea value={members} onChange={e => setMembers(e.target.value)} rows={3} placeholder={t("internals.operatingAgreementGenerator.placeholders.janeDoe60PercentAnd10")} /></div>
+        <div className="sm:col-span-2"><Label>{t("internals.operatingAgreementGenerator.labels.businessPurpose")}</Label><Input value={purpose} onChange={e => setPurpose(e.target.value)} /></div>
       </div>
       <Textarea value={doc} readOnly rows={20} className="font-mono text-xs" />
-      <Button onClick={() => navigator.clipboard.writeText(doc)}>Copy Agreement</Button>
+      <Button onClick={() => navigator.clipboard.writeText(doc)}>{t("internals.operatingAgreementGenerator.buttons.copyAgreement")}</Button>
     </div>
   );
 }

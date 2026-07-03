@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function PowerOfAttorneyGenerator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [form, setForm] = useState({ type: "general", principalName: "", principalAddress: "", agentName: "", agentAddress: "", alternateAgent: "", state: "", powers: "", effective: "immediate" });
   const [output, setOutput] = useState("");
 
@@ -118,7 +120,7 @@ My Commission Expires: ________________`;
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Type of POA</Label>
+          <Label>{t("internals.powerOfAttorneyGenerator.labels.typeOfPoa")}</Label>
           <Select value={form.type} onValueChange={(v) => update("type", v)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -130,7 +132,7 @@ My Commission Expires: ________________`;
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Effective</Label>
+          <Label>{t("internals.powerOfAttorneyGenerator.labels.effective")}</Label>
           <Select value={form.effective} onValueChange={(v) => update("effective", v)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -140,41 +142,41 @@ My Commission Expires: ________________`;
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Principal Name (You)</Label>
-          <Input placeholder="John Doe" value={form.principalName} onChange={(e) => update("principalName", e.target.value)} />
+          <Label>{t("internals.powerOfAttorneyGenerator.labels.principalNameYou")}</Label>
+          <Input placeholder={t("internals.powerOfAttorneyGenerator.placeholders.johnDoe")} value={form.principalName} onChange={(e) => update("principalName", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Principal Address</Label>
-          <Input placeholder="123 Main St, City, State" value={form.principalAddress} onChange={(e) => update("principalAddress", e.target.value)} />
+          <Label>{t("internals.powerOfAttorneyGenerator.labels.principalAddress")}</Label>
+          <Input placeholder={t("internals.powerOfAttorneyGenerator.placeholders.n123MainStCityState")} value={form.principalAddress} onChange={(e) => update("principalAddress", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Agent Name</Label>
-          <Input placeholder="Jane Smith" value={form.agentName} onChange={(e) => update("agentName", e.target.value)} />
+          <Label>{t("internals.powerOfAttorneyGenerator.labels.agentName")}</Label>
+          <Input placeholder={t("internals.powerOfAttorneyGenerator.placeholders.janeSmith")} value={form.agentName} onChange={(e) => update("agentName", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Agent Address</Label>
-          <Input placeholder="456 Oak Ave, City, State" value={form.agentAddress} onChange={(e) => update("agentAddress", e.target.value)} />
+          <Label>{t("internals.powerOfAttorneyGenerator.labels.agentAddress")}</Label>
+          <Input placeholder={t("internals.powerOfAttorneyGenerator.placeholders.n456OakAveCityState")} value={form.agentAddress} onChange={(e) => update("agentAddress", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Alternate Agent (optional)</Label>
-          <Input placeholder="Bob Johnson" value={form.alternateAgent} onChange={(e) => update("alternateAgent", e.target.value)} />
+          <Label>{t("internals.powerOfAttorneyGenerator.labels.alternateAgentOptional")}</Label>
+          <Input placeholder={t("internals.powerOfAttorneyGenerator.placeholders.bobJohnson")} value={form.alternateAgent} onChange={(e) => update("alternateAgent", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Governing State</Label>
-          <Input placeholder="California" value={form.state} onChange={(e) => update("state", e.target.value)} />
+          <Label>{t("internals.powerOfAttorneyGenerator.labels.governingState")}</Label>
+          <Input placeholder={t("internals.powerOfAttorneyGenerator.placeholders.california")} value={form.state} onChange={(e) => update("state", e.target.value)} />
         </div>
       </div>
       {form.type === "limited" && (
         <div className="space-y-2">
-          <Label>Specific Powers to Grant</Label>
-          <Textarea placeholder="Describe the specific limited powers..." rows={3} value={form.powers} onChange={(e) => update("powers", e.target.value)} />
+          <Label>{t("internals.powerOfAttorneyGenerator.labels.specificPowersToGrant")}</Label>
+          <Textarea placeholder={t("internals.powerOfAttorneyGenerator.placeholders.describeTheSpecificLimitedPowers")} rows={3} value={form.powers} onChange={(e) => update("powers", e.target.value)} />
         </div>
       )}
-      <Button onClick={generate} disabled={!form.principalName || !form.agentName} className="bg-accent text-accent-foreground hover:bg-gold-dark">Generate POA</Button>
+      <Button onClick={generate} disabled={!form.principalName || !form.agentName} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.powerOfAttorneyGenerator.buttons.generatePoa")}</Button>
       {output && (
         <div className="space-y-2">
           <div className="flex justify-end">
-            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>Copy to Clipboard</Button>
+            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>{t("internals.powerOfAttorneyGenerator.buttons.copyToClipboard")}</Button>
           </div>
           <Textarea value={output} readOnly rows={30} className="font-mono text-xs" />
         </div>

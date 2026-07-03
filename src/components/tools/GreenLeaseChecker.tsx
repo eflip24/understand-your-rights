@@ -4,6 +4,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 interface ClauseItem {
   id: string;
@@ -26,6 +27,7 @@ const greenClauses: ClauseItem[] = [
 ];
 
 export default function GreenLeaseChecker() {
+  const { t } = useTranslation(["tools", "common"]);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [showResults, setShowResults] = useState(false);
 
@@ -72,7 +74,7 @@ export default function GreenLeaseChecker() {
         ))}
       </div>
 
-      <Button onClick={() => setShowResults(true)} className="w-full">Evaluate Lease</Button>
+      <Button onClick={() => setShowResults(true)} className="w-full">{t("internals.greenLeaseChecker.buttons.evaluateLease")}</Button>
 
       {showResults && (
         <Card className="border-accent/30">

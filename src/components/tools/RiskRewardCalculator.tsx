@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function RiskRewardCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [entryPrice, setEntryPrice] = useState("");
   const [stopLoss, setStopLoss] = useState("");
   const [takeProfit, setTakeProfit] = useState("");
@@ -34,21 +36,19 @@ export default function RiskRewardCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-3">
         <div className="space-y-2">
-          <Label>Entry Price ($)</Label>
+          <Label>{t("internals.riskRewardCalculator.labels.entryPriceDollar")}</Label>
           <Input type="number" placeholder="100" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Stop Loss ($)</Label>
+          <Label>{t("internals.riskRewardCalculator.labels.stopLossDollar")}</Label>
           <Input type="number" placeholder="95" value={stopLoss} onChange={(e) => setStopLoss(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Take Profit ($)</Label>
+          <Label>{t("internals.riskRewardCalculator.labels.takeProfitDollar")}</Label>
           <Input type="number" placeholder="115" value={takeProfit} onChange={(e) => setTakeProfit(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!entryPrice || !stopLoss || !takeProfit} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate R:R
-      </Button>
+      <Button onClick={calculate} disabled={!entryPrice || !stopLoss || !takeProfit} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.riskRewardCalculator.buttons.calculateRR")}</Button>
       {result && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
           <div className="text-center p-4 bg-accent/10 rounded-lg border border-accent/20">

@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, Shield, Loader2 } from "lucide-react";
 import { useContractAnalysis } from "@/hooks/useContractAnalysis";
+import { useTranslation } from "react-i18next";
 
 interface Finding {
   clause: string;
@@ -27,6 +28,7 @@ const severityColors: Record<string, string> = {
 };
 
 export default function ContractRedFlagScanner() {
+  const { t } = useTranslation(["tools", "common"]);
   const [text, setText] = useState("");
   const { result, isLoading, analyze } = useContractAnalysis<RedFlagResult>("red-flag-scanner");
 
@@ -40,7 +42,7 @@ export default function ContractRedFlagScanner() {
       <div>
         <label className="text-sm font-medium mb-2 block">Paste your contract text</label>
         <Textarea
-          placeholder="Paste the full contract or specific sections you want analyzed..."
+          placeholder={t("internals.contractRedFlagScanner.placeholders.pasteTheFullContractOrSpecific")}
           value={text}
           onChange={(e) => setText(e.target.value)}
           className="min-h-[200px]"

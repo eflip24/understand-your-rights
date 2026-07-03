@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function NDAGenerator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [form, setForm] = useState({
     type: "mutual",
     party1: "",
@@ -75,7 +77,7 @@ Date: ________________             Date: ________________`;
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>NDA Type</Label>
+          <Label>{t("internals.nDAGenerator.labels.ndaType")}</Label>
           <Select value={form.type} onValueChange={(v) => update("type", v)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -85,7 +87,7 @@ Date: ________________             Date: ________________`;
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Duration (years)</Label>
+          <Label>{t("internals.nDAGenerator.labels.durationYears")}</Label>
           <Select value={form.duration} onValueChange={(v) => update("duration", v)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -96,31 +98,27 @@ Date: ________________             Date: ________________`;
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Party 1 (Your Name/Company)</Label>
-          <Input placeholder="Acme Corp" value={form.party1} onChange={(e) => update("party1", e.target.value)} />
+          <Label>{t("internals.nDAGenerator.labels.party1YourNameCompany")}</Label>
+          <Input placeholder={t("internals.nDAGenerator.placeholders.acmeCorp")} value={form.party1} onChange={(e) => update("party1", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Party 2 (Other Party)</Label>
-          <Input placeholder="Beta Inc" value={form.party2} onChange={(e) => update("party2", e.target.value)} />
+          <Label>{t("internals.nDAGenerator.labels.party2OtherParty")}</Label>
+          <Input placeholder={t("internals.nDAGenerator.placeholders.betaInc")} value={form.party2} onChange={(e) => update("party2", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Governing State</Label>
-          <Input placeholder="Delaware" value={form.state} onChange={(e) => update("state", e.target.value)} />
+          <Label>{t("internals.nDAGenerator.labels.governingState")}</Label>
+          <Input placeholder={t("internals.nDAGenerator.placeholders.delaware")} value={form.state} onChange={(e) => update("state", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Scope / Subject Matter</Label>
-          <Input placeholder="Software development project" value={form.scope} onChange={(e) => update("scope", e.target.value)} />
+          <Label>{t("internals.nDAGenerator.labels.scopeSubjectMatter")}</Label>
+          <Input placeholder={t("internals.nDAGenerator.placeholders.softwareDevelopmentProject")} value={form.scope} onChange={(e) => update("scope", e.target.value)} />
         </div>
       </div>
-      <Button onClick={generate} disabled={!form.party1 || !form.party2} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Generate NDA
-      </Button>
+      <Button onClick={generate} disabled={!form.party1 || !form.party2} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.nDAGenerator.buttons.generateNda")}</Button>
       {output && (
         <div className="space-y-2">
           <div className="flex justify-end">
-            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>
-              Copy to Clipboard
-            </Button>
+            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>{t("internals.nDAGenerator.buttons.copyToClipboard")}</Button>
           </div>
           <Textarea value={output} readOnly rows={25} className="font-mono text-xs" />
         </div>

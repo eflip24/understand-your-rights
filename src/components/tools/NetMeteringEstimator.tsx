@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function NetMeteringEstimator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [systemKw, setSystemKw] = useState("");
   const [sunHours, setSunHours] = useState("4.5");
   const [usage, setUsage] = useState("");
@@ -24,13 +26,13 @@ export default function NetMeteringEstimator() {
   return (
     <div className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-3">
-        <div><Label>System size (kW)</Label><Input type="number" value={systemKw} onChange={e => setSystemKw(e.target.value)} /></div>
-        <div><Label>Avg sun hours/day</Label><Input type="number" step="0.1" value={sunHours} onChange={e => setSunHours(e.target.value)} /></div>
-        <div><Label>Monthly usage (kWh)</Label><Input type="number" value={usage} onChange={e => setUsage(e.target.value)} /></div>
-        <div><Label>Retail rate ($/kWh)</Label><Input type="number" step="0.01" value={rate} onChange={e => setRate(e.target.value)} /></div>
-        <div><Label>Export rate ($/kWh)</Label><Input type="number" step="0.01" value={exportRate} onChange={e => setExportRate(e.target.value)} /></div>
+        <div><Label>{t("internals.netMeteringEstimator.labels.systemSizeKw")}</Label><Input type="number" value={systemKw} onChange={e => setSystemKw(e.target.value)} /></div>
+        <div><Label>{t("internals.netMeteringEstimator.labels.avgSunHoursDay")}</Label><Input type="number" step="0.1" value={sunHours} onChange={e => setSunHours(e.target.value)} /></div>
+        <div><Label>{t("internals.netMeteringEstimator.labels.monthlyUsageKwh")}</Label><Input type="number" value={usage} onChange={e => setUsage(e.target.value)} /></div>
+        <div><Label>{t("internals.netMeteringEstimator.labels.retailRateDollarKwh")}</Label><Input type="number" step="0.01" value={rate} onChange={e => setRate(e.target.value)} /></div>
+        <div><Label>{t("internals.netMeteringEstimator.labels.exportRateDollarKwh")}</Label><Input type="number" step="0.01" value={exportRate} onChange={e => setExportRate(e.target.value)} /></div>
       </div>
-      <Button onClick={calc} disabled={!systemKw || !usage}>Estimate Savings</Button>
+      <Button onClick={calc} disabled={!systemKw || !usage}>{t("internals.netMeteringEstimator.buttons.estimateSavings")}</Button>
       {result && (
         <Card><CardContent className="p-4 space-y-2">
           <p className="text-3xl font-bold">${(result.savings + result.credits).toLocaleString()}/year</p>

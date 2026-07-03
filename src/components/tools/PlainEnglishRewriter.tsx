@@ -3,6 +3,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { legalTerms } from "@/data/legalTerms";
+import { useTranslation } from "react-i18next";
 
 const REPLACEMENTS: [RegExp, string][] = [
   [/\bheretofore\b/gi, "before now"], [/\bhereinafter\b/gi, "from now on"],
@@ -15,6 +16,7 @@ const REPLACEMENTS: [RegExp, string][] = [
 ];
 
 export default function PlainEnglishRewriter() {
+  const { t } = useTranslation(["tools", "common"]);
   const [text, setText] = useState("");
   const [result, setResult] = useState<{ rewritten: string; glossary: { term: string; definition: string }[] } | null>(null);
 
@@ -29,8 +31,8 @@ export default function PlainEnglishRewriter() {
 
   return (
     <div className="space-y-4">
-      <Textarea placeholder="Paste a confusing legal clause..." value={text} onChange={(e) => setText(e.target.value)} rows={8} />
-      <Button onClick={rewrite} disabled={text.trim().length < 20}>Rewrite in Plain English</Button>
+      <Textarea placeholder={t("internals.plainEnglishRewriter.placeholders.pasteAConfusingLegalClause")} value={text} onChange={(e) => setText(e.target.value)} rows={8} />
+      <Button onClick={rewrite} disabled={text.trim().length < 20}>{t("internals.plainEnglishRewriter.buttons.rewriteInPlainEnglish")}</Button>
       {result && (
         <div className="space-y-3">
           <Card><CardContent className="p-4">

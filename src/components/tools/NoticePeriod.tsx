@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { addDays, addBusinessDays, format } from "date-fns";
+import { useTranslation } from "react-i18next";
 
 export default function NoticePeriod() {
+  const { t } = useTranslation(["tools", "common"]);
   const [startDate, setStartDate] = useState("");
   const [period, setPeriod] = useState("30");
   const [dayType, setDayType] = useState("calendar");
@@ -22,11 +24,11 @@ export default function NoticePeriod() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-3">
         <div className="space-y-2">
-          <Label>Notice Given On</Label>
+          <Label>{t("internals.noticePeriod.labels.noticeGivenOn")}</Label>
           <Input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Notice Period</Label>
+          <Label>{t("internals.noticePeriod.labels.noticePeriod")}</Label>
           <Select value={period} onValueChange={setPeriod}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -37,7 +39,7 @@ export default function NoticePeriod() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Day Type</Label>
+          <Label>{t("internals.noticePeriod.labels.dayType")}</Label>
           <Select value={dayType} onValueChange={setDayType}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -47,9 +49,7 @@ export default function NoticePeriod() {
           </Select>
         </div>
       </div>
-      <Button onClick={calculate} disabled={!startDate} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate End Date
-      </Button>
+      <Button onClick={calculate} disabled={!startDate} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.noticePeriod.buttons.calculateEndDate")}</Button>
       {result && (
         <div className="p-6 rounded-lg bg-secondary text-center">
           <p className="text-sm text-muted-foreground mb-1">Your notice period ends on</p>

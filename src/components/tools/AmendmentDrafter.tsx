@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { useTranslation } from "react-i18next";
 
 export default function AmendmentDrafter() {
+  const { t } = useTranslation(["tools", "common"]);
   const [form, setForm] = useState({ contractTitle: "", originalDate: "", party1: "", party2: "", state: "", amendmentNumber: "1", changes: "" });
   const [output, setOutput] = useState("");
 
@@ -62,41 +64,39 @@ Date: ________________             Date: ________________`;
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Original Contract Title</Label>
-          <Input placeholder="Service Agreement" value={form.contractTitle} onChange={(e) => update("contractTitle", e.target.value)} />
+          <Label>{t("internals.amendmentDrafter.labels.originalContractTitle")}</Label>
+          <Input placeholder={t("internals.amendmentDrafter.placeholders.serviceAgreement")} value={form.contractTitle} onChange={(e) => update("contractTitle", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Original Contract Date</Label>
+          <Label>{t("internals.amendmentDrafter.labels.originalContractDate")}</Label>
           <Input type="date" value={form.originalDate} onChange={(e) => update("originalDate", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Party 1</Label>
-          <Input placeholder="Acme Corp" value={form.party1} onChange={(e) => update("party1", e.target.value)} />
+          <Label>{t("internals.amendmentDrafter.labels.party1")}</Label>
+          <Input placeholder={t("internals.amendmentDrafter.placeholders.acmeCorp")} value={form.party1} onChange={(e) => update("party1", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Party 2</Label>
-          <Input placeholder="Beta Inc" value={form.party2} onChange={(e) => update("party2", e.target.value)} />
+          <Label>{t("internals.amendmentDrafter.labels.party2")}</Label>
+          <Input placeholder={t("internals.amendmentDrafter.placeholders.betaInc")} value={form.party2} onChange={(e) => update("party2", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Amendment Number</Label>
+          <Label>{t("internals.amendmentDrafter.labels.amendmentNumber")}</Label>
           <Input type="number" min="1" placeholder="1" value={form.amendmentNumber} onChange={(e) => update("amendmentNumber", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Governing State</Label>
-          <Input placeholder="Delaware" value={form.state} onChange={(e) => update("state", e.target.value)} />
+          <Label>{t("internals.amendmentDrafter.labels.governingState")}</Label>
+          <Input placeholder={t("internals.amendmentDrafter.placeholders.delaware")} value={form.state} onChange={(e) => update("state", e.target.value)} />
         </div>
       </div>
       <div className="space-y-2">
-        <Label>Describe the Changes</Label>
-        <Textarea placeholder="Section 3.1 is amended to read: ..." rows={4} value={form.changes} onChange={(e) => update("changes", e.target.value)} />
+        <Label>{t("internals.amendmentDrafter.labels.describeTheChanges")}</Label>
+        <Textarea placeholder={t("internals.amendmentDrafter.placeholders.section31IsAmendedTo")} rows={4} value={form.changes} onChange={(e) => update("changes", e.target.value)} />
       </div>
-      <Button onClick={generate} disabled={!form.party1 || !form.party2} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Draft Amendment
-      </Button>
+      <Button onClick={generate} disabled={!form.party1 || !form.party2} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.amendmentDrafter.buttons.draftAmendment")}</Button>
       {output && (
         <div className="space-y-2">
           <div className="flex justify-end">
-            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>Copy to Clipboard</Button>
+            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>{t("internals.amendmentDrafter.buttons.copyToClipboard")}</Button>
           </div>
           <Textarea value={output} readOnly rows={25} className="font-mono text-xs" />
         </div>

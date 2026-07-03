@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 const Q = [
   { q: "Did you receive the product/service as described?", yes: -2, no: 3 },
@@ -14,6 +15,7 @@ const Q = [
 ];
 
 export default function ChargebackChecker() {
+  const { t } = useTranslation(["tools", "common"]);
   const [answers, setAnswers] = useState<Record<number, "yes" | "no" | undefined>>({});
   const [result, setResult] = useState<{ score: number; verdict: string; tips: string[] } | null>(null);
 
@@ -36,12 +38,12 @@ export default function ChargebackChecker() {
         <div key={i}>
           <Label className="text-sm">{item.q}</Label>
           <RadioGroup value={answers[i]} onValueChange={(v) => setAnswers({ ...answers, [i]: v as "yes" | "no" })} className="flex gap-4 mt-1">
-            <div className="flex items-center gap-2"><RadioGroupItem value="yes" id={`y${i}`} /><Label htmlFor={`y${i}`}>Yes</Label></div>
-            <div className="flex items-center gap-2"><RadioGroupItem value="no" id={`n${i}`} /><Label htmlFor={`n${i}`}>No</Label></div>
+            <div className="flex items-center gap-2"><RadioGroupItem value="yes" id={`y${i}`} /><Label htmlFor={`y${i}`}>{t("internals.chargebackChecker.labels.yes")}</Label></div>
+            <div className="flex items-center gap-2"><RadioGroupItem value="no" id={`n${i}`} /><Label htmlFor={`n${i}`}>{t("internals.chargebackChecker.labels.no")}</Label></div>
           </RadioGroup>
         </div>
       ))}
-      <Button onClick={calc} disabled={Object.keys(answers).length < Q.length}>Check Eligibility</Button>
+      <Button onClick={calc} disabled={Object.keys(answers).length < Q.length}>{t("internals.chargebackChecker.buttons.checkEligibility")}</Button>
       {result && (
         <Card><CardContent className="p-4 space-y-2">
           <p className="text-2xl font-bold">{result.verdict}</p>

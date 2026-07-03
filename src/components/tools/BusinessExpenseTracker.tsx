@@ -16,7 +16,7 @@ const businessTypes: Record<string, string[]> = {
 };
 
 export default function BusinessExpenseTracker() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [businessType, setBusinessType] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [result, setResult] = useState("");
@@ -67,15 +67,15 @@ NOTES:
   return (
     <div className="space-y-6">
       <div>
-        <Label>Business Type</Label>
+        <Label>{t("internals.businessExpenseTracker.labels.businessType")}</Label>
         <Select value={businessType} onValueChange={v => { setBusinessType(v); setSelectedCategories([]); }}>
-          <SelectTrigger><SelectValue placeholder="Select business type" /></SelectTrigger>
+          <SelectTrigger><SelectValue placeholder={t("internals.businessExpenseTracker.placeholders.selectBusinessType")} /></SelectTrigger>
           <SelectContent>{Object.keys(businessTypes).map(t => <SelectItem key={t} value={t}>{t}</SelectItem>)}</SelectContent>
         </Select>
       </div>
       {categories.length > 0 && (
         <div>
-          <Label>Expense Categories (select to customize, or leave all for full template)</Label>
+          <Label>{t("internals.businessExpenseTracker.labels.expenseCategoriesSelectToCustomizeOr")}</Label>
           <div className="grid gap-2 mt-2 sm:grid-cols-2">
             {categories.map(cat => (
               <label key={cat} className="flex items-center gap-2 cursor-pointer p-2 rounded hover:bg-muted/50">
@@ -86,7 +86,7 @@ NOTES:
           </div>
         </div>
       )}
-      <Button onClick={generate} className="w-full" disabled={!businessType}>Generate Expense Template</Button>
+      <Button onClick={generate} className="w-full" disabled={!businessType}>{t("internals.businessExpenseTracker.buttons.generateExpenseTemplate")}</Button>
       {result && (
         <Card>
           <CardContent className="pt-6">

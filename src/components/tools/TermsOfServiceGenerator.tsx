@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useTranslation } from "react-i18next";
 
 export default function TermsOfServiceGenerator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [form, setForm] = useState({
     company: "",
     website: "",
@@ -103,21 +105,21 @@ ${form.company || "[Company Name]"}`;
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Company Name</Label>
-          <Input placeholder="Acme Corp" value={form.company} onChange={(e) => update("company", e.target.value)} />
+          <Label>{t("internals.termsOfServiceGenerator.labels.companyName")}</Label>
+          <Input placeholder={t("internals.termsOfServiceGenerator.placeholders.acmeCorp")} value={form.company} onChange={(e) => update("company", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Website URL</Label>
-          <Input placeholder="https://example.com" value={form.website} onChange={(e) => update("website", e.target.value)} />
+          <Label>{t("internals.termsOfServiceGenerator.labels.websiteUrl")}</Label>
+          <Input placeholder={t("internals.termsOfServiceGenerator.placeholders.httpsExampleCom")} value={form.website} onChange={(e) => update("website", e.target.value)} />
         </div>
         <div className="space-y-2 sm:col-span-2">
-          <Label>Contact Email</Label>
-          <Input placeholder="legal@example.com" value={form.email} onChange={(e) => update("email", e.target.value)} />
+          <Label>{t("internals.termsOfServiceGenerator.labels.contactEmail")}</Label>
+          <Input placeholder={t("internals.termsOfServiceGenerator.placeholders.legalExampleCom")} value={form.email} onChange={(e) => update("email", e.target.value)} />
         </div>
       </div>
 
       <div className="space-y-3">
-        <Label>Features Your Service Includes</Label>
+        <Label>{t("internals.termsOfServiceGenerator.labels.featuresYourServiceIncludes")}</Label>
         <div className="grid grid-cols-2 gap-3">
           {[
             { key: "accounts", label: "User Accounts" },
@@ -133,13 +135,11 @@ ${form.company || "[Company Name]"}`;
         </div>
       </div>
 
-      <Button onClick={generate} disabled={!form.company} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Generate Terms of Service
-      </Button>
+      <Button onClick={generate} disabled={!form.company} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.termsOfServiceGenerator.buttons.generateTermsOfService")}</Button>
       {output && (
         <div className="space-y-2">
           <div className="flex justify-end">
-            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>Copy to Clipboard</Button>
+            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>{t("internals.termsOfServiceGenerator.buttons.copyToClipboard")}</Button>
           </div>
           <Textarea value={output} readOnly rows={25} className="font-mono text-xs" />
         </div>

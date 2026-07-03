@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function ComplaintLetterGenerator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [form, setForm] = useState({
     yourName: "",
     yourAddress: "",
@@ -63,23 +65,23 @@ Enclosures: [List any attached documents — receipts, photos, correspondence]`;
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Your Name</Label>
-          <Input placeholder="John Smith" value={form.yourName} onChange={(e) => update("yourName", e.target.value)} />
+          <Label>{t("internals.complaintLetterGenerator.labels.yourName")}</Label>
+          <Input placeholder={t("internals.complaintLetterGenerator.placeholders.johnSmith")} value={form.yourName} onChange={(e) => update("yourName", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Your Address</Label>
-          <Input placeholder="123 Main St, City, State" value={form.yourAddress} onChange={(e) => update("yourAddress", e.target.value)} />
+          <Label>{t("internals.complaintLetterGenerator.labels.yourAddress")}</Label>
+          <Input placeholder={t("internals.complaintLetterGenerator.placeholders.n123MainStCityState")} value={form.yourAddress} onChange={(e) => update("yourAddress", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Recipient Name</Label>
-          <Input placeholder="Customer Service Manager" value={form.recipientName} onChange={(e) => update("recipientName", e.target.value)} />
+          <Label>{t("internals.complaintLetterGenerator.labels.recipientName")}</Label>
+          <Input placeholder={t("internals.complaintLetterGenerator.placeholders.customerServiceManager")} value={form.recipientName} onChange={(e) => update("recipientName", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Company Name</Label>
-          <Input placeholder="Acme Corp" value={form.recipientCompany} onChange={(e) => update("recipientCompany", e.target.value)} />
+          <Label>{t("internals.complaintLetterGenerator.labels.companyName")}</Label>
+          <Input placeholder={t("internals.complaintLetterGenerator.placeholders.acmeCorp")} value={form.recipientCompany} onChange={(e) => update("recipientCompany", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Complaint Type</Label>
+          <Label>{t("internals.complaintLetterGenerator.labels.complaintType")}</Label>
           <Select value={form.type} onValueChange={(v) => update("type", v)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -91,29 +93,27 @@ Enclosures: [List any attached documents — receipts, photos, correspondence]`;
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Product/Service Name</Label>
-          <Input placeholder="Widget Pro 3000" value={form.product} onChange={(e) => update("product", e.target.value)} />
+          <Label>{t("internals.complaintLetterGenerator.labels.productServiceName")}</Label>
+          <Input placeholder={t("internals.complaintLetterGenerator.placeholders.widgetPro3000")} value={form.product} onChange={(e) => update("product", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Purchase Date</Label>
+          <Label>{t("internals.complaintLetterGenerator.labels.purchaseDate")}</Label>
           <Input type="date" value={form.purchaseDate} onChange={(e) => update("purchaseDate", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Desired Resolution</Label>
-          <Input placeholder="Full refund" value={form.resolution} onChange={(e) => update("resolution", e.target.value)} />
+          <Label>{t("internals.complaintLetterGenerator.labels.desiredResolution")}</Label>
+          <Input placeholder={t("internals.complaintLetterGenerator.placeholders.fullRefund")} value={form.resolution} onChange={(e) => update("resolution", e.target.value)} />
         </div>
       </div>
       <div className="space-y-2">
-        <Label>Describe the Issue</Label>
-        <Textarea placeholder="Explain what happened..." value={form.issue} onChange={(e) => update("issue", e.target.value)} rows={4} />
+        <Label>{t("internals.complaintLetterGenerator.labels.describeTheIssue")}</Label>
+        <Textarea placeholder={t("internals.complaintLetterGenerator.placeholders.explainWhatHappened")} value={form.issue} onChange={(e) => update("issue", e.target.value)} rows={4} />
       </div>
-      <Button onClick={generate} disabled={!form.yourName} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Generate Letter
-      </Button>
+      <Button onClick={generate} disabled={!form.yourName} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.complaintLetterGenerator.buttons.generateLetter")}</Button>
       {output && (
         <div className="space-y-2">
           <div className="flex justify-end">
-            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>Copy to Clipboard</Button>
+            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>{t("internals.complaintLetterGenerator.buttons.copyToClipboard")}</Button>
           </div>
           <Textarea value={output} readOnly rows={20} className="font-mono text-xs" />
         </div>

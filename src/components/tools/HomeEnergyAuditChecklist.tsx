@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 interface AuditItem {
   id: string;
@@ -30,6 +31,7 @@ const auditItems: AuditItem[] = [
 ];
 
 export default function HomeEnergyAuditChecklist() {
+  const { t } = useTranslation(["tools", "common"]);
   const [homeType, setHomeType] = useState("");
   const [homeAge, setHomeAge] = useState("");
   const [completed, setCompleted] = useState<Set<string>>(new Set());
@@ -53,9 +55,9 @@ export default function HomeEnergyAuditChecklist() {
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <Label>Home Type</Label>
+          <Label>{t("internals.homeEnergyAuditChecklist.labels.homeType")}</Label>
           <Select value={homeType} onValueChange={setHomeType}>
-            <SelectTrigger><SelectValue placeholder="Select type" /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("internals.homeEnergyAuditChecklist.placeholders.selectType")} /></SelectTrigger>
             <SelectContent>
               <SelectItem value="single">Single-Family Home</SelectItem>
               <SelectItem value="townhouse">Townhouse</SelectItem>
@@ -65,9 +67,9 @@ export default function HomeEnergyAuditChecklist() {
           </Select>
         </div>
         <div>
-          <Label>Home Age</Label>
+          <Label>{t("internals.homeEnergyAuditChecklist.labels.homeAge")}</Label>
           <Select value={homeAge} onValueChange={setHomeAge}>
-            <SelectTrigger><SelectValue placeholder="Select age" /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("internals.homeEnergyAuditChecklist.placeholders.selectAge")} /></SelectTrigger>
             <SelectContent>
               <SelectItem value="new">0–10 years</SelectItem>
               <SelectItem value="mid">10–30 years</SelectItem>
@@ -77,7 +79,7 @@ export default function HomeEnergyAuditChecklist() {
         </div>
       </div>
 
-      <Button onClick={() => setGenerated(true)} className="w-full" disabled={!homeType}>Generate Checklist</Button>
+      <Button onClick={() => setGenerated(true)} className="w-full" disabled={!homeType}>{t("internals.homeEnergyAuditChecklist.buttons.generateChecklist")}</Button>
 
       {generated && (
         <Card>

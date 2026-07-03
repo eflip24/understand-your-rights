@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useTranslation } from "react-i18next";
 
 export default function MortgageAffordability() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [income, setIncome] = useState("");
   const [debts, setDebts] = useState("");
   const [down, setDown] = useState("");
@@ -28,10 +28,10 @@ export default function MortgageAffordability() {
   return (
     <div className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-3">
-        <div><Label>Annual income ($)</Label><Input type="number" value={income} onChange={e => setIncome(e.target.value)} /></div>
-        <div><Label>Monthly debts ($)</Label><Input type="number" value={debts} onChange={e => setDebts(e.target.value)} /></div>
-        <div><Label>Down payment ($)</Label><Input type="number" value={down} onChange={e => setDown(e.target.value)} /></div>
-        <div><Label>Interest rate (%)</Label><Input type="number" step="0.1" value={rate} onChange={e => setRate(e.target.value)} /></div>
+        <div><Label>{t("internals.mortgageAffordability.labels.annualIncomeDollar")}</Label><Input type="number" value={income} onChange={e => setIncome(e.target.value)} /></div>
+        <div><Label>{t("internals.mortgageAffordability.labels.monthlyDebtsDollar")}</Label><Input type="number" value={debts} onChange={e => setDebts(e.target.value)} /></div>
+        <div><Label>{t("internals.mortgageAffordability.labels.downPaymentDollar")}</Label><Input type="number" value={down} onChange={e => setDown(e.target.value)} /></div>
+        <div><Label>{t("internals.mortgageAffordability.labels.interestRatePercent")}</Label><Input type="number" step="0.1" value={rate} onChange={e => setRate(e.target.value)} /></div>
       </div>
       <Button onClick={calc} disabled={!income}>{t("common:actions.calculate")}</Button>
       {result && (

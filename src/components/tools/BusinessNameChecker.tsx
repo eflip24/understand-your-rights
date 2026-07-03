@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export default function BusinessNameChecker() {
+  const { t } = useTranslation(["tools", "common"]);
   const [name, setName] = useState("");
   const [result, setResult] = useState<null | { checks: { label: string; status: "pass" | "warn" | "fail"; note: string }[] }>(null);
 
@@ -51,10 +53,10 @@ export default function BusinessNameChecker() {
   return (
     <div className="space-y-6">
       <div>
-        <Label>Business Name</Label>
-        <Input value={name} onChange={e => setName(e.target.value)} placeholder="Acme Solutions LLC" className="mt-1" />
+        <Label>{t("internals.businessNameChecker.labels.businessName")}</Label>
+        <Input value={name} onChange={e => setName(e.target.value)} placeholder={t("internals.businessNameChecker.placeholders.acmeSolutionsLlc")} className="mt-1" />
       </div>
-      <Button onClick={check} className="w-full">Check Business Name</Button>
+      <Button onClick={check} className="w-full">{t("internals.businessNameChecker.buttons.checkBusinessName")}</Button>
       {result && (
         <Card>
           <CardContent className="pt-6 space-y-3">

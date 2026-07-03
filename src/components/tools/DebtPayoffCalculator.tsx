@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function DebtPayoffCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [balance, setBalance] = useState("");
   const [rate, setRate] = useState("");
   const [minPayment, setMinPayment] = useState("");
@@ -50,25 +52,23 @@ export default function DebtPayoffCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-2">
-          <Label>Current Balance ($)</Label>
+          <Label>{t("internals.debtPayoffCalculator.labels.currentBalanceDollar")}</Label>
           <Input type="number" placeholder="15000" value={balance} onChange={(e) => setBalance(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Annual Interest Rate (%)</Label>
+          <Label>{t("internals.debtPayoffCalculator.labels.annualInterestRatePercent")}</Label>
           <Input type="number" placeholder="18.9" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Minimum Payment ($)</Label>
+          <Label>{t("internals.debtPayoffCalculator.labels.minimumPaymentDollar")}</Label>
           <Input type="number" placeholder="300" value={minPayment} onChange={(e) => setMinPayment(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Extra Payment ($)</Label>
+          <Label>{t("internals.debtPayoffCalculator.labels.extraPaymentDollar")}</Label>
           <Input type="number" placeholder="200" value={extraPayment} onChange={(e) => setExtraPayment(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!balance || !rate || !minPayment} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Payoff
-      </Button>
+      <Button onClick={calculate} disabled={!balance || !rate || !minPayment} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.debtPayoffCalculator.buttons.calculatePayoff")}</Button>
       {result && (
         <div className="space-y-4 pt-2">
           <div className="grid grid-cols-2 gap-4">

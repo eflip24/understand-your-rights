@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function DisputeLetterGenerator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [form, setForm] = useState({ type: "billing", name: "", address: "", companyName: "", companyAddress: "", accountNumber: "", amount: "", date: "", description: "" });
   const [output, setOutput] = useState("");
 
@@ -54,7 +56,7 @@ Enclosures:
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Dispute Type</Label>
+          <Label>{t("internals.disputeLetterGenerator.labels.disputeType")}</Label>
           <Select value={form.type} onValueChange={(v) => update("type", v)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -66,45 +68,43 @@ Enclosures:
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Your Full Name</Label>
-          <Input placeholder="John Doe" value={form.name} onChange={(e) => update("name", e.target.value)} />
+          <Label>{t("internals.disputeLetterGenerator.labels.yourFullName")}</Label>
+          <Input placeholder={t("internals.disputeLetterGenerator.placeholders.johnDoe")} value={form.name} onChange={(e) => update("name", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Your Address</Label>
-          <Input placeholder="123 Main St, City, State, ZIP" value={form.address} onChange={(e) => update("address", e.target.value)} />
+          <Label>{t("internals.disputeLetterGenerator.labels.yourAddress")}</Label>
+          <Input placeholder={t("internals.disputeLetterGenerator.placeholders.n123MainStCityStateZip")} value={form.address} onChange={(e) => update("address", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Company Name</Label>
-          <Input placeholder="ABC Company" value={form.companyName} onChange={(e) => update("companyName", e.target.value)} />
+          <Label>{t("internals.disputeLetterGenerator.labels.companyName")}</Label>
+          <Input placeholder={t("internals.disputeLetterGenerator.placeholders.abcCompany")} value={form.companyName} onChange={(e) => update("companyName", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Company Address</Label>
-          <Input placeholder="456 Business Ave, City, State, ZIP" value={form.companyAddress} onChange={(e) => update("companyAddress", e.target.value)} />
+          <Label>{t("internals.disputeLetterGenerator.labels.companyAddress")}</Label>
+          <Input placeholder={t("internals.disputeLetterGenerator.placeholders.n456BusinessAveCityStateZip")} value={form.companyAddress} onChange={(e) => update("companyAddress", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Account Number (optional)</Label>
-          <Input placeholder="XXXX-1234" value={form.accountNumber} onChange={(e) => update("accountNumber", e.target.value)} />
+          <Label>{t("internals.disputeLetterGenerator.labels.accountNumberOptional")}</Label>
+          <Input placeholder={t("internals.disputeLetterGenerator.placeholders.xxxx1234")} value={form.accountNumber} onChange={(e) => update("accountNumber", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Disputed Amount ($)</Label>
+          <Label>{t("internals.disputeLetterGenerator.labels.disputedAmountDollar")}</Label>
           <Input type="number" placeholder="250.00" value={form.amount} onChange={(e) => update("amount", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Date of Issue</Label>
+          <Label>{t("internals.disputeLetterGenerator.labels.dateOfIssue")}</Label>
           <Input type="date" value={form.date} onChange={(e) => update("date", e.target.value)} />
         </div>
       </div>
       <div className="space-y-2">
-        <Label>Describe the Issue</Label>
-        <Textarea placeholder="Explain what happened, include dates and specifics..." rows={4} value={form.description} onChange={(e) => update("description", e.target.value)} />
+        <Label>{t("internals.disputeLetterGenerator.labels.describeTheIssue")}</Label>
+        <Textarea placeholder={t("internals.disputeLetterGenerator.placeholders.explainWhatHappenedIncludeDatesAnd")} rows={4} value={form.description} onChange={(e) => update("description", e.target.value)} />
       </div>
-      <Button onClick={generate} disabled={!form.name} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Generate Dispute Letter
-      </Button>
+      <Button onClick={generate} disabled={!form.name} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.disputeLetterGenerator.buttons.generateDisputeLetter")}</Button>
       {output && (
         <div className="space-y-2">
           <div className="flex justify-end">
-            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>Copy to Clipboard</Button>
+            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>{t("internals.disputeLetterGenerator.buttons.copyToClipboard")}</Button>
           </div>
           <Textarea value={output} readOnly rows={25} className="font-mono text-xs" />
         </div>

@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const baseRates: Record<string, number> = { auto: 160, home: 150, renters: 20, life: 40 };
 const ageFactors: Record<string, number> = { "16-25": 1.8, "26-35": 1.0, "36-45": 0.95, "46-55": 1.05, "56-65": 1.15, "65+": 1.3 };
@@ -10,6 +11,7 @@ const creditFactors: Record<string, number> = { excellent: 0.8, good: 1.0, fair:
 const coverageLevels: Record<string, number> = { minimum: 0.5, standard: 1.0, full: 1.4, premium: 1.8 };
 
 export default function InsurancePremiumEstimator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [insuranceType, setInsuranceType] = useState("auto");
   const [ageRange, setAgeRange] = useState("26-35");
   const [creditScore, setCreditScore] = useState("good");
@@ -41,7 +43,7 @@ export default function InsurancePremiumEstimator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Insurance Type</Label>
+          <Label>{t("internals.insurancePremiumEstimator.labels.insuranceType")}</Label>
           <Select value={insuranceType} onValueChange={setInsuranceType}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -53,7 +55,7 @@ export default function InsurancePremiumEstimator() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Age Range</Label>
+          <Label>{t("internals.insurancePremiumEstimator.labels.ageRange")}</Label>
           <Select value={ageRange} onValueChange={setAgeRange}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -62,7 +64,7 @@ export default function InsurancePremiumEstimator() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Credit Score Range</Label>
+          <Label>{t("internals.insurancePremiumEstimator.labels.creditScoreRange")}</Label>
           <Select value={creditScore} onValueChange={setCreditScore}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -74,7 +76,7 @@ export default function InsurancePremiumEstimator() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Coverage Level</Label>
+          <Label>{t("internals.insurancePremiumEstimator.labels.coverageLevel")}</Label>
           <Select value={coverageLevel} onValueChange={setCoverageLevel}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -86,11 +88,11 @@ export default function InsurancePremiumEstimator() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>ZIP Code</Label>
+          <Label>{t("internals.insurancePremiumEstimator.labels.zipCode")}</Label>
           <Input type="text" maxLength={5} placeholder="90210" value={zipCode} onChange={(e) => setZipCode(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} className="w-full">Estimate Premium</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.insurancePremiumEstimator.buttons.estimatePremium")}</Button>
       {result && (
         <div className="rounded-lg border bg-card p-4 space-y-3">
           <h3 className="font-semibold text-lg">Estimated Premium</h3>

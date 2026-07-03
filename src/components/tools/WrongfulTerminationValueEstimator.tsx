@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function WrongfulTerminationValueEstimator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [salary, setSalary] = useState("");
   const [monthsUnemployed, setMonthsUnemployed] = useState("");
   const [benefitsValue, setBenefitsValue] = useState("");
@@ -40,11 +42,11 @@ export default function WrongfulTerminationValueEstimator() {
   return (
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
-        <div><Label>Annual Salary at Termination ($)</Label><Input type="number" value={salary} onChange={e => setSalary(e.target.value)} placeholder="75000" /></div>
-        <div><Label>Months Unemployed Since</Label><Input type="number" value={monthsUnemployed} onChange={e => setMonthsUnemployed(e.target.value)} placeholder="6" step="0.5" /></div>
-        <div><Label>Annual Benefits Value ($)</Label><Input type="number" value={benefitsValue} onChange={e => setBenefitsValue(e.target.value)} placeholder="12000" /></div>
+        <div><Label>{t("internals.wrongfulTerminationValueEstimator.labels.annualSalaryAtTerminationDollar")}</Label><Input type="number" value={salary} onChange={e => setSalary(e.target.value)} placeholder="75000" /></div>
+        <div><Label>{t("internals.wrongfulTerminationValueEstimator.labels.monthsUnemployedSince")}</Label><Input type="number" value={monthsUnemployed} onChange={e => setMonthsUnemployed(e.target.value)} placeholder="6" step="0.5" /></div>
+        <div><Label>{t("internals.wrongfulTerminationValueEstimator.labels.annualBenefitsValueDollar")}</Label><Input type="number" value={benefitsValue} onChange={e => setBenefitsValue(e.target.value)} placeholder="12000" /></div>
         <div>
-          <Label>Claim Type</Label>
+          <Label>{t("internals.wrongfulTerminationValueEstimator.labels.claimType")}</Label>
           <Select value={claimType} onValueChange={(v) => setClaimType(v as typeof claimType)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -56,7 +58,7 @@ export default function WrongfulTerminationValueEstimator() {
           </Select>
         </div>
         <div className="sm:col-span-2">
-          <Label>Case Strength</Label>
+          <Label>{t("internals.wrongfulTerminationValueEstimator.labels.caseStrength")}</Label>
           <Select value={strength} onValueChange={(v) => setStrength(v as typeof strength)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>

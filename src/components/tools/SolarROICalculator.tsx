@@ -3,8 +3,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export default function SolarROICalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [systemCost, setSystemCost] = useState("");
   const [annualProduction, setAnnualProduction] = useState("");
   const [electricityRate, setElectricityRate] = useState("");
@@ -37,24 +39,24 @@ export default function SolarROICalculator() {
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <Label htmlFor="systemCost">System Cost ($)</Label>
+          <Label htmlFor="systemCost">{t("internals.solarROICalculator.labels.systemCostDollar")}</Label>
           <Input id="systemCost" type="number" placeholder="25000" value={systemCost} onChange={(e) => setSystemCost(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="annualProduction">Annual Production (kWh)</Label>
+          <Label htmlFor="annualProduction">{t("internals.solarROICalculator.labels.annualProductionKwh")}</Label>
           <Input id="annualProduction" type="number" placeholder="10000" value={annualProduction} onChange={(e) => setAnnualProduction(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="electricityRate">Electricity Rate ($/kWh)</Label>
+          <Label htmlFor="electricityRate">{t("internals.solarROICalculator.labels.electricityRateDollarKwh")}</Label>
           <Input id="electricityRate" type="number" step="0.01" placeholder="0.13" value={electricityRate} onChange={(e) => setElectricityRate(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="incentives">Incentives & Rebates ($)</Label>
+          <Label htmlFor="incentives">{t("internals.solarROICalculator.labels.incentivesAndRebatesDollar")}</Label>
           <Input id="incentives" type="number" placeholder="7500" value={incentives} onChange={(e) => setIncentives(e.target.value)} />
         </div>
       </div>
 
-      <Button onClick={calculate} className="w-full">Calculate ROI</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.solarROICalculator.buttons.calculateRoi")}</Button>
 
       {result && (
         <div className="grid gap-4 sm:grid-cols-2">

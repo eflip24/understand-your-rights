@@ -2189,11 +2189,79 @@
     }
   },
   "internals": {
-    "wordCounter": {
-      "button": "Count Words"
+    "accidentDamageCalculator": {
+      "buttons": {
+        "calculateTotalDamages": "Calculate Total Damages"
+      },
+      "labels": {
+        "medicalBillsDollar": "Medical Bills ($)",
+        "futureMedicalCostsDollar": "Future Medical Costs ($)",
+        "propertyDamageDollar": "Property Damage ($)",
+        "lostWagesDollar": "Lost Wages ($)",
+        "futureLostEarningsDollar": "Future Lost Earnings ($)",
+        "outOfPocketExpensesDollar": "Out-of-Pocket Expenses ($)",
+        "painAndSufferingEstimateDollar": "Pain & Suffering Estimate ($)"
+      }
     },
-    "readingTime": {
-      "button": "Calculate Reading Time"
+    "alimony": {
+      "higherIncome": "Higher Earner Annual Income ($)",
+      "lowerIncome": "Lower Earner Annual Income ($)",
+      "marriageYears": "Length of Marriage (years)",
+      "estimated": "Estimated Alimony",
+      "monthly": "Monthly Amount",
+      "duration": "Likely Duration",
+      "longTerm": "Long-term",
+      "years": "yrs",
+      "longMarriage": "(20+ year marriage)",
+      "stateGuideline": "State guideline:",
+      "footer": "Alimony is highly discretionary. Judges weigh standard of living, age, health, contributions to the marriage, and earning capacity. This is an estimate only — not legal advice."
+    },
+    "amendmentDrafter": {
+      "buttons": {
+        "draftAmendment": "Draft Amendment",
+        "copyToClipboard": "Copy to Clipboard"
+      },
+      "labels": {
+        "originalContractTitle": "Original Contract Title",
+        "originalContractDate": "Original Contract Date",
+        "party1": "Party 1",
+        "party2": "Party 2",
+        "amendmentNumber": "Amendment Number",
+        "governingState": "Governing State",
+        "describeTheChanges": "Describe the Changes"
+      },
+      "placeholders": {
+        "serviceAgreement": "Service Agreement",
+        "acmeCorp": "Acme Corp",
+        "betaInc": "Beta Inc",
+        "delaware": "Delaware",
+        "section31IsAmendedTo": "Section 3.1 is amended to read: ..."
+      }
+    },
+    "attorneyFeeCalculator": {
+      "buttons": {
+        "calculateFees": "Calculate Fees"
+      },
+      "labels": {
+        "feeStructure": "Fee Structure",
+        "expectedSettlementDollar": "Expected Settlement ($)",
+        "contingencyRatePercent": "Contingency Rate (%)",
+        "hourlyRateDollar": "Hourly Rate ($)",
+        "estimatedHours": "Estimated Hours",
+        "caseExpensesDollar": "Case Expenses ($)"
+      }
+    },
+    "autoLoanCalculator": {
+      "buttons": {
+        "calculateAutoLoan": "Calculate Auto Loan"
+      },
+      "labels": {
+        "vehiclePriceDollar": "Vehicle Price ($)",
+        "downPaymentDollar": "Down Payment ($)",
+        "tradeInValueDollar": "Trade-In Value ($)",
+        "annualInterestRatePercent": "Annual Interest Rate (%)",
+        "loanTermMonths": "Loan Term (Months)"
+      }
     },
     "autoRenewal": {
       "placeholder": "Paste your contract or subscription terms…",
@@ -2206,16 +2274,298 @@
       "warnLongNotice": "Long notice window ({{window}}) — set a calendar reminder.",
       "warnPerpetual": "Possible perpetual term language detected."
     },
-    "governingLaw": {
-      "placeholder": "Paste your contract…",
-      "button": "Identify Governing Law",
-      "governingLaw": "Governing Law",
-      "venue": "Venue/Jurisdiction",
-      "arbitration": "Arbitration",
-      "juryWaiver": "Jury Trial Waiver",
-      "classWaiver": "Class Action Waiver",
-      "yes": "Yes ⚠",
-      "no": "No"
+    "breakevenCalculator": {
+      "buttons": {
+        "calculateBreakeven": "Calculate Breakeven"
+      },
+      "labels": {
+        "entryPriceDollar": "Entry Price ($)",
+        "tradingFeePercent": "Trading Fee (%)",
+        "leverage": "Leverage (×)"
+      }
+    },
+    "businessExpenseTracker": {
+      "buttons": {
+        "generateExpenseTemplate": "Generate Expense Template"
+      },
+      "labels": {
+        "businessType": "Business Type",
+        "expenseCategoriesSelectToCustomizeOr": "Expense Categories (select to customize, or leave all for full template)"
+      },
+      "placeholders": {
+        "selectBusinessType": "Select business type"
+      }
+    },
+    "businessNameChecker": {
+      "buttons": {
+        "checkBusinessName": "Check Business Name"
+      },
+      "labels": {
+        "businessName": "Business Name"
+      },
+      "placeholders": {
+        "acmeSolutionsLlc": "Acme Solutions LLC"
+      }
+    },
+    "cancellationDeadline": {
+      "buttons": {
+        "calculateDeadline": "Calculate Deadline"
+      },
+      "labels": {
+        "signupPurchaseDate": "Signup / Purchase Date",
+        "coolingOffPeriodDays": "Cooling-Off Period (days)",
+        "dayType": "Day Type"
+      }
+    },
+    "carbonFootprintCalculator": {
+      "buttons": {
+        "calculateOffset": "Calculate Offset"
+      },
+      "labels": {
+        "annualElectricityUsageKwh": "Annual Electricity Usage (kWh)",
+        "currentEnergySource": "Current Energy Source",
+        "solarRenewableReplacementPercent": "Solar/Renewable Replacement (%)"
+      }
+    },
+    "ceaseAndDesistGenerator": {
+      "buttons": {
+        "generateCAndDLetter": "Generate C&D Letter",
+        "copyToClipboard": "Copy to Clipboard"
+      },
+      "labels": {
+        "typeOfCAndD": "Type of C&D",
+        "responseDeadlineDays": "Response Deadline (days)",
+        "yourName": "Your Name",
+        "yourAddress": "Your Address",
+        "recipientName": "Recipient Name",
+        "recipientAddress": "Recipient Address",
+        "governingState": "Governing State",
+        "describeTheSpecificConduct": "Describe the Specific Conduct"
+      },
+      "placeholders": {
+        "johnDoe": "John Doe",
+        "n123MainStCityStateZip": "123 Main St, City, State, ZIP",
+        "janeSmith": "Jane Smith",
+        "n456OtherStCityStateZip": "456 Other St, City, State, ZIP",
+        "california": "California",
+        "onDateYouDescribeTheBehavior": "On [date], you [describe the behavior]..."
+      }
+    },
+    "chargebackChecker": {
+      "buttons": {
+        "checkEligibility": "Check Eligibility"
+      },
+      "labels": {
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "childSupport": {
+      "yourIncome": "Your Annual Income ($)",
+      "otherIncome": "Other Parent's Annual Income ($)",
+      "numChildren": "Number of Children",
+      "yourRole": "Your Role",
+      "roleObligor": "I will pay support (non-custodial)",
+      "roleRecipient": "I will receive support (custodial)",
+      "estimated": "Estimated Monthly Child Support",
+      "youPay": "You would pay",
+      "youReceive": "You would receive",
+      "perMonth": "per month",
+      "model": "Model:",
+      "guidelinePct": "Guideline %:",
+      "guidelineText": "{{pct}}% of combined income for {{n}} child(ren)",
+      "statute": "Statute:",
+      "footer": "This is a baseline estimate. Final orders depend on custody time, healthcare costs, childcare, and judicial discretion. Not legal advice — consult a family law attorney for your specific situation."
+    },
+    "clauseExplainer": {
+      "placeholders": {
+        "pasteAnyClauseOrLegalParagraph": "Paste any clause or legal paragraph you want explained..."
+      }
+    },
+    "clauseFinder": {
+      "buttons": {
+        "findClauses": "Find Clauses"
+      }
+    },
+    "complaintLetterGenerator": {
+      "buttons": {
+        "generateLetter": "Generate Letter",
+        "copyToClipboard": "Copy to Clipboard"
+      },
+      "labels": {
+        "yourName": "Your Name",
+        "yourAddress": "Your Address",
+        "recipientName": "Recipient Name",
+        "companyName": "Company Name",
+        "complaintType": "Complaint Type",
+        "productServiceName": "Product/Service Name",
+        "purchaseDate": "Purchase Date",
+        "desiredResolution": "Desired Resolution",
+        "describeTheIssue": "Describe the Issue"
+      },
+      "placeholders": {
+        "johnSmith": "John Smith",
+        "n123MainStCityState": "123 Main St, City, State",
+        "customerServiceManager": "Customer Service Manager",
+        "acmeCorp": "Acme Corp",
+        "widgetPro3000": "Widget Pro 3000",
+        "fullRefund": "Full refund",
+        "explainWhatHappened": "Explain what happened..."
+      }
+    },
+    "compoundInterestCalculator": {
+      "buttons": {
+        "calculateCompoundInterest": "Calculate Compound Interest"
+      },
+      "labels": {
+        "initialPrincipalDollar": "Initial Principal ($)",
+        "annualInterestRatePercent": "Annual Interest Rate (%)",
+        "timePeriodYears": "Time Period (Years)",
+        "compoundingFrequency": "Compounding Frequency",
+        "monthlyContributionDollar": "Monthly Contribution ($)"
+      }
+    },
+    "consumerRightsQuiz": {
+      "buttons": {
+        "takeAgain": "Take Again"
+      }
+    },
+    "contractChecklistGenerator": {
+      "labels": {
+        "contractType": "Contract Type"
+      },
+      "placeholders": {
+        "selectContractType": "Select contract type..."
+      }
+    },
+    "contractComparison": {
+      "placeholders": {
+        "pasteTheFirstContract": "Paste the first contract...",
+        "pasteTheSecondContract": "Paste the second contract..."
+      }
+    },
+    "contractExpirationTracker": {
+      "buttons": {
+        "remove": "Remove",
+        "addContract": "+ Add Contract",
+        "trackExpirations": "Track Expirations"
+      },
+      "labels": {
+        "contractName": "Contract Name",
+        "startDate": "Start Date",
+        "endDate": "End Date"
+      },
+      "placeholders": {
+        "officeLease": "Office Lease"
+      }
+    },
+    "contractRedFlagScanner": {
+      "placeholders": {
+        "pasteTheFullContractOrSpecific": "Paste the full contract or specific sections you want analyzed..."
+      }
+    },
+    "contractValueCalculator": {
+      "buttons": {
+        "calculateTotalValue": "Calculate Total Value"
+      },
+      "labels": {
+        "paymentAmountDollar": "Payment Amount ($)",
+        "paymentFrequency": "Payment Frequency",
+        "termDurationYears": "Term Duration (years)",
+        "numberOfRenewals": "Number of Renewals",
+        "annualEscalationRatePercent": "Annual Escalation Rate (%)"
+      }
+    },
+    "contractorVsEmployeeChecker": {
+      "buttons": {
+        "analyzeClassificationObjectKeysAnswersLength": "Analyze Classification ({Object.keys(answers).length}/{questions.length} answered)"
+      },
+      "labels": {
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "cryptoConverterCalculator": {
+      "buttons": {
+        "convert": "Convert"
+      },
+      "labels": {
+        "amount": "Amount",
+        "cryptocurrency": "Cryptocurrency"
+      }
+    },
+    "cryptoTaxCalculator": {
+      "buttons": {
+        "calculateTax": "Calculate Tax"
+      },
+      "labels": {
+        "buyPriceDollar": "Buy Price ($)",
+        "sellPriceDollar": "Sell Price ($)",
+        "quantity": "Quantity",
+        "holdingPeriod": "Holding Period",
+        "taxBracketPercent": "Tax Bracket (%)"
+      }
+    },
+    "dCACalculator": {
+      "buttons": {
+        "calculateDca": "Calculate DCA"
+      },
+      "labels": {
+        "investmentPerPeriodDollar": "Investment Per Period ($)",
+        "numberOfPeriods": "Number of Periods",
+        "startPriceDollar": "Start Price ($)",
+        "endPriceDollar": "End Price ($)"
+      }
+    },
+    "dataBreach": {
+      "progress": "Progress"
+    },
+    "debtPayoffCalculator": {
+      "buttons": {
+        "calculatePayoff": "Calculate Payoff"
+      },
+      "labels": {
+        "currentBalanceDollar": "Current Balance ($)",
+        "annualInterestRatePercent": "Annual Interest Rate (%)",
+        "minimumPaymentDollar": "Minimum Payment ($)",
+        "extraPaymentDollar": "Extra Payment ($)"
+      }
+    },
+    "discrimination": {
+      "complete": "complete"
+    },
+    "disputeLetterGenerator": {
+      "buttons": {
+        "generateDisputeLetter": "Generate Dispute Letter",
+        "copyToClipboard": "Copy to Clipboard"
+      },
+      "labels": {
+        "disputeType": "Dispute Type",
+        "yourFullName": "Your Full Name",
+        "yourAddress": "Your Address",
+        "companyName": "Company Name",
+        "companyAddress": "Company Address",
+        "accountNumberOptional": "Account Number (optional)",
+        "disputedAmountDollar": "Disputed Amount ($)",
+        "dateOfIssue": "Date of Issue",
+        "describeTheIssue": "Describe the Issue"
+      },
+      "placeholders": {
+        "johnDoe": "John Doe",
+        "n123MainStCityStateZip": "123 Main St, City, State, ZIP",
+        "abcCompany": "ABC Company",
+        "n456BusinessAveCityStateZip": "456 Business Ave, City, State, ZIP",
+        "xxxx1234": "XXXX-1234",
+        "explainWhatHappenedIncludeDatesAnd": "Explain what happened, include dates and specifics..."
+      }
+    },
+    "divorceCostEstimator": {
+      "labels": {
+        "divorceType": "Divorce Type",
+        "childrenInvolved": "Children Involved?",
+        "maritalAssetComplexity": "Marital Asset Complexity",
+        "attorneyHourlyRateDollar": "Attorney Hourly Rate ($)"
+      }
     },
     "dmca": {
       "yourName": "Your full name",
@@ -2224,18 +2574,17 @@
       "infringing": "Infringing URLs",
       "button": "Copy Notice"
     },
-    "subscriptionCancel": {
-      "yourName": "Your name",
-      "accountId": "Account ID / email",
-      "serviceName": "Service name",
-      "date": "Date",
-      "button": "Copy Letter"
-    },
-    "dataBreach": {
-      "progress": "Progress"
-    },
-    "discrimination": {
-      "complete": "complete"
+    "eVvsGasCalculator": {
+      "buttons": {
+        "compareCosts": "Compare Costs"
+      },
+      "labels": {
+        "annualMilesDriven": "Annual Miles Driven",
+        "gasPriceDollarGallon": "Gas Price ($/gallon)",
+        "gasVehicleMpg": "Gas Vehicle MPG",
+        "electricityRateDollarKwh": "Electricity Rate ($/kWh)",
+        "evEfficiencyKwhPer100Miles": "EV Efficiency (kWh per 100 miles)"
+      }
     },
     "emergencyFund": {
       "expenses": "Monthly expenses ($)",
@@ -2247,18 +2596,401 @@
       "stillNeed": "Still need",
       "reachIn": "At ${{contrib}}/mo, you'll reach your goal in {{months}} months."
     },
+    "energySavingsCalculator": {
+      "buttons": {
+        "calculateSavings": "Calculate Savings"
+      },
+      "labels": {
+        "currentMonthlyBillDollar": "Current Monthly Bill ($)",
+        "solarCoveragePercent": "Solar Coverage (%)",
+        "systemCostDollar": "System Cost ($)"
+      }
+    },
+    "equityDilutionCalculator": {
+      "labels": {
+        "currentTotalSharesOutstanding": "Current Total Shares Outstanding",
+        "yourShares": "Your Shares",
+        "newSharesIssuedFundingRound": "New Shares Issued (Funding Round)",
+        "newOptionPoolShares": "New Option Pool Shares"
+      },
+      "placeholders": {
+        "eG1000000": "e.g. 1000000",
+        "eG100000": "e.g. 100000",
+        "eG250000": "e.g. 250000"
+      }
+    },
+    "evictionNoticeLookup": {
+      "labels": {
+        "reason": "Reason"
+      },
+      "placeholders": {
+        "selectState": "Select state",
+        "selectReason": "Select reason"
+      }
+    },
     "finalPaycheck": {
       "ifFired": "If terminated/fired:",
       "ifQuit": "If you quit:",
       "footer": "Final pay must include unused vacation in most states. Check your state labor department for specifics."
     },
-    "unemployment": {
-      "wages": "Annual wages (last 12 months, $)",
-      "button": "Estimate Benefits",
-      "perWeek": "/week",
-      "stateMax": "State maximum",
-      "maxPerWeek": "/week. Typical duration: up to {{weeks}} weeks.",
-      "footer": "Estimate only. Actual benefit calculated by your state's unemployment office using base-period wages."
+    "forceMajeureChecker": {
+      "buttons": {
+        "checkForceMajeureClause": "Check Force Majeure Clause"
+      },
+      "placeholders": {
+        "pasteYourContractText": "Paste your contract text..."
+      }
+    },
+    "foundersAgreementGenerator": {
+      "buttons": {
+        "copyAgreement": "Copy Agreement"
+      },
+      "labels": {
+        "companyName": "Company name",
+        "vestingSchedule": "Vesting schedule",
+        "foundersNamePercentRole": "Founders (name — % — role)"
+      },
+      "placeholders": {
+        "janeDoe50PercentCeoAnd": "Jane Doe — 50% — CEO&#10;John Smith — 50% — CTO"
+      }
+    },
+    "freelanceRateCalculator": {
+      "buttons": {
+        "calculateRates": "Calculate Rates"
+      },
+      "labels": {
+        "hourlyRateDollar": "Hourly Rate ($)",
+        "billableHoursWeek": "Billable Hours/Week",
+        "workingWeeksYear": "Working Weeks/Year",
+        "estimatedTaxRatePercent": "Estimated Tax Rate (%)",
+        "monthlyExpensesDollar": "Monthly Expenses ($)"
+      }
+    },
+    "governingLaw": {
+      "placeholder": "Paste your contract…",
+      "button": "Identify Governing Law",
+      "governingLaw": "Governing Law",
+      "venue": "Venue/Jurisdiction",
+      "arbitration": "Arbitration",
+      "juryWaiver": "Jury Trial Waiver",
+      "classWaiver": "Class Action Waiver",
+      "yes": "Yes ⚠",
+      "no": "No"
+    },
+    "grantBudgetCalculator": {
+      "labels": {
+        "totalGrantAmountDollar": "Total Grant Amount ($)",
+        "indirectCostRatePercent": "Indirect Cost Rate (%)"
+      },
+      "placeholders": {
+        "eG500000": "e.g. 500000",
+        "eG10": "e.g. 10"
+      }
+    },
+    "grantComplianceChecklist": {
+      "labels": {
+        "grantType": "Grant Type"
+      },
+      "placeholders": {
+        "selectGrantType": "Select grant type..."
+      }
+    },
+    "grantDeadlineTracker": {
+      "buttons": {
+        "addDeadline": "Add Deadline",
+        "": "×"
+      },
+      "labels": {
+        "grantTaskName": "Grant / Task Name",
+        "deadlineDate": "Deadline Date",
+        "type": "Type"
+      },
+      "placeholders": {
+        "eGNsfProgressReport": "e.g. NSF Progress Report"
+      }
+    },
+    "greenLeaseChecker": {
+      "buttons": {
+        "evaluateLease": "Evaluate Lease"
+      }
+    },
+    "habitabilityTracker": {
+      "buttons": {
+        "copyLetter": "Copy Letter"
+      },
+      "labels": {
+        "landlordName": "Landlord name",
+        "propertyAddress": "Property address",
+        "describeTheIssue": "Describe the issue"
+      },
+      "placeholders": {
+        "eGNoHotWaterSince": "e.g., No hot water since Jan 5. Affects bathing and dishwashing..."
+      }
+    },
+    "homeEnergyAuditChecklist": {
+      "buttons": {
+        "generateChecklist": "Generate Checklist"
+      },
+      "labels": {
+        "homeType": "Home Type",
+        "homeAge": "Home Age"
+      },
+      "placeholders": {
+        "selectType": "Select type",
+        "selectAge": "Select age"
+      }
+    },
+    "incomeTaxEstimator": {
+      "buttons": {
+        "estimateTax": "Estimate Tax"
+      },
+      "labels": {
+        "grossAnnualIncomeDollar": "Gross Annual Income ($)",
+        "filingStatus": "Filing Status",
+        "deductionsDollarBlankStandard": "Deductions ($, blank = standard)"
+      }
+    },
+    "independentContractorAgreement": {
+      "buttons": {
+        "generateAgreement": "Generate Agreement",
+        "copyToClipboard": "Copy to Clipboard"
+      },
+      "labels": {
+        "clientName": "Client Name",
+        "contractorName": "Contractor Name",
+        "clientAddress": "Client Address",
+        "contractorAddress": "Contractor Address",
+        "compensation": "Compensation",
+        "paymentTerms": "Payment Terms",
+        "durationOptional": "Duration (optional)",
+        "governingState": "Governing State",
+        "scopeOfServices": "Scope of Services"
+      },
+      "placeholders": {
+        "acmeCorp": "Acme Corp",
+        "janeSmithConsulting": "Jane Smith Consulting",
+        "n123BusinessSt": "123 Business St",
+        "n456FreelanceAve": "456 Freelance Ave",
+        "dollar5000PerMonth": "$5,000 per month",
+        "n6Months": "6 months",
+        "delaware": "Delaware",
+        "describeTheServicesTheContractorWill": "Describe the services the contractor will provide..."
+      }
+    },
+    "insurancePremiumEstimator": {
+      "buttons": {
+        "estimatePremium": "Estimate Premium"
+      },
+      "labels": {
+        "insuranceType": "Insurance Type",
+        "ageRange": "Age Range",
+        "creditScoreRange": "Credit Score Range",
+        "coverageLevel": "Coverage Level",
+        "zipCode": "ZIP Code"
+      }
+    },
+    "insuranceQuoteComparison": {
+      "buttons": {
+        "addQuote": "+ Add Quote",
+        "compareQuotes": "Compare Quotes"
+      },
+      "labels": {
+        "companyName": "Company Name",
+        "monthlyPremiumDollar": "Monthly Premium ($)",
+        "deductibleDollar": "Deductible ($)",
+        "coverageLimitDollar": "Coverage Limit ($)"
+      },
+      "placeholders": {
+        "stateFarm": "State Farm"
+      }
+    },
+    "invoiceInterestCalculator": {
+      "buttons": {
+        "calculateInterest": "Calculate Interest"
+      },
+      "labels": {
+        "invoiceAmountDollar": "Invoice Amount ($)",
+        "interestRatePercent": "Interest Rate (%)",
+        "daysOverdue": "Days Overdue",
+        "rateType": "Rate Type"
+      }
+    },
+    "jargonTranslator": {
+      "placeholders": {
+        "searchForALegalTermE": "Search for a legal term (e.g., indemnification, arbitration)..."
+      }
+    },
+    "lateFeeCalculator": {
+      "buttons": {
+        "calculateLateFee": "Calculate Late Fee"
+      },
+      "labels": {
+        "principalAmountDollar": "Principal Amount ($)",
+        "feeRatePercent": "Fee Rate (%)",
+        "daysLate": "Days Late",
+        "rateType": "Rate Type"
+      }
+    },
+    "leaseAnalyzer": {
+      "label": "Paste your lease agreement",
+      "placeholder": "Paste the full lease agreement text…",
+      "button": "Analyze Lease",
+      "analyzing": "Analyzing Lease…",
+      "keyTerms": "Key Terms",
+      "risks": "⚠ Risks",
+      "recommendations": "Recommendations"
+    },
+    "leaseBreakPenaltyCalculator": {
+      "labels": {
+        "monthlyRentDollar": "Monthly Rent ($)",
+        "monthsRemainingOnLease": "Months Remaining on Lease",
+        "securityDepositDollar": "Security Deposit ($)",
+        "estimatedMonthsToReRent": "Estimated Months to Re-Rent",
+        "leaseHasEarlyTerminationClause": "Lease Has Early Termination Clause?",
+        "earlyTerminationFeeStatedInLease": "Early Termination Fee Stated in Lease ($)"
+      }
+    },
+    "leaseTermComparison": {
+      "buttons": {
+        "compareLeases": "Compare Leases"
+      }
+    },
+    "lemonLawQualifier": {
+      "buttons": {
+        "checkQualification": "Check Qualification"
+      },
+      "labels": {
+        "repairAttemptsSameIssue": "Repair attempts (same issue)",
+        "totalDaysOutOfService": "Total days out of service",
+        "vehicleAgeMonths": "Vehicle age (months)",
+        "mileage": "Mileage"
+      }
+    },
+    "loanPaymentCalculator": {
+      "buttons": {
+        "calculatePayment": "Calculate Payment"
+      },
+      "labels": {
+        "loanAmountDollar": "Loan Amount ($)",
+        "annualInterestRatePercent": "Annual Interest Rate (%)",
+        "loanTermMonths": "Loan Term (Months)"
+      }
+    },
+    "marginCallCalculator": {
+      "buttons": {
+        "calculateMarginCall": "Calculate Margin Call"
+      },
+      "labels": {
+        "yourEquityDollar": "Your Equity ($)",
+        "borrowedAmountDollar": "Borrowed Amount ($)",
+        "numberOfShares": "Number of Shares",
+        "maintenanceMarginPercent": "Maintenance Margin (%)"
+      }
+    },
+    "minimumWageLookup": {
+      "placeholders": {
+        "selectState": "Select state..."
+      }
+    },
+    "mortgageAffordability": {
+      "labels": {
+        "annualIncomeDollar": "Annual income ($)",
+        "monthlyDebtsDollar": "Monthly debts ($)",
+        "downPaymentDollar": "Down payment ($)",
+        "interestRatePercent": "Interest rate (%)"
+      }
+    },
+    "moveOutChecklistGenerator": {
+      "buttons": {
+        "generateChecklist": "Generate Checklist"
+      },
+      "labels": {
+        "propertyType": "Property Type",
+        "propertyFeaturesSelectAllThatApply": "Property Features (select all that apply)"
+      },
+      "placeholders": {
+        "selectType": "Select type"
+      }
+    },
+    "nDAGenerator": {
+      "buttons": {
+        "generateNda": "Generate NDA",
+        "copyToClipboard": "Copy to Clipboard"
+      },
+      "labels": {
+        "ndaType": "NDA Type",
+        "durationYears": "Duration (years)",
+        "party1YourNameCompany": "Party 1 (Your Name/Company)",
+        "party2OtherParty": "Party 2 (Other Party)",
+        "governingState": "Governing State",
+        "scopeSubjectMatter": "Scope / Subject Matter"
+      },
+      "placeholders": {
+        "acmeCorp": "Acme Corp",
+        "betaInc": "Beta Inc",
+        "delaware": "Delaware",
+        "softwareDevelopmentProject": "Software development project"
+      }
+    },
+    "nda": {
+      "label": "Paste your NDA text",
+      "placeholder": "Paste the full NDA document…",
+      "button": "Score NDA Fairness",
+      "analyzing": "Analyzing NDA…",
+      "strengths": "✓ Strengths",
+      "concerns": "⚠ Concerns",
+      "recommendations": "Recommendations"
+    },
+    "netMeteringEstimator": {
+      "buttons": {
+        "estimateSavings": "Estimate Savings"
+      },
+      "labels": {
+        "systemSizeKw": "System size (kW)",
+        "avgSunHoursDay": "Avg sun hours/day",
+        "monthlyUsageKwh": "Monthly usage (kWh)",
+        "retailRateDollarKwh": "Retail rate ($/kWh)",
+        "exportRateDollarKwh": "Export rate ($/kWh)"
+      }
+    },
+    "netWorthCalculator": {
+      "buttons": {
+        "calculateNetWorth": "Calculate Net Worth"
+      }
+    },
+    "nonCompeteChecker": {
+      "buttons": {
+        "checkEnforceability": "Check Enforceability"
+      },
+      "labels": {
+        "durationMonths": "Duration (months)"
+      },
+      "placeholders": {
+        "selectState": "Select state..."
+      }
+    },
+    "noticePeriod": {
+      "buttons": {
+        "calculateEndDate": "Calculate End Date"
+      },
+      "labels": {
+        "noticeGivenOn": "Notice Given On",
+        "noticePeriod": "Notice Period",
+        "dayType": "Day Type"
+      }
+    },
+    "operatingAgreementGenerator": {
+      "buttons": {
+        "copyAgreement": "Copy Agreement"
+      },
+      "labels": {
+        "llcName": "LLC Name",
+        "membersNameOwnershipPercent": "Members (name + ownership %)",
+        "businessPurpose": "Business purpose"
+      },
+      "placeholders": {
+        "janeDoe60PercentAnd10": "Jane Doe — 60%&#10;John Smith — 40%"
+      }
     },
     "overtime": {
       "hourlyRate": "Hourly Rate ($)",
@@ -2282,21 +3014,151 @@
       "otPremium": "OT premium earned:",
       "otPremiumSuffix": "extra"
     },
-    "severance": {
-      "salary": "Annual Salary ($)",
-      "years": "Years of Service",
-      "level": "Severance Level",
-      "levelStandard": "Standard (1-2 weeks/year)",
-      "levelGenerous": "Generous (2-4 weeks/year)",
-      "levelExecutive": "Executive (4-8 weeks/year)",
-      "range": "Estimated Severance Range",
-      "low": "Low Estimate",
-      "high": "High Estimate",
-      "weeks": "weeks",
-      "weeklySalary": "Weekly salary:",
-      "yearsService": "Years of service:",
-      "levelLabel": "Level:",
-      "footer": "Severance is not legally required in most US states. These estimates reflect common industry practices. Always negotiate based on your specific situation."
+    "pPACalculator": {
+      "buttons": {
+        "comparePpaVsUtility": "Compare PPA vs Utility"
+      },
+      "labels": {
+        "ppaRateDollarKwh": "PPA Rate ($/kWh)",
+        "ppaAnnualEscalationPercent": "PPA Annual Escalation (%)",
+        "currentUtilityRateDollarKwh": "Current Utility Rate ($/kWh)",
+        "utilityAnnualEscalationPercent": "Utility Annual Escalation (%)",
+        "contractTermYears": "Contract Term (years)",
+        "annualUsageKwh": "Annual Usage (kWh)"
+      }
+    },
+    "pTOCalculator": {
+      "buttons": {
+        "calculatePto": "Calculate PTO"
+      },
+      "labels": {
+        "accrualRateDaysPerPeriod": "Accrual Rate (days per period)",
+        "accrualPeriod": "Accrual Period",
+        "monthsEmployed": "Months Employed",
+        "daysAlreadyUsed": "Days Already Used",
+        "maxCarryoverCapDaysOptional": "Max Carryover / Cap (days, optional)"
+      },
+      "placeholders": {
+        "noCap": "No cap"
+      }
+    },
+    "partnershipSplitCalculator": {
+      "buttons": {
+        "remove": "Remove",
+        "addPartner": "+ Add Partner",
+        "calculateSplits": "Calculate Splits"
+      },
+      "labels": {
+        "name": "Name",
+        "capitalContributionDollar": "Capital Contribution ($)",
+        "hoursWeek": "Hours/Week",
+        "capitalVsTimeWeightCapitalCapitalweight": "Capital vs. Time Weight (Capital: {capitalWeight}% / Time: {100 - parseFloat(capitalWeight)}%)"
+      }
+    },
+    "paycheckCalculator": {
+      "buttons": {
+        "calculatePaycheck": "Calculate Paycheck"
+      },
+      "labels": {
+        "payType": "Pay Type",
+        "hoursPerWeek": "Hours per Week",
+        "payFrequency": "Pay Frequency",
+        "filingStatus": "Filing Status"
+      }
+    },
+    "plainEnglishRewriter": {
+      "buttons": {
+        "rewriteInPlainEnglish": "Rewrite in Plain English"
+      },
+      "placeholders": {
+        "pasteAConfusingLegalClause": "Paste a confusing legal clause..."
+      }
+    },
+    "positionSizeCalculator": {
+      "buttons": {
+        "calculatePositionSize": "Calculate Position Size"
+      },
+      "labels": {
+        "accountSizeDollar": "Account Size ($)",
+        "riskPerTradePercent": "Risk Per Trade (%)",
+        "entryPriceDollar": "Entry Price ($)",
+        "stopLossPriceDollar": "Stop Loss Price ($)"
+      }
+    },
+    "powerOfAttorneyGenerator": {
+      "buttons": {
+        "generatePoa": "Generate POA",
+        "copyToClipboard": "Copy to Clipboard"
+      },
+      "labels": {
+        "typeOfPoa": "Type of POA",
+        "effective": "Effective",
+        "principalNameYou": "Principal Name (You)",
+        "principalAddress": "Principal Address",
+        "agentName": "Agent Name",
+        "agentAddress": "Agent Address",
+        "alternateAgentOptional": "Alternate Agent (optional)",
+        "governingState": "Governing State",
+        "specificPowersToGrant": "Specific Powers to Grant"
+      },
+      "placeholders": {
+        "johnDoe": "John Doe",
+        "n123MainStCityState": "123 Main St, City, State",
+        "janeSmith": "Jane Smith",
+        "n456OakAveCityState": "456 Oak Ave, City, State",
+        "bobJohnson": "Bob Johnson",
+        "california": "California",
+        "describeTheSpecificLimitedPowers": "Describe the specific limited powers..."
+      }
+    },
+    "privacyPolicyGenerator": {
+      "buttons": {
+        "generatePrivacyPolicy": "Generate Privacy Policy",
+        "copyToClipboard": "Copy to Clipboard"
+      },
+      "labels": {
+        "companyName": "Company Name",
+        "websiteUrl": "Website URL",
+        "contactEmail": "Contact Email",
+        "dataYouCollect": "Data You Collect"
+      },
+      "placeholders": {
+        "acmeCorp": "Acme Corp",
+        "httpsExampleCom": "https://example.com",
+        "privacyExampleCom": "privacy@example.com"
+      }
+    },
+    "profitLossCalculator": {
+      "buttons": {
+        "calculatePAndL": "Calculate P&L"
+      },
+      "labels": {
+        "entryPriceDollar": "Entry Price ($)",
+        "exitPriceDollar": "Exit Price ($)",
+        "quantity": "Quantity",
+        "leverage": "Leverage (×)",
+        "tradingFeePercent": "Trading Fee (%)"
+      }
+    },
+    "promissoryNoteGenerator": {
+      "buttons": {
+        "generatePromissoryNote": "Generate Promissory Note"
+      },
+      "labels": {
+        "lenderName": "Lender Name",
+        "borrowerName": "Borrower Name",
+        "principalAmountDollar": "Principal Amount ($)",
+        "annualInterestRatePercent": "Annual Interest Rate (%)",
+        "termMonths": "Term (Months)"
+      },
+      "placeholders": {
+        "johnSmith": "John Smith",
+        "janeDoe": "Jane Doe",
+        "selectState": "Select state"
+      }
+    },
+    "readingTime": {
+      "button": "Calculate Reading Time"
     },
     "refund": {
       "q_type": "What did you purchase?",
@@ -2327,35 +3189,127 @@
       "advicePossibly": "You may be eligible depending on the seller's return policy and your local consumer protection laws.",
       "adviceUnlikely": "Based on your answers, a refund may be difficult. Check the seller's policy or consult consumer protection services."
     },
-    "childSupport": {
-      "yourIncome": "Your Annual Income ($)",
-      "otherIncome": "Other Parent's Annual Income ($)",
-      "numChildren": "Number of Children",
-      "yourRole": "Your Role",
-      "roleObligor": "I will pay support (non-custodial)",
-      "roleRecipient": "I will receive support (custodial)",
-      "estimated": "Estimated Monthly Child Support",
-      "youPay": "You would pay",
-      "youReceive": "You would receive",
-      "perMonth": "per month",
-      "model": "Model:",
-      "guidelinePct": "Guideline %:",
-      "guidelineText": "{{pct}}% of combined income for {{n}} child(ren)",
-      "statute": "Statute:",
-      "footer": "This is a baseline estimate. Final orders depend on custody time, healthcare costs, childcare, and judicial discretion. Not legal advice — consult a family law attorney for your specific situation."
+    "rentIncreaseCalculator": {
+      "labels": {
+        "currentMonthlyRentDollar": "Current Monthly Rent ($)",
+        "proposedMonthlyRentDollar": "Proposed Monthly Rent ($)",
+        "jurisdictionOptional": "Jurisdiction (optional)"
+      },
+      "placeholders": {
+        "selectAreaForRentControlCheck": "Select area for rent control check"
+      }
     },
-    "alimony": {
-      "higherIncome": "Higher Earner Annual Income ($)",
-      "lowerIncome": "Lower Earner Annual Income ($)",
-      "marriageYears": "Length of Marriage (years)",
-      "estimated": "Estimated Alimony",
-      "monthly": "Monthly Amount",
-      "duration": "Likely Duration",
-      "longTerm": "Long-term",
-      "years": "yrs",
-      "longMarriage": "(20+ year marriage)",
-      "stateGuideline": "State guideline:",
-      "footer": "Alimony is highly discretionary. Judges weigh standard of living, age, health, contributions to the marriage, and earning capacity. This is an estimate only — not legal advice."
+    "rentalAgreementGenerator": {
+      "buttons": {
+        "generateRentalAgreement": "Generate Rental Agreement"
+      },
+      "labels": {
+        "landlordName": "Landlord Name",
+        "tenantName": "Tenant Name",
+        "propertyAddress": "Property Address",
+        "city": "City",
+        "monthlyRentDollar": "Monthly Rent ($)",
+        "securityDepositDollar": "Security Deposit ($)",
+        "leaseTermMonths": "Lease Term (Months)"
+      },
+      "placeholders": {
+        "propertyOwnerLlc": "Property Owner LLC",
+        "janeDoe": "Jane Doe",
+        "n123MainStApt4": "123 Main St, Apt 4",
+        "losAngeles": "Los Angeles",
+        "selectState": "Select state"
+      }
+    },
+    "riskRewardCalculator": {
+      "buttons": {
+        "calculateRR": "Calculate R:R"
+      },
+      "labels": {
+        "entryPriceDollar": "Entry Price ($)",
+        "stopLossDollar": "Stop Loss ($)",
+        "takeProfitDollar": "Take Profit ($)"
+      }
+    },
+    "salaryToHourlyConverter": {
+      "buttons": {
+        "salaryHourly": "Salary → Hourly",
+        "hourlySalary": "Hourly → Salary",
+        "convert": "Convert"
+      },
+      "labels": {
+        "annualSalaryDollar": "Annual Salary ($)",
+        "hourlyRateDollar": "Hourly Rate ($)",
+        "hoursPerWeek": "Hours per Week",
+        "weeksPerYear": "Weeks per Year",
+        "benefitsOverheadPercent": "Benefits Overhead (%)"
+      }
+    },
+    "securityDepositCalculator": {
+      "labels": {
+        "monthlyRentDollar": "Monthly Rent ($)"
+      },
+      "placeholders": {
+        "selectState": "Select state"
+      }
+    },
+    "settlementEstimator": {
+      "buttons": {
+        "estimateSettlementValue": "Estimate Settlement Value"
+      },
+      "labels": {
+        "medicalBillsToDateDollar": "Medical Bills to Date ($)",
+        "estimatedFutureMedicalDollar": "Estimated Future Medical ($)",
+        "lostWagesToDateDollar": "Lost Wages to Date ($)",
+        "futureLostEarningCapacityDollar": "Future Lost Earning Capacity ($)",
+        "propertyDamageDollar": "Property Damage ($)",
+        "injurySeverity": "Injury Severity"
+      }
+    },
+    "severance": {
+      "salary": "Annual Salary ($)",
+      "years": "Years of Service",
+      "level": "Severance Level",
+      "levelStandard": "Standard (1-2 weeks/year)",
+      "levelGenerous": "Generous (2-4 weeks/year)",
+      "levelExecutive": "Executive (4-8 weeks/year)",
+      "range": "Estimated Severance Range",
+      "low": "Low Estimate",
+      "high": "High Estimate",
+      "weeks": "weeks",
+      "weeklySalary": "Weekly salary:",
+      "yearsService": "Years of service:",
+      "levelLabel": "Level:",
+      "footer": "Severance is not legally required in most US states. These estimates reflect common industry practices. Always negotiate based on your specific situation."
+    },
+    "severanceFairnessScore": {
+      "labels": {
+        "annualSalaryDollar": "Annual Salary ($)",
+        "yearsOfService": "Years of Service",
+        "severanceOfferedDollar": "Severance Offered ($)",
+        "yourRoleLevel": "Your Role Level",
+        "includesHealthcareCobraPaid": "Includes Healthcare (COBRA paid)?",
+        "includesOutplacement": "Includes Outplacement?"
+      }
+    },
+    "signatureBlockGenerator": {
+      "buttons": {
+        "generateSignatureBlock": "Generate Signature Block",
+        "copyToClipboard": "Copy to Clipboard"
+      },
+      "labels": {
+        "entityType": "Entity Type",
+        "name": "Name",
+        "title": "Title",
+        "companyName": "Company Name"
+      },
+      "placeholders": {
+        "johnDoe": "John Doe",
+        "ceo": "CEO",
+        "acmeCorp": "Acme Corp",
+        "janeSmith": "Jane Smith",
+        "cfo": "CFO",
+        "betaInc": "Beta Inc"
+      }
     },
     "smallClaims": {
       "claimAmount": "Your Claim Amount ($) (optional)",
@@ -2376,23 +3330,146 @@
       "yearsUnitPlural": "Years",
       "footer": "⚠️ This is general information. Consult a lawyer for your specific situation."
     },
-    "nda": {
-      "label": "Paste your NDA text",
-      "placeholder": "Paste the full NDA document…",
-      "button": "Score NDA Fairness",
-      "analyzing": "Analyzing NDA…",
-      "strengths": "✓ Strengths",
-      "concerns": "⚠ Concerns",
-      "recommendations": "Recommendations"
+    "solarIncentiveEstimator": {
+      "buttons": {
+        "estimateIncentives": "Estimate Incentives"
+      },
+      "labels": {
+        "systemCostDollar": "System Cost ($)"
+      },
+      "placeholders": {
+        "selectState": "Select state"
+      }
     },
-    "leaseAnalyzer": {
-      "label": "Paste your lease agreement",
-      "placeholder": "Paste the full lease agreement text…",
-      "button": "Analyze Lease",
-      "analyzing": "Analyzing Lease…",
-      "keyTerms": "Key Terms",
-      "risks": "⚠ Risks",
-      "recommendations": "Recommendations"
+    "solarROICalculator": {
+      "buttons": {
+        "calculateRoi": "Calculate ROI"
+      },
+      "labels": {
+        "systemCostDollar": "System Cost ($)",
+        "annualProductionKwh": "Annual Production (kWh)",
+        "electricityRateDollarKwh": "Electricity Rate ($/kWh)",
+        "incentivesAndRebatesDollar": "Incentives & Rebates ($)"
+      }
+    },
+    "statuteOfLimitationsDeadlineCalculator": {
+      "labels": {
+        "claimType": "Claim Type",
+        "dateOfIncidentBreach": "Date of Incident / Breach"
+      }
+    },
+    "stockOptionTaxCalculator": {
+      "labels": {
+        "optionType": "Option Type",
+        "grantStrikePriceDollar": "Grant / Strike Price ($)",
+        "fairMarketValueAtExerciseDollar": "Fair Market Value at Exercise ($)",
+        "salePriceDollar": "Sale Price ($)",
+        "numberOfShares": "Number of Shares",
+        "holdingPeriod": "Holding Period",
+        "ordinaryIncomeTaxBracket": "Ordinary Income Tax Bracket"
+      },
+      "placeholders": {
+        "eG10": "e.g. 10",
+        "eG25": "e.g. 25",
+        "eG50": "e.g. 50",
+        "eG1000": "e.g. 1000"
+      }
+    },
+    "subscriptionCancel": {
+      "yourName": "Your name",
+      "accountId": "Account ID / email",
+      "serviceName": "Service name",
+      "date": "Date",
+      "button": "Copy Letter"
+    },
+    "termsOfServiceGenerator": {
+      "buttons": {
+        "generateTermsOfService": "Generate Terms of Service",
+        "copyToClipboard": "Copy to Clipboard"
+      },
+      "labels": {
+        "companyName": "Company Name",
+        "websiteUrl": "Website URL",
+        "contactEmail": "Contact Email",
+        "featuresYourServiceIncludes": "Features Your Service Includes"
+      },
+      "placeholders": {
+        "acmeCorp": "Acme Corp",
+        "httpsExampleCom": "https://example.com",
+        "legalExampleCom": "legal@example.com"
+      }
+    },
+    "termsSummarizer": {
+      "placeholders": {
+        "pasteTheTermsOfServicePrivacy": "Paste the terms of service, privacy policy, or any legal document..."
+      }
+    },
+    "tipSplitter": {
+      "buttons": {
+        "calculateSplit": "Calculate Split"
+      },
+      "labels": {
+        "subtotalDollar": "Subtotal ($)",
+        "taxDollar": "Tax ($)",
+        "tipPercent": "Tip %",
+        "people": "People",
+        "mandatoryServiceChargeAlreadyIncludedSkip": "Mandatory service charge already included (skip tip)"
+      }
+    },
+    "unemployment": {
+      "wages": "Annual wages (last 12 months, $)",
+      "button": "Estimate Benefits",
+      "perWeek": "/week",
+      "stateMax": "State maximum",
+      "maxPerWeek": "/week. Typical duration: up to {{weeks}} weeks.",
+      "footer": "Estimate only. Actual benefit calculated by your state's unemployment office using base-period wages."
+    },
+    "vestingScheduleCalculator": {
+      "labels": {
+        "totalSharesUnits": "Total Shares / Units",
+        "vestingPeriodMonths": "Vesting Period (months)",
+        "cliffPeriodMonths": "Cliff Period (months)",
+        "vestingFrequency": "Vesting Frequency"
+      },
+      "placeholders": {
+        "eG10000": "e.g. 10000"
+      }
+    },
+    "warrantyExpirationCalculator": {
+      "buttons": {
+        "remove": "Remove",
+        "addProduct": "+ Add Product",
+        "trackWarranties": "Track Warranties"
+      },
+      "labels": {
+        "product": "Product",
+        "purchaseDate": "Purchase Date",
+        "warrantyLength": "Warranty Length",
+        "unit": "Unit"
+      },
+      "placeholders": {
+        "laptop": "Laptop"
+      }
+    },
+    "wordCounter": {
+      "button": "Count Words"
+    },
+    "wrongfulTerminationChecklist": {
+      "buttons": {
+        "assessSituation": "Assess Situation"
+      },
+      "placeholders": {
+        "select": "Select..."
+      }
+    },
+    "wrongfulTerminationValueEstimator": {
+      "labels": {
+        "annualSalaryAtTerminationDollar": "Annual Salary at Termination ($)",
+        "monthsUnemployedSince": "Months Unemployed Since",
+        "annualBenefitsValueDollar": "Annual Benefits Value ($)",
+        "claimType": "Claim Type",
+        "caseStrength": "Case Strength"
+      }
     }
   }
 }

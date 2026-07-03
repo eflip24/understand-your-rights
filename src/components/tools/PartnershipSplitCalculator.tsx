@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 interface Partner {
   name: string;
@@ -11,6 +12,7 @@ interface Partner {
 }
 
 export default function PartnershipSplitCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [partners, setPartners] = useState<Partner[]>([
     { name: "", capital: "", hoursPerWeek: "" },
     { name: "", capital: "", hoursPerWeek: "" },
@@ -55,24 +57,24 @@ export default function PartnershipSplitCalculator() {
           <CardContent className="pt-4 space-y-3">
             <div className="flex items-center justify-between">
               <h4 className="font-medium text-sm">Partner {i + 1}</h4>
-              {partners.length > 2 && <Button variant="ghost" size="sm" onClick={() => removePartner(i)} className="text-destructive text-xs">Remove</Button>}
+              {partners.length > 2 && <Button variant="ghost" size="sm" onClick={() => removePartner(i)} className="text-destructive text-xs">{t("internals.partnershipSplitCalculator.buttons.remove")}</Button>}
             </div>
             <div className="grid gap-3 sm:grid-cols-3">
-              <div><Label className="text-xs">Name</Label><Input value={p.name} onChange={e => updatePartner(i, "name", e.target.value)} placeholder={`Partner ${i + 1}`} /></div>
-              <div><Label className="text-xs">Capital Contribution ($)</Label><Input type="number" value={p.capital} onChange={e => updatePartner(i, "capital", e.target.value)} placeholder="50000" /></div>
-              <div><Label className="text-xs">Hours/Week</Label><Input type="number" value={p.hoursPerWeek} onChange={e => updatePartner(i, "hoursPerWeek", e.target.value)} placeholder="40" /></div>
+              <div><Label className="text-xs">{t("internals.partnershipSplitCalculator.labels.name")}</Label><Input value={p.name} onChange={e => updatePartner(i, "name", e.target.value)} placeholder={`Partner ${i + 1}`} /></div>
+              <div><Label className="text-xs">{t("internals.partnershipSplitCalculator.labels.capitalContributionDollar")}</Label><Input type="number" value={p.capital} onChange={e => updatePartner(i, "capital", e.target.value)} placeholder="50000" /></div>
+              <div><Label className="text-xs">{t("internals.partnershipSplitCalculator.labels.hoursWeek")}</Label><Input type="number" value={p.hoursPerWeek} onChange={e => updatePartner(i, "hoursPerWeek", e.target.value)} placeholder="40" /></div>
             </div>
           </CardContent>
         </Card>
       ))}
       <div className="flex gap-3">
-        <Button variant="outline" onClick={addPartner} disabled={partners.length >= 6}>+ Add Partner</Button>
+        <Button variant="outline" onClick={addPartner} disabled={partners.length >= 6}>{t("internals.partnershipSplitCalculator.buttons.addPartner")}</Button>
       </div>
       <div>
-        <Label>Capital vs. Time Weight (Capital: {capitalWeight}% / Time: {100 - parseFloat(capitalWeight)}%)</Label>
+        <Label>{t("internals.partnershipSplitCalculator.labels.capitalVsTimeWeightCapitalCapitalweight")}</Label>
         <Input type="range" min="0" max="100" value={capitalWeight} onChange={e => setCapitalWeight(e.target.value)} className="mt-1" />
       </div>
-      <Button onClick={calculate} className="w-full">Calculate Splits</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.partnershipSplitCalculator.buttons.calculateSplits")}</Button>
       {result && (
         <Card>
           <CardContent className="pt-6 space-y-4">

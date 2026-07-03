@@ -20,7 +20,7 @@ const stateInfo: Record<string, { enforceability: string; notes: string; maxDura
 };
 
 export default function NonCompeteChecker() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [state, setState] = useState("");
   const [duration, setDuration] = useState("");
   const [result, setResult] = useState<typeof stateInfo[string] & { durationWarning?: string } | null>(null);
@@ -40,7 +40,7 @@ export default function NonCompeteChecker() {
         <div className="space-y-2">
           <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
-            <SelectTrigger><SelectValue placeholder="Select state..." /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("internals.nonCompeteChecker.placeholders.selectState")} /></SelectTrigger>
             <SelectContent>
               {Object.keys(stateInfo).map((s) => (
                 <SelectItem key={s} value={s}>{s}</SelectItem>
@@ -49,13 +49,11 @@ export default function NonCompeteChecker() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Duration (months)</Label>
+          <Label>{t("internals.nonCompeteChecker.labels.durationMonths")}</Label>
           <Input type="number" placeholder="12" value={duration} onChange={(e) => setDuration(e.target.value)} />
         </div>
       </div>
-      <Button onClick={check} disabled={!state || !duration} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Check Enforceability
-      </Button>
+      <Button onClick={check} disabled={!state || !duration} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.nonCompeteChecker.buttons.checkEnforceability")}</Button>
       {result && (
         <div className="space-y-3 pt-2">
           <div className="p-4 rounded-lg bg-secondary">

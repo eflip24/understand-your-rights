@@ -20,7 +20,7 @@ const stateIncentives: Record<string, { rebate: number; srec: number; name: stri
 };
 
 export default function SolarIncentiveEstimator() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [systemCost, setSystemCost] = useState("");
   const [state, setState] = useState("");
   const [result, setResult] = useState<{
@@ -48,13 +48,13 @@ export default function SolarIncentiveEstimator() {
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <Label htmlFor="systemCost">System Cost ($)</Label>
+          <Label htmlFor="systemCost">{t("internals.solarIncentiveEstimator.labels.systemCostDollar")}</Label>
           <Input id="systemCost" type="number" placeholder="25000" value={systemCost} onChange={(e) => setSystemCost(e.target.value)} />
         </div>
         <div>
           <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
-            <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("internals.solarIncentiveEstimator.placeholders.selectState")} /></SelectTrigger>
             <SelectContent>
               {Object.entries(stateIncentives).map(([code, data]) => (
                 <SelectItem key={code} value={code}>{data.name}</SelectItem>
@@ -64,7 +64,7 @@ export default function SolarIncentiveEstimator() {
         </div>
       </div>
 
-      <Button onClick={calculate} className="w-full">Estimate Incentives</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.solarIncentiveEstimator.buttons.estimateIncentives")}</Button>
 
       {result && (
         <div className="space-y-3">

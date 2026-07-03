@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, FileText } from "lucide-react";
 import { useContractAnalysis } from "@/hooks/useContractAnalysis";
+import { useTranslation } from "react-i18next";
 
 interface Section {
   title: string;
@@ -19,6 +20,7 @@ interface SummarizerResult {
 }
 
 export default function TermsSummarizer() {
+  const { t } = useTranslation(["tools", "common"]);
   const [text, setText] = useState("");
   const { result, isLoading, analyze } = useContractAnalysis<SummarizerResult>("terms-summarizer");
 
@@ -32,7 +34,7 @@ export default function TermsSummarizer() {
       <div>
         <label className="text-sm font-medium mb-2 block">Paste Terms & Conditions</label>
         <Textarea
-          placeholder="Paste the terms of service, privacy policy, or any legal document..."
+          placeholder={t("internals.termsSummarizer.placeholders.pasteTheTermsOfServicePrivacy")}
           value={text}
           onChange={(e) => setText(e.target.value)}
           className="min-h-[200px]"

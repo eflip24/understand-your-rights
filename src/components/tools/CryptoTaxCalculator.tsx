@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function CryptoTaxCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [buyPrice, setBuyPrice] = useState("");
   const [sellPrice, setSellPrice] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -32,19 +34,19 @@ export default function CryptoTaxCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Buy Price ($)</Label>
+          <Label>{t("internals.cryptoTaxCalculator.labels.buyPriceDollar")}</Label>
           <Input type="number" placeholder="20000" value={buyPrice} onChange={(e) => setBuyPrice(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Sell Price ($)</Label>
+          <Label>{t("internals.cryptoTaxCalculator.labels.sellPriceDollar")}</Label>
           <Input type="number" placeholder="35000" value={sellPrice} onChange={(e) => setSellPrice(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Quantity</Label>
+          <Label>{t("internals.cryptoTaxCalculator.labels.quantity")}</Label>
           <Input type="number" placeholder="0.5" step="0.001" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Holding Period</Label>
+          <Label>{t("internals.cryptoTaxCalculator.labels.holdingPeriod")}</Label>
           <Select value={holdingPeriod} onValueChange={setHoldingPeriod}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -55,7 +57,7 @@ export default function CryptoTaxCalculator() {
         </div>
         {holdingPeriod === "short" && (
           <div className="space-y-2">
-            <Label>Tax Bracket (%)</Label>
+            <Label>{t("internals.cryptoTaxCalculator.labels.taxBracketPercent")}</Label>
             <Select value={taxBracket} onValueChange={setTaxBracket}>
               <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
@@ -71,9 +73,7 @@ export default function CryptoTaxCalculator() {
           </div>
         )}
       </div>
-      <Button onClick={calculate} disabled={!buyPrice || !sellPrice || !quantity} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Tax
-      </Button>
+      <Button onClick={calculate} disabled={!buyPrice || !sellPrice || !quantity} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.cryptoTaxCalculator.buttons.calculateTax")}</Button>
       {result && (
         <div className="grid grid-cols-2 gap-4 pt-2">
           <div className={`text-center p-4 rounded-lg border ${result.gain >= 0 ? "bg-green-500/10 border-green-500/20" : "bg-destructive/10 border-destructive/20"}`}>

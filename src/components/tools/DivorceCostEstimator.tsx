@@ -12,7 +12,7 @@ const FILING_FEES: Record<string, number> = {
 };
 
 export default function DivorceCostEstimator() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [state, setState] = useState("California");
   const [type, setType] = useState<"uncontested" | "mediated" | "contested" | "litigated">("uncontested");
   const [hasChildren, setHasChildren] = useState<"no" | "yes">("no");
@@ -46,7 +46,7 @@ export default function DivorceCostEstimator() {
           </Select>
         </div>
         <div>
-          <Label>Divorce Type</Label>
+          <Label>{t("internals.divorceCostEstimator.labels.divorceType")}</Label>
           <Select value={type} onValueChange={(v) => setType(v as typeof type)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -58,7 +58,7 @@ export default function DivorceCostEstimator() {
           </Select>
         </div>
         <div>
-          <Label>Children Involved?</Label>
+          <Label>{t("internals.divorceCostEstimator.labels.childrenInvolved")}</Label>
           <Select value={hasChildren} onValueChange={(v) => setHasChildren(v as "no" | "yes")}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -68,7 +68,7 @@ export default function DivorceCostEstimator() {
           </Select>
         </div>
         <div>
-          <Label>Marital Asset Complexity</Label>
+          <Label>{t("internals.divorceCostEstimator.labels.maritalAssetComplexity")}</Label>
           <Select value={hasAssets} onValueChange={(v) => setHasAssets(v as typeof hasAssets)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -78,7 +78,7 @@ export default function DivorceCostEstimator() {
             </SelectContent>
           </Select>
         </div>
-        <div className="sm:col-span-2"><Label>Attorney Hourly Rate ($)</Label><Input type="number" value={hourlyRate} onChange={e => setHourlyRate(e.target.value)} /></div>
+        <div className="sm:col-span-2"><Label>{t("internals.divorceCostEstimator.labels.attorneyHourlyRateDollar")}</Label><Input type="number" value={hourlyRate} onChange={e => setHourlyRate(e.target.value)} /></div>
       </div>
 
       <Card>

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const emissionFactors: Record<string, number> = {
   coal: 0.95,
@@ -13,6 +14,7 @@ const emissionFactors: Record<string, number> = {
 };
 
 export default function CarbonFootprintCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [annualKwh, setAnnualKwh] = useState("");
   const [source, setSource] = useState("grid_avg");
   const [solarPercent, setSolarPercent] = useState("");
@@ -41,11 +43,11 @@ export default function CarbonFootprintCalculator() {
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <Label htmlFor="annualKwh">Annual Electricity Usage (kWh)</Label>
+          <Label htmlFor="annualKwh">{t("internals.carbonFootprintCalculator.labels.annualElectricityUsageKwh")}</Label>
           <Input id="annualKwh" type="number" placeholder="10000" value={annualKwh} onChange={(e) => setAnnualKwh(e.target.value)} />
         </div>
         <div>
-          <Label>Current Energy Source</Label>
+          <Label>{t("internals.carbonFootprintCalculator.labels.currentEnergySource")}</Label>
           <Select value={source} onValueChange={setSource}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -57,12 +59,12 @@ export default function CarbonFootprintCalculator() {
           </Select>
         </div>
         <div className="sm:col-span-2">
-          <Label htmlFor="solarPercent">Solar/Renewable Replacement (%)</Label>
+          <Label htmlFor="solarPercent">{t("internals.carbonFootprintCalculator.labels.solarRenewableReplacementPercent")}</Label>
           <Input id="solarPercent" type="number" placeholder="100" value={solarPercent} onChange={(e) => setSolarPercent(e.target.value)} />
         </div>
       </div>
 
-      <Button onClick={calculate} className="w-full">Calculate Offset</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.carbonFootprintCalculator.buttons.calculateOffset")}</Button>
 
       {result && (
         <div className="grid gap-4 sm:grid-cols-2">

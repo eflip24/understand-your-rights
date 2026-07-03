@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { useTranslation } from "react-i18next";
 
 interface LeaseData {
   rent: string;
@@ -19,6 +20,7 @@ interface LeaseData {
 const empty: LeaseData = { rent: "", deposit: "", termMonths: "", utilities: "", petDeposit: "", parking: "", laundry: "" };
 
 export default function LeaseTermComparison() {
+  const { t } = useTranslation(["tools", "common"]);
   const [a, setA] = useState<LeaseData>({ ...empty });
   const [b, setB] = useState<LeaseData>({ ...empty });
   const [compared, setCompared] = useState(false);
@@ -63,7 +65,7 @@ export default function LeaseTermComparison() {
           </Card>
         ))}
       </div>
-      <Button onClick={() => setCompared(true)} className="w-full">Compare Leases</Button>
+      <Button onClick={() => setCompared(true)} className="w-full">{t("internals.leaseTermComparison.buttons.compareLeases")}</Button>
       {compared && (
         <Card>
           <CardContent className="pt-6">

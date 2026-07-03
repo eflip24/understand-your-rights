@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 const questions = [
   {
@@ -54,6 +55,7 @@ const questions = [
 ];
 
 export default function ConsumerRightsQuiz() {
+  const { t } = useTranslation(["tools", "common"]);
   const [currentQ, setCurrentQ] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
@@ -96,7 +98,7 @@ export default function ConsumerRightsQuiz() {
         <Badge variant={pct >= 70 ? "default" : pct >= 40 ? "outline" : "destructive"}>
           {pct >= 70 ? "Consumer Rights Expert" : pct >= 40 ? "Getting There" : "Keep Learning"}
         </Badge>
-        <div><Button onClick={restart} className="bg-accent text-accent-foreground hover:bg-gold-dark">Take Again</Button></div>
+        <div><Button onClick={restart} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.consumerRightsQuiz.buttons.takeAgain")}</Button></div>
       </div>
     );
   }

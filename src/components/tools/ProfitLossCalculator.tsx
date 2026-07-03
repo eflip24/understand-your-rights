@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function ProfitLossCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [entryPrice, setEntryPrice] = useState("");
   const [exitPrice, setExitPrice] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -35,29 +37,27 @@ export default function ProfitLossCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Entry Price ($)</Label>
+          <Label>{t("internals.profitLossCalculator.labels.entryPriceDollar")}</Label>
           <Input type="number" placeholder="100" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Exit Price ($)</Label>
+          <Label>{t("internals.profitLossCalculator.labels.exitPriceDollar")}</Label>
           <Input type="number" placeholder="120" value={exitPrice} onChange={(e) => setExitPrice(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Quantity</Label>
+          <Label>{t("internals.profitLossCalculator.labels.quantity")}</Label>
           <Input type="number" placeholder="10" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Leverage (×)</Label>
+          <Label>{t("internals.profitLossCalculator.labels.leverage")}</Label>
           <Input type="number" placeholder="1" value={leverage} onChange={(e) => setLeverage(e.target.value)} />
         </div>
         <div className="space-y-2 sm:col-span-2">
-          <Label>Trading Fee (%)</Label>
+          <Label>{t("internals.profitLossCalculator.labels.tradingFeePercent")}</Label>
           <Input type="number" placeholder="0.1" step="0.01" value={feePercent} onChange={(e) => setFeePercent(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!entryPrice || !exitPrice || !quantity} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate P&L
-      </Button>
+      <Button onClick={calculate} disabled={!entryPrice || !exitPrice || !quantity} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.profitLossCalculator.buttons.calculatePAndL")}</Button>
       {result && (
         <div className="grid grid-cols-2 gap-4 pt-2">
           <div className={`text-center p-4 rounded-lg border ${result.netPnl >= 0 ? "bg-green-500/10 border-green-500/20" : "bg-destructive/10 border-destructive/20"}`}>

@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function CeaseAndDesistGenerator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [form, setForm] = useState({ type: "harassment", senderName: "", senderAddress: "", recipientName: "", recipientAddress: "", description: "", deadline: "10", state: "" });
   const [output, setOutput] = useState("");
 
@@ -75,7 +77,7 @@ CC: [Your Attorney, if applicable]`;
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Type of C&D</Label>
+          <Label>{t("internals.ceaseAndDesistGenerator.labels.typeOfCAndD")}</Label>
           <Select value={form.type} onValueChange={(v) => update("type", v)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -88,39 +90,39 @@ CC: [Your Attorney, if applicable]`;
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Response Deadline (days)</Label>
+          <Label>{t("internals.ceaseAndDesistGenerator.labels.responseDeadlineDays")}</Label>
           <Input type="number" placeholder="10" value={form.deadline} onChange={(e) => update("deadline", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Your Name</Label>
-          <Input placeholder="John Doe" value={form.senderName} onChange={(e) => update("senderName", e.target.value)} />
+          <Label>{t("internals.ceaseAndDesistGenerator.labels.yourName")}</Label>
+          <Input placeholder={t("internals.ceaseAndDesistGenerator.placeholders.johnDoe")} value={form.senderName} onChange={(e) => update("senderName", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Your Address</Label>
-          <Input placeholder="123 Main St, City, State, ZIP" value={form.senderAddress} onChange={(e) => update("senderAddress", e.target.value)} />
+          <Label>{t("internals.ceaseAndDesistGenerator.labels.yourAddress")}</Label>
+          <Input placeholder={t("internals.ceaseAndDesistGenerator.placeholders.n123MainStCityStateZip")} value={form.senderAddress} onChange={(e) => update("senderAddress", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Recipient Name</Label>
-          <Input placeholder="Jane Smith" value={form.recipientName} onChange={(e) => update("recipientName", e.target.value)} />
+          <Label>{t("internals.ceaseAndDesistGenerator.labels.recipientName")}</Label>
+          <Input placeholder={t("internals.ceaseAndDesistGenerator.placeholders.janeSmith")} value={form.recipientName} onChange={(e) => update("recipientName", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Recipient Address</Label>
-          <Input placeholder="456 Other St, City, State, ZIP" value={form.recipientAddress} onChange={(e) => update("recipientAddress", e.target.value)} />
+          <Label>{t("internals.ceaseAndDesistGenerator.labels.recipientAddress")}</Label>
+          <Input placeholder={t("internals.ceaseAndDesistGenerator.placeholders.n456OtherStCityStateZip")} value={form.recipientAddress} onChange={(e) => update("recipientAddress", e.target.value)} />
         </div>
         <div className="space-y-2 sm:col-span-2">
-          <Label>Governing State</Label>
-          <Input placeholder="California" value={form.state} onChange={(e) => update("state", e.target.value)} />
+          <Label>{t("internals.ceaseAndDesistGenerator.labels.governingState")}</Label>
+          <Input placeholder={t("internals.ceaseAndDesistGenerator.placeholders.california")} value={form.state} onChange={(e) => update("state", e.target.value)} />
         </div>
       </div>
       <div className="space-y-2">
-        <Label>Describe the Specific Conduct</Label>
-        <Textarea placeholder="On [date], you [describe the behavior]..." rows={4} value={form.description} onChange={(e) => update("description", e.target.value)} />
+        <Label>{t("internals.ceaseAndDesistGenerator.labels.describeTheSpecificConduct")}</Label>
+        <Textarea placeholder={t("internals.ceaseAndDesistGenerator.placeholders.onDateYouDescribeTheBehavior")} rows={4} value={form.description} onChange={(e) => update("description", e.target.value)} />
       </div>
-      <Button onClick={generate} disabled={!form.senderName} className="bg-accent text-accent-foreground hover:bg-gold-dark">Generate C&D Letter</Button>
+      <Button onClick={generate} disabled={!form.senderName} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.ceaseAndDesistGenerator.buttons.generateCAndDLetter")}</Button>
       {output && (
         <div className="space-y-2">
           <div className="flex justify-end">
-            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>Copy to Clipboard</Button>
+            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>{t("internals.ceaseAndDesistGenerator.buttons.copyToClipboard")}</Button>
           </div>
           <Textarea value={output} readOnly rows={30} className="font-mono text-xs" />
         </div>

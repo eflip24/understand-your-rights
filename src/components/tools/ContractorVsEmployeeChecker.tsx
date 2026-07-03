@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 const questions = [
   { id: 1, category: "Behavioral Control", question: "Does the company control when, where, and how the worker performs tasks?", employeeWeight: 2 },
@@ -18,6 +19,7 @@ const questions = [
 ];
 
 export default function ContractorVsEmployeeChecker() {
+  const { t } = useTranslation(["tools", "common"]);
   const [answers, setAnswers] = useState<Record<number, "yes" | "no">>({});
   const [result, setResult] = useState<null | { score: number; classification: string; factors: { category: string; label: string; direction: string }[] }>(null);
 
@@ -50,16 +52,14 @@ export default function ContractorVsEmployeeChecker() {
             <p className="font-medium text-sm mb-3">{q.id}. {q.question}</p>
             <RadioGroup value={answers[q.id] || ""} onValueChange={(v) => setAnswers(prev => ({ ...prev, [q.id]: v as "yes" | "no" }))}>
               <div className="flex gap-6">
-                <div className="flex items-center gap-2"><RadioGroupItem value="yes" id={`q${q.id}-yes`} /><Label htmlFor={`q${q.id}-yes`}>Yes</Label></div>
-                <div className="flex items-center gap-2"><RadioGroupItem value="no" id={`q${q.id}-no`} /><Label htmlFor={`q${q.id}-no`}>No</Label></div>
+                <div className="flex items-center gap-2"><RadioGroupItem value="yes" id={`q${q.id}-yes`} /><Label htmlFor={`q${q.id}-yes`}>{t("internals.contractorVsEmployeeChecker.labels.yes")}</Label></div>
+                <div className="flex items-center gap-2"><RadioGroupItem value="no" id={`q${q.id}-no`} /><Label htmlFor={`q${q.id}-no`}>{t("internals.contractorVsEmployeeChecker.labels.no")}</Label></div>
               </div>
             </RadioGroup>
           </div>
         ))}
       </div>
-      <Button onClick={analyze} className="w-full" disabled={Object.keys(answers).length < questions.length}>
-        Analyze Classification ({Object.keys(answers).length}/{questions.length} answered)
-      </Button>
+      <Button onClick={analyze} className="w-full" disabled={Object.keys(answers).length < questions.length}>{t("internals.contractorVsEmployeeChecker.buttons.analyzeClassificationObjectKeysAnswersLength")}</Button>
       {result && (
         <Card>
           <CardContent className="pt-6 space-y-4">

@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export default function EquityDilutionCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [currentShares, setCurrentShares] = useState("");
   const [yourShares, setYourShares] = useState("");
   const [newShares, setNewShares] = useState("");
@@ -23,20 +25,20 @@ export default function EquityDilutionCalculator() {
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label>Current Total Shares Outstanding</Label>
-          <Input type="number" value={currentShares} onChange={(e) => setCurrentShares(e.target.value)} placeholder="e.g. 1000000" />
+          <Label>{t("internals.equityDilutionCalculator.labels.currentTotalSharesOutstanding")}</Label>
+          <Input type="number" value={currentShares} onChange={(e) => setCurrentShares(e.target.value)} placeholder={t("internals.equityDilutionCalculator.placeholders.eG1000000")} />
         </div>
         <div className="space-y-2">
-          <Label>Your Shares</Label>
-          <Input type="number" value={yourShares} onChange={(e) => setYourShares(e.target.value)} placeholder="e.g. 100000" />
+          <Label>{t("internals.equityDilutionCalculator.labels.yourShares")}</Label>
+          <Input type="number" value={yourShares} onChange={(e) => setYourShares(e.target.value)} placeholder={t("internals.equityDilutionCalculator.placeholders.eG100000")} />
         </div>
         <div className="space-y-2">
-          <Label>New Shares Issued (Funding Round)</Label>
-          <Input type="number" value={newShares} onChange={(e) => setNewShares(e.target.value)} placeholder="e.g. 250000" />
+          <Label>{t("internals.equityDilutionCalculator.labels.newSharesIssuedFundingRound")}</Label>
+          <Input type="number" value={newShares} onChange={(e) => setNewShares(e.target.value)} placeholder={t("internals.equityDilutionCalculator.placeholders.eG250000")} />
         </div>
         <div className="space-y-2">
-          <Label>New Option Pool Shares</Label>
-          <Input type="number" value={optionPool} onChange={(e) => setOptionPool(e.target.value)} placeholder="e.g. 100000" />
+          <Label>{t("internals.equityDilutionCalculator.labels.newOptionPoolShares")}</Label>
+          <Input type="number" value={optionPool} onChange={(e) => setOptionPool(e.target.value)} placeholder={t("internals.equityDilutionCalculator.placeholders.eG100000")} />
         </div>
       </div>
 

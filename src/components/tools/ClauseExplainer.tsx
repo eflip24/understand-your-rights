@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, MessageSquare } from "lucide-react";
 import { useContractAnalysis } from "@/hooks/useContractAnalysis";
+import { useTranslation } from "react-i18next";
 
 interface ExplainerResult {
   plainEnglish: string;
@@ -14,6 +15,7 @@ interface ExplainerResult {
 }
 
 export default function ClauseExplainer() {
+  const { t } = useTranslation(["tools", "common"]);
   const [text, setText] = useState("");
   const { result, isLoading, analyze } = useContractAnalysis<ExplainerResult>("clause-explainer");
 
@@ -27,7 +29,7 @@ export default function ClauseExplainer() {
       <div>
         <label className="text-sm font-medium mb-2 block">Paste a contract clause</label>
         <Textarea
-          placeholder="Paste any clause or legal paragraph you want explained..."
+          placeholder={t("internals.clauseExplainer.placeholders.pasteAnyClauseOrLegalParagraph")}
           value={text}
           onChange={(e) => setText(e.target.value)}
           className="min-h-[120px]"

@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 interface ContractEntry {
   name: string;
@@ -11,6 +12,7 @@ interface ContractEntry {
 }
 
 export default function ContractExpirationTracker() {
+  const { t } = useTranslation(["tools", "common"]);
   const [entries, setEntries] = useState<ContractEntry[]>([{ name: "", startDate: "", endDate: "" }]);
   const [results, setResults] = useState<{ name: string; daysLeft: number; status: string }[] | null>(null);
 
@@ -48,29 +50,27 @@ export default function ContractExpirationTracker() {
       {entries.map((entry, i) => (
         <div key={i} className="grid gap-3 sm:grid-cols-4 items-end p-3 rounded-lg bg-secondary/50">
           <div className="space-y-1">
-            <Label>Contract Name</Label>
-            <Input placeholder="Office Lease" value={entry.name} onChange={(e) => updateEntry(i, "name", e.target.value)} />
+            <Label>{t("internals.contractExpirationTracker.labels.contractName")}</Label>
+            <Input placeholder={t("internals.contractExpirationTracker.placeholders.officeLease")} value={entry.name} onChange={(e) => updateEntry(i, "name", e.target.value)} />
           </div>
           <div className="space-y-1">
-            <Label>Start Date</Label>
+            <Label>{t("internals.contractExpirationTracker.labels.startDate")}</Label>
             <Input type="date" value={entry.startDate} onChange={(e) => updateEntry(i, "startDate", e.target.value)} />
           </div>
           <div className="space-y-1">
-            <Label>End Date</Label>
+            <Label>{t("internals.contractExpirationTracker.labels.endDate")}</Label>
             <Input type="date" value={entry.endDate} onChange={(e) => updateEntry(i, "endDate", e.target.value)} />
           </div>
           <div>
             {entries.length > 1 && (
-              <Button variant="outline" size="sm" onClick={() => removeEntry(i)}>Remove</Button>
+              <Button variant="outline" size="sm" onClick={() => removeEntry(i)}>{t("internals.contractExpirationTracker.buttons.remove")}</Button>
             )}
           </div>
         </div>
       ))}
       <div className="flex gap-2">
-        <Button variant="outline" onClick={addEntry}>+ Add Contract</Button>
-        <Button onClick={calculate} disabled={!valid} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-          Track Expirations
-        </Button>
+        <Button variant="outline" onClick={addEntry}>{t("internals.contractExpirationTracker.buttons.addContract")}</Button>
+        <Button onClick={calculate} disabled={!valid} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.contractExpirationTracker.buttons.trackExpirations")}</Button>
       </div>
       {results && results.length > 0 && (
         <div className="space-y-2 pt-2">
