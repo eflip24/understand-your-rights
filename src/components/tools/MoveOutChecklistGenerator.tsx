@@ -62,7 +62,7 @@ const featureItems: Record<string, string[]> = {
 };
 
 export default function MoveOutChecklistGenerator() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [propertyType, setPropertyType] = useState("");
   const [features, setFeatures] = useState<string[]>([]);
   const [generated, setGenerated] = useState(false);
@@ -86,9 +86,9 @@ export default function MoveOutChecklistGenerator() {
     <div className="space-y-6">
       <div className="space-y-4">
         <div>
-          <Label>Property Type</Label>
+          <Label>{t("internals.moveOutChecklistGenerator.labels.propertyType")}</Label>
           <Select value={propertyType} onValueChange={setPropertyType}>
-            <SelectTrigger><SelectValue placeholder="Select type" /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("internals.moveOutChecklistGenerator.placeholders.selectType")} /></SelectTrigger>
             <SelectContent>
               <SelectItem value="apartment">Apartment</SelectItem>
               <SelectItem value="house">House</SelectItem>
@@ -98,7 +98,7 @@ export default function MoveOutChecklistGenerator() {
           </Select>
         </div>
         <div>
-          <Label>Property Features (select all that apply)</Label>
+          <Label>{t("internals.moveOutChecklistGenerator.labels.propertyFeaturesSelectAllThatApply")}</Label>
           <div className="flex flex-wrap gap-3 mt-2">
             {Object.keys(featureItems).map(f => (
               <label key={f} className="flex items-center gap-2 cursor-pointer">
@@ -109,7 +109,7 @@ export default function MoveOutChecklistGenerator() {
           </div>
         </div>
       </div>
-      <Button onClick={() => setGenerated(true)} className="w-full">Generate Checklist</Button>
+      <Button onClick={() => setGenerated(true)} className="w-full">{t("internals.moveOutChecklistGenerator.buttons.generateChecklist")}</Button>
       {generated && (
         <Card>
           <CardContent className="pt-6 space-y-4">

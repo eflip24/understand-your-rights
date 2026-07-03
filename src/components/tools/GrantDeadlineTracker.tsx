@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 interface Deadline {
   id: number;
@@ -13,6 +14,7 @@ interface Deadline {
 }
 
 export default function GrantDeadlineTracker() {
+  const { t } = useTranslation(["tools", "common"]);
   const [deadlines, setDeadlines] = useState<Deadline[]>([]);
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
@@ -42,15 +44,15 @@ export default function GrantDeadlineTracker() {
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end">
         <div className="space-y-2">
-          <Label>Grant / Task Name</Label>
-          <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. NSF Progress Report" />
+          <Label>{t("internals.grantDeadlineTracker.labels.grantTaskName")}</Label>
+          <Input value={name} onChange={(e) => setName(e.target.value)} placeholder={t("internals.grantDeadlineTracker.placeholders.eGNsfProgressReport")} />
         </div>
         <div className="space-y-2">
-          <Label>Deadline Date</Label>
+          <Label>{t("internals.grantDeadlineTracker.labels.deadlineDate")}</Label>
           <Input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Type</Label>
+          <Label>{t("internals.grantDeadlineTracker.labels.type")}</Label>
           <select value={type} onChange={(e) => setType(e.target.value)} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
             <option value="application">Application</option>
             <option value="progress-report">Progress Report</option>
@@ -59,7 +61,7 @@ export default function GrantDeadlineTracker() {
             <option value="other">Other</option>
           </select>
         </div>
-        <Button onClick={addDeadline}>Add Deadline</Button>
+        <Button onClick={addDeadline}>{t("internals.grantDeadlineTracker.buttons.addDeadline")}</Button>
       </div>
 
       {sorted.length > 0 && (
@@ -81,7 +83,7 @@ export default function GrantDeadlineTracker() {
                         {status.days < 0 ? `${Math.abs(status.days)}d overdue` : `${status.days}d remaining`}
                       </p>
                     </div>
-                    <Button variant="ghost" size="sm" onClick={() => removeDeadline(d.id)}>×</Button>
+                    <Button variant="ghost" size="sm" onClick={() => removeDeadline(d.id)}>{t("internals.grantDeadlineTracker.buttons.")}</Button>
                   </div>
                 </CardContent>
               </Card>

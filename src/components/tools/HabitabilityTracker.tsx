@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useTranslation } from "react-i18next";
 
 export default function HabitabilityTracker() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [tenant, setTenant] = useState("");
   const [landlord, setLandlord] = useState("");
   const [address, setAddress] = useState("");
@@ -40,13 +40,13 @@ ${tenant || "[Tenant Name]"}`;
     <div className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-3">
         <div><Label>{t("common:fields.name")}</Label><Input value={tenant} onChange={e => setTenant(e.target.value)} /></div>
-        <div><Label>Landlord name</Label><Input value={landlord} onChange={e => setLandlord(e.target.value)} /></div>
-        <div className="sm:col-span-2"><Label>Property address</Label><Input value={address} onChange={e => setAddress(e.target.value)} /></div>
+        <div><Label>{t("internals.habitabilityTracker.labels.landlordName")}</Label><Input value={landlord} onChange={e => setLandlord(e.target.value)} /></div>
+        <div className="sm:col-span-2"><Label>{t("internals.habitabilityTracker.labels.propertyAddress")}</Label><Input value={address} onChange={e => setAddress(e.target.value)} /></div>
         <div><Label>{t("common:fields.date")}</Label><Input type="date" value={date} onChange={e => setDate(e.target.value)} /></div>
       </div>
-      <div><Label>Describe the issue</Label><Textarea value={issue} onChange={e => setIssue(e.target.value)} rows={4} placeholder="e.g., No hot water since Jan 5. Affects bathing and dishwashing..." /></div>
+      <div><Label>{t("internals.habitabilityTracker.labels.describeTheIssue")}</Label><Textarea value={issue} onChange={e => setIssue(e.target.value)} rows={4} placeholder={t("internals.habitabilityTracker.placeholders.eGNoHotWaterSince")} /></div>
       <Textarea value={letter} readOnly rows={16} className="font-mono text-xs" />
-      <Button onClick={() => navigator.clipboard.writeText(letter)}>Copy Letter</Button>
+      <Button onClick={() => navigator.clipboard.writeText(letter)}>{t("internals.habitabilityTracker.buttons.copyLetter")}</Button>
     </div>
   );
 }

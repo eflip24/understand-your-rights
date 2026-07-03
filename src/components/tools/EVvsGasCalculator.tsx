@@ -3,8 +3,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export default function EVvsGasCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [annualMiles, setAnnualMiles] = useState("");
   const [gasPrice, setGasPrice] = useState("");
   const [mpg, setMpg] = useState("");
@@ -39,28 +41,28 @@ export default function EVvsGasCalculator() {
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <Label htmlFor="annualMiles">Annual Miles Driven</Label>
+          <Label htmlFor="annualMiles">{t("internals.eVvsGasCalculator.labels.annualMilesDriven")}</Label>
           <Input id="annualMiles" type="number" placeholder="12000" value={annualMiles} onChange={(e) => setAnnualMiles(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="gasPrice">Gas Price ($/gallon)</Label>
+          <Label htmlFor="gasPrice">{t("internals.eVvsGasCalculator.labels.gasPriceDollarGallon")}</Label>
           <Input id="gasPrice" type="number" step="0.01" placeholder="3.50" value={gasPrice} onChange={(e) => setGasPrice(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="mpg">Gas Vehicle MPG</Label>
+          <Label htmlFor="mpg">{t("internals.eVvsGasCalculator.labels.gasVehicleMpg")}</Label>
           <Input id="mpg" type="number" placeholder="28" value={mpg} onChange={(e) => setMpg(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="electricityRate">Electricity Rate ($/kWh)</Label>
+          <Label htmlFor="electricityRate">{t("internals.eVvsGasCalculator.labels.electricityRateDollarKwh")}</Label>
           <Input id="electricityRate" type="number" step="0.01" placeholder="0.13" value={electricityRate} onChange={(e) => setElectricityRate(e.target.value)} />
         </div>
         <div className="sm:col-span-2">
-          <Label htmlFor="evEfficiency">EV Efficiency (kWh per 100 miles)</Label>
+          <Label htmlFor="evEfficiency">{t("internals.eVvsGasCalculator.labels.evEfficiencyKwhPer100Miles")}</Label>
           <Input id="evEfficiency" type="number" placeholder="30" value={evEfficiency} onChange={(e) => setEvEfficiency(e.target.value)} />
         </div>
       </div>
 
-      <Button onClick={calculate} className="w-full">Compare Costs</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.eVvsGasCalculator.buttons.compareCosts")}</Button>
 
       {result && (
         <div className="grid gap-4 sm:grid-cols-2">

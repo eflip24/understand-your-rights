@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function FreelanceRateCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [hourly, setHourly] = useState("");
   const [hoursPerWeek, setHoursPerWeek] = useState("30");
   const [weeksPerYear, setWeeksPerYear] = useState("48");
@@ -38,29 +40,27 @@ export default function FreelanceRateCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Hourly Rate ($)</Label>
+          <Label>{t("internals.freelanceRateCalculator.labels.hourlyRateDollar")}</Label>
           <Input type="number" placeholder="75" value={hourly} onChange={(e) => setHourly(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Billable Hours/Week</Label>
+          <Label>{t("internals.freelanceRateCalculator.labels.billableHoursWeek")}</Label>
           <Input type="number" placeholder="30" value={hoursPerWeek} onChange={(e) => setHoursPerWeek(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Working Weeks/Year</Label>
+          <Label>{t("internals.freelanceRateCalculator.labels.workingWeeksYear")}</Label>
           <Input type="number" placeholder="48" value={weeksPerYear} onChange={(e) => setWeeksPerYear(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Estimated Tax Rate (%)</Label>
+          <Label>{t("internals.freelanceRateCalculator.labels.estimatedTaxRatePercent")}</Label>
           <Input type="number" placeholder="25" value={taxRate} onChange={(e) => setTaxRate(e.target.value)} />
         </div>
         <div className="space-y-2 sm:col-span-2">
-          <Label>Monthly Expenses ($)</Label>
+          <Label>{t("internals.freelanceRateCalculator.labels.monthlyExpensesDollar")}</Label>
           <Input type="number" placeholder="500" value={expenses} onChange={(e) => setExpenses(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!hourly} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Rates
-      </Button>
+      <Button onClick={calculate} disabled={!hourly} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.freelanceRateCalculator.buttons.calculateRates")}</Button>
       {result && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
           {[

@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { addDays, addBusinessDays, format } from "date-fns";
+import { useTranslation } from "react-i18next";
 
 export default function CancellationDeadline() {
+  const { t } = useTranslation(["tools", "common"]);
   const [signupDate, setSignupDate] = useState("");
   const [period, setPeriod] = useState("14");
   const [dayType, setDayType] = useState("calendar");
@@ -24,11 +26,11 @@ export default function CancellationDeadline() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-3">
         <div className="space-y-2">
-          <Label>Signup / Purchase Date</Label>
+          <Label>{t("internals.cancellationDeadline.labels.signupPurchaseDate")}</Label>
           <Input type="date" value={signupDate} onChange={(e) => setSignupDate(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Cooling-Off Period (days)</Label>
+          <Label>{t("internals.cancellationDeadline.labels.coolingOffPeriodDays")}</Label>
           <Select value={period} onValueChange={setPeriod}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -39,7 +41,7 @@ export default function CancellationDeadline() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Day Type</Label>
+          <Label>{t("internals.cancellationDeadline.labels.dayType")}</Label>
           <Select value={dayType} onValueChange={setDayType}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -49,9 +51,7 @@ export default function CancellationDeadline() {
           </Select>
         </div>
       </div>
-      <Button onClick={calculate} disabled={!signupDate} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Deadline
-      </Button>
+      <Button onClick={calculate} disabled={!signupDate} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.cancellationDeadline.buttons.calculateDeadline")}</Button>
       {result && (
         <div className={`p-6 rounded-lg text-center ${result.expired ? "bg-destructive/10 border border-destructive/30" : "bg-green-50 border border-green-200 dark:bg-green-950/20 dark:border-green-800"}`}>
           <p className="text-sm text-muted-foreground mb-1">Your cancellation deadline is</p>

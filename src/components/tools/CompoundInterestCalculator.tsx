@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function CompoundInterestCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [principal, setPrincipal] = useState("");
   const [rate, setRate] = useState("");
   const [years, setYears] = useState("");
@@ -42,19 +44,19 @@ export default function CompoundInterestCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Initial Principal ($)</Label>
+          <Label>{t("internals.compoundInterestCalculator.labels.initialPrincipalDollar")}</Label>
           <Input type="number" placeholder="10000" value={principal} onChange={(e) => setPrincipal(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Annual Interest Rate (%)</Label>
+          <Label>{t("internals.compoundInterestCalculator.labels.annualInterestRatePercent")}</Label>
           <Input type="number" placeholder="7" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Time Period (Years)</Label>
+          <Label>{t("internals.compoundInterestCalculator.labels.timePeriodYears")}</Label>
           <Input type="number" placeholder="10" value={years} onChange={(e) => setYears(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Compounding Frequency</Label>
+          <Label>{t("internals.compoundInterestCalculator.labels.compoundingFrequency")}</Label>
           <Select value={frequency} onValueChange={setFrequency}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -66,13 +68,11 @@ export default function CompoundInterestCalculator() {
           </Select>
         </div>
         <div className="space-y-2 sm:col-span-2">
-          <Label>Monthly Contribution ($)</Label>
+          <Label>{t("internals.compoundInterestCalculator.labels.monthlyContributionDollar")}</Label>
           <Input type="number" placeholder="500" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!principal || !rate || !years} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Compound Interest
-      </Button>
+      <Button onClick={calculate} disabled={!principal || !rate || !years} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.compoundInterestCalculator.buttons.calculateCompoundInterest")}</Button>
       {result && (
         <div className="grid grid-cols-3 gap-4 pt-2">
           <div className="text-center p-4 bg-green-500/10 rounded-lg border border-green-500/20">

@@ -16,7 +16,7 @@ const RULES: Record<string, Record<string, string>> = {
 };
 
 export default function EvictionNoticeLookup() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [state, setState] = useState("");
   const [reason, setReason] = useState("");
   const r = state && reason ? RULES[state]?.[reason] : null;
@@ -25,13 +25,13 @@ export default function EvictionNoticeLookup() {
     <div className="space-y-4">
       <div><Label>{t("common:fields.state")}</Label>
         <Select value={state} onValueChange={setState}>
-          <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
+          <SelectTrigger><SelectValue placeholder={t("internals.evictionNoticeLookup.placeholders.selectState")} /></SelectTrigger>
           <SelectContent>{Object.keys(RULES).map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
         </Select>
       </div>
-      <div><Label>Reason</Label>
+      <div><Label>{t("internals.evictionNoticeLookup.labels.reason")}</Label>
         <Select value={reason} onValueChange={setReason}>
-          <SelectTrigger><SelectValue placeholder="Select reason" /></SelectTrigger>
+          <SelectTrigger><SelectValue placeholder={t("internals.evictionNoticeLookup.placeholders.selectReason")} /></SelectTrigger>
           <SelectContent>
             <SelectItem value="nonpayment">Non-payment of rent</SelectItem>
             <SelectItem value="violation">Lease violation</SelectItem>

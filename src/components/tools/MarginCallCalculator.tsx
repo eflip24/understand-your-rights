@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function MarginCallCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [equity, setEquity] = useState("");
   const [borrowed, setBorrowed] = useState("");
   const [shares, setShares] = useState("");
@@ -35,25 +37,23 @@ export default function MarginCallCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Your Equity ($)</Label>
+          <Label>{t("internals.marginCallCalculator.labels.yourEquityDollar")}</Label>
           <Input type="number" placeholder="10000" value={equity} onChange={(e) => setEquity(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Borrowed Amount ($)</Label>
+          <Label>{t("internals.marginCallCalculator.labels.borrowedAmountDollar")}</Label>
           <Input type="number" placeholder="10000" value={borrowed} onChange={(e) => setBorrowed(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Number of Shares</Label>
+          <Label>{t("internals.marginCallCalculator.labels.numberOfShares")}</Label>
           <Input type="number" placeholder="100" value={shares} onChange={(e) => setShares(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Maintenance Margin (%)</Label>
+          <Label>{t("internals.marginCallCalculator.labels.maintenanceMarginPercent")}</Label>
           <Input type="number" placeholder="25" value={maintenanceMargin} onChange={(e) => setMaintenanceMargin(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!equity || !borrowed || !shares} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Margin Call
-      </Button>
+      <Button onClick={calculate} disabled={!equity || !borrowed || !shares} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.marginCallCalculator.buttons.calculateMarginCall")}</Button>
       {result && (
         <div className="grid grid-cols-2 gap-4 pt-2">
           <div className={`text-center p-4 rounded-lg border ${result.status === "Safe" ? "bg-green-500/10 border-green-500/20" : result.status === "Warning" ? "bg-yellow-500/10 border-yellow-500/20" : "bg-destructive/10 border-destructive/20"}`}>

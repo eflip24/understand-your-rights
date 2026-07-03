@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const TRIGGERS = ["act of god", "war", "terrorism", "pandemic", "epidemic", "government", "natural disaster", "earthquake", "flood", "fire", "strike", "labor dispute", "supply chain", "shortage", "embargo"];
 const STRONG = ["catch-all", "any other event", "beyond reasonable control", "including but not limited to"];
 
 export default function ForceMajeureChecker() {
+  const { t } = useTranslation(["tools", "common"]);
   const [text, setText] = useState("");
   const [result, setResult] = useState<{ found: boolean; triggers: string[]; strength: string; notes: string[] } | null>(null);
 
@@ -26,8 +28,8 @@ export default function ForceMajeureChecker() {
 
   return (
     <div className="space-y-4">
-      <Textarea placeholder="Paste your contract text..." value={text} onChange={(e) => setText(e.target.value)} rows={10} />
-      <Button onClick={analyze} disabled={text.trim().length < 30}>Check Force Majeure Clause</Button>
+      <Textarea placeholder={t("internals.forceMajeureChecker.placeholders.pasteYourContractText")} value={text} onChange={(e) => setText(e.target.value)} rows={10} />
+      <Button onClick={analyze} disabled={text.trim().length < 30}>{t("internals.forceMajeureChecker.buttons.checkForceMajeureClause")}</Button>
       {result && (
         <Card><CardContent className="p-4 space-y-3">
           <div><span className="text-sm text-muted-foreground">Strength: </span><span className="font-semibold">{result.strength}</span></div>

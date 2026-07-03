@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function AccidentDamageCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [medicalBills, setMedicalBills] = useState("");
   const [futureMedical, setFutureMedical] = useState("");
   const [propertyDamage, setPropertyDamage] = useState("");
@@ -27,37 +29,37 @@ export default function AccidentDamageCalculator() {
       <h4 className="font-medium text-sm text-muted-foreground">Economic Damages</h4>
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Medical Bills ($)</Label>
+          <Label>{t("internals.accidentDamageCalculator.labels.medicalBillsDollar")}</Label>
           <Input type="number" placeholder="15000" value={medicalBills} onChange={(e) => setMedicalBills(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Future Medical Costs ($)</Label>
+          <Label>{t("internals.accidentDamageCalculator.labels.futureMedicalCostsDollar")}</Label>
           <Input type="number" placeholder="5000" value={futureMedical} onChange={(e) => setFutureMedical(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Property Damage ($)</Label>
+          <Label>{t("internals.accidentDamageCalculator.labels.propertyDamageDollar")}</Label>
           <Input type="number" placeholder="8000" value={propertyDamage} onChange={(e) => setPropertyDamage(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Lost Wages ($)</Label>
+          <Label>{t("internals.accidentDamageCalculator.labels.lostWagesDollar")}</Label>
           <Input type="number" placeholder="4000" value={lostWages} onChange={(e) => setLostWages(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Future Lost Earnings ($)</Label>
+          <Label>{t("internals.accidentDamageCalculator.labels.futureLostEarningsDollar")}</Label>
           <Input type="number" placeholder="0" value={futureLostWages} onChange={(e) => setFutureLostWages(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Out-of-Pocket Expenses ($)</Label>
+          <Label>{t("internals.accidentDamageCalculator.labels.outOfPocketExpensesDollar")}</Label>
           <Input type="number" placeholder="500" value={outOfPocket} onChange={(e) => setOutOfPocket(e.target.value)} />
         </div>
       </div>
       <h4 className="font-medium text-sm text-muted-foreground pt-2">Non-Economic Damages</h4>
       <div className="space-y-2">
-        <Label>Pain & Suffering Estimate ($)</Label>
+        <Label>{t("internals.accidentDamageCalculator.labels.painAndSufferingEstimateDollar")}</Label>
         <Input type="number" placeholder="20000" value={painSuffering} onChange={(e) => setPainSuffering(e.target.value)} />
         <p className="text-xs text-muted-foreground">Tip: A common estimate is 1.5–5x your medical bills, depending on severity.</p>
       </div>
-      <Button onClick={calculate} className="w-full">Calculate Total Damages</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.accidentDamageCalculator.buttons.calculateTotalDamages")}</Button>
       {result && (
         <div className="rounded-lg border bg-card p-4 space-y-3">
           <h3 className="font-semibold text-lg">Damage Breakdown</h3>

@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function AttorneyFeeCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [feeType, setFeeType] = useState("contingency");
   const [settlementAmount, setSettlementAmount] = useState("");
   const [contingencyRate, setContingencyRate] = useState("33");
@@ -34,7 +36,7 @@ export default function AttorneyFeeCalculator() {
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        <Label>Fee Structure</Label>
+        <Label>{t("internals.attorneyFeeCalculator.labels.feeStructure")}</Label>
         <Select value={feeType} onValueChange={setFeeType}>
           <SelectTrigger><SelectValue /></SelectTrigger>
           <SelectContent>
@@ -47,33 +49,33 @@ export default function AttorneyFeeCalculator() {
         {feeType === "contingency" ? (
           <>
             <div className="space-y-2">
-              <Label>Expected Settlement ($)</Label>
+              <Label>{t("internals.attorneyFeeCalculator.labels.expectedSettlementDollar")}</Label>
               <Input type="number" placeholder="100000" value={settlementAmount} onChange={(e) => setSettlementAmount(e.target.value)} />
             </div>
             <div className="space-y-2">
-              <Label>Contingency Rate (%)</Label>
+              <Label>{t("internals.attorneyFeeCalculator.labels.contingencyRatePercent")}</Label>
               <Input type="number" placeholder="33" step="1" value={contingencyRate} onChange={(e) => setContingencyRate(e.target.value)} />
             </div>
           </>
         ) : (
           <>
             <div className="space-y-2">
-              <Label>Hourly Rate ($)</Label>
+              <Label>{t("internals.attorneyFeeCalculator.labels.hourlyRateDollar")}</Label>
               <Input type="number" placeholder="300" value={hourlyRate} onChange={(e) => setHourlyRate(e.target.value)} />
             </div>
             <div className="space-y-2">
-              <Label>Estimated Hours</Label>
+              <Label>{t("internals.attorneyFeeCalculator.labels.estimatedHours")}</Label>
               <Input type="number" placeholder="50" value={estimatedHours} onChange={(e) => setEstimatedHours(e.target.value)} />
             </div>
           </>
         )}
         <div className="space-y-2">
-          <Label>Case Expenses ($)</Label>
+          <Label>{t("internals.attorneyFeeCalculator.labels.caseExpensesDollar")}</Label>
           <Input type="number" placeholder="5000" value={caseExpenses} onChange={(e) => setCaseExpenses(e.target.value)} />
           <p className="text-xs text-muted-foreground">Filing fees, expert witnesses, medical records, etc.</p>
         </div>
       </div>
-      <Button onClick={calculate} className="w-full">Calculate Fees</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.attorneyFeeCalculator.buttons.calculateFees")}</Button>
       {result && (
         <div className="rounded-lg border bg-card p-4 space-y-3">
           <h3 className="font-semibold text-lg">Fee Breakdown</h3>

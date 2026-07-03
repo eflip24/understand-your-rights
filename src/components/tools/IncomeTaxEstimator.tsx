@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const BRACKETS_2024 = {
   single: [
@@ -47,6 +48,7 @@ interface BracketResult {
 }
 
 export default function IncomeTaxEstimator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [income, setIncome] = useState("");
   const [filing, setFiling] = useState("single");
   const [deductions, setDeductions] = useState("");
@@ -80,11 +82,11 @@ export default function IncomeTaxEstimator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-3">
         <div className="space-y-2">
-          <Label>Gross Annual Income ($)</Label>
+          <Label>{t("internals.incomeTaxEstimator.labels.grossAnnualIncomeDollar")}</Label>
           <Input type="number" placeholder="85000" value={income} onChange={(e) => setIncome(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Filing Status</Label>
+          <Label>{t("internals.incomeTaxEstimator.labels.filingStatus")}</Label>
           <Select value={filing} onValueChange={setFiling}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -95,13 +97,11 @@ export default function IncomeTaxEstimator() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Deductions ($, blank = standard)</Label>
+          <Label>{t("internals.incomeTaxEstimator.labels.deductionsDollarBlankStandard")}</Label>
           <Input type="number" placeholder={STANDARD_DEDUCTIONS[filing].toString()} value={deductions} onChange={(e) => setDeductions(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!income} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Estimate Tax
-      </Button>
+      <Button onClick={calculate} disabled={!income} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.incomeTaxEstimator.buttons.estimateTax")}</Button>
       {result && (
         <div className="space-y-4 pt-2">
           <div className="grid grid-cols-3 gap-4">

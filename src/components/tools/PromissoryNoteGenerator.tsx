@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 const states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
 
 export default function PromissoryNoteGenerator() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [lender, setLender] = useState("");
   const [borrower, setBorrower] = useState("");
   const [amount, setAmount] = useState("");
@@ -97,20 +97,20 @@ Date: ________________`);
   return (
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
-        <div><Label>Lender Name</Label><Input value={lender} onChange={e => setLender(e.target.value)} placeholder="John Smith" /></div>
-        <div><Label>Borrower Name</Label><Input value={borrower} onChange={e => setBorrower(e.target.value)} placeholder="Jane Doe" /></div>
-        <div><Label>Principal Amount ($)</Label><Input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="10000" /></div>
-        <div><Label>Annual Interest Rate (%)</Label><Input type="number" value={interestRate} onChange={e => setInterestRate(e.target.value)} placeholder="5" /></div>
-        <div><Label>Term (Months)</Label><Input type="number" value={termMonths} onChange={e => setTermMonths(e.target.value)} placeholder="12" /></div>
+        <div><Label>{t("internals.promissoryNoteGenerator.labels.lenderName")}</Label><Input value={lender} onChange={e => setLender(e.target.value)} placeholder={t("internals.promissoryNoteGenerator.placeholders.johnSmith")} /></div>
+        <div><Label>{t("internals.promissoryNoteGenerator.labels.borrowerName")}</Label><Input value={borrower} onChange={e => setBorrower(e.target.value)} placeholder={t("internals.promissoryNoteGenerator.placeholders.janeDoe")} /></div>
+        <div><Label>{t("internals.promissoryNoteGenerator.labels.principalAmountDollar")}</Label><Input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="10000" /></div>
+        <div><Label>{t("internals.promissoryNoteGenerator.labels.annualInterestRatePercent")}</Label><Input type="number" value={interestRate} onChange={e => setInterestRate(e.target.value)} placeholder="5" /></div>
+        <div><Label>{t("internals.promissoryNoteGenerator.labels.termMonths")}</Label><Input type="number" value={termMonths} onChange={e => setTermMonths(e.target.value)} placeholder="12" /></div>
         <div>
           <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
-            <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("internals.promissoryNoteGenerator.placeholders.selectState")} /></SelectTrigger>
             <SelectContent>{states.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
           </Select>
         </div>
       </div>
-      <Button onClick={generate} className="w-full">Generate Promissory Note</Button>
+      <Button onClick={generate} className="w-full">{t("internals.promissoryNoteGenerator.buttons.generatePromissoryNote")}</Button>
       {result && (
         <Card>
           <CardContent className="pt-6">

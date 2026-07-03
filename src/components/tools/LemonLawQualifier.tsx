@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function LemonLawQualifier() {
+  const { t } = useTranslation(["tools", "common"]);
   const [repairs, setRepairs] = useState("");
   const [days, setDays] = useState("");
   const [age, setAge] = useState("");
@@ -26,12 +28,12 @@ export default function LemonLawQualifier() {
   return (
     <div className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-3">
-        <div><Label>Repair attempts (same issue)</Label><Input type="number" value={repairs} onChange={e => setRepairs(e.target.value)} /></div>
-        <div><Label>Total days out of service</Label><Input type="number" value={days} onChange={e => setDays(e.target.value)} /></div>
-        <div><Label>Vehicle age (months)</Label><Input type="number" value={age} onChange={e => setAge(e.target.value)} /></div>
-        <div><Label>Mileage</Label><Input type="number" value={miles} onChange={e => setMiles(e.target.value)} /></div>
+        <div><Label>{t("internals.lemonLawQualifier.labels.repairAttemptsSameIssue")}</Label><Input type="number" value={repairs} onChange={e => setRepairs(e.target.value)} /></div>
+        <div><Label>{t("internals.lemonLawQualifier.labels.totalDaysOutOfService")}</Label><Input type="number" value={days} onChange={e => setDays(e.target.value)} /></div>
+        <div><Label>{t("internals.lemonLawQualifier.labels.vehicleAgeMonths")}</Label><Input type="number" value={age} onChange={e => setAge(e.target.value)} /></div>
+        <div><Label>{t("internals.lemonLawQualifier.labels.mileage")}</Label><Input type="number" value={miles} onChange={e => setMiles(e.target.value)} /></div>
       </div>
-      <Button onClick={check} disabled={!repairs || !days || !age || !miles}>Check Qualification</Button>
+      <Button onClick={check} disabled={!repairs || !days || !age || !miles}>{t("internals.lemonLawQualifier.buttons.checkQualification")}</Button>
       {result && <Card><CardContent className="p-4"><p className="text-sm whitespace-pre-wrap">{result}</p></CardContent></Card>}
     </div>
   );

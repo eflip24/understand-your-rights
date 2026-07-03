@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function InvoiceInterestCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [amount, setAmount] = useState("");
   const [rate, setRate] = useState("");
   const [days, setDays] = useState("");
@@ -31,19 +33,19 @@ export default function InvoiceInterestCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Invoice Amount ($)</Label>
+          <Label>{t("internals.invoiceInterestCalculator.labels.invoiceAmountDollar")}</Label>
           <Input type="number" placeholder="5000" value={amount} onChange={(e) => setAmount(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Interest Rate (%)</Label>
+          <Label>{t("internals.invoiceInterestCalculator.labels.interestRatePercent")}</Label>
           <Input type="number" placeholder="10" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Days Overdue</Label>
+          <Label>{t("internals.invoiceInterestCalculator.labels.daysOverdue")}</Label>
           <Input type="number" placeholder="45" value={days} onChange={(e) => setDays(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Rate Type</Label>
+          <Label>{t("internals.invoiceInterestCalculator.labels.rateType")}</Label>
           <Select value={rateType} onValueChange={setRateType}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -54,9 +56,7 @@ export default function InvoiceInterestCalculator() {
           </Select>
         </div>
       </div>
-      <Button onClick={calculate} disabled={!amount || !rate || !days} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Interest
-      </Button>
+      <Button onClick={calculate} disabled={!amount || !rate || !days} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.invoiceInterestCalculator.buttons.calculateInterest")}</Button>
       {result && (
         <div className="grid grid-cols-3 gap-4 pt-2">
           <div className="text-center p-4 bg-secondary rounded-lg">

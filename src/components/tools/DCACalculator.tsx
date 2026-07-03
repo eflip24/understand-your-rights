@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function DCACalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [investmentPerPeriod, setInvestmentPerPeriod] = useState("");
   const [periods, setPeriods] = useState("");
   const [startPrice, setStartPrice] = useState("");
@@ -39,25 +41,23 @@ export default function DCACalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Investment Per Period ($)</Label>
+          <Label>{t("internals.dCACalculator.labels.investmentPerPeriodDollar")}</Label>
           <Input type="number" placeholder="500" value={investmentPerPeriod} onChange={(e) => setInvestmentPerPeriod(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Number of Periods</Label>
+          <Label>{t("internals.dCACalculator.labels.numberOfPeriods")}</Label>
           <Input type="number" placeholder="12" value={periods} onChange={(e) => setPeriods(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Start Price ($)</Label>
+          <Label>{t("internals.dCACalculator.labels.startPriceDollar")}</Label>
           <Input type="number" placeholder="30000" value={startPrice} onChange={(e) => setStartPrice(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>End Price ($)</Label>
+          <Label>{t("internals.dCACalculator.labels.endPriceDollar")}</Label>
           <Input type="number" placeholder="45000" value={endPrice} onChange={(e) => setEndPrice(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!investmentPerPeriod || !periods || !startPrice || !endPrice} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate DCA
-      </Button>
+      <Button onClick={calculate} disabled={!investmentPerPeriod || !periods || !startPrice || !endPrice} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.dCACalculator.buttons.calculateDca")}</Button>
       {result && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
           {[

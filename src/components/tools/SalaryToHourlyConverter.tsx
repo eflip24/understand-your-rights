@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function SalaryToHourlyConverter() {
+  const { t } = useTranslation(["tools", "common"]);
   const [mode, setMode] = useState<"s2h" | "h2s">("s2h");
   const [salary, setSalary] = useState("");
   const [hourly, setHourly] = useState("");
@@ -36,35 +38,35 @@ export default function SalaryToHourlyConverter() {
   return (
     <div className="space-y-4">
       <div className="flex gap-2">
-        <Button variant={mode === "s2h" ? "default" : "outline"} onClick={() => { setMode("s2h"); setResult(null); }}>Salary → Hourly</Button>
-        <Button variant={mode === "h2s" ? "default" : "outline"} onClick={() => { setMode("h2s"); setResult(null); }}>Hourly → Salary</Button>
+        <Button variant={mode === "s2h" ? "default" : "outline"} onClick={() => { setMode("s2h"); setResult(null); }}>{t("internals.salaryToHourlyConverter.buttons.salaryHourly")}</Button>
+        <Button variant={mode === "h2s" ? "default" : "outline"} onClick={() => { setMode("h2s"); setResult(null); }}>{t("internals.salaryToHourlyConverter.buttons.hourlySalary")}</Button>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         {mode === "s2h" ? (
           <div className="space-y-2">
-            <Label>Annual Salary ($)</Label>
+            <Label>{t("internals.salaryToHourlyConverter.labels.annualSalaryDollar")}</Label>
             <Input type="number" placeholder="75000" value={salary} onChange={(e) => setSalary(e.target.value)} />
           </div>
         ) : (
           <div className="space-y-2">
-            <Label>Hourly Rate ($)</Label>
+            <Label>{t("internals.salaryToHourlyConverter.labels.hourlyRateDollar")}</Label>
             <Input type="number" placeholder="36" step="0.5" value={hourly} onChange={(e) => setHourly(e.target.value)} />
           </div>
         )}
         <div className="space-y-2">
-          <Label>Hours per Week</Label>
+          <Label>{t("internals.salaryToHourlyConverter.labels.hoursPerWeek")}</Label>
           <Input type="number" placeholder="40" value={hoursPerWeek} onChange={(e) => setHoursPerWeek(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Weeks per Year</Label>
+          <Label>{t("internals.salaryToHourlyConverter.labels.weeksPerYear")}</Label>
           <Input type="number" placeholder="52" value={weeksPerYear} onChange={(e) => setWeeksPerYear(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Benefits Overhead (%)</Label>
+          <Label>{t("internals.salaryToHourlyConverter.labels.benefitsOverheadPercent")}</Label>
           <Input type="number" placeholder="30" value={benefitsPercent} onChange={(e) => setBenefitsPercent(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!valid} className="bg-accent text-accent-foreground hover:bg-gold-dark">Convert</Button>
+      <Button onClick={calculate} disabled={!valid} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.salaryToHourlyConverter.buttons.convert")}</Button>
       {result && (
         <div className="grid grid-cols-2 gap-4 pt-2">
           <div className="text-center p-4 bg-accent/10 rounded-lg border border-accent/20">

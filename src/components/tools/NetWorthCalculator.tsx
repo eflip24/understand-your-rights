@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 const ASSET_FIELDS = [
   { key: "cash", label: "Cash & Savings" },
@@ -20,6 +21,7 @@ const LIABILITY_FIELDS = [
 ];
 
 export default function NetWorthCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [values, setValues] = useState<Record<string, string>>({});
   const [result, setResult] = useState<{ totalAssets: number; totalLiabilities: number; netWorth: number } | null>(null);
 
@@ -56,9 +58,7 @@ export default function NetWorthCalculator() {
           ))}
         </div>
       </div>
-      <Button onClick={calculate} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Net Worth
-      </Button>
+      <Button onClick={calculate} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.netWorthCalculator.buttons.calculateNetWorth")}</Button>
       {result && (
         <div className="grid grid-cols-3 gap-4 pt-2">
           <div className="text-center p-4 bg-secondary rounded-lg">

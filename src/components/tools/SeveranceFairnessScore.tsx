@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function SeveranceFairnessScore() {
+  const { t } = useTranslation(["tools", "common"]);
   const [salary, setSalary] = useState("");
   const [years, setYears] = useState("");
   const [offerAmount, setOfferAmount] = useState("");
@@ -43,11 +45,11 @@ export default function SeveranceFairnessScore() {
   return (
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
-        <div><Label>Annual Salary ($)</Label><Input type="number" value={salary} onChange={e => setSalary(e.target.value)} placeholder="85000" /></div>
-        <div><Label>Years of Service</Label><Input type="number" value={years} onChange={e => setYears(e.target.value)} placeholder="5" step="0.5" /></div>
-        <div><Label>Severance Offered ($)</Label><Input type="number" value={offerAmount} onChange={e => setOfferAmount(e.target.value)} placeholder="20000" /></div>
+        <div><Label>{t("internals.severanceFairnessScore.labels.annualSalaryDollar")}</Label><Input type="number" value={salary} onChange={e => setSalary(e.target.value)} placeholder="85000" /></div>
+        <div><Label>{t("internals.severanceFairnessScore.labels.yearsOfService")}</Label><Input type="number" value={years} onChange={e => setYears(e.target.value)} placeholder="5" step="0.5" /></div>
+        <div><Label>{t("internals.severanceFairnessScore.labels.severanceOfferedDollar")}</Label><Input type="number" value={offerAmount} onChange={e => setOfferAmount(e.target.value)} placeholder="20000" /></div>
         <div>
-          <Label>Your Role Level</Label>
+          <Label>{t("internals.severanceFairnessScore.labels.yourRoleLevel")}</Label>
           <Select value={level} onValueChange={(v) => setLevel(v as typeof level)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -59,14 +61,14 @@ export default function SeveranceFairnessScore() {
           </Select>
         </div>
         <div>
-          <Label>Includes Healthcare (COBRA paid)?</Label>
+          <Label>{t("internals.severanceFairnessScore.labels.includesHealthcareCobraPaid")}</Label>
           <Select value={hasHealthcare} onValueChange={(v) => setHasHealthcare(v as "no" | "yes")}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent><SelectItem value="no">No</SelectItem><SelectItem value="yes">Yes</SelectItem></SelectContent>
           </Select>
         </div>
         <div>
-          <Label>Includes Outplacement?</Label>
+          <Label>{t("internals.severanceFairnessScore.labels.includesOutplacement")}</Label>
           <Select value={hasOutplacement} onValueChange={(v) => setHasOutplacement(v as "no" | "yes")}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent><SelectItem value="no">No</SelectItem><SelectItem value="yes">Yes</SelectItem></SelectContent>

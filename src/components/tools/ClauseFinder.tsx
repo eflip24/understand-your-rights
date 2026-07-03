@@ -23,7 +23,7 @@ const clauseTypes = [
 ];
 
 export default function ClauseFinder() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [text, setText] = useState("");
   const [results, setResults] = useState<{ name: string; found: boolean; snippets: string[] }[]>([]);
 
@@ -49,9 +49,7 @@ export default function ClauseFinder() {
   return (
     <div className="space-y-4">
       <Textarea placeholder={t("common:fields.contractText")} value={text} onChange={(e) => setText(e.target.value)} rows={8} />
-      <Button onClick={analyze} disabled={!text.trim()} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Find Clauses
-      </Button>
+      <Button onClick={analyze} disabled={!text.trim()} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.clauseFinder.buttons.findClauses")}</Button>
       {results.length > 0 && (
         <div className="space-y-3 pt-2">
           <p className="text-sm font-medium">{foundCount} of {clauseTypes.length} clause types detected</p>

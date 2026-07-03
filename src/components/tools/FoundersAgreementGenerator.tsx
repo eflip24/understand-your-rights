@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function FoundersAgreementGenerator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [company, setCompany] = useState("");
   const [founders, setFounders] = useState("");
   const [vesting, setVesting] = useState("4 years with a 1-year cliff");
@@ -42,12 +44,12 @@ ____________________________   Date: ___________`;
   return (
     <div className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-3">
-        <div><Label>Company name</Label><Input value={company} onChange={e => setCompany(e.target.value)} /></div>
-        <div><Label>Vesting schedule</Label><Input value={vesting} onChange={e => setVesting(e.target.value)} /></div>
-        <div className="sm:col-span-2"><Label>Founders (name — % — role)</Label><Textarea value={founders} onChange={e => setFounders(e.target.value)} rows={4} placeholder="Jane Doe — 50% — CEO&#10;John Smith — 50% — CTO" /></div>
+        <div><Label>{t("internals.foundersAgreementGenerator.labels.companyName")}</Label><Input value={company} onChange={e => setCompany(e.target.value)} /></div>
+        <div><Label>{t("internals.foundersAgreementGenerator.labels.vestingSchedule")}</Label><Input value={vesting} onChange={e => setVesting(e.target.value)} /></div>
+        <div className="sm:col-span-2"><Label>{t("internals.foundersAgreementGenerator.labels.foundersNamePercentRole")}</Label><Textarea value={founders} onChange={e => setFounders(e.target.value)} rows={4} placeholder={t("internals.foundersAgreementGenerator.placeholders.janeDoe50PercentCeoAnd")} /></div>
       </div>
       <Textarea value={doc} readOnly rows={18} className="font-mono text-xs" />
-      <Button onClick={() => navigator.clipboard.writeText(doc)}>Copy Agreement</Button>
+      <Button onClick={() => navigator.clipboard.writeText(doc)}>{t("internals.foundersAgreementGenerator.buttons.copyAgreement")}</Button>
     </div>
   );
 }

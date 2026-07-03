@@ -61,7 +61,7 @@ const wageData: Record<string, { state: number; tipped: number; notes: string }>
 const stateNames = Object.keys(wageData).sort();
 
 export default function MinimumWageLookup() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [state, setState] = useState("");
   const [result, setResult] = useState<{ state: number; tipped: number; notes: string; name: string } | null>(null);
 
@@ -75,7 +75,7 @@ export default function MinimumWageLookup() {
       <div className="max-w-sm space-y-2">
         <Label>{t("common:fields.state")}</Label>
         <Select value={state} onValueChange={setState}>
-          <SelectTrigger><SelectValue placeholder="Select state..." /></SelectTrigger>
+          <SelectTrigger><SelectValue placeholder={t("internals.minimumWageLookup.placeholders.selectState")} /></SelectTrigger>
           <SelectContent>
             {stateNames.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
           </SelectContent>

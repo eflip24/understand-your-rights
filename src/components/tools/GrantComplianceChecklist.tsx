@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const checklists: Record<string, { title: string; items: string[] }> = {
   federal: {
@@ -69,6 +70,7 @@ const checklists: Record<string, { title: string; items: string[] }> = {
 };
 
 export default function GrantComplianceChecklist() {
+  const { t } = useTranslation(["tools", "common"]);
   const [grantType, setGrantType] = useState("");
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
@@ -81,9 +83,9 @@ export default function GrantComplianceChecklist() {
   return (
     <div className="space-y-4">
       <div className="space-y-2 max-w-sm">
-        <Label>Grant Type</Label>
+        <Label>{t("internals.grantComplianceChecklist.labels.grantType")}</Label>
         <Select value={grantType} onValueChange={(v) => { setGrantType(v); setChecked({}); }}>
-          <SelectTrigger><SelectValue placeholder="Select grant type..." /></SelectTrigger>
+          <SelectTrigger><SelectValue placeholder={t("internals.grantComplianceChecklist.placeholders.selectGrantType")} /></SelectTrigger>
           <SelectContent>
             <SelectItem value="federal">Federal Grant</SelectItem>
             <SelectItem value="state">State Grant</SelectItem>

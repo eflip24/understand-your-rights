@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const BRACKETS_SINGLE = [
   { min: 0, max: 11600, rate: 0.10 },
@@ -41,6 +42,7 @@ function calcFederalTax(annualIncome: number, filing: string): number {
 }
 
 export default function PaycheckCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [payType, setPayType] = useState("salary");
   const [amount, setAmount] = useState("");
   const [hours, setHours] = useState("40");
@@ -85,7 +87,7 @@ export default function PaycheckCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-2">
-          <Label>Pay Type</Label>
+          <Label>{t("internals.paycheckCalculator.labels.payType")}</Label>
           <Select value={payType} onValueChange={setPayType}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -100,12 +102,12 @@ export default function PaycheckCalculator() {
         </div>
         {payType === "hourly" && (
           <div className="space-y-2">
-            <Label>Hours per Week</Label>
+            <Label>{t("internals.paycheckCalculator.labels.hoursPerWeek")}</Label>
             <Input type="number" placeholder="40" value={hours} onChange={(e) => setHours(e.target.value)} />
           </div>
         )}
         <div className="space-y-2">
-          <Label>Pay Frequency</Label>
+          <Label>{t("internals.paycheckCalculator.labels.payFrequency")}</Label>
           <Select value={frequency} onValueChange={setFrequency}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -117,7 +119,7 @@ export default function PaycheckCalculator() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Filing Status</Label>
+          <Label>{t("internals.paycheckCalculator.labels.filingStatus")}</Label>
           <Select value={filing} onValueChange={setFiling}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -127,9 +129,7 @@ export default function PaycheckCalculator() {
           </Select>
         </div>
       </div>
-      <Button onClick={calculate} disabled={!amount} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Paycheck
-      </Button>
+      <Button onClick={calculate} disabled={!amount} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.paycheckCalculator.buttons.calculatePaycheck")}</Button>
       {result && (
         <div className="space-y-4 pt-2">
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">

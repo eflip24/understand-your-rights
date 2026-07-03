@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 interface WarrantyEntry {
   product: string;
@@ -13,6 +14,7 @@ interface WarrantyEntry {
 }
 
 export default function WarrantyExpirationCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [entries, setEntries] = useState<WarrantyEntry[]>([{ product: "", purchaseDate: "", warrantyLength: "", warrantyUnit: "months" }]);
   const [results, setResults] = useState<{ product: string; expirationDate: string; daysLeft: number; status: string }[] | null>(null);
 
@@ -60,19 +62,19 @@ export default function WarrantyExpirationCalculator() {
       {entries.map((entry, i) => (
         <div key={i} className="grid gap-3 sm:grid-cols-5 items-end p-3 rounded-lg bg-secondary/50">
           <div className="space-y-1">
-            <Label>Product</Label>
-            <Input placeholder="Laptop" value={entry.product} onChange={(e) => updateEntry(i, "product", e.target.value)} />
+            <Label>{t("internals.warrantyExpirationCalculator.labels.product")}</Label>
+            <Input placeholder={t("internals.warrantyExpirationCalculator.placeholders.laptop")} value={entry.product} onChange={(e) => updateEntry(i, "product", e.target.value)} />
           </div>
           <div className="space-y-1">
-            <Label>Purchase Date</Label>
+            <Label>{t("internals.warrantyExpirationCalculator.labels.purchaseDate")}</Label>
             <Input type="date" value={entry.purchaseDate} onChange={(e) => updateEntry(i, "purchaseDate", e.target.value)} />
           </div>
           <div className="space-y-1">
-            <Label>Warranty Length</Label>
+            <Label>{t("internals.warrantyExpirationCalculator.labels.warrantyLength")}</Label>
             <Input type="number" placeholder="12" value={entry.warrantyLength} onChange={(e) => updateEntry(i, "warrantyLength", e.target.value)} />
           </div>
           <div className="space-y-1">
-            <Label>Unit</Label>
+            <Label>{t("internals.warrantyExpirationCalculator.labels.unit")}</Label>
             <Select value={entry.warrantyUnit} onValueChange={(v) => updateEntry(i, "warrantyUnit", v)}>
               <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
@@ -83,13 +85,13 @@ export default function WarrantyExpirationCalculator() {
             </Select>
           </div>
           <div>
-            {entries.length > 1 && <Button variant="outline" size="sm" onClick={() => removeEntry(i)}>Remove</Button>}
+            {entries.length > 1 && <Button variant="outline" size="sm" onClick={() => removeEntry(i)}>{t("internals.warrantyExpirationCalculator.buttons.remove")}</Button>}
           </div>
         </div>
       ))}
       <div className="flex gap-2">
-        <Button variant="outline" onClick={addEntry}>+ Add Product</Button>
-        <Button onClick={calculate} disabled={!valid} className="bg-accent text-accent-foreground hover:bg-gold-dark">Track Warranties</Button>
+        <Button variant="outline" onClick={addEntry}>{t("internals.warrantyExpirationCalculator.buttons.addProduct")}</Button>
+        <Button onClick={calculate} disabled={!valid} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.warrantyExpirationCalculator.buttons.trackWarranties")}</Button>
       </div>
       {results && results.length > 0 && (
         <div className="space-y-2 pt-2">

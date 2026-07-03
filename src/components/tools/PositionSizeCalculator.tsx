@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function PositionSizeCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [accountSize, setAccountSize] = useState("");
   const [riskPercent, setRiskPercent] = useState("2");
   const [entryPrice, setEntryPrice] = useState("");
@@ -33,25 +35,23 @@ export default function PositionSizeCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Account Size ($)</Label>
+          <Label>{t("internals.positionSizeCalculator.labels.accountSizeDollar")}</Label>
           <Input type="number" placeholder="10000" value={accountSize} onChange={(e) => setAccountSize(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Risk Per Trade (%)</Label>
+          <Label>{t("internals.positionSizeCalculator.labels.riskPerTradePercent")}</Label>
           <Input type="number" placeholder="2" step="0.5" value={riskPercent} onChange={(e) => setRiskPercent(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Entry Price ($)</Label>
+          <Label>{t("internals.positionSizeCalculator.labels.entryPriceDollar")}</Label>
           <Input type="number" placeholder="150" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Stop Loss Price ($)</Label>
+          <Label>{t("internals.positionSizeCalculator.labels.stopLossPriceDollar")}</Label>
           <Input type="number" placeholder="145" value={stopLoss} onChange={(e) => setStopLoss(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!accountSize || !riskPercent || !entryPrice || !stopLoss} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Position Size
-      </Button>
+      <Button onClick={calculate} disabled={!accountSize || !riskPercent || !entryPrice || !stopLoss} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.positionSizeCalculator.buttons.calculatePositionSize")}</Button>
       {result && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
           {[

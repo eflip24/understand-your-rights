@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { legalTerms, searchTerms } from "@/data/legalTerms";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export default function JargonTranslator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [query, setQuery] = useState("");
 
   const results = query.trim() ? searchTerms(query) : legalTerms.slice(0, 12);
@@ -11,7 +13,7 @@ export default function JargonTranslator() {
   return (
     <div className="space-y-4">
       <Input
-        placeholder="Search for a legal term (e.g., indemnification, arbitration)..."
+        placeholder={t("internals.jargonTranslator.placeholders.searchForALegalTermE")}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         className="text-base"

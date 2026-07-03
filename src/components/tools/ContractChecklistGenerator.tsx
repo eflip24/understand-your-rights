@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const checklists: Record<string, { title: string; items: string[] }> = {
   employment: {
@@ -74,6 +75,7 @@ const checklists: Record<string, { title: string; items: string[] }> = {
 };
 
 export default function ContractChecklistGenerator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [contractType, setContractType] = useState("");
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
@@ -86,9 +88,9 @@ export default function ContractChecklistGenerator() {
   return (
     <div className="space-y-4">
       <div className="space-y-2 max-w-sm">
-        <Label>Contract Type</Label>
+        <Label>{t("internals.contractChecklistGenerator.labels.contractType")}</Label>
         <Select value={contractType} onValueChange={(v) => { setContractType(v); setChecked({}); }}>
-          <SelectTrigger><SelectValue placeholder="Select contract type..." /></SelectTrigger>
+          <SelectTrigger><SelectValue placeholder={t("internals.contractChecklistGenerator.placeholders.selectContractType")} /></SelectTrigger>
           <SelectContent>
             <SelectItem value="employment">Employment Contract</SelectItem>
             <SelectItem value="nda">Non-Disclosure Agreement</SelectItem>

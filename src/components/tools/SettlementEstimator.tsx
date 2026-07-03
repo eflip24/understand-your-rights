@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const injuryMultipliers: Record<string, { label: string; low: number; high: number }> = {
   minor: { label: "Minor (sprains, bruises)", low: 1.5, high: 3 },
@@ -12,6 +13,7 @@ const injuryMultipliers: Record<string, { label: string; low: number; high: numb
 };
 
 export default function SettlementEstimator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [medicalBills, setMedicalBills] = useState("");
   const [futureMedical, setFutureMedical] = useState("");
   const [lostWages, setLostWages] = useState("");
@@ -41,27 +43,27 @@ export default function SettlementEstimator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Medical Bills to Date ($)</Label>
+          <Label>{t("internals.settlementEstimator.labels.medicalBillsToDateDollar")}</Label>
           <Input type="number" placeholder="15000" value={medicalBills} onChange={(e) => setMedicalBills(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Estimated Future Medical ($)</Label>
+          <Label>{t("internals.settlementEstimator.labels.estimatedFutureMedicalDollar")}</Label>
           <Input type="number" placeholder="5000" value={futureMedical} onChange={(e) => setFutureMedical(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Lost Wages to Date ($)</Label>
+          <Label>{t("internals.settlementEstimator.labels.lostWagesToDateDollar")}</Label>
           <Input type="number" placeholder="8000" value={lostWages} onChange={(e) => setLostWages(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Future Lost Earning Capacity ($)</Label>
+          <Label>{t("internals.settlementEstimator.labels.futureLostEarningCapacityDollar")}</Label>
           <Input type="number" placeholder="0" value={futureLostWages} onChange={(e) => setFutureLostWages(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Property Damage ($)</Label>
+          <Label>{t("internals.settlementEstimator.labels.propertyDamageDollar")}</Label>
           <Input type="number" placeholder="5000" value={propertyDamage} onChange={(e) => setPropertyDamage(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Injury Severity</Label>
+          <Label>{t("internals.settlementEstimator.labels.injurySeverity")}</Label>
           <Select value={injurySeverity} onValueChange={setInjurySeverity}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -72,7 +74,7 @@ export default function SettlementEstimator() {
           </Select>
         </div>
       </div>
-      <Button onClick={calculate} className="w-full">Estimate Settlement Value</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.settlementEstimator.buttons.estimateSettlementValue")}</Button>
       {result && (
         <div className="rounded-lg border bg-card p-4 space-y-3">
           <h3 className="font-semibold text-lg">Estimated Settlement Range</h3>

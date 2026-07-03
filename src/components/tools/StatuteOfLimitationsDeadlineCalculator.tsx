@@ -17,7 +17,7 @@ const SOL_YEARS: Record<string, Record<string, number>> = {
 };
 
 export default function StatuteOfLimitationsDeadlineCalculator() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [claimType, setClaimType] = useState("Personal Injury");
   const [state, setState] = useState("California");
   const [incidentDate, setIncidentDate] = useState("");
@@ -42,7 +42,7 @@ export default function StatuteOfLimitationsDeadlineCalculator() {
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <Label>Claim Type</Label>
+          <Label>{t("internals.statuteOfLimitationsDeadlineCalculator.labels.claimType")}</Label>
           <Select value={claimType} onValueChange={setClaimType}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>{Object.keys(SOL_YEARS).map(t => <SelectItem key={t} value={t}>{t}</SelectItem>)}</SelectContent>
@@ -55,7 +55,7 @@ export default function StatuteOfLimitationsDeadlineCalculator() {
             <SelectContent>{["California","New York","Texas","Florida","Illinois","Other"].map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
           </Select>
         </div>
-        <div className="sm:col-span-2"><Label>Date of Incident / Breach</Label><Input type="date" value={incidentDate} onChange={e => setIncidentDate(e.target.value)} /></div>
+        <div className="sm:col-span-2"><Label>{t("internals.statuteOfLimitationsDeadlineCalculator.labels.dateOfIncidentBreach")}</Label><Input type="date" value={incidentDate} onChange={e => setIncidentDate(e.target.value)} /></div>
       </div>
 
       {deadline && daysRemaining !== null && (

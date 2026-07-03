@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const rentControlAreas: Record<string, { cap: number; notes: string }> = {
   "California (Statewide - AB 1482)": { cap: 10, notes: "5% + local CPI, max 10%. Applies to buildings 15+ years old." },
@@ -16,6 +17,7 @@ const rentControlAreas: Record<string, { cap: number; notes: string }> = {
 };
 
 export default function RentIncreaseCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [currentRent, setCurrentRent] = useState("");
   const [proposedRent, setProposedRent] = useState("");
   const [area, setArea] = useState("");
@@ -31,13 +33,13 @@ export default function RentIncreaseCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
-        <div><Label>Current Monthly Rent ($)</Label><Input type="number" value={currentRent} onChange={e => setCurrentRent(e.target.value)} placeholder="1500" /></div>
-        <div><Label>Proposed Monthly Rent ($)</Label><Input type="number" value={proposedRent} onChange={e => setProposedRent(e.target.value)} placeholder="1650" /></div>
+        <div><Label>{t("internals.rentIncreaseCalculator.labels.currentMonthlyRentDollar")}</Label><Input type="number" value={currentRent} onChange={e => setCurrentRent(e.target.value)} placeholder="1500" /></div>
+        <div><Label>{t("internals.rentIncreaseCalculator.labels.proposedMonthlyRentDollar")}</Label><Input type="number" value={proposedRent} onChange={e => setProposedRent(e.target.value)} placeholder="1650" /></div>
       </div>
       <div>
-        <Label>Jurisdiction (optional)</Label>
+        <Label>{t("internals.rentIncreaseCalculator.labels.jurisdictionOptional")}</Label>
         <Select value={area} onValueChange={setArea}>
-          <SelectTrigger><SelectValue placeholder="Select area for rent control check" /></SelectTrigger>
+          <SelectTrigger><SelectValue placeholder={t("internals.rentIncreaseCalculator.placeholders.selectAreaForRentControlCheck")} /></SelectTrigger>
           <SelectContent>{Object.keys(rentControlAreas).map(a => <SelectItem key={a} value={a}>{a}</SelectItem>)}</SelectContent>
         </Select>
       </div>

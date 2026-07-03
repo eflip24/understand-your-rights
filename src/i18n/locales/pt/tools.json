@@ -2189,11 +2189,79 @@
     }
   },
   "internals": {
-    "wordCounter": {
-      "button": "Contar Palavras"
+    "accidentDamageCalculator": {
+      "buttons": {
+        "calculateTotalDamages": "Calcular Indenização Total"
+      },
+      "labels": {
+        "medicalBillsDollar": "Despesas Médicas ($)",
+        "futureMedicalCostsDollar": "Custos Médicos Futuros ($)",
+        "propertyDamageDollar": "Danos Materiais ($)",
+        "lostWagesDollar": "Salários Perdidos ($)",
+        "futureLostEarningsDollar": "Perda de Rendimentos Futura ($)",
+        "outOfPocketExpensesDollar": "Despesas Desembolsadas ($)",
+        "painAndSufferingEstimateDollar": "Estimativa de Danos Morais ($)"
+      }
     },
-    "readingTime": {
-      "button": "Calcular Tempo de Leitura"
+    "alimony": {
+      "higherIncome": "Renda Anual de Quem Ganha Mais ($)",
+      "lowerIncome": "Renda Anual de Quem Ganha Menos ($)",
+      "marriageYears": "Duração do Casamento (anos)",
+      "estimated": "Pensão Alimentícia Estimada (Cônjuge)",
+      "monthly": "Valor Mensal",
+      "duration": "Duração Provável",
+      "longTerm": "Longo prazo",
+      "years": "anos",
+      "longMarriage": "(casamento de 20+ anos)",
+      "stateGuideline": "Diretriz estadual:",
+      "footer": "A pensão alimentícia é altamente discricionária. Juízes ponderam padrão de vida, idade, saúde, contribuições para o casamento e capacidade de ganho. Esta é apenas uma estimativa — não é aconselhamento jurídico."
+    },
+    "amendmentDrafter": {
+      "buttons": {
+        "draftAmendment": "Redigir Aditamento",
+        "copyToClipboard": "Copiar para Área de Transferência"
+      },
+      "labels": {
+        "originalContractTitle": "Título do Contrato Original",
+        "originalContractDate": "Data do Contrato Original",
+        "party1": "Parte 1",
+        "party2": "Parte 2",
+        "amendmentNumber": "Número do Aditamento",
+        "governingState": "Governing State",
+        "describeTheChanges": "Descreva as Alterações"
+      },
+      "placeholders": {
+        "serviceAgreement": "Contrato de Prestação de Serviços",
+        "acmeCorp": "Acme Corp",
+        "betaInc": "Beta Inc",
+        "delaware": "Delaware",
+        "section31IsAmendedTo": "Section 3.1 is amended to read: ..."
+      }
+    },
+    "attorneyFeeCalculator": {
+      "buttons": {
+        "calculateFees": "Calcular Honorários"
+      },
+      "labels": {
+        "feeStructure": "Estrutura de Honorários",
+        "expectedSettlementDollar": "Acordo Esperado ($)",
+        "contingencyRatePercent": "Taxa de Contingência (%)",
+        "hourlyRateDollar": "Valor da Hora ($)",
+        "estimatedHours": "Horas Estimadas",
+        "caseExpensesDollar": "Despesas do Processo ($)"
+      }
+    },
+    "autoLoanCalculator": {
+      "buttons": {
+        "calculateAutoLoan": "Calcular Financiamento de Veículo"
+      },
+      "labels": {
+        "vehiclePriceDollar": "Preço do Veículo ($)",
+        "downPaymentDollar": "Entrada ($)",
+        "tradeInValueDollar": "Valor de Troca ($)",
+        "annualInterestRatePercent": "Taxa de Juros Anual (%)",
+        "loanTermMonths": "Prazo do Empréstimo (Meses)"
+      }
     },
     "autoRenewal": {
       "placeholder": "Cole os termos do seu contrato ou assinatura…",
@@ -2206,16 +2274,298 @@
       "warnLongNotice": "Janela de aviso longa ({{window}}) — defina um lembrete no calendário.",
       "warnPerpetual": "Possível linguagem de prazo perpétuo detectada."
     },
-    "governingLaw": {
-      "placeholder": "Cole seu contrato…",
-      "button": "Identificar Lei Aplicável",
-      "governingLaw": "Lei Aplicável",
-      "venue": "Foro/Jurisdição",
-      "arbitration": "Arbitragem",
-      "juryWaiver": "Renúncia a Julgamento por Júri",
-      "classWaiver": "Renúncia a Ação Coletiva",
-      "yes": "Sim ⚠",
-      "no": "Não"
+    "breakevenCalculator": {
+      "buttons": {
+        "calculateBreakeven": "Calcular Breakeven"
+      },
+      "labels": {
+        "entryPriceDollar": "Preço de Entrada ($)",
+        "tradingFeePercent": "Taxa de Negociação (%)",
+        "leverage": "Alavancagem (×)"
+      }
+    },
+    "businessExpenseTracker": {
+      "buttons": {
+        "generateExpenseTemplate": "Gerar Modelo de Despesas"
+      },
+      "labels": {
+        "businessType": "Tipo de Negócio",
+        "expenseCategoriesSelectToCustomizeOr": "Categorias de Despesas (selecione para personalizar ou deixe todas para o modelo completo)"
+      },
+      "placeholders": {
+        "selectBusinessType": "Selecione o tipo de negócio"
+      }
+    },
+    "businessNameChecker": {
+      "buttons": {
+        "checkBusinessName": "Verificar Nome da Empresa"
+      },
+      "labels": {
+        "businessName": "Nome da Empresa"
+      },
+      "placeholders": {
+        "acmeSolutionsLlc": "Acme Solutions LLC"
+      }
+    },
+    "cancellationDeadline": {
+      "buttons": {
+        "calculateDeadline": "Calcular Prazo"
+      },
+      "labels": {
+        "signupPurchaseDate": "Data de Inscrição / Compra",
+        "coolingOffPeriodDays": "Período de Reflexão (dias)",
+        "dayType": "Tipo de Dia"
+      }
+    },
+    "carbonFootprintCalculator": {
+      "buttons": {
+        "calculateOffset": "Calcular Compensação"
+      },
+      "labels": {
+        "annualElectricityUsageKwh": "Consumo Anual de Eletricidade (kWh)",
+        "currentEnergySource": "Fonte de Energia Atual",
+        "solarRenewableReplacementPercent": "Substituição por Solar/Renovável (%)"
+      }
+    },
+    "ceaseAndDesistGenerator": {
+      "buttons": {
+        "generateCAndDLetter": "Gerar Carta C&D",
+        "copyToClipboard": "Copiar para Área de Transferência"
+      },
+      "labels": {
+        "typeOfCAndD": "Tipo de C&D",
+        "responseDeadlineDays": "Prazo para Resposta (dias)",
+        "yourName": "Seu Nome",
+        "yourAddress": "Seu Endereço",
+        "recipientName": "Nome do Destinatário",
+        "recipientAddress": "Endereço do Destinatário",
+        "governingState": "Estado Regente",
+        "describeTheSpecificConduct": "Descreva a Conduta Específica"
+      },
+      "placeholders": {
+        "johnDoe": "John Doe",
+        "n123MainStCityStateZip": "123 Main St, City, State, ZIP",
+        "janeSmith": "Jane Smith",
+        "n456OtherStCityStateZip": "456 Other St, City, State, ZIP",
+        "california": "California",
+        "onDateYouDescribeTheBehavior": "Em [data], você [descreva o comportamento]..."
+      }
+    },
+    "chargebackChecker": {
+      "buttons": {
+        "checkEligibility": "Verificar Elegibilidade"
+      },
+      "labels": {
+        "yes": "Sim",
+        "no": "Não"
+      }
+    },
+    "childSupport": {
+      "yourIncome": "Sua Renda Anual ($)",
+      "otherIncome": "Renda Anual do Outro Genitor ($)",
+      "numChildren": "Número de Filhos",
+      "yourRole": "Seu Papel",
+      "roleObligor": "Eu pagarei a pensão (não-custodial)",
+      "roleRecipient": "Eu receberei a pensão (custodial)",
+      "estimated": "Pensão Alimentícia Mensal Estimada",
+      "youPay": "Você pagaria",
+      "youReceive": "Você receberia",
+      "perMonth": "por mês",
+      "model": "Modelo:",
+      "guidelinePct": "% de Referência:",
+      "guidelineText": "{{pct}}% da renda combinada para {{n}} filho(s)",
+      "statute": "Estatuto:",
+      "footer": "Esta é uma estimativa base. As ordens finais dependem do tempo de custódia, custos de saúde, cuidados infantis e discrição judicial. Não é aconselhamento jurídico — consulte um advogado de família para sua situação específica."
+    },
+    "clauseExplainer": {
+      "placeholders": {
+        "pasteAnyClauseOrLegalParagraph": "Cole qualquer cláusula ou parágrafo jurídico que deseje explicar..."
+      }
+    },
+    "clauseFinder": {
+      "buttons": {
+        "findClauses": "Localizar Cláusulas"
+      }
+    },
+    "complaintLetterGenerator": {
+      "buttons": {
+        "generateLetter": "Gerar Carta",
+        "copyToClipboard": "Copiar para Área de Transferência"
+      },
+      "labels": {
+        "yourName": "Seu Nome",
+        "yourAddress": "Seu Endereço",
+        "recipientName": "Nome do Destinatário",
+        "companyName": "Nome da Empresa",
+        "complaintType": "Tipo de Reclamação",
+        "productServiceName": "Nome do Produto/Serviço",
+        "purchaseDate": "Data da Compra",
+        "desiredResolution": "Resolução Desejada",
+        "describeTheIssue": "Descreva o Problema"
+      },
+      "placeholders": {
+        "johnSmith": "John Smith",
+        "n123MainStCityState": "123 Main St, City, State",
+        "customerServiceManager": "Customer Service Manager",
+        "acmeCorp": "Acme Corp",
+        "widgetPro3000": "Widget Pro 3000",
+        "fullRefund": "Reembolso total",
+        "explainWhatHappened": "Explique o que aconteceu..."
+      }
+    },
+    "compoundInterestCalculator": {
+      "buttons": {
+        "calculateCompoundInterest": "Calcular Juros Compostos"
+      },
+      "labels": {
+        "initialPrincipalDollar": "Capital Inicial ($)",
+        "annualInterestRatePercent": "Taxa de Juros Anual (%)",
+        "timePeriodYears": "Período (Anos)",
+        "compoundingFrequency": "Frequência de Capitalização",
+        "monthlyContributionDollar": "Contribuição Mensal ($)"
+      }
+    },
+    "consumerRightsQuiz": {
+      "buttons": {
+        "takeAgain": "Fazer Novamente"
+      }
+    },
+    "contractChecklistGenerator": {
+      "labels": {
+        "contractType": "Tipo de Contrato"
+      },
+      "placeholders": {
+        "selectContractType": "Selecione o tipo de contrato..."
+      }
+    },
+    "contractComparison": {
+      "placeholders": {
+        "pasteTheFirstContract": "Cole o primeiro contrato...",
+        "pasteTheSecondContract": "Cole o segundo contrato..."
+      }
+    },
+    "contractExpirationTracker": {
+      "buttons": {
+        "remove": "Remover",
+        "addContract": "+ Adicionar Contrato",
+        "trackExpirations": "Monitorar Vencimentos"
+      },
+      "labels": {
+        "contractName": "Nome do Contrato",
+        "startDate": "Data de Início",
+        "endDate": "Data de Término"
+      },
+      "placeholders": {
+        "officeLease": "Locação de Escritório"
+      }
+    },
+    "contractRedFlagScanner": {
+      "placeholders": {
+        "pasteTheFullContractOrSpecific": "Cole o contrato completo ou as seções específicas que você deseja analisar..."
+      }
+    },
+    "contractValueCalculator": {
+      "buttons": {
+        "calculateTotalValue": "Calcular Valor Total"
+      },
+      "labels": {
+        "paymentAmountDollar": "Valor do Pagamento ($)",
+        "paymentFrequency": "Frequência de Pagamento",
+        "termDurationYears": "Duração do Prazo (anos)",
+        "numberOfRenewals": "Número de Renovações",
+        "annualEscalationRatePercent": "Taxa de Reajuste Anual (%)"
+      }
+    },
+    "contractorVsEmployeeChecker": {
+      "buttons": {
+        "analyzeClassificationObjectKeysAnswersLength": "Analisar Classificação ({Object.keys(answers).length}/{questions.length} respondidas)"
+      },
+      "labels": {
+        "yes": "Sim",
+        "no": "Não"
+      }
+    },
+    "cryptoConverterCalculator": {
+      "buttons": {
+        "convert": "Converter"
+      },
+      "labels": {
+        "amount": "Valor",
+        "cryptocurrency": "Criptomoeda"
+      }
+    },
+    "cryptoTaxCalculator": {
+      "buttons": {
+        "calculateTax": "Calcular Imposto"
+      },
+      "labels": {
+        "buyPriceDollar": "Preço de Compra ($)",
+        "sellPriceDollar": "Preço de Venda ($)",
+        "quantity": "Quantidade",
+        "holdingPeriod": "Período de Detenção",
+        "taxBracketPercent": "Faixa de Imposto (%)"
+      }
+    },
+    "dCACalculator": {
+      "buttons": {
+        "calculateDca": "Calcular DCA"
+      },
+      "labels": {
+        "investmentPerPeriodDollar": "Investimento por Período ($)",
+        "numberOfPeriods": "Número de Períodos",
+        "startPriceDollar": "Preço Inicial ($)",
+        "endPriceDollar": "Preço Final ($)"
+      }
+    },
+    "dataBreach": {
+      "progress": "Progresso"
+    },
+    "debtPayoffCalculator": {
+      "buttons": {
+        "calculatePayoff": "Calcular Quitação"
+      },
+      "labels": {
+        "currentBalanceDollar": "Saldo Atual ($)",
+        "annualInterestRatePercent": "Taxa de Juros Anual (%)",
+        "minimumPaymentDollar": "Pagamento Mínimo ($)",
+        "extraPaymentDollar": "Pagamento Extra ($)"
+      }
+    },
+    "discrimination": {
+      "complete": "concluído"
+    },
+    "disputeLetterGenerator": {
+      "buttons": {
+        "generateDisputeLetter": "Gerar Carta de Contestação",
+        "copyToClipboard": "Copiar para Área de Transferência"
+      },
+      "labels": {
+        "disputeType": "Tipo de Contestação",
+        "yourFullName": "Seu Nome Completo",
+        "yourAddress": "Seu Endereço",
+        "companyName": "Nome da Empresa",
+        "companyAddress": "Endereço da Empresa",
+        "accountNumberOptional": "Número da Conta (opcional)",
+        "disputedAmountDollar": "Valor Contestado ($)",
+        "dateOfIssue": "Data de Emissão",
+        "describeTheIssue": "Descreva o Problema"
+      },
+      "placeholders": {
+        "johnDoe": "John Doe",
+        "n123MainStCityStateZip": "123 Main St, City, State, ZIP",
+        "abcCompany": "ABC Company",
+        "n456BusinessAveCityStateZip": "456 Business Ave, City, State, ZIP",
+        "xxxx1234": "XXXX-1234",
+        "explainWhatHappenedIncludeDatesAnd": "Explique o que aconteceu, inclua datas e detalhes específicos..."
+      }
+    },
+    "divorceCostEstimator": {
+      "labels": {
+        "divorceType": "Tipo de Divórcio",
+        "childrenInvolved": "Filhos Envolvidos?",
+        "maritalAssetComplexity": "Complexidade de Bens Conjugais",
+        "attorneyHourlyRateDollar": "Valor da Hora do Advogado ($)"
+      }
     },
     "dmca": {
       "yourName": "Seu nome completo",
@@ -2224,18 +2574,17 @@
       "infringing": "URLs infratoras",
       "button": "Copiar Notificação"
     },
-    "subscriptionCancel": {
-      "yourName": "Seu nome",
-      "accountId": "ID da conta / e-mail",
-      "serviceName": "Nome do serviço",
-      "date": "Data",
-      "button": "Copiar Carta"
-    },
-    "dataBreach": {
-      "progress": "Progresso"
-    },
-    "discrimination": {
-      "complete": "concluído"
+    "eVvsGasCalculator": {
+      "buttons": {
+        "compareCosts": "Comparar Custos"
+      },
+      "labels": {
+        "annualMilesDriven": "Milhas Anuais Percorridas",
+        "gasPriceDollarGallon": "Preço da Gasolina ($/galão)",
+        "gasVehicleMpg": "Consumo do Veículo a Gasolina (MPG)",
+        "electricityRateDollarKwh": "Tarifa de Eletricidade ($/kWh)",
+        "evEfficiencyKwhPer100Miles": "Eficiência do VE (kWh por 100 milhas)"
+      }
     },
     "emergencyFund": {
       "expenses": "Despesas mensais ($)",
@@ -2247,18 +2596,401 @@
       "stillNeed": "Ainda faltam",
       "reachIn": "Com ${{contrib}}/mês, você atingirá sua meta em {{months}} meses."
     },
+    "energySavingsCalculator": {
+      "buttons": {
+        "calculateSavings": "Calcular Economia"
+      },
+      "labels": {
+        "currentMonthlyBillDollar": "Fatura Mensal Atual ($)",
+        "solarCoveragePercent": "Cobertura Solar (%)",
+        "systemCostDollar": "Custo do Sistema ($)"
+      }
+    },
+    "equityDilutionCalculator": {
+      "labels": {
+        "currentTotalSharesOutstanding": "Total Atual de Ações em Circulação",
+        "yourShares": "Suas Ações",
+        "newSharesIssuedFundingRound": "Novas Ações Emitidas (Rodada de Investimento)",
+        "newOptionPoolShares": "Novas Ações do Option Pool"
+      },
+      "placeholders": {
+        "eG1000000": "ex: 1000000",
+        "eG100000": "ex: 100000",
+        "eG250000": "ex: 250000"
+      }
+    },
+    "evictionNoticeLookup": {
+      "labels": {
+        "reason": "Motivo"
+      },
+      "placeholders": {
+        "selectState": "Selecionar estado",
+        "selectReason": "Selecionar motivo"
+      }
+    },
     "finalPaycheck": {
       "ifFired": "Se demitido:",
       "ifQuit": "Se você pedir demissão:",
       "footer": "O pagamento final deve incluir férias não utilizadas na maioria dos estados. Verifique o departamento de trabalho do seu estado para detalhes específicos."
     },
-    "unemployment": {
-      "wages": "Salário anual (últimos 12 meses, $)",
-      "button": "Estimar Benefícios",
-      "perWeek": "/semana",
-      "stateMax": "Máximo estadual",
-      "maxPerWeek": "/semana. Duração típica: até {{weeks}} semanas.",
-      "footer": "Apenas estimativa. O benefício real é calculado pelo escritório de desemprego do seu estado usando os salários do período-base."
+    "forceMajeureChecker": {
+      "buttons": {
+        "checkForceMajeureClause": "Verificar Cláusula de Force Majeure"
+      },
+      "placeholders": {
+        "pasteYourContractText": "Cole o texto do seu contrato..."
+      }
+    },
+    "foundersAgreementGenerator": {
+      "buttons": {
+        "copyAgreement": "Copiar Contrato"
+      },
+      "labels": {
+        "companyName": "Nome da empresa",
+        "vestingSchedule": "Cronograma de vesting",
+        "foundersNamePercentRole": "Fundadores (nome — % — cargo)"
+      },
+      "placeholders": {
+        "janeDoe50PercentCeoAnd": "Jane Doe — 50% — CEO&#10;John Smith — 50% — CTO"
+      }
+    },
+    "freelanceRateCalculator": {
+      "buttons": {
+        "calculateRates": "Calcular Taxas"
+      },
+      "labels": {
+        "hourlyRateDollar": "Taxa Horária ($)",
+        "billableHoursWeek": "Horas Faturáveis/Semana",
+        "workingWeeksYear": "Semanas de Trabalho/Ano",
+        "estimatedTaxRatePercent": "Taxa de Imposto Estimada (%)",
+        "monthlyExpensesDollar": "Despesas Mensais ($)"
+      }
+    },
+    "governingLaw": {
+      "placeholder": "Cole seu contrato…",
+      "button": "Identificar Lei Aplicável",
+      "governingLaw": "Lei Aplicável",
+      "venue": "Foro/Jurisdição",
+      "arbitration": "Arbitragem",
+      "juryWaiver": "Renúncia a Julgamento por Júri",
+      "classWaiver": "Renúncia a Ação Coletiva",
+      "yes": "Sim ⚠",
+      "no": "Não"
+    },
+    "grantBudgetCalculator": {
+      "labels": {
+        "totalGrantAmountDollar": "Valor Total da Concessão ($)",
+        "indirectCostRatePercent": "Taxa de Custos Indiretos (%)"
+      },
+      "placeholders": {
+        "eG500000": "ex: 500000",
+        "eG10": "ex: 10"
+      }
+    },
+    "grantComplianceChecklist": {
+      "labels": {
+        "grantType": "Tipo de Concessão"
+      },
+      "placeholders": {
+        "selectGrantType": "Selecione o tipo de concessão..."
+      }
+    },
+    "grantDeadlineTracker": {
+      "buttons": {
+        "addDeadline": "Adicionar Prazo",
+        "": "×"
+      },
+      "labels": {
+        "grantTaskName": "Nome da Concessão / Equipe",
+        "deadlineDate": "Data do Prazo",
+        "type": "Tipo"
+      },
+      "placeholders": {
+        "eGNsfProgressReport": "ex: NSF Progress Report"
+      }
+    },
+    "greenLeaseChecker": {
+      "buttons": {
+        "evaluateLease": "Avaliar Contrato de Locação"
+      }
+    },
+    "habitabilityTracker": {
+      "buttons": {
+        "copyLetter": "Copiar Carta"
+      },
+      "labels": {
+        "landlordName": "Nome do locador",
+        "propertyAddress": "Endereço do imóvel",
+        "describeTheIssue": "Descreva o problema"
+      },
+      "placeholders": {
+        "eGNoHotWaterSince": "ex: Sem água quente desde 5 de janeiro. Afeta o banho e a lavagem de louça..."
+      }
+    },
+    "homeEnergyAuditChecklist": {
+      "buttons": {
+        "generateChecklist": "Gerar Lista de Verificação"
+      },
+      "labels": {
+        "homeType": "Tipo de Residência",
+        "homeAge": "Idade da Residência"
+      },
+      "placeholders": {
+        "selectType": "Selecionar tipo",
+        "selectAge": "Selecionar idade"
+      }
+    },
+    "incomeTaxEstimator": {
+      "buttons": {
+        "estimateTax": "Estimar Imposto"
+      },
+      "labels": {
+        "grossAnnualIncomeDollar": "Renda Bruta Anual ($)",
+        "filingStatus": "Estado Civil para Fins Fiscais",
+        "deductionsDollarBlankStandard": "Deduções ($, em branco = padrão)"
+      }
+    },
+    "independentContractorAgreement": {
+      "buttons": {
+        "generateAgreement": "Gerar Contrato",
+        "copyToClipboard": "Copiar para Área de Transferência"
+      },
+      "labels": {
+        "clientName": "Nome do Cliente",
+        "contractorName": "Nome do Contratado",
+        "clientAddress": "Endereço do Cliente",
+        "contractorAddress": "Endereço do Contratado",
+        "compensation": "Remuneração",
+        "paymentTerms": "Termos de Pagamento",
+        "durationOptional": "Duração (opcional)",
+        "governingState": "Estado Regente",
+        "scopeOfServices": "Escopo de Serviços"
+      },
+      "placeholders": {
+        "acmeCorp": "Acme Corp",
+        "janeSmithConsulting": "Jane Smith Consulting",
+        "n123BusinessSt": "123 Business St",
+        "n456FreelanceAve": "456 Freelance Ave",
+        "dollar5000PerMonth": "$5,000 por mês",
+        "n6Months": "6 meses",
+        "delaware": "Delaware",
+        "describeTheServicesTheContractorWill": "Descreva os serviços que o contratado irá fornecer..."
+      }
+    },
+    "insurancePremiumEstimator": {
+      "buttons": {
+        "estimatePremium": "Estimar Prêmio"
+      },
+      "labels": {
+        "insuranceType": "Tipo de Seguro",
+        "ageRange": "Faixa Etária",
+        "creditScoreRange": "Faixa de Pontuação de Crédito",
+        "coverageLevel": "Nível de Cobertura",
+        "zipCode": "Código Postal (ZIP Code)"
+      }
+    },
+    "insuranceQuoteComparison": {
+      "buttons": {
+        "addQuote": "+ Adicionar Cotação",
+        "compareQuotes": "Comparar Cotações"
+      },
+      "labels": {
+        "companyName": "Nome da Empresa",
+        "monthlyPremiumDollar": "Prêmio Mensal ($)",
+        "deductibleDollar": "Franquia ($)",
+        "coverageLimitDollar": "Limite de Cobertura ($)"
+      },
+      "placeholders": {
+        "stateFarm": "State Farm"
+      }
+    },
+    "invoiceInterestCalculator": {
+      "buttons": {
+        "calculateInterest": "Calcular Juros"
+      },
+      "labels": {
+        "invoiceAmountDollar": "Valor da Fatura ($)",
+        "interestRatePercent": "Taxa de Juros (%)",
+        "daysOverdue": "Dias em Atraso",
+        "rateType": "Tipo de Taxa"
+      }
+    },
+    "jargonTranslator": {
+      "placeholders": {
+        "searchForALegalTermE": "Pesquisar termo jurídico (ex: indenização, arbitragem)..."
+      }
+    },
+    "lateFeeCalculator": {
+      "buttons": {
+        "calculateLateFee": "Calcular Multa por Atraso"
+      },
+      "labels": {
+        "principalAmountDollar": "Valor Principal ($)",
+        "feeRatePercent": "Taxa de Juros (%)",
+        "daysLate": "Dias de Atraso",
+        "rateType": "Tipo de Taxa"
+      }
+    },
+    "leaseAnalyzer": {
+      "label": "Cole seu contrato de aluguel",
+      "placeholder": "Cole o texto completo do contrato de aluguel…",
+      "button": "Analisar Aluguel",
+      "analyzing": "Analisando Aluguel…",
+      "keyTerms": "Termos Principais",
+      "risks": "⚠ Riscos",
+      "recommendations": "Recomendações"
+    },
+    "leaseBreakPenaltyCalculator": {
+      "labels": {
+        "monthlyRentDollar": "Aluguel Mensal ($)",
+        "monthsRemainingOnLease": "Meses Restantes no Contrato",
+        "securityDepositDollar": "Depósito de Segurança ($)",
+        "estimatedMonthsToReRent": "Estimativa de Meses para Re-alugar",
+        "leaseHasEarlyTerminationClause": "Contrato tem cláusula de rescisão antecipada?",
+        "earlyTerminationFeeStatedInLease": "Taxa de Rescisão Antecipada no Contrato ($)"
+      }
+    },
+    "leaseTermComparison": {
+      "buttons": {
+        "compareLeases": "Comparar Contratos"
+      }
+    },
+    "lemonLawQualifier": {
+      "buttons": {
+        "checkQualification": "Verificar Qualificação"
+      },
+      "labels": {
+        "repairAttemptsSameIssue": "Tentativas de reparo (mesmo problema)",
+        "totalDaysOutOfService": "Total de dias fora de serviço",
+        "vehicleAgeMonths": "Idade do veículo (meses)",
+        "mileage": "Quilometragem"
+      }
+    },
+    "loanPaymentCalculator": {
+      "buttons": {
+        "calculatePayment": "Calcular Pagamento"
+      },
+      "labels": {
+        "loanAmountDollar": "Valor do Empréstimo ($)",
+        "annualInterestRatePercent": "Taxa de Juros Anual (%)",
+        "loanTermMonths": "Prazo do Empréstimo (Meses)"
+      }
+    },
+    "marginCallCalculator": {
+      "buttons": {
+        "calculateMarginCall": "Calcular Chamada de Margem"
+      },
+      "labels": {
+        "yourEquityDollar": "Seu Patrimônio Líquido ($)",
+        "borrowedAmountDollar": "Valor Emprestado ($)",
+        "numberOfShares": "Número de Ações",
+        "maintenanceMarginPercent": "Margem de Manutenção (%)"
+      }
+    },
+    "minimumWageLookup": {
+      "placeholders": {
+        "selectState": "Selecione o estado..."
+      }
+    },
+    "mortgageAffordability": {
+      "labels": {
+        "annualIncomeDollar": "Renda anual ($)",
+        "monthlyDebtsDollar": "Dívidas mensais ($)",
+        "downPaymentDollar": "Entrada ($)",
+        "interestRatePercent": "Taxa de juros (%)"
+      }
+    },
+    "moveOutChecklistGenerator": {
+      "buttons": {
+        "generateChecklist": "Gerar Checklist"
+      },
+      "labels": {
+        "propertyType": "Tipo de Propriedade",
+        "propertyFeaturesSelectAllThatApply": "Características da Propriedade (selecione todas as aplicáveis)"
+      },
+      "placeholders": {
+        "selectType": "Selecione o tipo"
+      }
+    },
+    "nDAGenerator": {
+      "buttons": {
+        "generateNda": "Gerar NDA",
+        "copyToClipboard": "Copiar para Área de Transferência"
+      },
+      "labels": {
+        "ndaType": "Tipo de NDA",
+        "durationYears": "Duração (anos)",
+        "party1YourNameCompany": "Parte 1 (Seu Nome/Empresa)",
+        "party2OtherParty": "Parte 2 (Outra Parte)",
+        "governingState": "Estado Regente",
+        "scopeSubjectMatter": "Escopo / Objeto"
+      },
+      "placeholders": {
+        "acmeCorp": "Acme Corp",
+        "betaInc": "Beta Inc",
+        "delaware": "Delaware",
+        "softwareDevelopmentProject": "Projeto de desenvolvimento de software"
+      }
+    },
+    "nda": {
+      "label": "Cole o texto do seu NDA",
+      "placeholder": "Cole o documento de NDA completo…",
+      "button": "Avaliar Justiça do NDA",
+      "analyzing": "Analisando NDA…",
+      "strengths": "✓ Pontos Fortes",
+      "concerns": "⚠ Preocupações",
+      "recommendations": "Recomendações"
+    },
+    "netMeteringEstimator": {
+      "buttons": {
+        "estimateSavings": "Estimar Economia"
+      },
+      "labels": {
+        "systemSizeKw": "Tamanho do sistema (kW)",
+        "avgSunHoursDay": "Média de horas de sol/dia",
+        "monthlyUsageKwh": "Uso mensal (kWh)",
+        "retailRateDollarKwh": "Tarifa de varejo ($/kWh)",
+        "exportRateDollarKwh": "Tarifa de exportação ($/kWh)"
+      }
+    },
+    "netWorthCalculator": {
+      "buttons": {
+        "calculateNetWorth": "Calcular Patrimônio Líquido"
+      }
+    },
+    "nonCompeteChecker": {
+      "buttons": {
+        "checkEnforceability": "Verificar Exequibilidade"
+      },
+      "labels": {
+        "durationMonths": "Duração (meses)"
+      },
+      "placeholders": {
+        "selectState": "Selecionar state..."
+      }
+    },
+    "noticePeriod": {
+      "buttons": {
+        "calculateEndDate": "Calcular Data de Término"
+      },
+      "labels": {
+        "noticeGivenOn": "Aviso Prévio Dado em",
+        "noticePeriod": "Período de Aviso",
+        "dayType": "Tipo de Dia"
+      }
+    },
+    "operatingAgreementGenerator": {
+      "buttons": {
+        "copyAgreement": "Copiar Contrato"
+      },
+      "labels": {
+        "llcName": "Nome da LLC",
+        "membersNameOwnershipPercent": "Sócios (nome + % de participação)",
+        "businessPurpose": "Objetivo social"
+      },
+      "placeholders": {
+        "janeDoe60PercentAnd10": "Jane Doe — 60%&#10;John Smith — 40%"
+      }
     },
     "overtime": {
       "hourlyRate": "Valor da Hora ($)",
@@ -2282,21 +3014,151 @@
       "otPremium": "Adicional de HE ganho:",
       "otPremiumSuffix": "extra"
     },
-    "severance": {
-      "salary": "Salário Anual ($)",
-      "years": "Anos de Serviço",
-      "level": "Nível de Rescisão",
-      "levelStandard": "Padrão (1-2 semanas/ano)",
-      "levelGenerous": "Generoso (2-4 semanas/ano)",
-      "levelExecutive": "Executivo (4-8 semanas/ano)",
-      "range": "Intervalo Estimado de Rescisão",
-      "low": "Estimativa Baixa",
-      "high": "Estimativa Alta",
-      "weeks": "semanas",
-      "weeklySalary": "Salário semanal:",
-      "yearsService": "Anos de serviço:",
-      "levelLabel": "Nível:",
-      "footer": "A indenização rescisória não é legalmente obrigatória na maioria dos estados dos EUA. Estas estimativas refletem práticas comuns da indústria. Sempre negocie com base na sua situação específica."
+    "pPACalculator": {
+      "buttons": {
+        "comparePpaVsUtility": "Comparar PPA vs Utility"
+      },
+      "labels": {
+        "ppaRateDollarKwh": "Taxa PPA ($/kWh)",
+        "ppaAnnualEscalationPercent": "Ajuste Anual PPA (%)",
+        "currentUtilityRateDollarKwh": "Taxa Utility Atual ($/kWh)",
+        "utilityAnnualEscalationPercent": "Ajuste Anual Utility (%)",
+        "contractTermYears": "Prazo do Contrato (anos)",
+        "annualUsageKwh": "Consumo Anual (kWh)"
+      }
+    },
+    "pTOCalculator": {
+      "buttons": {
+        "calculatePto": "Calcular PTO"
+      },
+      "labels": {
+        "accrualRateDaysPerPeriod": "Taxa de acúmulo (dias por período)",
+        "accrualPeriod": "Período de acúmulo",
+        "monthsEmployed": "Meses de emprego",
+        "daysAlreadyUsed": "Dias já utilizados",
+        "maxCarryoverCapDaysOptional": "Limite Máximo / Carryover (dias, opcional)"
+      },
+      "placeholders": {
+        "noCap": "Sem limite"
+      }
+    },
+    "partnershipSplitCalculator": {
+      "buttons": {
+        "remove": "Remover",
+        "addPartner": "+ Adicionar Sócio",
+        "calculateSplits": "Calcular Divisões"
+      },
+      "labels": {
+        "name": "Nome",
+        "capitalContributionDollar": "Contribuição de Capital ($)",
+        "hoursWeek": "Horas/Semana",
+        "capitalVsTimeWeightCapitalCapitalweight": "Peso Capital vs. Tempo (Capital: {capitalWeight}% / Tempo: {100 - parseFloat(capitalWeight)}%)"
+      }
+    },
+    "paycheckCalculator": {
+      "buttons": {
+        "calculatePaycheck": "Calcular Pagamento"
+      },
+      "labels": {
+        "payType": "Tipo de Remuneração",
+        "hoursPerWeek": "Horas por Semana",
+        "payFrequency": "Frequência de Pagamento",
+        "filingStatus": "Estado Civil para Impostos"
+      }
+    },
+    "plainEnglishRewriter": {
+      "buttons": {
+        "rewriteInPlainEnglish": "Reescrever em Linguagem Clara"
+      },
+      "placeholders": {
+        "pasteAConfusingLegalClause": "Cole uma cláusula jurídica confusa..."
+      }
+    },
+    "positionSizeCalculator": {
+      "buttons": {
+        "calculatePositionSize": "Calcular Tamanho da Posição"
+      },
+      "labels": {
+        "accountSizeDollar": "Tamanho da Conta ($)",
+        "riskPerTradePercent": "Risco por Operação (%)",
+        "entryPriceDollar": "Preço de Entrada ($)",
+        "stopLossPriceDollar": "Preço de Stop Loss ($)"
+      }
+    },
+    "powerOfAttorneyGenerator": {
+      "buttons": {
+        "generatePoa": "Gerar Procuração",
+        "copyToClipboard": "Copiar para a Área de Transferência"
+      },
+      "labels": {
+        "typeOfPoa": "Tipo de Procuração",
+        "effective": "Vigência",
+        "principalNameYou": "Nome do Outorgante (Você)",
+        "principalAddress": "Endereço do Outorgante",
+        "agentName": "Nome do Procurador",
+        "agentAddress": "Endereço do Procurador",
+        "alternateAgentOptional": "Procurador Substituto (opcional)",
+        "governingState": "Estado Regente",
+        "specificPowersToGrant": "Poderes Específicos a Conceder"
+      },
+      "placeholders": {
+        "johnDoe": "John Doe",
+        "n123MainStCityState": "123 Main St, City, State",
+        "janeSmith": "Jane Smith",
+        "n456OakAveCityState": "456 Oak Ave, City, State",
+        "bobJohnson": "Bob Johnson",
+        "california": "California",
+        "describeTheSpecificLimitedPowers": "Descreva os poderes limitados específicos..."
+      }
+    },
+    "privacyPolicyGenerator": {
+      "buttons": {
+        "generatePrivacyPolicy": "Gerar Política de Privacidade",
+        "copyToClipboard": "Copiar para a Área de Transferência"
+      },
+      "labels": {
+        "companyName": "Nome da Empresa",
+        "websiteUrl": "URL do Site",
+        "contactEmail": "E-mail de Contato",
+        "dataYouCollect": "Dados Coletados"
+      },
+      "placeholders": {
+        "acmeCorp": "Acme Corp",
+        "httpsExampleCom": "https://example.com",
+        "privacyExampleCom": "privacy@example.com"
+      }
+    },
+    "profitLossCalculator": {
+      "buttons": {
+        "calculatePAndL": "Calcular L&P"
+      },
+      "labels": {
+        "entryPriceDollar": "Preço de Entrada ($)",
+        "exitPriceDollar": "Preço de Saída ($)",
+        "quantity": "Quantidade",
+        "leverage": "Alavancagem (×)",
+        "tradingFeePercent": "Taxa de Negociação (%)"
+      }
+    },
+    "promissoryNoteGenerator": {
+      "buttons": {
+        "generatePromissoryNote": "Gerar Nota Promissória"
+      },
+      "labels": {
+        "lenderName": "Nome do Credor",
+        "borrowerName": "Nome do Devedor",
+        "principalAmountDollar": "Valor Principal ($)",
+        "annualInterestRatePercent": "Taxa de Juros Anual (%)",
+        "termMonths": "Prazo (Meses)"
+      },
+      "placeholders": {
+        "johnSmith": "John Smith",
+        "janeDoe": "Jane Doe",
+        "selectState": "Select state"
+      }
+    },
+    "readingTime": {
+      "button": "Calcular Tempo de Leitura"
     },
     "refund": {
       "q_type": "O que você comprou?",
@@ -2327,35 +3189,127 @@
       "advicePossibly": "Você pode ser elegível dependendo da política de devolução do vendedor e das leis locais de proteção ao consumidor.",
       "adviceUnlikely": "Com base nas suas respostas, um reembolso pode ser difícil. Verifique a política do vendedor ou consulte serviços de proteção ao consumidor."
     },
-    "childSupport": {
-      "yourIncome": "Sua Renda Anual ($)",
-      "otherIncome": "Renda Anual do Outro Genitor ($)",
-      "numChildren": "Número de Filhos",
-      "yourRole": "Seu Papel",
-      "roleObligor": "Eu pagarei a pensão (não-custodial)",
-      "roleRecipient": "Eu receberei a pensão (custodial)",
-      "estimated": "Pensão Alimentícia Mensal Estimada",
-      "youPay": "Você pagaria",
-      "youReceive": "Você receberia",
-      "perMonth": "por mês",
-      "model": "Modelo:",
-      "guidelinePct": "% de Referência:",
-      "guidelineText": "{{pct}}% da renda combinada para {{n}} filho(s)",
-      "statute": "Estatuto:",
-      "footer": "Esta é uma estimativa base. As ordens finais dependem do tempo de custódia, custos de saúde, cuidados infantis e discrição judicial. Não é aconselhamento jurídico — consulte um advogado de família para sua situação específica."
+    "rentIncreaseCalculator": {
+      "labels": {
+        "currentMonthlyRentDollar": "Aluguel Mensal Atual ($)",
+        "proposedMonthlyRentDollar": "Aluguel Mensal Proposto ($)",
+        "jurisdictionOptional": "Jurisdição (opcional)"
+      },
+      "placeholders": {
+        "selectAreaForRentControlCheck": "Selecione a área para verificar o controle de aluguel"
+      }
     },
-    "alimony": {
-      "higherIncome": "Renda Anual de Quem Ganha Mais ($)",
-      "lowerIncome": "Renda Anual de Quem Ganha Menos ($)",
-      "marriageYears": "Duração do Casamento (anos)",
-      "estimated": "Pensão Alimentícia Estimada (Cônjuge)",
-      "monthly": "Valor Mensal",
-      "duration": "Duração Provável",
-      "longTerm": "Longo prazo",
-      "years": "anos",
-      "longMarriage": "(casamento de 20+ anos)",
-      "stateGuideline": "Diretriz estadual:",
-      "footer": "A pensão alimentícia é altamente discricionária. Juízes ponderam padrão de vida, idade, saúde, contribuições para o casamento e capacidade de ganho. Esta é apenas uma estimativa — não é aconselhamento jurídico."
+    "rentalAgreementGenerator": {
+      "buttons": {
+        "generateRentalAgreement": "Gerar Contrato de Aluguel"
+      },
+      "labels": {
+        "landlordName": "Nome do Locador",
+        "tenantName": "Nome do Locatário",
+        "propertyAddress": "Endereço do Imóvel",
+        "city": "Cidade",
+        "monthlyRentDollar": "Aluguel Mensal ($)",
+        "securityDepositDollar": "Depósito de Segurança ($)",
+        "leaseTermMonths": "Prazo do Contrato (Meses)"
+      },
+      "placeholders": {
+        "propertyOwnerLlc": "Property Owner LLC",
+        "janeDoe": "Jane Doe",
+        "n123MainStApt4": "123 Main St, Apt 4",
+        "losAngeles": "Los Angeles",
+        "selectState": "Select state"
+      }
+    },
+    "riskRewardCalculator": {
+      "buttons": {
+        "calculateRR": "Calcular R:R"
+      },
+      "labels": {
+        "entryPriceDollar": "Preço de Entrada ($)",
+        "stopLossDollar": "Stop Loss ($)",
+        "takeProfitDollar": "Take Profit ($)"
+      }
+    },
+    "salaryToHourlyConverter": {
+      "buttons": {
+        "salaryHourly": "Salário → Valor/Hora",
+        "hourlySalary": "Valor/Hora → Salário",
+        "convert": "Converter"
+      },
+      "labels": {
+        "annualSalaryDollar": "Salário Anual ($)",
+        "hourlyRateDollar": "Valor da Hora ($)",
+        "hoursPerWeek": "Horas por Semana",
+        "weeksPerYear": "Semanas por Ano",
+        "benefitsOverheadPercent": "Encargos e Benefícios (%)"
+      }
+    },
+    "securityDepositCalculator": {
+      "labels": {
+        "monthlyRentDollar": "Aluguel Mensal ($)"
+      },
+      "placeholders": {
+        "selectState": "Selecionar estado"
+      }
+    },
+    "settlementEstimator": {
+      "buttons": {
+        "estimateSettlementValue": "Estimar Valor do Acordo"
+      },
+      "labels": {
+        "medicalBillsToDateDollar": "Despesas Médicas até o Momento ($)",
+        "estimatedFutureMedicalDollar": "Estimativa de Despesas Médicas Futuras ($)",
+        "lostWagesToDateDollar": "Salários Perdidos até o Momento ($)",
+        "futureLostEarningCapacityDollar": "Perda de Capacidade de Ganho Futuro ($)",
+        "propertyDamageDollar": "Danos à Propriedade ($)",
+        "injurySeverity": "Gravidade da Lesão"
+      }
+    },
+    "severance": {
+      "salary": "Salário Anual ($)",
+      "years": "Anos de Serviço",
+      "level": "Nível de Rescisão",
+      "levelStandard": "Padrão (1-2 semanas/ano)",
+      "levelGenerous": "Generoso (2-4 semanas/ano)",
+      "levelExecutive": "Executivo (4-8 semanas/ano)",
+      "range": "Intervalo Estimado de Rescisão",
+      "low": "Estimativa Baixa",
+      "high": "Estimativa Alta",
+      "weeks": "semanas",
+      "weeklySalary": "Salário semanal:",
+      "yearsService": "Anos de serviço:",
+      "levelLabel": "Nível:",
+      "footer": "A indenização rescisória não é legalmente obrigatória na maioria dos estados dos EUA. Estas estimativas refletem práticas comuns da indústria. Sempre negocie com base na sua situação específica."
+    },
+    "severanceFairnessScore": {
+      "labels": {
+        "annualSalaryDollar": "Salário Anual ($)",
+        "yearsOfService": "Anos de Serviço",
+        "severanceOfferedDollar": "Indenização Oferecida ($)",
+        "yourRoleLevel": "Nível do Cargo",
+        "includesHealthcareCobraPaid": "Inclui Plano de Saúde (COBRA pago)?",
+        "includesOutplacement": "Inclui Recolocação Profissional (Outplacement)?"
+      }
+    },
+    "signatureBlockGenerator": {
+      "buttons": {
+        "generateSignatureBlock": "Gerar Bloco de Assinatura",
+        "copyToClipboard": "Copiar para a Área de Transferência"
+      },
+      "labels": {
+        "entityType": "Tipo de Entidade",
+        "name": "Nome",
+        "title": "Cargo",
+        "companyName": "Nome da Empresa"
+      },
+      "placeholders": {
+        "johnDoe": "John Doe",
+        "ceo": "CEO",
+        "acmeCorp": "Acme Corp",
+        "janeSmith": "Jane Smith",
+        "cfo": "CFO",
+        "betaInc": "Beta Inc"
+      }
     },
     "smallClaims": {
       "claimAmount": "Valor da sua Causa ($) (opcional)",
@@ -2376,23 +3330,146 @@
       "yearsUnitPlural": "Anos",
       "footer": "⚠️ Esta é uma informação geral. Consulte um advogado para sua situação específica."
     },
-    "nda": {
-      "label": "Cole o texto do seu NDA",
-      "placeholder": "Cole o documento de NDA completo…",
-      "button": "Avaliar Justiça do NDA",
-      "analyzing": "Analisando NDA…",
-      "strengths": "✓ Pontos Fortes",
-      "concerns": "⚠ Preocupações",
-      "recommendations": "Recomendações"
+    "solarIncentiveEstimator": {
+      "buttons": {
+        "estimateIncentives": "Estimar Incentivos"
+      },
+      "labels": {
+        "systemCostDollar": "Custo do Sistema ($)"
+      },
+      "placeholders": {
+        "selectState": "Selecione o estado"
+      }
     },
-    "leaseAnalyzer": {
-      "label": "Cole seu contrato de aluguel",
-      "placeholder": "Cole o texto completo do contrato de aluguel…",
-      "button": "Analisar Aluguel",
-      "analyzing": "Analisando Aluguel…",
-      "keyTerms": "Termos Principais",
-      "risks": "⚠ Riscos",
-      "recommendations": "Recomendações"
+    "solarROICalculator": {
+      "buttons": {
+        "calculateRoi": "Calcular ROI"
+      },
+      "labels": {
+        "systemCostDollar": "Custo do Sistema ($)",
+        "annualProductionKwh": "Produção Anual (kWh)",
+        "electricityRateDollarKwh": "Tarifa de Eletricidade ($/kWh)",
+        "incentivesAndRebatesDollar": "Incentivos e Descontos ($)"
+      }
+    },
+    "statuteOfLimitationsDeadlineCalculator": {
+      "labels": {
+        "claimType": "Tipo de Reivindicação",
+        "dateOfIncidentBreach": "Data do Incidente / Violação"
+      }
+    },
+    "stockOptionTaxCalculator": {
+      "labels": {
+        "optionType": "Tipo de Opção",
+        "grantStrikePriceDollar": "Preço de Outorga / Exercício ($)",
+        "fairMarketValueAtExerciseDollar": "Valor Justo de Mercado no Exercício ($)",
+        "salePriceDollar": "Preço de Venda ($)",
+        "numberOfShares": "Número de Ações",
+        "holdingPeriod": "Período de Detenção",
+        "ordinaryIncomeTaxBracket": "Alíquota de Imposto sobre Renda Ordinária"
+      },
+      "placeholders": {
+        "eG10": "ex: 10",
+        "eG25": "ex: 25",
+        "eG50": "ex: 50",
+        "eG1000": "ex: 1000"
+      }
+    },
+    "subscriptionCancel": {
+      "yourName": "Seu nome",
+      "accountId": "ID da conta / e-mail",
+      "serviceName": "Nome do serviço",
+      "date": "Data",
+      "button": "Copiar Carta"
+    },
+    "termsOfServiceGenerator": {
+      "buttons": {
+        "generateTermsOfService": "Gerar Termos de Serviço",
+        "copyToClipboard": "Copiar para a Área de Transferência"
+      },
+      "labels": {
+        "companyName": "Nome da Empresa",
+        "websiteUrl": "URL do Website",
+        "contactEmail": "E-mail de Contato",
+        "featuresYourServiceIncludes": "Recursos que seu Serviço Inclui"
+      },
+      "placeholders": {
+        "acmeCorp": "Acme Corp",
+        "httpsExampleCom": "https://example.com",
+        "legalExampleCom": "legal@example.com"
+      }
+    },
+    "termsSummarizer": {
+      "placeholders": {
+        "pasteTheTermsOfServicePrivacy": "Cole os termos de serviço, política de privacidade ou qualquer documento legal..."
+      }
+    },
+    "tipSplitter": {
+      "buttons": {
+        "calculateSplit": "Calcular Divisão"
+      },
+      "labels": {
+        "subtotalDollar": "Subtotal ($)",
+        "taxDollar": "Imposto ($)",
+        "tipPercent": "Gorjeta %",
+        "people": "Pessoas",
+        "mandatoryServiceChargeAlreadyIncludedSkip": "Taxa de serviço obrigatória já incluída (pular gorjeta)"
+      }
+    },
+    "unemployment": {
+      "wages": "Salário anual (últimos 12 meses, $)",
+      "button": "Estimar Benefícios",
+      "perWeek": "/semana",
+      "stateMax": "Máximo estadual",
+      "maxPerWeek": "/semana. Duração típica: até {{weeks}} semanas.",
+      "footer": "Apenas estimativa. O benefício real é calculado pelo escritório de desemprego do seu estado usando os salários do período-base."
+    },
+    "vestingScheduleCalculator": {
+      "labels": {
+        "totalSharesUnits": "Total de Ações / Unidades",
+        "vestingPeriodMonths": "Período de Vesting (meses)",
+        "cliffPeriodMonths": "Período de Cliff (meses)",
+        "vestingFrequency": "Frequência de Vesting"
+      },
+      "placeholders": {
+        "eG10000": "ex: 10000"
+      }
+    },
+    "warrantyExpirationCalculator": {
+      "buttons": {
+        "remove": "Remover",
+        "addProduct": "+ Adicionar Produto",
+        "trackWarranties": "Acompanhar Garantias"
+      },
+      "labels": {
+        "product": "Produto",
+        "purchaseDate": "Data da Compra",
+        "warrantyLength": "Duração da Garantia",
+        "unit": "Unidade"
+      },
+      "placeholders": {
+        "laptop": "Laptop"
+      }
+    },
+    "wordCounter": {
+      "button": "Contar Palavras"
+    },
+    "wrongfulTerminationChecklist": {
+      "buttons": {
+        "assessSituation": "Avaliar Situação"
+      },
+      "placeholders": {
+        "select": "Selecionar..."
+      }
+    },
+    "wrongfulTerminationValueEstimator": {
+      "labels": {
+        "annualSalaryAtTerminationDollar": "Salário Anual na Rescisão ($)",
+        "monthsUnemployedSince": "Meses Desempregado Desde",
+        "annualBenefitsValueDollar": "Valor de Benefícios Anuais ($)",
+        "claimType": "Tipo de Reivindicação",
+        "caseStrength": "Força do Caso"
+      }
     }
   }
 }

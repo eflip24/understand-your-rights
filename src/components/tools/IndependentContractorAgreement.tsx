@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { useTranslation } from "react-i18next";
 
 export default function IndependentContractorAgreement() {
+  const { t } = useTranslation(["tools", "common"]);
   const [form, setForm] = useState({ clientName: "", contractorName: "", clientAddress: "", contractorAddress: "", services: "", compensation: "", paymentTerms: "net-30", duration: "", state: "" });
   const [output, setOutput] = useState("");
 
@@ -103,27 +105,27 @@ Date: ________________`;
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Client Name</Label>
-          <Input placeholder="Acme Corp" value={form.clientName} onChange={(e) => update("clientName", e.target.value)} />
+          <Label>{t("internals.independentContractorAgreement.labels.clientName")}</Label>
+          <Input placeholder={t("internals.independentContractorAgreement.placeholders.acmeCorp")} value={form.clientName} onChange={(e) => update("clientName", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Contractor Name</Label>
-          <Input placeholder="Jane Smith Consulting" value={form.contractorName} onChange={(e) => update("contractorName", e.target.value)} />
+          <Label>{t("internals.independentContractorAgreement.labels.contractorName")}</Label>
+          <Input placeholder={t("internals.independentContractorAgreement.placeholders.janeSmithConsulting")} value={form.contractorName} onChange={(e) => update("contractorName", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Client Address</Label>
-          <Input placeholder="123 Business St" value={form.clientAddress} onChange={(e) => update("clientAddress", e.target.value)} />
+          <Label>{t("internals.independentContractorAgreement.labels.clientAddress")}</Label>
+          <Input placeholder={t("internals.independentContractorAgreement.placeholders.n123BusinessSt")} value={form.clientAddress} onChange={(e) => update("clientAddress", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Contractor Address</Label>
-          <Input placeholder="456 Freelance Ave" value={form.contractorAddress} onChange={(e) => update("contractorAddress", e.target.value)} />
+          <Label>{t("internals.independentContractorAgreement.labels.contractorAddress")}</Label>
+          <Input placeholder={t("internals.independentContractorAgreement.placeholders.n456FreelanceAve")} value={form.contractorAddress} onChange={(e) => update("contractorAddress", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Compensation</Label>
-          <Input placeholder="$5,000 per month" value={form.compensation} onChange={(e) => update("compensation", e.target.value)} />
+          <Label>{t("internals.independentContractorAgreement.labels.compensation")}</Label>
+          <Input placeholder={t("internals.independentContractorAgreement.placeholders.dollar5000PerMonth")} value={form.compensation} onChange={(e) => update("compensation", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Payment Terms</Label>
+          <Label>{t("internals.independentContractorAgreement.labels.paymentTerms")}</Label>
           <select value={form.paymentTerms} onChange={(e) => update("paymentTerms", e.target.value)} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
             <option value="net-15">Net 15</option>
             <option value="net-30">Net 30</option>
@@ -133,23 +135,23 @@ Date: ________________`;
           </select>
         </div>
         <div className="space-y-2">
-          <Label>Duration (optional)</Label>
-          <Input placeholder="6 months" value={form.duration} onChange={(e) => update("duration", e.target.value)} />
+          <Label>{t("internals.independentContractorAgreement.labels.durationOptional")}</Label>
+          <Input placeholder={t("internals.independentContractorAgreement.placeholders.n6Months")} value={form.duration} onChange={(e) => update("duration", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Governing State</Label>
-          <Input placeholder="Delaware" value={form.state} onChange={(e) => update("state", e.target.value)} />
+          <Label>{t("internals.independentContractorAgreement.labels.governingState")}</Label>
+          <Input placeholder={t("internals.independentContractorAgreement.placeholders.delaware")} value={form.state} onChange={(e) => update("state", e.target.value)} />
         </div>
       </div>
       <div className="space-y-2">
-        <Label>Scope of Services</Label>
-        <Textarea placeholder="Describe the services the contractor will provide..." rows={3} value={form.services} onChange={(e) => update("services", e.target.value)} />
+        <Label>{t("internals.independentContractorAgreement.labels.scopeOfServices")}</Label>
+        <Textarea placeholder={t("internals.independentContractorAgreement.placeholders.describeTheServicesTheContractorWill")} rows={3} value={form.services} onChange={(e) => update("services", e.target.value)} />
       </div>
-      <Button onClick={generate} disabled={!form.clientName || !form.contractorName} className="bg-accent text-accent-foreground hover:bg-gold-dark">Generate Agreement</Button>
+      <Button onClick={generate} disabled={!form.clientName || !form.contractorName} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.independentContractorAgreement.buttons.generateAgreement")}</Button>
       {output && (
         <div className="space-y-2">
           <div className="flex justify-end">
-            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>Copy to Clipboard</Button>
+            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>{t("internals.independentContractorAgreement.buttons.copyToClipboard")}</Button>
           </div>
           <Textarea value={output} readOnly rows={30} className="font-mono text-xs" />
         </div>

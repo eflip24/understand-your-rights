@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 interface Quote {
   company: string;
@@ -13,6 +14,7 @@ interface Quote {
 const emptyQuote = (): Quote => ({ company: "", monthlyPremium: "", deductible: "", coverageLimit: "" });
 
 export default function InsuranceQuoteComparison() {
+  const { t } = useTranslation(["tools", "common"]);
   const [quotes, setQuotes] = useState<Quote[]>([emptyQuote(), emptyQuote(), emptyQuote()]);
   const [result, setResult] = useState<{ sorted: (Quote & { annualCost: number; effectiveCost: number })[] } | null>(null);
 
@@ -44,27 +46,27 @@ export default function InsuranceQuoteComparison() {
           <h4 className="font-medium text-sm text-muted-foreground">Quote {i + 1}</h4>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-1">
-              <Label>Company Name</Label>
-              <Input placeholder="State Farm" value={q.company} onChange={(e) => updateQuote(i, "company", e.target.value)} />
+              <Label>{t("internals.insuranceQuoteComparison.labels.companyName")}</Label>
+              <Input placeholder={t("internals.insuranceQuoteComparison.placeholders.stateFarm")} value={q.company} onChange={(e) => updateQuote(i, "company", e.target.value)} />
             </div>
             <div className="space-y-1">
-              <Label>Monthly Premium ($)</Label>
+              <Label>{t("internals.insuranceQuoteComparison.labels.monthlyPremiumDollar")}</Label>
               <Input type="number" placeholder="150" value={q.monthlyPremium} onChange={(e) => updateQuote(i, "monthlyPremium", e.target.value)} />
             </div>
             <div className="space-y-1">
-              <Label>Deductible ($)</Label>
+              <Label>{t("internals.insuranceQuoteComparison.labels.deductibleDollar")}</Label>
               <Input type="number" placeholder="500" value={q.deductible} onChange={(e) => updateQuote(i, "deductible", e.target.value)} />
             </div>
             <div className="space-y-1">
-              <Label>Coverage Limit ($)</Label>
+              <Label>{t("internals.insuranceQuoteComparison.labels.coverageLimitDollar")}</Label>
               <Input type="number" placeholder="100000" value={q.coverageLimit} onChange={(e) => updateQuote(i, "coverageLimit", e.target.value)} />
             </div>
           </div>
         </div>
       ))}
       <div className="flex gap-2">
-        <Button variant="outline" onClick={addQuote}>+ Add Quote</Button>
-        <Button onClick={compare} className="flex-1">Compare Quotes</Button>
+        <Button variant="outline" onClick={addQuote}>{t("internals.insuranceQuoteComparison.buttons.addQuote")}</Button>
+        <Button onClick={compare} className="flex-1">{t("internals.insuranceQuoteComparison.buttons.compareQuotes")}</Button>
       </div>
       {result && result.sorted.length > 0 && (
         <div className="rounded-lg border bg-card p-4 space-y-3">

@@ -16,7 +16,7 @@ const STATE_RULES: Record<string, { capMonths: number | null; mustMitigate: bool
 };
 
 export default function LeaseBreakPenaltyCalculator() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["tools", "common"]);
   const [monthlyRent, setMonthlyRent] = useState("");
   const [monthsRemaining, setMonthsRemaining] = useState("");
   const [securityDeposit, setSecurityDeposit] = useState("");
@@ -56,9 +56,9 @@ export default function LeaseBreakPenaltyCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
-        <div><Label>Monthly Rent ($)</Label><Input type="number" value={monthlyRent} onChange={e => setMonthlyRent(e.target.value)} placeholder="2000" /></div>
-        <div><Label>Months Remaining on Lease</Label><Input type="number" value={monthsRemaining} onChange={e => setMonthsRemaining(e.target.value)} placeholder="6" step="0.5" /></div>
-        <div><Label>Security Deposit ($)</Label><Input type="number" value={securityDeposit} onChange={e => setSecurityDeposit(e.target.value)} placeholder="2000" /></div>
+        <div><Label>{t("internals.leaseBreakPenaltyCalculator.labels.monthlyRentDollar")}</Label><Input type="number" value={monthlyRent} onChange={e => setMonthlyRent(e.target.value)} placeholder="2000" /></div>
+        <div><Label>{t("internals.leaseBreakPenaltyCalculator.labels.monthsRemainingOnLease")}</Label><Input type="number" value={monthsRemaining} onChange={e => setMonthsRemaining(e.target.value)} placeholder="6" step="0.5" /></div>
+        <div><Label>{t("internals.leaseBreakPenaltyCalculator.labels.securityDepositDollar")}</Label><Input type="number" value={securityDeposit} onChange={e => setSecurityDeposit(e.target.value)} placeholder="2000" /></div>
         <div>
           <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
@@ -66,16 +66,16 @@ export default function LeaseBreakPenaltyCalculator() {
             <SelectContent>{Object.keys(STATE_RULES).map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
           </Select>
         </div>
-        <div><Label>Estimated Months to Re-Rent</Label><Input type="number" value={reRentTime} onChange={e => setReRentTime(e.target.value)} step="0.5" /></div>
+        <div><Label>{t("internals.leaseBreakPenaltyCalculator.labels.estimatedMonthsToReRent")}</Label><Input type="number" value={reRentTime} onChange={e => setReRentTime(e.target.value)} step="0.5" /></div>
         <div>
-          <Label>Lease Has Early Termination Clause?</Label>
+          <Label>{t("internals.leaseBreakPenaltyCalculator.labels.leaseHasEarlyTerminationClause")}</Label>
           <Select value={hasEarlyTermClause} onValueChange={(v) => setHasEarlyTermClause(v as "no" | "yes")}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent><SelectItem value="no">No</SelectItem><SelectItem value="yes">Yes</SelectItem></SelectContent>
           </Select>
         </div>
         {hasEarlyTermClause === "yes" && (
-          <div className="sm:col-span-2"><Label>Early Termination Fee Stated in Lease ($)</Label><Input type="number" value={earlyTermFee} onChange={e => setEarlyTermFee(e.target.value)} placeholder="4000" /></div>
+          <div className="sm:col-span-2"><Label>{t("internals.leaseBreakPenaltyCalculator.labels.earlyTerminationFeeStatedInLease")}</Label><Input type="number" value={earlyTermFee} onChange={e => setEarlyTermFee(e.target.value)} placeholder="4000" /></div>
         )}
       </div>
 

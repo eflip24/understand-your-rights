@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function ContractValueCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [form, setForm] = useState({ baseValue: "", frequency: "monthly", duration: "", renewals: "0", escalation: "0" });
   const [result, setResult] = useState<{ initialTerm: number; renewalValue: number; totalValue: number; monthlyAvg: number } | null>(null);
 
@@ -55,11 +57,11 @@ export default function ContractValueCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Payment Amount ($)</Label>
+          <Label>{t("internals.contractValueCalculator.labels.paymentAmountDollar")}</Label>
           <Input type="number" placeholder="5000" value={form.baseValue} onChange={(e) => update("baseValue", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Payment Frequency</Label>
+          <Label>{t("internals.contractValueCalculator.labels.paymentFrequency")}</Label>
           <Select value={form.frequency} onValueChange={(v) => update("frequency", v)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -71,21 +73,19 @@ export default function ContractValueCalculator() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Term Duration (years)</Label>
+          <Label>{t("internals.contractValueCalculator.labels.termDurationYears")}</Label>
           <Input type="number" placeholder="3" value={form.duration} onChange={(e) => update("duration", e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Number of Renewals</Label>
+          <Label>{t("internals.contractValueCalculator.labels.numberOfRenewals")}</Label>
           <Input type="number" placeholder="0" min="0" value={form.renewals} onChange={(e) => update("renewals", e.target.value)} />
         </div>
         <div className="space-y-2 sm:col-span-2">
-          <Label>Annual Escalation Rate (%)</Label>
+          <Label>{t("internals.contractValueCalculator.labels.annualEscalationRatePercent")}</Label>
           <Input type="number" placeholder="3" step="0.5" value={form.escalation} onChange={(e) => update("escalation", e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!valid} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Calculate Total Value
-      </Button>
+      <Button onClick={calculate} disabled={!valid} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.contractValueCalculator.buttons.calculateTotalValue")}</Button>
       {result && (
         <div className="grid grid-cols-2 gap-4 pt-2">
           <div className="text-center p-4 bg-secondary rounded-lg">

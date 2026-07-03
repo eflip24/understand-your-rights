@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function PTOCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [accrualRate, setAccrualRate] = useState("");
   const [accrualPeriod, setAccrualPeriod] = useState("monthly");
   const [monthsEmployed, setMonthsEmployed] = useState("");
@@ -41,11 +43,11 @@ export default function PTOCalculator() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Accrual Rate (days per period)</Label>
+          <Label>{t("internals.pTOCalculator.labels.accrualRateDaysPerPeriod")}</Label>
           <Input type="number" placeholder="1.25" step="0.25" value={accrualRate} onChange={(e) => setAccrualRate(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Accrual Period</Label>
+          <Label>{t("internals.pTOCalculator.labels.accrualPeriod")}</Label>
           <Select value={accrualPeriod} onValueChange={setAccrualPeriod}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -56,19 +58,19 @@ export default function PTOCalculator() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Months Employed</Label>
+          <Label>{t("internals.pTOCalculator.labels.monthsEmployed")}</Label>
           <Input type="number" placeholder="18" value={monthsEmployed} onChange={(e) => setMonthsEmployed(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Days Already Used</Label>
+          <Label>{t("internals.pTOCalculator.labels.daysAlreadyUsed")}</Label>
           <Input type="number" placeholder="5" value={usedDays} onChange={(e) => setUsedDays(e.target.value)} />
         </div>
         <div className="space-y-2 sm:col-span-2">
-          <Label>Max Carryover / Cap (days, optional)</Label>
-          <Input type="number" placeholder="No cap" value={maxCarryover} onChange={(e) => setMaxCarryover(e.target.value)} />
+          <Label>{t("internals.pTOCalculator.labels.maxCarryoverCapDaysOptional")}</Label>
+          <Input type="number" placeholder={t("internals.pTOCalculator.placeholders.noCap")} value={maxCarryover} onChange={(e) => setMaxCarryover(e.target.value)} />
         </div>
       </div>
-      <Button onClick={calculate} disabled={!valid} className="bg-accent text-accent-foreground hover:bg-gold-dark">Calculate PTO</Button>
+      <Button onClick={calculate} disabled={!valid} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.pTOCalculator.buttons.calculatePto")}</Button>
       {result && (
         <div className="grid grid-cols-2 gap-4 pt-2">
           <div className="text-center p-4 bg-secondary rounded-lg">

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const defaultCategories = [
   { name: "Personnel", amount: "" },
@@ -14,6 +15,7 @@ const defaultCategories = [
 ];
 
 export default function GrantBudgetCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [totalGrant, setTotalGrant] = useState("");
   const [indirectRate, setIndirectRate] = useState("10");
   const [allocations, setAllocations] = useState(defaultCategories);
@@ -37,12 +39,12 @@ export default function GrantBudgetCalculator() {
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label>Total Grant Amount ($)</Label>
-          <Input type="number" value={totalGrant} onChange={(e) => setTotalGrant(e.target.value)} placeholder="e.g. 500000" />
+          <Label>{t("internals.grantBudgetCalculator.labels.totalGrantAmountDollar")}</Label>
+          <Input type="number" value={totalGrant} onChange={(e) => setTotalGrant(e.target.value)} placeholder={t("internals.grantBudgetCalculator.placeholders.eG500000")} />
         </div>
         <div className="space-y-2">
-          <Label>Indirect Cost Rate (%)</Label>
-          <Input type="number" value={indirectRate} onChange={(e) => setIndirectRate(e.target.value)} placeholder="e.g. 10" />
+          <Label>{t("internals.grantBudgetCalculator.labels.indirectCostRatePercent")}</Label>
+          <Input type="number" value={indirectRate} onChange={(e) => setIndirectRate(e.target.value)} placeholder={t("internals.grantBudgetCalculator.placeholders.eG10")} />
         </div>
       </div>
 

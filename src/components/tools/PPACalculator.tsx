@@ -3,8 +3,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export default function PPACalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [ppaRate, setPpaRate] = useState("");
   const [ppaEscalation, setPpaEscalation] = useState("");
   const [termYears, setTermYears] = useState("");
@@ -48,32 +50,32 @@ export default function PPACalculator() {
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <Label htmlFor="ppaRate">PPA Rate ($/kWh)</Label>
+          <Label htmlFor="ppaRate">{t("internals.pPACalculator.labels.ppaRateDollarKwh")}</Label>
           <Input id="ppaRate" type="number" step="0.01" placeholder="0.10" value={ppaRate} onChange={(e) => setPpaRate(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="ppaEsc">PPA Annual Escalation (%)</Label>
+          <Label htmlFor="ppaEsc">{t("internals.pPACalculator.labels.ppaAnnualEscalationPercent")}</Label>
           <Input id="ppaEsc" type="number" step="0.1" placeholder="2" value={ppaEscalation} onChange={(e) => setPpaEscalation(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="utilityRate">Current Utility Rate ($/kWh)</Label>
+          <Label htmlFor="utilityRate">{t("internals.pPACalculator.labels.currentUtilityRateDollarKwh")}</Label>
           <Input id="utilityRate" type="number" step="0.01" placeholder="0.14" value={utilityRate} onChange={(e) => setUtilityRate(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="utilEsc">Utility Annual Escalation (%)</Label>
+          <Label htmlFor="utilEsc">{t("internals.pPACalculator.labels.utilityAnnualEscalationPercent")}</Label>
           <Input id="utilEsc" type="number" step="0.1" placeholder="3.5" value={utilityEscalation} onChange={(e) => setUtilityEscalation(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="termYears">Contract Term (years)</Label>
+          <Label htmlFor="termYears">{t("internals.pPACalculator.labels.contractTermYears")}</Label>
           <Input id="termYears" type="number" placeholder="20" value={termYears} onChange={(e) => setTermYears(e.target.value)} />
         </div>
         <div>
-          <Label htmlFor="annualKwh">Annual Usage (kWh)</Label>
+          <Label htmlFor="annualKwh">{t("internals.pPACalculator.labels.annualUsageKwh")}</Label>
           <Input id="annualKwh" type="number" placeholder="10000" value={annualKwh} onChange={(e) => setAnnualKwh(e.target.value)} />
         </div>
       </div>
 
-      <Button onClick={calculate} className="w-full">Compare PPA vs Utility</Button>
+      <Button onClick={calculate} className="w-full">{t("internals.pPACalculator.buttons.comparePpaVsUtility")}</Button>
 
       {result && (
         <div className="space-y-4">

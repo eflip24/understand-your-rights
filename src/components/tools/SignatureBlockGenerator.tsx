@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function SignatureBlockGenerator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [form, setForm] = useState({ entityType: "individual", name: "", title: "", company: "", name2: "", title2: "", company2: "" });
   const [output, setOutput] = useState("");
 
@@ -38,7 +40,7 @@ export default function SignatureBlockGenerator() {
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        <Label>Entity Type</Label>
+        <Label>{t("internals.signatureBlockGenerator.labels.entityType")}</Label>
         <Select value={form.entityType} onValueChange={(v) => update("entityType", v)}>
           <SelectTrigger><SelectValue /></SelectTrigger>
           <SelectContent>
@@ -53,18 +55,18 @@ export default function SignatureBlockGenerator() {
         <div className="space-y-3">
           <p className="text-sm font-semibold text-muted-foreground">Party 1</p>
           <div className="space-y-2">
-            <Label>Name</Label>
-            <Input placeholder="John Doe" value={form.name} onChange={(e) => update("name", e.target.value)} />
+            <Label>{t("internals.signatureBlockGenerator.labels.name")}</Label>
+            <Input placeholder={t("internals.signatureBlockGenerator.placeholders.johnDoe")} value={form.name} onChange={(e) => update("name", e.target.value)} />
           </div>
           {showCompany && (
             <>
               <div className="space-y-2">
-                <Label>Title</Label>
-                <Input placeholder="CEO" value={form.title} onChange={(e) => update("title", e.target.value)} />
+                <Label>{t("internals.signatureBlockGenerator.labels.title")}</Label>
+                <Input placeholder={t("internals.signatureBlockGenerator.placeholders.ceo")} value={form.title} onChange={(e) => update("title", e.target.value)} />
               </div>
               <div className="space-y-2">
-                <Label>Company Name</Label>
-                <Input placeholder="Acme Corp" value={form.company} onChange={(e) => update("company", e.target.value)} />
+                <Label>{t("internals.signatureBlockGenerator.labels.companyName")}</Label>
+                <Input placeholder={t("internals.signatureBlockGenerator.placeholders.acmeCorp")} value={form.company} onChange={(e) => update("company", e.target.value)} />
               </div>
             </>
           )}
@@ -72,28 +74,28 @@ export default function SignatureBlockGenerator() {
         <div className="space-y-3">
           <p className="text-sm font-semibold text-muted-foreground">Party 2</p>
           <div className="space-y-2">
-            <Label>Name</Label>
-            <Input placeholder="Jane Smith" value={form.name2} onChange={(e) => update("name2", e.target.value)} />
+            <Label>{t("internals.signatureBlockGenerator.labels.name")}</Label>
+            <Input placeholder={t("internals.signatureBlockGenerator.placeholders.janeSmith")} value={form.name2} onChange={(e) => update("name2", e.target.value)} />
           </div>
           {showCompany && (
             <>
               <div className="space-y-2">
-                <Label>Title</Label>
-                <Input placeholder="CFO" value={form.title2} onChange={(e) => update("title2", e.target.value)} />
+                <Label>{t("internals.signatureBlockGenerator.labels.title")}</Label>
+                <Input placeholder={t("internals.signatureBlockGenerator.placeholders.cfo")} value={form.title2} onChange={(e) => update("title2", e.target.value)} />
               </div>
               <div className="space-y-2">
-                <Label>Company Name</Label>
-                <Input placeholder="Beta Inc" value={form.company2} onChange={(e) => update("company2", e.target.value)} />
+                <Label>{t("internals.signatureBlockGenerator.labels.companyName")}</Label>
+                <Input placeholder={t("internals.signatureBlockGenerator.placeholders.betaInc")} value={form.company2} onChange={(e) => update("company2", e.target.value)} />
               </div>
             </>
           )}
         </div>
       </div>
-      <Button onClick={generate} className="bg-accent text-accent-foreground hover:bg-gold-dark">Generate Signature Block</Button>
+      <Button onClick={generate} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.signatureBlockGenerator.buttons.generateSignatureBlock")}</Button>
       {output && (
         <div className="space-y-2">
           <div className="flex justify-end">
-            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>Copy to Clipboard</Button>
+            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(output)}>{t("internals.signatureBlockGenerator.buttons.copyToClipboard")}</Button>
           </div>
           <Textarea value={output} readOnly rows={15} className="font-mono text-xs" />
         </div>

@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const cryptoPrices: Record<string, { name: string; price: number }> = {
   BTC: { name: "Bitcoin", price: 87000 },
@@ -16,6 +17,7 @@ const cryptoPrices: Record<string, { name: string; price: number }> = {
 };
 
 export default function CryptoConverterCalculator() {
+  const { t } = useTranslation(["tools", "common"]);
   const [amount, setAmount] = useState("");
   const [fromCrypto, setFromCrypto] = useState("BTC");
   const [result, setResult] = useState<{ usdValue: number; conversions: { symbol: string; name: string; amount: number }[] } | null>(null);
@@ -39,11 +41,11 @@ export default function CryptoConverterCalculator() {
       <p className="text-xs text-muted-foreground">⚠️ Uses static reference prices for demonstration. Not real-time data.</p>
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>Amount</Label>
+          <Label>{t("internals.cryptoConverterCalculator.labels.amount")}</Label>
           <Input type="number" placeholder="1" step="0.001" value={amount} onChange={(e) => setAmount(e.target.value)} />
         </div>
         <div className="space-y-2">
-          <Label>Cryptocurrency</Label>
+          <Label>{t("internals.cryptoConverterCalculator.labels.cryptocurrency")}</Label>
           <Select value={fromCrypto} onValueChange={setFromCrypto}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -54,9 +56,7 @@ export default function CryptoConverterCalculator() {
           </Select>
         </div>
       </div>
-      <Button onClick={calculate} disabled={!amount} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        Convert
-      </Button>
+      <Button onClick={calculate} disabled={!amount} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("internals.cryptoConverterCalculator.buttons.convert")}</Button>
       {result && (
         <div className="space-y-4 pt-2">
           <div className="text-center p-4 bg-accent/10 rounded-lg border border-accent/20">
