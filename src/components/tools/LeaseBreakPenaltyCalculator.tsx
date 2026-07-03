@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 // State liability cap in months of rent (most states require landlord to mitigate; some cap penalty)
 const STATE_RULES: Record<string, { capMonths: number | null; mustMitigate: boolean; note: string }> = {
@@ -15,6 +16,7 @@ const STATE_RULES: Record<string, { capMonths: number | null; mustMitigate: bool
 };
 
 export default function LeaseBreakPenaltyCalculator() {
+  const { t } = useTranslation("common");
   const [monthlyRent, setMonthlyRent] = useState("");
   const [monthsRemaining, setMonthsRemaining] = useState("");
   const [securityDeposit, setSecurityDeposit] = useState("");
@@ -58,7 +60,7 @@ export default function LeaseBreakPenaltyCalculator() {
         <div><Label>Months Remaining on Lease</Label><Input type="number" value={monthsRemaining} onChange={e => setMonthsRemaining(e.target.value)} placeholder="6" step="0.5" /></div>
         <div><Label>Security Deposit ($)</Label><Input type="number" value={securityDeposit} onChange={e => setSecurityDeposit(e.target.value)} placeholder="2000" /></div>
         <div>
-          <Label>State</Label>
+          <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>{Object.keys(STATE_RULES).map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>

@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 // Approximate filing fees (USD) by state
 const FILING_FEES: Record<string, number> = {
@@ -11,6 +12,7 @@ const FILING_FEES: Record<string, number> = {
 };
 
 export default function DivorceCostEstimator() {
+  const { t } = useTranslation("common");
   const [state, setState] = useState("California");
   const [type, setType] = useState<"uncontested" | "mediated" | "contested" | "litigated">("uncontested");
   const [hasChildren, setHasChildren] = useState<"no" | "yes">("no");
@@ -37,7 +39,7 @@ export default function DivorceCostEstimator() {
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <Label>State</Label>
+          <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>{Object.keys(FILING_FEES).map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const depositData: Record<string, { maxMonths: number; interestRequired: boolean; returnDays: number; notes: string }> = {
   "California": { maxMonths: 2, interestRequired: false, returnDays: 21, notes: "2 months for unfurnished, 3 for furnished" },
@@ -29,6 +30,7 @@ const depositData: Record<string, { maxMonths: number; interestRequired: boolean
 };
 
 export default function SecurityDepositCalculator() {
+  const { t } = useTranslation("common");
   const [state, setState] = useState("");
   const [monthlyRent, setMonthlyRent] = useState("");
 
@@ -39,7 +41,7 @@ export default function SecurityDepositCalculator() {
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <Label>State</Label>
+          <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
             <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
             <SelectContent>{Object.keys(depositData).sort().map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>

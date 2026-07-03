@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 const RULES: Record<string, Record<string, string>> = {
   "California": { nonpayment: "3 days (excluding weekends/holidays)", violation: "3-day cure or quit", noFault: "30 or 60 days (length depends on tenancy)" },
@@ -15,13 +16,14 @@ const RULES: Record<string, Record<string, string>> = {
 };
 
 export default function EvictionNoticeLookup() {
+  const { t } = useTranslation("common");
   const [state, setState] = useState("");
   const [reason, setReason] = useState("");
   const r = state && reason ? RULES[state]?.[reason] : null;
 
   return (
     <div className="space-y-4">
-      <div><Label>State</Label>
+      <div><Label>{t("common:fields.state")}</Label>
         <Select value={state} onValueChange={setState}>
           <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
           <SelectContent>{Object.keys(RULES).map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>

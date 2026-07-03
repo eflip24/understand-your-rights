@@ -5,10 +5,12 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 const states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
 
 export default function RentalAgreementGenerator() {
+  const { t } = useTranslation("common");
   const [landlord, setLandlord] = useState("");
   const [tenant, setTenant] = useState("");
   const [address, setAddress] = useState("");
@@ -113,7 +115,7 @@ Date: ________________`);
         <div><Label>Property Address</Label><Input value={address} onChange={e => setAddress(e.target.value)} placeholder="123 Main St, Apt 4" /></div>
         <div><Label>City</Label><Input value={city} onChange={e => setCity(e.target.value)} placeholder="Los Angeles" /></div>
         <div>
-          <Label>State</Label>
+          <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
             <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
             <SelectContent>{states.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
@@ -127,7 +129,7 @@ Date: ________________`);
       {result && (
         <Card>
           <CardContent className="pt-6">
-            <div className="flex justify-end mb-2"><Button variant="outline" size="sm" onClick={copy}>Copy</Button></div>
+            <div className="flex justify-end mb-2"><Button variant="outline" size="sm" onClick={copy}>{t("common:actions.copy")}</Button></div>
             <pre className="whitespace-pre-wrap text-sm font-mono bg-muted p-4 rounded-lg overflow-auto max-h-[500px]">{result}</pre>
           </CardContent>
         </Card>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 const stateInfo: Record<string, { enforceability: string; notes: string; maxDuration: string }> = {
   "California": { enforceability: "Generally Unenforceable", notes: "California broadly prohibits non-compete agreements under Business and Professions Code § 16600.", maxDuration: "N/A" },
@@ -19,6 +20,7 @@ const stateInfo: Record<string, { enforceability: string; notes: string; maxDura
 };
 
 export default function NonCompeteChecker() {
+  const { t } = useTranslation("common");
   const [state, setState] = useState("");
   const [duration, setDuration] = useState("");
   const [result, setResult] = useState<typeof stateInfo[string] & { durationWarning?: string } | null>(null);
@@ -36,7 +38,7 @@ export default function NonCompeteChecker() {
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label>State</Label>
+          <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
             <SelectTrigger><SelectValue placeholder="Select state..." /></SelectTrigger>
             <SelectContent>

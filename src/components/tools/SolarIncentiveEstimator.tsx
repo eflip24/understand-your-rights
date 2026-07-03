@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const stateIncentives: Record<string, { rebate: number; srec: number; name: string }> = {
   CA: { rebate: 1000, srec: 50, name: "California" },
@@ -19,6 +20,7 @@ const stateIncentives: Record<string, { rebate: number; srec: number; name: stri
 };
 
 export default function SolarIncentiveEstimator() {
+  const { t } = useTranslation("common");
   const [systemCost, setSystemCost] = useState("");
   const [state, setState] = useState("");
   const [result, setResult] = useState<{
@@ -50,7 +52,7 @@ export default function SolarIncentiveEstimator() {
           <Input id="systemCost" type="number" placeholder="25000" value={systemCost} onChange={(e) => setSystemCost(e.target.value)} />
         </div>
         <div>
-          <Label>State</Label>
+          <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
             <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
             <SelectContent>

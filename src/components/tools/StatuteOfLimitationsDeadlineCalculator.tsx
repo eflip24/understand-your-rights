@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const SOL_YEARS: Record<string, Record<string, number>> = {
   "Written Contract": { "California": 4, "New York": 6, "Texas": 4, "Florida": 5, "Illinois": 10, "Other": 6 },
@@ -16,6 +17,7 @@ const SOL_YEARS: Record<string, Record<string, number>> = {
 };
 
 export default function StatuteOfLimitationsDeadlineCalculator() {
+  const { t } = useTranslation("common");
   const [claimType, setClaimType] = useState("Personal Injury");
   const [state, setState] = useState("California");
   const [incidentDate, setIncidentDate] = useState("");
@@ -47,7 +49,7 @@ export default function StatuteOfLimitationsDeadlineCalculator() {
           </Select>
         </div>
         <div>
-          <Label>State</Label>
+          <Label>{t("common:fields.state")}</Label>
           <Select value={state} onValueChange={setState}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>{["California","New York","Texas","Florida","Illinois","Other"].map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>

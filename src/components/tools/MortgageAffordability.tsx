@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function MortgageAffordability() {
+  const { t } = useTranslation("common");
   const [income, setIncome] = useState("");
   const [debts, setDebts] = useState("");
   const [down, setDown] = useState("");
@@ -31,7 +33,7 @@ export default function MortgageAffordability() {
         <div><Label>Down payment ($)</Label><Input type="number" value={down} onChange={e => setDown(e.target.value)} /></div>
         <div><Label>Interest rate (%)</Label><Input type="number" step="0.1" value={rate} onChange={e => setRate(e.target.value)} /></div>
       </div>
-      <Button onClick={calc} disabled={!income}>Calculate</Button>
+      <Button onClick={calc} disabled={!income}>{t("common:actions.calculate")}</Button>
       {result && (
         <Card><CardContent className="p-4 space-y-2">
           <p className="text-3xl font-bold">${result.maxPrice.toLocaleString()}</p>

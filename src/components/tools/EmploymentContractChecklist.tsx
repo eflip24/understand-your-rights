@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useTranslation } from "react-i18next";
 
 const checklist = [
   { category: "Basics", items: ["Job title and description are accurate", "Start date is specified", "Employment type (full-time, part-time, contract) is clear", "Work location and remote work policies defined", "Reporting structure identified"] },
@@ -13,6 +14,7 @@ const checklist = [
 ];
 
 export default function EmploymentContractChecklist() {
+  const { t } = useTranslation("common");
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
   const totalItems = checklist.reduce((sum, cat) => sum + cat.items.length, 0);
@@ -23,7 +25,7 @@ export default function EmploymentContractChecklist() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <span className="text-sm text-muted-foreground">{completedItems}/{totalItems} items reviewed</span>
-        <Button variant="outline" size="sm" onClick={() => setChecked({})}>Reset</Button>
+        <Button variant="outline" size="sm" onClick={() => setChecked({})}>{t("common:actions.reset")}</Button>
       </div>
       <div className="w-full bg-secondary rounded-full h-2">
         <div className="bg-accent h-2 rounded-full transition-all" style={{ width: `${totalItems > 0 ? (completedItems / totalItems) * 100 : 0}%` }} />
