@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 const businessTypes: Record<string, string[]> = {
   "Freelance/Consulting": ["Software/Subscriptions", "Home Office", "Internet/Phone", "Professional Development", "Marketing/Advertising", "Travel", "Meals (Business)", "Insurance", "Legal/Accounting", "Office Supplies"],
@@ -15,6 +16,7 @@ const businessTypes: Record<string, string[]> = {
 };
 
 export default function BusinessExpenseTracker() {
+  const { t } = useTranslation("common");
   const [businessType, setBusinessType] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [result, setResult] = useState("");
@@ -88,7 +90,7 @@ NOTES:
       {result && (
         <Card>
           <CardContent className="pt-6">
-            <div className="flex justify-end mb-2"><Button variant="outline" size="sm" onClick={copy}>Copy</Button></div>
+            <div className="flex justify-end mb-2"><Button variant="outline" size="sm" onClick={copy}>{t("common:actions.copy")}</Button></div>
             <pre className="whitespace-pre-wrap text-sm font-mono bg-muted p-4 rounded-lg overflow-auto max-h-[500px]">{result}</pre>
           </CardContent>
         </Card>

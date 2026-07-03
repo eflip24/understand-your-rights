@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 export default function OperatingAgreementGenerator() {
+  const { t } = useTranslation("common");
   const [llc, setLlc] = useState("");
   const [state, setState] = useState("");
   const [members, setMembers] = useState("");
@@ -44,7 +46,7 @@ Member Signature & Date`;
     <div className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-3">
         <div><Label>LLC Name</Label><Input value={llc} onChange={e => setLlc(e.target.value)} /></div>
-        <div><Label>State</Label><Input value={state} onChange={e => setState(e.target.value)} /></div>
+        <div><Label>{t("common:fields.state")}</Label><Input value={state} onChange={e => setState(e.target.value)} /></div>
         <div className="sm:col-span-2"><Label>Members (name + ownership %)</Label><Textarea value={members} onChange={e => setMembers(e.target.value)} rows={3} placeholder="Jane Doe — 60%&#10;John Smith — 40%" /></div>
         <div className="sm:col-span-2"><Label>Business purpose</Label><Input value={purpose} onChange={e => setPurpose(e.target.value)} /></div>
       </div>

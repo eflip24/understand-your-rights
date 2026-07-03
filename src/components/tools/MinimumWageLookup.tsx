@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const wageData: Record<string, { state: number; tipped: number; notes: string }> = {
   "Federal": { state: 7.25, tipped: 2.13, notes: "Federal minimum wage since 2009" },
@@ -60,6 +61,7 @@ const wageData: Record<string, { state: number; tipped: number; notes: string }>
 const stateNames = Object.keys(wageData).sort();
 
 export default function MinimumWageLookup() {
+  const { t } = useTranslation("common");
   const [state, setState] = useState("");
   const [result, setResult] = useState<{ state: number; tipped: number; notes: string; name: string } | null>(null);
 
@@ -71,7 +73,7 @@ export default function MinimumWageLookup() {
   return (
     <div className="space-y-4">
       <div className="max-w-sm space-y-2">
-        <Label>State</Label>
+        <Label>{t("common:fields.state")}</Label>
         <Select value={state} onValueChange={setState}>
           <SelectTrigger><SelectValue placeholder="Select state..." /></SelectTrigger>
           <SelectContent>
@@ -79,7 +81,7 @@ export default function MinimumWageLookup() {
           </SelectContent>
         </Select>
       </div>
-      <Button onClick={lookup} disabled={!state} className="bg-accent text-accent-foreground hover:bg-gold-dark">Look Up</Button>
+      <Button onClick={lookup} disabled={!state} className="bg-accent text-accent-foreground hover:bg-gold-dark">{t("common:actions.lookUp")}</Button>
       {result && (
         <div className="space-y-3 pt-2">
           <div className="grid grid-cols-2 gap-4">

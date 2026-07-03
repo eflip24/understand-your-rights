@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 const clauseTypes = [
   { name: "Indemnification", keywords: ["indemnif", "hold harmless", "indemnity"] },
@@ -22,6 +23,7 @@ const clauseTypes = [
 ];
 
 export default function ClauseFinder() {
+  const { t } = useTranslation("common");
   const [text, setText] = useState("");
   const [results, setResults] = useState<{ name: string; found: boolean; snippets: string[] }[]>([]);
 
@@ -46,7 +48,7 @@ export default function ClauseFinder() {
 
   return (
     <div className="space-y-4">
-      <Textarea placeholder="Paste your contract text here..." value={text} onChange={(e) => setText(e.target.value)} rows={8} />
+      <Textarea placeholder={t("common:fields.contractText")} value={text} onChange={(e) => setText(e.target.value)} rows={8} />
       <Button onClick={analyze} disabled={!text.trim()} className="bg-accent text-accent-foreground hover:bg-gold-dark">
         Find Clauses
       </Button>

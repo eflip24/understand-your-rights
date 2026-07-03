@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 const baseItems = [
   "Give written notice per lease terms (typically 30-60 days)",
@@ -61,6 +62,7 @@ const featureItems: Record<string, string[]> = {
 };
 
 export default function MoveOutChecklistGenerator() {
+  const { t } = useTranslation("common");
   const [propertyType, setPropertyType] = useState("");
   const [features, setFeatures] = useState<string[]>([]);
   const [generated, setGenerated] = useState(false);
@@ -113,7 +115,7 @@ export default function MoveOutChecklistGenerator() {
           <CardContent className="pt-6 space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="font-serif font-bold text-lg">Move-Out Checklist</h3>
-              <Button variant="outline" size="sm" onClick={copyChecklist}>Copy</Button>
+              <Button variant="outline" size="sm" onClick={copyChecklist}>{t("common:actions.copy")}</Button>
             </div>
             <div className="w-full bg-muted rounded-full h-2">
               <div className="bg-accent h-2 rounded-full transition-all" style={{ width: `${progress}%` }} />
