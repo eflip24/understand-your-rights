@@ -19,6 +19,22 @@ import { useConsent } from "@/lib/consent";
 import { useLocation } from "react-router-dom";
 import "@/i18n/config";
 
+/**
+ * Fires the AdSense Auto-ads page-level tag once per session, after
+ * consent resolves and only when the current route is monetizable.
+ * Mounted inside <BrowserRouter> so useLocation works.
+ */
+const AdSenseAutoAdsInit = () => {
+  const consent = useConsent();
+  const location = useLocation();
+  useEffect(() => {
+    if (consent === null) return;
+    if (!shouldShowAds(location.pathname)) return;
+    initAutoAds({ advertisingConsent: !!consent.advertising });
+  }, [consent, location.pathname]);
+  return null;
+};
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
