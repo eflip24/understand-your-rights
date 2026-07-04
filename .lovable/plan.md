@@ -1,125 +1,65 @@
+## Goal
 
-# Milestone C — Tool Internals i18n (Phase 1)
+Turn on Google AdSense Auto ads across the whole site (anchor, vignette, in-article, matched content) while keeping the existing consent-gated `<AdSlot />` placements and per-page allow/deny rules intact.
 
-Goal: translate the internal UI (button labels, input labels, result headings, placeholders) of the 20 highest-traffic tools, using a shared `common.actions` namespace so we don't re-translate "Calculate"/"Reset"/"Copy" 100 times.
+## Current state (already done — no changes needed)
 
-## 1. Shared `common.actions` namespace
+- `index.html` loads the AdSense script + Funding Choices CMP for consent.
+- `public/ads.txt` correctly declares `pub-7983626512285415`.
+- `<AdSlot />` is placed on tool pages, blog posts, pillar articles, cluster articles, content pages, and lawyer directory pages.
+- `AD_DENY_PREFIXES` in `AdSlot.tsx` blocks thin/utility pages (login, dashboard, admin, directory index pages, etc.).
 
-Extend the existing `common.json` in all 6 locales with a new `actions` block plus a small `fields` block for ultra-generic input labels:
+## Changes
 
-```json
-{
-  "actions": {
-    "calculate": "Calculate",
-    "reset": "Reset",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "download": "Download",
-    "analyze": "Analyze",
-    "detect": "Detect",
-    "generate": "Generate",
-    "check": "Check",
-    "estimate": "Estimate",
-    "count": "Count",
-    "clear": "Clear",
-    "paste": "Paste text",
-    "loading": "Loading…"
-  },
-  "fields": {
-    "state": "State",
-    "amount": "Amount ($)",
-    "date": "Date",
-    "name": "Your name",
-    "email": "Email",
-    "yourText": "Paste your text here…",
-    "contractText": "Paste your contract text here…",
-    "monthlyIncome": "Monthly income ($)",
-    "annualWages": "Annual wages ($)",
-    "notFound": "Not found",
-    "results": "Results",
-    "words": "Words",
-    "characters": "Characters",
-    "sentences": "Sentences",
-    "paragraphs": "Paragraphs",
-    "minutes": "Minutes",
-    "seconds": "Seconds"
-  }
-}
+### 1. Enable Auto ads (page-level tag)
+
+Add the Auto ads config snippet inside `<head>` in `index.html`, right after the existing AdSense script tag:
+
+```html
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7983626512285415",
+    enable_page_level_ads: true
+  });
+</script>
 ```
 
-Translate via `scripts/translate-pages.mjs` pattern (reuse Lovable AI Gateway, JSON structure preserved). ES/FR/DE/IT/PT filled in one batch script run.
+This tells Google it may auto-insert anchor, vignette, and in-article ads in addition to whatever `<AdSlot />` renders.
 
-## 2. Top 20 tools to wire
+### 2. Respect consent + deny-list for Auto ads
 
-Chosen by prior traffic + generic reusability (calculators + analyzers first — these have the most reusable strings):
+Auto ads would otherwise fire on login/admin/thin pages and before the CMP resolves. Two guardrails:
 
-1. WordCounter
-2. ReadingTimeCalculator
-3. AutoRenewalDetector
-4. GoverningLawIdentifier
-5. DMCAGenerator
-6. SubscriptionCancellationLetter
-7. DataBreachChecklist
-8. DiscriminationChecklist
-9. EmergencyFundCalculator
-10. FinalPaycheckLookup
-11. UnemploymentEstimator
-12. OvertimeCalculator
-13. SeverancePayCalculator
-14. RefundChecker
-15. ChildSupportEstimator
-16. AlimonyEstimator
-17. SmallClaimsLimitLookup
-18. StatuteOfLimitationsLookup
-19. NDAAnalyzer
-20. LeaseClauseScanner
+- **Consent gating:** move the Auto-ads `push({...})` out of `index.html` and into a small `src/lib/adsenseAutoAds.ts` hook wired into `App.tsx`, so it only pushes after `useConsent()` returns a decision (mirrors what `AdSlot.tsx` already does).
+- **Route gating:** reuse the existing `shouldShowAds(pathname)` helper (extract it from `AdSlot.tsx` into `src/lib/adsense.ts`) and skip the Auto-ads push on denied routes. Auto ads unfortunately can't be un-injected once pushed for a session, so we push only when the user first lands on an allowed route.
 
-## 3. Per-tool wiring pattern
+### 3. Non-personalized ads under "reject"
 
-Each component gets:
-```tsx
-import { useTranslation } from "react-i18next";
-const { t } = useTranslation(["common", "tools"]);
-```
+When `useConsent()` returns `"rejected"`, set `window.adsbygoogle.requestNonPersonalizedAds = 1` before the push. Already declared in `src/lib/adsense.ts` types — just needs to be applied in the new auto-ads init and in `AdSlot.tsx`.
 
-- Buttons: `t("common:actions.calculate")` etc.
-- Generic field labels: `t("common:fields.state")` etc.
-- Tool-specific strings (result headings unique to that tool, warning messages, US-state lookup rules text): add per-tool keys under a new `tools:internals.<toolId>.*` subtree in `tools.json`, e.g.
-  ```json
-  "internals": {
-    "wordCounter": { "resultLabels": { "estPages": "Est. Pages" } },
-    "autoRenewal": {
-      "detected": "⚠ Auto-renewal language detected",
-      "clean": "✓ No auto-renewal language found",
-      "warnRisky": "Auto-renewal detected but no clear notice window — risky."
-    }
-  }
-  ```
-- Lookup tables containing US-state rule text (FinalPaycheckLookup, UnemploymentEstimator) stay as constants but the surrounding labels and disclaimers move to i18n. State names themselves stay English (proper nouns).
+### 4. Leave slot IDs empty
 
-## 4. Translation script
+Per your answer, keep `AD_SLOT_IDS` empty strings — AdSense fills them via `data-ad-format="auto"`. When you later create named units in the dashboard, paste the IDs into `src/lib/adsense.ts` and manual slots start serving those specific units.
 
-Add `scripts/translate-tool-internals.mjs` — same shape as `translate-pages.mjs`:
-- Reads `src/i18n/locales/en/{common,tools}.json`
-- For each non-EN locale, sends only the new keys (delta) to `google/gemini-3-flash-preview` via Lovable AI Gateway
-- Merges into existing locale files, preserving prior translations
-- Idempotent: re-runs skip keys already present unless `--force`
+### 5. ads.txt
 
-## 5. Verification
+No changes — already AdSense-only and correct.
 
-- Run `bun run build` — must pass with no TS errors.
-- Smoke-check 3 tools in ES (`/es/tools/word-counter`, `/es/tools/auto-renewal-detector`, `/es/tools/unemployment-estimator`) via Playwright screenshot to confirm buttons/labels render in Spanish.
-- Confirm English routes render identically (no regressions).
+## Files touched
 
-## Out of scope for this milestone
+- `index.html` — remove any inline auto-ads push (moved to React so consent is respected).
+- `src/lib/adsense.ts` — export `shouldShowAds()` helper; add `initAutoAds()` that respects consent + non-personalized flag.
+- `src/components/ads/AdSlot.tsx` — import `shouldShowAds` from `adsense.ts` (dedupe), apply non-personalized flag on reject.
+- `src/App.tsx` — call `initAutoAds()` from a `useEffect` tied to consent + route.
 
-- The remaining ~93 tools (planned for Milestone C phase 2, same script + pattern).
-- Translating dynamic disclaimers embedded in constants tables (state-specific legal text) — flagged for a later legal-review pass.
+## Verification
 
-## Deliverables
+- Load `/` in preview → confirm no console errors, CMP banner appears on EEA IPs, `adsbygoogle` queue receives the auto-ads push after consent.
+- Navigate to `/login` → confirm Auto ads init is skipped.
+- Navigate to a tool detail page → confirm both Auto ads and manual `<AdSlot />` fire once each.
 
-- Updated `src/i18n/locales/{en,es,fr,de,it,pt}/common.json` with `actions` + `fields`.
-- Updated `src/i18n/locales/{en,es,fr,de,it,pt}/tools.json` with `internals.*` subtree for the 20 tools.
-- 20 refactored tool components under `src/components/tools/`.
-- New `scripts/translate-tool-internals.mjs`.
-- Green build + 3 Playwright screenshots as evidence.
+## Not in scope
+
+- Creating named ad units in the AdSense dashboard (you can do that later; paste the IDs into `AD_SLOT_IDS` and I'll wire them).
+- Adding new `<AdSlot />` positions.
+- Any A/B testing of ad density.
