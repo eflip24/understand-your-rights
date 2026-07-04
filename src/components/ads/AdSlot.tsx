@@ -33,7 +33,11 @@ export default function AdSlot({ slot, className = "" }: AdSlotProps) {
     if (pushed.current) return;
     if (typeof window === "undefined") return;
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      window.adsbygoogle = window.adsbygoogle || [];
+      if (!consent?.advertising) {
+        window.adsbygoogle.requestNonPersonalizedAds = 1;
+      }
+      window.adsbygoogle.push({});
       pushed.current = true;
     } catch {
       // AdSense not loaded yet (script may be blocked); silently ignore.
