@@ -14,6 +14,9 @@ import AppRoutes from "@/AppRoutes";
 import LocaleSync from "@/i18n/LocaleSync";
 import { supabase } from "@/integrations/supabase/client";
 import { setRuntimeRegionIntros } from "@/data/eu/regionIntros";
+import { initAutoAds, shouldShowAds } from "@/lib/adsense";
+import { useConsent } from "@/lib/consent";
+import { useLocation } from "react-router-dom";
 import "@/i18n/config";
 
 
