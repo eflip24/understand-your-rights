@@ -73,6 +73,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <LocaleSync />
+            <AdSenseAutoAdsInit />
             <ScrollToTop />
             <div className="flex min-h-screen flex-col">
               <Navbar />
