@@ -124,6 +124,9 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "dui-cost-estimator": React.lazy(() => import("@/components/tools/DUICostEstimator")),
   "divorce-buyout": React.lazy(() => import("@/components/tools/DivorceBuyoutCalculator")),
   "eeoc-settlement": React.lazy(() => import("@/components/tools/EEOCSettlementCalculator")),
+  "wage-garnishment": React.lazy(() => import("@/components/tools/WageGarnishmentCalculator")),
+  "ssdi-backpay": React.lazy(() => import("@/components/tools/SSDIBackPayEstimator")),
+  "medical-lien": React.lazy(() => import("@/components/tools/MedicalLienEstimator")),
 };
 
 const ToolLoader = () => (
