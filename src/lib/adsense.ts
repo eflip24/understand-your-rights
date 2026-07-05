@@ -9,6 +9,7 @@ export const AD_SLOT_IDS: Record<string, string> = {
   "mid-content": "",
   "end-of-article": "",
   "post-result": "",
+  "tool-result": "",
   "sidebar": "",
   "in-feed": "",
 };
