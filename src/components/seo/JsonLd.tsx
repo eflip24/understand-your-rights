@@ -67,7 +67,12 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
   };
 }
 
-export function webApplicationSchema(name: string, description: string, url: string) {
+export function webApplicationSchema(
+  name: string,
+  description: string,
+  url: string,
+  areaServed?: string[],
+) {
   return {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -81,6 +86,9 @@ export function webApplicationSchema(name: string, description: string, url: str
       price: "0",
       priceCurrency: "USD",
     },
+    ...(areaServed && areaServed.length
+      ? { areaServed: areaServed.map((code) => ({ "@type": "Country", name: code })) }
+      : {}),
   };
 }
 
