@@ -9,17 +9,18 @@ import { useTranslation } from "react-i18next";
  * ToolPageLayout via faqSchema() using tool.faqs — this component only
  * adds the narrative explainer, keyed by tool id.
  *
- * Translation keys (in tools.json):
- *   internals.<toolId>.seoContext.heading   (H2 for the explainer)
- *   internals.<toolId>.seoContext.paragraphs[i]  (array of prose paragraphs)
+ * Translation keys (in tools.json, top-level `seoContext` map keyed
+ * by tool id — kebab-case, matches Tool.id in src/data/tools.ts):
+ *   seoContext.<toolId>.heading        (H2 for the explainer)
+ *   seoContext.<toolId>.paragraphs[i]  (array of prose paragraphs)
  *
  * If no seoContext block is defined for a tool, this renders nothing.
  */
 export default function ToolSeoContext({ toolId }: { toolId: string }) {
   const { t, i18n } = useTranslation("tools");
 
-  const heading = t(`internals.${toolId}.seoContext.heading`, { defaultValue: "" });
-  const paragraphsRaw = t(`internals.${toolId}.seoContext.paragraphs`, {
+  const heading = t(`seoContext.${toolId}.heading`, { defaultValue: "" });
+  const paragraphsRaw = t(`seoContext.${toolId}.paragraphs`, {
     returnObjects: true,
     defaultValue: [],
   }) as unknown;
