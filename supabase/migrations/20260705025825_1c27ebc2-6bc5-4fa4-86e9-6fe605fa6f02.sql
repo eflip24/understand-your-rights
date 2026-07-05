@@ -1,0 +1,3 @@
+
+ALTER TABLE public.blog_posts ALTER COLUMN wp_id DROP NOT NULL;
+ALTER TABLE public.blog_posts ADD COLUMN IF NOT EXISTS meta JSONB;

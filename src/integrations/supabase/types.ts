@@ -87,11 +87,12 @@ export type Database = {
           excerpt: string
           featured_image_url: string | null
           id: string
+          meta: Json | null
           published_at: string | null
           slug: string
           status: string
           title: string
-          wp_id: number
+          wp_id: number | null
         }
         Insert: {
           ai_generated?: boolean
@@ -101,11 +102,12 @@ export type Database = {
           excerpt?: string
           featured_image_url?: string | null
           id?: string
+          meta?: Json | null
           published_at?: string | null
           slug: string
           status?: string
           title: string
-          wp_id: number
+          wp_id?: number | null
         }
         Update: {
           ai_generated?: boolean
@@ -115,11 +117,12 @@ export type Database = {
           excerpt?: string
           featured_image_url?: string | null
           id?: string
+          meta?: Json | null
           published_at?: string | null
           slug?: string
           status?: string
           title?: string
-          wp_id?: number
+          wp_id?: number | null
         }
         Relationships: []
       }
