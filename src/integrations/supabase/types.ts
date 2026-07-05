@@ -123,6 +123,179 @@ export type Database = {
         }
         Relationships: []
       }
+      content_clusters: {
+        Row: {
+          active: boolean
+          auto_publish: boolean
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+          priority_score: number | null
+          seed_keywords: string[]
+          target_blogs: string[]
+          target_tools: string[]
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          auto_publish?: boolean
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+          priority_score?: number | null
+          seed_keywords?: string[]
+          target_blogs?: string[]
+          target_tools?: string[]
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          auto_publish?: boolean
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+          priority_score?: number | null
+          seed_keywords?: string[]
+          target_blogs?: string[]
+          target_tools?: string[]
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      growth_metrics: {
+        Row: {
+          avg_position: number | null
+          clicks: number | null
+          created_at: string
+          id: string
+          impressions: number | null
+          keyword: string | null
+          meta: Json | null
+          page_url: string
+          rpm: number | null
+          snapshot_date: string
+        }
+        Insert: {
+          avg_position?: number | null
+          clicks?: number | null
+          created_at?: string
+          id?: string
+          impressions?: number | null
+          keyword?: string | null
+          meta?: Json | null
+          page_url: string
+          rpm?: number | null
+          snapshot_date?: string
+        }
+        Update: {
+          avg_position?: number | null
+          clicks?: number | null
+          created_at?: string
+          id?: string
+          impressions?: number | null
+          keyword?: string | null
+          meta?: Json | null
+          page_url?: string
+          rpm?: number | null
+          snapshot_date?: string
+        }
+        Relationships: []
+      }
+      growth_runs: {
+        Row: {
+          error: string | null
+          finished_at: string | null
+          function_name: string
+          id: string
+          started_at: string
+          stats: Json
+          status: string
+        }
+        Insert: {
+          error?: string | null
+          finished_at?: string | null
+          function_name: string
+          id?: string
+          started_at?: string
+          stats?: Json
+          status?: string
+        }
+        Update: {
+          error?: string | null
+          finished_at?: string | null
+          function_name?: string
+          id?: string
+          started_at?: string
+          stats?: Json
+          status?: string
+        }
+        Relationships: []
+      }
+      keyword_candidates: {
+        Row: {
+          cluster: string | null
+          competition: number | null
+          cpc: number | null
+          created_at: string
+          database: string
+          id: string
+          intent: string | null
+          kd: number | null
+          keyword: string
+          priority_score: number | null
+          serp_snapshot: Json | null
+          source_run: string | null
+          status: string
+          updated_at: string
+          volume: number | null
+        }
+        Insert: {
+          cluster?: string | null
+          competition?: number | null
+          cpc?: number | null
+          created_at?: string
+          database?: string
+          id?: string
+          intent?: string | null
+          kd?: number | null
+          keyword: string
+          priority_score?: number | null
+          serp_snapshot?: Json | null
+          source_run?: string | null
+          status?: string
+          updated_at?: string
+          volume?: number | null
+        }
+        Update: {
+          cluster?: string | null
+          competition?: number | null
+          cpc?: number | null
+          created_at?: string
+          database?: string
+          id?: string
+          intent?: string | null
+          kd?: number | null
+          keyword?: string
+          priority_score?: number | null
+          serp_snapshot?: Json | null
+          source_run?: string | null
+          status?: string
+          updated_at?: string
+          volume?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "keyword_candidates_source_run_fkey"
+            columns: ["source_run"]
+            isOneToOne: false
+            referencedRelation: "growth_runs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string | null
@@ -203,6 +376,62 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      sprint_queue: {
+        Row: {
+          approved_at: string | null
+          approved_by: string | null
+          cluster_id: string | null
+          created_at: string
+          generated_asset_id: string | null
+          id: string
+          notes: string | null
+          published_at: string | null
+          spec: Json
+          status: string
+          title: string
+          type: string
+          updated_at: string
+        }
+        Insert: {
+          approved_at?: string | null
+          approved_by?: string | null
+          cluster_id?: string | null
+          created_at?: string
+          generated_asset_id?: string | null
+          id?: string
+          notes?: string | null
+          published_at?: string | null
+          spec?: Json
+          status?: string
+          title: string
+          type: string
+          updated_at?: string
+        }
+        Update: {
+          approved_at?: string | null
+          approved_by?: string | null
+          cluster_id?: string | null
+          created_at?: string
+          generated_asset_id?: string | null
+          id?: string
+          notes?: string | null
+          published_at?: string | null
+          spec?: Json
+          status?: string
+          title?: string
+          type?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sprint_queue_cluster_id_fkey"
+            columns: ["cluster_id"]
+            isOneToOne: false
+            referencedRelation: "content_clusters"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       tool_translations: {
         Row: {
