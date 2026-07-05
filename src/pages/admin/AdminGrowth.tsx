@@ -94,11 +94,12 @@ export default function AdminGrowth() {
     }
   };
 
-  const updateSprint = async (id: string, patch: Partial<Sprint>) => {
+  const updateSprint = async (id: string, patch: Record<string, unknown>) => {
     const { error } = await supabase.from("sprint_queue").update(patch).eq("id", id);
     if (error) toast.error(error.message);
     else await load();
   };
+
 
   const generate = async (sprint: Sprint) => {
     setBusy(sprint.id);
