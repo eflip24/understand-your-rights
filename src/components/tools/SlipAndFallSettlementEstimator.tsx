@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 const severityBands: Record<string, { label: string; low: number; high: number }> = {
   minor: { label: "Minor bruising / no lasting injury", low: 1.0, high: 2.0 },
@@ -85,6 +86,7 @@ export default function SlipAndFallSettlementEstimator() {
           <p className="text-xs text-muted-foreground">Uses the multiplier method common in premises-liability claims, adjusted for comparative fault. General information only — not legal advice.</p>
         </div>
       )}
+      <ToolResultAd show={!!result} />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useTranslation } from "react-i18next";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 export default function WrongfulTerminationValueEstimator() {
   const { t } = useTranslation(["tools", "common"]);
@@ -95,6 +96,7 @@ export default function WrongfulTerminationValueEstimator() {
           </CardContent>
         </Card>
       )}
+      <ToolResultAd show={!!result} />
     </div>
   );
 }
