@@ -119,6 +119,11 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "wrongful-term-value": React.lazy(() => import("@/components/tools/WrongfulTerminationValueEstimator")),
   "severance-fairness": React.lazy(() => import("@/components/tools/SeveranceFairnessScore")),
   "lease-break-penalty": React.lazy(() => import("@/components/tools/LeaseBreakPenaltyCalculator")),
+  "slip-and-fall-settlement": React.lazy(() => import("@/components/tools/SlipAndFallSettlementEstimator")),
+  "workers-comp-settlement": React.lazy(() => import("@/components/tools/WorkersCompSettlementCalculator")),
+  "dui-cost-estimator": React.lazy(() => import("@/components/tools/DUICostEstimator")),
+  "divorce-buyout": React.lazy(() => import("@/components/tools/DivorceBuyoutCalculator")),
+  "eeoc-settlement": React.lazy(() => import("@/components/tools/EEOCSettlementCalculator")),
 };
 
 const ToolLoader = () => (
