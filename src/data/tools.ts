@@ -1421,12 +1421,12 @@ export const tools: Tool[] = [
   // Personal Injury & Insurance Calculators
   {
     id: "settlement-estimator",
-    name: "Settlement Value Estimator",
+    name: "Personal Injury Settlement Calculator",
     slug: "settlement-estimator",
     category: "consumer",
     categoryLabel: "Consumer Tools",
-    description: "Estimate your personal injury or auto accident settlement value. Enter medical bills, lost wages, and injury severity to get a range based on the multiplier method.",
-    shortDescription: "Estimate PI/auto accident settlement ranges.",
+    description: "Free personal injury settlement calculator. Estimate the value of a car accident or personal injury claim using the multiplier method — enter medical bills, lost wages, and injury severity to get a settlement range.",
+    shortDescription: "Estimate a personal injury settlement value.",
     icon: Calculator,
     popular: true,
     faqs: [
@@ -1741,9 +1741,9 @@ export const tools: Tool[] = [
     relatedToolIds: ["statute-of-limitations", "small-claims-limit", "settlement-estimator"] },
 
   // ===== Employment (case value + fairness) =====
-  { id: "wrongful-term-value", name: "Wrongful Termination Case Value Estimator", slug: "wrongful-termination-case-value-estimator", category: "employment", categoryLabel: "Employment Tools",
-    description: "Estimate the potential value of a wrongful termination claim including lost wages, lost benefits, emotional distress damages, and attorney fees.",
-    shortDescription: "Estimate your wrongful termination case value.", icon: BarChart3, popular: true,
+  { id: "wrongful-term-value", name: "Wrongful Termination Settlement Calculator", slug: "wrongful-termination-case-value-estimator", category: "employment", categoryLabel: "Employment Tools",
+    description: "Free wrongful termination settlement calculator. Estimate the value of a wrongful termination claim including back pay, front pay, lost benefits, emotional distress damages, and attorney fees.",
+    shortDescription: "Estimate a wrongful termination settlement value.", icon: BarChart3, popular: true,
     faqs: [
       { question: "What damages are typical?", answer: "Back pay (wages from termination to settlement), front pay (future lost earnings), benefits, and in some cases emotional distress and punitive damages." },
       { question: "Do I have to mitigate damages?", answer: "Yes — you must make reasonable efforts to find new work. Wages from a new job offset back pay." },
