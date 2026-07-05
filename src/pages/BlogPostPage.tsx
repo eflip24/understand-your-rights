@@ -292,9 +292,9 @@ export default function BlogPostPage() {
           <article className="flex-1 min-w-0">
             <AdSlot slot="above-content" className="mb-6" />
             <Card>
-              <CardContent className="p-8 md:p-10">
+              <CardContent className="p-4 sm:p-8 md:p-10">
                 <div
-                  className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-headings:text-foreground prose-p:text-foreground/85 prose-p:leading-relaxed prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-img:shadow-md prose-blockquote:border-accent prose-blockquote:bg-muted/50 prose-blockquote:rounded-r-lg prose-blockquote:py-1 prose-strong:text-foreground prose-li:text-foreground/85"
+                  className="prose prose-base sm:prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-headings:text-foreground prose-headings:break-words prose-p:text-foreground/85 prose-p:leading-relaxed prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-img:shadow-md prose-blockquote:border-accent prose-blockquote:bg-muted/50 prose-blockquote:rounded-r-lg prose-blockquote:py-1 prose-strong:text-foreground prose-li:text-foreground/85"
                   dangerouslySetInnerHTML={{ __html: processedContent }}
                 />
               </CardContent>
