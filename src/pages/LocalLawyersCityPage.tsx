@@ -310,6 +310,81 @@ export default function LocalLawyersCityPage() {
         </div>
       </section>
 
+      {/* Sprint 6 — Questions to ask + Average cost + Recommender */}
+      {(() => {
+        const paContent = getPracticeAreaContent(practiceArea.slug);
+        if (!paContent) return null;
+        const costBand = formatStateCostBand(paContent, stateInfo.abbreviation, stateInfo.name);
+        const topic = RECOMMENDER_TOPIC_MAP[practiceArea.slug];
+        return (
+          <>
+            {/* Average lawyer cost */}
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                <DollarSign className="h-5 w-5 text-accent" />
+                Average {practiceArea.shortTitle} Lawyer Cost in {stateInfo.name}
+              </h2>
+              <div className="rounded-lg border bg-card p-4 md:p-5 space-y-3">
+                <p className="text-sm text-muted-foreground">
+                  <strong className="text-foreground">Fee model:</strong> {paContent.feeModel}
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {paContent.costRange.contingencyPct && (
+                    <div className="rounded border bg-background p-3">
+                      <p className="text-xs text-muted-foreground">Typical contingency</p>
+                      <p className="text-lg font-bold text-foreground">{paContent.costRange.contingencyPct}</p>
+                    </div>
+                  )}
+                  {paContent.costRange.hourlyRange && (
+                    <div className="rounded border bg-background p-3">
+                      <p className="text-xs text-muted-foreground">Hourly range</p>
+                      <p className="text-lg font-bold text-foreground">{paContent.costRange.hourlyRange}</p>
+                    </div>
+                  )}
+                  {paContent.costRange.flatFeeRange && (
+                    <div className="rounded border bg-background p-3">
+                      <p className="text-xs text-muted-foreground">Flat-fee range</p>
+                      <p className="text-lg font-bold text-foreground">{paContent.costRange.flatFeeRange}</p>
+                    </div>
+                  )}
+                  {paContent.costRange.consultFee && (
+                    <div className="rounded border bg-background p-3">
+                      <p className="text-xs text-muted-foreground">Consultation</p>
+                      <p className="text-lg font-bold text-foreground">{paContent.costRange.consultFee}</p>
+                    </div>
+                  )}
+                </div>
+                {costBand && (
+                  <p className="text-xs text-muted-foreground italic">
+                    {costBand}. Actual quotes vary by firm, case complexity, and city.
+                  </p>
+                )}
+              </div>
+            </section>
+
+            {/* Questions to ask */}
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                <HelpCircle className="h-5 w-5 text-accent" />
+                Questions to Ask a {practiceArea.shortTitle} Lawyer in {cityInfo.name}
+              </h2>
+              <p className="text-sm text-muted-foreground mb-4">
+                Bring this checklist to your free consultation. Firms that refuse to answer plainly are usually not the right fit.
+              </p>
+              <ol className="space-y-2.5 list-decimal pl-5">
+                {paContent.questions.map((q) => (
+                  <li key={q} className="text-sm text-foreground leading-relaxed">
+                    {q}
+                  </li>
+                ))}
+              </ol>
+            </section>
+
+            {topic && <ToolRecommender topic={topic} className="mb-8" />}
+          </>
+        );
+      })()}
+
       {practiceArea.relatedPillarPath && (
         <div className="mb-8 p-4 rounded-lg bg-accent/5 border border-accent/20">
           <p className="text-sm text-muted-foreground">
