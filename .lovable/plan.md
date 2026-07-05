@@ -1,122 +1,110 @@
 
-# Automated CPC Growth Engine — Full Plan
+# LegallySpoken Growth Plan (Semrush-driven, US database)
 
-## Reality check on your plan
+## 1. Where you actually stand
 
-Your 4-phase plan is solid. Two things to adjust before we build:
+Semrush sees **59 ranking keywords, all pages 8–10, 0 estimated traffic**. Highest positions today are `salary and overtime laws` (#37) and `legalese translator` (#82). You're indexed but nothing is close to page 1 yet.
 
-1. **~40% of your "new tool ideas" already exist** (120 tools shipped, incl. `AlimonyCalculator`, `ChildSupportCalculator`, `EvictionNoticeLookup`, `DUICostEstimator`, `DivorceCostEstimator`, `EEOCSettlementCalculator`, `AttorneyFeeCalculator`, `FinalPaycheckLookup`, settlement estimators, etc.). We should **deepen/state-ize the existing ones** before shipping duplicates.
-2. **The whole thing should be push-button, not copy-paste-Monday.** We already have `pg_cron`, the Semrush connector, Lovable AI Gateway, and an `ai-blog` pipeline — we can wire the loop end-to-end so Monday-morning prompts disappear.
+**Strengths already shipped:** ~120+ tools including PI settlement, workers' comp, EEOC, alimony, statute of limitations, overtime, security deposit, wage garnishment, SSDI back pay, medical lien; lawyer directory matrix; multilingual state guides; AI blog pipeline; growth automation (keyword-radar, sprint-planner, content-forge).
 
-Below is what to build.
+**Biggest real gap:** hardly any of these tools have supporting cornerstone/hub content or SERP-optimized landing copy targeting the exact commercial phrases below. The calculators exist — the **money pages** around them don't.
 
----
+## 2. Reality check on the CPC target
 
-## Part A — The automation loop (the core deliverable)
+Pure "calculator" queries almost never hit $15 CPC — advertisers bid on the **lawyer intent** immediately above them ($40–$160 CPC). Winning strategy = rank calculators/tools on low-KD terms, then funnel to lawyer-directory pages where AdSense actually monetizes. All numbers below are live Semrush pulls (US).
 
-Four new edge functions, all cron-triggered, all writing to a new `growth_pipeline` schema. You approve/reject from an admin dashboard; nothing publishes without your click unless you flip a per-cluster `auto_publish` flag.
+## 3. Six clusters, ranked by (CPC × Volume) ÷ (KD+10)
 
-```text
-   Mon 07:00 UTC          Wed 07:00 UTC          Daily 06:00 UTC        1st of month
-        │                       │                       │                     │
-        ▼                       ▼                       ▼                     ▼
-  keyword-radar  ──▶  sprint-planner  ──▶  content-forge  ──▶  growth-analytics
-  (Semrush pull)      (cluster+score)     (tool/blog/hub gen)   (RPM + rank review)
-        │                       │                       │                     │
-        └──────────────► growth_pipeline (Supabase) ◄────┴─────────────────────┘
-                                │
-                                ▼
-                        /admin/growth  (approve, edit, publish)
-```
+### Cluster A — Personal Injury Settlement Money Terms  ⭐ #1 priority
+| Keyword | Vol | CPC | KD |
+|---|---|---|---|
+| injury settlement | 8,100 | **$28.97** | 39 |
+| bodily injury settlement | 720 | **$14.41** | ~30 |
+| personal injury settlements | 880 | **$14.38** | ~30 |
+| motorcycle accident settlement calculator | 480 | **$17.38** | 14 |
+| truck accident settlement calculator | 260 | $13.75 | 3 |
+| car accident settlement calculator | 1,300 | $12.45 | 22 |
+| pain and suffering calculator | 1,600 | $8.15 | 12 |
+| how much to ask for in a personal injury settlement | 320 | $10.88 | ~20 |
+| how long does a personal injury settlement take | 170 | $8.45 | ~20 |
+| are personal injury settlements taxable | 1,300 | $2.39 | ~15 |
 
-**Tables (all RLS + GRANTs, admin-role gated via existing `has_role`):**
-- `keyword_candidates` — id, keyword, cpc, volume, kd, intent, cluster, source_run, status
-- `content_clusters` — id, name, pillar_id, target_tools[], target_blogs[], priority_score, auto_publish
-- `sprint_queue` — id, cluster_id, type (`tool` | `blog` | `state_hub` | `lawyer_page`), spec_json, status, generated_asset_id
-- `growth_metrics` — page_url, impressions, clicks, rpm, avg_position, snapshot_date
+### Cluster B — Employment Tools
+| Keyword | Vol | CPC | KD |
+|---|---|---|---|
+| overtime pay calculator | 2,400 | $5.50 | 23 |
+| severance pay calculator | 2,400 | $0.14 | 19 |
+| wrongful termination settlement calculator | 720 | $3.62 | 9 |
+| eeoc settlement calculator | 320 | $4.87 | 5 |
+| final paycheck laws | 170 | $2.96 | 52 |
+| unemployment benefits calculator | 1,300 | — | 44 |
 
-**Edge functions:**
-1. `keyword-radar` (Mon) — calls Semrush connector for the 6 clusters you listed + auto-discovered adjacent ones; filters CPC ≥ $15, KD ≤ 55, vol 300–5k; upserts to `keyword_candidates`.
-2. `sprint-planner` (Wed) — scores clusters `(CPC × volume × feasibility) / (KD+10)`; picks top 2; drafts a spec (tool schema, sections, FAQ, internal links). Writes to `sprint_queue` with `status='awaiting_review'`.
-3. `content-forge` (daily) — pulls next approved sprint, generates: blog post HTML (existing `generate-blog-article` path), hero image (Gemini image), and for **tool sprints** a scaffolded React component file + `tools.ts` entry + i18n keys committed to a draft branch (or written to `pending_tools` for you to accept).
-4. `growth-analytics` (monthly) — Semrush `top_pages` + `page_analysis` for our domain; flags underperformers, suggests refresh sprints.
+### Cluster C — Housing / Tenant
+| Keyword | Vol | CPC | KD |
+|---|---|---|---|
+| how to break a lease | 2,400 | $0.09 | 40 |
+| rent increase calculator | 1,000 | $1.16 | 22 |
+| squatters rights by state | 320 | $2.00 | 32 |
+| notice to quit template | 210 | $0.99 | 25 |
+| security deposit calculator | 170 | — | 11 |
 
-**Admin UI** — new `/admin/growth` route: cluster board, sprint queue with diff preview, one-click publish/reject, RPM heatmap by page type. Reuses existing admin RBAC.
+### Cluster D — Legal Fees / Consumer Money
+| Keyword | Vol | CPC | KD |
+|---|---|---|---|
+| wage garnishment calculator | 1,300 | $1.37 | 14 |
+| ssdi back pay calculator | 720 | $1.24 | 17 |
+| estate tax calculator | 880 | $3.82 | 27 |
+| bankruptcy means test calculator | 260 | $3.40 | 18 |
+| probate cost calculator | 140 | $2.45 | 16 |
+| attorney fee calculator | 90 | $4.42 | 4 |
 
-**Cron wiring:** `pg_cron` + `pg_net` calling each function with `CRON_SECRET` header (already provisioned).
+### Cluster E — Family Law
+| Keyword | Vol | CPC | KD |
+|---|---|---|---|
+| child support calculator | 18,100 | $0.80 | 65 (skip head; win state pages) |
+| alimony calculator | 2,400 | $0.58 | 27 |
+| spousal support calculator | 1,600 | $0.73 | 32 |
+| parenting time calculator | 480 | — | 24 |
+| qdro calculator | 110 | $3.24 | 0 |
 
----
+### Cluster F — Mass Tort / MDL Landing Pages (highest CPC ceiling)
+`tylenol autism settlement` (390, KD 34) and `zantac settlement amounts` (70, KD 16) actually show volume; most MDL calculator terms have no Semrush volume but SERPs are thin — Google Discover + AdSense RPM here is exceptional when a case pops.
 
-## Part B — Net-new tools worth building (dedup'd against current 120)
+## 4. Top 5 recommendations (2–4 weeks)
 
-Only ones **not already shipped**, ranked by CPC × intent:
+| # | Build | Cluster | Why |
+|---|---|---|---|
+| 1 | **PI Settlement Hub** at `/personal-injury-settlements` with a rebuilt "How much is my case worth?" flow (multiplier + per-diem toggle, comparative negligence, policy-limit cap, net-to-client). Add sub-pages for motorcycle / truck / car / bodily-injury settlement calculators. Cross-link every one to lawyer-near-me. | A | $15–$29 CPC head terms, KD ≤ 22 on 6 of 10, lawyer-directory funnel = highest AdSense RPM. |
+| 2 | **"Are personal injury settlements taxable?" pillar** + PDF tax-checklist download (email-gate). | A | 3,000+ combined monthly volume in question queries, near-zero KD, purely informational — ranks fast. |
+| 3 | **"How much to ask for in a settlement" interactive worksheet** wrapping SettlementEstimator + AttorneyFeeCalculator side-by-side. | A/D | Long-tail commercial intent, no interactive competitor ranks. |
+| 4 | **State-ize Alimony + Spousal Support** into `/tools/family/alimony-calculator/{state}` — 51 programmatic pages using existing state-guide pattern. | E | 2,400 + 1,600/mo on head terms KD 27–32; state pages cannibalize weak local competition. |
+| 5 | **Mass-Tort Landing Framework** — one template, 8 initial pages (Camp Lejeune, Roundup, Tylenol autism, hair relaxer, Ozempic, Paraquat, 3M, talcum). Zero KD, minute-to-build with content-forge, huge CPC when Discover picks them up. | F | Ad RPM on active MDL pages regularly clears $30+. |
 
-| Tool | Why it wins | Notes |
-|---|---|---|
-| **Statute of Limitations Checker** (claim type × state) | Massive utility, near-zero competition on interactive format | State data table required |
-| **Personal Injury Settlement Value Estimator** (medbills + lost wages + P&S multiplier) | CPC $50–$200 in PI vertical | Extends `SettlementEstimator` with tiered inputs |
-| **Overtime & Unpaid Wages Calculator** (FLSA + state OT rules) | Employment CPC + high search vol | State overtime rules table |
-| **Security Deposit Return Calculator** (state deadlines + interest) | Fills gap next to `EvictionNoticeLookup` | |
-| **Legal Fee Estimator by Practice Area** | Rising trend, monetizes lawyer-directory CTAs | Cross-links directory |
-| **Medical Lien / Subrogation Estimator** | Sky-high PI CPC, almost no interactive tools rank | |
-| **Wage Garnishment Calculator** (state caps) | Consumer-debt CPC | |
-| **SSDI/SSI Back Pay Estimator** | Very high intent, low competition | |
+**Every build must include:** state selector where applicable · results explanation card · "Save my case" (existing anon-token pattern) · PDF export · `ToolRecommender` + lawyer-directory CTA · FAQ + HowTo JSON-LD · breadcrumb schema · internal links to 3 sibling tools and the practice-area guide.
 
-We should **not** re-ship child support, alimony, divorce cost, DUI cost, wrongful termination — those exist. Instead, **state-ize them**: add state selector + per-state guideline data + `/tools/{tool}/{state}` programmatic pages (you already have the `programmatic-state-guides` pattern per project memory).
+**Ad zones** (respect existing AdSense-compliance gating): one in-content unit after the input form, one after results, one in the "Related tools" strip. No ads on empty-state or above the fold on tool pages.
 
----
+## 5. Quick wins (ship within a week)
 
-## Part C — Lawyer directory expansion (biggest untapped lever)
+1. "Personal injury settlement timeline: 6 steps and how long each takes" article — targets 170/mo, near-zero KD.
+2. Comparison table: "Multiplier method vs Per-diem method" embedded in the PI hub.
+3. FAQ block "Are settlements taxable?" injected into every existing settlement tool result.
+4. "What to do after a car accident" 10-step checklist (PDF-downloadable).
+5. "State-by-state motorcycle helmet + insurance laws" comparison table — feeds motorcycle settlement calculator.
+6. "Attorney contingency fee explained" 800-word explainer linking every settlement tool to `attorney-fee-calculator`.
+7. "How pain and suffering is calculated" long-form with worked examples — targets 1,600/mo, KD 12.
 
-The directory currently serves `/lawyer-near-me` with static listings. To scale it into a CPC magnet:
+## 6. 30-day action plan
 
-1. **Practice-area × city matrix pages** — `/lawyer/{practice-area}/{city}` (e.g. `/lawyer/personal-injury/houston`). Programmatic, uses existing pillar pattern + LocalBusiness JSON-LD. Target: top 25 practice areas × top 100 US metros = 2,500 pages, generated in batches via `content-forge`.
-2. **"Questions to ask a {practice-area} lawyer" content blocks** — AI-generated, per practice area, embedded in each city page. High "consult" intent → advertiser gold.
-3. **"Average {practice-area} lawyer cost in {state}"** — one component, data-driven, replaces 50 blog posts with one dynamic template.
-4. **Directory-to-tool bridge** — each directory page recommends 2–3 relevant calculators; each tool result page recommends nearest lawyers. Doubles pages/session.
-5. **Verified-listing form** (free) — lets real attorneys claim/enrich listings. Builds unique content + backlinks; keep AdSense-compliant (no paid rankings).
+**Week 1** — Ship Recommendation #1 (PI Settlement Hub + 4 sub-calculators + JSON-LD).  
+**Week 2** — Ship Recommendation #2 (taxability pillar) + Quick Wins 1–3.  
+**Week 3** — Ship Recommendation #4 (alimony state fan-out, 51 pages via content-forge).  
+**Week 4** — Ship Recommendation #5 (mass-tort framework + first 4 pages) and Quick Wins 4–7.
 
----
+Run `keyword-radar` weekly and trigger `seo--trigger_scan` after each publish.
 
-## Part D — Engagement & compounding features
+## 7. Single highest-impact first ask
 
-These lift RPM and pages/session on top of everything else:
+> **"Build the Personal Injury Settlement Hub at `/personal-injury-settlements` with the rebuilt calculator flow, 4 sub-pages (car/motorcycle/truck/bodily-injury), taxability FAQ block, PDF export, and full JSON-LD."**
 
-- **"What should I do next?" recommender** — after any tool result, model-driven suggestion of 2–3 tools + 1 blog + 1 directory page. Uses existing `legal-chat` infra.
-- **Downloadable PDF checklists** — auto-generated from tool results (accident, divorce, eviction, wage claim). Email-gated → remarketing list.
-- **State hub pages** — `/legal-tools/{state}` aggregating every tool with that state's data + top attorneys + statute-of-limitations quick answers. Extends existing state-guide pattern.
-- **"Save my case" persistent progress** — anon session token, resume tools later. Compounds returning-visitor value.
-- **Comparison mode** — "DIY cost vs lawyer cost" side-by-side, wraps existing calculators. New page type, high commercial intent.
-- **FAQ + HowTo schema everywhere** — extend the existing JSON-LD `@graph`; unlocks rich results.
-
----
-
-## Part E — What we won't do (and why)
-
-- **No auto-publish by default.** AdSense compliance memory already gates ads on quality; a bad AI page tanks the whole domain. Human approval stays, but it's 1-click instead of copy-paste-prompting.
-- **No duplicate calculators.** Extend existing ones with state logic first.
-- **No "voice optimization" work.** Marginal ROI vs the above; revisit after Part A ships.
-
----
-
-## Rollout order (suggested)
-
-1. **Sprint 1 (this week):** Part A tables + `keyword-radar` + `/admin/growth` skeleton. First real Semrush pull on Monday.
-2. **Sprint 2:** `sprint-planner` + `content-forge` for **blog** type; ship 2 new blog clusters.
-3. **Sprint 3:** Statute of Limitations Checker + Overtime Calculator (Part B top 2).
-4. **Sprint 4:** Lawyer directory practice-area × city matrix (Part C.1) + recommender (Part D.1).
-5. **Sprint 5+:** `content-forge` for **tool** type (scaffolded PRs), `growth-analytics`, remaining Part B/C/D.
-
----
-
-## Technical details
-
-- **Semrush access:** use the Semrush **connector** (per `semrush-tools-guide`) — the built-in chat tools won't run inside an edge function. Trigger `standard_connectors--connect` before Sprint 1.
-- **AI content:** Lovable AI Gateway, `google/gemini-3-flash-preview` for text, `google/gemini-3.1-flash-image` for hero images. No user API key needed.
-- **Cron:** `pg_cron` + `pg_net`, secret via `CRON_SECRET` header (already set). Written via `supabase--insert` per the schedule-jobs pattern (not migration, to keep secrets out of remixes).
-- **Bot protection:** reuse existing multi-layer strategy on all new endpoints.
-- **Localization:** new tools/pages fan out to the 6-locale pillar system already in place.
-- **SEO:** each generated asset ends by calling `seo--trigger_scan`; failures block publish.
-- **Cost guardrail:** hard monthly cap on AI/Semrush credits with alert row in `growth_metrics`.
-
-Approve this and I'll start with Sprint 1.
+That one build hits a $28.97 CPC head term at KD 39 plus 5+ KD-under-25 sub-terms totaling ~4,000 monthly searches, and pipes traffic straight into your highest-RPM lawyer-directory pages.
