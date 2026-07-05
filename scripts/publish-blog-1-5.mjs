@@ -104,16 +104,15 @@ Paired tool label: ${p.tool_label}
 
 Write the article per the schema. Substitute {TOOL_URL} and {TOOL_LABEL} in the CTA with the values above.`;
   // Gemini occasionally returns invalid JSON on long articles (unescaped
-  // quotes/newlines inside "content"). Retry up to 3× with lower temperature
+  // quotes/newlines inside "content"). Retry up to 5× with lower temperature
   // and a stronger JSON-safety reminder before giving up.
   let j;
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  for (let attempt = 1; attempt <= 5; attempt++) {
     try {
       j = await callAiJson({
-        system: SYSTEM + (attempt > 1 ? "\n\nCRITICAL: All double quotes inside HTML attributes MUST be JSON-escaped as \\\". No literal newlines inside string values — use \\n." : ""),
+        system: SYSTEM + (attempt > 1 ? "\n\nCRITICAL: All double quotes inside HTML attributes MUST be JSON-escaped as \\\". No literal newlines inside string values — use \\n. Keep total content under 9000 characters." : ""),
         user,
         temperature: attempt === 1 ? 0.5 : 0.2,
-        model: attempt === 3 ? "openai/gpt-5-mini" : "google/gemini-2.5-flash",
       });
       if (j?.content && j?.excerpt) break;
     } catch (e) {
