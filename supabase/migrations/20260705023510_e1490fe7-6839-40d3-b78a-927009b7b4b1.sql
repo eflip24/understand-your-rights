@@ -1,0 +1,1 @@
+DELETE FROM blog_posts WHERE slug IN ('test-post-delete-me','diag-post-xyz');
