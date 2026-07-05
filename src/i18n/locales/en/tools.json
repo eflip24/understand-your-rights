@@ -1520,9 +1520,9 @@
     ]
   },
   "settlement-estimator": {
-    "name": "Settlement Value Estimator",
-    "description": "Estimate your personal injury or auto accident settlement value. Enter medical bills, lost wages, and injury severity to get a range based on the multiplier method.",
-    "shortDescription": "Estimate PI/auto accident settlement ranges.",
+    "name": "Personal Injury Settlement Calculator",
+    "description": "Free personal injury settlement calculator. Estimate the value of a car accident or personal injury claim using the multiplier method — enter medical bills, lost wages, and injury severity to get a settlement range.",
+    "shortDescription": "Estimate a personal injury settlement value.",
     "faqs": [
       {
         "question": "How accurate is the settlement estimator?",
@@ -2090,9 +2090,9 @@
     ]
   },
   "wrongful-term-value": {
-    "name": "Wrongful Termination Case Value Estimator",
-    "description": "Estimate the potential value of a wrongful termination claim including lost wages, lost benefits, emotional distress damages, and attorney fees.",
-    "shortDescription": "Estimate your wrongful termination case value.",
+    "name": "Wrongful Termination Settlement Calculator",
+    "description": "Free wrongful termination settlement calculator. Estimate the value of a wrongful termination claim including back pay, front pay, lost benefits, emotional distress damages, and attorney fees.",
+    "shortDescription": "Estimate a wrongful termination settlement value.",
     "faqs": [
       {
         "question": "What damages are typical?",

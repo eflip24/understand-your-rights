@@ -1520,9 +1520,9 @@
     ]
   },
   "settlement-estimator": {
-    "name": "Stimatore del Valore di Transazione",
-    "description": "Stima il valore della tua transazione per lesioni personali o incidenti automobilistici. Inserisci le spese mediche, il salario perso e la gravità delle lesioni per ottenere un intervallo basato sul metodo del moltiplicatore.",
-    "shortDescription": "Stima gli intervalli di transazione per lesioni personali/incidenti auto.",
+    "name": "Calcolatore per il risarcimento da lesioni personali",
+    "description": "Calcolatore gratuito per il risarcimento da lesioni personali. Stima il valore di un incidente stradale o di una richiesta di risarcimento per lesioni personali utilizzando il metodo del moltiplicatore: inserisci spese mediche, perdita di reddito e gravità della lesione per ottenere un intervallo di possibile risarcimento.",
+    "shortDescription": "Stima il valore di un risarcimento per lesioni personali.",
     "faqs": [
       {
         "question": "Quanto è accurato lo stimatore di risarcimento?",
@@ -2090,9 +2090,9 @@
     ]
   },
   "wrongful-term-value": {
-    "name": "Stimatore Valore Caso di Licenziamento Illegittimo",
-    "description": "Stima il potenziale valore di un reclamo per licenziamento illegittimo includendo salari persi, benefici persi, danni per sofferenza emotiva e onorari dell'avvocato.",
-    "shortDescription": "Stima il valore del tuo caso di licenziamento illegittimo.",
+    "name": "Calcolatore per il risarcimento da licenziamento illegittimo",
+    "description": "Calcolatore gratuito per il risarcimento da licenziamento illegittimo. Stima il valore di una richiesta di risarcimento per licenziamento includendo retribuzioni arretrate, retribuzione futura, perdita di benefit, danni per sofferenza emotiva e onorari dell'avvocato.",
+    "shortDescription": "Stima il valore di un risarcimento per licenziamento illegittimo.",
     "faqs": [
       {
         "question": "Quali danni sono tipici?",

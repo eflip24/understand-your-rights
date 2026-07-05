@@ -1520,9 +1520,9 @@
     ]
   },
   "settlement-estimator": {
-    "name": "Estimador de Valor de Acuerdo",
-    "description": "Estime el valor de su acuerdo por lesiones personales o accidente automovilístico. Ingrese facturas médicas, salarios perdidos y la gravedad de la lesión para obtener un rango basado en el método multiplicador.",
-    "shortDescription": "Estime los rangos de acuerdo por lesiones personales/accidentes automovilísticos.",
+    "name": "Calculadora de indemnización por lesiones personales",
+    "description": "Calculadora gratuita de indemnización por lesiones personales. Estima el valor de una reclamación por accidente de coche o lesiones personales usando el método del multiplicador — introduce facturas médicas, salarios perdidos y la gravedad de la lesión para obtener un rango de indemnización.",
+    "shortDescription": "Estima el valor de una indemnización por lesiones personales.",
     "faqs": [
       {
         "question": "¿Qué tan preciso es el estimador de indemnizaciones?",
@@ -2090,9 +2090,9 @@
     ]
   },
   "wrongful-term-value": {
-    "name": "Estimador del Valor de un Caso de Despido Impropio",
-    "description": "Estima el valor potencial de una reclamación por despido impropio, incluyendo salarios perdidos, beneficios perdidos, daños por angustia emocional y honorarios de abogados.",
-    "shortDescription": "Estima el valor de tu caso de despido impropio.",
+    "name": "Calculadora de indemnización por despido improcedente",
+    "description": "Calculadora gratuita de indemnización por despido improcedente. Estima el valor de una reclamación por despido improcedente incluyendo salarios atrasados, salarios futuros, prestaciones perdidas, daños por angustia emocional y honorarios de abogados.",
+    "shortDescription": "Estima el valor de una indemnización por despido improcedente.",
     "faqs": [
       {
         "question": "¿Qué daños son típicos?",
