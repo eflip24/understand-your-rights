@@ -29,7 +29,7 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
   const localizedFaqs = toolFaqs(tool);
 
   const schemas = [
-    webApplicationSchema(localizedName, localizedDesc, url),
+    webApplicationSchema(localizedName, localizedDesc, url, TIER_A_AREAS[tool.id]),
     ...(localizedFaqs.length ? [faqSchema(localizedFaqs)] : []),
   ];
   return (
