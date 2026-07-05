@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import { Outlet, Link, useNavigate, useLocation } from "react-router-dom";
 import { useAdminRole } from "@/hooks/useAdminRole";
 import { useAuth } from "@/contexts/AuthContext";
-import { LayoutDashboard, FileText, Tags, ArrowLeft, Loader2 } from "lucide-react";
+import { LayoutDashboard, FileText, Tags, TrendingUp, ArrowLeft, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const sidebarLinks = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Blog Posts", href: "/admin/blog", icon: FileText },
   { label: "Categories", href: "/admin/categories", icon: Tags },
+  { label: "Growth", href: "/admin/growth", icon: TrendingUp },
 ];
 
 export default function AdminLayout() {
