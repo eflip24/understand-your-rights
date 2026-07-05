@@ -11,6 +11,23 @@ import ToolSeoContext from "@/components/tools/ToolSeoContext";
 import { useLocalizedPath } from "@/i18n/paths";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
 
+
+/**
+ * EU Track A: WebApplication.areaServed hint for high-CPC Tier-A tools.
+ * Signals to Google that these tools serve US + DE/FR/IT markets so
+ * localized copies show up for EU-desktop ad-context targeting.
+ */
+const TIER_A_AREAS: Record<string, string[]> = {
+  "settlement-estimator":     ["US", "DE", "FR", "IT"],
+  "wrongful-term-value":      ["US", "DE", "FR", "IT"],
+  "divorce-cost":             ["US", "DE", "FR", "IT"],
+  "slip-and-fall-settlement": ["US", "DE", "FR", "IT"],
+  "workers-comp-settlement":  ["US", "DE", "FR", "IT"],
+  "dui-cost-estimator":       ["US", "DE", "FR", "IT"],
+  "divorce-buyout":           ["US", "DE", "FR", "IT"],
+  "eeoc-settlement":          ["US", "DE", "FR", "IT"],
+};
+
 interface ToolPageLayoutProps {
   tool: Tool;
   children: React.ReactNode;
@@ -29,7 +46,7 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
   const localizedFaqs = toolFaqs(tool);
 
   const schemas = [
-    webApplicationSchema(localizedName, localizedDesc, url),
+    webApplicationSchema(localizedName, localizedDesc, url, TIER_A_AREAS[tool.id]),
     ...(localizedFaqs.length ? [faqSchema(localizedFaqs)] : []),
   ];
   return (
