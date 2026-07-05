@@ -7,7 +7,13 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      // Responsive gutter: tight on phones so content isn't crushed,
+      // roomier on tablets/desktop. Fixes cramped blog + tool pages.
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        lg: "2rem",
+      },
       screens: {
         "2xl": "1400px",
       },
