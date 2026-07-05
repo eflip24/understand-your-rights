@@ -1,4 +1,5 @@
 import ToolRecommender from "@/components/tools/ToolRecommender";
+import SettlementTaxabilityFAQ from "@/components/tools/SettlementTaxabilityFAQ";
 import { useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -290,6 +291,7 @@ export default function WorkersCompSettlementCalculator() {
         Estimator only, not legal advice. Workers' comp rules and benefit formulas vary widely by state. Attorney fees are capped by statute in most states (commonly 15–25%). Speak with a licensed workers' comp attorney before signing any settlement, MSA, or clincher.
       </p>
 
+      <SettlementTaxabilityFAQ variant="workers-comp" className="mt-6" />
       <ToolRecommender topic="workers-compensation" />
     </div>
   );

@@ -1,4 +1,5 @@
 import ToolRecommender from "@/components/tools/ToolRecommender";
+import SettlementTaxabilityFAQ from "@/components/tools/SettlementTaxabilityFAQ";
 import { useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -273,6 +274,7 @@ export default function SettlementEstimator() {
         Estimator only, not legal advice. Actual settlements depend on venue, defendant, insurance posture, evidence, credibility, and negotiation. Speak with a licensed personal injury attorney for a case evaluation — most work on contingency (no fee unless you recover).
       </p>
 
+      <SettlementTaxabilityFAQ variant="personal-injury" className="mt-6" />
       <ToolRecommender topic="personal-injury" />
     </div>
   );

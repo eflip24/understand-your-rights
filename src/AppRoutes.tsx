@@ -75,6 +75,8 @@ const EuLawyersRegionPage = React.lazy(() => import("@/pages/eu/EuLawyersRegionP
 const ImpressumPage = React.lazy(() => import("@/pages/legal/ImpressumPage"));
 const PersonalInjurySettlementHub = React.lazy(() => import("@/pages/PersonalInjurySettlementHub"));
 const PersonalInjurySettlementSubPage = React.lazy(() => import("@/pages/PersonalInjurySettlementSubPage"));
+const PersonalInjurySettlementTaxability = React.lazy(() => import("@/pages/PersonalInjurySettlementTaxability"));
+const PersonalInjurySettlementTimeline = React.lazy(() => import("@/pages/PersonalInjurySettlementTimeline"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
@@ -134,6 +136,8 @@ export default function AppRoutes() {
       <Route path="/landlord-tenant-law/:state/:slug" element={<StateClusterArticlePage />} />
       <Route path="/ai-tech-law/:state/:slug" element={<StateClusterArticlePage />} />
       <Route path="/personal-injury-settlements" element={<PersonalInjurySettlementHub />} />
+      <Route path="/personal-injury-settlements/taxability" element={<PersonalInjurySettlementTaxability />} />
+      <Route path="/personal-injury-settlements/timeline" element={<PersonalInjurySettlementTimeline />} />
       <Route path="/personal-injury-settlements/:vertical" element={<PersonalInjurySettlementSubPage />} />
       <Route path="/lawyer-near-me" element={<LocalLawyersDirectory />} />
       <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
