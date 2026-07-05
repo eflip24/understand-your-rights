@@ -271,6 +271,8 @@ export default function SettlementEstimator() {
       <p className="text-xs text-muted-foreground border-t pt-3">
         Estimator only, not legal advice. Actual settlements depend on venue, defendant, insurance posture, evidence, credibility, and negotiation. Speak with a licensed personal injury attorney for a case evaluation — most work on contingency (no fee unless you recover).
       </p>
+
+      <ToolRecommender topic="personal-injury" />
     </div>
   );
 }

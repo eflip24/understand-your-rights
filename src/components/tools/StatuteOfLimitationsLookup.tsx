@@ -147,6 +147,8 @@ export default function StatuteOfLimitationsLookup() {
       <p className="text-xs text-muted-foreground border-t pt-3">
         Educational reference only — not legal advice. Statutes change; verify with a licensed attorney in your jurisdiction before relying on these figures.
       </p>
+
+      <ToolRecommender topic="statute-of-limitations" />
     </div>
   );
 }
