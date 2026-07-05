@@ -96,7 +96,7 @@ export default function WrongfulTerminationValueEstimator() {
           </CardContent>
         </Card>
       )}
-      <ToolResultAd show={!!result} />
+      <ToolResultAd show={!!salary} />
     </div>
   );
 }
