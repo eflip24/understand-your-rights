@@ -104,7 +104,7 @@ export default function DivorceCostEstimator() {
           <p className="text-xs text-muted-foreground">Estimates are per spouse. Costs scale dramatically with conflict — uncontested divorces cost a fraction of contested ones. Not legal advice.</p>
         </CardContent>
       </Card>
-      <ToolResultAd show={!!result} />
+      <ToolResultAd show={true} />
     </div>
   );
 }
