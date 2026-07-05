@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { JsonLdGraph, webApplicationSchema, faqSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
 import AdSlot from "@/components/ads/AdSlot";
+import ToolSeoContext from "@/components/tools/ToolSeoContext";
 import { useLocalizedPath } from "@/i18n/paths";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
 
@@ -69,6 +70,10 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
         <p className="text-muted-foreground text-lg max-w-2xl">{localizedDesc}</p>
       </div>
 
+      {/* Top ad slot — above the tool, below the header. Keeps CLS low via
+          min-h reservation inside <AdSlot />. Consent + deny-list gated. */}
+      <AdSlot slot="above-content" className="mb-8" />
+
       {/* Tool Content */}
       <Card className="mb-10 shadow-md">
         <CardContent className="p-6">
@@ -77,6 +82,12 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
       </Card>
 
       <AdSlot slot="post-result" className="mb-10" />
+
+      {/* Keyword-rich explainer — mitigates AdSense "Low Value Content"
+          flags on pure-calculator tools. Renders only when tool has a
+          seoContext block populated in tools.json. */}
+      <ToolSeoContext toolId={tool.id} />
+
 
       {/* FAQ */}
       {localizedFaqs.length > 0 && (

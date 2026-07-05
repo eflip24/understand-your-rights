@@ -3471,5 +3471,31 @@
         "caseStrength": "Case Strength"
       }
     }
+  },
+  "seoContext": {
+    "settlement-estimator": {
+      "heading": "How Personal Injury Settlements Are Calculated",
+      "paragraphs": [
+        "A personal injury settlement is the money an insurance company pays to close your claim before or instead of a lawsuit. Most US settlements are built from two buckets: economic damages (medical bills, lost wages, future treatment, property damage) and non-economic damages (pain and suffering, emotional distress, loss of enjoyment). Add them together and you get the ballpark figure your case is worth.",
+        "The most common shortcut adjusters and personal injury attorneys use is the multiplier method: total your out-of-pocket economic losses, then multiply by 1.5 to 5 for a soft-tissue injury, and up to 10 for permanent or catastrophic injury. A $12,000 medical bill and $3,000 in lost wages with a 3x multiplier lands the case around $45,000 before liability, insurance policy limits, and comparative-fault reductions are applied.",
+        "This calculator gives you a defensible starting range so you don't accept a lowball offer, but it can't replace a car accident lawyer or personal injury attorney who knows your state's caps, statute of limitations, and jury tendencies. If the number here surprises you, that's usually the moment to schedule a free consultation before signing anything from the at-fault driver's insurer."
+      ]
+    },
+    "wrongful-term-value": {
+      "heading": "How Wrongful Termination Settlement Amounts Work",
+      "paragraphs": [
+        "Wrongful termination settlements in the US typically bundle four things: back pay from the date you were fired to the date of settlement, front pay for future lost earnings until you can reasonably replace the job, emotional-distress damages, and — where the employer's conduct was especially bad — punitive damages. Federal cases under Title VII, the ADA, or the ADEA also add attorneys' fees to the pot.",
+        "Median wrongful termination settlements sit between $40,000 and $80,000, but California cases and any case involving retaliation, discrimination, or a documented pattern can easily clear $200,000. The EEOC publishes annual data showing the average discrimination settlement runs $40,000 for administrative charges and materially higher once a lawsuit is filed.",
+        "The size of your payout depends heavily on how strong the paper trail is (emails, performance reviews, witness statements), whether the employer offered severance, and how quickly you mitigated damages by looking for new work. Use this estimator as a floor when a wrongful termination lawyer quotes case value, and remember that most settlements are taxable except the portion allocated to physical injury."
+      ]
+    },
+    "divorce-cost": {
+      "heading": "How Much a Divorce Really Costs in the US",
+      "paragraphs": [
+        "The average contested divorce in the United States runs $15,000 to $20,000 per spouse when attorneys are involved, according to Nolo and Martindale-Nolo surveys. An uncontested divorce with no children and no property dispute can close for under $500 in filing fees. The gap between those two numbers is almost entirely driven by three factors: whether children are involved, whether real estate has to be divided or sold, and whether the case goes to trial.",
+        "This calculator estimates your divorce cost by combining state filing fees, expected attorney hours at your local hourly rate, mediator or parenting-coordinator fees, and one-time transaction costs like a QDRO for splitting retirement accounts or an appraisal for the marital home. Alimony and child support are ongoing payments and are calculated separately.",
+        "You can cut divorce cost dramatically by choosing collaborative divorce or mediation before litigation, filing jointly in a no-fault state, and reaching agreement on custody and property before you hire a divorce lawyer. If your case involves domestic violence, hidden assets, or a business valuation, the reverse is true — budget for a full contested divorce and get referrals to a family law attorney early."
+      ]
+    }
   }
 }
