@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useTranslation } from "react-i18next";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 // Approximate filing fees (USD) by state
 const FILING_FEES: Record<string, number> = {
@@ -103,6 +104,7 @@ export default function DivorceCostEstimator() {
           <p className="text-xs text-muted-foreground">Estimates are per spouse. Costs scale dramatically with conflict — uncontested divorces cost a fraction of contested ones. Not legal advice.</p>
         </CardContent>
       </Card>
+      <ToolResultAd show={!!result} />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 // Title VII compensatory + punitive damages caps by employer size (2026 figures)
 const capBySize: Record<string, { label: string; cap: number }> = {
@@ -96,6 +97,7 @@ export default function EEOCSettlementCalculator() {
           <p className="text-xs text-muted-foreground">Title VII caps combined compensatory and punitive damages by employer size; back pay is not capped. Estimates only — not legal advice.</p>
         </div>
       )}
+      <ToolResultAd show={!!result} />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 export default function DivorceBuyoutCalculator() {
   const [homeValue, setHomeValue] = useState("");
@@ -69,6 +70,7 @@ export default function DivorceBuyoutCalculator() {
           <p className="text-xs text-muted-foreground">Assumes you keep the house and refinance into your name. Community-property vs equitable-distribution states treat contributions differently. General information only — not legal advice.</p>
         </div>
       )}
+      <ToolResultAd show={!!result} />
     </div>
   );
 }

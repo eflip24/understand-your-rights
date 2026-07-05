@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 const offenseTiers: Record<string, { label: string; attorneyLow: number; attorneyHigh: number; fines: number; other: number }> = {
   first: { label: "1st offense DUI/DWI", attorneyLow: 1500, attorneyHigh: 5000, fines: 1200, other: 2500 },
@@ -90,6 +91,7 @@ export default function DUICostEstimator() {
           <p className="text-xs text-muted-foreground">Ranges reflect typical US costs. Actual DUI lawyer cost varies by state, jurisdiction, and case complexity. General information only — not legal advice.</p>
         </div>
       )}
+      <ToolResultAd show={!!result} />
     </div>
   );
 }

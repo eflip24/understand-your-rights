@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useTranslation } from "react-i18next";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 const injuryMultipliers: Record<string, { label: string; low: number; high: number }> = {
   minor: { label: "Minor (sprains, bruises)", low: 1.5, high: 3 },
@@ -95,6 +96,7 @@ export default function SettlementEstimator() {
           <p className="text-xs text-muted-foreground">Uses the multiplier method ({injuryMultipliers[injurySeverity].low}x–{injuryMultipliers[injurySeverity].high}x). Actual settlements depend on many factors. This is not legal advice.</p>
         </div>
       )}
+      <ToolResultAd show={!!result} />
     </div>
   );
 }

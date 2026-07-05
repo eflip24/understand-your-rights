@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 // Rough national averages. State law varies widely.
 const bodyPartWeeks: Record<string, { label: string; weeks: number }> = {
@@ -81,6 +82,7 @@ export default function WorkersCompSettlementCalculator() {
           <p className="text-xs text-muted-foreground">Uses two-thirds of average weekly wage × body-part weeks × impairment rating, plus medical. State rules and caps vary. General information only — not legal advice.</p>
         </div>
       )}
+      <ToolResultAd show={!!result} />
     </div>
   );
 }
