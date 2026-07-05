@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ChevronRight, MapPin, Scale, Clock, Shield, Phone, Globe, Briefcase } from "lucide-react";
+import { ChevronRight, MapPin, Scale, Clock, Shield, Phone, Globe, Briefcase, HelpCircle, DollarSign } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import Tier3Head from "@/components/seo/Tier3Head";
@@ -12,9 +12,24 @@ import { getCityBySlug } from "@/data/locations/cityData";
 import { getLawyerListings } from "@/data/locations/lawyerListings";
 import type { MapMarker } from "@/components/maps/LocalMap";
 import SettlementEstimator from "@/components/tools/SettlementEstimator";
+import ToolRecommender, { type RecommenderTopic } from "@/components/tools/ToolRecommender";
+import { getPracticeAreaContent, formatStateCostBand } from "@/data/practiceAreaContent";
 import { useLocalizedPath } from "@/i18n/paths";
 
 const LocalMap = React.lazy(() => import("@/components/maps/LocalMap"));
+
+// Practice-area slug → recommender topic
+const RECOMMENDER_TOPIC_MAP: Record<string, RecommenderTopic> = {
+  "personal-injury": "personal-injury",
+  "car-accident": "car-accident",
+  "truck-accident": "truck-accident",
+  "medical-malpractice": "medical-malpractice",
+  "workers-compensation": "workers-compensation",
+  employment: "employment",
+  "insurance-dispute": "insurance-dispute",
+  "real-estate": "real-estate",
+  "family-law": "family-law",
+};
 
 const SITE = "https://legallyspoken.com";
 
