@@ -61,31 +61,41 @@ Hard rules:
 Output STRICT JSON: {"excerpt": "150-160 char meta description", "content": "<full HTML body>"}`;
 
 function shellInsert(row) {
-  const args = [
-    "-v", "ON_ERROR_STOP=1",
-    "-c",
-    `INSERT INTO blog_posts (wp_id, title, slug, content, excerpt, author_name, published_at, status, ai_generated)
-     VALUES ($1, $2, $3, $4, $5, $6, now(), 'published', true)
-     ON CONFLICT (slug) DO UPDATE SET
-       title = EXCLUDED.title,
-       content = EXCLUDED.content,
-       excerpt = EXCLUDED.excerpt,
-       published_at = COALESCE(blog_posts.published_at, now())
-     RETURNING id, slug;`,
-    "-v", `1=${row.wp_id}`,
-  ];
-  // psql -v can't take arbitrary text safely; use a heredoc via stdin instead.
-  const sql = `
+  // Use unique dollar-quote tags to avoid any collision with content bytes.
+  const tag = (name) => `${name}_${crypto.randomBytes(4).toString("hex")}`;
+  const tTitle = tag("t");
+  const tSlug = tag("s");
+  const tBody = tag("b");
+  const tExc = tag("e");
+  const sql = `\\set ON_ERROR_STOP 1
 INSERT INTO blog_posts (wp_id, title, slug, content, excerpt, author_name, published_at, status, ai_generated)
-VALUES (${row.wp_id}, $tag$${row.title}$tag$, $tag$${row.slug}$tag$, $body$${row.content}$body$, $tag$${row.excerpt}$tag$, 'LegallySpoken Editorial', now(), 'published', true)
+VALUES (
+  ${row.wp_id},
+  $${tTitle}$${row.title}$${tTitle}$,
+  $${tSlug}$${row.slug}$${tSlug}$,
+  $${tBody}$${row.content}$${tBody}$,
+  $${tExc}$${row.excerpt}$${tExc}$,
+  'LegallySpoken Editorial', now(), 'published', true
+)
 ON CONFLICT (slug) DO UPDATE SET
   title = EXCLUDED.title,
   content = EXCLUDED.content,
   excerpt = EXCLUDED.excerpt,
   published_at = COALESCE(blog_posts.published_at, now())
-RETURNING id, slug;`;
-  const out = execFileSync("psql", ["-v", "ON_ERROR_STOP=1", "-c", sql], { encoding: "utf8" });
-  return out;
+RETURNING id, slug;
+`;
+  const file = `/tmp/blog_${row.wp_id}.sql`;
+  fs.writeFileSync(file, sql);
+  try {
+    const out = execFileSync("psql", ["-v", "ON_ERROR_STOP=1", "-f", file], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    return out;
+  } catch (e) {
+    console.error("  psql failed:", (e.stderr || e.message || "").toString().slice(0, 400));
+    throw e;
+  }
 }
 
 let wpBase = 900001;
