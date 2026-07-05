@@ -63,28 +63,28 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
       />
       <JsonLdGraph schemas={schemas} />
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">
-        <Link to={lp("/tools")} className="hover:text-foreground transition-colors">{t("common:page.tools")}</Link>
-        <ChevronRight className="h-3 w-3" />
-        <Link to={lp(`/tools/${tool.category}`)} className="hover:text-foreground transition-colors">
+      <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6 overflow-hidden">
+        <Link to={lp("/tools")} className="hover:text-foreground transition-colors shrink-0">{t("common:page.tools")}</Link>
+        <ChevronRight className="h-3 w-3 shrink-0" />
+        <Link to={lp(`/tools/${tool.category}`)} className="hover:text-foreground transition-colors shrink-0">
           {toolCategoryLabel(tool)}
         </Link>
-        <ChevronRight className="h-3 w-3" />
-        <span className="text-foreground">{localizedName}</span>
+        <ChevronRight className="h-3 w-3 shrink-0" />
+        <span className="text-foreground truncate">{localizedName}</span>
       </nav>
 
       {/* Header */}
       <div className="mb-8">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="p-2.5 rounded-lg bg-accent/10">
+        <div className="flex items-start gap-3 mb-3">
+          <div className="p-2.5 rounded-lg bg-accent/10 shrink-0">
             <tool.icon className="h-6 w-6 text-accent" />
           </div>
-          <div>
+          <div className="min-w-0 flex-1">
             <span className="text-xs font-medium text-accent uppercase tracking-wider">{toolCategoryLabel(tool)}</span>
-            <h1 className="text-3xl font-bold text-foreground leading-tight">{localizedName}</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-foreground leading-tight break-words hyphens-auto">{localizedName}</h1>
           </div>
         </div>
-        <p className="text-muted-foreground text-lg max-w-2xl">{localizedDesc}</p>
+        <p className="text-muted-foreground text-base sm:text-lg max-w-2xl">{localizedDesc}</p>
       </div>
 
       {/* Top ad slot — above the tool, below the header. Keeps CLS low via
@@ -93,7 +93,7 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
 
       {/* Tool Content */}
       <Card className="mb-10 shadow-md">
-        <CardContent className="p-6">
+        <CardContent className="p-4 sm:p-6">
           {children}
         </CardContent>
       </Card>
