@@ -1520,9 +1520,9 @@
     ]
   },
   "settlement-estimator": {
-    "name": "Schadensersatzschätzer",
-    "description": "Schätzen Sie den Wert Ihrer Personenschaden- oder Autounfallregulierung. Geben Sie Arztrechnungen, Lohnausfall und Verletzungsschwere ein, um eine Spanne basierend auf der Multiplikatormethode zu erhalten.",
-    "shortDescription": "Schätzen Sie die Spannen für Personenschaden-/Autounfallregulierungen.",
+    "name": "Personal Injury (Personenschaden) Schmerzensgeld-Rechner",
+    "description": "Kostenloser Personal Injury (Personenschaden) Schmerzensgeld-Rechner. Schätzen Sie den Wert eines Autounfalls oder einer Personenschadenforderung mit der Multiplikatormethode – geben Sie Arztrechnungen, entgangene Löhne und die Schwere der Verletzung ein, um eine Bandbreite für die Vergleichssumme zu erhalten.",
+    "shortDescription": "Schätzen Sie die Höhe einer Personal Injury (Personenschaden)-Vergleichssumme.",
     "faqs": [
       {
         "question": "Wie genau ist der Vergleichsrechner?",
@@ -2090,9 +2090,9 @@
     ]
   },
   "wrongful-term-value": {
-    "name": "Schadensschätzer für unrechtmäßige Kündigung",
-    "description": "Schätzen Sie den potenziellen Wert eines Anspruchs wegen unrechtmäßiger Kündigung, einschließlich entgangener Löhne, entgangener Leistungen, Schmerzensgelder und Anwaltsgebühren.",
-    "shortDescription": "Schätzen Sie den Wert Ihres Falls bei unrechtmäßiger Kündigung.",
+    "name": "Wrongful Termination (unrechtmäßige Kündigung) Abfindungs-Rechner",
+    "description": "Kostenloser Wrongful Termination (unrechtmäßige Kündigung) Abfindungs-Rechner. Schätzen Sie den Wert einer Klage wegen unrechtmäßiger Kündigung inklusive Nachzahlungen (back pay), voraussichtlicher Einkommensausfälle (front pay), entgangener Leistungen, Schadensersatz für seelische Belastungen und Anwaltskosten.",
+    "shortDescription": "Schätzen Sie die Höhe einer Abfindung wegen Wrongful Termination (unrechtmäßige Kündigung).",
     "faqs": [
       {
         "question": "Welche Schäden sind typisch?",

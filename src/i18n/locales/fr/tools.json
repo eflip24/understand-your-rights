@@ -1520,9 +1520,9 @@
     ]
   },
   "settlement-estimator": {
-    "name": "Estimateur de valeur de règlement",
-    "description": "Estimez la valeur de votre règlement pour blessures corporelles ou accident de voiture. Saisissez les frais médicaux, les salaires perdus et la gravité de la blessure pour obtenir une fourchette basée sur la méthode du multiplicateur.",
-    "shortDescription": "Estimer les fourchettes de règlement pour blessures corporelles/accidents de voiture.",
+    "name": "Calculateur d'indemnisation pour préjudice corporel",
+    "description": "Calculateur gratuit d'indemnisation pour préjudice corporel. Estimez la valeur d'une réclamation liée à un accident de voiture ou à un dommage corporel en utilisant la méthode du multiplicateur — saisissez les frais médicaux, les salaires perdus et la gravité des blessures pour obtenir une fourchette d'indemnisation.",
+    "shortDescription": "Estimez la valeur d'une indemnisation pour préjudice corporel.",
     "faqs": [
       {
         "question": "Quelle est la précision de l'estimateur de règlement?",
@@ -2090,9 +2090,9 @@
     ]
   },
   "wrongful-term-value": {
-    "name": "Estimateur de la valeur d'une affaire de licenciement abusif",
-    "description": "Estimer la valeur potentielle d'une réclamation pour licenciement abusif, y compris les salaires perdus, les avantages perdus, les dommages-intérêts pour détresse émotionnelle et les honoraires d'avocat.",
-    "shortDescription": "Estimer la valeur de votre affaire de licenciement abusif.",
+    "name": "Calculateur d'indemnisation pour licenciement abusif",
+    "description": "Calculateur gratuit d'indemnisation pour licenciement abusif. Estimez la valeur d'une réclamation pour licenciement abusif, incluant les salaires arriérés, les pertes de revenus futurs, la perte d'avantages, les dommages pour préjudice moral et les honoraires d'avocat.",
+    "shortDescription": "Estimez la valeur d'une indemnisation pour licenciement abusif.",
     "faqs": [
       {
         "question": "Quels sont les dommages typiques ?",

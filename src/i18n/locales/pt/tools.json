@@ -1520,9 +1520,9 @@
     ]
   },
   "settlement-estimator": {
-    "name": "Estimador de Valor de Acordo",
-    "description": "Estime o valor do seu acordo de lesão pessoal ou acidente automóvel. Insira contas médicas, salários perdidos e gravidade da lesão para obter um intervalo com base no método do multiplicador.",
-    "shortDescription": "Estime os intervalos de acordo de PI/acidente automóvel.",
+    "name": "Calculadora de Indemnização por Personal Injury",
+    "description": "Calculadora gratuita de indemnização por personal injury. Estime o valor de um acidente de viação ou de uma reclamação por personal injury usando o método do multiplicador \u0014 introduza despesas médicas, salários perdidos e a gravidade da lesão para obter um intervalo de acordo.",
+    "shortDescription": "Estime o valor de um acordo por personal injury.",
     "faqs": [
       {
         "question": "Qual é a precisão do estimador de indemnizações?",
@@ -2090,9 +2090,9 @@
     ]
   },
   "wrongful-term-value": {
-    "name": "Estimador de Valor de Caso de Rescisão Injusta",
-    "description": "Estime o valor potencial de uma reclamação de rescisão injusta, incluindo salários perdidos, benefícios perdidos, danos por sofrimento emocional e honorários de advogado.",
-    "shortDescription": "Estime o valor do seu caso de rescisão injusta.",
+    "name": "Calculadora de Indemnização por Wrongful Termination",
+    "description": "Calculadora gratuita de indemnização por wrongful termination. Estime o valor de uma reclamação por wrongful termination incluindo salários em atraso (back pay), salários futuros (front pay), benefícios perdidos, danos por sofrimento emocional e honorários de advogado.",
+    "shortDescription": "Estime o valor de um acordo por wrongful termination.",
     "faqs": [
       {
         "question": "Que danos são típicos?",
