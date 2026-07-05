@@ -77,11 +77,7 @@ VALUES (
   $${tExc}$${row.excerpt}$${tExc}$,
   'LegallySpoken Editorial', now(), 'published', true
 )
-ON CONFLICT (slug) DO UPDATE SET
-  title = EXCLUDED.title,
-  content = EXCLUDED.content,
-  excerpt = EXCLUDED.excerpt,
-  published_at = COALESCE(blog_posts.published_at, now())
+ON CONFLICT (slug) DO NOTHING
 RETURNING id, slug;
 `;
   const file = `/tmp/blog_${row.wp_id}.sql`;
