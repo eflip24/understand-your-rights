@@ -219,6 +219,11 @@ export default function PersonalInjurySettlementHub() {
             </li>
           ))}
         </ol>
+        <div className="mt-3">
+          <Link to={lp("/personal-injury-settlements/timeline")} className="text-sm text-accent hover:underline">
+            Read the detailed 6-step timeline guide →
+          </Link>
+        </div>
       </section>
 
       <AdSlot slot="above-content" className="mb-8" />
@@ -240,6 +245,11 @@ export default function PersonalInjurySettlementHub() {
             </AccordionItem>
           ))}
         </Accordion>
+        <div className="mt-3">
+          <Link to={lp("/personal-injury-settlements/taxability")} className="text-sm text-accent hover:underline">
+            Read the full settlement-taxability guide →
+          </Link>
+        </div>
       </section>
 
       {/* How much to ask for */}
