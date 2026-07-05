@@ -1,10 +1,13 @@
 /**
+/**
  * Sprint post batch #1-5: high-CPC editorial calendar rollout.
  * Drafts each post via Lovable AI Gateway and inserts into blog_posts
  * (status=published, ai_generated=true). Idempotent on slug.
  */
 import { callAiJson } from "./_aiTranslate.mjs";
 import { execFileSync } from "node:child_process";
+import fs from "node:fs";
+import crypto from "node:crypto";
 
 const POSTS = [
   {
