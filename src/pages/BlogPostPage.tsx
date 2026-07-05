@@ -220,7 +220,7 @@ export default function BlogPostPage() {
 
         {/* Post header card */}
         <Card className="mb-8">
-          <CardContent className="p-8 md:p-10">
+          <CardContent className="p-5 sm:p-8 md:p-10">
             {post.categories && post.categories.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.categories.map((cat) => (
@@ -233,7 +233,7 @@ export default function BlogPostPage() {
               </div>
             )}
 
-            <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight break-words hyphens-auto">
               {title}
             </h1>
 
