@@ -1,3 +1,4 @@
+import ToolRecommender from "@/components/tools/ToolRecommender";
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -147,6 +148,8 @@ export default function StatuteOfLimitationsLookup() {
       <p className="text-xs text-muted-foreground border-t pt-3">
         Educational reference only — not legal advice. Statutes change; verify with a licensed attorney in your jurisdiction before relying on these figures.
       </p>
+
+      <ToolRecommender topic="statute-of-limitations" />
     </div>
   );
 }

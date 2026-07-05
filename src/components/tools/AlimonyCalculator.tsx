@@ -1,3 +1,4 @@
+import ToolRecommender from "@/components/tools/ToolRecommender";
 import { useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -244,6 +245,8 @@ export default function AlimonyCalculator() {
       <p className="text-xs text-muted-foreground border-t pt-3">
         Estimator only, not legal advice. Alimony is highly judge-dependent even in formula states. Speak with a licensed family law attorney in your state for a case-specific analysis.
       </p>
+
+      <ToolRecommender topic="alimony" />
     </div>
   );
 }

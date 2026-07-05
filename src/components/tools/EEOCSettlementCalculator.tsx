@@ -1,3 +1,4 @@
+import ToolRecommender from "@/components/tools/ToolRecommender";
 import { useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -292,6 +293,8 @@ export default function EEOCSettlementCalculator() {
       <p className="text-xs text-muted-foreground border-t pt-3">
         Estimator only, not legal advice. EEOC settlement values swing wildly based on venue, judge, jury pool, employer resources, and evidence. Damage caps apply to Title VII/ADA/GINA claims only — race (§ 1981), age (ADEA), and FLSA claims have separate frameworks. Speak with an employment attorney; most work on contingency.
       </p>
+
+      <ToolRecommender topic="eeoc" />
     </div>
   );
 }

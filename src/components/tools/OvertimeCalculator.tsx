@@ -1,3 +1,4 @@
+import ToolRecommender from "@/components/tools/ToolRecommender";
 import { useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -215,6 +216,8 @@ export default function OvertimeCalculator() {
       <p className="text-xs text-muted-foreground border-t pt-3">
         Estimator only — not legal advice. Overtime eligibility depends on your exemption status (executive, administrative, professional, outside sales, etc.). Salaried does not automatically mean exempt.
       </p>
+
+      <ToolRecommender topic="wage-hour" />
     </div>
   );
 }
