@@ -1,106 +1,152 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useTranslation } from "react-i18next";
+import { Badge } from "@/components/ui/badge";
+import { AlertCircle, Clock, CheckCircle2, ExternalLink } from "lucide-react";
+import { SOL_STATES, CLAIM_TYPES, getSol, type SolClaimType } from "@/data/solData";
+import { Link } from "react-router-dom";
 
-const solData: Record<string, Record<string, { years: number; notes: string }>> = {
-  "Written Contract": {
-    "California": { years: 4, notes: "Cal. Code Civ. Proc. § 337" },
-    "New York": { years: 6, notes: "N.Y. C.P.L.R. § 213(2)" },
-    "Texas": { years: 4, notes: "Tex. Civ. Prac. & Rem. Code § 16.004" },
-    "Florida": { years: 5, notes: "Fla. Stat. § 95.11(2)(b)" },
-    "Illinois": { years: 10, notes: "735 ILCS 5/13-206" },
-    "Other": { years: 6, notes: "Most states range from 3-10 years. Check your state specifically." },
-  },
-  "Oral Contract": {
-    "California": { years: 2, notes: "Cal. Code Civ. Proc. § 339" },
-    "New York": { years: 6, notes: "N.Y. C.P.L.R. § 213(2)" },
-    "Texas": { years: 4, notes: "Tex. Civ. Prac. & Rem. Code § 16.004" },
-    "Florida": { years: 4, notes: "Fla. Stat. § 95.11(3)(k)" },
-    "Illinois": { years: 5, notes: "735 ILCS 5/13-205" },
-    "Other": { years: 4, notes: "Most states range from 2-6 years for oral contracts." },
-  },
-  "Personal Injury": {
-    "California": { years: 2, notes: "Cal. Code Civ. Proc. § 335.1" },
-    "New York": { years: 3, notes: "N.Y. C.P.L.R. § 214(5)" },
-    "Texas": { years: 2, notes: "Tex. Civ. Prac. & Rem. Code § 16.003" },
-    "Florida": { years: 4, notes: "Fla. Stat. § 95.11(3)(a)" },
-    "Illinois": { years: 2, notes: "735 ILCS 5/13-202" },
-    "Other": { years: 2, notes: "Most states allow 2-3 years for personal injury claims." },
-  },
-  "Property Damage": {
-    "California": { years: 3, notes: "Cal. Code Civ. Proc. § 338(b)" },
-    "New York": { years: 3, notes: "N.Y. C.P.L.R. § 214(4)" },
-    "Texas": { years: 2, notes: "Tex. Civ. Prac. & Rem. Code § 16.003" },
-    "Florida": { years: 4, notes: "Fla. Stat. § 95.11(3)(h)" },
-    "Illinois": { years: 5, notes: "735 ILCS 5/13-205" },
-    "Other": { years: 3, notes: "Most states allow 2-6 years for property damage claims." },
-  },
-  "Fraud": {
-    "California": { years: 3, notes: "Cal. Code Civ. Proc. § 338(d)" },
-    "New York": { years: 6, notes: "N.Y. C.P.L.R. § 213(8)" },
-    "Texas": { years: 4, notes: "Tex. Civ. Prac. & Rem. Code § 16.004" },
-    "Florida": { years: 4, notes: "Fla. Stat. § 95.11(3)(j)" },
-    "Illinois": { years: 5, notes: "735 ILCS 5/13-205" },
-    "Other": { years: 4, notes: "Most states allow 3-6 years for fraud claims." },
-  },
-};
+function fmtYears(y: number) {
+  if (y < 1) {
+    const months = Math.round(y * 12);
+    return `${months} month${months === 1 ? "" : "s"}`;
+  }
+  return `${y} year${y === 1 ? "" : "s"}`;
+}
 
-const TYPE_LABEL_KEYS: Record<string, string> = {
-  "Written Contract": "internals.sol.types.written",
-  "Oral Contract": "internals.sol.types.oral",
-  "Personal Injury": "internals.sol.types.pi",
-  "Property Damage": "internals.sol.types.property",
-  "Fraud": "internals.sol.types.fraud",
-};
-
-const claimTypes = Object.keys(solData);
-const states = ["California", "New York", "Texas", "Florida", "Illinois", "Other"];
+function addYears(iso: string, years: number): Date {
+  const d = new Date(iso);
+  const wholeYears = Math.floor(years);
+  const fracMonths = Math.round((years - wholeYears) * 12);
+  d.setFullYear(d.getFullYear() + wholeYears);
+  d.setMonth(d.getMonth() + fracMonths);
+  return d;
+}
 
 export default function StatuteOfLimitationsLookup() {
-  const { t } = useTranslation(["tools", "common"]);
-  const [claimType, setClaimType] = useState("");
   const [state, setState] = useState("");
-  const [result, setResult] = useState<{ years: number; notes: string } | null>(null);
+  const [claim, setClaim] = useState<SolClaimType | "">("");
+  const [incidentDate, setIncidentDate] = useState("");
 
-  const lookup = () => {
-    const data = solData[claimType]?.[state];
-    if (data) setResult(data);
-  };
+  const entry = state && claim ? getSol(state, claim) : null;
+  const claimLabel = CLAIM_TYPES.find((c) => c.id === claim)?.label ?? "";
+
+  const deadline = useMemo(() => {
+    if (!entry || !incidentDate) return null;
+    const d = addYears(incidentDate, entry.years);
+    const now = new Date();
+    const daysLeft = Math.ceil((d.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+    return { date: d, daysLeft };
+  }, [entry, incidentDate]);
+
+  const status: "safe" | "urgent" | "expired" | null = deadline
+    ? deadline.daysLeft < 0
+      ? "expired"
+      : deadline.daysLeft <= 90
+      ? "urgent"
+      : "safe"
+    : null;
 
   return (
-    <div className="space-y-4">
-      <div className="grid gap-4 sm:grid-cols-2">
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-3">
         <div className="space-y-2">
-          <Label>{t("internals.sol.claimType")}</Label>
-          <Select value={claimType} onValueChange={setClaimType}>
-            <SelectTrigger><SelectValue placeholder={t("internals.sol.selectClaim")} /></SelectTrigger>
-            <SelectContent>
-              {claimTypes.map((ct) => <SelectItem key={ct} value={ct}>{t(TYPE_LABEL_KEYS[ct])}</SelectItem>)}
+          <Label>Your state</Label>
+          <Select value={state} onValueChange={setState}>
+            <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
+            <SelectContent className="max-h-72">
+              {SOL_STATES.map((s) => (
+                <SelectItem key={s.abbr} value={s.state}>{s.state}</SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>{t("common:fields.state")}</Label>
-          <Select value={state} onValueChange={setState}>
-            <SelectTrigger><SelectValue placeholder={t("common:fields.selectState")} /></SelectTrigger>
-            <SelectContent>
-              {states.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+          <Label>Type of claim</Label>
+          <Select value={claim} onValueChange={(v) => setClaim(v as SolClaimType)}>
+            <SelectTrigger><SelectValue placeholder="Select claim type" /></SelectTrigger>
+            <SelectContent className="max-h-72">
+              {CLAIM_TYPES.map((c) => (
+                <SelectItem key={c.id} value={c.id}>{c.label}</SelectItem>
+              ))}
             </SelectContent>
           </Select>
+        </div>
+        <div className="space-y-2">
+          <Label>Date of incident (optional)</Label>
+          <Input type="date" value={incidentDate} onChange={(e) => setIncidentDate(e.target.value)} max={new Date().toISOString().slice(0, 10)} />
         </div>
       </div>
-      <Button onClick={lookup} disabled={!claimType || !state} className="bg-accent text-accent-foreground hover:bg-gold-dark">
-        {t("common:actions.lookUp")}
-      </Button>
-      {result && (
-        <div className="p-6 rounded-lg bg-secondary text-center space-y-2">
-          <p className="text-3xl font-bold font-serif">{result.years} {result.years !== 1 ? t("internals.sol.yearsUnitPlural") : t("internals.sol.yearsUnit")}</p>
-          <p className="text-sm text-muted-foreground">{result.notes}</p>
-          <p className="text-xs text-muted-foreground mt-2">{t("internals.sol.footer")}</p>
-        </div>
+
+      {entry && (
+        <Card>
+          <CardContent className="pt-6 space-y-4">
+            <div className="flex items-start justify-between gap-4 flex-wrap">
+              <div>
+                <p className="text-sm text-muted-foreground">Filing deadline for {claimLabel} in {state}</p>
+                <p className="text-4xl font-serif font-bold text-primary">{fmtYears(entry.years)}</p>
+              </div>
+              <Badge variant="secondary" className="text-xs">{entry.citation}</Badge>
+            </div>
+
+            {deadline && (
+              <div className={`p-4 rounded-lg border ${
+                status === "expired" ? "bg-destructive/10 border-destructive/40" :
+                status === "urgent" ? "bg-amber-500/10 border-amber-500/40" :
+                "bg-emerald-500/10 border-emerald-500/40"
+              }`}>
+                <div className="flex items-center gap-2 mb-1">
+                  {status === "expired" ? <AlertCircle className="w-5 h-5 text-destructive" /> :
+                   status === "urgent" ? <Clock className="w-5 h-5 text-amber-600" /> :
+                   <CheckCircle2 className="w-5 h-5 text-emerald-600" />}
+                  <p className="font-semibold">
+                    {status === "expired" ? "Deadline has passed" :
+                     status === "urgent" ? "Deadline approaching" :
+                     "Time to file"}
+                  </p>
+                </div>
+                <p className="text-sm">
+                  File by <span className="font-semibold">{deadline.date.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })}</span>
+                  {status !== "expired" && ` — ${deadline.daysLeft} day${deadline.daysLeft === 1 ? "" : "s"} remaining`}
+                  {status === "expired" && ` — ${Math.abs(deadline.daysLeft)} day${Math.abs(deadline.daysLeft) === 1 ? "" : "s"} past deadline`}
+                </p>
+                {status === "urgent" && (
+                  <p className="text-xs mt-2 text-muted-foreground">Under 90 days left. Consult an attorney immediately — service, filing, and pre-suit notices take time.</p>
+                )}
+                {status === "expired" && (
+                  <p className="text-xs mt-2 text-muted-foreground">Some exceptions may still apply (discovery rule, tolling for minors/disability, fraudulent concealment). Speak with a lawyer before assuming the claim is dead.</p>
+                )}
+              </div>
+            )}
+
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p><strong>Important exceptions that can change your deadline:</strong></p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li><strong>Discovery rule:</strong> The clock may start when you discovered (or should have discovered) the harm, not when it happened. Common in medical malpractice, fraud, and latent injuries.</li>
+                <li><strong>Tolling for minors:</strong> Many states pause the clock until age 18.</li>
+                <li><strong>Government defendants:</strong> Tort Claims Acts often require notice within 60–180 days, well before the general deadline.</li>
+                <li><strong>Contracts with different terms:</strong> A written contract can shorten (but usually not lengthen beyond statutory max) the limitations period.</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-wrap gap-2 pt-2">
+              <Button asChild variant="outline" size="sm">
+                <Link to="/tools/consumer/sol-deadline">Precise deadline calculator <ExternalLink className="w-3 h-3 ml-1" /></Link>
+              </Button>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/local-lawyers">Find a lawyer in {state} <ExternalLink className="w-3 h-3 ml-1" /></Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       )}
+
+      <p className="text-xs text-muted-foreground border-t pt-3">
+        Educational reference only — not legal advice. Statutes change; verify with a licensed attorney in your jurisdiction before relying on these figures.
+      </p>
     </div>
   );
 }
