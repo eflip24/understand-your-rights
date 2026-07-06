@@ -82,8 +82,14 @@ const STATES: Record<string, StateFormula> = {
 
 const fmt = (n: number) => n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 
-export default function AlimonyCalculator() {
-  const [state, setState] = useState("National guideline");
+export const ALIMONY_STATE_FORMULAS = STATES;
+
+interface AlimonyCalculatorProps {
+  defaultState?: string;
+}
+
+export default function AlimonyCalculator({ defaultState }: AlimonyCalculatorProps = {}) {
+  const [state, setState] = useState(defaultState && STATES[defaultState] ? defaultState : "National guideline");
   const [higherIncome, setHigherIncome] = useState("");
   const [lowerIncome, setLowerIncome] = useState("");
   const [years, setYears] = useState("");
