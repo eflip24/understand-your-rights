@@ -40,17 +40,14 @@ export default function CarAccidentChecklist() {
       <Tier3Head
         title="What to Do After a Car Accident: 10-Step Checklist (2026)"
         description="Free 10-step checklist covering the exact actions to take at the scene, in the 24 hours after, and before you talk to any insurance company. Printable PDF."
-        canonical={URL}
       />
       <JsonLdGraph
-        nodes={[
-          articleSchema({
-            url: URL,
-            headline: "What to Do After a Car Accident: 10-Step Checklist",
-            description: "Step-by-step checklist for the scene, the first 24 hours, and dealing with insurers after a crash.",
-            datePublished: "2026-07-08",
-            dateModified: "2026-07-08",
-          }),
+        schemas={[
+          articleSchema(
+            "What to Do After a Car Accident: 10-Step Checklist",
+            "Step-by-step checklist for the scene, the first 24 hours, and dealing with insurers after a crash.",
+            URL,
+          ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
             { name: "Auto Accident Law", url: `${SITE}/auto-accident-law` },
@@ -102,11 +99,10 @@ export default function CarAccidentChecklist() {
           ))}
         </section>
 
-        <AdSlot slotId="car-accident-checklist-mid" />
+        <AdSlot slot="car-accident-checklist-mid" />
 
         <section className="my-8">
-          <h2 className="text-2xl font-bold mb-4">Value your case with our free tools</h2>
-          <ToolRecommender toolIds={["settlement-estimator", "pain-suffering-calculator", "medical-lien-estimator", "attorney-fee-calculator"]} />
+          <ToolRecommender topic="car-accident" title="Value your case with our free tools" />
         </section>
 
         <section className="my-10">
