@@ -80,6 +80,10 @@ const PersonalInjurySettlementTimeline = React.lazy(() => import("@/pages/Person
 const StateAlimonyPage = React.lazy(() => import("@/pages/StateAlimonyPage"));
 const MassTortHub = React.lazy(() => import("@/pages/MassTortHub"));
 const MassTortCasePage = React.lazy(() => import("@/pages/MassTortCasePage"));
+const CarAccidentChecklist = React.lazy(() => import("@/pages/CarAccidentChecklist"));
+const MotorcycleHelmetLawsByState = React.lazy(() => import("@/pages/MotorcycleHelmetLawsByState"));
+const AttorneyContingencyFeeExplained = React.lazy(() => import("@/pages/AttorneyContingencyFeeExplained"));
+const PainAndSufferingExplained = React.lazy(() => import("@/pages/PainAndSufferingExplained"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
@@ -145,6 +149,10 @@ export default function AppRoutes() {
       <Route path="/alimony-calculator/:state" element={<StateAlimonyPage />} />
       <Route path="/mass-tort-lawsuits" element={<MassTortHub />} />
       <Route path="/mass-tort-lawsuits/:slug" element={<MassTortCasePage />} />
+      <Route path="/what-to-do-after-a-car-accident" element={<CarAccidentChecklist />} />
+      <Route path="/motorcycle-helmet-insurance-laws-by-state" element={<MotorcycleHelmetLawsByState />} />
+      <Route path="/attorney-contingency-fee-explained" element={<AttorneyContingencyFeeExplained />} />
+      <Route path="/how-pain-and-suffering-is-calculated" element={<PainAndSufferingExplained />} />
       <Route path="/lawyer-near-me" element={<LocalLawyersDirectory />} />
       <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
       <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
