@@ -80,6 +80,10 @@ const PersonalInjurySettlementTimeline = React.lazy(() => import("@/pages/Person
 const StateAlimonyPage = React.lazy(() => import("@/pages/StateAlimonyPage"));
 const MassTortHub = React.lazy(() => import("@/pages/MassTortHub"));
 const MassTortCasePage = React.lazy(() => import("@/pages/MassTortCasePage"));
+const CarAccidentChecklist = React.lazy(() => import("@/pages/CarAccidentChecklist"));
+const MotorcycleHelmetLawsByState = React.lazy(() => import("@/pages/MotorcycleHelmetLawsByState"));
+const AttorneyContingencyFeeExplained = React.lazy(() => import("@/pages/AttorneyContingencyFeeExplained"));
+const PainAndSufferingExplained = React.lazy(() => import("@/pages/PainAndSufferingExplained"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
