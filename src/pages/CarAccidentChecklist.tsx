@@ -99,7 +99,7 @@ export default function CarAccidentChecklist() {
           ))}
         </section>
 
-        <AdSlot slot="car-accident-checklist-mid" />
+        <AdSlot slot="mid-content" />
 
         <section className="my-8">
           <ToolRecommender topic="car-accident" title="Value your case with our free tools" />
