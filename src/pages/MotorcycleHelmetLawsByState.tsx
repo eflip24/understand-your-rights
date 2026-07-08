@@ -15,7 +15,7 @@ const URL = `${SITE}/motorcycle-helmet-insurance-laws-by-state`;
 
 // Helmet: universal = all riders, partial = under 18/21 or with permit, none = no law.
 // Min liability: state minimum liability BI per person / per accident / property damage.
-const ROWS: { state: string; helmet: string; minBI: string; noFault: "Yes" | "No"; uim: string }[] = [
+const ROWS: { state: string; helmet: string; minBI: string; noFault: string; uim: string }[] = [
   { state: "Alabama", helmet: "Universal", minBI: "25/50/25", noFault: "No", uim: "Optional" },
   { state: "Alaska", helmet: "Under 18 + permit", minBI: "50/100/25", noFault: "No", uim: "Required (reject in writing)" },
   { state: "Arizona", helmet: "Under 18", minBI: "25/50/15", noFault: "No", uim: "Offered" },
