@@ -1,110 +1,113 @@
 
-# LegallySpoken Growth Plan (Semrush-driven, US database)
+# 30-Day "Right User, Not More Users" Plan
 
-## 1. Where you actually stand
+Goal: engineer pages + signals so Google serves the $15–$160 CPC legal, insurance, and finance ads — not random shoe/crypto ads. Every task below is designed to be shippable in one day inside Lovable.
 
-Semrush sees **59 ranking keywords, all pages 8–10, 0 estimated traffic**. Highest positions today are `salary and overtime laws` (#37) and `legalese translator` (#82). You're indexed but nothing is close to page 1 yet.
+The plan has 4 phases. Each phase runs one week. Every day has: (1) a build task, (2) a signal task (things that improve dwell time, engagement, or intent clarity), and (3) a distribution task (get the *right* users to the page).
 
-**Strengths already shipped:** ~120+ tools including PI settlement, workers' comp, EEOC, alimony, statute of limitations, overtime, security deposit, wage garnishment, SSDI back pay, medical lien; lawyer directory matrix; multilingual state guides; AI blog pipeline; growth automation (keyword-radar, sprint-planner, content-forge).
+---
 
-**Biggest real gap:** hardly any of these tools have supporting cornerstone/hub content or SERP-optimized landing copy targeting the exact commercial phrases below. The calculators exist — the **money pages** around them don't.
+## Phase 1 — Fix Contextual Signals (Days 1–7)
+Make Google's crawler unmistakably classify each money page as "personal injury / insurance / legal services." This alone lifts RPM before any new traffic arrives.
 
-## 2. Reality check on the CPC target
+**Day 1 — PI Hub context hardening**
+- Build: Add a 400-word "About personal-injury settlements" intro block above the calculator on `/personal-injury-settlements` using in-market entities (adjuster, policy limit, MedPay, UM/UIM, subrogation, contingency fee, MMI).
+- Signal: Add `Article` + `WebApplication` + `FAQPage` JSON-LD with `about` referencing schema.org LegalService and InsuranceAgency.
+- Distribution: `seo--trigger_scan` + submit URL in Search Console.
 
-Pure "calculator" queries almost never hit $15 CPC — advertisers bid on the **lawyer intent** immediately above them ($40–$160 CPC). Winning strategy = rank calculators/tools on low-KD terms, then funnel to lawyer-directory pages where AdSense actually monetizes. All numbers below are live Semrush pulls (US).
+**Day 2 — Insurance-entity injection across 4 PI sub-calculators**
+- Build: Inject "How insurance companies value this claim" section into car/motorcycle/truck/bodily-injury sub-pages. Name real carriers (State Farm, GEICO, Progressive, Allstate) as entities — this is what makes Google map the page to auto-insurance ad inventory.
+- Signal: Add "Related coverage terms" internal-link strip (bodily injury liability, UM/UIM, MedPay, PIP).
+- Distribution: Cross-link from every existing settlement tool result card.
 
-## 3. Six clusters, ranked by (CPC × Volume) ÷ (KD+10)
+**Day 3 — Auto-insurance intent pillar**
+- Build: New page `/auto-insurance-claim-guide` — 10-step claim guide + embedded settlement estimator. Auto-insurance CPC = $15–$45.
+- Signal: HowTo JSON-LD + FAQ.
+- Distribution: Link from `car-accident-checklist` and every state auto-accident page.
 
-### Cluster A — Personal Injury Settlement Money Terms  ⭐ #1 priority
-| Keyword | Vol | CPC | KD |
-|---|---|---|---|
-| injury settlement | 8,100 | **$28.97** | 39 |
-| bodily injury settlement | 720 | **$14.41** | ~30 |
-| personal injury settlements | 880 | **$14.38** | ~30 |
-| motorcycle accident settlement calculator | 480 | **$17.38** | 14 |
-| truck accident settlement calculator | 260 | $13.75 | 3 |
-| car accident settlement calculator | 1,300 | $12.45 | 22 |
-| pain and suffering calculator | 1,600 | $8.15 | 12 |
-| how much to ask for in a personal injury settlement | 320 | $10.88 | ~20 |
-| how long does a personal injury settlement take | 170 | $8.45 | ~20 |
-| are personal injury settlements taxable | 1,300 | $2.39 | ~15 |
+**Day 4 — Debt / bankruptcy intent expansion**
+- Build: `/debt-settlement-calculator` + `/bankruptcy-vs-debt-settlement` comparison. Debt-relief CPC = $20–$60.
+- Signal: Embed existing `BankruptcyMeansTestCalculator` + `WageGarnishmentCalculator` on the new hub.
+- Distribution: Cross-link from wage-garnishment tool.
 
-### Cluster B — Employment Tools
-| Keyword | Vol | CPC | KD |
-|---|---|---|---|
-| overtime pay calculator | 2,400 | $5.50 | 23 |
-| severance pay calculator | 2,400 | $0.14 | 19 |
-| wrongful termination settlement calculator | 720 | $3.62 | 9 |
-| eeoc settlement calculator | 320 | $4.87 | 5 |
-| final paycheck laws | 170 | $2.96 | 52 |
-| unemployment benefits calculator | 1,300 | — | 44 |
+**Day 5 — Health / disability intent expansion**
+- Build: `/long-term-disability-claim-guide` + `/ssdi-denied-what-next`. LTD/disability lawyer CPC = $25–$80.
+- Signal: Embed `SSDIBackPayCalculator`, FAQ, HowTo.
+- Distribution: Link from existing SSDI tool and workers' comp calculator.
 
-### Cluster C — Housing / Tenant
-| Keyword | Vol | CPC | KD |
-|---|---|---|---|
-| how to break a lease | 2,400 | $0.09 | 40 |
-| rent increase calculator | 1,000 | $1.16 | 22 |
-| squatters rights by state | 320 | $2.00 | 32 |
-| notice to quit template | 210 | $0.99 | 25 |
-| security deposit calculator | 170 | — | 11 |
+**Day 6 — Mesothelioma / asbestos landing (highest CPC on the internet)**
+- Build: `/mesothelioma-settlement-guide` under the mass-tort framework. CPC frequently $200–$400.
+- Signal: Rigorous medical + legal citations, timeline, VA-benefits section, trust-fund table.
+- Distribution: Add to mass-tort hub, submit to Search Console.
 
-### Cluster D — Legal Fees / Consumer Money
-| Keyword | Vol | CPC | KD |
-|---|---|---|---|
-| wage garnishment calculator | 1,300 | $1.37 | 14 |
-| ssdi back pay calculator | 720 | $1.24 | 17 |
-| estate tax calculator | 880 | $3.82 | 27 |
-| bankruptcy means test calculator | 260 | $3.40 | 18 |
-| probate cost calculator | 140 | $2.45 | 16 |
-| attorney fee calculator | 90 | $4.42 | 4 |
+**Day 7 — Signal audit day**
+- Build: Add "Save my results" + PDF export to any tool missing it (dwell + return-visit signal).
+- Signal: Run `analytics--read_project_analytics`, identify pages with bounce > 70%, add a related-tools strip + inline FAQ to the top 5.
+- Distribution: `keyword-radar` weekly run + `sprint-planner`.
 
-### Cluster E — Family Law
-| Keyword | Vol | CPC | KD |
-|---|---|---|---|
-| child support calculator | 18,100 | $0.80 | 65 (skip head; win state pages) |
-| alimony calculator | 2,400 | $0.58 | 27 |
-| spousal support calculator | 1,600 | $0.73 | 32 |
-| parenting time calculator | 480 | — | 24 |
-| qdro calculator | 110 | $3.24 | 0 |
+---
 
-### Cluster F — Mass Tort / MDL Landing Pages (highest CPC ceiling)
-`tylenol autism settlement` (390, KD 34) and `zantac settlement amounts` (70, KD 16) actually show volume; most MDL calculator terms have no Semrush volume but SERPs are thin — Google Discover + AdSense RPM here is exceptional when a case pops.
+## Phase 2 — Engagement & Dwell Time (Days 8–14)
+Google rewards pages where in-market users linger. Every task here is designed to push time-on-page past 2 minutes.
 
-## 4. Top 5 recommendations (2–4 weeks)
+**Day 8** — Multi-step wizard wrapper for `SettlementEstimator` (5 screens instead of 1 form). Multi-step = 3–4× dwell.
+**Day 9** — Add "Compare 3 scenarios side-by-side" to alimony + child-support + spousal-support calculators.
+**Day 10** — Add anonymous save-token + email-gated PDF ("Get your full report") to PI hub → first-party data.
+**Day 11** — Build `/how-much-is-my-case-worth` interactive quiz (10 questions → routes user to the right calculator). Quiz completion is a very strong engagement signal.
+**Day 12** — Add "Recently viewed tools" + "People also used" strips site-wide → pages/session up.
+**Day 13** — Add sticky "Talk to a lawyer near me" CTA on every settlement result page → feeds highest-RPM directory pages.
+**Day 14** — Ship inline glossary tooltips (hover a legal term → definition popover). Increases dwell without new pages.
 
-| # | Build | Cluster | Why |
-|---|---|---|---|
-| 1 | **PI Settlement Hub** at `/personal-injury-settlements` with a rebuilt "How much is my case worth?" flow (multiplier + per-diem toggle, comparative negligence, policy-limit cap, net-to-client). Add sub-pages for motorcycle / truck / car / bodily-injury settlement calculators. Cross-link every one to lawyer-near-me. | A | $15–$29 CPC head terms, KD ≤ 22 on 6 of 10, lawyer-directory funnel = highest AdSense RPM. |
-| 2 | **"Are personal injury settlements taxable?" pillar** + PDF tax-checklist download (email-gate). | A | 3,000+ combined monthly volume in question queries, near-zero KD, purely informational — ranks fast. |
-| 3 | **"How much to ask for in a settlement" interactive worksheet** wrapping SettlementEstimator + AttorneyFeeCalculator side-by-side. | A/D | Long-tail commercial intent, no interactive competitor ranks. |
-| 4 | **State-ize Alimony + Spousal Support** into `/tools/family/alimony-calculator/{state}` — 51 programmatic pages using existing state-guide pattern. | E | 2,400 + 1,600/mo on head terms KD 27–32; state pages cannibalize weak local competition. |
-| 5 | **Mass-Tort Landing Framework** — one template, 8 initial pages (Camp Lejeune, Roundup, Tylenol autism, hair relaxer, Ozempic, Paraquat, 3M, talcum). Zero KD, minute-to-build with content-forge, huge CPC when Discover picks them up. | F | Ad RPM on active MDL pages regularly clears $30+. |
+---
 
-**Every build must include:** state selector where applicable · results explanation card · "Save my case" (existing anon-token pattern) · PDF export · `ToolRecommender` + lawyer-directory CTA · FAQ + HowTo JSON-LD · breadcrumb schema · internal links to 3 sibling tools and the practice-area guide.
+## Phase 3 — Right-User Acquisition (Days 15–21)
+Publish content that attracts users whose Google profile is *already* tagged in-market for legal/insurance/finance.
 
-**Ad zones** (respect existing AdSense-compliance gating): one in-content unit after the input form, one after results, one in the "Related tools" strip. No ads on empty-state or above the fold on tool pages.
+**Day 15** — "Cost of hiring a personal injury lawyer" — pairs with contingency-fee explainer.
+**Day 16** — "How insurance adjusters calculate pain and suffering" — insurance-industry entity dense.
+**Day 17** — "What is a demand letter? (with template + calculator)" — commercial intent.
+**Day 18** — "Average settlement amounts by injury type" data-table page — attracts researchers deep in the funnel.
+**Day 19** — "How long after a car accident can you sue?" — statute-of-limitations by state, funnels to existing SOL tool.
+**Day 20** — "Workers' comp vs personal injury: which pays more?" comparison.
+**Day 21** — "Do I need a lawyer for a car accident?" decision-tree page → routes to lawyer directory (highest-RPM page).
 
-## 5. Quick wins (ship within a week)
+---
 
-1. "Personal injury settlement timeline: 6 steps and how long each takes" article — targets 170/mo, near-zero KD.
-2. Comparison table: "Multiplier method vs Per-diem method" embedded in the PI hub.
-3. FAQ block "Are settlements taxable?" injected into every existing settlement tool result.
-4. "What to do after a car accident" 10-step checklist (PDF-downloadable).
-5. "State-by-state motorcycle helmet + insurance laws" comparison table — feeds motorcycle settlement calculator.
-6. "Attorney contingency fee explained" 800-word explainer linking every settlement tool to `attorney-fee-calculator`.
-7. "How pain and suffering is calculated" long-form with worked examples — targets 1,600/mo, KD 12.
+## Phase 4 — First-Party Data + Retention (Days 22–30)
+The 2026 game: users who return and users you can re-target with consented data. Return visitors have far higher RPM.
 
-## 6. 30-day action plan
+**Day 22** — "Case Tracker" mini-app: signed-in users save calculator inputs, get 7-day check-in email.
+**Day 23** — Weekly "Settlement News" digest (auto-generated via existing blog pipeline) → email opt-in.
+**Day 24** — "Personalized settlement report" — user enters email, gets branded PDF + follow-up sequence.
+**Day 25** — Add `user_intent` tracking to saved analyses (PI / family / employment / housing) — used to personalize on-site recommendations.
+**Day 26** — Build `/my-legal-dashboard` for logged-in users showing saved cases + relevant tools. Return-visitor RPM is 2–3× first-visit.
+**Day 27** — Add "Continue where you left off" banner + localStorage draft for anonymous users.
+**Day 28** — Retarget-friendly landing pages: 3 dedicated pages optimized for Google Discover pickup (mass-tort updates).
+**Day 29** — Ship "Ask a lawyer" lead form on top 5 money pages (already the highest-RPM funnel).
+**Day 30** — Review: pull `analytics` + Semrush, identify top-10 pages by dwell × CPC, double down.
 
-**Week 1** — Ship Recommendation #1 (PI Settlement Hub + 4 sub-calculators + JSON-LD).  
-**Week 2** — Ship Recommendation #2 (taxability pillar) + Quick Wins 1–3.  
-**Week 3** — Ship Recommendation #4 (alimony state fan-out, 51 pages via content-forge).  
-**Week 4** — Ship Recommendation #5 (mass-tort framework + first 4 pages) and Quick Wins 4–7.
+---
 
-Run `keyword-radar` weekly and trigger `seo--trigger_scan` after each publish.
+## Technical section
 
-## 7. Single highest-impact first ask
+**New routes to add:** `/auto-insurance-claim-guide`, `/debt-settlement-calculator`, `/bankruptcy-vs-debt-settlement`, `/long-term-disability-claim-guide`, `/ssdi-denied-what-next`, `/mesothelioma-settlement-guide`, `/how-much-is-my-case-worth`, `/my-legal-dashboard`, plus ~7 content pages in Phase 3.
 
-> **"Build the Personal Injury Settlement Hub at `/personal-injury-settlements` with the rebuilt calculator flow, 4 sub-pages (car/motorcycle/truck/bodily-injury), taxability FAQ block, PDF export, and full JSON-LD."**
+**Reusable primitives to build first (Day 1 quick wins that unlock the rest):**
+1. `<MultiStepWizard>` wrapper — wraps existing calculators into 3–5 step flows.
+2. `<InMarketEntityBlock>` — standardized carrier/entity name block for contextual signals.
+3. `<EmailGatedPDF>` — reuses existing PDF export + adds email capture to `saved_analyses`.
+4. `<RelatedIntentStrip>` — cross-links by intent cluster (PI, insurance, debt, family, housing).
 
-That one build hits a $28.97 CPC head term at KD 39 plus 5+ KD-under-25 sub-terms totaling ~4,000 monthly searches, and pipes traffic straight into your highest-RPM lawyer-directory pages.
+**JSON-LD:** every new page ships with `Article` + `FAQPage` + `BreadcrumbList`. Money pages also add `WebApplication` (for calculators) and `HowTo` (for guides).
+
+**Ad placement:** keep existing gating. High-CPC pages get one unit after the form, one after results, one in the related-tools strip.
+
+**Measurement:** after each phase, run `semrush--seo_trend` on the domain + `analytics--read_project_analytics` to confirm dwell time and pages/session are climbing before starting the next phase.
+
+---
+
+## The single first thing to build
+
+**Day 1 kickoff = harden `/personal-injury-settlements` contextual signals + ship the `<InMarketEntityBlock>` primitive.** It's the highest-CPC page you already have; making Google unmistakably classify it as PI + auto-insurance will lift RPM within one crawl cycle — before any of the Phase 2–4 work lands.
+
+Approve this plan and I'll start on Day 1 immediately.
