@@ -10,6 +10,14 @@ export interface PiSubPageData {
   faqs: { question: string; answer: string }[];
   timelineNote: string;
   lawyerLink: { label: string; path: string };
+  /** Contextual signal block — how carriers value this specific claim type. */
+  adjusterPlaybook: {
+    category: string;
+    /** 2–3 paragraph explanation with named carrier + software entities. */
+    paragraphs: string[];
+    /** In-market entity chips — carriers, coverage codes, statutes, medical terms. */
+    entities: string[];
+  };
 }
 
 export const piSubPages: Record<string, PiSubPageData> = {
@@ -52,6 +60,28 @@ export const piSubPages: Record<string, PiSubPageData> = {
     ],
     timelineNote: "Filing deadline in most states: 2 years from the date of the crash. Some states are shorter (LA=1yr, KY=1yr for injury). Miss the deadline and your claim is dead.",
     lawyerLink: { label: "Find a Car Accident Lawyer Near You", path: "/lawyer-near-me/car-accident" },
+    adjusterPlaybook: {
+      category: "Auto Insurance Claim · Bodily Injury Liability",
+      paragraphs: [
+        "Every major auto carrier — State Farm, GEICO, Progressive, Allstate, Liberty Mutual, Nationwide, Farmers, USAA, and Travelers — runs your car accident claim through claims-evaluation software (Colossus, ClaimIQ, or Mitchell Decision Point). The software reads your ICD-10 diagnosis codes, treatment duration, provider type (ER vs chiropractic vs orthopedic), and any permanency rating, then outputs a settlement range the adjuster is authorized to pay within.",
+        "The adjuster's first offer is almost always at the bottom of that computed range — often 30–50% below fair value. The number moves up when you document objective injuries (MRI findings, positive orthopedic tests, surgical intervention), consistent treatment without gaps, and clear liability (police report, dashcam, independent witness). It moves down when the file has gaps in treatment, chiropractic-only care, prior injuries to the same body part, or low property damage ('minor impact soft tissue' / MIST protocol).",
+        "Coverage that pays a car accident settlement: the at-fault driver's Bodily Injury Liability (BI); your own Uninsured/Underinsured Motorist (UM/UIM) if their limit is too low; your MedPay or PIP for immediate medical bills; and any umbrella policy layered above the auto BI limit.",
+      ],
+      entities: [
+        "Bodily Injury Liability (BI)",
+        "UM/UIM Coverage",
+        "MedPay",
+        "PIP / No-Fault",
+        "Colossus Software",
+        "ICD-10 Codes",
+        "MIST Protocol",
+        "Comparative Negligence",
+        "Policy Limits",
+        "Umbrella Policy",
+        "Demand Letter",
+        "State Farm · GEICO · Progressive · Allstate",
+      ],
+    },
   },
   "motorcycle-accident": {
     slug: "motorcycle-accident",
@@ -92,6 +122,28 @@ export const piSubPages: Record<string, PiSubPageData> = {
     ],
     timelineNote: "Same SOL as car accidents in most states (2–3 years), but preserve the bike itself and gear — they're key evidence.",
     lawyerLink: { label: "Find a Motorcycle Accident Lawyer", path: "/lawyer-near-me/personal-injury" },
+    adjusterPlaybook: {
+      category: "Motorcycle Insurance Claim · Serious Bodily Injury",
+      paragraphs: [
+        "Motorcycle claims are handled by specialized bodily-injury adjusters at Progressive, GEICO, Dairyland, Foremost, Markel, Allstate, and State Farm — the carriers that write the majority of U.S. motorcycle policies. Because motorcycle crashes produce a much higher rate of serious injury (traumatic brain injury, spinal fracture, degloving, orthopedic surgery, road rash requiring skin grafts), the average payout runs 3–5× a comparable auto claim. Adjusters know this and often send an early lowball offer before the rider has retained counsel, hoping to close the file below the software's true valuation range.",
+        "Colossus and ClaimIQ weight motorcycle files heavily for permanency: hardware placement (plates, screws, rods), scarring in a visible location, and any permanent impairment rating from an orthopedic surgeon dramatically increase the model output. Helmet use, in non-universal-helmet states, is scrutinized for comparative-negligence arguments on head injuries only — it should not affect the orthopedic or road-rash portion of a claim.",
+        "Coverage that pays: at-fault driver's Bodily Injury Liability, your own UM/UIM (critical because many at-fault drivers carry only state-minimum BI), MedPay on the motorcycle policy, and any auto or umbrella policy layered above the primary. Preserve the bike, gear, and helmet as evidence — biomechanical experts use them to prove crash dynamics.",
+      ],
+      entities: [
+        "Bodily Injury Liability (BI)",
+        "UM/UIM Coverage",
+        "MedPay",
+        "Comparative Negligence",
+        "Permanency Rating",
+        "TBI / Traumatic Brain Injury",
+        "Colossus Software",
+        "Helmet-Law Bias",
+        "Progressive · GEICO · Dairyland · Foremost",
+        "Umbrella Policy",
+        "Spoliation Letter",
+        "Demand Letter",
+      ],
+    },
   },
   "truck-accident": {
     slug: "truck-accident",
@@ -132,6 +184,28 @@ export const piSubPages: Record<string, PiSubPageData> = {
     ],
     timelineNote: "Federal FMCSR record retention is short — some records purge in 6 months. Preserve evidence immediately.",
     lawyerLink: { label: "Find a Truck Accident Lawyer", path: "/lawyer-near-me/truck-accident" },
+    adjusterPlaybook: {
+      category: "Commercial Trucking Claim · Federal FMCSR",
+      paragraphs: [
+        "Commercial truck claims are handled by specialized transportation-liability adjusters at Great West Casualty, Sentry, Progressive Commercial, Northland, Zurich, Old Republic, Travelers, and Berkshire Hathaway GUARD — the carriers that write the bulk of U.S. Federal Motor Carrier Safety Administration (FMCSA) trucking policies. Federal law (49 CFR § 387.9) requires interstate freight carriers to carry a minimum $750,000 liability limit; hazmat carriers must carry $5 million. Unlike auto cases, truck settlements rarely hit the policy ceiling — the injury value caps the recovery.",
+        "The defense playbook is different from auto: within hours of a serious crash, the trucking company deploys a Rapid Response team (investigator, biomechanical expert, defense counsel) to the scene. Plaintiff's counsel must send a spoliation letter immediately to preserve the Electronic Logging Device (ELD) data, driver Hours of Service (HOS) logs, dashcam footage, post-crash drug/alcohol test results, maintenance records, and driver qualification file. Federal rules only require some records to be retained for 6 months.",
+        "Multiple defendants typically share liability: the driver, the motor carrier (respondeat superior + negligent hiring/retention/training), the truck owner if separate, the shipper/loader if cargo shifted, the maintenance provider, and any parts manufacturer in a product-defect case. Each has its own primary and excess layers, which is why truck settlements regularly exceed $1 million in serious-injury and wrongful-death cases.",
+      ],
+      entities: [
+        "FMCSA / FMCSR",
+        "49 CFR § 387.9",
+        "Electronic Logging Device (ELD)",
+        "Hours of Service (HOS)",
+        "MCS-90 Endorsement",
+        "Spoliation Letter",
+        "Respondeat Superior",
+        "Negligent Hiring / Retention",
+        "Great West · Sentry · Progressive Commercial · Zurich",
+        "Rapid Response Team",
+        "Excess / Umbrella Layers",
+        "Wrongful Death Claim",
+      ],
+    },
   },
   "bodily-injury": {
     slug: "bodily-injury",
@@ -172,5 +246,27 @@ export const piSubPages: Record<string, PiSubPageData> = {
     ],
     timelineNote: "Most BI claims must be filed with the insurer within 30 days and lawsuits filed within the state SOL (typically 2 years for auto, 2–3 for general negligence).",
     lawyerLink: { label: "Find a Personal Injury Lawyer", path: "/lawyer-near-me/personal-injury" },
+    adjusterPlaybook: {
+      category: "Bodily Injury Liability · Policy-Limits Analysis",
+      paragraphs: [
+        "A 'bodily injury' (BI) settlement is the physical-injury portion of a liability insurance payout — separate from property damage (PD). Every U.S. auto, homeowner, renter, and general-liability policy carries stated BI limits shown as a split (e.g., 25/50 = $25,000 per person / $50,000 per crash) or a Combined Single Limit (CSL). Carriers including State Farm, GEICO, Progressive, Allstate, Liberty Mutual, Nationwide, Farmers, USAA, Travelers, and Chubb evaluate BI claims with Colossus, ClaimIQ, or Mitchell Decision Point.",
+        "When damages exceed the at-fault party's BI limit, four options open: (1) accept the tender and release the defendant; (2) tap your own Underinsured Motorist (UIM) coverage — the fastest additional pool of money; (3) pursue the defendant's personal assets, which is only worthwhile against a solvent defendant; or (4) pursue an umbrella or excess policy that sits above the primary BI layer. A properly documented time-limited demand at the policy limit, if rejected, can also expose the carrier to a bad-faith failure-to-settle claim that breaks the policy ceiling entirely.",
+        "Tax treatment: under IRC § 104(a)(2), the compensatory portion of a BI settlement — medical bills, lost wages tied to the injury, and pain and suffering flowing from physical injury — is federal-income-tax-free. Punitive damages, pre- and post-judgment interest, and pure emotional-distress claims not stemming from a physical injury are taxable.",
+      ],
+      entities: [
+        "Bodily Injury Liability (BI)",
+        "Combined Single Limit (CSL)",
+        "Underinsured Motorist (UIM)",
+        "Umbrella / Excess Policy",
+        "Bad Faith Failure to Settle",
+        "Stowers Demand",
+        "Time-Limited Policy-Limit Demand",
+        "IRC § 104(a)(2)",
+        "Colossus · ClaimIQ · Mitchell",
+        "State Farm · GEICO · Progressive · Allstate · Chubb",
+        "Structured Settlement",
+        "Subrogation",
+      ],
+    },
   },
 };
