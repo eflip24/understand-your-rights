@@ -14,6 +14,7 @@ import {
 } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import ToolRecommender from "@/components/tools/ToolRecommender";
+import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import { useLocalizedPath } from "@/i18n/paths";
 import { piSubPages } from "@/data/piSettlementSubPages";
 
