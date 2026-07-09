@@ -13,6 +13,7 @@ import {
   webApplicationSchema,
 } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
+import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import { useLocalizedPath } from "@/i18n/paths";
 import { piSubPages } from "@/data/piSettlementSubPages";
 import { PI_TAXABILITY_FAQS } from "@/pages/PersonalInjurySettlementHub";
@@ -72,6 +73,26 @@ export default function PersonalInjurySettlementSubPage() {
           <Link to={lp(data.lawyerLink.path)}>{data.lawyerLink.label}</Link>
         </Button>
       </div>
+
+      <InMarketEntityBlock
+        category={data.adjusterPlaybook.category}
+        intro={
+          <>
+            {data.adjusterPlaybook.paragraphs.map((p, i) => (
+              <p key={i} className={i < data.adjusterPlaybook.paragraphs.length - 1 ? "mb-2" : ""}>
+                {p}
+              </p>
+            ))}
+          </>
+        }
+        entities={data.adjusterPlaybook.entities}
+        relatedTerms={[
+          { label: "Attorney Fee Calculator", href: "/tools/consumer/attorney-fee-calculator" },
+          { label: "Medical Lien Estimator", href: "/tools/consumer/medical-lien-subrogation-estimator" },
+          { label: "Statute of Limitations", href: "/tools/consumer/statute-of-limitations-lookup" },
+          { label: data.lawyerLink.label, href: data.lawyerLink.path },
+        ]}
+      />
 
       <AdSlot slot="above-content" className="mb-6" />
 
