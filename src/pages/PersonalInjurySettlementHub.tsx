@@ -144,7 +144,67 @@ export default function PersonalInjurySettlementHub() {
         </Button>
       </div>
 
+      <InMarketEntityBlock
+        category="Personal Injury · Auto Insurance · Legal Services"
+        intro={
+          <>
+            <p className="mb-2">
+              A <strong>personal injury settlement</strong> is money an insurance carrier or
+              at-fault defendant pays to resolve a bodily-injury claim without going to trial.
+              In the United States, the vast majority of injury claims — car accidents,
+              motorcycle crashes, commercial truck collisions, slip-and-fall, dog bites,
+              product liability, and premises liability — settle out of court through
+              negotiation between the injured claimant (or their attorney) and a
+              claims <strong>adjuster</strong> working for the at-fault party's insurer.
+            </p>
+            <p className="mb-2">
+              Every major auto carrier — <strong>State Farm, GEICO, Progressive, Allstate,
+              Liberty Mutual, Nationwide, Farmers, USAA, and Travelers</strong> — uses
+              claims-evaluation software (Colossus, ClaimIQ, Mitchell) that assigns a
+              dollar range to your injury based on ICD-10 diagnosis codes, treatment
+              duration, and permanency. Knowing how your file is scored is the difference
+              between a lowball first offer and a fair settlement. Coverage that typically
+              pays: <strong>bodily injury liability (BI), uninsured / underinsured motorist
+              (UM/UIM), MedPay, personal injury protection (PIP), and umbrella policies</strong>.
+            </p>
+            <p>
+              Most personal injury lawyers work on a <strong>contingency fee</strong>
+              (typically 33.3% pre-suit, 40% if litigation is filed), meaning no fee unless
+              you recover. Your net take-home also depends on <strong>medical liens</strong>
+              (Medicare, Medicaid, ERISA health plans, hospital liens), <strong>subrogation</strong>
+              rights, and whether your state uses <strong>comparative negligence</strong> or
+              contributory-fault rules. The calculator below models all of this so you can
+              see your realistic net recovery — not just the top-line settlement number.
+            </p>
+          </>
+        }
+        entities={[
+          "Bodily Injury Liability",
+          "UM/UIM Coverage",
+          "MedPay",
+          "PIP (No-Fault)",
+          "Policy Limits",
+          "Comparative Negligence",
+          "Contingency Fee",
+          "Medical Lien",
+          "Subrogation",
+          "Maximum Medical Improvement (MMI)",
+          "Demand Letter",
+          "Colossus / ClaimIQ",
+          "IRC § 104(a)(2)",
+          "Statute of Limitations",
+          "Structured Settlement",
+        ]}
+        relatedTerms={[
+          { label: "Attorney Fee Calculator", href: "/tools/consumer/attorney-fee-calculator" },
+          { label: "Medical Lien Estimator", href: "/tools/consumer/medical-lien-subrogation-estimator" },
+          { label: "Statute of Limitations", href: "/tools/consumer/statute-of-limitations-lookup" },
+          { label: "Find a PI Lawyer Near Me", href: "/lawyer-near-me/personal-injury" },
+        ]}
+      />
+
       <AdSlot slot="above-content" className="mb-8" />
+
 
       {/* Sub-page cards */}
       <section className="mb-10">
