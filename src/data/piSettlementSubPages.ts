@@ -10,6 +10,14 @@ export interface PiSubPageData {
   faqs: { question: string; answer: string }[];
   timelineNote: string;
   lawyerLink: { label: string; path: string };
+  /** Contextual signal block — how carriers value this specific claim type. */
+  adjusterPlaybook: {
+    category: string;
+    /** 2–3 paragraph explanation with named carrier + software entities. */
+    paragraphs: string[];
+    /** In-market entity chips — carriers, coverage codes, statutes, medical terms. */
+    entities: string[];
+  };
 }
 
 export const piSubPages: Record<string, PiSubPageData> = {
