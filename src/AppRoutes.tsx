@@ -154,6 +154,7 @@ export default function AppRoutes() {
       <Route path="/motorcycle-helmet-insurance-laws-by-state" element={<MotorcycleHelmetLawsByState />} />
       <Route path="/attorney-contingency-fee-explained" element={<AttorneyContingencyFeeExplained />} />
       <Route path="/how-pain-and-suffering-is-calculated" element={<PainAndSufferingExplained />} />
+      <Route path="/auto-insurance-claim-guide" element={<AutoInsuranceClaimGuide />} />
       <Route path="/lawyer-near-me" element={<LocalLawyersDirectory />} />
       <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
       <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
