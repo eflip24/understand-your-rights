@@ -5,7 +5,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Tier3Head from "@/components/seo/Tier3Head";
-import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema, howToSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
+
+function howToSchema(name: string, description: string, steps: { name: string; text: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
 import AdSlot from "@/components/ads/AdSlot";
 import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import { useLocalizedPath } from "@/i18n/paths";
