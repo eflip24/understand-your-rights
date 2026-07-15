@@ -164,6 +164,7 @@ export default function AppRoutes() {
       <Route path="/bankruptcy-vs-debt-settlement" element={<BankruptcyVsDebtSettlement />} />
       <Route path="/long-term-disability-claim-guide" element={<LongTermDisabilityClaimGuide />} />
       <Route path="/ssdi-denied-what-next" element={<SsdiDeniedWhatNext />} />
+      <Route path="/mesothelioma-settlement-guide" element={<MesotheliomaSettlementGuide />} />
       <Route path="/lawyer-near-me" element={<LocalLawyersDirectory />} />
       <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
       <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
