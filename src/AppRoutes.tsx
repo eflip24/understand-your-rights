@@ -89,6 +89,7 @@ const DebtSettlementCalculatorPage = React.lazy(() => import("@/pages/DebtSettle
 const BankruptcyVsDebtSettlement = React.lazy(() => import("@/pages/BankruptcyVsDebtSettlement"));
 const LongTermDisabilityClaimGuide = React.lazy(() => import("@/pages/LongTermDisabilityClaimGuide"));
 const SsdiDeniedWhatNext = React.lazy(() => import("@/pages/SsdiDeniedWhatNext"));
+const MesotheliomaSettlementGuide = React.lazy(() => import("@/pages/MesotheliomaSettlementGuide"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
@@ -163,6 +164,7 @@ export default function AppRoutes() {
       <Route path="/bankruptcy-vs-debt-settlement" element={<BankruptcyVsDebtSettlement />} />
       <Route path="/long-term-disability-claim-guide" element={<LongTermDisabilityClaimGuide />} />
       <Route path="/ssdi-denied-what-next" element={<SsdiDeniedWhatNext />} />
+      <Route path="/mesothelioma-settlement-guide" element={<MesotheliomaSettlementGuide />} />
       <Route path="/lawyer-near-me" element={<LocalLawyersDirectory />} />
       <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
       <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
