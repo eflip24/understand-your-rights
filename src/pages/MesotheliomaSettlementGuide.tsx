@@ -155,7 +155,7 @@ export default function MesotheliomaSettlementGuide() {
           ]}
         />
 
-        <AdSlot slot="mesothelioma-top" />
+        <AdSlot slot="above-content" />
 
         <section className="mb-10">
           <h2 className="text-3xl font-bold mb-4">Average Settlement Amounts</h2>
@@ -228,7 +228,7 @@ export default function MesotheliomaSettlementGuide() {
           </ol>
         </section>
 
-        <AdSlot slot="mesothelioma-mid" />
+        <AdSlot slot="mid-content" />
 
         <section className="mb-10">
           <h2 className="text-3xl font-bold mb-4">Veterans & Mesothelioma</h2>
