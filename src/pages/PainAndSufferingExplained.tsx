@@ -9,6 +9,7 @@ import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/compo
 import AdSlot from "@/components/ads/AdSlot";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import { useLocalizedPath } from "@/i18n/paths";
+import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 
 const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/how-pain-and-suffering-is-calculated`;
@@ -218,6 +219,15 @@ export default function PainAndSufferingExplained() {
             </CardContent>
           </Card>
         </section>
+      <RelatedIntentStrip
+        cluster="Personal-injury settlement cluster"
+        links={[
+          { href: "/personal-injury-settlements", label: "Settlement calculator", blurb: "Runs the multiplier and per-diem yourself" },
+          { href: "/auto-insurance-claim-guide", label: "Auto insurance claim guide", blurb: "Colossus, ClaimIQ, and MIST protocols" },
+          { href: "/personal-injury-settlements/taxability", label: "Is my settlement taxable?", blurb: "IRC § 104(a)(2) and the allocation trap" },
+          { href: "/attorney-contingency-fee-explained", label: "Contingency fees explained", blurb: "Net after attorney fees and liens" },
+        ]}
+      />
       </main>
     </>
   );

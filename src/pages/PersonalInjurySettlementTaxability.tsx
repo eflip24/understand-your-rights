@@ -8,6 +8,7 @@ import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/compo
 import AdSlot from "@/components/ads/AdSlot";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import { useLocalizedPath } from "@/i18n/paths";
+import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 
 const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/personal-injury-settlements/taxability`;
@@ -229,6 +230,15 @@ export default function PersonalInjurySettlementTaxability() {
         </p>
       </section>
 
+      <RelatedIntentStrip
+        cluster="Personal-injury settlement cluster"
+        links={[
+          { href: "/personal-injury-settlements", label: "Personal injury settlement calculator", blurb: "Multiplier + per-diem estimate for your case" },
+          { href: "/personal-injury-settlements/timeline", label: "How long a settlement takes", blurb: "Step-by-step timeline from demand to check" },
+          { href: "/how-pain-and-suffering-is-calculated", label: "How pain & suffering is valued", blurb: "Multiplier vs per-diem vs Colossus" },
+          { href: "/attorney-contingency-fee-explained", label: "Contingency fees explained", blurb: "33.33% vs 40% and what changes the net" },
+        ]}
+      />
       <ToolRecommender topic="personal-injury" />
 
       <AdSlot slot="end-of-article" className="mb-8" />
