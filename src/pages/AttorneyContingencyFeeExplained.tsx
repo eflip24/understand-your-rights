@@ -9,6 +9,7 @@ import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/compo
 import AdSlot from "@/components/ads/AdSlot";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import { useLocalizedPath } from "@/i18n/paths";
+import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 
 const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/attorney-contingency-fee-explained`;
@@ -176,6 +177,15 @@ export default function AttorneyContingencyFeeExplained() {
             </CardContent>
           </Card>
         </section>
+      <RelatedIntentStrip
+        cluster="Personal-injury settlement cluster"
+        links={[
+          { href: "/personal-injury-settlements", label: "Settlement calculator", blurb: "Estimate gross value before fees" },
+          { href: "/personal-injury-settlements/taxability", label: "Settlement taxability", blurb: "IRC § 104(a)(2) and what remains taxable" },
+          { href: "/personal-injury-settlements/timeline", label: "Settlement timeline", blurb: "How long each stage really takes" },
+          { href: "/how-pain-and-suffering-is-calculated", label: "Pain & suffering valuation", blurb: "What the multiplier is doing" },
+        ]}
+      />
       </main>
     </>
   );

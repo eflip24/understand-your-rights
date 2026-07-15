@@ -8,6 +8,7 @@ import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/compo
 import AdSlot from "@/components/ads/AdSlot";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import { useLocalizedPath } from "@/i18n/paths";
+import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 
 const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/what-to-do-after-a-car-accident`;
@@ -126,6 +127,15 @@ export default function CarAccidentChecklist() {
             </CardContent>
           </Card>
         </section>
+      <RelatedIntentStrip
+        cluster="Auto-accident cluster"
+        links={[
+          { href: "/auto-insurance-claim-guide", label: "Auto insurance claim guide", blurb: "How adjusters value BI, UM/UIM, MedPay, PIP" },
+          { href: "/personal-injury-settlements/auto-accident", label: "Auto-accident settlement calculator", blurb: "Estimate your case value" },
+          { href: "/how-pain-and-suffering-is-calculated", label: "Pain & suffering explained", blurb: "The multiplier the adjuster is running" },
+          { href: "/motorcycle-helmet-insurance-laws-by-state", label: "Motorcycle helmet laws by state", blurb: "How helmet laws affect BI recovery" },
+        ]}
+      />
       </main>
     </>
   );
