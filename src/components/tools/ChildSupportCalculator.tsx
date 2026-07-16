@@ -92,6 +92,70 @@ export default function ChildSupportCalculator() {
           </CardContent>
         </Card>
       )}
+
+      {/* Day 9 — 3-scenario side-by-side comparison */}
+      <ChildSupportScenarioBar
+        yourIncome={yourIncome}
+        otherIncome={otherIncome}
+        children={children}
+        state={state}
+        role={role}
+        monthlyObligation={monthlyObligation}
+        calculated={calculated}
+      />
     </div>
+  );
+}
+
+function ChildSupportScenarioBar({
+  yourIncome,
+  otherIncome,
+  children,
+  state,
+  role,
+  monthlyObligation,
+  calculated,
+}: {
+  yourIncome: string;
+  otherIncome: string;
+  children: string;
+  state: string;
+  role: "obligor" | "recipient";
+  monthlyObligation: number;
+  calculated: boolean;
+}) {
+  const buildSnapshot = useCallback((): ScenarioSnapshot | null => {
+    if (!calculated) return null;
+    const yi = parseFloat(yourIncome) || 0;
+    const oi = parseFloat(otherIncome) || 0;
+    const n = Math.max(1, Math.min(5, parseInt(children) || 1));
+    const monthly = Math.round(monthlyObligation);
+    const annual = monthly * 12;
+    const fmt = (v: number) => v.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+    return {
+      label: `${state} · ${n} kid${n > 1 ? "s" : ""} · ${fmt(yi)} / ${fmt(oi)}`,
+      savedAt: Date.now(),
+      rows: [
+        {
+          label: role === "obligor" ? "Monthly you pay" : "Monthly you receive",
+          value: fmt(monthly),
+          numeric: monthly,
+          higherIsBetter: role === "recipient",
+        },
+        { label: "Annual", value: fmt(annual), numeric: annual, higherIsBetter: role === "recipient" },
+        { label: "Children", value: String(n), numeric: n },
+        { label: "State", value: state },
+        { label: "Combined income", value: fmt(yi + oi), numeric: yi + oi },
+      ],
+    };
+  }, [yourIncome, otherIncome, children, state, role, monthlyObligation, calculated]);
+
+  return (
+    <ScenarioCompare
+      title="Compare 3 child-support scenarios side-by-side"
+      description="Adjust the incomes, number of children, or state above and save each version to see how the monthly obligation changes."
+      buildSnapshot={buildSnapshot}
+      contextLabel={role === "obligor" ? "Obligor view" : "Recipient view"}
+    />
   );
 }
