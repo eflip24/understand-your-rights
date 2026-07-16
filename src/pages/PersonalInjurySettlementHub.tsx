@@ -18,7 +18,7 @@ import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import { useLocalizedPath } from "@/i18n/paths";
 import { piSubPages } from "@/data/piSettlementSubPages";
 
-const SettlementEstimator = lazy(() => import("@/components/tools/SettlementEstimator"));
+const SettlementEstimator = lazy(() => import("@/components/tools/SettlementEstimatorWizard"));
 
 const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/personal-injury-settlements`;
