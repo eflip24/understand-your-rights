@@ -1,5 +1,6 @@
 import ToolRecommender from "@/components/tools/ToolRecommender";
-import { useMemo, useState } from "react";
+import ScenarioCompare, { type ScenarioSnapshot } from "@/components/tools/ScenarioCompare";
+import { useCallback, useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
