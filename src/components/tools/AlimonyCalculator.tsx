@@ -249,9 +249,7 @@ export default function AlimonyCalculator({ defaultState }: AlimonyCalculatorPro
         </Card>
       )}
 
-          </CardContent>
-        </Card>
-      )}
+
 
       {/* Day 9 — 3-scenario side-by-side comparison */}
       <ScenarioCompareBar
