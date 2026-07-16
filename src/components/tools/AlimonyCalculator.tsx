@@ -249,6 +249,20 @@ export default function AlimonyCalculator({ defaultState }: AlimonyCalculatorPro
         </Card>
       )}
 
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Day 9 — 3-scenario side-by-side comparison */}
+      <ScenarioCompareBar
+        state={state}
+        higherIncome={higherIncome}
+        lowerIncome={lowerIncome}
+        years={years}
+        role={role}
+        result={result}
+      />
+
       <p className="text-xs text-muted-foreground border-t pt-3">
         Estimator only, not legal advice. Alimony is highly judge-dependent even in formula states. Speak with a licensed family law attorney in your state for a case-specific analysis.
       </p>
@@ -256,6 +270,89 @@ export default function AlimonyCalculator({ defaultState }: AlimonyCalculatorPro
       <ToolRecommender topic="alimony" />
     </div>
   );
+}
+
+/** Wires the calculator's live state into the generic ScenarioCompare primitive. */
+function ScenarioCompareBar({
+  state,
+  higherIncome,
+  lowerIncome,
+  years,
+  role,
+  result,
+}: {
+  state: string;
+  higherIncome: string;
+  lowerIncome: string;
+  years: string;
+  role: "payer" | "recipient";
+  result: ReturnType<typeof buildResultShape> | null;
+}) {
+  const buildSnapshot = useCallback((): ScenarioSnapshot | null => {
+    if (!result) return null;
+    const hi = parseFloat(higherIncome) || 0;
+    const li = parseFloat(lowerIncome) || 0;
+    const y = parseFloat(years) || 0;
+    return {
+      label: `${state} · ${y}yr · ${fmt(hi)} vs ${fmt(li)}`,
+      savedAt: Date.now(),
+      rows: [
+        {
+          label: "Monthly alimony",
+          value: `${fmt(result.monthlyLow)} – ${fmt(result.monthlyHigh)}`,
+          sub: role === "payer" ? "you pay" : "you receive",
+          numeric: (result.monthlyLow + result.monthlyHigh) / 2,
+          higherIsBetter: role === "recipient",
+        },
+        {
+          label: "Duration",
+          value: result.indefinite
+            ? "Indefinite"
+            : `${result.durationYearsLow.toFixed(1)} – ${result.durationYearsHigh.toFixed(1)} yrs`,
+          numeric: result.indefinite ? 99 : (result.durationYearsLow + result.durationYearsHigh) / 2,
+          higherIsBetter: role === "recipient",
+        },
+        {
+          label: "Total lifetime value",
+          value: `${fmt(result.lifetimeLow)} – ${fmt(result.lifetimeHigh)}`,
+          sub: "pre-tax",
+          numeric: (result.lifetimeLow + result.lifetimeHigh) / 2,
+          higherIsBetter: role === "recipient",
+        },
+        {
+          label: "State",
+          value: state,
+        },
+        {
+          label: "Marriage length",
+          value: `${y} years`,
+          numeric: y,
+        },
+      ],
+    };
+  }, [state, higherIncome, lowerIncome, years, role, result]);
+
+  return (
+    <ScenarioCompare
+      title="Compare 3 alimony scenarios side-by-side"
+      description="Adjust the inputs above and click 'Save current scenario' to see how state, marriage length, or a pay change moves your alimony award."
+      buildSnapshot={buildSnapshot}
+      contextLabel={role === "payer" ? "Payer view" : "Recipient view"}
+    />
+  );
+}
+
+/** Type helper so ScenarioCompareBar can share the memo's shape. */
+function buildResultShape() {
+  return null as unknown as {
+    monthlyLow: number;
+    monthlyHigh: number;
+    durationYearsLow: number;
+    durationYearsHigh: number;
+    indefinite: boolean;
+    lifetimeLow: number;
+    lifetimeHigh: number;
+  };
 }
 
 function Field({ label, v, set, placeholder }: { label: string; v: string; set: (s: string) => void; placeholder?: string }) {
