@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useTranslation } from "react-i18next";
+import ScenarioCompare, { type ScenarioSnapshot } from "@/components/tools/ScenarioCompare";
 
 const STATE_RATES: Record<string, { model: string; pct: number[]; note: string }> = {
   "California": { model: "Income Shares", pct: [0.20, 0.27, 0.32, 0.36, 0.40], note: "CA Fam. Code § 4055 — guideline formula varies by custody time-share." },
