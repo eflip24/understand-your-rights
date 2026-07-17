@@ -1,113 +1,154 @@
 
-# 30-Day "Right User, Not More Users" Plan
+# Plan: Footer credit + Online Fillable Legal Forms foundation
 
-Goal: engineer pages + signals so Google serves the $15–$160 CPC legal, insurance, and finance ads — not random shoe/crypto ads. Every task below is designed to be shippable in one day inside Lovable.
+Two deliverables in one build:
 
-The plan has 4 phases. Each phase runs one week. Every day has: (1) a build task, (2) a signal task (things that improve dwell time, engagement, or intent clarity), and (3) a distribution task (get the *right* users to the page).
-
----
-
-## Phase 1 — Fix Contextual Signals (Days 1–7)
-Make Google's crawler unmistakably classify each money page as "personal injury / insurance / legal services." This alone lifts RPM before any new traffic arrives.
-
-**Day 1 — PI Hub context hardening**
-- Build: Add a 400-word "About personal-injury settlements" intro block above the calculator on `/personal-injury-settlements` using in-market entities (adjuster, policy limit, MedPay, UM/UIM, subrogation, contingency fee, MMI).
-- Signal: Add `Article` + `WebApplication` + `FAQPage` JSON-LD with `about` referencing schema.org LegalService and InsuranceAgency.
-- Distribution: `seo--trigger_scan` + submit URL in Search Console.
-
-**Day 2 — Insurance-entity injection across 4 PI sub-calculators**
-- Build: Inject "How insurance companies value this claim" section into car/motorcycle/truck/bodily-injury sub-pages. Name real carriers (State Farm, GEICO, Progressive, Allstate) as entities — this is what makes Google map the page to auto-insurance ad inventory.
-- Signal: Add "Related coverage terms" internal-link strip (bodily injury liability, UM/UIM, MedPay, PIP).
-- Distribution: Cross-link from every existing settlement tool result card.
-
-**Day 3 — Auto-insurance intent pillar**
-- Build: New page `/auto-insurance-claim-guide` — 10-step claim guide + embedded settlement estimator. Auto-insurance CPC = $15–$45.
-- Signal: HowTo JSON-LD + FAQ.
-- Distribution: Link from `car-accident-checklist` and every state auto-accident page.
-
-**Day 4 — Debt / bankruptcy intent expansion**
-- Build: `/debt-settlement-calculator` + `/bankruptcy-vs-debt-settlement` comparison. Debt-relief CPC = $20–$60.
-- Signal: Embed existing `BankruptcyMeansTestCalculator` + `WageGarnishmentCalculator` on the new hub.
-- Distribution: Cross-link from wage-garnishment tool.
-
-**Day 5 — Health / disability intent expansion**
-- Build: `/long-term-disability-claim-guide` + `/ssdi-denied-what-next`. LTD/disability lawyer CPC = $25–$80.
-- Signal: Embed `SSDIBackPayCalculator`, FAQ, HowTo.
-- Distribution: Link from existing SSDI tool and workers' comp calculator.
-
-**Day 6 — Mesothelioma / asbestos landing (highest CPC on the internet)**
-- Build: `/mesothelioma-settlement-guide` under the mass-tort framework. CPC frequently $200–$400.
-- Signal: Rigorous medical + legal citations, timeline, VA-benefits section, trust-fund table.
-- Distribution: Add to mass-tort hub, submit to Search Console.
-
-**Day 7 — Signal audit day**
-- Build: Add "Save my results" + PDF export to any tool missing it (dwell + return-visit signal).
-- Signal: Run `analytics--read_project_analytics`, identify pages with bounce > 70%, add a related-tools strip + inline FAQ to the top 5.
-- Distribution: `keyword-radar` weekly run + `sprint-planner`.
+1. Small change: add "Website designed and developed by [eFlip](https://eflip.ie)" to the site footer.
+2. Large change: production-ready foundation for a Fillable Legal Forms system integrated into the existing site (auth, dashboard, design system, Stripe via Lovable Cloud).
 
 ---
 
-## Phase 2 — Engagement & Dwell Time (Days 8–14)
-Google rewards pages where in-market users linger. Every task here is designed to push time-on-page past 2 minutes.
+## A. Footer credit (quick)
 
-**Day 8** — Multi-step wizard wrapper for `SettlementEstimator` (5 screens instead of 1 form). Multi-step = 3–4× dwell.
-**Day 9** — Add "Compare 3 scenarios side-by-side" to alimony + child-support + spousal-support calculators.
-**Day 10** — Add anonymous save-token + email-gated PDF ("Get your full report") to PI hub → first-party data.
-**Day 11** — Build `/how-much-is-my-case-worth` interactive quiz (10 questions → routes user to the right calculator). Quiz completion is a very strong engagement signal.
-**Day 12** — Add "Recently viewed tools" + "People also used" strips site-wide → pages/session up.
-**Day 13** — Add sticky "Talk to a lawyer near me" CTA on every settlement result page → feeds highest-RPM directory pages.
-**Day 14** — Ship inline glossary tooltips (hover a legal term → definition popover). Increases dwell without new pages.
+Edit `src/components/layout/Footer.tsx`:
+- Add a small line in the bottom bar (next to or below the existing copyright): `Website designed and developed by eFlip` where "eFlip" is an `<a href="https://eflip.ie" target="_blank" rel="noopener noreferrer">`.
+- Uses existing muted-foreground styling. No design token changes.
 
 ---
 
-## Phase 3 — Right-User Acquisition (Days 15–21)
-Publish content that attracts users whose Google profile is *already* tagged in-market for legal/insurance/finance.
+## B. Fillable Legal Forms foundation
 
-**Day 15** — "Cost of hiring a personal injury lawyer" — pairs with contingency-fee explainer.
-**Day 16** — "How insurance adjusters calculate pain and suffering" — insurance-industry entity dense.
-**Day 17** — "What is a demand letter? (with template + calculator)" — commercial intent.
-**Day 18** — "Average settlement amounts by injury type" data-table page — attracts researchers deep in the funnel.
-**Day 19** — "How long after a car accident can you sue?" — statute-of-limitations by state, funnels to existing SOL tool.
-**Day 20** — "Workers' comp vs personal injury: which pays more?" comparison.
-**Day 21** — "Do I need a lawyer for a car accident?" decision-tree page → routes to lawyer directory (highest-RPM page).
+### B1. Data model
 
----
+New file `src/data/forms.ts`:
 
-## Phase 4 — First-Party Data + Retention (Days 22–30)
-The 2026 game: users who return and users you can re-target with consented data. Return visitors have far higher RPM.
+```ts
+export type FormFieldType = "text" | "email" | "date" | "number" | "select" | "textarea" | "checkbox" | "ssn" | "ein";
+export interface FormFieldDef { id: string; label: string; type: FormFieldType; help?: string; required?: boolean; options?: {value:string;label:string}[]; placeholder?: string; }
+export interface FormStepDef { id: string; title: string; description?: string; fields: FormFieldDef[]; }
+export interface LegalFormDef {
+  slug: string; title: string; shortDescription: string; category: "employment"|"tax"|"business"|"realestate"|"personal";
+  price: number;                 // clean-PDF price in USD
+  lastUpdated: string;           // ISO
+  isFeatured?: boolean;
+  steps: FormStepDef[];
+  pdfTemplate: "w9"|"i9"|"w4"|"nda"|"lease"|"poa"; // maps to a pdf-lib generator
+  relatedForms?: string[]; relatedBlogSlugs?: string[];
+}
+export const legalForms: LegalFormDef[] = [ /* W-9, I-9, W-4, NDA, Lease, POA — placeholders with realistic step/field defs */ ];
+```
 
-**Day 22** — "Case Tracker" mini-app: signed-in users save calculator inputs, get 7-day check-in email.
-**Day 23** — Weekly "Settlement News" digest (auto-generated via existing blog pipeline) → email opt-in.
-**Day 24** — "Personalized settlement report" — user enters email, gets branded PDF + follow-up sequence.
-**Day 25** — Add `user_intent` tracking to saved analyses (PI / family / employment / housing) — used to personalize on-site recommendations.
-**Day 26** — Build `/my-legal-dashboard` for logged-in users showing saved cases + relevant tools. Return-visitor RPM is 2–3× first-visit.
-**Day 27** — Add "Continue where you left off" banner + localStorage draft for anonymous users.
-**Day 28** — Retarget-friendly landing pages: 3 dedicated pages optimized for Google Discover pickup (mass-tort updates).
-**Day 29** — Ship "Ask a lawyer" lead form on top 5 money pages (already the highest-RPM funnel).
-**Day 30** — Review: pull `analytics` + Semrush, identify top-10 pages by dwell × CPC, double down.
+6 seed forms so hub + homepage render fully.
 
----
+### B2. Database (Lovable Cloud migration)
 
-## Technical section
+Two new tables in `public`, both with GRANTs + RLS scoped to `auth.uid()`:
 
-**New routes to add:** `/auto-insurance-claim-guide`, `/debt-settlement-calculator`, `/bankruptcy-vs-debt-settlement`, `/long-term-disability-claim-guide`, `/ssdi-denied-what-next`, `/mesothelioma-settlement-guide`, `/how-much-is-my-case-worth`, `/my-legal-dashboard`, plus ~7 content pages in Phase 3.
+- `form_drafts` — one row per (user, form_slug): `id uuid pk`, `user_id uuid not null`, `form_slug text not null`, `step int`, `data jsonb`, `progress_pct int`, `updated_at timestamptz`. Unique `(user_id, form_slug)`.
+- `form_purchases` — `id`, `user_id`, `form_slug`, `stripe_session_id`, `amount_cents`, `created_at`. Unique `(user_id, form_slug)` for lifetime access.
 
-**Reusable primitives to build first (Day 1 quick wins that unlock the rest):**
-1. `<MultiStepWizard>` wrapper — wraps existing calculators into 3–5 step flows.
-2. `<InMarketEntityBlock>` — standardized carrier/entity name block for contextual signals.
-3. `<EmailGatedPDF>` — reuses existing PDF export + adds email capture to `saved_analyses`.
-4. `<RelatedIntentStrip>` — cross-links by intent cluster (PI, insurance, debt, family, housing).
+Policies: user can select/insert/update/delete own rows. `service_role` full access (webhook writes purchases). Grants: `authenticated` CRUD, `service_role` ALL.
 
-**JSON-LD:** every new page ships with `Article` + `FAQPage` + `BreadcrumbList`. Money pages also add `WebApplication` (for calculators) and `HowTo` (for guides).
+### B3. Routing & navigation
 
-**Ad placement:** keep existing gating. High-CPC pages get one unit after the form, one after results, one in the related-tools strip.
+- `src/AppRoutes.tsx`: add `/forms` (hub) and `/forms/:slug` (wizard). Both lazy-loaded.
+- `src/components/layout/Navbar.tsx`: insert "Forms" link after Home (desktop + mobile menu).
+- Uses existing `useLocalizedPath` so multi-locale routing still works (per project memory).
 
-**Measurement:** after each phase, run `semrush--seo_trend` on the domain + `analytics--read_project_analytics` to confirm dwell time and pages/session are climbing before starting the next phase.
+### B4. Pages & components
 
----
+New files:
 
-## The single first thing to build
+```
+src/pages/FormsHubPage.tsx
+src/pages/FormWizardPage.tsx
+src/components/forms/FormCard.tsx
+src/components/forms/FormWizard.tsx        // reuses existing MultiStepWizard primitive
+src/components/forms/FormField.tsx         // shadcn Input/Select/Textarea wrappers with help/validation
+src/components/forms/AutoSaveIndicator.tsx
+src/components/forms/FormDisclaimer.tsx
+src/components/forms/PdfActionBar.tsx      // "Download Free (watermarked)" + "Get Clean PDF – $X"
+src/components/forms/Breadcrumbs.tsx       // generic, reusable
+src/components/home/FeaturedFormsSection.tsx
+src/components/dashboard/MyFormsSection.tsx // In Progress / Completed / Purchased tabs
+src/hooks/useFormDraft.ts                  // load + autosave (debounced 1.5s) to Supabase + localStorage mirror
+src/lib/pdf/generateFormPdf.ts             // pdf-lib generator, watermark flag
+src/lib/pdf/templates/{w9,i9,w4,nda,lease,poa}.ts
+```
 
-**Day 1 kickoff = harden `/personal-injury-settlements` contextual signals + ship the `<InMarketEntityBlock>` primitive.** It's the highest-CPC page you already have; making Google unmistakably classify it as PI + auto-insurance will lift RPM within one crawl cycle — before any of the Phase 2–4 work lands.
+Edits:
+- `src/pages/HomePage.tsx`: mount `<FeaturedFormsSection />` above the categories block.
+- `src/pages/DashboardPage.tsx`: mount `<MyFormsSection />` above the existing Saved Analyses list.
 
-Approve this plan and I'll start on Day 1 immediately.
+### B5. Autosave & resume
+
+`useFormDraft(slug)`:
+- On mount: load draft from Supabase (`form_drafts` where user_id + slug); fall back to `localStorage.forms:<slug>`; hydrate wizard state.
+- Debounced 1.5s save on any change → upsert to Supabase (logged in) + always mirror to localStorage.
+- Exposes `{ data, setField, step, setStep, status: "idle"|"saving"|"saved", lastSavedAt }` consumed by `<AutoSaveIndicator />`.
+- Guest mode: localStorage only + "Email me a resume link" (Phase 2 — stub UI only, mark TODO).
+
+### B6. PDF generation
+
+Client-side with `pdf-lib`:
+- One generator per template in `src/lib/pdf/templates/*` that lays out fields onto a blank page (placeholder layout — not a facsimile of official IRS/USCIS forms; make that explicit in disclaimer).
+- `generateFormPdf({ template, data, watermark: boolean })` returns a `Blob`.
+- Watermark: light gray diagonal text "Generated free on legallyspoken.com — Upgrade for clean version".
+- Triggered from `<PdfActionBar />`; success/failure toasts via existing `use-toast`.
+
+Dependency: `bun add pdf-lib`.
+
+### B7. Stripe (Lovable-managed payments)
+
+Runs Steps 1–7 of the payments-pre-enable flow:
+1. Call `payments--recommend_payment_provider` to classify the product.
+2. Present recommendation to user. Digital forms → likely Paddle or Stripe; will surface the tool's suggestion.
+3. On confirm, enable via `payments--enable_stripe_payments` (or Paddle if recommended).
+4. Create the 6 seed products via `batch_create_product` (one price per form).
+5. Add checkout edge function + webhook per the knowledge files that appear after enable.
+6. On webhook `checkout.session.completed` → insert `form_purchases` row (service role) keyed by `user_id` + `form_slug` from metadata.
+7. Client checks `form_purchases` before letting user re-download the clean PDF; purchased forms appear under Dashboard → Purchased tab.
+
+Because provider choice depends on the eligibility check result and needs user confirmation, this step will pause for user approval mid-build.
+
+### B8. Dashboard "My Forms"
+
+`<MyFormsSection />` inside existing `DashboardPage`:
+- Tabs: **In Progress** (rows from `form_drafts` where progress_pct < 100), **Completed Free** (progress_pct = 100, not in purchases), **Purchased** (join with `form_purchases`).
+- Each row: title, updated date, progress bar, action buttons (Continue, Download Free, Re-download Clean, Delete draft).
+- Empty states per tab.
+
+### B9. Cross-cutting
+
+- `<FormDisclaimer />` used on hub, every wizard, and homepage section — mirrors existing legal disclaimer tone.
+- `<Breadcrumbs />` on wizard: Home › Forms › {Category} › {Form}.
+- SEO: `<Head>` on hub + wizard with title/description; JSON-LD `HowTo` schema on wizard (optional).
+- Mobile-first: wizard stacks vertically, sticky action bar at bottom under `md`.
+
+### B10. Implementation order in build mode
+
+1. Footer credit (1 edit).
+2. Migration for `form_drafts` + `form_purchases`.
+3. `src/data/forms.ts` seeds + types.
+4. Navbar + routes.
+5. Hub page + FormCard + FeaturedFormsSection on Home.
+6. Wizard page + FormWizard + FormField + AutoSaveIndicator + useFormDraft.
+7. pdf-lib install + templates + free watermarked download.
+8. Dashboard "My Forms".
+9. **Pause** → run `recommend_payment_provider`, confirm provider with user, enable payments, create products, wire checkout + webhook + Purchased tab + clean PDF gating.
+10. Disclaimers, breadcrumbs, related-forms/related-blog wiring, final polish.
+
+### Technical notes
+
+- Uses existing shadcn/ui components, Tailwind tokens, `useLocalizedPath`, `useAuth`, `supabase` client — no new design tokens.
+- All new `public` tables include GRANTs in the same migration (project rule).
+- Localized routes (`/es/forms`, etc.) work automatically because `AppRoutes` is mounted under each locale prefix.
+- No changes to `src/integrations/supabase/client.ts` or auto-generated files.
+
+### What will be delivered end-of-build
+
+- Footer credit live.
+- `/forms` hub + 6 seed forms + reusable wizard + autosave + free watermarked PDFs.
+- Dashboard "My Forms" with In Progress / Completed / Purchased tabs.
+- Stripe (or recommended provider) checkout + webhook + clean PDF gating.
+- A short "How to add a new form" note at the end of the build reply.
