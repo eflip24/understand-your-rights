@@ -7,6 +7,7 @@ import { categories } from "@/data/tools";
 import HeroBanner from "@/components/home/HeroBanner";
 import QuizAndPopularToolsSection from "@/components/home/QuizAndPopularToolsSection";
 import LegalResourcesAndHowItWorks from "@/components/home/LegalResourcesAndHowItWorks";
+import FeaturedFormsSection from "@/components/home/FeaturedFormsSection";
 import { JsonLdGraph, websiteSchema, organizationSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
