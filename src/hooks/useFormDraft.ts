@@ -85,7 +85,7 @@ export function useFormDraft({ slug, totalSteps }: Options) {
         [{
           user_id: user.id,
           form_slug: slug,
-          data: nextData,
+          data: nextData as never,
           step: nextStep,
           progress_pct: progress,
         }],
