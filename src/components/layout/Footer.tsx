@@ -112,6 +112,17 @@ export default function Footer() {
               <strong className="text-primary-foreground">{t("footer.disclaimer")}</strong> {t("footer.disclaimerBody")}
             </p>
           </div>
+          <p className="mt-6 text-center text-xs text-primary-foreground/60">
+            Website designed and developed by{" "}
+            <a
+              href="https://eflip.ie"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:underline"
+            >
+              eFlip
+            </a>
+          </p>
         </div>
       </div>
     </footer>

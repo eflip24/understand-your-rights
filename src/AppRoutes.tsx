@@ -90,6 +90,8 @@ const BankruptcyVsDebtSettlement = React.lazy(() => import("@/pages/BankruptcyVs
 const LongTermDisabilityClaimGuide = React.lazy(() => import("@/pages/LongTermDisabilityClaimGuide"));
 const SsdiDeniedWhatNext = React.lazy(() => import("@/pages/SsdiDeniedWhatNext"));
 const MesotheliomaSettlementGuide = React.lazy(() => import("@/pages/MesotheliomaSettlementGuide"));
+const FormsHubPage = React.lazy(() => import("@/pages/FormsHubPage"));
+const FormWizardPage = React.lazy(() => import("@/pages/FormWizardPage"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
@@ -104,6 +106,8 @@ export default function AppRoutes() {
       <Route path="/tools" element={<ToolsDirectory />} />
       <Route path="/tools/:category" element={<CategoryPage />} />
       <Route path="/tools/:category/:tool" element={<ToolPage />} />
+      <Route path="/forms" element={<FormsHubPage />} />
+      <Route path="/forms/:slug" element={<FormWizardPage />} />
       <Route path="/legal-terms" element={<LegalTermsDirectory />} />
       <Route path="/legal-terms/:slug" element={<LegalTermPage />} />
       <Route path="/legal-clauses" element={<LegalClausesDirectory />} />

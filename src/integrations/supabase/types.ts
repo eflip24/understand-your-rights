@@ -168,6 +168,66 @@ export type Database = {
         }
         Relationships: []
       }
+      form_drafts: {
+        Row: {
+          created_at: string
+          data: Json
+          form_slug: string
+          id: string
+          progress_pct: number
+          step: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          data?: Json
+          form_slug: string
+          id?: string
+          progress_pct?: number
+          step?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          data?: Json
+          form_slug?: string
+          id?: string
+          progress_pct?: number
+          step?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      form_purchases: {
+        Row: {
+          amount_cents: number | null
+          created_at: string
+          form_slug: string
+          id: string
+          stripe_session_id: string | null
+          user_id: string
+        }
+        Insert: {
+          amount_cents?: number | null
+          created_at?: string
+          form_slug: string
+          id?: string
+          stripe_session_id?: string | null
+          user_id: string
+        }
+        Update: {
+          amount_cents?: number | null
+          created_at?: string
+          form_slug?: string
+          id?: string
+          stripe_session_id?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       growth_metrics: {
         Row: {
           avg_position: number | null

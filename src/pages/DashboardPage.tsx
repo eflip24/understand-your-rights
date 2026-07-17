@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, Trash2, FileText, Scale } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
+import MyFormsSection from "@/components/dashboard/MyFormsSection";
 
 interface SavedAnalysis {
   id: string;
@@ -74,6 +75,8 @@ export default function DashboardPage() {
           <p className="text-sm text-muted-foreground">{user?.email}</p>
         </div>
       </div>
+
+      <MyFormsSection />
 
       <h2 className="font-semibold text-lg mb-4">Saved Analyses</h2>
 
