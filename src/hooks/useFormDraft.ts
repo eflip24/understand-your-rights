@@ -82,13 +82,13 @@ export function useFormDraft({ slug, totalSteps }: Options) {
     const { error } = await supabase
       .from("form_drafts")
       .upsert(
-        {
+        [{
           user_id: user.id,
           form_slug: slug,
           data: nextData,
           step: nextStep,
           progress_pct: progress,
-        },
+        }],
         { onConflict: "user_id,form_slug" }
       );
     if (error) {
