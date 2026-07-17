@@ -130,6 +130,7 @@ export default function HomePage() {
       </section>
 
 
+      <FeaturedFormsSection />
       <QuizAndPopularToolsSection />
 
       {/* Categories */}
