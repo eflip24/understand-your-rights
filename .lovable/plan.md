@@ -1,154 +1,96 @@
+## Goal
+Replace the current placeholder W-9 entry in `src/data/forms.ts` with a 100%-accurate multi-step version of IRS Form W-9 (Rev. March 2024), and give it a dedicated PDF renderer. Reuses the existing Forms foundation (wizard, auto-save, dashboard, watermark/clean PDF, related forms, disclaimer).
 
-# Plan: Footer credit + Online Fillable Legal Forms foundation
+## What needs to change
 
-Two deliverables in one build:
+### 1. Extend form-field primitives (`src/data/forms.ts` + `FormField.tsx`)
+Add three new field types so the schema-driven wizard can render W-9 accurately without hand-rolling a bespoke component:
 
-1. Small change: add "Website designed and developed by [eFlip](https://eflip.ie)" to the site footer.
-2. Large change: production-ready foundation for a Fillable Legal Forms system integrated into the existing site (auth, dashboard, design system, Stripe via Lovable Cloud).
+- `radio` — used for Line 3a (7 mutually exclusive tax-classification boxes) and for the SSN-vs-EIN choice in Part I.
+- `conditionalText` — a text input that only renders when a parent field equals a given value (LLC tax-code entry, "Other" description).
+- `usState` — a US state dropdown (50 + DC) for Line 6.
 
----
+Each new type gets one small block in `FormField.tsx`; existing `ssn` / `ein` types already exist and stay.
 
-## A. Footer credit (quick)
+Also add optional `showWhen?: { fieldId: string; equals: string | string[] | true }` to `FormFieldDef` so Line 3b and the LLC code field render only when their trigger is set. `FormWizardPage` already reads `data`, so it just needs to filter `current.fields` through a `shouldShow(field, data)` helper before rendering and before required-field validation.
 
-Edit `src/components/layout/Footer.tsx`:
-- Add a small line in the bottom bar (next to or below the existing copyright): `Website designed and developed by eFlip` where "eFlip" is an `<a href="https://eflip.ie" target="_blank" rel="noopener noreferrer">`.
-- Uses existing muted-foreground styling. No design token changes.
+### 2. Rewrite the `w-9` entry with the exact IRS structure
+Four wizard steps mapped to the official lines:
 
----
+**Step 1 — Name & tax classification**
+- Line 1: `name` (text, required) with official help text about sole proprietors / disregarded entities.
+- Line 2: `businessName` (text, optional).
+- Line 3a: `classification` (radio, required) with the 7 official options in order: Individual/sole proprietor, C corporation, S corporation, Partnership, Trust/estate, LLC, Other.
+- LLC code: `llcTaxCode` (conditionalText, required when `classification === "llc"`) — label "Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)".
+- Other description: `otherDescription` (conditionalText, required when `classification === "other"`).
+- Rendered note under Line 3a with the exact IRS "Check the LLC box…" text (added as a `description` on a hidden info field or as step-level `note` — see technical notes).
+- Line 3b: `foreignPartners` (checkbox, `showWhen` `classification ∈ {partnership, trust, llc-with-P}` — handled via a small computed trigger field).
 
-## B. Fillable Legal Forms foundation
+**Step 2 — Exemptions & address**
+- Line 4a: `exemptPayeeCode` (text, optional).
+- Line 4b: `fatcaCode` (text, optional) with the "accounts outside the United States" note as help text.
+- Line 5: `streetAddress` (text, required).
+- Line 6: `city` (text, required), `state` (usState, required), `zip` (text, required, pattern 5 or 9 digits).
+- Requester name/address: `requesterInfo` (textarea, optional).
+- Line 7: `accountNumbers` (text, optional).
 
-### B1. Data model
+**Step 3 — Part I: Taxpayer identification number**
+- Instruction paragraph rendered as step `description` (exact IRS wording).
+- `tinType` (radio, required): "Social Security Number" | "Employer Identification Number".
+- `ssn` (ssn, `showWhen` tinType === "ssn", required).
+- `ein` (ein, `showWhen` tinType === "ein", required).
 
-New file `src/data/forms.ts`:
+**Step 4 — Part II: Certification**
+- Full 4-item certification text rendered as step `description` (verbatim).
+- Cross-out-item-2 instructions rendered as a secondary note.
+- `signatureName` (text, required) — "Signature of U.S. person (typed name)".
+- `certifyChecked` (checkbox, required) — "I agree this typed name is my electronic signature."
+- `signatureDate` (date, required, defaults to today via wizard prefill).
 
-```ts
-export type FormFieldType = "text" | "email" | "date" | "number" | "select" | "textarea" | "checkbox" | "ssn" | "ein";
-export interface FormFieldDef { id: string; label: string; type: FormFieldType; help?: string; required?: boolean; options?: {value:string;label:string}[]; placeholder?: string; }
-export interface FormStepDef { id: string; title: string; description?: string; fields: FormFieldDef[]; }
-export interface LegalFormDef {
-  slug: string; title: string; shortDescription: string; category: "employment"|"tax"|"business"|"realestate"|"personal";
-  price: number;                 // clean-PDF price in USD
-  lastUpdated: string;           // ISO
-  isFeatured?: boolean;
-  steps: FormStepDef[];
-  pdfTemplate: "w9"|"i9"|"w4"|"nda"|"lease"|"poa"; // maps to a pdf-lib generator
-  relatedForms?: string[]; relatedBlogSlugs?: string[];
-}
-export const legalForms: LegalFormDef[] = [ /* W-9, I-9, W-4, NDA, Lease, POA — placeholders with realistic step/field defs */ ];
-```
+Add step-level optional `note?: string` to `FormStepDef` so the rendered wizard can show the exact IRS blocks (LLC note, Part I instructions, Part II certification + cross-out note) in the right place. `FormWizardPage` renders `step.note` under `step.description`.
 
-6 seed forms so hub + homepage render fully.
+Update `relatedForms` to `["w-4", "i-9", "nda"]` and set `relatedBlogSlugs` to any existing 1099/independent-contractor posts (safe to leave empty if none match).
 
-### B2. Database (Lovable Cloud migration)
+### 3. Dedicated W-9 PDF renderer (`src/lib/pdf/generateFormPdf.ts`)
+The current renderer prints "label / value" for every field, which won't reproduce the IRS layout well. Add a `w9`-specific branch inside `generateFormPdf`:
 
-Two new tables in `public`, both with GRANTs + RLS scoped to `auth.uid()`:
+- Header: "Form W-9 (Rev. March 2024) — Request for Taxpayer Identification Number and Certification".
+- Section blocks that mirror the IRS 1-page layout (Name / Business name / Classification with the selected box marked, LLC code and Other description inline; Exemptions row; Address block; TIN box showing whichever of SSN/EIN was chosen with the correct hyphenation; Part II certification text verbatim; signature line with typed name + date).
+- Footer disclaimer: "This is a free fillable helper tool created by legallyspoken.com. Not an official IRS form. Verify at irs.gov before submitting." — same watermark logic reused for the free version.
 
-- `form_drafts` — one row per (user, form_slug): `id uuid pk`, `user_id uuid not null`, `form_slug text not null`, `step int`, `data jsonb`, `progress_pct int`, `updated_at timestamptz`. Unique `(user_id, form_slug)`.
-- `form_purchases` — `id`, `user_id`, `form_slug`, `stripe_session_id`, `amount_cents`, `created_at`. Unique `(user_id, form_slug)` for lifetime access.
+Generic renderer stays as the fallback for other slugs (w-4, i-9, nda, lease, poa).
 
-Policies: user can select/insert/update/delete own rows. `service_role` full access (webhook writes purchases). Grants: `authenticated` CRUD, `service_role` ALL.
+### 4. Disclaimer copy
+Add a W-9-specific compact disclaimer above the download bar on the final step (only when `slug === "w-9"`), using the exact wording from the prompt. `FormDisclaimer` stays generic; a small inline paragraph handles the W-9 line.
 
-### B3. Routing & navigation
+### 5. Stripe checkout
+Out of scope for this build — `FormWizardPage.handleCheckout` already shows a "coming soon" toast, and the prompt's Stripe/paid-PDF wiring is deferred to its own turn (a payments-eligibility check + webhook function). Free watermarked PDF, auto-save, dashboard resume, and purchase-gated clean PDF plumbing all remain wired via the existing `form_purchases` table.
 
-- `src/AppRoutes.tsx`: add `/forms` (hub) and `/forms/:slug` (wizard). Both lazy-loaded.
-- `src/components/layout/Navbar.tsx`: insert "Forms" link after Home (desktop + mobile menu).
-- Uses existing `useLocalizedPath` so multi-locale routing still works (per project memory).
+## Files touched
+- `src/data/forms.ts` — extend types (`radio`, `conditionalText`, `usState`, `showWhen`, step `note`); rewrite the `w-9` entry.
+- `src/components/forms/FormField.tsx` — render the three new field types.
+- `src/pages/FormWizardPage.tsx` — apply `showWhen` filtering to rendering + validation; render `step.note`; W-9-specific inline disclaimer on the last step.
+- `src/lib/pdf/generateFormPdf.ts` — add `renderW9(pdfDoc, data, watermark)` branch selected via `form.pdfTemplate === "w9"`.
 
-### B4. Pages & components
+No DB migration, no new routes, no new components.
 
-New files:
+## Technical notes
+- `showWhen` for Line 3b treats `classification === "partnership" || classification === "trust" || (classification === "llc" && llcTaxCode?.toUpperCase() === "P")`. Simplest implementation: encode that as `showWhen: { fieldId: "__line3bTrigger", equals: true }` where `__line3bTrigger` is a computed derived value inserted by `FormWizardPage` before filtering (kept out of persisted data).
+- Zip validation: allow `^\d{5}(-?\d{4})?$` — soft validate only (warning, not blocking) to stay consistent with the existing wizard's UX.
+- SSN / EIN inputs already exist and use `inputMode="numeric"`; add lightweight formatting (`###-##-####` and `##-#######`) in `FormField.tsx` on blur so PDF output is clean.
+- PDF renderer uses `pdf-lib` (already a dep) and standard Helvetica; no new fonts needed. Long certification text is wrapped via the existing `wrapText` helper.
 
-```
-src/pages/FormsHubPage.tsx
-src/pages/FormWizardPage.tsx
-src/components/forms/FormCard.tsx
-src/components/forms/FormWizard.tsx        // reuses existing MultiStepWizard primitive
-src/components/forms/FormField.tsx         // shadcn Input/Select/Textarea wrappers with help/validation
-src/components/forms/AutoSaveIndicator.tsx
-src/components/forms/FormDisclaimer.tsx
-src/components/forms/PdfActionBar.tsx      // "Download Free (watermarked)" + "Get Clean PDF – $X"
-src/components/forms/Breadcrumbs.tsx       // generic, reusable
-src/components/home/FeaturedFormsSection.tsx
-src/components/dashboard/MyFormsSection.tsx // In Progress / Completed / Purchased tabs
-src/hooks/useFormDraft.ts                  // load + autosave (debounced 1.5s) to Supabase + localStorage mirror
-src/lib/pdf/generateFormPdf.ts             // pdf-lib generator, watermark flag
-src/lib/pdf/templates/{w9,i9,w4,nda,lease,poa}.ts
-```
+## Out of scope (flagged for a follow-up turn)
+- Live Stripe checkout for the $4.99 clean PDF (needs `payments--recommend_payment_provider` → `enable_stripe_payments` → products + webhook).
+- Electronic signature pad — using typed-name + confirmation checkbox is legally equivalent for a W-9 helper and matches the rest of the Forms suite.
+- Related blog posts: none of the current published posts are 1099/independent-contractor specific, so `relatedBlogSlugs` stays empty until we ship those.
 
-Edits:
-- `src/pages/HomePage.tsx`: mount `<FeaturedFormsSection />` above the categories block.
-- `src/pages/DashboardPage.tsx`: mount `<MyFormsSection />` above the existing Saved Analyses list.
-
-### B5. Autosave & resume
-
-`useFormDraft(slug)`:
-- On mount: load draft from Supabase (`form_drafts` where user_id + slug); fall back to `localStorage.forms:<slug>`; hydrate wizard state.
-- Debounced 1.5s save on any change → upsert to Supabase (logged in) + always mirror to localStorage.
-- Exposes `{ data, setField, step, setStep, status: "idle"|"saving"|"saved", lastSavedAt }` consumed by `<AutoSaveIndicator />`.
-- Guest mode: localStorage only + "Email me a resume link" (Phase 2 — stub UI only, mark TODO).
-
-### B6. PDF generation
-
-Client-side with `pdf-lib`:
-- One generator per template in `src/lib/pdf/templates/*` that lays out fields onto a blank page (placeholder layout — not a facsimile of official IRS/USCIS forms; make that explicit in disclaimer).
-- `generateFormPdf({ template, data, watermark: boolean })` returns a `Blob`.
-- Watermark: light gray diagonal text "Generated free on legallyspoken.com — Upgrade for clean version".
-- Triggered from `<PdfActionBar />`; success/failure toasts via existing `use-toast`.
-
-Dependency: `bun add pdf-lib`.
-
-### B7. Stripe (Lovable-managed payments)
-
-Runs Steps 1–7 of the payments-pre-enable flow:
-1. Call `payments--recommend_payment_provider` to classify the product.
-2. Present recommendation to user. Digital forms → likely Paddle or Stripe; will surface the tool's suggestion.
-3. On confirm, enable via `payments--enable_stripe_payments` (or Paddle if recommended).
-4. Create the 6 seed products via `batch_create_product` (one price per form).
-5. Add checkout edge function + webhook per the knowledge files that appear after enable.
-6. On webhook `checkout.session.completed` → insert `form_purchases` row (service role) keyed by `user_id` + `form_slug` from metadata.
-7. Client checks `form_purchases` before letting user re-download the clean PDF; purchased forms appear under Dashboard → Purchased tab.
-
-Because provider choice depends on the eligibility check result and needs user confirmation, this step will pause for user approval mid-build.
-
-### B8. Dashboard "My Forms"
-
-`<MyFormsSection />` inside existing `DashboardPage`:
-- Tabs: **In Progress** (rows from `form_drafts` where progress_pct < 100), **Completed Free** (progress_pct = 100, not in purchases), **Purchased** (join with `form_purchases`).
-- Each row: title, updated date, progress bar, action buttons (Continue, Download Free, Re-download Clean, Delete draft).
-- Empty states per tab.
-
-### B9. Cross-cutting
-
-- `<FormDisclaimer />` used on hub, every wizard, and homepage section — mirrors existing legal disclaimer tone.
-- `<Breadcrumbs />` on wizard: Home › Forms › {Category} › {Form}.
-- SEO: `<Head>` on hub + wizard with title/description; JSON-LD `HowTo` schema on wizard (optional).
-- Mobile-first: wizard stacks vertically, sticky action bar at bottom under `md`.
-
-### B10. Implementation order in build mode
-
-1. Footer credit (1 edit).
-2. Migration for `form_drafts` + `form_purchases`.
-3. `src/data/forms.ts` seeds + types.
-4. Navbar + routes.
-5. Hub page + FormCard + FeaturedFormsSection on Home.
-6. Wizard page + FormWizard + FormField + AutoSaveIndicator + useFormDraft.
-7. pdf-lib install + templates + free watermarked download.
-8. Dashboard "My Forms".
-9. **Pause** → run `recommend_payment_provider`, confirm provider with user, enable payments, create products, wire checkout + webhook + Purchased tab + clean PDF gating.
-10. Disclaimers, breadcrumbs, related-forms/related-blog wiring, final polish.
-
-### Technical notes
-
-- Uses existing shadcn/ui components, Tailwind tokens, `useLocalizedPath`, `useAuth`, `supabase` client — no new design tokens.
-- All new `public` tables include GRANTs in the same migration (project rule).
-- Localized routes (`/es/forms`, etc.) work automatically because `AppRoutes` is mounted under each locale prefix.
-- No changes to `src/integrations/supabase/client.ts` or auto-generated files.
-
-### What will be delivered end-of-build
-
-- Footer credit live.
-- `/forms` hub + 6 seed forms + reusable wizard + autosave + free watermarked PDFs.
-- Dashboard "My Forms" with In Progress / Completed / Purchased tabs.
-- Stripe (or recommended provider) checkout + webhook + clean PDF gating.
-- A short "How to add a new form" note at the end of the build reply.
+## Acceptance
+- All 7 tax-classification boxes render as radios in the IRS order; only one selectable.
+- LLC code field appears only when LLC is selected; "Other" description appears only when Other is selected.
+- Line 3b checkbox appears only under the three qualifying conditions.
+- Part I shows the exact instruction paragraph and gates SSN vs EIN by radio.
+- Part II renders the full 4-item certification and cross-out note verbatim.
+- Free download produces a W-9-layout PDF with watermark; clean download works for users with a `form_purchases` row.
+- Resume from `/dashboard` "My Forms" reopens on the last edited step with all values (including radios / conditional fields).
+- Typecheck clean.

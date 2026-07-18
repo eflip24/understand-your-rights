@@ -14,7 +14,7 @@ import PdfActionBar from "@/components/forms/PdfActionBar";
 import FormDisclaimer from "@/components/forms/FormDisclaimer";
 import FormCard from "@/components/forms/FormCard";
 import { useFormDraft } from "@/hooks/useFormDraft";
-import { categoryLabels, getFormBySlug, legalForms } from "@/data/forms";
+import { categoryLabels, getFormBySlug, isFieldVisible, legalForms } from "@/data/forms";
 import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
 
@@ -62,6 +62,7 @@ export default function FormWizardPage() {
     const errs: Record<string, string> = {};
     for (const field of current.fields) {
       if (!field.required) continue;
+      if (!isFieldVisible(field, data)) continue;
       const v = data[field.id];
       if (v === undefined || v === null || v === "" || v === false) {
         errs[field.id] = "This field is required.";
@@ -130,18 +131,25 @@ export default function FormWizardPage() {
           {current.description && (
             <p className="text-sm text-muted-foreground">{current.description}</p>
           )}
-          {current.fields.map((field) => (
-            <FormField
-              key={field.id}
-              field={field}
-              value={data[field.id]}
-              onChange={(v) => {
-                setField(field.id, v);
-                if (errors[field.id]) setErrors((e) => ({ ...e, [field.id]: "" }));
-              }}
-              error={errors[field.id]}
-            />
-          ))}
+          {current.note && (
+            <div className="rounded-md border border-border/60 bg-secondary/40 p-4 text-sm leading-relaxed text-foreground/90 whitespace-pre-line">
+              {current.note}
+            </div>
+          )}
+          {current.fields
+            .filter((field) => isFieldVisible(field, data))
+            .map((field) => (
+              <FormField
+                key={field.id}
+                field={field}
+                value={data[field.id]}
+                onChange={(v) => {
+                  setField(field.id, v);
+                  if (errors[field.id]) setErrors((e) => ({ ...e, [field.id]: "" }));
+                }}
+                error={errors[field.id]}
+              />
+            ))}
 
           <div className="flex items-center justify-between pt-2">
             <Button
@@ -169,6 +177,16 @@ export default function FormWizardPage() {
       {isLast && (
         <div className="mt-6">
           <h2 className="mb-3 font-serif text-lg font-bold">Download</h2>
+          {form.slug === "w-9" && (
+            <p className="mb-3 rounded-md border border-accent/30 bg-accent/5 p-3 text-xs leading-relaxed text-foreground/80">
+              This is a free fillable helper tool created by legallyspoken.com. It is <strong>not</strong> an
+              official IRS form. Before submitting to any requester, verify the current Form W-9 at{" "}
+              <a href="https://www.irs.gov/forms-pubs/about-form-w-9" target="_blank" rel="noreferrer" className="text-accent underline">
+                irs.gov
+              </a>
+              . LegallySpoken is not a law firm and does not provide legal or tax advice.
+            </p>
+          )}
           <PdfActionBar form={form} data={data} hasPurchased={hasPurchased} onCheckout={handleCheckout} />
           {!user && (
             <p className="mt-3 text-xs text-muted-foreground">
