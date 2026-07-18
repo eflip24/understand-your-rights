@@ -62,6 +62,7 @@ export default function FormWizardPage() {
     const errs: Record<string, string> = {};
     for (const field of current.fields) {
       if (!field.required) continue;
+      if (!isFieldVisible(field, data)) continue;
       const v = data[field.id];
       if (v === undefined || v === null || v === "" || v === false) {
         errs[field.id] = "This field is required.";
