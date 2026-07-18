@@ -3,7 +3,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import type { FormFieldDef } from "@/data/forms";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { US_STATES, type FormFieldDef } from "@/data/forms";
 
 interface Props {
   field: FormFieldDef;
@@ -34,6 +35,12 @@ export default function FormField({ field, value, onChange, error }: Props) {
     <p className="text-xs text-destructive mt-1">{error}</p>
   );
 
+  const noteNode = field.note && (
+    <p className="mt-2 rounded-md border border-border/60 bg-secondary/40 p-2 text-xs italic text-muted-foreground leading-relaxed">
+      {field.note}
+    </p>
+  );
+
   switch (field.type) {
     case "textarea":
       return (
@@ -48,6 +55,7 @@ export default function FormField({ field, value, onChange, error }: Props) {
             rows={4}
           />
           {errorNode}
+          {noteNode}
         </div>
       );
     case "select":
@@ -67,6 +75,52 @@ export default function FormField({ field, value, onChange, error }: Props) {
             </SelectContent>
           </Select>
           {errorNode}
+          {noteNode}
+        </div>
+      );
+    case "usState":
+      return (
+        <div>
+          {common}
+          <Select value={(value as string) || ""} onValueChange={onChange}>
+            <SelectTrigger id={id} className="mt-1.5">
+              <SelectValue placeholder="Select state…" />
+            </SelectTrigger>
+            <SelectContent className="max-h-72">
+              {US_STATES.map((o) => (
+                <SelectItem key={o.value} value={o.value}>
+                  {o.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          {errorNode}
+          {noteNode}
+        </div>
+      );
+    case "radio":
+      return (
+        <div>
+          {common}
+          <RadioGroup
+            value={(value as string) || ""}
+            onValueChange={onChange}
+            className="mt-2 space-y-2"
+          >
+            {field.options?.map((o) => (
+              <div key={o.value} className="flex items-start gap-2">
+                <RadioGroupItem id={`${id}-${o.value}`} value={o.value} className="mt-0.5" />
+                <Label
+                  htmlFor={`${id}-${o.value}`}
+                  className="text-sm font-normal cursor-pointer leading-snug"
+                >
+                  {o.label}
+                </Label>
+              </div>
+            ))}
+          </RadioGroup>
+          {errorNode}
+          {noteNode}
         </div>
       );
     case "checkbox":
@@ -85,6 +139,7 @@ export default function FormField({ field, value, onChange, error }: Props) {
             </Label>
             {field.help && <p className="text-xs text-muted-foreground">{field.help}</p>}
             {errorNode}
+            {noteNode}
           </div>
         </div>
       );
@@ -110,6 +165,7 @@ export default function FormField({ field, value, onChange, error }: Props) {
             className="mt-1.5"
           />
           {errorNode}
+          {noteNode}
         </div>
       );
     }
