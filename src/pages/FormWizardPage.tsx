@@ -131,18 +131,25 @@ export default function FormWizardPage() {
           {current.description && (
             <p className="text-sm text-muted-foreground">{current.description}</p>
           )}
-          {current.fields.map((field) => (
-            <FormField
-              key={field.id}
-              field={field}
-              value={data[field.id]}
-              onChange={(v) => {
-                setField(field.id, v);
-                if (errors[field.id]) setErrors((e) => ({ ...e, [field.id]: "" }));
-              }}
-              error={errors[field.id]}
-            />
-          ))}
+          {current.note && (
+            <div className="rounded-md border border-border/60 bg-secondary/40 p-4 text-sm leading-relaxed text-foreground/90 whitespace-pre-line">
+              {current.note}
+            </div>
+          )}
+          {current.fields
+            .filter((field) => isFieldVisible(field, data))
+            .map((field) => (
+              <FormField
+                key={field.id}
+                field={field}
+                value={data[field.id]}
+                onChange={(v) => {
+                  setField(field.id, v);
+                  if (errors[field.id]) setErrors((e) => ({ ...e, [field.id]: "" }));
+                }}
+                error={errors[field.id]}
+              />
+            ))}
 
           <div className="flex items-center justify-between pt-2">
             <Button
