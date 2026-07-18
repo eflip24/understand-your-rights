@@ -14,7 +14,7 @@ import PdfActionBar from "@/components/forms/PdfActionBar";
 import FormDisclaimer from "@/components/forms/FormDisclaimer";
 import FormCard from "@/components/forms/FormCard";
 import { useFormDraft } from "@/hooks/useFormDraft";
-import { categoryLabels, getFormBySlug, legalForms } from "@/data/forms";
+import { categoryLabels, getFormBySlug, isFieldVisible, legalForms } from "@/data/forms";
 import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
 
