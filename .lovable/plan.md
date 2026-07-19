@@ -1,96 +1,92 @@
-## Goal
-Replace the current placeholder W-9 entry in `src/data/forms.ts` with a 100%-accurate multi-step version of IRS Form W-9 (Rev. March 2024), and give it a dedicated PDF renderer. Reuses the existing Forms foundation (wizard, auto-save, dashboard, watermark/clean PDF, related forms, disclaimer).
 
-## What needs to change
+# Plan: Add Form I-9, Form W-4 (2026), and Simple NDA
 
-### 1. Extend form-field primitives (`src/data/forms.ts` + `FormField.tsx`)
-Add three new field types so the schema-driven wizard can render W-9 accurately without hand-rolling a bespoke component:
+Build on the existing foundation (`FormWizardPage`, `useFormDraft`, `MyFormsSection`, `PdfActionBar`, `generateFormPdf`, `form_drafts` / `form_purchases` tables). The W-9 pattern is our reference — same conditional field logic (`showWhen`), same per-form PDF renderer switch.
 
-- `radio` — used for Line 3a (7 mutually exclusive tax-classification boxes) and for the SSN-vs-EIN choice in Part I.
-- `conditionalText` — a text input that only renders when a parent field equals a given value (LLC tax-code entry, "Other" description).
-- `usState` — a US state dropdown (50 + DC) for Line 6.
+## 1. Extend the data layer — `src/data/forms.ts`
 
-Each new type gets one small block in `FormField.tsx`; existing `ssn` / `ein` types already exist and stay.
+Add three new `LegalFormDef` entries plus supporting constants. No breaking changes to existing types beyond extending `PdfTemplate` (already includes `i9`, `w4`, `nda`).
 
-Also add optional `showWhen?: { fieldId: string; equals: string | string[] | true }` to `FormFieldDef` so Line 3b and the LLC code field render only when their trigger is set. `FormWizardPage` already reads `data`, so it just needs to filter `current.fields` through a `shouldShow(field, data)` helper before rendering and before required-field validation.
+### Form I-9 (`/forms/i-9`)
+- **Title:** "Free Fillable Form I-9 Online – Employment Eligibility Verification"
+- **Edition badge:** 01/20/25 (valid through 05/31/2027). Rendered in header + PDF.
+- **Steps (5):**
+  1. **Section 1 — Employee info & attestation:** Last, First, MI, Other last names, Street, Apt, City, State, ZIP, DOB, SSN, email, phone, attestation radio (4 options).
+     - Conditional fields via `showWhen`:
+       - Option 3 (LPR) → USCIS/A-Number.
+       - Option 4 (alien authorized) → Work-until date + one-of: USCIS/A-Number, Form I-94 admission number, or Foreign passport number + country of issuance.
+  2. **Section 1 signature:** Typed signature + date; "Did a preparer/translator help?" checkbox.
+  3. **Preparer/Translator certification** (`showWhen` step-gate via first field): preparer name, address, signature, date. Rendered only if flagged.
+  4. **Section 2 — Employer review:** Doc path radio ("List A" | "List B + C"); then either 1 List-A block or 2 blocks (B + C). Each block: Document Title, Issuing Authority, Document Number, Expiration Date. Plus first-day-of-employment date.
+  5. **Section 2 certification:** Employer signature name, title, date, business name, business address. Optional Section 3 (reverification) toggle → new name, rehire date, reverification doc fields.
+- **Disclaimer:** Prominent block — this is a self-help worksheet; the official Form I-9 must be signed on the USCIS PDF. Link to `uscis.gov/i-9`.
 
-### 2. Rewrite the `w-9` entry with the exact IRS structure
-Four wizard steps mapped to the official lines:
+### Form W-4 (`/forms/w-4`)
+- **Title:** "Free Fillable Form W-4 2026 – Employee's Withholding Certificate"
+- **Steps (5, mirroring the IRS 5-step layout):**
+  1. **Step 1 — Personal info:** First, MI, Last, SSN, Address, City, State, ZIP, Filing status radio (Single/MFS, MFJ or QSS, HoH).
+  2. **Step 2 — Multiple jobs / spouse works:** Radio (a) Use IRS estimator, (b) Use Multiple Jobs Worksheet, (c) Check box 2(c) if two jobs with similar pay. Simple built-in estimator: second-job annual wages input → computed extra withholding suggestion (rendered as help text, written back to Step 4c only on user confirm).
+  3. **Step 3 — Dependents:** Qualifying children under 17 × $2,000; other dependents × $500. Auto-total.
+  4. **Step 4 — Other adjustments:** 4(a) other income, 4(b) deductions, 4(c) extra withholding per pay period.
+  5. **Step 5 — Sign & date:** Typed signature, date. Optional employer section (name/address, first date of employment, EIN) marked "employer completes."
+- **Disclaimer:** Not tax advice; verify against latest W-4 at irs.gov.
 
-**Step 1 — Name & tax classification**
-- Line 1: `name` (text, required) with official help text about sole proprietors / disregarded entities.
-- Line 2: `businessName` (text, optional).
-- Line 3a: `classification` (radio, required) with the 7 official options in order: Individual/sole proprietor, C corporation, S corporation, Partnership, Trust/estate, LLC, Other.
-- LLC code: `llcTaxCode` (conditionalText, required when `classification === "llc"`) — label "Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)".
-- Other description: `otherDescription` (conditionalText, required when `classification === "other"`).
-- Rendered note under Line 3a with the exact IRS "Check the LLC box…" text (added as a `description` on a hidden info field or as step-level `note` — see technical notes).
-- Line 3b: `foreignPartners` (checkbox, `showWhen` `classification ∈ {partnership, trust, llc-with-P}` — handled via a small computed trigger field).
+### Simple NDA (`/forms/nda`)
+- **Title:** "Free NDA Template – Non-Disclosure Agreement Generator"
+- **Steps (6):**
+  1. **Parties:** Agreement type radio (Mutual / One-way); Disclosing party name + address + entity type; Receiving party name + address + entity type; Effective date.
+  2. **Purpose & Confidential Information:** Purpose textarea; scope description; select "Broad standard definition" vs "Limited to marked/identified information."
+  3. **Obligations & Exclusions:** Term of confidentiality (years, dropdown 1/2/3/5/7/Indefinite); permitted-representatives checkbox; exclusions displayed as standard clauses (read-only informational).
+  4. **Return of materials & remedies:** Return-vs-destroy select; injunctive relief acknowledgment (checkbox — standard).
+  5. **Governing law & venue:** US state (governing law); county/venue optional.
+  6. **Signatures:** Disclosing signer name + title + date; Receiving signer name + title + date.
+- **Disclaimer:** Plain-English template, not legal advice; state-specific enforceability varies.
 
-**Step 2 — Exemptions & address**
-- Line 4a: `exemptPayeeCode` (text, optional).
-- Line 4b: `fatcaCode` (text, optional) with the "accounts outside the United States" note as help text.
-- Line 5: `streetAddress` (text, required).
-- Line 6: `city` (text, required), `state` (usState, required), `zip` (text, required, pattern 5 or 9 digits).
-- Requester name/address: `requesterInfo` (textarea, optional).
-- Line 7: `accountNumbers` (text, optional).
+## 2. Reusable template enhancements — `FormWizardPage.tsx` + related
 
-**Step 3 — Part I: Taxpayer identification number**
-- Instruction paragraph rendered as step `description` (exact IRS wording).
-- `tinType` (radio, required): "Social Security Number" | "Employer Identification Number".
-- `ssn` (ssn, `showWhen` tinType === "ssn", required).
-- `ein` (ein, `showWhen` tinType === "ein", required).
+Small, non-breaking upgrades that benefit all forms:
+- **Step-level `showWhen`** in `FormStepDef` (currently only fields have it) so the I-9 preparer step can be skipped entirely when not needed. Update the "step X of N" counter to reflect visible steps.
+- **Tooltip help:** promote `field.help` to also accept an optional `tooltip` (icon-triggered popover) — rendered as an info icon next to the label using shadcn `Tooltip`. Backwards compatible.
+- **Optional per-form `officialLink`** (e.g., `irs.gov/w4`, `uscis.gov/i-9`) rendered in the top-of-page disclaimer callout — same treatment currently hard-coded for W-9 becomes data-driven.
+- **Related forms:** wire cross-links (W-9 ↔ W-4 ↔ I-9; NDA ↔ existing NDA-adjacent forms).
 
-**Step 4 — Part II: Certification**
-- Full 4-item certification text rendered as step `description` (verbatim).
-- Cross-out-item-2 instructions rendered as a secondary note.
-- `signatureName` (text, required) — "Signature of U.S. person (typed name)".
-- `certifyChecked` (checkbox, required) — "I agree this typed name is my electronic signature."
-- `signatureDate` (date, required, defaults to today via wizard prefill).
+## 3. PDF renderers — `src/lib/pdf/generateFormPdf.ts`
 
-Add step-level optional `note?: string` to `FormStepDef` so the rendered wizard can show the exact IRS blocks (LLC note, Part I instructions, Part II certification + cross-out note) in the right place. `FormWizardPage` renders `step.note` under `step.description`.
+Add three template-specific renderers (following `renderW9`):
+- **`renderI9`:** Two-page layout mimicking Section 1 + Section 2 structure (labeled boxes, checked attestation, document tables). "Edition 01/20/25 — Expires 05/31/2027" in header. Footer disclaimer: not an official USCIS form; sign the official PDF from uscis.gov.
+- **`renderW4`:** 2026 layout — heading "Form W-4 (2026) — Employee's Withholding Certificate," 5 numbered step blocks, computed dependent-credit total, footer disclaimer.
+- **`renderNda`:** Professional agreement layout — title, party recitals, numbered sections (Definitions, Obligations, Exclusions, Term, Return, Remedies, Governing Law, Miscellaneous), signature blocks (2 columns).
 
-Update `relatedForms` to `["w-4", "i-9", "nda"]` and set `relatedBlogSlugs` to any existing 1099/independent-contractor posts (safe to leave empty if none match).
+All three reuse `wrapText`, `drawWatermark`, `formatDate`, `formatSsn`, and the `str()` helper.
 
-### 3. Dedicated W-9 PDF renderer (`src/lib/pdf/generateFormPdf.ts`)
-The current renderer prints "label / value" for every field, which won't reproduce the IRS layout well. Add a `w9`-specific branch inside `generateFormPdf`:
+## 4. Homepage + navigation
 
-- Header: "Form W-9 (Rev. March 2024) — Request for Taxpayer Identification Number and Certification".
-- Section blocks that mirror the IRS 1-page layout (Name / Business name / Classification with the selected box marked, LLC code and Other description inline; Exemptions row; Address block; TIN box showing whichever of SSN/EIN was chosen with the correct hyphenation; Part II certification text verbatim; signature line with typed name + date).
-- Footer disclaimer: "This is a free fillable helper tool created by legallyspoken.com. Not an official IRS form. Verify at irs.gov before submitting." — same watermark logic reused for the free version.
+- Add I-9, W-4, NDA to the featured cards on `FeaturedFormsSection` (currently W-9-heavy).
+- Forms Hub `/forms` already lists everything from `legalForms` — new forms show automatically once added to the array.
 
-Generic renderer stays as the fallback for other slugs (w-4, i-9, nda, lease, poa).
+## 5. Stripe checkout — status note
 
-### 4. Disclaimer copy
-Add a W-9-specific compact disclaimer above the download bar on the final step (only when `slug === "w-9"`), using the exact wording from the prompt. `FormDisclaimer` stays generic; a small inline paragraph handles the W-9 line.
+Stripe is **not yet enabled** (per Sprint foundation prompt; `handleCheckout` currently toasts "coming soon"). This build keeps that behavior: free watermarked PDFs work end-to-end for all three forms today. Paid clean PDFs are wired through the same `PdfActionBar` → when Stripe is enabled and a `form_purchases` row exists, the clean PDF unlocks — no code changes needed here. If you want the Stripe flow live now, I'll surface the built-in Stripe Payments enable step as a follow-up (separate approval).
 
-### 5. Stripe checkout
-Out of scope for this build — `FormWizardPage.handleCheckout` already shows a "coming soon" toast, and the prompt's Stripe/paid-PDF wiring is deferred to its own turn (a payments-eligibility check + webhook function). Free watermarked PDF, auto-save, dashboard resume, and purchase-gated clean PDF plumbing all remain wired via the existing `form_purchases` table.
+## 6. QA before wrap-up
 
-## Files touched
-- `src/data/forms.ts` — extend types (`radio`, `conditionalText`, `usState`, `showWhen`, step `note`); rewrite the `w-9` entry.
-- `src/components/forms/FormField.tsx` — render the three new field types.
-- `src/pages/FormWizardPage.tsx` — apply `showWhen` filtering to rendering + validation; render `step.note`; W-9-specific inline disclaimer on the last step.
-- `src/lib/pdf/generateFormPdf.ts` — add `renderW9(pdfDoc, data, watermark)` branch selected via `form.pdfTemplate === "w9"`.
+- Type-check via automatic build.
+- Manually walk each wizard: draft autosave, resume from LocalStorage, conditional field logic (I-9 attestation option 3/4; W-4 Step 2 branches; NDA mutual vs one-way).
+- Generate both watermarked and clean PDFs for each form and eyeball layout.
 
-No DB migration, no new routes, no new components.
+## Technical section
 
-## Technical notes
-- `showWhen` for Line 3b treats `classification === "partnership" || classification === "trust" || (classification === "llc" && llcTaxCode?.toUpperCase() === "P")`. Simplest implementation: encode that as `showWhen: { fieldId: "__line3bTrigger", equals: true }` where `__line3bTrigger` is a computed derived value inserted by `FormWizardPage` before filtering (kept out of persisted data).
-- Zip validation: allow `^\d{5}(-?\d{4})?$` — soft validate only (warning, not blocking) to stay consistent with the existing wizard's UX.
-- SSN / EIN inputs already exist and use `inputMode="numeric"`; add lightweight formatting (`###-##-####` and `##-#######`) in `FormField.tsx` on blur so PDF output is clean.
-- PDF renderer uses `pdf-lib` (already a dep) and standard Helvetica; no new fonts needed. Long certification text is wrapped via the existing `wrapText` helper.
+**Files to create:** none — all three forms live in existing files.
 
-## Out of scope (flagged for a follow-up turn)
-- Live Stripe checkout for the $4.99 clean PDF (needs `payments--recommend_payment_provider` → `enable_stripe_payments` → products + webhook).
-- Electronic signature pad — using typed-name + confirmation checkbox is legally equivalent for a W-9 helper and matches the rest of the Forms suite.
-- Related blog posts: none of the current published posts are 1099/independent-contractor specific, so `relatedBlogSlugs` stays empty until we ship those.
+**Files to edit:**
+- `src/data/forms.ts` — append three `LegalFormDef` entries, extend `FormStepDef` with optional `showWhen`, extend `LegalFormDef` with optional `officialLink`.
+- `src/lib/pdf/generateFormPdf.ts` — three new `renderI9`, `renderW4`, `renderNda` functions + template switch.
+- `src/pages/FormWizardPage.tsx` — read `officialLink` for the disclaimer callout; skip hidden steps in progress counter.
+- `src/components/forms/FormField.tsx` — optional tooltip icon.
+- `src/components/home/FeaturedFormsSection.tsx` — ensure the three new forms surface.
 
-## Acceptance
-- All 7 tax-classification boxes render as radios in the IRS order; only one selectable.
-- LLC code field appears only when LLC is selected; "Other" description appears only when Other is selected.
-- Line 3b checkbox appears only under the three qualifying conditions.
-- Part I shows the exact instruction paragraph and gates SSN vs EIN by radio.
-- Part II renders the full 4-item certification and cross-out note verbatim.
-- Free download produces a W-9-layout PDF with watermark; clean download works for users with a `form_purchases` row.
-- Resume from `/dashboard` "My Forms" reopens on the last edited step with all values (including radios / conditional fields).
-- Typecheck clean.
+**No DB or route changes:** `FormWizardPage` already handles any slug in `legalForms`; `form_drafts` / `form_purchases` already keyed by `form_slug`.
+
+**Deliverable at end:** summary of the three forms plus a short "how to add form #N" recipe (append to `legalForms`, add renderer branch, add cross-links).
+
+Ready to build on approval.
