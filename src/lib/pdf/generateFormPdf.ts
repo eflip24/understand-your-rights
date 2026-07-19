@@ -340,6 +340,341 @@ function renderGeneric({ pdfDoc, font, fontBold, form, data, watermark }: Generi
 }
 
 // ---------------------------------------------------------------------------
+// Sectioned document builder (used by W-4, I-9, NDA)
+// ---------------------------------------------------------------------------
+
+interface DocCtx {
+  pdfDoc: PDFDocument;
+  font: PDFFont;
+  fontBold: PDFFont;
+  data: Record<string, unknown>;
+  watermark: boolean;
+}
+
+interface DocApi {
+  h1: (s: string) => void;
+  h2: (s: string) => void;
+  h3: (s: string) => void;
+  p: (s: string, opts?: { size?: number; italic?: boolean; muted?: boolean }) => void;
+  kv: (label: string, value: string) => void;
+  check: (label: string, checked: boolean) => void;
+  rule: () => void;
+  gap: (h?: number) => void;
+  footer: (s: string) => void;
+}
+
+function buildDoc(ctx: DocCtx): DocApi {
+  const { pdfDoc, font, fontBold, watermark } = ctx;
+  const pageWidth = 612;
+  const pageHeight = 792;
+  const margin = 54;
+  const maxWidth = pageWidth - margin * 2;
+
+  let page = pdfDoc.addPage([pageWidth, pageHeight]);
+  let y = pageHeight - margin;
+
+  const newPage = () => {
+    if (watermark) drawWatermark(page, pageWidth, pageHeight, font);
+    page = pdfDoc.addPage([pageWidth, pageHeight]);
+    y = pageHeight - margin;
+  };
+  const need = (h: number) => { if (y - h < margin) newPage(); };
+
+  const write = (s: string, size: number, f: PDFFont, color: [number, number, number], indent = 0) => {
+    const lines = wrapText(s, f, size, maxWidth - indent);
+    for (const line of lines) {
+      need(size + 4);
+      page.drawText(line, { x: margin + indent, y, size, font: f, color: rgb(color[0], color[1], color[2]) });
+      y -= size + 4;
+    }
+  };
+
+  return {
+    h1: (s) => { need(30); write(s, 18, fontBold, [0.08, 0.12, 0.32]); y -= 4; },
+    h2: (s) => { need(22); y -= 4; write(s, 13, fontBold, [0.1, 0.15, 0.35]); y -= 2; },
+    h3: (s) => { need(16); write(s, 11, fontBold, [0.2, 0.2, 0.3]); },
+    p: (s, opts) => write(s, opts?.size ?? 10, font, opts?.muted ? [0.4, 0.4, 0.5] : [0.1, 0.1, 0.15]),
+    kv: (label, value) => {
+      write(label, 9, fontBold, [0.3, 0.3, 0.4]);
+      write(value || "—", 11, font, [0.1, 0.1, 0.15]);
+      y -= 3;
+    },
+    check: (label, checked) => write(`${checked ? "[X]" : "[ ]"}  ${label}`, 10, font, [0.1, 0.1, 0.15], 4),
+    rule: () => {
+      need(10);
+      page.drawLine({ start: { x: margin, y }, end: { x: pageWidth - margin, y }, thickness: 0.5, color: rgb(0.75, 0.75, 0.8) });
+      y -= 10;
+    },
+    gap: (h = 6) => { y -= h; },
+    footer: (s) => {
+      need(20);
+      y -= 6;
+      page.drawLine({ start: { x: margin, y }, end: { x: pageWidth - margin, y }, thickness: 0.5, color: rgb(0.8, 0.8, 0.85) });
+      y -= 10;
+      write(s, 8, font, [0.45, 0.45, 0.5]);
+      if (watermark) drawWatermark(page, pageWidth, pageHeight, font);
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
+// W-4 (2026)
+// ---------------------------------------------------------------------------
+
+function renderW4(ctx: DocCtx) {
+  const d = ctx.data;
+  const doc = buildDoc(ctx);
+  doc.h1("Form W-4 (2026) — Employee's Withholding Certificate");
+  doc.p("Department of the Treasury — Internal Revenue Service", { muted: true, size: 8 });
+  doc.p("Give this form to your employer. Do not send to the IRS. Verify at irs.gov/FormW4.", { muted: true, size: 8 });
+  doc.rule();
+
+  doc.h2("Step 1 — Personal information");
+  doc.kv("First name and middle initial", `${str(d.firstName)} ${str(d.middleInitial)}`.trim());
+  doc.kv("Last name", str(d.lastName));
+  doc.kv("Social security number", formatSsn(str(d.ssn)));
+  doc.kv("Address", str(d.streetAddress));
+  doc.kv("City, State, ZIP", [str(d.city), str(d.state), str(d.zip)].filter(Boolean).join(", "));
+  doc.gap(4);
+  doc.h3("Step 1(c) — Filing status");
+  const fs = str(d.filingStatus);
+  doc.check("Single or Married filing separately", fs === "single");
+  doc.check("Married filing jointly or Qualifying surviving spouse", fs === "mfj");
+  doc.check("Head of household", fs === "hoh");
+  if (d.ssnNameMismatch) doc.check("Last name differs from Social Security card (call 800-772-1213)", true);
+
+  doc.h2("Step 2 — Multiple jobs or spouse works");
+  const m2 = str(d.step2Method);
+  doc.check("Not applicable", m2 === "none");
+  doc.check("(a) Used the IRS Tax Withholding Estimator (irs.gov/W4App)", m2 === "estimator");
+  doc.check("(b) Used the Multiple Jobs Worksheet on page 3", m2 === "worksheet");
+  doc.check("(c) Two jobs total with roughly similar pay — box 2(c)", m2 === "box2c");
+  if (d.secondJobAnnualPay) doc.kv("Estimated annual pay — second job", `$${str(d.secondJobAnnualPay)}`);
+
+  doc.h2("Step 3 — Claim dependents");
+  const kids = Number(d.qualifyingChildren) || 0;
+  const others = Number(d.otherDependents) || 0;
+  const otherCr = Number(d.otherCredits) || 0;
+  doc.kv("Qualifying children under 17", `${kids} × $2,000 = $${(kids * 2000).toLocaleString()}`);
+  doc.kv("Other dependents", `${others} × $500 = $${(others * 500).toLocaleString()}`);
+  if (otherCr) doc.kv("Other credits", `$${otherCr.toLocaleString()}`);
+  doc.kv("Total (Step 3)", `$${(kids * 2000 + others * 500 + otherCr).toLocaleString()}`);
+
+  doc.h2("Step 4 — Other adjustments (optional)");
+  doc.kv("4(a) Other income (annual)", d.otherIncome ? `$${str(d.otherIncome)}` : "—");
+  doc.kv("4(b) Deductions", d.deductions ? `$${str(d.deductions)}` : "—");
+  doc.kv("4(c) Extra withholding per pay period", d.extraWithholding ? `$${str(d.extraWithholding)}` : "—");
+
+  doc.h2("Step 5 — Sign here");
+  doc.p("Under penalties of perjury, I declare that this certificate, to the best of my knowledge and belief, is true, correct, and complete.", { size: 9, muted: true });
+  doc.gap(4);
+  doc.kv("Employee's signature (typed)", str(d.signatureName));
+  doc.kv("Date", formatDate(str(d.signatureDate)));
+
+  if (d.employerName || d.employerEin || d.firstDateOfEmployment) {
+    doc.h2("Employers only");
+    doc.kv("Employer's name and address", str(d.employerName));
+    doc.kv("First date of employment", formatDate(str(d.firstDateOfEmployment)));
+    doc.kv("Employer identification number (EIN)", formatEin(str(d.employerEin)));
+  }
+
+  doc.footer("This is a free fillable helper tool from legallyspoken.com. It is NOT an official IRS form. Verify the current Form W-4 at irs.gov before submitting. LegallySpoken is not a law firm and does not provide legal or tax advice.");
+}
+
+// ---------------------------------------------------------------------------
+// I-9 (Edition 01/20/25)
+// ---------------------------------------------------------------------------
+
+function renderI9(ctx: DocCtx) {
+  const d = ctx.data;
+  const doc = buildDoc(ctx);
+  doc.h1("Form I-9 — Employment Eligibility Verification");
+  doc.p("USCIS · Department of Homeland Security · Edition 01/20/25 · Expires 05/31/2027", { muted: true, size: 8 });
+  doc.rule();
+
+  doc.h2("Section 1 — Employee information and attestation");
+  doc.kv("Last name (family name)", str(d.lastName));
+  doc.kv("First name (given name)", str(d.firstName));
+  doc.kv("Middle initial", str(d.middleInitial));
+  doc.kv("Other last names used", str(d.otherLastNames));
+  doc.kv("Address", `${str(d.streetAddress)}${d.aptNumber ? " Apt. " + str(d.aptNumber) : ""}`);
+  doc.kv("City, State, ZIP", [str(d.city), str(d.state), str(d.zip)].filter(Boolean).join(", "));
+  doc.kv("Date of birth", formatDate(str(d.dob)));
+  doc.kv("U.S. Social Security Number", formatSsn(str(d.ssn)));
+  doc.kv("Email", str(d.email));
+  doc.kv("Telephone", str(d.phone));
+
+  doc.h3("Citizenship / immigration status");
+  const s = str(d.status);
+  doc.check("1. A citizen of the United States", s === "citizen");
+  doc.check("2. A noncitizen national of the United States", s === "national");
+  doc.check("3. A lawful permanent resident", s === "lpr");
+  doc.check("4. A noncitizen authorized to work", s === "authorized");
+  if (s === "lpr" || s === "authorized") doc.kv("USCIS A-Number / Alien Registration Number", str(d.uscisNumber));
+  if (s === "authorized") {
+    doc.kv("Work authorization expiration", formatDate(str(d.workAuthExpires)));
+    if (d.i94Number) doc.kv("Form I-94 Admission Number", str(d.i94Number));
+    if (d.foreignPassportNumber) doc.kv("Foreign passport number", str(d.foreignPassportNumber));
+    if (d.passportCountry) doc.kv("Country of issuance", str(d.passportCountry));
+  }
+
+  doc.gap(4);
+  doc.p("I am aware that federal law provides for imprisonment and/or fines for false statements or the use of false documents in connection with the completion of this form.", { size: 9, muted: true });
+  doc.kv("Employee's signature (typed)", str(d.employeeSignature));
+  doc.kv("Date", formatDate(str(d.employeeSignatureDate)));
+
+  if (d.preparerUsed) {
+    doc.h2("Preparer / Translator certification");
+    doc.kv("Signature (typed)", str(d.preparerSignature));
+    doc.kv("Date", formatDate(str(d.preparerDate)));
+    doc.kv("Last name", str(d.preparerLastName));
+    doc.kv("First name", str(d.preparerFirstName));
+    doc.kv("Address", str(d.preparerAddress));
+  }
+
+  doc.h2("Section 2 — Employer review and verification");
+  const path = str(d.docPath);
+  if (path === "listA") {
+    doc.h3("List A — Identity and employment authorization");
+    doc.kv("Document title", str(d.listA_title));
+    doc.kv("Issuing authority", str(d.listA_authority));
+    doc.kv("Document number", str(d.listA_number));
+    doc.kv("Expiration date", formatDate(str(d.listA_expiration)));
+    if (d.listA_title2) {
+      doc.kv("Additional document title", str(d.listA_title2));
+      doc.kv("Additional issuing authority", str(d.listA_authority2));
+      doc.kv("Additional document number", str(d.listA_number2));
+    }
+  } else if (path === "listBC") {
+    doc.h3("List B — Identity");
+    doc.kv("Document title", str(d.listB_title));
+    doc.kv("Issuing authority", str(d.listB_authority));
+    doc.kv("Document number", str(d.listB_number));
+    doc.kv("Expiration date", formatDate(str(d.listB_expiration)));
+    doc.h3("List C — Employment authorization");
+    doc.kv("Document title", str(d.listC_title));
+    doc.kv("Issuing authority", str(d.listC_authority));
+    doc.kv("Document number", str(d.listC_number));
+    doc.kv("Expiration date", formatDate(str(d.listC_expiration)));
+  }
+  doc.kv("Employee's first day of employment", formatDate(str(d.firstDayOfEmployment)));
+  if (d.altProcedure) doc.check("Alternative Procedure used (qualified E-Verify participant, remote exam)", true);
+
+  doc.gap(4);
+  doc.p("Employer certification: I attest, under penalty of perjury, that (1) I have examined the documentation presented, (2) the documentation appears to be genuine and to relate to the employee named, and (3) to the best of my knowledge the employee is authorized to work in the United States.", { size: 9, muted: true });
+  doc.kv("Employer signature (typed)", str(d.employerSignature));
+  doc.kv("Date", formatDate(str(d.employerSignatureDate)));
+  doc.kv("Title", str(d.employerRepTitle));
+  doc.kv("Employer representative name", `${str(d.employerRepFirstName)} ${str(d.employerRepLastName)}`.trim());
+  doc.kv("Business or organization name", str(d.employerBusinessName));
+  doc.kv("Business address", str(d.employerBusinessAddress));
+
+  if (d.reverifyEnable) {
+    doc.h2("Supplement B — Reverification / Rehire");
+    if (d.reverifyNewName) doc.kv("New name (if changed)", str(d.reverifyNewName));
+    if (d.reverifyRehireDate) doc.kv("Date of rehire", formatDate(str(d.reverifyRehireDate)));
+    doc.kv("Document title", str(d.reverifyDocTitle));
+    doc.kv("Document number", str(d.reverifyDocNumber));
+    doc.kv("Expiration", formatDate(str(d.reverifyDocExpiration)));
+    doc.kv("Employer signature", str(d.reverifySignature));
+    doc.kv("Date", formatDate(str(d.reverifySignatureDate)));
+  }
+
+  doc.footer("This is a free fillable helper tool from legallyspoken.com. It is NOT an official USCIS form. Employers must retain the official Form I-9 (uscis.gov/i-9). LegallySpoken is not a law firm and does not provide legal advice.");
+}
+
+// ---------------------------------------------------------------------------
+// NDA
+// ---------------------------------------------------------------------------
+
+function renderNda(ctx: DocCtx) {
+  const d = ctx.data;
+  const doc = buildDoc(ctx);
+  const isMutual = str(d.agreementType) === "mutual";
+  const partyALabel = isMutual ? "Party A" : "Disclosing Party";
+  const partyBLabel = isMutual ? "Party B" : "Receiving Party";
+
+  doc.h1(isMutual ? "Mutual Non-Disclosure Agreement" : "Non-Disclosure Agreement");
+  doc.p(`This ${isMutual ? "Mutual " : ""}Non-Disclosure Agreement (the "Agreement") is entered into as of ${formatDate(str(d.effectiveDate))} (the "Effective Date"), by and between:`, { size: 10 });
+  doc.gap(4);
+  doc.p(`${partyALabel}: ${str(d.partyAName)}${d.partyAEntity ? ` (${entityLabel(str(d.partyAEntity))})` : ""}, with an address at ${str(d.partyAAddress).replace(/\n/g, ", ")}; and`);
+  doc.p(`${partyBLabel}: ${str(d.partyBName)}${d.partyBEntity ? ` (${entityLabel(str(d.partyBEntity))})` : ""}, with an address at ${str(d.partyBAddress).replace(/\n/g, ", ")}.`);
+  doc.p("Each a \"Party\" and together the \"Parties.\"", { muted: true, size: 9 });
+
+  doc.h2("1. Purpose");
+  doc.p(`The Parties wish to explore the following business opportunity (the "Purpose"): ${str(d.purpose)}.`);
+
+  doc.h2("2. Confidential Information");
+  if (str(d.scopeDefinition) === "broad") {
+    doc.p(`"Confidential Information" means any non-public information disclosed by ${isMutual ? "either Party to the other" : "the Disclosing Party to the Receiving Party"}, in any form or medium, whether or not marked as confidential, including without limitation business plans, financial information, customer and supplier data, product roadmaps, technical data, source code, know-how, and trade secrets.`);
+  } else {
+    doc.p(`"Confidential Information" means information disclosed by ${isMutual ? "either Party" : "the Disclosing Party"} that is marked or identified as confidential at the time of disclosure, or that a reasonable person would understand to be confidential given the nature of the information and the circumstances of disclosure.`);
+  }
+  if (d.specificallyIncluded) doc.p(`Without limiting the foregoing, Confidential Information specifically includes: ${str(d.specificallyIncluded)}.`);
+  doc.p("Confidential Information does not include information that: (a) is or becomes publicly known through no breach of this Agreement; (b) was rightfully known before disclosure; (c) is independently developed without use of the Confidential Information; or (d) is lawfully obtained from a third party without a duty of confidentiality.", { size: 9 });
+
+  doc.h2("3. Obligations");
+  doc.p(`The Receiving Party shall (i) use Confidential Information solely for the Purpose; (ii) protect it with at least the same degree of care used for its own confidential information, and no less than reasonable care; and (iii) not disclose Confidential Information to any third party except as permitted below.`);
+  if (d.permittedReps) {
+    doc.p("The Receiving Party may disclose Confidential Information to its employees, contractors, attorneys, accountants, and financial advisors who need to know for the Purpose and who are bound by written or professional confidentiality obligations at least as protective as this Agreement. The Receiving Party remains responsible for their compliance.", { size: 10 });
+  }
+
+  doc.h2("4. Term");
+  const term = str(d.term);
+  if (term === "indefinite") {
+    doc.p("This Agreement remains in effect until the Confidential Information no longer qualifies as confidential under Section 2.");
+  } else {
+    doc.p(`The obligations in this Agreement remain in effect for a period of ${term} year${term === "1" ? "" : "s"} from the Effective Date. Obligations with respect to trade secrets continue for as long as such information remains a trade secret under applicable law.`);
+  }
+
+  doc.h2("5. Return or Destruction");
+  const ret = str(d.returnOrDestroy);
+  if (ret === "return") doc.p(`Upon written request or termination, the Receiving Party shall promptly return all Confidential Information${isMutual ? " received from the other Party" : ""}, including all copies.`);
+  else if (ret === "destroy") doc.p(`Upon written request or termination, the Receiving Party shall promptly destroy all Confidential Information${isMutual ? " received from the other Party" : ""}, including all copies, and certify such destruction in writing.`);
+  else doc.p(`Upon written request or termination, the Receiving Party shall promptly return or destroy (at ${isMutual ? "the disclosing Party's" : "the Disclosing Party's"} option) all Confidential Information, including all copies.`);
+
+  doc.h2("6. No License; No Warranty");
+  doc.p("Nothing in this Agreement grants any license or right in the Confidential Information, by implication or otherwise, except the limited right to use it for the Purpose. All Confidential Information is provided \"as is,\" without warranty of any kind.");
+
+  doc.h2("7. Remedies");
+  if (d.injunctiveRelief) {
+    doc.p(`The Parties acknowledge that a breach of this Agreement may cause irreparable harm for which monetary damages would be inadequate, and each Party is entitled to seek injunctive or other equitable relief, in addition to all other remedies available at law or in equity.`);
+  } else {
+    doc.p("A breach of this Agreement may entitle the non-breaching Party to any remedies available at law or in equity.");
+  }
+
+  doc.h2("8. Governing Law");
+  const county = str(d.venueCounty);
+  doc.p(`This Agreement is governed by the laws of the State of ${str(d.governingState)}, without regard to its conflict-of-laws principles. The Parties consent to the exclusive jurisdiction of the state and federal courts located in ${county ? county + ", " : ""}${str(d.governingState)}.`);
+
+  doc.h2("9. Miscellaneous");
+  doc.p("This Agreement constitutes the entire agreement of the Parties with respect to the Confidential Information and supersedes all prior discussions on that subject. It may be amended only in a writing signed by both Parties. If any provision is held unenforceable, the remaining provisions remain in full force. This Agreement may be executed in counterparts, including electronically.", { size: 10 });
+
+  doc.h2("Signatures");
+  doc.p("By typing their name below, each signatory represents that they are authorized to bind the Party for which they sign and adopt the typed name as their electronic signature.", { size: 9, muted: true });
+  doc.gap(6);
+  doc.kv(`${partyALabel} — Signed by`, str(d.partyASignerName));
+  doc.kv("Title", str(d.partyASignerTitle));
+  doc.kv("Date", formatDate(str(d.partyASignatureDate)));
+  doc.gap(6);
+  doc.kv(`${partyBLabel} — Signed by`, str(d.partyBSignerName));
+  doc.kv("Title", str(d.partyBSignerTitle));
+  doc.kv("Date", formatDate(str(d.partyBSignatureDate)));
+
+  doc.footer("This NDA template was generated by legallyspoken.com from your inputs. It is a self-help template, not legal advice. Review with a licensed attorney before signing, especially for high-value transactions or cross-border deals.");
+}
+
+function entityLabel(v: string): string {
+  switch (v) {
+    case "individual": return "an individual";
+    case "llc": return "a limited liability company";
+    case "corp": return "a corporation";
+    case "partnership": return "a partnership";
+    default: return "an entity";
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Shared helpers
 // ---------------------------------------------------------------------------
 
