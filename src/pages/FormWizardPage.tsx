@@ -177,16 +177,17 @@ export default function FormWizardPage() {
       {isLast && (
         <div className="mt-6">
           <h2 className="mb-3 font-serif text-lg font-bold">Download</h2>
-          {form.slug === "w-9" && (
+          {form.officialLink && (
             <p className="mb-3 rounded-md border border-accent/30 bg-accent/5 p-3 text-xs leading-relaxed text-foreground/80">
               This is a free fillable helper tool created by legallyspoken.com. It is <strong>not</strong> an
-              official IRS form. Before submitting to any requester, verify the current Form W-9 at{" "}
-              <a href="https://www.irs.gov/forms-pubs/about-form-w-9" target="_blank" rel="noreferrer" className="text-accent underline">
-                irs.gov
+              official government form. Before submitting to any agency or employer, verify the current version at{" "}
+              <a href={form.officialLink.href} target="_blank" rel="noreferrer" className="text-accent underline">
+                {form.officialLink.label}
               </a>
-              . LegallySpoken is not a law firm and does not provide legal or tax advice.
+              . LegallySpoken is not a law firm and does not provide legal, tax, or immigration advice.
             </p>
           )}
+
           <PdfActionBar form={form} data={data} hasPurchased={hasPurchased} onCheckout={handleCheckout} />
           {!user && (
             <p className="mt-3 text-xs text-muted-foreground">
