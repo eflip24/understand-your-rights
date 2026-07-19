@@ -57,7 +57,14 @@ export interface LegalFormDef {
   pdfTemplate: PdfTemplate;
   relatedForms?: string[];
   relatedBlogSlugs?: string[];
+  /** Official government URL (IRS, USCIS). When set, the wizard page renders
+   *  a "verify at official source" callout. */
+  officialLink?: { label: string; href: string };
+  /** Optional short edition tag rendered in the header (e.g. "Rev. March 2024",
+   *  "Edition 01/20/25 · Expires 05/31/2027"). */
+  edition?: string;
 }
+
 
 export const categoryLabels: Record<FormCategory, string> = {
   employment: "Employment",
