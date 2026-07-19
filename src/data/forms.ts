@@ -97,6 +97,9 @@ export const legalForms: LegalFormDef[] = [
     lastUpdated: "2024-03-01",
     isFeatured: true,
     pdfTemplate: "w9",
+    edition: "Rev. March 2024",
+    officialLink: { label: "irs.gov/FormW9", href: "https://www.irs.gov/forms-pubs/about-form-w-9" },
+
     steps: [
       {
         id: "name-classification",
