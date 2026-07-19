@@ -23,9 +23,16 @@ export async function generateFormPdf({ form, data, watermark }: GenerateOptions
 
   if (form.pdfTemplate === "w9") {
     renderW9({ pdfDoc, font, fontBold, data, watermark });
+  } else if (form.pdfTemplate === "w4") {
+    renderW4({ pdfDoc, font, fontBold, data, watermark });
+  } else if (form.pdfTemplate === "i9") {
+    renderI9({ pdfDoc, font, fontBold, data, watermark });
+  } else if (form.pdfTemplate === "nda") {
+    renderNda({ pdfDoc, font, fontBold, data, watermark });
   } else {
     renderGeneric({ pdfDoc, font, fontBold, form, data, watermark });
   }
+
 
   const bytes = await pdfDoc.save();
   return new Blob(
