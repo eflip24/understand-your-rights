@@ -524,6 +524,21 @@ function buildLawyers(): string {
   return wrapUrlset(e);
 }
 
+const formSlugs = [
+  "w-9","w-4","i-9","nda","residential-lease-agreement","power-of-attorney-financial",
+  "vehicle-bill-of-sale","eviction-notice","demand-letter","promissory-note","release-of-liability",
+  "offer-letter","independent-contractor-agreement","direct-deposit-authorization",
+  "notice-to-vacate","move-in-move-out-checklist","security-deposit-receipt","late-rent-notice",
+  "llc-operating-agreement","healthcare-power-of-attorney","simple-will","living-will","hipaa-authorization",
+];
+const formPackSlugs = ["new-hire-pack","landlord-starter-pack","small-business-pack","personal-planning-pack"];
+
+function buildForms(): string {
+  const e: string[] = [u(`${SITE}/forms`,"weekly","0.9")];
+  for (const s of formSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
+  for (const s of formPackSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
+  return wrapUrlset(e);
+
 async function buildBlog(supabase: ReturnType<typeof createClient>): Promise<string> {
   const e: string[] = [];
   const { data: posts } = await supabase.from("blog_posts").select("slug, published_at").eq("status","published").order("published_at",{ascending:false});
