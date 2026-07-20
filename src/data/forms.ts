@@ -54,7 +54,20 @@ export type PdfTemplate =
   | "evictionNotice"
   | "demandLetter"
   | "promissoryNote"
-  | "releaseOfLiability";
+  | "releaseOfLiability"
+  // Generic renderer covers the following (Batch 4 pack forms).
+  | "offerLetter"
+  | "independentContractor"
+  | "directDeposit"
+  | "noticeToVacate"
+  | "moveInOutChecklist"
+  | "securityDepositReceipt"
+  | "lateRentNotice"
+  | "llcOperatingAgreement"
+  | "healthcarePoa"
+  | "simpleWill"
+  | "livingWill"
+  | "hipaaAuthorization";
 
 export interface LegalFormDef {
   slug: string;
