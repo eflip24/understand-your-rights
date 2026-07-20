@@ -1,5 +1,10 @@
 import { PDFDocument, PDFFont, PDFPage, StandardFonts, rgb, degrees } from "pdf-lib";
 import { W9_CLASSIFICATIONS, type LegalFormDef } from "@/data/forms";
+import {
+  computeVacateBy,
+  getEvictionRule,
+  type EvictionReason,
+} from "@/data/evictionStateRules";
 
 interface GenerateOptions {
   form: LegalFormDef;
@@ -29,6 +34,14 @@ export async function generateFormPdf({ form, data, watermark }: GenerateOptions
     renderI9({ pdfDoc, font, fontBold, data, watermark });
   } else if (form.pdfTemplate === "nda") {
     renderNda({ pdfDoc, font, fontBold, data, watermark });
+  } else if (form.pdfTemplate === "poa") {
+    renderPoa({ pdfDoc, font, fontBold, data, watermark });
+  } else if (form.pdfTemplate === "lease") {
+    renderLease({ pdfDoc, font, fontBold, data, watermark });
+  } else if (form.pdfTemplate === "billOfSale") {
+    renderBillOfSale({ pdfDoc, font, fontBold, data, watermark });
+  } else if (form.pdfTemplate === "evictionNotice") {
+    renderEvictionNotice({ pdfDoc, font, fontBold, data, watermark });
   } else {
     renderGeneric({ pdfDoc, font, fontBold, form, data, watermark });
   }
