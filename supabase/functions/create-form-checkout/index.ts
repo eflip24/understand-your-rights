@@ -53,8 +53,20 @@ Deno.serve(async (req) => {
     if (!slug || typeof slug !== "string") throw new Error("Missing slug");
     if (environment !== "sandbox" && environment !== "live") throw new Error("Invalid environment");
 
-    const priceEntry = FORM_PRICES_CENTS[slug];
-    if (!priceEntry) throw new Error(`Unknown form slug: ${slug}`);
+    const { data: priceRow, error: priceErr } = await supabase
+      .from("form_prices")
+      .select("slug, title, kind, amount_cents, currency, active")
+      .eq("slug", slug)
+      .maybeSingle();
+    if (priceErr) throw new Error(`Price lookup failed: ${priceErr.message}`);
+    if (!priceRow) throw new Error(`Unknown form slug: ${slug}`);
+    if (!priceRow.active) throw new Error(`This item is not currently available for purchase.`);
+    const priceEntry = {
+      amount: priceRow.amount_cents as number,
+      title: priceRow.title as string,
+      kind: priceRow.kind as "form" | "pack",
+      currency: (priceRow.currency as string) || "usd",
+    };
 
     // Auth (optional — anonymous purchases allowed, but we prefer to link userId)
     const authHeader = req.headers.get("Authorization");
