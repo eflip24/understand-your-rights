@@ -17,6 +17,7 @@ import { getPackBySlug, getPackFormDefs, type FormPack, type PackSharedField } f
 import { isFieldVisible } from "@/data/forms";
 import { generatePackZip } from "@/lib/pdf/generatePackZip";
 import { downloadBlob } from "@/lib/pdf/generateFormPdf";
+import { uploadDocument } from "@/lib/documents/uploadDocument";
 import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
 
@@ -130,6 +131,14 @@ export default function FormPackWizardPage() {
         watermark,
       });
       downloadBlob(blob, `${pack.slug}${watermark ? "-free-draft" : "-clean"}.zip`);
+      if (user) {
+        uploadDocument({
+          userId: user.id, slug: pack.slug, kind: "pack",
+          variant: watermark ? "watermarked" : "clean",
+          status: watermark ? "completed" : "purchased",
+          blob, title: pack.title, snapshot: data, extension: "zip", contentType: "application/zip",
+        }).catch(() => {});
+      }
       toast({
         title: watermark ? "Free pack downloaded" : "Clean pack downloaded",
         description: watermark

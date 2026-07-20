@@ -19,6 +19,8 @@ import { useFormDraft } from "@/hooks/useFormDraft";
 import { categoryLabels, getFormBySlug, isFieldVisible, legalForms } from "@/data/forms";
 import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
+import StateSelector from "@/components/forms/StateSelector";
+import SignaturePad, { type SignatureValue } from "@/components/forms/SignaturePad";
 
 export default function FormWizardPage() {
   const { slug = "" } = useParams();
@@ -150,6 +152,12 @@ export default function FormWizardPage() {
 
       <Card>
         <CardContent className="p-5 md:p-6 space-y-5">
+          {step === 0 && form.stateAware && (
+            <StateSelector
+              value={(data.__stateCode as string) || undefined}
+              onChange={(code) => setField("__stateCode", code)}
+            />
+          )}
           {current.description && (
             <p className="text-sm text-muted-foreground">{current.description}</p>
           )}
@@ -172,6 +180,13 @@ export default function FormWizardPage() {
                 error={errors[field.id]}
               />
             ))}
+
+          {isLast && (
+            <SignaturePad
+              value={(data.__signature as SignatureValue) || undefined}
+              onChange={(v) => setField("__signature", v as unknown as string)}
+            />
+          )}
 
           <div className="flex items-center justify-between pt-2">
             <Button
@@ -210,7 +225,14 @@ export default function FormWizardPage() {
             </p>
           )}
 
-          <PdfActionBar form={form} data={data} hasPurchased={hasPurchased} onCheckout={handleCheckout} />
+          <PdfActionBar
+            form={form}
+            data={data}
+            hasPurchased={hasPurchased}
+            onCheckout={handleCheckout}
+            stateCode={(data.__stateCode as string) || null}
+            signature={(data.__signature as SignatureValue) || null}
+          />
           {!user && (
             <p className="mt-3 text-xs text-muted-foreground">
               <Link to={lp("/signup")} className="text-accent hover:underline">Create a free account</Link>{" "}

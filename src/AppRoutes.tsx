@@ -92,6 +92,7 @@ const SsdiDeniedWhatNext = React.lazy(() => import("@/pages/SsdiDeniedWhatNext")
 const MesotheliomaSettlementGuide = React.lazy(() => import("@/pages/MesotheliomaSettlementGuide"));
 const FormsHubPage = React.lazy(() => import("@/pages/FormsHubPage"));
 const FormWizardPage = React.lazy(() => import("@/pages/FormWizardPage"));
+const MyDocumentsPage = React.lazy(() => import("@/pages/MyDocumentsPage"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
@@ -119,6 +120,7 @@ export default function AppRoutes() {
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
+      <Route path="/dashboard/documents" element={<MyDocumentsPage />} />
       <Route path="/legal-health-check" element={<LegalHealthCheckPage />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/blog/category/:slug" element={<BlogCategoryPage />} />

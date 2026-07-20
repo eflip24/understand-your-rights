@@ -76,6 +76,17 @@ export default function DashboardPage() {
         </div>
       </div>
 
+      <Card className="mb-6">
+        <CardContent className="p-4 flex items-center gap-4">
+          <FileText className="h-5 w-5 text-accent shrink-0" />
+          <div className="flex-1 min-w-0">
+            <p className="font-medium text-sm">My Documents</p>
+            <p className="text-xs text-muted-foreground">All your saved and purchased PDFs, plus version history.</p>
+          </div>
+          <Button asChild size="sm" variant="outline"><Link to={lp("/dashboard/documents")}>Open library</Link></Button>
+        </CardContent>
+      </Card>
+
       <MyFormsSection />
 
       <h2 className="font-semibold text-lg mb-4">Saved Analyses</h2>

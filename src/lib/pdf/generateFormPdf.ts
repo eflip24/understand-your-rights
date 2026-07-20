@@ -5,11 +5,16 @@ import {
   getEvictionRule,
   type EvictionReason,
 } from "@/data/evictionStateRules";
+import { getStateRules } from "@/data/stateFormRules";
+import type { SignatureValue } from "@/components/forms/SignaturePad";
 
 interface GenerateOptions {
   form: LegalFormDef;
   data: Record<string, unknown>;
   watermark: boolean;
+  stateCode?: string | null;
+  signature?: SignatureValue | null;
+  flatten?: boolean;
 }
 
 /**
@@ -21,10 +26,11 @@ interface GenerateOptions {
  * These PDFs are self-help templates, NOT facsimiles of official IRS/USCIS
  * or state government forms.
  */
-export async function generateFormPdf({ form, data, watermark }: GenerateOptions): Promise<Blob> {
+export async function generateFormPdf({ form, data, watermark, stateCode, signature, flatten }: GenerateOptions): Promise<Blob> {
   const pdfDoc = await PDFDocument.create();
   const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
   const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+  const fontItalic = await pdfDoc.embedFont(StandardFonts.HelveticaOblique);
 
   if (form.pdfTemplate === "w9") {
     renderW9({ pdfDoc, font, fontBold, data, watermark });
@@ -49,13 +55,21 @@ export async function generateFormPdf({ form, data, watermark }: GenerateOptions
   } else if (form.pdfTemplate === "releaseOfLiability") {
     renderReleaseOfLiability({ pdfDoc, font, fontBold, data, watermark });
   } else {
-    // Generic renderer covers Batch-4 pack forms (offerLetter, directDeposit,
-    // noticeToVacate, moveInOutChecklist, securityDepositReceipt, lateRentNotice,
-    // llcOperatingAgreement, healthcarePoa, simpleWill, livingWill,
-    // hipaaAuthorization, independentContractor) and any future template.
     renderGeneric({ pdfDoc, font, fontBold, form, data, watermark });
   }
 
+  // Append state-rules appendix and signature block when applicable.
+  if (form.stateAware && stateCode) {
+    appendStateRulesPage(pdfDoc, font, fontBold, form, stateCode, watermark);
+  }
+  if (signature && (signature.dataUrl || signature.typedName)) {
+    await appendSignaturePage(pdfDoc, font, fontBold, fontItalic, data, signature, watermark);
+  }
+
+  // Flatten any acroform fields for the clean variant (no-op for canvas-drawn PDFs).
+  if (flatten) {
+    try { pdfDoc.getForm().flatten(); } catch { /* no form present */ }
+  }
 
   const bytes = await pdfDoc.save();
   return new Blob(
@@ -63,6 +77,164 @@ export async function generateFormPdf({ form, data, watermark }: GenerateOptions
     { type: "application/pdf" }
   );
 }
+
+// ---------------------------------------------------------------------------
+// State rules appendix
+// ---------------------------------------------------------------------------
+
+function appendStateRulesPage(
+  pdfDoc: PDFDocument,
+  font: PDFFont,
+  fontBold: PDFFont,
+  form: LegalFormDef,
+  stateCode: string,
+  watermark: boolean,
+) {
+  const rules = getStateRules(stateCode);
+  const pageWidth = 612;
+  const pageHeight = 792;
+  const margin = 48;
+  const maxWidth = pageWidth - margin * 2;
+  const page = pdfDoc.addPage([pageWidth, pageHeight]);
+  let y = pageHeight - margin;
+
+  const draw = (s: string, opts: { bold?: boolean; size?: number; gap?: number; indent?: number } = {}) => {
+    const size = opts.size ?? 10;
+    const f = opts.bold ? fontBold : font;
+    const lines = wrapText(s, f, size, maxWidth - (opts.indent ?? 0));
+    for (const line of lines) {
+      page.drawText(line, { x: margin + (opts.indent ?? 0), y, size, font: f, color: rgb(0.08, 0.1, 0.2) });
+      y -= size + 3;
+    }
+    y -= opts.gap ?? 4;
+  };
+
+  draw(`State-Specific Notes — ${rules.name}`, { bold: true, size: 15, gap: 8 });
+  draw(rules.isDefault
+    ? `We don't have deep coverage for ${rules.name} yet, so the rules below are general defaults. Verify with a local attorney before signing.`
+    : `The following rules apply to documents used in ${rules.name}. Local ordinances (rent control, city eviction rules, homestead rules) can add requirements.`,
+    { size: 9 });
+  y -= 6;
+
+  const relevant = form.pdfTemplate ?? "";
+  if (["lease", "evictionNotice"].includes(relevant) || form.slug === "residential-lease-agreement" || form.slug === "late-rent-notice") {
+    draw("Lease / rental", { bold: true, size: 12, gap: 4 });
+    draw(`• Max security deposit: ${rules.lease.maxSecurityDeposit}`);
+    draw(`• Deposit return window: ${rules.lease.depositReturnDays} days after move-out`);
+    draw(`• Late-fee cap: ${rules.lease.lateFeeCap}`);
+    draw("• Required disclosures:", { bold: true });
+    for (const d of rules.lease.mandatoryDisclosures) draw(`   – ${d}`, { indent: 8 });
+    if (rules.lease.earlyTerminationNote) draw(`• ${rules.lease.earlyTerminationNote}`);
+    y -= 4;
+  }
+  if (form.slug === "notice-to-vacate") {
+    draw("Notice to vacate", { bold: true, size: 12, gap: 4 });
+    draw(`• Month-to-month tenancy: ${rules.noticeToVacate.monthToMonthDays} days' notice`);
+    draw(`• Yearly / long-term tenancy: ${rules.noticeToVacate.yearlyLeaseDays} days' notice`);
+    draw(`• ${rules.noticeToVacate.fixedTermNote}`);
+    y -= 4;
+  }
+  if (relevant === "poa" || form.slug === "healthcare-power-of-attorney") {
+    draw("Power of attorney", { bold: true, size: 12, gap: 4 });
+    draw(`• Notarization required: ${rules.poa.notarizationRequired ? "Yes" : "No"}`);
+    draw(`• Witnesses required: ${rules.poa.witnessesRequired}`);
+    if (rules.poa.statutoryFormNote) draw(`• ${rules.poa.statutoryFormNote}`);
+    y -= 4;
+  }
+  if (form.slug === "simple-will") {
+    draw("Will", { bold: true, size: 12, gap: 4 });
+    draw(`• Witnesses required: ${rules.will.witnessesRequired}`);
+    draw(`• Self-proving affidavit available: ${rules.will.selfProvingAffidavitAvailable ? "Yes" : "No"}`);
+    draw(`• Holographic (handwritten) wills recognized: ${rules.will.holographicRecognized ? "Yes" : "No"}`);
+    y -= 4;
+  }
+  if (relevant === "billOfSale") {
+    draw("Bill of sale", { bold: true, size: 12, gap: 4 });
+    draw(`• Notarization required: ${rules.billOfSale.notarizationRequired ? "Yes" : "No"}`);
+    draw(`• Odometer disclosure required: ${rules.billOfSale.odometerDisclosureRequired ? "Yes" : "No"}`);
+    y -= 4;
+  }
+
+  draw("This is general information, not legal advice. LegallySpoken is not a law firm.", { size: 8 });
+
+  if (watermark) drawWatermark(page, pageWidth, pageHeight, font);
+}
+
+// ---------------------------------------------------------------------------
+// Signature appendix
+// ---------------------------------------------------------------------------
+
+async function appendSignaturePage(
+  pdfDoc: PDFDocument,
+  font: PDFFont,
+  fontBold: PDFFont,
+  fontItalic: PDFFont,
+  data: Record<string, unknown>,
+  signature: SignatureValue,
+  watermark: boolean,
+) {
+  const pageWidth = 612;
+  const pageHeight = 792;
+  const margin = 48;
+  const page = pdfDoc.addPage([pageWidth, pageHeight]);
+  let y = pageHeight - margin;
+
+  page.drawText("Electronic Signature", { x: margin, y, size: 16, font: fontBold, color: rgb(0.08, 0.1, 0.2) });
+  y -= 26;
+
+  page.drawText("Signed by:", { x: margin, y, size: 10, font: fontBold });
+  y -= 14;
+  const signerName = (data.fullName as string) || (data.signerName as string) || (data.employeeName as string) || (data.tenantName as string) || (data.landlordName as string) || (data.principalName as string) || signature.typedName || "";
+  page.drawText(signerName || "___________________________", { x: margin, y, size: 11, font });
+  y -= 28;
+
+  // Draw the signature itself.
+  if (signature.dataUrl) {
+    try {
+      const png = await pdfDoc.embedPng(signature.dataUrl);
+      const targetW = 240;
+      const scale = targetW / png.width;
+      const targetH = png.height * scale;
+      page.drawImage(png, { x: margin, y: y - targetH, width: targetW, height: targetH });
+      y -= targetH + 8;
+    } catch {
+      page.drawText(signature.typedName ?? "[signature image error]", { x: margin, y, size: 18, font: fontItalic });
+      y -= 26;
+    }
+  } else if (signature.typedName) {
+    page.drawText(`/s/ ${signature.typedName}`, { x: margin, y, size: 20, font: fontItalic, color: rgb(0.08, 0.1, 0.2) });
+    y -= 30;
+  }
+
+  page.drawLine({ start: { x: margin, y: y }, end: { x: margin + 280, y }, thickness: 0.5, color: rgb(0.4, 0.4, 0.4) });
+  y -= 14;
+  page.drawText(`Date signed: ${new Date(signature.signedAt).toLocaleString()}`, { x: margin, y, size: 9, font });
+  y -= 30;
+
+  page.drawText("Certificate of Electronic Signature", { x: margin, y, size: 11, font: fontBold });
+  y -= 16;
+  const cert = [
+    `Signer name: ${signerName || "(not provided)"}`,
+    `Signature method: ${signature.dataUrl ? "Hand-drawn on device" : "Typed name"}`,
+    `Timestamp: ${new Date(signature.signedAt).toISOString()}`,
+    `Document ID: ls-${Math.random().toString(36).slice(2, 10)}-${Date.now().toString(36)}`,
+    "",
+    "Under the federal ESIGN Act (15 U.S.C. §§ 7001–7031) and the Uniform Electronic Transactions Act (UETA)",
+    "adopted in most U.S. states, an electronic signature has the same legal effect as a handwritten signature",
+    "for most contracts. Some documents — including wills in most states, certain notarized instruments, and",
+    "documents governed by the UCC — may still require a wet-ink signature, witnesses, or notarization.",
+    "This certificate is generated by legallyspoken.com and is not a substitute for legal advice.",
+  ];
+  for (const line of cert) {
+    const size = line.startsWith("Under the") || line.startsWith("adopted") || line.startsWith("for most") || line.startsWith("documents") || line.startsWith("This certificate") ? 9 : 9;
+    page.drawText(line, { x: margin, y, size, font, color: rgb(0.2, 0.2, 0.28) });
+    y -= 13;
+  }
+
+  if (watermark) drawWatermark(page, pageWidth, pageHeight, font);
+}
+
+
 
 // ---------------------------------------------------------------------------
 // W-9 layout (Rev. March 2024)
