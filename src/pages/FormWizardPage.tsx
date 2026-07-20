@@ -284,6 +284,14 @@ export default function FormWizardPage() {
       )}
 
       <FormDisclaimer />
+
+      <StripeCheckoutDialog
+        open={checkoutOpen}
+        onClose={handleCheckoutClose}
+        slug={slug}
+        title={form.title}
+        returnUrl={`${window.location.origin}${lp(`/checkout/return`)}?slug=${slug}&session_id={CHECKOUT_SESSION_ID}`}
+      />
     </div>
   );
 }
