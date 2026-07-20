@@ -94,8 +94,12 @@ const SsdiDeniedWhatNext = React.lazy(() => import("@/pages/SsdiDeniedWhatNext")
 const MesotheliomaSettlementGuide = React.lazy(() => import("@/pages/MesotheliomaSettlementGuide"));
 const FormsHubPage = React.lazy(() => import("@/pages/FormsHubPage"));
 const FormWizardPage = React.lazy(() => import("@/pages/FormWizardPage"));
-const FormSeoLanding = React.lazy(() => import("@/pages/forms/FormSeoLanding"));
-const FormStateSeoLanding = React.lazy(() => import("@/pages/forms/FormStateSeoLanding"));
+const FormSeoLandingWrapper = React.lazy(() =>
+  import("@/pages/forms/FormSeoWrappers").then((m) => ({ default: m.FormSeoLandingWrapper })),
+);
+const FormStateSeoLandingWrapper = React.lazy(() =>
+  import("@/pages/forms/FormSeoWrappers").then((m) => ({ default: m.FormStateSeoLandingWrapper })),
+);
 const MyDocumentsPage = React.lazy(() => import("@/pages/MyDocumentsPage"));
 const CheckoutReturnPage = React.lazy(() => import("@/pages/CheckoutReturnPage"));
 
