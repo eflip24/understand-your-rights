@@ -1998,6 +1998,652 @@ export const legalForms: LegalFormDef[] = [
     ],
     relatedForms: ["nda", "demand-letter", "promissory-note"],
   },
+  // ==========================================================================
+  // Batch 4 — Pack member forms (New Hire, Landlord, Small Business, Personal Planning)
+  // Individual pages are live; primary consumption is via `/forms/*-pack` bundles.
+  // ==========================================================================
+  {
+    slug: "offer-letter",
+    title: "Employment Offer Letter",
+    shortDescription:
+      "Simple, professional employment offer letter covering title, pay, start date, and at-will terms.",
+    category: "employment",
+    price: 4.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "offerLetter",
+    steps: [
+      {
+        id: "parties",
+        title: "Employer & candidate",
+        fields: [
+          { id: "employerName", label: "Employer / company name", type: "text", required: true },
+          { id: "employerAddress", label: "Employer address", type: "textarea" },
+          { id: "candidateName", label: "Candidate full name", type: "text", required: true },
+          { id: "candidateAddress", label: "Candidate address", type: "textarea" },
+          { id: "letterDate", label: "Letter date", type: "date", required: true },
+        ],
+      },
+      {
+        id: "role",
+        title: "Role & compensation",
+        fields: [
+          { id: "jobTitle", label: "Job title", type: "text", required: true },
+          { id: "startDate", label: "Anticipated start date", type: "date", required: true },
+          { id: "employmentType", label: "Employment type", type: "select", required: true,
+            options: [
+              { value: "fullTime", label: "Full-time (exempt)" },
+              { value: "fullTimeNonExempt", label: "Full-time (non-exempt)" },
+              { value: "partTime", label: "Part-time" },
+            ] },
+          { id: "payRate", label: "Compensation (e.g. $75,000 / year or $28.00 / hour)", type: "text", required: true },
+          { id: "payFrequency", label: "Pay frequency", type: "select",
+            options: [
+              { value: "weekly", label: "Weekly" },
+              { value: "biweekly", label: "Bi-weekly" },
+              { value: "semimonthly", label: "Semi-monthly" },
+              { value: "monthly", label: "Monthly" },
+            ] },
+          { id: "reportsTo", label: "Reports to", type: "text" },
+          { id: "workLocation", label: "Primary work location (city, state / remote)", type: "text" },
+        ],
+      },
+      {
+        id: "terms",
+        title: "Terms & benefits",
+        fields: [
+          { id: "benefitsSummary", label: "Benefits summary (health, PTO, 401(k), etc.)", type: "textarea",
+            placeholder: "Medical, dental, vision after 60 days; 15 days PTO; 401(k) with 4% match…" },
+          { id: "contingencies", label: "Contingencies", type: "checkbox",
+            help: "Offer contingent on background check, I-9 verification, and reference checks" },
+          { id: "atWillAck", label: "This is at-will employment (either party may terminate at any time)", type: "checkbox" },
+          { id: "acceptBy", label: "Please accept by (date)", type: "date" },
+        ],
+      },
+    ],
+    relatedForms: ["i-9", "w-4", "nda"],
+  },
+  {
+    slug: "independent-contractor-agreement",
+    title: "Independent Contractor Agreement",
+    shortDescription:
+      "Plain-English 1099 contractor agreement covering scope, fees, IP, confidentiality, and termination.",
+    category: "business",
+    price: 6.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "independentContractor",
+    steps: [
+      {
+        id: "parties",
+        title: "Client & contractor",
+        fields: [
+          { id: "clientName", label: "Client (company) name", type: "text", required: true },
+          { id: "clientAddress", label: "Client address", type: "textarea" },
+          { id: "contractorName", label: "Contractor name", type: "text", required: true },
+          { id: "contractorAddress", label: "Contractor address", type: "textarea" },
+          { id: "contractorTaxId", label: "Contractor SSN / EIN (for 1099)", type: "text" },
+          { id: "effectiveDate", label: "Effective date", type: "date", required: true },
+        ],
+      },
+      {
+        id: "scope",
+        title: "Scope & compensation",
+        fields: [
+          { id: "servicesDescription", label: "Description of services", type: "textarea", required: true,
+            placeholder: "Design and develop the marketing website; deliver source files and one round of revisions…" },
+          { id: "deliverables", label: "Deliverables & milestones", type: "textarea" },
+          { id: "feeStructure", label: "Fee structure", type: "select",
+            options: [
+              { value: "flatFee", label: "Flat fee" },
+              { value: "hourly", label: "Hourly" },
+              { value: "milestone", label: "Milestone-based" },
+              { value: "retainer", label: "Monthly retainer" },
+            ] },
+          { id: "feeAmount", label: "Fee amount (USD)", type: "text", required: true },
+          { id: "invoiceCadence", label: "Invoice cadence", type: "text", placeholder: "Net 15 upon each milestone" },
+          { id: "expensesPolicy", label: "Expenses", type: "select",
+            options: [
+              { value: "none", label: "Not reimbursable" },
+              { value: "preApproved", label: "Reimbursable if pre-approved in writing" },
+              { value: "allActual", label: "All reasonable expenses reimbursable" },
+            ] },
+        ],
+      },
+      {
+        id: "legal",
+        title: "IP, confidentiality & termination",
+        fields: [
+          { id: "ipOwnership", label: "IP ownership", type: "select",
+            options: [
+              { value: "workForHire", label: "Work-for-hire (Client owns all deliverables)" },
+              { value: "license", label: "Contractor retains ownership, Client gets a license" },
+            ] },
+          { id: "confidentiality", label: "Include mutual confidentiality clause", type: "checkbox" },
+          { id: "nonSolicit", label: "12-month non-solicitation of employees", type: "checkbox" },
+          { id: "termDays", label: "Either party may terminate with N days written notice", type: "number", placeholder: "14" },
+          { id: "governingState", label: "Governing law (state)", type: "usState", required: true },
+          { id: "contractorAck1099", label: "Contractor acknowledges 1099 status (no withholdings, no benefits)", type: "checkbox", required: true },
+        ],
+      },
+    ],
+    relatedForms: ["nda", "w-9", "offer-letter"],
+  },
+  {
+    slug: "direct-deposit-authorization",
+    title: "Direct Deposit Authorization",
+    shortDescription:
+      "Simple authorization form for an employer to deposit wages directly into an employee's bank account.",
+    category: "employment",
+    price: 3.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "directDeposit",
+    steps: [
+      {
+        id: "employee",
+        title: "Employee",
+        fields: [
+          { id: "employeeName", label: "Full name", type: "text", required: true },
+          { id: "employeeAddress", label: "Home address", type: "textarea" },
+          { id: "employeeSSN", label: "SSN (last 4 sufficient)", type: "text" },
+          { id: "employerName", label: "Employer name", type: "text", required: true },
+          { id: "effectiveDate", label: "Effective pay date", type: "date", required: true },
+        ],
+      },
+      {
+        id: "bank",
+        title: "Bank account",
+        description: "Attach a voided check when submitting to your employer.",
+        fields: [
+          { id: "bankName", label: "Bank name", type: "text", required: true },
+          { id: "routingNumber", label: "Routing number (9 digits)", type: "text", required: true },
+          { id: "accountNumber", label: "Account number", type: "text", required: true },
+          { id: "accountType", label: "Account type", type: "radio", required: true,
+            options: [
+              { value: "checking", label: "Checking" },
+              { value: "savings", label: "Savings" },
+            ] },
+          { id: "depositType", label: "Deposit amount", type: "radio", required: true,
+            options: [
+              { value: "full", label: "Full net pay" },
+              { value: "fixed", label: "Fixed dollar amount" },
+              { value: "percent", label: "Percentage of net pay" },
+            ] },
+          { id: "depositValue", label: "Fixed $ or % (if not full)", type: "text",
+            showWhen: (d) => d.depositType === "fixed" || d.depositType === "percent" },
+        ],
+      },
+      {
+        id: "ack",
+        title: "Authorization",
+        fields: [
+          { id: "authAck", label: "I authorize my employer and its financial institution to deposit my pay to the account above, and to reverse any erroneous credits.", type: "checkbox", required: true },
+          { id: "signDate", label: "Date signed", type: "date", required: true },
+        ],
+      },
+    ],
+    relatedForms: ["w-4", "i-9"],
+  },
+  {
+    slug: "notice-to-vacate",
+    title: "Notice to Vacate (Tenant → Landlord)",
+    shortDescription:
+      "Written notice a tenant gives a landlord to end a month-to-month or lease-end tenancy.",
+    category: "realestate",
+    price: 3.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "noticeToVacate",
+    steps: [
+      {
+        id: "parties",
+        title: "Parties & property",
+        fields: [
+          { id: "tenantName", label: "Tenant name(s)", type: "text", required: true },
+          { id: "landlordName", label: "Landlord name", type: "text", required: true },
+          { id: "landlordAddress", label: "Landlord address (where notice is sent)", type: "textarea", required: true },
+          { id: "propertyAddress", label: "Rental property address", type: "textarea", required: true },
+          { id: "propertyState", label: "State", type: "usState", required: true },
+        ],
+      },
+      {
+        id: "notice",
+        title: "Notice details",
+        fields: [
+          { id: "noticeDate", label: "Today's date", type: "date", required: true },
+          { id: "vacateDate", label: "Move-out date", type: "date", required: true,
+            help: "Most states require at least 30 days for month-to-month tenancies." },
+          { id: "tenancyType", label: "Tenancy type", type: "radio",
+            options: [
+              { value: "monthToMonth", label: "Month-to-month" },
+              { value: "leaseEnd", label: "End of fixed-term lease" },
+            ] },
+          { id: "forwardingAddress", label: "Forwarding address (for security deposit)", type: "textarea" },
+          { id: "reason", label: "Optional reason", type: "textarea" },
+        ],
+      },
+    ],
+    relatedForms: ["residential-lease-agreement", "eviction-notice"],
+  },
+  {
+    slug: "move-in-move-out-checklist",
+    title: "Move-In / Move-Out Inspection Checklist",
+    shortDescription:
+      "Room-by-room condition checklist protecting both landlord and tenant on security deposit disputes.",
+    category: "realestate",
+    price: 3.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "moveInOutChecklist",
+    steps: [
+      {
+        id: "meta",
+        title: "Property & inspection",
+        fields: [
+          { id: "propertyAddress", label: "Rental property address", type: "textarea", required: true },
+          { id: "tenantName", label: "Tenant name(s)", type: "text", required: true },
+          { id: "landlordName", label: "Landlord / manager name", type: "text", required: true },
+          { id: "inspectionType", label: "Inspection type", type: "radio", required: true,
+            options: [
+              { value: "moveIn", label: "Move-in" },
+              { value: "moveOut", label: "Move-out" },
+            ] },
+          { id: "inspectionDate", label: "Inspection date", type: "date", required: true },
+        ],
+      },
+      {
+        id: "rooms",
+        title: "Room-by-room condition",
+        description: "Note condition (Good / Fair / Poor) and any damage.",
+        fields: [
+          { id: "livingRoom", label: "Living room", type: "textarea" },
+          { id: "kitchen", label: "Kitchen (appliances, counters, sink, floors)", type: "textarea" },
+          { id: "bedroom1", label: "Bedroom 1", type: "textarea" },
+          { id: "bedroom2", label: "Bedroom 2", type: "textarea" },
+          { id: "bathroom1", label: "Bathroom 1", type: "textarea" },
+          { id: "bathroom2", label: "Bathroom 2", type: "textarea" },
+          { id: "exterior", label: "Exterior / garage / yard", type: "textarea" },
+          { id: "smokeAlarms", label: "Smoke & CO alarms tested and working", type: "checkbox" },
+        ],
+      },
+      {
+        id: "sign",
+        title: "Signatures",
+        fields: [
+          { id: "tenantAck", label: "Tenant has inspected and agrees to the above", type: "checkbox", required: true },
+          { id: "landlordAck", label: "Landlord/manager has inspected and agrees to the above", type: "checkbox", required: true },
+        ],
+      },
+    ],
+    relatedForms: ["residential-lease-agreement", "security-deposit-receipt"],
+  },
+  {
+    slug: "security-deposit-receipt",
+    title: "Security Deposit Receipt",
+    shortDescription:
+      "Written receipt for a security deposit — required by many states within a short window of receipt.",
+    category: "realestate",
+    price: 3.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "securityDepositReceipt",
+    steps: [
+      {
+        id: "receipt",
+        title: "Deposit details",
+        fields: [
+          { id: "landlordName", label: "Landlord name", type: "text", required: true },
+          { id: "tenantName", label: "Tenant name(s)", type: "text", required: true },
+          { id: "propertyAddress", label: "Rental property address", type: "textarea", required: true },
+          { id: "depositAmount", label: "Deposit amount (USD)", type: "text", required: true },
+          { id: "receivedDate", label: "Date received", type: "date", required: true },
+          { id: "paymentMethod", label: "Payment method", type: "select",
+            options: [
+              { value: "check", label: "Check" },
+              { value: "moneyOrder", label: "Money order" },
+              { value: "ach", label: "Bank transfer / ACH" },
+              { value: "cash", label: "Cash" },
+              { value: "card", label: "Credit / debit card" },
+            ] },
+          { id: "bankName", label: "Financial institution holding the deposit", type: "text",
+            help: "Required in many states (e.g. MA, NJ, NY, CT)." },
+          { id: "accountType", label: "Account type", type: "select",
+            options: [
+              { value: "escrow", label: "Escrow / trust account" },
+              { value: "interest", label: "Interest-bearing account" },
+              { value: "operating", label: "Operating account" },
+            ] },
+          { id: "propertyState", label: "State", type: "usState", required: true },
+        ],
+      },
+    ],
+    relatedForms: ["residential-lease-agreement", "move-in-move-out-checklist"],
+  },
+  {
+    slug: "late-rent-notice",
+    title: "Late Rent Notice",
+    shortDescription:
+      "Formal reminder to a tenant that rent is past due, including late fees and a payment deadline.",
+    category: "realestate",
+    price: 3.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "lateRentNotice",
+    steps: [
+      {
+        id: "parties",
+        title: "Parties & property",
+        fields: [
+          { id: "landlordName", label: "Landlord name", type: "text", required: true },
+          { id: "tenantName", label: "Tenant name(s)", type: "text", required: true },
+          { id: "propertyAddress", label: "Rental property address", type: "textarea", required: true },
+          { id: "propertyState", label: "State", type: "usState", required: true },
+        ],
+      },
+      {
+        id: "amounts",
+        title: "Amounts owed",
+        fields: [
+          { id: "noticeDate", label: "Today's date", type: "date", required: true },
+          { id: "rentDueDate", label: "Rent was due on", type: "date", required: true },
+          { id: "rentAmount", label: "Rent amount owed (USD)", type: "text", required: true },
+          { id: "lateFee", label: "Late fee (USD)", type: "text" },
+          { id: "totalDue", label: "Total now due (USD)", type: "text", required: true },
+          { id: "payBy", label: "Pay by (date)", type: "date", required: true },
+          { id: "paymentInstructions", label: "How to pay (check payable to, portal, address)", type: "textarea" },
+          { id: "escalationNote", label: "Include notice that eviction proceedings may follow if unpaid", type: "checkbox" },
+        ],
+      },
+    ],
+    relatedForms: ["eviction-notice", "residential-lease-agreement"],
+  },
+  {
+    slug: "llc-operating-agreement",
+    title: "Basic LLC Operating Agreement",
+    shortDescription:
+      "Simple single-member or multi-member LLC operating agreement covering ownership, management, and distributions.",
+    category: "business",
+    price: 9.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "llcOperatingAgreement",
+    steps: [
+      {
+        id: "company",
+        title: "Company",
+        fields: [
+          { id: "llcName", label: "LLC name (exact as filed)", type: "text", required: true },
+          { id: "formationState", label: "Formation state", type: "usState", required: true },
+          { id: "formationDate", label: "Date of formation", type: "date" },
+          { id: "principalAddress", label: "Principal office address", type: "textarea", required: true },
+          { id: "purpose", label: "Business purpose", type: "textarea",
+            placeholder: "Any lawful purpose for which a limited liability company may be organized…" },
+          { id: "term", label: "Term", type: "select",
+            options: [
+              { value: "perpetual", label: "Perpetual" },
+              { value: "fixed", label: "Fixed (see notes)" },
+            ] },
+        ],
+      },
+      {
+        id: "members",
+        title: "Members & ownership",
+        fields: [
+          { id: "memberType", label: "Membership", type: "radio", required: true,
+            options: [
+              { value: "single", label: "Single-member" },
+              { value: "multi", label: "Multi-member" },
+            ] },
+          { id: "member1Name", label: "Member 1 — name", type: "text", required: true },
+          { id: "member1Address", label: "Member 1 — address", type: "textarea" },
+          { id: "member1Contribution", label: "Member 1 — capital contribution (USD)", type: "text" },
+          { id: "member1Interest", label: "Member 1 — membership interest (%)", type: "text", placeholder: "100" },
+          { id: "member2Name", label: "Member 2 — name", type: "text", showWhen: (d) => d.memberType === "multi" },
+          { id: "member2Address", label: "Member 2 — address", type: "textarea", showWhen: (d) => d.memberType === "multi" },
+          { id: "member2Contribution", label: "Member 2 — capital contribution (USD)", type: "text", showWhen: (d) => d.memberType === "multi" },
+          { id: "member2Interest", label: "Member 2 — membership interest (%)", type: "text", showWhen: (d) => d.memberType === "multi" },
+          { id: "additionalMembers", label: "Additional members (name, contribution, %)", type: "textarea", showWhen: (d) => d.memberType === "multi" },
+        ],
+      },
+      {
+        id: "management",
+        title: "Management & distributions",
+        fields: [
+          { id: "managementType", label: "Management", type: "radio", required: true,
+            options: [
+              { value: "member", label: "Member-managed" },
+              { value: "manager", label: "Manager-managed" },
+            ] },
+          { id: "managerName", label: "Manager name (if manager-managed)", type: "text",
+            showWhen: (d) => d.managementType === "manager" },
+          { id: "distributionPolicy", label: "Distribution policy", type: "textarea",
+            placeholder: "Distributions made in proportion to membership interests, at times determined by the members…" },
+          { id: "bankAuthority", label: "Who may sign checks / open accounts", type: "text" },
+          { id: "attorneyReviewAck", label: "I understand this template does not replace review by a licensed attorney or CPA.", type: "checkbox", required: true },
+        ],
+      },
+    ],
+    relatedForms: ["independent-contractor-agreement", "nda", "promissory-note"],
+  },
+  {
+    slug: "healthcare-power-of-attorney",
+    title: "Healthcare Power of Attorney",
+    shortDescription:
+      "Appoint a healthcare agent to make medical decisions for you if you cannot speak for yourself.",
+    category: "personal",
+    price: 6.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "healthcarePoa",
+    steps: [
+      {
+        id: "principal",
+        title: "You (the principal)",
+        fields: [
+          { id: "principalName", label: "Full legal name", type: "text", required: true },
+          { id: "principalDOB", label: "Date of birth", type: "date" },
+          { id: "principalAddress", label: "Home address", type: "textarea", required: true },
+          { id: "principalState", label: "State", type: "usState", required: true,
+            help: "Witness and notary rules vary by state." },
+        ],
+      },
+      {
+        id: "agent",
+        title: "Your healthcare agent",
+        fields: [
+          { id: "agentName", label: "Agent full name", type: "text", required: true },
+          { id: "agentRelationship", label: "Relationship (spouse, adult child, friend…)", type: "text" },
+          { id: "agentAddress", label: "Agent address", type: "textarea" },
+          { id: "agentPhone", label: "Agent phone", type: "text" },
+          { id: "alternateAgentName", label: "Alternate agent name", type: "text" },
+          { id: "alternateAgentPhone", label: "Alternate agent phone", type: "text" },
+        ],
+      },
+      {
+        id: "authority",
+        title: "Powers & preferences",
+        fields: [
+          { id: "authorityBreadth", label: "Authority", type: "radio", required: true,
+            options: [
+              { value: "broad", label: "Broad — agent may make any healthcare decision I could make" },
+              { value: "limited", label: "Limited — see specific instructions below" },
+            ] },
+          { id: "specificInstructions", label: "Specific instructions or limits", type: "textarea",
+            showWhen: (d) => d.authorityBreadth === "limited" },
+          { id: "lifeSupport", label: "Life-sustaining treatment preferences", type: "textarea",
+            placeholder: "If I am in a terminal condition or permanent unconsciousness, I want / do not want…" },
+          { id: "hipaaWaiver", label: "Agent may access my medical records (HIPAA)", type: "checkbox" },
+          { id: "witnessAck", label: "I understand my state requires witnesses and/or notarization to make this valid.", type: "checkbox", required: true },
+        ],
+      },
+    ],
+    relatedForms: ["living-will", "hipaa-authorization", "power-of-attorney-financial"],
+  },
+  {
+    slug: "simple-will",
+    title: "Simple Will / Last Will and Testament",
+    shortDescription:
+      "Straightforward will covering executor, beneficiaries, and specific gifts. Not for complex estates.",
+    category: "personal",
+    price: 9.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "simpleWill",
+    steps: [
+      {
+        id: "testator",
+        title: "You (the testator)",
+        fields: [
+          { id: "testatorName", label: "Full legal name", type: "text", required: true },
+          { id: "testatorAddress", label: "Home address", type: "textarea", required: true },
+          { id: "testatorState", label: "State of residence", type: "usState", required: true },
+          { id: "priorWills", label: "I revoke all prior wills and codicils", type: "checkbox", required: true },
+          { id: "maritalStatus", label: "Marital status", type: "select",
+            options: [
+              { value: "single", label: "Single" },
+              { value: "married", label: "Married" },
+              { value: "divorced", label: "Divorced" },
+              { value: "widowed", label: "Widowed" },
+            ] },
+          { id: "spouseName", label: "Spouse name", type: "text", showWhen: (d) => d.maritalStatus === "married" },
+        ],
+      },
+      {
+        id: "family",
+        title: "Family & guardianship",
+        fields: [
+          { id: "children", label: "Children (name, date of birth)", type: "textarea" },
+          { id: "minorGuardianName", label: "Guardian for minor children — name", type: "text" },
+          { id: "minorGuardianAddress", label: "Guardian for minor children — address", type: "textarea" },
+          { id: "alternateGuardianName", label: "Alternate guardian — name", type: "text" },
+        ],
+      },
+      {
+        id: "executor",
+        title: "Executor & gifts",
+        fields: [
+          { id: "executorName", label: "Executor / personal representative — name", type: "text", required: true },
+          { id: "executorAddress", label: "Executor address", type: "textarea" },
+          { id: "alternateExecutorName", label: "Alternate executor — name", type: "text" },
+          { id: "bondWaiver", label: "Executor may serve without posting bond", type: "checkbox" },
+          { id: "specificGifts", label: "Specific gifts (item / amount → to whom)", type: "textarea",
+            placeholder: "$10,000 to my sister Jane Doe; my 2019 Toyota Camry to my son John Doe…" },
+          { id: "residuaryBeneficiary", label: "Residuary beneficiary (who receives the rest)", type: "textarea", required: true },
+          { id: "alternateResiduary", label: "Alternate residuary beneficiary", type: "textarea" },
+        ],
+      },
+      {
+        id: "sign",
+        title: "Signing formalities",
+        note:
+          "Most states require this will to be signed by you and witnessed by TWO disinterested adults present at the same time. Some states also require or allow a self-proving notarized affidavit. Do not sign until witnesses are present.",
+        fields: [
+          { id: "witnessAck", label: "I will sign in the presence of two disinterested adult witnesses.", type: "checkbox", required: true },
+          { id: "attorneyReviewAck", label: "I understand this template is not a substitute for review by an estate-planning attorney, especially for larger estates.", type: "checkbox", required: true },
+        ],
+      },
+    ],
+    relatedForms: ["living-will", "power-of-attorney-financial", "healthcare-power-of-attorney"],
+  },
+  {
+    slug: "living-will",
+    title: "Living Will / Advance Directive",
+    shortDescription:
+      "Written statement of your wishes about life-sustaining treatment if you cannot communicate.",
+    category: "personal",
+    price: 6.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "livingWill",
+    steps: [
+      {
+        id: "principal",
+        title: "You",
+        fields: [
+          { id: "principalName", label: "Full legal name", type: "text", required: true },
+          { id: "principalDOB", label: "Date of birth", type: "date" },
+          { id: "principalAddress", label: "Home address", type: "textarea", required: true },
+          { id: "principalState", label: "State", type: "usState", required: true },
+        ],
+      },
+      {
+        id: "wishes",
+        title: "Treatment preferences",
+        note:
+          "This directive applies only if two physicians determine you have a terminal condition or permanent unconsciousness and cannot make or communicate decisions.",
+        fields: [
+          { id: "cprPref", label: "CPR (cardiopulmonary resuscitation)", type: "radio",
+            options: [
+              { value: "want", label: "I want it" },
+              { value: "decline", label: "I decline it" },
+              { value: "agentDecide", label: "My agent decides" },
+            ] },
+          { id: "ventilatorPref", label: "Mechanical ventilation", type: "radio",
+            options: [
+              { value: "want", label: "I want it" },
+              { value: "decline", label: "I decline it" },
+              { value: "agentDecide", label: "My agent decides" },
+            ] },
+          { id: "tubeFeedingPref", label: "Artificial nutrition / hydration (tube feeding)", type: "radio",
+            options: [
+              { value: "want", label: "I want it" },
+              { value: "decline", label: "I decline it" },
+              { value: "agentDecide", label: "My agent decides" },
+            ] },
+          { id: "comfortCare", label: "I always want comfort / palliative care", type: "checkbox" },
+          { id: "organDonation", label: "I wish to donate my organs and tissues (as permitted by law)", type: "checkbox" },
+          { id: "otherWishes", label: "Other wishes", type: "textarea" },
+        ],
+      },
+      {
+        id: "sign",
+        title: "Signing",
+        fields: [
+          { id: "witnessAck", label: "I will sign this directive with two disinterested adult witnesses and/or a notary, as required by my state.", type: "checkbox", required: true },
+        ],
+      },
+    ],
+    relatedForms: ["healthcare-power-of-attorney", "hipaa-authorization", "simple-will"],
+  },
+  {
+    slug: "hipaa-authorization",
+    title: "HIPAA Authorization for Release of Medical Information",
+    shortDescription:
+      "Authorize a hospital or provider to release your protected health information to a named person.",
+    category: "personal",
+    price: 4.99,
+    lastUpdated: "2026-01-01",
+    pdfTemplate: "hipaaAuthorization",
+    steps: [
+      {
+        id: "principal",
+        title: "You (the patient)",
+        fields: [
+          { id: "patientName", label: "Patient full legal name", type: "text", required: true },
+          { id: "patientDOB", label: "Date of birth", type: "date", required: true },
+          { id: "patientAddress", label: "Home address", type: "textarea" },
+          { id: "patientPhone", label: "Phone", type: "text" },
+        ],
+      },
+      {
+        id: "release",
+        title: "Release details",
+        fields: [
+          { id: "providerName", label: "Provider / hospital name (who releases)", type: "text", required: true },
+          { id: "providerAddress", label: "Provider address", type: "textarea" },
+          { id: "recipientName", label: "Recipient name (who receives)", type: "text", required: true },
+          { id: "recipientAddress", label: "Recipient address", type: "textarea" },
+          { id: "recipientRelationship", label: "Recipient relationship / role", type: "text" },
+          { id: "purpose", label: "Purpose of disclosure", type: "select",
+            options: [
+              { value: "personalUse", label: "Personal / family use" },
+              { value: "legal", label: "Legal proceedings" },
+              { value: "secondOpinion", label: "Second opinion / continuing care" },
+              { value: "insurance", label: "Insurance claim" },
+              { value: "other", label: "Other" },
+            ] },
+          { id: "purposeOther", label: "Describe purpose", type: "textarea", showWhen: (d) => d.purpose === "other" },
+          { id: "informationType", label: "Information to be released", type: "textarea",
+            placeholder: "All medical records; or specific: labs from 1/2024–12/2024, imaging, discharge summaries…" },
+          { id: "excludeSensitive", label: "Exclude highly sensitive records", type: "checkbox",
+            help: "Some categories (HIV/AIDS, mental health, substance use, genetic testing) require separate specific authorization in many states." },
+          { id: "expirationDate", label: "This authorization expires on", type: "date", required: true },
+          { id: "revokeAck", label: "I understand I may revoke this authorization in writing at any time.", type: "checkbox", required: true },
+        ],
+      },
+    ],
+    relatedForms: ["healthcare-power-of-attorney", "living-will"],
+  },
 ];
 
 export const getFormBySlug = (slug: string): LegalFormDef | undefined =>
