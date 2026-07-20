@@ -113,6 +113,18 @@ export default function AppRoutes() {
       <Route path="/tools/:category" element={<CategoryPage />} />
       <Route path="/tools/:category/:tool" element={<ToolPage />} />
       <Route path="/forms" element={<FormsHubPage />} />
+      {/* State fan-out SEO landings — must come before /:slug catch */}
+      <Route path="/forms/eviction-notice/:stateSlug" element={<FormStateSeoLandingWrapper formKey="eviction-notice" />} />
+      <Route path="/forms/lease-agreement/:stateSlug" element={<FormStateSeoLandingWrapper formKey="lease-agreement" />} />
+      <Route path="/forms/power-of-attorney/:stateSlug" element={<FormStateSeoLandingWrapper formKey="power-of-attorney" />} />
+      <Route path="/forms/vehicle-bill-of-sale/:stateSlug" element={<FormStateSeoLandingWrapper formKey="vehicle-bill-of-sale" />} />
+      {/* Standalone SEO landings — explicit paths beat /:slug by specificity */}
+      <Route path="/forms/w-9-online-free" element={<FormSeoLandingWrapper landingSlug="w-9-online-free" />} />
+      <Route path="/forms/w-4-online-free" element={<FormSeoLandingWrapper landingSlug="w-4-online-free" />} />
+      <Route path="/forms/i-9-online-free" element={<FormSeoLandingWrapper landingSlug="i-9-online-free" />} />
+      <Route path="/forms/nda-online-free" element={<FormSeoLandingWrapper landingSlug="nda-online-free" />} />
+      <Route path="/forms/demand-letter-online-free" element={<FormSeoLandingWrapper landingSlug="demand-letter-online-free" />} />
+      <Route path="/forms/promissory-note-online-free" element={<FormSeoLandingWrapper landingSlug="promissory-note-online-free" />} />
       <Route path="/forms/:slug" element={<FormWizardPage />} />
       <Route path="/checkout/return" element={<CheckoutReturnPage />} />
       <Route path="/unsubscribe" element={<UnsubscribePage />} />
