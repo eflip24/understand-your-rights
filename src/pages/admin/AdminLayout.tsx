@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Outlet, Link, useNavigate, useLocation } from "react-router-dom";
 import { useAdminRole } from "@/hooks/useAdminRole";
 import { useAuth } from "@/contexts/AuthContext";
-import { LayoutDashboard, FileText, Tags, TrendingUp, ArrowLeft, Loader2 } from "lucide-react";
+import { LayoutDashboard, FileText, Tags, TrendingUp, DollarSign, ArrowLeft, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const sidebarLinks = [
@@ -10,6 +10,7 @@ const sidebarLinks = [
   { label: "Blog Posts", href: "/admin/blog", icon: FileText },
   { label: "Categories", href: "/admin/categories", icon: Tags },
   { label: "Growth", href: "/admin/growth", icon: TrendingUp },
+  { label: "Pricing", href: "/admin/prices", icon: DollarSign },
 ];
 
 export default function AdminLayout() {
