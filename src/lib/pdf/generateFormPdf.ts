@@ -1122,3 +1122,302 @@ export function downloadBlob(blob: Blob, filename: string) {
   document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+
+// ---------------------------------------------------------------------------
+// Demand Letter / Collection Letter
+// ---------------------------------------------------------------------------
+
+function renderDemandLetter(ctx: DocCtx) {
+  const d = ctx.data;
+  const doc = buildDoc(ctx);
+  const responseDays = Number(d.responseDays) || 14;
+  const amount = Number(d.amountOwed) || 0;
+  const typeLabel: Record<string, string> = {
+    unpaidInvoice: "OUTSTANDING BALANCE — FORMAL DEMAND FOR PAYMENT",
+    breach: "BREACH OF CONTRACT — FORMAL DEMAND",
+    securityDeposit: "DEMAND FOR RETURN OF SECURITY DEPOSIT",
+    propertyDamage: "DEMAND FOR PAYMENT OF PROPERTY DAMAGE",
+    other: "FORMAL DEMAND LETTER",
+  };
+  const re = typeLabel[str(d.letterType)] || "FORMAL DEMAND LETTER";
+
+  // Sender letterhead
+  const senderLine1 = d.senderType === "business" && d.senderBusiness ? str(d.senderBusiness) : str(d.senderName);
+  doc.h3(senderLine1);
+  if (d.senderType === "business" && d.senderBusiness && d.senderName) {
+    doc.p(`${str(d.senderName)}${d.senderRole ? `, ${str(d.senderRole)}` : ""}`, { size: 9, muted: true });
+  }
+  doc.p(str(d.senderAddress).replace(/\n/g, ", "), { size: 9, muted: true });
+  const contact = [str(d.senderPhone), str(d.senderEmail)].filter(Boolean).join(" · ");
+  if (contact) doc.p(contact, { size: 9, muted: true });
+  doc.gap(8);
+  doc.p(formatDate(str(d.letterDate)));
+  doc.gap(4);
+  doc.p("VIA CERTIFIED MAIL AND FIRST-CLASS MAIL", { size: 9, muted: true });
+  doc.gap(4);
+
+  // Recipient
+  doc.p(str(d.recipientName));
+  doc.p(str(d.recipientAddress).replace(/\n/g, ", "));
+  if (d.recipientAttorney) doc.p(`c/o ${str(d.recipientAttorney)}, Esq.`);
+  doc.gap(6);
+  doc.h3(`RE:  ${re}`);
+  if (amount) doc.p(`Amount in controversy: $${amount.toLocaleString()}`, { size: 10, muted: true });
+  doc.rule();
+
+  // Salutation & body
+  doc.p(`Dear ${str(d.recipientName) || "Sir/Madam"}:`);
+  doc.gap(4);
+
+  // Paragraph 1 — background
+  doc.p(`This letter constitutes formal written demand relating to the following matter: ${str(d.background) || "___"}${d.originalDueDate ? ` The obligation became due on ${formatDate(str(d.originalDueDate))}.` : ""}`);
+
+  // Paragraph 2 — prior attempts
+  if (d.priorAttempts) {
+    doc.gap(4);
+    doc.p(`Despite prior efforts to resolve this matter — ${str(d.priorAttempts)} — the amount remains outstanding.`);
+  }
+
+  // Paragraph 3 — amount
+  doc.gap(4);
+  doc.p(`As of the date of this letter, the total amount owed is $${amount.toLocaleString()}${d.interestRate ? `, plus interest accruing at ${str(d.interestRate)}% per annum` : ""}${d.additionalDamages ? `, plus additional damages as follows: ${str(d.additionalDamages)}` : ""}.`);
+
+  // Paragraph 4 — demand
+  doc.gap(4);
+  doc.p(`DEMAND IS HEREBY MADE that you remit the full amount owed WITHIN ${responseDays} DAYS of your receipt of this letter. Acceptable payment methods: ${str(d.paymentMethods) || "as agreed"}.`);
+
+  // Paragraph 5 — consequences
+  const consequences: string[] = [];
+  if (d.conFileSuit) consequences.push("commence a civil action for recovery of the amount owed, plus interest and costs");
+  if (d.conAttorneyFees) consequences.push("seek attorney's fees and costs where permitted by contract or statute");
+  if (d.conCollections) consequences.push("refer this matter to a collection agency");
+  if (d.conCreditReport) consequences.push("report the delinquency to credit reporting agencies where lawful");
+  if (consequences.length > 0) {
+    doc.gap(4);
+    doc.p(`Should you fail to comply with this demand within the time stated, I reserve the right to, without further notice, ${consequences.join("; ")}.`);
+  }
+
+  // FDCPA
+  if (d.isConsumerDebtCollector && d.fdcpaAck) {
+    doc.gap(6);
+    doc.p("This is an attempt to collect a debt. Any information obtained will be used for that purpose. Unless you notify this office within thirty (30) days after receiving this notice that you dispute the validity of this debt, or any portion thereof, this office will assume the debt is valid.", { size: 9 });
+  }
+
+  // Governing law
+  if (d.governingState) {
+    doc.gap(4);
+    doc.p(`This matter is governed by the laws of the State of ${str(d.governingState)}.`, { size: 10, muted: true });
+  }
+
+  // Closing
+  doc.gap(8);
+  doc.p("This letter is sent without prejudice to any of my rights or remedies, all of which are expressly reserved. I hope to resolve this matter without resorting to litigation.");
+  doc.gap(6);
+  doc.p("Sincerely,");
+  doc.gap(16);
+  doc.p(str(d.senderSignature) || str(d.senderName));
+  if (d.senderType === "business" && d.senderRole) doc.p(str(d.senderRole), { size: 9, muted: true });
+  doc.kv("Date", formatDate(str(d.senderSignDate)));
+
+  doc.footer("This demand letter was generated by legallyspoken.com from your inputs. It is a self-help template, not legal advice. Send by certified mail with return receipt, keep a copy, and consult a licensed attorney before filing suit. Third-party debt collectors must comply with the federal Fair Debt Collection Practices Act (FDCPA).");
+}
+
+// ---------------------------------------------------------------------------
+// Promissory Note
+// ---------------------------------------------------------------------------
+
+function renderPromissoryNote(ctx: DocCtx) {
+  const d = ctx.data;
+  const doc = buildDoc(ctx);
+  const principal = Number(d.principal) || 0;
+  const apr = Number(d.apr) || 0;
+  const interestType = str(d.interestType);
+  const structure = str(d.repaymentStructure);
+  const installAmt = Number(d.installmentAmount) || 0;
+  const numPmts = Number(d.numberOfPayments) || 0;
+  const totalRepay = structure === "installments" ? installAmt * numPmts : 0;
+
+  doc.h1("PROMISSORY NOTE");
+  doc.p(`Principal amount: $${principal.toLocaleString()} USD  ·  Effective ${formatDate(str(d.disbursementDate))}  ·  Governed by the laws of ${str(d.governingState) || "___"}.`, { size: 10, muted: true });
+  doc.rule();
+
+  doc.p(`FOR VALUE RECEIVED, the undersigned, ${str(d.borrowerName) || "___"} of ${str(d.borrowerAddress).replace(/\n/g, ", ")} ("Borrower"), promises to pay to the order of ${str(d.lenderName) || "___"} of ${str(d.lenderAddress).replace(/\n/g, ", ")} ("Lender"), the principal sum of $${principal.toLocaleString()} USD, together with interest thereon as set forth below, on the terms and conditions of this Promissory Note.`);
+
+  if (d.purpose) {
+    doc.gap(4);
+    doc.p(`Purpose of loan: ${str(d.purpose)}`, { size: 10, muted: true });
+  }
+
+  doc.h2("1. Interest");
+  if (interestType === "none") {
+    doc.p("This Note shall bear NO interest. The Borrower shall repay only the principal amount.");
+  } else if (interestType === "simple") {
+    doc.p(`Interest shall accrue on the outstanding principal balance at the simple annual rate of ${apr}% per annum.`);
+  } else if (interestType === "compound") {
+    doc.p(`Interest shall accrue on the outstanding principal balance at the annual rate of ${apr}%, compounded ${str(d.compoundingFrequency) || "monthly"}.`);
+  }
+  if (apr > 10) {
+    doc.p("NOTICE: The stated interest rate exceeds 10% per annum. State usury statutes may cap the enforceable rate on private loans. Verify the applicable limit in the governing state before signing.", { size: 9, muted: true });
+  }
+
+  doc.h2("2. Repayment");
+  if (structure === "lumpSum") {
+    doc.p(`Borrower shall pay the entire outstanding principal balance, together with all accrued and unpaid interest, in a single payment on ${formatDate(str(d.maturityDate))} (the "Maturity Date").`);
+  } else if (structure === "installments") {
+    doc.p(`Borrower shall repay this Note in ${numPmts} ${str(d.installmentFrequency) || "monthly"} installments of $${installAmt.toLocaleString()} each, beginning on ${formatDate(str(d.firstPaymentDate))} and continuing on the same day of each ${str(d.installmentFrequency) === "weekly" ? "week" : str(d.installmentFrequency) === "biweekly" ? "two weeks" : str(d.installmentFrequency) === "quarterly" ? "quarter" : "month"} until paid in full.`);
+    if (totalRepay > 0) {
+      doc.p(`Total scheduled payments: $${totalRepay.toLocaleString()} (approximate; may differ from principal + interest depending on rounding and prepayments).`, { size: 9, muted: true });
+    }
+  } else if (structure === "onDemand") {
+    doc.p("The entire outstanding balance, principal and accrued interest, shall be due and payable upon written demand by the Lender.");
+  }
+
+  doc.h2("3. Late Payment");
+  const lft = str(d.lateFeeType);
+  const grace = str(d.graceDays) || "0";
+  if (lft === "flat" && d.lateFeeAmount) {
+    doc.p(`If any payment is not received within ${grace} days of its due date, Borrower shall pay a late fee of $${str(d.lateFeeAmount)}.`);
+  } else if (lft === "percent" && d.lateFeePercent) {
+    doc.p(`If any payment is not received within ${grace} days of its due date, Borrower shall pay a late fee equal to ${str(d.lateFeePercent)}% of the past-due amount.`);
+  } else {
+    doc.p("No specific late fee is imposed by this Note.");
+  }
+
+  doc.h2("4. Acceleration");
+  if (d.acceleration) {
+    doc.p("Upon any default in payment or other breach of this Note, the entire unpaid principal balance, together with all accrued interest, shall become immediately due and payable at the option of the Lender, without further notice or demand.");
+  } else {
+    doc.p("The parties have not elected an acceleration clause. Remedies for default are limited to those available at law.");
+  }
+
+  doc.h2("5. Prepayment");
+  doc.p(d.prepaymentAllowed
+    ? "Borrower may prepay all or any portion of the principal at any time, without premium or penalty. Prepayments shall be applied first to accrued interest and then to principal."
+    : "Prepayment is permitted only with the Lender's prior written consent.");
+
+  doc.h2("6. Security");
+  if (str(d.collateralType) === "secured") {
+    doc.p(`This Note is SECURED by the following collateral: ${str(d.collateralDescription) || "___"}.`);
+    if (d.ucc1Ack) doc.p("Lender may, at its option, file a UCC-1 financing statement to perfect its security interest in the collateral.", { size: 10 });
+  } else {
+    doc.p("This Note is UNSECURED. It is not backed by collateral, and the Lender's remedies for default are limited to those available at law.");
+  }
+
+  doc.h2("7. Governing Law & Venue");
+  doc.p(`This Note shall be governed by, and construed in accordance with, the laws of the State of ${str(d.governingState) || "___"}, without regard to its conflict-of-laws principles.`);
+
+  doc.h2("8. Waiver of Presentment");
+  doc.p("Borrower, and each surety, endorser, and guarantor of this Note, hereby waives presentment for payment, demand, notice of dishonor, protest, and notice of protest, and agrees to remain bound notwithstanding any extension, renewal, or modification.");
+
+  doc.h2("9. Severability & Entire Agreement");
+  doc.p("If any provision of this Note is held invalid or unenforceable, the remaining provisions shall continue in full force. This Note constitutes the entire agreement of the parties with respect to the loan and supersedes any prior discussions.");
+
+  doc.h2("Signatures");
+  doc.kv("Borrower — signed (typed)", str(d.borrowerSignature));
+  doc.kv("Date", formatDate(str(d.borrowerSignDate)));
+  if (d.lenderSignature) {
+    doc.gap(4);
+    doc.kv("Lender — signed (typed)", str(d.lenderSignature));
+    doc.kv("Date", formatDate(str(d.lenderSignDate)));
+  }
+  if (d.hasCosigner) {
+    doc.gap(4);
+    doc.h3("Co-Signer / Guarantor");
+    doc.p(`${str(d.cosignerName)} of ${str(d.cosignerAddress).replace(/\n/g, ", ")}, hereby guarantees the full and prompt payment of this Note and waives notice of default.`);
+    doc.kv("Co-signer — signed (typed)", str(d.cosignerSignature));
+    doc.kv("Date", formatDate(str(d.cosignerSignDate)));
+  }
+  if (d.notarize) {
+    doc.gap(6);
+    doc.h3("Notary Acknowledgment");
+    doc.p(`State of ${str(d.governingState) || "___"}, County of ______________________.`);
+    doc.p(`On this ____ day of ____________, 20____, before me personally appeared ${str(d.borrowerName) || "___"}, known to me (or satisfactorily proven) to be the person whose name is subscribed to this Note, and acknowledged that he/she executed it for the purposes therein contained.`, { size: 9 });
+    doc.gap(10);
+    doc.p("_______________________________________________", { muted: true });
+    doc.p("Notary Public — signature and seal", { muted: true, size: 9 });
+  }
+
+  doc.footer("This Promissory Note was generated by legallyspoken.com from your inputs. State usury laws cap enforceable interest rates on private loans and vary widely — verify the limit in the governing state. This is not legal advice; consult a licensed attorney before signing, especially for loans secured by real property (which typically require a separate mortgage or deed of trust).");
+}
+
+// ---------------------------------------------------------------------------
+// Release of Liability / Waiver
+// ---------------------------------------------------------------------------
+
+function renderReleaseOfLiability(ctx: DocCtx) {
+  const d = ctx.data;
+  const doc = buildDoc(ctx);
+  const isMinor = Boolean(d.isMinor);
+  const isPostIncident = str(d.waiverType) === "postIncident";
+
+  doc.h1("RELEASE OF LIABILITY, WAIVER OF CLAIMS,");
+  doc.h1("AND ASSUMPTION OF RISK");
+  doc.p(`Effective ${formatDate(str(d.activityDate))}  ·  Governed by the laws of the State of ${str(d.governingState) || "___"}.`, { size: 10, muted: true });
+  doc.rule();
+
+  doc.p(`THIS RELEASE ("Release") is entered into by and between ${str(d.releasorName) || "___"} ("Releasor"), of ${str(d.releasorAddress).replace(/\n/g, ", ")}, and ${str(d.releaseeName) || "___"} ("Releasee"), of ${str(d.releaseeAddress).replace(/\n/g, ", ")}.`);
+
+  doc.h2("1. Activity / Subject Matter");
+  doc.p(`Releasee's business or activity: ${str(d.releaseeBusinessDescription) || "___"}.`);
+  doc.p(`${isPostIncident ? "Incident" : "Activity"} description: ${str(d.activityDescription) || "___"}.`);
+  doc.p(`Location: ${str(d.activityLocation) || "___"}.`);
+  doc.p(`Date${d.activityEndDate ? "s" : ""}: ${formatDate(str(d.activityDate))}${d.activityEndDate ? ` through ${formatDate(str(d.activityEndDate))}` : ""}.`);
+
+  doc.h2("2. Consideration");
+  doc.p(d.consideration
+    ? `In consideration of $${Number(d.consideration).toLocaleString()} and the mutual promises herein, the receipt and sufficiency of which are acknowledged, the parties agree as follows:`
+    : "In consideration of the opportunity to participate in the activity described above, and the mutual promises herein, the receipt and sufficiency of which are acknowledged, the parties agree as follows:");
+
+  doc.h2("3. Assumption of Risk");
+  doc.p(`Releasor understands and acknowledges that the activity involves known and unknown risks, including but not limited to: ${str(d.knownRisks) || "___"}. Releasor VOLUNTARILY ASSUMES all such risks, whether known or unknown, and accepts full responsibility for any resulting injury, damage, loss, or expense.`);
+
+  doc.h2("4. Release and Waiver of Claims");
+  doc.p("Releasor, on behalf of Releasor and Releasor's heirs, executors, administrators, and assigns, hereby RELEASES, WAIVES, DISCHARGES, and COVENANTS NOT TO SUE the Releasee, and Releasee's officers, directors, employees, agents, and volunteers, from any and all claims, demands, causes of action, and liabilities of any kind, whether known or unknown, arising out of or related to the activity described above.");
+
+  doc.h2("5. Indemnification");
+  doc.p("Releasor agrees to INDEMNIFY, DEFEND, and HOLD HARMLESS the Releasee from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising from Releasor's participation in the activity, or brought by any third party on Releasor's behalf.");
+
+  doc.h2("6. Acknowledgments");
+  doc.check("Releasor has read and understands this Release in its entirety.", Boolean(d.ackRead));
+  doc.check("Releasor voluntarily assumes all risks, known and unknown.", Boolean(d.ackAssume));
+  doc.check("Releasor releases, waives, and discharges the Releasee from all claims.", Boolean(d.ackRelease));
+  doc.check("Releasor agrees to indemnify and hold harmless the Releasee.", Boolean(d.ackIndemnify));
+  doc.check(`Releasor agrees this Release is governed by the laws of ${str(d.governingState) || "___"}.`, Boolean(d.ackGoverning));
+
+  doc.h2("7. Severability");
+  doc.p("If any provision of this Release is held invalid or unenforceable, the remaining provisions shall continue in full force and effect.");
+
+  doc.h2("8. Governing Law");
+  doc.p(`This Release is governed by the laws of the State of ${str(d.governingState) || "___"}. The parties consent to venue and jurisdiction in that state's courts for any dispute arising under this Release.`);
+
+  doc.h2("Signatures");
+  doc.p("BY SIGNING BELOW, THE RELEASOR ACKNOWLEDGES HAVING READ THIS RELEASE, UNDERSTANDING ITS TERMS, AND VOLUNTARILY AGREEING TO BE BOUND BY IT.", { size: 9, muted: true });
+  doc.gap(4);
+  doc.kv("Releasor — signed (typed)", str(d.releasorSignature));
+  doc.kv("Date", formatDate(str(d.releasorSignDate)));
+
+  if (isMinor) {
+    doc.gap(6);
+    doc.h3("Parent / Guardian Consent (Releasor is a minor)");
+    doc.p(`I, ${str(d.guardianName) || "___"}, being the ${str(d.guardianRelationship) || "parent or legal guardian"} of the above-named minor Releasor, have read and understood this Release. I consent to the minor's participation in the activity and agree, on behalf of myself and the minor, to be bound by all terms of this Release, including the release, waiver, and indemnification provisions.`);
+    doc.gap(2);
+    doc.kv("Parent / guardian — signed (typed)", str(d.guardianSignature));
+    doc.kv("Date", formatDate(str(d.guardianSignDate)));
+  }
+
+  if (d.witnessName || d.witnessSignature) {
+    doc.gap(6);
+    doc.h3("Witness");
+    doc.kv("Witness — name", str(d.witnessName));
+    doc.kv("Witness — signed (typed)", str(d.witnessSignature));
+    doc.kv("Date", formatDate(str(d.witnessSignDate)));
+  }
+
+  if (d.emergencyContactName) {
+    doc.gap(6);
+    doc.p(`Emergency contact: ${str(d.emergencyContactName)}${d.emergencyContactPhone ? ` · ${str(d.emergencyContactPhone)}` : ""}.`, { size: 9, muted: true });
+  }
+
+  doc.footer("This waiver was generated by legallyspoken.com from your inputs. Enforceability of pre-injury liability waivers varies by state — Louisiana, Virginia, and Montana broadly restrict them, and courts elsewhere will not enforce waivers of gross negligence, recklessness, or intentional harm. This is not legal advice; consult a licensed attorney for high-risk activities or commercial use.");
+}
+
