@@ -19,6 +19,8 @@ import { useFormDraft } from "@/hooks/useFormDraft";
 import { categoryLabels, getFormBySlug, isFieldVisible, legalForms } from "@/data/forms";
 import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
+import StateSelector from "@/components/forms/StateSelector";
+import SignaturePad, { type SignatureValue } from "@/components/forms/SignaturePad";
 
 export default function FormWizardPage() {
   const { slug = "" } = useParams();
