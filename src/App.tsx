@@ -8,6 +8,7 @@ import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
 import ScrollToTop from "@/components/ScrollToTop";
 import LegalChatWidget from "@/components/chat/LegalChatWidget";
 import AppRoutes from "@/AppRoutes";
@@ -76,6 +77,7 @@ const App = () => {
             <AdSenseAutoAdsInit />
             <ScrollToTop />
             <div className="flex min-h-screen flex-col">
+              <PaymentTestModeBanner />
               <Navbar />
               <main className="flex-1">
                 <Suspense fallback={<PageLoader />}>
