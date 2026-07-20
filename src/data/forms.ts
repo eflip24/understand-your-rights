@@ -1197,6 +1197,7 @@ export const legalForms: LegalFormDef[] = [
   // Power of Attorney (Financial)
   // ---------------------------------------------------------------------
   {
+    stateAware: true,
     slug: "power-of-attorney-financial",
     title: "Free Financial Power of Attorney Form — Durable & Springing POA",
     shortDescription:
@@ -1318,6 +1319,7 @@ export const legalForms: LegalFormDef[] = [
   // Vehicle Bill of Sale (also works for boats & general property)
   // ---------------------------------------------------------------------
   {
+    stateAware: true,
     slug: "vehicle-bill-of-sale",
     title: "Free Vehicle Bill of Sale Template — Car, Boat & General Property",
     shortDescription:
@@ -1468,6 +1470,7 @@ export const legalForms: LegalFormDef[] = [
   // Eviction Notice (state-specific)
   // ---------------------------------------------------------------------
   {
+    stateAware: true,
     slug: "eviction-notice",
     title: "Free Eviction Notice Generator — State-Specific",
     shortDescription:
@@ -2187,6 +2190,7 @@ export const legalForms: LegalFormDef[] = [
     relatedForms: ["w-4", "i-9"],
   },
   {
+    stateAware: true,
     slug: "notice-to-vacate",
     title: "Notice to Vacate (Tenant → Landlord)",
     shortDescription:
@@ -2319,6 +2323,7 @@ export const legalForms: LegalFormDef[] = [
     relatedForms: ["residential-lease-agreement", "move-in-move-out-checklist"],
   },
   {
+    stateAware: true,
     slug: "late-rent-notice",
     title: "Late Rent Notice",
     shortDescription:
@@ -2423,6 +2428,7 @@ export const legalForms: LegalFormDef[] = [
     relatedForms: ["independent-contractor-agreement", "nda", "promissory-note"],
   },
   {
+    stateAware: true,
     slug: "healthcare-power-of-attorney",
     title: "Healthcare Power of Attorney",
     shortDescription:
@@ -2476,6 +2482,7 @@ export const legalForms: LegalFormDef[] = [
     relatedForms: ["living-will", "hipaa-authorization", "power-of-attorney-financial"],
   },
   {
+    stateAware: true,
     slug: "simple-will",
     title: "Simple Will / Last Will and Testament",
     shortDescription:
