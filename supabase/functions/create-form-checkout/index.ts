@@ -103,7 +103,7 @@ Deno.serve(async (req) => {
       return_url: returnUrl,
       ...(customerId && { customer: customerId }),
       payment_intent_data: { description: priceEntry.title },
-      automatic_tax: { enabled: true },
+      
       metadata: {
         form_slug: slug,
         kind: priceEntry.kind,
