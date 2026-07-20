@@ -25,6 +25,15 @@ export default function FormWizardPage() {
   const lp = useLocalizedPath();
   const { user } = useAuth();
 
+  // If this slug matches a form pack, hand off to the pack wizard.
+  if (getPackBySlug(slug)) {
+    return (
+      <Suspense fallback={null}>
+        <FormPackWizardPage />
+      </Suspense>
+    );
+  }
+
   // Legacy slug redirects → canonical SEO-friendly URLs.
   const SLUG_ALIASES: Record<string, string> = {
     "power-of-attorney": "power-of-attorney-financial",
