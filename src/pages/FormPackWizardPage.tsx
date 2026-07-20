@@ -366,6 +366,14 @@ export default function FormPackWizardPage() {
       </Card>
 
       <FormDisclaimer />
+
+      <StripeCheckoutDialog
+        open={checkoutOpen}
+        onClose={handleCheckoutClose}
+        slug={pack.slug}
+        title={pack.title}
+        returnUrl={`${window.location.origin}${lp(`/checkout/return`)}?slug=${pack.slug}&session_id={CHECKOUT_SESSION_ID}`}
+      />
     </div>
   );
 }
