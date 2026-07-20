@@ -151,8 +151,54 @@ export default function FormWizardPage() {
   return (
     <div className="container max-w-4xl py-8 px-4">
       <Head
-        title={`${form.title} – Fill Free Online | LegallySpoken`}
-        description={form.shortDescription}
+        title={`${form.title} — Free Fillable PDF Online (${new Date().getFullYear()}) | LegallySpoken`}
+        description={`Fill out ${form.title} online free in minutes. Guided wizard, instant PDF download, e-signature ready. ${form.shortDescription}`}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "HowTo",
+                name: `How to fill out ${form.title} online`,
+                description: form.shortDescription,
+                totalTime: "PT10M",
+                step: form.steps.map((s, i) => ({
+                  "@type": "HowToStep",
+                  position: i + 1,
+                  name: s.title,
+                  text: s.description || s.title,
+                })),
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Home", item: "https://legallyspoken.com/" },
+                  { "@type": "ListItem", position: 2, name: "Legal Forms", item: "https://legallyspoken.com/forms" },
+                  { "@type": "ListItem", position: 3, name: form.title, item: `https://legallyspoken.com/forms/${form.slug}` },
+                ],
+              },
+              {
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: `Is the ${form.title} free to fill out on LegallySpoken?`,
+                    acceptedAnswer: { "@type": "Answer", text: "Yes. The guided wizard and watermarked PDF download are always free. A clean, professional PDF is available as an optional one-time upgrade." },
+                  },
+                  {
+                    "@type": "Question",
+                    name: `Can I e-sign ${form.title} online?`,
+                    acceptedAnswer: { "@type": "Answer", text: "Yes. You can draw or type your signature in the final step. The signed PDF downloads instantly." },
+                  },
+                ],
+              },
+            ],
+          }),
+        }}
       />
       <Breadcrumbs
         items={[
