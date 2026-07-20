@@ -27,9 +27,8 @@ async function handleCheckoutCompleted(session: any) {
       form_slug: formSlug,
       stripe_session_id: session.id,
       amount_cents: session.amount_total ?? null,
-      currency: session.currency ?? "usd",
     },
-    { onConflict: "stripe_session_id" },
+    { onConflict: "user_id,form_slug" },
   );
   if (error) console.error("form_purchases upsert error", error);
 }
