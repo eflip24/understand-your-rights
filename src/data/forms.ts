@@ -43,7 +43,15 @@ export type FormCategory =
   | "realestate"
   | "personal";
 
-export type PdfTemplate = "w9" | "i9" | "w4" | "nda" | "lease" | "poa";
+export type PdfTemplate =
+  | "w9"
+  | "i9"
+  | "w4"
+  | "nda"
+  | "lease"
+  | "poa"
+  | "billOfSale"
+  | "evictionNotice";
 
 export interface LegalFormDef {
   slug: string;
