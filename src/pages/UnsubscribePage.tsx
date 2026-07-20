@@ -45,7 +45,7 @@ export default function UnsubscribePage() {
 
   return (
     <>
-      <Helmet><title>Unsubscribe · LegallySpoken</title><meta name="robots" content="noindex" /></Helmet>
+      
       <main className="min-h-[70vh] flex items-center justify-center px-4 py-16 bg-background">
         <div className="w-full max-w-md rounded-2xl border bg-card p-8 shadow-sm text-center">
           {state === "loading" && (
