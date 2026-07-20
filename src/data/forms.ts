@@ -1586,6 +1586,405 @@ export const legalForms: LegalFormDef[] = [
     ],
     relatedForms: ["residential-lease-agreement", "demand-letter"],
   },
+
+  // ---------------------------------------------------------------------
+  // Demand Letter / Collection Letter
+  // ---------------------------------------------------------------------
+  {
+    slug: "demand-letter",
+    title: "Free Demand Letter Template — Pre-Litigation Collection Letter",
+    shortDescription:
+      "Formal written demand for payment or performance before filing suit. Widely used for unpaid invoices, security-deposit disputes, and breach of contract.",
+    category: "personal",
+    price: 9.99,
+    lastUpdated: "2026-01-20",
+    isFeatured: true,
+    pdfTemplate: "demandLetter",
+    steps: [
+      {
+        id: "letterType",
+        title: "Letter type",
+        description: "Choose the reason you're writing. This tailors the language of the letter.",
+        fields: [
+          {
+            id: "letterType",
+            label: "Reason for this demand",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "unpaidInvoice", label: "Unpaid invoice / debt owed" },
+              { value: "breach", label: "Breach of contract" },
+              { value: "securityDeposit", label: "Return of security deposit" },
+              { value: "propertyDamage", label: "Property damage" },
+              { value: "other", label: "Other" },
+            ],
+          },
+          {
+            id: "isConsumerDebtCollector",
+            label: "I am a third-party debt collector attempting to collect a consumer debt (FDCPA applies).",
+            type: "checkbox",
+            help: "Check only if you are a collection agency or attorney regularly collecting consumer debts for others. Original creditors do NOT check this box.",
+          },
+        ],
+      },
+      {
+        id: "sender",
+        title: "Sender (you)",
+        description: "Enter your details as they should appear at the top of the letter.",
+        fields: [
+          { id: "senderType", label: "Sending as", type: "radio", required: true, options: [
+            { value: "individual", label: "Individual" },
+            { value: "business", label: "Business / entity" },
+          ] },
+          { id: "senderName", label: "Your full legal name", type: "text", required: true },
+          { id: "senderBusiness", label: "Business / entity name", type: "text", showWhen: (d) => d.senderType === "business" },
+          { id: "senderRole", label: "Your title / role", type: "text", showWhen: (d) => d.senderType === "business", placeholder: "e.g., Owner, Credit Manager" },
+          { id: "senderAddress", label: "Return address", type: "textarea", required: true },
+          { id: "senderPhone", label: "Phone", type: "text" },
+          { id: "senderEmail", label: "Email", type: "email" },
+        ],
+      },
+      {
+        id: "recipient",
+        title: "Recipient (debtor)",
+        fields: [
+          { id: "recipientName", label: "Recipient — legal name", type: "text", required: true },
+          { id: "recipientAddress", label: "Recipient — mailing address", type: "textarea", required: true },
+          { id: "recipientAttorney", label: "Recipient's attorney of record (if known)", type: "text" },
+          { id: "letterDate", label: "Date of this letter", type: "date", required: true },
+        ],
+      },
+      {
+        id: "dispute",
+        title: "The dispute",
+        description: "Describe what is owed or what went wrong. Be specific — dates, amounts, and contract references strengthen the letter.",
+        fields: [
+          { id: "amountOwed", label: "Amount owed (USD)", type: "number", required: true },
+          { id: "originalDueDate", label: "Original due date / date of breach", type: "date" },
+          {
+            id: "background",
+            label: "Description of goods, services, or contract",
+            type: "textarea",
+            required: true,
+            placeholder: "e.g., Invoice #1042 for web-design services delivered on Oct 3, 2025 in the amount of $2,400.",
+          },
+          {
+            id: "priorAttempts",
+            label: "Prior attempts to collect / resolve",
+            type: "textarea",
+            placeholder: "e.g., Oct 15 — emailed reminder. Nov 1 — mailed second notice. Nov 20 — phone call, no response.",
+          },
+          { id: "interestRate", label: "Contractual interest rate (%, optional)", type: "number" },
+          { id: "additionalDamages", label: "Itemized additional damages (optional)", type: "textarea", placeholder: "e.g., $150 stop-payment bank fee; $75 collection costs." },
+        ],
+      },
+      {
+        id: "demand",
+        title: "Demand & deadline",
+        description: "Set your deadline, accepted payment methods, and what will happen if the recipient ignores the letter.",
+        fields: [
+          {
+            id: "responseDays",
+            label: "Days to respond",
+            type: "select",
+            required: true,
+            options: [
+              { value: "7", label: "7 days" },
+              { value: "10", label: "10 days" },
+              { value: "14", label: "14 days" },
+              { value: "30", label: "30 days" },
+            ],
+          },
+          { id: "paymentMethods", label: "Payment method(s) accepted", type: "text", required: true, placeholder: "e.g., Cashier's check, ACH, PayPal to ..." },
+          { id: "conFileSuit", label: "State that you will file suit if the demand is not met", type: "checkbox" },
+          { id: "conAttorneyFees", label: "Reserve the right to seek attorney's fees (where the contract or statute allows)", type: "checkbox" },
+          { id: "conCollections", label: "State that the debt may be referred to a collections agency", type: "checkbox" },
+          { id: "conCreditReport", label: "State that non-payment may be reported to credit bureaus (only where lawful for you)", type: "checkbox" },
+          {
+            id: "fdcpaAck",
+            label: "FDCPA acknowledgment: 'This is an attempt to collect a debt; any information obtained will be used for that purpose.'",
+            type: "checkbox",
+            showWhen: (d) => Boolean(d.isConsumerDebtCollector),
+            help: "Required for third-party debt collectors under the Fair Debt Collection Practices Act.",
+          },
+          { id: "governingState", label: "Governing state law", type: "usState", required: true },
+          { id: "senderSignature", label: "Your signature (type your full name)", type: "text", required: true },
+          { id: "senderSignDate", label: "Signed on", type: "date", required: true },
+        ],
+      },
+    ],
+    relatedForms: ["promissory-note", "nda", "eviction-notice"],
+    officialLink: { label: "FTC — Debt Collection FAQs (consumer info)", href: "https://consumer.ftc.gov/articles/debt-collection-faqs" },
+  },
+
+  // ---------------------------------------------------------------------
+  // Promissory Note (Loan Agreement)
+  // ---------------------------------------------------------------------
+  {
+    slug: "promissory-note",
+    title: "Free Promissory Note Template — Loan Agreement Between Individuals",
+    shortDescription:
+      "Binding written promise from a borrower to repay a fixed sum. Covers secured/unsecured, installment or lump-sum, with or without interest.",
+    category: "personal",
+    price: 14.99,
+    lastUpdated: "2026-01-20",
+    isFeatured: true,
+    pdfTemplate: "promissoryNote",
+    steps: [
+      {
+        id: "parties",
+        title: "Parties",
+        fields: [
+          { id: "lenderName", label: "Lender — full legal name (or entity)", type: "text", required: true },
+          { id: "lenderAddress", label: "Lender — mailing address", type: "textarea", required: true },
+          { id: "lenderEntityType", label: "Lender is a(n)", type: "select", options: [
+            { value: "individual", label: "Individual" },
+            { value: "llc", label: "LLC" },
+            { value: "corp", label: "Corporation" },
+            { value: "partnership", label: "Partnership" },
+            { value: "trust", label: "Trust" },
+          ] },
+          { id: "borrowerName", label: "Borrower — full legal name (or entity)", type: "text", required: true },
+          { id: "borrowerAddress", label: "Borrower — mailing address", type: "textarea", required: true },
+          { id: "borrowerEntityType", label: "Borrower is a(n)", type: "select", options: [
+            { value: "individual", label: "Individual" },
+            { value: "llc", label: "LLC" },
+            { value: "corp", label: "Corporation" },
+            { value: "partnership", label: "Partnership" },
+            { value: "trust", label: "Trust" },
+          ] },
+        ],
+      },
+      {
+        id: "loan",
+        title: "Loan basics",
+        fields: [
+          { id: "principal", label: "Principal (USD)", type: "number", required: true },
+          { id: "disbursementDate", label: "Date funds disbursed / effective date", type: "date", required: true },
+          { id: "purpose", label: "Purpose of loan (optional)", type: "textarea", placeholder: "e.g., Down payment on primary residence." },
+          { id: "governingState", label: "Governing state law", type: "usState", required: true },
+        ],
+      },
+      {
+        id: "interest",
+        title: "Interest",
+        description: "Choose how interest accrues. Most states cap interest rates for private loans between individuals — check your state's usury statute.",
+        fields: [
+          {
+            id: "interestType",
+            label: "Interest",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "none", label: "No interest (0%)" },
+              { value: "simple", label: "Simple interest" },
+              { value: "compound", label: "Compound interest" },
+            ],
+          },
+          { id: "apr", label: "Annual percentage rate (APR %)", type: "number", showWhen: (d) => d.interestType === "simple" || d.interestType === "compound" },
+          {
+            id: "compoundingFrequency",
+            label: "Compounding frequency",
+            type: "select",
+            showWhen: (d) => d.interestType === "compound",
+            options: [
+              { value: "monthly", label: "Monthly" },
+              { value: "quarterly", label: "Quarterly" },
+              { value: "semiannual", label: "Semi-annually" },
+              { value: "annual", label: "Annually" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "repayment",
+        title: "Repayment terms",
+        fields: [
+          {
+            id: "repaymentStructure",
+            label: "Repayment structure",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "lumpSum", label: "Single lump-sum payment on maturity date" },
+              { value: "installments", label: "Installments" },
+              { value: "onDemand", label: "Payable on demand" },
+            ],
+          },
+          { id: "maturityDate", label: "Maturity date (loan due in full)", type: "date", showWhen: (d) => d.repaymentStructure === "lumpSum" },
+          {
+            id: "installmentFrequency",
+            label: "Installment frequency",
+            type: "select",
+            showWhen: (d) => d.repaymentStructure === "installments",
+            options: [
+              { value: "weekly", label: "Weekly" },
+              { value: "biweekly", label: "Bi-weekly" },
+              { value: "monthly", label: "Monthly" },
+              { value: "quarterly", label: "Quarterly" },
+            ],
+          },
+          { id: "installmentAmount", label: "Installment amount (USD)", type: "number", showWhen: (d) => d.repaymentStructure === "installments" },
+          { id: "firstPaymentDate", label: "First payment date", type: "date", showWhen: (d) => d.repaymentStructure === "installments" },
+          { id: "numberOfPayments", label: "Number of payments", type: "number", showWhen: (d) => d.repaymentStructure === "installments" },
+        ],
+      },
+      {
+        id: "default",
+        title: "Default, security & prepayment",
+        fields: [
+          { id: "graceDays", label: "Grace period before late fee (days)", type: "number", placeholder: "e.g., 10" },
+          { id: "lateFeeType", label: "Late fee type", type: "select", options: [
+            { value: "none", label: "None" },
+            { value: "flat", label: "Flat dollar amount" },
+            { value: "percent", label: "Percent of past-due amount" },
+          ] },
+          { id: "lateFeeAmount", label: "Late fee ($)", type: "number", showWhen: (d) => d.lateFeeType === "flat" },
+          { id: "lateFeePercent", label: "Late fee (%)", type: "number", showWhen: (d) => d.lateFeeType === "percent" },
+          { id: "acceleration", label: "Upon default, the entire unpaid balance becomes immediately due (acceleration clause)", type: "checkbox" },
+          { id: "prepaymentAllowed", label: "Borrower may prepay any amount at any time without penalty", type: "checkbox" },
+          {
+            id: "collateralType",
+            label: "Security / collateral",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "unsecured", label: "Unsecured — no collateral" },
+              { value: "secured", label: "Secured by collateral" },
+            ],
+          },
+          { id: "collateralDescription", label: "Description of collateral", type: "textarea", showWhen: (d) => d.collateralType === "secured", placeholder: "e.g., 2020 Honda Civic, VIN 1HGCV1F30LA000000." },
+          { id: "ucc1Ack", label: "Lender may file a UCC-1 financing statement to perfect the security interest", type: "checkbox", showWhen: (d) => d.collateralType === "secured" },
+        ],
+      },
+      {
+        id: "signatures",
+        title: "Signatures",
+        description: "The borrower's signature is required. Lender signature and notarization are recommended for enforceability.",
+        fields: [
+          { id: "borrowerSignature", label: "Borrower — signature (type name)", type: "text", required: true },
+          { id: "borrowerSignDate", label: "Borrower — date signed", type: "date", required: true },
+          { id: "lenderSignature", label: "Lender — signature (type name)", type: "text" },
+          { id: "lenderSignDate", label: "Lender — date signed", type: "date" },
+          { id: "hasCosigner", label: "Add a co-signer / guarantor", type: "checkbox" },
+          { id: "cosignerName", label: "Co-signer — full legal name", type: "text", showWhen: (d) => Boolean(d.hasCosigner) },
+          { id: "cosignerAddress", label: "Co-signer — address", type: "textarea", showWhen: (d) => Boolean(d.hasCosigner) },
+          { id: "cosignerSignature", label: "Co-signer — signature (type name)", type: "text", showWhen: (d) => Boolean(d.hasCosigner) },
+          { id: "cosignerSignDate", label: "Co-signer — date signed", type: "date", showWhen: (d) => Boolean(d.hasCosigner) },
+          { id: "notarize", label: "Include a notary acknowledgment block", type: "checkbox" },
+        ],
+      },
+    ],
+    relatedForms: ["demand-letter", "nda", "vehicle-bill-of-sale"],
+  },
+
+  // ---------------------------------------------------------------------
+  // Release of Liability / Waiver
+  // ---------------------------------------------------------------------
+  {
+    slug: "release-of-liability",
+    title: "Free Release of Liability Waiver — General & Activity-Specific",
+    shortDescription:
+      "Pre-activity or post-incident waiver in which one party releases another from claims. Covers events, recreation, equipment use, and settlement releases.",
+    category: "personal",
+    price: 9.99,
+    lastUpdated: "2026-01-20",
+    isFeatured: true,
+    pdfTemplate: "releaseOfLiability",
+    steps: [
+      {
+        id: "waiverType",
+        title: "Waiver type",
+        fields: [
+          {
+            id: "waiverType",
+            label: "Type of release",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "generalActivity", label: "General activity waiver (pre-event)" },
+              { value: "eventVenue", label: "Event / venue waiver" },
+              { value: "equipment", label: "Vehicle or equipment use" },
+              { value: "postIncident", label: "Post-incident settlement release" },
+              { value: "fitness", label: "Fitness, sports, or recreation" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "releasee",
+        title: "Releasee (party being released)",
+        description: "The person, company, or organization being released from claims.",
+        fields: [
+          { id: "releaseeName", label: "Releasee — legal name", type: "text", required: true },
+          { id: "releaseeAddress", label: "Releasee — address", type: "textarea", required: true },
+          { id: "releaseeEntityType", label: "Releasee is a(n)", type: "select", options: [
+            { value: "individual", label: "Individual" },
+            { value: "llc", label: "LLC" },
+            { value: "corp", label: "Corporation" },
+            { value: "nonprofit", label: "Non-profit" },
+            { value: "other", label: "Other entity" },
+          ] },
+          { id: "releaseeBusinessDescription", label: "Nature of Releasee's business / activity", type: "textarea", required: true, placeholder: "e.g., Rock-climbing gym operating indoor top-rope and bouldering walls." },
+        ],
+      },
+      {
+        id: "releasor",
+        title: "Releasor (person signing the waiver)",
+        description: "The person waiving their claims. If under 18, a parent or guardian must also sign.",
+        fields: [
+          { id: "releasorName", label: "Releasor — full legal name", type: "text", required: true },
+          { id: "releasorAddress", label: "Releasor — address", type: "textarea", required: true },
+          { id: "releasorDob", label: "Releasor — date of birth", type: "date", required: true },
+          { id: "releasorPhone", label: "Releasor — phone", type: "text" },
+          { id: "emergencyContactName", label: "Emergency contact — name", type: "text" },
+          { id: "emergencyContactPhone", label: "Emergency contact — phone", type: "text" },
+          { id: "isMinor", label: "Releasor is under 18 (parent / guardian must also sign)", type: "checkbox" },
+          { id: "guardianName", label: "Parent / guardian — full legal name", type: "text", showWhen: (d) => Boolean(d.isMinor) },
+          { id: "guardianRelationship", label: "Relationship to minor", type: "text", showWhen: (d) => Boolean(d.isMinor) },
+        ],
+      },
+      {
+        id: "activity",
+        title: "Activity / incident details",
+        fields: [
+          { id: "activityDescription", label: "Description of activity (or incident, for post-incident releases)", type: "textarea", required: true },
+          { id: "activityLocation", label: "Location", type: "text", required: true },
+          { id: "activityDate", label: "Date of activity or incident", type: "date", required: true },
+          { id: "activityEndDate", label: "End date (for multi-day activities)", type: "date" },
+          {
+            id: "knownRisks",
+            label: "Known risks (edit or add to the defaults)",
+            type: "textarea",
+            required: true,
+            placeholder: "e.g., falls, collisions, muscle strain, exposure to weather, equipment failure.",
+          },
+          { id: "consideration", label: "Consideration paid, if any (USD)", type: "number", help: "For post-incident releases, enter the settlement amount." },
+          { id: "governingState", label: "Governing state law", type: "usState", required: true },
+        ],
+      },
+      {
+        id: "acknowledgments",
+        title: "Acknowledgments & signature",
+        description: "Each acknowledgment must be checked. They are reproduced as numbered clauses in the final PDF.",
+        fields: [
+          { id: "ackRead", label: "I have read and understand this Release.", type: "checkbox", required: true },
+          { id: "ackAssume", label: "I voluntarily assume all risks, known and unknown, arising from the activity.", type: "checkbox", required: true },
+          { id: "ackRelease", label: "I release, waive, and discharge the Releasee from all claims arising from the activity.", type: "checkbox", required: true },
+          { id: "ackIndemnify", label: "I agree to indemnify and hold harmless the Releasee from any claims brought by me or on my behalf.", type: "checkbox", required: true },
+          { id: "ackGoverning", label: "I agree this Release is governed by the laws of the state selected above.", type: "checkbox", required: true },
+          { id: "releasorSignature", label: "Releasor — signature (type name)", type: "text", required: true },
+          { id: "releasorSignDate", label: "Releasor — date signed", type: "date", required: true },
+          { id: "guardianSignature", label: "Parent / guardian — signature (type name)", type: "text", showWhen: (d) => Boolean(d.isMinor), required: true },
+          { id: "guardianSignDate", label: "Parent / guardian — date signed", type: "date", showWhen: (d) => Boolean(d.isMinor), required: true },
+          { id: "witnessName", label: "Witness — name (optional)", type: "text" },
+          { id: "witnessSignature", label: "Witness — signature (optional)", type: "text" },
+          { id: "witnessSignDate", label: "Witness — date signed", type: "date" },
+        ],
+      },
+    ],
+    relatedForms: ["nda", "demand-letter", "promissory-note"],
+  },
 ];
 
 export const getFormBySlug = (slug: string): LegalFormDef | undefined =>
