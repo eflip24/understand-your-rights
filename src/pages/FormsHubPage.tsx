@@ -44,6 +44,24 @@ export default function FormsHubPage() {
         </p>
       </header>
 
+      <section className="mb-10">
+        <div className="mb-4 flex items-end justify-between">
+          <div>
+            <h2 className="font-serif text-2xl font-bold">Form Packs — Save with Bundles</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Fill shared info once. Get every document you need for a common life or business event as one clean pack.
+            </p>
+          </div>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {formPacks.map((p) => (
+            <FormPackCard key={p.slug} pack={p} />
+          ))}
+        </div>
+      </section>
+
+
+
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="relative w-full sm:max-w-sm">
           <Search className="pointer-events-none absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
