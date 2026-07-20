@@ -49,6 +49,10 @@ export async function generateFormPdf({ form, data, watermark }: GenerateOptions
   } else if (form.pdfTemplate === "releaseOfLiability") {
     renderReleaseOfLiability({ pdfDoc, font, fontBold, data, watermark });
   } else {
+    // Generic renderer covers Batch-4 pack forms (offerLetter, directDeposit,
+    // noticeToVacate, moveInOutChecklist, securityDepositReceipt, lateRentNotice,
+    // llcOperatingAgreement, healthcarePoa, simpleWill, livingWill,
+    // hipaaAuthorization, independentContractor) and any future template.
     renderGeneric({ pdfDoc, font, fontBold, form, data, watermark });
   }
 
