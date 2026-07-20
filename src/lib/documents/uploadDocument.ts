@@ -53,7 +53,7 @@ export async function uploadDocument(args: UploadDocumentArgs): Promise<{ id: st
   const sha256 = await sha256Hex(args.blob);
   const { data: row, error: insErr } = await supabase
     .from("form_documents")
-    .insert({
+    .insert([{
       user_id: args.userId,
       slug: args.slug,
       kind: args.kind,
@@ -61,12 +61,12 @@ export async function uploadDocument(args: UploadDocumentArgs): Promise<{ id: st
       status: args.status ?? (args.variant === "clean" ? "purchased" : "completed"),
       storage_path: path,
       size_bytes: args.blob.size,
-      sha256,
-      snapshot: args.snapshot ?? {},
+      sha256: sha256 ?? undefined,
+      snapshot: (args.snapshot ?? {}) as never,
       version,
-      title: args.title ?? null,
-      state_code: args.stateCode ?? null,
-    })
+      title: args.title ?? undefined,
+      state_code: args.stateCode ?? undefined,
+    }])
     .select("id, version")
     .single();
 
