@@ -533,10 +533,19 @@ const formSlugs = [
 ];
 const formPackSlugs = ["new-hire-pack","landlord-starter-pack","small-business-pack","personal-planning-pack"];
 
+const formSeoLandingSlugs = [
+  "w-9-online-free","w-4-online-free","i-9-online-free","nda-online-free",
+  "demand-letter-online-free","promissory-note-online-free",
+];
+const formStateFanoutPrefixes = ["eviction-notice","lease-agreement","power-of-attorney","vehicle-bill-of-sale"];
+const formFanoutStates = ["california","new-york","texas","florida","illinois","pennsylvania"];
+
 function buildForms(): string {
   const e: string[] = [u(`${SITE}/forms`,"weekly","0.9")];
   for (const s of formSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
   for (const s of formPackSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
+  for (const s of formSeoLandingSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.8"));
+  for (const p of formStateFanoutPrefixes) for (const st of formFanoutStates) e.push(u(`${SITE}/forms/${p}/${st}`,"monthly","0.7"));
   return wrapUrlset(e);
 }
 

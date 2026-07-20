@@ -1,91 +1,68 @@
-## Phase 5 — State-Specific Logic + Advanced Features
+## Goal
+Create dedicated SEO landing pages for the highest-CPC / highest-volume legal forms so we capture long-tail search intent (e.g. "w-9 online free", "eviction notice california") separate from the interactive wizard pages.
 
-Delivered as one implementation pass, but organized in 5 self-contained modules so each can be verified before moving on.
+## Target forms (based on Semrush CPC + volume + our current inventory)
 
----
+| Priority | Form | Landing slug | Primary keyword cluster |
+|---|---|---|---|
+| 1 | W-9 (Rev. Mar 2024) | `/forms/w-9-online-free` | "fillable w-9", "w9 form 2024 pdf" |
+| 2 | W-4 (2026) | `/forms/w-4-online-free` | "w4 form 2026", "fillable w4" |
+| 3 | I-9 (01/20/25) | `/forms/i-9-online-free` | "i-9 form 2025", "employment eligibility form" |
+| 4 | Eviction Notice | `/forms/eviction-notice/{state}` × 6 states (CA, NY, TX, FL, IL, PA) | "3 day eviction notice california", etc. |
+| 5 | Residential Lease | `/forms/lease-agreement/{state}` × 6 states | "california lease agreement pdf" |
+| 6 | Financial Power of Attorney | `/forms/power-of-attorney/{state}` × 6 states | "poa form texas" |
+| 7 | Simple NDA | `/forms/nda-online-free` | "free nda template" |
+| 8 | Bill of Sale (Vehicle) | `/forms/vehicle-bill-of-sale/{state}` × 6 states | "dmv bill of sale florida" |
+| 9 | Demand Letter | `/forms/demand-letter-online-free` | "demand letter for payment" |
+| 10 | Promissory Note | `/forms/promissory-note-online-free` | "promissory note template free" |
 
-### Module A — State engine (foundation)
+Total: 4 standalone + 4 state-fanned forms × 6 states = **28 new landing pages**.
 
-Create `src/data/stateFormRules.ts` — a single source of truth keyed by USPS state code with priority coverage for **CA, NY, TX, FL, IL, PA, OH** (all 50 fall back to sensible defaults).
+## Page structure (reusable template)
+Each landing page shares one component `FormSeoLandingPage.tsx` that renders:
+1. H1 with primary keyword + "Free • Fillable Online • Instant PDF"
+2. Above-the-fold CTA → deep-links to the wizard with state pre-selected
+3. "What is this form?" (150–250 words, entity-rich)
+4. "Who needs it / when to use it"
+5. State-specific rules block (only on state-fanned pages, pulled from existing state data)
+6. Step-by-step "How to fill it out" (HowTo schema)
+7. FAQ block (FAQPage schema, 5–7 Qs pulled from PAA)
+8. Related forms strip (RelatedIntentStrip)
+9. Trust signals (e-signature, secure library, no login required for free forms)
+10. Second CTA
 
-Per state, we store:
-- Lease: max security deposit, deposit-return window, late-fee cap, mandatory disclosures (e.g. CA lead-based paint + bedbug + Megan's Law; NY window guard; TX §92.056 repair notice; FL §83.49 deposit; IL RLTO for Chicago).
-- Eviction: notice periods per cause (non-payment, lease violation, holdover, no-cause) — replaces/extends the current `evictionStateRules.ts`.
-- Notice to vacate: tenant-side notice period by lease type.
-- POA (financial + healthcare): notarization required, witnesses required (count), statutory form warning.
-- Simple Will: witnesses required, self-proving affidavit availability.
-- Bill of Sale: notarization required flag, odometer disclosure requirement.
+## Technical approach
 
-A reusable `<StateSelector>` step component drops into any form; forms declare `stateAware: true` in `LegalFormDef` and get a state step auto-inserted first. Rule lookups happen at render time so notice periods, clauses, and disclaimers change live.
+**New files**
+- `src/data/formSeoLandings.ts` — content map: `{ slug, formId, h1, metaTitle, metaDescription, intro, useCases, howToSteps[], faqs[], keywords[] }`
+- `src/data/formStateFanout.ts` — state × form matrix with state-specific timing/legal rules (reuse existing eviction/lease state data where present)
+- `src/components/forms/FormSeoLandingPage.tsx` — reusable template
+- `src/pages/forms/FormSeoLanding.tsx` — route handler resolving slug → data
+- `src/pages/forms/FormStateSeoLanding.tsx` — resolves `/forms/{form}/{state}` → data
 
-Forms upgraded to state-aware in this phase: Residential Lease, Eviction Notice (existing rules merged in), Notice to Vacate, Financial POA, Healthcare POA, Simple Will, Vehicle Bill of Sale, Late Rent Notice.
+**Modified**
+- `src/AppRoutes.tsx` — add routes (lazy-loaded); keep existing wizard routes intact and untouched
+- `supabase/functions/generate-sitemap/index.ts` — extend `forms` sitemap with the 28 new URLs
+- `src/data/formPacks.ts` — no change; landings link into wizards
 
----
+**SEO essentials per page**
+- Unique `<title>` ≤60 chars, meta description ≤160
+- Canonical self-reference
+- OG/Twitter tags
+- JSON-LD `@graph`: `WebPage` + `HowTo` + `FAQPage` + `BreadcrumbList` (+ `GovernmentService` for W-9/W-4/I-9)
+- Internal links from `/forms` hub and from the wizard page (small "Learn more" link)
 
-### Module B — E-signature
+## Non-goals
+- No changes to wizard logic, pricing, checkout, or PDF generation
+- No new forms; landings point at existing wizards
+- No content-farm duplication — each state page carries genuinely different rules (notice periods, statutes cited)
 
-New `<SignaturePad>` component (canvas draw + typed-name fallback + auto-dated) built on `react-signature-canvas`. Adds a final "Sign" step to every form and pack. Captured signature is stored in the draft `data.signature = { dataUrl, typedName, signedAt, ipHash }` and stamped into the PDF signature block by each renderer (already have signature lines — we replace the underline with the image or typed name in a script font).
+## Rollout
+1. Ship template + data layer + 4 standalone landings (W-9, W-4, I-9, NDA)
+2. Ship state fan-out for eviction notice (highest state-CPC)
+3. Ship remaining state fan-outs (lease, POA, bill of sale)
+4. Ship demand letter + promissory note
+5. Regenerate sitemap, verify all 28 URLs resolve and are in sitemap
+6. Add cross-links from `/forms` hub grid
 
-Server-side: extend `form_drafts.data` (JSONB, no schema change) — no new column needed. Status transitions to `signed` when a signature is present.
-
----
-
-### Module C — Document library + version history
-
-**Schema (single migration):**
-- `form_documents` — permanent record of every generated PDF. Columns: `user_id`, `form_slug` (or `pack_slug`), `kind` (`form`|`pack`), `variant` (`watermarked`|`clean`), `status` (`draft`|`completed`|`signed`|`purchased`), `storage_path`, `size_bytes`, `sha256`, `snapshot` (JSONB copy of form data at generation), `version` (int, auto-increment per user+slug), `created_at`. RLS: user-owns-row. Grants to `authenticated` + `service_role`.
-- `documents` storage bucket (private) with RLS on `storage.objects` restricting to `auth.uid()::text` folder prefix.
-
-**Behavior:**
-- Every PDF download (free or paid) is also uploaded to `documents/{user_id}/{slug}/v{n}.pdf` and a `form_documents` row is inserted. Anonymous users still get the download but no row (existing behavior preserved).
-- New `MyDocumentsPage` at `/dashboard/documents` — table with search, status filter, kind filter, re-download button (signed URL, 60 min), and a "Versions" popover showing every prior version with per-version re-download.
-- `DashboardPage` gets a "My Documents" card linking there; existing drafts card stays.
-
----
-
-### Module D — PDF hardening + bulk pack download
-
-- Switch clean-variant PDFs to **flattened output** (pdf-lib `form.flatten()` when acroform fields exist; otherwise no-op) so downstream editors can't tamper with fields.
-- Optional password protection on paid variants: user chooses in the review step; we use `pdf-lib`'s encrypt-on-save (via `qpdf-wasm` fallback if pdf-lib version lacks it — implementation detail decided at build time based on installed lib). Off by default.
-- Watermarked/free variants stay unencrypted so free previews remain frictionless.
-- Pack ZIPs already exist; add a "Download all as ZIP" button on the pack review step for both variants and a re-download-ZIP button on the dashboard row.
-
----
-
-### Module E — Dashboard UX
-
-`DashboardPage` reworked into two cards + one table:
-- **In-progress drafts** (from `form_drafts`) with Resume + progress bar.
-- **My Documents** (from `form_documents`) with search, status pill (Draft / Completed / Signed / Purchased), kind filter (Form / Pack), re-download, versions.
-- Mobile: cards stack; search sticks to top; row actions collapse into a menu.
-
-Strong disclaimers surface in three places: state step ("Rules shown are general — not legal advice"), signature step ("Electronic signatures are valid under ESIGN/UETA in most cases — some documents (wills in some states) require wet signature + witnesses"), and dashboard footer.
-
----
-
-### Out of scope for Phase 5
-
-Not included so this phase stays shippable: notary integration, multi-party remote signing invitations, custom state coverage beyond the 7 priority states (defaults still apply), Stripe pack-checkout wiring (kept as-is from prior phases).
-
----
-
-### Technical section
-
-Files touched:
-- `src/data/stateFormRules.ts` — new, replaces the narrow `evictionStateRules.ts` (kept as re-export shim so nothing breaks).
-- `src/data/forms.ts` — add `stateAware?: boolean` to `LegalFormDef`; flag the 8 forms above.
-- `src/components/forms/StateSelector.tsx`, `SignaturePad.tsx` — new.
-- `src/pages/FormWizardPage.tsx`, `FormPackWizardPage.tsx` — inject state step + signature step; pass `stateRules` to renderers.
-- `src/lib/pdf/generateFormPdf.ts` — accept `signature`, `stateRules`, flatten, optional encrypt.
-- `src/lib/pdf/generatePackZip.ts` — pass-through of new options + bulk button hook.
-- `src/lib/documents/uploadDocument.ts` — new; storage + insert.
-- `src/pages/MyDocumentsPage.tsx` — new; route `/dashboard/documents`.
-- `src/pages/DashboardPage.tsx` — restructure.
-- `src/AppRoutes.tsx` — add `/dashboard/documents`.
-- One migration: `form_documents` table + grants + RLS + `documents` storage bucket + object policies.
-- Package add: `react-signature-canvas`.
-
-### Verification
-
-- `tsgo --noEmit` clean.
-- Manual: fill lease with state = CA, confirm deposit clause and disclosures render; switch to TX, confirm they change. Sign, download free PDF, confirm signature image appears. Re-open dashboard, confirm document row + version 1. Regenerate, confirm version 2 with prior version still downloadable. Pack: bulk ZIP works from review and from dashboard.
+Want me to proceed with all 28 in one build, or ship in the 5 phases above so you can review after each?
