@@ -21,6 +21,8 @@ import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
 import StateSelector from "@/components/forms/StateSelector";
 import SignaturePad, { type SignatureValue } from "@/components/forms/SignaturePad";
+import StripeCheckoutDialog from "@/components/forms/StripeCheckoutDialog";
+import { isPaymentsConfigured } from "@/lib/stripe";
 
 export default function FormWizardPage() {
   const { slug = "" } = useParams();
@@ -64,6 +66,7 @@ export default function FormWizardPage() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [hasPurchased, setHasPurchased] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   useEffect(() => {
     if (!user) { setHasPurchased(false); return; }
