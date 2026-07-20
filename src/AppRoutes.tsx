@@ -44,6 +44,7 @@ const ForgotPasswordPage = React.lazy(() => import("@/pages/ForgotPasswordPage")
 const ResetPasswordPage = React.lazy(() => import("@/pages/ResetPasswordPage"));
 const DashboardPage = React.lazy(() => import("@/pages/DashboardPage"));
 const BlogPage = React.lazy(() => import("@/pages/BlogPage"));
+const UnsubscribePage = React.lazy(() => import("@/pages/UnsubscribePage"));
 const BlogPostPage = React.lazy(() => import("@/pages/BlogPostPage"));
 const BlogCategoryPage = React.lazy(() => import("@/pages/BlogCategoryPage"));
 const AdminLayout = React.lazy(() => import("@/pages/admin/AdminLayout"));
