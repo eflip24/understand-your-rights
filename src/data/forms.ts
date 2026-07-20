@@ -1294,7 +1294,7 @@ export const legalForms: LegalFormDef[] = [
         ],
       },
     ],
-    relatedForms: ["residential-lease-agreement", "promissoryNote-placeholder", "vehicle-bill-of-sale"],
+    relatedForms: ["residential-lease-agreement", "promissory-note", "vehicle-bill-of-sale"],
   },
 
   // ---------------------------------------------------------------------
@@ -1444,7 +1444,7 @@ export const legalForms: LegalFormDef[] = [
         ],
       },
     ],
-    relatedForms: ["power-of-attorney", "residential-lease", "nda"],
+    relatedForms: ["power-of-attorney-financial", "residential-lease-agreement", "demand-letter"],
   },
 
   // ---------------------------------------------------------------------
@@ -1584,7 +1584,7 @@ export const legalForms: LegalFormDef[] = [
         ],
       },
     ],
-    relatedForms: ["residential-lease", "power-of-attorney"],
+    relatedForms: ["residential-lease-agreement", "demand-letter"],
   },
 ];
 
