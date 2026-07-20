@@ -98,6 +98,62 @@ export default function FormsHubPage() {
         </div>
       )}
 
+      {/* Popular state-specific forms — SEO internal linking */}
+      <section className="mt-14">
+        <h2 className="font-serif text-2xl font-bold mb-2">Popular state-specific forms</h2>
+        <p className="text-sm text-muted-foreground mb-5">
+          State law controls notice periods, deposit caps, and signing formalities. These are pre-configured for the state you pick.
+        </p>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { title: "Eviction Notice", prefix: "eviction-notice", blurb: "State-compliant notice to quit / pay-or-quit" },
+            { title: "Lease Agreement", prefix: "lease-agreement", blurb: "Deposit caps, disclosures, late-fee rules built in" },
+            { title: "Power of Attorney", prefix: "power-of-attorney", blurb: "Notary + witness formalities handled per state" },
+            { title: "Vehicle Bill of Sale", prefix: "vehicle-bill-of-sale", blurb: "DMV-ready, notary block where required" },
+          ].map((f) => (
+            <div key={f.prefix} className="rounded-lg border p-4">
+              <h3 className="font-semibold">{f.title}</h3>
+              <p className="text-xs text-muted-foreground mt-1 mb-3">{f.blurb}</p>
+              <ul className="text-sm space-y-1">
+                {[
+                  ["california", "California"],
+                  ["new-york", "New York"],
+                  ["texas", "Texas"],
+                  ["florida", "Florida"],
+                  ["illinois", "Illinois"],
+                  ["pennsylvania", "Pennsylvania"],
+                ].map(([slug, name]) => (
+                  <li key={slug}>
+                    <a href={lp(`/forms/${f.prefix}/${slug}`)} className="text-primary hover:underline">
+                      {name} {f.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Free fillable landings */}
+      <section className="mt-14">
+        <h2 className="font-serif text-2xl font-bold mb-2">Free fillable — most searched</h2>
+        <div className="flex flex-wrap gap-2">
+          {[
+            ["w-9-online-free", "Free Fillable W-9 (2024)"],
+            ["w-4-online-free", "Free Fillable W-4 (2026)"],
+            ["i-9-online-free", "Free Fillable I-9 (2025)"],
+            ["nda-online-free", "Free NDA Template"],
+            ["demand-letter-online-free", "Free Demand Letter"],
+            ["promissory-note-online-free", "Free Promissory Note"],
+          ].map(([slug, label]) => (
+            <a key={slug} href={lp(`/forms/${slug}`)} className="rounded-full border px-3 py-1 text-sm hover:bg-accent">
+              {label}
+            </a>
+          ))}
+        </div>
+      </section>
+
       <FormDisclaimer />
     </div>
   );
