@@ -225,7 +225,14 @@ export default function FormWizardPage() {
             </p>
           )}
 
-          <PdfActionBar form={form} data={data} hasPurchased={hasPurchased} onCheckout={handleCheckout} />
+          <PdfActionBar
+            form={form}
+            data={data}
+            hasPurchased={hasPurchased}
+            onCheckout={handleCheckout}
+            stateCode={(data.__stateCode as string) || null}
+            signature={(data.__signature as SignatureValue) || null}
+          />
           {!user && (
             <p className="mt-3 text-xs text-muted-foreground">
               <Link to={lp("/signup")} className="text-accent hover:underline">Create a free account</Link>{" "}
