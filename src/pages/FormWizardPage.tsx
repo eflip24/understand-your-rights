@@ -22,6 +22,17 @@ export default function FormWizardPage() {
   const { slug = "" } = useParams();
   const lp = useLocalizedPath();
   const { user } = useAuth();
+
+  // Legacy slug redirects → canonical SEO-friendly URLs.
+  const SLUG_ALIASES: Record<string, string> = {
+    "power-of-attorney": "power-of-attorney-financial",
+    "residential-lease": "residential-lease-agreement",
+    "bill-of-sale": "vehicle-bill-of-sale",
+  };
+  if (SLUG_ALIASES[slug]) {
+    return <Navigate to={lp(`/forms/${SLUG_ALIASES[slug]}`)} replace />;
+  }
+
   const form = getFormBySlug(slug);
 
   if (!form) return <Navigate to={lp("/forms")} replace />;
