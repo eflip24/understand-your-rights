@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, lazy, Suspense } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
+import { getPackBySlug } from "@/data/formPacks";
+const FormPackWizardPage = lazy(() => import("@/pages/FormPackWizardPage"));
 import { ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,6 +24,15 @@ export default function FormWizardPage() {
   const { slug = "" } = useParams();
   const lp = useLocalizedPath();
   const { user } = useAuth();
+
+  // If this slug matches a form pack, hand off to the pack wizard.
+  if (getPackBySlug(slug)) {
+    return (
+      <Suspense fallback={null}>
+        <FormPackWizardPage />
+      </Suspense>
+    );
+  }
 
   // Legacy slug redirects → canonical SEO-friendly URLs.
   const SLUG_ALIASES: Record<string, string> = {
