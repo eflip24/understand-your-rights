@@ -3,7 +3,7 @@ import { useSearchParams, Link } from "react-router-dom";
 import { Loader2, CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import { Helmet } from "react-helmet-async";
+import { useEffect as useEffectTitle } from "react";
 
 type State = "loading" | "valid" | "invalid" | "already" | "success" | "error";
 
