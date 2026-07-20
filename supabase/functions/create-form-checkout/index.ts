@@ -106,6 +106,7 @@ Deno.serve(async (req) => {
       
       metadata: {
         form_slug: slug,
+        form_title: priceEntry.title,
         kind: priceEntry.kind,
         ...(userId && { userId }),
       },

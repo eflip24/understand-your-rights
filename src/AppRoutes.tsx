@@ -44,6 +44,7 @@ const ForgotPasswordPage = React.lazy(() => import("@/pages/ForgotPasswordPage")
 const ResetPasswordPage = React.lazy(() => import("@/pages/ResetPasswordPage"));
 const DashboardPage = React.lazy(() => import("@/pages/DashboardPage"));
 const BlogPage = React.lazy(() => import("@/pages/BlogPage"));
+const UnsubscribePage = React.lazy(() => import("@/pages/UnsubscribePage"));
 const BlogPostPage = React.lazy(() => import("@/pages/BlogPostPage"));
 const BlogCategoryPage = React.lazy(() => import("@/pages/BlogCategoryPage"));
 const AdminLayout = React.lazy(() => import("@/pages/admin/AdminLayout"));
@@ -112,6 +113,7 @@ export default function AppRoutes() {
       <Route path="/forms" element={<FormsHubPage />} />
       <Route path="/forms/:slug" element={<FormWizardPage />} />
       <Route path="/checkout/return" element={<CheckoutReturnPage />} />
+      <Route path="/unsubscribe" element={<UnsubscribePage />} />
       <Route path="/legal-terms" element={<LegalTermsDirectory />} />
       <Route path="/legal-terms/:slug" element={<LegalTermPage />} />
       <Route path="/legal-clauses" element={<LegalClausesDirectory />} />
