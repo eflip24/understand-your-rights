@@ -538,6 +538,9 @@ function buildForms(): string {
   for (const s of formSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
   for (const s of formPackSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
   return wrapUrlset(e);
+}
+
+
 
 async function buildBlog(supabase: ReturnType<typeof createClient>): Promise<string> {
   const e: string[] = [];
