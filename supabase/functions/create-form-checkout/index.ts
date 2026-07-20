@@ -6,38 +6,9 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// Server-authoritative price map. Amounts in cents (USD).
-const FORM_PRICES_CENTS: Record<string, { amount: number; title: string; kind: "form" | "pack" }> = {
-  // Individual forms
-  "w-9": { amount: 499, title: "Form W-9 (Clean PDF)", kind: "form" },
-  "w-4": { amount: 499, title: "Form W-4 (Clean PDF)", kind: "form" },
-  "i-9": { amount: 499, title: "Form I-9 (Clean PDF)", kind: "form" },
-  "nda": { amount: 999, title: "Non-Disclosure Agreement (Clean PDF)", kind: "form" },
-  "residential-lease-agreement": { amount: 1499, title: "Residential Lease Agreement (Clean PDF)", kind: "form" },
-  "power-of-attorney-financial": { amount: 1499, title: "Financial Power of Attorney (Clean PDF)", kind: "form" },
-  "vehicle-bill-of-sale": { amount: 999, title: "Vehicle Bill of Sale (Clean PDF)", kind: "form" },
-  "eviction-notice": { amount: 999, title: "Eviction Notice (Clean PDF)", kind: "form" },
-  "demand-letter": { amount: 999, title: "Demand Letter (Clean PDF)", kind: "form" },
-  "promissory-note": { amount: 1499, title: "Promissory Note (Clean PDF)", kind: "form" },
-  "release-of-liability": { amount: 999, title: "Release of Liability (Clean PDF)", kind: "form" },
-  "offer-letter": { amount: 499, title: "Employment Offer Letter (Clean PDF)", kind: "form" },
-  "independent-contractor-agreement": { amount: 699, title: "Independent Contractor Agreement (Clean PDF)", kind: "form" },
-  "direct-deposit-authorization": { amount: 399, title: "Direct Deposit Authorization (Clean PDF)", kind: "form" },
-  "notice-to-vacate": { amount: 399, title: "Notice to Vacate (Clean PDF)", kind: "form" },
-  "move-in-move-out-checklist": { amount: 399, title: "Move-In / Move-Out Checklist (Clean PDF)", kind: "form" },
-  "security-deposit-receipt": { amount: 399, title: "Security Deposit Receipt (Clean PDF)", kind: "form" },
-  "late-rent-notice": { amount: 399, title: "Late Rent Notice (Clean PDF)", kind: "form" },
-  "llc-operating-agreement": { amount: 999, title: "LLC Operating Agreement (Clean PDF)", kind: "form" },
-  "healthcare-power-of-attorney": { amount: 699, title: "Healthcare Power of Attorney (Clean PDF)", kind: "form" },
-  "simple-will": { amount: 999, title: "Simple Will (Clean PDF)", kind: "form" },
-  "living-will": { amount: 699, title: "Living Will (Clean PDF)", kind: "form" },
-  "hipaa-authorization": { amount: 499, title: "HIPAA Authorization (Clean PDF)", kind: "form" },
-  // Packs
-  "new-hire-pack": { amount: 3400, title: "New Hire Forms Pack (Clean ZIP)", kind: "pack" },
-  "landlord-starter-pack": { amount: 2900, title: "Landlord Starter Pack (Clean ZIP)", kind: "pack" },
-  "small-business-pack": { amount: 3900, title: "Small Business Basics Pack (Clean ZIP)", kind: "pack" },
-  "personal-planning-pack": { amount: 3400, title: "Personal Planning Pack (Clean ZIP)", kind: "pack" },
-};
+// Prices live in the public.form_prices table (admin-editable).
+// Read via service role so RLS is bypassed and inactive rows can also be
+// rejected explicitly with a clearer error than "not found".
 
 const supabase = createClient(
   Deno.env.get("SUPABASE_URL")!,
@@ -82,8 +53,20 @@ Deno.serve(async (req) => {
     if (!slug || typeof slug !== "string") throw new Error("Missing slug");
     if (environment !== "sandbox" && environment !== "live") throw new Error("Invalid environment");
 
-    const priceEntry = FORM_PRICES_CENTS[slug];
-    if (!priceEntry) throw new Error(`Unknown form slug: ${slug}`);
+    const { data: priceRow, error: priceErr } = await supabase
+      .from("form_prices")
+      .select("slug, title, kind, amount_cents, currency, active")
+      .eq("slug", slug)
+      .maybeSingle();
+    if (priceErr) throw new Error(`Price lookup failed: ${priceErr.message}`);
+    if (!priceRow) throw new Error(`Unknown form slug: ${slug}`);
+    if (!priceRow.active) throw new Error(`This item is not currently available for purchase.`);
+    const priceEntry = {
+      amount: priceRow.amount_cents as number,
+      title: priceRow.title as string,
+      kind: priceRow.kind as "form" | "pack",
+      currency: (priceRow.currency as string) || "usd",
+    };
 
     // Auth (optional — anonymous purchases allowed, but we prefer to link userId)
     const authHeader = req.headers.get("Authorization");
@@ -106,7 +89,7 @@ Deno.serve(async (req) => {
     const session = await stripe.checkout.sessions.create({
       line_items: [{
         price_data: {
-          currency: "usd",
+          currency: priceEntry.currency,
           product_data: {
             name: priceEntry.title,
             metadata: { form_slug: slug, kind: priceEntry.kind },
