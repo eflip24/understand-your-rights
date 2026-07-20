@@ -1,64 +1,80 @@
-# Tools Hub Redesign (/tools)
+# Find a Lawyer Hub Redesign (/lawyer-near-me)
 
-Mirror the successful Forms Hub redesign pattern on the Legal Tools directory, using the same navy/gold tokens so both hubs feel like one product.
+Bring the Lawyer directory up to the same polish tier as the redesigned Forms and Tools hubs, using the shared navy/gold token system. Frontend/presentation only.
 
 ## Problems with current page
-- Flat, generic header with no hero, no trust, no search prominence.
-- Category chips wrap awkwardly; no icons, no counts, no sticky behavior on scroll.
-- No "by situation / by life event" entry point — users must know the category name.
-- Cards are uniform but lack signals users actually scan for: time-to-use, popularity, "new", free badge, related form link.
-- No popular / featured shortcuts above the fold.
-- Search icon is orphaned to the left of the chip row.
+- Container is capped at `max-w-4xl` — the page feels narrow and empty next to Forms/Tools hubs.
+- No hero, no search, no trust signals. Just a Badge + H1 + paragraph.
+- Every practice-area card uses the same generic `Users` icon, so nothing scans visually.
+- No entry-point for the two things users actually want: **their location** and **their situation**.
+- No "popular" or "most-searched" shortcuts above the fold.
+- Disclaimer is a plain footer — should be a proper trust strip.
 
 ## What we'll build
 
-### 1. New `ToolsHero.tsx`
-- Big H1 + one-line value prop ("Free legal calculators, generators & analyzers — no signup").
-- Prominent centered search with icon inside; live filters cards as user types.
-- Trust chips row: "70+ tools", "Always free", "No signup", "Attorney-reviewed content".
-- Popular tool shortcut pills (6): Legal Jargon Translator, Contract Reading Time, NDA Generator, Non-Compete Checker, Late Fee Calculator, Alimony Calculator.
+### 1. New `LawyerDirectoryHero.tsx`
+- Full-width hero card with navy/gold gradient, blur orbs (same style as Forms/Tools hero).
+- H1 "Find the right lawyer, fast" with gold-underlined key phrase.
+- Sub-line about free directory, no signup, attorney-verified.
+- Prominent **practice-area search input** that live-filters the grid below (client-side on `shortTitle`, `title`, `description`).
+- Trust chip row: "12 practice areas", "Free consultations", "Attorney-verified", "50-state coverage".
+- Popular shortcuts: Personal Injury, Car Accident, Workers' Comp, Family Law, Bankruptcy, Employment.
 
-### 2. New `ToolsBySituationTiles.tsx`
-"Find a tool by situation" — 6 large tiles with icon + label + count:
-- Signing a contract
-- Facing a fee, refund, or debt
-- Starting or leaving a job
-- Renting or buying property
-- Family & divorce
-- Running a small business
+### 2. New `LawyerSituationTiles.tsx`
+"What happened?" — 6 large tiles that each deep-link to the relevant practice area:
+- I was in an accident → `/lawyer-near-me/car-accident`
+- I was hurt on the job → `/lawyer-near-me/workers-compensation`
+- My claim was denied → `/lawyer-near-me/insurance-dispute`
+- I'm getting divorced → `/lawyer-near-me/family-law`
+- I'm drowning in debt → `/lawyer-near-me/bankruptcy`
+- I was fired or discriminated against → `/lawyer-near-me/employment`
 
-Each tile filters the grid below (writes to same `activeCategory`/tag state, scrolls to results).
+Each tile: icon + plain-English situation + destination hint + arrow.
 
-### 3. New `ToolsCategoryTabs.tsx`
-Replaces the current button row.
-- Sticky on scroll (top-16, backdrop-blur, subtle border-bottom).
-- Icon + label + live count per tab (All, Contract, Consumer, Employment, Document Generators, AI Analysis, Real Estate, Business, Finance & Trading, Green Energy & Solar, Family Law).
-- Horizontal scroll on mobile, wraps on desktop.
+### 3. Distinct icon per practice area
+Map each of the 12 slugs to a specific Lucide icon inside the page (no data-model change):
+- personal-injury → HeartPulse
+- car-accident → Car
+- workers-compensation → HardHat
+- employment → Briefcase
+- insurance-dispute → ShieldAlert
+- real-estate → Home
+- family-law → HeartHandshake
+- bankruptcy → Wallet
+- criminal-defense → Gavel
+- immigration → Globe2
+- truck-accident → Truck
+- medical-malpractice → Stethoscope
 
-### 4. Polished `ToolCard`
-Update the inline card in `ToolsDirectory.tsx` (no new file needed):
-- Larger icon tile with gold ring on hover.
-- Category eyebrow + bold title + description.
-- Meta row at bottom: "~2 min", "Free", optional "New" or "Popular" badge (from a small allowlist in `src/data/tools.ts` featured/popular flags — additive optional fields, no data migration required).
-- Whole card is the link with clear focus ring; arrow icon on hover.
+### 4. Polished practice-area cards
+- Full-width grid: `sm:grid-cols-2 lg:grid-cols-3` (was 2 cols only).
+- Per-card: colored icon tile with gold ring on hover, category eyebrow ("Practice Area"), bold title, description, and a footer row with "Free consultations · No obligation" + "Browse lawyers →".
+- Whole card clickable with focus-visible ring; card lifts on hover.
+- If `relatedPillarPath` exists, show a small secondary "Read the law guide" chip in the footer (opens pillar page in same tab via nested link — implemented as separate `<Link>` so the card link doesn't wrap it).
 
-### 5. Trust strip (below results)
-Reuse the Forms Hub trust strip style: 4 columns — Always free, Plain-English results, Attorney-reviewed, Save results as PDF where supported.
+### 5. State chooser strip
+Below the grid: "Browse lawyers by state" with a clean chip grid of all 50 state abbreviations. Clicking a state routes to `/lawyer-near-me/personal-injury/{state-slug}` (the highest-volume practice area) — this leverages existing routes without new pages.
 
-### 6. Empty state
-Friendlier empty state with 3 suggested popular tools when a search returns nothing.
+### 6. Trust strip (below results)
+4-column card row matching Forms/Tools hubs:
+- ShieldCheck — "Attorney-verified listings"
+- Sparkles — "Free consultations"
+- Scale — "50-state coverage"
+- Users — "No referral fees"
+
+### 7. Rewritten disclaimer
+Keep the legal disclaimer but move it into a soft-bordered muted card so it reads as intentional, not orphaned.
 
 ## File plan
-- New: `src/components/tools/ToolsHero.tsx`
-- New: `src/components/tools/ToolsBySituationTiles.tsx`
-- New: `src/components/tools/ToolsCategoryTabs.tsx`
-- Edit: `src/pages/ToolsDirectory.tsx` — compose the new sections, keep existing search/filter state, keep i18n hooks (`useLocalizedTools`, `useLocalizedPath`), keep the current route unchanged.
-- Optional additive fields in `src/data/tools.ts` type: `popular?: boolean`, `estMinutes?: number`. Flag ~10 popular tools; leave the rest untouched.
+- New: `src/components/lawyers/LawyerDirectoryHero.tsx`
+- New: `src/components/lawyers/LawyerSituationTiles.tsx`
+- Edit: `src/pages/LocalLawyersDirectory.tsx` — widen container to `container py-10` (no `max-w-4xl`), compose new sections, keep existing `AdSlot`, `JsonLdGraph`, breadcrumbs, and disclaimer copy.
+- No changes to `src/data/localLawyers.ts`, routes, or JSON-LD structure.
 
 ## Scope guardrails
-- Frontend/presentation only. No routing changes, no data model changes beyond additive optional fields.
-- Uses existing navy/gold semantic tokens — no hardcoded colors.
-- Preserves current query-string behavior (`?q=`) and category state.
-- No changes to individual tool pages or i18n data.
+- Frontend only. No new routes, no backend, no data-model changes.
+- All colors via semantic tokens; no hardcoded hex/utilities.
+- Existing i18n `useLocalizedPath` preserved.
+- Ad slots kept in current positions.
 
-**Highest-impact single change if we do nothing else:** the Hero + sticky category tabs + situation tiles — that alone transforms the first impression and navigation.
+**Highest-impact single change if we do nothing else:** the Hero + per-area icons + situation tiles — that trio alone transforms the "empty page" feeling and gives users an obvious entry point.
