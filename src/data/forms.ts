@@ -43,7 +43,15 @@ export type FormCategory =
   | "realestate"
   | "personal";
 
-export type PdfTemplate = "w9" | "i9" | "w4" | "nda" | "lease" | "poa";
+export type PdfTemplate =
+  | "w9"
+  | "i9"
+  | "w4"
+  | "nda"
+  | "lease"
+  | "poa"
+  | "billOfSale"
+  | "evictionNotice";
 
 export interface LegalFormDef {
   slug: string;
@@ -893,105 +901,687 @@ export const legalForms: LegalFormDef[] = [
     relatedForms: ["w-9", "residential-lease"],
   },
 
+  // ---------------------------------------------------------------------
+  // Residential Lease Agreement
+  // ---------------------------------------------------------------------
   {
     slug: "residential-lease",
-    title: "Residential Lease Agreement",
-    shortDescription: "A plain-English fixed-term lease between landlord and tenant.",
+    title: "Free Residential Lease Agreement Template — Landlord & Tenant",
+    shortDescription:
+      "Create a professional fixed-term or month-to-month residential lease. Automatic rent totals, security deposit tracking, and clear default and termination clauses.",
     category: "realestate",
     price: 14.99,
-    lastUpdated: "2026-01-15",
+    lastUpdated: "2026-01-20",
     isFeatured: true,
     pdfTemplate: "lease",
     steps: [
       {
         id: "parties",
-        title: "Landlord & tenant",
+        title: "Landlord & tenant(s)",
+        description:
+          "Enter the legal name of the landlord (or property-management entity) and up to four tenants who will be jointly and severally liable on the lease.",
         fields: [
-          { id: "landlord", label: "Landlord full name", type: "text", required: true },
-          { id: "tenant", label: "Tenant full name(s)", type: "text", required: true },
+          { id: "landlordName", label: "Landlord — legal name (person or entity)", type: "text", required: true },
+          { id: "landlordAddress", label: "Landlord — mailing address for notices", type: "textarea", required: true },
+          { id: "landlordPhone", label: "Landlord — phone", type: "text" },
+          { id: "tenant1Name", label: "Tenant 1 — full legal name", type: "text", required: true },
+          { id: "tenant2Name", label: "Tenant 2 — full legal name (optional)", type: "text" },
+          { id: "tenant3Name", label: "Tenant 3 — full legal name (optional)", type: "text" },
+          { id: "tenant4Name", label: "Tenant 4 — full legal name (optional)", type: "text" },
         ],
       },
       {
         id: "property",
         title: "Property",
         fields: [
-          { id: "propertyAddress", label: "Property address", type: "text", required: true },
-          { id: "unit", label: "Unit / apt", type: "text" },
-          { id: "state", label: "State / jurisdiction", type: "text", required: true },
+          { id: "propertyStreet", label: "Property street address", type: "text", required: true },
+          { id: "propertyUnit", label: "Unit / apartment number", type: "text" },
+          { id: "propertyCity", label: "City", type: "text", required: true },
+          { id: "propertyState", label: "State", type: "usState", required: true },
+          { id: "propertyZip", label: "ZIP code", type: "text", required: true },
+          { id: "bedrooms", label: "Bedrooms", type: "number", placeholder: "2" },
+          { id: "bathrooms", label: "Bathrooms", type: "number", placeholder: "1" },
+          { id: "parking", label: "Parking (spaces or 'none')", type: "text", placeholder: "1 assigned space" },
+          {
+            id: "furnished",
+            label: "Furnishing",
+            type: "radio",
+            options: [
+              { value: "unfurnished", label: "Unfurnished" },
+              { value: "partial", label: "Partially furnished" },
+              { value: "furnished", label: "Fully furnished (inventory attached)" },
+            ],
+          },
         ],
       },
       {
-        id: "terms",
+        id: "term-rent",
         title: "Term & rent",
+        description:
+          "Choose a fixed-term lease with an end date, or a month-to-month tenancy that continues until terminated with proper notice.",
         fields: [
+          {
+            id: "termType",
+            label: "Lease type",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "fixed", label: "Fixed term (with end date)" },
+              { value: "mtm", label: "Month-to-month" },
+            ],
+          },
           { id: "startDate", label: "Lease start date", type: "date", required: true },
-          { id: "endDate", label: "Lease end date", type: "date", required: true },
-          { id: "monthlyRent", label: "Monthly rent ($)", type: "number", required: true },
-          { id: "securityDeposit", label: "Security deposit ($)", type: "number" },
-          { id: "dueDay", label: "Rent due day of month", type: "number", help: "Common: 1." },
+          {
+            id: "endDate",
+            label: "Lease end date",
+            type: "date",
+            required: true,
+            showWhen: (d) => d.termType === "fixed",
+          },
+          { id: "monthlyRent", label: "Monthly rent ($)", type: "number", required: true, placeholder: "1800" },
+          { id: "dueDay", label: "Rent due — day of month", type: "number", placeholder: "1" },
+          {
+            id: "lateFeeType",
+            label: "Late fee",
+            type: "radio",
+            options: [
+              { value: "none", label: "No late fee" },
+              { value: "flat", label: "Flat dollar amount" },
+              { value: "percent", label: "Percentage of monthly rent" },
+            ],
+          },
+          {
+            id: "lateFeeAmount",
+            label: "Late fee — flat amount ($)",
+            type: "number",
+            showWhen: (d) => d.lateFeeType === "flat",
+          },
+          {
+            id: "lateFeePercent",
+            label: "Late fee — percentage of monthly rent (%)",
+            type: "number",
+            showWhen: (d) => d.lateFeeType === "percent",
+          },
+          {
+            id: "graceDays",
+            label: "Grace period (days after due date before late fee applies)",
+            type: "number",
+            placeholder: "5",
+            showWhen: (d) => d.lateFeeType === "flat" || d.lateFeeType === "percent",
+          },
+          { id: "firstPaymentDate", label: "First rent payment date", type: "date" },
+        ],
+      },
+      {
+        id: "deposit",
+        title: "Security deposit",
+        fields: [
+          { id: "securityDeposit", label: "Security deposit ($)", type: "number", placeholder: "1800" },
+          { id: "lastMonthRent", label: "Last month's rent held (optional, $)", type: "number" },
+          {
+            id: "depositHeldAt",
+            label: "Where the deposit is held (bank / trust, if required by state)",
+            type: "text",
+            help: "Some states require deposits to be held in a separate interest-bearing account.",
+          },
+        ],
+      },
+      {
+        id: "utilities",
+        title: "Utilities & maintenance",
+        description:
+          "For each utility, choose who is responsible. Anything left blank defaults to tenant.",
+        fields: [
+          {
+            id: "utilElectric",
+            label: "Electricity",
+            type: "radio",
+            options: [
+              { value: "tenant", label: "Tenant pays" },
+              { value: "landlord", label: "Landlord pays" },
+              { value: "split", label: "Split / included in rent" },
+            ],
+          },
+          {
+            id: "utilGas",
+            label: "Gas",
+            type: "radio",
+            options: [
+              { value: "tenant", label: "Tenant pays" },
+              { value: "landlord", label: "Landlord pays" },
+              { value: "split", label: "Split / included" },
+            ],
+          },
+          {
+            id: "utilWater",
+            label: "Water & sewer",
+            type: "radio",
+            options: [
+              { value: "tenant", label: "Tenant pays" },
+              { value: "landlord", label: "Landlord pays" },
+              { value: "split", label: "Split / included" },
+            ],
+          },
+          {
+            id: "utilTrash",
+            label: "Trash / recycling",
+            type: "radio",
+            options: [
+              { value: "tenant", label: "Tenant pays" },
+              { value: "landlord", label: "Landlord pays" },
+              { value: "split", label: "Split / included" },
+            ],
+          },
+          {
+            id: "utilInternet",
+            label: "Internet / cable",
+            type: "radio",
+            options: [
+              { value: "tenant", label: "Tenant pays" },
+              { value: "landlord", label: "Landlord pays" },
+              { value: "split", label: "Split / included" },
+            ],
+          },
+          {
+            id: "utilLawn",
+            label: "Lawn care / snow removal",
+            type: "radio",
+            options: [
+              { value: "tenant", label: "Tenant" },
+              { value: "landlord", label: "Landlord" },
+              { value: "na", label: "N/A" },
+            ],
+          },
+          { id: "appliancesIncluded", label: "Appliances included (comma-separated)", type: "text", placeholder: "Refrigerator, stove, dishwasher, washer, dryer" },
         ],
       },
       {
         id: "rules",
-        title: "Rules",
+        title: "Rules & restrictions",
         fields: [
-          { id: "petsAllowed", label: "Pets allowed", type: "checkbox" },
-          { id: "smokingAllowed", label: "Smoking allowed", type: "checkbox" },
-          { id: "utilities", label: "Utilities included", type: "textarea", placeholder: "Water, trash, …" },
-          { id: "certify", label: "Both parties agree to the terms.", type: "checkbox", required: true },
+          {
+            id: "pets",
+            label: "Pets",
+            type: "radio",
+            options: [
+              { value: "none", label: "No pets allowed" },
+              { value: "withDeposit", label: "Allowed with pet deposit" },
+              { value: "noDeposit", label: "Allowed, no additional deposit" },
+            ],
+          },
+          {
+            id: "petDeposit",
+            label: "Pet deposit ($)",
+            type: "number",
+            showWhen: (d) => d.pets === "withDeposit",
+          },
+          {
+            id: "smoking",
+            label: "Smoking",
+            type: "radio",
+            options: [
+              { value: "prohibited", label: "Prohibited anywhere on the property" },
+              { value: "outside", label: "Outside only" },
+              { value: "allowed", label: "Allowed" },
+            ],
+          },
+          {
+            id: "subletting",
+            label: "Subletting / assignment",
+            type: "radio",
+            options: [
+              { value: "prohibited", label: "Prohibited without written landlord consent" },
+              { value: "allowed", label: "Allowed with reasonable notice" },
+            ],
+          },
+          { id: "quietHours", label: "Quiet hours / additional house rules (optional)", type: "textarea" },
+        ],
+      },
+      {
+        id: "termination-sign",
+        title: "Termination, default & signatures",
+        fields: [
+          {
+            id: "noticePeriod",
+            label: "Notice period to terminate (days)",
+            type: "number",
+            placeholder: "30",
+            help: "State law may impose a minimum. 30 days is common for month-to-month; fixed-term leases typically require breach or mutual agreement.",
+          },
+          {
+            id: "curePeriod",
+            label: "Default — days to cure after written notice",
+            type: "number",
+            placeholder: "10",
+          },
+          { id: "governingState", label: "Governing law — state", type: "usState", required: true },
+          { id: "landlordSignature", label: "Landlord signature (typed)", type: "text", required: true },
+          { id: "landlordSignDate", label: "Landlord signature date", type: "date", required: true },
+          { id: "tenant1Signature", label: "Tenant 1 signature (typed)", type: "text", required: true },
+          { id: "tenant1SignDate", label: "Tenant 1 signature date", type: "date", required: true },
+          { id: "tenant2Signature", label: "Tenant 2 signature (typed, if applicable)", type: "text" },
+          { id: "tenant2SignDate", label: "Tenant 2 signature date", type: "date" },
+          {
+            id: "certify",
+            label: "Both parties agree to the terms of this lease.",
+            type: "checkbox",
+            required: true,
+          },
         ],
       },
     ],
-    relatedForms: ["nda"],
+    relatedForms: ["power-of-attorney", "eviction-notice", "bill-of-sale"],
   },
+
+  // ---------------------------------------------------------------------
+  // Power of Attorney (Financial)
+  // ---------------------------------------------------------------------
   {
     slug: "power-of-attorney",
-    title: "General Power of Attorney",
-    shortDescription: "Appoint an agent to act on your behalf for financial matters.",
+    title: "Free Power of Attorney Form Online — Financial POA Generator",
+    shortDescription:
+      "Appoint a trusted agent to handle your financial affairs. Choose from durable or springing effectiveness, custom powers, and successor agents.",
     category: "personal",
     price: 14.99,
-    lastUpdated: "2026-01-15",
+    lastUpdated: "2026-01-20",
     isFeatured: true,
     pdfTemplate: "poa",
     steps: [
       {
         id: "principal",
         title: "Principal (you)",
+        description: "The Principal is the person granting authority. Enter your details exactly as they appear on your government-issued ID.",
         fields: [
-          { id: "principalName", label: "Your full legal name", type: "text", required: true },
-          { id: "principalAddress", label: "Your address", type: "text", required: true },
-          { id: "principalDob", label: "Your date of birth", type: "date" },
+          { id: "principalName", label: "Principal — full legal name", type: "text", required: true },
+          { id: "principalAddress", label: "Principal — mailing address", type: "textarea", required: true },
+          { id: "principalDob", label: "Principal — date of birth", type: "date" },
+          { id: "principalPhone", label: "Principal — phone", type: "text" },
         ],
       },
       {
         id: "agent",
         title: "Agent (attorney-in-fact)",
+        description:
+          "The Agent will act on your behalf. Choose someone you trust completely. You may also name a successor agent to act if your primary agent cannot serve.",
         fields: [
-          { id: "agentName", label: "Agent's full legal name", type: "text", required: true },
-          { id: "agentAddress", label: "Agent's address", type: "text", required: true },
-          { id: "alternateAgent", label: "Alternate agent (optional)", type: "text" },
+          { id: "agentName", label: "Agent — full legal name", type: "text", required: true },
+          { id: "agentAddress", label: "Agent — mailing address", type: "textarea", required: true },
+          { id: "agentPhone", label: "Agent — phone", type: "text" },
+          { id: "agentRelationship", label: "Agent — relationship to principal", type: "text", placeholder: "e.g., spouse, adult child, attorney" },
+          {
+            id: "hasSuccessor",
+            label: "Name a successor / alternate agent",
+            type: "checkbox",
+          },
+          { id: "successorName", label: "Successor agent — full legal name", type: "text", showWhen: (d) => Boolean(d.hasSuccessor) },
+          { id: "successorAddress", label: "Successor agent — mailing address", type: "textarea", showWhen: (d) => Boolean(d.hasSuccessor) },
+          { id: "successorPhone", label: "Successor agent — phone", type: "text", showWhen: (d) => Boolean(d.hasSuccessor) },
         ],
       },
       {
-        id: "scope",
+        id: "powers",
         title: "Powers granted",
+        description:
+          "Select the categories of authority you are granting. Uncheck any you do NOT want your agent to exercise.",
         fields: [
-          { id: "powers", label: "Powers granted to the agent", type: "textarea", required: true, placeholder: "e.g., manage bank accounts, sign real-estate documents…" },
-          { id: "durable", label: "This POA is durable (survives incapacity)", type: "checkbox" },
+          { id: "powerAll", label: "Grant ALL of the powers listed below", type: "checkbox", help: "Toggling this on is a shortcut — you can still uncheck individual categories." },
+          { id: "powerRealEstate", label: "Real estate transactions", type: "checkbox" },
+          { id: "powerBanking", label: "Banking, finances & investments", type: "checkbox" },
+          { id: "powerBusiness", label: "Business operating transactions", type: "checkbox" },
+          { id: "powerInsurance", label: "Insurance & annuity transactions", type: "checkbox" },
+          { id: "powerEstate", label: "Estate, trust & other beneficiary transactions", type: "checkbox" },
+          { id: "powerClaims", label: "Claims & litigation", type: "checkbox" },
+          { id: "powerFamily", label: "Personal & family maintenance", type: "checkbox" },
+          { id: "powerBenefits", label: "Government benefits (Social Security, Medicare, etc.)", type: "checkbox" },
+          { id: "powerRetirement", label: "Retirement plans", type: "checkbox" },
+          { id: "powerTaxes", label: "Tax matters", type: "checkbox" },
+          { id: "powerGifts", label: "Gift-giving (limited)", type: "checkbox" },
+          { id: "powerCustom", label: "Additional custom powers (optional)", type: "textarea", placeholder: "Describe any additional powers or limitations." },
+        ],
+      },
+      {
+        id: "effective",
+        title: "Effective date & duration",
+        fields: [
+          {
+            id: "effectiveType",
+            label: "When does this POA become effective?",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "durable", label: "Immediately, and continues if I become incapacitated (Durable POA)" },
+              { value: "springing", label: "Only upon a physician's certification of my incapacity (Springing POA)" },
+            ],
+          },
           { id: "effectiveDate", label: "Effective date", type: "date", required: true },
-          { id: "state", label: "Governing state", type: "text", required: true },
+          { id: "terminationDate", label: "Termination date (optional — leave blank for no expiration)", type: "date" },
+        ],
+      },
+      {
+        id: "law",
+        title: "Governing law & special instructions",
+        fields: [
+          { id: "governingState", label: "Governing law — state", type: "usState", required: true },
+          {
+            id: "specialInstructions",
+            label: "Special instructions or limitations (optional)",
+            type: "textarea",
+            placeholder: "e.g., agent may not make gifts exceeding $15,000 in any calendar year without written consent.",
+          },
         ],
       },
       {
         id: "sign",
-        title: "Sign",
+        title: "Signatures & notary",
+        description:
+          "Type names below to indicate intent. To make this POA legally effective in most states, print the completed PDF and sign in ink before a notary public and (where required) two adult witnesses.",
         fields: [
-          { id: "certify", label: "I sign this power of attorney willingly.", type: "checkbox", required: true },
-          { id: "signatureDate", label: "Signature date", type: "date", required: true },
+          { id: "principalSignature", label: "Principal signature (typed)", type: "text", required: true },
+          { id: "principalSignDate", label: "Principal signature date", type: "date", required: true },
+          { id: "witness1Name", label: "Witness 1 — name", type: "text" },
+          { id: "witness1Address", label: "Witness 1 — address", type: "text" },
+          { id: "witness2Name", label: "Witness 2 — name", type: "text" },
+          { id: "witness2Address", label: "Witness 2 — address", type: "text" },
+          {
+            id: "certify",
+            label: "I understand this document must be signed in wet ink before a notary public to take effect.",
+            type: "checkbox",
+            required: true,
+          },
         ],
       },
     ],
-    relatedForms: ["residential-lease"],
+    relatedForms: ["residential-lease", "nda", "bill-of-sale"],
+  },
+
+  // ---------------------------------------------------------------------
+  // Bill of Sale (General)
+  // ---------------------------------------------------------------------
+  {
+    slug: "bill-of-sale",
+    title: "Free Bill of Sale Form — Vehicle & General Property",
+    shortDescription:
+      "Document the sale of a vehicle, boat, or personal property. Includes odometer disclosure, as-is warranty language, and buyer/seller signatures.",
+    category: "personal",
+    price: 9.99,
+    lastUpdated: "2026-01-20",
+    isFeatured: true,
+    pdfTemplate: "billOfSale",
+    steps: [
+      {
+        id: "type",
+        title: "What is being sold?",
+        fields: [
+          {
+            id: "saleType",
+            label: "Type of property",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "vehicle", label: "Motor vehicle (car, truck, motorcycle)" },
+              { value: "boat", label: "Boat / watercraft" },
+              { value: "general", label: "General personal property" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "seller",
+        title: "Seller information",
+        fields: [
+          { id: "sellerName", label: "Seller — full legal name", type: "text", required: true },
+          { id: "sellerAddress", label: "Seller — address", type: "textarea", required: true },
+          { id: "sellerPhone", label: "Seller — phone", type: "text" },
+          { id: "sellerDl", label: "Seller — driver's license or ID number (optional)", type: "text" },
+        ],
+      },
+      {
+        id: "buyer",
+        title: "Buyer information",
+        fields: [
+          { id: "buyerName", label: "Buyer — full legal name", type: "text", required: true },
+          { id: "buyerAddress", label: "Buyer — address", type: "textarea", required: true },
+          { id: "buyerPhone", label: "Buyer — phone", type: "text" },
+          { id: "buyerDl", label: "Buyer — driver's license or ID number (optional)", type: "text" },
+        ],
+      },
+      {
+        id: "item",
+        title: "Item description",
+        description: "Provide identifying details. For vehicles, federal law (49 CFR § 580) requires an odometer disclosure at the time of transfer.",
+        fields: [
+          // Vehicle
+          { id: "vYear", label: "Year", type: "text", required: true, showWhen: (d) => d.saleType === "vehicle" },
+          { id: "vMake", label: "Make", type: "text", required: true, showWhen: (d) => d.saleType === "vehicle" },
+          { id: "vModel", label: "Model", type: "text", required: true, showWhen: (d) => d.saleType === "vehicle" },
+          { id: "vTrim", label: "Body / trim", type: "text", showWhen: (d) => d.saleType === "vehicle" },
+          { id: "vColor", label: "Color", type: "text", showWhen: (d) => d.saleType === "vehicle" },
+          { id: "vVin", label: "Vehicle identification number (VIN)", type: "text", required: true, showWhen: (d) => d.saleType === "vehicle" },
+          { id: "vOdometer", label: "Odometer reading (miles)", type: "number", required: true, showWhen: (d) => d.saleType === "vehicle" },
+          {
+            id: "vOdometerDisclosure",
+            label: "Odometer disclosure (federal requirement)",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "actual", label: "Reflects ACTUAL mileage of the vehicle" },
+              { value: "exceeds", label: "EXCEEDS its mechanical limits (rolled over)" },
+              { value: "notActual", label: "Is NOT the actual mileage (WARNING — odometer discrepancy)" },
+            ],
+            showWhen: (d) => d.saleType === "vehicle",
+          },
+          { id: "vTitle", label: "Title number", type: "text", showWhen: (d) => d.saleType === "vehicle" },
+          { id: "vPlate", label: "License plate", type: "text", showWhen: (d) => d.saleType === "vehicle" },
+          // Boat
+          { id: "bMake", label: "Make", type: "text", required: true, showWhen: (d) => d.saleType === "boat" },
+          { id: "bModel", label: "Model", type: "text", required: true, showWhen: (d) => d.saleType === "boat" },
+          { id: "bYear", label: "Year", type: "text", required: true, showWhen: (d) => d.saleType === "boat" },
+          { id: "bHin", label: "Hull identification number (HIN)", type: "text", required: true, showWhen: (d) => d.saleType === "boat" },
+          { id: "bLength", label: "Length (feet)", type: "number", showWhen: (d) => d.saleType === "boat" },
+          { id: "bRegistration", label: "Registration number", type: "text", showWhen: (d) => d.saleType === "boat" },
+          // General
+          {
+            id: "gDescription",
+            label: "Description of item(s)",
+            type: "textarea",
+            required: true,
+            showWhen: (d) => d.saleType === "general",
+            placeholder: "Describe the item(s) being sold in detail — make, model, condition, distinguishing marks.",
+          },
+          { id: "gSerial", label: "Serial number (if any)", type: "text", showWhen: (d) => d.saleType === "general" },
+        ],
+      },
+      {
+        id: "terms",
+        title: "Sale terms & signatures",
+        fields: [
+          { id: "salePrice", label: "Sale price (USD)", type: "number", required: true, placeholder: "12500" },
+          {
+            id: "paymentMethod",
+            label: "Payment method",
+            type: "select",
+            required: true,
+            options: [
+              { value: "cash", label: "Cash" },
+              { value: "check", label: "Personal check" },
+              { value: "cashiers", label: "Cashier's check / money order" },
+              { value: "wire", label: "Wire transfer" },
+              { value: "other", label: "Other" },
+            ],
+          },
+          { id: "saleDate", label: "Date of sale", type: "date", required: true },
+          { id: "saleCity", label: "City where sale took place", type: "text" },
+          { id: "saleState", label: "State where sale took place", type: "usState", required: true },
+          {
+            id: "warranty",
+            label: "Warranty",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "asIs", label: "AS-IS — no warranty of any kind, express or implied" },
+              { value: "limited", label: "Limited warranty (describe below)" },
+            ],
+          },
+          {
+            id: "warrantyTerms",
+            label: "Limited warranty terms",
+            type: "textarea",
+            showWhen: (d) => d.warranty === "limited",
+          },
+          { id: "sellerSignature", label: "Seller signature (typed)", type: "text", required: true },
+          { id: "sellerSignDate", label: "Seller signature date", type: "date", required: true },
+          { id: "buyerSignature", label: "Buyer signature (typed)", type: "text", required: true },
+          { id: "buyerSignDate", label: "Buyer signature date", type: "date", required: true },
+          {
+            id: "certify",
+            label: "Both parties agree to the terms of this Bill of Sale.",
+            type: "checkbox",
+            required: true,
+          },
+        ],
+      },
+    ],
+    relatedForms: ["power-of-attorney", "residential-lease", "nda"],
+  },
+
+  // ---------------------------------------------------------------------
+  // Eviction Notice (state-specific)
+  // ---------------------------------------------------------------------
+  {
+    slug: "eviction-notice",
+    title: "Free Eviction Notice Generator — State-Specific",
+    shortDescription:
+      "Generate a state-appropriate eviction / notice to quit. Timing rules auto-fill for the top 10 states; other states default to general guidance.",
+    category: "realestate",
+    price: 9.99,
+    lastUpdated: "2026-01-20",
+    isFeatured: true,
+    pdfTemplate: "evictionNotice",
+    steps: [
+      {
+        id: "state",
+        title: "Jurisdiction",
+        description:
+          "Select the state where the rental property is located. State laws vary — timing below reflects general statutory rules and may not account for local rent-control ordinances. Verify with a landlord-tenant attorney before serving.",
+        fields: [
+          { id: "state", label: "State where the property is located", type: "usState", required: true },
+        ],
+      },
+      {
+        id: "parties",
+        title: "Landlord & tenant",
+        fields: [
+          { id: "landlordName", label: "Landlord — full legal name", type: "text", required: true },
+          { id: "landlordBusiness", label: "Landlord — business / management company (optional)", type: "text" },
+          { id: "landlordAddress", label: "Landlord — mailing address", type: "textarea", required: true },
+          { id: "landlordPhone", label: "Landlord — phone", type: "text" },
+          { id: "tenantNames", label: "Tenant(s) — full legal name(s)", type: "text", required: true, placeholder: "Jane Doe and John Doe" },
+          { id: "propertyAddress", label: "Rental property address", type: "textarea", required: true },
+        ],
+      },
+      {
+        id: "reason",
+        title: "Reason for eviction",
+        fields: [
+          {
+            id: "reason",
+            label: "Reason",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "nonpayment", label: "Non-payment of rent" },
+              { value: "curableViolation", label: "Lease violation (curable)" },
+              { value: "nonCurable", label: "Lease violation (non-curable / material breach)" },
+              { value: "endOfTenancy", label: "End of tenancy / no-fault termination" },
+              { value: "illegal", label: "Illegal activity or serious nuisance" },
+            ],
+          },
+          // Non-payment fields
+          { id: "amountPastDue", label: "Amount of rent past due ($)", type: "number", required: true, showWhen: (d) => d.reason === "nonpayment" },
+          { id: "periodCovered", label: "Period covered (e.g., 'November 1 – November 30, 2026')", type: "text", showWhen: (d) => d.reason === "nonpayment" },
+          { id: "lateFees", label: "Late fees / other charges ($)", type: "number", showWhen: (d) => d.reason === "nonpayment" },
+          // Violation fields
+          {
+            id: "violationDescription",
+            label: "Description of the violation",
+            type: "textarea",
+            required: true,
+            showWhen: (d) => d.reason === "curableViolation" || d.reason === "nonCurable",
+          },
+          {
+            id: "leaseClause",
+            label: "Lease clause / paragraph number violated (if known)",
+            type: "text",
+            showWhen: (d) => d.reason === "curableViolation" || d.reason === "nonCurable",
+          },
+          {
+            id: "cureAction",
+            label: "What tenant must do to cure",
+            type: "textarea",
+            showWhen: (d) => d.reason === "curableViolation",
+          },
+          // End of tenancy
+          {
+            id: "tenancyType",
+            label: "Tenancy type",
+            type: "radio",
+            options: [
+              { value: "mtm", label: "Month-to-month" },
+              { value: "fixed", label: "Fixed-term (ending)" },
+            ],
+            showWhen: (d) => d.reason === "endOfTenancy",
+          },
+        ],
+      },
+      {
+        id: "timing",
+        title: "Notice period & deadline",
+        description:
+          "The notice date and vacate-by deadline are computed from the state statutory notice period. You may override the computed date if a longer notice is required by local ordinance or the lease.",
+        fields: [
+          { id: "noticeDate", label: "Date of this notice", type: "date", required: true },
+          {
+            id: "overrideVacateBy",
+            label: "Manually override the computed vacate-by date",
+            type: "checkbox",
+          },
+          {
+            id: "vacateByOverride",
+            label: "Vacate by (manual override)",
+            type: "date",
+            showWhen: (d) => Boolean(d.overrideVacateBy),
+          },
+        ],
+      },
+      {
+        id: "delivery",
+        title: "Delivery & certificate of service",
+        fields: [
+          {
+            id: "serviceMethod",
+            label: "Method of service",
+            type: "radio",
+            required: true,
+            options: [
+              { value: "personal", label: "Personal delivery to tenant" },
+              { value: "postMail", label: "Posted on the door AND mailed by first-class mail" },
+              { value: "certified", label: "Certified mail, return receipt requested" },
+              { value: "substituted", label: "Substituted service (adult at residence)" },
+            ],
+          },
+          { id: "serverName", label: "Name of person serving the notice", type: "text", required: true },
+          { id: "serverSignature", label: "Server signature (typed)", type: "text", required: true },
+          { id: "serverDate", label: "Date served", type: "date", required: true },
+          {
+            id: "certify",
+            label: "I certify the information above is true and correct, and I served this notice as stated.",
+            type: "checkbox",
+            required: true,
+          },
+        ],
+      },
+    ],
+    relatedForms: ["residential-lease", "power-of-attorney"],
   },
 ];
 
