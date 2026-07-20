@@ -1,80 +1,105 @@
-# Find a Lawyer Hub Redesign (/lawyer-near-me)
+## Homepage Redesign Plan
 
-Bring the Lawyer directory up to the same polish tier as the redesigned Forms and Tools hubs, using the shared navy/gold token system. Frontend/presentation only.
+Bring the homepage up to the same premium standard as the Forms, Tools, and Find-a-Lawyer hubs. The current page has strong content but reads as a long stack of similar-weight sections (hero → stats → intro paragraphs → forms → quiz → categories → guides → blog → resources → CTA). First impression feels dense and undifferentiated, and users don't get a clear "what do I do next?" moment above the fold.
 
-## Problems with current page
-- Container is capped at `max-w-4xl` — the page feels narrow and empty next to Forms/Tools hubs.
-- No hero, no search, no trust signals. Just a Badge + H1 + paragraph.
-- Every practice-area card uses the same generic `Users` icon, so nothing scans visually.
-- No entry-point for the two things users actually want: **their location** and **their situation**.
-- No "popular" or "most-searched" shortcuts above the fold.
-- Disclaimer is a plain footer — should be a proper trust strip.
+### Goals
+1. Instant clarity in the hero: who it's for + one prominent search.
+2. Three obvious paths ("I need a tool", "I need a form", "I need a lawyer") within the first screen.
+3. Reduce vertical noise — merge/trim redundant sections.
+4. Reinforce trust signals higher on the page.
+5. Keep everything on-brand (navy/gold, glassmorphism, serif headings, 120% root).
 
-## What we'll build
+---
 
-### 1. New `LawyerDirectoryHero.tsx`
-- Full-width hero card with navy/gold gradient, blur orbs (same style as Forms/Tools hero).
-- H1 "Find the right lawyer, fast" with gold-underlined key phrase.
-- Sub-line about free directory, no signup, attorney-verified.
-- Prominent **practice-area search input** that live-filters the grid below (client-side on `shortTitle`, `title`, `description`).
-- Trust chip row: "12 practice areas", "Free consultations", "Attorney-verified", "50-state coverage".
-- Popular shortcuts: Personal Injury, Car Accident, Workers' Comp, Family Law, Bankruptcy, Employment.
+### 1. New Hero (`HeroBanner` refresh)
+- Navy gradient with subtle gold accent glow.
+- H1 (serif): "Plain-English legal help — free."
+- Sub: one line naming the three product surfaces (tools, forms, lawyers).
+- **Universal search bar** that queries tools + forms + guides in one dropdown (grouped results).
+- 3 shortcut chips under the search: "Popular: Alimony Calculator · W-9 Form · Personal Injury Lawyer".
+- Trust row: "100+ tools · 23 forms · 50-state coverage · No signup".
 
-### 2. New `LawyerSituationTiles.tsx`
-"What happened?" — 6 large tiles that each deep-link to the relevant practice area:
-- I was in an accident → `/lawyer-near-me/car-accident`
-- I was hurt on the job → `/lawyer-near-me/workers-compensation`
-- My claim was denied → `/lawyer-near-me/insurance-dispute`
-- I'm getting divorced → `/lawyer-near-me/family-law`
-- I'm drowning in debt → `/lawyer-near-me/bankruptcy`
-- I was fired or discriminated against → `/lawyer-near-me/employment`
+### 2. Three-Path Picker (new component `HomePathTiles`)
+Directly under hero, three large tiles:
+- **Free Legal Tools** → `/tools` (calculators, checkers, translators)
+- **Fillable Legal Forms** → `/forms` (W-9, NDA, Lease, POA…)
+- **Find a Lawyer** → `/lawyer-near-me` (by state & practice area)
 
-Each tile: icon + plain-English situation + destination hint + arrow.
+Each tile: icon, title, one-line value prop, count badge, hover lift.
 
-### 3. Distinct icon per practice area
-Map each of the 12 slugs to a specific Lucide icon inside the page (no data-model change):
-- personal-injury → HeartPulse
-- car-accident → Car
-- workers-compensation → HardHat
-- employment → Briefcase
-- insurance-dispute → ShieldAlert
-- real-estate → Home
-- family-law → HeartHandshake
-- bankruptcy → Wallet
-- criminal-defense → Gavel
-- immigration → Globe2
-- truck-accident → Truck
-- medical-malpractice → Stethoscope
+### 3. "By Situation" Strip (new component `HomeSituationStrip`)
+Horizontal scroll / grid of intent tiles reusing existing situation taxonomy:
+- I was in an accident · I'm getting divorced · I'm hiring someone · I'm renting a place · I'm starting a business · I'm dealing with debt · I got fired · I need to sign a contract
 
-### 4. Polished practice-area cards
-- Full-width grid: `sm:grid-cols-2 lg:grid-cols-3` (was 2 cols only).
-- Per-card: colored icon tile with gold ring on hover, category eyebrow ("Practice Area"), bold title, description, and a footer row with "Free consultations · No obligation" + "Browse lawyers →".
-- Whole card clickable with focus-visible ring; card lifts on hover.
-- If `relatedPillarPath` exists, show a small secondary "Read the law guide" chip in the footer (opens pillar page in same tab via nested link — implemented as separate `<Link>` so the card link doesn't wrap it).
+Each links directly to the most relevant hub or filtered view.
 
-### 5. State chooser strip
-Below the grid: "Browse lawyers by state" with a clean chip grid of all 50 state abbreviations. Clicking a state routes to `/lawyer-near-me/personal-injury/{state-slug}` (the highest-volume practice area) — this leverages existing routes without new pages.
+### 4. Featured Forms + Popular Tools (merged)
+Replace two separate sections (`FeaturedFormsSection` + `QuizAndPopularToolsSection`) with a **single 2-column "Most used this week" block**:
+- Left: Top 4 forms (W-9, NDA, Lease, POA)
+- Right: Top 4 tools (Alimony, Child Support, Settlement, Jargon Translator)
+- Keep the Legal Health Check quiz but move it to a slim CTA card at the end of this section rather than sharing top billing.
 
-### 6. Trust strip (below results)
-4-column card row matching Forms/Tools hubs:
-- ShieldCheck — "Attorney-verified listings"
-- Sparkles — "Free consultations"
-- Scale — "50-state coverage"
-- Users — "No referral fees"
+### 5. Trust & Editorial Strip
+Compact horizontal band (replaces the long 4-paragraph intro):
+- 4 icons: Attorney-reviewed · Updated to latest revisions · No signup required · 50-state + EU coverage
+- One-sentence editorial pledge with links to `/editorial-standards` and `/about`.
 
-### 7. Rewritten disclaimer
-Keep the legal disclaimer but move it into a soft-bordered muted card so it reads as intentional, not orphaned.
+The full 4-paragraph SEO intro moves lower on the page (before the CTA) so Google still reads it, but users aren't wall-of-text on entry.
 
-## File plan
-- New: `src/components/lawyers/LawyerDirectoryHero.tsx`
-- New: `src/components/lawyers/LawyerSituationTiles.tsx`
-- Edit: `src/pages/LocalLawyersDirectory.tsx` — widen container to `container py-10` (no `max-w-4xl`), compose new sections, keep existing `AdSlot`, `JsonLdGraph`, breadcrumbs, and disclaimer copy.
-- No changes to `src/data/localLawyers.ts`, routes, or JSON-LD structure.
+### 6. Practice-Area Guides
+Keep the existing 8-guide grid but move it right after the Situation Strip since it directly maps to intent. Add subtle icon backgrounds matching the lawyer-directory redesign for visual consistency.
 
-## Scope guardrails
-- Frontend only. No new routes, no backend, no data-model changes.
-- All colors via semantic tokens; no hardcoded hex/utilities.
-- Existing i18n `useLocalizedPath` preserved.
-- Ad slots kept in current positions.
+### 7. Categories Section
+Keep — it's visually strong with the illustrated icons. Tighten heading copy and reduce top/bottom padding by ~30%.
 
-**Highest-impact single change if we do nothing else:** the Hero + per-area icons + situation tiles — that trio alone transforms the "empty page" feeling and gives users an obvious entry point.
+### 8. Latest from the Blog
+Keep as-is (already well-designed). No changes.
+
+### 9. Stats Bar
+Remove the standalone stats bar under the hero (stats are already encoded as trust chips inside the new hero and path tiles). Reclaims ~90px of above-the-fold real estate.
+
+### 10. Final CTA
+Keep the navy CTA band but change copy to a softer prompt: "Not sure where to start? Take the 60-second Legal Health Check" → routes to `/legal-health-check`. This makes the quiz the finishing moment instead of competing with the hero.
+
+---
+
+### Section Order (final)
+```text
+1.  Hero (with universal search)
+2.  Three-Path Picker (Tools / Forms / Lawyers)
+3.  Situation Strip
+4.  Practice-Area Guides
+5.  Most Used This Week (forms + tools merged)
+6.  Categories (illustrated)
+7.  Trust & Editorial strip
+8.  Latest from the Blog
+9.  Long-form SEO intro paragraphs (moved down)
+10. LegalResourcesAndHowItWorks (existing)
+11. Final CTA → Legal Health Check
+```
+
+---
+
+### Files to create
+- `src/components/home/HomePathTiles.tsx`
+- `src/components/home/HomeSituationStrip.tsx`
+- `src/components/home/HomeUniversalSearch.tsx` (used inside HeroBanner)
+- `src/components/home/HomeTrustStrip.tsx`
+- `src/components/home/MostUsedThisWeek.tsx` (replaces FeaturedFormsSection + popular-tools half of QuizAndPopularToolsSection on the homepage)
+
+### Files to update
+- `src/components/home/HeroBanner.tsx` — new copy + integrated search + trust chips
+- `src/pages/HomePage.tsx` — new section order, remove stats bar, move SEO intro
+- Reuse existing `sitePracticeAreas`, `formsSeoLandings`, `tools` data — no new data layer.
+
+### Design tokens
+All colors from existing `--primary`, `--accent`, `--secondary` tokens. No hardcoded hex. Same glassmorphism card treatment used on Forms/Tools/Lawyer hubs. Serif for section H2s, sans for body.
+
+### Out of scope
+- No routing changes, no backend changes, no i18n key removals (new keys added; old keys left in place so translations still work).
+- Blog section untouched.
+- No changes to Navbar/Footer.
+
+---
+
+**Highest-impact single change if we had to ship only one thing:** the hero + three-path picker + situation strip together — because they solve the "where do I go?" problem in the first screen, which is the #1 blocker to Ad-relevant page depth.
