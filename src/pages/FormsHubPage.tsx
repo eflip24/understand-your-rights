@@ -111,7 +111,7 @@ export default function FormsHubPage() {
             <FormPackCard
               key={p.slug}
               pack={p}
-              featured={p.slug === "small-business-basics-pack"}
+              featured={p.slug === "small-business-pack"}
             />
           ))}
         </div>

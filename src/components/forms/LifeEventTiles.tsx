@@ -27,7 +27,7 @@ const EVENTS = [
     icon: Building2,
     title: "Starting a business",
     desc: "LLC agreement, contractor, NDA, bill of sale",
-    to: "/forms/small-business-basics-pack",
+    to: "/forms/small-business-pack",
   },
   {
     icon: HeartHandshake,
