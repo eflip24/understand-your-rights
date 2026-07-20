@@ -1,86 +1,91 @@
-# 4 Form Packs — Bundled Multi-Form Wizards
+## Phase 5 — State-Specific Logic + Advanced Features
 
-Ship four pack pages that reuse the existing wizard/autosave/dashboard/PDF/Stripe foundation. A "pack" is a single wizard that (a) collects shared info once, (b) lets the user toggle which documents to include, (c) generates each selected form's PDF, and (d) offers a free watermarked bundle or a paid clean bundle delivered as a single ZIP.
+Delivered as one implementation pass, but organized in 5 self-contained modules so each can be verified before moving on.
 
-## Missing forms to build first
+---
 
-Several pack members don't exist yet. Ship them as full `LegalFormDef` entries in `src/data/forms.ts` with `renderX` functions in `generateFormPdf.ts` — same pattern as the last two batches.
+### Module A — State engine (foundation)
 
-**New Hire Pack (2 new):** Employment Offer Letter, Direct Deposit Authorization.
-**Landlord Pack (4 new):** Notice to Vacate, Move-In/Move-Out Inspection Checklist, Security Deposit Receipt, Late Rent Notice.
-**Small Business Pack (1 new):** Basic LLC Operating Agreement (single-member + multi-member toggle).
-**Personal Planning Pack (4 new):** Healthcare POA, Simple Will, Living Will / Advance Directive, HIPAA Authorization.
+Create `src/data/stateFormRules.ts` — a single source of truth keyed by USPS state code with priority coverage for **CA, NY, TX, FL, IL, PA, OH** (all 50 fall back to sensible defaults).
 
-Total: **11 new standalone forms** (each also usable individually at `/forms/{slug}`) plus 4 pack wrappers.
+Per state, we store:
+- Lease: max security deposit, deposit-return window, late-fee cap, mandatory disclosures (e.g. CA lead-based paint + bedbug + Megan's Law; NY window guard; TX §92.056 repair notice; FL §83.49 deposit; IL RLTO for Chicago).
+- Eviction: notice periods per cause (non-payment, lease violation, holdover, no-cause) — replaces/extends the current `evictionStateRules.ts`.
+- Notice to vacate: tenant-side notice period by lease type.
+- POA (financial + healthcare): notarization required, witnesses required (count), statutory form warning.
+- Simple Will: witnesses required, self-proving affidavit availability.
+- Bill of Sale: notarization required flag, odometer disclosure requirement.
 
-## Pack architecture
+A reusable `<StateSelector>` step component drops into any form; forms declare `stateAware: true` in `LegalFormDef` and get a state step auto-inserted first. Rule lookups happen at render time so notice periods, clauses, and disclaimers change live.
 
-### New data layer: `src/data/formPacks.ts`
-```ts
-export interface FormPack {
-  slug: string;                    // e.g. "new-hire-pack"
-  title: string;
-  seoDescription: string;
-  priceUsd: number;                // 34, 29, 39, 34
-  members: Array<{
-    formSlug: string;              // links to existing LegalFormDef
-    defaultSelected: boolean;
-    optional?: boolean;            // e.g. Independent Contractor toggle
-  }>;
-  sharedFieldMap: Record<string, string[]>;
-  // e.g. { fullName: ["w4.employeeName","i9.lastName+firstName","offer.employeeName"] }
-  stateSelector?: boolean;         // Landlord pack
-}
-```
-Define four packs with the composition, pricing, and shared-field maps listed in the user prompts.
+Forms upgraded to state-aware in this phase: Residential Lease, Eviction Notice (existing rules merged in), Notice to Vacate, Financial POA, Healthcare POA, Simple Will, Vehicle Bill of Sale, Late Rent Notice.
 
-### Wizard: `src/pages/FormPackWizardPage.tsx`
-Reuses existing wizard primitives. Flow:
-1. **Select documents** — checklist of pack members (respects `optional`).
-2. **Shared info** — one consolidated step group (name, address, SSN/EIN, dates, property, etc. — driven by union of member fields via `sharedFieldMap`).
-3. **Per-form deltas** — only the fields NOT covered by shared info, grouped by form with clear headers.
-4. **Review** — per-form summary + preview.
-5. **Generate** — free (watermarked ZIP) or paid (clean ZIP via existing Stripe flow, pack-level `form_slug`).
+---
 
-Autosave into `form_drafts` under a single row keyed by pack slug (JSONB `data` holds `{ selected: string[], shared: {...}, perForm: {...} }`). Dashboard "My Forms" already lists rows by slug — packs appear alongside individual forms with pack title.
+### Module B — E-signature
 
-### ZIP generation: `src/lib/pdf/generatePackZip.ts`
-Add `jszip` (~30kB gz). For each selected member, call the existing `generateFormPdf(form, mergedData, { watermark })` — merging shared + per-form data — and add the returned Uint8Array to a JSZip instance. Emit `pack-slug.zip`. Include a `README.txt` with disclaimer and per-form official-source links.
+New `<SignaturePad>` component (canvas draw + typed-name fallback + auto-dated) built on `react-signature-canvas`. Adds a final "Sign" step to every form and pack. Captured signature is stored in the draft `data.signature = { dataUrl, typedName, signedAt, ipHash }` and stamped into the PDF signature block by each renderer (already have signature lines — we replace the underline with the image or typed name in a script font).
 
-### Stripe integration
-Extend the existing `create-form-checkout` edge function (or add a thin wrapper) to accept a pack slug and pack price. Success returns to `/forms/{pack-slug}?paid=1`, which unlocks the clean ZIP the same way individual paid PDFs unlock today. `form_purchases.form_slug` stores the pack slug so re-downloads persist.
+Server-side: extend `form_drafts.data` (JSONB, no schema change) — no new column needed. Status transitions to `signed` when a signature is present.
 
-### Routing
-Add route `/forms/:packSlug` handled by `FormPackWizardPage` when the slug matches a `FormPack`; falls through to existing `FormWizardPage` otherwise (via a lookup in `AppRoutes.tsx`).
+---
 
-### SEO / disclaimers
-Each pack page ships Helmet `<title>` and meta description exactly as specified. Strong disclaimer on the pack landing intro + inside the ZIP README. Personal Planning pack shows a stronger notice ("not a substitute for an attorney; witness/notary requirements vary by state").
+### Module C — Document library + version history
 
-## Pack definitions (final)
+**Schema (single migration):**
+- `form_documents` — permanent record of every generated PDF. Columns: `user_id`, `form_slug` (or `pack_slug`), `kind` (`form`|`pack`), `variant` (`watermarked`|`clean`), `status` (`draft`|`completed`|`signed`|`purchased`), `storage_path`, `size_bytes`, `sha256`, `snapshot` (JSONB copy of form data at generation), `version` (int, auto-increment per user+slug), `created_at`. RLS: user-owns-row. Grants to `authenticated` + `service_role`.
+- `documents` storage bucket (private) with RLS on `storage.objects` restricting to `auth.uid()::text` folder prefix.
 
-| Pack | URL | Price | Members |
-|---|---|---|---|
-| New Hire | `/forms/new-hire-pack` | **$34** | W-4, I-9, Offer Letter, Independent Contractor (opt), NDA, Direct Deposit |
-| Landlord Starter | `/forms/landlord-starter-pack` | **$29** | Lease, Eviction Notice, Notice to Vacate, Inspection Checklist, Deposit Receipt, Late Rent Notice |
-| Small Business Basics | `/forms/small-business-pack` | **$39** | IC Agreement, NDA, Bill of Sale, Promissory Note, LLC Operating Agreement, Demand Letter |
-| Personal Planning | `/forms/personal-planning-pack` | **$34** | Financial POA, Healthcare POA, Simple Will, Living Will, HIPAA Auth |
+**Behavior:**
+- Every PDF download (free or paid) is also uploaded to `documents/{user_id}/{slug}/v{n}.pdf` and a `form_documents` row is inserted. Anonymous users still get the download but no row (existing behavior preserved).
+- New `MyDocumentsPage` at `/dashboard/documents` — table with search, status filter, kind filter, re-download button (signed URL, 60 min), and a "Versions" popover showing every prior version with per-version re-download.
+- `DashboardPage` gets a "My Documents" card linking there; existing drafts card stays.
 
-## Homepage / hub integration
-- Add a **"Form Packs — Save with Bundles"** section to `/forms` above the individual-forms grid.
-- Update `FeaturedFormsSection.tsx` to lead with the four packs.
+---
 
-## Guardrails
-- No schema migration — `form_drafts` and `form_purchases` reuse slugs.
-- Every new individual form remains independently accessible at `/forms/{slug}`.
-- Existing paid-PDF Stripe flow is extended, not replaced.
-- Final: `tsgo --noEmit` clean.
+### Module D — PDF hardening + bulk pack download
 
-## Order of build
-1. 11 new individual forms (`forms.ts` + renderers) — biggest chunk.
-2. `formPacks.ts` definitions.
-3. `FormPackWizardPage.tsx` + ZIP builder + Stripe pack pricing.
-4. Route wiring + `/forms` hub bundle section.
-5. Type-check + smoke-test each pack path.
+- Switch clean-variant PDFs to **flattened output** (pdf-lib `form.flatten()` when acroform fields exist; otherwise no-op) so downstream editors can't tamper with fields.
+- Optional password protection on paid variants: user chooses in the review step; we use `pdf-lib`'s encrypt-on-save (via `qpdf-wasm` fallback if pdf-lib version lacks it — implementation detail decided at build time based on installed lib). Off by default.
+- Watermarked/free variants stay unencrypted so free previews remain frictionless.
+- Pack ZIPs already exist; add a "Download all as ZIP" button on the pack review step for both variants and a re-download-ZIP button on the dashboard row.
 
-## Deliverable
-Summary table with the 4 pack URLs, member counts, prices, and any state-conditional logic.
+---
+
+### Module E — Dashboard UX
+
+`DashboardPage` reworked into two cards + one table:
+- **In-progress drafts** (from `form_drafts`) with Resume + progress bar.
+- **My Documents** (from `form_documents`) with search, status pill (Draft / Completed / Signed / Purchased), kind filter (Form / Pack), re-download, versions.
+- Mobile: cards stack; search sticks to top; row actions collapse into a menu.
+
+Strong disclaimers surface in three places: state step ("Rules shown are general — not legal advice"), signature step ("Electronic signatures are valid under ESIGN/UETA in most cases — some documents (wills in some states) require wet signature + witnesses"), and dashboard footer.
+
+---
+
+### Out of scope for Phase 5
+
+Not included so this phase stays shippable: notary integration, multi-party remote signing invitations, custom state coverage beyond the 7 priority states (defaults still apply), Stripe pack-checkout wiring (kept as-is from prior phases).
+
+---
+
+### Technical section
+
+Files touched:
+- `src/data/stateFormRules.ts` — new, replaces the narrow `evictionStateRules.ts` (kept as re-export shim so nothing breaks).
+- `src/data/forms.ts` — add `stateAware?: boolean` to `LegalFormDef`; flag the 8 forms above.
+- `src/components/forms/StateSelector.tsx`, `SignaturePad.tsx` — new.
+- `src/pages/FormWizardPage.tsx`, `FormPackWizardPage.tsx` — inject state step + signature step; pass `stateRules` to renderers.
+- `src/lib/pdf/generateFormPdf.ts` — accept `signature`, `stateRules`, flatten, optional encrypt.
+- `src/lib/pdf/generatePackZip.ts` — pass-through of new options + bulk button hook.
+- `src/lib/documents/uploadDocument.ts` — new; storage + insert.
+- `src/pages/MyDocumentsPage.tsx` — new; route `/dashboard/documents`.
+- `src/pages/DashboardPage.tsx` — restructure.
+- `src/AppRoutes.tsx` — add `/dashboard/documents`.
+- One migration: `form_documents` table + grants + RLS + `documents` storage bucket + object policies.
+- Package add: `react-signature-canvas`.
+
+### Verification
+
+- `tsgo --noEmit` clean.
+- Manual: fill lease with state = CA, confirm deposit clause and disclosures render; switch to TX, confirm they change. Sign, download free PDF, confirm signature image appears. Re-open dashboard, confirm document row + version 1. Regenerate, confirm version 2 with prior version still downloadable. Pack: bulk ZIP works from review and from dashboard.
