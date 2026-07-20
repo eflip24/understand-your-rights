@@ -924,6 +924,7 @@ export const legalForms: LegalFormDef[] = [
   // Residential Lease Agreement
   // ---------------------------------------------------------------------
   {
+    stateAware: true,
     slug: "residential-lease-agreement",
     title: "Free Residential Lease Agreement Template — Landlord & Tenant",
     shortDescription:
