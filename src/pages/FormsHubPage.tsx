@@ -4,9 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Head from "@/components/seo/Head";
 import FormCard from "@/components/forms/FormCard";
+import FormPackCard from "@/components/forms/FormPackCard";
 import FormDisclaimer from "@/components/forms/FormDisclaimer";
 import Breadcrumbs from "@/components/forms/Breadcrumbs";
 import { categoryLabels, legalForms, type FormCategory } from "@/data/forms";
+import { formPacks } from "@/data/formPacks";
 import { useLocalizedPath } from "@/i18n/paths";
 
 const CATEGORIES: (FormCategory | "all")[] = ["all", "employment", "tax", "business", "realestate", "personal"];
