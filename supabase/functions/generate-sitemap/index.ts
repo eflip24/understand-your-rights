@@ -560,6 +560,7 @@ Deno.serve(async (req) => {
   if (type === "guides") return new Response(buildGuides(), { headers: h });
   if (type === "state-guides") return new Response(buildStateGuides(), { headers: h });
   if (type === "lawyers") return new Response(buildLawyers(), { headers: h });
+  if (type === "forms") return new Response(buildForms(), { headers: h });
   if (type === "statutes") return new Response(buildStatutes(), { headers: h });
   if (type === "core-i18n") return new Response(buildCoreI18n(), { headers: h });
   if (type === "tools-i18n") return new Response(buildToolsI18n(), { headers: h });
