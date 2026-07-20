@@ -10,6 +10,8 @@ export interface UploadDocumentArgs {
   title?: string;
   stateCode?: string | null;
   snapshot?: Record<string, unknown>;
+  extension?: string;
+  contentType?: string;
 }
 
 async function sha256Hex(blob: Blob): Promise<string | null> {
@@ -39,12 +41,12 @@ export async function uploadDocument(args: UploadDocumentArgs): Promise<{ id: st
     .maybeSingle();
   const version = (existing?.version ?? 0) + 1;
 
-  const ext = "pdf";
+  const ext = args.extension ?? "pdf";
   const path = `${args.userId}/${args.slug}/v${version}-${args.variant}.${ext}`;
 
   const { error: upErr } = await supabase.storage
     .from("documents")
-    .upload(path, args.blob, { contentType: "application/pdf", upsert: false });
+    .upload(path, args.blob, { contentType: args.contentType ?? "application/pdf", upsert: false });
   if (upErr) {
     console.warn("[uploadDocument] storage error", upErr.message);
     return null;
