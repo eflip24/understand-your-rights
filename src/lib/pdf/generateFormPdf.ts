@@ -42,6 +42,12 @@ export async function generateFormPdf({ form, data, watermark }: GenerateOptions
     renderBillOfSale({ pdfDoc, font, fontBold, data, watermark });
   } else if (form.pdfTemplate === "evictionNotice") {
     renderEvictionNotice({ pdfDoc, font, fontBold, data, watermark });
+  } else if (form.pdfTemplate === "demandLetter") {
+    renderDemandLetter({ pdfDoc, font, fontBold, data, watermark });
+  } else if (form.pdfTemplate === "promissoryNote") {
+    renderPromissoryNote({ pdfDoc, font, fontBold, data, watermark });
+  } else if (form.pdfTemplate === "releaseOfLiability") {
+    renderReleaseOfLiability({ pdfDoc, font, fontBold, data, watermark });
   } else {
     renderGeneric({ pdfDoc, font, fontBold, form, data, watermark });
   }
