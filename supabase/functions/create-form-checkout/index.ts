@@ -89,7 +89,7 @@ Deno.serve(async (req) => {
     const session = await stripe.checkout.sessions.create({
       line_items: [{
         price_data: {
-          currency: "usd",
+          currency: priceEntry.currency,
           product_data: {
             name: priceEntry.title,
             metadata: { form_slug: slug, kind: priceEntry.kind },
