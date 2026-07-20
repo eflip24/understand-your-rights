@@ -87,6 +87,9 @@ export interface LegalFormDef {
   /** Optional short edition tag rendered in the header (e.g. "Rev. March 2024",
    *  "Edition 01/20/25 · Expires 05/31/2027"). */
   edition?: string;
+  /** When true, the wizard renders a StateSelector at the top of the flow and
+   *  the PDF appends a state-specific rules appendix. */
+  stateAware?: boolean;
 }
 
 
