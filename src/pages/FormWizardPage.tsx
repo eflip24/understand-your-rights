@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, lazy, Suspense } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
+import { getPackBySlug } from "@/data/formPacks";
+const FormPackWizardPage = lazy(() => import("@/pages/FormPackWizardPage"));
 import { ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
