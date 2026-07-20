@@ -168,6 +168,57 @@ export type Database = {
         }
         Relationships: []
       }
+      form_documents: {
+        Row: {
+          created_at: string
+          id: string
+          kind: string
+          sha256: string | null
+          size_bytes: number | null
+          slug: string
+          snapshot: Json
+          state_code: string | null
+          status: string
+          storage_path: string
+          title: string | null
+          user_id: string
+          variant: string
+          version: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          kind: string
+          sha256?: string | null
+          size_bytes?: number | null
+          slug: string
+          snapshot?: Json
+          state_code?: string | null
+          status?: string
+          storage_path: string
+          title?: string | null
+          user_id: string
+          variant: string
+          version?: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          kind?: string
+          sha256?: string | null
+          size_bytes?: number | null
+          slug?: string
+          snapshot?: Json
+          state_code?: string | null
+          status?: string
+          storage_path?: string
+          title?: string | null
+          user_id?: string
+          variant?: string
+          version?: number
+        }
+        Relationships: []
+      }
       form_drafts: {
         Row: {
           created_at: string
