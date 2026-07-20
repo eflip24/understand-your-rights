@@ -20,6 +20,8 @@ import { downloadBlob } from "@/lib/pdf/generateFormPdf";
 import { uploadDocument } from "@/lib/documents/uploadDocument";
 import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
+import StripeCheckoutDialog from "@/components/forms/StripeCheckoutDialog";
+import { isPaymentsConfigured } from "@/lib/stripe";
 
 /** Group shared fields by their `group` label into wizard steps. */
 function groupSharedFields(fields: PackSharedField[]): Array<{ title: string; fields: PackSharedField[] }> {
@@ -68,6 +70,7 @@ export default function FormPackWizardPage() {
   const [hasPurchased, setHasPurchased] = useState(false);
   const [busyFree, setBusyFree] = useState(false);
   const [busyClean, setBusyClean] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   useEffect(() => {
     if (!user) { setHasPurchased(false); return; }
@@ -152,11 +155,33 @@ export default function FormPackWizardPage() {
     }
   };
 
+  const refetchPurchase = async () => {
+    if (!user) return;
+    const { data: row } = await supabase
+      .from("form_purchases").select("id").eq("user_id", user.id).eq("form_slug", pack.slug).maybeSingle();
+    if (row) setHasPurchased(true);
+  };
+
   const handleCheckout = () => {
-    toast({
-      title: "Checkout coming soon",
-      description: "Pack payments are being wired up. In the meantime, use the free watermarked ZIP.",
-    });
+    if (!user) {
+      toast({ title: "Sign in required", description: "Create a free account so we can attach the purchase to your dashboard." });
+      return;
+    }
+    if (!isPaymentsConfigured()) {
+      toast({ title: "Payments not yet live", description: "Checkout is being finalized. Please use the free watermarked ZIP for now." });
+      return;
+    }
+    setCheckoutOpen(true);
+  };
+
+  const handleCheckoutClose = () => {
+    setCheckoutOpen(false);
+    let n = 0;
+    const iv = setInterval(async () => {
+      n += 1;
+      await refetchPurchase();
+      if (n >= 6) clearInterval(iv);
+    }, 2000);
   };
 
   const packMembers = getPackFormDefs(pack);
