@@ -51,7 +51,10 @@ export type PdfTemplate =
   | "lease"
   | "poa"
   | "billOfSale"
-  | "evictionNotice";
+  | "evictionNotice"
+  | "demandLetter"
+  | "promissoryNote"
+  | "releaseOfLiability";
 
 export interface LegalFormDef {
   slug: string;
@@ -898,17 +901,17 @@ export const legalForms: LegalFormDef[] = [
         ],
       },
     ],
-    relatedForms: ["w-9", "residential-lease"],
+    relatedForms: ["w-9", "residential-lease-agreement"],
   },
 
   // ---------------------------------------------------------------------
   // Residential Lease Agreement
   // ---------------------------------------------------------------------
   {
-    slug: "residential-lease",
+    slug: "residential-lease-agreement",
     title: "Free Residential Lease Agreement Template — Landlord & Tenant",
     shortDescription:
-      "Create a professional fixed-term or month-to-month residential lease. Automatic rent totals, security deposit tracking, and clear default and termination clauses.",
+      "Create a professional fixed-term or month-to-month residential lease agreement. Automatic rent totals, security deposit tracking, and clear default and termination clauses.",
     category: "realestate",
     price: 14.99,
     lastUpdated: "2026-01-20",
@@ -1170,17 +1173,17 @@ export const legalForms: LegalFormDef[] = [
         ],
       },
     ],
-    relatedForms: ["power-of-attorney", "eviction-notice", "bill-of-sale"],
+    relatedForms: ["power-of-attorney-financial", "eviction-notice", "vehicle-bill-of-sale"],
   },
 
   // ---------------------------------------------------------------------
   // Power of Attorney (Financial)
   // ---------------------------------------------------------------------
   {
-    slug: "power-of-attorney",
-    title: "Free Power of Attorney Form Online — Financial POA Generator",
+    slug: "power-of-attorney-financial",
+    title: "Free Financial Power of Attorney Form — Durable & Springing POA",
     shortDescription:
-      "Appoint a trusted agent to handle your financial affairs. Choose from durable or springing effectiveness, custom powers, and successor agents.",
+      "Appoint a trusted agent to handle your financial affairs. Choose durable or springing effectiveness, custom powers, and a successor agent.",
     category: "personal",
     price: 14.99,
     lastUpdated: "2026-01-20",
@@ -1291,17 +1294,17 @@ export const legalForms: LegalFormDef[] = [
         ],
       },
     ],
-    relatedForms: ["residential-lease", "nda", "bill-of-sale"],
+    relatedForms: ["residential-lease-agreement", "promissoryNote-placeholder", "vehicle-bill-of-sale"],
   },
 
   // ---------------------------------------------------------------------
-  // Bill of Sale (General)
+  // Vehicle Bill of Sale (also works for boats & general property)
   // ---------------------------------------------------------------------
   {
-    slug: "bill-of-sale",
-    title: "Free Bill of Sale Form — Vehicle & General Property",
+    slug: "vehicle-bill-of-sale",
+    title: "Free Vehicle Bill of Sale Template — Car, Boat & General Property",
     shortDescription:
-      "Document the sale of a vehicle, boat, or personal property. Includes odometer disclosure, as-is warranty language, and buyer/seller signatures.",
+      "Document the sale of a vehicle, boat, or personal property. Includes federal odometer disclosure, as-is or limited warranty language, and buyer/seller signatures.",
     category: "personal",
     price: 9.99,
     lastUpdated: "2026-01-20",
