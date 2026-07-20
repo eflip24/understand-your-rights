@@ -104,11 +104,40 @@ export default function FormWizardPage() {
     setStep(Math.min(step + 1, totalSteps - 1));
   };
 
+  const refetchPurchase = async () => {
+    if (!user) return;
+    const { data: row } = await supabase
+      .from("form_purchases").select("id").eq("user_id", user.id).eq("form_slug", slug).maybeSingle();
+    if (row) setHasPurchased(true);
+  };
+
   const handleCheckout = () => {
-    toast({
-      title: "Checkout coming soon",
-      description: "Payments are being wired up. In the meantime, use the free watermarked PDF.",
-    });
+    if (!user) {
+      toast({
+        title: "Sign in required",
+        description: "Create a free account so we can attach the purchase to your dashboard.",
+      });
+      return;
+    }
+    if (!isPaymentsConfigured()) {
+      toast({
+        title: "Payments not yet live",
+        description: "Checkout is being finalized. Please use the free watermarked PDF for now.",
+      });
+      return;
+    }
+    setCheckoutOpen(true);
+  };
+
+  const handleCheckoutClose = () => {
+    setCheckoutOpen(false);
+    // Poll a few times — webhook may take a moment.
+    let n = 0;
+    const iv = setInterval(async () => {
+      n += 1;
+      await refetchPurchase();
+      if (n >= 6) clearInterval(iv);
+    }, 2000);
   };
 
   const related = useMemo(() => {
