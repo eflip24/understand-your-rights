@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Search, ArrowRight, Car, HeartPulse, ShieldCheck, Users, Briefcase, AlertTriangle, Home, Cpu, Wrench, FileText, BarChart3 } from "lucide-react";
+import { ArrowRight, Car, HeartPulse, ShieldCheck, Users, Briefcase, AlertTriangle, Home, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { categories } from "@/data/tools";
 import HeroBanner from "@/components/home/HeroBanner";
-import QuizAndPopularToolsSection from "@/components/home/QuizAndPopularToolsSection";
 import LegalResourcesAndHowItWorks from "@/components/home/LegalResourcesAndHowItWorks";
-import FeaturedFormsSection from "@/components/home/FeaturedFormsSection";
+import HomePathTiles from "@/components/home/HomePathTiles";
+import HomeSituationStrip from "@/components/home/HomeSituationStrip";
+import HomeTrustStrip from "@/components/home/HomeTrustStrip";
+import MostUsedThisWeek from "@/components/home/MostUsedThisWeek";
 import { JsonLdGraph, websiteSchema, organizationSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
@@ -54,13 +56,6 @@ export default function HomePage() {
     { titleKey: "guides.findLawyer.title", descKey: "guides.findLawyer.description", href: "/lawyer-near-me", icon: Users },
   ];
 
-  const stats = [
-    { value: "100+", labelKey: "stats.tools", icon: Wrench },
-    { value: "7", labelKey: "stats.guides", icon: FileText },
-    { value: "50", labelKey: "stats.states", icon: BarChart3 },
-    { value: "6,000+", labelKey: "stats.pages", icon: Search },
-  ];
-
   return (
     <div>
       <Head
@@ -71,73 +66,38 @@ export default function HomePage() {
 
       <HeroBanner />
 
-      {/* Stats Bar */}
-      <section className="border-b bg-secondary/50">
-        <div className="container py-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat) => (
-              <div key={stat.labelKey} className="flex items-center gap-3 justify-center">
-                <stat.icon className="h-5 w-5 text-accent shrink-0" />
-                <div>
-                  <p className="text-2xl font-bold text-foreground">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground">{t(`home:${stat.labelKey}`)}</p>
+      <HomePathTiles />
+
+      <HomeSituationStrip />
+
+      {/* Legal Guides — practice areas */}
+      <section className="container py-14 md:py-16">
+        <div className="text-center mb-10">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-2">{t("home:guides.title")}</h2>
+          <p className="text-muted-foreground">{t("home:guides.subtitle")}</p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {legalGuides.map((guide) => (
+            <Link key={guide.href} to={lp(guide.href)}>
+              <Card className="h-full hover:shadow-lg hover:border-accent/40 transition-all group p-6">
+                <div className="p-2.5 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors w-fit mb-4">
+                  <guide.icon className="h-6 w-6 text-accent" />
                 </div>
-              </div>
-            ))}
-          </div>
+                <h3 className="font-serif font-bold text-lg mb-2">{t(`home:${guide.titleKey}`)}</h3>
+                <p className="text-sm text-muted-foreground">{t(`home:${guide.descKey}`)}</p>
+              </Card>
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* Unique site intro — written so the page carries substantive text
-          even before any tool, card, or AI-translated content loads. */}
-      <section className="container py-12 md:py-14 max-w-4xl">
-        <div className="space-y-5 text-foreground/90 leading-relaxed">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
-            What LegallySpoken actually does for you
-          </h2>
-          <p>
-            LegallySpoken is a free, no-signup library of more than 100 plain-English legal
-            tools and reference guides built for non-lawyers. Instead of selling you a
-            subscription or a downloadable PDF pack, every calculator, contract analyzer,
-            risk checker, deadline calendar, and document generator on this site runs
-            instantly in your browser — and stays free.
-          </p>
-          <p>
-            We cover the everyday legal situations people actually search for: reading a
-            lease before you sign it, working out a personal-injury settlement range,
-            calculating an employment-law deadline, spotting risky clauses in a contract,
-            understanding a small-claims notice, comparing insurance offers, or finding a
-            local attorney. Our state-by-state guides cover all 50 US states, and our
-            European section covers Germany, France, Spain, Italy, and Portugal in each
-            country&apos;s own language.
-          </p>
-          <p>
-            Drafts are produced with AI assistance and then reviewed by a human editor
-            against primary sources (statutes, regulations, agency guidance). We are
-            transparent about that workflow — see our{" "}
-            <Link to={lp("/editorial-standards")} className="text-accent hover:underline">
-              editorial standards
-            </Link>{" "}
-            for exactly how we research, write, review, and update each page, and our{" "}
-            <Link to={lp("/about")} className="text-accent hover:underline">about page</Link>{" "}
-            for who we are.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            LegallySpoken is not a law firm and nothing here is legal advice. Use our tools
-            to get oriented, then talk to a licensed attorney about decisions that matter.
-          </p>
-        </div>
-      </section>
-
-
-      <FeaturedFormsSection />
-      <QuizAndPopularToolsSection />
+      <MostUsedThisWeek />
 
       {/* Categories */}
-      <section className="bg-secondary/50 py-16">
+      <section className="bg-secondary/50 py-14">
         <div className="container">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-2">{t("home:categories.title")}</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-2">{t("home:categories.title")}</h2>
             <p className="text-muted-foreground">{t("home:categories.subtitle")}</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -163,33 +123,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Legal Guides */}
-      <section className="container py-16">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-2">{t("home:guides.title")}</h2>
-          <p className="text-muted-foreground">{t("home:guides.subtitle")}</p>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {legalGuides.map((guide) => (
-            <Link key={guide.href} to={lp(guide.href)}>
-              <Card className="h-full hover:shadow-lg hover:border-accent/30 transition-all group p-6">
-                <div className="p-2.5 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors w-fit mb-4">
-                  <guide.icon className="h-6 w-6 text-accent" />
-                </div>
-                <h3 className="font-serif font-bold text-lg mb-2">{t(`home:${guide.titleKey}`)}</h3>
-                <p className="text-sm text-muted-foreground">{t(`home:${guide.descKey}`)}</p>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <HomeTrustStrip />
 
       {/* Latest from the Blog */}
       {latestPosts.length > 0 && (
         <section className="bg-secondary/50 py-16">
           <div className="container">
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold mb-2">{t("home:blog.title")}</h2>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-2">{t("home:blog.title")}</h2>
               <p className="text-muted-foreground">{t("home:blog.subtitle")}</p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
@@ -232,10 +173,51 @@ export default function HomePage() {
 
       <LegalResourcesAndHowItWorks />
 
+      {/* Long-form SEO intro — moved lower so users hit product surfaces first,
+          but Google still reads the substantive content on the homepage. */}
+      <section className="container py-14 max-w-4xl">
+        <div className="space-y-5 text-foreground/90 leading-relaxed">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+            What LegallySpoken actually does for you
+          </h2>
+          <p>
+            LegallySpoken is a free, no-signup library of more than 100 plain-English legal
+            tools and reference guides built for non-lawyers. Instead of selling you a
+            subscription or a downloadable PDF pack, every calculator, contract analyzer,
+            risk checker, deadline calendar, and document generator on this site runs
+            instantly in your browser — and stays free.
+          </p>
+          <p>
+            We cover the everyday legal situations people actually search for: reading a
+            lease before you sign it, working out a personal-injury settlement range,
+            calculating an employment-law deadline, spotting risky clauses in a contract,
+            understanding a small-claims notice, comparing insurance offers, or finding a
+            local attorney. Our state-by-state guides cover all 50 US states, and our
+            European section covers Germany, France, Spain, Italy, and Portugal in each
+            country&apos;s own language.
+          </p>
+          <p>
+            Drafts are produced with AI assistance and then reviewed by a human editor
+            against primary sources (statutes, regulations, agency guidance). We are
+            transparent about that workflow — see our{" "}
+            <Link to={lp("/editorial-standards")} className="text-accent hover:underline">
+              editorial standards
+            </Link>{" "}
+            for exactly how we research, write, review, and update each page, and our{" "}
+            <Link to={lp("/about")} className="text-accent hover:underline">about page</Link>{" "}
+            for who we are.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            LegallySpoken is not a law firm and nothing here is legal advice. Use our tools
+            to get oriented, then talk to a licensed attorney about decisions that matter.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-primary text-primary-foreground py-16">
         <div className="container text-center">
-          <h2 className="text-3xl font-bold mb-3">{t("home:cta.title")}</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-3">{t("home:cta.title")}</h2>
           <p className="text-primary-foreground/70 mb-6 max-w-lg mx-auto">
             {t("home:cta.subtitle")}
           </p>
