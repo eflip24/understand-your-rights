@@ -2662,6 +2662,12 @@ export const legalForms: LegalFormDef[] = [
   },
 ];
 
+// Batch 5 — European starter pack. Kept in a separate module for clarity;
+// appended here so the existing `legalForms` export includes them.
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+import { euForms } from "./euForms";
+legalForms.push(...euForms);
+
 export const getFormBySlug = (slug: string): LegalFormDef | undefined =>
   legalForms.find((f) => f.slug === slug);
 
