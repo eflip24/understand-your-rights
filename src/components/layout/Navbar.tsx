@@ -140,6 +140,15 @@ export default function Navbar() {
 
             <NavigationMenuItem>
               <Link
+                to={lp("/eu-forms")}
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                EU Forms
+              </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link
                 to={lp("/lawyer-near-me")}
                 className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
@@ -234,6 +243,13 @@ export default function Navbar() {
                     className="px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary"
                   >
                     Forms
+                  </Link>
+                  <Link
+                    to={lp("/eu-forms")}
+                    onClick={() => setMobileOpen(false)}
+                    className="px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary"
+                  >
+                    EU Forms
                   </Link>
                   <Link
                     to={lp("/lawyer-near-me")}

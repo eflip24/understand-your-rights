@@ -1,3 +1,5 @@
+import { euForms } from "./euForms";
+
 export type FormFieldType =
   | "text"
   | "email"
@@ -55,7 +57,8 @@ export type PdfTemplate =
   | "demandLetter"
   | "promissoryNote"
   | "releaseOfLiability"
-  // Generic renderer covers the following (Batch 4 pack forms).
+  // Generic renderer covers the following (Batch 4 pack forms + EU Batch 5).
+  | "generic"
   | "offerLetter"
   | "independentContractor"
   | "directDeposit"
@@ -74,7 +77,7 @@ export interface LegalFormDef {
   title: string;
   shortDescription: string;
   category: FormCategory;
-  price: number; // USD for clean PDF
+  price: number; // USD for clean PDF (EUR for EU forms)
   lastUpdated: string; // ISO date
   isFeatured?: boolean;
   steps: FormStepDef[];
@@ -90,6 +93,10 @@ export interface LegalFormDef {
   /** When true, the wizard renders a StateSelector at the top of the flow and
    *  the PDF appends a state-specific rules appendix. */
   stateAware?: boolean;
+  /** Jurisdiction bucket — controls hub separation. Defaults to "us". */
+  region?: "us" | "eu";
+  /** EU-hub subcategory. Only meaningful when region === "eu". */
+  euCategory?: "gdpr" | "employment" | "consumer" | "business" | "realestate" | "personal" | "tax";
 }
 
 
@@ -2656,6 +2663,9 @@ export const legalForms: LegalFormDef[] = [
     relatedForms: ["healthcare-power-of-attorney", "living-will"],
   },
 ];
+
+// Batch 5 — European starter pack. Appended here so `legalForms` includes them.
+legalForms.push(...euForms);
 
 export const getFormBySlug = (slug: string): LegalFormDef | undefined =>
   legalForms.find((f) => f.slug === slug);

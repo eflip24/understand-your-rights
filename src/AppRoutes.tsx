@@ -102,6 +102,7 @@ const FormStateSeoLandingWrapper = React.lazy(() =>
 );
 const MyDocumentsPage = React.lazy(() => import("@/pages/MyDocumentsPage"));
 const CheckoutReturnPage = React.lazy(() => import("@/pages/CheckoutReturnPage"));
+const EuFormsHubPage = React.lazy(() => import("@/pages/EuFormsHubPage"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
@@ -130,6 +131,9 @@ export default function AppRoutes() {
       <Route path="/forms/demand-letter-online-free" element={<FormSeoLandingWrapper landingSlug="demand-letter-online-free" />} />
       <Route path="/forms/promissory-note-online-free" element={<FormSeoLandingWrapper landingSlug="promissory-note-online-free" />} />
       <Route path="/forms/:slug" element={<FormWizardPage />} />
+      {/* European Forms — kept on a separate URL branch from US /forms. */}
+      <Route path="/eu-forms" element={<EuFormsHubPage />} />
+      <Route path="/eu-forms/:slug" element={<FormWizardPage />} />
       <Route path="/checkout/return" element={<CheckoutReturnPage />} />
       <Route path="/unsubscribe" element={<UnsubscribePage />} />
       <Route path="/legal-terms" element={<LegalTermsDirectory />} />

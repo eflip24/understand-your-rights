@@ -540,12 +540,19 @@ const formSeoLandingSlugs = [
 const formStateFanoutPrefixes = ["eviction-notice","lease-agreement","power-of-attorney","vehicle-bill-of-sale"];
 const formFanoutStates = ["california","new-york","texas","florida","illinois","pennsylvania"];
 
+const euFormSlugs = [
+  "eu-gdpr-dpa","eu-gdpr-consent","eu-employment-contract","eu-rtbf-request",
+  "eu-power-of-attorney","eu-consumer-withdrawal","eu-vat-invoice","eu-nda",
+];
+
 function buildForms(): string {
   const e: string[] = [u(`${SITE}/forms`,"weekly","0.9")];
   for (const s of formSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
   for (const s of formPackSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
   for (const s of formSeoLandingSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.8"));
   for (const p of formStateFanoutPrefixes) for (const st of formFanoutStates) e.push(u(`${SITE}/forms/${p}/${st}`,"monthly","0.7"));
+  e.push(u(`${SITE}/eu-forms`,"weekly","0.9"));
+  for (const s of euFormSlugs) e.push(u(`${SITE}/eu-forms/${s}`,"monthly","0.7"));
   return wrapUrlset(e);
 }
 

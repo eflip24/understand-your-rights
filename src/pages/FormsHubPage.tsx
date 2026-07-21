@@ -35,21 +35,24 @@ export default function FormsHubPage() {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<CatKey>("all");
 
+  // US hub only: filter out EU forms (they live at /eu-forms).
+  const usForms = useMemo(() => legalForms.filter((f) => f.region !== "eu"), []);
+
   const counts = useMemo(() => {
     const c: Record<CatKey, number> = {
-      all: legalForms.length,
+      all: usForms.length,
       employment: 0,
       tax: 0,
       business: 0,
       realestate: 0,
       personal: 0,
     };
-    for (const f of legalForms) c[f.category]++;
+    for (const f of usForms) c[f.category]++;
     return c;
-  }, []);
+  }, [usForms]);
 
   const filtered = useMemo(() => {
-    return legalForms.filter((f) => {
+    return usForms.filter((f) => {
       if (cat !== "all" && f.category !== cat) return false;
       if (q.trim()) {
         const hay = `${f.title} ${f.shortDescription} ${f.slug}`.toLowerCase();
@@ -57,7 +60,7 @@ export default function FormsHubPage() {
       }
       return true;
     });
-  }, [q, cat]);
+  }, [usForms, q, cat]);
 
   return (
     <div className="container max-w-6xl px-4 py-8">
