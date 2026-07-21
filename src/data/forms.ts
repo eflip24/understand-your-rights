@@ -1,3 +1,5 @@
+import { euForms } from "./euForms";
+
 export type FormFieldType =
   | "text"
   | "email"
@@ -2662,10 +2664,7 @@ export const legalForms: LegalFormDef[] = [
   },
 ];
 
-// Batch 5 — European starter pack. Kept in a separate module for clarity;
-// appended here so the existing `legalForms` export includes them.
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-import { euForms } from "./euForms";
+// Batch 5 — European starter pack. Appended here so `legalForms` includes them.
 legalForms.push(...euForms);
 
 export const getFormBySlug = (slug: string): LegalFormDef | undefined =>
