@@ -201,12 +201,20 @@ export default function FormWizardPage() {
         }}
       />
       <Breadcrumbs
-        items={[
-          { label: "Home", href: lp("/") },
-          { label: "Forms", href: lp("/forms") },
-          { label: categoryLabels[form.category] },
-          { label: form.title.split("–")[0].trim() },
-        ]}
+        items={
+          form.region === "eu"
+            ? [
+                { label: "Home", href: lp("/") },
+                { label: "EU Forms", href: lp("/eu-forms") },
+                { label: form.title.split("—")[0].trim() },
+              ]
+            : [
+                { label: "Home", href: lp("/") },
+                { label: "Forms", href: lp("/forms") },
+                { label: categoryLabels[form.category] },
+                { label: form.title.split("–")[0].trim() },
+              ]
+        }
       />
 
       <header className="mb-6">
