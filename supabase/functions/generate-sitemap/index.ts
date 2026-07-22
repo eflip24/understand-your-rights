@@ -543,7 +543,12 @@ const formFanoutStates = ["california","new-york","texas","florida","illinois","
 const euFormSlugs = [
   "eu-gdpr-dpa","eu-gdpr-consent","eu-employment-contract","eu-rtbf-request",
   "eu-power-of-attorney","eu-consumer-withdrawal","eu-vat-invoice","eu-nda",
+  "eu-dsar-request","eu-data-breach-notification","eu-privacy-policy",
+  "eu-freelance-contract","eu-independent-contractor-agreement","eu-director-appointment",
+  "eu-service-agreement","eu-ip-assignment","eu-shareholder-agreement","eu-demand-letter",
+  "eu-consumer-complaint","eu-rental-agreement","eu-simple-will",
 ];
+const euPackSlugs = ["gdpr-pack","employment-pack","business-starter-pack","personal-pack"];
 
 function buildForms(): string {
   const e: string[] = [u(`${SITE}/forms`,"weekly","0.9")];
@@ -553,6 +558,7 @@ function buildForms(): string {
   for (const p of formStateFanoutPrefixes) for (const st of formFanoutStates) e.push(u(`${SITE}/forms/${p}/${st}`,"monthly","0.7"));
   e.push(u(`${SITE}/eu-forms`,"weekly","0.9"));
   for (const s of euFormSlugs) e.push(u(`${SITE}/eu-forms/${s}`,"monthly","0.7"));
+  for (const s of euPackSlugs) e.push(u(`${SITE}/eu-forms/${s}`,"monthly","0.8"));
   return wrapUrlset(e);
 }
 
