@@ -38,7 +38,9 @@ export interface FormPack {
   title: string;
   seoTitle: string;
   seoDescription: string;
-  category: "employment" | "realestate" | "business" | "personal";
+  category: "employment" | "realestate" | "business" | "personal" | "gdpr";
+  /** Region — controls hub placement & wizard breadcrumb. Defaults to "us". */
+  region?: "us" | "eu";
   priceUsd: number;
   savingsCopy: string;
   overview: string;
@@ -226,11 +228,232 @@ const personalPlanningPack: FormPack = {
     "Estate and healthcare documents have strict signing and witnessing requirements that vary by state. This pack is not a substitute for review by a licensed estate-planning attorney.",
 };
 
+// ---------------------------------------------------------------------------
+// EU GDPR & Data Protection Pack — /eu-forms/gdpr-pack
+// ---------------------------------------------------------------------------
+const euGdprPack: FormPack = {
+  slug: "gdpr-pack",
+  title: "EU GDPR & Data Protection Forms Pack",
+  seoTitle: "EU GDPR & Data Protection Forms Pack — DPA, Consent, DSAR, RTBF, Breach & Privacy Policy",
+  seoDescription:
+    "Every GDPR document an EU business needs in one guided wizard: Data Processing Agreement, Consent Form, DSAR, Right to be Forgotten, Breach Notification, and Privacy Policy.",
+  category: "gdpr",
+  region: "eu",
+  priceUsd: 44,
+  savingsCopy: "Six GDPR documents in one pack. Fill shared controller information once.",
+  overview:
+    "The six documents every EU business needs to be GDPR-defensible: DPA for your vendors, a valid Consent Form, a template for handling access requests (DSAR) and erasure requests (RTBF), a Breach Notification ready to send within 72 hours, and a compliant Privacy Policy.",
+  members: [
+    { formSlug: "eu-gdpr-dpa", defaultSelected: true },
+    { formSlug: "eu-gdpr-consent", defaultSelected: true },
+    { formSlug: "eu-privacy-policy", defaultSelected: true },
+    { formSlug: "eu-dsar-request", defaultSelected: true },
+    { formSlug: "eu-rtbf-request", defaultSelected: true },
+    { formSlug: "eu-data-breach-notification", defaultSelected: false, optional: true },
+  ],
+  sharedFields: [
+    { group: "Country", id: "shared_country", label: "Applicable country / jurisdiction", type: "select", required: true,
+      options: [
+        { value: "generic", label: "Generic EU (any member state)" },
+        { value: "DE", label: "Germany" }, { value: "FR", label: "France" }, { value: "ES", label: "Spain" },
+        { value: "IT", label: "Italy" }, { value: "NL", label: "Netherlands" }, { value: "IE", label: "Ireland" },
+        { value: "BE", label: "Belgium" }, { value: "PT", label: "Portugal" }, { value: "PL", label: "Poland" }, { value: "SE", label: "Sweden" },
+      ],
+      distributeTo: [
+        "eu-gdpr-dpa.__euCountry","eu-gdpr-consent.__euCountry","eu-privacy-policy.__euCountry",
+        "eu-dsar-request.__euCountry","eu-rtbf-request.__euCountry","eu-data-breach-notification.__euCountry",
+      ] },
+    { group: "Your organisation", id: "shared_controllerName", label: "Controller / organisation legal name", type: "text", required: true,
+      distributeTo: ["eu-gdpr-dpa.controllerName","eu-gdpr-consent.controllerName","eu-privacy-policy.controllerName","eu-data-breach-notification.controllerName"] },
+    { group: "Your organisation", id: "shared_controllerAddress", label: "Registered address", type: "textarea", required: true,
+      distributeTo: ["eu-gdpr-dpa.controllerAddress","eu-privacy-policy.controllerAddress","eu-data-breach-notification.controllerAddress"] },
+    { group: "Your organisation", id: "shared_privacyContact", label: "Privacy / DPO contact email", type: "email",
+      distributeTo: ["eu-privacy-policy.contactEmail","eu-gdpr-consent.controllerContact"] },
+    { group: "Your organisation", id: "shared_websiteUrl", label: "Website / service URL", type: "text",
+      distributeTo: ["eu-privacy-policy.websiteUrl"] },
+  ],
+  disclaimer:
+    "GDPR compliance depends heavily on your specific processing activities and national implementing law. Use these as starting drafts and have them reviewed by a data-protection lawyer or DPO before use.",
+};
+
+// ---------------------------------------------------------------------------
+// EU Employment & Freelance Pack — /eu-forms/employment-pack
+// ---------------------------------------------------------------------------
+const euEmploymentPack: FormPack = {
+  slug: "employment-pack",
+  title: "EU Employment & Freelance Forms Pack",
+  seoTitle: "EU Employment & Freelance Forms Pack — Contracts, NDA & Director Appointment",
+  seoDescription:
+    "Everything to hire in the EU: employment contract, freelance contract, EU independent contractor agreement, NDA with GDPR clauses, and director appointment letter — one guided wizard.",
+  category: "employment",
+  region: "eu",
+  priceUsd: 39,
+  savingsCopy: "Hire employees, freelancers, contractors and directors. One shared employer profile.",
+  overview:
+    "Five contracts covering the full spectrum of EU engagements — from a permanent employee under Directive 2019/1152 to a genuine self-employed contractor, plus a GDPR-aware NDA and a formal director appointment.",
+  members: [
+    { formSlug: "eu-employment-contract", defaultSelected: true },
+    { formSlug: "eu-freelance-contract", defaultSelected: true },
+    { formSlug: "eu-independent-contractor-agreement", defaultSelected: false, optional: true },
+    { formSlug: "eu-nda", defaultSelected: true },
+    { formSlug: "eu-director-appointment", defaultSelected: false, optional: true },
+  ],
+  sharedFields: [
+    { group: "Country", id: "shared_country", label: "Applicable country / jurisdiction", type: "select", required: true,
+      options: [
+        { value: "generic", label: "Generic EU" }, { value: "DE", label: "Germany" }, { value: "FR", label: "France" },
+        { value: "ES", label: "Spain" }, { value: "IT", label: "Italy" }, { value: "NL", label: "Netherlands" },
+        { value: "IE", label: "Ireland" }, { value: "BE", label: "Belgium" }, { value: "PT", label: "Portugal" },
+        { value: "PL", label: "Poland" }, { value: "SE", label: "Sweden" },
+      ],
+      distributeTo: [
+        "eu-employment-contract.__euCountry","eu-freelance-contract.__euCountry",
+        "eu-independent-contractor-agreement.__euCountry","eu-nda.__euCountry","eu-director-appointment.__euCountry",
+      ] },
+    { group: "Your company (employer / client)", id: "shared_employerName", label: "Company / employer legal name", type: "text", required: true,
+      distributeTo: [
+        "eu-employment-contract.employerName","eu-freelance-contract.clientName",
+        "eu-independent-contractor-agreement.clientName","eu-nda.party1Name","eu-director-appointment.companyName",
+      ] },
+    { group: "Your company (employer / client)", id: "shared_employerAddress", label: "Company address", type: "textarea", required: true,
+      distributeTo: [
+        "eu-employment-contract.employerAddress","eu-freelance-contract.clientAddress",
+        "eu-independent-contractor-agreement.clientAddress","eu-director-appointment.registeredAddress",
+      ] },
+    { group: "Worker (employee / freelancer)", id: "shared_workerName", label: "Worker full name", type: "text", required: true,
+      distributeTo: [
+        "eu-employment-contract.employeeName","eu-freelance-contract.freelancerName",
+        "eu-independent-contractor-agreement.contractorName","eu-nda.party2Name","eu-director-appointment.directorName",
+      ] },
+    { group: "Worker (employee / freelancer)", id: "shared_workerAddress", label: "Worker address", type: "textarea", required: true,
+      distributeTo: [
+        "eu-employment-contract.employeeAddress","eu-freelance-contract.freelancerAddress",
+        "eu-independent-contractor-agreement.contractorAddress","eu-director-appointment.directorAddress",
+      ] },
+    { group: "Engagement", id: "shared_startDate", label: "Start / effective date", type: "date", required: true,
+      distributeTo: [
+        "eu-employment-contract.startDate","eu-freelance-contract.startDate",
+        "eu-independent-contractor-agreement.startDate","eu-director-appointment.appointmentDate","eu-nda.signatoryDate",
+      ] },
+  ],
+  disclaimer:
+    "Employment, self-employment classification, and directors' duties are heavily regulated at national level. Have these reviewed by a local employment or corporate lawyer before signing.",
+};
+
+// ---------------------------------------------------------------------------
+// EU Business Starter Pack — /eu-forms/business-starter-pack
+// ---------------------------------------------------------------------------
+const euBusinessStarterPack: FormPack = {
+  slug: "business-starter-pack",
+  title: "EU Small Business Starter Forms Pack",
+  seoTitle: "EU Small Business Starter Forms Pack — Service Agreement, IP, VAT Invoice, Shareholders & Collection",
+  seoDescription:
+    "Every core document to run a small EU business: service / consulting agreement, IP assignment, VAT invoice, director appointment, basic shareholder agreement, and EU demand letter.",
+  category: "business",
+  region: "eu",
+  priceUsd: 44,
+  savingsCopy: "Six essential EU business templates. One shared business profile.",
+  overview:
+    "The paperwork every EU startup ends up needing: sign consulting clients, assign IP, invoice with VAT, appoint a director, set out shareholder terms, and — when needed — chase down an unpaid invoice under the Late Payment Directive.",
+  members: [
+    { formSlug: "eu-service-agreement", defaultSelected: true },
+    { formSlug: "eu-ip-assignment", defaultSelected: true },
+    { formSlug: "eu-vat-invoice", defaultSelected: true },
+    { formSlug: "eu-director-appointment", defaultSelected: true },
+    { formSlug: "eu-shareholder-agreement", defaultSelected: false, optional: true },
+    { formSlug: "eu-demand-letter", defaultSelected: false, optional: true },
+  ],
+  sharedFields: [
+    { group: "Country", id: "shared_country", label: "Country of establishment", type: "select", required: true,
+      options: [
+        { value: "generic", label: "Generic EU" }, { value: "DE", label: "Germany" }, { value: "FR", label: "France" },
+        { value: "ES", label: "Spain" }, { value: "IT", label: "Italy" }, { value: "NL", label: "Netherlands" },
+        { value: "IE", label: "Ireland" }, { value: "BE", label: "Belgium" }, { value: "PT", label: "Portugal" },
+        { value: "PL", label: "Poland" }, { value: "SE", label: "Sweden" },
+      ],
+      distributeTo: [
+        "eu-service-agreement.__euCountry","eu-ip-assignment.__euCountry","eu-vat-invoice.__euCountry",
+        "eu-director-appointment.__euCountry","eu-shareholder-agreement.__euCountry","eu-demand-letter.__euCountry",
+      ] },
+    { group: "Your business", id: "shared_businessName", label: "Business legal name", type: "text", required: true,
+      distributeTo: [
+        "eu-service-agreement.providerName","eu-ip-assignment.assigneeName","eu-vat-invoice.sellerName",
+        "eu-director-appointment.companyName","eu-shareholder-agreement.companyName","eu-demand-letter.senderName",
+      ] },
+    { group: "Your business", id: "shared_businessAddress", label: "Business address", type: "textarea", required: true,
+      distributeTo: [
+        "eu-service-agreement.providerAddress","eu-ip-assignment.assigneeAddress","eu-vat-invoice.sellerAddress",
+        "eu-director-appointment.registeredAddress","eu-shareholder-agreement.registeredAddress","eu-demand-letter.senderAddress",
+      ] },
+    { group: "Your business", id: "shared_vatNumber", label: "VAT number", type: "text",
+      distributeTo: ["eu-service-agreement.providerVat","eu-vat-invoice.sellerVat","eu-demand-letter.senderVat"] },
+  ],
+  disclaimer:
+    "Company formation, share transfers, IP moral-rights waivers, and VAT rules vary materially between member states. Use these as starting drafts and confirm locally before signing.",
+};
+
+// ---------------------------------------------------------------------------
+// EU Personal & Consumer Pack — /eu-forms/personal-pack
+// ---------------------------------------------------------------------------
+const euPersonalPack: FormPack = {
+  slug: "personal-pack",
+  title: "EU Personal & Consumer Forms Pack",
+  seoTitle: "EU Personal & Consumer Forms Pack — POA, 14-Day Withdrawal, Complaint, Tenancy & Will",
+  seoDescription:
+    "Five personal EU documents in one guided pack: Power of Attorney, 14-day consumer withdrawal, complaint letter, basic rental agreement, and simple will.",
+  category: "personal",
+  region: "eu",
+  priceUsd: 34,
+  savingsCopy: "One shared personal profile fills every document.",
+  overview:
+    "The five documents most EU consumers and residents end up needing at some point: appoint someone to act on your behalf, cancel an online purchase within 14 days, formally complain to a trader, rent a home, and draft a simple will.",
+  members: [
+    { formSlug: "eu-power-of-attorney", defaultSelected: true },
+    { formSlug: "eu-consumer-withdrawal", defaultSelected: true },
+    { formSlug: "eu-consumer-complaint", defaultSelected: true },
+    { formSlug: "eu-rental-agreement", defaultSelected: false, optional: true },
+    { formSlug: "eu-simple-will", defaultSelected: false, optional: true },
+  ],
+  sharedFields: [
+    { group: "Country", id: "shared_country", label: "Country of residence", type: "select", required: true,
+      options: [
+        { value: "generic", label: "Generic EU" }, { value: "DE", label: "Germany" }, { value: "FR", label: "France" },
+        { value: "ES", label: "Spain" }, { value: "IT", label: "Italy" }, { value: "NL", label: "Netherlands" },
+        { value: "IE", label: "Ireland" }, { value: "BE", label: "Belgium" }, { value: "PT", label: "Portugal" },
+        { value: "PL", label: "Poland" }, { value: "SE", label: "Sweden" },
+      ],
+      distributeTo: [
+        "eu-power-of-attorney.__euCountry","eu-consumer-withdrawal.__euCountry",
+        "eu-consumer-complaint.__euCountry","eu-rental-agreement.__euCountry","eu-simple-will.__euCountry",
+      ] },
+    { group: "You", id: "shared_personalName", label: "Your full legal name", type: "text", required: true,
+      distributeTo: [
+        "eu-power-of-attorney.principalName","eu-consumer-withdrawal.consumerName",
+        "eu-consumer-complaint.consumerName","eu-rental-agreement.tenantName","eu-simple-will.testatorName",
+      ] },
+    { group: "You", id: "shared_personalAddress", label: "Your address", type: "textarea", required: true,
+      distributeTo: [
+        "eu-power-of-attorney.principalAddress","eu-consumer-withdrawal.consumerAddress",
+        "eu-consumer-complaint.consumerAddress","eu-simple-will.testatorAddress",
+      ] },
+    { group: "You", id: "shared_personalEmail", label: "Your email", type: "email",
+      distributeTo: ["eu-consumer-complaint.consumerEmail"] },
+    { group: "You", id: "shared_personalDob", label: "Your date of birth", type: "date",
+      distributeTo: ["eu-simple-will.testatorDob"] },
+  ],
+  disclaimer:
+    "Powers of attorney, wills, and residential tenancies are subject to national formalities (notarisation, witnessing, minimum terms). Use as drafts only and finalise with a local notary or lawyer where required.",
+};
+
 export const formPacks: FormPack[] = [
   newHirePack,
   landlordPack,
   smallBusinessPack,
   personalPlanningPack,
+  euGdprPack,
+  euEmploymentPack,
+  euBusinessStarterPack,
+  euPersonalPack,
 ];
 
 export const getPackBySlug = (slug: string): FormPack | undefined =>

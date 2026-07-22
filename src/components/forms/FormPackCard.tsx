@@ -38,7 +38,7 @@ export default function FormPackCard({ pack, featured }: Props) {
 
   return (
     <Link
-      to={lp(`/forms/${pack.slug}`)}
+      to={lp(`${pack.region === "eu" ? "/eu-forms" : "/forms"}/${pack.slug}`)}
       className="group relative flex h-full flex-col rounded-xl border border-accent/30 bg-gradient-to-br from-accent/[0.08] via-background to-background p-5 transition-all hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-lg"
     >
       {featured && (
