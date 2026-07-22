@@ -522,4 +522,751 @@ export const euForms: LegalFormDef[] = [
       },
     ],
   },
+
+  // ------------------------------------------------------------------ 9. DSAR
+  {
+    slug: "eu-dsar-request",
+    title: "Free Data Subject Access Request (DSAR) Letter — GDPR Article 15",
+    shortDescription:
+      "Formal letter to a data controller requesting a copy of all personal data held about you, under Article 15 GDPR.",
+    category: "personal",
+    region: "eu",
+    euCategory: "gdpr",
+    price: 2.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    edition: "GDPR Art. 15",
+    steps: [
+      {
+        id: "requester",
+        title: "Your details",
+        fields: [
+          countryField,
+          { id: "requesterName", label: "Your full name", type: "text", required: true },
+          { id: "requesterEmail", label: "Your email", type: "email", required: true },
+          { id: "requesterAddress", label: "Your postal address", type: "textarea" },
+          { id: "identityRef", label: "Identity reference (customer ID, account number, etc.)", type: "text" },
+        ],
+      },
+      {
+        id: "recipient",
+        title: "Who you're writing to",
+        fields: [
+          { id: "controllerName", label: "Controller / company name", type: "text", required: true },
+          { id: "controllerContact", label: "DPO or privacy contact email", type: "email", required: true },
+        ],
+      },
+      {
+        id: "scope",
+        title: "What you're requesting",
+        note:
+          "Article 15 GDPR gives you the right to: (a) confirmation of processing, (b) a copy of the personal data, (c) purposes, categories, recipients, retention, sources, automated decision-making details, and international transfers. The controller must respond within one month (extendable by two months for complex requests).",
+        fields: [
+          { id: "scopeConfirmation", label: "Confirmation that my data is being processed", type: "checkbox" },
+          { id: "scopeCopy", label: "A copy of all personal data held about me", type: "checkbox" },
+          { id: "scopePurposes", label: "Purposes of processing", type: "checkbox" },
+          { id: "scopeRecipients", label: "Recipients / categories of recipients", type: "checkbox" },
+          { id: "scopeRetention", label: "Retention period or criteria used", type: "checkbox" },
+          { id: "scopeSources", label: "Sources of the data (if not collected from me)", type: "checkbox" },
+          { id: "scopeAutomated", label: "Existence of automated decision-making, including profiling", type: "checkbox" },
+          { id: "scopeTransfers", label: "International data transfers and safeguards", type: "checkbox" },
+          { id: "format", label: "Preferred delivery format", type: "select", required: true, options: [
+            { value: "electronic", label: "Electronic (PDF or structured file)" },
+            { value: "post", label: "Postal mail" },
+          ] },
+          { id: "requestDate", label: "Date of request", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 10. Data Breach Notification
+  {
+    slug: "eu-data-breach-notification",
+    title: "Free GDPR Data Breach Notification Template — Articles 33 & 34",
+    shortDescription:
+      "Notification template for reporting a personal data breach to the supervisory authority (Art. 33) and, where required, to affected data subjects (Art. 34).",
+    category: "business",
+    region: "eu",
+    euCategory: "gdpr",
+    price: 7.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    edition: "GDPR Art. 33 & 34",
+    steps: [
+      {
+        id: "controller",
+        title: "Controller & DPO",
+        fields: [
+          countryField,
+          { id: "controllerName", label: "Controller — legal name", type: "text", required: true },
+          { id: "controllerAddress", label: "Controller — registered address", type: "textarea", required: true },
+          { id: "dpoName", label: "DPO name (or breach point of contact)", type: "text", required: true },
+          { id: "dpoEmail", label: "DPO / breach contact email", type: "email", required: true },
+          { id: "supervisoryAuthority", label: "Lead supervisory authority", type: "text", required: true, placeholder: "e.g. CNIL (France), BfDI (Germany), AEPD (Spain)" },
+        ],
+      },
+      {
+        id: "breach",
+        title: "The breach",
+        note:
+          "Article 33: notify the competent supervisory authority within 72 hours of becoming aware of the breach where feasible. Article 34: additionally notify affected data subjects when the breach is likely to result in a high risk to their rights and freedoms.",
+        fields: [
+          { id: "discoveryDateTime", label: "When did you become aware of the breach?", type: "text", required: true, placeholder: "e.g. 15 March 2026, 14:30 CET" },
+          { id: "incidentDateTime", label: "When did the incident occur (if known)?", type: "text" },
+          { id: "natureOfBreach", label: "Nature of the breach", type: "select", required: true, options: [
+            { value: "confidentiality", label: "Confidentiality — unauthorised disclosure / access" },
+            { value: "integrity", label: "Integrity — unauthorised alteration" },
+            { value: "availability", label: "Availability — accidental / unlawful loss or destruction" },
+            { value: "mixed", label: "Mixed / more than one category" },
+          ] },
+          { id: "description", label: "Description of what happened", type: "textarea", required: true },
+          { id: "dataCategories", label: "Categories of personal data affected", type: "textarea", required: true, placeholder: "e.g. names, emails, hashed passwords, IP addresses" },
+          { id: "dataSubjectCategories", label: "Categories of data subjects affected", type: "textarea", required: true, placeholder: "e.g. customers, employees" },
+          { id: "approximateNumbers", label: "Approximate number of data subjects & records", type: "text", required: true },
+        ],
+      },
+      {
+        id: "consequences",
+        title: "Consequences & measures",
+        fields: [
+          { id: "likelyConsequences", label: "Likely consequences for data subjects", type: "textarea", required: true, placeholder: "e.g. risk of phishing / identity theft" },
+          { id: "measuresTaken", label: "Measures already taken", type: "textarea", required: true, placeholder: "e.g. revoked tokens, forced password reset, patched vulnerability" },
+          { id: "measuresProposed", label: "Measures proposed to mitigate risk", type: "textarea" },
+          { id: "highRisk", label: "Breach likely to result in a HIGH risk to data subjects — notify them under Art. 34?", type: "checkbox" },
+          { id: "communicationMethod", label: "How data subjects will be notified", type: "text", placeholder: "e.g. Email to affected accounts + banner in app" },
+          { id: "notificationDate", label: "Date of notification", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 11. Privacy Policy
+  {
+    slug: "eu-privacy-policy",
+    title: "Free GDPR Privacy Policy Template — Articles 13 & 14",
+    shortDescription:
+      "Basic GDPR-compliant privacy policy covering the Article 13 & 14 disclosures every EU business must publish.",
+    category: "business",
+    region: "eu",
+    euCategory: "gdpr",
+    price: 9.99,
+    lastUpdated: today,
+    isFeatured: true,
+    pdfTemplate: "generic",
+    edition: "GDPR Art. 13 & 14",
+    steps: [
+      {
+        id: "controller",
+        title: "Your organisation",
+        fields: [
+          countryField,
+          { id: "controllerName", label: "Controller / company name", type: "text", required: true },
+          { id: "controllerAddress", label: "Registered address", type: "textarea", required: true },
+          { id: "contactEmail", label: "Privacy contact email", type: "email", required: true },
+          { id: "dpoContact", label: "DPO name & contact (if appointed)", type: "text" },
+          { id: "websiteUrl", label: "Website / service URL", type: "text", required: true },
+        ],
+      },
+      {
+        id: "processing",
+        title: "What data & why",
+        note:
+          "Under Art. 13 GDPR you must disclose: identity & contact of controller, DPO if any, purposes and legal basis for processing, legitimate interests where relied on, recipients, international transfers, retention period, data-subject rights, right to lodge a complaint, and whether provision of data is a statutory / contractual requirement.",
+        fields: [
+          { id: "dataCollected", label: "Personal data you collect", type: "textarea", required: true, placeholder: "e.g. name, email, IP address, order history, cookies" },
+          { id: "purposes", label: "Purposes of processing", type: "textarea", required: true, placeholder: "e.g. account creation, order fulfilment, marketing (with consent), fraud prevention" },
+          { id: "legalBases", label: "Legal bases used (Art. 6)", type: "textarea", required: true, placeholder: "e.g. Contract (Art. 6(1)(b)), Consent (Art. 6(1)(a)), Legitimate interests (Art. 6(1)(f))" },
+          { id: "recipients", label: "Recipients / processors", type: "textarea", placeholder: "e.g. Stripe (payments), AWS (hosting), Google Analytics (analytics)" },
+          { id: "internationalTransfers", label: "Transfers outside the EEA?", type: "select", required: true, options: [
+            { value: "none", label: "None" },
+            { value: "sccs", label: "Yes, under Standard Contractual Clauses" },
+            { value: "adequacy", label: "Yes, to adequacy-decision countries only" },
+          ] },
+          { id: "retentionSummary", label: "Retention periods (summary)", type: "textarea", required: true, placeholder: "e.g. Account data: while the account is active + 12 months. Invoices: 10 years (tax law)." },
+        ],
+      },
+      {
+        id: "rights",
+        title: "Rights, cookies & complaints",
+        fields: [
+          { id: "cookiesUsed", label: "Cookies / tracking used", type: "select", required: true, options: [
+            { value: "essential", label: "Essential only (no consent banner needed)" },
+            { value: "analytics", label: "Essential + analytics (consent required)" },
+            { value: "marketing", label: "Analytics + advertising (consent required)" },
+          ] },
+          { id: "supervisoryAuthority", label: "Supervisory authority (for complaints)", type: "text", required: true, placeholder: "e.g. Commission Nationale de l'Informatique et des Libertés (CNIL)" },
+          { id: "policyEffectiveDate", label: "Effective date", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 12. Freelance Contract
+  {
+    slug: "eu-freelance-contract",
+    title: "Free EU Freelance / Self-Employed Service Contract",
+    shortDescription:
+      "Service contract between a client and a self-employed freelancer in the EU, with clear deliverables, VAT status, and IP terms.",
+    category: "employment",
+    region: "eu",
+    euCategory: "employment",
+    price: 7.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    steps: [
+      {
+        id: "parties",
+        title: "Client & freelancer",
+        fields: [
+          countryField,
+          { id: "clientName", label: "Client legal name", type: "text", required: true },
+          { id: "clientAddress", label: "Client address", type: "textarea", required: true },
+          { id: "clientVat", label: "Client VAT number (if applicable)", type: "text" },
+          { id: "freelancerName", label: "Freelancer legal name", type: "text", required: true },
+          { id: "freelancerAddress", label: "Freelancer address", type: "textarea", required: true },
+          { id: "freelancerVat", label: "Freelancer VAT number (if applicable)", type: "text" },
+        ],
+      },
+      {
+        id: "scope",
+        title: "Scope & deliverables",
+        note:
+          "Freelance contracts must clearly establish independence — no fixed hours, no exclusive relationship, freelancer supplies own tools and works for other clients — to avoid re-classification as employment (false self-employment / disguised employment) under EU and national labour law.",
+        fields: [
+          { id: "services", label: "Services to be provided", type: "textarea", required: true },
+          { id: "deliverables", label: "Deliverables / milestones", type: "textarea", required: true },
+          { id: "startDate", label: "Start date", type: "date", required: true },
+          { id: "endDate", label: "End date or 'until completion'", type: "text" },
+        ],
+      },
+      {
+        id: "fees",
+        title: "Fees & IP",
+        fields: [
+          { id: "feeAmount", label: "Fee amount", type: "number", required: true },
+          { id: "feeCurrency", label: "Currency", type: "select", required: true, options: [
+            { value: "EUR", label: "EUR (€)" }, { value: "GBP", label: "GBP (£)" }, { value: "USD", label: "USD" },
+          ] },
+          { id: "feeStructure", label: "Fee structure", type: "select", required: true, options: [
+            { value: "fixed", label: "Fixed total fee" },
+            { value: "hourly", label: "Hourly rate" },
+            { value: "milestone", label: "Milestone-based" },
+          ] },
+          { id: "vatHandling", label: "VAT handling", type: "select", required: true, options: [
+            { value: "add", label: "VAT added at applicable local rate" },
+            { value: "reverse", label: "Reverse charge (intra-EU B2B under Art. 196)" },
+            { value: "exempt", label: "Not VAT-registered / exempt" },
+          ] },
+          { id: "paymentTerms", label: "Payment terms", type: "text", placeholder: "e.g. Net 30 by bank transfer" },
+          { id: "ipOwnership", label: "IP ownership on delivery", type: "select", required: true, options: [
+            { value: "client", label: "Assigned to client on full payment" },
+            { value: "license", label: "Freelancer retains ownership; client gets a non-exclusive licence" },
+          ] },
+          { id: "signDate", label: "Effective date", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 13. Independent Contractor Agreement (EU)
+  {
+    slug: "eu-independent-contractor-agreement",
+    title: "Free EU Independent Contractor Agreement Template",
+    shortDescription:
+      "Contractor agreement drafted around EU false-self-employment criteria (autonomy, own tools, no integration into workforce, multiple clients).",
+    category: "employment",
+    region: "eu",
+    euCategory: "employment",
+    price: 8.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    steps: [
+      {
+        id: "parties",
+        title: "The parties",
+        fields: [
+          countryField,
+          { id: "clientName", label: "Client legal name", type: "text", required: true },
+          { id: "clientAddress", label: "Client address", type: "textarea", required: true },
+          { id: "contractorName", label: "Contractor legal name", type: "text", required: true },
+          { id: "contractorAddress", label: "Contractor address", type: "textarea", required: true },
+          { id: "contractorRegistration", label: "Contractor business registration / VAT number", type: "text" },
+        ],
+      },
+      {
+        id: "relationship",
+        title: "Independence factors",
+        note:
+          "Genuinely self-employed contractors: work autonomously, use their own equipment, are free to accept other clients, are not integrated into the client's workforce, and bear financial risk. This section documents each factor to reduce re-classification risk.",
+        fields: [
+          { id: "ownEquipment", label: "Contractor provides own tools & equipment", type: "checkbox" },
+          { id: "worksForOthers", label: "Contractor is free to work for other clients", type: "checkbox" },
+          { id: "noFixedHours", label: "No fixed working hours — contractor sets own schedule", type: "checkbox" },
+          { id: "canSubcontract", label: "Contractor may subcontract or use substitutes", type: "checkbox" },
+          { id: "bearsRisk", label: "Contractor bears financial risk (rectification / warranty)", type: "checkbox" },
+        ],
+      },
+      {
+        id: "scope",
+        title: "Scope, fee & IP",
+        fields: [
+          { id: "services", label: "Services / deliverables", type: "textarea", required: true },
+          { id: "startDate", label: "Start date", type: "date", required: true },
+          { id: "term", label: "Term / expected completion", type: "text", required: true },
+          { id: "feeAmount", label: "Fee (with currency)", type: "text", required: true, placeholder: "e.g. €5,000 fixed, or €80/hour" },
+          { id: "expenses", label: "Expenses policy", type: "select", required: true, options: [
+            { value: "included", label: "Included in fee" },
+            { value: "preapproved", label: "Pre-approved expenses reimbursed at cost" },
+          ] },
+          { id: "ipAssignment", label: "All work-product IP is assigned to the client on payment", type: "checkbox" },
+          { id: "signDate", label: "Signature date", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 14. Director Appointment Letter
+  {
+    slug: "eu-director-appointment",
+    title: "Free EU Company Director Appointment Letter",
+    shortDescription:
+      "Formal letter appointing a company director, setting out role, powers, remuneration, and duties under national company law.",
+    category: "business",
+    region: "eu",
+    euCategory: "business",
+    price: 6.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    steps: [
+      {
+        id: "company",
+        title: "Company",
+        fields: [
+          countryField,
+          { id: "companyName", label: "Company legal name", type: "text", required: true },
+          { id: "companyRegistration", label: "Company registration number", type: "text", required: true },
+          { id: "registeredAddress", label: "Registered address", type: "textarea", required: true },
+        ],
+      },
+      {
+        id: "director",
+        title: "Director",
+        fields: [
+          { id: "directorName", label: "Director full name", type: "text", required: true },
+          { id: "directorAddress", label: "Director address", type: "textarea", required: true },
+          { id: "directorNationality", label: "Nationality", type: "text" },
+          { id: "directorDob", label: "Date of birth", type: "date" },
+        ],
+      },
+      {
+        id: "role",
+        title: "Role & terms",
+        note:
+          "Directors owe statutory duties under national company law (e.g. §93 AktG in Germany, s. 172-177 Companies Act in Ireland, Art. L. 225-251 Code de commerce in France). This letter records the appointment; the actual duties come from statute.",
+        fields: [
+          { id: "roleTitle", label: "Role title", type: "select", required: true, options: [
+            { value: "director", label: "Director" },
+            { value: "managing", label: "Managing Director" },
+            { value: "executive", label: "Executive Director" },
+            { value: "nonexec", label: "Non-Executive Director" },
+          ] },
+          { id: "appointmentDate", label: "Effective appointment date", type: "date", required: true },
+          { id: "term", label: "Term of appointment", type: "text", required: true, placeholder: "e.g. Indefinite / 3 years / until removed by shareholders" },
+          { id: "remuneration", label: "Remuneration", type: "text", placeholder: "e.g. €0 (uncompensated) or €X per year" },
+          { id: "keyPowers", label: "Key powers granted", type: "textarea", placeholder: "e.g. Sign banking documents, represent the company externally, hire staff up to €X" },
+          { id: "insuranceCover", label: "D&O insurance in place?", type: "checkbox" },
+          { id: "signatoryDate", label: "Signature date", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 15. Service / Consulting Agreement
+  {
+    slug: "eu-service-agreement",
+    title: "Free EU Service / Consulting Agreement Template",
+    shortDescription:
+      "General-purpose B2B service or consulting agreement for EU businesses, with SOW, fees, VAT, and limitation of liability.",
+    category: "business",
+    region: "eu",
+    euCategory: "business",
+    price: 7.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    steps: [
+      {
+        id: "parties",
+        title: "The parties",
+        fields: [
+          countryField,
+          { id: "providerName", label: "Provider (consultant) — legal name", type: "text", required: true },
+          { id: "providerAddress", label: "Provider address", type: "textarea", required: true },
+          { id: "providerVat", label: "Provider VAT number", type: "text" },
+          { id: "clientName", label: "Client — legal name", type: "text", required: true },
+          { id: "clientAddress", label: "Client address", type: "textarea", required: true },
+          { id: "clientVat", label: "Client VAT number", type: "text" },
+        ],
+      },
+      {
+        id: "sow",
+        title: "Statement of work",
+        fields: [
+          { id: "servicesDescription", label: "Services to be provided", type: "textarea", required: true },
+          { id: "deliverables", label: "Deliverables", type: "textarea" },
+          { id: "kpis", label: "Acceptance criteria / KPIs", type: "textarea" },
+          { id: "startDate", label: "Start date", type: "date", required: true },
+          { id: "endDate", label: "End date or 'until completion'", type: "text" },
+        ],
+      },
+      {
+        id: "commercial",
+        title: "Fees, IP & liability",
+        note:
+          "Under Directive 2011/7/EU on combating late payment in commercial transactions, B2B payment terms should not exceed 60 days unless expressly agreed and not grossly unfair. Statutory late-payment interest applies (ECB reference + 8 percentage points).",
+        fields: [
+          { id: "fees", label: "Fees & rate", type: "text", required: true, placeholder: "e.g. €150/hour or €10,000 fixed" },
+          { id: "paymentTerms", label: "Payment terms", type: "text", required: true, placeholder: "e.g. Net 30 days" },
+          { id: "vatHandling", label: "VAT handling", type: "select", required: true, options: [
+            { value: "add", label: "VAT added at applicable rate" },
+            { value: "reverse", label: "Reverse charge (Art. 196 VAT Directive)" },
+            { value: "exempt", label: "Not VAT-registered / exempt" },
+          ] },
+          { id: "ipTerms", label: "IP terms", type: "select", required: true, options: [
+            { value: "clientOwns", label: "All work product assigned to client on payment" },
+            { value: "providerOwns", label: "Provider retains IP; client gets a non-exclusive licence" },
+          ] },
+          { id: "liabilityCap", label: "Liability cap (typically fees paid in the prior 12 months)", type: "text", placeholder: "e.g. Fees paid in prior 12 months" },
+          { id: "governingLaw", label: "Governing law", type: "text", required: true },
+          { id: "signDate", label: "Effective date", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 16. IP Assignment
+  {
+    slug: "eu-ip-assignment",
+    title: "Free EU IP Assignment Agreement Template",
+    shortDescription:
+      "Full assignment of intellectual property (copyright, related rights, database rights) from an author or contractor to a company, with a moral-rights waiver where permitted.",
+    category: "business",
+    region: "eu",
+    euCategory: "business",
+    price: 6.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    steps: [
+      {
+        id: "parties",
+        title: "The parties",
+        fields: [
+          countryField,
+          { id: "assignorName", label: "Assignor (author / contractor) name", type: "text", required: true },
+          { id: "assignorAddress", label: "Assignor address", type: "textarea", required: true },
+          { id: "assigneeName", label: "Assignee (company) legal name", type: "text", required: true },
+          { id: "assigneeAddress", label: "Assignee registered address", type: "textarea", required: true },
+        ],
+      },
+      {
+        id: "work",
+        title: "Assigned work & rights",
+        note:
+          "Moral rights (paternity, integrity) are inalienable in France, Germany and most EU civil-law jurisdictions — they cannot be transferred and often cannot be waived. Include a waiver clause but note it may be unenforceable in some member states.",
+        fields: [
+          { id: "workDescription", label: "Description of the work assigned", type: "textarea", required: true, placeholder: "e.g. All code, designs and documentation created for Project X between 1 Jan and 30 Jun 2026" },
+          { id: "rightsIncluded", label: "Rights included", type: "textarea", required: true, placeholder: "e.g. copyright, database rights, related rights, all trademarks, know-how" },
+          { id: "consideration", label: "Consideration (payment for the assignment)", type: "text", required: true, placeholder: "e.g. €5,000, or 'included in service fee under agreement dated …'" },
+          { id: "moralRightsWaiver", label: "Include moral-rights waiver (where permitted)", type: "checkbox" },
+          { id: "warrantyOriginal", label: "Assignor warrants the work is original and free of third-party claims", type: "checkbox" },
+          { id: "signDate", label: "Effective date", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 17. Basic Shareholder Agreement
+  {
+    slug: "eu-shareholder-agreement",
+    title: "Free EU Basic Shareholder Agreement Template",
+    shortDescription:
+      "Simple shareholder agreement for a private EU company, covering share ownership, transfer restrictions, and basic decision-making.",
+    category: "business",
+    region: "eu",
+    euCategory: "business",
+    price: 12.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    steps: [
+      {
+        id: "company",
+        title: "The company",
+        fields: [
+          countryField,
+          { id: "companyName", label: "Company legal name", type: "text", required: true },
+          { id: "companyForm", label: "Legal form", type: "select", required: true, options: [
+            { value: "gmbh", label: "GmbH (Germany)" }, { value: "sarl", label: "SARL / SAS (France)" },
+            { value: "sl", label: "SL / SRL (Spain / Italy)" }, { value: "bv", label: "BV (Netherlands)" },
+            { value: "ltd", label: "Ltd (Ireland)" }, { value: "other", label: "Other" },
+          ] },
+          { id: "registeredAddress", label: "Registered address", type: "textarea", required: true },
+          { id: "shareCapital", label: "Share capital", type: "text", required: true, placeholder: "e.g. €25,000 divided into 25,000 shares" },
+        ],
+      },
+      {
+        id: "shareholders",
+        title: "Shareholders",
+        fields: [
+          { id: "shareholder1Name", label: "Shareholder 1 name", type: "text", required: true },
+          { id: "shareholder1Percent", label: "Shareholder 1 % holding", type: "number", required: true },
+          { id: "shareholder2Name", label: "Shareholder 2 name", type: "text" },
+          { id: "shareholder2Percent", label: "Shareholder 2 % holding", type: "number" },
+          { id: "shareholder3Name", label: "Shareholder 3 name (optional)", type: "text" },
+          { id: "shareholder3Percent", label: "Shareholder 3 % holding", type: "number" },
+        ],
+      },
+      {
+        id: "governance",
+        title: "Governance & transfers",
+        note:
+          "This template is a simple starting point. A private-company shareholder agreement usually needs local review — statutory pre-emption, drag/tag rights and quorum rules vary materially between GmbH, SARL, SL, BV and Ltd companies.",
+        fields: [
+          { id: "boardComposition", label: "Board composition", type: "text", required: true, placeholder: "e.g. 2 directors — one nominated by each majority shareholder group" },
+          { id: "reservedMatters", label: "Reserved matters (require unanimous / supermajority approval)", type: "textarea", placeholder: "e.g. Issuing new shares, taking on debt over €X, changing the business, selling the company" },
+          { id: "preEmption", label: "Include pre-emption rights on share transfers", type: "checkbox" },
+          { id: "tagAlong", label: "Include tag-along right for minority shareholders", type: "checkbox" },
+          { id: "dragAlong", label: "Include drag-along right (majority can force a sale)", type: "checkbox" },
+          { id: "governingLaw", label: "Governing law", type: "text", required: true },
+          { id: "signDate", label: "Effective date", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 18. EU Demand Letter
+  {
+    slug: "eu-demand-letter",
+    title: "Free EU Demand / Collection Letter — Late Payment Directive 2011/7/EU",
+    shortDescription:
+      "Formal demand letter to recover an unpaid invoice, invoking statutory late-payment interest and recovery costs under Directive 2011/7/EU.",
+    category: "business",
+    region: "eu",
+    euCategory: "business",
+    price: 4.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    edition: "Directive 2011/7/EU",
+    steps: [
+      {
+        id: "sender",
+        title: "You (the creditor)",
+        fields: [
+          countryField,
+          { id: "senderName", label: "Your business name", type: "text", required: true },
+          { id: "senderAddress", label: "Your address", type: "textarea", required: true },
+          { id: "senderVat", label: "Your VAT number", type: "text" },
+        ],
+      },
+      {
+        id: "debtor",
+        title: "Debtor",
+        fields: [
+          { id: "debtorName", label: "Debtor legal name", type: "text", required: true },
+          { id: "debtorAddress", label: "Debtor address", type: "textarea", required: true },
+        ],
+      },
+      {
+        id: "debt",
+        title: "The debt",
+        note:
+          "Directive 2011/7/EU (transposed into national law across the EU) grants automatic statutory late-payment interest on B2B debts after the payment deadline, plus a flat €40 recovery-cost lump sum and reasonable further recovery costs.",
+        fields: [
+          { id: "invoiceNumber", label: "Invoice number", type: "text", required: true },
+          { id: "invoiceDate", label: "Invoice date", type: "date", required: true },
+          { id: "dueDate", label: "Original due date", type: "date", required: true },
+          { id: "amountDue", label: "Amount due", type: "number", required: true },
+          { id: "currency", label: "Currency", type: "select", required: true, options: [
+            { value: "EUR", label: "EUR (€)" }, { value: "GBP", label: "GBP (£)" }, { value: "SEK", label: "SEK" }, { value: "PLN", label: "PLN" },
+          ] },
+          { id: "servicesGoods", label: "What the invoice was for", type: "textarea", required: true },
+          { id: "priorReminders", label: "Prior reminders sent (dates)", type: "text" },
+          { id: "paymentDeadlineDays", label: "Payment deadline (days from this letter)", type: "number", required: true, placeholder: "e.g. 14" },
+          { id: "claimInterest", label: "Claim statutory late-payment interest", type: "checkbox" },
+          { id: "claimRecoveryCosts", label: "Claim €40 lump-sum recovery cost (Art. 6)", type: "checkbox" },
+          { id: "letterDate", label: "Letter date", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 19. Consumer Complaint Letter
+  {
+    slug: "eu-consumer-complaint",
+    title: "Free EU Consumer Complaint Letter Template",
+    shortDescription:
+      "Formal complaint letter to a trader relying on the EU Consumer Rights Directive (2011/83/EU) and the Sale of Goods Directive (2019/771).",
+    category: "personal",
+    region: "eu",
+    euCategory: "consumer",
+    price: 2.49,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    steps: [
+      {
+        id: "consumer",
+        title: "You (the consumer)",
+        fields: [
+          countryField,
+          { id: "consumerName", label: "Your full name", type: "text", required: true },
+          { id: "consumerAddress", label: "Your address", type: "textarea", required: true },
+          { id: "consumerEmail", label: "Your email", type: "email", required: true },
+        ],
+      },
+      {
+        id: "trader",
+        title: "Trader",
+        fields: [
+          { id: "traderName", label: "Trader legal name", type: "text", required: true },
+          { id: "traderAddress", label: "Trader address", type: "textarea", required: true },
+          { id: "traderEmail", label: "Trader email", type: "email" },
+        ],
+      },
+      {
+        id: "complaint",
+        title: "The complaint",
+        note:
+          "Directive 2019/771 gives EU consumers a 2-year legal guarantee (some countries longer) covering goods that are not in conformity at delivery. Remedies (Art. 13): repair or replacement first, then price reduction or termination. Every EU country also offers an ADR body and the EU Online Dispute Resolution platform (ec.europa.eu/consumers/odr) for online purchases.",
+        fields: [
+          { id: "orderRef", label: "Order / contract reference", type: "text", required: true },
+          { id: "purchaseDate", label: "Date of purchase", type: "date", required: true },
+          { id: "itemDescription", label: "Product / service", type: "textarea", required: true },
+          { id: "amountPaid", label: "Amount paid", type: "text", required: true },
+          { id: "problem", label: "Description of the problem", type: "textarea", required: true },
+          { id: "remedyRequested", label: "Remedy requested", type: "select", required: true, options: [
+            { value: "repair", label: "Repair" },
+            { value: "replacement", label: "Replacement" },
+            { value: "reduction", label: "Price reduction" },
+            { value: "refund", label: "Full refund / contract termination" },
+          ] },
+          { id: "deadlineDays", label: "Deadline for trader response (days)", type: "number", required: true, placeholder: "e.g. 14" },
+          { id: "letterDate", label: "Letter date", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 20. EU Rental Agreement
+  {
+    slug: "eu-rental-agreement",
+    title: "Free Basic EU Rental / Tenancy Agreement Template",
+    shortDescription:
+      "Simple residential tenancy agreement for EU landlords and tenants. National tenancy laws override — always check local minimum-term and deposit rules.",
+    category: "realestate",
+    region: "eu",
+    euCategory: "realestate",
+    price: 8.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    steps: [
+      {
+        id: "parties",
+        title: "Landlord & tenant",
+        fields: [
+          countryField,
+          { id: "landlordName", label: "Landlord name", type: "text", required: true },
+          { id: "landlordAddress", label: "Landlord address", type: "textarea", required: true },
+          { id: "tenantName", label: "Tenant name(s)", type: "text", required: true },
+          { id: "tenantAddress", label: "Tenant current address", type: "textarea" },
+        ],
+      },
+      {
+        id: "property",
+        title: "The property",
+        note:
+          "National tenancy rules override this template. Germany's Mietrecht, France's Loi ALUR, Spain's LAU, Italy's Legge 431/1998, and the Netherlands' Huurrecht each impose minimum terms, notice periods, and deposit caps. Never sign a foreign-language template without local review.",
+        fields: [
+          { id: "propertyAddress", label: "Rental property address", type: "textarea", required: true },
+          { id: "propertyType", label: "Property type", type: "select", required: true, options: [
+            { value: "apartment", label: "Apartment" },
+            { value: "house", label: "House" },
+            { value: "room", label: "Room in shared property" },
+          ] },
+          { id: "furnished", label: "Furnished?", type: "select", required: true, options: [
+            { value: "furnished", label: "Furnished" },
+            { value: "part", label: "Part-furnished" },
+            { value: "unfurnished", label: "Unfurnished" },
+          ] },
+        ],
+      },
+      {
+        id: "terms",
+        title: "Term, rent & deposit",
+        fields: [
+          { id: "startDate", label: "Start date", type: "date", required: true },
+          { id: "termLength", label: "Term length", type: "text", required: true, placeholder: "e.g. 12 months, or open-ended (unbefristet)" },
+          { id: "noticePeriod", label: "Notice period", type: "text", required: true, placeholder: "e.g. 3 months" },
+          { id: "monthlyRent", label: "Monthly rent", type: "number", required: true },
+          { id: "currency", label: "Currency", type: "select", required: true, options: [
+            { value: "EUR", label: "EUR (€)" }, { value: "GBP", label: "GBP (£)" }, { value: "SEK", label: "SEK" }, { value: "PLN", label: "PLN" },
+          ] },
+          { id: "rentDueDay", label: "Rent due day of month", type: "number", placeholder: "e.g. 1" },
+          { id: "depositAmount", label: "Security deposit (typically 1-3 months' rent)", type: "number" },
+          { id: "utilitiesIncluded", label: "Utilities included in rent?", type: "textarea", placeholder: "e.g. Water & heating included; electricity billed separately" },
+          { id: "signDate", label: "Signature date", type: "date", required: true },
+        ],
+      },
+    ],
+  },
+
+  // ------------------------------------------------------------------ 21. Simple Will
+  {
+    slug: "eu-simple-will",
+    title: "Free Basic EU Simple Will Template",
+    shortDescription:
+      "A starting-point simple will for EU residents. Formalities vary sharply by country — always finalise with a notary where required.",
+    category: "personal",
+    region: "eu",
+    euCategory: "personal",
+    price: 9.99,
+    lastUpdated: today,
+    pdfTemplate: "generic",
+    steps: [
+      {
+        id: "testator",
+        title: "You (the testator)",
+        fields: [
+          countryField,
+          { id: "testatorName", label: "Your full legal name", type: "text", required: true },
+          { id: "testatorAddress", label: "Your address", type: "textarea", required: true },
+          { id: "testatorDob", label: "Date of birth", type: "date", required: true },
+          { id: "testatorNationality", label: "Nationality", type: "text", required: true },
+        ],
+      },
+      {
+        id: "family",
+        title: "Family & executor",
+        note:
+          "EU Regulation 650/2012 (Brussels IV) lets you choose the law of your nationality to govern your succession. Most civil-law countries (France, Germany, Spain, Italy) enforce 'forced heirship' — a fixed share must go to children and sometimes spouse. This template is a starting draft only; wills should be notarised or holographic under local law.",
+        fields: [
+          { id: "spouseName", label: "Spouse / partner name (if any)", type: "text" },
+          { id: "childrenNames", label: "Children (names & dates of birth)", type: "textarea" },
+          { id: "executorName", label: "Executor full name", type: "text", required: true },
+          { id: "executorAddress", label: "Executor address", type: "textarea", required: true },
+          { id: "alternateExecutorName", label: "Alternate executor", type: "text" },
+        ],
+      },
+      {
+        id: "bequests",
+        title: "Bequests & residuary estate",
+        fields: [
+          { id: "specificBequests", label: "Specific bequests (item / cash amount to named person)", type: "textarea", placeholder: "e.g. €10,000 to my brother John Smith. My gold watch to my daughter Anna." },
+          { id: "residuaryBeneficiary", label: "Residuary beneficiary (who inherits everything else)", type: "text", required: true },
+          { id: "residuaryAlternate", label: "Alternate residuary beneficiary", type: "text" },
+          { id: "guardianMinorChildren", label: "Guardian for minor children (if applicable)", type: "text" },
+          { id: "chosenSuccessionLaw", label: "Chosen law of succession (usually nationality — Brussels IV)", type: "text" },
+          { id: "signDate", label: "Date of will", type: "date", required: true },
+        ],
+      },
+    ],
+  },
 ];

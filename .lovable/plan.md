@@ -1,70 +1,83 @@
-# EU Forms + Internal Linking & SEO Plan
 
-Two-phase build: ship the cross-cutting linking/SEO layer first (benefits all existing US forms immediately), then launch the EU Forms section with Batch 5.
+## EU Form Packs — 4 bundled wizards
 
-## Phase 1 — Internal Linking + SEO Foundation
+Build four EU-region packs using the existing `formPacks.ts` foundation and the existing `FormPackWizardPage.tsx` flow (which already handles shared fields, country selectors via per-form `__euCountry`, watermarked vs. clean ZIP, Stripe checkout, dashboard save).
 
-**Related Forms component**
-- `src/components/forms/RelatedForms.tsx` — reusable card grid with title, blurb, price chip, CTA. Accepts explicit slugs OR auto-derives from category/tags.
-- `src/data/formRelationships.ts` — map of `formSlug → related[]` (curated where it matters, fallback to same-category).
-- Mount on: `FormWizardPage`, `FormSeoLandingPage`, `FormsHubPage`, EU hub, and blog post template (via existing related-content slot).
+### Packs
 
-**SEO polish across form routes**
-- Extend `formSeoLandings.ts` / wizard metadata with: keyword-rich `<title>` (≤60), `<meta description>` (≤160), H1 alignment, `lastUpdated` timestamp shown in UI and in JSON-LD `dateModified`.
-- Ensure every form/landing emits Breadcrumb JSON-LD + visible breadcrumbs (reuse existing `Breadcrumbs` component; add where missing).
-- Add strong bottom CTA block ("Start free → pay only to download clean PDF") on all form pages.
-- Sitemap: confirm all form + landing + EU routes emitted with `lastmod`.
+**1. GDPR & Data Protection Pack** — `/eu-forms/gdpr-pack` — **$44**
+- GDPR DPA *(existing)*
+- GDPR Consent Form *(existing)*
+- Right to be Forgotten Request *(existing)*
+- **NEW:** Data Subject Access Request (DSAR) Letter — GDPR Art. 15
+- **NEW:** Data Breach Notification Template — GDPR Art. 33/34
+- **NEW:** Privacy Policy Template (basic) — Art. 13/14 disclosures
 
-**Keyword targets** (applied to titles/descriptions/H2s, informed by search intent — e.g. "free GDPR consent form EU template", "EU employment contract template PDF", "14 day withdrawal form EU", "VAT invoice template Europe").
+**2. EU Employment & Freelance Pack** — `/eu-forms/employment-pack` — **$39**
+- EU Employment Contract *(existing)*
+- EU NDA *(existing, with GDPR clauses noted)*
+- **NEW:** Freelance / Self-Employed Service Contract
+- **NEW:** Independent Contractor Agreement (EU version, IR35/false self-employment safe wording)
+- **NEW:** Director Appointment Letter
 
-## Phase 2 — European Forms Section
+**3. EU Business Starter Pack** — `/eu-forms/business-starter-pack` — **$44**
+- EU VAT Invoice *(existing)*
+- Director Appointment *(reused from Employment pack)*
+- **NEW:** Simple Service / Consulting Agreement
+- **NEW:** IP Assignment Agreement
+- **NEW:** Basic Shareholder Agreement (simple)
+- **NEW:** Demand / Collection Letter (EU)
 
-**Navigation & routing**
-- Navbar: add "EU Forms" top-level link (desktop + mobile).
-- Footer: EU Forms column.
-- Routes: `/eu-forms` (hub), `/eu-forms/:slug` (wizards), `/eu-forms/:slug/:country` (country fan-out later).
+**4. EU Personal & Consumer Pack** — `/eu-forms/personal-pack` — **$34**
+- EU Power of Attorney *(existing)*
+- 14-Day Consumer Withdrawal Form *(existing)*
+- **NEW:** Consumer Complaint Letter
+- **NEW:** EU Rental / Tenancy Agreement (basic)
+- **NEW:** Simple Will (basic EU version)
 
-**Data layer**
-- `src/data/euForms.ts` — categories: Employment & HR, Data Protection & GDPR, Consumer Rights & Contracts, Company & Business Formation, Real Estate & Rental, Personal & Family, Tax & VAT.
-- Country selector component (`EUCountrySelector.tsx`) with DE, FR, ES, IT, NL, IE, BE, PT, PL, SE + generic EU fallback. Drives locale-aware defaults (currency €, date format, jurisdiction clause).
+### Implementation
 
-**EU Hub page (`/eu-forms`)**
-- Distinct EU hero (subtle EU-blue accent, not a flag), search, category tiles, country chooser strip, trust strip ("GDPR-aware templates, plain-English"), disclaimer that these are templates not legal advice for any specific member state.
-- Featured: Batch 5 forms + "New" badges.
+**Step 1 — Extend types**
+- `formPacks.ts`: add `"gdpr"` to `FormPack.category` union (and any pack rendering that keys off it, e.g. `FormPackCard`), plus optional `region?: "us" | "eu"` so the US Forms Hub can filter EU packs out and the EU Hub can list them.
+- `AppRoutes.tsx`: mount `FormPackWizardPage` under `/eu-forms/:slug` in addition to the existing `/forms/:slug`. `FormPackWizardPage` already resolves purely by slug, so no page-level changes needed beyond breadcrumb copy.
 
-**Batch 5 — 8 EU starter forms** (wizard + free preview PDF + paid clean PDF; priced via existing `form_prices` admin):
-1. GDPR Data Processing Agreement (Controller ↔ Processor, Art. 28 clauses)
-2. GDPR Consent Form (purposes, withdrawal, data categories)
-3. EU Employment Contract Template (Directive 2019/1152 transparent working conditions fields)
-4. Right to be Forgotten Request Letter (Art. 17)
-5. EU Power of Attorney (general/financial, generic EU)
-6. Consumer Withdrawal Form (14-day cooling-off, Directive 2011/83/EU Annex I)
-7. Simple VAT Invoice (multi-country, VAT number, reverse-charge toggle)
-8. NDA — EU version with GDPR clauses
+**Step 2 — Add 12 new EU forms to `src/data/euForms.ts`**
+All use `pdfTemplate: "generic"` (same renderer that ships the existing 8 EU forms). Each includes the shared `countryField` in step 1 so the pack's country auto-fills. Statute references go in `note` blocks so they land in both the wizard UI and the PDF:
+- DSAR — Art. 15 GDPR
+- Data Breach Notification — Art. 33 (supervisory authority) / Art. 34 (data subject); 72-hour trigger
+- Privacy Policy — Art. 13/14 disclosures + lawful basis + rights list
+- Freelance Contract — deliverables, milestones, ownership, VAT status
+- EU Independent Contractor — genuine self-employment factors, no employment relationship, IP assignment
+- Director Appointment Letter — role, powers, remuneration, D&O
+- Simple Service / Consulting Agreement — SOW, fees, VAT, limitation of liability
+- IP Assignment — full assignment of copyright + moral rights waiver where permitted
+- Basic Shareholder Agreement — share split, transfer restrictions, tag/drag light
+- EU Demand Letter — statutory late-payment interest (Directive 2011/7/EU) for B2B
+- Consumer Complaint Letter — Consumer Rights Directive references, ADR/ODR pointer
+- EU Rental Agreement — parties, property, rent, deposit, term, notice
+- Simple Will — testator, executor, beneficiaries, notarisation warning per country
 
-Each form gets:
-- Wizard using existing `FormWizard` infra + autosave + e-signature.
-- Country selector where meaningful (Employment, POA, Invoice, NDA).
-- SEO landing entry in `formSeoLandings` style with FAQ + HowTo JSON-LD.
-- `RelatedForms` block linking to sibling EU forms and, where useful, US analogs (e.g. EU NDA ↔ US NDA) with a clear "US equivalent" label so jurisdictions don't blur.
+**Step 3 — Register 4 packs in `formPacks.ts`**
+Each pack: `region: "eu"`, appropriate `category`, `sharedFields` grouped as steps. Shared fields for the GDPR pack: controller name/address, DPO contact, country. Employment pack: employer, employee/freelancer name+address, start date, role, pay. Business pack: business name/address, VAT ID, formation country, signer. Personal pack: your name, address, DOB, country, agent name/address.
 
-**Separation guardrails (SEO + UX)**
-- No mixing of US and EU forms in the same category grid.
-- EU pages use `/eu-forms/*` slugs only; canonical + og:url self-reference.
-- Cross-links between US and EU only via explicit "US equivalent / EU equivalent" callouts, not in default related lists.
+Each pack `disclaimer` reminds that EU rules (notarisation, will formalities, employment carve-outs, VAT rates) vary by member state.
 
-**Sitemap + cross-linking**
-- `generate-sitemap` edge function: add EU hub + 8 EU form routes.
-- FormsHubPage: add a "Working with EU parties? See EU Forms →" strip (single entry point, not merged).
-- Blog: linkify GDPR / EU employment / VAT mentions to matching EU forms via existing `linkifyLegalContent`.
+**Step 4 — Surface on EU Forms Hub**
+- `EuFormsHubPage.tsx`: add a "Form Packs" section above the individual forms grid, listing the 4 packs with `FormPackCard` (already used on the US hub). Filter `formPacks` to `region === "eu"`.
 
-## Delivery order
-1. Phase 1 (RelatedForms component, relationships map, SEO polish, breadcrumbs, lastUpdated).
-2. EU navigation + `/eu-forms` hub + `euForms.ts` + country selector.
-3. Batch 5 forms in two sub-batches of 4 (GDPR set first, then Employment/Commerce set).
-4. Sitemap + cross-links + QA pass.
+**Step 5 — Sitemap + navigation**
+- `generate-sitemap/index.ts`: add the 4 pack URLs and the 12 new EU form slugs.
+- Deploy the sitemap edge function.
 
-## Out of scope (later batches, confirmed)
-Country-specific rental agreements, company formation documents, data breach notification templates, per-country deep fan-out (DE/FR/ES/IT/NL).
+### Technical details
 
-**Confirm to proceed and I'll start with Phase 1 (linking + SEO), then ship the EU hub and GDPR set of Batch 5 first.**
+- Wizard: reuse `FormPackWizardPage.tsx` verbatim. It already reads `slug` from `useParams` and calls `getPackBySlug`, so routing under `/eu-forms/:slug` requires no wizard changes; only the breadcrumb "Forms" label conditionally becomes "EU Forms" when `region === "eu"`.
+- PDFs: all 12 new forms use the generic renderer (label/value + `note` blocks), matching the existing 8 EU forms.
+- Pricing: pack rows in the `form_prices` table are consulted server-side by `create-form-checkout`. After deploy, seed the 4 pack slugs into `form_prices` (USD amounts above) via the admin `/admin/prices` page or a one-off insert — pack checkout otherwise falls back to the client `priceUsd` for display only.
+- Dashboard: existing `MyFormsSection.tsx` lists any document with `kind: "pack"` — no change needed.
+- Cross-linking / SEO: covered by follow-up prompts; scope of this plan is the 4 packs + 12 forms only.
+
+### Out of scope (do next, per user's roadmap)
+- Blog posts supporting each pack
+- Country-specific pack fan-outs (Germany, France, Spain, Italy)
+- Cross-links between matching US ↔ EU packs (e.g. New Hire ↔ EU Employment)

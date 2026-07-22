@@ -110,7 +110,7 @@ export default function FormsHubPage() {
           </span>
         </div>
         <div className="grid gap-5 pt-3 sm:grid-cols-2 lg:grid-cols-4">
-          {formPacks.map((p) => (
+          {formPacks.filter((p) => p.region !== "eu").map((p) => (
             <FormPackCard
               key={p.slug}
               pack={p}

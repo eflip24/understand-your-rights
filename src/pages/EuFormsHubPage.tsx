@@ -1,14 +1,16 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, ShieldCheck, Globe2, Save, FileText, Sparkles, ArrowRight } from "lucide-react";
+import { Search, ShieldCheck, Globe2, Save, FileText, Sparkles, ArrowRight, PackageCheck } from "lucide-react";
 import Head from "@/components/seo/Head";
 import Breadcrumbs from "@/components/forms/Breadcrumbs";
 import FormCard from "@/components/forms/FormCard";
+import FormPackCard from "@/components/forms/FormPackCard";
 import FormDisclaimer from "@/components/forms/FormDisclaimer";
 import EuCountrySelector from "@/components/forms/EuCountrySelector";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { legalForms } from "@/data/forms";
+import { formPacks } from "@/data/formPacks";
 import { euCategoryLabels, type EuCategoryKey } from "@/data/euForms";
 import { useLocalizedPath } from "@/i18n/paths";
 
@@ -118,6 +120,28 @@ export default function EuFormsHubPage() {
           <span className="inline-flex items-center gap-1.5"><FileText className="h-3.5 w-3.5" /> Free watermarked PDF · clean upgrade from €1.99</span>
         </div>
       </header>
+
+      {/* EU Form Packs — bundled multi-doc wizards */}
+      <section className="mt-10" aria-labelledby="eu-packs-heading">
+        <div className="mb-5 flex flex-wrap items-end justify-between gap-2">
+          <div>
+            <h2 id="eu-packs-heading" className="font-serif text-2xl font-bold md:text-3xl">
+              EU Form Packs
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Fill shared company or personal info once. Get every document you need — GDPR, employment, business, or consumer — as one clean ZIP.
+            </p>
+          </div>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+            <PackageCheck className="h-3.5 w-3.5" /> One ZIP · one payment
+          </span>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {formPacks.filter((p) => p.region === "eu").map((p) => (
+            <FormPackCard key={p.slug} pack={p} featured={p.slug === "gdpr-pack"} />
+          ))}
+        </div>
+      </section>
 
       {/* Featured (Batch 5 highlights) */}
       {featured.length > 0 && (
