@@ -172,6 +172,57 @@ export default function EuFormsHubPage() {
         </section>
       )}
 
+      {/* Country-native forms — Batch 7 */}
+      {countryForms.length > 0 && (
+        <section className="mt-14" aria-labelledby="eu-country-heading">
+          <div className="mb-5">
+            <h2 id="eu-country-heading" className="font-serif text-2xl font-bold md:text-3xl">
+              Country-native forms
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Written in the local language with the right statutory references — Kodeks pracy,
+              Code du travail, LAU, BGB, Legge 431/98, BW.
+            </p>
+          </div>
+
+          <div className="mb-6 flex flex-wrap gap-2">
+            {countriesInUse.map((code) => {
+              const meta = EU_COUNTRY_META[code];
+              const count = countryForms.filter((f) => f.country === code).length;
+              return (
+                <a
+                  key={code}
+                  href={`#country-${code}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background px-3 py-1.5 text-sm font-medium text-foreground/85 transition hover:border-accent/50 hover:text-accent"
+                >
+                  <span aria-hidden>{meta.flag}</span>
+                  {meta.name}
+                  <Badge variant="secondary" className="ml-1 h-5 min-w-5 justify-center rounded-full px-1.5 text-[10px]">
+                    {count}
+                  </Badge>
+                </a>
+              );
+            })}
+          </div>
+
+          {countriesInUse.map((code) => {
+            const meta = EU_COUNTRY_META[code];
+            const list = countryForms.filter((f) => f.country === code);
+            return (
+              <div key={code} id={`country-${code}`} className="mt-8 scroll-mt-24">
+                <h3 className="mb-4 flex items-center gap-2 font-serif text-xl font-bold">
+                  <span aria-hidden className="text-2xl">{meta.flag}</span>
+                  {meta.name} <span className="text-sm font-normal text-muted-foreground">({meta.nativeName})</span>
+                </h3>
+                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {list.map((f) => <FormCard key={f.slug} form={f} />)}
+                </div>
+              </div>
+            );
+          })}
+        </section>
+      )}
+
       {/* Category filter */}
       <section className="mt-14">
         <div className="mb-5">
