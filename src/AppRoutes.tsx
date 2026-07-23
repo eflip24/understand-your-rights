@@ -134,6 +134,7 @@ export default function AppRoutes() {
       {/* European Forms — kept on a separate URL branch from US /forms. */}
       <Route path="/eu-forms" element={<EuFormsHubPage />} />
       <Route path="/eu-forms/:slug" element={<FormWizardPage />} />
+      <Route path="/eu-forms/:country/:slug" element={<FormWizardPage />} />
       <Route path="/checkout/return" element={<CheckoutReturnPage />} />
       <Route path="/unsubscribe" element={<UnsubscribePage />} />
       <Route path="/legal-terms" element={<LegalTermsDirectory />} />

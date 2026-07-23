@@ -70,7 +70,15 @@ export default function FormCard({ form }: { form: LegalFormDef }) {
             size="sm"
             className="w-full justify-center gap-1.5 bg-accent text-accent-foreground hover:bg-gold-dark"
           >
-            <Link to={lp(`/forms/${form.slug}`)}>
+            <Link
+              to={lp(
+                form.country
+                  ? `/eu-forms/${form.country}/${form.slug}`
+                  : form.region === "eu"
+                  ? `/eu-forms/${form.slug}`
+                  : `/forms/${form.slug}`,
+              )}
+            >
               Fill for free <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>

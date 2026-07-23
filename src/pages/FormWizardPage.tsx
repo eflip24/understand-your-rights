@@ -16,16 +16,17 @@ import PdfActionBar from "@/components/forms/PdfActionBar";
 import FormDisclaimer from "@/components/forms/FormDisclaimer";
 import FormCard from "@/components/forms/FormCard";
 import { useFormDraft } from "@/hooks/useFormDraft";
-import { categoryLabels, getFormBySlug, isFieldVisible, legalForms } from "@/data/forms";
+import { categoryLabels, getFormBySlug, getFormByCountrySlug, isFieldVisible, legalForms } from "@/data/forms";
 import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
 import StateSelector from "@/components/forms/StateSelector";
 import SignaturePad, { type SignatureValue } from "@/components/forms/SignaturePad";
 import StripeCheckoutDialog from "@/components/forms/StripeCheckoutDialog";
 import { isPaymentsConfigured } from "@/lib/stripe";
+import { EU_COUNTRY_META } from "@/data/euCountryForms";
 
 export default function FormWizardPage() {
-  const { slug = "" } = useParams();
+  const { slug = "", country } = useParams();
   const lp = useLocalizedPath();
   const { user } = useAuth();
 
@@ -48,9 +49,9 @@ export default function FormWizardPage() {
     return <Navigate to={lp(`/forms/${SLUG_ALIASES[slug]}`)} replace />;
   }
 
-  const form = getFormBySlug(slug);
+  const form = country ? getFormByCountrySlug(country, slug) : getFormBySlug(slug);
 
-  if (!form) return <Navigate to={lp("/forms")} replace />;
+  if (!form) return <Navigate to={lp(country ? "/eu-forms" : "/forms")} replace />;
 
   const totalSteps = form.steps.length;
   const {
@@ -202,7 +203,17 @@ export default function FormWizardPage() {
       />
       <Breadcrumbs
         items={
-          form.region === "eu"
+          form.country
+            ? [
+                { label: "Home", href: lp("/") },
+                { label: "EU Forms", href: lp("/eu-forms") },
+                {
+                  label: `${EU_COUNTRY_META[form.country].flag} ${EU_COUNTRY_META[form.country].name}`,
+                  href: lp(`/eu-forms#country-${form.country}`),
+                },
+                { label: form.title.split("—")[0].trim() },
+              ]
+            : form.region === "eu"
             ? [
                 { label: "Home", href: lp("/") },
                 { label: "EU Forms", href: lp("/eu-forms") },

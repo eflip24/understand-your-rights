@@ -1,4 +1,5 @@
 import { euForms } from "./euForms";
+import { euCountryForms } from "./euCountryForms";
 
 export type FormFieldType =
   | "text"
@@ -97,6 +98,9 @@ export interface LegalFormDef {
   region?: "us" | "eu";
   /** EU-hub subcategory. Only meaningful when region === "eu". */
   euCategory?: "gdpr" | "employment" | "consumer" | "business" | "realestate" | "personal" | "tax";
+  /** Optional ISO country code for country-native EU forms (Batch 7).
+   *  When set, the form is routed under `/eu-forms/:country/:slug`. */
+  country?: "de" | "fr" | "es" | "it" | "nl" | "pl";
 }
 
 
@@ -2666,6 +2670,12 @@ export const legalForms: LegalFormDef[] = [
 
 // Batch 5 — European starter pack. Appended here so `legalForms` includes them.
 legalForms.push(...euForms);
+// Batch 7 — Country-native EU forms (DE/FR/ES/IT/NL/PL) at /eu-forms/:country/:slug.
+legalForms.push(...euCountryForms);
+
+/** Look up a country-native EU form by (country, slug). */
+export const getFormByCountrySlug = (country: string, slug: string): LegalFormDef | undefined =>
+  legalForms.find((f) => f.country === country && f.slug === slug);
 
 export const getFormBySlug = (slug: string): LegalFormDef | undefined =>
   legalForms.find((f) => f.slug === slug);
