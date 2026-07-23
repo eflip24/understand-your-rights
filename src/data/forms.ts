@@ -97,6 +97,9 @@ export interface LegalFormDef {
   region?: "us" | "eu";
   /** EU-hub subcategory. Only meaningful when region === "eu". */
   euCategory?: "gdpr" | "employment" | "consumer" | "business" | "realestate" | "personal" | "tax";
+  /** Optional ISO country code for country-native EU forms (Batch 7).
+   *  When set, the form is routed under `/eu-forms/:country/:slug`. */
+  country?: "de" | "fr" | "es" | "it" | "nl" | "pl";
 }
 
 
