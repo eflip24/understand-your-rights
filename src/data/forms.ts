@@ -2670,6 +2670,12 @@ export const legalForms: LegalFormDef[] = [
 
 // Batch 5 — European starter pack. Appended here so `legalForms` includes them.
 legalForms.push(...euForms);
+// Batch 7 — Country-native EU forms (DE/FR/ES/IT/NL/PL) at /eu-forms/:country/:slug.
+legalForms.push(...euCountryForms);
+
+/** Look up a country-native EU form by (country, slug). */
+export const getFormByCountrySlug = (country: string, slug: string): LegalFormDef | undefined =>
+  legalForms.find((f) => f.country === country && f.slug === slug);
 
 export const getFormBySlug = (slug: string): LegalFormDef | undefined =>
   legalForms.find((f) => f.slug === slug);
