@@ -16,16 +16,17 @@ import PdfActionBar from "@/components/forms/PdfActionBar";
 import FormDisclaimer from "@/components/forms/FormDisclaimer";
 import FormCard from "@/components/forms/FormCard";
 import { useFormDraft } from "@/hooks/useFormDraft";
-import { categoryLabels, getFormBySlug, isFieldVisible, legalForms } from "@/data/forms";
+import { categoryLabels, getFormBySlug, getFormByCountrySlug, isFieldVisible, legalForms } from "@/data/forms";
 import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
 import StateSelector from "@/components/forms/StateSelector";
 import SignaturePad, { type SignatureValue } from "@/components/forms/SignaturePad";
 import StripeCheckoutDialog from "@/components/forms/StripeCheckoutDialog";
 import { isPaymentsConfigured } from "@/lib/stripe";
+import { EU_COUNTRY_META } from "@/data/euCountryForms";
 
 export default function FormWizardPage() {
-  const { slug = "" } = useParams();
+  const { slug = "", country } = useParams();
   const lp = useLocalizedPath();
   const { user } = useAuth();
 
