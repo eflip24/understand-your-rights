@@ -48,6 +48,14 @@ export default function EuFormsHubPage() {
 
   const featured = forms.filter((f) => f.isFeatured);
 
+  const countryForms = useMemo(() => forms.filter((f) => f.country), [forms]);
+  const countriesInUse = useMemo(() => {
+    const set = new Set<EuCountryFormCode>();
+    countryForms.forEach((f) => f.country && set.add(f.country));
+    return Array.from(set);
+  }, [countryForms]);
+
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
