@@ -203,7 +203,17 @@ export default function FormWizardPage() {
       />
       <Breadcrumbs
         items={
-          form.region === "eu"
+          form.country
+            ? [
+                { label: "Home", href: lp("/") },
+                { label: "EU Forms", href: lp("/eu-forms") },
+                {
+                  label: `${EU_COUNTRY_META[form.country].flag} ${EU_COUNTRY_META[form.country].name}`,
+                  href: lp(`/eu-forms#country-${form.country}`),
+                },
+                { label: form.title.split("—")[0].trim() },
+              ]
+            : form.region === "eu"
             ? [
                 { label: "Home", href: lp("/") },
                 { label: "EU Forms", href: lp("/eu-forms") },
