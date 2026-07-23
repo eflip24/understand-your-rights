@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { legalForms } from "@/data/forms";
 import { formPacks } from "@/data/formPacks";
 import { euCategoryLabels, type EuCategoryKey } from "@/data/euForms";
+import { EU_COUNTRY_META, type EuCountryFormCode } from "@/data/euCountryForms";
 import { useLocalizedPath } from "@/i18n/paths";
 
 type CatKey = EuCategoryKey | "all";
