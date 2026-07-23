@@ -549,6 +549,17 @@ const euFormSlugs = [
   "eu-consumer-complaint","eu-rental-agreement","eu-simple-will",
 ];
 const euPackSlugs = ["gdpr-pack","employment-pack","business-starter-pack","personal-pack"];
+// Batch 7 — country-native EU forms at /eu-forms/{country}/{slug}
+const euCountryFormPaths: [string, string][] = [
+  ["de","arbeitsvertrag"],
+  ["de","kuendigung-arbeitsvertrag"],
+  ["fr","contrat-cdi"],
+  ["fr","contrat-bail"],
+  ["es","contrato-arrendamiento"],
+  ["it","contratto-locazione"],
+  ["nl","arbeidsovereenkomst"],
+  ["pl","umowa-o-prace"],
+];
 
 function buildForms(): string {
   const e: string[] = [u(`${SITE}/forms`,"weekly","0.9")];
@@ -559,6 +570,7 @@ function buildForms(): string {
   e.push(u(`${SITE}/eu-forms`,"weekly","0.9"));
   for (const s of euFormSlugs) e.push(u(`${SITE}/eu-forms/${s}`,"monthly","0.7"));
   for (const s of euPackSlugs) e.push(u(`${SITE}/eu-forms/${s}`,"monthly","0.8"));
+  for (const [c,s] of euCountryFormPaths) e.push(u(`${SITE}/eu-forms/${c}/${s}`,"monthly","0.8"));
   return wrapUrlset(e);
 }
 
