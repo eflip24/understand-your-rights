@@ -49,9 +49,9 @@ export default function FormWizardPage() {
     return <Navigate to={lp(`/forms/${SLUG_ALIASES[slug]}`)} replace />;
   }
 
-  const form = getFormBySlug(slug);
+  const form = country ? getFormByCountrySlug(country, slug) : getFormBySlug(slug);
 
-  if (!form) return <Navigate to={lp("/forms")} replace />;
+  if (!form) return <Navigate to={lp(country ? "/eu-forms" : "/forms")} replace />;
 
   const totalSteps = form.steps.length;
   const {
