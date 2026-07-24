@@ -22,6 +22,7 @@ import { useLocalizedPath } from "@/i18n/paths";
 import StateSelector from "@/components/forms/StateSelector";
 import SignaturePad, { type SignatureValue } from "@/components/forms/SignaturePad";
 import StripeCheckoutDialog from "@/components/forms/StripeCheckoutDialog";
+import StickyMobileCta from "@/components/forms/StickyMobileCta";
 import { isPaymentsConfigured } from "@/lib/stripe";
 import { EU_COUNTRY_META } from "@/data/euCountryForms";
 
@@ -150,7 +151,7 @@ export default function FormWizardPage() {
   const isLast = step === totalSteps - 1;
 
   return (
-    <div className="container max-w-4xl py-8 px-4">
+    <div className="container max-w-4xl py-8 px-4 pb-28 md:pb-8">
       <Head
         title={`${form.title} — Free Fillable PDF Online (${new Date().getFullYear()}) | LegallySpoken`}
         description={`Fill out ${form.title} online free in minutes. Guided wizard, instant PDF download, e-signature ready. ${form.shortDescription}`}
@@ -356,6 +357,15 @@ export default function FormWizardPage() {
         slug={slug}
         title={form.title}
         returnUrl={`${window.location.origin}${lp(`/checkout/return`)}?slug=${slug}&session_id={CHECKOUT_SESSION_ID}`}
+      />
+
+      <StickyMobileCta
+        progressPct={progressPct}
+        step={step}
+        totalSteps={totalSteps}
+        isLast={isLast}
+        onNext={handleNext}
+        hidden={isLast && hasPurchased}
       />
     </div>
   );
