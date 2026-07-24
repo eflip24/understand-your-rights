@@ -1,56 +1,81 @@
-## Batch 7: Country-Specific Deep-Dive Forms
 
-Move beyond generic EU templates into country-native forms — the language, statutory references, and structure users actually search for in DE/FR/ES/IT/NL/PL. These target long-tail, high-intent, low-competition keywords ("Arbeitsvertrag Vorlage", "modèle CDI", "contrato de arrendamiento").
+# Next Phases — Growth, Content, Multilingual & Design
 
-## Forms in this batch (8)
+Semrush snapshot (US db): 61 indexed keywords, 0 est. traffic, top positions still 80–100. Translation: Google knows the site but hasn't ranked it yet. The unlock is **more depth on money keywords + faster first-impression polish + multilingual reach into EU markets we already have forms for**.
 
-| # | Form | Country | URL | Primary keyword |
-|---|---|---|---|---|
-| 1 | Arbeitsvertrag (unbefristet) | 🇩🇪 DE | `/eu-forms/de/arbeitsvertrag` | Arbeitsvertrag Vorlage |
-| 2 | Kündigung Arbeitsvertrag | 🇩🇪 DE | `/eu-forms/de/kuendigung-arbeitsvertrag` | Kündigung Vorlage |
-| 3 | Contrat CDI (Contrat à durée indéterminée) | 🇫🇷 FR | `/eu-forms/fr/contrat-cdi` | modèle contrat CDI |
-| 4 | Contrat de bail d'habitation (loi ALUR) | 🇫🇷 FR | `/eu-forms/fr/contrat-bail` | contrat de bail gratuit |
-| 5 | Contrato de arrendamiento de vivienda (LAU) | 🇪🇸 ES | `/eu-forms/es/contrato-arrendamiento` | contrato arrendamiento vivienda |
-| 6 | Contratto di locazione ad uso abitativo | 🇮🇹 IT | `/eu-forms/it/contratto-locazione` | contratto di locazione |
-| 7 | Arbeidsovereenkomst (bepaalde tijd) | 🇳🇱 NL | `/eu-forms/nl/arbeidsovereenkomst` | arbeidsovereenkomst voorbeeld |
-| 8 | Umowa o pracę | 🇵🇱 PL | `/eu-forms/pl/umowa-o-prace` | umowa o pracę wzór |
+Below is a 4-phase plan you can green-light phase by phase (same cadence we've been running).
 
-Each form uses native-language field labels, statutory references (BGB, Code du travail, Estatuto de los Trabajadores, Legge 431/98, BW 7:610, Kodeks pracy), and country-correct defaults (notice periods, deposit caps, trial periods).
+---
 
-## Approach
+## Phase 8 — High-CPC Content Expansion (US)
 
-**Reuse, don't rebuild.** The existing `FormWizardPage` + `useFormDraft` + `generateFormPdf` foundation handles multi-step wizards, autosave, dashboard integration, watermarked free PDF, Stripe clean PDF, and disclaimers. This batch just adds data + light routing.
+Goal: build 10 new pillar/landing pages on the highest-CPC legal + insurance clusters we don't own yet.
 
-**New country-scoped subroute.** Add `/eu-forms/:country/:slug` alongside the existing `/eu-forms/:slug`. Country is one of `de|fr|es|it|nl|pl`. `FormWizardPage` resolves by (country, slug) when both are present.
+| # | Page | Cluster | Why (CPC signal) |
+|---|---|---|---|
+| 1 | `/truck-accident-settlements` | Personal injury | Truck accident lawyer CPC $200–$700 |
+| 2 | `/uber-lyft-accident-claims` | Rideshare PI | Emerging, high-CPC, low competition |
+| 3 | `/nursing-home-abuse-claims` | Elder law + PI | CPC $80–$300 |
+| 4 | `/workers-comp-denied-what-next` | Workers comp | Companion to existing calc |
+| 5 | `/car-insurance-claim-denied` | Auto insurance | CPC $50–$150 |
+| 6 | `/homeowners-insurance-claim-denied` | Property | Hurricane/storm surge queries |
+| 7 | `/dui-first-offense-guide` (state fan-out) | Criminal | CPC $30–$120 |
+| 8 | `/chapter-7-vs-chapter-13` | Bankruptcy | Companion to debt hub |
+| 9 | `/wrongful-termination-settlements` | Employment | CPC $40–$150 |
+| 10 | `/roundup-camp-lejeune-updates` | Mass tort refresh | Very high RPM |
 
-## Files to create/change
+Each page: entity-dense intro (carriers, statutes, agencies), HowTo + FAQ JSON-LD, `RelatedIntentStrip`, `InMarketEntityBlock`, tie-in to matching calculator + `/lawyer-near-me/{practice-area}`.
 
-- **`src/data/euCountryForms.ts`** (new) — the 8 form defs. Each carries `country`, `nativeLanguage`, statutory references, and native-language step + field labels. Reuses the existing `LegalFormDef` shape.
-- **`src/data/euForms.ts`** — export a merged `allEuForms` array so the hub and lookup helpers see both generic + country forms.
-- **`src/pages/FormWizardPage.tsx`** — accept optional `:country` param; look up in `allEuForms`; render `Home > EU Forms > {Country} > {Form}` breadcrumb.
-- **`src/AppRoutes.tsx`** — add `<Route path="/eu-forms/:country/:slug" element={<FormWizardPage />} />`.
-- **`src/pages/EuFormsHubPage.tsx`** — add a "By country" section below the existing grid, with 6 country tiles (flag + count) linking to anchored sections; render country forms grouped by flag.
-- **`src/data/formRelationships.ts`** — cross-link each country form to its generic EU equivalent (e.g. `de/arbeitsvertrag` ↔ `eu-employment-contract`) so the existing `RelatedForms` component surfaces a "Generic EU version" chip.
-- **`src/components/forms/PdfActionBar.tsx`** / **`generateFormPdf.ts`** — no changes; already generic.
-- **`supabase/functions/generate-sitemap/index.ts`** — emit the 8 new `/eu-forms/{country}/{slug}` URLs. Redeploy.
-- **SEO** — per-form title/description in native language + English subtitle (e.g. "Arbeitsvertrag Vorlage kostenlos (2026) — Free German Employment Contract Template"). JSON-LD HowTo/FAQ inherited from `FormWizardPage`.
+---
 
-## Country-specific logic examples
+## Phase 9 — Multilingual Depth (EU markets we already serve)
 
-- **DE Arbeitsvertrag** — Probezeit (0/1/3/6 months), Kündigungsfrist calc from BGB §622, tarifgebunden yes/no branch.
-- **FR Contrat de bail** — dépôt de garantie cap (1 month unfurnished, 2 furnished), loi Pinel/ALUR notice, préavis 1 vs 3 mois branch.
-- **ES Contrato de arrendamiento** — fianza (1 month vivienda, 2 uso distinto), duración mínima 5/7 años per LAU 2019.
-- **IT Contratto di locazione** — 4+4 libero vs 3+2 concordato branch, cedolare secca opt-in.
-- **PL Umowa o pracę** — okres próbny/określony/nieokreślony branch, wynagrodzenie minimalne default.
+We ship 21 country-native EU forms + 7 UI locales but only English SEO landings. Fix that.
 
-## Pricing
+1. **Localize the 8 flagship EU form landings** (GDPR Consent, DPA, EU Employment, 14-Day Withdrawal, VAT Invoice, EU NDA, RtBF, EU PoA) into `de / fr / es / it / nl / pl / pt` using the existing translate-tools-cron pattern. Each = real per-locale `<title>`, `<meta>`, H1, HowTo/FAQ schema.
+2. **Country legal pillars** — one long-form guide per (country × top topic): `/de/gdpr-leitfaden`, `/fr/rgpd-guide`, `/es/despido-improcedente`, `/it/licenziamento-illegittimo`, `/pl/wypowiedzenie-umowy-o-prace`. Data-driven from a new `src/data/eu/topicPillars.ts`.
+3. **hreflang matrix** on all localized pages (currently only partial) + per-locale canonicals via Helmet.
+4. **Localized sitemaps** — split `sitemap.xml` into `sitemap-en.xml`, `sitemap-de.xml`, etc. via the existing edge function.
 
-Reuse existing `form_prices` table default ($14.99 clean PDF). You can override per-form in `/admin/prices` after ship.
+---
 
-## Out of scope (name the batch to trigger)
+## Phase 10 — First-Impression Design Polish
 
-- Country company-formation docs (GmbH, SARL, SRL) — Batch 8 candidate
-- VAT/tax filing helpers — Batch 9 candidate
-- Privacy Policy / Cookie Consent generators — separate tool, not a form
+Applies to the pages users land on from Google (forms hub, tools hub, PI hub, lawyer hub, form/tool detail).
 
-Approve and I'll ship all 8.
+1. **Above-the-fold refresh** — swap generic hero panels for editorial-grade layouts: eyebrow chip → serif H1 → single-sentence promise → 1 primary CTA + 1 secondary → trust row (numbers, logos of statute authorities, not fake press badges).
+2. **Card system v2** — unify FormCard / ToolCard / LawyerCard: icon badge, category chip, benefit line, meta row (time / free / state-aware), hover state with primary accent. Kill visual drift between hubs.
+3. **Sticky mini-CTA bar** on all form/tool detail pages (mobile especially) — surfaces "Start form" / "Open calculator" on scroll. Big time-to-conversion win.
+4. **Typography pass** — enforce serif for H1/H2, sans for body, cap line-length at 68ch on prose pages; fixes the "wall of text" feel on pillar pages.
+5. **Empty-state and loading polish** — skeletons on hubs, friendlier "no results" copy, subtle motion (Framer) on tile hover only. No hero animation gimmicks.
+
+---
+
+## Phase 11 — Indirect Semrush + Programmatic Scale
+
+Use the built-in Semrush tools (not the connector) as a weekly research loop:
+
+1. **Weekly keyword radar** — I run `keyword_research` + `serp_analysis` on 5 candidate topics you flag, return a KDI/volume/CPC table, and we pick the 2 worth building.
+2. **State fan-out generator** — extend `formStateFanout` pattern to: DUI, workers comp denial, wrongful termination, small claims limits. One template + 51 rows = 200+ indexable pages with real per-state statutes.
+3. **City fan-out for top 5 practice areas** — extend `/lawyer-near-me/{area}/{state}/{city}` to top-100 metros for personal injury, workers comp, DUI, family, bankruptcy. Zero-content-debt because it reuses the existing programmatic template.
+4. **AdSense RPM audit** — instrument `AdSlot` clicks per pillar to see which clusters actually monetize; feed that back into Phase 8 prioritization.
+
+---
+
+## Technical Notes
+
+- No schema changes required for Phases 8, 10, 11. Phase 9 needs new JSON files under `src/i18n/locales/{lang}/eu-forms.json` and a `topicPillars.ts` per locale (mirrors existing `regionIntrosGenerated.ts` pattern).
+- All new landing pages reuse `FormSeoLandingPage.tsx` / a new `PillarLandingPage.tsx` — no bespoke page components.
+- Sitemap edge function already parameterized; split by locale is a `?lang=de` query param addition.
+- Design polish is scoped to shared components (`FormsHero`, `ToolsHero`, `LawyerDirectoryHero`, card components, `ToolPageLayout`, `FormWizardPage`) — no page rewrites.
+
+---
+
+## Suggested order
+
+1. **Phase 10 (design polish)** — 1 sprint, immediate visible ROI on the traffic we already get.
+2. **Phase 8 (US high-CPC)** — 2 sprints, 5 pages each.
+3. **Phase 9 (multilingual)** — 2 sprints; unlocks 7× the SEO surface.
+4. **Phase 11 (programmatic + radar)** — ongoing weekly loop.
+
+Tell me which phase to kick off and I'll start on it — or reorder if you'd rather ship content before polish.
