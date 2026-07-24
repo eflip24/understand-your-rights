@@ -358,6 +358,15 @@ export default function FormWizardPage() {
         title={form.title}
         returnUrl={`${window.location.origin}${lp(`/checkout/return`)}?slug=${slug}&session_id={CHECKOUT_SESSION_ID}`}
       />
+
+      <StickyMobileCta
+        progressPct={progressPct}
+        step={step}
+        totalSteps={totalSteps}
+        isLast={isLast}
+        onNext={handleNext}
+        hidden={isLast && hasPurchased}
+      />
     </div>
   );
 }
