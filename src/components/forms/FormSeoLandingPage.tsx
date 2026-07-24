@@ -110,7 +110,7 @@ export default function FormSeoLandingPage(props: FormSeoLandingProps) {
           <h1 className="font-serif text-3xl md:text-4xl font-bold mt-2 leading-tight">
             {props.h1}
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl">{props.intro}</p>
+          <p className="prose-legal mt-4 text-lg text-muted-foreground">{props.intro}</p>
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Button size="lg" onClick={() => navigate(wizardHref)}>
