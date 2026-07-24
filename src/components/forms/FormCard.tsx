@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FileText, ArrowRight, Clock, MapPin, PenLine } from "lucide-react";
+import { FileText, ArrowRight, Clock, MapPin, PenLine, Flame } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -31,7 +31,13 @@ export default function FormCard({ form }: { form: LegalFormDef }) {
   const stateAware = STATE_AWARE.has(form.slug);
 
   return (
-    <Card className="group flex h-full flex-col overflow-hidden border-border/70 transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg">
+    <Card className="group relative flex h-full flex-col overflow-hidden border-border/70 transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg">
+      {form.isFeatured && (
+        <div className="absolute right-3 top-3 z-10 inline-flex items-center gap-1 rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accent-foreground shadow">
+          <Flame className="h-3 w-3" /> Popular
+        </div>
+      )}
+
       <CardContent className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="rounded-lg bg-accent/10 p-2.5 text-accent">

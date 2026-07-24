@@ -116,3 +116,19 @@
     font-family: 'Playfair Display', serif;
   }
 }
+
+@layer components {
+  /* Editorial prose width for long-form legal pillar/landing pages.
+     Caps line length around 68ch so paragraphs stay readable on wide screens
+     without touching heading widths or component layouts. */
+  .prose-legal {
+    max-width: 68ch;
+  }
+  .prose-legal p,
+  .prose-legal li {
+    line-height: 1.7;
+  }
+  .prose-legal > * + * {
+    margin-top: 0.85em;
+  }
+}
