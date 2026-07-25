@@ -103,6 +103,8 @@ const FormStateSeoLandingWrapper = React.lazy(() =>
 const MyDocumentsPage = React.lazy(() => import("@/pages/MyDocumentsPage"));
 const CheckoutReturnPage = React.lazy(() => import("@/pages/CheckoutReturnPage"));
 const EuFormsHubPage = React.lazy(() => import("@/pages/EuFormsHubPage"));
+const KeywordClusterHub = React.lazy(() => import("@/pages/KeywordClusterHub"));
+const KeywordClusterPage = React.lazy(() => import("@/pages/KeywordClusterPage"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
