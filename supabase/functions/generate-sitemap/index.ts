@@ -233,6 +233,17 @@ function buildGuidesI18n(): string {
   for (const s of criminalLawSlugs) e.push(uL(`/criminal-law/${s}`, "monthly", "0.7"));
   for (const s of landlordTenantLawSlugs) e.push(uL(`/landlord-tenant-law/${s}`, "monthly", "0.7"));
   for (const s of aiTechLawSlugs) e.push(uL(`/ai-tech-law/${s}`, "monthly", "0.7"));
+  // Keyword-cluster landing pages (/answers) — high-CPC intent pages, i18n.
+  const keywordAnswerSlugs = [
+    "average-car-accident-settlement-amount",
+    "workers-comp-settlement-calculator",
+    "mesothelioma-lawyer-average-settlement",
+    "how-to-file-chapter-7-bankruptcy",
+    "how-much-alimony-will-i-pay",
+    "eviction-notice-free-template",
+  ];
+  e.push(uL(`/answers`, "weekly", "0.8"));
+  for (const s of keywordAnswerSlugs) e.push(uL(`/answers/${s}`, "monthly", "0.8"));
   return wrapUrlset(e);
 }
 // Lawyer routes are Tier-3 (English-only) — see buildLawyers() for the EN-only emission.

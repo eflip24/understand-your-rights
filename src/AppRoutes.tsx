@@ -103,6 +103,8 @@ const FormStateSeoLandingWrapper = React.lazy(() =>
 const MyDocumentsPage = React.lazy(() => import("@/pages/MyDocumentsPage"));
 const CheckoutReturnPage = React.lazy(() => import("@/pages/CheckoutReturnPage"));
 const EuFormsHubPage = React.lazy(() => import("@/pages/EuFormsHubPage"));
+const KeywordClusterHub = React.lazy(() => import("@/pages/KeywordClusterHub"));
+const KeywordClusterPage = React.lazy(() => import("@/pages/KeywordClusterPage"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
@@ -200,6 +202,8 @@ export default function AppRoutes() {
       <Route path="/long-term-disability-claim-guide" element={<LongTermDisabilityClaimGuide />} />
       <Route path="/ssdi-denied-what-next" element={<SsdiDeniedWhatNext />} />
       <Route path="/mesothelioma-settlement-guide" element={<MesotheliomaSettlementGuide />} />
+      <Route path="/answers" element={<KeywordClusterHub />} />
+      <Route path="/answers/:slug" element={<KeywordClusterPage />} />
       <Route path="/lawyer-near-me" element={<LocalLawyersDirectory />} />
       <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
       <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
