@@ -134,17 +134,21 @@ export default function FormsHubPage() {
         <FormsCategoryTabs active={cat} onChange={setCat} counts={counts} />
 
         {filtered.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-border p-10 text-center">
-            <p className="text-muted-foreground">No forms match your search yet.</p>
-            <button
-              onClick={() => {
-                setQ("");
-                setCat("all");
-              }}
-              className="mt-3 text-sm font-medium text-accent hover:underline"
-            >
-              Clear filters
-            </button>
+          <div className="rounded-xl border border-dashed border-border bg-muted/30 py-16 text-center">
+            <p className="mb-1 text-lg font-semibold">No forms match that search</p>
+            <p className="text-sm text-muted-foreground">
+              Try a different keyword, or{" "}
+              <button
+                onClick={() => {
+                  setQ("");
+                  setCat("all");
+                }}
+                className="text-accent underline-offset-2 hover:underline"
+              >
+                clear filters
+              </button>
+              .
+            </p>
           </div>
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -8,6 +8,7 @@ import { JsonLdGraph, webApplicationSchema, faqSchema } from "@/components/seo/J
 import Head from "@/components/seo/Head";
 import AdSlot from "@/components/ads/AdSlot";
 import ToolSeoContext from "@/components/tools/ToolSeoContext";
+import ToolStickyMobileCta from "@/components/tools/ToolStickyMobileCta";
 import { useLocalizedPath } from "@/i18n/paths";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
 
@@ -50,7 +51,7 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
     ...(localizedFaqs.length ? [faqSchema(localizedFaqs)] : []),
   ];
   return (
-    <div className="container py-8 max-w-4xl">
+    <div className="container py-8 pb-24 md:pb-8 max-w-4xl">
       <Head
         title={
           (() => {
@@ -144,6 +145,8 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
           </div>
         </div>
       )}
+
+      <ToolStickyMobileCta toolName={localizedName} category={tool.category} />
     </div>
   );
 }
