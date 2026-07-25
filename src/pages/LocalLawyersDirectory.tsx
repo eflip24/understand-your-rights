@@ -34,6 +34,13 @@ import LawyerSituationTiles from "@/components/lawyers/LawyerSituationTiles";
 
 const SITE = "https://legallyspoken.com";
 
+const POPULAR_AREAS = new Set([
+  "personal-injury",
+  "car-accident",
+  "workers-compensation",
+  "employment",
+]);
+
 const AREA_ICONS: Record<string, LucideIcon> = {
   "personal-injury": HeartPulse,
   "car-accident": Car,
@@ -140,9 +147,16 @@ export default function LocalLawyersDirectory() {
                       <Icon className="h-5 w-5" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                        Practice Area
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                          Practice Area
+                        </span>
+                        {POPULAR_AREAS.has(area.slug) && (
+                          <span className="rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accent">
+                            Popular
+                          </span>
+                        )}
+                      </div>
                       <h3 className="mt-0.5 font-serif text-base font-bold leading-tight text-foreground">
                         {area.shortTitle}
                       </h3>
