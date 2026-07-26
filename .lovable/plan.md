@@ -1,81 +1,36 @@
+# Phase 8 — High-CPC Content Expansion (US)
 
-# Next Phases — Growth, Content, Multilingual & Design
+Ship 10 new money pages in the same house style as the existing guides (`AutoInsuranceClaimGuide`, `SsdiDeniedWhatNext`, `MesotheliomaSettlementGuide`): entity-dense intro, `InMarketEntityBlock`, HowTo + FAQ + Article + Breadcrumb JSON-LD, `RelatedIntentStrip`, `ToolRecommender`, AdSlots, and a direct tie-in to the matching calculator and `/lawyer-near-me/{practice-area}`.
 
-Semrush snapshot (US db): 61 indexed keywords, 0 est. traffic, top positions still 80–100. Translation: Google knows the site but hasn't ranked it yet. The unlock is **more depth on money keywords + faster first-impression polish + multilingual reach into EU markets we already have forms for**.
+## Pages
 
-Below is a 4-phase plan you can green-light phase by phase (same cadence we've been running).
+| # | Route | Cluster | Calculator tie-in | Lawyer tie-in |
+|---|---|---|---|---|
+| 1 | /truck-accident-settlements | PI (FMCSA, 49 CFR 395 HOS, ELD, Prime/Werner/Swift, MCS-90) | Settlement Estimator | /lawyer-near-me/personal-injury |
+| 2 | /uber-lyft-accident-claims | Rideshare PI (James River, Period 1/2/3, $1M contingent) | Settlement Estimator | /lawyer-near-me/car-accident |
+| 3 | /nursing-home-abuse-claims | Elder law + PI (CMS 42 CFR 483, Five-Star, state ombudsman) | Pain & Suffering / Settlement Estimator | /lawyer-near-me/personal-injury |
+| 4 | /workers-comp-denied-what-next | Workers comp (state WCB appeal, IME, C-3, utilization review) | Workers' Comp Settlement Calc | /lawyer-near-me/employment |
+| 5 | /car-insurance-claim-denied | Auto insurance (bad faith, DOI complaint, Colossus/ClaimIQ) | Settlement Estimator | /lawyer-near-me/insurance-dispute |
+| 6 | /homeowners-insurance-claim-denied | Property (HO-3, ACV vs RCV, hurricane deductible, FL/TX/LA, public adjuster, appraisal clause) | Settlement Estimator | /lawyer-near-me/insurance-dispute |
+| 7 | /dui-first-offense-guide + /dui-first-offense-guide/:state | Criminal (BAC .08, implied consent, IID, ALR/DMV hearing, SR-22) | — (penalty/cost table) | /lawyer-near-me/criminal-defense/{state} |
+| 8 | /chapter-7-vs-chapter-13 | Bankruptcy (means test, 341 meeting, exemptions, trustee) | Debt Settlement Calculator | /lawyer-near-me/… debt/bankruptcy |
+| 9 | /wrongful-termination-settlements | Employment (EEOC, Title VII, FMLA, at-will exceptions) | EEOC Settlement Calculator | /lawyer-near-me/employment |
+| 10 | /roundup-camp-lejeune-updates | Mass tort (Monsanto/Bayer MDL 2741, CLJA, PACT Act, EDNC) | Settlement Estimator | /lawyer-near-me/personal-injury |
 
----
+## DUI state fan-out (page 7)
 
-## Phase 8 — High-CPC Content Expansion (US)
+New `src/data/duiStates.ts` covering all 51 jurisdictions: BAC limits, first-offense jail/fine range, license suspension length, IID requirement, lookback period, SR-22 requirement, statute citation. The hub lists all states in a scannable grid; `/dui-first-offense-guide/:state` renders a state template pre-populated from that data, with self-referential canonical + breadcrumb per state.
 
-Goal: build 10 new pillar/landing pages on the highest-CPC legal + insurance clusters we don't own yet.
+## Technical notes
 
-| # | Page | Cluster | Why (CPC signal) |
-|---|---|---|---|
-| 1 | `/truck-accident-settlements` | Personal injury | Truck accident lawyer CPC $200–$700 |
-| 2 | `/uber-lyft-accident-claims` | Rideshare PI | Emerging, high-CPC, low competition |
-| 3 | `/nursing-home-abuse-claims` | Elder law + PI | CPC $80–$300 |
-| 4 | `/workers-comp-denied-what-next` | Workers comp | Companion to existing calc |
-| 5 | `/car-insurance-claim-denied` | Auto insurance | CPC $50–$150 |
-| 6 | `/homeowners-insurance-claim-denied` | Property | Hurricane/storm surge queries |
-| 7 | `/dui-first-offense-guide` (state fan-out) | Criminal | CPC $30–$120 |
-| 8 | `/chapter-7-vs-chapter-13` | Bankruptcy | Companion to debt hub |
-| 9 | `/wrongful-termination-settlements` | Employment | CPC $40–$150 |
-| 10 | `/roundup-camp-lejeune-updates` | Mass tort refresh | Very high RPM |
+- Content lives in data files (`src/data/phase8Pillars.ts` style per-page constants) so copy is editable without touching JSX; DUI uses a shared template component.
+- All pages are Tier-3 (English-only) → use `Tier3Head` so non-English locales are noindexed, consistent with existing guides.
+- JSON-LD via the existing `JsonLdGraph` + `articleSchema`/`faqSchema`/`breadcrumbSchema` helpers, plus a HowTo graph node per page.
+- Routes registered lazily in `AppRoutes.tsx`, matching the current lazy-import pattern.
+- `RelatedIntentStrip` links each page into its existing cluster (PI hub, auto-insurance guide, debt hub, mass-tort hub, SSDI/LTD guides) and existing pages get reciprocal links added where the cluster already has a strip.
+- `generate-sitemap` edge function: add the 10 routes + 51 DUI state URLs to the guides shard, then redeploy.
+- Legal disclaimer block on every page (site standard).
 
-Each page: entity-dense intro (carriers, statutes, agencies), HowTo + FAQ JSON-LD, `RelatedIntentStrip`, `InMarketEntityBlock`, tie-in to matching calculator + `/lawyer-near-me/{practice-area}`.
+## Out of scope
 
----
-
-## Phase 9 — Multilingual Depth (EU markets we already serve)
-
-We ship 21 country-native EU forms + 7 UI locales but only English SEO landings. Fix that.
-
-1. **Localize the 8 flagship EU form landings** (GDPR Consent, DPA, EU Employment, 14-Day Withdrawal, VAT Invoice, EU NDA, RtBF, EU PoA) into `de / fr / es / it / nl / pl / pt` using the existing translate-tools-cron pattern. Each = real per-locale `<title>`, `<meta>`, H1, HowTo/FAQ schema.
-2. **Country legal pillars** — one long-form guide per (country × top topic): `/de/gdpr-leitfaden`, `/fr/rgpd-guide`, `/es/despido-improcedente`, `/it/licenziamento-illegittimo`, `/pl/wypowiedzenie-umowy-o-prace`. Data-driven from a new `src/data/eu/topicPillars.ts`.
-3. **hreflang matrix** on all localized pages (currently only partial) + per-locale canonicals via Helmet.
-4. **Localized sitemaps** — split `sitemap.xml` into `sitemap-en.xml`, `sitemap-de.xml`, etc. via the existing edge function.
-
----
-
-## Phase 10 — First-Impression Design Polish
-
-Applies to the pages users land on from Google (forms hub, tools hub, PI hub, lawyer hub, form/tool detail).
-
-1. **Above-the-fold refresh** — swap generic hero panels for editorial-grade layouts: eyebrow chip → serif H1 → single-sentence promise → 1 primary CTA + 1 secondary → trust row (numbers, logos of statute authorities, not fake press badges).
-2. **Card system v2** — unify FormCard / ToolCard / LawyerCard: icon badge, category chip, benefit line, meta row (time / free / state-aware), hover state with primary accent. Kill visual drift between hubs.
-3. **Sticky mini-CTA bar** on all form/tool detail pages (mobile especially) — surfaces "Start form" / "Open calculator" on scroll. Big time-to-conversion win.
-4. **Typography pass** — enforce serif for H1/H2, sans for body, cap line-length at 68ch on prose pages; fixes the "wall of text" feel on pillar pages.
-5. **Empty-state and loading polish** — skeletons on hubs, friendlier "no results" copy, subtle motion (Framer) on tile hover only. No hero animation gimmicks.
-
----
-
-## Phase 11 — Indirect Semrush + Programmatic Scale
-
-Use the built-in Semrush tools (not the connector) as a weekly research loop:
-
-1. **Weekly keyword radar** — I run `keyword_research` + `serp_analysis` on 5 candidate topics you flag, return a KDI/volume/CPC table, and we pick the 2 worth building.
-2. **State fan-out generator** — extend `formStateFanout` pattern to: DUI, workers comp denial, wrongful termination, small claims limits. One template + 51 rows = 200+ indexable pages with real per-state statutes.
-3. **City fan-out for top 5 practice areas** — extend `/lawyer-near-me/{area}/{state}/{city}` to top-100 metros for personal injury, workers comp, DUI, family, bankruptcy. Zero-content-debt because it reuses the existing programmatic template.
-4. **AdSense RPM audit** — instrument `AdSlot` clicks per pillar to see which clusters actually monetize; feed that back into Phase 8 prioritization.
-
----
-
-## Technical Notes
-
-- No schema changes required for Phases 8, 10, 11. Phase 9 needs new JSON files under `src/i18n/locales/{lang}/eu-forms.json` and a `topicPillars.ts` per locale (mirrors existing `regionIntrosGenerated.ts` pattern).
-- All new landing pages reuse `FormSeoLandingPage.tsx` / a new `PillarLandingPage.tsx` — no bespoke page components.
-- Sitemap edge function already parameterized; split by locale is a `?lang=de` query param addition.
-- Design polish is scoped to shared components (`FormsHero`, `ToolsHero`, `LawyerDirectoryHero`, card components, `ToolPageLayout`, `FormWizardPage`) — no page rewrites.
-
----
-
-## Suggested order
-
-1. **Phase 10 (design polish)** — 1 sprint, immediate visible ROI on the traffic we already get.
-2. **Phase 8 (US high-CPC)** — 2 sprints, 5 pages each.
-3. **Phase 9 (multilingual)** — 2 sprints; unlocks 7× the SEO surface.
-4. **Phase 11 (programmatic + radar)** — ongoing weekly loop.
-
-Tell me which phase to kick off and I'll start on it — or reorder if you'd rather ship content before polish.
+No new calculators — pages link to existing tools. No multilingual translation for these routes in this phase.
