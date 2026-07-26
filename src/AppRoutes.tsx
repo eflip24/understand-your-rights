@@ -81,6 +81,7 @@ const PersonalInjurySettlementTaxability = React.lazy(() => import("@/pages/Pers
 const PersonalInjurySettlementTimeline = React.lazy(() => import("@/pages/PersonalInjurySettlementTimeline"));
 const StateAlimonyPage = React.lazy(() => import("@/pages/StateAlimonyPage"));
 const MassTortHub = React.lazy(() => import("@/pages/MassTortHub"));
+const HighCpcPillarPage = React.lazy(() => import("@/pages/HighCpcPillarPage"));
 const MassTortCasePage = React.lazy(() => import("@/pages/MassTortCasePage"));
 const CarAccidentChecklist = React.lazy(() => import("@/pages/CarAccidentChecklist"));
 const MotorcycleHelmetLawsByState = React.lazy(() => import("@/pages/MotorcycleHelmetLawsByState"));
