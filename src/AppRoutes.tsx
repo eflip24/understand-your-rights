@@ -193,6 +193,15 @@ export default function AppRoutes() {
       <Route path="/alimony-calculator/:state" element={<StateAlimonyPage />} />
       <Route path="/mass-tort-lawsuits" element={<MassTortHub />} />
       <Route path="/mass-tort-lawsuits/:slug" element={<MassTortCasePage />} />
+      <Route path="/truck-accident-settlements" element={<HighCpcPillarPage slug="truck-accident-settlements" />} />
+      <Route path="/uber-lyft-accident-claims" element={<HighCpcPillarPage slug="uber-lyft-accident-claims" />} />
+      <Route path="/nursing-home-abuse-claims" element={<HighCpcPillarPage slug="nursing-home-abuse-claims" />} />
+      <Route path="/workers-comp-denied-what-next" element={<HighCpcPillarPage slug="workers-comp-denied-what-next" />} />
+      <Route path="/car-insurance-claim-denied" element={<HighCpcPillarPage slug="car-insurance-claim-denied" />} />
+      <Route path="/homeowners-insurance-claim-denied" element={<HighCpcPillarPage slug="homeowners-insurance-claim-denied" />} />
+      <Route path="/chapter-7-vs-chapter-13" element={<HighCpcPillarPage slug="chapter-7-vs-chapter-13" />} />
+      <Route path="/wrongful-termination-settlements" element={<HighCpcPillarPage slug="wrongful-termination-settlements" />} />
+      <Route path="/roundup-camp-lejeune-updates" element={<HighCpcPillarPage slug="roundup-camp-lejeune-updates" />} />
       <Route path="/what-to-do-after-a-car-accident" element={<CarAccidentChecklist />} />
       <Route path="/motorcycle-helmet-insurance-laws-by-state" element={<MotorcycleHelmetLawsByState />} />
       <Route path="/attorney-contingency-fee-explained" element={<AttorneyContingencyFeeExplained />} />
