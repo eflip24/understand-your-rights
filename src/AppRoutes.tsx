@@ -83,6 +83,8 @@ const StateAlimonyPage = React.lazy(() => import("@/pages/StateAlimonyPage"));
 const MassTortHub = React.lazy(() => import("@/pages/MassTortHub"));
 const HighCpcPillarPage = React.lazy(() => import("@/pages/HighCpcPillarPage"));
 const MassTortCasePage = React.lazy(() => import("@/pages/MassTortCasePage"));
+const DuiFirstOffenseGuide = React.lazy(() => import("@/pages/DuiFirstOffenseGuide"));
+const DuiFirstOffenseStatePage = React.lazy(() => import("@/pages/DuiFirstOffenseStatePage"));
 const CarAccidentChecklist = React.lazy(() => import("@/pages/CarAccidentChecklist"));
 const MotorcycleHelmetLawsByState = React.lazy(() => import("@/pages/MotorcycleHelmetLawsByState"));
 const AttorneyContingencyFeeExplained = React.lazy(() => import("@/pages/AttorneyContingencyFeeExplained"));
@@ -202,6 +204,8 @@ export default function AppRoutes() {
       <Route path="/chapter-7-vs-chapter-13" element={<HighCpcPillarPage slug="chapter-7-vs-chapter-13" />} />
       <Route path="/wrongful-termination-settlements" element={<HighCpcPillarPage slug="wrongful-termination-settlements" />} />
       <Route path="/roundup-camp-lejeune-updates" element={<HighCpcPillarPage slug="roundup-camp-lejeune-updates" />} />
+      <Route path="/dui-first-offense-guide" element={<DuiFirstOffenseGuide />} />
+      <Route path="/dui-first-offense-guide/:state" element={<DuiFirstOffenseStatePage />} />
       <Route path="/what-to-do-after-a-car-accident" element={<CarAccidentChecklist />} />
       <Route path="/motorcycle-helmet-insurance-laws-by-state" element={<MotorcycleHelmetLawsByState />} />
       <Route path="/attorney-contingency-fee-explained" element={<AttorneyContingencyFeeExplained />} />

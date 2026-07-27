@@ -503,6 +503,27 @@ function buildLegalTerms(): string {
   return wrapUrlset(e);
 }
 
+// Phase 8 — high-CPC US pillar pages (Tier-3, English-only).
+const phase8PillarSlugs = [
+  "truck-accident-settlements","uber-lyft-accident-claims","nursing-home-abuse-claims",
+  "workers-comp-denied-what-next","car-insurance-claim-denied","homeowners-insurance-claim-denied",
+  "chapter-7-vs-chapter-13","wrongful-termination-settlements","roundup-camp-lejeune-updates",
+];
+// Standalone English-only guides and hubs shipped across the growth phases.
+const standaloneGuideSlugs = [
+  "what-to-do-after-a-car-accident","motorcycle-helmet-insurance-laws-by-state",
+  "attorney-contingency-fee-explained","how-pain-and-suffering-is-calculated",
+  "auto-insurance-claim-guide","debt-settlement-calculator","bankruptcy-vs-debt-settlement",
+  "long-term-disability-claim-guide","ssdi-denied-what-next","mesothelioma-settlement-guide",
+  "legal-health-check",
+];
+const piSettlementSlugs = ["taxability","timeline","car-accident","motorcycle-accident","truck-accident","bodily-injury"];
+const massTortSlugs = [
+  "camp-lejeune","roundup","tylenol-autism","hair-relaxer","ozempic","paraquat","3m-earplugs","talcum-powder",
+];
+// DUI first-offense fan-out: 50 states + DC.
+const duiStateSlugs = [...stateSlugs, "district-of-columbia"].sort();
+
 function buildGuides(): string {
   const e: string[] = [];
   for (const s of autoAccidentSlugs) e.push(u(`${SITE}/auto-accident-law/${s}`,"monthly","0.7"));
@@ -512,8 +533,23 @@ function buildGuides(): string {
   for (const s of criminalLawSlugs) e.push(u(`${SITE}/criminal-law/${s}`,"monthly","0.7"));
   for (const s of landlordTenantLawSlugs) e.push(u(`${SITE}/landlord-tenant-law/${s}`,"monthly","0.7"));
   for (const s of aiTechLawSlugs) e.push(u(`${SITE}/ai-tech-law/${s}`,"monthly","0.7"));
+  // Phase 8 pillars + standalone guides
+  for (const s of phase8PillarSlugs) e.push(u(`${SITE}/${s}`,"monthly","0.8"));
+  for (const s of standaloneGuideSlugs) e.push(u(`${SITE}/${s}`,"monthly","0.8"));
+  // Personal-injury settlement hub cluster
+  e.push(u(`${SITE}/personal-injury-settlements`,"weekly","0.9"));
+  for (const s of piSettlementSlugs) e.push(u(`${SITE}/personal-injury-settlements/${s}`,"monthly","0.8"));
+  // Mass-tort cluster
+  e.push(u(`${SITE}/mass-tort-lawsuits`,"weekly","0.8"));
+  for (const s of massTortSlugs) e.push(u(`${SITE}/mass-tort-lawsuits/${s}`,"monthly","0.7"));
+  // Alimony state fan-out
+  for (const s of duiStateSlugs) e.push(u(`${SITE}/alimony-calculator/${s}`,"monthly","0.6"));
+  // DUI first-offense hub + 51-jurisdiction fan-out
+  e.push(u(`${SITE}/dui-first-offense-guide`,"weekly","0.9"));
+  for (const s of duiStateSlugs) e.push(u(`${SITE}/dui-first-offense-guide/${s}`,"monthly","0.7"));
   return wrapUrlset(e);
 }
+
 
 function buildStateGuides(): string {
   const e: string[] = [];
