@@ -67,7 +67,9 @@ export default function FormsHubPage() {
       <Head
         title="Free Fillable Legal Forms | LegallySpoken"
         description="Fill common legal forms online in minutes. Free watermarked PDF download; upgrade to a clean professional PDF from $4.99. W-9, W-4, I-9, NDA, lease, eviction, POA and more."
+        englishOnly
       />
+
       <Breadcrumbs items={[{ label: "Home", href: lp("/") }, { label: "Forms" }]} />
 
       <FormsHero query={q} onQueryChange={setQ} totalForms={legalForms.length} />
