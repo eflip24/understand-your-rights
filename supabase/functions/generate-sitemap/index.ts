@@ -608,18 +608,25 @@ const euCountryFormPaths: [string, string][] = [
   ["pl","umowa-o-prace"],
 ];
 
+/** US forms are English-only (Tier-3): one URL each, no hreflang alternates. */
 function buildForms(): string {
   const e: string[] = [u(`${SITE}/forms`,"weekly","0.9")];
   for (const s of formSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
   for (const s of formPackSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
   for (const s of formSeoLandingSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.8"));
   for (const p of formStateFanoutPrefixes) for (const st of formFanoutStates) e.push(u(`${SITE}/forms/${p}/${st}`,"monthly","0.7"));
-  e.push(u(`${SITE}/eu-forms`,"weekly","0.9"));
-  for (const s of euFormSlugs) e.push(u(`${SITE}/eu-forms/${s}`,"monthly","0.7"));
-  for (const s of euPackSlugs) e.push(u(`${SITE}/eu-forms/${s}`,"monthly","0.8"));
-  for (const [c,s] of euCountryFormPaths) e.push(u(`${SITE}/eu-forms/${c}/${s}`,"monthly","0.8"));
   return wrapUrlset(e);
 }
+
+/** EU forms exist in all six locales — one <url> per (path × locale) with alternates. */
+function buildFormsEuI18n(): string {
+  const e: string[] = [uL(`/eu-forms`,"weekly","0.9")];
+  for (const s of euFormSlugs) e.push(uL(`/eu-forms/${s}`,"monthly","0.7"));
+  for (const s of euPackSlugs) e.push(uL(`/eu-forms/${s}`,"monthly","0.8"));
+  for (const [c,s] of euCountryFormPaths) e.push(uL(`/eu-forms/${c}/${s}`,"monthly","0.8"));
+  return wrapUrlset(e);
+}
+
 
 
 
