@@ -26,7 +26,15 @@ interface HeadProps {
   noindex?: boolean;
   ogImage?: string;
   ogType?: string;
+  /**
+   * Tier-3 routes exist in English only. When true we emit a single `en`
+   * alternate + x-default, point the canonical at the English URL, and drop
+   * og:locale:alternate — otherwise Google sees hreflang pointing at pages
+   * that are simultaneously noindexed, which is a conflicting signal.
+   */
+  englishOnly?: boolean;
 }
+
 
 function setMeta(name: string, content: string, attr: "name" | "property" = "name") {
   let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
