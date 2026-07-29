@@ -659,6 +659,8 @@ Deno.serve(async (req) => {
   if (type === "legal-terms-i18n") return new Response(buildLegalTermsI18n(), { headers: h });
   if (type === "guides-i18n") return new Response(buildGuidesI18n(), { headers: h });
   if (type === "lawyers-eu-i18n") return new Response(buildLawyersEuI18n(), { headers: h });
+  if (type === "forms-eu-i18n") return new Response(buildFormsEuI18n(), { headers: h });
+
   
   
   if (type === "blog") {
