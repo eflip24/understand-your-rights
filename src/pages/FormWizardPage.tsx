@@ -155,7 +155,9 @@ export default function FormWizardPage() {
       <Head
         title={`${form.title} — Free Fillable PDF Online (${new Date().getFullYear()}) | LegallySpoken`}
         description={`Fill out ${form.title} online free in minutes. Guided wizard, instant PDF download, e-signature ready. ${form.shortDescription}`}
+        englishOnly={form.region !== "eu"}
       />
+
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger

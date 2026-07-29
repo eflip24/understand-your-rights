@@ -189,7 +189,7 @@ export default function FormPackWizardPage() {
 
   return (
     <div className="container max-w-4xl py-8 px-4">
-      <Head title={`${pack.seoTitle} | LegallySpoken`} description={pack.seoDescription} />
+      <Head title={`${pack.seoTitle} | LegallySpoken`} description={pack.seoDescription} englishOnly={pack.region !== "eu"} />
       <Breadcrumbs
         items={[
           { label: "Home", href: lp("/") },

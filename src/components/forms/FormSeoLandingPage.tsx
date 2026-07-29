@@ -88,7 +88,7 @@ export default function FormSeoLandingPage(props: FormSeoLandingProps) {
 
   return (
     <div className="min-h-screen">
-      <Head title={props.metaTitle} description={props.metaDescription} />
+      <Head title={props.metaTitle} description={props.metaDescription} englishOnly />
       <JsonLdGraph
         schemas={[webPageSchema, howToSchema, faqSchema, breadcrumbSchema, govSchema]}
       />

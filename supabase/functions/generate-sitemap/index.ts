@@ -188,9 +188,10 @@ function uL(path: string, freq: string, pri: string): string {
 function sitemapIndex(): string {
   const BASE = "https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap";
   const types = [
-    "core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes",
-    "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n","lawyers-eu-i18n",
+    "core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes","forms",
+    "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n","lawyers-eu-i18n","forms-eu-i18n",
   ];
+
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${BASE}?type=${t}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
 }
 
@@ -608,18 +609,25 @@ const euCountryFormPaths: [string, string][] = [
   ["pl","umowa-o-prace"],
 ];
 
+/** US forms are English-only (Tier-3): one URL each, no hreflang alternates. */
 function buildForms(): string {
   const e: string[] = [u(`${SITE}/forms`,"weekly","0.9")];
   for (const s of formSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
   for (const s of formPackSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.7"));
   for (const s of formSeoLandingSlugs) e.push(u(`${SITE}/forms/${s}`,"monthly","0.8"));
   for (const p of formStateFanoutPrefixes) for (const st of formFanoutStates) e.push(u(`${SITE}/forms/${p}/${st}`,"monthly","0.7"));
-  e.push(u(`${SITE}/eu-forms`,"weekly","0.9"));
-  for (const s of euFormSlugs) e.push(u(`${SITE}/eu-forms/${s}`,"monthly","0.7"));
-  for (const s of euPackSlugs) e.push(u(`${SITE}/eu-forms/${s}`,"monthly","0.8"));
-  for (const [c,s] of euCountryFormPaths) e.push(u(`${SITE}/eu-forms/${c}/${s}`,"monthly","0.8"));
   return wrapUrlset(e);
 }
+
+/** EU forms exist in all six locales — one <url> per (path × locale) with alternates. */
+function buildFormsEuI18n(): string {
+  const e: string[] = [uL(`/eu-forms`,"weekly","0.9")];
+  for (const s of euFormSlugs) e.push(uL(`/eu-forms/${s}`,"monthly","0.7"));
+  for (const s of euPackSlugs) e.push(uL(`/eu-forms/${s}`,"monthly","0.8"));
+  for (const [c,s] of euCountryFormPaths) e.push(uL(`/eu-forms/${c}/${s}`,"monthly","0.8"));
+  return wrapUrlset(e);
+}
+
 
 
 
@@ -651,6 +659,8 @@ Deno.serve(async (req) => {
   if (type === "legal-terms-i18n") return new Response(buildLegalTermsI18n(), { headers: h });
   if (type === "guides-i18n") return new Response(buildGuidesI18n(), { headers: h });
   if (type === "lawyers-eu-i18n") return new Response(buildLawyersEuI18n(), { headers: h });
+  if (type === "forms-eu-i18n") return new Response(buildFormsEuI18n(), { headers: h });
+
   
   
   if (type === "blog") {
