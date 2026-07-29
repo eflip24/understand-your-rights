@@ -22,8 +22,9 @@ export default function Tier3Head(props: Props) {
   const isNonEn = (i18n.language || "en").split("-")[0] !== "en";
   return (
     <>
-      <Head {...props} noindex={props.noindex || isNonEn} />
+      <Head {...props} noindex={props.noindex || isNonEn} englishOnly />
       <EnglishOnlyBanner />
     </>
   );
 }
+
