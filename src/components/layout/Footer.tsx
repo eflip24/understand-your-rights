@@ -34,6 +34,7 @@ export default function Footer() {
   ];
 
   const guideLinks = [
+    { label: "All guides", href: lp("/guides") },
     { label: t("nav.guides.auto"), href: lp("/auto-accident-law") },
     { label: t("nav.guides.pi"), href: lp("/personal-injury-law") },
     { label: t("nav.guides.insurance"), href: lp("/insurance-law") },
