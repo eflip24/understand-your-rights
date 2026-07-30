@@ -534,6 +534,7 @@ function buildGuides(): string {
   for (const s of criminalLawSlugs) e.push(u(`${SITE}/criminal-law/${s}`,"monthly","0.7"));
   for (const s of landlordTenantLawSlugs) e.push(u(`${SITE}/landlord-tenant-law/${s}`,"monthly","0.7"));
   for (const s of aiTechLawSlugs) e.push(u(`${SITE}/ai-tech-law/${s}`,"monthly","0.7"));
+  e.push(u(`${SITE}/guides`,"weekly","0.9"));
   // Phase 8 pillars + standalone guides
   for (const s of phase8PillarSlugs) e.push(u(`${SITE}/${s}`,"monthly","0.8"));
   for (const s of standaloneGuideSlugs) e.push(u(`${SITE}/${s}`,"monthly","0.8"));

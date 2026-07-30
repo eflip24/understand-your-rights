@@ -12,6 +12,7 @@ import LangSwitcher from "@/components/layout/LangSwitcher";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAdminRole } from "@/hooks/useAdminRole";
 import { useLocalizedPath } from "@/i18n/paths";
+import { navGuideGroups } from "@/data/guideIndex";
 import { cn } from "@/lib/utils";
 
 function NavDropdownItem({ href, label, onClick }: { href: string; label: string; onClick?: () => void }) {
@@ -53,6 +54,7 @@ export default function Navbar() {
   ];
 
   const guidesLinks = [
+    { label: "All guides", href: lp("/guides") },
     { label: t("nav.guides.auto"), href: lp("/auto-accident-law") },
     { label: t("nav.guides.pi"), href: lp("/personal-injury-law") },
     { label: t("nav.guides.insurance"), href: lp("/insurance-law") },
@@ -61,6 +63,13 @@ export default function Navbar() {
     { label: t("nav.guides.landlord"), href: lp("/landlord-tenant-law") },
     { label: t("nav.guides.aiTech"), href: lp("/ai-tech-law") },
   ];
+
+  // High-intent clusters surfaced directly in the mega-menu.
+  const guidesMega = navGuideGroups.map((g) => ({
+    label: g.label,
+    entries: g.entries.slice(0, 4).map((e) => ({ label: e.title, href: lp(e.path) })),
+  }));
+
 
   const resourcesLinks = [
     { label: t("nav.resources.terms"), href: lp("/legal-terms") },
@@ -110,11 +119,32 @@ export default function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-muted-foreground hover:text-foreground">{t("nav.guides")}</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[320px] gap-1 p-3">
-                  {guidesLinks.map((link) => (
-                    <NavDropdownItem key={link.href} href={link.href} label={link.label} />
-                  ))}
-                </ul>
+                <div className="w-[720px] p-4">
+                  <div className="grid grid-cols-3 gap-x-6 gap-y-4">
+                    {guidesMega.map((group) => (
+                      <div key={group.label}>
+                        <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                          {group.label}
+                        </p>
+                        <ul className="grid gap-0.5">
+                          {group.entries.map((link) => (
+                            <NavDropdownItem key={link.href} href={link.href} label={link.label} />
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                    <div>
+                      <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                        Practice areas
+                      </p>
+                      <ul className="grid gap-0.5">
+                        {guidesLinks.map((link) => (
+                          <NavDropdownItem key={link.href} href={link.href} label={link.label} />
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
 

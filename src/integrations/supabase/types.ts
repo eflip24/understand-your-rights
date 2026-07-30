@@ -468,6 +468,27 @@ export type Database = {
         }
         Relationships: []
       }
+      guide_translations: {
+        Row: {
+          data: Json
+          guide_slug: string
+          locale: string
+          updated_at: string
+        }
+        Insert: {
+          data: Json
+          guide_slug: string
+          locale: string
+          updated_at?: string
+        }
+        Update: {
+          data?: Json
+          guide_slug?: string
+          locale?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       keyword_candidates: {
         Row: {
           cluster: string | null

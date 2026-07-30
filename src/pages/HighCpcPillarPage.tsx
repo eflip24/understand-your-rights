@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, Scale } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Tier3Head from "@/components/seo/Tier3Head";
+import Head from "@/components/seo/Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
 import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
@@ -12,6 +13,7 @@ import AdSlot from "@/components/ads/AdSlot";
 import NotFound from "@/pages/NotFound";
 import { getPhase8Pillar, type Phase8Pillar } from "@/data/phase8Pillars";
 import { useLocalizedPath } from "@/i18n/paths";
+import { useLocalizedGuide } from "@/i18n/guideTranslationOverrides";
 
 const SITE = "https://legallyspoken.com";
 
@@ -23,8 +25,11 @@ export default function HighCpcPillarPage({ slug: slugProp }: { slug?: string })
   return <PillarBody data={data} />;
 }
 
-function PillarBody({ data }: { data: Phase8Pillar }) {
+function PillarBody({ data: source }: { data: Phase8Pillar }) {
   const lp = useLocalizedPath();
+  // Locale overlay: translated copy when this guide exists in the active
+  // locale, English otherwise (with English-only hreflang scope).
+  const { guide: data, isTranslated } = useLocalizedGuide(source);
   const url = `${SITE}/${data.slug}`;
 
   const howToSchema = {
@@ -43,7 +48,11 @@ function PillarBody({ data }: { data: Phase8Pillar }) {
 
   return (
     <div className="min-h-screen">
-      <Tier3Head title={data.metaTitle} description={data.metaDescription} ogType="article" />
+      {isTranslated ? (
+        <Head title={data.metaTitle} description={data.metaDescription} ogType="article" />
+      ) : (
+        <Tier3Head title={data.metaTitle} description={data.metaDescription} ogType="article" />
+      )}
       <JsonLdGraph
         schemas={[
           articleSchema(data.h1, data.metaDescription, url),
