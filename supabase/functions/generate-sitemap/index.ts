@@ -549,6 +549,10 @@ function buildGuides(): string {
   // DUI first-offense hub + 51-jurisdiction fan-out
   e.push(u(`${SITE}/dui-first-offense-guide`,"weekly","0.9"));
   for (const s of duiStateSlugs) e.push(u(`${SITE}/dui-first-offense-guide/${s}`,"monthly","0.7"));
+  // Phase 11 — pillar state fan-outs
+  for (const p of ["workers-comp-denied-what-next","wrongful-termination-settlements","car-insurance-claim-denied"]) {
+    for (const s of duiStateSlugs) e.push(u(`${SITE}/${p}/${s}`,"monthly","0.7"));
+  }
   return wrapUrlset(e);
 }
 

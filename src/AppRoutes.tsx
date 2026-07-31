@@ -82,6 +82,7 @@ const PersonalInjurySettlementTimeline = React.lazy(() => import("@/pages/Person
 const StateAlimonyPage = React.lazy(() => import("@/pages/StateAlimonyPage"));
 const MassTortHub = React.lazy(() => import("@/pages/MassTortHub"));
 const HighCpcPillarPage = React.lazy(() => import("@/pages/HighCpcPillarPage"));
+const PillarStateFanoutPage = React.lazy(() => import("@/pages/PillarStateFanoutPage"));
 const MassTortCasePage = React.lazy(() => import("@/pages/MassTortCasePage"));
 const DuiFirstOffenseGuide = React.lazy(() => import("@/pages/DuiFirstOffenseGuide"));
 const DuiFirstOffenseStatePage = React.lazy(() => import("@/pages/DuiFirstOffenseStatePage"));
@@ -200,10 +201,13 @@ export default function AppRoutes() {
       <Route path="/uber-lyft-accident-claims" element={<HighCpcPillarPage slug="uber-lyft-accident-claims" />} />
       <Route path="/nursing-home-abuse-claims" element={<HighCpcPillarPage slug="nursing-home-abuse-claims" />} />
       <Route path="/workers-comp-denied-what-next" element={<HighCpcPillarPage slug="workers-comp-denied-what-next" />} />
+      <Route path="/workers-comp-denied-what-next/:state" element={<PillarStateFanoutPage cluster="workers-comp" />} />
       <Route path="/car-insurance-claim-denied" element={<HighCpcPillarPage slug="car-insurance-claim-denied" />} />
+      <Route path="/car-insurance-claim-denied/:state" element={<PillarStateFanoutPage cluster="car-insurance" />} />
       <Route path="/homeowners-insurance-claim-denied" element={<HighCpcPillarPage slug="homeowners-insurance-claim-denied" />} />
       <Route path="/chapter-7-vs-chapter-13" element={<HighCpcPillarPage slug="chapter-7-vs-chapter-13" />} />
       <Route path="/wrongful-termination-settlements" element={<HighCpcPillarPage slug="wrongful-termination-settlements" />} />
+      <Route path="/wrongful-termination-settlements/:state" element={<PillarStateFanoutPage cluster="wrongful-termination" />} />
       <Route path="/roundup-camp-lejeune-updates" element={<HighCpcPillarPage slug="roundup-camp-lejeune-updates" />} />
       <Route path="/dui-first-offense-guide" element={<DuiFirstOffenseGuide />} />
       <Route path="/dui-first-offense-guide/:state" element={<DuiFirstOffenseStatePage />} />
