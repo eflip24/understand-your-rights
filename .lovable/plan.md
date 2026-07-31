@@ -1,36 +1,41 @@
-# Phase 8 — High-CPC Content Expansion (US)
+## What's actually unfinished
 
-Ship 10 new money pages in the same house style as the existing guides (`AutoInsuranceClaimGuide`, `SsdiDeniedWhatNext`, `MesotheliomaSettlementGuide`): entity-dense intro, `InMarketEntityBlock`, HowTo + FAQ + Article + Breadcrumb JSON-LD, `RelatedIntentStrip`, `ToolRecommender`, AdSlots, and a direct tie-in to the matching calculator and `/lawyer-near-me/{practice-area}`.
+I checked the database and the deployed functions. Two concrete gaps, one loose end:
 
-## Pages
+| # | Gap | Evidence |
+|---|-----|----------|
+| 1 | **Guide translations are empty** — the Phase 9 pipeline was built and deployed, but zero translations exist. Every Phase-8 pillar still renders English-only, so the 6-locale hreflang path in `HighCpcPillarPage` never activates. | `select count(*) from guide_translations` returns 0 rows for all locales |
+| 2 | **No schedule for the guide translator** — `translate-tools-daily` and `translate-region-intros-daily` are active pg_cron jobs; there is no `translate-guides` job. It only ever ran manually, and those runs hit credit/rate limits. | `cron.job` lists only the two jobs |
+| 3 | **Phase 11 (programmatic scale) never started** — the roadmap's last outstanding phase. | No state fan-out beyond DUI + alimony |
 
-| # | Route | Cluster | Calculator tie-in | Lawyer tie-in |
-|---|---|---|---|---|
-| 1 | /truck-accident-settlements | PI (FMCSA, 49 CFR 395 HOS, ELD, Prime/Werner/Swift, MCS-90) | Settlement Estimator | /lawyer-near-me/personal-injury |
-| 2 | /uber-lyft-accident-claims | Rideshare PI (James River, Period 1/2/3, $1M contingent) | Settlement Estimator | /lawyer-near-me/car-accident |
-| 3 | /nursing-home-abuse-claims | Elder law + PI (CMS 42 CFR 483, Five-Star, state ombudsman) | Pain & Suffering / Settlement Estimator | /lawyer-near-me/personal-injury |
-| 4 | /workers-comp-denied-what-next | Workers comp (state WCB appeal, IME, C-3, utilization review) | Workers' Comp Settlement Calc | /lawyer-near-me/employment |
-| 5 | /car-insurance-claim-denied | Auto insurance (bad faith, DOI complaint, Colossus/ClaimIQ) | Settlement Estimator | /lawyer-near-me/insurance-dispute |
-| 6 | /homeowners-insurance-claim-denied | Property (HO-3, ACV vs RCV, hurricane deductible, FL/TX/LA, public adjuster, appraisal clause) | Settlement Estimator | /lawyer-near-me/insurance-dispute |
-| 7 | /dui-first-offense-guide + /dui-first-offense-guide/:state | Criminal (BAC .08, implied consent, IID, ALR/DMV hearing, SR-22) | — (penalty/cost table) | /lawyer-near-me/criminal-defense/{state} |
-| 8 | /chapter-7-vs-chapter-13 | Bankruptcy (means test, 341 meeting, exemptions, trustee) | Debt Settlement Calculator | /lawyer-near-me/… debt/bankruptcy |
-| 9 | /wrongful-termination-settlements | Employment (EEOC, Title VII, FMLA, at-will exceptions) | EEOC Settlement Calculator | /lawyer-near-me/employment |
-| 10 | /roundup-camp-lejeune-updates | Mass tort (Monsanto/Bayer MDL 2741, CLJA, PACT Act, EDNC) | Settlement Estimator | /lawyer-near-me/personal-injury |
+Everything else from the roadmap is in place: Phase 8's 10 pillars + 51 DUI states, Phase 10 design polish, Phase 12 guide registry/hub/mega-menu, and the sitemap shards (guides, guides-i18n, dui states, PI sub-pages, mass tort).
 
-## DUI state fan-out (page 7)
+## Step 1 — Finish Phase 9 (translation backfill)
 
-New `src/data/duiStates.ts` covering all 51 jurisdictions: BAC limits, first-offense jail/fine range, license suspension length, IID requirement, lookback period, SR-22 requirement, statute citation. The hub lists all states in a scannable grid; `/dui-first-offense-guide/:state` renders a state template pre-populated from that data, with self-referential canonical + breadcrumb per state.
+- Schedule `translate-guides-cron` in pg_cron on a staggered slot (e.g. `41 5 * * *`) so it doesn't collide with the tools/region jobs, and reduce per-run batch size so a single run stays inside free-tier limits.
+- Add a manual "drain" path: run the function repeatedly with an explicit `?locale=` until each of es/fr/de/pt/it is complete (9 guides × 5 locales = 45 rows).
+- Verify the merge path end-to-end in the browser: load `/es/truck-accident-settlements`, confirm translated copy renders, canonical is self-referential, and all 6 hreflang tags emit (instead of the English-only fallback).
+- Once a locale is complete, its URLs need to appear in the `guides-i18n` sitemap shard — currently that shard should only emit locales that actually have rows, so gate it on real translation coverage rather than assuming all 5.
+
+## Step 2 — Phase 11: programmatic scale (state fan-out)
+
+Reuse the DUI state-template pattern for the clusters with the highest CPC and clearest state-level variation:
+
+| Cluster | Route pattern | State-varying data |
+|---|---|---|
+| Workers' comp denial | `/workers-comp-denied-what-next/:state` | Appeal board name, filing deadline, IME rules, benefit caps |
+| Wrongful termination | `/wrongful-termination-settlements/:state` | At-will exceptions, state FEP agency, filing window vs EEOC |
+| Car insurance claim denial | `/car-insurance-claim-denied/:state` | Fault vs no-fault, DOI complaint route, bad-faith statute, prompt-pay deadline |
+
+Each gets one data file (51 jurisdictions), one shared template component driven by the existing pillar template, self-referential canonical + breadcrumb per state, registration in `guideIndex.ts`, and sitemap entries. That's ~153 new indexable pages on already-validated templates.
 
 ## Technical notes
 
-- Content lives in data files (`src/data/phase8Pillars.ts` style per-page constants) so copy is editable without touching JSX; DUI uses a shared template component.
-- All pages are Tier-3 (English-only) → use `Tier3Head` so non-English locales are noindexed, consistent with existing guides.
-- JSON-LD via the existing `JsonLdGraph` + `articleSchema`/`faqSchema`/`breadcrumbSchema` helpers, plus a HowTo graph node per page.
-- Routes registered lazily in `AppRoutes.tsx`, matching the current lazy-import pattern.
-- `RelatedIntentStrip` links each page into its existing cluster (PI hub, auto-insurance guide, debt hub, mass-tort hub, SSDI/LTD guides) and existing pages get reciprocal links added where the cluster already has a strip.
-- `generate-sitemap` edge function: add the 10 routes + 51 DUI state URLs to the guides shard, then redeploy.
-- Legal disclaimer block on every page (site standard).
+- New state data files follow `src/data/duiStates.ts` shape; templates follow `DuiFirstOffenseStatePage.tsx`.
+- State pages are Tier-3 (English-only) → `Tier3Head`, consistent with the hreflang scope rule.
+- `generate-sitemap` gets three new slug arrays in the guides shard, then redeploy.
+- No new calculators; state pages link to existing tools and `/lawyer-near-me/{area}/{state}`.
 
-## Out of scope
+## Suggested order
 
-No new calculators — pages link to existing tools. No multilingual translation for these routes in this phase.
+Step 1 first — it's finishing work already paid for, and it unlocks 45 translated pages with no new content authoring. Step 2 is the bigger new-surface bet.
