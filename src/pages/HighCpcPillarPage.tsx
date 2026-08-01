@@ -9,6 +9,7 @@ import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/compo
 import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 import ToolRecommender from "@/components/tools/ToolRecommender";
+import PillarStateChooser from "@/components/seo/PillarStateChooser";
 import AdSlot from "@/components/ads/AdSlot";
 import NotFound from "@/pages/NotFound";
 import { getPhase8Pillar, type Phase8Pillar } from "@/data/phase8Pillars";
@@ -194,6 +195,8 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
             ))}
           </div>
         </section>
+
+        <PillarStateChooser slug={data.slug} />
 
         <AdSlot slot="end-of-article" className="mb-10" />
 
