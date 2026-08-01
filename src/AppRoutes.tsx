@@ -169,6 +169,8 @@ export default function AppRoutes() {
         <Route path="categories" element={<AdminCategories />} />
         <Route path="growth" element={<AdminGrowth />} />
         <Route path="prices" element={<AdminPrices />} />
+        <Route path="translations" element={<AdminTranslations />} />
+
       </Route>
       <Route path="/auto-accident-law" element={<PillarPageWrapper category="auto" />} />
       <Route path="/auto-accident-law/:slug" element={<ClusterPageWrapper category="auto" />} />
