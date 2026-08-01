@@ -54,6 +54,7 @@ const AdminBlogEditor = React.lazy(() => import("@/pages/admin/AdminBlogEditor")
 const AdminCategories = React.lazy(() => import("@/pages/admin/AdminCategories"));
 const AdminGrowth = React.lazy(() => import("@/pages/admin/AdminGrowth"));
 const AdminPrices = React.lazy(() => import("@/pages/admin/AdminPrices"));
+const AdminTranslations = React.lazy(() => import("@/pages/admin/AdminTranslations"));
 const DisclaimerPage = React.lazy(() => import("@/pages/DisclaimerPage"));
 const PrivacyPolicyPage = React.lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage"));
@@ -168,6 +169,8 @@ export default function AppRoutes() {
         <Route path="categories" element={<AdminCategories />} />
         <Route path="growth" element={<AdminGrowth />} />
         <Route path="prices" element={<AdminPrices />} />
+        <Route path="translations" element={<AdminTranslations />} />
+
       </Route>
       <Route path="/auto-accident-law" element={<PillarPageWrapper category="auto" />} />
       <Route path="/auto-accident-law/:slug" element={<ClusterPageWrapper category="auto" />} />
