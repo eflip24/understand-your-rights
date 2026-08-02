@@ -219,6 +219,14 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
             attorney in your jurisdiction before acting on anything on this page.
           </p>
         </section>
+        </div>
+
+        {/* Desktop sidebar rail — sticky ad unit alongside long-form copy. */}
+        <aside className="hidden xl:block">
+          <div className="sticky top-24">
+            <AdSlot slot="sidebar" />
+          </div>
+        </aside>
       </div>
     </div>
   );
