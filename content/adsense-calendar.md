@@ -56,3 +56,13 @@ Ordered by revenue upside (Volume × CPC × winnability). Each cross-links to it
 ## Progress log
 
 - 2026-07-05 — Wired `above-content` slot into `ToolPageLayout.tsx`; created `ToolSeoContext` component; seeded 3 Tier-A English seoContext entries. Next: build Tier-A new tools starting with Slip & Fall Settlement Estimator.
+- 2026-08-02 — Revenue workstream (plan days 1-3): named ad units now read from
+  `VITE_ADSENSE_SLOT_*` env vars; deny list reworked so lawyer-directory
+  city/state pages monetize (only bare hubs withheld); mobile sticky anchor
+  unit (`StickyAnchorAd`) added app-wide; desktop sidebar rail added to
+  `HighCpcPillarPage`; `ToolResultAd` wired into wage-garnishment, SSDI back
+  pay, medical lien, debt settlement and debt payoff calculators. Also added
+  `src/lib/contentDepth.ts` and gated thin state fan-out pages to noindex.
+  Env vars to set once units exist in AdSense:
+  VITE_ADSENSE_SLOT_ABOVE_CONTENT, _MID_CONTENT, _END_OF_ARTICLE,
+  _POST_RESULT, _TOOL_RESULT, _SIDEBAR, _IN_FEED, _ANCHOR_MOBILE.
