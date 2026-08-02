@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import ToolRecommender from "@/components/tools/ToolRecommender";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 // 2024 SSI federal max
 const SSI_FED_MAX_2024 = 943;
@@ -147,6 +148,8 @@ export default function SSDIBackPayEstimator() {
           </CardContent>
         </Card>
       )}
+
+      <ToolResultAd show={!!calc} />
 
       <ToolRecommender topic="workers-compensation" />
     </div>

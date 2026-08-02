@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import ToolRecommender from "@/components/tools/ToolRecommender";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 // 2024 federal minimum wage
 const FED_MIN_WAGE = 7.25;
@@ -171,6 +172,8 @@ export default function WageGarnishmentCalculator() {
           </CardContent>
         </Card>
       )}
+
+      <ToolResultAd show={!!calc} />
 
       <ToolRecommender topic="wage-hour" />
     </div>
