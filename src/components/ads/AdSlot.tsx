@@ -9,7 +9,7 @@ import {
 } from "@/lib/adAnalytics";
 
 interface AdSlotProps {
-  slot: "above-content" | "mid-content" | "end-of-article" | "post-result" | "tool-result" | "sidebar" | "in-feed";
+  slot: "above-content" | "mid-content" | "end-of-article" | "post-result" | "tool-result" | "sidebar" | "in-feed" | "anchor-mobile";
   className?: string;
 }
 
@@ -21,6 +21,7 @@ const slotStyles: Record<string, string> = {
   "tool-result": "min-h-[250px]",
   "sidebar": "min-h-[250px] md:min-h-[600px]",
   "in-feed": "min-h-[120px]",
+  "anchor-mobile": "min-h-[50px]",
 };
 
 
