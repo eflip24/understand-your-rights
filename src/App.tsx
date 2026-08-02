@@ -11,6 +11,7 @@ import Footer from "@/components/layout/Footer";
 
 import ScrollToTop from "@/components/ScrollToTop";
 import LegalChatWidget from "@/components/chat/LegalChatWidget";
+import StickyAnchorAd from "@/components/ads/StickyAnchorAd";
 import AppRoutes from "@/AppRoutes";
 import LocaleSync from "@/i18n/LocaleSync";
 import { supabase } from "@/integrations/supabase/client";
@@ -97,6 +98,7 @@ const App = () => {
               <Footer />
             </div>
             <LegalChatWidget />
+            <StickyAnchorAd />
             {/* Cookie consent now handled by Google Funding Choices (TCF v2.2) loaded in index.html */}
           </BrowserRouter>
         </TooltipProvider>
