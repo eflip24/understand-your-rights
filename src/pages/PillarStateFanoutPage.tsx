@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Scale } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Tier3Head from "@/components/seo/Tier3Head";
+import { isThinFanoutPage } from "@/lib/contentDepth";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
 import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
@@ -368,9 +369,26 @@ function Body({ d }: { d: Built }) {
     })),
   };
 
+  // Index only the state pages that carry real jurisdiction-specific
+  // substance; sparse records stay crawlable for users but noindexed so they
+  // do not dilute the pillar they hang off.
+  const thin = isThinFanoutPage([
+    ...d.intro,
+    ...d.facts.map((f) => `${f.label} ${f.value}`),
+    ...d.steps.map((x) => `${x.name} ${x.text}`),
+    ...d.faqs.map((f) => `${f.question} ${f.answer}`),
+    d.entityIntro,
+    ...d.entities,
+  ]);
+
   return (
     <div className="min-h-screen">
-      <Tier3Head title={d.metaTitle} description={d.metaDescription} ogType="article" />
+      <Tier3Head
+        title={d.metaTitle}
+        description={d.metaDescription}
+        ogType="article"
+        noindex={thin}
+      />
       <JsonLdGraph
         schemas={[
           articleSchema(d.h1, d.metaDescription, url),
