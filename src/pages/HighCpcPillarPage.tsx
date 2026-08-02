@@ -67,7 +67,8 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
         ]}
       />
 
-      <div className="container max-w-4xl py-10 px-4">
+      <div className="container max-w-7xl py-10 px-4 xl:grid xl:grid-cols-[minmax(0,56rem)_300px] xl:gap-10 xl:justify-center">
+        <div className="max-w-4xl w-full mx-auto xl:mx-0">
         <header className="mb-8">
           <p className="text-sm uppercase tracking-wide text-accent font-semibold">
             {data.tagline}
@@ -218,6 +219,14 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
             attorney in your jurisdiction before acting on anything on this page.
           </p>
         </section>
+        </div>
+
+        {/* Desktop sidebar rail — sticky ad unit alongside long-form copy. */}
+        <aside className="hidden xl:block">
+          <div className="sticky top-24">
+            <AdSlot slot="sidebar" />
+          </div>
+        </aside>
       </div>
     </div>
   );

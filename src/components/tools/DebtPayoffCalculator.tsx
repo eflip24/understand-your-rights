@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useTranslation } from "react-i18next";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 export default function DebtPayoffCalculator() {
   const { t } = useTranslation(["tools", "common"]);
@@ -97,6 +98,7 @@ export default function DebtPayoffCalculator() {
           )}
         </div>
       )}
+      <ToolResultAd show={!!result} />
     </div>
   );
 }

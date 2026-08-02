@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import SettlementTaxabilityFAQ from "@/components/tools/SettlementTaxabilityFAQ";
+import ToolResultAd from "@/components/tools/ToolResultAd";
 
 type LienType = "medicare" | "medicaid" | "erisa" | "hospital" | "private-health" | "va-tricare";
 
@@ -159,6 +160,8 @@ export default function MedicalLienEstimator() {
           </CardContent>
         </Card>
       )}
+
+      <ToolResultAd show={!!calc} />
 
       <SettlementTaxabilityFAQ variant="personal-injury" className="mt-6" />
       <ToolRecommender topic="personal-injury" />
