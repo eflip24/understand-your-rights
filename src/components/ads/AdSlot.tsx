@@ -40,7 +40,9 @@ export default function AdSlot({ slot, className = "" }: AdSlotProps) {
 
 
   useEffect(() => {
+    if (AUTO_ADS_ONLY) return;
     if (!consentDecided || !allowedHere) return;
+
     if (pushed.current) return;
     if (typeof window === "undefined") return;
     try {
