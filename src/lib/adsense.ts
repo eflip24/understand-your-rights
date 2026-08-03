@@ -34,11 +34,24 @@ export const AD_SLOT_IDS: Record<string, string> = {
   "anchor-mobile": envSlot("VITE_ADSENSE_SLOT_ANCHOR_MOBILE"),
 };
 
+/**
+ * Auto-ads mode.
+ *
+ * When no named unit IDs are configured, the account is running Google
+ * Auto ads: Google places anchor, vignette and in-article units itself.
+ * In that mode we must NOT also render manual <ins> blocks with a blank
+ * data-ad-slot (they mostly go unfilled, reserve dead space, and can
+ * cause duplicate/overlapping placements). Set any VITE_ADSENSE_SLOT_*
+ * env var to switch that placement back to a manual unit.
+ */
+export const AUTO_ADS_ONLY = Object.values(AD_SLOT_IDS).every((id) => !id);
+
 declare global {
   interface Window {
     adsbygoogle?: any[] & { requestNonPersonalizedAds?: number };
   }
 }
+
 
 // Utility / account / thin index routes never monetize. These are pages
 // with no editorial content at all, so AdSense should never see an ad

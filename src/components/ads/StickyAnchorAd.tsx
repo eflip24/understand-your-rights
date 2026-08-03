@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import AdSlot from "@/components/ads/AdSlot";
-import { shouldShowAds } from "@/lib/adsense";
+import { shouldShowAds, AUTO_ADS_ONLY } from "@/lib/adsense";
+
 
 /**
  * Mobile-only sticky anchor unit.
