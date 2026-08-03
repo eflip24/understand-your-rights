@@ -101,9 +101,11 @@ export function shouldShowAds(pathname: string): boolean {
   return true;
 }
 
-// Pushes the Auto-ads page-level tag once per session, after consent is
-// resolved and only on allowed routes. Auto ads (anchor, vignette,
-// in-article) then supplement the manual <AdSlot /> placements.
+// Auto ads are enabled per-site in the AdSense dashboard and activated by
+// the adsbygoogle.js tag in index.html — no page-level push is needed (the
+// legacy `enable_page_level_ads` call can even conflict with it). All we do
+// here is set the non-personalized flag before any auto ad request when the
+// visitor declined advertising consent.
 let autoAdsPushed = false;
 export function initAutoAds(opts: { advertisingConsent: boolean }) {
   if (typeof window === "undefined" || autoAdsPushed) return;
@@ -112,13 +114,9 @@ export function initAutoAds(opts: { advertisingConsent: boolean }) {
     if (!opts.advertisingConsent) {
       window.adsbygoogle.requestNonPersonalizedAds = 1;
     }
-    window.adsbygoogle.push({
-      google_ad_client: ADSENSE_CLIENT,
-      enable_page_level_ads: true,
-      overlays: { bottom: true },
-    });
     autoAdsPushed = true;
   } catch {
     // AdSense script may be blocked; ignore.
   }
+
 }
