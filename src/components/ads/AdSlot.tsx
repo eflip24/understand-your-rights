@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { ADSENSE_CLIENT, AD_SLOT_IDS, shouldShowAds } from "@/lib/adsense";
+import { ADSENSE_CLIENT, AD_SLOT_IDS, AUTO_ADS_ONLY, shouldShowAds } from "@/lib/adsense";
 import { useConsent } from "@/lib/consent";
 import {
   classifyPageType,
