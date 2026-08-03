@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import AdSlot from "@/components/ads/AdSlot";
-import { shouldShowAds } from "@/lib/adsense";
+import { shouldShowAds, AUTO_ADS_ONLY } from "@/lib/adsense";
+
 
 /**
  * Mobile-only sticky anchor unit.
@@ -24,8 +25,12 @@ export default function StickyAnchorAd() {
     return () => clearTimeout(t);
   }, [location.pathname]);
 
+  // Google Auto ads serve their own anchor overlay; rendering ours too
+  // would double up on mobile. Only show when a manual unit is configured.
+  if (AUTO_ADS_ONLY) return null;
   if (dismissed || !visible) return null;
   if (!shouldShowAds(location.pathname)) return null;
+
 
   return (
     <div className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-background/95 backdrop-blur border-t border-border">

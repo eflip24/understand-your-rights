@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { ADSENSE_CLIENT, AD_SLOT_IDS, shouldShowAds } from "@/lib/adsense";
+import { ADSENSE_CLIENT, AD_SLOT_IDS, AUTO_ADS_ONLY, shouldShowAds } from "@/lib/adsense";
 import { useConsent } from "@/lib/consent";
 import {
   classifyPageType,
@@ -40,7 +40,9 @@ export default function AdSlot({ slot, className = "" }: AdSlotProps) {
 
 
   useEffect(() => {
+    if (AUTO_ADS_ONLY) return;
     if (!consentDecided || !allowedHere) return;
+
     if (pushed.current) return;
     if (typeof window === "undefined") return;
     try {
@@ -118,9 +120,14 @@ export default function AdSlot({ slot, className = "" }: AdSlotProps) {
     clickFired.current = false;
   }, [location.pathname]);
 
+  // Auto ads mode: Google decides placement, so we render nothing here
+  // rather than a blank-slot <ins> that would go unfilled.
+  if (AUTO_ADS_ONLY) return null;
+
   // Page is on the deny list — render nothing (not even a placeholder) so
   // AdSense crawlers never see an ad slot on thin pages.
   if (!allowedHere) return null;
+
 
   if (!consentDecided) {
     // Reserve space to prevent CLS without showing an ad container.
