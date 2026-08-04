@@ -106,19 +106,31 @@ export function definedTermSchema(term: string, definition: string, url: string)
   };
 }
 
-export function articleSchema(title: string, description: string, url: string) {
+export function articleSchema(
+  title: string,
+  description: string,
+  url: string,
+  dates?: { datePublished?: string; dateModified?: string; author?: string },
+) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
     description,
     url,
+    ...(dates?.datePublished ? { datePublished: dates.datePublished } : {}),
+    ...(dates?.dateModified ? { dateModified: dates.dateModified } : {}),
+    author: {
+      "@type": "Organization",
+      name: dates?.author || "LegallySpoken Editorial Team",
+    },
     publisher: {
       "@type": "Organization",
       name: "LegallySpoken",
     },
   };
 }
+
 
 export function websiteSchema() {
   return {
