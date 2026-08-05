@@ -79,6 +79,16 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
           <h1 className="font-serif text-3xl md:text-4xl font-bold mt-2 leading-tight">
             {data.h1}
           </h1>
+          {data.dateModified && (
+            <p className="text-xs text-muted-foreground mt-3">
+              By the LegallySpoken Editorial Team · Last reviewed{" "}
+              {new Date(data.dateModified).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+          )}
         </header>
 
         <InMarketEntityBlock
