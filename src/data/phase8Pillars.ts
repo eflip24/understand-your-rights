@@ -860,6 +860,102 @@ export const phase8Pillars: Phase8Pillar[] = [
           "In Chapter 7, secured creditors keep their liens. If you are current and your equity is exempt, you generally keep the property by continuing to pay — sometimes via a reaffirmation agreement. If you have significant non-exempt equity, the trustee can sell the asset, pay your exemption in cash, and distribute the rest. In Chapter 13, arrears are folded into the plan and the automatic stay halts a foreclosure sale, which is the single most common reason people choose Chapter 13 over Chapter 7.",
         ],
       },
+      {
+        heading: "Chapter 7 vs Chapter 13 side by side",
+        paragraphs: [
+          "The table below is the comparison most filers actually need: not the statutory definitions, but what each chapter costs, how long it lasts, and what it does to the two assets people care about most.",
+        ],
+        tables: [
+          {
+            caption: "Chapter 7 vs Chapter 13 — the practical differences",
+            columns: ["Factor", "Chapter 7 (liquidation)", "Chapter 13 (reorganization)"],
+            rows: [
+              ["Court filing fee", "$338", "$313"],
+              ["Typical attorney fee", "$1,200–$2,500, paid before filing", "$3,500–$5,500, mostly paid through the plan"],
+              ["Time to discharge", "3–5 months from filing", "36 or 60 months of plan payments"],
+              ["Income requirement", "Below state median, or pass Form 122A-2", "Regular income sufficient to fund a plan"],
+              ["Non-exempt assets", "Trustee may sell them", "You keep them and pay their value into the plan"],
+              ["Mortgage arrears", "Cannot be cured — foreclosure resumes after the stay lifts", "Cured over 3–5 years while you keep the home"],
+              ["Vehicle cramdown", "Not available", "Available if purchased 910+ days before filing"],
+              ["Second-mortgage strip", "Not available", "Available if the home is worth less than the first mortgage"],
+              ["Credit report duration", "10 years from filing", "7 years from filing"],
+              ["Repeat filing bar", "8 years (Ch.7 to Ch.7)", "2 years (Ch.13 to Ch.13); 4 years after a Ch.7 discharge"],
+            ],
+            note: "Filing fees are the standard fees charged by U.S. Bankruptcy Courts; attorney-fee ranges reflect typical consumer no-asset and standard plan cases and vary by district.",
+          },
+        ],
+      },
+      {
+        heading: "What your money actually goes to",
+        paragraphs: [
+          "People compare bankruptcy to debt settlement on headline cost and get the wrong answer, because the two routes carry very different hidden costs. Settlement generates taxable cancellation-of-debt income on Form 1099-C and does not stop a lawsuit; bankruptcy's discharge is not taxable income and stops collection instantly. The worked example below uses $42,000 of unsecured debt — close to the median consumer filing.",
+        ],
+        tables: [
+          {
+            caption: "Worked example — $42,000 unsecured debt, three routes",
+            columns: ["Route", "Out of pocket", "Time", "Tax consequence", "Collection stops"],
+            rows: [
+              ["Chapter 7", "≈ $1,900 (fee + counsel)", "4 months", "None — discharge is not income", "Immediately, at filing"],
+              ["Chapter 13 (30% plan)", "≈ $12,600 + $4,000 counsel over 60 months", "5 years", "None", "Immediately, at filing"],
+              ["Debt settlement (50%)", "≈ $21,000 + 20–25% company fee", "24–48 months", "1099-C on ≈ $21,000 forgiven", "No — suits and garnishment continue"],
+              ["Minimum payments", "≈ $96,000 total interest and principal", "20+ years", "None", "No"],
+            ],
+            note: "Illustrative only. Plan percentages, settlement rates and interest assumptions vary; run your own numbers in the debt settlement calculator below.",
+          },
+        ],
+      },
+      {
+        heading: "Exemptions: what you keep depends on your state",
+        paragraphs: [
+          "Exemptions are the single biggest variable in whether Chapter 7 is safe for you. Seventeen states plus DC let you elect the federal exemption scheme of 11 U.S.C. § 522(d); the rest force you into state exemptions. A homeowner with $80,000 of equity is untouchable in Florida and at real risk in a state with a $25,000 homestead cap.",
+        ],
+        tables: [
+          {
+            caption: "Homestead and vehicle exemptions in the largest filing states",
+            columns: ["State", "Homestead (single filer)", "Motor vehicle", "Federal scheme allowed?"],
+            rows: [
+              ["Federal (§ 522(d))", "$27,900", "$4,450", "—"],
+              ["California (System 2)", "$31,950", "$6,375", "No — state only"],
+              ["Texas", "Unlimited (acreage limits apply)", "One vehicle per licensed driver", "Yes"],
+              ["Florida", "Unlimited (acreage limits apply)", "$1,000", "No — state only"],
+              ["New York", "$179,950–$204,825 by county", "$4,825", "No — state only"],
+              ["Illinois", "$15,000", "$2,400", "No — state only"],
+              ["Ohio", "$161,375", "$4,450", "No — state only"],
+              ["Georgia", "$21,500", "$5,000", "No — state only"],
+            ],
+            note: "Federal figures adjust every three years under § 104. State caps change by statute and several are indexed for inflation — confirm the current figure for your district before relying on it.",
+          },
+        ],
+      },
+      {
+        heading: "Timeline from first call to discharge",
+        tables: [
+          {
+            caption: "What happens, and when",
+            columns: ["Stage", "Chapter 7", "Chapter 13"],
+            rows: [
+              ["Credit counseling", "Within 180 days before filing", "Within 180 days before filing"],
+              ["Petition filed / automatic stay", "Day 0", "Day 0"],
+              ["First plan payment due", "n/a", "Day 30, before confirmation"],
+              ["341 meeting of creditors", "Day 21–40", "Day 21–50"],
+              ["Objection / confirmation window", "Trustee has 60 days after the 341 to object to exemptions", "Confirmation hearing usually within 45 days of the 341"],
+              ["Debtor education course", "Before discharge", "Before discharge"],
+              ["Discharge order", "Roughly 60–75 days after the 341 meeting", "After the final plan payment, 36 or 60 months in"],
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Mistakes that cost filers their case",
+        bullets: [
+          "Paying back a relative in the 12 months before filing — the trustee can claw the money back as a preferential transfer to an insider.",
+          "Running up credit cards or taking cash advances within 90 days: purchases over roughly $800 for luxury goods and cash advances over roughly $1,100 are presumed nondischargeable.",
+          "Transferring a car or a house title to a family member 'for safekeeping' — a fraudulent transfer that can convert a routine case into a denial of discharge under § 727.",
+          "Emptying a protected retirement account to pay unsecured creditors before filing. ERISA-qualified plans and most IRAs are already exempt; the money would have been kept.",
+          "Omitting a creditor, a bank account, a side gig or an expected tax refund from the schedules. Everything is disclosed under penalty of perjury.",
+          "Filing a Chapter 13 plan that cannot survive a single missed payment. Feasibility under § 1325(a)(6) is a confirmation requirement, and roughly half of Chapter 13 plans are dismissed before completion.",
+        ],
+      },
     ],
     howTo: [
       { name: "Total your debts by category", text: "Separate secured (mortgage, auto), priority (taxes, support) and general unsecured. The mix drives the chapter." },
