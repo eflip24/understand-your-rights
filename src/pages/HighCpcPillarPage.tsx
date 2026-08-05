@@ -146,6 +146,36 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
                 ))}
               </ul>
             )}
+            {s.tables?.map((t) => (
+              <figure key={t.caption} className="my-6 overflow-x-auto">
+                <figcaption className="text-sm font-semibold mb-2">{t.caption}</figcaption>
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-muted/60">
+                      {t.columns.map((c) => (
+                        <th key={c} className="border px-3 py-2 text-left font-semibold">
+                          {c}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {t.rows.map((r, ri) => (
+                      <tr key={ri} className={ri % 2 ? "bg-muted/20" : undefined}>
+                        {r.map((cell, ci) => (
+                          <td key={ci} className="border px-3 py-2 align-top">
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                {t.note && (
+                  <p className="text-xs text-muted-foreground mt-2">{t.note}</p>
+                )}
+              </figure>
+            ))}
             {i === 1 && <AdSlot slot="mid-content" className="mt-8" />}
           </section>
         ))}
