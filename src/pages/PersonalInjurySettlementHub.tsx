@@ -204,12 +204,13 @@ export default function PersonalInjurySettlementHub() {
             "Personal Injury Settlement Calculator & Complete Guide",
             "Estimate personal injury settlements with the multiplier or per-diem method. State-aware, includes attorney fees, liens, comparative fault, and policy limits.",
             URL,
+            { datePublished: PUBLISHED, dateModified: UPDATED },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
             { name: "Personal Injury Settlements", url: URL },
           ]),
-          faqSchema(PI_TAXABILITY_FAQS),
+          faqSchema([...PI_GENERAL_FAQS, ...PI_TAXABILITY_FAQS]),
           webApplicationSchema(
             "Personal Injury Settlement Calculator",
             "Free interactive calculator estimating personal injury settlement value using multiplier or per-diem method, with net-to-client breakdown.",
@@ -232,6 +233,10 @@ export default function PersonalInjurySettlementHub() {
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl">
           Estimate the value of your personal injury claim in under two minutes. Uses both the industry-standard <strong>multiplier method</strong> and <strong>per-diem method</strong>, adjusts for comparative fault and policy limits, and shows your net recovery after attorney fees and medical liens.
+        </p>
+        <p className="text-xs text-muted-foreground mt-3">
+          By the LegallySpoken Editorial Team · Last reviewed{" "}
+          {new Date(UPDATED).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
         </p>
       </header>
 
