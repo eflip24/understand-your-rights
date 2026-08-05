@@ -56,7 +56,10 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
       )}
       <JsonLdGraph
         schemas={[
-          articleSchema(data.h1, data.metaDescription, url),
+          articleSchema(data.h1, data.metaDescription, url, {
+            datePublished: data.datePublished,
+            dateModified: data.dateModified,
+          }),
           howToSchema,
           faqSchema(data.faqs),
           breadcrumbSchema([
