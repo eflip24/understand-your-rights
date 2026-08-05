@@ -12,10 +12,20 @@ import type { RecommenderTopic } from "@/components/tools/ToolRecommender";
  * Copy lives here so it can be edited without touching JSX.
  */
 
+export interface PillarTable {
+  caption: string;
+  columns: string[];
+  rows: string[][];
+  /** Optional note rendered under the table (source, caveat). */
+  note?: string;
+}
+
 export interface PillarSection {
   heading: string;
   paragraphs?: string[];
   bullets?: string[];
+  /** Original data tables — the citable asset on a rebuilt page. */
+  tables?: PillarTable[];
 }
 
 export interface PillarFaq {
