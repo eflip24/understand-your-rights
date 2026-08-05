@@ -347,6 +347,114 @@ export default function PersonalInjurySettlementHub() {
         </Suspense>
       </section>
 
+      {/* Value by injury type */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-3">Settlement Ranges by Injury Type</h2>
+        <p className="text-muted-foreground mb-4">
+          These are the ranges most commonly reported for claims that resolve pre-suit with
+          adequate coverage available. The multiplier column shows what adjusters typically
+          apply to medical specials for that injury profile, and treatment length is the
+          practical driver of both numbers.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <caption className="sr-only">Personal injury settlement ranges by injury type</caption>
+            <thead>
+              <tr className="bg-muted/60">
+                <th className="border px-3 py-2 text-left font-semibold">Injury profile</th>
+                <th className="border px-3 py-2 text-left font-semibold">Typical settlement range</th>
+                <th className="border px-3 py-2 text-left font-semibold">Usual multiplier</th>
+                <th className="border px-3 py-2 text-left font-semibold">Treatment window</th>
+              </tr>
+            </thead>
+            <tbody>
+              {VALUE_BY_INJURY.map((r, i) => (
+                <tr key={r[0]} className={i % 2 ? "bg-muted/20" : undefined}>
+                  {r.map((cell, ci) => (
+                    <td key={ci} className="border px-3 py-2 align-top">{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-muted-foreground mt-2">
+          Ranges assume liability is reasonably clear and coverage is available. Policy limits,
+          comparative fault and venue can move any of these figures substantially.
+        </p>
+      </section>
+
+      {/* Carrier behaviour */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-3">How Each Major Carrier Handles Injury Claims</h2>
+        <p className="text-muted-foreground mb-4">
+          Adjusters do not price your claim by hand. Files are scored by software against
+          ICD-10 codes, treatment duration, provider type and permanency, then negotiated
+          inside a defined authority ladder. Knowing the carrier's posture tells you where
+          to push.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <caption className="sr-only">Insurer claim-evaluation posture by carrier</caption>
+            <thead>
+              <tr className="bg-muted/60">
+                <th className="border px-3 py-2 text-left font-semibold">Carrier</th>
+                <th className="border px-3 py-2 text-left font-semibold">Evaluation system</th>
+                <th className="border px-3 py-2 text-left font-semibold">Negotiating posture</th>
+                <th className="border px-3 py-2 text-left font-semibold">What moves them</th>
+              </tr>
+            </thead>
+            <tbody>
+              {CARRIER_BEHAVIOUR.map((r, i) => (
+                <tr key={r[0]} className={i % 2 ? "bg-muted/20" : undefined}>
+                  {r.map((cell, ci) => (
+                    <td key={ci} className="border px-3 py-2 align-top">{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot slot="mid-content" className="mb-10" />
+
+      {/* Fault rules */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-3">How Your State's Fault Rule Changes the Number</h2>
+        <p className="text-muted-foreground mb-4">
+          Comparative fault is applied to the gross valuation before fees and liens. In four
+          jurisdictions plus the District of Columbia, being even slightly at fault ends the
+          claim outright — which is why liability evidence matters more there than damages
+          documentation.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <caption className="sr-only">Comparative and contributory negligence rules by state</caption>
+            <thead>
+              <tr className="bg-muted/60">
+                <th className="border px-3 py-2 text-left font-semibold">Rule</th>
+                <th className="border px-3 py-2 text-left font-semibold">Effect on recovery</th>
+                <th className="border px-3 py-2 text-left font-semibold">Representative states</th>
+              </tr>
+            </thead>
+            <tbody>
+              {FAULT_RULES.map((r, i) => (
+                <tr key={r[0]} className={i % 2 ? "bg-muted/20" : undefined}>
+                  {r.map((cell, ci) => (
+                    <td key={ci} className="border px-3 py-2 align-top">{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-muted-foreground mt-2">
+          State fault rules change by statute and case law; confirm the current rule for your
+          jurisdiction before relying on it.
+        </p>
+      </section>
+
       {/* Method comparison */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
