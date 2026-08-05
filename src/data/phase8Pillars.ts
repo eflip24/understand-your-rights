@@ -63,6 +63,9 @@ export interface Phase8Pillar {
   primaryCta: PillarCta;
   lawyerCta: PillarCta;
   recommenderTopic?: RecommenderTopic;
+  /** ISO dates surfaced in Article JSON-LD and the byline. */
+  datePublished?: string;
+  dateModified?: string;
   cluster: string;
   related: { label: string; href: string; blurb?: string }[];
 }
