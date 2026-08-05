@@ -541,6 +541,31 @@ export default function PersonalInjurySettlementHub() {
         </ol>
       </section>
 
+      {/* General FAQ */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">Personal Injury Settlement FAQs</h2>
+        <Accordion type="single" collapsible className="w-full">
+          {PI_GENERAL_FAQS.map((faq, i) => (
+            <AccordionItem key={i} value={`gen-${i}`}>
+              <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </section>
+
+      <RelatedIntentStrip
+        cluster="Personal injury cluster"
+        links={[
+          { label: "What to do after a car accident", href: "/what-to-do-after-a-car-accident", blurb: "The first 72 hours decide the claim." },
+          { label: "How pain and suffering is calculated", href: "/how-pain-and-suffering-is-calculated", blurb: "Multiplier and per-diem, worked out." },
+          { label: "Attorney contingency fees explained", href: "/attorney-contingency-fee-explained", blurb: "What one third actually costs you." },
+          { label: "Settlement timeline", href: "/personal-injury-settlements/timeline", blurb: "Crash to cheque, stage by stage." },
+          { label: "Are settlements taxable?", href: "/personal-injury-settlements/taxability", blurb: "IRC § 104(a)(2) in plain English." },
+          { label: "Car insurance claim denied", href: "/car-insurance-claim-denied", blurb: "Appeal routes and bad-faith leverage." },
+        ]}
+      />
+
       {/* Adjacent tools */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-3">Related Tools</h2>
