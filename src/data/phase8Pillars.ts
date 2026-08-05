@@ -1233,6 +1233,8 @@ export const phase8Pillars: Phase8Pillar[] = [
       description: "Free case review; toxic-exposure claims are contingency-based.",
     },
     recommenderTopic: "personal-injury",
+    datePublished: "2026-02-14",
+    dateModified: "2026-08-05",
     cluster: "Mass tort cluster",
     related: [
       { label: "Mass tort lawsuits hub", href: "/mass-tort-lawsuits", blurb: "Every active litigation we track." },
