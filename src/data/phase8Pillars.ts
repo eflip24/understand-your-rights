@@ -12,10 +12,20 @@ import type { RecommenderTopic } from "@/components/tools/ToolRecommender";
  * Copy lives here so it can be edited without touching JSX.
  */
 
+export interface PillarTable {
+  caption: string;
+  columns: string[];
+  rows: string[][];
+  /** Optional note rendered under the table (source, caveat). */
+  note?: string;
+}
+
 export interface PillarSection {
   heading: string;
   paragraphs?: string[];
   bullets?: string[];
+  /** Original data tables — the citable asset on a rebuilt page. */
+  tables?: PillarTable[];
 }
 
 export interface PillarFaq {
@@ -53,6 +63,9 @@ export interface Phase8Pillar {
   primaryCta: PillarCta;
   lawyerCta: PillarCta;
   recommenderTopic?: RecommenderTopic;
+  /** ISO dates surfaced in Article JSON-LD and the byline. */
+  datePublished?: string;
+  dateModified?: string;
   cluster: string;
   related: { label: string; href: string; blurb?: string }[];
 }
@@ -847,6 +860,102 @@ export const phase8Pillars: Phase8Pillar[] = [
           "In Chapter 7, secured creditors keep their liens. If you are current and your equity is exempt, you generally keep the property by continuing to pay — sometimes via a reaffirmation agreement. If you have significant non-exempt equity, the trustee can sell the asset, pay your exemption in cash, and distribute the rest. In Chapter 13, arrears are folded into the plan and the automatic stay halts a foreclosure sale, which is the single most common reason people choose Chapter 13 over Chapter 7.",
         ],
       },
+      {
+        heading: "Chapter 7 vs Chapter 13 side by side",
+        paragraphs: [
+          "The table below is the comparison most filers actually need: not the statutory definitions, but what each chapter costs, how long it lasts, and what it does to the two assets people care about most.",
+        ],
+        tables: [
+          {
+            caption: "Chapter 7 vs Chapter 13 — the practical differences",
+            columns: ["Factor", "Chapter 7 (liquidation)", "Chapter 13 (reorganization)"],
+            rows: [
+              ["Court filing fee", "$338", "$313"],
+              ["Typical attorney fee", "$1,200–$2,500, paid before filing", "$3,500–$5,500, mostly paid through the plan"],
+              ["Time to discharge", "3–5 months from filing", "36 or 60 months of plan payments"],
+              ["Income requirement", "Below state median, or pass Form 122A-2", "Regular income sufficient to fund a plan"],
+              ["Non-exempt assets", "Trustee may sell them", "You keep them and pay their value into the plan"],
+              ["Mortgage arrears", "Cannot be cured — foreclosure resumes after the stay lifts", "Cured over 3–5 years while you keep the home"],
+              ["Vehicle cramdown", "Not available", "Available if purchased 910+ days before filing"],
+              ["Second-mortgage strip", "Not available", "Available if the home is worth less than the first mortgage"],
+              ["Credit report duration", "10 years from filing", "7 years from filing"],
+              ["Repeat filing bar", "8 years (Ch.7 to Ch.7)", "2 years (Ch.13 to Ch.13); 4 years after a Ch.7 discharge"],
+            ],
+            note: "Filing fees are the standard fees charged by U.S. Bankruptcy Courts; attorney-fee ranges reflect typical consumer no-asset and standard plan cases and vary by district.",
+          },
+        ],
+      },
+      {
+        heading: "What your money actually goes to",
+        paragraphs: [
+          "People compare bankruptcy to debt settlement on headline cost and get the wrong answer, because the two routes carry very different hidden costs. Settlement generates taxable cancellation-of-debt income on Form 1099-C and does not stop a lawsuit; bankruptcy's discharge is not taxable income and stops collection instantly. The worked example below uses $42,000 of unsecured debt — close to the median consumer filing.",
+        ],
+        tables: [
+          {
+            caption: "Worked example — $42,000 unsecured debt, three routes",
+            columns: ["Route", "Out of pocket", "Time", "Tax consequence", "Collection stops"],
+            rows: [
+              ["Chapter 7", "≈ $1,900 (fee + counsel)", "4 months", "None — discharge is not income", "Immediately, at filing"],
+              ["Chapter 13 (30% plan)", "≈ $12,600 + $4,000 counsel over 60 months", "5 years", "None", "Immediately, at filing"],
+              ["Debt settlement (50%)", "≈ $21,000 + 20–25% company fee", "24–48 months", "1099-C on ≈ $21,000 forgiven", "No — suits and garnishment continue"],
+              ["Minimum payments", "≈ $96,000 total interest and principal", "20+ years", "None", "No"],
+            ],
+            note: "Illustrative only. Plan percentages, settlement rates and interest assumptions vary; run your own numbers in the debt settlement calculator below.",
+          },
+        ],
+      },
+      {
+        heading: "Exemptions: what you keep depends on your state",
+        paragraphs: [
+          "Exemptions are the single biggest variable in whether Chapter 7 is safe for you. Seventeen states plus DC let you elect the federal exemption scheme of 11 U.S.C. § 522(d); the rest force you into state exemptions. A homeowner with $80,000 of equity is untouchable in Florida and at real risk in a state with a $25,000 homestead cap.",
+        ],
+        tables: [
+          {
+            caption: "Homestead and vehicle exemptions in the largest filing states",
+            columns: ["State", "Homestead (single filer)", "Motor vehicle", "Federal scheme allowed?"],
+            rows: [
+              ["Federal (§ 522(d))", "$27,900", "$4,450", "—"],
+              ["California (System 2)", "$31,950", "$6,375", "No — state only"],
+              ["Texas", "Unlimited (acreage limits apply)", "One vehicle per licensed driver", "Yes"],
+              ["Florida", "Unlimited (acreage limits apply)", "$1,000", "No — state only"],
+              ["New York", "$179,950–$204,825 by county", "$4,825", "No — state only"],
+              ["Illinois", "$15,000", "$2,400", "No — state only"],
+              ["Ohio", "$161,375", "$4,450", "No — state only"],
+              ["Georgia", "$21,500", "$5,000", "No — state only"],
+            ],
+            note: "Federal figures adjust every three years under § 104. State caps change by statute and several are indexed for inflation — confirm the current figure for your district before relying on it.",
+          },
+        ],
+      },
+      {
+        heading: "Timeline from first call to discharge",
+        tables: [
+          {
+            caption: "What happens, and when",
+            columns: ["Stage", "Chapter 7", "Chapter 13"],
+            rows: [
+              ["Credit counseling", "Within 180 days before filing", "Within 180 days before filing"],
+              ["Petition filed / automatic stay", "Day 0", "Day 0"],
+              ["First plan payment due", "n/a", "Day 30, before confirmation"],
+              ["341 meeting of creditors", "Day 21–40", "Day 21–50"],
+              ["Objection / confirmation window", "Trustee has 60 days after the 341 to object to exemptions", "Confirmation hearing usually within 45 days of the 341"],
+              ["Debtor education course", "Before discharge", "Before discharge"],
+              ["Discharge order", "Roughly 60–75 days after the 341 meeting", "After the final plan payment, 36 or 60 months in"],
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Mistakes that cost filers their case",
+        bullets: [
+          "Paying back a relative in the 12 months before filing — the trustee can claw the money back as a preferential transfer to an insider.",
+          "Running up credit cards or taking cash advances within 90 days: purchases over roughly $800 for luxury goods and cash advances over roughly $1,100 are presumed nondischargeable.",
+          "Transferring a car or a house title to a family member 'for safekeeping' — a fraudulent transfer that can convert a routine case into a denial of discharge under § 727.",
+          "Emptying a protected retirement account to pay unsecured creditors before filing. ERISA-qualified plans and most IRAs are already exempt; the money would have been kept.",
+          "Omitting a creditor, a bank account, a side gig or an expected tax refund from the schedules. Everything is disclosed under penalty of perjury.",
+          "Filing a Chapter 13 plan that cannot survive a single missed payment. Feasibility under § 1325(a)(6) is a confirmation requirement, and roughly half of Chapter 13 plans are dismissed before completion.",
+        ],
+      },
     ],
     howTo: [
       { name: "Total your debts by category", text: "Separate secured (mortgage, auto), priority (taxes, support) and general unsecured. The mix drives the chapter." },
@@ -863,6 +972,13 @@ export const phase8Pillars: Phase8Pillar[] = [
       { question: "Can I convert from Chapter 13 to Chapter 7?", answer: "Yes. Conversion is common when income drops mid-plan or the plan becomes unfeasible, and it is available as of right in most circumstances under 11 U.S.C. § 1307 provided you qualify under the means test at conversion." },
       { question: "Does bankruptcy stop wage garnishment?", answer: "Immediately. The automatic stay under § 362 halts most garnishments the moment the petition is filed — the notable exception being domestic support obligations, which continue." },
       { question: "How often can I file?", answer: "Chapter 7 to Chapter 7 requires 8 years between filings. Chapter 13 after a Chapter 7 discharge requires 4 years for a full discharge, and Chapter 13 to Chapter 13 requires 2 years." },
+      { question: "What is the means test and how do I know if I pass?", answer: "Form 122A-1 compares your six-month average gross household income (annualized) to the median for your household size in your state. Below the median, you pass automatically and file Chapter 7. Above it, Form 122A-2 subtracts IRS National and Local Standards for food, housing, transportation and health care, plus your actual secured payments and priority debt, and looks at what is left over each month. Roughly speaking, more than about $290 of monthly disposable income presumes abuse and pushes you toward Chapter 13." },
+      { question: "Do I keep my car in Chapter 7?", answer: "If you are current on the loan and your equity fits the state motor-vehicle exemption (commonly $3,000–$7,500, with a wildcard sometimes stacked on top), you keep it by continuing to pay — often under a reaffirmation agreement. If it is paid off and worth more than the exemption, the trustee can sell it, pay you the exempt amount in cash, and distribute the balance." },
+      { question: "What is a Chapter 13 cramdown and when can I use it?", answer: "A cramdown reduces a secured debt to the collateral's actual value, with the shortfall treated as unsecured. It is available for vehicles purchased more than 910 days before filing and for most other personal property purchased more than one year before filing. It is not available for the mortgage on your principal residence." },
+      { question: "Can I strip a second mortgage?", answer: "In Chapter 13, yes — if the first mortgage balance exceeds the home's fair market value, a wholly unsecured junior lien can be stripped off and treated as general unsecured debt, disappearing at plan completion. Lien stripping is not available in Chapter 7." },
+      { question: "Will my employer or landlord find out?", answer: "Bankruptcy filings are public court records, but there is no notice to your employer unless a wage order is used in Chapter 13 or your employer is a creditor. Discrimination in employment because of a bankruptcy filing is prohibited by 11 U.S.C. § 525." },
+      { question: "How soon can I get a mortgage after bankruptcy?", answer: "Typical seasoning is two years after a Chapter 7 discharge for FHA and VA loans, four years for conventional, and as little as 12 months of on-time plan payments with court permission during an active Chapter 13." },
+      { question: "Should I settle my debts instead of filing?", answer: "Settlement makes sense when you have a lump sum available, the debt is limited to a few accounts, and you can absorb the tax on the forgiven balance reported on Form 1099-C. Bankruptcy is usually cheaper when the debt exceeds roughly half your annual income, when garnishment has already started, or when a foreclosure or repossession is imminent — because forgiven debt in bankruptcy is not taxable income." },
     ],
     primaryCta: {
       path: "/tools/finance/debt-settlement-calculator",
@@ -874,6 +990,8 @@ export const phase8Pillars: Phase8Pillar[] = [
       label: "Find a bankruptcy lawyer near you",
       description: "Most offer a free consultation and flat-fee Chapter 7 representation.",
     },
+    datePublished: "2026-02-14",
+    dateModified: "2026-08-05",
     cluster: "Debt & bankruptcy cluster",
     related: [
       { label: "Bankruptcy vs debt settlement", href: "/bankruptcy-vs-debt-settlement", blurb: "Which route costs less overall." },
@@ -1087,6 +1205,89 @@ export const phase8Pillars: Phase8Pillar[] = [
           "For deceased claimants, the estate's appointment papers, since survival and wrongful death claims are handled through the personal representative.",
         ],
       },
+      {
+        heading: "Camp Lejeune Elective Option tiers, explained",
+        paragraphs: [
+          "The Elective Option is the government's fixed-tier settlement track. Tier I covers the diagnoses with the strongest ATSDR-modelled association to the contaminated wells at Tarawa Terrace and Hadnot Point; Tier II covers conditions with a weaker but recognised association. The payment rises with cumulative exposure length, and a separate fixed amount is added where the claimant has died.",
+        ],
+        tables: [
+          {
+            caption: "Elective Option — tier structure and payment bands",
+            columns: ["Tier", "Representative conditions", "30–364 days exposure", "1–5 years", "5+ years"],
+            rows: [
+              ["Tier I", "Kidney cancer, liver cancer, non-Hodgkin lymphoma, leukemia, bladder cancer", "$150,000", "$300,000", "$450,000"],
+              ["Tier II", "Multiple myeloma, Parkinson's disease, kidney disease / end-stage renal disease, systemic sclerosis", "$100,000", "$250,000", "$400,000"],
+              ["Death add-on", "Any qualifying Tier I or Tier II condition where the claimant has died", "+$100,000", "+$100,000", "+$100,000"],
+            ],
+            note: "Amounts are the published Elective Option bands and are reduced by VA, Medicare and Medicaid offsets and by the statutory attorney-fee cap. Conditions outside these tiers must be pursued on the litigation track.",
+          },
+        ],
+      },
+      {
+        heading: "Elective Option or litigation — how the two tracks compare",
+        tables: [
+          {
+            caption: "Fixed-tier settlement vs individual litigation",
+            columns: ["Factor", "Elective Option", "Litigation in EDNC"],
+            rows: [
+              ["Causation proof", "Not required — tier eligibility only", "Individual causation must be established"],
+              ["Typical time to money", "Months", "Two years and up"],
+              ["Damages ceiling", "Capped by tier", "Full economic and non-economic damages"],
+              ["Punitive damages", "Barred by the CLJA", "Barred by the CLJA"],
+              ["Attorney fee cap", "20%", "25%"],
+              ["Offsets", "VA / Medicare / Medicaid deducted", "VA / Medicare / Medicaid deducted"],
+              ["Best fit", "Clear tier diagnosis, modest damages, need for speed", "Severe illness, heavy treatment costs, large wage loss, death case"],
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Roundup: what drives the value of an individual claim",
+        paragraphs: [
+          "Roundup resolutions are graded on a points-style matrix rather than published tiers. Firms handling inventory settlements weigh diagnosis subtype, age at diagnosis, treatment intensity, exposure duration and whether the claimant survived. The table below reflects the value drivers most consistently applied across inventory settlements.",
+        ],
+        tables: [
+          {
+            caption: "Roundup value drivers and their direction of effect",
+            columns: ["Factor", "Raises value", "Lowers value"],
+            rows: [
+              ["Diagnosis", "DLBCL, aggressive NHL subtypes, relapse", "Indolent CLL with watchful waiting only"],
+              ["Age at diagnosis", "Under 60, working, dependants at home", "Advanced age with competing morbidity"],
+              ["Treatment", "Chemotherapy, stem-cell transplant, hospitalisation", "Observation only"],
+              ["Exposure", "Occupational, years of near-daily use, documented", "Occasional residential use, no records"],
+              ["Alternative cause", "No competing risk factors", "Prior immunosuppression, hepatitis C, other known NHL risk"],
+              ["Outcome", "Death case with surviving spouse or minor children", "Full remission with no lasting impairment"],
+            ],
+            note: "Directional guidance drawn from publicly reported inventory settlement criteria. Individual outcomes vary; no firm can promise a figure at intake.",
+          },
+        ],
+      },
+      {
+        heading: "Deadlines you cannot miss",
+        tables: [
+          {
+            caption: "Filing windows by litigation",
+            columns: ["Claim", "Trigger", "Window", "Mandatory first step"],
+            rows: [
+              ["Roundup (product liability)", "Diagnosis, or discovery of the link", "State statute of limitations — commonly 2–3 years, 1 year in Louisiana and Tennessee", "None; file suit or join an inventory"],
+              ["Roundup (wrongful death)", "Date of death", "Typically 1–3 years by state", "Estate must be opened"],
+              ["Camp Lejeune (CLJA)", "CLJA framework", "Two-year filing framework with a six-month agency review before suit", "Administrative claim to Navy JAG Tort Claims Unit"],
+            ],
+            note: "Limitations rules are state-specific and fact-specific. Treat this as a prompt to confirm your date with a lawyer, not as legal advice on your deadline.",
+          },
+        ],
+      },
+      {
+        heading: "How to avoid the mass-tort claim mills",
+        bullets: [
+          "Ask who will actually litigate your case. Many television and social advertisements are run by lead-generation companies that sell the signed retainer to a filing firm.",
+          "Get the fee agreement in writing, including case costs, common-benefit assessments and lien-resolution charges — not just the headline percentage.",
+          "Confirm the firm has cases on file in the correct venue (MDL 2741 in N.D. Cal., or EDNC for Camp Lejeune) rather than only accumulating inventory.",
+          "Never sign a medical authorisation before you know which firm receives your records.",
+          "Be sceptical of any promised figure at intake. No one can price a claim before records and exposure history are reviewed.",
+          "Check whether the firm handles Medicare and Medicaid lien resolution in-house — an unresolved lien can hold your money for months after settlement.",
+        ],
+      },
     ],
     howTo: [
       { name: "Confirm the qualifying diagnosis", text: "Obtain the pathology report and treating oncologist records establishing the diagnosis and its date." },
@@ -1103,6 +1304,13 @@ export const phase8Pillars: Phase8Pillar[] = [
       { question: "Do I need to have served in the military to file a Camp Lejeune claim?", answer: "No. Civilian employees, contractors, and family members who lived on base — including those exposed in utero — can file, provided they meet the 30-day cumulative exposure requirement within the covered window." },
       { question: "Is a mass tort the same as a class action?", answer: "No. In a mass tort, each claimant keeps an individual case with its own damages evaluation; cases are only coordinated for pretrial purposes in an MDL. In a class action, one judgment binds the entire class and payouts are usually uniform." },
       { question: "What do these lawyers charge?", answer: "Roundup cases are handled on standard contingency, typically 33–40%, plus case costs and any common-benefit assessment. Camp Lejeune fees are capped by statute at 20% for claims resolved administratively and 25% for cases filed in court." },
+      { question: "Does filing a Camp Lejeune claim reduce my VA benefits?", answer: "It does not cancel your benefits, but the Camp Lejeune Justice Act requires that any award be offset by disability compensation, health-care payments and other benefits already paid for the same injury by the VA, Medicare or Medicaid. Keep every award letter and payment record — the offset is calculated from them, and unclaimed documentation cannot reduce it in your favour." },
+      { question: "Can I file for a family member who has died?", answer: "Yes. Both litigations allow survival and wrongful-death claims brought by the personal representative of the estate. You will need letters testamentary or letters of administration from probate court, the death certificate, and the medical records establishing the qualifying diagnosis. Under the CLJA, a representative may file even where the exposure predates the veteran's death by decades." },
+      { question: "Do I have to travel to North Carolina or California?", answer: "Almost never. Mass tort claims are handled through plaintiff fact sheets, written discovery and records collection. Only claimants selected as bellwether cases sit for deposition or attend trial, and even those proceedings are increasingly handled remotely." },
+      { question: "How long will my claim take?", answer: "Camp Lejeune requires a six-month administrative review before suit can be filed, and litigated claims in EDNC have been running well beyond two years. The Elective Option resolves fastest — months rather than years — for claimants whose diagnosis fits a defined tier. Roundup timelines vary by venue and by whether your case falls into a negotiated inventory settlement." },
+      { question: "What if I used Roundup at home rather than at work?", answer: "Residential users can and do file, but the exposure case is harder. Frequency and duration matter more than occupation: years of regular yard and garden application, documented by purchase receipts, store loyalty records, property records or witness statements, is the profile firms accept." },
+      { question: "Will a mass tort settlement affect Medicaid, SSI or other means-tested benefits?", answer: "It can. A lump sum counts as a resource in the month after receipt for SSI and Medicaid. Claimants on means-tested programs commonly use a special needs trust or a structured settlement to preserve eligibility — set this up before the money is disbursed, not after." },
+      { question: "Is there a filing fee or upfront cost to me?", answer: "No. Both litigations are handled on contingency, with case costs advanced by the firm and deducted from any recovery. Ask for the fee agreement in writing and confirm how costs, common-benefit assessments and lien resolution charges are calculated before signing." },
     ],
     primaryCta: {
       path: "/mass-tort-lawsuits",
@@ -1115,6 +1323,8 @@ export const phase8Pillars: Phase8Pillar[] = [
       description: "Free case review; toxic-exposure claims are contingency-based.",
     },
     recommenderTopic: "personal-injury",
+    datePublished: "2026-02-14",
+    dateModified: "2026-08-05",
     cluster: "Mass tort cluster",
     related: [
       { label: "Mass tort lawsuits hub", href: "/mass-tort-lawsuits", blurb: "Every active litigation we track." },
