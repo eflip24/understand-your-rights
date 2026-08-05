@@ -1205,6 +1205,89 @@ export const phase8Pillars: Phase8Pillar[] = [
           "For deceased claimants, the estate's appointment papers, since survival and wrongful death claims are handled through the personal representative.",
         ],
       },
+      {
+        heading: "Camp Lejeune Elective Option tiers, explained",
+        paragraphs: [
+          "The Elective Option is the government's fixed-tier settlement track. Tier I covers the diagnoses with the strongest ATSDR-modelled association to the contaminated wells at Tarawa Terrace and Hadnot Point; Tier II covers conditions with a weaker but recognised association. The payment rises with cumulative exposure length, and a separate fixed amount is added where the claimant has died.",
+        ],
+        tables: [
+          {
+            caption: "Elective Option — tier structure and payment bands",
+            columns: ["Tier", "Representative conditions", "30–364 days exposure", "1–5 years", "5+ years"],
+            rows: [
+              ["Tier I", "Kidney cancer, liver cancer, non-Hodgkin lymphoma, leukemia, bladder cancer", "$150,000", "$300,000", "$450,000"],
+              ["Tier II", "Multiple myeloma, Parkinson's disease, kidney disease / end-stage renal disease, systemic sclerosis", "$100,000", "$250,000", "$400,000"],
+              ["Death add-on", "Any qualifying Tier I or Tier II condition where the claimant has died", "+$100,000", "+$100,000", "+$100,000"],
+            ],
+            note: "Amounts are the published Elective Option bands and are reduced by VA, Medicare and Medicaid offsets and by the statutory attorney-fee cap. Conditions outside these tiers must be pursued on the litigation track.",
+          },
+        ],
+      },
+      {
+        heading: "Elective Option or litigation — how the two tracks compare",
+        tables: [
+          {
+            caption: "Fixed-tier settlement vs individual litigation",
+            columns: ["Factor", "Elective Option", "Litigation in EDNC"],
+            rows: [
+              ["Causation proof", "Not required — tier eligibility only", "Individual causation must be established"],
+              ["Typical time to money", "Months", "Two years and up"],
+              ["Damages ceiling", "Capped by tier", "Full economic and non-economic damages"],
+              ["Punitive damages", "Barred by the CLJA", "Barred by the CLJA"],
+              ["Attorney fee cap", "20%", "25%"],
+              ["Offsets", "VA / Medicare / Medicaid deducted", "VA / Medicare / Medicaid deducted"],
+              ["Best fit", "Clear tier diagnosis, modest damages, need for speed", "Severe illness, heavy treatment costs, large wage loss, death case"],
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Roundup: what drives the value of an individual claim",
+        paragraphs: [
+          "Roundup resolutions are graded on a points-style matrix rather than published tiers. Firms handling inventory settlements weigh diagnosis subtype, age at diagnosis, treatment intensity, exposure duration and whether the claimant survived. The table below reflects the value drivers most consistently applied across inventory settlements.",
+        ],
+        tables: [
+          {
+            caption: "Roundup value drivers and their direction of effect",
+            columns: ["Factor", "Raises value", "Lowers value"],
+            rows: [
+              ["Diagnosis", "DLBCL, aggressive NHL subtypes, relapse", "Indolent CLL with watchful waiting only"],
+              ["Age at diagnosis", "Under 60, working, dependants at home", "Advanced age with competing morbidity"],
+              ["Treatment", "Chemotherapy, stem-cell transplant, hospitalisation", "Observation only"],
+              ["Exposure", "Occupational, years of near-daily use, documented", "Occasional residential use, no records"],
+              ["Alternative cause", "No competing risk factors", "Prior immunosuppression, hepatitis C, other known NHL risk"],
+              ["Outcome", "Death case with surviving spouse or minor children", "Full remission with no lasting impairment"],
+            ],
+            note: "Directional guidance drawn from publicly reported inventory settlement criteria. Individual outcomes vary; no firm can promise a figure at intake.",
+          },
+        ],
+      },
+      {
+        heading: "Deadlines you cannot miss",
+        tables: [
+          {
+            caption: "Filing windows by litigation",
+            columns: ["Claim", "Trigger", "Window", "Mandatory first step"],
+            rows: [
+              ["Roundup (product liability)", "Diagnosis, or discovery of the link", "State statute of limitations — commonly 2–3 years, 1 year in Louisiana and Tennessee", "None; file suit or join an inventory"],
+              ["Roundup (wrongful death)", "Date of death", "Typically 1–3 years by state", "Estate must be opened"],
+              ["Camp Lejeune (CLJA)", "CLJA framework", "Two-year filing framework with a six-month agency review before suit", "Administrative claim to Navy JAG Tort Claims Unit"],
+            ],
+            note: "Limitations rules are state-specific and fact-specific. Treat this as a prompt to confirm your date with a lawyer, not as legal advice on your deadline.",
+          },
+        ],
+      },
+      {
+        heading: "How to avoid the mass-tort claim mills",
+        bullets: [
+          "Ask who will actually litigate your case. Many television and social advertisements are run by lead-generation companies that sell the signed retainer to a filing firm.",
+          "Get the fee agreement in writing, including case costs, common-benefit assessments and lien-resolution charges — not just the headline percentage.",
+          "Confirm the firm has cases on file in the correct venue (MDL 2741 in N.D. Cal., or EDNC for Camp Lejeune) rather than only accumulating inventory.",
+          "Never sign a medical authorisation before you know which firm receives your records.",
+          "Be sceptical of any promised figure at intake. No one can price a claim before records and exposure history are reviewed.",
+          "Check whether the firm handles Medicare and Medicaid lien resolution in-house — an unresolved lien can hold your money for months after settlement.",
+        ],
+      },
     ],
     howTo: [
       { name: "Confirm the qualifying diagnosis", text: "Obtain the pathology report and treating oncologist records establishing the diagnosis and its date." },
