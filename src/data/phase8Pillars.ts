@@ -990,6 +990,8 @@ export const phase8Pillars: Phase8Pillar[] = [
       label: "Find a bankruptcy lawyer near you",
       description: "Most offer a free consultation and flat-fee Chapter 7 representation.",
     },
+    datePublished: "2026-02-14",
+    dateModified: "2026-08-05",
     cluster: "Debt & bankruptcy cluster",
     related: [
       { label: "Bankruptcy vs debt settlement", href: "/bankruptcy-vs-debt-settlement", blurb: "Which route costs less overall." },
