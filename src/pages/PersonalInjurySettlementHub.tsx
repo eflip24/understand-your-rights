@@ -15,8 +15,108 @@ import {
 import AdSlot from "@/components/ads/AdSlot";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
+import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 import { useLocalizedPath } from "@/i18n/paths";
 import { piSubPages } from "@/data/piSettlementSubPages";
+
+const PUBLISHED = "2026-01-18";
+const UPDATED = "2026-08-05";
+
+/** Reference table: reported settlement ranges by injury profile. */
+const VALUE_BY_INJURY = [
+  ["Soft-tissue whiplash, no imaging findings", "$2,500 – $10,000", "1.5×", "6–12 weeks PT"],
+  ["Whiplash with positive MRI / bulging disc", "$10,000 – $35,000", "2×", "3–6 months"],
+  ["Fracture treated without surgery", "$25,000 – $75,000", "2.5×", "3–9 months"],
+  ["Fracture with ORIF surgery / hardware", "$75,000 – $250,000", "3×", "9–18 months"],
+  ["Herniated disc with injections", "$40,000 – $120,000", "3×", "6–18 months"],
+  ["Spinal fusion (single level)", "$150,000 – $500,000", "3.5–4×", "12–24 months"],
+  ["Traumatic brain injury (mild, documented)", "$100,000 – $400,000", "4×", "12–36 months"],
+  ["Traumatic brain injury (severe / permanent)", "$1M – policy limits", "5×+", "Lifetime care plan"],
+  ["Amputation or paralysis", "Policy limits, usually excess or umbrella", "5×+", "Lifetime care plan"],
+  ["Wrongful death", "Statutory scheme + limits", "n/a", "12–36 months"],
+];
+
+/** How the major carriers behave, from published claim practices and filings. */
+const CARRIER_BEHAVIOUR = [
+  ["State Farm", "Colossus-lineage internal evaluation", "Low first offer, moves in steady increments", "Consistent documentation of treatment gaps"],
+  ["GEICO", "ClaimIQ", "Very low first offer, fast to litigation posture", "Complete records before demanding; they audit gaps"],
+  ["Progressive", "ClaimIQ + internal severity model", "Aggressive on comparative fault", "Independent liability evidence (dashcam, scene photos)"],
+  ["Allstate", "Colossus", "Formal, tiered authority ladder", "Escalating to a supervisor with itemised damages"],
+  ["Liberty Mutual", "Internal severity scoring", "Slow, heavy documentation requests", "Deadlines in writing on every request"],
+  ["USAA", "Internal model", "Reasonable but firm on caps", "Clear MMI narrative from the treating physician"],
+  ["Nationwide / Farmers", "Mitchell / internal", "Mid-range offers, quicker close", "Anchoring high in the demand letter"],
+];
+
+/** Fault rules decide whether partial blame reduces or destroys recovery. */
+const FAULT_RULES = [
+  ["Pure comparative negligence", "Recovery reduced by your fault percentage, even at 99%", "CA, NY, FL (pre-2023 claims), WA, AZ, NM, LA, MS, RI, MO, KY, AK"],
+  ["Modified comparative — 51% bar", "No recovery once you are 51% or more at fault", "TX, IL, OH, PA, MI, NJ, WI, MN, CT, MA, IN, OR, NV"],
+  ["Modified comparative — 50% bar", "No recovery at 50% or more", "GA, CO, TN, UT, AR, ID, KS, ME, NE, ND, WV"],
+  ["Contributory negligence", "Any fault at all bars recovery entirely", "AL, MD, NC, VA, District of Columbia"],
+];
+
+export const PI_GENERAL_FAQS = [
+  {
+    question: "How much is my personal injury settlement worth?",
+    answer:
+      "Value is built from three parts: documented economic loss (medical bills, future care, lost wages, lost earning capacity), non-economic loss (pain and suffering, usually 1.5–5× the medical specials depending on injury severity), and the ceiling imposed by available insurance. A soft-tissue whiplash claim with $4,000 of treatment typically resolves between $6,000 and $15,000; a surgical case with $80,000 of specials commonly resolves in the low-to-mid six figures if coverage exists.",
+  },
+  {
+    question: "How long does a personal injury settlement take?",
+    answer:
+      "A straightforward claim settled pre-suit takes roughly 4–9 months from the crash — most of which is spent reaching Maximum Medical Improvement, because you cannot value a claim until treatment plateaus. Filed cases add 12–36 months, though over 95% still settle before trial.",
+  },
+  {
+    question: "Should I accept the first offer from the insurance company?",
+    answer:
+      "No. First offers are opening positions generated before the adjuster has full records, and they typically land at 40–60% of the demand. Cases that settle without counsel are consistently reported at lower gross values than represented claims, and the adjuster expects a counter.",
+  },
+  {
+    question: "Do I need a lawyer for a small injury claim?",
+    answer:
+      "If your treatment is under roughly $3,000, liability is undisputed and you have fully recovered, self-representation often nets you more because you keep the third that would go to fees. Once there is surgery, a permanent impairment, disputed fault, multiple defendants, a commercial vehicle, or a policy-limits issue, representation almost always increases net recovery.",
+  },
+  {
+    question: "What is Maximum Medical Improvement and why does it matter?",
+    answer:
+      "MMI is the point at which your treating physician says your condition will not materially improve with further treatment. It matters because a settlement is final: once you sign the release, you cannot reopen the claim if a disc later needs surgery. Settling before MMI is the single most expensive mistake injured claimants make.",
+  },
+  {
+    question: "What happens if the at-fault driver has no insurance or low limits?",
+    answer:
+      "Your own uninsured / underinsured motorist coverage steps into the at-fault driver's shoes, up to your UM/UIM limit. Notify your carrier early and obtain written consent before settling with the at-fault insurer, or you can forfeit the UIM claim. Where the defendant is a business, look for excess and umbrella layers above the primary policy.",
+  },
+  {
+    question: "Will my medical bills be taken out of my settlement?",
+    answer:
+      "Yes, if a lien or subrogation right applies. Medicare (a super-lien), Medicaid, ERISA self-funded plans, hospital statutory liens, and letters of protection from treating providers all attach to the recovery. Liens are frequently negotiated down — Medicare applies a procurement-cost reduction, and hospitals routinely settle for less than face value.",
+  },
+  {
+    question: "Is my settlement taxable?",
+    answer:
+      "The compensatory portion for physical injury is excluded from federal income tax under IRC § 104(a)(2). Punitive damages, pre- and post-judgment interest, and emotional-distress damages not arising from physical injury are taxable. Ask that the settlement agreement allocate the categories explicitly.",
+  },
+  {
+    question: "How does partial fault affect what I collect?",
+    answer:
+      "It depends on your state's rule. In a pure comparative state, 30% fault reduces a $100,000 valuation to $70,000. In a 51%-bar state, 51% fault means nothing at all. In the four contributory-negligence jurisdictions plus DC, even 1% fault is a complete bar — which is why liability evidence matters far more in those states.",
+  },
+  {
+    question: "What is a demand letter and what should it contain?",
+    answer:
+      "It is the written settlement demand that opens negotiation: a liability narrative, the complete medical record and bill summary, wage-loss documentation from your employer, a description of how the injury changed daily life, and a specific dollar figure. Anchor above your target — settlements typically land at 60–80% of a well-supported demand.",
+  },
+  {
+    question: "Can I still recover if I was a passenger, pedestrian or cyclist?",
+    answer:
+      "Yes, and usually more easily, because fault rarely attaches to you. Passengers can often claim against multiple policies — both drivers' liability coverage plus their own UM/UIM. Pedestrians and cyclists frequently recover under the striking driver's policy and their own household auto policy's UM coverage even though no vehicle of theirs was involved.",
+  },
+  {
+    question: "What is the deadline to file a personal injury lawsuit?",
+    answer:
+      "Most states allow two or three years from the date of injury, with one year in Louisiana and Tennessee and shorter notice periods — often 60–180 days — for claims against a government entity. Missing it ends the claim regardless of merit, so check the statute of limitations for your state before negotiating.",
+  },
+];
 
 const SettlementEstimator = lazy(() => import("@/components/tools/SettlementEstimatorWizard"));
 
