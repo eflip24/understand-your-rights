@@ -48,6 +48,51 @@ const FAQS = [
     answer:
       "Contingency fees of 33.33%–40% are standard, plus case costs (expert witnesses, exposure reconstruction, medical illustrators). Because mesothelioma cases require product-identification investigators and industrial-hygiene experts, expenses often run $50,000–$250,000 — all fronted by the firm.",
   },
+  {
+    question: "How much is a mesothelioma trust fund claim worth on its own?",
+    answer:
+      "Trusts publish a scheduled value per disease level and then pay a fraction of it — the payment percentage. A mesothelioma scheduled value of $180,000 at a 25% payment percentage pays $45,000 from that single trust. Because most plaintiffs qualify against 15–25 trusts based on their exposure history, aggregate trust recoveries commonly land between $200,000 and $700,000, entirely separate from lawsuits against solvent defendants.",
+  },
+  {
+    question: "Which occupations produce the strongest exposure evidence?",
+    answer:
+      "Navy shipyard and engine-room service, boilermakers, pipefitters and steamfitters, insulators, industrial electricians, auto mechanics doing brake and clutch work, drywall finishers using joint compound, and refinery and power-plant workers. Union records, Social Security earnings histories and product-identification depositions from co-workers convert an occupation into a named-product exposure, which is what defendants pay for.",
+  },
+  {
+    question: "Can I still file if I do not remember the specific asbestos products?",
+    answer:
+      "Usually yes. Firms retain industrial-hygiene and product-identification investigators who reconstruct exposure from job site, employer, trade and date range using ship records, plant purchase records and prior testimony from the same sites. Personal recall of brand names is helpful but is rarely the only route to identifying defendants.",
+  },
+  {
+    question: "Does secondhand (take-home) exposure qualify?",
+    answer:
+      "Yes in most jurisdictions. Spouses and children who laundered work clothes carrying asbestos dust have recovered in take-home exposure cases, though a minority of states limit the duty owed to household members. These claims turn on proving the worker's own exposure first, then the household contact pattern.",
+  },
+  {
+    question: "Will a settlement affect Medicare, Medicaid or VA benefits?",
+    answer:
+      "Medicare and Medicaid assert liens for treatment related to the illness and must be resolved before net funds are disbursed; that negotiation typically adds 30–90 days. VA service-connected disability and DIC are not offset by asbestos recoveries from private manufacturers. Need-based benefits such as SSI and Medicaid eligibility can be affected, which is why special-needs or settlement trusts are sometimes used.",
+  },
+];
+
+/** Settlement ranges by case profile — original data table. */
+const VALUE_PROFILE = [
+  { profile: "Living plaintiff, pleural, strong occupational ID", trust: "$300K – $700K", tort: "$1.0M – $2.4M", note: "Trial preference leverage is highest here" },
+  { profile: "Living plaintiff, peritoneal mesothelioma", trust: "$250K – $600K", tort: "$800K – $2.0M", note: "Fewer defendants, more medical variability" },
+  { profile: "Wrongful death / survival claim", trust: "$200K – $500K", tort: "$600K – $1.5M", note: "Deadline runs from death, not diagnosis" },
+  { profile: "Navy veteran, shipyard exposure", trust: "$350K – $700K", tort: "$1.0M – $2.2M", note: "Plus VA disability and DIC, which are not offset" },
+  { profile: "Take-home / secondhand exposure", trust: "$150K – $400K", tort: "$500K – $1.4M", note: "Duty to household members varies by state" },
+  { profile: "Weak or undocumented product ID", trust: "$50K – $200K", tort: "Often trust claims only", note: "Investigator reconstruction is decisive" },
+];
+
+/** High-volume asbestos venues — filing-environment table. */
+const VENUES = [
+  { court: "Philadelphia CCP (PA)", feature: "Dedicated asbestos program, reverse-bifurcation history", pace: "Trial in 12–24 months" },
+  { court: "Los Angeles / Alameda (CA)", feature: "CCP § 36 trial preference for terminal plaintiffs", pace: "Trial within 120 days of motion" },
+  { court: "Madison County (IL)", feature: "Historically the highest asbestos filing volume in the U.S.", pace: "Structured trial settings" },
+  { court: "Baltimore City (MD)", feature: "Consolidated asbestos docket", pace: "Consolidation can slow individual cases" },
+  { court: "New York City NYCAL", feature: "Case management order with accelerated in extremis track", pace: "Trial in 9–18 months" },
+  { court: "King County (WA)", feature: "Strong plaintiff verdict history", pace: "12–24 months" },
 ];
 
 const TRUST_FUNDS = [
@@ -86,6 +131,7 @@ export default function MesotheliomaSettlementGuide() {
             "Mesothelioma Settlement Guide",
             "How mesothelioma settlements are valued in 2026: average amounts, § 524(g) asbestos trust funds, VA benefits, and the expedited litigation timeline.",
             URL,
+            { datePublished: "2026-02-14", dateModified: "2026-08-06" },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
@@ -114,6 +160,9 @@ export default function MesotheliomaSettlementGuide() {
           Mesothelioma is a rare, aggressive cancer caused almost exclusively by asbestos exposure.
           Because causation is well-established and defendants are numerous, settlements are among the
           highest in U.S. personal-injury litigation — averaging $1M–$1.4M, with trial verdicts averaging $2.4M.
+        </p>
+        <p className="text-xs text-muted-foreground mb-6">
+          By the LegallySpoken Editorial Team · Last reviewed August 6, 2026
         </p>
 
         <InMarketEntityBlock
@@ -178,7 +227,74 @@ export default function MesotheliomaSettlementGuide() {
             jury verdicts. Individual outcomes depend on exposure evidence, defendant solvency, jurisdiction,
             and whether the plaintiff is living at trial.
           </p>
+
+          <h3 className="text-xl font-bold mt-8 mb-3">What different case profiles recover</h3>
+          <p className="mb-4 text-muted-foreground">
+            Nearly every mesothelioma plaintiff recovers from two stacks at once: § 524(g) trust claims
+            against bankrupt manufacturers, and tort settlements from solvent defendants. The table below
+            separates the two so you can see where the money actually comes from.
+          </p>
+          <div className="overflow-x-auto rounded-lg border">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Case profile</TableHead>
+                  <TableHead>Aggregate trust claims</TableHead>
+                  <TableHead>Tort settlements</TableHead>
+                  <TableHead>Notes</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {VALUE_PROFILE.map((r) => (
+                  <TableRow key={r.profile}>
+                    <TableCell className="font-medium">{r.profile}</TableCell>
+                    <TableCell>{r.trust}</TableCell>
+                    <TableCell>{r.tort}</TableCell>
+                    <TableCell className="text-sm text-muted-foreground">{r.note}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Ranges are illustrative composites of published settlement data and trust distribution
+            procedures, before attorney fees, case costs and medical liens.
+          </p>
         </section>
+
+        <section className="mb-10">
+          <h2 className="text-3xl font-bold mb-4">Where Asbestos Cases Are Filed</h2>
+          <p className="mb-4 text-muted-foreground">
+            Venue matters more in asbestos litigation than in almost any other tort. A handful of courts
+            run dedicated asbestos dockets with case-management orders that move terminal plaintiffs to
+            trial fast — and defendants price settlements accordingly.
+          </p>
+          <div className="overflow-x-auto rounded-lg border">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Court</TableHead>
+                  <TableHead>Docket feature</TableHead>
+                  <TableHead>Typical pace</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {VENUES.map((v) => (
+                  <TableRow key={v.court}>
+                    <TableCell className="font-medium">{v.court}</TableCell>
+                    <TableCell className="text-sm text-muted-foreground">{v.feature}</TableCell>
+                    <TableCell>{v.pace}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Filing venue depends on where exposure occurred, where defendants do business, and residency —
+            it is not a free choice. Compiled from published asbestos case-management orders.
+          </p>
+        </section>
+
 
         <section className="mb-10">
           <h2 className="text-3xl font-bold mb-4">Asbestos § 524(g) Trust Funds</h2>

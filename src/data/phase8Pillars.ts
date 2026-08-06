@@ -265,6 +265,64 @@ export const phase8Pillars: Phase8Pillar[] = [
           "Arbitration clauses in the rider terms of service for non-injury disputes.",
         ],
       },
+      {
+        heading: "Coverage by app period — Uber vs Lyft, side by side",
+        paragraphs: [
+          "The table below is the single most useful thing to have open when an adjuster tells you what policy applies. Limits are the published U.S. minimums each platform maintains nationally; a handful of states (New York, and Washington for TNC-specific statutes) require higher or differently structured coverage, and New York rideshare trips are written through a state-specific group policy with $1.25 million in liability.",
+        ],
+        tables: [
+          {
+            caption: "Rideshare insurance limits by app period (2026, U.S. baseline)",
+            columns: ["App period", "Uber", "Lyft", "Who pays first"],
+            rows: [
+              ["Period 0 — app off", "No platform coverage", "No platform coverage", "Driver's personal auto policy"],
+              ["Period 1 — app on, no request", "$50K/$100K bodily injury, $25K property; contingent comp/collision with $2,500 deductible", "$50K/$100K bodily injury, $25K property; contingent comp/collision with $2,500 deductible", "Personal policy first, platform layer excess"],
+              ["Period 2 — en route to pickup", "$1,000,000 third-party liability", "$1,000,000 third-party liability", "Platform commercial policy primary"],
+              ["Period 3 — passenger on board", "$1,000,000 liability + UM/UIM in most states", "$1,000,000 liability + UM/UIM in most states", "Platform commercial policy primary"],
+              ["New York trips (all periods 2–3)", "$1.25M liability via NY TNC group policy", "$1.25M liability via NY TNC group policy", "TNC group policy"],
+            ],
+            note: "Limits reflect published platform insurance summaries. Confirm the applicable policy in writing — the period assertion in the first adjuster call is not evidence.",
+          },
+        ],
+      },
+      {
+        heading: "What rideshare claims actually settle for",
+        paragraphs: [
+          "Rideshare claims are valued the same way as any auto injury claim — documented medical specials, wage loss, and a general-damages multiplier — but with two twists: the available limit is far higher than a typical personal policy in Periods 2 and 3, and the third-party administrator handling the file usually needs internal authority sign-off above roughly $100,000, which adds weeks.",
+        ],
+        tables: [
+          {
+            caption: "Typical rideshare injury settlement ranges by injury profile",
+            columns: ["Injury profile", "Typical medical specials", "Common settlement range", "Notes"],
+            rows: [
+              ["Soft tissue, chiropractic only, no imaging", "$1,500 – $5,000", "$8,000 – $20,000", "Adjusters apply MIST-style scoring; low first offers are routine"],
+              ["Soft tissue with MRI-confirmed disc bulge", "$6,000 – $15,000", "$25,000 – $60,000", "Causation letter from the treating physician moves the number most"],
+              ["Injections (ESI / facet blocks)", "$15,000 – $35,000", "$60,000 – $150,000", "Documented failed conservative care is the value driver"],
+              ["Surgery (discectomy, fusion, ORIF)", "$60,000 – $250,000", "$200,000 – $1,000,000 (limit)", "Period 2/3 cases frequently reach the $1M policy"],
+              ["Fracture with hardware, no surgery on spine", "$25,000 – $70,000", "$90,000 – $300,000", "Scarring and permanent impairment ratings add materially"],
+              ["Catastrophic / TBI / wrongful death", "$150,000+", "$1,000,000 policy limit, plus UM/UIM stacking", "Look for excess layers and the other driver's own policy"],
+            ],
+            note: "Ranges are drawn from published rideshare-claim outcomes and standard specials-plus-multiplier valuation. Your case may fall outside them.",
+          },
+        ],
+      },
+      {
+        heading: "Deadlines that actually bind your rideshare claim",
+        tables: [
+          {
+            caption: "Rideshare claim deadlines",
+            columns: ["Step", "Practical deadline", "Why it matters"],
+            rows: [
+              ["Report through the app", "Same day", "Opens the claim number that routes to the commercial carrier"],
+              ["Request the trip record", "Within 30 days", "Establishes the app period before the file is closed out"],
+              ["First medical treatment", "72 hours", "Gaps beyond a week are used to discount general damages"],
+              ["Personal-injury statute of limitations", "1 year (KY, LA, TN) to 6 years (ME, ND)", "Missing it ends the claim regardless of merit"],
+              ["Wrongful death", "1–3 years from date of death", "Runs separately from the injury clock"],
+              ["UM/UIM notice to the TNC carrier", "Often 30 days to 1 year per policy", "Late notice is a standard UM/UIM denial ground"],
+            ],
+          },
+        ],
+      },
     ],
     howTo: [
       { name: "Capture the trip evidence at the scene", text: "Screenshot the trip receipt, trip ID, driver name and plate, and photograph the app screen showing an active ride." },
@@ -281,6 +339,12 @@ export const phase8Pillars: Phase8Pillar[] = [
       { question: "How much is a typical Uber accident settlement?", answer: "Soft-tissue passenger claims usually settle between $15,000 and $50,000. Claims with imaging-confirmed injuries, injections or surgery commonly land between $75,000 and $300,000, with catastrophic cases running to the $1 million policy limit." },
       { question: "Does my own car insurance cover me while driving for Uber?", answer: "Not unless you carry a rideshare endorsement. Standard personal policies contain a livery or public-conveyance exclusion, which is why the platform's contingent coverage exists — and why it carries a $2,500 deductible." },
       { question: "How long do I have to file?", answer: "The personal-injury statute of limitations in your state governs — commonly two or three years, but as short as one year in Kentucky, Louisiana and Tennessee. Platform reporting deadlines are much shorter in practice, so report immediately." },
+      { question: "What is the difference between Period 1 and Period 2 for my payout?", answer: "It is usually the difference between about $50,000 and $1,000,000 of available coverage. Period 1 is app-on but no accepted request; Period 2 begins the moment the driver accepts your ride request. The trip record timestamp — not the adjuster's summary — decides it." },
+      { question: "Who pays if the rideshare driver was not at fault?", answer: "The at-fault driver's liability carrier pays first. If their limits are exhausted or they are uninsured, the rideshare UM/UIM coverage (Periods 2 and 3) responds up to $1 million in most states. You can pursue both in parallel." },
+      { question: "Do I have to give the rideshare carrier a recorded statement?", answer: "You are obliged to cooperate with your own insurer, not with the other side's. Statements to the TNC's third-party administrator are optional and are frequently used to pin down a Period 1 narrative or a 'minor impact' description. Decline until you have the trip record and, ideally, counsel." },
+      { question: "What if my rideshare driver was driving for both Uber and Lyft at once?", answer: "Multi-apping is common. Whichever platform had an accepted ride or an on-board passenger at impact provides the $1 million layer; the other platform's coverage sits in Period 1 at contingent limits. Pull the trip records from both accounts." },
+      { question: "Can I claim for a damaged phone, laptop or luggage in a rideshare crash?", answer: "Yes — personal property damaged in the crash is recoverable as property damage under the applicable liability policy. Photograph the items, keep receipts or a replacement quote, and submit them with your medical documentation rather than separately." },
+      { question: "How long does a rideshare settlement take to pay?", answer: "Once you accept, the TNC's administrator typically issues the release within 5–10 business days and the check 2–4 weeks after the signed release returns. Any health-insurance or Medicare lien must be resolved before your net funds are disbursed, which adds 30–90 days in lien-heavy cases." },
     ],
     primaryCta: {
       path: "/tools/consumer/settlement-estimator",
@@ -292,6 +356,8 @@ export const phase8Pillars: Phase8Pillar[] = [
       label: "Find a rideshare accident lawyer near you",
       description: "Free consultations; rideshare cases are handled on contingency.",
     },
+    datePublished: "2026-02-14",
+    dateModified: "2026-08-06",
     recommenderTopic: "car-accident",
     cluster: "Personal injury cluster",
     related: [
@@ -616,6 +682,63 @@ export const phase8Pillars: Phase8Pillar[] = [
           "Where the amount is small, small claims court on the property-damage or deductible portion is often faster than either.",
         ],
       },
+      {
+        heading: "Denial grounds, how often they appear, and what beats them",
+        tables: [
+          {
+            caption: "Auto claim denial grounds and the evidence that reverses them",
+            columns: ["Stated ground", "What the carrier must show", "Evidence that reverses it"],
+            rows: [
+              ["Late notice", "Actual prejudice to the investigation in most states", "Report date proof, intact vehicle, available witnesses"],
+              ["Policy lapse / cancellation", "Proper statutory notice of cancellation was mailed", "Payment history, bank record, absence of a compliant notice"],
+              ["Named-driver exclusion", "A signed exclusion in force on the loss date", "Copy of the signed endorsement and its effective dates"],
+              ["Material misrepresentation", "The misstatement was material to underwriting the risk", "Underwriting guidelines showing the fact would not change the rate"],
+              ["Liability disputed", "A reasonable investigation supporting its version", "Police report, dashcam, scene photos, independent witnesses"],
+              ["Injuries unrelated / pre-existing", "Medical opinion severing causation", "Treating-physician causation letter addressing prior findings"],
+              ["MIST / low-impact", "Biomechanical or damage-threshold argument", "Repair estimate detail, photographs, imaging, treatment continuity"],
+              ["Total loss valuation too low", "A supportable actual-cash-value figure", "Local comparable listings, dealer quotes, appraisal-clause demand"],
+            ],
+            note: "Denial grounds compiled from state Department of Insurance complaint categories and standard personal-auto policy conditions.",
+          },
+        ],
+      },
+      {
+        heading: "Prompt-pay clocks and complaint routes by state",
+        paragraphs: [
+          "Every state sets deadlines for acknowledging a claim, deciding coverage, and paying. Missing them is not just annoying — it is the statutory hook for an unfair claims practice argument and the first thing a Department of Insurance analyst checks.",
+        ],
+        tables: [
+          {
+            caption: "Representative prompt-payment deadlines (large states)",
+            columns: ["State", "Acknowledge claim", "Coverage decision", "Payment after acceptance"],
+            rows: [
+              ["California", "15 days", "40 days from proof of loss", "30 days"],
+              ["Texas", "15 days", "15 business days after receiving all items", "5 business days"],
+              ["Florida", "14 days", "60 days (property); 90 days (PIP)", "20 days"],
+              ["New York", "15 business days", "15 business days after proof of loss", "5 business days"],
+              ["Illinois", "15 working days", "30 working days", "30 days"],
+              ["Pennsylvania", "10 working days", "15 working days after investigation", "Prompt on acceptance"],
+            ],
+            note: "Deadlines summarized from state unfair claims settlement practices regulations; exact triggers vary by claim type. Verify against your state's current rule before citing it in an appeal.",
+          },
+        ],
+      },
+      {
+        heading: "What bad faith is worth",
+        tables: [
+          {
+            caption: "Recovery beyond the policy benefit, by theory",
+            columns: ["Theory", "What you can recover", "Typical requirement"],
+            rows: [
+              ["Breach of contract", "The unpaid benefit plus interest", "Coverage exists and the loss is proved"],
+              ["First-party bad faith", "Consequential damages, emotional distress, sometimes fees", "Denial was unreasonable and the insurer knew or recklessly disregarded that"],
+              ["Statutory unfair claims practice", "Statutory penalties and attorney fees in many states", "Violation of the state's claims-handling standards"],
+              ["Third-party bad faith (excess exposure)", "The entire verdict above policy limits", "Refusal of a reasonable within-limits demand"],
+              ["Punitive damages", "Multiplier on compensatory damages where allowed", "Clear and convincing evidence of malice or oppression"],
+            ],
+          },
+        ],
+      },
     ],
     howTo: [
       { name: "Get the denial in writing", text: "Demand a written denial citing the specific policy language relied on. Verbal denials are not appealable." },
@@ -632,6 +755,12 @@ export const phase8Pillars: Phase8Pillar[] = [
       { question: "What is the appraisal clause?", answer: "A provision in most auto and property policies allowing either side to demand a binding valuation by independent appraisers and an umpire when the dispute is about the amount of loss rather than coverage. It is the fastest route out of a lowball total-loss valuation." },
       { question: "Can my insurer deny my claim because I have a pre-existing injury?", answer: "Not simply because a prior condition exists. The legal standard in most states is that a defendant takes the plaintiff as found — an aggravation of a pre-existing condition is compensable. What the carrier needs is a physician saying the current symptoms are unrelated, and that opinion is rebuttable." },
       { question: "Will appealing a denial raise my premium?", answer: "Appealing a claim decision is not a rate-making event on its own. Premiums move on at-fault losses, claim frequency and territory rating, not on whether you challenged a denial." },
+      { question: "What should my appeal letter actually say?", answer: "Four things: the claim number and date of loss; the exact denial ground quoted from the letter; the documents that rebut it, listed and attached; and a demand for a written decision within 30 days citing your state's unfair claims settlement practices statute. Keep it under two pages and send it by a trackable method." },
+      { question: "How long do I have to appeal an auto claim denial?", answer: "The internal appeal window is set by the letter and is commonly 30 to 180 days. Separately, the contractual suit-limitation clause in most auto policies gives you one to two years from the loss to sue, and the state's breach-of-contract statute of limitations (often 3–6 years) sits behind that. Diary all three." },
+      { question: "Can the insurer deny my claim because I did not get a recorded statement done?", answer: "They can assert non-cooperation, which is a real policy condition for your own insurer. But a denial on that basis usually requires a material breach that prejudiced the investigation, not a scheduling dispute. Offer a written statement and document your availability." },
+      { question: "What is diminished value and can I recover it after a denial?", answer: "Diminished value is the loss in resale value of a repaired vehicle. Most states allow third-party diminished-value claims against the at-fault driver's carrier (Georgia is the strongest for first-party claims). Recovery typically runs 10–25% of pre-loss value and needs an independent appraisal, not the carrier's estimate." },
+      { question: "Does filing a Department of Insurance complaint hurt my chances in court?", answer: "No. The complaint file is administrative, costs nothing, and the carrier's written response often becomes useful evidence of its stated reasoning — which is exactly what a bad-faith case needs. Filing does not waive any right to sue." },
+      { question: "What if the carrier just stops responding instead of denying?", answer: "Silence is treated as constructive denial in most unfair-claims statutes, which require acknowledgment and a decision within fixed periods. Send a written demand referencing the statutory deadline, then file the DOI complaint. Delay itself is actionable bad faith in many states." },
     ],
     primaryCta: {
       path: "/tools/consumer/settlement-estimator",
@@ -643,6 +772,8 @@ export const phase8Pillars: Phase8Pillar[] = [
       label: "Find an insurance dispute lawyer near you",
       description: "Bad-faith cases are frequently taken on contingency.",
     },
+    datePublished: "2026-02-14",
+    dateModified: "2026-08-06",
     recommenderTopic: "insurance-dispute",
     cluster: "Insurance dispute cluster",
     related: [

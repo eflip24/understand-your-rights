@@ -14,6 +14,7 @@ import FormField from "@/components/forms/FormField";
 import AutoSaveIndicator from "@/components/forms/AutoSaveIndicator";
 import PdfActionBar from "@/components/forms/PdfActionBar";
 import FormDisclaimer from "@/components/forms/FormDisclaimer";
+import FormGuideContent, { getFormGuide } from "@/components/forms/FormGuideContent";
 import FormCard from "@/components/forms/FormCard";
 import { useFormDraft } from "@/hooks/useFormDraft";
 import { categoryLabels, getFormBySlug, getFormByCountrySlug, isFieldVisible, legalForms } from "@/data/forms";
@@ -51,6 +52,7 @@ export default function FormWizardPage() {
   }
 
   const form = country ? getFormByCountrySlug(country, slug) : getFormBySlug(slug);
+  const guide = country ? undefined : getFormGuide(slug);
 
   if (!form) return <Navigate to={lp(country ? "/eu-forms" : "/forms")} replace />;
 
@@ -198,6 +200,11 @@ export default function FormWizardPage() {
                     name: `Can I e-sign ${form.title} online?`,
                     acceptedAnswer: { "@type": "Answer", text: "Yes. You can draw or type your signature in the final step. The signed PDF downloads instantly." },
                   },
+                  ...(guide?.faqs ?? []).map((f) => ({
+                    "@type": "Question",
+                    name: f.question,
+                    acceptedAnswer: { "@type": "Answer", text: f.answer },
+                  })),
                 ],
               },
             ],
@@ -350,6 +357,8 @@ export default function FormWizardPage() {
           </div>
         </div>
       )}
+
+      {guide && <FormGuideContent guide={guide} title={form.title} localePath={lp} />}
 
       <FormDisclaimer />
 
