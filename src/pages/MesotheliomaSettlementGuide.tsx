@@ -48,6 +48,51 @@ const FAQS = [
     answer:
       "Contingency fees of 33.33%–40% are standard, plus case costs (expert witnesses, exposure reconstruction, medical illustrators). Because mesothelioma cases require product-identification investigators and industrial-hygiene experts, expenses often run $50,000–$250,000 — all fronted by the firm.",
   },
+  {
+    question: "How much is a mesothelioma trust fund claim worth on its own?",
+    answer:
+      "Trusts publish a scheduled value per disease level and then pay a fraction of it — the payment percentage. A mesothelioma scheduled value of $180,000 at a 25% payment percentage pays $45,000 from that single trust. Because most plaintiffs qualify against 15–25 trusts based on their exposure history, aggregate trust recoveries commonly land between $200,000 and $700,000, entirely separate from lawsuits against solvent defendants.",
+  },
+  {
+    question: "Which occupations produce the strongest exposure evidence?",
+    answer:
+      "Navy shipyard and engine-room service, boilermakers, pipefitters and steamfitters, insulators, industrial electricians, auto mechanics doing brake and clutch work, drywall finishers using joint compound, and refinery and power-plant workers. Union records, Social Security earnings histories and product-identification depositions from co-workers convert an occupation into a named-product exposure, which is what defendants pay for.",
+  },
+  {
+    question: "Can I still file if I do not remember the specific asbestos products?",
+    answer:
+      "Usually yes. Firms retain industrial-hygiene and product-identification investigators who reconstruct exposure from job site, employer, trade and date range using ship records, plant purchase records and prior testimony from the same sites. Personal recall of brand names is helpful but is rarely the only route to identifying defendants.",
+  },
+  {
+    question: "Does secondhand (take-home) exposure qualify?",
+    answer:
+      "Yes in most jurisdictions. Spouses and children who laundered work clothes carrying asbestos dust have recovered in take-home exposure cases, though a minority of states limit the duty owed to household members. These claims turn on proving the worker's own exposure first, then the household contact pattern.",
+  },
+  {
+    question: "Will a settlement affect Medicare, Medicaid or VA benefits?",
+    answer:
+      "Medicare and Medicaid assert liens for treatment related to the illness and must be resolved before net funds are disbursed; that negotiation typically adds 30–90 days. VA service-connected disability and DIC are not offset by asbestos recoveries from private manufacturers. Need-based benefits such as SSI and Medicaid eligibility can be affected, which is why special-needs or settlement trusts are sometimes used.",
+  },
+];
+
+/** Settlement ranges by case profile — original data table. */
+const VALUE_PROFILE = [
+  { profile: "Living plaintiff, pleural, strong occupational ID", trust: "$300K – $700K", tort: "$1.0M – $2.4M", note: "Trial preference leverage is highest here" },
+  { profile: "Living plaintiff, peritoneal mesothelioma", trust: "$250K – $600K", tort: "$800K – $2.0M", note: "Fewer defendants, more medical variability" },
+  { profile: "Wrongful death / survival claim", trust: "$200K – $500K", tort: "$600K – $1.5M", note: "Deadline runs from death, not diagnosis" },
+  { profile: "Navy veteran, shipyard exposure", trust: "$350K – $700K", tort: "$1.0M – $2.2M", note: "Plus VA disability and DIC, which are not offset" },
+  { profile: "Take-home / secondhand exposure", trust: "$150K – $400K", tort: "$500K – $1.4M", note: "Duty to household members varies by state" },
+  { profile: "Weak or undocumented product ID", trust: "$50K – $200K", tort: "Often trust claims only", note: "Investigator reconstruction is decisive" },
+];
+
+/** High-volume asbestos venues — filing-environment table. */
+const VENUES = [
+  { court: "Philadelphia CCP (PA)", feature: "Dedicated asbestos program, reverse-bifurcation history", pace: "Trial in 12–24 months" },
+  { court: "Los Angeles / Alameda (CA)", feature: "CCP § 36 trial preference for terminal plaintiffs", pace: "Trial within 120 days of motion" },
+  { court: "Madison County (IL)", feature: "Historically the highest asbestos filing volume in the U.S.", pace: "Structured trial settings" },
+  { court: "Baltimore City (MD)", feature: "Consolidated asbestos docket", pace: "Consolidation can slow individual cases" },
+  { court: "New York City NYCAL", feature: "Case management order with accelerated in extremis track", pace: "Trial in 9–18 months" },
+  { court: "King County (WA)", feature: "Strong plaintiff verdict history", pace: "12–24 months" },
 ];
 
 const TRUST_FUNDS = [
