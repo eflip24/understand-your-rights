@@ -680,6 +680,63 @@ export const phase8Pillars: Phase8Pillar[] = [
           "Where the amount is small, small claims court on the property-damage or deductible portion is often faster than either.",
         ],
       },
+      {
+        heading: "Denial grounds, how often they appear, and what beats them",
+        tables: [
+          {
+            caption: "Auto claim denial grounds and the evidence that reverses them",
+            columns: ["Stated ground", "What the carrier must show", "Evidence that reverses it"],
+            rows: [
+              ["Late notice", "Actual prejudice to the investigation in most states", "Report date proof, intact vehicle, available witnesses"],
+              ["Policy lapse / cancellation", "Proper statutory notice of cancellation was mailed", "Payment history, bank record, absence of a compliant notice"],
+              ["Named-driver exclusion", "A signed exclusion in force on the loss date", "Copy of the signed endorsement and its effective dates"],
+              ["Material misrepresentation", "The misstatement was material to underwriting the risk", "Underwriting guidelines showing the fact would not change the rate"],
+              ["Liability disputed", "A reasonable investigation supporting its version", "Police report, dashcam, scene photos, independent witnesses"],
+              ["Injuries unrelated / pre-existing", "Medical opinion severing causation", "Treating-physician causation letter addressing prior findings"],
+              ["MIST / low-impact", "Biomechanical or damage-threshold argument", "Repair estimate detail, photographs, imaging, treatment continuity"],
+              ["Total loss valuation too low", "A supportable actual-cash-value figure", "Local comparable listings, dealer quotes, appraisal-clause demand"],
+            ],
+            note: "Denial grounds compiled from state Department of Insurance complaint categories and standard personal-auto policy conditions.",
+          },
+        ],
+      },
+      {
+        heading: "Prompt-pay clocks and complaint routes by state",
+        paragraphs: [
+          "Every state sets deadlines for acknowledging a claim, deciding coverage, and paying. Missing them is not just annoying — it is the statutory hook for an unfair claims practice argument and the first thing a Department of Insurance analyst checks.",
+        ],
+        tables: [
+          {
+            caption: "Representative prompt-payment deadlines (large states)",
+            columns: ["State", "Acknowledge claim", "Coverage decision", "Payment after acceptance"],
+            rows: [
+              ["California", "15 days", "40 days from proof of loss", "30 days"],
+              ["Texas", "15 days", "15 business days after receiving all items", "5 business days"],
+              ["Florida", "14 days", "60 days (property); 90 days (PIP)", "20 days"],
+              ["New York", "15 business days", "15 business days after proof of loss", "5 business days"],
+              ["Illinois", "15 working days", "30 working days", "30 days"],
+              ["Pennsylvania", "10 working days", "15 working days after investigation", "Prompt on acceptance"],
+            ],
+            note: "Deadlines summarized from state unfair claims settlement practices regulations; exact triggers vary by claim type. Verify against your state's current rule before citing it in an appeal.",
+          },
+        ],
+      },
+      {
+        heading: "What bad faith is worth",
+        tables: [
+          {
+            caption: "Recovery beyond the policy benefit, by theory",
+            columns: ["Theory", "What you can recover", "Typical requirement"],
+            rows: [
+              ["Breach of contract", "The unpaid benefit plus interest", "Coverage exists and the loss is proved"],
+              ["First-party bad faith", "Consequential damages, emotional distress, sometimes fees", "Denial was unreasonable and the insurer knew or recklessly disregarded that"],
+              ["Statutory unfair claims practice", "Statutory penalties and attorney fees in many states", "Violation of the state's claims-handling standards"],
+              ["Third-party bad faith (excess exposure)", "The entire verdict above policy limits", "Refusal of a reasonable within-limits demand"],
+              ["Punitive damages", "Multiplier on compensatory damages where allowed", "Clear and convincing evidence of malice or oppression"],
+            ],
+          },
+        ],
+      },
     ],
     howTo: [
       { name: "Get the denial in writing", text: "Demand a written denial citing the specific policy language relied on. Verbal denials are not appealable." },
