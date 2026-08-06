@@ -131,6 +131,7 @@ export default function MesotheliomaSettlementGuide() {
             "Mesothelioma Settlement Guide",
             "How mesothelioma settlements are valued in 2026: average amounts, § 524(g) asbestos trust funds, VA benefits, and the expedited litigation timeline.",
             URL,
+            { datePublished: "2026-02-14", dateModified: "2026-08-06" },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
