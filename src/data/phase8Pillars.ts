@@ -770,6 +770,8 @@ export const phase8Pillars: Phase8Pillar[] = [
       label: "Find an insurance dispute lawyer near you",
       description: "Bad-faith cases are frequently taken on contingency.",
     },
+    datePublished: "2026-02-14",
+    dateModified: "2026-08-06",
     recommenderTopic: "insurance-dispute",
     cluster: "Insurance dispute cluster",
     related: [
