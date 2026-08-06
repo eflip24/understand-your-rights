@@ -356,6 +356,8 @@ export const phase8Pillars: Phase8Pillar[] = [
       label: "Find a rideshare accident lawyer near you",
       description: "Free consultations; rideshare cases are handled on contingency.",
     },
+    datePublished: "2026-02-14",
+    dateModified: "2026-08-06",
     recommenderTopic: "car-accident",
     cluster: "Personal injury cluster",
     related: [
