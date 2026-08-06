@@ -52,6 +52,7 @@ export default function FormWizardPage() {
   }
 
   const form = country ? getFormByCountrySlug(country, slug) : getFormBySlug(slug);
+  const guide = country ? undefined : getFormGuide(slug);
 
   if (!form) return <Navigate to={lp(country ? "/eu-forms" : "/forms")} replace />;
 
