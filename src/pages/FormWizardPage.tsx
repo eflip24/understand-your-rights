@@ -198,6 +198,11 @@ export default function FormWizardPage() {
                     name: `Can I e-sign ${form.title} online?`,
                     acceptedAnswer: { "@type": "Answer", text: "Yes. You can draw or type your signature in the final step. The signed PDF downloads instantly." },
                   },
+                  ...(guide?.faqs ?? []).map((f) => ({
+                    "@type": "Question",
+                    name: f.question,
+                    acceptedAnswer: { "@type": "Answer", text: f.answer },
+                  })),
                 ],
               },
             ],
