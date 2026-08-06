@@ -358,6 +358,8 @@ export default function FormWizardPage() {
         </div>
       )}
 
+      {guide && <FormGuideContent guide={guide} title={form.title} localePath={lp} />}
+
       <FormDisclaimer />
 
       <StripeCheckoutDialog
