@@ -14,6 +14,7 @@ import FormField from "@/components/forms/FormField";
 import AutoSaveIndicator from "@/components/forms/AutoSaveIndicator";
 import PdfActionBar from "@/components/forms/PdfActionBar";
 import FormDisclaimer from "@/components/forms/FormDisclaimer";
+import FormGuideContent, { getFormGuide } from "@/components/forms/FormGuideContent";
 import FormCard from "@/components/forms/FormCard";
 import { useFormDraft } from "@/hooks/useFormDraft";
 import { categoryLabels, getFormBySlug, getFormByCountrySlug, isFieldVisible, legalForms } from "@/data/forms";
