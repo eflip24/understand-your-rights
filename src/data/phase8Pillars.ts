@@ -265,6 +265,64 @@ export const phase8Pillars: Phase8Pillar[] = [
           "Arbitration clauses in the rider terms of service for non-injury disputes.",
         ],
       },
+      {
+        heading: "Coverage by app period — Uber vs Lyft, side by side",
+        paragraphs: [
+          "The table below is the single most useful thing to have open when an adjuster tells you what policy applies. Limits are the published U.S. minimums each platform maintains nationally; a handful of states (New York, and Washington for TNC-specific statutes) require higher or differently structured coverage, and New York rideshare trips are written through a state-specific group policy with $1.25 million in liability.",
+        ],
+        tables: [
+          {
+            caption: "Rideshare insurance limits by app period (2026, U.S. baseline)",
+            columns: ["App period", "Uber", "Lyft", "Who pays first"],
+            rows: [
+              ["Period 0 — app off", "No platform coverage", "No platform coverage", "Driver's personal auto policy"],
+              ["Period 1 — app on, no request", "$50K/$100K bodily injury, $25K property; contingent comp/collision with $2,500 deductible", "$50K/$100K bodily injury, $25K property; contingent comp/collision with $2,500 deductible", "Personal policy first, platform layer excess"],
+              ["Period 2 — en route to pickup", "$1,000,000 third-party liability", "$1,000,000 third-party liability", "Platform commercial policy primary"],
+              ["Period 3 — passenger on board", "$1,000,000 liability + UM/UIM in most states", "$1,000,000 liability + UM/UIM in most states", "Platform commercial policy primary"],
+              ["New York trips (all periods 2–3)", "$1.25M liability via NY TNC group policy", "$1.25M liability via NY TNC group policy", "TNC group policy"],
+            ],
+            note: "Limits reflect published platform insurance summaries. Confirm the applicable policy in writing — the period assertion in the first adjuster call is not evidence.",
+          },
+        ],
+      },
+      {
+        heading: "What rideshare claims actually settle for",
+        paragraphs: [
+          "Rideshare claims are valued the same way as any auto injury claim — documented medical specials, wage loss, and a general-damages multiplier — but with two twists: the available limit is far higher than a typical personal policy in Periods 2 and 3, and the third-party administrator handling the file usually needs internal authority sign-off above roughly $100,000, which adds weeks.",
+        ],
+        tables: [
+          {
+            caption: "Typical rideshare injury settlement ranges by injury profile",
+            columns: ["Injury profile", "Typical medical specials", "Common settlement range", "Notes"],
+            rows: [
+              ["Soft tissue, chiropractic only, no imaging", "$1,500 – $5,000", "$8,000 – $20,000", "Adjusters apply MIST-style scoring; low first offers are routine"],
+              ["Soft tissue with MRI-confirmed disc bulge", "$6,000 – $15,000", "$25,000 – $60,000", "Causation letter from the treating physician moves the number most"],
+              ["Injections (ESI / facet blocks)", "$15,000 – $35,000", "$60,000 – $150,000", "Documented failed conservative care is the value driver"],
+              ["Surgery (discectomy, fusion, ORIF)", "$60,000 – $250,000", "$200,000 – $1,000,000 (limit)", "Period 2/3 cases frequently reach the $1M policy"],
+              ["Fracture with hardware, no surgery on spine", "$25,000 – $70,000", "$90,000 – $300,000", "Scarring and permanent impairment ratings add materially"],
+              ["Catastrophic / TBI / wrongful death", "$150,000+", "$1,000,000 policy limit, plus UM/UIM stacking", "Look for excess layers and the other driver's own policy"],
+            ],
+            note: "Ranges are drawn from published rideshare-claim outcomes and standard specials-plus-multiplier valuation. Your case may fall outside them.",
+          },
+        ],
+      },
+      {
+        heading: "Deadlines that actually bind your rideshare claim",
+        tables: [
+          {
+            caption: "Rideshare claim deadlines",
+            columns: ["Step", "Practical deadline", "Why it matters"],
+            rows: [
+              ["Report through the app", "Same day", "Opens the claim number that routes to the commercial carrier"],
+              ["Request the trip record", "Within 30 days", "Establishes the app period before the file is closed out"],
+              ["First medical treatment", "72 hours", "Gaps beyond a week are used to discount general damages"],
+              ["Personal-injury statute of limitations", "1 year (KY, LA, TN) to 6 years (ME, ND)", "Missing it ends the claim regardless of merit"],
+              ["Wrongful death", "1–3 years from date of death", "Runs separately from the injury clock"],
+              ["UM/UIM notice to the TNC carrier", "Often 30 days to 1 year per policy", "Late notice is a standard UM/UIM denial ground"],
+            ],
+          },
+        ],
+      },
     ],
     howTo: [
       { name: "Capture the trip evidence at the scene", text: "Screenshot the trip receipt, trip ID, driver name and plate, and photograph the app screen showing an active ride." },
