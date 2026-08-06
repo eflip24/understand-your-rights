@@ -223,7 +223,74 @@ export default function MesotheliomaSettlementGuide() {
             jury verdicts. Individual outcomes depend on exposure evidence, defendant solvency, jurisdiction,
             and whether the plaintiff is living at trial.
           </p>
+
+          <h3 className="text-xl font-bold mt-8 mb-3">What different case profiles recover</h3>
+          <p className="mb-4 text-muted-foreground">
+            Nearly every mesothelioma plaintiff recovers from two stacks at once: § 524(g) trust claims
+            against bankrupt manufacturers, and tort settlements from solvent defendants. The table below
+            separates the two so you can see where the money actually comes from.
+          </p>
+          <div className="overflow-x-auto rounded-lg border">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Case profile</TableHead>
+                  <TableHead>Aggregate trust claims</TableHead>
+                  <TableHead>Tort settlements</TableHead>
+                  <TableHead>Notes</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {VALUE_PROFILE.map((r) => (
+                  <TableRow key={r.profile}>
+                    <TableCell className="font-medium">{r.profile}</TableCell>
+                    <TableCell>{r.trust}</TableCell>
+                    <TableCell>{r.tort}</TableCell>
+                    <TableCell className="text-sm text-muted-foreground">{r.note}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Ranges are illustrative composites of published settlement data and trust distribution
+            procedures, before attorney fees, case costs and medical liens.
+          </p>
         </section>
+
+        <section className="mb-10">
+          <h2 className="text-3xl font-bold mb-4">Where Asbestos Cases Are Filed</h2>
+          <p className="mb-4 text-muted-foreground">
+            Venue matters more in asbestos litigation than in almost any other tort. A handful of courts
+            run dedicated asbestos dockets with case-management orders that move terminal plaintiffs to
+            trial fast — and defendants price settlements accordingly.
+          </p>
+          <div className="overflow-x-auto rounded-lg border">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Court</TableHead>
+                  <TableHead>Docket feature</TableHead>
+                  <TableHead>Typical pace</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {VENUES.map((v) => (
+                  <TableRow key={v.court}>
+                    <TableCell className="font-medium">{v.court}</TableCell>
+                    <TableCell className="text-sm text-muted-foreground">{v.feature}</TableCell>
+                    <TableCell>{v.pace}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Filing venue depends on where exposure occurred, where defendants do business, and residency —
+            it is not a free choice. Compiled from published asbestos case-management orders.
+          </p>
+        </section>
+
 
         <section className="mb-10">
           <h2 className="text-3xl font-bold mb-4">Asbestos § 524(g) Trust Funds</h2>
