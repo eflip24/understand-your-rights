@@ -161,6 +161,9 @@ export default function MesotheliomaSettlementGuide() {
           Because causation is well-established and defendants are numerous, settlements are among the
           highest in U.S. personal-injury litigation — averaging $1M–$1.4M, with trial verdicts averaging $2.4M.
         </p>
+        <p className="text-xs text-muted-foreground mb-6">
+          By the LegallySpoken Editorial Team · Last reviewed August 6, 2026
+        </p>
 
         <InMarketEntityBlock
           category="Mesothelioma · Asbestos Litigation · VA Benefits"
