@@ -8,7 +8,9 @@ import { JsonLdGraph, webApplicationSchema, faqSchema } from "@/components/seo/J
 import Head from "@/components/seo/Head";
 import AdSlot from "@/components/ads/AdSlot";
 import ToolSeoContext from "@/components/tools/ToolSeoContext";
+import ToolGuideContent, { getToolGuide } from "@/components/tools/ToolGuideContent";
 import ToolStickyMobileCta from "@/components/tools/ToolStickyMobileCta";
+
 import { useLocalizedPath } from "@/i18n/paths";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
 
@@ -46,10 +48,15 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
   const localizedDesc = toolDescription(tool);
   const localizedFaqs = toolFaqs(tool);
 
+  // Long-form editorial guide (English) for rebuilt money-tool pages.
+  const guide = getToolGuide(tool.id);
+  const schemaFaqs = [...localizedFaqs, ...(guide ? guide.faqs : [])];
+
   const schemas = [
     webApplicationSchema(localizedName, localizedDesc, url, TIER_A_AREAS[tool.id]),
-    ...(localizedFaqs.length ? [faqSchema(localizedFaqs)] : []),
+    ...(schemaFaqs.length ? [faqSchema(schemaFaqs)] : []),
   ];
+
   return (
     <div className="container py-8 pb-24 md:pb-8 max-w-4xl">
       <Head
@@ -105,6 +112,11 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
           flags on pure-calculator tools. Renders only when tool has a
           seoContext block populated in tools.json. */}
       <ToolSeoContext toolId={tool.id} />
+
+      {/* Rebuilt money-tool guide: tables, entities, deep FAQ. */}
+      {guide && <ToolGuideContent guide={guide} localePath={lp} />}
+
+
 
 
       {/* FAQ */}

@@ -564,12 +564,71 @@ export const phase8Pillars: Phase8Pillar[] = [
         ],
       },
       {
+        heading: "Denial reasons, cure strategy and realistic odds",
+        tables: [
+          {
+            caption: "The six denial reasons that drive most workers' comp controversions",
+            columns: ["Stated reason", "What the carrier is really arguing", "What cures it", "Typical cure time"],
+            rows: [
+              ["Late notice", "You reported after the statutory notice window (30 days in NY/CA, 30 days in TX, 90 days in PA)", "Text messages, emails, incident report, coworker or supervisor affidavit showing actual notice", "2–4 weeks"],
+              ["No causal relationship", "The treating records do not connect the mechanism of injury to the diagnosis", "Treating-physician narrative using the phrase 'to a reasonable degree of medical certainty'", "3–6 weeks"],
+              ["Pre-existing / degenerative", "Imaging shows arthritis or disc disease predating the accident", "Aggravation opinion — most states compensate a work-related worsening of a prior condition", "4–8 weeks"],
+              ["Not an employee", "You were paid on a 1099 or through a staffing firm", "Economic-realities evidence: schedule control, tools supplied, exclusivity, direct supervision", "1–3 months"],
+              ["Intoxication / horseplay / violation of rule", "A post-accident test was positive or a safety rule was broken", "Carrier bears the burden; a positive THC test without impairment proof rarely defeats the claim", "1–3 months"],
+              ["Treatment not medically necessary", "A utilization-review physician denied the requested surgery or therapy on paper", "UR appeal / IMR with peer-reviewed guideline citations (MTUS, ODG, ACOEM)", "30–45 days"],
+            ],
+            note: "Timelines assume the treating physician cooperates promptly. Statutory notice windows are examples; confirm your own state's rule.",
+          },
+        ],
+      },
+      {
+        heading: "Appeal deadlines and the first filing by state",
+        paragraphs: [
+          "Workers' comp appeals run on administrative clocks that are far shorter than civil statutes of limitation. The date printed on the denial form controls. If two dates appear — one to request a hearing and one to file a claim petition — calendar the earlier one.",
+        ],
+        tables: [
+          {
+            caption: "Denial-appeal windows and first filing (representative states, 2026)",
+            columns: ["State", "First filing after denial", "Window", "Deciding body"],
+            rows: [
+              ["California", "Application for Adjudication + DOR", "1 year from denial / injury date", "WCAB judge (UR disputes go to IMR in 30 days)"],
+              ["New York", "Form RFA-1LC hearing request", "Claim must be filed within 2 years", "NY Workers' Compensation Board"],
+              ["Texas", "DWC-045 Benefit Review Conference request", "1 year from injury; BRC promptly after denial", "Division of Workers' Compensation"],
+              ["Florida", "Petition for Benefits (PFB)", "2 years from injury, 1 year from last benefit", "Judge of Compensation Claims"],
+              ["Pennsylvania", "Claim Petition", "3 years from injury", "Workers' Compensation Judge"],
+              ["Illinois", "Application for Adjustment of Claim", "3 years from injury / 2 years from last payment", "Illinois Workers' Compensation Commission"],
+              ["Georgia", "Form WC-14", "1 year from injury", "State Board of Workers' Compensation"],
+              ["Ohio", "Notice of Appeal to Industrial Commission", "14 days from BWC order", "Industrial Commission of Ohio"],
+              ["New Jersey", "Claim Petition", "2 years from injury / last payment", "Division of Workers' Compensation"],
+              ["Michigan", "Application for Mediation or Hearing", "2 years from injury", "Board of Magistrates"],
+            ],
+            note: "Deadlines summarized from state workers' compensation statutes and agency forms. Verify the exact date on your denial notice — a missed administrative deadline usually ends the claim on the merits.",
+          },
+        ],
+      },
+      {
         heading: "How denied claims resolve",
         paragraphs: [
           "Most appeals settle before a full hearing. Once the treating physician's causation narrative is in the record and the IME has been deposed or contradicted, carriers reassess exposure and offer a stipulated award or a lump-sum Compromise & Release. Value turns on the impairment rating under the AMA Guides, wage rate, remaining medical exposure and whether future medical is left open or closed out.",
         ],
+        tables: [
+          {
+            caption: "What a workers' comp settlement is built from",
+            columns: ["Component", "How it is calculated", "Notes"],
+            rows: [
+              ["Temporary total disability (TTD)", "Roughly 66⅔% of average weekly wage, subject to a state maximum", "Paid for the healing period until MMI"],
+              ["Permanent partial disability (PPD)", "Impairment % under the AMA Guides × statutory weeks × compensation rate", "The single biggest driver in most settlements"],
+              ["Future medical", "Projected cost of injections, surgery, medication and follow-up", "Closing future medical usually raises the lump sum materially"],
+              ["Medicare set-aside (MSA)", "Required analysis when you are a Medicare beneficiary or reasonably expect entitlement", "Adds 4–8 weeks to closing; funds must be spent on injury-related care"],
+              ["Vocational rehabilitation", "Retraining benefit where you cannot return to the prior job", "Available in some states only"],
+              ["Attorney fee", "Contingency, typically 10–20%, approved by the board", "Deducted from the award, not added to it"],
+            ],
+            note: "Illustrative structure only. Rates, statutory weeks and maximums differ in every state.",
+          },
+        ],
       },
     ],
+
     howTo: [
       { name: "Note your appeal deadline immediately", text: "Find the appeal window on the denial form and calendar it. Missing it can end the claim permanently regardless of merit." },
       { name: "Request the full claim file", text: "Ask in writing for the IME report, UR determination, adjuster notes where discoverable, and the wage statement used to set your rate." },
@@ -585,7 +644,16 @@ export const phase8Pillars: Phase8Pillar[] = [
       { question: "Can I be fired for filing a workers' comp claim?", answer: "Retaliation for filing is prohibited in every state and creates a separate cause of action. Employers usually frame the termination as performance-based or as an inability to accommodate restrictions, so document your performance history and any comments tied to the claim." },
       { question: "Should I hire a lawyer for a denied claim?", answer: "For any denial involving surgery, lost time beyond a few weeks, or a permanent impairment rating, yes. Workers' comp attorney fees are contingency-based and capped and approved by the state board — typically 10–20% of the recovery." },
       { question: "What is a Compromise & Release?", answer: "A lump-sum settlement that typically closes the claim, often including future medical care. It is final: once approved, you generally cannot reopen the claim if the condition worsens. Value it against expected future treatment before signing." },
+      { question: "Do I have to attend the insurance company's IME?", answer: "In almost every state, yes — refusing an authorized independent medical examination can suspend your benefits. What you can do is bring a witness where permitted, write down the start and end time and exactly what was examined, and request a full copy of the report so your treating physician can rebut it point by point." },
+      { question: "What happens if I miss the appeal deadline?", answer: "The claim is usually barred on the merits, no matter how strong the medical evidence. A small number of states allow late filing for equitable tolling — fraudulent concealment by the employer, mental incapacity, or an occupational disease that was not discoverable — but those exceptions are narrow and require a motion." },
+      { question: "Can I get unemployment while my workers' comp appeal is pending?", answer: "Sometimes. Unemployment requires that you be able and available to work, so it may conflict with a total-disability claim but not with a claim for partial disability or a denied claim where you are working with restrictions. Disclose the workers' comp claim on the unemployment application — inconsistent statements are the fastest way to lose both." },
+      { question: "How is my average weekly wage calculated, and why does it matter?", answer: "Most states average your gross earnings over the 52 weeks before the injury, including overtime and, in some states, the value of lodging or per diem. Because temporary and permanent benefits are both a percentage of that number, an understated AWW quietly reduces every dollar you receive — check the carrier's wage statement against your own pay records." },
+      { question: "What is utilization review and how do I fight a UR denial?", answer: "Utilization review is a paper process where a physician retained by the carrier decides whether requested treatment meets evidence-based guidelines such as MTUS, ODG or ACOEM. You fight it by having the treating physician resubmit with the specific guideline citation, functional deficits, conservative care already tried, and objective imaging — and, in California, by filing for Independent Medical Review within 30 days." },
+      { question: "Should I close out future medical in a settlement?", answer: "Only after pricing it. Ask the treating physician for a future-care plan — injections, hardware removal, revision surgery, medication — and cost it out. If you are on Medicare or likely to be within 30 months, a Medicare set-aside is required and the funds are restricted to injury-related care." },
     ],
+    datePublished: "2026-03-04",
+    dateModified: "2026-08-07",
+
     primaryCta: {
       path: "/tools/consumer/workers-comp-settlement-calculator",
       label: "Estimate your workers' comp settlement",
