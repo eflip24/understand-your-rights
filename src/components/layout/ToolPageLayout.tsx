@@ -48,10 +48,15 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
   const localizedDesc = toolDescription(tool);
   const localizedFaqs = toolFaqs(tool);
 
+  // Long-form editorial guide (English) for rebuilt money-tool pages.
+  const guide = getToolGuide(tool.id);
+  const schemaFaqs = [...localizedFaqs, ...(guide ? guide.faqs : [])];
+
   const schemas = [
     webApplicationSchema(localizedName, localizedDesc, url, TIER_A_AREAS[tool.id]),
-    ...(localizedFaqs.length ? [faqSchema(localizedFaqs)] : []),
+    ...(schemaFaqs.length ? [faqSchema(schemaFaqs)] : []),
   ];
+
   return (
     <div className="container py-8 pb-24 md:pb-8 max-w-4xl">
       <Head
