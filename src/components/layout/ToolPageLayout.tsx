@@ -113,6 +113,11 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
           seoContext block populated in tools.json. */}
       <ToolSeoContext toolId={tool.id} />
 
+      {/* Rebuilt money-tool guide: tables, entities, deep FAQ. */}
+      {guide && <ToolGuideContent guide={guide} localePath={lp} />}
+
+
+
 
       {/* FAQ */}
       {localizedFaqs.length > 0 && (
