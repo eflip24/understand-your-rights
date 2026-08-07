@@ -135,11 +135,11 @@ export const TOOL_GUIDES: Record<string, ToolGuide> = {
       { question: "Should I have a lawyer review my severance agreement?", answer: "Review is worth it whenever the package is more than a few weeks of pay, contains a non-compete, follows a complaint you made, or you believe the termination was discriminatory or retaliatory. Employment attorneys commonly review severance agreements on a flat fee, and a single negotiated clause often exceeds the cost." },
     ],
     related: [
-      { label: "Severance fairness score", href: "/tools/business/severance-fairness-score" },
+      { label: "Severance fairness score", href: "/tools/employment/severance-offer-fairness-score" },
       { label: "Wrongful termination settlements", href: "/wrongful-termination-settlements" },
-      { label: "Unemployment benefit estimator", href: "/tools/consumer/unemployment-estimator" },
-      { label: "Final paycheck rules by state", href: "/tools/consumer/final-paycheck-lookup" },
-      { label: "EEOC settlement calculator", href: "/tools/consumer/eeoc-settlement-calculator" },
+      { label: "Unemployment benefit estimator", href: "/tools/employment/unemployment-benefits-estimator" },
+      { label: "Final paycheck rules by state", href: "/tools/employment/final-paycheck-deadline-lookup" },
+      { label: "EEOC settlement calculator", href: "/tools/employment/eeoc-settlement-calculator" },
     ],
   },
 
@@ -230,8 +230,8 @@ export const TOOL_GUIDES: Record<string, ToolGuide> = {
       { question: "Is a lump-sum buyout better than monthly payments?", answer: "It depends on your risk tolerance. A buyout eliminates enforcement risk, collection hassle and future modification, but it is typically discounted to present value, is not modifiable if your circumstances change, and requires liquid assets. Monthly support preserves flexibility for both sides and can be secured with life insurance." },
     ],
     related: [
-      { label: "Child support calculator", href: "/tools/consumer/child-support-calculator" },
-      { label: "Divorce cost estimator", href: "/tools/consumer/divorce-cost-estimator" },
+      { label: "Child support calculator", href: "/tools/family/child-support-calculator" },
+      { label: "Divorce cost estimator", href: "/tools/family/divorce-cost-estimator" },
       { label: "Divorce house buyout calculator", href: "/tools/consumer/divorce-buyout-calculator" },
       { label: "Find a family law attorney", href: "/lawyer-near-me/family" },
     ],
