@@ -8,7 +8,9 @@ import { JsonLdGraph, webApplicationSchema, faqSchema } from "@/components/seo/J
 import Head from "@/components/seo/Head";
 import AdSlot from "@/components/ads/AdSlot";
 import ToolSeoContext from "@/components/tools/ToolSeoContext";
+import ToolGuideContent, { getToolGuide } from "@/components/tools/ToolGuideContent";
 import ToolStickyMobileCta from "@/components/tools/ToolStickyMobileCta";
+
 import { useLocalizedPath } from "@/i18n/paths";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
 
