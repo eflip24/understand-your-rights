@@ -153,7 +153,124 @@ export const FORM_GUIDES: Record<string, FormGuide> = {
       { label: "Personal planning pack", href: "/forms/personal-planning-pack" },
     ],
   },
+
+  "eviction-notice": {
+    reviewedOn: "2026-08-07",
+    intro: [
+      "An eviction notice — called a notice to quit, notice to vacate, or pay-or-quit notice depending on the state — is the document that starts a lawful eviction. It is not the eviction itself. In every U.S. state the sequence is the same: serve a written notice, wait out the statutory cure or vacate period, then file an unlawful detainer or summary possession case in the local court if the tenant has not paid, cured, or moved.",
+      "The notice is also the single most common reason landlords lose eviction cases. Judges dismiss filings for the wrong notice type, a day-count that ignores weekends or the mailing rule, a missing itemization of rent owed, service by a method the statute does not allow, or naming the wrong parties. A dismissal is rarely with prejudice, but it costs the landlord the filing fee and several more weeks of unpaid occupancy.",
+    ],
+    sections: [
+      {
+        heading: "The four notice types, and which one your situation calls for",
+        tables: [
+          {
+            caption: "Eviction notice types compared",
+            columns: ["Notice type", "Use it when", "Can the tenant fix it?", "Typical period"],
+            rows: [
+              ["Pay rent or quit", "Rent is late or partially paid", "Yes — paying in full stops the eviction", "3–14 days"],
+              ["Cure or quit", "A lease term is violated (unauthorized pet, occupant, subletting, nuisance)", "Yes — correcting the violation stops it", "3–30 days"],
+              ["Unconditional quit", "Serious conduct: illegal activity, severe property damage, repeat violations", "No", "3–30 days"],
+              ["Notice to terminate tenancy (no cause)", "Month-to-month tenancy ending where no-cause termination is still allowed", "N/A", "30–90 days"],
+            ],
+            note: "Just-cause jurisdictions (California under AB 1482, Oregon, Washington, New Jersey, and many cities) restrict or prohibit no-cause terminations for tenants past an occupancy threshold.",
+          },
+        ],
+      },
+      {
+        heading: "Notice periods by state",
+        paragraphs: [
+          "Day counts are statutory and unforgiving. Most states count calendar days and exclude the day of service; several exclude weekends and legal holidays for short notices; and many add extra days when the notice is served by mail rather than in person.",
+        ],
+        tables: [
+          {
+            caption: "Nonpayment-of-rent notice periods (representative states, 2026)",
+            columns: ["State", "Pay-or-quit period", "Lease-violation cure", "No-cause termination (month-to-month)"],
+            rows: [
+              ["California", "3 business days", "3 days to cure", "30 days (<1 yr) / 60 days (1 yr+); just cause under AB 1482"],
+              ["New York", "14 days", "10 days to cure", "30/60/90 days by length of occupancy"],
+              ["Texas", "3 days (lease may shorten)", "3 days", "30 days"],
+              ["Florida", "3 business days", "7 days to cure", "30 days (monthly tenancy)"],
+              ["Illinois", "5 days", "10 days", "30 days; Chicago adds RLTO requirements"],
+              ["Pennsylvania", "10 days", "15/30 days by lease term", "15 days (<1 yr) / 30 days (1 yr+)"],
+              ["Ohio", "3 days", "3 days", "30 days"],
+              ["Georgia", "Immediate demand for possession", "Per lease", "60 days"],
+              ["Michigan", "7 days", "30 days", "30 days"],
+              ["Arizona", "5 days", "10 days (health/safety: 5 days)", "30 days"],
+              ["Washington", "14 days", "10 days", "20 days; just cause required"],
+              ["North Carolina", "10 days", "Per lease", "7 days (monthly tenancy)"],
+            ],
+            note: "Periods summarized from state landlord-tenant statutes and current as of the review date. Local rent-control and just-cause ordinances frequently impose longer periods — always check the city and county rules for the property address.",
+          },
+        ],
+      },
+      {
+        heading: "Serving the notice so it survives a challenge",
+        bullets: [
+          "Personal delivery to the tenant is the strongest method and starts the clock immediately in every state.",
+          "Substituted service — leaving it with a competent adult at the residence or workplace plus mailing a copy — is allowed in most states but usually adds days to the period.",
+          "Posting and mailing (nail and mail) is a last resort and only after documented attempts at personal service in most jurisdictions.",
+          "Certified mail alone is insufficient in several states, and a refused certified letter can defeat proof of service — send first-class as well.",
+          "Photograph the posted notice with a timestamp, keep the mailing receipt, and complete a proof-of-service declaration the same day.",
+          "Never use self-help: changing locks, removing doors, shutting off utilities or removing belongings exposes landlords to statutory damages that commonly run to two or three months' rent plus the tenant's attorney fees.",
+        ],
+      },
+      {
+        heading: "What must appear on the face of the notice",
+        bullets: [
+          "Full names of every adult tenant on the lease, plus 'and all others in possession' where the state allows it.",
+          "The complete property address including unit number.",
+          "For nonpayment: the exact amount of rent due, the periods it covers, and — in states like California — the name, address and hours of the person authorized to receive payment.",
+          "A clear statement of what the tenant must do and by what date, and what happens if they do not.",
+          "The date of the notice, the landlord or agent's signature, and contact information.",
+          "Any state-mandated language: fee itemization, retaliation disclosures, right-to-counsel notices, or federal CARES Act 30-day language for covered properties.",
+        ],
+      },
+      {
+        heading: "After the notice period expires",
+        paragraphs: [
+          "If the tenant has not paid, cured, or vacated, the landlord files an eviction complaint (unlawful detainer, forcible entry and detainer, or summary possession) with the county court. Filing fees typically run $50–$400, service of the summons adds $30–$150, and contested hearings are usually scheduled within one to six weeks depending on the county's docket. Only a sheriff or marshal may execute a writ of possession — never the landlord.",
+        ],
+        tables: [
+          {
+            caption: "Typical landlord cost and timeline for an uncontested eviction",
+            columns: ["Stage", "Typical time", "Typical cost"],
+            rows: [
+              ["Notice period", "3–30 days", "$0–$75 (service)"],
+              ["Filing the complaint", "1–3 days", "$50–$400"],
+              ["Service of summons", "3–10 days", "$30–$150"],
+              ["Hearing and judgment", "1–6 weeks", "$0 (or attorney fees $500–$2,500)"],
+              ["Writ of possession / lockout", "3–14 days", "$50–$400 sheriff fee"],
+            ],
+            note: "Contested cases, jury demands and habitability counterclaims can extend the timeline by months. Figures are national ranges, not quotes.",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How many days' notice do I have to give before evicting a tenant?", answer: "It depends on the state and the reason. Nonpayment notices run 3 to 14 days in most states, lease-violation cure periods run 3 to 30 days, and no-cause terminations of a month-to-month tenancy typically require 30 to 90 days. Check your state's rule and any local ordinance before choosing a date." },
+      { question: "Can I evict a tenant without a written notice?", answer: "No. Every state requires written notice before an eviction case can be filed, and courts dismiss filings where the notice is missing, defective, or improperly served. The only narrow exceptions involve a fixed-term lease that expired on its own terms in a few states." },
+      { question: "Does the tenant have to move out when the notice period ends?", answer: "Legally they should, but if they do not, you cannot remove them yourself. You must file an eviction case, obtain a judgment for possession, and have a sheriff or marshal execute the writ. Self-help lockouts are illegal everywhere and carry statutory penalties." },
+      { question: "What happens if the tenant pays after I serve a pay-or-quit notice?", answer: "If they pay the full amount demanded within the notice period, the notice is satisfied and the tenancy continues. Accepting a partial payment — or any payment after the period expires — can waive the notice in many states, so document what you accept and, where allowed, accept it expressly 'for use and occupancy only, without waiver.'" },
+      { question: "Can I evict a tenant with no lease?", answer: "Yes. A tenant paying rent without a written lease is a month-to-month or at-will tenant with the same statutory protections. You terminate with the state's no-cause notice period, typically 30 days, longer in just-cause jurisdictions." },
+      { question: "How do I serve an eviction notice correctly?", answer: "Personal delivery is safest. If that fails, most states allow substituted service on an adult at the property plus a mailed copy, and posting-and-mailing as a last resort. Complete a proof of service the same day, keep photographs of any posting, and retain mailing receipts — service is the most commonly challenged element at the hearing." },
+      { question: "Can a tenant fight the eviction notice?", answer: "Yes. Common defenses are defective notice or service, retaliation for a code complaint or repair request, discrimination, breach of the warranty of habitability, acceptance of rent after the notice, and failure to follow local just-cause or rent-control procedures. A valid defense usually results in dismissal, not just a delay." },
+      { question: "Is an eviction notice the same as an eviction?", answer: "No. The notice is a pre-suit demand. The eviction is a court judgment for possession followed by a sheriff-executed writ. Nothing about serving a notice permits changing locks, removing property, or shutting off utilities." },
+      { question: "How much does it cost to evict a tenant?", answer: "An uncontested eviction typically runs $150 to $1,000 in filing, service and sheriff fees, plus attorney fees of roughly $500 to $2,500 where counsel is used. Contested cases with habitability counterclaims cost considerably more and can take several months." },
+      { question: "Do I need a lawyer to evict a tenant?", answer: "Individual landlords may appear on their own in most small-claims-style eviction courts, but LLCs and corporations must be represented by counsel in many states. If the tenant has a lawyer, has raised habitability or retaliation, or the property is in a just-cause jurisdiction, hiring a landlord-tenant attorney is usually cheaper than a dismissal." },
+      { question: "Can I evict during winter or a state of emergency?", answer: "Some states and cities restrict lockouts during extreme cold or declared emergencies, and federally subsidized or federally backed properties carry additional notice requirements. Check both the state statute and any active local emergency order before serving." },
+      { question: "What if some occupants are not on the lease?", answer: "Name every adult you know of and add 'and all other occupants' if your state permits it. Unnamed occupants can otherwise claim they were not parties to the judgment and force a second proceeding after the lockout." },
+    ],
+    related: [
+      { label: "Residential lease agreement", href: "/forms/residential-lease-agreement" },
+      { label: "Lease termination letter", href: "/forms/lease-termination-letter" },
+      { label: "Demand letter for unpaid rent", href: "/forms/demand-letter" },
+      { label: "Landlord starter pack", href: "/forms/landlord-starter-pack" },
+      { label: "Eviction notice lookup tool", href: "/tools/realestate/eviction-notice-lookup" },
+    ],
+  },
 };
+
 
 export function getFormGuide(slug: string): FormGuide | undefined {
   return FORM_GUIDES[slug];
