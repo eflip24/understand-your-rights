@@ -8,6 +8,7 @@ import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import ToolRecommender from "@/components/tools/ToolRecommender";
+import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 import { useLocalizedPath } from "@/i18n/paths";
 
 const SITE = "https://legallyspoken.com";
@@ -69,7 +70,48 @@ const ROWS: { state: string; helmet: string; minBI: string; noFault: string; uim
   { state: "District of Columbia", helmet: "Universal", minBI: "25/50/10", noFault: "No", uim: "Required" },
 ];
 
+const HELMET_DEFENSE: { rule: string; states: string; effect: string }[] = [
+  {
+    rule: "Helmet non-use inadmissible / barred",
+    states: "Florida, Texas, and several states by statute or case law",
+    effect: "No damages reduction; the jury never hears whether a helmet was worn.",
+  },
+  {
+    rule: "Admissible only for head and neck injuries",
+    states: "Most comparative-negligence states",
+    effect: "Typical reduction of 10%–40% on head-injury damages, and only with biomechanical expert proof.",
+  },
+  {
+    rule: "Treated as general comparative fault",
+    states: "A minority of jurisdictions",
+    effect: "Reduction applied to the whole award, not just the head-injury component.",
+  },
+  {
+    rule: "Contributory negligence states",
+    states: "Alabama, Maryland, North Carolina, Virginia, DC",
+    effect: "Any rider fault can bar recovery entirely — the highest-stakes version of this argument.",
+  },
+];
+
+const COST_BANDS: { injury: string; medical: string; band: string }[] = [
+  { injury: "Road rash, no fracture", medical: "$3,000 – $12,000", band: "$8,000 – $35,000" },
+  { injury: "Single limb fracture with ORIF", medical: "$40,000 – $90,000", band: "$60,000 – $180,000" },
+  { injury: "Multiple fractures / pelvis", medical: "$90,000 – $250,000", band: "$150,000 – $600,000" },
+  { injury: "Traumatic brain injury (helmeted)", medical: "$150,000 – $500,000", band: "$400,000 – $2,000,000" },
+  { injury: "Traumatic brain injury (unhelmeted, non-universal state)", medical: "$150,000 – $500,000", band: "Same range less a 10%–40% helmet-defense reduction" },
+  { injury: "Spinal cord injury / paraplegia", medical: "$500,000 – $1,500,000+", band: "Policy-limits driven; usually exceeds available coverage" },
+];
+
 const FAQS = [
+  { question: "How is the helmet defense actually applied in court?", answer: "Three approaches exist. A minority of states (including Florida and Texas) bar or sharply limit evidence of helmet non-use. Most comparative-negligence states allow it only for head and neck injuries, and only if the defense produces biomechanical expert testimony that a helmet would have prevented or reduced that specific injury. A handful of states apportion the reduction as ordinary comparative fault against the entire award." },
+  { question: "Do helmet laws change my insurance premium?", answer: "Not directly — carriers price on rider age, engine displacement, ZIP code, record and coverage limits. Indirectly they matter a great deal: in non-universal states, medical-payments and UM/UIM claims for head injuries are larger, and that loss experience is priced into the state's base rate." },
+  { question: "What coverage limits should a rider actually carry?", answer: "State minimums are almost never adequate. A single ORIF surgery plus rehabilitation regularly exceeds $150,000. Practical targets are $100,000/$300,000 bodily injury liability, matching UM/UIM, $10,000 MedPay, and — if you rely on your bike for work — separate disability coverage, because auto policies do not replace long-term income." },
+  { question: "Is a passenger covered if they were not wearing a helmet?", answer: "A passenger has their own claim against the at-fault driver and, usually, against the rider's liability coverage. In non-universal states the same helmet-defense argument can reduce the passenger's head-injury damages, and in universal-helmet states an unhelmeted passenger can also expose the rider to a citation." },
+  { question: "Does no-fault / PIP apply to motorcycles?", answer: "Often not. Several no-fault states — Michigan and Florida among them — treat motorcycles differently from cars, either excluding them from mandatory PIP or requiring a separate purchase. Riders in those states frequently discover after a crash that they have no first-party medical coverage at all." },
+  { question: "What is a lane-splitting citation worth to the insurer?", answer: "California permits lane splitting, Utah and a few others permit limited lane filtering, and most states prohibit both. A citation is not automatic liability, but it hands the adjuster a comparative-fault argument that commonly shaves 10% to 30% off the offer even where the other driver turned across the rider's path." },
+  { question: "Do modular or novelty helmets satisfy a universal helmet law?", answer: "Only DOT-compliant helmets meeting FMVSS 218 satisfy these statutes. Novelty shells sold as 'not for highway use' do not, and wearing one in a universal-helmet state can produce both a citation and the same damages argument as wearing nothing." },
+  { question: "How long do I have to file a motorcycle injury claim?", answer: "The personal-injury statute of limitations governs, most commonly two or three years from the crash, with shorter notice deadlines — sometimes 60 to 180 days — when a government vehicle or a road-design defect is involved. UM/UIM claims are contractual and can carry separate, sometimes shorter, contract deadlines." },
+  { question: "Does a helmet law violation itself prove negligence?", answer: "Generally no. Many states expressly provide that helmet non-use is not negligence per se and is not admissible to show fault for the crash. The fight is narrower: whether it can be used to reduce damages for the head injury specifically." },
   { question: "Does not wearing a helmet reduce my motorcycle accident settlement?", answer: "In many states, yes — under comparative-negligence rules the insurer can argue your head/neck injuries were worsened by not wearing a helmet, potentially reducing damages by 10–40%. A few states (Florida, Texas) limit this 'helmet defense.'" },
   { question: "Do I need special motorcycle insurance beyond state minimums?", answer: "Yes. State minimum liability rarely covers a serious motorcycle injury (surgery + PT often exceeds $100K). Add MedPay ($5K–$10K) and Uninsured/Underinsured Motorist coverage — 1 in 8 US drivers is uninsured." },
   { question: "Which states have universal helmet laws in 2026?", answer: "18 states plus DC still require helmets for ALL riders: AL, CA, GA, LA, MD, MA, MS, NE, NV, NJ, NY, NC, OR, TN, VT, VA, WA, WV, DC. Others require helmets only for riders under 18 or 21." },
@@ -90,6 +132,7 @@ export default function MotorcycleHelmetLawsByState() {
             "Motorcycle Helmet & Insurance Laws by State",
             "50-state comparison of motorcycle helmet requirements and minimum insurance limits.",
             URL,
+            { datePublished: "2026-01-22", dateModified: "2026-08-08" },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
@@ -118,6 +161,11 @@ export default function MotorcycleHelmetLawsByState() {
             <Button onClick={() => window.print()} variant="outline" size="sm"><Printer className="h-4 w-4 mr-2" />Save as PDF</Button>
           </div>
         </header>
+
+        <p className="text-xs text-muted-foreground mb-6">
+          By the LegallySpoken Editorial Team · Last reviewed August 8, 2026
+        </p>
+
 
         <Card className="mb-6">
           <CardContent className="pt-4 text-sm text-muted-foreground space-y-2">
@@ -153,6 +201,64 @@ export default function MotorcycleHelmetLawsByState() {
 
         <AdSlot slot="mid-content" />
 
+        <section className="my-10">
+          <h2 className="text-2xl font-bold mb-3">How the "helmet defense" works, by liability rule</h2>
+          <p className="text-sm text-muted-foreground mb-4 max-w-3xl">
+            Whether a helmet was worn rarely decides fault for the collision. It decides how much of the
+            head-injury damages survive. Which of the four rules below applies in your state is usually
+            worth more to the outcome than the helmet statute itself.
+          </p>
+          <div className="rounded-lg border overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Rule</TableHead>
+                  <TableHead>Where it applies</TableHead>
+                  <TableHead>Effect on the award</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {HELMET_DEFENSE.map((r) => (
+                  <TableRow key={r.rule}>
+                    <TableCell className="font-medium">{r.rule}</TableCell>
+                    <TableCell>{r.states}</TableCell>
+                    <TableCell>{r.effect}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </section>
+
+        <section className="my-10">
+          <h2 className="text-2xl font-bold mb-3">Motorcycle injury severity and typical settlement bands</h2>
+          <div className="rounded-lg border overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Injury pattern</TableHead>
+                  <TableHead>Typical medical specials</TableHead>
+                  <TableHead>Typical settlement band</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {COST_BANDS.map((r) => (
+                  <TableRow key={r.injury}>
+                    <TableCell className="font-medium">{r.injury}</TableCell>
+                    <TableCell className="font-mono text-xs">{r.medical}</TableCell>
+                    <TableCell>{r.band}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-2">
+            Bands assume clear liability and adequate coverage. In practice the at-fault driver's policy limit
+            caps most motorcycle recoveries, which is why underinsured-motorist coverage matters more to riders
+            than to drivers.
+          </p>
+        </section>
+
         <section className="my-8">
           <ToolRecommender topic="car-accident" title="Value your motorcycle accident case" />
         </section>
@@ -168,6 +274,16 @@ export default function MotorcycleHelmetLawsByState() {
             ))}
           </Accordion>
         </section>
+
+        <RelatedIntentStrip
+          cluster="Auto & injury cluster"
+          links={[
+            { label: "What to do after a car accident", href: "/what-to-do-after-a-car-accident", blurb: "The first 48 hours, evidence and adjuster calls." },
+            { label: "Car insurance claim denied", href: "/car-insurance-claim-denied", blurb: "Denial reasons and how to reverse them." },
+            { label: "Pain and suffering explained", href: "/pain-and-suffering-calculation", blurb: "Multiplier and per-diem methods." },
+            { label: "Personal injury settlements", href: "/personal-injury-settlements", blurb: "How injury claims are valued end to end." },
+          ]}
+        />
 
         <section className="my-8">
           <Card>
