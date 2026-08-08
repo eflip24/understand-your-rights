@@ -41,7 +41,77 @@ const HOW_TO = [
   },
 ];
 
+const HEARING_DEADLINES: { state: string; agency: string; days: string; refusal: string }[] = [
+  { state: "California", agency: "DMV (APS hearing)", days: "10 days", refusal: "1 year" },
+  { state: "Texas", agency: "DPS (ALR hearing)", days: "15 days", refusal: "180 days" },
+  { state: "Florida", agency: "FLHSMV (formal review)", days: "10 days", refusal: "1 year" },
+  { state: "New York", agency: "DMV (refusal hearing)", days: "At arraignment", refusal: "1 year" },
+  { state: "Illinois", agency: "Secretary of State", days: "90 days to petition", refusal: "1 year" },
+  { state: "Washington", agency: "DOL", days: "7 days", refusal: "1 year" },
+  { state: "Arizona", agency: "MVD", days: "15 days", refusal: "1 year" },
+  { state: "Georgia", agency: "DDS (30-day letter)", days: "30 days", refusal: "1 year" },
+  { state: "Ohio", agency: "BMV (ALS appeal)", days: "First appearance / 30 days", refusal: "1 year" },
+  { state: "Pennsylvania", agency: "PennDOT", days: "30 days to appeal", refusal: "12 months" },
+  { state: "Michigan", agency: "Secretary of State", days: "14 days", refusal: "1 year" },
+  { state: "North Carolina", agency: "DMV", days: "10 days", refusal: "1 year" },
+];
+
 const FAQS = [
+  {
+    question: "What is the deadline to save my driver's licence after a DUI arrest?",
+    answer:
+      "It is measured in days from the arrest, not from your court date. California allows 10 days to request a DMV APS hearing, Texas 15 days for an ALR hearing, Washington 7 days, Florida 10 days for a formal review. Miss it and the suspension takes effect automatically, regardless of what later happens in criminal court.",
+  },
+  {
+    question: "Is the criminal case separate from the DMV suspension?",
+    answer:
+      "Yes. They are two proceedings with different standards of proof, different decision-makers and different deadlines. You can win the criminal case and still lose your licence administratively, or vice versa. Both need to be handled, and the administrative track almost always moves first.",
+  },
+  {
+    question: "What does an ignition interlock actually cost?",
+    answer:
+      "Installation typically runs $70 to $150, with monthly monitoring and lease fees of $60 to $100. Over a standard 12-month requirement, expect $800 to $1,500 all-in from vendors such as Intoxalock, Smart Start, LifeSafer or Draeger, plus a removal fee. Many states now offer indigency programs that reduce these amounts.",
+  },
+  {
+    question: "Will a first DUI show up on a background check?",
+    answer:
+      "Almost always. A DUI conviction is a criminal record entry that standard employment and tenant screening will surface. Some states permit expungement or sealing after a waiting period, and diversion resolutions such as Pennsylvania ARD or Oregon DUII diversion can allow the charge to be dismissed and expunged on completion.",
+  },
+  {
+    question: "How much will my car insurance increase after a first DUI?",
+    answer:
+      "The typical national increase is roughly 70% to 100% of the prior premium, sustained for three to five years. States requiring an SR-22 (or FR-44 in Florida and Virginia, which demands higher limits) add both the filing fee and placement in a high-risk tier. The cumulative three-year cost commonly exceeds the fine, the lawyer and the interlock combined.",
+  },
+  {
+    question: "Can I drive at all during the suspension?",
+    answer:
+      "Most states offer a restricted, hardship or occupational licence permitting travel to work, school, treatment and childcare, usually conditioned on interlock installation and proof of SR-22. Refusal cases are treated more harshly: several states impose a hard no-driving period before any restricted licence becomes available.",
+  },
+  {
+    question: "What happens if I refused the breath or blood test?",
+    answer:
+      "Every state has an implied-consent statute imposing an administrative suspension for refusal — commonly one year, and often longer than the suspension for failing the test. Many states also allow the prosecution to argue refusal as consciousness of guilt, and a warrant for a blood draw frequently follows the refusal anyway.",
+  },
+  {
+    question: "Does a DUI in another state follow me home?",
+    answer:
+      "Yes. Through the Driver Licence Compact and the Non-Resident Violator Compact, the conviction is reported to your home state, which applies its own penalties and counts the offence for lookback purposes. You generally must also comply with the arresting state's requirements before either licence is reinstated.",
+  },
+  {
+    question: "What is a lookback period and why does it matter?",
+    answer:
+      "The lookback (or washout) period is how far back the state counts prior offences when charging a second DUI. Ranges run from five years to a lifetime — Florida uses a lifetime lookback for some enhancements, while several states use five or ten years. It determines whether a future offence is charged as a first or a second.",
+  },
+  {
+    question: "Should I just plead guilty at the first appearance?",
+    answer:
+      "Rarely. Even where the facts look poor, defence value tends to sit in the stop, the calibration and maintenance records for the breath instrument, observation-period compliance, and the availability of a wet-reckless or diversion resolution. Pleading at arraignment also forfeits the administrative hearing in several states.",
+  },
+  {
+    question: "What is a wet reckless and can I get one?",
+    answer:
+      "A wet reckless is a reckless-driving conviction with an alcohol notation, offered as a plea reduction in states including California. It normally carries lower fines, no mandatory jail and a shorter programme, but it still counts as a prior in a later DUI prosecution and insurers still price it as an alcohol offence.",
+  },
   {
     question: "Will a first-offense DUI put me in jail?",
     answer:
@@ -115,6 +185,7 @@ export default function DuiFirstOffenseGuide() {
             "First-Offense DUI Guide: Penalties, Costs and Deadlines by State",
             "State-by-state first-offense DUI penalties, license suspension periods, ignition interlock rules and SR-22 requirements.",
             url,
+            { datePublished: "2026-02-04", dateModified: "2026-08-08" },
           ),
           howToSchema,
           faqSchema(FAQS),
@@ -135,6 +206,10 @@ export default function DuiFirstOffenseGuide() {
             First-Offense DUI: Penalties, Costs and Deadlines in Every State
           </h1>
         </header>
+
+        <p className="text-xs text-muted-foreground mb-6">
+          By the LegallySpoken Editorial Team · Last reviewed August 8, 2026
+        </p>
 
         <InMarketEntityBlock
           category="DUI / DWI defense"
@@ -261,6 +336,45 @@ export default function DuiFirstOffenseGuide() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="font-serif text-2xl font-bold mb-3">
+            Administrative licence-hearing deadlines that expire before your court date
+          </h2>
+          <p className="prose-legal text-muted-foreground leading-relaxed mb-4">
+            These clocks start on the day of arrest. Nothing that happens in criminal court pauses them,
+            and in most states missing the request window forfeits the hearing permanently.
+          </p>
+          <div className="overflow-x-auto rounded-md border">
+            <table className="w-full text-sm">
+              <caption className="sr-only">
+                Deadline to request an administrative licence hearing after a DUI arrest, by state
+              </caption>
+              <thead className="bg-muted/50">
+                <tr className="text-left">
+                  <th scope="col" className="p-3 font-semibold">State</th>
+                  <th scope="col" className="p-3 font-semibold">Agency</th>
+                  <th scope="col" className="p-3 font-semibold">Days to request</th>
+                  <th scope="col" className="p-3 font-semibold">Refusal suspension</th>
+                </tr>
+              </thead>
+              <tbody>
+                {HEARING_DEADLINES.map((r) => (
+                  <tr key={r.state} className="border-t align-top">
+                    <td className="p-3 font-medium">{r.state}</td>
+                    <td className="p-3">{r.agency}</td>
+                    <td className="p-3 font-mono">{r.days}</td>
+                    <td className="p-3">{r.refusal}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-2">
+            Deadlines are the commonly applied statutory windows; confirm the exact date printed on the
+            temporary permit issued at arrest, which controls.
+          </p>
         </section>
 
         <section className="mb-10">

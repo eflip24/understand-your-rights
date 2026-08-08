@@ -7,6 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema, webApplicationSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
+import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import DebtSettlementCalculator from "@/components/tools/DebtSettlementCalculator";
 import { useLocalizedPath } from "@/i18n/paths";
@@ -15,6 +16,61 @@ const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/debt-settlement-calculator`;
 
 const FAQS = [
+  {
+    question: "How long does a debt-settlement program take to finish?",
+    answer:
+      "Most programs are built around a 24- to 48-month escrow schedule, because the first account cannot be settled until enough cash has accumulated to fund a lump sum. Accounts settled in months 1-12 are usually the smallest balances; the largest creditor is typically settled last, which is also when litigation risk peaks.",
+  },
+  {
+    question: "Do I keep paying the creditor while I save for a settlement?",
+    answer:
+      "No — and that is the mechanism. Settlement leverage exists only once an account is delinquent and heading for charge-off at 180 days. That is also the source of the credit damage, collection calls and lawsuit exposure, which is why the strategy suits people who are already behind rather than people who are current.",
+  },
+  {
+    question: "How much are debt-settlement company fees?",
+    answer:
+      "Typically 15% to 25% of the enrolled balance. Under the FTC Telemarketing Sales Rule, 16 CFR § 310.4, a for-profit company that negotiated by phone cannot charge any fee until it has settled at least one account and you have made a payment on that settlement. Advance fees demanded before a settlement is reached are a violation.",
+  },
+  {
+    question: "Can I negotiate directly with the creditor myself?",
+    answer:
+      "Yes, and it removes the 15% to 25% program fee entirely. Call the pre-charge-off recovery department, ask for the settlement authority on the account, and insist on a written settlement agreement stating the amount, the deadline and that the balance will be reported as settled in full before you send any funds.",
+  },
+  {
+    question: "What should the written settlement letter say?",
+    answer:
+      "It should identify the account number, state the exact settlement amount and payment date, confirm that payment resolves the account in full, specify the credit-bureau reporting language, and confirm that the creditor will not sell or transfer any remaining balance. Never pay by giving live access to your bank account.",
+  },
+  {
+    question: "Will a settled account still be sold to a debt buyer?",
+    answer:
+      "It should not be if the agreement says the account is resolved in full, but zombie-debt resale does happen. Keep the settlement letter and proof of payment indefinitely; if a buyer such as Midland, Portfolio Recovery, LVNV or Cavalry later contacts you, the letter plus an FDCPA validation demand ends it.",
+  },
+  {
+    question: "How does settlement compare to a nonprofit debt-management plan?",
+    answer:
+      "A DMP through an NFCC-affiliated agency keeps you current, pays the balance in full at a reduced interest rate over three to five years, and does far less credit damage. Settlement pays less than the full balance but damages credit and can create taxable forgiven income. DMPs suit people who can afford full repayment at a lower rate; settlement does not.",
+  },
+  {
+    question: "Can I be sued during the program, and what happens if I am?",
+    answer:
+      "Yes. Discover and Capital One in particular file suit on mid-size balances. Never ignore the summons: answering within the state's deadline preserves defences such as the statute of limitations and lack of standing, and most cases settle after an answer is filed. Ignoring it produces a default judgment, then wage garnishment.",
+  },
+  {
+    question: "What happens to my credit score and for how long?",
+    answer:
+      "Expect a 100- to 150-point drop for a previously good score, driven mostly by the delinquencies rather than the settlement itself. Charge-offs and settled accounts remain on the report for seven years from the original delinquency date, though the practical impact fades substantially after roughly two years of clean payment history.",
+  },
+  {
+    question: "Do medical and student loan debts work the same way?",
+    answer:
+      "Medical debt settles at a steep discount and, under current credit-bureau policy, paid medical collections are removed from reports. Federal student loans do not belong in a settlement program at all: income-driven repayment, deferment and forgiveness programs are far better options, and federal loans survive bankruptcy absent an undue-hardship showing.",
+  },
+  {
+    question: "Is a debt-settlement attorney worth the extra cost?",
+    answer:
+      "When litigation has started or is likely, yes: an attorney can answer the complaint, assert FDCPA and FCRA counterclaims, and negotiate from a stronger position. For a small number of pre-litigation accounts, direct negotiation usually produces the same discount at a fraction of the cost.",
+  },
   {
     question: "How much does debt settlement typically save?",
     answer:
@@ -99,6 +155,10 @@ export default function DebtSettlementCalculatorPage() {
           </div>
         </header>
 
+        <p className="text-xs text-muted-foreground mb-6">
+          By the LegallySpoken Editorial Team · Last reviewed August 8, 2026
+        </p>
+
         <InMarketEntityBlock
           category="Debt Relief · Consumer Bankruptcy"
           intro={
@@ -163,6 +223,56 @@ export default function DebtSettlementCalculatorPage() {
             </TableBody>
           </Table>
 
+          <h2 className="text-2xl font-bold mt-6 mb-3">All-in cost comparison: settlement vs. DMP vs. Chapter 7</h2>
+          <p>
+            The table below models a $40,000 unsecured balance for a filer with modest assets. The settlement
+            column assumes a 45% settlement, a 20% program fee, and tax on the forgiven amount at a 22%
+            marginal rate with no insolvency exclusion available.
+          </p>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Cost component</TableHead>
+                <TableHead>Debt settlement</TableHead>
+                <TableHead>Debt management plan</TableHead>
+                <TableHead>Chapter 7</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow><TableCell>Paid to creditors</TableCell><TableCell className="font-mono">$18,000</TableCell><TableCell className="font-mono">$40,000</TableCell><TableCell className="font-mono">$0</TableCell></TableRow>
+              <TableRow><TableCell>Program / filing fees</TableCell><TableCell className="font-mono">$8,000</TableCell><TableCell className="font-mono">$1,750</TableCell><TableCell className="font-mono">$338 court + $1,200–$2,500 attorney</TableCell></TableRow>
+              <TableRow><TableCell>Tax on forgiven debt</TableCell><TableCell className="font-mono">≈$4,840</TableCell><TableCell className="font-mono">$0</TableCell><TableCell className="font-mono">$0 (§ 108(a)(1)(A))</TableCell></TableRow>
+              <TableRow><TableCell>Total out of pocket</TableCell><TableCell className="font-mono font-semibold">≈$30,840</TableCell><TableCell className="font-mono font-semibold">≈$41,750</TableCell><TableCell className="font-mono font-semibold">≈$1,538–$2,838</TableCell></TableRow>
+              <TableRow><TableCell>Time to resolution</TableCell><TableCell>24–48 months</TableCell><TableCell>36–60 months</TableCell><TableCell>~4 months</TableCell></TableRow>
+              <TableRow><TableCell>Credit report impact</TableCell><TableCell>7 years from first delinquency</TableCell><TableCell>Minimal; accounts stay current</TableCell><TableCell>10 years from filing</TableCell></TableRow>
+              <TableRow><TableCell>Lawsuit / garnishment risk</TableCell><TableCell>High during accumulation</TableCell><TableCell>Low</TableCell><TableCell>None after the automatic stay</TableCell></TableRow>
+            </TableBody>
+          </Table>
+          <p className="text-xs text-muted-foreground">
+            Illustrative model, not a quote. Chapter 7 requires passing the means test and surrendering
+            non-exempt assets; settlement leaves accounts exposed to suit until each one is resolved.
+          </p>
+
+          <h2 className="text-2xl font-bold mt-6 mb-3">Where the leverage sits in the collection timeline</h2>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Account stage</TableHead>
+                <TableHead>Who holds the file</TableHead>
+                <TableHead>Realistic discount</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow><TableCell>Current, hardship request</TableCell><TableCell>Issuer hardship desk</TableCell><TableCell className="font-mono">Rate reduction only, 0% principal</TableCell></TableRow>
+              <TableRow><TableCell>30–89 days late</TableCell><TableCell>Internal collections</TableCell><TableCell className="font-mono">0–10%</TableCell></TableRow>
+              <TableRow><TableCell>90–179 days late</TableCell><TableCell>Pre-charge-off recovery</TableCell><TableCell className="font-mono">30–50%</TableCell></TableRow>
+              <TableRow><TableCell>Charged off, in-house</TableCell><TableCell>Recovery / agency placement</TableCell><TableCell className="font-mono">40–60%</TableCell></TableRow>
+              <TableRow><TableCell>Sold to a debt buyer</TableCell><TableCell>Midland, PRA, LVNV, Cavalry</TableCell><TableCell className="font-mono">60–80%</TableCell></TableRow>
+              <TableRow><TableCell>Suit filed, pre-judgment</TableCell><TableCell>Collection law firm</TableCell><TableCell className="font-mono">40–60%, often on a payment plan</TableCell></TableRow>
+              <TableRow><TableCell>Judgment entered</TableCell><TableCell>Judgment creditor</TableCell><TableCell className="font-mono">0–30%; garnishment leverage flips</TableCell></TableRow>
+            </TableBody>
+          </Table>
+
           <h2 className="text-2xl font-bold mt-6 mb-3">The 1099-C tax trap</h2>
           <p>
             Any forgiven balance over $600 triggers a Form 1099-C from the creditor. That amount is taxable as ordinary income under <strong>IRC § 61(a)(11)</strong> unless an exclusion applies. The most common is the <strong>insolvency exclusion</strong>, IRC § 108(a)(1)(B): if your total liabilities exceeded your total assets on the day before the debt was cancelled, you can exclude cancelled debt up to the amount of insolvency by filing Form 982 with your return. Discharge in bankruptcy is separately excluded under § 108(a)(1)(A) and never generates a 1099-C tax.
@@ -197,6 +307,16 @@ export default function DebtSettlementCalculatorPage() {
             ))}
           </Accordion>
         </section>
+
+        <RelatedIntentStrip
+          cluster="Debt & bankruptcy cluster"
+          links={[
+            { label: "Chapter 7 vs Chapter 13", href: "/chapter-7-vs-chapter-13", blurb: "Means test, exemptions and timelines." },
+            { label: "Bankruptcy vs debt settlement", href: "/bankruptcy-vs-debt-settlement", blurb: "Side-by-side cost and credit impact." },
+            { label: "Wage garnishment calculator", href: "/tools/finance/wage-garnishment-calculator", blurb: "What a judgment creditor can take." },
+            { label: "Statute of limitations lookup", href: "/tools/consumer/statute-of-limitations-lookup", blurb: "Check whether old debt is time-barred." },
+          ]}
+        />
 
         <section className="my-8">
           <Card>
