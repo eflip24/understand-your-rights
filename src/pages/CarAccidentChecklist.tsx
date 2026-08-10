@@ -127,7 +127,7 @@ export default function CarAccidentChecklist() {
             "What to Do After a Car Accident: 10-Step Checklist",
             "Step-by-step checklist for the scene, the first 72 hours, state reporting thresholds, insurer tactics, and claim valuation after a crash.",
             URL,
-            { datePublished: "2026-01-12", dateModified: REVIEWED },
+            { datePublished: "2026-01-12", dateModified: REVIEWED, author: AUTHOR },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
