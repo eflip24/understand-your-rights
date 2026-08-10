@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Tier3Head from "@/components/seo/Tier3Head";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
+import AuthorByline from "@/components/seo/AuthorByline";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
 
 function howToSchema(name: string, description: string, steps: { name: string; text: string }[]) {
@@ -142,7 +143,7 @@ export default function LongTermDisabilityClaimGuide() {
             "Long-Term Disability Claim Guide",
             "Complete LTD claim guide covering ERISA appeals, definitions of disability, and insurer denial tactics.",
             URL,
-            { datePublished: "2026-03-12", dateModified: "2026-08-08" },
+            { datePublished: "2026-03-12", dateModified: "2026-08-08", author: "Personal Injury Editor" },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
@@ -176,9 +177,7 @@ export default function LongTermDisabilityClaimGuide() {
           </div>
         </header>
 
-        <p className="text-xs text-muted-foreground mb-6">
-          By the LegallySpoken Editorial Team · Last reviewed August 8, 2026
-        </p>
+        <AuthorByline authorId="personal-injury-editor" reviewedAt="2026-08-08" compact className="mb-6" />
 
         <InMarketEntityBlock
           category="Long-Term Disability · ERISA"

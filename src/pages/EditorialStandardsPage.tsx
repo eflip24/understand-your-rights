@@ -1,12 +1,15 @@
 import { ShieldCheck, BookOpen, RefreshCw, Bot, Users, AlertTriangle } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import Head from "@/components/seo/Head";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLocalizedPath } from "@/i18n/paths";
 
 const ICONS = [BookOpen, ShieldCheck, Bot, Users, RefreshCw, AlertTriangle];
 
 export default function EditorialStandardsPage() {
   const { t } = useTranslation("pages");
+  const lp = useLocalizedPath();
   const intro = t("editorial.intro", { returnObjects: true }) as string[];
   const pillars = t("editorial.pillars", { returnObjects: true }) as Array<{ title: string; body: string }>;
   const steps = t("editorial.pipeline.steps", { returnObjects: true }) as Array<{ label: string; body: string }>;
@@ -76,6 +79,16 @@ export default function EditorialStandardsPage() {
         <div className="space-y-4">
           <h2 className="font-serif text-2xl font-bold text-foreground">{t("editorial.corrections.title")}</h2>
           <p className="text-muted-foreground leading-relaxed">{t("editorial.corrections.body")}</p>
+        </div>
+
+        <div className="space-y-4 rounded-lg border bg-muted/30 p-6">
+          <h2 className="font-serif text-2xl font-bold text-foreground">Our editorial team</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Every byline on LegallySpoken points to a named editorial role with a specific area of oversight. Meet the team and their review responsibilities on our About page.
+          </p>
+          <Link to={lp("/about")} className="text-accent font-medium hover:underline">
+            Meet the team →
+          </Link>
         </div>
 
         <p className="text-xs text-muted-foreground border-t pt-6">{t("editorial.disclaimer")}</p>

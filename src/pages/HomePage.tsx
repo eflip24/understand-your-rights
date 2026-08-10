@@ -38,6 +38,9 @@ const categoryImages: Record<string, string> = {
   energy: catEnergy,
 };
 
+/** Add real social/authority profiles (LinkedIn, Crunchbase, etc.) here when available. */
+const ORG_SAME_AS: string[] = [];
+
 export default function HomePage() {
   const { t, i18n } = useTranslation(["home"]);
   const lp = useLocalizedPath();
@@ -62,7 +65,7 @@ export default function HomePage() {
         title={t("home:meta.title")}
         description={t("home:meta.description")}
       />
-      <JsonLdGraph schemas={[websiteSchema(), organizationSchema()]} />
+      <JsonLdGraph schemas={[websiteSchema(), organizationSchema(ORG_SAME_AS)]} />
 
       <HeroBanner />
 

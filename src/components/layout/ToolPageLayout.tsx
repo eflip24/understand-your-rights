@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { JsonLdGraph, webApplicationSchema, faqSchema } from "@/components/seo/JsonLd";
 import Head from "@/components/seo/Head";
+import AuthorByline from "@/components/seo/AuthorByline";
 import AdSlot from "@/components/ads/AdSlot";
 import ToolSeoContext from "@/components/tools/ToolSeoContext";
 import ToolGuideContent, { getToolGuide } from "@/components/tools/ToolGuideContent";
@@ -13,6 +14,7 @@ import ToolStickyMobileCta from "@/components/tools/ToolStickyMobileCta";
 
 import { useLocalizedPath } from "@/i18n/paths";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
+import { getAuthorIdForToolCategory } from "@/data/editorialTeam";
 
 
 /**
@@ -93,6 +95,12 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
           </div>
         </div>
         <p className="text-muted-foreground text-base sm:text-lg max-w-2xl">{localizedDesc}</p>
+        <AuthorByline
+          authorId={getAuthorIdForToolCategory(tool.category)}
+          reviewedAt={guide?.reviewedOn}
+          compact
+          className="mt-3"
+        />
       </div>
 
       {/* Top ad slot — above the tool, below the header. Keeps CLS low via

@@ -7,9 +7,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
+import AuthorByline from "@/components/seo/AuthorByline";
 import AdSlot from "@/components/ads/AdSlot";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import { useLocalizedPath } from "@/i18n/paths";
+import { getEditorialRole } from "@/data/editorialTeam";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 
 const AccidentDamageCalculator = lazy(() => import("@/components/tools/AccidentDamageCalculator"));
@@ -17,6 +19,7 @@ const AccidentDamageCalculator = lazy(() => import("@/components/tools/AccidentD
 const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/what-to-do-after-a-car-accident`;
 const REVIEWED = "2026-08-04";
+const AUTHOR = getEditorialRole("personal-injury-editor")?.name;
 
 const STEPS = [
   {
@@ -124,7 +127,7 @@ export default function CarAccidentChecklist() {
             "What to Do After a Car Accident: 10-Step Checklist",
             "Step-by-step checklist for the scene, the first 72 hours, state reporting thresholds, insurer tactics, and claim valuation after a crash.",
             URL,
-            { datePublished: "2026-01-12", dateModified: REVIEWED },
+            { datePublished: "2026-01-12", dateModified: REVIEWED, author: AUTHOR },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
@@ -163,9 +166,7 @@ export default function CarAccidentChecklist() {
           <p className="text-lg text-muted-foreground">
             The exact sequence — at the scene, in the first 72 hours, and before you talk to any insurer. Includes state reporting thresholds, the deadlines that quietly kill claims, and a calculator to value your damages before you respond to an offer.
           </p>
-          <p className="text-xs text-muted-foreground mt-3">
-            Reviewed by the LegallySpoken editorial team · Last updated {new Date(REVIEWED).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · General information, not legal advice.
-          </p>
+          <AuthorByline authorId="personal-injury-editor" reviewedAt={REVIEWED} compact className="mt-3" />
           <div className="mt-4 flex gap-2">
             <Button onClick={() => window.print()} variant="outline" size="sm"><Printer className="h-4 w-4 mr-2" />Save as PDF</Button>
           </div>

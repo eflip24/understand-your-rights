@@ -66,6 +66,8 @@ export interface Phase8Pillar {
   /** ISO dates surfaced in Article JSON-LD and the byline. */
   datePublished?: string;
   dateModified?: string;
+  /** Editorial role id from editorialTeam.ts; used for byline + Article schema author. */
+  authorId?: string;
   cluster: string;
   related: { label: string; href: string; blurb?: string }[];
 }
@@ -358,6 +360,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     },
     datePublished: "2026-02-14",
     dateModified: "2026-08-06",
+    authorId: "personal-injury-editor",
     recommenderTopic: "car-accident",
     cluster: "Personal injury cluster",
     related: [
@@ -529,6 +532,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     ],
     datePublished: "2026-02-18",
     dateModified: "2026-08-08",
+    authorId: "personal-injury-editor",
     primaryCta: {
       path: "/tools/consumer/settlement-estimator",
       label: "Estimate a nursing home neglect claim",
@@ -715,6 +719,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     ],
     datePublished: "2026-03-04",
     dateModified: "2026-08-07",
+    authorId: "personal-injury-editor",
 
     primaryCta: {
       path: "/tools/consumer/workers-comp-settlement-calculator",
@@ -904,6 +909,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     },
     datePublished: "2026-02-14",
     dateModified: "2026-08-06",
+    authorId: "personal-injury-editor",
     recommenderTopic: "insurance-dispute",
     cluster: "Insurance dispute cluster",
     related: [
@@ -1253,6 +1259,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     },
     datePublished: "2026-02-14",
     dateModified: "2026-08-05",
+    authorId: "consumer-finance-editor",
     cluster: "Debt & bankruptcy cluster",
     related: [
       { label: "Bankruptcy vs debt settlement", href: "/bankruptcy-vs-debt-settlement", blurb: "Which route costs less overall." },
@@ -1426,6 +1433,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     ],
     datePublished: "2026-03-04",
     dateModified: "2026-08-08",
+    authorId: "senior-legal-researcher",
     primaryCta: {
       path: "/tools/consumer/eeoc-settlement-calculator",
       label: "Estimate your wrongful termination settlement",
@@ -1649,6 +1657,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     recommenderTopic: "personal-injury",
     datePublished: "2026-02-14",
     dateModified: "2026-08-05",
+    authorId: "personal-injury-editor",
     cluster: "Mass tort cluster",
     related: [
       { label: "Mass tort lawsuits hub", href: "/mass-tort-lawsuits", blurb: "Every active litigation we track." },

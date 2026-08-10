@@ -110,8 +110,14 @@ export function articleSchema(
   title: string,
   description: string,
   url: string,
-  dates?: { datePublished?: string; dateModified?: string; author?: string },
+  dates?: {
+    datePublished?: string;
+    dateModified?: string;
+    author?: string;
+    authorUrl?: string;
+  },
 ) {
+  const authorName = dates?.author || "LegallySpoken Editorial Team";
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -122,11 +128,13 @@ export function articleSchema(
     ...(dates?.dateModified ? { dateModified: dates.dateModified } : {}),
     author: {
       "@type": "Organization",
-      name: dates?.author || "LegallySpoken Editorial Team",
+      name: authorName,
+      ...(dates?.authorUrl ? { url: dates.authorUrl } : {}),
     },
     publisher: {
       "@type": "Organization",
       name: "LegallySpoken",
+      url: "https://legallyspoken.com",
     },
   };
 }
@@ -147,14 +155,14 @@ export function websiteSchema() {
   };
 }
 
-export function organizationSchema() {
+export function organizationSchema(sameAs?: string[]) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "LegallySpoken",
     url: "https://legallyspoken.com",
     description: "Free legal tools, contract analyzers, and plain-English legal resources for everyday people.",
-    sameAs: [],
+    sameAs: sameAs ?? [],
   };
 }
 

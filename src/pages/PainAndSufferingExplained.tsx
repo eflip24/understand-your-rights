@@ -7,9 +7,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
+import AuthorByline from "@/components/seo/AuthorByline";
 import AdSlot from "@/components/ads/AdSlot";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import { useLocalizedPath } from "@/i18n/paths";
+import { getEditorialRole } from "@/data/editorialTeam";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 
 const SettlementEstimator = lazy(() => import("@/components/tools/SettlementEstimator"));
@@ -17,6 +19,7 @@ const SettlementEstimator = lazy(() => import("@/components/tools/SettlementEsti
 const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/how-pain-and-suffering-is-calculated`;
 const REVIEWED = "2026-08-04";
+const AUTHOR = getEditorialRole("personal-injury-editor")?.name;
 
 const MULTIPLIERS = [
   { type: "Soft tissue, full recovery in 3–6 months, no imaging findings", mult: "1.0–1.5×", driver: "Subjective complaints only; MIST protocols apply" },
@@ -74,7 +77,7 @@ export default function PainAndSufferingExplained() {
             "How Pain and Suffering Is Calculated",
             "The multiplier method, per-diem method, insurer evaluation software, state caps, and worked examples for valuing non-economic damages.",
             URL,
-            { datePublished: "2026-01-26", dateModified: REVIEWED },
+            { datePublished: "2026-01-26", dateModified: REVIEWED, author: AUTHOR },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
@@ -99,9 +102,7 @@ export default function PainAndSufferingExplained() {
           <p className="text-lg text-muted-foreground">
             Pain and suffering is usually the largest single line in a personal injury settlement — and the most negotiable. Here is exactly how the number is built: both valuation methods, what the insurer's software is scoring, three worked examples, and the state caps that can override all of it.
           </p>
-          <p className="text-xs text-muted-foreground mt-3">
-            Reviewed by the LegallySpoken editorial team · Last updated {new Date(REVIEWED).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · General information, not legal advice.
-          </p>
+          <AuthorByline authorId="personal-injury-editor" reviewedAt={REVIEWED} compact className="mt-3" />
           <div className="mt-4 flex gap-2">
             <Button onClick={() => window.print()} variant="outline" size="sm"><Printer className="h-4 w-4 mr-2" />Save as PDF</Button>
           </div>

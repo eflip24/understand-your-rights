@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
+import AuthorByline from "@/components/seo/AuthorByline";
 import AdSlot from "@/components/ads/AdSlot";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
@@ -132,7 +133,7 @@ export default function MotorcycleHelmetLawsByState() {
             "Motorcycle Helmet & Insurance Laws by State",
             "50-state comparison of motorcycle helmet requirements and minimum insurance limits.",
             URL,
-            { datePublished: "2026-01-22", dateModified: "2026-08-08" },
+            { datePublished: "2026-01-22", dateModified: "2026-08-08", author: "Personal Injury Editor" },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
@@ -162,9 +163,7 @@ export default function MotorcycleHelmetLawsByState() {
           </div>
         </header>
 
-        <p className="text-xs text-muted-foreground mb-6">
-          By the LegallySpoken Editorial Team · Last reviewed August 8, 2026
-        </p>
+        <AuthorByline authorId="personal-injury-editor" reviewedAt="2026-08-08" compact className="mb-6" />
 
 
         <Card className="mb-6">
