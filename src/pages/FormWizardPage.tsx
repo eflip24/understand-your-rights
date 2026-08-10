@@ -9,6 +9,7 @@ import { Progress } from "@/components/ui/progress";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import Head from "@/components/seo/Head";
+import AuthorByline from "@/components/seo/AuthorByline";
 import Breadcrumbs from "@/components/forms/Breadcrumbs";
 import FormField from "@/components/forms/FormField";
 import AutoSaveIndicator from "@/components/forms/AutoSaveIndicator";
@@ -26,6 +27,7 @@ import StripeCheckoutDialog from "@/components/forms/StripeCheckoutDialog";
 import StickyMobileCta from "@/components/forms/StickyMobileCta";
 import { isPaymentsConfigured } from "@/lib/stripe";
 import { EU_COUNTRY_META } from "@/data/euCountryForms";
+import { getAuthorIdForToolCategory } from "@/data/editorialTeam";
 
 export default function FormWizardPage() {
   const { slug = "", country } = useParams();
@@ -241,9 +243,12 @@ export default function FormWizardPage() {
       <header className="mb-6">
         <h1 className="font-serif text-2xl md:text-3xl font-bold">{form.title}</h1>
         <p className="mt-2 text-muted-foreground">{form.shortDescription}</p>
-        <p className="mt-2 text-xs text-muted-foreground">
-          Last updated {new Date(form.lastUpdated).toLocaleDateString()}
-        </p>
+        <AuthorByline
+          authorId={getAuthorIdForToolCategory(form.category)}
+          reviewedAt={guide?.reviewedOn ?? form.lastUpdated}
+          compact
+          className="mt-2"
+        />
       </header>
 
       <div className="mb-4 flex items-center justify-between gap-4">
