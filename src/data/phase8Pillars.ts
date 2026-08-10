@@ -532,6 +532,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     ],
     datePublished: "2026-02-18",
     dateModified: "2026-08-08",
+    authorId: "personal-injury-editor",
     primaryCta: {
       path: "/tools/consumer/settlement-estimator",
       label: "Estimate a nursing home neglect claim",
