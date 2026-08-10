@@ -66,6 +66,8 @@ export interface Phase8Pillar {
   /** ISO dates surfaced in Article JSON-LD and the byline. */
   datePublished?: string;
   dateModified?: string;
+  /** Editorial role id from editorialTeam.ts; used for byline + Article schema author. */
+  authorId?: string;
   cluster: string;
   related: { label: string; href: string; blurb?: string }[];
 }
