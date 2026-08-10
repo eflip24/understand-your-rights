@@ -282,24 +282,24 @@ export default function FormGuideContent({
   guide,
   title,
   localePath,
+  authorId,
 }: {
   guide: FormGuide;
   title: string;
   localePath: (p: string) => string;
+  authorId?: string;
 }) {
   return (
     <article className="mt-12 border-t pt-8">
       <h2 className="font-serif text-2xl font-bold mb-2">
         {title.split("—")[0].trim()}: the complete guide
       </h2>
-      <p className="text-xs text-muted-foreground mb-5">
-        By the LegallySpoken Editorial Team · Last reviewed{" "}
-        {new Date(guide.reviewedOn).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })}
-      </p>
+      <AuthorByline
+        authorId={authorId}
+        reviewedAt={guide.reviewedOn}
+        compact
+        className="mb-5"
+      />
 
       {guide.intro.map((p, i) => (
         <p key={i} className="text-muted-foreground leading-relaxed mb-4">
