@@ -19,6 +19,7 @@ const SettlementEstimator = lazy(() => import("@/components/tools/SettlementEsti
 const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/how-pain-and-suffering-is-calculated`;
 const REVIEWED = "2026-08-04";
+const AUTHOR = getEditorialRole("personal-injury-editor")?.name;
 
 const MULTIPLIERS = [
   { type: "Soft tissue, full recovery in 3–6 months, no imaging findings", mult: "1.0–1.5×", driver: "Subjective complaints only; MIST protocols apply" },

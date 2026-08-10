@@ -19,6 +19,7 @@ const AccidentDamageCalculator = lazy(() => import("@/components/tools/AccidentD
 const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/what-to-do-after-a-car-accident`;
 const REVIEWED = "2026-08-04";
+const AUTHOR = getEditorialRole("personal-injury-editor")?.name;
 
 const STEPS = [
   {

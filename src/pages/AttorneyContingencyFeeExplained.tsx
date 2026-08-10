@@ -19,6 +19,7 @@ const AttorneyFeeCalculator = lazy(() => import("@/components/tools/AttorneyFeeC
 const SITE = "https://legallyspoken.com";
 const URL = `${SITE}/attorney-contingency-fee-explained`;
 const REVIEWED = "2026-08-04";
+const AUTHOR = getEditorialRole("consumer-finance-editor")?.name;
 
 const LADDER = [
   { stage: "Policy-limits demand accepted within 30 days", fee: "25–30%", note: "Common where liability is clear and limits are low" },
