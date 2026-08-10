@@ -1259,6 +1259,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     },
     datePublished: "2026-02-14",
     dateModified: "2026-08-05",
+    authorId: "consumer-finance-editor",
     cluster: "Debt & bankruptcy cluster",
     related: [
       { label: "Bankruptcy vs debt settlement", href: "/bankruptcy-vs-debt-settlement", blurb: "Which route costs less overall." },
