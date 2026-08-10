@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
+import AuthorByline from "@/components/seo/AuthorByline";
 import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 import AdSlot from "@/components/ads/AdSlot";
@@ -185,7 +186,7 @@ export default function DuiFirstOffenseGuide() {
             "First-Offense DUI Guide: Penalties, Costs and Deadlines by State",
             "State-by-state first-offense DUI penalties, license suspension periods, ignition interlock rules and SR-22 requirements.",
             url,
-            { datePublished: "2026-02-04", dateModified: "2026-08-08" },
+            { datePublished: "2026-02-04", dateModified: "2026-08-08", author: "Senior Legal Researcher" },
           ),
           howToSchema,
           faqSchema(FAQS),
@@ -207,9 +208,7 @@ export default function DuiFirstOffenseGuide() {
           </h1>
         </header>
 
-        <p className="text-xs text-muted-foreground mb-6">
-          By the LegallySpoken Editorial Team · Last reviewed August 8, 2026
-        </p>
+        <AuthorByline authorId="senior-legal-researcher" reviewedAt="2026-08-08" compact className="mb-6" />
 
         <InMarketEntityBlock
           category="DUI / DWI defense"
