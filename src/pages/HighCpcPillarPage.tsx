@@ -34,6 +34,7 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
   // locale, English otherwise (with English-only hreflang scope).
   const { guide: data, isTranslated } = useLocalizedGuide(source);
   const url = `${SITE}/${data.slug}`;
+  const authorName = getEditorialRole(data.authorId)?.name;
 
   const howToSchema = {
     "@context": "https://schema.org",
@@ -61,6 +62,7 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
           articleSchema(data.h1, data.metaDescription, url, {
             datePublished: data.datePublished,
             dateModified: data.dateModified,
+            author: authorName,
           }),
           howToSchema,
           faqSchema(data.faqs),
@@ -82,14 +84,12 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
             {data.h1}
           </h1>
           {data.dateModified && (
-            <p className="text-xs text-muted-foreground mt-3">
-              By the LegallySpoken Editorial Team · Last reviewed{" "}
-              {new Date(data.dateModified).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </p>
+            <AuthorByline
+              authorId={data.authorId}
+              reviewedAt={data.dateModified}
+              compact
+              className="mt-3"
+            />
           )}
         </header>
 
