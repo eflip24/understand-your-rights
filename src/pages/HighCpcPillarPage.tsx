@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Tier3Head from "@/components/seo/Tier3Head";
 import Head from "@/components/seo/Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
+import AuthorByline from "@/components/seo/AuthorByline";
 import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 import ToolRecommender from "@/components/tools/ToolRecommender";
@@ -13,6 +14,7 @@ import PillarStateChooser from "@/components/seo/PillarStateChooser";
 import AdSlot from "@/components/ads/AdSlot";
 import NotFound from "@/pages/NotFound";
 import { getPhase8Pillar, type Phase8Pillar } from "@/data/phase8Pillars";
+import { getEditorialRole } from "@/data/editorialTeam";
 import { useLocalizedPath } from "@/i18n/paths";
 import { useLocalizedGuide } from "@/i18n/guideTranslationOverrides";
 
