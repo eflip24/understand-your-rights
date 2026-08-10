@@ -97,7 +97,7 @@ export default function ToolPageLayout({ tool, children }: ToolPageLayoutProps) 
         <p className="text-muted-foreground text-base sm:text-lg max-w-2xl">{localizedDesc}</p>
         <AuthorByline
           authorId={getAuthorIdForToolCategory(tool.category)}
-          reviewedAt={guide?.lastReviewed}
+          reviewedAt={guide?.reviewedOn}
           compact
           className="mt-3"
         />
