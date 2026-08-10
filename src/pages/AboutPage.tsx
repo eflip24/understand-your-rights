@@ -19,6 +19,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Head from "@/components/seo/Head";
+import { editorialTeam } from "@/data/editorialTeam";
 import { useLocalizedPath } from "@/i18n/paths";
 
 const BADGE_ICONS = [Gift, UserCheck, MessageSquare, MapPin];
@@ -115,6 +116,31 @@ export default function AboutPage() {
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">{t("about.who.title")}</h2>
           <p className="text-muted-foreground text-lg leading-relaxed">{t("about.who.p1")}</p>
           <p className="text-muted-foreground text-lg leading-relaxed">{t("about.who.p2")}</p>
+        </div>
+      </section>
+
+      {/* Our Editorial Team */}
+      <section className="py-16 md:py-20 bg-muted/20">
+        <div className="container max-w-5xl mx-auto space-y-10">
+          <div className="text-center space-y-4 max-w-2xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Our Editorial Team</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Every guide, calculator, and form explanation is researched, written, and reviewed by
+              specialists in consumer law, personal-injury research, finance, and legal-document
+              compliance. We do not publish anonymous legal advice.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {editorialTeam.map((member) => (
+              <Card key={member.id} className="border-border/50">
+                <CardContent className="p-6 space-y-3">
+                  <h3 className="font-serif font-semibold text-lg text-foreground">{member.name}</h3>
+                  <p className="text-sm font-medium text-accent">{member.title}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
