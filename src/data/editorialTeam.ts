@@ -72,6 +72,25 @@ export function getDefaultAuthor(): EditorialRole {
   return editorialTeam[0];
 }
 
+export function getAuthorIdForToolCategory(category: string): string {
+  switch (category) {
+    case "consumer":
+    case "finance":
+      return "consumer-finance-editor";
+    case "employment":
+    case "business":
+    case "family":
+      return "senior-legal-researcher";
+    case "contract":
+    case "ai":
+    case "realestate":
+    case "energy":
+    case "generators":
+    default:
+      return "editor-in-chief";
+  }
+}
+
 export const editorialProcess = {
   steps: [
     {
