@@ -363,7 +363,14 @@ export default function FormWizardPage() {
         </div>
       )}
 
-      {guide && <FormGuideContent guide={guide} title={form.title} localePath={lp} />}
+      {guide && (
+        <FormGuideContent
+          guide={guide}
+          title={form.title}
+          localePath={lp}
+          authorId={getAuthorIdForToolCategory(form.category)}
+        />
+      )}
 
       <FormDisclaimer />
 
