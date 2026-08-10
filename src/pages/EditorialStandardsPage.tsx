@@ -9,6 +9,7 @@ const ICONS = [BookOpen, ShieldCheck, Bot, Users, RefreshCw, AlertTriangle];
 
 export default function EditorialStandardsPage() {
   const { t } = useTranslation("pages");
+  const lp = useLocalizedPath();
   const intro = t("editorial.intro", { returnObjects: true }) as string[];
   const pillars = t("editorial.pillars", { returnObjects: true }) as Array<{ title: string; body: string }>;
   const steps = t("editorial.pipeline.steps", { returnObjects: true }) as Array<{ label: string; body: string }>;
