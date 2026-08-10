@@ -1,7 +1,9 @@
 import { ShieldCheck, BookOpen, RefreshCw, Bot, Users, AlertTriangle } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import Head from "@/components/seo/Head";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLocalizedPath } from "@/i18n/paths";
 
 const ICONS = [BookOpen, ShieldCheck, Bot, Users, RefreshCw, AlertTriangle];
 
