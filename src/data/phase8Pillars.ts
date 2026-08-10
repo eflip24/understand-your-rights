@@ -719,6 +719,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     ],
     datePublished: "2026-03-04",
     dateModified: "2026-08-07",
+    authorId: "personal-injury-editor",
 
     primaryCta: {
       path: "/tools/consumer/workers-comp-settlement-calculator",
