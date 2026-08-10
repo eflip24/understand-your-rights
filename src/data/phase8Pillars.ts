@@ -1657,6 +1657,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     recommenderTopic: "personal-injury",
     datePublished: "2026-02-14",
     dateModified: "2026-08-05",
+    authorId: "personal-injury-editor",
     cluster: "Mass tort cluster",
     related: [
       { label: "Mass tort lawsuits hub", href: "/mass-tort-lawsuits", blurb: "Every active litigation we track." },
