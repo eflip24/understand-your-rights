@@ -81,6 +81,16 @@ export default function EditorialStandardsPage() {
           <p className="text-muted-foreground leading-relaxed">{t("editorial.corrections.body")}</p>
         </div>
 
+        <div className="space-y-4 rounded-lg border bg-muted/30 p-6">
+          <h2 className="font-serif text-2xl font-bold text-foreground">Our editorial team</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Every byline on LegallySpoken points to a named editorial role with a specific area of oversight. Meet the team and their review responsibilities on our About page.
+          </p>
+          <Link to={lp("/about")} className="text-accent font-medium hover:underline">
+            Meet the team →
+          </Link>
+        </div>
+
         <p className="text-xs text-muted-foreground border-t pt-6">{t("editorial.disclaimer")}</p>
       </section>
     </>
