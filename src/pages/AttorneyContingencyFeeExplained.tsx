@@ -80,7 +80,7 @@ export default function AttorneyContingencyFeeExplained() {
             "Attorney Contingency Fees Explained",
             "How contingency fees work, typical percentages, cost deduction order, statutory caps, lien math, and worked examples showing your net.",
             URL,
-            { datePublished: "2026-01-19", dateModified: REVIEWED },
+            { datePublished: "2026-01-19", dateModified: REVIEWED, author: AUTHOR },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },

@@ -77,7 +77,7 @@ export default function PainAndSufferingExplained() {
             "How Pain and Suffering Is Calculated",
             "The multiplier method, per-diem method, insurer evaluation software, state caps, and worked examples for valuing non-economic damages.",
             URL,
-            { datePublished: "2026-01-26", dateModified: REVIEWED },
+            { datePublished: "2026-01-26", dateModified: REVIEWED, author: AUTHOR },
           ),
           breadcrumbSchema([
             { name: "Home", url: SITE },
