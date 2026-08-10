@@ -135,7 +135,7 @@ export default function AboutPage() {
               <Card key={member.id} className="border-border/50">
                 <CardContent className="p-6 space-y-3">
                   <h3 className="font-serif font-semibold text-lg text-foreground">{member.name}</h3>
-                  <p className="text-sm font-medium text-accent">{member.title}</p>
+                  <p className="text-sm font-medium text-accent">{member.role}</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
                 </CardContent>
               </Card>
