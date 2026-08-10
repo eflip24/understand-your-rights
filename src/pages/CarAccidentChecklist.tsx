@@ -166,9 +166,7 @@ export default function CarAccidentChecklist() {
           <p className="text-lg text-muted-foreground">
             The exact sequence — at the scene, in the first 72 hours, and before you talk to any insurer. Includes state reporting thresholds, the deadlines that quietly kill claims, and a calculator to value your damages before you respond to an offer.
           </p>
-          <p className="text-xs text-muted-foreground mt-3">
-            Reviewed by the LegallySpoken editorial team · Last updated {new Date(REVIEWED).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · General information, not legal advice.
-          </p>
+          <AuthorByline authorId="personal-injury-editor" reviewedAt={REVIEWED} compact className="mt-3" />
           <div className="mt-4 flex gap-2">
             <Button onClick={() => window.print()} variant="outline" size="sm"><Printer className="h-4 w-4 mr-2" />Save as PDF</Button>
           </div>

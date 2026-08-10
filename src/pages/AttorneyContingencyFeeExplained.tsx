@@ -105,9 +105,7 @@ export default function AttorneyContingencyFeeExplained() {
           <p className="text-lg text-muted-foreground">
             "No win, no fee" makes injury law accessible — but four clauses in the retainer (the fee ladder, the cost order, the cost cap, and the lien language) decide what actually lands in your bank account. Here is the full math, with worked examples.
           </p>
-          <p className="text-xs text-muted-foreground mt-3">
-            Reviewed by the LegallySpoken editorial team · Last updated {new Date(REVIEWED).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · General information, not legal advice.
-          </p>
+          <AuthorByline authorId="consumer-finance-editor" reviewedAt={REVIEWED} compact className="mt-3" />
           <div className="mt-4 flex gap-2">
             <Button onClick={() => window.print()} variant="outline" size="sm"><Printer className="h-4 w-4 mr-2" />Save as PDF</Button>
           </div>

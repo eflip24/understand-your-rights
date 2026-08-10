@@ -102,9 +102,7 @@ export default function PainAndSufferingExplained() {
           <p className="text-lg text-muted-foreground">
             Pain and suffering is usually the largest single line in a personal injury settlement — and the most negotiable. Here is exactly how the number is built: both valuation methods, what the insurer's software is scoring, three worked examples, and the state caps that can override all of it.
           </p>
-          <p className="text-xs text-muted-foreground mt-3">
-            Reviewed by the LegallySpoken editorial team · Last updated {new Date(REVIEWED).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · General information, not legal advice.
-          </p>
+          <AuthorByline authorId="personal-injury-editor" reviewedAt={REVIEWED} compact className="mt-3" />
           <div className="mt-4 flex gap-2">
             <Button onClick={() => window.print()} variant="outline" size="sm"><Printer className="h-4 w-4 mr-2" />Save as PDF</Button>
           </div>
