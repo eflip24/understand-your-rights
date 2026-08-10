@@ -1433,6 +1433,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     ],
     datePublished: "2026-03-04",
     dateModified: "2026-08-08",
+    authorId: "senior-legal-researcher",
     primaryCta: {
       path: "/tools/consumer/eeoc-settlement-calculator",
       label: "Estimate your wrongful termination settlement",
