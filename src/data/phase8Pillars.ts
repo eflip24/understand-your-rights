@@ -360,6 +360,7 @@ export const phase8Pillars: Phase8Pillar[] = [
     },
     datePublished: "2026-02-14",
     dateModified: "2026-08-06",
+    authorId: "personal-injury-editor",
     recommenderTopic: "car-accident",
     cluster: "Personal injury cluster",
     related: [
