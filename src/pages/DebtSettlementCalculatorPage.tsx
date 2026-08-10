@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Tier3Head from "@/components/seo/Tier3Head";
 import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema, webApplicationSchema } from "@/components/seo/JsonLd";
+import AuthorByline from "@/components/seo/AuthorByline";
 import AdSlot from "@/components/ads/AdSlot";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
@@ -118,6 +119,7 @@ export default function DebtSettlementCalculatorPage() {
             "Debt Settlement Calculator",
             "Estimate lump-sum settlement payoff, program fees, and tax on cancelled debt after applying the IRC § 108 insolvency exclusion.",
             URL,
+            { datePublished: "2026-02-10", dateModified: "2026-08-08", author: "Consumer Finance Editor" },
           ),
           webApplicationSchema(
             "Debt Settlement Calculator",
@@ -155,9 +157,7 @@ export default function DebtSettlementCalculatorPage() {
           </div>
         </header>
 
-        <p className="text-xs text-muted-foreground mb-6">
-          By the LegallySpoken Editorial Team · Last reviewed August 8, 2026
-        </p>
+        <AuthorByline authorId="consumer-finance-editor" reviewedAt="2026-08-08" compact className="mb-6" />
 
         <InMarketEntityBlock
           category="Debt Relief · Consumer Bankruptcy"
