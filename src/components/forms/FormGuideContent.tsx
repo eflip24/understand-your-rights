@@ -10,6 +10,8 @@
  * the same treatment.
  */
 
+import AuthorByline from "@/components/seo/AuthorByline";
+
 export interface FormGuideTable {
   caption: string;
   columns: string[];
