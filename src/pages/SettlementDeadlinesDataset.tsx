@@ -264,7 +264,7 @@ export default function SettlementDeadlinesDataset() {
         occupational-disease exceptions can shorten or extend them. General information, not legal advice.
       </p>
 
-      <AdSlot placement="in-article" />
+      <AdSlot slot="mid-content" />
 
       <section className="mt-10 grid gap-6 md:grid-cols-2">
         <Card>
