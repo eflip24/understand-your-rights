@@ -28,6 +28,21 @@ export interface GuideGroup {
 
 export const guideGroups: GuideGroup[] = [
   {
+    id: "data",
+    label: "Legal data & research",
+    description:
+      "Original, citable datasets compiled from state statutes and agency guidance — free to download and republish.",
+    entries: [
+      {
+        path: "/data/settlement-deadlines",
+        title: "State legal deadlines dataset",
+        blurb:
+          "Filing deadlines, workers' comp appeal windows, EEOC limits and insurer prompt-pay rules for all 51 US jurisdictions. CSV + embed.",
+        badge: "Dataset",
+      },
+    ],
+  },
+  {
     id: "injury",
     label: "Injury & accident settlements",
     description:
