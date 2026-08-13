@@ -75,9 +75,7 @@ export default function CourtsHub() {
       "US Court Systems: Where to File, What It Costs, and Which Court Hears Your Case",
       "Court structure, small claims limits, filing fees and official contacts for all 51 US jurisdictions.",
       `${SITE}/courts`,
-      undefined,
-      COURTS_LAST_VERIFIED,
-      COURTS_LAST_VERIFIED,
+      { datePublished: COURTS_LAST_VERIFIED, dateModified: COURTS_LAST_VERIFIED },
     ),
   ];
 
