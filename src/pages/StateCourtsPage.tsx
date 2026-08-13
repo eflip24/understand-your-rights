@@ -9,7 +9,7 @@ import { useLocalizedPath } from "@/i18n/paths";
 import { getStateCourts, COURTS_LAST_VERIFIED, smallClaimsCap } from "@/data/courts/stateCourts";
 import { getStateBySlug } from "@/data/locations/stateData";
 import { getCitiesByState } from "@/data/locations/cityData";
-import { getStateSol } from "@/data/solData";
+import { getSol } from "@/data/solData";
 
 const SITE = "https://legallyspoken.com";
 
@@ -22,7 +22,8 @@ export default function StateCourtsPage() {
 
   const legal = getStateBySlug(courts.slug);
   const cities = getCitiesByState(courts.slug);
-  const sol = getStateSol(courts.abbr);
+  const writtenSol = getSol(courts.abbr, "written_contract");
+  const oralSol = getSol(courts.abbr, "oral_contract");
   const cap = smallClaimsCap(courts);
 
   const faqs = [
@@ -222,7 +223,7 @@ export default function StateCourtsPage() {
 
       <AdSlot slot="mid-content" className="my-8" />
 
-      {(legal || sol) && (
+      {(legal || writtenSol || oralSol) && (
         <section className="mb-8">
           <h2 className="mb-4 flex items-center gap-2 text-2xl font-bold">
             <Scale className="h-5 w-5 text-accent" /> Deadlines that apply before you file
@@ -240,18 +241,18 @@ export default function StateCourtsPage() {
                 </div>
               </>
             )}
-            {sol?.entries.written_contract && (
+            {writtenSol && (
               <div className="rounded-lg border bg-card p-4">
                 <p className="text-sm text-muted-foreground">Written contract</p>
-                <p className="text-lg font-bold">{sol.entries.written_contract.years} years</p>
-                <p className="text-xs text-muted-foreground">{sol.entries.written_contract.citation}</p>
+                <p className="text-lg font-bold">{writtenSol.years} years</p>
+                <p className="text-xs text-muted-foreground">{writtenSol.citation}</p>
               </div>
             )}
-            {sol?.entries.oral_contract && (
+            {oralSol && (
               <div className="rounded-lg border bg-card p-4">
                 <p className="text-sm text-muted-foreground">Oral contract</p>
-                <p className="text-lg font-bold">{sol.entries.oral_contract.years} years</p>
-                <p className="text-xs text-muted-foreground">{sol.entries.oral_contract.citation}</p>
+                <p className="text-lg font-bold">{oralSol.years} years</p>
+                <p className="text-xs text-muted-foreground">{oralSol.citation}</p>
               </div>
             )}
           </div>
