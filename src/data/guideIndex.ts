@@ -40,6 +40,13 @@ export const guideGroups: GuideGroup[] = [
           "Filing deadlines, workers' comp appeal windows, EEOC limits and insurer prompt-pay rules for all 51 US jurisdictions. CSV + embed.",
         badge: "Dataset",
       },
+      {
+        path: "/courts",
+        title: "US court systems & small claims limits",
+        blurb:
+          "Court structure, small claims caps, filing fees and official judiciary links for all 51 US jurisdictions, plus courthouse pages for major cities.",
+        badge: "Dataset",
+      },
     ],
   },
   {

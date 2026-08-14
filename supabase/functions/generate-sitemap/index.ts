@@ -536,6 +536,10 @@ function buildGuides(): string {
   for (const s of aiTechLawSlugs) e.push(u(`${SITE}/ai-tech-law/${s}`,"monthly","0.7"));
   e.push(u(`${SITE}/guides`,"weekly","0.9"));
   e.push(u(`${SITE}/data/settlement-deadlines`,"weekly","0.9"));
+  // Court information hub
+  e.push(u(`${SITE}/courts`,"weekly","0.9"));
+  for (const st of [...stateSlugs, "district-of-columbia"]) e.push(u(`${SITE}/courts/${st}`,"monthly","0.7"));
+  for (const [st, cities] of Object.entries(citySlugsMap)) for (const c of cities) e.push(u(`${SITE}/courts/${st}/${c}`,"monthly","0.6"));
   // Phase 8 pillars + standalone guides
   for (const s of phase8PillarSlugs) e.push(u(`${SITE}/${s}`,"monthly","0.8"));
   for (const s of standaloneGuideSlugs) e.push(u(`${SITE}/${s}`,"monthly","0.8"));

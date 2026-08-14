@@ -112,6 +112,9 @@ const EuFormsHubPage = React.lazy(() => import("@/pages/EuFormsHubPage"));
 const KeywordClusterHub = React.lazy(() => import("@/pages/KeywordClusterHub"));
 const GuidesHubPage = React.lazy(() => import("@/pages/GuidesHubPage"));
 const KeywordClusterPage = React.lazy(() => import("@/pages/KeywordClusterPage"));
+const CourtsHub = React.lazy(() => import("@/pages/CourtsHub"));
+const StateCourtsPage = React.lazy(() => import("@/pages/StateCourtsPage"));
+const CityCourtPage = React.lazy(() => import("@/pages/CityCourtPage"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
@@ -200,6 +203,9 @@ export default function AppRoutes() {
       <Route path="/personal-injury-settlements/:vertical" element={<PersonalInjurySettlementSubPage />} />
       <Route path="/alimony-calculator/:state" element={<StateAlimonyPage />} />
       <Route path="/data/settlement-deadlines" element={<SettlementDeadlinesDataset />} />
+      <Route path="/courts" element={<CourtsHub />} />
+      <Route path="/courts/:state" element={<StateCourtsPage />} />
+      <Route path="/courts/:state/:city" element={<CityCourtPage />} />
       <Route path="/mass-tort-lawsuits" element={<MassTortHub />} />
       <Route path="/mass-tort-lawsuits/:slug" element={<MassTortCasePage />} />
       <Route path="/truck-accident-settlements" element={<HighCpcPillarPage slug="truck-accident-settlements" />} />
