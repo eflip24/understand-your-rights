@@ -203,6 +203,9 @@ export default function AppRoutes() {
       <Route path="/personal-injury-settlements/:vertical" element={<PersonalInjurySettlementSubPage />} />
       <Route path="/alimony-calculator/:state" element={<StateAlimonyPage />} />
       <Route path="/data/settlement-deadlines" element={<SettlementDeadlinesDataset />} />
+      <Route path="/courts" element={<CourtsHub />} />
+      <Route path="/courts/:state" element={<StateCourtsPage />} />
+      <Route path="/courts/:state/:city" element={<CityCourtPage />} />
       <Route path="/mass-tort-lawsuits" element={<MassTortHub />} />
       <Route path="/mass-tort-lawsuits/:slug" element={<MassTortCasePage />} />
       <Route path="/truck-accident-settlements" element={<HighCpcPillarPage slug="truck-accident-settlements" />} />
