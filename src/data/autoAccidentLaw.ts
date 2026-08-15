@@ -9,6 +9,22 @@ export interface ClusterArticle {
   relatedTermSlugs: string[];
 }
 
+export interface PillarDepthTable {
+  title: string;
+  caption?: string;
+  columns: string[];
+  rows: string[][];
+}
+
+/** Optional editorial depth layer for pillar hubs (data tables + hub-level FAQs). */
+export interface PillarDepth {
+  intro?: string;
+  sections?: { heading: string; body: string }[];
+  tables?: PillarDepthTable[];
+  faqs?: { question: string; answer: string }[];
+  lastVerified?: string;
+}
+
 export interface PillarData {
   basePath: string;
   category: string;
@@ -17,6 +33,7 @@ export interface PillarData {
   pillarMetaDescription: string;
   pillarIntro: string;
   clusters: ClusterArticle[];
+  depth?: PillarDepth;
 }
 
 export const autoAccidentLaw: PillarData = {
