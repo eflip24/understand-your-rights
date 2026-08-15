@@ -451,4 +451,81 @@ export const insuranceLaw: PillarData = {
       relatedTermSlugs: ["warranty", "breach", "remedy"],
     },
   ],
+  depth: {
+    intro:
+      "Insurance is a contract, and most disputes are won or lost on three things: what the policy actually says, whether you met the notice and proof-of-loss deadlines, and what your state's unfair-claims-practices law requires the carrier to do. This hub sets out those rules, the carrier-side process your adjuster is following, and the escalation ladder that gets denials reversed without a lawsuit.",
+    sections: [
+      {
+        heading: "How a claim is really decided inside a carrier",
+        body:
+          "Frontline adjusters at State Farm, GEICO, Progressive, Allstate, USAA, Liberty Mutual, Farmers and Travelers work to written claim-handling guidelines and software-generated valuations — Colossus, Xactimate for property, Mitchell and CCC for auto. Those systems price the file from coded inputs: diagnosis codes, treatment gaps, repair line items, prior claims. That is why documentation beats argument. A demand that supplies the codes, the records and the invoices moves the number; an angry phone call does not. Adjusters also have authority limits, so an offer that will not move is often a supervisor decision, not a personal one.",
+      },
+      {
+        heading: "Bad faith: what actually counts",
+        body:
+          "Every state prohibits unfair claim settlement practices — most through a version of the NAIC Unfair Claims Settlement Practices Act. Typical violations: failing to acknowledge a claim promptly, no reasonable investigation, denying without a stated policy basis, misrepresenting policy terms, or forcing litigation by lowballing. First-party bad faith (your own insurer) is actionable in most states and can expose the carrier to damages beyond the policy limit. Third-party bad faith (the other side's insurer) is far narrower and in many states requires an assigned judgment.",
+      },
+      {
+        heading: "Escalation ladder that works",
+        body:
+          "1) Written internal appeal citing the policy language, sent inside the appeal window. 2) Request the full claim file and the specific policy provision relied on — several states require disclosure on request. 3) External or independent review, mandatory for health plans under the ACA. 4) Complaint to your state Department of Insurance, which forces a written carrier response, usually within 15-30 days. 5) Appraisal or mediation where the policy provides it. 6) Suit for breach of contract and, where supported, bad faith. Most reversals happen at steps 1 and 4.",
+      },
+    ],
+    tables: [
+      {
+        title: "Claim deadlines that end cases",
+        columns: ["Deadline", "Typical window", "Why it matters"],
+        rows: [
+          ["Notice of loss to your insurer", "\"Prompt\" — often read as 24 hours to 30 days", "Late notice is the most common clean denial. Notify first, investigate second."],
+          ["Proof of loss (property)", "60 days from the carrier's request", "A sworn statement of the loss. Missing it can void an otherwise covered claim."],
+          ["Internal appeal of a denial", "30-180 days from the denial letter", "The window is set in the denial letter itself, not by state law alone."],
+          ["ERISA / group health external review", "180 days for internal appeal, then 4 months for external", "ERISA claims are decided on the administrative record — everything must be filed before suit."],
+          ["Suit on the policy (contract limitation)", "1-6 years, often shortened by policy to 1-2 years", "Policies may contractually shorten the state statute of limitations; check the suit-limitation clause."],
+          ["Uninsured / underinsured motorist claim", "Notice often 30 days; suit 2-6 years", "Settling with the at-fault driver without carrier consent can forfeit UIM coverage."],
+        ],
+        caption:
+          "Windows are typical ranges only. The controlling deadline is in your policy and your state's insurance code — read both before you rely on any of these figures.",
+      },
+      {
+        title: "Denial reason vs the counter-move that works",
+        columns: ["Stated denial reason", "What it usually means", "Counter-move"],
+        rows: [
+          ["Not medically necessary", "A utilization reviewer, often a non-specialist, disagreed with your doctor", "Get a letter of medical necessity citing the plan's own clinical criteria; demand peer-to-peer review with a same-specialty reviewer."],
+          ["Pre-existing condition", "Records show earlier treatment for the same body part", "Provide the treating physician's causation opinion distinguishing aggravation from prior condition."],
+          ["Policy exclusion applies", "Carrier is reading an exclusion broadly", "Quote the exclusion verbatim and demand the specific factual basis; exclusions are construed against the drafter."],
+          ["Late notice / late proof of loss", "You missed a contractual deadline", "Show no prejudice to the carrier — many states require actual prejudice before late notice defeats coverage."],
+          ["Damage is wear and tear", "Property adjuster attributed loss to maintenance", "Independent adjuster or engineer report; invoke the policy's appraisal clause."],
+          ["Offer far below repair cost", "Software valuation using regional labour rates", "Submit three local estimates plus the carrier's own line-item sheet marked up with omissions."],
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How long does an insurance company have to pay a claim?",
+        answer:
+          "Most states set prompt-payment rules of 15-30 days to acknowledge a claim, 15-45 days to accept or deny after receiving proof of loss, and 5-30 days to pay once accepted. Miss those and interest or penalties can accrue. Your state Department of Insurance publishes the exact numbers, and a complaint to that department is the fastest lever when a carrier stalls.",
+      },
+      {
+        question: "Can I sue my own insurance company for bad faith?",
+        answer:
+          "In most states, yes — first-party bad faith is recognised where the insurer had no reasonable basis for denying or delaying payment and knew it. Remedies can include the policy benefit, consequential losses, attorney's fees and in some states punitive damages. ERISA-governed group health and disability plans are the big exception: federal law preempts state bad-faith claims and limits recovery mostly to the benefit itself.",
+      },
+      {
+        question: "Do I have to give a recorded statement?",
+        answer:
+          "To your own insurer, usually yes — cooperation clauses require it. To the other side's insurer, no. Either way you can ask for written questions instead, request a copy of the recording, and prepare with your documents in front of you. Never guess at speeds, distances, injuries or dollar amounts; \"I don't know yet\" is a complete answer.",
+      },
+      {
+        question: "Does complaining to the state insurance commissioner actually work?",
+        answer:
+          "It frequently does, because it forces a written response from the carrier's compliance unit within a set number of days and creates a regulatory record. It cannot order payment, but it routinely produces a reversal or a materially improved offer when the denial was weakly reasoned.",
+      },
+      {
+        question: "Will hiring a lawyer increase my payout?",
+        answer:
+          "For small property or first-party claims, often not enough to justify a fee — the escalation ladder above does the work. For serious injury, disputed liability, UIM claims, or a denied disability or life policy, representation usually changes both the number and the speed, and injury lawyers work on contingency so there is no upfront cost.",
+      },
+    ],
+    lastVerified: "2026-08-14",
+  },
 };

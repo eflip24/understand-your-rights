@@ -3,7 +3,7 @@ import { ChevronRight, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Tier3Head from "@/components/seo/Tier3Head";
-import { JsonLdGraph, articleSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import SmartLocalLink from "@/components/seo/SmartLocalLink";
 import { tools } from "@/data/tools";
@@ -44,6 +44,7 @@ export default function PillarPage({ data }: PillarPageProps) {
           { name: "Home", url: SITE },
           { name: data.category, url: `${SITE}${data.basePath}` },
         ]),
+        ...(data.depth?.faqs?.length ? [faqSchema(data.depth.faqs)] : []),
       ]} />
 
       {/* Breadcrumbs */}
@@ -88,6 +89,67 @@ export default function PillarPage({ data }: PillarPageProps) {
           ))}
         </div>
       </div>
+
+      {/* Editorial depth layer */}
+      {data.depth && (
+        <div className="mb-10 space-y-8">
+          {data.depth.intro && (
+            <p className="text-muted-foreground leading-relaxed">{data.depth.intro}</p>
+          )}
+
+          {data.depth.sections?.map((sec) => (
+            <section key={sec.heading}>
+              <h2 className="text-2xl font-bold mb-3">{sec.heading}</h2>
+              <p className="text-muted-foreground leading-relaxed">{sec.body}</p>
+            </section>
+          ))}
+
+          {data.depth.tables?.map((tbl) => (
+            <section key={tbl.title}>
+              <h2 className="text-2xl font-bold mb-3">{tbl.title}</h2>
+              <div className="rounded-lg border bg-card overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-muted/50">
+                      {tbl.columns.map((c) => (
+                        <th key={c} className="text-left p-3 font-semibold whitespace-nowrap">{c}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tbl.rows.map((row, i) => (
+                      <tr key={row[0]} className={i % 2 ? "bg-muted/20" : ""}>
+                        {row.map((cell, j) => (
+                          <td key={j} className={j === 0 ? "p-3 font-medium text-foreground align-top" : "p-3 text-muted-foreground align-top"}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {tbl.caption && <p className="text-xs text-muted-foreground mt-2 italic">{tbl.caption}</p>}
+            </section>
+          ))}
+
+          {data.depth.faqs?.length ? (
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {data.depth.faqs.map((f) => (
+                  <div key={f.question} className="rounded-lg border bg-card p-4">
+                    <h3 className="font-semibold text-foreground mb-1.5">{f.question}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{f.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {data.depth.lastVerified && (
+            <p className="text-xs text-muted-foreground">Data last verified {data.depth.lastVerified}.</p>
+          )}
+        </div>
+      )}
 
       {/* Popular Tools */}
       <div className="mb-10">
