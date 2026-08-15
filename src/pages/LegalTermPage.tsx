@@ -6,6 +6,7 @@ import NotFound from "@/pages/NotFound";
 import { Card, CardContent } from "@/components/ui/card";
 import { JsonLdGraph, definedTermSchema, faqSchema } from "@/components/seo/JsonLd";
 import { linkifyLegalContent } from "@/lib/linkifyContent";
+import TermDepthBlock from "@/components/seo/TermDepthBlock";
 
 export default function LegalTermPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -65,6 +66,8 @@ export default function LegalTermPage() {
           dangerouslySetInnerHTML={{ __html: linkedExplanation }}
         />
       </div>
+
+      <TermDepthBlock slug={slug} term={localizedTerm} />
 
       {/* Example Clause */}
       <div className="mb-8">
