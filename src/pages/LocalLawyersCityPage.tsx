@@ -4,7 +4,7 @@ import { ChevronRight, MapPin, Scale, Clock, Shield, Phone, Globe, Briefcase, He
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import Tier3Head from "@/components/seo/Tier3Head";
-import { JsonLdGraph, breadcrumbSchema, localBusinessSchema } from "@/components/seo/JsonLd";
+import { JsonLdGraph, breadcrumbSchema, faqSchema, localBusinessSchema } from "@/components/seo/JsonLd";
 import AdSlot from "@/components/ads/AdSlot";
 import { practiceAreas } from "@/data/localLawyers";
 import { getStateBySlug } from "@/data/locations/stateData";
@@ -15,6 +15,7 @@ import SettlementEstimator from "@/components/tools/SettlementEstimator";
 import ToolRecommender, { type RecommenderTopic } from "@/components/tools/ToolRecommender";
 import { getPracticeAreaContent, formatStateCostBand } from "@/data/practiceAreaContent";
 import { useLocalizedPath } from "@/i18n/paths";
+import LocalFilingDepthBlock, { buildLocalFilingFaqs } from "@/components/seo/LocalFilingDepthBlock";
 
 const LocalMap = React.lazy(() => import("@/components/maps/LocalMap"));
 
@@ -68,6 +69,8 @@ export default function LocalLawyersCityPage() {
     })),
   ];
 
+  const filingFaqs = buildLocalFilingFaqs(stateInfo.slug, stateInfo.name, cityInfo, practiceArea.shortTitle);
+
   // JSON-LD schemas
   const schemas = [
     breadcrumbSchema([
@@ -93,6 +96,7 @@ export default function LocalLawyersCityPage() {
         url: l.website || `${SITE}/lawyer-near-me/${practiceArea.slug}/${stateInfo.slug}/${cityInfo.slug}`,
       })
     ),
+    ...(filingFaqs.length ? [faqSchema(filingFaqs)] : []),
   ];
 
   return (
@@ -252,6 +256,32 @@ export default function LocalLawyersCityPage() {
           </div>
         </div>
       </section>
+
+      {/* Local filing depth */}
+      <LocalFilingDepthBlock
+        stateSlug={stateInfo.slug}
+        stateName={stateInfo.name}
+        city={cityInfo}
+        practiceLabel={practiceArea.shortTitle}
+        className="mb-8"
+      />
+
+      {/* Filing FAQs */}
+      {filingFaqs.length > 0 && (
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold text-foreground mb-4">
+            Filing Questions — {cityInfo.name}, {stateInfo.abbreviation}
+          </h2>
+          <div className="space-y-3">
+            {filingFaqs.map((f) => (
+              <div key={f.question} className="rounded-lg border bg-card p-4">
+                <h3 className="font-semibold text-foreground mb-1.5">{f.question}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{f.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Section 4 — Map with all markers */}
       <section className="mb-8">
