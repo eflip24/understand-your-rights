@@ -19,7 +19,8 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Head from "@/components/seo/Head";
-import { editorialTeam } from "@/data/editorialTeam";
+import { editorialTeam, editorialProcess } from "@/data/editorialTeam";
+import { JsonLdGraph } from "@/components/seo/JsonLd";
 import { useLocalizedPath } from "@/i18n/paths";
 
 const BADGE_ICONS = [Gift, UserCheck, MessageSquare, MapPin];
@@ -35,6 +36,34 @@ export default function AboutPage() {
   return (
     <>
       <Head title={t("about.metaTitle")} description={t("about.metaDescription")} />
+      <JsonLdGraph
+        schemas={[
+          {
+            "@type": "Organization",
+            "@id": "https://legallyspoken.com/#organization",
+            name: "LegallySpoken",
+            url: "https://legallyspoken.com",
+            description:
+              "Plain-English legal tools, calculators, fillable forms and guides for consumers in the US and EU. Not a law firm and not legal advice.",
+            foundingDate: "2024-01-15",
+            knowsAbout: [
+              "Personal injury claims",
+              "Landlord and tenant law",
+              "Employment law",
+              "Insurance claims",
+              "Small claims court procedure",
+              "Legal forms and documents",
+            ],
+            publishingPrinciples: "https://legallyspoken.com/editorial-standards",
+            employee: editorialTeam.map((m) => ({
+              "@type": "Person",
+              name: m.name,
+              jobTitle: m.role,
+              description: m.bio,
+            })),
+          },
+        ]}
+      />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 py-20 md:py-28">
@@ -140,6 +169,54 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How We Research and Review */}
+      <section className="py-16 md:py-20">
+        <div className="container max-w-4xl mx-auto space-y-8">
+          <div className="space-y-4 max-w-2xl">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
+              How we research, review and update every page
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Our methodology is published so you can judge the work, not just trust it. Every figure on this
+              site — filing fee, statute of limitations, benefit cap — traces to a statute, court rule or
+              official government source, and carries the date it was last verified.
+            </p>
+          </div>
+          <ol className="space-y-4">
+            {editorialProcess.steps.map((step, i) => (
+              <li key={step.label} className="flex gap-4">
+                <span className="shrink-0 h-8 w-8 rounded-full bg-accent/10 text-accent font-semibold flex items-center justify-center">
+                  {i + 1}
+                </span>
+                <div>
+                  <h3 className="font-semibold text-foreground">{step.label}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <div className="rounded-lg border bg-card p-4">
+              <p className="text-sm text-muted-foreground">Sources we rely on</p>
+              <p className="text-foreground font-medium">State statutes, court rules, agency guidance and official forms — never scraped summaries.</p>
+            </div>
+            <div className="rounded-lg border bg-card p-4">
+              <p className="text-sm text-muted-foreground">What we never do</p>
+              <p className="text-foreground font-medium">No paid placement in guides, no invented attorney credentials, no legal advice.</p>
+            </div>
+            <div className="rounded-lg border bg-card p-4">
+              <p className="text-sm text-muted-foreground">Corrections</p>
+              <p className="text-foreground font-medium">Spotted an error? Tell us and we fix it — corrections are dated on the page.</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <Link to={lp("/editorial-standards")} className="text-accent font-medium hover:underline">Full editorial standards →</Link>
+            <Link to={lp("/contact")} className="text-accent font-medium hover:underline">Report a correction →</Link>
+            <Link to={lp("/guides")} className="text-accent font-medium hover:underline">Browse our guides →</Link>
           </div>
         </div>
       </section>
