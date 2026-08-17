@@ -15,7 +15,9 @@ export type RecommenderTopic =
   | "alimony"
   | "statute-of-limitations"
   | "insurance-dispute"
-  | "real-estate";
+  | "real-estate"
+  | "estate-planning";
+
 
 interface RecItem {
   label: string;
