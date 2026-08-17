@@ -33,7 +33,9 @@ const toolPages: [string, string][] = [
   ["finance", "loan-payment-calculator"],["finance", "grant-budget-calculator"],["finance", "grant-deadline-tracker"],
   ["finance", "grant-compliance-checklist"],["finance", "vesting-schedule-calculator"],["finance", "stock-option-tax-calculator"],
   ["finance", "equity-dilution-calculator"],["finance", "income-tax-estimator"],["finance", "auto-loan-calculator"],
-  ["finance", "debt-payoff-calculator"],["finance", "net-worth-calculator"],
+  ["finance", "debt-payoff-calculator"],["finance", "net-worth-calculator"],["finance", "probate-cost-calculator"],
+  ["consumer", "wrongful-death-settlement-calculator"],["consumer", "lost-wages-calculator"],
+
   ["energy", "solar-panel-roi-calculator"],["energy", "solar-incentive-tax-credit-estimator"],["energy", "energy-savings-calculator"],
   ["energy", "carbon-footprint-offset-calculator"],["energy", "green-lease-clause-checker"],["energy", "ev-vs-gas-cost-comparison"],
   ["energy", "home-energy-audit-checklist"],["energy", "power-purchase-agreement-calculator"],
