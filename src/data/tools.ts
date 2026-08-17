@@ -1908,7 +1908,62 @@ export const tools: Tool[] = [
     ],
     relatedToolIds: ["settlement-estimator", "attorney-fee", "slip-and-fall-settlement"],
   },
+  {
+    id: "wrongful-death-settlement",
+    name: "Wrongful Death Settlement Calculator",
+    slug: "wrongful-death-settlement-calculator",
+    category: "consumer",
+    categoryLabel: "Consumer Tools",
+    description: "Estimate the value of a wrongful death claim using present-value lost support, household services, non-economic damages, and your state's caps, punitive rules and comparative-fault bar.",
+    shortDescription: "Value a wrongful death claim by state.",
+    icon: Scale,
+    popular: true,
+    faqs: [
+      { question: "How is a wrongful death settlement calculated?", answer: "Start with economic loss: the decedent's income and benefits to retirement, reduced by personal consumption and discounted to present value, plus household services, final medical bills and funeral costs. Non-economic damages (loss of companionship, grief) are then added as a multiple of the economic figure where the state allows them." },
+      { question: "Which states do not allow grief damages?", answer: "New York (EPTL § 5-4.3) and New Jersey limit recovery to pecuniary loss, so grief and sorrow are not compensable. Illinois, Georgia and Florida expressly allow them, which is why comparable cases settle for far more in those states." },
+      { question: "Is a wrongful death settlement taxable?", answer: "Compensatory damages for a death caused by physical injury are excluded from income under IRC § 104(a)(2). Punitive damages and interest on the judgment are taxable." },
+      { question: "How long do I have to file a wrongful death claim?", answer: "Most states allow two years from the date of death; Tennessee allows one year and Michigan, Washington, Massachusetts, Maryland and Missouri allow three. Claims against a government body often require a notice of claim within 60–180 days." },
+    ],
+    relatedToolIds: ["settlement-estimator", "medical-lien", "attorney-fee"],
+  },
+  {
+    id: "probate-cost",
+    name: "Probate Cost & Executor Fee Calculator",
+    slug: "probate-cost-calculator",
+    category: "finance",
+    categoryLabel: "Financial Tools",
+    description: "Estimate attorney fees, executor commissions, court filing fees and total probate cost for your state — including statutory sliding scales in California, Florida, New York and Missouri.",
+    shortDescription: "Estimate probate fees and net to heirs.",
+    icon: Receipt,
+    popular: true,
+    faqs: [
+      { question: "How much does probate cost?", answer: "In statutory-fee states such as California, the attorney and the executor are each entitled to 4% of the first $100,000, 3% of the next $100,000, 2% up to $1M and 1% above that — so a $650,000 estate generates roughly $32,000 in professional fees before court costs. Reasonable-fee states typically run 2–6% of the estate." },
+      { question: "Are probate fees based on the mortgage-free value?", answer: "No. Statutory fees are calculated on the gross value of probate assets, without deducting mortgages or other debt. A $600,000 home with a $400,000 mortgage still generates fees on $600,000." },
+      { question: "Can I avoid probate fees?", answer: "Assets with a beneficiary designation, joint tenancy property and assets held in a living trust bypass probate entirely. Most states also offer a small-estate affidavit — California's threshold is $184,500 and Texas allows a small estate affidavit up to $75,000." },
+      { question: "Does the executor have to take the fee?", answer: "No. A family executor who is also a beneficiary usually waives the commission, because the fee is taxable income while an inheritance generally is not." },
+    ],
+    relatedToolIds: ["net-worth", "income-tax-estimator"],
+  },
+  {
+    id: "lost-wages",
+    name: "Lost Wages & Future Earnings Calculator",
+    slug: "lost-wages-calculator",
+    category: "consumer",
+    categoryLabel: "Consumer Tools",
+    description: "Calculate past lost wages, overtime, bonuses and self-employed income loss after an injury, plus the present value of any permanent loss of earning capacity.",
+    shortDescription: "Calculate lost wages after an injury.",
+    icon: DollarSign,
+    popular: true,
+    faqs: [
+      { question: "How do I prove lost wages to an insurance adjuster?", answer: "Adjusters want a wage-and-salary verification letter from your employer, 13 weeks of pay stubs before the injury, your most recent W-2 or Schedule C, and a physician's note taking you off work for each period claimed." },
+      { question: "Can I claim lost wages if I used sick leave?", answer: "Usually yes. Under the collateral source rule in most states, accrued paid leave is your own property, so the value of PTO and sick days burned because of the injury is recoverable even though you kept getting paid." },
+      { question: "How is loss of future earning capacity calculated?", answer: "Annual earnings are multiplied by the percentage impairment and by the number of years to retirement, then discounted to present value — typically using a real discount rate of about 1% (3% discount against 2% wage growth)." },
+      { question: "Are lost wages in a settlement taxable?", answer: "Lost wages recovered as part of a physical-injury settlement are excluded under IRC § 104(a)(2). Lost wages in a non-physical claim such as discrimination or wrongful termination are taxable and reported on a W-2 or 1099." },
+    ],
+    relatedToolIds: ["settlement-estimator", "workers-comp-settlement", "wrongful-death-settlement"],
+  },
 ];
+
 
 export function getToolBySlug(category: string, slug: string): Tool | undefined {
   return tools.find((t) => t.category === category && t.slug === slug);
