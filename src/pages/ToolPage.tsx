@@ -127,7 +127,11 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "wage-garnishment": React.lazy(() => import("@/components/tools/WageGarnishmentCalculator")),
   "ssdi-backpay": React.lazy(() => import("@/components/tools/SSDIBackPayEstimator")),
   "medical-lien": React.lazy(() => import("@/components/tools/MedicalLienEstimator")),
+  "wrongful-death-settlement": React.lazy(() => import("@/components/tools/WrongfulDeathSettlementCalculator")),
+  "probate-cost": React.lazy(() => import("@/components/tools/ProbateCostCalculator")),
+  "lost-wages": React.lazy(() => import("@/components/tools/LostWagesCalculator")),
 };
+
 
 const ToolLoader = () => (
   <div className="flex items-center justify-center py-12">
