@@ -15,7 +15,9 @@ export type RecommenderTopic =
   | "alimony"
   | "statute-of-limitations"
   | "insurance-dispute"
-  | "real-estate";
+  | "real-estate"
+  | "estate-planning";
+
 
 interface RecItem {
   label: string;
@@ -99,7 +101,14 @@ const RECS: Record<RecommenderTopic, RecItem[]> = {
     { label: "Landlord-Tenant Law Guide", path: "/landlord-tenant-law", kind: "guide", reason: "Notice and eviction rules." },
     { label: "Find a Real Estate Lawyer", path: "/lawyer-near-me/real-estate", kind: "directory", reason: "Flat-fee closings, hourly disputes." },
   ],
+  "estate-planning": [
+    { label: "Last Will & Testament", path: "/forms/last-will-and-testament", kind: "tool", reason: "Fill in and download in minutes." },
+    { label: "Financial Power of Attorney", path: "/forms/financial-power-of-attorney", kind: "tool", reason: "Name who handles money if you can't." },
+    { label: "Personal Planning Pack", path: "/form-packs/personal-planning-pack", kind: "tool", reason: "Will, directive and POA together." },
+    { label: "Find an Estate Planning Lawyer", path: "/lawyer-near-me/estate-planning", kind: "directory", reason: "Most offer flat-fee estate plans." },
+  ],
 };
+
 
 const ICONS = {
   tool: Calculator,
