@@ -222,22 +222,40 @@ export const guideGroups: GuideGroup[] = [
         title: "Alimony calculator",
         blurb: "State-specific spousal support formulas and duration guidelines.",
       },
+      {
+        path: "/tools/finance/probate-cost-calculator",
+        title: "Probate cost & executor fee calculator",
+        blurb: "Statutory sliding scales, executor commissions, court fees and small-estate thresholds.",
+        badge: "Calculator",
+      },
     ],
   },
   {
-    id: "practice-areas",
-    label: "Practice-area libraries",
-    description: "Deep topic libraries with state-level articles.",
+    id: "self-help-filings",
+    label: "Self-help filings & letters",
+    description:
+      "Guided documents that replace a paid consultation for routine disputes — fill in the facts, get a court-ready PDF.",
     entries: [
-      { path: "/auto-accident-law", title: "Auto accident law", blurb: "Fault, coverage, and claim mechanics." },
-      { path: "/personal-injury-law", title: "Personal injury law", blurb: "Liability, damages, and litigation basics." },
-      { path: "/insurance-law", title: "Insurance law", blurb: "Policy interpretation and bad-faith standards." },
-      { path: "/employment-law", title: "Employment law", blurb: "Wages, discrimination, and termination." },
-      { path: "/criminal-law", title: "Criminal law", blurb: "Charges, procedure, and sentencing." },
-      { path: "/landlord-tenant-law", title: "Landlord & tenant law", blurb: "Evictions, deposits, and habitability." },
-      { path: "/ai-tech-law", title: "AI & tech law", blurb: "Data, privacy, and emerging-tech regulation." },
+      {
+        path: "/forms/small-claims-demand-packet",
+        title: "Small claims demand letter & filing prep packet",
+        blurb: "Pre-suit demand letter, claim valuation, service method and a court-day evidence checklist.",
+        badge: "New",
+      },
+      {
+        path: "/forms/debt-validation-letter",
+        title: "Debt validation letter (FDCPA)",
+        blurb: "Use your 30-day right to force a collector to prove the debt before they collect or report it.",
+        badge: "New",
+      },
+      {
+        path: "/forms/demand-letter",
+        title: "Demand letter / collection letter",
+        blurb: "Formal written demand for payment, with deadline and escalation language.",
+      },
     ],
   },
+
 ];
 
 /** Flat list of every registered guide. */
