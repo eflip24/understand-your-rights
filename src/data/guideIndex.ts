@@ -255,8 +255,22 @@ export const guideGroups: GuideGroup[] = [
       },
     ],
   },
-
+  {
+    id: "practice-areas",
+    label: "Practice-area libraries",
+    description: "Deep topic libraries with state-level articles.",
+    entries: [
+      { path: "/auto-accident-law", title: "Auto accident law", blurb: "Fault, coverage, and claim mechanics." },
+      { path: "/personal-injury-law", title: "Personal injury law", blurb: "Liability, damages, and litigation basics." },
+      { path: "/insurance-law", title: "Insurance law", blurb: "Policy interpretation and bad-faith standards." },
+      { path: "/employment-law", title: "Employment law", blurb: "Wages, discrimination, and termination." },
+      { path: "/criminal-law", title: "Criminal law", blurb: "Charges, procedure, and sentencing." },
+      { path: "/landlord-tenant-law", title: "Landlord & tenant law", blurb: "Evictions, deposits, and habitability." },
+      { path: "/ai-tech-law", title: "AI & tech law", blurb: "Data, privacy, and emerging-tech regulation." },
+    ],
+  },
 ];
+
 
 /** Flat list of every registered guide. */
 export const allGuides: GuideEntry[] = guideGroups.flatMap((g) => g.entries);
