@@ -96,8 +96,21 @@ export const guideGroups: GuideGroup[] = [
         title: "Attorney contingency fees explained",
         blurb: "33% vs 40%, case costs, liens, and what actually lands in your pocket.",
       },
+      {
+        path: "/tools/consumer/wrongful-death-settlement-calculator",
+        title: "Wrongful death settlement calculator",
+        blurb: "Present-value lost support, household services, state damage caps and comparative-fault bars.",
+        badge: "Calculator",
+      },
+      {
+        path: "/tools/consumer/lost-wages-calculator",
+        title: "Lost wages & future earnings calculator",
+        blurb: "Past wage loss, self-employed income, and the present value of lost earning capacity.",
+        badge: "Calculator",
+      },
     ],
   },
+
   {
     id: "insurance",
     label: "Insurance claim denials",
