@@ -590,6 +590,7 @@ const formSlugs = [
   "offer-letter","independent-contractor-agreement","direct-deposit-authorization",
   "notice-to-vacate","move-in-move-out-checklist","security-deposit-receipt","late-rent-notice",
   "llc-operating-agreement","healthcare-power-of-attorney","simple-will","living-will","hipaa-authorization",
+  "small-claims-demand-packet","debt-validation-letter",
 ];
 const formPackSlugs = ["new-hire-pack","landlord-starter-pack","small-business-pack","personal-planning-pack"];
 

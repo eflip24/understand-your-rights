@@ -96,8 +96,21 @@ export const guideGroups: GuideGroup[] = [
         title: "Attorney contingency fees explained",
         blurb: "33% vs 40%, case costs, liens, and what actually lands in your pocket.",
       },
+      {
+        path: "/tools/consumer/wrongful-death-settlement-calculator",
+        title: "Wrongful death settlement calculator",
+        blurb: "Present-value lost support, household services, state damage caps and comparative-fault bars.",
+        badge: "Calculator",
+      },
+      {
+        path: "/tools/consumer/lost-wages-calculator",
+        title: "Lost wages & future earnings calculator",
+        blurb: "Past wage loss, self-employed income, and the present value of lost earning capacity.",
+        badge: "Calculator",
+      },
     ],
   },
+
   {
     id: "insurance",
     label: "Insurance claim denials",
@@ -209,6 +222,37 @@ export const guideGroups: GuideGroup[] = [
         title: "Alimony calculator",
         blurb: "State-specific spousal support formulas and duration guidelines.",
       },
+      {
+        path: "/tools/finance/probate-cost-calculator",
+        title: "Probate cost & executor fee calculator",
+        blurb: "Statutory sliding scales, executor commissions, court fees and small-estate thresholds.",
+        badge: "Calculator",
+      },
+    ],
+  },
+  {
+    id: "self-help-filings",
+    label: "Self-help filings & letters",
+    description:
+      "Guided documents that replace a paid consultation for routine disputes — fill in the facts, get a court-ready PDF.",
+    entries: [
+      {
+        path: "/forms/small-claims-demand-packet",
+        title: "Small claims demand letter & filing prep packet",
+        blurb: "Pre-suit demand letter, claim valuation, service method and a court-day evidence checklist.",
+        badge: "New",
+      },
+      {
+        path: "/forms/debt-validation-letter",
+        title: "Debt validation letter (FDCPA)",
+        blurb: "Use your 30-day right to force a collector to prove the debt before they collect or report it.",
+        badge: "New",
+      },
+      {
+        path: "/forms/demand-letter",
+        title: "Demand letter / collection letter",
+        blurb: "Formal written demand for payment, with deadline and escalation language.",
+      },
     ],
   },
   {
@@ -226,6 +270,7 @@ export const guideGroups: GuideGroup[] = [
     ],
   },
 ];
+
 
 /** Flat list of every registered guide. */
 export const allGuides: GuideEntry[] = guideGroups.flatMap((g) => g.entries);
