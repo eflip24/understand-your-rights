@@ -35,6 +35,8 @@ const toolPages: [string, string][] = [
   ["finance", "equity-dilution-calculator"],["finance", "income-tax-estimator"],["finance", "auto-loan-calculator"],
   ["finance", "debt-payoff-calculator"],["finance", "net-worth-calculator"],["finance", "probate-cost-calculator"],
   ["consumer", "wrongful-death-settlement-calculator"],["consumer", "lost-wages-calculator"],
+  ["consumer", "truck-accident-settlement-calculator"],["consumer", "dog-bite-settlement-calculator"],
+  ["consumer", "nursing-home-abuse-settlement-calculator"],
 
   ["energy", "solar-panel-roi-calculator"],["energy", "solar-incentive-tax-credit-estimator"],["energy", "energy-savings-calculator"],
   ["energy", "carbon-footprint-offset-calculator"],["energy", "green-lease-clause-checker"],["energy", "ev-vs-gas-cost-comparison"],
