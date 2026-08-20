@@ -130,6 +130,9 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "wrongful-death-settlement": React.lazy(() => import("@/components/tools/WrongfulDeathSettlementCalculator")),
   "probate-cost": React.lazy(() => import("@/components/tools/ProbateCostCalculator")),
   "lost-wages": React.lazy(() => import("@/components/tools/LostWagesCalculator")),
+  "truck-accident-settlement": React.lazy(() => import("@/components/tools/TruckAccidentSettlementCalculator")),
+  "dog-bite-settlement": React.lazy(() => import("@/components/tools/DogBiteSettlementCalculator")),
+  "nursing-home-abuse-settlement": React.lazy(() => import("@/components/tools/NursingHomeAbuseSettlementCalculator")),
 };
 
 

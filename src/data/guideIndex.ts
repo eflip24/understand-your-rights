@@ -108,6 +108,24 @@ export const guideGroups: GuideGroup[] = [
         blurb: "Past wage loss, self-employed income, and the present value of lost earning capacity.",
         badge: "Calculator",
       },
+      {
+        path: "/tools/consumer/truck-accident-settlement-calculator",
+        title: "Truck accident settlement calculator",
+        blurb: "FMCSA violation aggravators, stacked policy limits, and net recovery after fees and liens.",
+        badge: "Calculator",
+      },
+      {
+        path: "/tools/consumer/dog-bite-settlement-calculator",
+        title: "Dog bite settlement calculator",
+        blurb: "Dunbar severity scale, strict-liability vs one-bite states, and homeowner policy limits.",
+        badge: "Calculator",
+      },
+      {
+        path: "/tools/consumer/nursing-home-abuse-settlement-calculator",
+        title: "Nursing home abuse settlement calculator",
+        blurb: "Pressure ulcers, falls and neglect deaths with CMS citation aggravators and damage caps.",
+        badge: "Calculator",
+      },
     ],
   },
 
