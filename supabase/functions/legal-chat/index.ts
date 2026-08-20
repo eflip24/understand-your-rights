@@ -153,6 +153,41 @@ serve(async (req) => {
       );
     }
 
+    // Input limits: prevent AI credit exhaustion via oversized payloads
+    const MAX_MESSAGES = 50;
+    const MAX_CONTENT_CHARS = 4000;
+    if (messages.length === 0 || messages.length > MAX_MESSAGES) {
+      return new Response(
+        JSON.stringify({ error: `messages must contain between 1 and ${MAX_MESSAGES} items` }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+    const safeMessages: { role: string; content: string }[] = [];
+    for (const m of messages) {
+      if (!m || typeof m !== "object") {
+        return new Response(
+          JSON.stringify({ error: "Invalid message format" }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+      const role = (m as { role?: unknown }).role;
+      const content = (m as { content?: unknown }).content;
+      if (role !== "user" && role !== "assistant") {
+        return new Response(
+          JSON.stringify({ error: "Message role must be 'user' or 'assistant'" }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+      if (typeof content !== "string" || content.length === 0 || content.length > MAX_CONTENT_CHARS) {
+        return new Response(
+          JSON.stringify({ error: `Message content must be 1-${MAX_CONTENT_CHARS} characters` }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+      safeMessages.push({ role, content });
+    }
+
+
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) {
       throw new Error("LOVABLE_API_KEY is not configured");
