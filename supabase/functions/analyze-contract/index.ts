@@ -241,6 +241,22 @@ serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
 
+    const MAX_TEXT_CHARS = 50_000;
+    for (const [label, value] of [["text", text], ["textA", textA], ["textB", textB]] as const) {
+      if (value !== undefined && value !== null && typeof value !== "string") {
+        return new Response(JSON.stringify({ error: `${label} must be a string` }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      if (typeof value === "string" && value.length > MAX_TEXT_CHARS) {
+        return new Response(
+          JSON.stringify({ error: `${label} exceeds the ${MAX_TEXT_CHARS} character limit` }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+    }
+
     let userContent = text || "";
     if (toolType === "contract-comparison") {
       userContent = `CONTRACT A:\n${textA}\n\nCONTRACT B:\n${textB}`;
@@ -252,6 +268,7 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
