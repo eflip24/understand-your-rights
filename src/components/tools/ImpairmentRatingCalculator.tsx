@@ -114,7 +114,7 @@ export default function ImpairmentRatingCalculator() {
         </Card>
       )}
 
-      {calc && <ToolResultAd />}
+      {calc && <ToolResultAd show />}
 
       <div className="rounded-lg border overflow-hidden">
         <table className="w-full text-sm">
@@ -139,7 +139,7 @@ export default function ImpairmentRatingCalculator() {
         </table>
       </div>
 
-      <ToolRecommender area="workers-comp" />
+      <ToolRecommender topic="workers-compensation" />
     </div>
   );
 }

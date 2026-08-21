@@ -129,7 +129,7 @@ export default function DiminishedValueCalculator() {
         </Card>
       )}
 
-      {calc && <ToolResultAd />}
+      {calc && <ToolResultAd show />}
 
       <div className="rounded-lg border p-4 text-sm space-y-2">
         <h3 className="font-serif font-bold">How to document a diminished value claim</h3>
@@ -143,7 +143,7 @@ export default function DiminishedValueCalculator() {
         </ol>
       </div>
 
-      <ToolRecommender area="auto-accident" />
+      <ToolRecommender topic="car-accident" />
     </div>
   );
 }
