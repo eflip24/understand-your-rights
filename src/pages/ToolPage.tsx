@@ -133,6 +133,10 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "truck-accident-settlement": React.lazy(() => import("@/components/tools/TruckAccidentSettlementCalculator")),
   "dog-bite-settlement": React.lazy(() => import("@/components/tools/DogBiteSettlementCalculator")),
   "nursing-home-abuse-settlement": React.lazy(() => import("@/components/tools/NursingHomeAbuseSettlementCalculator")),
+  "diminished-value": React.lazy(() => import("@/components/tools/DiminishedValueCalculator")),
+  "impairment-rating": React.lazy(() => import("@/components/tools/ImpairmentRatingCalculator")),
+  "custody-time-percentage": React.lazy(() => import("@/components/tools/CustodyTimePercentageCalculator")),
+  "estate-tax-estimator": React.lazy(() => import("@/components/tools/EstateTaxEstimator")),
 };
 
 
