@@ -37,6 +37,8 @@ const toolPages: [string, string][] = [
   ["consumer", "wrongful-death-settlement-calculator"],["consumer", "lost-wages-calculator"],
   ["consumer", "truck-accident-settlement-calculator"],["consumer", "dog-bite-settlement-calculator"],
   ["consumer", "nursing-home-abuse-settlement-calculator"],
+  ["consumer", "diminished-value-calculator"],["employment", "impairment-rating-calculator"],
+  ["family", "custody-time-percentage-calculator"],["finance", "estate-tax-estimator"],
 
   ["energy", "solar-panel-roi-calculator"],["energy", "solar-incentive-tax-credit-estimator"],["energy", "energy-savings-calculator"],
   ["energy", "carbon-footprint-offset-calculator"],["energy", "green-lease-clause-checker"],["energy", "ev-vs-gas-cost-comparison"],
