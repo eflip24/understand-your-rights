@@ -126,6 +126,31 @@ export const guideGroups: GuideGroup[] = [
         blurb: "Pressure ulcers, falls and neglect deaths with CMS citation aggravators and damage caps.",
         badge: "Calculator",
       },
+      {
+        path: "/tools/consumer/diminished-value-calculator",
+        title: "Diminished value calculator",
+        blurb: "Formula 17c vs independent appraisal for your car's post-accident loss of resale value.",
+        badge: "Calculator",
+      },
+      {
+        path: "/tools/employment/impairment-rating-calculator",
+        title: "Workers' comp impairment rating calculator",
+        blurb: "Convert an AMA Guides rating into a PPD award using your state's weekly cap and week schedule.",
+        badge: "Calculator",
+      },
+      {
+        path: "/tools/family/custody-time-percentage-calculator",
+        title: "Custody & parenting time percentage calculator",
+        blurb: "Turn any schedule into annual overnights and the timeshare percentage support formulas use.",
+        badge: "Calculator",
+      },
+      {
+        path: "/tools/finance/estate-tax-estimator",
+        title: "Estate & inheritance tax estimator",
+        blurb: "Federal and state death taxes, portability, the New York cliff and beneficiary-class rates.",
+        badge: "Calculator",
+      },
+
     ],
   },
 
