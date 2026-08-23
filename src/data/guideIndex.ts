@@ -312,6 +312,40 @@ export const guideGroups: GuideGroup[] = [
       { path: "/ai-tech-law", title: "AI & tech law", blurb: "Data, privacy, and emerging-tech regulation." },
     ],
   },
+  {
+    id: "europe",
+    label: "Europe",
+    description:
+      "Country-specific calculators and guidance for employees and consumers in Germany, France, Spain, Italy and Portugal.",
+    entries: [
+      {
+        path: "/eu-tools",
+        title: "European legal calculators",
+        blurb: "Statutory severance and notice-period maths for DE, FR, ES, IT and PT, with the labour-code article behind each result.",
+        badge: "New",
+      },
+      {
+        path: "/eu-tools/severance-calculator",
+        title: "EU severance calculator",
+        blurb: "Dismissal compensation under §1a KSchG, the French barème, the Estatuto de los Trabajadores, TFR and the Código do Trabalho.",
+      },
+      {
+        path: "/eu-tools/notice-period-calculator",
+        title: "EU notice period calculator",
+        blurb: "Statutory notice, last working day and pay in lieu for employer and employee terminations across five countries.",
+      },
+      {
+        path: "/lawyer-eu",
+        title: "EU lawyer directory",
+        blurb: "How to instruct a lawyer in each EU country, bar-association rules, fees and legal aid.",
+      },
+      {
+        path: "/eu-forms",
+        title: "European legal forms",
+        blurb: "GDPR, employment, consumer and business templates for the EU, with country-native versions.",
+      },
+    ],
+  },
 ];
 
 
