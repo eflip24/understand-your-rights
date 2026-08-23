@@ -82,7 +82,7 @@ export default function EuToolPage({ slug }: { slug: ToolSlug }) {
 
   const schemas = [
     webApplicationSchema(title, description, `${SITE}${path}`, country ? [country.toUpperCase()] : ["DE", "FR", "ES", "IT", "PT"]),
-    faqSchema(faqs),
+    faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a }))),
     {
       "@type": "BreadcrumbList",
       itemListElement: [
