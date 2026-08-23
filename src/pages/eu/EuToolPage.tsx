@@ -70,7 +70,9 @@ export default function EuToolPage({ slug }: { slug: ToolSlug }) {
   const rules = country ? EU_EMPLOYMENT_COUNTRIES[country] : undefined;
 
   const path = country ? `/eu-tools/${slug}/${EU_TOOL_COUNTRY_SLUGS[country]}` : `/eu-tools/${slug}`;
-  const title = country ? `${meta.title.replace("EU ", "")} — ${countryName}` : meta.title;
+  const title = country
+    ? `${meta.title.replace("EU ", "")[0].toUpperCase()}${meta.title.replace("EU ", "").slice(1)} — ${countryName}`
+    : meta.title;
   const description = country
     ? `${countryName}: ${meta.description}`.slice(0, 155)
     : meta.description;
