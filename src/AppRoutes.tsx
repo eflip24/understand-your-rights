@@ -241,6 +241,12 @@ export default function AppRoutes() {
       <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
       <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
       <Route path="/lawyer-near-me/:area/:state/:city" element={<LocalLawyersCityPage />} />
+      {/* EU calculators — same path in all 6 locales (locale prefix only). */}
+      <Route path="/eu-tools" element={<EuToolsHubPage />} />
+      <Route path="/eu-tools/severance-calculator" element={<EuToolPage slug="severance-calculator" />} />
+      <Route path="/eu-tools/severance-calculator/:country" element={<EuToolPage slug="severance-calculator" />} />
+      <Route path="/eu-tools/notice-period-calculator" element={<EuToolPage slug="notice-period-calculator" />} />
+      <Route path="/eu-tools/notice-period-calculator/:country" element={<EuToolPage slug="notice-period-calculator" />} />
       <Route path="/lawyer-eu" element={<EuLawyersHub />} />
       <Route path="/lawyer-eu/:country" element={<EuLawyersCountryPage />} />
       {/* B9: region route MUST precede the area route — the literal "region"
