@@ -120,7 +120,7 @@ export default function EuToolPage({ slug }: { slug: ToolSlug }) {
         <p className="text-muted-foreground text-base sm:text-lg">
           {rules ? pickText(rules.intro, locale) : meta.intro}
         </p>
-        <AuthorByline authorId="employment" compact className="mt-3" />
+        <AuthorByline authorId="senior-legal-researcher" compact className="mt-3" />
       </header>
 
       <AdSlot slot="above-content" className="mb-8" />
