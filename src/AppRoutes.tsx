@@ -75,6 +75,8 @@ const EuLawyersCountryPage = React.lazy(() => import("@/pages/eu/EuLawyersCountr
 const EuLawyersAreaPage = React.lazy(() => import("@/pages/eu/EuLawyersAreaPage"));
 const EuLawyersCityPage = React.lazy(() => import("@/pages/eu/EuLawyersCityPage"));
 const EuLawyersRegionPage = React.lazy(() => import("@/pages/eu/EuLawyersRegionPage"));
+const EuToolsHubPage = React.lazy(() => import("@/pages/eu/EuToolsHubPage"));
+const EuToolPage = React.lazy(() => import("@/pages/eu/EuToolPage"));
 const ImpressumPage = React.lazy(() => import("@/pages/legal/ImpressumPage"));
 const PersonalInjurySettlementHub = React.lazy(() => import("@/pages/PersonalInjurySettlementHub"));
 const PersonalInjurySettlementSubPage = React.lazy(() => import("@/pages/PersonalInjurySettlementSubPage"));
@@ -239,6 +241,12 @@ export default function AppRoutes() {
       <Route path="/lawyer-near-me/:area" element={<LocalLawyersAreaPage />} />
       <Route path="/lawyer-near-me/:area/:state" element={<LocalLawyersStatePage />} />
       <Route path="/lawyer-near-me/:area/:state/:city" element={<LocalLawyersCityPage />} />
+      {/* EU calculators — same path in all 6 locales (locale prefix only). */}
+      <Route path="/eu-tools" element={<EuToolsHubPage />} />
+      <Route path="/eu-tools/severance-calculator" element={<EuToolPage slug="severance-calculator" />} />
+      <Route path="/eu-tools/severance-calculator/:country" element={<EuToolPage slug="severance-calculator" />} />
+      <Route path="/eu-tools/notice-period-calculator" element={<EuToolPage slug="notice-period-calculator" />} />
+      <Route path="/eu-tools/notice-period-calculator/:country" element={<EuToolPage slug="notice-period-calculator" />} />
       <Route path="/lawyer-eu" element={<EuLawyersHub />} />
       <Route path="/lawyer-eu/:country" element={<EuLawyersCountryPage />} />
       {/* B9: region route MUST precede the area route — the literal "region"

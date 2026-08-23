@@ -196,6 +196,7 @@ function sitemapIndex(): string {
   const types = [
     "core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes","forms",
     "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n","lawyers-eu-i18n","forms-eu-i18n",
+    "eu-tools-i18n",
   ];
 
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${BASE}?type=${t}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
@@ -648,6 +649,19 @@ function buildFormsEuI18n(): string {
 
 
 
+/** EU calculators: same path in all six locales, full hreflang alternates. */
+const euToolSlugs = ["severance-calculator", "notice-period-calculator"];
+const euToolCountrySlugs = ["germany", "france", "spain", "italy", "portugal"];
+
+function buildEuToolsI18n(): string {
+  const e: string[] = [uL(`/eu-tools`, "weekly", "0.8")];
+  for (const s of euToolSlugs) {
+    e.push(uL(`/eu-tools/${s}`, "monthly", "0.8"));
+    for (const c of euToolCountrySlugs) e.push(uL(`/eu-tools/${s}/${c}`, "monthly", "0.7"));
+  }
+  return wrapUrlset(e);
+}
+
 async function buildBlog(supabase: ReturnType<typeof createClient>): Promise<string> {
   const e: string[] = [];
   const { data: posts } = await supabase.from("blog_posts").select("slug, published_at").eq("status","published").order("published_at",{ascending:false});
@@ -677,6 +691,7 @@ Deno.serve(async (req) => {
   if (type === "guides-i18n") return new Response(buildGuidesI18n(), { headers: h });
   if (type === "lawyers-eu-i18n") return new Response(buildLawyersEuI18n(), { headers: h });
   if (type === "forms-eu-i18n") return new Response(buildFormsEuI18n(), { headers: h });
+  if (type === "eu-tools-i18n") return new Response(buildEuToolsI18n(), { headers: h });
 
   
   
