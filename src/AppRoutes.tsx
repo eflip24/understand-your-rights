@@ -75,6 +75,8 @@ const EuLawyersCountryPage = React.lazy(() => import("@/pages/eu/EuLawyersCountr
 const EuLawyersAreaPage = React.lazy(() => import("@/pages/eu/EuLawyersAreaPage"));
 const EuLawyersCityPage = React.lazy(() => import("@/pages/eu/EuLawyersCityPage"));
 const EuLawyersRegionPage = React.lazy(() => import("@/pages/eu/EuLawyersRegionPage"));
+const EuToolsHubPage = React.lazy(() => import("@/pages/eu/EuToolsHubPage"));
+const EuToolPage = React.lazy(() => import("@/pages/eu/EuToolPage"));
 const ImpressumPage = React.lazy(() => import("@/pages/legal/ImpressumPage"));
 const PersonalInjurySettlementHub = React.lazy(() => import("@/pages/PersonalInjurySettlementHub"));
 const PersonalInjurySettlementSubPage = React.lazy(() => import("@/pages/PersonalInjurySettlementSubPage"));
