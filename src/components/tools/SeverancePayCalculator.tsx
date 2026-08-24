@@ -4,9 +4,13 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { useLocalizedPath } from "@/i18n/paths";
 
 export default function SeverancePayCalculator() {
   const { t } = useTranslation(["tools", "common"]);
+  const lp = useLocalizedPath();
   const [salary, setSalary] = useState("");
   const [years, setYears] = useState("");
   const [level, setLevel] = useState("standard");
@@ -70,6 +74,13 @@ export default function SeverancePayCalculator() {
           </CardContent>
         </Card>
       )}
+
+      <p className="text-sm text-muted-foreground">
+        Working in the EU? Severance there is set by statute, not custom.{" "}
+        <Link to={lp("/eu-tools/severance-calculator")} className="text-accent hover:underline inline-flex items-center gap-1">
+          Use the European severance calculator <ArrowRight className="h-3 w-3" />
+        </Link>
+      </p>
     </div>
   );
 }
