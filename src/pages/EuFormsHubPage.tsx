@@ -297,6 +297,10 @@ export default function EuFormsHubPage() {
         </div>
       </section>
 
+      <EuToolsCrossLink className="mt-10" />
+
+
+
       <div className="mt-14">
         <FormDisclaimer />
       </div>
