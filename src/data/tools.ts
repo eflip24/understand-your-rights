@@ -1453,6 +1453,26 @@ export const tools: Tool[] = [
     relatedToolIds: ["insurance-premium", "settlement-estimator", "complaint-generator"],
   },
   {
+    id: "pain-and-suffering",
+    name: "Pain and Suffering Calculator",
+    slug: "pain-and-suffering-calculator",
+    category: "consumer",
+    categoryLabel: "Consumer Tools",
+    description: "Calculate pain and suffering damages with both the multiplier method and the per-diem method, adjusted for your state's damage cap, comparative-fault rule and statute of limitations.",
+    shortDescription: "Value pain and suffering damages by state.",
+    icon: Calculator,
+    popular: true,
+    faqs: [
+      { question: "How is pain and suffering calculated?", answer: "Two methods dominate. The multiplier method multiplies your medical specials by roughly 1x to 5x (higher for catastrophic injury) based on severity, permanency and liability. The per-diem method assigns a daily dollar value - often your daily wage - for every day from the injury to maximum medical improvement. Run both and lead with the higher figure in your demand." },
+      { question: "What is the average pain and suffering settlement?", answer: "For soft-tissue injuries that resolve within a few weeks, pain and suffering usually lands between 1x and 1.5x the medical bills. Injuries with objective imaging run 2x to 3.5x, surgical cases 3x to 5x, and permanent impairment or disfigurement 4x and above. The bills themselves matter less than the documented permanency." },
+      { question: "Is there a cap on pain and suffering damages?", answer: "In most states there is no cap on non-economic damages in ordinary injury claims - caps are concentrated in medical malpractice and claims against government bodies. States such as Kansas, Ohio, Tennessee, Hawaii and Maryland do cap general non-economic damages, and several state supreme courts (Georgia, Florida, Illinois, Oklahoma, Washington) have struck their caps down entirely." },
+      { question: "Does my own fault reduce pain and suffering?", answer: "Yes. Under pure comparative fault your award drops by your fault percentage. Under modified comparative fault you recover nothing once you reach 50% or 51%, depending on the state. In Alabama, Maryland, North Carolina, Virginia and DC, pure contributory negligence bars recovery entirely if you are even 1% at fault." },
+      { question: "Is a pain and suffering settlement taxable?", answer: "Compensation for physical injury or physical sickness, including the pain and suffering that flows from it, is excluded from gross income under IRC Section 104(a)(2). Interest on the award and punitive damages are taxable, and emotional-distress damages without an underlying physical injury are taxable." },
+    ],
+    relatedToolIds: ["settlement-estimator", "attorney-fee", "lost-wages"],
+  },
+  {
+
     id: "accident-damage",
     name: "Accident Damage Calculator",
     slug: "accident-damage-calculator",

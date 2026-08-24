@@ -60,7 +60,7 @@ Disallow: /forgot-password
 Disallow: /reset-password
 Disallow: /dashboard
 
-Sitemap: https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap
+Sitemap: https://legallyspoken.com/sitemap.xml
 
 User-agent: Mediapartners-Google
 Allow: /

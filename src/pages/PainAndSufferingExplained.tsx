@@ -234,7 +234,18 @@ export default function PainAndSufferingExplained() {
           <Suspense fallback={<div className="animate-pulse h-96 bg-muted rounded-lg" />}>
             <SettlementEstimator />
           </Suspense>
+          <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4">
+            <p className="font-medium">Want both methods side by side, with your state's cap applied?</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              The dedicated pain and suffering calculator runs the multiplier and per-diem methods together,
+              applies your state's comparative-fault rule and damage cap, and prints a demand-ready summary.
+            </p>
+            <Button asChild className="mt-3">
+              <Link to={lp("/tools/consumer/pain-and-suffering-calculator")}>Open the pain and suffering calculator</Link>
+            </Button>
+          </div>
         </section>
+
 
         <section className="prose prose-sm max-w-none my-8">
           <h2 className="text-2xl font-bold mt-6 mb-3">What insurers actually run: Colossus and its peers</h2>
