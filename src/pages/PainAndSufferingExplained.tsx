@@ -241,7 +241,7 @@ export default function PainAndSufferingExplained() {
               applies your state's comparative-fault rule and damage cap, and prints a demand-ready summary.
             </p>
             <Button asChild className="mt-3">
-              <Link to={lp("/tools/consumer/pain-and-suffering-calculator")}>Open the pain and suffering calculator</Link>
+              <Link to={localePath("/tools/consumer/pain-and-suffering-calculator")}>Open the pain and suffering calculator</Link>
             </Button>
           </div>
         </section>
