@@ -456,6 +456,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://legallyspoken.com/tools/consumer/pain-and-suffering-calculator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://legallyspoken.com/tools/energy/solar-panel-roi-calculator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
