@@ -1,0 +1,41 @@
+# Google disavow file — legallyspoken.com
+# Generated from the Semrush backlink profile (Authority 5/100, Trust 5/100,
+# 128 referring domains, 216 backlinks).
+#
+# Why: a paid-link footprint is attached to the domain. Nine backlinks across
+# six referring domains carry the anchor
+#   "high quality dofollow backlinks da 50 pa 40 premium pbn network service
+#    legallyspoken.com rank first page google fast seo link building buy
+#    backlinks online cheap"
+# plus "visit site seo legallyspoken.com premium backlinks". Those are PBN /
+# link-sale footprints, and the rest of the profile is low-trust scraper and
+# auto-directory domains (Trust 2-4/100) that pass no value.
+#
+# HOW TO USE
+# 1. Open https://search.google.com/search-console/disavow-links
+# 2. Select the legallyspoken.com property.
+# 3. Upload this file (plain .txt, one domain/URL per line).
+# 4. Re-upload whenever new spam domains appear — each upload REPLACES the
+#    previous list, so keep this file as the master copy.
+#
+# Never disavow legitimate links. yahoo.com (Authority 100) and eflip.ie are
+# genuine and are intentionally NOT listed here.
+
+# --- PBN / link-sale footprint ---
+domain:seodomains.website
+
+# --- Scraper, stats and auto-generated "domain analysis" sites ---
+domain:factmags.com
+domain:allwebsitesdirectory.com
+domain:australianwebdirectory.shop
+domain:bestwebstats.com
+domain:domain.com.lc
+domain:domainanalysis.org
+domain:domainsc.com
+
+# --- Add below: any further referring domain that matches these patterns ---
+# Pattern checklist before adding a domain:
+#   * Trust Score under 10/100 AND no editorial context around the link
+#   * Anchor text mentions backlinks, PBN, SEO services or "buy links"
+#   * Auto-generated directory / whois / site-stats page
+#   * Foreign-language spam blog with unrelated topics

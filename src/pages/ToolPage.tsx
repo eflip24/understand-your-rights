@@ -137,6 +137,8 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "impairment-rating": React.lazy(() => import("@/components/tools/ImpairmentRatingCalculator")),
   "custody-time-percentage": React.lazy(() => import("@/components/tools/CustodyTimePercentageCalculator")),
   "estate-tax-estimator": React.lazy(() => import("@/components/tools/EstateTaxEstimator")),
+  "pain-and-suffering": React.lazy(() => import("@/components/tools/PainAndSufferingCalculator")),
+
 };
 
 

@@ -11,6 +11,7 @@ import SmartLocalLink from "@/components/seo/SmartLocalLink";
 import { linkifyLegalContent } from "@/lib/linkifyContent";
 import { getStateVariant, getNegligenceExplanation, getNoFaultExplanation, stateData } from "@/data/stateVariants";
 import { tools } from "@/data/tools";
+import { isThinFanoutPage } from "@/lib/contentDepth";
 
 export default function StateClusterArticlePage() {
   const { state, slug } = useParams<{ state: string; slug: string }>();
@@ -40,9 +41,17 @@ export default function StateClusterArticlePage() {
   const stateIdx = stateData.findIndex((s) => s.slug === state);
   const nearbyStates = stateData.filter((_, i) => Math.abs(i - stateIdx) <= 3 && i !== stateIdx).slice(0, 5);
 
+  // Only index state variants that carry real state-specific substance; sparse
+  // records read as near-duplicates of their siblings and dilute crawl budget.
+  const thin = isThinFanoutPage([
+    article.content.replace(/<[^>]+>/g, " "),
+    ...article.faqs.map((f) => `${f.question} ${f.answer}`),
+  ], 1800);
+
   return (
     <div className="container py-8 max-w-4xl">
-      <Tier3Head title={metaTitle} description={metaDescription} ogType="article" />
+      <Tier3Head title={metaTitle} description={metaDescription} ogType="article" noindex={thin} />
+
       <JsonLdGraph schemas={[
         articleSchema(stateTitle, metaDescription, url),
         breadcrumbSchema([

@@ -39,6 +39,7 @@ const toolPages: [string, string][] = [
   ["consumer", "nursing-home-abuse-settlement-calculator"],
   ["consumer", "diminished-value-calculator"],["employment", "impairment-rating-calculator"],
   ["family", "custody-time-percentage-calculator"],["finance", "estate-tax-estimator"],
+  ["consumer", "pain-and-suffering-calculator"],
 
   ["energy", "solar-panel-roi-calculator"],["energy", "solar-incentive-tax-credit-estimator"],["energy", "energy-savings-calculator"],
   ["energy", "carbon-footprint-offset-calculator"],["energy", "green-lease-clause-checker"],["energy", "ev-vs-gas-cost-comparison"],

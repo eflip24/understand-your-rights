@@ -1,44 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=core</loc>
+    <loc>https://legallyspoken.com/sitemaps/core.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=tools</loc>
+    <loc>https://legallyspoken.com/sitemaps/tools.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=legal-terms</loc>
+    <loc>https://legallyspoken.com/sitemaps/legal-terms.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=guides</loc>
+    <loc>https://legallyspoken.com/sitemaps/guides.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=state-guides</loc>
+    <loc>https://legallyspoken.com/sitemaps/state-guides.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=lawyers</loc>
+    <loc>https://legallyspoken.com/sitemaps/lawyers.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=forms</loc>
-  <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=blog</loc>
+    <loc>https://legallyspoken.com/sitemaps/forms.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=statutes</loc>
+    <loc>https://legallyspoken.com/sitemaps/statutes.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=core-i18n</loc>
+    <loc>https://legallyspoken.com/sitemaps/blog.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=tools-i18n</loc>
+    <loc>https://legallyspoken.com/sitemaps/core-i18n.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=legal-terms-i18n</loc>
+    <loc>https://legallyspoken.com/sitemaps/tools-i18n.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=guides-i18n</loc>
+    <loc>https://legallyspoken.com/sitemaps/legal-terms-i18n.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap?type=lawyers-i18n</loc>
+    <loc>https://legallyspoken.com/sitemaps/guides-i18n.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://legallyspoken.com/sitemaps/lawyers-eu-i18n.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://legallyspoken.com/sitemaps/forms-eu-i18n.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://legallyspoken.com/sitemaps/eu-tools-i18n.xml</loc>
   </sitemap>
 </sitemapindex>

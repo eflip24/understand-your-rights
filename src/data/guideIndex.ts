@@ -77,10 +77,16 @@ export const guideGroups: GuideGroup[] = [
         blurb: "CMS citations, state ombudsman complaints, and typical settlement drivers.",
       },
       {
+        path: "/tools/consumer/pain-and-suffering-calculator",
+        title: "Pain and suffering calculator",
+        blurb: "Multiplier and per-diem methods with state damage caps and comparative-fault rules.",
+      },
+      {
         path: "/how-pain-and-suffering-is-calculated",
         title: "How pain and suffering is calculated",
         blurb: "Multiplier vs per-diem methods, with worked examples adjusters actually use.",
       },
+
       {
         path: "/what-to-do-after-a-car-accident",
         title: "What to do after a car accident",
