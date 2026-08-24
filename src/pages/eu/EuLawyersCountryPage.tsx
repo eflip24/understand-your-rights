@@ -116,6 +116,8 @@ export default function EuLawyersCountryPage() {
 
       <CountryPillarSections pillar={pillar} locale={locale} labels={pillarLabels} />
 
+      <EuToolsCrossLink country={canonical.country} className="mb-10" />
+
       <h2 className="text-2xl font-bold mb-3">{t("country.practiceAreas")}</h2>
       <div className="grid gap-2 sm:grid-cols-2 mb-8">
         {areas.map((a) => (
