@@ -7,6 +7,7 @@ import FormCard from "@/components/forms/FormCard";
 import FormPackCard from "@/components/forms/FormPackCard";
 import FormDisclaimer from "@/components/forms/FormDisclaimer";
 import EuCountrySelector from "@/components/forms/EuCountrySelector";
+import EuToolsCrossLink from "@/components/eu/EuToolsCrossLink";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { legalForms } from "@/data/forms";
@@ -296,6 +297,10 @@ export default function EuFormsHubPage() {
           </Link>
         </div>
       </section>
+
+      <EuToolsCrossLink className="mt-10" />
+
+
 
       <div className="mt-14">
         <FormDisclaimer />
