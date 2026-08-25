@@ -99,14 +99,12 @@ export default function StatuteOfLimitationsHub() {
   }, [claim]);
 
   const schemas = [
-    articleSchema({
-      headline: "Statute of Limitations by State (All 51 US Jurisdictions)",
-      description:
-        "Filing deadlines for personal injury, medical malpractice, wrongful death, contract, fraud and debt claims in every US state, with the statute cited for each.",
-      url: URL,
-      datePublished: "2026-08-25",
-      dateModified: "2026-08-25",
-    }),
+    articleSchema(
+      "Statute of Limitations by State (All 51 US Jurisdictions)",
+      "Filing deadlines for personal injury, medical malpractice, wrongful death, contract, fraud and debt claims in every US state, with the statute cited for each.",
+      URL,
+      { datePublished: "2026-08-25", dateModified: "2026-08-25" },
+    ),
     breadcrumbSchema([
       { name: "Home", url: SITE },
       { name: "Guides", url: `${SITE}/guides` },
@@ -142,7 +140,7 @@ export default function StatuteOfLimitationsHub() {
           no matter how strong it is. Pick a claim type, find your state, and check the
           shorter notice deadlines below — those are the ones people miss.
         </p>
-        <AuthorByline authorId="legal-research" reviewedAt="2026-08-25" compact className="mt-4" />
+        <AuthorByline authorId="senior-legal-researcher" reviewedAt="2026-08-25" compact className="mt-4" />
       </header>
 
       <AdSlot slot="above-content" className="mb-8" />
