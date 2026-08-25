@@ -34,7 +34,165 @@ export interface ToolGuide {
   related?: { label: string; href: string }[];
 }
 
+import { workersCompSettlementRules } from "@/data/workersCompSettlementRules";
+import { SOL_STATES } from "@/data/solData";
+
+const wcStateRows = workersCompSettlementRules.map((r) => [
+  r.state,
+  `$${r.maxWeekly.toLocaleString("en-US")}/wk`,
+  r.ttdRate,
+  r.ppdSystem,
+  `${Math.round(r.feeRate * 100)}% — ${r.feeNote}`,
+]);
+
+const solStateRows = [...SOL_STATES]
+  .sort((a, b) => a.state.localeCompare(b.state))
+  .map((s) => [
+    s.state,
+    s.entries.personal_injury ? `${s.entries.personal_injury.years} yrs` : "—",
+    s.entries.medical_malpractice ? `${s.entries.medical_malpractice.years} yrs` : "—",
+    s.entries.wrongful_death ? `${s.entries.wrongful_death.years} yrs` : "—",
+    s.entries.written_contract ? `${s.entries.written_contract.years} yrs` : "—",
+    s.entries.oral_contract ? `${s.entries.oral_contract.years} yrs` : "—",
+    s.entries.fraud ? `${s.entries.fraud.years} yrs` : "—",
+  ]);
+
 export const TOOL_GUIDES: Record<string, ToolGuide> = {
+  /* ------------------------------- workers' compensation settlement ---- */
+  "workers-comp-settlement": {
+    title: "Workers' comp settlements: how the number is actually built",
+    reviewedOn: "2026-08-25",
+    intro: [
+      "A workers' compensation settlement is not one figure — it is three stacked pieces: the temporary disability already owed for time you missed, the permanent partial disability (PPD) award for whatever function you did not get back, and the value the carrier puts on your future medical care. Understanding which piece an adjuster is squeezing is the difference between accepting a low clincher and correcting it before you sign.",
+      "Everything starts from your average weekly wage (AWW), normally the average of gross earnings over the 52 weeks before the injury, including overtime and often the value of employer-paid perks you lost. Your comp rate is usually two-thirds of that AWW, but every state applies a hard weekly maximum tied to the state average wage — which is why two workers with identical injuries and identical salaries can be paid very differently in Mississippi ($604/wk cap) and Iowa ($2,130/wk cap).",
+      "The third variable, and the one most claimants never check, is how the state measures permanence. Scheduled-member states pay a set number of weeks per body part multiplied by your impairment rating. Whole-person states convert an AMA Guides rating into weeks or dollars. Wage-loss states such as Michigan and Pennsylvania largely ignore the rating and pay on the earnings you actually lost.",
+    ],
+    sections: [
+      {
+        heading: "The formula, step by step",
+        bullets: [
+          "Step 1 — Average weekly wage: total gross earnings for the 52 weeks before the injury ÷ 52 (concurrent employment often counts).",
+          "Step 2 — Comp rate: AWW × the state wage-replacement rate (usually 66⅔%), then capped at the state weekly maximum.",
+          "Step 3 — Temporary total disability: comp rate × weeks you were off work, minus the state's unpaid waiting period.",
+          "Step 4 — Permanent partial disability: statutory weeks for the injured body part × your impairment rating percentage × comp rate.",
+          "Step 5 — Future medical: the carrier's projection of surgeries, injections, therapy and prescriptions, discounted for the risk you never use it.",
+          "Step 6 — Deductions: approved attorney fee, any advance, unpaid child support and a Medicare Set-Aside if you are Medicare-eligible.",
+        ],
+      },
+      {
+        heading: "Worked example: a back injury with a 15% rating",
+        paragraphs: [
+          "A warehouse worker in Illinois earning $900 a week suffers a lumbar disc injury, is off work for 20 weeks, and is given a 15% impairment rating to the person as a whole. The comp rate is $900 × 66⅔% = $600, which is below the Illinois maximum, so it stands. Temporary disability is $600 × 20 = $12,000. The permanent piece is 500 weeks (whole-person basis) × 15% = 75 weeks, × $600 = $45,000. Add $10,000 of projected future medical and the baseline is $67,000.",
+          "Carriers rarely pay the baseline exactly. Full-and-final clinchers in that posture typically land between 70% and 115% of the scheduled value depending on liability disputes, the quality of the rating and whether the worker returned to full duty. At the 20% Illinois attorney fee cap, a $70,000 settlement nets roughly $56,000 before any lien.",
+        ],
+      },
+      {
+        heading: "What raises and lowers the offer",
+        bullets: [
+          "A second impairment rating from your own physician. Adjusters open with the IME rating, which is almost always the lower of the two.",
+          "Surgery already performed, or a surgeon's written recommendation for future surgery — this is the largest single driver of future-medical value.",
+          "Permanent work restrictions that the employer cannot accommodate, which can move the claim toward permanent total or a wage-differential award.",
+          "Age and remaining work life: a 30-year-old with a shoulder restriction has decades of exposure, and carriers price that.",
+          "Gaps in treatment, missed appointments and unrelated prior claims — all used to argue the condition is degenerative rather than work-related.",
+          "Whether you accept a clincher (closes medical forever) or a stipulation (keeps medical open). Closing medical should cost the carrier meaningfully more.",
+        ],
+      },
+      {
+        heading: "Weekly caps, PPD basis and attorney fees by state",
+        tables: [
+          {
+            caption: "Workers' compensation settlement variables for all 51 US jurisdictions",
+            columns: ["Jurisdiction", "Max weekly benefit", "TTD rate", "How PPD is paid", "Approved attorney fee"],
+            rows: wcStateRows,
+            note: "Weekly maximums are re-set annually against each state's average weekly wage; figures shown are recent published benchmarks for estimating, not the operative number in your claim.",
+          },
+        ],
+      },
+      {
+        heading: "Before you sign anything",
+        bullets: [
+          "Ask for the carrier's settlement breakdown in writing: indemnity, future medical and any credit for benefits already paid.",
+          "Confirm whether Medicare's interests need protection. A required Medicare Set-Aside can consume a large share of the cash you expected.",
+          "Check whether closing the claim also closes your right to reopen for a worsening condition — most clinchers do.",
+          "Check any health-insurance or provider lien against the settlement before agreeing to a number.",
+          "Verify the appeal deadline in your state if the claim was denied; several states allow as little as 14 to 30 days.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How is a workers' comp settlement calculated?", answer: "Take two-thirds of your average weekly wage (capped at the state maximum) to get your comp rate. Multiply it by the weeks you were off work for temporary disability, then by the statutory weeks for the injured body part times your impairment rating for permanent partial disability, and add the projected cost of future medical treatment." },
+      { question: "What is the average workers' comp settlement for a back injury?", answer: "Back and spine claims commonly settle between $25,000 and $80,000, with surgical cases and high-wage claimants frequently exceeding $150,000. The spread is driven by the impairment rating, whether surgery is recommended, and the state's weekly cap." },
+      { question: "Does a workers' comp settlement include pain and suffering?", answer: "No. Workers' compensation is a no-fault system that pays wage replacement, medical treatment and permanent impairment only. Pain and suffering is recoverable only in a separate third-party liability claim against someone other than your employer." },
+      { question: "Is a workers' comp settlement taxable?", answer: "Workers' compensation benefits are generally not taxable under IRC § 104(a)(1). The exception is the offset situation: if the settlement reduces your Social Security disability benefits, the offset portion can become taxable." },
+      { question: "How much does a workers' comp lawyer take?", answer: "Fees are capped by statute and must be approved by the judge or board. Most states allow 15% to 25% of the recovery, with a handful permitting up to 30–33% on contested amounts." },
+      { question: "Should I accept the first workers' comp settlement offer?", answer: "Rarely. Opening offers are usually built on the insurer's IME rating and a thin future-medical figure. Getting an independent rating and a surgeon's future-care statement before negotiating typically moves the number more than any argument about liability." },
+    ],
+    related: [
+      { label: "Workers' comp denied — what to do next", href: "/workers-comp-denied-what-next" },
+      { label: "Impairment rating calculator", href: "/tools/consumer/impairment-rating-calculator" },
+      { label: "Statute of limitations by state", href: "/statute-of-limitations-by-state" },
+      { label: "Lost wages calculator", href: "/tools/consumer/lost-wages-calculator" },
+    ],
+  },
+
+  /* ------------------------------------ statute of limitations lookup ---- */
+  "statute-of-limitations": {
+    title: "Statute of limitations by state: how long you have to file",
+    reviewedOn: "2026-08-25",
+    intro: [
+      "A statute of limitations is a hard deadline. File one day late and the defendant can move to dismiss on that ground alone, no matter how strong the underlying claim is. The clock is set by state law and by the type of claim, which is why the same car crash can carry a one-year deadline in Louisiana and a six-year deadline in Maine.",
+      "Two traps catch people far more often than the headline number. The first is the claim against a government body — city, county, state, transit authority or public hospital — which normally requires a written notice of claim within 30 to 180 days, long before the general statute expires. The second is the discovery rule: for latent injuries, fraud and professional malpractice, the clock may start when you knew or reasonably should have known of the harm, which can help or hurt depending on what the record shows about when you first suspected something.",
+    ],
+    sections: [
+      {
+        heading: "When the clock starts, pauses and stops",
+        bullets: [
+          "Accrual: usually the date of the injury, the breach, or the last payment on a debt.",
+          "Discovery rule: for latent injury, fraud and malpractice, accrual can shift to the date you discovered — or should have discovered — the harm.",
+          "Minority and incapacity: deadlines are commonly tolled while the claimant is a minor or legally incapacitated.",
+          "Fraudulent concealment: a defendant who hides the wrong can be barred from relying on the statute.",
+          "Statutes of repose: an absolute outer limit (often 6–12 years for construction and product claims) that runs regardless of discovery.",
+          "Filing, not settling, stops the clock. Ongoing negotiation with an insurer does not extend anything unless there is a written tolling agreement.",
+        ],
+      },
+      {
+        heading: "Filing deadlines by state and claim type",
+        tables: [
+          {
+            caption: "Standard civil statute of limitations, in years, for all 51 US jurisdictions",
+            columns: ["Jurisdiction", "Personal injury", "Medical malpractice", "Wrongful death", "Written contract", "Oral contract", "Fraud"],
+            rows: solStateRows,
+            note: "Standard, non-tolled periods compiled from each state's civil practice code. Discovery rules, statutes of repose and government notice requirements can shorten or extend every figure here.",
+          },
+        ],
+      },
+      {
+        heading: "Short deadlines people miss",
+        bullets: [
+          "Government tort claim notice: often 30–180 days, and it applies before you ever file suit.",
+          "EEOC discrimination charge: 180 days, extended to 300 days in states with an equivalent fair-employment agency.",
+          "Workers' compensation denial appeal: as little as 14–30 days from the denial notice in several states.",
+          "Uninsured or underinsured motorist claims: governed by the policy's contractual limit, which can be shorter than the tort statute.",
+          "Medical malpractice pre-suit notice or certificate of merit requirements, which add procedural steps inside the same window.",
+          "Insurance bad-faith and prompt-pay complaints, which run on their own statutory clocks.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "What is the statute of limitations for a personal injury claim?", answer: "Two years is the most common personal-injury deadline in the United States, but the range runs from one year (Kentucky, Louisiana, Tennessee) to six years (Maine, North Dakota). Check your own state, because the deadline is jurisdictional." },
+      { question: "What happens if I miss the statute of limitations?", answer: "The defendant will move to dismiss and courts almost always grant it. The claim is not merely weakened; it is time-barred, and an insurer that knows the date has passed has no reason to pay anything." },
+      { question: "Can a statute of limitations be extended?", answer: "Sometimes. The discovery rule, the claimant being a minor or incapacitated, the defendant leaving the state, fraudulent concealment, and a written tolling agreement can all extend or pause the period. None of them are safe to assume without legal advice." },
+      { question: "Does the statute of limitations differ for suing a city or state?", answer: "Yes, and it is far shorter in practical terms. Most jurisdictions require a formal notice of claim within 30 to 180 days of the incident before any lawsuit against a public entity is allowed." },
+      { question: "When does the clock start for a debt?", answer: "Typically the date of the last payment or last acknowledgment of the debt. Making even a small payment on an old debt can restart the clock in many states, which is why collectors push for one." },
+    ],
+    related: [
+      { label: "Statute of limitations by state", href: "/statute-of-limitations-by-state" },
+      { label: "Filing deadline calculator", href: "/tools/consumer/statute-of-limitations-deadline-calculator" },
+      { label: "State legal deadlines dataset", href: "/data/settlement-deadlines" },
+      { label: "Small claims court limits", href: "/courts" },
+    ],
+  },
+
   /* ------------------------------------------------ #13 severance ---- */
   "severance-pay": {
     title: "Severance pay: how it is calculated, taxed and negotiated",

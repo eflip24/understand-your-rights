@@ -47,6 +47,13 @@ export const guideGroups: GuideGroup[] = [
           "Court structure, small claims caps, filing fees and official judiciary links for all 51 US jurisdictions, plus courthouse pages for major cities.",
         badge: "Dataset",
       },
+      {
+        path: "/statute-of-limitations-by-state",
+        title: "Statute of limitations by state",
+        blurb:
+          "Filing deadlines for injury, malpractice, wrongful death, contract, fraud and debt claims in all 51 jurisdictions, with the statute cited and the short notice deadlines that run first.",
+        badge: "Reference",
+      },
     ],
   },
   {
