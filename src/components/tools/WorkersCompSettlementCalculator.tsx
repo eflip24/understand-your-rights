@@ -199,7 +199,7 @@ export default function WorkersCompSettlementCalculator() {
                 <span className="font-bold text-primary">{fmt(result.low)} – {fmt(result.high)}</span>
               </div>
               <div className="flex justify-between text-sm text-muted-foreground border-t pt-2">
-                <span>− Attorney fee (~20% cap)</span>
+                <span>− Attorney fee ({Math.round(result.feeRate * 100)}% — {result.rule.feeNote})</span>
                 <span>−{fmt(result.feeLow)} – −{fmt(result.feeHigh)}</span>
               </div>
             </div>
