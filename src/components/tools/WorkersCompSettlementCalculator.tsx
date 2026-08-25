@@ -10,61 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { HardHat, ExternalLink, Info } from "lucide-react";
 import { Link } from "react-router-dom";
 import ToolResultAd from "@/components/tools/ToolResultAd";
-
-// State workers' comp maximum weekly benefit (approximate 2024 SAWW-based caps)
-const STATE_MAX: Record<string, { max: number; note?: string }> = {
-  "National average": { max: 1100 },
-  Alabama: { max: 1050 },
-  Alaska: { max: 1348 },
-  Arizona: { max: 1173 },
-  Arkansas: { max: 811 },
-  California: { max: 1620 },
-  Colorado: { max: 1382 },
-  Connecticut: { max: 1651 },
-  Delaware: { max: 872 },
-  Florida: { max: 1260 },
-  Georgia: { max: 800 },
-  Hawaii: { max: 1188 },
-  Idaho: { max: 928 },
-  Illinois: { max: 1849 },
-  Indiana: { max: 833 },
-  Iowa: { max: 2130, note: "One of the highest caps" },
-  Kansas: { max: 804 },
-  Kentucky: { max: 1118 },
-  Louisiana: { max: 816 },
-  Maine: { max: 1128 },
-  Maryland: { max: 1231 },
-  Massachusetts: { max: 1829 },
-  Michigan: { max: 1163 },
-  Minnesota: { max: 1284 },
-  Mississippi: { max: 604, note: "Lowest cap in US" },
-  Missouri: { max: 1179 },
-  Montana: { max: 894 },
-  Nebraska: { max: 1029 },
-  Nevada: { max: 1183 },
-  "New Hampshire": { max: 1875 },
-  "New Jersey": { max: 1131 },
-  "New Mexico": { max: 951 },
-  "New York": { max: 1145 },
-  "North Carolina": { max: 1240 },
-  "North Dakota": { max: 1191 },
-  Ohio: { max: 1132 },
-  Oklahoma: { max: 984 },
-  Oregon: { max: 1616 },
-  Pennsylvania: { max: 1325 },
-  "Rhode Island": { max: 1567 },
-  "South Carolina": { max: 1063 },
-  "South Dakota": { max: 895 },
-  Tennessee: { max: 1108 },
-  Texas: { max: 1105 },
-  Utah: { max: 1030 },
-  Vermont: { max: 1584 },
-  Virginia: { max: 1338 },
-  Washington: { max: 2081 },
-  "West Virginia": { max: 1029 },
-  Wisconsin: { max: 1200 },
-  Wyoming: { max: 985 },
-};
+import { WC_RULES_BY_STATE, getWcRule } from "@/data/workersCompSettlementRules";
 
 // Body-part scheduled weeks (rough average; states vary)
 const BODY_PARTS: Record<string, { label: string; weeks: number }> = {
@@ -84,9 +30,6 @@ const BODY_PARTS: Record<string, { label: string; weeks: number }> = {
   other: { label: "Other / whole-person", weeks: 500 },
 };
 
-// Attorney fee caps common in WC (varies 15–25% by state; 20% median)
-const WC_FEE_RATE = 0.2;
-
 const fmt = (n: number) => n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 
 export default function WorkersCompSettlementCalculator() {
@@ -105,7 +48,9 @@ export default function WorkersCompSettlementCalculator() {
     const ttd = parseFloat(ttdWeeks) || 0;
 
     const rawCompRate = wage * (2 / 3);
-    const stateMax = STATE_MAX[state].max;
+    const rule = getWcRule(state);
+    const stateMax = rule.maxWeekly;
+    const feeRate = rule.feeRate;
     const compRate = Math.min(rawCompRate, stateMax);
     const cappedByState = rawCompRate > stateMax;
 
@@ -129,13 +74,15 @@ export default function WorkersCompSettlementCalculator() {
 
     // Attorney fee applied to indemnity + future medical (typical); past medical usually excluded
     const feeBase = totalIndemnity + medFuture;
-    const feeLow = low > 0 ? feeBase * 0.7 * WC_FEE_RATE : 0;
-    const feeHigh = high > 0 ? feeBase * 1.15 * WC_FEE_RATE : 0;
+    const feeLow = low > 0 ? feeBase * 0.7 * feeRate : 0;
+    const feeHigh = high > 0 ? feeBase * 1.15 * feeRate : 0;
 
     const netLow = Math.max(0, low - feeLow);
     const netHigh = Math.max(0, high - feeHigh);
 
     return {
+      rule,
+      feeRate,
       compRate,
       cappedByState,
       stateMax,
@@ -171,13 +118,16 @@ export default function WorkersCompSettlementCalculator() {
               <Select value={state} onValueChange={setState}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent className="max-h-72">
-                  {Object.keys(STATE_MAX).map((s) => (
-                    <SelectItem key={s} value={s}>{s} — max {fmt(STATE_MAX[s].max)}/wk</SelectItem>
+                  {Object.keys(WC_RULES_BY_STATE).map((s) => (
+                    <SelectItem key={s} value={s}>{s} — max {fmt(WC_RULES_BY_STATE[s].maxWeekly)}/wk</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
-              {STATE_MAX[state].note && (
-                <p className="text-xs text-muted-foreground">{STATE_MAX[state].note}</p>
+              <p className="text-xs text-muted-foreground">
+                {getWcRule(state).ttdRate} · PPD paid on {getWcRule(state).ppdSystem.toLowerCase()} · attorney fee {Math.round(getWcRule(state).feeRate * 100)}% ({getWcRule(state).feeNote}) · {getWcRule(state).statute}
+              </p>
+              {getWcRule(state).note && (
+                <p className="text-xs text-muted-foreground">{getWcRule(state).note}</p>
               )}
             </div>
           </div>
