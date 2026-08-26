@@ -544,6 +544,7 @@ function buildGuides(): string {
   for (const s of aiTechLawSlugs) e.push(u(`${SITE}/ai-tech-law/${s}`,"monthly","0.7"));
   e.push(u(`${SITE}/guides`,"weekly","0.9"));
   e.push(u(`${SITE}/data/settlement-deadlines`,"weekly","0.9"));
+  e.push(u(`${SITE}/data/court-filing-fees`,"weekly","0.9"));
   e.push(u(`${SITE}/statute-of-limitations-by-state`,"weekly","0.9"));
   // Court information hub
   e.push(u(`${SITE}/courts`,"weekly","0.9"));

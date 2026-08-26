@@ -189,7 +189,7 @@ export default function CourtsHub() {
         </h2>
         <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
           <li>Send a written demand first — many courts expect it, and most disputes settle at this stage. Our <Link to={lp("/forms/demand-letter")} className="text-accent hover:underline">demand letter builder</Link> produces one in a few minutes.</li>
-          <li>Check the filing deadline for your claim type in the <Link to={lp("/data/settlement-deadlines")} className="text-accent hover:underline">state legal deadlines dataset</Link>. Filing one day late ends the case regardless of merit.</li>
+          <li>Check the filing deadline for your claim type in the <Link to={lp("/data/settlement-deadlines")} className="text-accent hover:underline">state legal deadlines dataset</Link>. Compare the cost of filing anywhere in the US in our <Link to={lp("/data/court-filing-fees")} className="text-accent hover:underline">court filing fees &amp; small claims limits index</Link>. Filing one day late ends the case regardless of merit.</li>
           <li>Sue in the county where the defendant lives or where the dispute happened — filing in the wrong venue gets the case dismissed or transferred.</li>
           <li>Bring the contract, invoices, photos, texts and a one-page timeline. Judges in small claims decide on documents far more often than on argument.</li>
           <li>Winning is not collecting. Ask the clerk what enforcement tools the court offers — wage garnishment, bank levy or a property lien.</li>

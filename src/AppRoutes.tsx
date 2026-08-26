@@ -85,6 +85,7 @@ const PersonalInjurySettlementTimeline = React.lazy(() => import("@/pages/Person
 const StateAlimonyPage = React.lazy(() => import("@/pages/StateAlimonyPage"));
 const MassTortHub = React.lazy(() => import("@/pages/MassTortHub"));
 const SettlementDeadlinesDataset = React.lazy(() => import("@/pages/SettlementDeadlinesDataset"));
+const CourtFilingFeesDataset = React.lazy(() => import("@/pages/CourtFilingFeesDataset"));
 const StatuteOfLimitationsHub = React.lazy(() => import("@/pages/StatuteOfLimitationsHub"));
 const HighCpcPillarPage = React.lazy(() => import("@/pages/HighCpcPillarPage"));
 const PillarStateFanoutPage = React.lazy(() => import("@/pages/PillarStateFanoutPage"));
@@ -206,6 +207,7 @@ export default function AppRoutes() {
       <Route path="/personal-injury-settlements/:vertical" element={<PersonalInjurySettlementSubPage />} />
       <Route path="/alimony-calculator/:state" element={<StateAlimonyPage />} />
       <Route path="/data/settlement-deadlines" element={<SettlementDeadlinesDataset />} />
+      <Route path="/data/court-filing-fees" element={<CourtFilingFeesDataset />} />
       <Route path="/statute-of-limitations-by-state" element={<StatuteOfLimitationsHub />} />
       <Route path="/courts" element={<CourtsHub />} />
       <Route path="/courts/:state" element={<StateCourtsPage />} />
