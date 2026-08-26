@@ -41,6 +41,13 @@ export const guideGroups: GuideGroup[] = [
         badge: "Dataset",
       },
       {
+        path: "/data/court-filing-fees",
+        title: "Court filing fees & small claims limits",
+        blurb:
+          "Small claims caps, filing-fee ranges, governing statutes and official e-filing links for all 51 US jurisdictions. CSV + embed.",
+        badge: "Dataset",
+      },
+      {
         path: "/courts",
         title: "US court systems & small claims limits",
         blurb:
