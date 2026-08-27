@@ -6,6 +6,8 @@ import NotFound from "@/pages/NotFound";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle } from "lucide-react";
 import { JsonLdGraph, articleSchema, faqSchema } from "@/components/seo/JsonLd";
+import ClauseDepthBlock from "@/components/seo/ClauseDepthBlock";
+
 
 export default function LegalClausePage() {
   const { slug } = useParams<{ slug: string }>();
