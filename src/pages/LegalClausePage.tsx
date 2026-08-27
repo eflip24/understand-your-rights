@@ -83,6 +83,10 @@ export default function LegalClausePage() {
         <h2 className="text-2xl font-bold mb-4">{t("common:legalClausePage.enforceability", { defaultValue: "Enforceability Notes" })}</h2>
         <p className="text-muted-foreground leading-relaxed">{clause.enforceabilityNotes}</p>
       </div>
+
+      {/* Negotiation playbook, alternative wording, state variation, related contracts */}
+      <ClauseDepthBlock slug={clause.slug} title={title} />
     </ContentPageLayout>
   );
 }
+
