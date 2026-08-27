@@ -16,7 +16,8 @@ export interface NegotiationPlay {
   /** What the party with less leverage should ask for. */
   ask: string;
   /** The realistic landing spot when the other side pushes back. */
-  fallback: string;
+  fallback?: string;
+
   /** What counterparties almost never agree to. */
   rarelyAccepted?: string;
 }
