@@ -38,12 +38,15 @@ export default function ClauseDepthBlock({ slug, title }: ClauseDepthBlockProps)
                   <span className="text-xs font-semibold uppercase tracking-wide text-accent">Ask for</span>
                   <p className="text-sm text-foreground mt-1">{play.ask}</p>
                 </div>
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Realistic fallback
-                  </span>
-                  <p className="text-sm text-muted-foreground mt-1">{play.fallback}</p>
-                </div>
+                {play.fallback && (
+                  <div>
+                    <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                      Realistic fallback
+                    </span>
+                    <p className="text-sm text-muted-foreground mt-1">{play.fallback}</p>
+                  </div>
+                )}
+
                 {play.rarelyAccepted && (
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-wide text-destructive">
