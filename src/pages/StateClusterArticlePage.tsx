@@ -12,6 +12,8 @@ import { linkifyLegalContent } from "@/lib/linkifyContent";
 import { getStateVariant, getNegligenceExplanation, getNoFaultExplanation, stateData } from "@/data/stateVariants";
 import { tools } from "@/data/tools";
 import { isThinFanoutPage } from "@/lib/contentDepth";
+import { getNearMissDepth, nearMissDepthText } from "@/data/nearMissDepth";
+import NearMissDepthBlock from "@/components/seo/NearMissDepthBlock";
 
 export default function StateClusterArticlePage() {
   const { state, slug } = useParams<{ state: string; slug: string }>();
@@ -43,9 +45,14 @@ export default function StateClusterArticlePage() {
 
   // Only index state variants that carry real state-specific substance; sparse
   // records read as near-duplicates of their siblings and dilute crawl budget.
+  // Rescue depth: hand-researched jurisdiction detail for pages that already
+  // rank but read thin. Counts toward the depth gate so rescued pages index.
+  const depth = getNearMissDepth(pillar, state, slug);
+
   const thin = isThinFanoutPage([
     article.content.replace(/<[^>]+>/g, " "),
     ...article.faqs.map((f) => `${f.question} ${f.answer}`),
+    nearMissDepthText(depth),
   ], 1800);
 
   return (
@@ -137,6 +144,8 @@ export default function StateClusterArticlePage() {
         className="prose prose-lg dark:prose-invert max-w-none mb-10 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-6 [&_h3]:mb-3 [&_p]:text-muted-foreground [&_p]:leading-relaxed [&_p]:mb-4 [&_strong]:text-foreground"
         dangerouslySetInnerHTML={{ __html: linkedContent }}
       />
+
+      {depth && <NearMissDepthBlock depth={depth} stateName={stateName} />}
 
       <AdSlot slot="mid-content" className="my-8" />
 
