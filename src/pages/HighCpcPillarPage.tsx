@@ -250,11 +250,18 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
           <ToolRecommender topic={data.recommenderTopic} className="mb-10" />
         )}
 
+        <CaseReviewForm
+          defaultClaimType={claimTypeFromSlug(data.slug)}
+          toolId={`pillar:${data.slug}`}
+          className="mb-10"
+        />
+
         <RelatedIntentStrip
           cluster={data.cluster}
           heading="Continue in this cluster"
           links={data.related}
         />
+
 
         <section className="mt-8 text-xs text-muted-foreground border-t border-border pt-4">
           <p>
