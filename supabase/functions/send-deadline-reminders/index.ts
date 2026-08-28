@@ -41,9 +41,12 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   const cronHeader = req.headers.get("x-cron-secret");
+  const authHeader = req.headers.get("Authorization");
   const authorized =
     (CRON_SECRET && cronHeader === CRON_SECRET) ||
-    (await isAdmin(req.headers.get("Authorization")));
+    // pg_cron calls in with the service role key held in the vault.
+    authHeader === `Bearer ${SERVICE_KEY}` ||
+    (await isAdmin(authHeader));
   if (!authorized) return json({ error: "Unauthorized" }, 401);
 
   const today = new Date();
