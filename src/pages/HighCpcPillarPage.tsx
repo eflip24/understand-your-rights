@@ -11,7 +11,10 @@ import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import PillarStateChooser from "@/components/seo/PillarStateChooser";
+import CaseReviewForm from "@/components/capture/CaseReviewForm";
+import { claimTypeFromSlug } from "@/lib/claimType";
 import AdSlot from "@/components/ads/AdSlot";
+
 import NotFound from "@/pages/NotFound";
 import { getPhase8Pillar, type Phase8Pillar } from "@/data/phase8Pillars";
 import { getEditorialRole } from "@/data/editorialTeam";
