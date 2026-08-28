@@ -42,11 +42,12 @@ async function post(body: Record<string, unknown>) {
   if (error) {
     let details = error.message;
     try {
-      // @ts-expect-error — FunctionsHttpError carries a Response context
-      if (error.context?.text) details = await error.context.text();
+      const ctx = (error as { context?: { text?: () => Promise<string> } }).context;
+      if (ctx?.text) details = await ctx.text();
     } catch {
       /* keep the original message */
     }
+
     throw new Error(details);
   }
   return data as { ok: boolean; id?: string };
