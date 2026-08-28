@@ -31,3 +31,9 @@ verify_jwt = false
 
 [functions.handle-email-suppression]
 verify_jwt = false
+
+[functions.capture-lead]
+verify_jwt = false
+
+[functions.send-deadline-reminders]
+verify_jwt = false
