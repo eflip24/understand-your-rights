@@ -11,7 +11,10 @@ import InMarketEntityBlock from "@/components/seo/InMarketEntityBlock";
 import RelatedIntentStrip from "@/components/seo/RelatedIntentStrip";
 import ToolRecommender from "@/components/tools/ToolRecommender";
 import PillarStateChooser from "@/components/seo/PillarStateChooser";
+import CaseReviewForm from "@/components/capture/CaseReviewForm";
+import { claimTypeFromSlug } from "@/lib/claimType";
 import AdSlot from "@/components/ads/AdSlot";
+
 import NotFound from "@/pages/NotFound";
 import { getPhase8Pillar, type Phase8Pillar } from "@/data/phase8Pillars";
 import { getEditorialRole } from "@/data/editorialTeam";
@@ -250,11 +253,18 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
           <ToolRecommender topic={data.recommenderTopic} className="mb-10" />
         )}
 
+        <CaseReviewForm
+          defaultClaimType={claimTypeFromSlug(data.slug)}
+          toolId={`pillar:${data.slug}`}
+          className="mb-10"
+        />
+
         <RelatedIntentStrip
           cluster={data.cluster}
           heading="Continue in this cluster"
           links={data.related}
         />
+
 
         <section className="mt-8 text-xs text-muted-foreground border-t border-border pt-4">
           <p>

@@ -126,6 +126,75 @@ export type Database = {
         }
         Relationships: []
       }
+      case_leads: {
+        Row: {
+          city: string | null
+          claim_type: string
+          consent: boolean
+          created_at: string
+          description: string | null
+          email: string
+          estimated_value_cents: number | null
+          full_name: string
+          id: string
+          incident_date: string | null
+          notes: string | null
+          phone: string | null
+          quality_score: number
+          sol_open: boolean | null
+          source_path: string | null
+          state_code: string | null
+          status: string
+          tier: string
+          tool_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          city?: string | null
+          claim_type: string
+          consent?: boolean
+          created_at?: string
+          description?: string | null
+          email: string
+          estimated_value_cents?: number | null
+          full_name: string
+          id?: string
+          incident_date?: string | null
+          notes?: string | null
+          phone?: string | null
+          quality_score?: number
+          sol_open?: boolean | null
+          source_path?: string | null
+          state_code?: string | null
+          status?: string
+          tier?: string
+          tool_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          city?: string | null
+          claim_type?: string
+          consent?: boolean
+          created_at?: string
+          description?: string | null
+          email?: string
+          estimated_value_cents?: number | null
+          full_name?: string
+          id?: string
+          incident_date?: string | null
+          notes?: string | null
+          phone?: string | null
+          quality_score?: number
+          sol_open?: boolean | null
+          source_path?: string | null
+          state_code?: string | null
+          status?: string
+          tier?: string
+          tool_id?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       content_clusters: {
         Row: {
           active: boolean
@@ -687,6 +756,54 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      subscribers: {
+        Row: {
+          claim_type: string | null
+          consent: boolean
+          created_at: string
+          deadline_date: string | null
+          email: string
+          estimate: Json | null
+          id: string
+          locale: string
+          reminder_sent_at: string | null
+          source_path: string | null
+          state_code: string | null
+          tool_id: string | null
+          unsubscribed_at: string | null
+        }
+        Insert: {
+          claim_type?: string | null
+          consent?: boolean
+          created_at?: string
+          deadline_date?: string | null
+          email: string
+          estimate?: Json | null
+          id?: string
+          locale?: string
+          reminder_sent_at?: string | null
+          source_path?: string | null
+          state_code?: string | null
+          tool_id?: string | null
+          unsubscribed_at?: string | null
+        }
+        Update: {
+          claim_type?: string | null
+          consent?: boolean
+          created_at?: string
+          deadline_date?: string | null
+          email?: string
+          estimate?: Json | null
+          id?: string
+          locale?: string
+          reminder_sent_at?: string | null
+          source_path?: string | null
+          state_code?: string | null
+          tool_id?: string | null
+          unsubscribed_at?: string | null
+        }
+        Relationships: []
       }
       suppressed_emails: {
         Row: {
