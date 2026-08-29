@@ -29,6 +29,7 @@ const ClusterPageWrapper = ({ category }: { category: keyof typeof pillarDataMap
 );
 
 const HomePage = React.lazy(() => import("@/pages/HomePage"));
+const PricingPage = React.lazy(() => import("@/pages/PricingPage"));
 const ToolsDirectory = React.lazy(() => import("@/pages/ToolsDirectory"));
 const CategoryPage = React.lazy(() => import("@/pages/CategoryPage"));
 const ToolPage = React.lazy(() => import("@/pages/ToolPage"));
@@ -165,6 +166,7 @@ export default function AppRoutes() {
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />
+      <Route path="/pricing" element={<PricingPage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/dashboard/documents" element={<MyDocumentsPage />} />
       <Route path="/legal-health-check" element={<LegalHealthCheckPage />} />

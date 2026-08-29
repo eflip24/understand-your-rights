@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { ADSENSE_CLIENT, AD_SLOT_IDS, AUTO_ADS_ONLY, shouldShowAds } from "@/lib/adsense";
 import { useConsent } from "@/lib/consent";
+import { useSubscription } from "@/contexts/SubscriptionContext";
 import {
   classifyPageType,
   trackAdImpression,
@@ -27,6 +28,7 @@ const slotStyles: Record<string, string> = {
 
 export default function AdSlot({ slot, className = "" }: AdSlotProps) {
   const consent = useConsent();
+  const { isSubscriber } = useSubscription();
   const location = useLocation();
   const pushed = useRef(false);
   const impressionFired = useRef(false);
@@ -35,7 +37,7 @@ export default function AdSlot({ slot, className = "" }: AdSlotProps) {
   const insRef = useRef<HTMLModElement | null>(null);
 
   const consentDecided = consent !== null;
-  const allowedHere = shouldShowAds(location.pathname);
+  const allowedHere = shouldShowAds(location.pathname) && !isSubscriber;
   const analyticsAllowed = !!consent?.analytics;
 
 

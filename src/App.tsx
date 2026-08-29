@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { SubscriptionProvider } from "@/contexts/SubscriptionContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -70,6 +71,7 @@ const App = () => {
   <QueryClientProvider client={queryClient}>
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <AuthProvider>
+        <SubscriptionProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -102,6 +104,7 @@ const App = () => {
             {/* Cookie consent now handled by Google Funding Choices (TCF v2.2) loaded in index.html */}
           </BrowserRouter>
         </TooltipProvider>
+        </SubscriptionProvider>
       </AuthProvider>
     </ThemeProvider>
   </QueryClientProvider>
