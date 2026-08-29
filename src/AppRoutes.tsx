@@ -56,6 +56,7 @@ const AdminGrowth = React.lazy(() => import("@/pages/admin/AdminGrowth"));
 const AdminPrices = React.lazy(() => import("@/pages/admin/AdminPrices"));
 const AdminTranslations = React.lazy(() => import("@/pages/admin/AdminTranslations"));
 const AdminLeads = React.lazy(() => import("@/pages/admin/AdminLeads"));
+const AdminAds = React.lazy(() => import("@/pages/admin/AdminAds"));
 const DisclaimerPage = React.lazy(() => import("@/pages/DisclaimerPage"));
 const PrivacyPolicyPage = React.lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage"));
@@ -180,6 +181,7 @@ export default function AppRoutes() {
         <Route path="prices" element={<AdminPrices />} />
         <Route path="translations" element={<AdminTranslations />} />
         <Route path="leads" element={<AdminLeads />} />
+        <Route path="ads" element={<AdminAds />} />
 
       </Route>
       <Route path="/auto-accident-law" element={<PillarPageWrapper category="auto" />} />
