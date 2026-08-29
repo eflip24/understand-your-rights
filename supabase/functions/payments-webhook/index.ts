@@ -12,8 +12,6 @@ function getSupabase() {
   return _supabase;
 }
 
-const SUB_ACTIVE = ["active", "trialing", "past_due"];
-
 async function upsertSubscription(sub: any) {
   const userId = sub.metadata?.userId;
   if (!userId) {
