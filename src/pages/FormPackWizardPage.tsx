@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
+import { useSubscription } from "@/contexts/SubscriptionContext";
 import { useAuth } from "@/contexts/AuthContext";
 import Head from "@/components/seo/Head";
 import Breadcrumbs from "@/components/forms/Breadcrumbs";
@@ -67,13 +68,15 @@ export default function FormPackWizardPage() {
   }, [pack.slug]);
 
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [hasPurchased, setHasPurchased] = useState(false);
+  const [purchasedOnce, setPurchasedOnce] = useState(false);
+  const { isSubscriber } = useSubscription();
+  const hasPurchased = purchasedOnce || isSubscriber;
   const [busyFree, setBusyFree] = useState(false);
   const [busyClean, setBusyClean] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   useEffect(() => {
-    if (!user) { setHasPurchased(false); return; }
+    if (!user) { setPurchasedOnce(false); return; }
     let cancelled = false;
     (async () => {
       const { data: row } = await supabase
@@ -82,7 +85,7 @@ export default function FormPackWizardPage() {
         .eq("user_id", user.id)
         .eq("form_slug", pack.slug)
         .maybeSingle();
-      if (!cancelled) setHasPurchased(Boolean(row));
+      if (!cancelled) setPurchasedOnce(Boolean(row));
     })();
     return () => { cancelled = true; };
   }, [user, pack.slug]);
@@ -159,7 +162,7 @@ export default function FormPackWizardPage() {
     if (!user) return;
     const { data: row } = await supabase
       .from("form_purchases").select("id").eq("user_id", user.id).eq("form_slug", pack.slug).maybeSingle();
-    if (row) setHasPurchased(true);
+    if (row) setPurchasedOnce(true);
   };
 
   const handleCheckout = () => {
