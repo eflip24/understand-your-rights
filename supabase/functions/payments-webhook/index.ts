@@ -12,7 +12,33 @@ function getSupabase() {
   return _supabase;
 }
 
+async function upsertSubscription(sub: any) {
+  const userId = sub.metadata?.userId;
+  if (!userId) {
+    console.log("subscription event missing userId metadata — skipping", sub.id);
+    return;
+  }
+  const periodEnd = sub.current_period_end ?? sub.items?.data?.[0]?.current_period_end ?? null;
+  const { error } = await getSupabase().from("subscriptions").upsert(
+    {
+      user_id: userId,
+      plan_slug: sub.metadata?.plan_slug || "unlimited-monthly",
+      status: sub.status,
+      stripe_customer_id: typeof sub.customer === "string" ? sub.customer : sub.customer?.id ?? null,
+      stripe_subscription_id: sub.id,
+      current_period_end: periodEnd ? new Date(periodEnd * 1000).toISOString() : null,
+      cancel_at_period_end: Boolean(sub.cancel_at_period_end),
+    },
+    { onConflict: "stripe_subscription_id" },
+  );
+  if (error) console.error("subscriptions upsert error", error);
+}
+
 async function handleCheckoutCompleted(session: any) {
+  if (session.mode === "subscription") {
+    console.log("subscription checkout completed", session.id);
+    return; // subscription.* events carry the authoritative state
+  }
   const md = session.metadata || {};
   const formSlug = md.form_slug;
   const userId = md.userId;
@@ -95,6 +121,11 @@ Deno.serve(async (req) => {
       case "checkout.session.completed":
       case "transaction.completed":
         await handleCheckoutCompleted(event.data.object);
+        break;
+      case "customer.subscription.created":
+      case "customer.subscription.updated":
+      case "customer.subscription.deleted":
+        await upsertSubscription(event.data.object);
         break;
       default:
         console.log("Unhandled event:", event.type);

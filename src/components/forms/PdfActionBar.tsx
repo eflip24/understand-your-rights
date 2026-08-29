@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Download, Lock, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
@@ -70,7 +71,9 @@ export default function PdfActionBar({ form, data, hasPurchased, onCheckout, sta
   };
 
   return (
-    <div className="flex flex-col gap-3 sm:flex-row">
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row">
+
       <Button
         variant="outline"
         className="flex-1 gap-2"
@@ -94,6 +97,17 @@ export default function PdfActionBar({ form, data, hasPurchased, onCheckout, sta
         )}
         {hasPurchased ? "Download Clean PDF" : `Get Clean PDF — $${form.price.toFixed(2)}`}
       </Button>
+      </div>
+      {!hasPurchased && (
+        <p className="text-xs text-muted-foreground text-center">
+          Need more than one document?{" "}
+          <Link to="/pricing" className="underline underline-offset-2 font-medium">
+            Get unlimited forms and an ad-free site with a membership
+          </Link>
+          .
+        </p>
+      )}
     </div>
   );
 }
+
