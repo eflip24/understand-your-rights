@@ -96,6 +96,17 @@ export default function PdfActionBar({ form, data, hasPurchased, onCheckout, sta
         )}
         {hasPurchased ? "Download Clean PDF" : `Get Clean PDF — $${form.price.toFixed(2)}`}
       </Button>
+      </div>
+      {!hasPurchased && (
+        <p className="text-xs text-muted-foreground text-center">
+          Need more than one document?{" "}
+          <Link to="/pricing" className="underline underline-offset-2 font-medium">
+            Get unlimited forms and an ad-free site with a membership
+          </Link>
+          .
+        </p>
+      )}
     </div>
   );
 }
+
