@@ -56,10 +56,46 @@ function fire(name: string, props: AdEventProps) {
   }
 }
 
+// First-party persistence so RPM/CTR by page type is available in the
+// admin dashboard without depending on Plausible/GA exports. Queued and
+// flushed in small batches to avoid a request per impression.
+type QueuedEvent = { event_type: "impression" | "click"; slot: string; page_type: string; path: string };
+let queue: QueuedEvent[] = [];
+let flushTimer: ReturnType<typeof setTimeout> | null = null;
+
+async function flush() {
+  flushTimer = null;
+  const batch = queue;
+  queue = [];
+  if (!batch.length) return;
+  try {
+    const { supabase } = await import("@/integrations/supabase/client");
+    await supabase.from("ad_events").insert(batch);
+  } catch {
+    /* logging must never break the page */
+  }
+}
+
+function record(event: QueuedEvent) {
+  if (typeof window === "undefined") return;
+  queue.push(event);
+  if (queue.length >= 10) {
+    void flush();
+    return;
+  }
+  if (!flushTimer) flushTimer = setTimeout(() => void flush(), 4000);
+}
+
+if (typeof window !== "undefined") {
+  window.addEventListener("pagehide", () => void flush());
+}
+
 export function trackAdImpression(props: AdEventProps) {
   fire("Ad Impression", props);
+  record({ event_type: "impression", ...props });
 }
 
 export function trackAdClick(props: AdEventProps) {
   fire("Ad Click", props);
+  record({ event_type: "click", ...props });
 }
