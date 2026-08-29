@@ -45,7 +45,9 @@ export default function Footer() {
   ];
 
   const resourceLinks = [
+    { label: "Membership & Pricing", href: lp("/pricing") },
     { label: t("nav.resources.statutes"), href: lp("/laws") },
+
     { label: t("nav.resources.terms"), href: lp("/legal-terms") },
     { label: t("nav.resources.clauses"), href: lp("/legal-clauses") },
     { label: t("nav.resources.contracts"), href: lp("/contract-types") },
