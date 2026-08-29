@@ -70,7 +70,9 @@ export default function PdfActionBar({ form, data, hasPurchased, onCheckout, sta
   };
 
   return (
-    <div className="flex flex-col gap-3 sm:flex-row">
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row">
+
       <Button
         variant="outline"
         className="flex-1 gap-2"
