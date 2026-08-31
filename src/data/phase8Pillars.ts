@@ -1811,7 +1811,7 @@ export const phase8Pillars: Phase8Pillar[] = [
       description: "Use the guided demand-letter wizard to produce a dated, itemised appeal you can post with proof of delivery.",
     },
     lawyerCta: {
-      path: "/lawyer-near-me/insurance",
+      path: "/lawyer-near-me/insurance-dispute",
       label: "Find an insurance dispute lawyer",
       description: "Most insurance and ERISA benefits lawyers review denials at no cost and take cases on contingency or fee-shifting.",
     },
@@ -1968,7 +1968,7 @@ export const phase8Pillars: Phase8Pillar[] = [
       description: "Put your losses in writing to the organisation that lost your data, with dates, receipts and a response deadline.",
     },
     lawyerCta: {
-      path: "/lawyer-near-me/consumer-protection",
+      path: "/lawyer-near-me/employment",
       label: "Find a consumer privacy lawyer",
       description: "Privacy class action firms review breach claims at no cost and are paid from any settlement fund.",
     },

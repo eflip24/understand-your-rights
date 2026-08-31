@@ -517,6 +517,7 @@ const phase8PillarSlugs = [
   "truck-accident-settlements","uber-lyft-accident-claims","nursing-home-abuse-claims",
   "workers-comp-denied-what-next","car-insurance-claim-denied","homeowners-insurance-claim-denied",
   "chapter-7-vs-chapter-13","wrongful-termination-settlements","roundup-camp-lejeune-updates",
+  "health-insurance-claim-denied","data-breach-claim-compensation","ai-hiring-and-workplace-surveillance",
 ];
 // Standalone English-only guides and hubs shipped across the growth phases.
 const standaloneGuideSlugs = [

@@ -231,6 +231,9 @@ export default function AppRoutes() {
       <Route path="/chapter-7-vs-chapter-13" element={<HighCpcPillarPage slug="chapter-7-vs-chapter-13" />} />
       <Route path="/wrongful-termination-settlements" element={<HighCpcPillarPage slug="wrongful-termination-settlements" />} />
       <Route path="/wrongful-termination-settlements/:state" element={<PillarStateFanoutPage cluster="wrongful-termination" />} />
+      <Route path="/health-insurance-claim-denied" element={<HighCpcPillarPage slug="health-insurance-claim-denied" />} />
+      <Route path="/data-breach-claim-compensation" element={<HighCpcPillarPage slug="data-breach-claim-compensation" />} />
+      <Route path="/ai-hiring-and-workplace-surveillance" element={<HighCpcPillarPage slug="ai-hiring-and-workplace-surveillance" />} />
       <Route path="/roundup-camp-lejeune-updates" element={<HighCpcPillarPage slug="roundup-camp-lejeune-updates" />} />
       <Route path="/dui-first-offense-guide" element={<DuiFirstOffenseGuide />} />
       <Route path="/dui-first-offense-guide/:state" element={<DuiFirstOffenseStatePage />} />
