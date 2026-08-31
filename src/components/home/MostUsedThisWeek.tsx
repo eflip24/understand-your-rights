@@ -5,17 +5,17 @@ import { Button } from "@/components/ui/button";
 import { useLocalizedPath } from "@/i18n/paths";
 
 const topForms = [
-  { title: "Form W-9 (Rev. March 2024)", desc: "Request for Taxpayer ID", slug: "w-9" },
-  { title: "Simple NDA", desc: "Mutual non-disclosure agreement", slug: "nda-simple" },
-  { title: "Residential Lease Agreement", desc: "Standard rental contract", slug: "residential-lease-agreement" },
-  { title: "Financial Power of Attorney", desc: "Delegate financial decisions", slug: "financial-power-of-attorney" },
+  { title: "W-4 Employee's Withholding Certificate", desc: "Prepare a new hire's tax form", href: "/forms/w-4-online-free" },
+  { title: "Simple NDA", desc: "Mutual non-disclosure agreement", href: "/forms/nda-online-free" },
+  { title: "Residential Lease Agreement", desc: "Standard rental contract", href: "/forms/residential-lease-agreement" },
+  { title: "Demand Letter", desc: "Make a clear written legal demand", href: "/forms/demand-letter-online-free" },
 ];
 
 const topTools = [
-  { title: "Alimony Calculator", desc: "State-specific spousal support estimates", slug: "alimony-calculator" },
-  { title: "Child Support Calculator", desc: "Guideline support amounts", slug: "child-support-calculator" },
-  { title: "Settlement Estimator", desc: "Personal injury settlement range", slug: "settlement-estimator" },
-  { title: "Legal Jargon Translator", desc: "Plain-English legal terms", slug: "jargon-translator" },
+  { title: "Pain & Suffering Calculator", desc: "Estimate non-economic damages by state", href: "/tools/consumer/pain-and-suffering-calculator" },
+  { title: "Workers' Comp Settlement Calculator", desc: "State-specific benefit estimates", href: "/tools/employment/workers-comp-settlement-calculator" },
+  { title: "Truck Accident Calculator", desc: "Explore a commercial crash estimate", href: "/tools/consumer/truck-accident-settlement-calculator" },
+  { title: "Estate Tax Estimator", desc: "Estimate potential estate tax", href: "/tools/finance/estate-tax-estimator" },
 ];
 
 export default function MostUsedThisWeek() {
@@ -47,9 +47,9 @@ export default function MostUsedThisWeek() {
           </div>
           <ul className="divide-y">
             {topForms.map((f) => (
-              <li key={f.slug}>
+              <li key={f.href}>
                 <Link
-                  to={lp(`/forms/${f.slug}`)}
+                  to={lp(f.href)}
                   className="flex items-center justify-between py-3 group hover:bg-secondary/40 -mx-2 px-2 rounded-lg transition-colors"
                 >
                   <div>
@@ -78,9 +78,9 @@ export default function MostUsedThisWeek() {
           </div>
           <ul className="divide-y">
             {topTools.map((tool) => (
-              <li key={tool.slug}>
+              <li key={tool.href}>
                 <Link
-                  to={lp(`/tools/${tool.slug}`)}
+                  to={lp(tool.href)}
                   className="flex items-center justify-between py-3 group hover:bg-secondary/40 -mx-2 px-2 rounded-lg transition-colors"
                 >
                   <div>
