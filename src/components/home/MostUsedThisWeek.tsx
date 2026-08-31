@@ -78,9 +78,9 @@ export default function MostUsedThisWeek() {
           </div>
           <ul className="divide-y">
             {topTools.map((tool) => (
-              <li key={tool.slug}>
+              <li key={tool.href}>
                 <Link
-                  to={lp(`/tools/${tool.slug}`)}
+                  to={lp(tool.href)}
                   className="flex items-center justify-between py-3 group hover:bg-secondary/40 -mx-2 px-2 rounded-lg transition-colors"
                 >
                   <div>
