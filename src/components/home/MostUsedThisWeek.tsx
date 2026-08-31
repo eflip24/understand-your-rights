@@ -5,17 +5,17 @@ import { Button } from "@/components/ui/button";
 import { useLocalizedPath } from "@/i18n/paths";
 
 const topForms = [
-  { title: "Form W-9 (Rev. March 2024)", desc: "Request for Taxpayer ID", slug: "w-9" },
+  { title: "W-4 Employee's Withholding Certificate", desc: "Prepare a new hire's tax form", slug: "w-4" },
   { title: "Simple NDA", desc: "Mutual non-disclosure agreement", slug: "nda-simple" },
   { title: "Residential Lease Agreement", desc: "Standard rental contract", slug: "residential-lease-agreement" },
-  { title: "Financial Power of Attorney", desc: "Delegate financial decisions", slug: "financial-power-of-attorney" },
+  { title: "Demand Letter", desc: "Make a clear written legal demand", slug: "demand-letter" },
 ];
 
 const topTools = [
-  { title: "Alimony Calculator", desc: "State-specific spousal support estimates", slug: "alimony-calculator" },
-  { title: "Child Support Calculator", desc: "Guideline support amounts", slug: "child-support-calculator" },
-  { title: "Settlement Estimator", desc: "Personal injury settlement range", slug: "settlement-estimator" },
-  { title: "Legal Jargon Translator", desc: "Plain-English legal terms", slug: "jargon-translator" },
+  { title: "Pain & Suffering Calculator", desc: "Estimate non-economic damages by state", slug: "pain-and-suffering-calculator" },
+  { title: "Workers' Comp Settlement Calculator", desc: "State-specific benefit estimates", slug: "workers-comp-settlement-calculator" },
+  { title: "Truck Accident Calculator", desc: "Explore a commercial crash estimate", slug: "truck-accident-settlement-calculator" },
+  { title: "Estate Tax Estimator", desc: "Estimate potential estate tax", slug: "estate-tax-estimator" },
 ];
 
 export default function MostUsedThisWeek() {
