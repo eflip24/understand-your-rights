@@ -55,6 +55,12 @@ export const guideGroups: GuideGroup[] = [
         badge: "Dataset",
       },
       {
+        path: "/data-breach-claim-compensation",
+        title: "Data breach compensation",
+        blurb: "Settlement tiers, documented-loss claims, GDPR Article 82 damages, and the evidence that raises a payout.",
+        badge: "New",
+      },
+      {
         path: "/statute-of-limitations-by-state",
         title: "Statute of limitations by state",
         blurb:
@@ -190,6 +196,12 @@ export const guideGroups: GuideGroup[] = [
         blurb: "Wind vs flood exclusions, public adjusters, and appraisal or suit deadlines.",
       },
       {
+        path: "/health-insurance-claim-denied",
+        title: "Health insurance claim denied",
+        blurb: "Internal appeals, ERISA claim files, external review by an IRO, and the deadlines for each plan type.",
+        badge: "New",
+      },
+      {
         path: "/auto-insurance-claim-guide",
         title: "Auto insurance claim guide",
         blurb: "Carrier tendencies, Colossus-style claim software, and negotiating with adjusters.",
@@ -201,6 +213,12 @@ export const guideGroups: GuideGroup[] = [
     label: "Work, disability & benefits",
     description: "Denied benefits, workplace claims, and the appeal windows that matter.",
     entries: [
+      {
+        path: "/ai-hiring-and-workplace-surveillance",
+        title: "AI hiring tools & workplace surveillance",
+        blurb: "Bias audits, monitoring notice laws, EEOC deadlines, biometric rules and non-compete enforceability.",
+        badge: "New",
+      },
       {
         path: "/workers-comp-denied-what-next",
         title: "Workers' comp denied — what next",
