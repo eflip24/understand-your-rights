@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { useLocalizedPath } from "@/i18n/paths";
 
 const topForms = [
-  { title: "W-4 Employee's Withholding Certificate", desc: "Prepare a new hire's tax form", slug: "w-4" },
-  { title: "Simple NDA", desc: "Mutual non-disclosure agreement", slug: "nda-simple" },
+  { title: "W-4 Employee's Withholding Certificate", desc: "Prepare a new hire's tax form", slug: "w-4-online-free" },
+  { title: "Simple NDA", desc: "Mutual non-disclosure agreement", slug: "nda-online-free" },
   { title: "Residential Lease Agreement", desc: "Standard rental contract", slug: "residential-lease-agreement" },
-  { title: "Demand Letter", desc: "Make a clear written legal demand", slug: "demand-letter" },
+  { title: "Demand Letter", desc: "Make a clear written legal demand", slug: "demand-letter-online-free" },
 ];
 
 const topTools = [
