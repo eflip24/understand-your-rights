@@ -47,9 +47,9 @@ export default function MostUsedThisWeek() {
           </div>
           <ul className="divide-y">
             {topForms.map((f) => (
-              <li key={f.slug}>
+              <li key={f.href}>
                 <Link
-                  to={lp(`/forms/${f.slug}`)}
+                  to={lp(f.href)}
                   className="flex items-center justify-between py-3 group hover:bg-secondary/40 -mx-2 px-2 rounded-lg transition-colors"
                 >
                   <div>
