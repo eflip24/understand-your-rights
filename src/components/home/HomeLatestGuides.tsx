@@ -27,19 +27,19 @@ const guides = [
     tag: "Guide",
     title: "Truck accident settlements",
     desc: "Why commercial policies pay more, and who else can be held liable besides the driver.",
-    href: "/truck-accident-settlement",
+    href: "/truck-accident-settlements",
   },
   {
     tag: "Guide",
     title: "Workers' comp claim denied",
     desc: "The appeal ladder state by state, plus the denial reasons that are easiest to overturn.",
-    href: "/workers-comp-claim-denied",
+    href: "/workers-comp-denied-what-next",
   },
   {
     tag: "Guide",
     title: "DUI first offense",
     desc: "Penalties, licence consequences and ignition-interlock rules in all 51 jurisdictions.",
-    href: "/dui-first-offense",
+    href: "/dui-first-offense-guide",
   },
 ];
 
