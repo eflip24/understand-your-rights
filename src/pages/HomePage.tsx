@@ -19,6 +19,10 @@ import Head from "@/components/seo/Head";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
 import { useLocalizedPath } from "@/i18n/paths";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
+import HomeDataSets from "@/components/home/HomeDataSets";
+import HomeLatestGuides from "@/components/home/HomeLatestGuides";
+import HomeMembershipBand from "@/components/home/HomeMembershipBand";
+import HomeCaseReviewBand from "@/components/home/HomeCaseReviewBand";
 
 import catContract from "@/assets/cat-contract.png";
 import catConsumer from "@/assets/cat-consumer.png";
