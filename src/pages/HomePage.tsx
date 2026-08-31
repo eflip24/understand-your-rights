@@ -19,11 +19,6 @@ import Head from "@/components/seo/Head";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
 import { useLocalizedPath } from "@/i18n/paths";
 import { useLocalizedTools } from "@/i18n/useLocalizedTools";
-import HomeDataSets from "@/components/home/HomeDataSets";
-import HomeLatestGuides from "@/components/home/HomeLatestGuides";
-import HomeMembershipBand from "@/components/home/HomeMembershipBand";
-import HomeCaseReviewBand from "@/components/home/HomeCaseReviewBand";
-
 import catContract from "@/assets/cat-contract.png";
 import catConsumer from "@/assets/cat-consumer.png";
 import catEmployment from "@/assets/cat-employment.png";
@@ -103,6 +98,8 @@ export default function HomePage() {
       </section>
 
       <MostUsedThisWeek />
+      <HomeDataSets />
+      <HomeLatestGuides />
 
       {/* Categories */}
       <section className="bg-secondary/50 py-14">
@@ -135,6 +132,7 @@ export default function HomePage() {
       </section>
 
       <HomeTrustStrip />
+      <HomeMembershipBand />
 
       {/* Latest from the Blog */}
       {latestPosts.length > 0 && (
@@ -183,6 +181,7 @@ export default function HomePage() {
       )}
 
       <LegalResourcesAndHowItWorks />
+      <HomeCaseReviewBand />
 
       {/* Long-form SEO intro — moved lower so users hit product surfaces first,
           but Google still reads the substantive content on the homepage. */}
@@ -193,10 +192,10 @@ export default function HomePage() {
           </h2>
           <p>
             LegallySpoken is a free, no-signup library of more than 100 plain-English legal
-            tools and reference guides built for non-lawyers. Instead of selling you a
-            subscription or a downloadable PDF pack, every calculator, contract analyzer,
-            risk checker, deadline calendar, and document generator on this site runs
-            instantly in your browser — and stays free.
+            tools and reference guides built for non-lawyers. The calculators, contract analyzer,
+            risk checkers, deadline indexes, court data and document tools help you get oriented
+            instantly in your browser. Tools and guides stay free; forms are available individually
+            or through an optional membership with unlimited downloads.
           </p>
           <p>
             We cover the everyday legal situations people actually search for: reading a
@@ -205,7 +204,9 @@ export default function HomePage() {
             understanding a small-claims notice, comparing insurance offers, or finding a
             local attorney. Our state-by-state guides cover all 50 US states, and our
             European section covers Germany, France, Spain, Italy, and Portugal in each
-            country&apos;s own language.
+            country&apos;s own language. Our free settlement-deadline and court-filing datasets make
+            the underlying research easier to compare, while our European employment calculators
+            cover Germany, France, Spain, Italy and Portugal in each country&apos;s own language.
           </p>
           <p>
             Drafts are produced with AI assistance and then reviewed by a human editor
