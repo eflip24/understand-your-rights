@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
-import { Car, Heart, UserPlus, Home, Briefcase, CreditCard, UserX, FileSignature } from "lucide-react";
+import { Car, Heart, UserPlus, Home, Briefcase, CreditCard, UserX, FileSignature, ShieldAlert, Lock } from "lucide-react";
 import { useLocalizedPath } from "@/i18n/paths";
 
 const situations = [
   { icon: Car, label: "I was in an accident", href: "/auto-accident-law" },
+  { icon: ShieldAlert, label: "My insurance claim was denied", href: "/health-insurance-claim-denied" },
   { icon: Heart, label: "I'm getting divorced", href: "/tools/family" },
   { icon: UserPlus, label: "I'm hiring someone", href: "/forms/pack/new-hire-pack" },
   { icon: Home, label: "I'm renting a place", href: "/forms/residential-lease-agreement" },
   { icon: Briefcase, label: "I'm starting a business", href: "/forms/pack/small-business-basics-pack" },
   { icon: CreditCard, label: "I'm dealing with debt", href: "/tools/debt-settlement-calculator" },
   { icon: UserX, label: "I got fired", href: "/employment-law" },
+  { icon: Lock, label: "My data was breached", href: "/data-breach-claim-compensation" },
   { icon: FileSignature, label: "I need to sign a contract", href: "/tools/contract" },
 ];
+
 
 export default function HomeSituationStrip() {
   const lp = useLocalizedPath();
