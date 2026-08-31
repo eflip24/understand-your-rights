@@ -5,17 +5,17 @@ import { Button } from "@/components/ui/button";
 import { useLocalizedPath } from "@/i18n/paths";
 
 const topForms = [
-  { title: "W-4 Employee's Withholding Certificate", desc: "Prepare a new hire's tax form", slug: "w-4-online-free" },
-  { title: "Simple NDA", desc: "Mutual non-disclosure agreement", slug: "nda-online-free" },
-  { title: "Residential Lease Agreement", desc: "Standard rental contract", slug: "residential-lease-agreement" },
-  { title: "Demand Letter", desc: "Make a clear written legal demand", slug: "demand-letter-online-free" },
+  { title: "W-4 Employee's Withholding Certificate", desc: "Prepare a new hire's tax form", href: "/forms/w-4-online-free" },
+  { title: "Simple NDA", desc: "Mutual non-disclosure agreement", href: "/forms/nda-online-free" },
+  { title: "Residential Lease Agreement", desc: "Standard rental contract", href: "/forms/residential-lease-agreement" },
+  { title: "Demand Letter", desc: "Make a clear written legal demand", href: "/forms/demand-letter-online-free" },
 ];
 
 const topTools = [
-  { title: "Pain & Suffering Calculator", desc: "Estimate non-economic damages by state", slug: "pain-and-suffering-calculator" },
-  { title: "Workers' Comp Settlement Calculator", desc: "State-specific benefit estimates", slug: "workers-comp-settlement-calculator" },
-  { title: "Truck Accident Calculator", desc: "Explore a commercial crash estimate", slug: "truck-accident-settlement-calculator" },
-  { title: "Estate Tax Estimator", desc: "Estimate potential estate tax", slug: "estate-tax-estimator" },
+  { title: "Pain & Suffering Calculator", desc: "Estimate non-economic damages by state", href: "/tools/consumer/pain-and-suffering-calculator" },
+  { title: "Workers' Comp Settlement Calculator", desc: "State-specific benefit estimates", href: "/tools/employment/workers-comp-settlement-calculator" },
+  { title: "Truck Accident Calculator", desc: "Explore a commercial crash estimate", href: "/tools/consumer/truck-accident-settlement-calculator" },
+  { title: "Estate Tax Estimator", desc: "Estimate potential estate tax", href: "/tools/finance/estate-tax-estimator" },
 ];
 
 export default function MostUsedThisWeek() {
