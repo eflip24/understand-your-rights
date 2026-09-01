@@ -11,7 +11,7 @@ import { tools, categories } from "@/data/tools";
 import { guideGroups } from "@/data/guideIndex";
 import { FORM_SEO_LANDINGS } from "@/data/formSeoLandings";
 import { formPacks } from "@/data/formPacks";
-import { legalTerms } from "@/data/legalTerms";
+import { legalTermPages } from "@/data/legalTermPages";
 import { stateData } from "@/data/locations/stateData";
 
 export type SearchKind = "tool" | "guide" | "form" | "pack" | "term" | "state" | "page";
@@ -104,16 +104,16 @@ export function getSearchIndex(): SearchEntry[] {
       id: `pack-${pack.slug}`,
       title: pack.title,
       subtitle: pack.savingsCopy,
-      path: `${pack.region === "eu" ? "/eu-forms" : "/forms"}/pack/${pack.slug}`,
+      path: `${pack.region === "eu" ? "/eu-forms" : "/forms"}/${pack.slug}`,
       kind: "pack",
       keywords: ["bundle", "pack", pack.category],
     })),
 
-    ...legalTerms.map<SearchEntry>((term) => ({
-      id: `term-${term.term}`,
+    ...legalTermPages.map<SearchEntry>((term) => ({
+      id: `term-${term.slug}`,
       title: term.term,
       subtitle: term.definition,
-      path: `/legal-terms/${slugify(term.term)}`,
+      path: `/legal-terms/${term.slug}`,
       kind: "term",
       keywords: [term.category, "definition", "meaning"],
     })),
