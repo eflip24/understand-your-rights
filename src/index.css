@@ -130,7 +130,7 @@
 @layer components {
   .hero-surface {
     background-color: hsl(var(--hero-surface));
-    background-image: radial-gradient(circle at 20% 20%, hsl(var(--gold) / 0.16), transparent 30%), radial-gradient(circle at 78% 30%, hsl(var(--navy-light) / 0.35), transparent 34%), linear-gradient(135deg, hsl(var(--hero-surface)), hsl(var(--navy-dark)) 62%, hsl(var(--hero-surface));
+    background-image: radial-gradient(circle at 20% 20%, hsl(var(--gold) / 0.16), transparent 30%), radial-gradient(circle at 78% 30%, hsl(var(--navy-light) / 0.35), transparent 34%), linear-gradient(135deg, hsl(var(--hero-surface)), hsl(var(--navy-dark)) 62%, hsl(var(--hero-surface)));
   }
 
   .hero-grid {
