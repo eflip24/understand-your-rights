@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Wrench, FileText, Scale, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useLocalizedPath } from "@/i18n/paths";
+import LegalTriage from "@/components/home/LegalTriage";
 
 const paths = [
   {
@@ -31,13 +32,16 @@ export default function HomePathTiles() {
   const lp = useLocalizedPath();
   return (
     <section className="container py-12 md:py-16">
-      <div className="mb-8 text-center">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-          Where would you like to start?
-        </h2>
-        <p className="mt-2 text-muted-foreground">
-          Three ways in — pick the one that matches what you need right now.
-        </p>
+      <div className="mb-8 flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+        <div>
+          <h2 className="font-serif text-3xl font-bold text-foreground md:text-4xl">
+            Where would you like to start?
+          </h2>
+          <p className="mt-2 text-muted-foreground">
+            Tools, forms, and guidance for the legal problem in front of you.
+          </p>
+        </div>
+        <LegalTriage className="shrink-0 gap-2" />
       </div>
       <div className="grid gap-6 md:grid-cols-3">
         {paths.map((p) => (

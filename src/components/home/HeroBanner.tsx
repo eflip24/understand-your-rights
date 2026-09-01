@@ -5,6 +5,7 @@ import { CalendarDays, CheckCircle2, FileText, Scale, Search, ShieldCheck } from
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useLocalizedPath } from "@/i18n/paths";
+import GlobalSearch from "@/components/search/GlobalSearch";
 
 function LegalIllustration() {
   return (
@@ -97,8 +98,8 @@ export default function HeroBanner() {
             {t("hero.subtitle")}
           </p>
 
-          <form onSubmit={handleSearch} className="mt-10 w-full max-w-2xl">
-            <div className="group rounded-2xl border border-white/15 bg-white/[0.08] p-2 shadow-2xl shadow-navy-dark/40 backdrop-blur-xl transition-all duration-300 focus-within:border-gold/55 focus-within:shadow-gold/15">
+          <div className="mt-10 w-full max-w-2xl">
+            <form onSubmit={handleSearch} className="group rounded-2xl border border-white/15 bg-white/[0.08] p-2 shadow-2xl shadow-navy-dark/40 backdrop-blur-xl transition-all duration-300 focus-within:border-gold/55 focus-within:shadow-gold/15">
               <div className="flex flex-col gap-2 sm:flex-row">
                 <div className="relative min-w-0 flex-1">
                   <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gold/80" />
@@ -110,15 +111,16 @@ export default function HeroBanner() {
                     className="h-14 rounded-xl border-0 bg-white text-base font-medium text-navy-dark placeholder:text-charcoal/55 pl-12 shadow-inner focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-0"
                   />
                 </div>
-                <Button
-                  type="submit"
-                  className="h-14 rounded-xl bg-gold px-8 font-sans text-base font-bold text-navy-dark shadow-lg shadow-gold/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-gold/30"
-                >
+                <Button type="submit" className="h-14 rounded-xl bg-gold px-8 font-sans text-base font-bold text-navy-dark shadow-lg shadow-gold/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-gold/30">
                   {t("hero.searchButton")}
                 </Button>
               </div>
+            </form>
+            <div className="mt-3 flex justify-center sm:justify-start">
+              <GlobalSearch compact className="text-white/80 hover:bg-white/10 hover:text-white" />
+              <span className="ms-2 self-center text-xs text-white/55">Browse the full legal library</span>
             </div>
-          </form>
+          </div>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:justify-start">
             {trustSignals.map((text) => (
