@@ -56,6 +56,12 @@
     --sidebar-accent-foreground: 220 20% 90%;
     --sidebar-border: 222 30% 25%;
     --sidebar-ring: 42 55% 55%;
+
+    /* Semantic hero tokens keep contrast stable across themes. */
+    --hero-surface: 230 63% 11%;
+    --hero-foreground: 0 0% 100%;
+    --hero-muted: 0 0% 100% / 0.72;
+    --hero-line: 0 0% 100%;
   }
 
   .dark {
@@ -75,7 +81,7 @@
     --secondary-foreground: 220 20% 92%;
 
     --muted: 222 30% 18%;
-    --muted-foreground: 220 15% 55%;
+    --muted-foreground: 222 15% 66%;
 
     --accent: 42 55% 55%;
     --accent-foreground: 222 45% 12%;
@@ -95,6 +101,11 @@
     --sidebar-accent-foreground: 220 20% 90%;
     --sidebar-border: 222 30% 15%;
     --sidebar-ring: 42 55% 55%;
+
+    --hero-surface: 230 63% 8%;
+    --hero-foreground: 0 0% 100%;
+    --hero-muted: 0 0% 100% / 0.72;
+    --hero-line: 0 0% 100%;
   }
 }
 
@@ -102,7 +113,6 @@
   html {
     font-size: 120%;
   }
-
 
   * {
     @apply border-border;
@@ -118,9 +128,21 @@
 }
 
 @layer components {
-  /* Editorial prose width for long-form legal pillar/landing pages.
-     Caps line length around 68ch so paragraphs stay readable on wide screens
-     without touching heading widths or component layouts. */
+  .hero-surface {
+    background-color: hsl(var(--hero-surface));
+    background-image: radial-gradient(circle at 20% 20%, hsl(var(--gold) / 0.16), transparent 30%), radial-gradient(circle at 78% 30%, hsl(var(--navy-light) / 0.35), transparent 34%), linear-gradient(135deg, hsl(var(--hero-surface)), hsl(var(--navy-dark)) 62%, hsl(var(--hero-surface));
+  }
+
+  .hero-grid {
+    opacity: 0.07;
+    background-image: linear-gradient(hsl(var(--hero-line)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--hero-line)) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+
+  .hero-rule {
+    background-image: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.5), transparent);
+  }
+
   .prose-legal {
     max-width: 68ch;
   }
