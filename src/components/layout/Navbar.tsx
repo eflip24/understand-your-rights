@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Menu, Search, Scale, LogOut, LayoutDashboard, LogIn, Shield, ChevronDown } from "lucide-react";
+import { Menu, Scale, LogOut, LayoutDashboard, LogIn, Shield, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import GlobalSearch from "@/components/search/GlobalSearch";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
@@ -33,7 +32,6 @@ function NavDropdownItem({ href, label, onClick }: { href: string; label: string
 }
 
 export default function Navbar() {
-  const [searchQuery, setSearchQuery] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
@@ -80,13 +78,6 @@ export default function Navbar() {
     { label: t("nav.resources.about"), href: lp("/about") },
   ];
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`${lp("/tools")}?q=${encodeURIComponent(searchQuery.trim())}`);
-      setSearchQuery("");
-    }
-  };
 
   const handleSignOut = async () => {
     await signOut();
@@ -242,17 +233,9 @@ export default function Navbar() {
               </SheetTrigger>
               <SheetContent side="right" className="w-80 overflow-y-auto">
                 <SheetTitle className="font-serif text-lg">{t("nav.menu")}</SheetTitle>
-                <form onSubmit={(e) => { handleSearch(e); setMobileOpen(false); }} className="mt-4">
-                  <div className="relative">
-                    <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      placeholder={t("nav.search")}
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="ps-9"
-                    />
-                  </div>
-                </form>
+                <div className="mt-4">
+                  <GlobalSearch className="w-full justify-start" />
+                </div>
                 <div className="mt-4 sm:hidden">
                   <LangSwitcher variant="navbar" />
                 </div>
