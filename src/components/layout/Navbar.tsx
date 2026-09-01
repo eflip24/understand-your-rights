@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Menu, Search, Scale, LogOut, LayoutDashboard, LogIn, Shield, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import GlobalSearch from "@/components/search/GlobalSearch";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -188,18 +189,10 @@ export default function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Search */}
-        <form onSubmit={handleSearch} className="hidden md:flex items-center gap-2 max-w-xs w-full">
-          <div className="relative w-full">
-            <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              placeholder={t("nav.search")}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="ps-9 h-9 bg-secondary border-none"
-            />
-          </div>
-        </form>
+        {/* Global search — includes tools, forms, guides, glossary, and state resources. */}
+        <div className="hidden md:flex w-full max-w-xs">
+          <GlobalSearch />
+        </div>
 
         <div className="hidden lg:flex items-center gap-2">
           {user ? (
