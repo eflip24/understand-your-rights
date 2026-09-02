@@ -218,10 +218,15 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-0.5 sm:gap-1 shrink-0">
+          {/* One-tap search on small screens where the full search bar is hidden. */}
+          <div className="md:hidden">
+            <GlobalSearch compact />
+          </div>
           <div className="hidden sm:block">
             <LangSwitcher variant="navbar" />
           </div>
           <ThemeToggle />
+
 
           {/* Mobile menu */}
           <div className="lg:hidden">
