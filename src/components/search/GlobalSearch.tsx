@@ -77,7 +77,8 @@ export default function GlobalSearch({ className, compact = false }: GlobalSearc
         {!compact && <CommandShortcut className="hidden shrink-0 rounded border border-border px-1.5 py-0.5 text-[10px] sm:inline">⌘K</CommandShortcut>}
       </Button>
 
-      <CommandDialog open={open} onOpenChange={(nextOpen) => { setOpen(nextOpen); if (!nextOpen) setQuery(""); }}>
+      {/* Ranking happens in searchIndex.ts, so cmdk's own fuzzy filter is disabled. */}
+      <CommandDialog shouldFilter={false} open={open} onOpenChange={(nextOpen) => { setOpen(nextOpen); if (!nextOpen) setQuery(""); }}>
         <div className="border-b border-border bg-muted/30 px-4 py-3">
           <div className="flex items-center justify-between gap-3">
             <div>
