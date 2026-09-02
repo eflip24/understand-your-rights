@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ArrowRight, BookOpen, Calculator, FileText, Gavel, Layers3, MapPinned, Search, Scale } from "lucide-react";
 import {
   CommandDialog,
@@ -36,6 +37,7 @@ export default function GlobalSearch({ className, compact = false }: GlobalSearc
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const lp = useLocalizedPath();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -68,11 +70,11 @@ export default function GlobalSearch({ className, compact = false }: GlobalSearc
           compact ? "h-9 w-9 p-0" : "h-9 w-full justify-between gap-3 border-border bg-secondary/60 px-3 text-muted-foreground hover:bg-secondary hover:text-foreground",
           className,
         )}
-        aria-label="Search legal tools, forms, and guides"
+        aria-label={t("globalSearch.aria")}
       >
         <span className="flex min-w-0 items-center gap-2">
           <Search className="h-4 w-4 shrink-0" />
-          {!compact && <span className="truncate text-sm">Search legal tools, forms &amp; guides</span>}
+          {!compact && <span className="truncate text-sm">{t("globalSearch.trigger")}</span>}
         </span>
         {!compact && <CommandShortcut className="hidden shrink-0 rounded border border-border px-1.5 py-0.5 text-[10px] sm:inline">⌘K</CommandShortcut>}
       </Button>
@@ -82,23 +84,23 @@ export default function GlobalSearch({ className, compact = false }: GlobalSearc
         <div className="border-b border-border bg-muted/30 px-4 py-3">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <p className="font-serif text-base font-bold text-foreground">Find your next legal step</p>
-              <p className="text-xs text-muted-foreground">Search {totalIndexed.toLocaleString()} tools, forms, guides, terms, and state resources.</p>
+              <p className="font-serif text-base font-bold text-foreground">{t("globalSearch.title")}</p>
+              <p className="text-xs text-muted-foreground">{t("globalSearch.subtitle", { count: totalIndexed })}</p>
             </div>
-            <Badge variant="outline" className="hidden shrink-0 sm:inline-flex">⌘K anytime</Badge>
+            <Badge variant="outline" className="hidden shrink-0 sm:inline-flex">{t("globalSearch.badge")}</Badge>
           </div>
         </div>
-        <CommandInput value={query} onValueChange={setQuery} placeholder="Try “car accident deadline” or “lease”" />
+        <CommandInput value={query} onValueChange={setQuery} placeholder={t("globalSearch.placeholder")} />
         <CommandList className="max-h-[min(60vh,520px)] p-2">
           {!query.trim() ? (
             <CommandEmpty className="py-10">
               <Search className="mx-auto mb-3 h-7 w-7 text-muted-foreground" />
-              <p className="font-medium text-foreground">Start with what you need help with</p>
-              <p className="mt-1 text-xs text-muted-foreground">Use a topic, document, deadline, or state.</p>
+              <p className="font-medium text-foreground">{t("globalSearch.emptyTitle")}</p>
+              <p className="mt-1 text-xs text-muted-foreground">{t("globalSearch.emptyHint")}</p>
             </CommandEmpty>
           ) : (
             <>
-              <CommandEmpty>No matching legal resources found.</CommandEmpty>
+              <CommandEmpty>{t("globalSearch.noResults")}</CommandEmpty>
               {groups.map((group) => (
                 <CommandGroup key={group.kind} heading={KIND_LABEL[group.kind]}>
                   {group.items.map((entry) => {
