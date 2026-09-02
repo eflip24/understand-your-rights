@@ -82,7 +82,7 @@
     "metaTitle": "Leitfaden zu Vertragsarten — Häufige Vereinbarungen Erklärt | LegallySpoken",
     "metaDescription": "Entdecken Sie häufige Vertragsarten mit Schlüsselklauseln, Risiken und FAQs. Verstehen Sie NDAs, Mietverträge, Arbeitsverträge und mehr.",
     "title": "Leitfaden zu Vertragsarten",
-    "subtitle": "{{count}} häufige Vertragsarten mit Schlüsselklauseln und Risiken.",
+    "subtitle": "{{total}} häufige Vertragsarten mit Schlüsselklauseln und Risiken.",
     "searchPlaceholder": "Vertragsarten suchen...",
     "all": "Alle",
     "stats": "{{clauses}} Schlüsselklauseln • {{risks}} Risiken",
@@ -92,7 +92,7 @@
     "metaTitle": "Leitfaden zu Rechtsklauseln — Häufige Vertragsklauseln Erklärt | LegallySpoken",
     "metaDescription": "Entdecken Sie häufige Vertragsklauseln mit Beispielen, Hinweisen zur Durchsetzbarkeit und Warnsignalen. Verstehen Sie, was jede Klausel bedeutet, bevor Sie unterschreiben.",
     "title": "Leitfaden zu Rechtsklauseln",
-    "subtitle": "{{count}} häufige Vertragsklauseln mit Beispielen und Warnsignalen erklärt.",
+    "subtitle": "{{total}} häufige Vertragsklauseln mit Beispielen und Warnsignalen erklärt.",
     "searchPlaceholder": "Klauseln suchen...",
     "all": "Alle",
     "stats": "{{examples}} Beispiele • {{flags}} Warnsignale",
@@ -137,5 +137,16 @@
     "seconds": "Sekunden",
     "selectPlaceholder": "Auswählen…",
     "selectState": "Bundesstaat wählen…"
+  },
+  "globalSearch": {
+    "trigger": "Tools, Formulare & Ratgeber suchen",
+    "aria": "Rechtliche Tools, Formulare und Ratgeber suchen",
+    "title": "Finden Sie Ihren nächsten rechtlichen Schritt",
+    "subtitle": "Durchsuchen Sie {{total}} Tools, Formulare, Ratgeber, Begriffe und Länder-Ressourcen.",
+    "badge": "⌘K jederzeit",
+    "placeholder": "z. B. „Kündigungsfrist“ oder „Mietvertrag“",
+    "emptyTitle": "Beginnen Sie mit Ihrem Anliegen",
+    "emptyHint": "Thema, Dokument, Frist oder Region eingeben.",
+    "noResults": "Keine passenden Ergebnisse gefunden."
   }
 }

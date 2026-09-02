@@ -82,7 +82,7 @@
     "metaTitle": "Guia de Tipos de Contrato — Acordos Comuns Explicados | LegallySpoken",
     "metaDescription": "Explore os tipos de contrato mais comuns com cláusulas-chave, riscos e perguntas frequentes. Entenda NDAs, arrendamentos, contratos de trabalho e mais.",
     "title": "Guia de Tipos de Contrato",
-    "subtitle": "{{count}} tipos de contrato comuns com cláusulas-chave e riscos.",
+    "subtitle": "{{total}} tipos de contrato comuns com cláusulas-chave e riscos.",
     "searchPlaceholder": "Pesquisar tipos de contrato...",
     "all": "Todos",
     "stats": "{{clauses}} cláusulas-chave • {{risks}} riscos",
@@ -92,7 +92,7 @@
     "metaTitle": "Guia de Cláusulas Legais — Cláusulas Contratuais Comuns Explicadas | LegallySpoken",
     "metaDescription": "Explore cláusulas contratuais comuns com exemplos, notas de aplicabilidade e sinais de alerta. Entenda o que cada cláusula significa antes de assinar.",
     "title": "Guia de Cláusulas Legais",
-    "subtitle": "{{count}} cláusulas contratuais comuns explicadas com exemplos e sinais de alerta.",
+    "subtitle": "{{total}} cláusulas contratuais comuns explicadas com exemplos e sinais de alerta.",
     "searchPlaceholder": "Pesquisar cláusulas...",
     "all": "Todas",
     "stats": "{{examples}} exemplos • {{flags}} sinais de alerta",
@@ -137,5 +137,16 @@
     "seconds": "Segundos",
     "selectPlaceholder": "Selecionar…",
     "selectState": "Selecionar estado…"
+  },
+  "globalSearch": {
+    "trigger": "Pesquisar ferramentas, formulários e guias",
+    "aria": "Pesquisar ferramentas, formulários e guias jurídicos",
+    "title": "Encontre o seu próximo passo jurídico",
+    "subtitle": "Pesquise {{total}} ferramentas, formulários, guias, termos e recursos regionais.",
+    "badge": "⌘K a qualquer momento",
+    "placeholder": "Tente «prazo acidente» ou «contrato de arrendamento»",
+    "emptyTitle": "Comece pela sua situação",
+    "emptyHint": "Use um tema, documento, prazo ou região.",
+    "noResults": "Nenhum recurso jurídico encontrado."
   }
 }

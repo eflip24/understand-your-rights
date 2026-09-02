@@ -82,7 +82,7 @@
     "metaTitle": "Guida ai Tipi di Contratto — Accordi Comuni Spiegati | LegallySpoken",
     "metaDescription": "Esplora i tipi di contratto più comuni con clausole chiave, rischi e FAQ. Comprendi NDA, contratti di locazione, contratti di lavoro e altro.",
     "title": "Guida ai Tipi di Contratto",
-    "subtitle": "{{count}} tipi di contratto comuni con clausole chiave e rischi.",
+    "subtitle": "{{total}} tipi di contratto comuni con clausole chiave e rischi.",
     "searchPlaceholder": "Cerca tipi di contratto...",
     "all": "Tutti",
     "stats": "{{clauses}} clausole chiave • {{risks}} rischi",
@@ -92,7 +92,7 @@
     "metaTitle": "Guida alle Clausole Legali — Clausole Contrattuali Comuni Spiegate | LegallySpoken",
     "metaDescription": "Esplora le clausole contrattuali comuni con esempi, note sull'applicabilità e segnali d'allarme. Comprendi cosa significa ogni clausola prima di firmare.",
     "title": "Guida alle Clausole Legali",
-    "subtitle": "{{count}} clausole contrattuali comuni spiegate con esempi e segnali d'allarme.",
+    "subtitle": "{{total}} clausole contrattuali comuni spiegate con esempi e segnali d'allarme.",
     "searchPlaceholder": "Cerca clausole...",
     "all": "Tutte",
     "stats": "{{examples}} esempi • {{flags}} segnali d'allarme",
@@ -137,5 +137,16 @@
     "seconds": "Secondi",
     "selectPlaceholder": "Seleziona…",
     "selectState": "Seleziona stato…"
+  },
+  "globalSearch": {
+    "trigger": "Cerca strumenti, moduli e guide",
+    "aria": "Cerca strumenti, moduli e guide legali",
+    "title": "Trova il tuo prossimo passo legale",
+    "subtitle": "Cerca tra {{total}} strumenti, moduli, guide, termini e risorse regionali.",
+    "badge": "⌘K quando vuoi",
+    "placeholder": "Prova «termine incidente» o «contratto di locazione»",
+    "emptyTitle": "Parti dalla tua situazione",
+    "emptyHint": "Usa un argomento, documento, termine o regione.",
+    "noResults": "Nessuna risorsa legale trovata."
   }
 }

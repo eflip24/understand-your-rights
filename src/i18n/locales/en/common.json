@@ -4,7 +4,7 @@
     "guides": "Guides",
     "resources": "Resources",
     "findLawyer": "Find a Lawyer",
-    "search": "Search legal resources...", 
+    "search": "Search legal resources...",
     "logIn": "Log in",
     "logOut": "Log out",
     "dashboard": "Dashboard",
@@ -82,7 +82,7 @@
     "metaTitle": "Contract Types Guide — Common Agreements Explained | LegallySpoken",
     "metaDescription": "Explore common contract types with key clauses, risks, and FAQs. Understand NDAs, leases, employment contracts, and more.",
     "title": "Contract Types Guide",
-    "subtitle": "{{count}} common contract types with key clauses and risks.",
+    "subtitle": "{{total}} common contract types with key clauses and risks.",
     "searchPlaceholder": "Search contract types...",
     "all": "All",
     "stats": "{{clauses}} key clauses • {{risks}} risks",
@@ -92,7 +92,7 @@
     "metaTitle": "Legal Clauses Guide — Common Contract Clauses Explained | LegallySpoken",
     "metaDescription": "Explore common contract clauses with examples, enforceability notes, and red flags. Understand what each clause means before you sign.",
     "title": "Legal Clauses Guide",
-    "subtitle": "{{count}} common contract clauses explained with examples and red flags.",
+    "subtitle": "{{total}} common contract clauses explained with examples and red flags.",
     "searchPlaceholder": "Search clauses...",
     "all": "All",
     "stats": "{{examples}} examples • {{flags}} red flags",
@@ -137,5 +137,16 @@
     "seconds": "Seconds",
     "selectPlaceholder": "Select…",
     "selectState": "Select state…"
+  },
+  "globalSearch": {
+    "trigger": "Search legal tools, forms & guides",
+    "aria": "Search legal tools, forms, and guides",
+    "title": "Find your next legal step",
+    "subtitle": "Search {{total}} tools, forms, guides, terms, and state resources.",
+    "badge": "⌘K anytime",
+    "placeholder": "Try “car accident deadline” or “lease”",
+    "emptyTitle": "Start with what you need help with",
+    "emptyHint": "Use a topic, document, deadline, or state.",
+    "noResults": "No matching legal resources found."
   }
 }

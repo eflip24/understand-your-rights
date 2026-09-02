@@ -82,7 +82,7 @@
     "metaTitle": "Guide des Types de Contrat — Accords Courants Expliqués | LegallySpoken",
     "metaDescription": "Explorez les types de contrat les plus courants avec leurs clauses clés, risques et FAQ. NDA, baux, contrats de travail et plus.",
     "title": "Guide des Types de Contrat",
-    "subtitle": "{{count}} types de contrat courants avec clauses clés et risques.",
+    "subtitle": "{{total}} types de contrat courants avec clauses clés et risques.",
     "searchPlaceholder": "Rechercher des types de contrat...",
     "all": "Tous",
     "stats": "{{clauses}} clauses clés • {{risks}} risques",
@@ -92,7 +92,7 @@
     "metaTitle": "Guide des Clauses Juridiques — Clauses Contractuelles Courantes Expliquées | LegallySpoken",
     "metaDescription": "Explorez les clauses contractuelles courantes avec des exemples, des notes d'applicabilité et des signaux d'alerte. Comprenez ce que signifie chaque clause avant de signer.",
     "title": "Guide des Clauses Juridiques",
-    "subtitle": "{{count}} clauses contractuelles courantes expliquées avec exemples et signaux d'alerte.",
+    "subtitle": "{{total}} clauses contractuelles courantes expliquées avec exemples et signaux d'alerte.",
     "searchPlaceholder": "Rechercher des clauses...",
     "all": "Toutes",
     "stats": "{{examples}} exemples • {{flags}} signaux d'alerte",
@@ -137,5 +137,16 @@
     "seconds": "Secondes",
     "selectPlaceholder": "Sélectionner…",
     "selectState": "Sélectionner un état…"
+  },
+  "globalSearch": {
+    "trigger": "Rechercher outils, formulaires et guides",
+    "aria": "Rechercher des outils, formulaires et guides juridiques",
+    "title": "Trouvez votre prochaine étape juridique",
+    "subtitle": "Recherchez parmi {{total}} outils, formulaires, guides, termes et ressources régionales.",
+    "badge": "⌘K à tout moment",
+    "placeholder": "Essayez « délai accident » ou « bail »",
+    "emptyTitle": "Commencez par votre situation",
+    "emptyHint": "Indiquez un sujet, document, délai ou région.",
+    "noResults": "Aucune ressource juridique correspondante."
   }
 }
