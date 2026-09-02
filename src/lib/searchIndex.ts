@@ -163,13 +163,19 @@ function scoreEntry(entry: SearchEntry, tokens: string[]): number {
   const haystack = `${title} ${(entry.subtitle ?? "").toLowerCase()} ${(entry.keywords ?? []).join(" ").toLowerCase()}`;
 
   let score = 0;
+  let matched = 0;
   for (const token of tokens) {
-    if (title.startsWith(token)) score += 40;
-    else if (title.includes(token)) score += 24;
-    else if (haystack.includes(token)) score += 8;
-    else return -1; // every token must match somewhere
+    if (title.startsWith(token)) { score += 40; matched++; }
+    else if (title.includes(token)) { score += 24; matched++; }
+    else if (haystack.includes(token)) { score += 8; matched++; }
   }
-  return score + KIND_WEIGHT[entry.kind];
+
+  // Natural-language queries ("car accident deadline") rarely match every word,
+  // so rank by how much of the phrase matched instead of demanding all of it.
+  if (!matched) return -1;
+  const coverage = matched / tokens.length;
+  if (coverage < 0.5) return -1;
+  return score + Math.round(coverage * 20) + KIND_WEIGHT[entry.kind];
 }
 
 export function searchAll(query: string, limit = 40): SearchEntry[] {
