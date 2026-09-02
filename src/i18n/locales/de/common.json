@@ -137,5 +137,16 @@
     "seconds": "Sekunden",
     "selectPlaceholder": "Auswählen…",
     "selectState": "Bundesstaat wählen…"
+  },
+  "globalSearch": {
+    "trigger": "Tools, Formulare & Ratgeber suchen",
+    "aria": "Rechtliche Tools, Formulare und Ratgeber suchen",
+    "title": "Finden Sie Ihren nächsten rechtlichen Schritt",
+    "subtitle": "Durchsuchen Sie {{count}} Tools, Formulare, Ratgeber, Begriffe und Länder-Ressourcen.",
+    "badge": "⌘K jederzeit",
+    "placeholder": "z. B. „Kündigungsfrist“ oder „Mietvertrag“",
+    "emptyTitle": "Beginnen Sie mit Ihrem Anliegen",
+    "emptyHint": "Thema, Dokument, Frist oder Region eingeben.",
+    "noResults": "Keine passenden Ergebnisse gefunden."
   }
 }

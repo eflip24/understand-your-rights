@@ -137,5 +137,16 @@
     "seconds": "Secondes",
     "selectPlaceholder": "Sélectionner…",
     "selectState": "Sélectionner un état…"
+  },
+  "globalSearch": {
+    "trigger": "Rechercher outils, formulaires et guides",
+    "aria": "Rechercher des outils, formulaires et guides juridiques",
+    "title": "Trouvez votre prochaine étape juridique",
+    "subtitle": "Recherchez parmi {{count}} outils, formulaires, guides, termes et ressources régionales.",
+    "badge": "⌘K à tout moment",
+    "placeholder": "Essayez « délai accident » ou « bail »",
+    "emptyTitle": "Commencez par votre situation",
+    "emptyHint": "Indiquez un sujet, document, délai ou région.",
+    "noResults": "Aucune ressource juridique correspondante."
   }
 }

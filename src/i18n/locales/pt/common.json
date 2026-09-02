@@ -137,5 +137,16 @@
     "seconds": "Segundos",
     "selectPlaceholder": "Selecionar…",
     "selectState": "Selecionar estado…"
+  },
+  "globalSearch": {
+    "trigger": "Pesquisar ferramentas, formulários e guias",
+    "aria": "Pesquisar ferramentas, formulários e guias jurídicos",
+    "title": "Encontre o seu próximo passo jurídico",
+    "subtitle": "Pesquise {{count}} ferramentas, formulários, guias, termos e recursos regionais.",
+    "badge": "⌘K a qualquer momento",
+    "placeholder": "Tente «prazo acidente» ou «contrato de arrendamento»",
+    "emptyTitle": "Comece pela sua situação",
+    "emptyHint": "Use um tema, documento, prazo ou região.",
+    "noResults": "Nenhum recurso jurídico encontrado."
   }
 }

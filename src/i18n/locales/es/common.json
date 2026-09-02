@@ -137,5 +137,16 @@
     "seconds": "Segundos",
     "selectPlaceholder": "Selecciona…",
     "selectState": "Selecciona estado…"
+  },
+  "globalSearch": {
+    "trigger": "Buscar herramientas, formularios y guías",
+    "aria": "Buscar herramientas, formularios y guías legales",
+    "title": "Encuentra tu siguiente paso legal",
+    "subtitle": "Busca entre {{count}} herramientas, formularios, guías, términos y recursos regionales.",
+    "badge": "⌘K en cualquier momento",
+    "placeholder": "Prueba «plazo accidente» o «contrato de alquiler»",
+    "emptyTitle": "Empieza por tu situación",
+    "emptyHint": "Usa un tema, documento, plazo o región.",
+    "noResults": "No se encontraron recursos legales."
   }
 }

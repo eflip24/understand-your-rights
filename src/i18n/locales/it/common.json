@@ -137,5 +137,16 @@
     "seconds": "Secondi",
     "selectPlaceholder": "Seleziona…",
     "selectState": "Seleziona stato…"
+  },
+  "globalSearch": {
+    "trigger": "Cerca strumenti, moduli e guide",
+    "aria": "Cerca strumenti, moduli e guide legali",
+    "title": "Trova il tuo prossimo passo legale",
+    "subtitle": "Cerca tra {{count}} strumenti, moduli, guide, termini e risorse regionali.",
+    "badge": "⌘K quando vuoi",
+    "placeholder": "Prova «termine incidente» o «contratto di locazione»",
+    "emptyTitle": "Parti dalla tua situazione",
+    "emptyHint": "Usa un argomento, documento, termine o regione.",
+    "noResults": "Nessuna risorsa legale trovata."
   }
 }

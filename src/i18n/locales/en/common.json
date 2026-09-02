@@ -4,7 +4,7 @@
     "guides": "Guides",
     "resources": "Resources",
     "findLawyer": "Find a Lawyer",
-    "search": "Search legal resources...", 
+    "search": "Search legal resources...",
     "logIn": "Log in",
     "logOut": "Log out",
     "dashboard": "Dashboard",
@@ -137,5 +137,16 @@
     "seconds": "Seconds",
     "selectPlaceholder": "Select…",
     "selectState": "Select state…"
+  },
+  "globalSearch": {
+    "trigger": "Search legal tools, forms & guides",
+    "aria": "Search legal tools, forms, and guides",
+    "title": "Find your next legal step",
+    "subtitle": "Search {{count}} tools, forms, guides, terms, and state resources.",
+    "badge": "⌘K anytime",
+    "placeholder": "Try “car accident deadline” or “lease”",
+    "emptyTitle": "Start with what you need help with",
+    "emptyHint": "Use a topic, document, deadline, or state.",
+    "noResults": "No matching legal resources found."
   }
 }
