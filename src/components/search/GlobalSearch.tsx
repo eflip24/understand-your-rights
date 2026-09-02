@@ -85,7 +85,7 @@ export default function GlobalSearch({ className, compact = false }: GlobalSearc
           <div className="flex items-center justify-between gap-3">
             <div>
               <p className="font-serif text-base font-bold text-foreground">{t("globalSearch.title")}</p>
-              <p className="text-xs text-muted-foreground">{t("globalSearch.subtitle", { count: totalIndexed })}</p>
+              <p className="text-xs text-muted-foreground">{t("globalSearch.subtitle", { total: totalIndexed.toLocaleString() })}</p>
             </div>
             <Badge variant="outline" className="hidden shrink-0 sm:inline-flex">{t("globalSearch.badge")}</Badge>
           </div>
