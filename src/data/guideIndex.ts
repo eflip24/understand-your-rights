@@ -34,6 +34,13 @@ export const guideGroups: GuideGroup[] = [
       "Original, citable datasets compiled from state statutes and agency guidance — free to download and republish.",
     entries: [
       {
+        path: "/international",
+        title: "International legal guides (UK, Ireland, Canada, Australia)",
+        blurb:
+          "Claim deadlines, employment tribunal and Fair Work time limits, consumer rights and small claims limits for the four English-speaking common-law systems outside the US.",
+        badge: "New",
+      },
+      {
         path: "/data/settlement-deadlines",
         title: "State legal deadlines dataset",
         blurb:

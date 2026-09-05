@@ -547,6 +547,9 @@ function buildGuides(): string {
   e.push(u(`${SITE}/data/settlement-deadlines`,"weekly","0.9"));
   e.push(u(`${SITE}/data/court-filing-fees`,"weekly","0.9"));
   e.push(u(`${SITE}/statute-of-limitations-by-state`,"weekly","0.9"));
+  // International legal guides (EN-only)
+  e.push(u(`${SITE}/international`,"weekly","0.9"));
+  for (const c of ["united-kingdom","ireland","canada","australia"]) e.push(u(`${SITE}/international/${c}`,"monthly","0.8"));
   // Court information hub
   e.push(u(`${SITE}/courts`,"weekly","0.9"));
   for (const st of [...stateSlugs, "district-of-columbia"]) e.push(u(`${SITE}/courts/${st}`,"monthly","0.7"));
