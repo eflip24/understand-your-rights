@@ -122,6 +122,8 @@ const KeywordClusterPage = React.lazy(() => import("@/pages/KeywordClusterPage")
 const CourtsHub = React.lazy(() => import("@/pages/CourtsHub"));
 const StateCourtsPage = React.lazy(() => import("@/pages/StateCourtsPage"));
 const CityCourtPage = React.lazy(() => import("@/pages/CityCourtPage"));
+const InternationalHub = React.lazy(() => import("@/pages/InternationalHub"));
+const InternationalCountryPage = React.lazy(() => import("@/pages/InternationalCountryPage"));
 
 /**
  * The full route tree, used twice in App.tsx — once at "/" for English (default,
@@ -215,6 +217,8 @@ export default function AppRoutes() {
       <Route path="/data/settlement-deadlines" element={<SettlementDeadlinesDataset />} />
       <Route path="/data/court-filing-fees" element={<CourtFilingFeesDataset />} />
       <Route path="/statute-of-limitations-by-state" element={<StatuteOfLimitationsHub />} />
+      <Route path="/international" element={<InternationalHub />} />
+      <Route path="/international/:slug" element={<InternationalCountryPage />} />
       <Route path="/courts" element={<CourtsHub />} />
       <Route path="/courts/:state" element={<StateCourtsPage />} />
       <Route path="/courts/:state/:city" element={<CityCourtPage />} />
