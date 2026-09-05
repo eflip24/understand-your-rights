@@ -13,6 +13,7 @@ import { FORM_SEO_LANDINGS } from "@/data/formSeoLandings";
 import { formPacks } from "@/data/formPacks";
 import { legalTermPages } from "@/data/legalTermPages";
 import { stateData } from "@/data/locations/stateData";
+import { internationalJurisdictions } from "@/data/internationalJurisdictions";
 
 export type SearchKind = "tool" | "guide" | "form" | "pack" | "term" | "state" | "page";
 
@@ -51,6 +52,7 @@ const STATIC_PAGES: SearchEntry[] = [
   { id: "page-sol", title: "Statute of limitations by state", path: "/statute-of-limitations-by-state", kind: "page", keywords: ["deadline", "time limit", "filing window"] },
   { id: "page-deadlines", title: "Settlement deadlines dataset", path: "/data/settlement-deadlines", kind: "page" },
   { id: "page-fees", title: "Court filing fees dataset", path: "/data/court-filing-fees", kind: "page" },
+  { id: "page-international", title: "International legal guides (UK, Ireland, Canada, Australia)", path: "/international", kind: "page", keywords: ["uk", "britain", "ireland", "canada", "australia", "abroad", "overseas"] },
   { id: "page-lawyer", title: "Find a lawyer near me", path: "/lawyer-near-me", kind: "page" },
   { id: "page-lawyer-eu", title: "Find a lawyer in Europe", path: "/lawyer-eu", kind: "page" },
   { id: "page-eu-tools", title: "European employment calculators", path: "/eu-tools", kind: "page" },
@@ -116,6 +118,15 @@ export function getSearchIndex(): SearchEntry[] {
       path: `/legal-terms/${term.slug}`,
       kind: "term",
       keywords: [term.category, "definition", "meaning"],
+    })),
+
+    ...internationalJurisdictions.map<SearchEntry>((j) => ({
+      id: `intl-${j.slug}`,
+      title: `${j.country} — claim deadlines & legal guide`,
+      subtitle: j.tagline,
+      path: `/international/${j.slug}`,
+      kind: "state",
+      keywords: [j.code, j.currency, "limitation period", "small claims", "employment"],
     })),
 
     ...stateData.map<SearchEntry>((state) => ({
