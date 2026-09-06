@@ -474,6 +474,229 @@ export const internationalJurisdictions: InternationalJurisdiction[] = [
     ],
     lastVerified: INTERNATIONAL_LAST_VERIFIED,
   },
+  {
+    slug: "new-zealand",
+    country: "New Zealand",
+    code: "NZ",
+    currency: "NZD",
+    tagline: "Personal grievance deadlines, ACC's no-fault injury cover and the Disputes Tribunal",
+    metaTitle: "New Zealand Legal Guide — Personal Grievance, ACC & Disputes Tribunal Limits",
+    metaDescription:
+      "Plain-English New Zealand legal reference: the 90-day personal grievance deadline, unjustified dismissal remedies, ACC's no-fault injury scheme, Consumer Guarantees Act rights, and Disputes Tribunal limits and fees.",
+    intro: [
+      "New Zealand law is unusually centralised: one national employment system, one national consumer statute and one no-fault accident scheme that replaces most personal injury litigation. That makes the answers consistent nationwide, but it also means the routes are narrower — if a claim does not fit the designated forum, there is often no alternative court remedy.",
+      "Two deadlines dominate. Employment personal grievances must be raised with the employer within 90 days of the problem, and Disputes Tribunal claims sit under a fixed money limit that decides whether your dispute is cheap and informal or an expensive District Court matter.",
+    ],
+    quickFacts: [
+      { label: "Personal grievance", value: "90 days", note: "Raised with the employer, not filed in court" },
+      { label: "Disputes Tribunal limit", value: "NZ$30,000", note: "Per claim, lawyers not permitted" },
+      { label: "Contract & tort limitation", value: "6 years", note: "Limitation Act 2010" },
+      { label: "Injury compensation", value: "ACC, no-fault", note: "Suing for compensatory damages is barred" },
+    ],
+    deadlines: [
+      { claim: "Personal grievance (raise with employer)", limit: "90 days", authority: "Employment Relations Act 2000 s.114" },
+      { claim: "Sexual harassment grievance", limit: "12 months", authority: "Employment Relations Act 2000 s.114(1A)" },
+      { claim: "Filing in the Employment Relations Authority", limit: "3 years after grievance raised", authority: "Employment Relations Act 2000 s.114(6)" },
+      { claim: "Breach of contract / negligence", limit: "6 years", authority: "Limitation Act 2010 s.11" },
+      { claim: "Late knowledge longstop", limit: "15 years", authority: "Limitation Act 2010 s.11(3)" },
+      { claim: "Human Rights Commission complaint", limit: "12 months", authority: "Human Rights Act 1993 s.79" },
+      { claim: "Residential tenancy claim", limit: "12 months from breach", authority: "Residential Tenancies Act 1986" },
+    ],
+    topics: [
+      {
+        id: "personal-grievance",
+        heading: "The 90-day personal grievance clock — and what 'raising' actually means",
+        body: [
+          "A personal grievance covers unjustified dismissal, unjustified disadvantage, discrimination, harassment and duress. The 90-day period runs from the date the action occurred or came to your notice, and the step you must take within it is raising the grievance with the employer — a letter or email that identifies the problem and says you are raising a personal grievance is enough. You do not need to have filed anything with the Employment Relations Authority in that window.",
+          "Miss the 90 days and you need the employer's consent or the Authority's leave for exceptional circumstances, which is granted sparingly. Sexual harassment grievances carry a longer 12-month window, and once a grievance is validly raised you generally have three years to file with the Authority.",
+          "The test for dismissal is justification: what a fair and reasonable employer could have done in all the circumstances. Process failures alone can make an otherwise defensible dismissal unjustified, which is why remedies frequently turn on whether the employer investigated, put allegations to the employee and genuinely considered the response.",
+        ],
+        steps: [
+          "Put the grievance in writing within 90 days, dated, and keep proof of sending.",
+          "Name the specific action — dismissal, disadvantage, discrimination — and what you want.",
+          "Request your personal file and the investigation documents under the Privacy Act.",
+          "Use free mediation through MBIE before filing with the Authority.",
+        ],
+      },
+      {
+        id: "acc",
+        heading: "ACC: no-fault cover instead of a personal injury claim",
+        body: [
+          "New Zealand's Accident Compensation scheme covers personal injury by accident, work-related conditions and treatment injury, and in exchange bars claims for compensatory damages for those injuries. Instead of suing, you lodge an ACC claim, usually through the treating doctor, and receive treatment costs, weekly compensation at 80% of pre-injury earnings, and lump sums for permanent impairment.",
+          "Because litigation is off the table for the injury itself, disputes are about entitlement and cover: whether the injury is accident-related rather than degenerative, whether earnings were calculated correctly, and whether a treatment injury is established. The route is a review application within three months of the decision, then appeal to the District Court.",
+          "Exemplary damages remain available in rare cases of outrageous conduct, and claims for mental injury not tied to a covered physical injury, or for non-injury losses such as lost property, sit outside the bar.",
+        ],
+        steps: [
+          "Lodge the ACC claim through your GP or the treatment provider immediately.",
+          "Challenge a declined claim by filing a review within three months of the decision letter.",
+          "Ask for an independent medical assessment if cover is refused as degenerative.",
+        ],
+      },
+      {
+        id: "consumer",
+        heading: "Consumer Guarantees Act and the Disputes Tribunal",
+        body: [
+          "The Consumer Guarantees Act gives buyers guarantees of acceptable quality, fitness for purpose and correspondence with description, and those guarantees cannot be contracted out of in consumer sales. As in Australia, the remedy depends on whether the failure is substantial: substantial failures let the consumer reject the goods for a refund or claim compensation; minor ones give the supplier a chance to repair within a reasonable time.",
+          "The Disputes Tribunal hears claims up to NZ$30,000, decides them by referees rather than judges, and does not allow lawyers to appear. Filing fees are tiered by claim value, hearings are informal, and orders are enforceable in the District Court. Appeals are limited to procedural unfairness, not disagreement with the outcome.",
+          "For faulty services and misleading conduct, the Fair Trading Act adds a separate route with Commerce Commission enforcement, useful where the loss is small but the conduct is systemic.",
+        ],
+      },
+    ],
+    smallClaims: {
+      limit: "NZ$30,000",
+      court: "Disputes Tribunal",
+      fee: "NZ$59 to NZ$234 depending on claim value",
+      note: "Lawyers cannot represent parties in the Disputes Tribunal, which keeps costs low; appeals are limited to unfair conduct of the hearing.",
+    },
+    faqs: [
+      {
+        question: "How long do I have to raise a personal grievance in New Zealand?",
+        answer:
+          "90 days from the date the problem happened or came to your notice. You raise it with the employer in writing — you do not need to have filed with the Employment Relations Authority within that period. Sexual harassment grievances have a 12-month window.",
+      },
+      {
+        question: "Can I sue for a personal injury in New Zealand?",
+        answer:
+          "Generally no. ACC provides no-fault cover for personal injury and bars claims for compensatory damages. You claim through ACC instead, and challenge declined entitlements through the review and District Court appeal process.",
+      },
+      {
+        question: "What is the Disputes Tribunal limit?",
+        answer:
+          "NZ$30,000 per claim. Lawyers are not permitted to appear, filing fees run from about NZ$59 to NZ$234 depending on the amount claimed, and a referee decides the case informally.",
+      },
+    ],
+    helpBodies: [
+      { name: "Employment New Zealand (MBIE)", role: "Free employment rights information and mediation", url: "https://www.employment.govt.nz" },
+      { name: "ACC", role: "Accident compensation claims and reviews", url: "https://www.acc.co.nz" },
+      { name: "Disputes Tribunal", role: "Low-cost civil claims up to NZ$30,000", url: "https://www.disputestribunal.govt.nz" },
+      { name: "Citizens Advice Bureau NZ", role: "Free general legal and consumer advice", url: "https://www.cab.org.nz" },
+      { name: "Community Law Centres", role: "Free legal help for people who cannot afford a lawyer", url: "https://communitylaw.org.nz" },
+    ],
+    sources: [
+      { name: "Employment Relations Act 2000", url: "https://www.legislation.govt.nz/act/public/2000/0024/latest/DLM58316.html" },
+      { name: "Limitation Act 2010", url: "https://www.legislation.govt.nz/act/public/2010/0110/latest/DLM2033100.html" },
+      { name: "Consumer Guarantees Act 1993", url: "https://www.legislation.govt.nz/act/public/1993/0091/latest/DLM311053.html" },
+      { name: "Disputes Tribunal — fees and limits", url: "https://www.disputestribunal.govt.nz" },
+    ],
+    relatedUsPaths: [
+      { path: "/wrongful-termination-settlements", label: "US wrongful termination settlements" },
+      { path: "/tools/employment/severance-pay-calculator", label: "Severance pay calculator" },
+      { path: "/data/court-filing-fees", label: "US court filing fees by state" },
+    ],
+    lastVerified: INTERNATIONAL_LAST_VERIFIED,
+  },
+  {
+    slug: "south-africa",
+    country: "South Africa",
+    code: "ZA",
+    currency: "ZAR",
+    tagline: "CCMA referral deadlines, BCEA notice and severance rules, and the free Small Claims Court",
+    metaTitle: "South Africa Legal Guide — CCMA Deadlines, BCEA Notice & Small Claims Court",
+    metaDescription:
+      "Plain-English South African legal reference: 30-day CCMA unfair dismissal referrals, BCEA notice periods and severance pay, prescription periods, Consumer Protection Act rights, and the free Small Claims Court.",
+    intro: [
+      "South African employment law is unusually protective and unusually deadline-driven. Dismissal disputes go to the CCMA or a bargaining council rather than a court, and the referral window is short — 30 days for unfair dismissal, 90 days for unfair labour practice — measured from the date the dispute arose.",
+      "Outside employment, the Prescription Act sets a general three-year period for debt and delict claims, while the Small Claims Court offers a genuinely free forum for claims up to R20,000 where lawyers are not allowed to appear at all.",
+    ],
+    quickFacts: [
+      { label: "Unfair dismissal referral", value: "30 days", note: "To the CCMA or bargaining council" },
+      { label: "Unfair labour practice", value: "90 days", note: "From the act or omission" },
+      { label: "Small Claims Court", value: "R20,000", note: "No filing fee, no legal representation" },
+      { label: "General prescription", value: "3 years", note: "Debt and delict, Prescription Act 68 of 1969" },
+    ],
+    deadlines: [
+      { claim: "Unfair dismissal (CCMA referral)", limit: "30 days", authority: "Labour Relations Act 66 of 1995 s.191(1)" },
+      { claim: "Unfair labour practice", limit: "90 days", authority: "Labour Relations Act s.191(1)(b)(ii)" },
+      { claim: "Automatically unfair dismissal (Labour Court)", limit: "90 days after conciliation certificate", authority: "Labour Relations Act s.191(11)" },
+      { claim: "Discrimination (Employment Equity Act)", limit: "6 months", authority: "Employment Equity Act 55 of 1998 s.10" },
+      { claim: "Debt and delict claims", limit: "3 years", authority: "Prescription Act 68 of 1969 s.11(d)" },
+      { claim: "Claims against the State (notice)", limit: "6 months' notice, 3 years to sue", authority: "Institution of Legal Proceedings Against Organs of State Act 40 of 2002" },
+      { claim: "Road Accident Fund claim", limit: "3 years (2 years if driver unidentified)", authority: "Road Accident Fund Act 56 of 1996" },
+    ],
+    topics: [
+      {
+        id: "ccma",
+        heading: "The CCMA route: 30 days, conciliation, then arbitration",
+        body: [
+          "Almost every dismissal dispute starts with a referral to the CCMA or the relevant bargaining council on form LRA 7.11 within 30 days of the dismissal date. Late referrals require a condonation application explaining the delay, the prospects of success and the prejudice to the employer — condonation is discretionary and frequently refused for long, unexplained delays.",
+          "The first step is conciliation, a confidential settlement meeting. If it fails, the commissioner issues a certificate of non-resolution, and most misconduct and incapacity dismissals then go to arbitration at the CCMA, where the award is final and binding and only reviewable by the Labour Court. Automatically unfair dismissals — pregnancy, union activity, whistleblowing, discrimination — go to the Labour Court instead, within 90 days of the certificate.",
+          "Compensation for unfair dismissal is capped at 12 months' remuneration, or 24 months where the dismissal is automatically unfair. Reinstatement is the default remedy for a substantively unfair dismissal unless it is impracticable or the employee does not want it.",
+        ],
+        steps: [
+          "Refer to the CCMA within 30 days using form LRA 7.11 — email, fax or in person.",
+          "If late, file a condonation application with a full explanation for every day of delay.",
+          "Ask for the disciplinary record, charge sheet and outcome letter in writing.",
+          "Attend conciliation in person; settlements there are enforceable as arbitration awards.",
+        ],
+      },
+      {
+        id: "notice-severance",
+        heading: "BCEA notice periods and retrenchment severance pay",
+        body: [
+          "The Basic Conditions of Employment Act sets minimum notice by length of service: one week during the first six months, two weeks from six months to one year, and four weeks after one year. Farm and domestic workers get four weeks after six months. Notice must be in writing, and pay in lieu is permitted, but notice cannot be used to sidestep a fair dismissal process.",
+          "Where the dismissal is for operational requirements — retrenchment — the employee is entitled to severance of at least one week's remuneration for each completed year of continuous service, on top of notice pay and accrued leave. Refusing a reasonable alternative position forfeits severance.",
+          "Retrenchment also carries a consultation obligation under section 189, and for large employers a facilitated section 189A process. Failure to consult properly makes the dismissal procedurally unfair even where the commercial rationale is sound.",
+        ],
+        steps: [
+          "Calculate notice from continuous service, not from your current job title or grade.",
+          "Add one week per completed year of service for a retrenchment severance figure.",
+          "Check the final payslip covers notice, severance, accrued leave and pro-rata bonus.",
+          "Refer any shortfall as a BCEA claim; refer the fairness dispute to the CCMA separately.",
+        ],
+      },
+      {
+        id: "small-claims",
+        heading: "Small Claims Court and consumer protection",
+        body: [
+          "The Small Claims Court hears claims up to R20,000, charges no filing fee, and prohibits legal representation entirely — a commissioner, usually a practising attorney sitting voluntarily, decides the matter. Before issuing summons you must send a letter of demand giving the other side 14 days to pay, then obtain the summons from the clerk of the court.",
+          "Judgments are final: there is no appeal on the merits, only review to the High Court for gross irregularity. That trade-off is why the forum is fast and free, and why the letter of demand and your documents do most of the work.",
+          "For goods and services, the Consumer Protection Act adds a six-month right to return defective goods for repair, replacement or refund at the consumer's election, plus a cooling-off right for direct marketing. Complaints can go to the National Consumer Commission or an accredited ombud rather than to court.",
+        ],
+      },
+    ],
+    smallClaims: {
+      limit: "R20,000",
+      court: "Small Claims Court",
+      fee: "No filing fee (sheriff service costs may apply)",
+      note: "Legal representation is not permitted, a letter of demand giving 14 days is required first, and there is no appeal on the merits.",
+    },
+    faqs: [
+      {
+        question: "How long do I have to refer an unfair dismissal to the CCMA?",
+        answer:
+          "30 days from the date of dismissal. Late referrals require a condonation application setting out the reason for the delay, the prospects of success and the degree of lateness. Unfair labour practice disputes carry a 90-day window.",
+      },
+      {
+        question: "How much severance pay am I owed if I am retrenched in South Africa?",
+        answer:
+          "At least one week's remuneration for each completed year of continuous service, plus notice pay and accrued leave. Unreasonably refusing an alternative position offered by the employer forfeits the severance entitlement.",
+      },
+      {
+        question: "Does the Small Claims Court cost anything?",
+        answer:
+          "There is no filing fee. You pay only for the sheriff to serve the summons if you use one. Lawyers are not allowed to appear, so there are no legal fees either.",
+      },
+    ],
+    helpBodies: [
+      { name: "CCMA", role: "Free conciliation and arbitration of dismissal disputes", url: "https://www.ccma.org.za" },
+      { name: "Department of Employment and Labour", role: "BCEA enforcement, UIF and workplace inspections", url: "https://www.labour.gov.za" },
+      { name: "Legal Aid South Africa", role: "Free legal representation for qualifying people", url: "https://legal-aid.co.za" },
+      { name: "National Consumer Commission", role: "Consumer Protection Act complaints", url: "https://www.thencc.gov.za" },
+      { name: "Small Claims Court (DOJ)", role: "Free claims up to R20,000", url: "https://www.justice.gov.za/scc/scc.htm" },
+    ],
+    sources: [
+      { name: "Labour Relations Act 66 of 1995", url: "https://www.gov.za/documents/labour-relations-act" },
+      { name: "Basic Conditions of Employment Act 75 of 1997", url: "https://www.gov.za/documents/basic-conditions-employment-act" },
+      { name: "Prescription Act 68 of 1969", url: "https://www.gov.za/documents/prescription-act" },
+      { name: "Consumer Protection Act 68 of 2008", url: "https://www.gov.za/documents/consumer-protection-act" },
+    ],
+    relatedUsPaths: [
+      { path: "/wrongful-termination-settlements", label: "US wrongful termination settlements" },
+      { path: "/tools/employment/severance-pay-calculator", label: "Severance pay calculator" },
+      { path: "/statute-of-limitations-by-state", label: "US statute of limitations by state" },
+    ],
+    lastVerified: INTERNATIONAL_LAST_VERIFIED,
+  },
 ];
 
 export function getJurisdictionBySlug(slug?: string): InternationalJurisdiction | undefined {
