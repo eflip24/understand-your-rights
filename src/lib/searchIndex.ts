@@ -129,6 +129,25 @@ export function getSearchIndex(): SearchEntry[] {
       keywords: [j.code, j.currency, "limitation period", "small claims", "employment"],
     })),
 
+    ...internationalJurisdictions.flatMap<SearchEntry>((j) => [
+      {
+        id: `intl-notice-${j.slug}`,
+        title: `${j.country} notice period & severance calculator`,
+        subtitle: `Minimum notice, pay in lieu and severance in ${j.country}`,
+        path: `/international/${j.slug}/notice-period`,
+        kind: "tool",
+        keywords: [j.code, "notice period", "redundancy", "severance", "dismissal", "termination"],
+      },
+      {
+        id: `intl-claims-${j.slug}`,
+        title: `${j.country} small claims cost checker`,
+        subtitle: `Filing fees, limits and eligibility for small claims in ${j.country}`,
+        path: `/international/${j.slug}/small-claims-cost`,
+        kind: "tool",
+        keywords: [j.code, "small claims", "court fees", "filing fee", "sue", "tribunal"],
+      },
+    ]),
+
     ...stateData.map<SearchEntry>((state) => ({
       id: `state-${state.slug}`,
       title: `${state.name} — legal deadlines & courts`,
