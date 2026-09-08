@@ -219,6 +219,8 @@ export default function AppRoutes() {
       <Route path="/statute-of-limitations-by-state" element={<StatuteOfLimitationsHub />} />
       <Route path="/international" element={<InternationalHub />} />
       <Route path="/international/:slug" element={<InternationalCountryPage />} />
+      <Route path="/international/:slug/notice-period" element={<InternationalNoticeCalculator />} />
+      <Route path="/international/:slug/small-claims-cost" element={<InternationalSmallClaimsCalculator />} />
       <Route path="/courts" element={<CourtsHub />} />
       <Route path="/courts/:state" element={<StateCourtsPage />} />
       <Route path="/courts/:state/:city" element={<CityCourtPage />} />
