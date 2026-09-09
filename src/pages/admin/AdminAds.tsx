@@ -203,9 +203,10 @@ export default function AdminAds() {
         </div>
         <p className="text-sm text-muted-foreground">
           {AUTO_ADS_ONLY
-            ? "No named ad units are configured, so Google decides every placement and per-slot reporting is unavailable. Create a display unit per placement in AdSense and set the matching environment variable to switch that placement to a named unit."
-            : "Named units are in use. Placements without an ID still fall back to auto format."}
+            ? "No ad unit IDs are configured, so every placement on the site is currently rendered by Google Auto ads only and per-slot reporting is unavailable. Create a display unit per placement in AdSense, then paste each ID into AD_SLOT_FALLBACKS in src/lib/adsense.ts (or set the matching environment variable)."
+            : "Named units are in use. Each placement with an ID renders as a real unit; placements still blank stay on Auto ads."}
         </p>
+
         <div className="grid gap-2 sm:grid-cols-2">
           {namedUnits.map(([slot, id]) => (
             <div key={slot} className="flex items-center justify-between rounded border px-3 py-2 text-sm">
