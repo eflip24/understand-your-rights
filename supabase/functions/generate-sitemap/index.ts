@@ -549,7 +549,11 @@ function buildGuides(): string {
   e.push(u(`${SITE}/statute-of-limitations-by-state`,"weekly","0.9"));
   // International legal guides (EN-only)
   e.push(u(`${SITE}/international`,"weekly","0.9"));
-  for (const c of ["united-kingdom","ireland","canada","australia"]) e.push(u(`${SITE}/international/${c}`,"monthly","0.8"));
+  for (const c of ["united-kingdom","ireland","canada","australia","new-zealand","south-africa"]) {
+    e.push(u(`${SITE}/international/${c}`,"monthly","0.8"));
+    e.push(u(`${SITE}/international/${c}/notice-period`,"monthly","0.8"));
+    e.push(u(`${SITE}/international/${c}/small-claims-cost`,"monthly","0.8"));
+  }
   // Court information hub
   e.push(u(`${SITE}/courts`,"weekly","0.9"));
   for (const st of [...stateSlugs, "district-of-columbia"]) e.push(u(`${SITE}/courts/${st}`,"monthly","0.7"));
