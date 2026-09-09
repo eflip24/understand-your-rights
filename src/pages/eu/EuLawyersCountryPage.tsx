@@ -118,7 +118,7 @@ export default function EuLawyersCountryPage() {
 
       <CountryPillarSections pillar={pillar} locale={locale} labels={pillarLabels} />
 
-      <CountryExpatDepthBlock country={canonical.country} className="mb-10" />
+      {locale === "en" && <CountryExpatDepthBlock country={canonical.country} className="mb-10" />}
 
       <EuToolsCrossLink country={canonical.country} className="mb-10" />
 
