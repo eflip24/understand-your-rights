@@ -33,13 +33,13 @@ const envSlot = (key: string): string => {
  * Filling a single one is enough to switch that placement on.
  */
 export const AD_SLOT_FALLBACKS: Record<string, string> = {
-  "above-content": "",
-  "mid-content": "",
-  "end-of-article": "",
-  "post-result": "",
-  "tool-result": "",
-  "sidebar": "",
-  "in-feed": "",
+  "above-content": "7958006282",
+  "mid-content": "6022459730",
+  "end-of-article": "6429653843",
+  "post-result": "4689679267",
+  "tool-result": "3376597599",
+  "sidebar": "5922869883",
+  "in-feed": "9359069518",
   "anchor-mobile": "",
 };
 
