@@ -62,6 +62,28 @@ export default function InternationalCountryPage() {
         ))}
       </div>
 
+      <section className="mb-8 grid gap-3 sm:grid-cols-2" aria-labelledby="calculators">
+        <h2 id="calculators" className="sr-only">{j.country} calculators</h2>
+        <Link
+          to={lp(`/international/${j.slug}/notice-period`)}
+          className="rounded-lg border bg-card p-4 transition-colors hover:border-accent"
+        >
+          <p className="font-semibold text-accent">{j.country} notice period calculator</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Minimum notice, pay in lieu, severance and the deadline to challenge a dismissal.
+          </p>
+        </Link>
+        <Link
+          to={lp(`/international/${j.slug}/small-claims-cost`)}
+          className="rounded-lg border bg-card p-4 transition-colors hover:border-accent"
+        >
+          <p className="font-semibold text-accent">{j.country} small claims cost checker</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Check the limit, filing and hearing fees, and what you keep if you win.
+          </p>
+        </Link>
+      </section>
+
       <AdSlot slot="above-content" className="mb-8" />
 
       <div className="mb-10 space-y-4">

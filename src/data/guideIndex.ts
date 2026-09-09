@@ -35,9 +35,9 @@ export const guideGroups: GuideGroup[] = [
     entries: [
       {
         path: "/international",
-        title: "International legal guides (UK, Ireland, Canada, Australia)",
+        title: "International legal guides (UK, Ireland, Canada, Australia, NZ, South Africa)",
         blurb:
-          "Claim deadlines, employment tribunal and Fair Work time limits, consumer rights and small claims limits for the four English-speaking common-law systems outside the US.",
+          "Claim deadlines, employment tribunal and Fair Work time limits, consumer rights, small claims limits and notice-period calculators for six common-law systems outside the US.",
         badge: "New",
       },
       {
