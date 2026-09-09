@@ -30,7 +30,7 @@ export interface CountryExpatDepth {
 }
 
 export const COUNTRY_EXPAT_DEPTH: Record<string, CountryExpatDepth> = {
-  spain: {
+  es: {
     heading: "Hiring a lawyer in Spain as a foreign resident or property owner",
     intro:
       "Most people searching for a lawyer in Spain from abroad are dealing with one of four things: buying or selling property, an inheritance involving Spanish assets, a residency or NIE application, or a dispute with a developer, bank or insurer. Spanish practice differs from northern European practice in ways that cost money if you learn them late — the notary does not act for you, the estate agent is not neutral, and the person handling your paperwork may not be a lawyer at all.",
