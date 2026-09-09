@@ -14,7 +14,14 @@
  *
  * Figures are indicative and several states index their cap to inflation
  * annually. Always confirm the current number before relying on it.
+ *
+ * Last reviewed: September 2026. Indexed caps (CA, CO, ID, MD, MI, MO, NV, NC,
+ * SC, UT, VA, WV) change every year — the controlling figure is the one in
+ * force when the claim arose, not the one in force at trial.
  */
+
+/** Month/year this table was last checked against state statutes. */
+export const PAIN_SUFFERING_CAPS_REVIEWED = "September 2026";
 
 export interface StatePainSufferingRule {
   /** Cap on non-economic damages in ordinary (non-medical) injury claims. */
@@ -38,7 +45,7 @@ export const painSufferingRules: Record<string, StatePainSufferingRule> = {
   AK: r("$400,000 or $8,000 × life expectancy (higher for severe permanent impairment)", "$250,000 / $400,000 severe", "Alaska is one of the few states that caps non-economic damages in ordinary injury cases, not just malpractice."),
   AZ: r(NO_GENERAL_CAP, "No cap (barred by the Arizona Constitution)", "The Arizona Constitution forbids damage caps, which makes pain-and-suffering the largest part of most serious claims."),
   AR: r(NO_GENERAL_CAP, "No cap", "Arkansas voters and courts have repeatedly rejected caps; multiplier arguments run the case."),
-  CA: r(NO_GENERAL_CAP, "$430,000 (non-death) / $600,000 (death), rising annually to $750,000 / $1M by 2033", "MICRA was amended in 2023 — the old $250,000 cap no longer applies and rises every January 1."),
+  CA: r(NO_GENERAL_CAP, "$470,000 (non-death) / $650,000 (death) in 2026, rising annually to $750,000 / $1M by 2033", "MICRA was amended by AB 35 — the old $250,000 cap no longer applies. The cap rises $40,000 (injury) or $50,000 (death) every January 1, and the figure that counts is the one in force when the claim arose."),
   CO: r("~$729,790 (indexed, general non-economic)", "$300,000 within a $1M total cap", "Colorado indexes its caps for inflation, so quote the year of the injury, not today's figure."),
   CT: r(NO_GENERAL_CAP, "No cap", "No caps at all; comparative fault above 51% is the only bar."),
   DE: r(NO_GENERAL_CAP, "No cap", "No damage caps, but medical claims need an affidavit of merit at filing."),
@@ -54,7 +61,7 @@ export const painSufferingRules: Record<string, StatePainSufferingRule> = {
   KY: r(NO_GENERAL_CAP, "No cap (Kentucky Constitution §54 bars caps)", "Kentucky's constitution prohibits limiting damages, but its one-year statute of limitations is brutally short."),
   LA: r(NO_GENERAL_CAP, "$500,000 total (excluding future medical)", "Louisiana's malpractice cap covers all damages combined and has not been raised since 1975."),
   ME: r(NO_GENERAL_CAP, "$500,000 (wrongful death non-economic)", "Ordinary injury claims are uncapped; wrongful death has a statutory limit."),
-  MD: r("~$935,000 (indexed +$15,000 each year)", "~$935,000 (separate schedule)", "Maryland's cap rises every year and contributory negligence still applies — both must be checked."),
+  MD: r("$965,000 for claims arising 1 Oct 2025–30 Sep 2026 (+$15,000 each 1 October)", "Separate malpractice schedule, also indexed annually", "Maryland's cap steps up every 1 October and is fixed by the date the claim arose, not the trial date. Contributory negligence still applies here — both must be checked."),
   MA: r(NO_GENERAL_CAP, "$500,000 unless substantial or permanent impairment", "The malpractice cap falls away when the injury is permanent, so document permanency early."),
   MI: r(NO_GENERAL_CAP, "~$597,000 / ~$1.06M (indexed)", "No-fault reform in 2019 changed what medical costs are recoverable; pain and suffering requires a serious impairment of body function."),
   MN: r(NO_GENERAL_CAP, "No cap", "Minnesota has no caps; the no-fault tort threshold is the gate for auto claims."),
@@ -62,7 +69,7 @@ export const painSufferingRules: Record<string, StatePainSufferingRule> = {
   MO: r(NO_GENERAL_CAP, "~$450,000 / ~$840,000 catastrophic (indexed)", "Only malpractice is capped; the cap is inflation-adjusted every year."),
   MT: r(NO_GENERAL_CAP, "$250,000", "Montana caps malpractice non-economic damages only."),
   NE: r(NO_GENERAL_CAP, "$2.25M total", "Nebraska's cap is a total recovery cap, and the Excess Liability Fund pays above the provider's share."),
-  NV: r(NO_GENERAL_CAP, "$430,000 in 2024, rising $80,000 a year to $750,000", "Nevada's cap was rewritten by AB 404; the number depends on the year the claim accrued."),
+  NV: r(NO_GENERAL_CAP, "$590,000 in 2026, rising $80,000 each 1 January to $750,000, then indexed at 2.1%", "Nevada's cap was rewritten by AB 404 (2023), starting at $430,000 in 2024; the number depends on the year the claim accrued, and the Nevada Supreme Court publishes the current figure."),
   NH: r(NO_GENERAL_CAP, "No cap (struck down in Carson v. Maurer)", "No caps; comparative fault above 50% bars recovery."),
   NJ: r(NO_GENERAL_CAP, "No cap", "New Jersey's verbal-threshold election on your auto policy decides whether you can claim pain and suffering at all — check the declarations page."),
   NM: r(NO_GENERAL_CAP, "$750,000+ (independent providers, indexed)", "New Mexico's 2021 reform staggered the cap by provider type."),

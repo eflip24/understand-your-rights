@@ -7,6 +7,7 @@ import EuLawyerHead from "@/components/seo/EuLawyerHead";
 import BarDisclaimerNotice from "@/components/eu/BarDisclaimerNotice";
 import CountryPillarSections from "@/components/eu/CountryPillarSections";
 import EuToolsCrossLink from "@/components/eu/EuToolsCrossLink";
+import CountryExpatDepthBlock from "@/components/eu/CountryExpatDepth";
 import PillarLocaleFallbackBanner from "@/components/eu/PillarLocaleFallbackBanner";
 import { JsonLdGraph, breadcrumbSchema, itemListSchema, faqSchema } from "@/components/seo/JsonLd";
 import { useLocaleFromUrl } from "@/i18n/LocaleSync";
@@ -116,6 +117,8 @@ export default function EuLawyersCountryPage() {
       />
 
       <CountryPillarSections pillar={pillar} locale={locale} labels={pillarLabels} />
+
+      <CountryExpatDepthBlock country={canonical.country} className="mb-10" />
 
       <EuToolsCrossLink country={canonical.country} className="mb-10" />
 

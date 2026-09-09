@@ -2,6 +2,15 @@
 // Years for civil claims by state. Sources cited per-state in `citation`.
 // Educational reference — NOT legal advice. Discovery rules, tolling, and
 // government-entity claims may shorten or extend these periods.
+//
+// Last verified against state statutes: September 2026. Recent changes
+// reflected here: Louisiana moved from 1 to 2 years for torts arising on or
+// after 1 July 2024 (Act 423 of 2024, C.C. art. 3493.1); Florida moved from 4
+// to 2 years for negligence accruing on or after 24 March 2023 (HB 837).
+// Deadlines are fixed by the date the claim arose, not the date you file.
+
+/** Month/year this table was last checked against state statutes. */
+export const SOL_DATA_REVIEWED = "September 2026";
 
 export type SolClaimType =
   | "written_contract"
@@ -296,7 +305,7 @@ export const SOL_STATES: StateSol[] = [
   { state: "Kentucky", abbr: "KY", entries: {
     written_contract: { years: 10, citation: "Ky. Rev. Stat. § 413.090 (5yrs post-2014)" },
     oral_contract: { years: 5, citation: "Ky. Rev. Stat. § 413.120" },
-    personal_injury: { years: 1, citation: "Ky. Rev. Stat. § 413.140" },
+    personal_injury: { years: 1, citation: "Ky. Rev. Stat. § 413.140 (2 yrs for motor-vehicle injury under KRS § 304.39-230)" },
     medical_malpractice: { years: 1, citation: "Ky. Rev. Stat. § 413.140" },
     wrongful_death: { years: 1, citation: "Ky. Rev. Stat. § 413.140" },
     property_damage: { years: 2, citation: "Ky. Rev. Stat. § 413.125" },
@@ -311,13 +320,13 @@ export const SOL_STATES: StateSol[] = [
   { state: "Louisiana", abbr: "LA", entries: {
     written_contract: { years: 10, citation: "La. Civ. Code art. 3499" },
     oral_contract: { years: 10, citation: "La. Civ. Code art. 3499" },
-    personal_injury: { years: 1, citation: "La. Civ. Code art. 3492" },
-    medical_malpractice: { years: 1, citation: "La. R.S. § 9:5628" },
-    wrongful_death: { years: 1, citation: "La. Civ. Code art. 2315.2" },
-    property_damage: { years: 1, citation: "La. Civ. Code art. 3493" },
-    product_liability: { years: 1, citation: "La. Civ. Code art. 3492" },
-    fraud: { years: 1, citation: "La. Civ. Code art. 3492" },
-    defamation: { years: 1, citation: "La. Civ. Code art. 3492" },
+    personal_injury: { years: 2, citation: "La. Civ. Code art. 3493.1 (2 yrs for torts arising on/after 1 Jul 2024; 1 yr before)" },
+    medical_malpractice: { years: 1, citation: "La. R.S. § 9:5628 (1 yr from act or discovery, 3-yr repose)" },
+    wrongful_death: { years: 2, citation: "La. Civ. Code arts. 2315.2, 3493.1 (deaths on/after 1 Jul 2024)" },
+    property_damage: { years: 2, citation: "La. Civ. Code art. 3493.1 (art. 3493 repealed by Act 423 of 2024)" },
+    product_liability: { years: 2, citation: "La. Civ. Code art. 3493.1" },
+    fraud: { years: 2, citation: "La. Civ. Code art. 3493.1" },
+    defamation: { years: 2, citation: "La. Civ. Code art. 3493.1" },
     employment_discrimination: { years: 1, citation: "La. R.S. § 23:303" },
     unpaid_wages: { years: 3, citation: "La. Civ. Code art. 3494" },
     debt_collection: { years: 10, citation: "La. Civ. Code art. 3499" },

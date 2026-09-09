@@ -44,8 +44,11 @@ export default function LegalTermPage() {
       relatedToolIds={term.relatedToolIds}
       relatedTermSlugs={term.relatedTermSlugs}
       faqs={term.faqs}
-      metaTitle={`${localizedTerm} — ${t("common:page.definitionExamplesSuffix")}`}
-      metaDescription={localizedDef}
+      metaTitle={t("common:page.termMetaTitle", {
+        term: localizedTerm,
+        defaultValue: `${localizedTerm} — ${t("common:page.definitionExamplesSuffix")}`,
+      })}
+      metaDescription={localizedDef.length > 150 ? localizedDef.slice(0, 150).trim() + "…" : localizedDef}
     >
       <JsonLdGraph schemas={schemas} />
 
