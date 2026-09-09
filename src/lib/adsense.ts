@@ -23,28 +23,53 @@ const envSlot = (key: string): string => {
   }
 };
 
+/**
+ * ==========================================================
+ * PASTE YOUR ADSENSE AD UNIT IDs HERE (digits only, e.g. "1234567890")
+ * ==========================================================
+ * Create one Display ad unit per placement in AdSense
+ * (Ads → By ad unit → Display ads), copy its data-ad-slot number and
+ * paste it below. Any placement left as "" stays on Google Auto ads.
+ * Filling a single one is enough to switch that placement on.
+ */
+export const AD_SLOT_FALLBACKS: Record<string, string> = {
+  "above-content": "",
+  "mid-content": "",
+  "end-of-article": "",
+  "post-result": "",
+  "tool-result": "",
+  "sidebar": "",
+  "in-feed": "",
+  "anchor-mobile": "",
+};
+
+const slotId = (key: string, name: string): string =>
+  envSlot(key) || AD_SLOT_FALLBACKS[name] || "";
+
 export const AD_SLOT_IDS: Record<string, string> = {
-  "above-content": envSlot("VITE_ADSENSE_SLOT_ABOVE_CONTENT"),
-  "mid-content": envSlot("VITE_ADSENSE_SLOT_MID_CONTENT"),
-  "end-of-article": envSlot("VITE_ADSENSE_SLOT_END_OF_ARTICLE"),
-  "post-result": envSlot("VITE_ADSENSE_SLOT_POST_RESULT"),
-  "tool-result": envSlot("VITE_ADSENSE_SLOT_TOOL_RESULT"),
-  "sidebar": envSlot("VITE_ADSENSE_SLOT_SIDEBAR"),
-  "in-feed": envSlot("VITE_ADSENSE_SLOT_IN_FEED"),
-  "anchor-mobile": envSlot("VITE_ADSENSE_SLOT_ANCHOR_MOBILE"),
+  "above-content": slotId("VITE_ADSENSE_SLOT_ABOVE_CONTENT", "above-content"),
+  "mid-content": slotId("VITE_ADSENSE_SLOT_MID_CONTENT", "mid-content"),
+  "end-of-article": slotId("VITE_ADSENSE_SLOT_END_OF_ARTICLE", "end-of-article"),
+  "post-result": slotId("VITE_ADSENSE_SLOT_POST_RESULT", "post-result"),
+  "tool-result": slotId("VITE_ADSENSE_SLOT_TOOL_RESULT", "tool-result"),
+  "sidebar": slotId("VITE_ADSENSE_SLOT_SIDEBAR", "sidebar"),
+  "in-feed": slotId("VITE_ADSENSE_SLOT_IN_FEED", "in-feed"),
+  "anchor-mobile": slotId("VITE_ADSENSE_SLOT_ANCHOR_MOBILE", "anchor-mobile"),
 };
 
 /**
  * Auto-ads mode.
  *
- * When no named unit IDs are configured, the account is running Google
- * Auto ads: Google places anchor, vignette and in-article units itself.
- * In that mode we must NOT also render manual <ins> blocks with a blank
- * data-ad-slot (they mostly go unfilled, reserve dead space, and can
- * cause duplicate/overlapping placements). Set any VITE_ADSENSE_SLOT_*
- * env var to switch that placement back to a manual unit.
+ * A placement with no configured unit ID must NOT render a manual <ins>
+ * with a blank data-ad-slot (it goes unfilled and reserves dead space) —
+ * Google Auto ads covers that position instead. Placements WITH an ID
+ * render as real, per-slot-reportable units.
  */
 export const AUTO_ADS_ONLY = Object.values(AD_SLOT_IDS).every((id) => !id);
+
+/** True when this specific placement has a real ad unit configured. */
+export const hasManualUnit = (slot: string): boolean => !!AD_SLOT_IDS[slot];
+
 
 declare global {
   interface Window {
