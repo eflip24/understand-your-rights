@@ -148,9 +148,9 @@ export function datasetToCsv(rows: SettlementDeadlineRow[] = settlementDeadlineD
 
 export const DATASET_META = {
   name: "US State Legal Deadlines & Settlement Rules Dataset",
-  version: "1.0",
+  version: "1.1",
   jurisdictions: settlementDeadlineDataset.length,
   fields: DATASET_COLUMNS.length + 2,
-  updated: "2026-08-11",
+  updated: "2026-09-09",
   license: "CC BY 4.0 — free to reuse with attribution to LegallySpoken.",
 };

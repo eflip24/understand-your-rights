@@ -63,7 +63,8 @@
     "whatDoesMean": "Que Signifie \"{{term}}\" ?",
     "exampleClause": "Exemple de Clause",
     "definitionExamplesSuffix": "Définition & Exemples | LegallySpoken",
-    "englishOnlyNotice": "Ce guide n'est actuellement disponible qu'en anglais."
+    "englishOnlyNotice": "Ce guide n'est actuellement disponible qu'en anglais.",
+    "termMetaTitle": "{{term}} : définition juridique, éléments et exemples | LegallySpoken"
   },
   "contractTypePage": {
     "metaSuffix": "Guide et Clauses Clés | LegallySpoken",

@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { AlertCircle, Clock, CheckCircle2, ExternalLink } from "lucide-react";
-import { SOL_STATES, CLAIM_TYPES, getSol, type SolClaimType } from "@/data/solData";
+import { SOL_STATES, CLAIM_TYPES, getSol, SOL_DATA_REVIEWED, type SolClaimType } from "@/data/solData";
 import { Link } from "react-router-dom";
 
 function fmtYears(y: number) {
@@ -146,7 +146,10 @@ export default function StatuteOfLimitationsLookup() {
       )}
 
       <p className="text-xs text-muted-foreground border-t pt-3">
-        Educational reference only — not legal advice. Statutes change; verify with a licensed attorney in your jurisdiction before relying on these figures.
+        Educational reference only — not legal advice. Last verified against state statutes in {SOL_DATA_REVIEWED}.
+        The deadline is set by the date your claim arose, not the date you file, so a state that has changed its law
+        recently can have two different periods running at once. Verify with a licensed attorney in your jurisdiction
+        before relying on these figures.
       </p>
 
       <ToolRecommender topic="statute-of-limitations" />

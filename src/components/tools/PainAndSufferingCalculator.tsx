@@ -10,7 +10,7 @@ import ToolRecommender from "@/components/tools/ToolRecommender";
 import SettlementTaxabilityFAQ from "@/components/tools/SettlementTaxabilityFAQ";
 import ToolResultAd from "@/components/tools/ToolResultAd";
 import { stateData } from "@/data/locations/stateData";
-import { getPainSufferingRule } from "@/data/painSufferingCaps";
+import { getPainSufferingRule, PAIN_SUFFERING_CAPS_REVIEWED } from "@/data/painSufferingCaps";
 
 const usd = (n: number) => `$${Math.round(n).toLocaleString("en-US")}`;
 
@@ -296,7 +296,9 @@ export default function PainAndSufferingCalculator() {
 
             <p className="text-xs text-muted-foreground">
               Estimates only, based on the multiplier and per-diem methods insurers and plaintiff firms both use.
-              Caps and comparative-fault rules change; confirm the current figure for your state. Not legal advice.
+              Cap figures last checked against state statutes in {PAIN_SUFFERING_CAPS_REVIEWED}. Several states index
+              their cap annually and the controlling figure is the one in force when the claim arose, so confirm the
+              current number for your state. Not legal advice.
             </p>
           </CardContent>
         </Card>

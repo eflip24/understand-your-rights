@@ -63,7 +63,8 @@
     "whatDoesMean": "Was bedeutet „{{term}}“?",
     "exampleClause": "Beispielklausel",
     "definitionExamplesSuffix": "Definition & Beispiele | LegallySpoken",
-    "englishOnlyNotice": "Dieser Leitfaden ist derzeit nur auf Englisch verfügbar."
+    "englishOnlyNotice": "Dieser Leitfaden ist derzeit nur auf Englisch verfügbar.",
+    "termMetaTitle": "{{term}}: Juristische Definition, Merkmale & Beispiele | LegallySpoken"
   },
   "contractTypePage": {
     "metaSuffix": "Leitfaden & Schlüsselklauseln | LegallySpoken",
