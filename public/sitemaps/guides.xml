@@ -546,6 +546,31 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://legallyspoken.com/international</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/united-kingdom</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/ireland</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/canada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/australia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://legallyspoken.com/courts</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -1237,6 +1262,21 @@
   </url>
   <url>
     <loc>https://legallyspoken.com/roundup-camp-lejeune-updates</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/health-insurance-claim-denied</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/data-breach-claim-compensation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/ai-hiring-and-workplace-surveillance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
