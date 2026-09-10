@@ -256,6 +256,11 @@
     <priority>0.5</priority>
   </url>
 <url>
+    <loc>https://legallyspoken.com/insurance-law/colorado/subrogation-explained</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
     <loc>https://legallyspoken.com/employment-law/alabama/wrongful-termination</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -456,6 +461,11 @@
     <priority>0.5</priority>
   </url>
 <url>
+    <loc>https://legallyspoken.com/employment-law/south-carolina/severance-agreements</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
     <loc>https://legallyspoken.com/employment-law/south-dakota/wrongful-termination</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -507,6 +517,16 @@
   </url>
 <url>
     <loc>https://legallyspoken.com/criminal-law/maine/drug-charges</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>https://legallyspoken.com/criminal-law/new-york/domestic-violence-charges</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>https://legallyspoken.com/criminal-law/ohio/domestic-violence-charges</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
