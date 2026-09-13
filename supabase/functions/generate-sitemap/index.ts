@@ -547,6 +547,8 @@ function buildGuides(): string {
   e.push(u(`${SITE}/data/settlement-deadlines`,"weekly","0.9"));
   e.push(u(`${SITE}/data/court-filing-fees`,"weekly","0.9"));
   e.push(u(`${SITE}/statute-of-limitations-by-state`,"weekly","0.9"));
+  // Spain cross-border lawyer guide (EN, with DA/SV/NO/NL summaries)
+  e.push(u(`${SITE}/english-speaking-lawyer-in-spain`,"monthly","0.9"));
   // International legal guides (EN-only)
   e.push(u(`${SITE}/international`,"weekly","0.9"));
   for (const c of ["united-kingdom","ireland","canada","australia","new-zealand","south-africa"]) {

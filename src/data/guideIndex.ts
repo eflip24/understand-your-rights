@@ -34,6 +34,13 @@ export const guideGroups: GuideGroup[] = [
       "Original, citable datasets compiled from state statutes and agency guidance — free to download and republish.",
     entries: [
       {
+        path: "/english-speaking-lawyer-in-spain",
+        title: "English-speaking lawyer in Spain: costs, checks and deadlines",
+        blurb:
+          "Abogado vs gestor vs notario, typical fees by matter, how to verify a colegiado number, and the deadlines that catch foreign buyers, heirs and employees out. Summaries in Danish, Swedish, Norwegian and Dutch.",
+        badge: "New",
+      },
+      {
         path: "/international",
         title: "International legal guides (UK, Ireland, Canada, Australia, NZ, South Africa)",
         blurb:

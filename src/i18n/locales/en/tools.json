@@ -3592,6 +3592,15 @@
         "Key inputs include your lost wages and benefits, the expected duration of future lost earnings if reinstatement is unlikely, and documented emotional distress or humiliation. Employer size and state or federal statutory caps are critical because they may cap compensatory or punitive damages. Willfulness, discriminatory intent, and evidence strength affect potential awards; so do mitigation opportunities like alternative employment. Attorney fees, litigation costs, and potential settlements with other parties also influence the net recovery estimate.",
         "This EEOC estimator is for informational purposes and is not legal advice. Employment discrimination cases involve procedural rules, deadlines, and complex remedies that vary by statute and jurisdiction. If you believe you experienced discrimination or retaliation, consult a licensed employment attorney promptly to evaluate your claim, discuss filing EEOC charges, and advise on remedies and litigation strategy. The calculator offers only illustrative ranges and does not predict outcomes or replace professional legal counsel."
       ]
+    },
+    "stock-option-tax": {
+      "heading": "How Stock Option Taxes Work — ISOs, NSOs and the Timing Trap",
+      "paragraphs": [
+        "Stock option tax turns on two moments: the day you exercise and the day you sell. With a non-qualified stock option (NSO), the spread between the strike price and the fair market value at exercise is ordinary compensation income. It is reported on your W-2, withheld at supplemental rates, and subject to Social Security and Medicare. Nothing about holding the shares afterwards undoes that.",
+        "Incentive stock options (ISOs) behave differently. There is no regular income tax at exercise, but the spread is an adjustment item for the alternative minimum tax. If you exercise a large ISO position and hold, you can owe AMT on a gain you have not received in cash. Hold the shares at least two years from grant and one year from exercise and the entire gain is taxed as long-term capital gain; sell earlier and the sale becomes a disqualifying disposition, converting the spread back into ordinary income.",
+        "The sale itself is taxed on the difference between your sale price and your cost basis. For an NSO, the basis is the fair market value you already paid income tax on. Short-term gains (one year or less) are taxed at ordinary rates; long-term gains at 0, 15 or 20 percent depending on your taxable income, plus the 3.8 percent net investment income tax above the statutory thresholds.",
+        "The most expensive mistake is exercising into a falling market. Tax is assessed on the value at exercise, not what the shares are eventually worth. If the price drops after exercise, the liability stands and the loss is a capital loss, deductible against capital gains and only $3,000 per year against ordinary income. Model the cash cost of exercise and the tax in the same month before you act, and speak to a tax professional about an 83(b) election if your shares are still subject to vesting."
+      ]
     }
   }
 }

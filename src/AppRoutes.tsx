@@ -123,6 +123,7 @@ const CourtsHub = React.lazy(() => import("@/pages/CourtsHub"));
 const StateCourtsPage = React.lazy(() => import("@/pages/StateCourtsPage"));
 const CityCourtPage = React.lazy(() => import("@/pages/CityCourtPage"));
 const InternationalHub = React.lazy(() => import("@/pages/InternationalHub"));
+const LawyerInSpainGuide = React.lazy(() => import("@/pages/LawyerInSpainGuide"));
 const InternationalCountryPage = React.lazy(() => import("@/pages/InternationalCountryPage"));
 const InternationalNoticeCalculator = React.lazy(() => import("@/pages/InternationalNoticeCalculator"));
 const InternationalSmallClaimsCalculator = React.lazy(() => import("@/pages/InternationalSmallClaimsCalculator"));
@@ -219,6 +220,7 @@ export default function AppRoutes() {
       <Route path="/data/settlement-deadlines" element={<SettlementDeadlinesDataset />} />
       <Route path="/data/court-filing-fees" element={<CourtFilingFeesDataset />} />
       <Route path="/statute-of-limitations-by-state" element={<StatuteOfLimitationsHub />} />
+      <Route path="/english-speaking-lawyer-in-spain" element={<LawyerInSpainGuide />} />
       <Route path="/international" element={<InternationalHub />} />
       <Route path="/international/:slug" element={<InternationalCountryPage />} />
       <Route path="/international/:slug/notice-period" element={<InternationalNoticeCalculator />} />
