@@ -118,6 +118,22 @@ export default function EuLawyersCountryPage() {
 
       <CountryPillarSections pillar={pillar} locale={locale} labels={pillarLabels} />
 
+      {canonical.country === "es" && (
+        <Link
+          to="/english-speaking-lawyer-in-spain"
+          className="mb-10 block rounded-xl border bg-secondary/40 p-5 hover:border-accent hover:shadow-md transition-all"
+        >
+          <span className="text-base font-semibold text-foreground">
+            Guide: finding an English-speaking lawyer in Spain
+          </span>
+          <span className="mt-1 block text-sm text-muted-foreground">
+            Abogado vs gestor vs notario, typical fees by matter, how to verify a
+            colegiado number, and the deadlines foreign clients miss. Summaries in
+            Danish, Swedish, Norwegian and Dutch.
+          </span>
+        </Link>
+      )}
+
       {locale === "en" && <CountryExpatDepthBlock country={canonical.country} className="mb-10" />}
 
       <EuToolsCrossLink country={canonical.country} className="mb-10" />
