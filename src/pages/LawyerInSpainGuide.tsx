@@ -133,7 +133,7 @@ export default function LawyerInSpainGuide() {
         { label: "Find a lawyer in Europe", href: "/lawyer-eu" },
         { label: "Spain" },
       ]}
-      relatedToolIds={["severance-calculator"]}
+      relatedToolIds={["severance-pay"]}
       faqs={FAQS}
     >
       <JsonLdGraph
@@ -147,7 +147,7 @@ export default function LawyerInSpainGuide() {
             "Finding an English-speaking lawyer in Spain",
             "How Spanish legal practice works for foreign buyers, heirs, residents and employees: professional roles, typical fees, verification checks and key deadlines.",
             `${SITE}${PATH}`,
-            REVIEWED,
+            { datePublished: "2026-09-13", dateModified: REVIEWED },
           ),
         ]}
       />
