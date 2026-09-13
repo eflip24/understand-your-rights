@@ -56,6 +56,7 @@ const STATIC_PAGES: SearchEntry[] = [
   { id: "page-lawyer", title: "Find a lawyer near me", path: "/lawyer-near-me", kind: "page" },
   { id: "page-lawyer-eu", title: "Find a lawyer in Europe", path: "/lawyer-eu", kind: "page" },
   { id: "page-eu-tools", title: "European employment calculators", path: "/eu-tools", kind: "page" },
+  { id: "page-lawyer-spain", title: "English-speaking lawyer in Spain", path: "/english-speaking-lawyer-in-spain", kind: "page", keywords: ["spain", "spanish", "abogado", "advokat i spanien", "advokat i spania", "advocaat spanje", "expat", "property", "inheritance"] },
   { id: "page-eu-forms", title: "European legal forms & GDPR packs", path: "/eu-forms", kind: "page" },
   { id: "page-quiz", title: "Legal health check", path: "/legal-health-check", kind: "page" },
   { id: "page-pricing", title: "Membership & pricing", path: "/pricing", kind: "page" },
