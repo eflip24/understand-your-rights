@@ -12,8 +12,10 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { useBlogPost, useRelatedPosts } from "@/hooks/useBlogPosts";
+import { useBlogPost, useRelatedPosts, useBlogPostTranslation } from "@/hooks/useBlogPosts";
 import Tier3Head from "@/components/seo/Tier3Head";
+import Head from "@/components/seo/Head";
+import { useLocaleFromUrl } from "@/i18n/LocaleSync";
 import { JsonLdGraph, blogPostingSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { format } from "date-fns";
@@ -79,17 +81,25 @@ export default function BlogPostPage() {
   const { data: post, isLoading } = useBlogPost(slug || "");
   const { data: related = [] } = useRelatedPosts(post?.id);
   const lp = useLocalizedPath();
+  const locale = useLocaleFromUrl();
+  const { data: translation } = useBlogPostTranslation(post?.id, locale);
+
+  // Locale overlay: a published translation replaces title/excerpt/body.
+  const localizedTitle = translation?.title || post?.title || "";
+  const localizedExcerpt = translation?.excerpt || post?.excerpt || "";
+  const localizedBody = translation?.content || post?.content || "";
+  const isTranslated = !!translation?.content;
 
   const processedContent = useMemo(() => {
-    if (!post?.content) return "";
-    const html = linkifyLegalContent(addHeadingIds(cleanContent(post.content)));
+    if (!localizedBody) return "";
+    const html = linkifyLegalContent(addHeadingIds(cleanContent(localizedBody)));
     return DOMPurify.sanitize(html, { ADD_ATTR: ['id', 'target', 'rel'] });
-  }, [post?.content]);
+  }, [localizedBody]);
 
   const headings = useMemo(() => {
-    if (!post?.content) return [];
-    return extractHeadings(post.content);
-  }, [post?.content]);
+    if (!localizedBody) return [];
+    return extractHeadings(localizedBody);
+  }, [localizedBody]);
 
   const categoryNames = useMemo(() => {
     if (!post?.categories) return [];
@@ -143,23 +153,26 @@ export default function BlogPostPage() {
     );
   }
 
-  const title = decodeHtml(post.title);
-  const postUrl = `https://legallyspoken.com/blog/${post.slug}`;
-  const wordCount = post.content ? post.content.replace(/<[^>]+>/g, "").split(/\s+/).length : 0;
+  const title = decodeHtml(localizedTitle);
+  const localePrefix = locale === "en" ? "" : `/${locale}`;
+  const postUrl = `https://legallyspoken.com${localePrefix}/blog/${post.slug}`;
+  const wordCount = localizedBody ? localizedBody.replace(/<[^>]+>/g, "").split(/\s+/).length : 0;
   const readingTime = Math.max(3, Math.ceil(wordCount / 238));
+  const headProps = {
+    title: `${title} — LegallySpoken`,
+    description: localizedExcerpt,
+    ogImage: post.featured_image_url || undefined,
+    ogType: "article",
+  };
 
   return (
     <>
-      <Tier3Head
-        title={`${title} — LegallySpoken`}
-        description={post.excerpt}
-        ogImage={post.featured_image_url || undefined}
-        ogType="article"
-      />
+      {/* Translated articles get full hreflang; untranslated ones stay English-only. */}
+      {isTranslated ? <Head {...headProps} /> : <Tier3Head {...headProps} />}
       <JsonLdGraph schemas={[
         blogPostingSchema({
           headline: title,
-          description: post.excerpt,
+          description: localizedExcerpt,
           url: postUrl,
           datePublished: post.published_at || undefined,
           author: post.author_name,

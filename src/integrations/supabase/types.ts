@@ -153,6 +153,57 @@ export type Database = {
         }
         Relationships: []
       }
+      blog_translations: {
+        Row: {
+          content: string
+          created_at: string
+          excerpt: string
+          id: string
+          locale: string
+          post_id: string
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          content?: string
+          created_at?: string
+          excerpt?: string
+          id?: string
+          locale: string
+          post_id: string
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          excerpt?: string
+          id?: string
+          locale?: string
+          post_id?: string
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blog_translations_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "blog_translations_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts_with_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       case_leads: {
         Row: {
           city: string | null

@@ -677,8 +677,22 @@ function buildEuToolsI18n(): string {
 
 async function buildBlog(supabase: ReturnType<typeof createClient>): Promise<string> {
   const e: string[] = [];
-  const { data: posts } = await supabase.from("blog_posts").select("slug, published_at").eq("status","published").order("published_at",{ascending:false});
-  if (posts) for (const p of posts) e.push(u(`${SITE}/blog/${p.slug}`,"monthly","0.6", p.published_at ? new Date(p.published_at).toISOString().split("T")[0] : undefined));
+  const { data: posts } = await supabase.from("blog_posts").select("id, slug, published_at").eq("status","published").order("published_at",{ascending:false});
+  // Locale variants are listed only for posts that actually have a published
+  // translation — untranslated articles stay English-only (Tier-3 noindex).
+  const { data: translations } = await supabase
+    .from("blog_translations").select("post_id, locale").eq("status", "published");
+  const byPost = new Map<string, string[]>();
+  for (const t of (translations ?? []) as { post_id: string; locale: string }[]) {
+    byPost.set(t.post_id, [...(byPost.get(t.post_id) ?? []), t.locale]);
+  }
+  if (posts) for (const p of posts as { id: string; slug: string; published_at: string | null }[]) {
+    const lm = p.published_at ? new Date(p.published_at).toISOString().split("T")[0] : undefined;
+    e.push(u(`${SITE}/blog/${p.slug}`,"monthly","0.6", lm));
+    for (const loc of byPost.get(p.id) ?? []) {
+      e.push(u(`${SITE}/${loc}/blog/${p.slug}`,"monthly","0.5", lm));
+    }
+  }
   const { data: cats } = await supabase.from("blog_categories").select("slug");
   if (cats) for (const c of cats) e.push(u(`${SITE}/blog/category/${c.slug}`,"weekly","0.5"));
   return wrapUrlset(e);

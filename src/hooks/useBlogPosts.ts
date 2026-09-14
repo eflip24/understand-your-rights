@@ -106,6 +106,58 @@ export function useBlogPost(slug: string) {
   });
 }
 
+export interface BlogTranslation {
+  title: string;
+  excerpt: string;
+  content: string;
+}
+
+/**
+ * Locale overlay for a blog post. Returns null when the article has no
+ * translation in this locale (caller falls back to the English original).
+ */
+export function useBlogPostTranslation(postId: string | undefined, locale: string) {
+  return useQuery({
+    queryKey: ["blog-translation", postId, locale],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("blog_translations")
+        .select("title, excerpt, content")
+        .eq("post_id", postId!)
+        .eq("locale", locale)
+        .eq("status", "published")
+        .maybeSingle();
+      if (error) throw error;
+      return (data as BlogTranslation | null) ?? null;
+    },
+    enabled: !!postId && locale !== "en",
+  });
+}
+
+/** Slugs that have a published translation in the given locale (for list pages). */
+export function useTranslatedPostTitles(locale: string) {
+  return useQuery({
+    queryKey: ["blog-translated-titles", locale],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("blog_translations")
+        .select("post_id, title, excerpt")
+        .eq("locale", locale)
+        .eq("status", "published");
+      if (error) throw error;
+      const map: Record<string, { title: string; excerpt: string }> = {};
+      for (const row of data || []) {
+        map[(row as { post_id: string }).post_id] = {
+          title: (row as { title: string }).title,
+          excerpt: (row as { excerpt: string }).excerpt,
+        };
+      }
+      return map;
+    },
+    enabled: locale !== "en",
+  });
+}
+
 export function useBlogCategories() {
   return useQuery({
     queryKey: ["blog-categories"],
