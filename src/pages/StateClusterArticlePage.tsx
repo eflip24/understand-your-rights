@@ -13,6 +13,7 @@ import { getStateVariant, getNegligenceExplanation, getNoFaultExplanation, state
 import { tools } from "@/data/tools";
 import { isThinFanoutPage } from "@/lib/contentDepth";
 import { hasProvenDemand } from "@/data/provenDemandUrls";
+import { useGeneratedDepth } from "@/data/stateDepth/useGeneratedDepth";
 import { getNearMissDepth, nearMissDepthText } from "@/data/nearMissDepth";
 import NearMissDepthBlock from "@/components/seo/NearMissDepthBlock";
 
@@ -152,7 +153,7 @@ export default function StateClusterArticlePage() {
         dangerouslySetInnerHTML={{ __html: linkedContent }}
       />
 
-      {depth && <NearMissDepthBlock depth={depth} stateName={stateName} />}
+      {(depth ?? generatedDepth) && <NearMissDepthBlock depth={(depth ?? generatedDepth)!} stateName={stateName} />}
 
       <AdSlot slot="mid-content" className="my-8" />
 
