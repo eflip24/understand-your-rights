@@ -48,7 +48,7 @@ export default function LegalTermPage() {
         term: localizedTerm,
         defaultValue: `${localizedTerm} — ${t("common:page.definitionExamplesSuffix")}`,
       })}
-      metaDescription={localizedDef.length > 150 ? localizedDef.slice(0, 150).trim() + "…" : localizedDef}
+      metaDescription={localizedDef.length > 150 ? `${localizedDef.slice(0, 150).slice(0, localizedDef.slice(0, 150).lastIndexOf(" "))}…` : localizedDef}
     >
       <JsonLdGraph schemas={schemas} />
 

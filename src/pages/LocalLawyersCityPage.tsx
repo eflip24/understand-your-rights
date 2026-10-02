@@ -102,8 +102,8 @@ export default function LocalLawyersCityPage() {
   return (
     <div className="container py-8 max-w-4xl">
       <Tier3Head
-        title={`${pageTitle} | LegallySpoken`}
-        description={`Find ${practiceArea.shortTitle.toLowerCase()} lawyers in ${cityInfo.name}, ${stateInfo.name}. ${stateInfo.name} statute of limitations: ${stateInfo.personalInjurySOL}. Free local courthouse info and settlement calculator.`}
+        title={`${pageTitle}: 2026 Courts, Deadlines & Fees`}
+        description={`${stateInfo.name} gives you ${stateInfo.personalInjurySOL} to sue. Find ${practiceArea.shortTitle.toLowerCase()} lawyers in ${cityInfo.name}, plus the local courthouse, filing fees and a free settlement calculator.`}
         noindex={lawyers.length === 0 && filingFaqs.length === 0}
       />
       <JsonLdGraph schemas={schemas} />

@@ -9,6 +9,13 @@ import { JsonLdGraph, articleSchema, faqSchema } from "@/components/seo/JsonLd";
 import ClauseDepthBlock from "@/components/seo/ClauseDepthBlock";
 
 
+function trimToSentence(text: string, max = 155) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const end = cut.lastIndexOf(". ");
+  return end > 80 ? cut.slice(0, end + 1) : `${cut.slice(0, cut.lastIndexOf(" "))}…`;
+}
+
 export default function LegalClausePage() {
   const { slug } = useParams<{ slug: string }>();
   const location = useLocation();
@@ -38,8 +45,8 @@ export default function LegalClausePage() {
       relatedToolIds={clause.relatedToolIds}
       relatedTermSlugs={clause.relatedTermSlugs}
       faqs={clause.faqs}
-      metaTitle={`${title} — ${t("common:legalClausePage.metaSuffix", { defaultValue: "Guide & Examples | LegallySpoken" })}`}
-      metaDescription={explanation.slice(0, 155) + "..."}
+      metaTitle={`${title} Explained: ${t("common:legalClausePage.metaSuffix", { defaultValue: "Meaning, Examples & Red Flags" })}`}
+      metaDescription={trimToSentence(explanation)}
     >
       <JsonLdGraph schemas={schemas} />
 
