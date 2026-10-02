@@ -34,6 +34,7 @@ writeFileSync(
   `export { getAllStateVariantPaths, getStateVariant } from "@/data/stateVariants";
 export { getNearMissDepth, nearMissDepthText } from "@/data/nearMissDepth";
 export { isThinFanoutPage } from "@/lib/contentDepth";
+export { hasProvenDemand } from "@/data/provenDemandUrls";
 `,
 );
 
@@ -53,6 +54,7 @@ const {
   getNearMissDepth,
   nearMissDepthText,
   isThinFanoutPage,
+  hasProvenDemand,
 } = await import(`file://${outfile}`);
 
 // Same threshold the page component uses.
@@ -72,7 +74,7 @@ for (const { pillar, state, slug } of getAllStateVariantPaths()) {
     ],
     STATE_GUIDE_MIN_CHARS,
   );
-  if (isThin) thin++;
+  if (isThin && !hasProvenDemand(`/${pillar}/${state}/${slug}`)) thin++;
   else indexable.add(`/${pillar}/${state}/${slug}`);
 }
 

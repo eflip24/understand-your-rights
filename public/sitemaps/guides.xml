@@ -546,6 +546,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://legallyspoken.com/english-speaking-lawyer-in-spain</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://legallyspoken.com/international</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -556,7 +561,27 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://legallyspoken.com/international/united-kingdom/notice-period</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/united-kingdom/small-claims-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://legallyspoken.com/international/ireland</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/ireland/notice-period</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/ireland/small-claims-cost</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -566,7 +591,57 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://legallyspoken.com/international/canada/notice-period</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/canada/small-claims-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://legallyspoken.com/international/australia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/australia/notice-period</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/australia/small-claims-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/new-zealand</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/new-zealand/notice-period</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/new-zealand/small-claims-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/south-africa/notice-period</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legallyspoken.com/international/south-africa/small-claims-cost</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

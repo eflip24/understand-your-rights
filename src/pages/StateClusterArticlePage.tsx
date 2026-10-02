@@ -12,6 +12,7 @@ import { linkifyLegalContent } from "@/lib/linkifyContent";
 import { getStateVariant, getNegligenceExplanation, getNoFaultExplanation, stateData } from "@/data/stateVariants";
 import { tools } from "@/data/tools";
 import { isThinFanoutPage } from "@/lib/contentDepth";
+import { hasProvenDemand } from "@/data/provenDemandUrls";
 import { getNearMissDepth, nearMissDepthText } from "@/data/nearMissDepth";
 import NearMissDepthBlock from "@/components/seo/NearMissDepthBlock";
 
@@ -49,7 +50,8 @@ export default function StateClusterArticlePage() {
   // rank but read thin. Counts toward the depth gate so rescued pages index.
   const depth = getNearMissDepth(pillar, state, slug);
 
-  const thin = isThinFanoutPage([
+  // Pages Google already shows in search keep indexing regardless of length.
+  const thin = !hasProvenDemand(`/${pillar}/${state}/${slug}`) && isThinFanoutPage([
     article.content.replace(/<[^>]+>/g, " "),
     ...article.faqs.map((f) => `${f.question} ${f.answer}`),
     nearMissDepthText(depth),
