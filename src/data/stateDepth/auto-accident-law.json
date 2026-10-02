@@ -1,0 +1,892 @@
+{
+ "auto-accident-law/arizona/uninsured-motorist-claims": {
+  "summary": "Arizona requires auto liability insurers to offer uninsured motorist bodily-injury coverage in writing, but drivers are not required to buy it. When purchased, this coverage protects insured people who are legally entitled to recover damages from an uninsured vehicle’s owner or operator, subject to applicable coverage limits and policy terms. Arizona also has specific rules for unidentified vehicles, underinsured drivers, and multiple policies; a claim against the responsible driver is distinct from a coverage claim against an insurer.",
+  "sections": [
+   {
+    "heading": "Arizona uninsured motorist coverage requirements",
+    "facts": [
+     {
+      "label": "Written offer",
+      "value": "Insurers issuing motor vehicle liability policies must make uninsured motorist coverage available and offer it by written notice. The offered limits must be at least equal to the policy’s bodily-injury liability limits. Buying the coverage is optional. — A.R.S. § 20-259.01(A)"
+     },
+     {
+      "label": "Protected losses",
+      "value": "Arizona’s statutory uninsured motorist coverage concerns damages for bodily injury, sickness, disease, and resulting death. It does not establish uninsured motorist coverage for damage to the insured vehicle. — A.R.S. § 20-259.01(A)"
+     },
+     {
+      "label": "Selection and rejection",
+      "value": "A named insured’s selection of limits or rejection on a form approved by the insurance director is valid for all insureds under the policy. The statute also addresses when another offer is unnecessary for renewals and replacement policies. — A.R.S. § 20-259.01(A)"
+     }
+    ]
+   },
+   {
+    "heading": "Which coverage applies?",
+    "table": {
+     "columns": [
+      "Situation",
+      "Arizona rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Responsible driver has no liability insurance",
+       "Purchased uninsured motorist coverage can cover bodily-injury damages the insured is legally entitled to recover.",
+       "A.R.S. § 20-259.01(A)"
+      ],
+      [
+       "Responsible driver has insufficient liability limits",
+       "Underinsured motorist coverage is separate coverage, applicable when damages exceed the sum of applicable bodily-injury liability limits.",
+       "A.R.S. § 20-259.01(B), (G)"
+      ],
+      [
+       "Unidentified vehicle causes an accident without contact",
+       "The insured must provide corroboration supporting the account that an unidentified vehicle caused the accident.",
+       "A.R.S. § 20-259.01"
+      ],
+      [
+       "Claim concerns vehicle repairs only",
+       "The statutory uninsured motorist bodily-injury coverage does not cover vehicle repairs.",
+       "A.R.S. § 20-259.01(A)"
+      ],
+      [
+       "Driver carries Arizona’s minimum liability insurance",
+       "Required liability limits are $25,000 for bodily injury or death of one person, $50,000 for two or more people, and $15,000 for property damage per accident.",
+       "A.R.S. § 28-4009"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Deadlines and multiple coverages",
+    "facts": [
+     {
+      "label": "Personal-injury lawsuit deadline",
+      "value": "Arizona generally allows two years after accrual for a personal-injury action against the responsible driver. That tort deadline is not a complete statement of the requirements governing a claim against an uninsured motorist insurer. — A.R.S. § 12-542"
+     },
+     {
+      "label": "Multiple policies or coverages",
+      "value": "When an insured has purchased multiple policies or coverages on different vehicles, the insurer may limit coverage for one accident to one policy or coverage selected by the insured. The statute imposes notice requirements for this limitation. — A.R.S. § 20-259.01"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Arizona",
+    "bullets": [
+     "An uninsured motorist insurance claim is presented to the insurer providing that coverage.",
+     "The Arizona Department of Insurance and Financial Institutions accepts insurance consumer complaints, including complaints about auto insurers and claim handling. Its complaint process does not replace a lawsuit or determine civil damages.",
+     "Arizona superior courts hear civil insurance disputes and personal-injury cases within their jurisdiction. A policy may also provide for arbitration of particular disputes."
+    ]
+   },
+   {
+    "heading": "Common questions in Arizona",
+    "bullets": [
+     "Is uninsured motorist coverage mandatory? No. Arizona requires insurers to offer it, not drivers to purchase it.",
+     "Are uninsured and underinsured motorist coverage interchangeable? No. They address different circumstances, and Arizona requires separate offers.",
+     "Must an unidentified vehicle physically hit my car? No. Arizona permits a claim without physical contact, but requires corroboration supporting the unidentified vehicle’s role.",
+     "Does the other driver’s minimum insurance guarantee full compensation? No. Liability limits cap available liability coverage; purchased underinsured motorist coverage may apply when covered damages exceed applicable liability limits."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Arizona Legislature — A.R.S. § 20-259.01",
+    "url": "https://www.azleg.gov/ars/20/00259-01.htm"
+   },
+   {
+    "label": "Arizona Legislature — A.R.S. § 28-4009",
+    "url": "https://www.azleg.gov/ars/28/04009.htm"
+   },
+   {
+    "label": "Arizona Legislature — A.R.S. § 12-542",
+    "url": "https://www.azleg.gov/ars/12/00542.htm"
+   },
+   {
+    "label": "Arizona Department of Insurance and Financial Institutions — Consumer",
+    "url": "https://difi.az.gov/consumer"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "auto-accident-law/delaware/no-fault-vs-at-fault-states": {
+  "summary": "Delaware combines fault-based auto accident liability with mandatory no-fault personal injury protection, or PIP, so calling it simply an at-fault or no-fault state can be misleading. PIP covers specified injury-related losses without requiring proof that another driver caused the crash, while negligence claims remain available for damages outside the statutory PIP exclusion. Delaware does not impose a serious-injury threshold for pain-and-suffering claims, but comparative negligence can reduce or bar a claimant’s recovery.",
+  "sections": [
+   {
+    "heading": "How Delaware combines PIP and fault-based liability",
+    "facts": [
+     {
+      "label": "Mandatory first-party benefits",
+      "value": "Delaware’s required motor vehicle coverage includes PIP for reasonable and necessary covered expenses, including medical expenses and net lost earnings, without regard to fault. Eligibility depends on the statute and applicable coverage; PIP is not compensation for pain and suffering. — 21 Del. C. § 2118(a)(2)"
+     },
+     {
+      "label": "Claims against an at-fault driver",
+      "value": "An injured person may pursue a negligence claim for damages not excluded by Delaware’s PIP rules. Section 2118 does not require a specified injury severity or medical-expense threshold before a claimant can seek pain-and-suffering damages. — 21 Del. C. § 2118"
+     },
+     {
+      "label": "No duplicate presentation of PIP losses",
+      "value": "A person eligible for statutory benefits under § 2118(a)(2) or (a)(3) generally cannot plead or introduce evidence of those eligible damages in an action against a tortfeasor, even if the benefits were not actually recovered. — 21 Del. C. § 2118(h)"
+     }
+    ]
+   },
+   {
+    "heading": "Coverage amounts, deadlines, and fault rules",
+    "table": {
+     "columns": [
+      "Issue",
+      "Delaware rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Minimum PIP limits",
+       "$15,000 for one person and $30,000 for all persons injured in one accident.",
+       "21 Del. C. § 2118(a)(2)b"
+      ],
+      [
+       "Minimum bodily-injury liability limits",
+       "$25,000 for one person and $50,000 for two or more persons in one accident.",
+       "21 Del. C. § 2118(a)(1)"
+      ],
+      [
+       "Minimum property-damage liability limit",
+       "$10,000 for one accident.",
+       "21 Del. C. § 2118(a)(1)"
+      ],
+      [
+       "PIP expense period",
+       "Covered medical expenses and net lost earnings generally must be incurred within two years after the accident; the statute contains a limited provision for certain later dental or surgical procedures.",
+       "21 Del. C. § 2118(a)(2)a"
+      ],
+      [
+       "Personal-injury lawsuit deadline",
+       "Generally two years from accrual of the injury claim, subject to applicable exceptions.",
+       "10 Del. C. § 8119"
+      ],
+      [
+       "Comparative negligence",
+       "Recovery is reduced by the claimant’s negligence and barred if that negligence exceeds the combined negligence of the defendants against whom recovery is sought.",
+       "10 Del. C. § 8132"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Delaware",
+    "bullets": [
+     "The Delaware Department of Insurance handles consumer complaints involving insurers, including automobile claim handling. Its complaint process is separate from a court action deciding negligence or damages.",
+     "Delaware Superior Court hears civil automobile negligence and personal-injury actions. The appropriate court for another type of automobile dispute depends on the claim and the court’s jurisdiction.",
+     "Section 2118 provides an Insurance Commissioner arbitration process for specified motor vehicle insurance benefit disputes. Eligibility and procedure depend on the dispute; this is not a general substitute for a negligence lawsuit. — 21 Del. C. § 2118(j)"
+    ]
+   },
+   {
+    "heading": "Common questions in Delaware",
+    "bullets": [
+     "Is Delaware a no-fault state? It requires no-fault PIP benefits but retains fault-based claims against negligent drivers. The label alone does not explain both parts of its system.",
+     "Can someone who caused the crash receive PIP? Fault alone does not disqualify an otherwise eligible person from covered PIP benefits. Statutory eligibility and applicable coverage still matter.",
+     "Can an injured person sue for pain and suffering? Yes. Delaware’s PIP law does not impose a serious-injury threshold, although liability and damages must still be established.",
+     "Does being 50% at fault prevent recovery? No. When the claimant’s negligence equals the defendants’ combined negligence, recovery is permitted but reduced proportionally. Greater claimant negligence bars recovery under § 8132.",
+     "Is the two-year PIP expense period the same as a lawsuit deadline? No. The period for incurring covered expenses and the limitation period for filing a personal-injury lawsuit are separate legal rules."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Delaware Code, Title 21, Chapter 21 — § 2118",
+    "url": "https://delcode.delaware.gov/title21/c021/index.html"
+   },
+   {
+    "label": "Delaware Code, Title 10, Chapter 81 — §§ 8119 and 8132",
+    "url": "https://delcode.delaware.gov/title10/c081/index.html"
+   },
+   {
+    "label": "Delaware Department of Insurance",
+    "url": "https://insurance.delaware.gov/"
+   },
+   {
+    "label": "Delaware Superior Court",
+    "url": "https://courts.delaware.gov/superior/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "auto-accident-law/california/diminished-value-claim": {
+  "summary": "California permits an auto-accident property-damage claim to include a vehicle’s remaining loss in market value after reasonable repairs when the evidence establishes that loss. This is generally a claim against the legally responsible party; payment under the vehicle owner’s own insurance depends on the policy’s coverage and exclusions. California’s civil jury instructions recognize repair costs plus proven residual diminished value, subject to a limit based on the vehicle’s value before the damage.",
+  "sections": [
+   {
+    "heading": "California’s diminished-value rule",
+    "facts": [
+     {
+      "label": "Repair costs and remaining loss",
+      "value": "When repairs do not restore a vehicle to its pre-accident value, recoverable property damages can include reasonable repair costs plus the difference between its value before the harm and its value after repairs. These combined amounts cannot exceed the vehicle’s value before the harm. — Judicial Council of California Civil Jury Instructions, CACI No. 3903J."
+     },
+     {
+      "label": "What diminished value measures",
+      "value": "The relevant loss is a reduction in market value, not merely the existence of an accident entry in a vehicle-history report. The claimant must prove the amount of property damage; California’s jury instruction does not prescribe a fixed percentage or automatic payment for accident history. — CACI No. 3903J."
+     },
+     {
+      "label": "Fault affects recovery",
+      "value": "California applies comparative fault. When the vehicle owner’s negligence contributed to the damage, the damages otherwise recoverable are reduced by that owner’s percentage of responsibility. — California Civil Code § 1714; CACI No. 405."
+     }
+    ]
+   },
+   {
+    "heading": "Deadlines, limits, and claim types",
+    "table": {
+     "columns": [
+      "Issue",
+      "California rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Property-damage lawsuit",
+       "The general limitation period for injury to personal property is three years. Accrual rules and exceptions can affect the calculation.",
+       "Code of Civil Procedure § 338(c)(1)"
+      ],
+      [
+       "Small claims: individuals",
+       "A natural person generally may seek up to $12,500, subject to statutory exceptions.",
+       "Code of Civil Procedure § 116.221"
+      ],
+      [
+       "Small claims: other claimants",
+       "The general monetary limit for claimants other than natural persons is $6,250, subject to statutory exceptions.",
+       "Code of Civil Procedure § 116.220"
+      ],
+      [
+       "Claim against the responsible party",
+       "Proven residual loss after repairs can be part of property damages; it is not an automatic additional award.",
+       "CACI No. 3903J"
+      ],
+      [
+       "Claim under the owner’s policy",
+       "The tort-damages instruction does not itself establish what an insurance contract covers. Coverage turns on the applicable policy.",
+       "CACI No. 3903J; Insurance Code §  insuring-policy provisions, including § 381"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in California",
+    "bullets": [
+     "California Superior Court hears civil vehicle-damage lawsuits. Its small claims division handles qualifying claims within the applicable monetary limit. Small claims is a court procedure, not a separate insurance benefit. — Code of Civil Procedure §§ 116.210–116.221.",
+     "The California Department of Insurance receives consumer complaints about insurers and claims handling. Its complaint process is separate from a civil lawsuit seeking a damages judgment.",
+     "California identifies specified unfair claims-settlement practices, including failing to adopt reasonable standards for prompt investigation and failing to attempt prompt, fair settlement when liability is reasonably clear. — Insurance Code § 790.03(h)."
+    ]
+   },
+   {
+    "heading": "Common questions in California",
+    "bullets": [
+     "Can a repaired car still support a claim? Yes. CACI No. 3903J expressly addresses property worth less after repairs than before the harm, provided that remaining loss is proven.",
+     "Is diminished value automatically a percentage of repair costs? No. California’s property-damage jury instruction uses market-value loss and reasonable repair costs, not a mandatory percentage formula.",
+     "Can repair costs and diminished value both be recovered? Yes, when supported by the evidence, but the combined recovery described in CACI No. 3903J cannot exceed the vehicle’s pre-harm value.",
+     "Does a complaint to the Department of Insurance decide the damages lawsuit? No. The department’s consumer-complaint process is not a court judgment establishing the responsible party’s liability or the vehicle’s diminished value."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "California Courts — Jury Instructions",
+    "url": "https://courts.ca.gov/partners/jury-instructions"
+   },
+   {
+    "label": "California Legislature — Code of Civil Procedure § 338",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=338."
+   },
+   {
+    "label": "California Courts Self-Help Guide — Small Claims",
+    "url": "https://selfhelp.courts.ca.gov/small-claims"
+   },
+   {
+    "label": "California Department of Insurance — Getting Help",
+    "url": "https://www.insurance.ca.gov/01-consumers/101-help/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "auto-accident-law/connecticut/no-fault-vs-at-fault-states": {
+  "summary": "Connecticut is an at-fault state for auto accidents, not a no-fault state that requires personal injury protection benefits before an injured person can pursue the responsible driver. Liability depends on legal responsibility for the crash, and Connecticut’s modified comparative negligence rule can reduce or bar an injured person’s recovery. Required auto insurance includes liability and uninsured/underinsured motorist coverage, but these coverages serve different purposes and do not guarantee payment for every accident loss.",
+  "sections": [
+   {
+    "heading": "How fault affects Connecticut accident claims",
+    "facts": [
+     {
+      "label": "Fault-based liability",
+      "value": "Connecticut requires automobile liability coverage for damages an insured becomes legally obligated to pay because of covered bodily injury or property damage. It does not require the personal injury protection coverage characteristic of a mandatory no-fault system. — Connecticut General Statutes §§ 38a-334–38a-336"
+     },
+     {
+      "label": "Shared responsibility",
+      "value": "In negligence actions for personal injury, death, or property damage, an injured person’s negligence does not bar recovery when it is no greater than the combined negligence of the people against whom recovery is sought. Damages are reduced in proportion to the injured person’s negligence. — Connecticut General Statutes § 52-572h(b)"
+     },
+     {
+      "label": "Recoverable losses",
+      "value": "Connecticut distinguishes economic damages, including reasonable and necessary medical expenses and lost earnings or earning capacity, from noneconomic damages, including physical pain and suffering and mental and emotional suffering. Recovery still depends on liability and proof of loss. — Connecticut General Statutes § 52-572h(a)"
+     }
+    ]
+   },
+   {
+    "heading": "Required coverage and comparative fault",
+    "table": {
+     "columns": [
+      "Issue",
+      "Connecticut rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Bodily injury liability",
+       "Minimum limits: $25,000 for one person and $50,000 for one accident.",
+       "Conn. Gen. Stat. §§ 14-112(a), 38a-335"
+      ],
+      [
+       "Property damage liability",
+       "Minimum limit: $25,000 for one accident.",
+       "Conn. Gen. Stat. §§ 14-112(a), 38a-335"
+      ],
+      [
+       "Uninsured/underinsured motorist coverage",
+       "Required bodily injury protection; limits generally equal bodily injury liability limits unless the named insured requests a permitted reduction in writing.",
+       "Conn. Gen. Stat. § 38a-336(a)"
+      ],
+      [
+       "Injured person 50% at fault",
+       "Recovery remains possible when the other responsible parties collectively bear the remaining 50%; damages are reduced by half.",
+       "Conn. Gen. Stat. § 52-572h(b)"
+      ],
+      [
+       "Injured person more than 50% at fault",
+       "Recovery is barred under the modified comparative negligence rule.",
+       "Conn. Gen. Stat. § 52-572h(b)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Deadlines for accident lawsuits",
+    "facts": [
+     {
+      "label": "Negligence injury and property damage claims",
+      "value": "The general deadline is two years from when the injury is first sustained or discovered, or reasonably should have been discovered. The statute also generally prohibits filing more than three years after the act or omission complained of; exceptions and other applicable statutes can affect these periods. — Connecticut General Statutes § 52-584"
+     },
+     {
+      "label": "Wrongful death",
+      "value": "An executor or administrator generally must bring a wrongful death action within two years after death, and no more than five years after the act or omission complained of, subject to statutory exceptions. — Connecticut General Statutes § 52-555"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Connecticut",
+    "bullets": [
+     "Connecticut Superior Court hears civil lawsuits seeking damages arising from automobile accidents.",
+     "The Connecticut Insurance Department’s Consumer Affairs Unit handles complaints involving insurance companies and claim handling. A regulatory complaint is different from a civil lawsuit seeking accident damages."
+    ]
+   },
+   {
+    "heading": "Common questions in Connecticut",
+    "bullets": [
+     "Does Connecticut require a serious-injury threshold before suing a negligent driver? No. Its fault-based system does not impose a no-fault serious-injury threshold.",
+     "Can both drivers share fault? Yes. Connecticut’s comparative negligence statute allows responsibility to be divided and reduces recoverable damages accordingly.",
+     "Does uninsured motorist coverage pay for damage to my car? The mandatory coverage under § 38a-336 protects against bodily injury, including death, rather than vehicle damage.",
+     "Does having insurance eliminate personal liability? No. Policy limits cap the insurer’s contractual coverage; they do not automatically cap the responsible person’s legal liability."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Connecticut General Assembly — Chapter 700, Property and Casualty Insurance",
+    "url": "https://www.cga.ct.gov/current/pub/chap_700.htm"
+   },
+   {
+    "label": "Connecticut General Assembly — Chapter 246, Motor Vehicles",
+    "url": "https://www.cga.ct.gov/current/pub/chap_246.htm"
+   },
+   {
+    "label": "Connecticut General Assembly — Chapter 925, Statutory Rights of Action and Defenses",
+    "url": "https://www.cga.ct.gov/current/pub/chap_925.htm"
+   },
+   {
+    "label": "Connecticut General Assembly — Chapter 926, Statute of Limitations",
+    "url": "https://www.cga.ct.gov/current/pub/chap_926.htm"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "auto-accident-law/connecticut/diminished-value-claim": {
+  "summary": "In Connecticut, diminished value means a vehicle’s loss in market value because of an accident, including a loss that remains after repairs. A claim against an at-fault driver depends on proof of the loss and Connecticut’s negligence rules; payment under the vehicle owner’s own insurance policy is a separate coverage question. Connecticut’s comparative-negligence statute can reduce or bar recovery, and its negligence filing deadline generally applies to accident-related property-damage lawsuits.",
+  "sections": [
+   {
+    "heading": "Legal basis and limits in Connecticut",
+    "facts": [
+     {
+      "label": "Nature of the loss",
+      "value": "Diminished value is a property-damage issue, rather than a separate statutory payment automatically owed whenever a vehicle has an accident history. Compensatory damages require proof of an actual loss attributable to the accident; an asserted resale discount is not automatically the amount recoverable. — Connecticut Judicial Branch, Civil Jury Instructions, damages instructions."
+     },
+     {
+      "label": "Shared fault",
+      "value": "For negligence causing property damage, a claimant’s negligence does not bar recovery if it is not greater than the combined negligence of the people against whom recovery is sought. Recoverable damages are reduced in proportion to the claimant’s percentage of negligence. — Conn. Gen. Stat. § 52-572h(b)."
+     },
+     {
+      "label": "Negligence lawsuit deadline",
+      "value": "An action for property damage caused by negligence generally must be brought within two years after the damage is first sustained or discovered, or reasonably should have been discovered. The statute also generally bars suit more than three years after the act or omission complained of. Exceptions can affect application of these limits. — Conn. Gen. Stat. § 52-584."
+     }
+    ]
+   },
+   {
+    "heading": "How the claim route affects recovery",
+    "table": {
+     "columns": [
+      "Issue",
+      "Connecticut treatment",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Claim against the negligent driver",
+       "Liability, causation, and the amount of property damage must be established; alleging diminished value alone does not establish the amount owed.",
+       "Connecticut Judicial Branch, Civil Jury Instructions."
+      ],
+      [
+       "Claim under the owner's collision coverage",
+       "Whether the insurer owes a separate diminished-value payment depends on the policy's coverage and applicable law; negligence rules alone do not establish coverage.",
+       "Connecticut Insurance Department, automobile insurance consumer information."
+      ],
+      [
+       "Claimant is 50% negligent",
+       "Recovery remains possible when the claimant's negligence does not exceed the combined negligence of the people against whom recovery is sought; damages are proportionately reduced.",
+       "Conn. Gen. Stat. § 52-572h(b)."
+      ],
+      [
+       "Claimant's negligence exceeds the statutory threshold",
+       "The comparative-negligence rule bars recovery in the negligence action.",
+       "Conn. Gen. Stat. § 52-572h(b)."
+      ],
+      [
+       "Court filing",
+       "Connecticut Superior Court hears civil property-damage actions. Qualifying monetary disputes may proceed through its small-claims process.",
+       "Conn. Gen. Stat. § 51-15; Connecticut Judicial Branch."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Connecticut",
+    "bullets": [
+     "Connecticut Superior Court is the trial court for civil negligence claims involving accident-related property damage. Its small-claims process is available for disputes within that process’s monetary and subject-matter limits.",
+     "The Connecticut Insurance Department accepts consumer complaints concerning insurance companies and claim handling. Its complaint process is distinct from a lawsuit establishing the other driver’s liability or awarding contested damages.",
+     "A disagreement over insurance coverage and a negligence claim against another driver can involve different legal issues and deadlines. For case-specific questions, talk to a lawyer."
+    ]
+   },
+   {
+    "heading": "Common questions in Connecticut",
+    "bullets": [
+     "Is diminished value automatically payable after repairs? No. The existence and amount of a remaining market-value loss must be established; a completed repair does not itself establish an additional monetary loss.",
+     "Can a driver who shares fault recover? Yes, within § 52-572h(b)’s comparative-negligence threshold. Any recovery is reduced by the claimant’s percentage of negligence.",
+     "Does the two-year deadline govern every insurance dispute? No. Section 52-584 addresses specified negligence and related injury claims. A dispute under an insurance contract raises separate coverage and limitations questions.",
+     "Does an Insurance Department complaint replace a lawsuit? No. Regulatory complaint handling and a court action for damages are different processes."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Connecticut General Statutes, Chapter 925 — § 52-572h",
+    "url": "https://www.cga.ct.gov/current/pub/chap_925.htm#sec_52-572h"
+   },
+   {
+    "label": "Connecticut General Statutes, Chapter 926 — § 52-584",
+    "url": "https://www.cga.ct.gov/current/pub/chap_926.htm#sec_52-584"
+   },
+   {
+    "label": "Connecticut Judicial Branch — Civil Jury Instructions",
+    "url": "https://www.jud.ct.gov/JI/Civil/default.htm"
+   },
+   {
+    "label": "Connecticut Insurance Department",
+    "url": "https://portal.ct.gov/cid"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "auto-accident-law/kansas/uninsured-motorist-claims": {
+  "summary": "Kansas requires auto liability policies issued for vehicles registered or principally garaged in Kansas to include uninsured motorist coverage, with bodily injury limits generally matching the policy’s liability limits unless the named insured rejects coverage above the statutory minimum in writing. Underinsured motorist protection is included as well, but Kansas ties that protection to the difference between applicable coverage limits rather than simply whether the injured person’s losses exceed the other driver’s insurance; policy terms and legal entitlement to damages also matter.",
+  "sections": [
+   {
+    "heading": "Kansas uninsured and underinsured motorist requirements",
+    "facts": [
+     {
+      "label": "Required protection",
+      "value": "Uninsured motorist coverage protects insured people who are legally entitled to recover bodily injury damages from an uninsured vehicle’s owner or operator, including damages resulting from death. It is not a general statutory requirement to insure damage to the insured vehicle — K.S.A. 40-284(a)."
+     },
+     {
+      "label": "Coverage limits and rejection",
+      "value": "The default uninsured motorist limits equal the policy’s bodily injury liability limits. The named insured may reject, in writing, the portion exceeding Kansas’s required bodily injury liability minimums; the statute does not authorize rejection of the required minimum protection — K.S.A. 40-284(a), (c); K.S.A. 40-3107(e)."
+     },
+     {
+      "label": "Underinsured motorist trigger",
+      "value": "Underinsured motorist coverage applies to the extent its limits exceed the bodily injury liability limits carried by the other vehicle’s owner or operator. Recoverable damages and other applicable coverage provisions remain relevant — K.S.A. 40-284(b)."
+     }
+    ]
+   },
+   {
+    "heading": "Limits and rules at a glance",
+    "table": {
+     "columns": [
+      "Issue",
+      "Kansas rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Minimum bodily injury limit per person",
+       "$25,000 for bodily injury to or death of one person in one accident.",
+       "K.S.A. 40-284(a), (c); 40-3107(e)"
+      ],
+      [
+       "Minimum bodily injury limit per accident",
+       "$50,000 for bodily injury to or death of two or more people, subject to the per-person limit.",
+       "K.S.A. 40-284(a), (c); 40-3107(e)"
+      ],
+      [
+       "Underinsured motorist limits",
+       "Equal to the policy’s uninsured motorist limits.",
+       "K.S.A. 40-284(b)"
+      ],
+      [
+       "Stacking multiple coverages",
+       "Applicable uninsured and underinsured motorist limits cannot be added together; total limits available cannot exceed the highest limits of any single applicable policy.",
+       "K.S.A. 40-284(d)"
+      ],
+      [
+       "Comparative negligence",
+       "For negligence-based damages, the claimant’s negligence must be less than the causal negligence of the party or parties against whom recovery is sought; damages are reduced proportionately.",
+       "K.S.A. 60-258a(a)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Kansas",
+    "bullets": [
+     "An uninsured or underinsured motorist insurance claim is presented to the insurer providing the applicable coverage. Whether a person qualifies as an insured depends on the policy and Kansas law.",
+     "The Kansas Department of Insurance accepts consumer complaints about insurers and claim handling. Its complaint process does not replace a court proceeding or establish a claimant’s damages through a civil judgment.",
+     "Kansas district courts hear civil auto-accident and insurance-contract lawsuits, subject to jurisdiction and venue requirements. A claim against the responsible driver and a claim for policy benefits have different legal bases."
+    ]
+   },
+   {
+    "heading": "Common questions in Kansas",
+    "bullets": [
+     "Does uninsured motorist coverage automatically pay my policy limit? No. The statutory coverage concerns damages the insured is legally entitled to recover, subject to applicable limits and lawful policy provisions.",
+     "Is a driver underinsured merely because my injuries cost more than their insurance? No. Kansas’s statutory formula also compares the applicable underinsured motorist limits with the other vehicle’s bodily injury liability limits. Equal limits do not create a positive difference under that formula.",
+     "Can I combine limits from several insured vehicles? Kansas expressly prohibits stacking applicable uninsured and underinsured motorist limits, including where multiple vehicles or policies are involved.",
+     "Can I reject all uninsured motorist coverage? The statutory rejection option applies only to coverage exceeding the required minimum bodily injury limits and requires a written rejection by the named insured."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Kansas Legislature: K.S.A. 40-284",
+    "url": "https://www.ksrevisor.gov/statutes/chapters/ch40/040_002_0084.html"
+   },
+   {
+    "label": "Kansas Legislature: K.S.A. 40-3107",
+    "url": "https://www.ksrevisor.gov/statutes/chapters/ch40/040_031_0007.html"
+   },
+   {
+    "label": "Kansas Legislature: K.S.A. 60-258a",
+    "url": "https://www.ksrevisor.gov/statutes/chapters/ch60/060_002_0058a.html"
+   },
+   {
+    "label": "Kansas Department of Insurance",
+    "url": "https://insurance.kansas.gov/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "auto-accident-law/georgia/diminished-value-claim": {
+  "summary": "Georgia recognizes diminished value as a potential part of an automobile property-damage claim: even after proper repairs, a vehicle may be worth less because of its accident history. Under State Farm Mutual Automobile Insurance Co. v. Mabry, an insurer’s obligation to pay for covered vehicle loss can include that remaining reduction in value, not just repair costs. Recovery depends on the applicable coverage or liability rules and proof of an actual loss; Georgia does not guarantee a fixed percentage payment.",
+  "sections": [
+   {
+    "heading": "What Georgia recognizes as diminished value",
+    "facts": [
+     {
+      "label": "First-party coverage",
+      "value": "In Mabry, the Georgia Supreme Court held that the insurer’s promise to pay for vehicle loss included diminished value, when present, as well as repair costs. The insurer also had a duty to assess diminished value when its policyholder reported a covered loss; a separate diminished-value request was not required under the policy at issue. — State Farm Mutual Automobile Insurance Co. v. Mabry, 274 Ga. 498 (2001)."
+     },
+     {
+      "label": "Repairs do not necessarily eliminate the loss",
+      "value": "The Georgia Supreme Court has reaffirmed that physical damage and remaining diminution in value can be distinct components of a covered property loss. Paying to repair damage does not necessarily compensate for the entire loss in value. — Royal Capital Development, LLC v. Maryland Casualty Co., 291 Ga. 262 (2012)."
+     },
+     {
+      "label": "Valuation is evidence-dependent",
+      "value": "Mabry did not establish a universal statutory payment schedule. Whether diminished value exists and its amount are factual questions; a repaired vehicle does not automatically qualify for a particular percentage of its former value. — Mabry, 274 Ga. 498."
+     }
+    ]
+   },
+   {
+    "heading": "Deadlines, fault, and court limits",
+    "table": {
+     "columns": [
+      "Issue",
+      "Georgia rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Claim against the responsible driver",
+       "An action for damage to personal property generally has a four-year limitation period measured from accrual.",
+       "O.C.G.A. § 9-3-32"
+      ],
+      [
+       "Shared responsibility",
+       "Damages are reduced for the claimant’s percentage of fault. A claimant who is 50% or more responsible cannot recover under this statute.",
+       "O.C.G.A. § 51-12-33"
+      ],
+      [
+       "Magistrate court",
+       "Civil claims within magistrate-court jurisdiction may involve up to $15,000, subject to statutory exclusions.",
+       "O.C.G.A. § 15-10-2(5)"
+      ],
+      [
+       "First-party insurer bad faith",
+       "For a covered loss refused in bad faith after the statutory 60-day demand period, potential additional recovery includes reasonable attorney fees and a penalty of up to 50% of the insurer’s liability or $5,000, whichever is greater.",
+       "O.C.G.A. § 33-4-6"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Georgia",
+    "bullets": [
+     "The Georgia Office of Commissioner of Insurance and Safety Fire accepts consumer complaints about insurers through its Consumer Services Division. Its complaint process is regulatory, not a court judgment awarding diminished-value damages.",
+     "Georgia magistrate courts hear qualifying civil money claims within their $15,000 jurisdictional limit. State courts, where established, and superior courts also hear civil property-damage disputes within their jurisdiction. — O.C.G.A. §§ 15-10-2, 15-7-4; Georgia Constitution, Article VI.",
+     "A lawsuit against the responsible driver and a coverage lawsuit against the claimant’s own insurer involve different legal duties. The four-year property-damage deadline does not necessarily determine the deadline for a policy-based claim. Talk to a lawyer."
+    ]
+   },
+   {
+    "heading": "Common questions in Georgia",
+    "bullets": [
+     "Can diminished value remain after satisfactory repairs? Yes. Georgia recognizes that repairs may restore function without restoring the vehicle’s full pre-loss market value. — Mabry.",
+     "Does Georgia require a fixed diminished-value percentage? No. Mabry does not prescribe a universal percentage award; the existence and amount of loss require valuation evidence.",
+     "Does Mabry mean every accident produces a payment? No. The decision concerns covered loss, and diminished value must actually exist.",
+     "Does an insurer’s refusal automatically establish bad faith? No. The additional remedies under O.C.G.A. § 33-4-6 require satisfaction of the statute’s demand requirements and proof of bad faith, not merely disagreement about value."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Georgia Office of Commissioner of Insurance and Safety Fire — Consumer Services",
+    "url": "https://oci.georgia.gov/consumer-services"
+   },
+   {
+    "label": "Georgia General Assembly — legislative and Georgia Code resources",
+    "url": "https://www.legis.ga.gov/"
+   },
+   {
+    "label": "Supreme Court of Georgia — opinions and court resources",
+    "url": "https://www.gasupreme.us/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "auto-accident-law/hawaii/no-fault-vs-at-fault-states": {
+  "summary": "Hawaii is a no-fault auto insurance state, but fault still matters for property damage and personal injury claims that qualify for a lawsuit. Required personal injury protection (PIP) generally pays covered accident-related medical and rehabilitation expenses without deciding who caused the crash, with a minimum required limit of $10,000 per person. Hawaii restricts personal injury lawsuits arising from motor vehicle accidents, while allowing statutory exceptions; comparative negligence can reduce or bar recovery when a fault-based claim is available.",
+  "sections": [
+   {
+    "heading": "What Hawaii’s no-fault system covers",
+    "facts": [
+     {
+      "label": "Required first-party protection",
+      "value": "Hawaii requires motor vehicle insurance policies to include personal injury protection with a minimum limit of $10,000 per person. This is coverage for qualifying medical and rehabilitation expenses, not a general payment for every financial loss caused by a crash. — Hawaii Revised Statutes § 431:10C-301."
+     },
+     {
+      "label": "Restricted personal injury liability",
+      "value": "Hawaii generally abolishes tort liability for accidental harm arising from motor vehicle accidents in the state, subject to statutory exceptions. The exceptions include accidents involving death, significant permanent loss of use of a body part or function, or permanent and serious disfigurement. These are not the statute’s only exceptions. — Hawaii Revised Statutes § 431:10C-306."
+     },
+     {
+      "label": "Fault remains relevant",
+      "value": "No-fault does not mean that every driver is legally blameless. Hawaii’s required insurance includes liability coverage for bodily injury and property damage, alongside PIP; liability coverage addresses covered legal responsibility to others. — Hawaii Revised Statutes § 431:10C-301."
+     }
+    ]
+   },
+   {
+    "heading": "No-fault benefits versus fault-based claims",
+    "table": {
+     "columns": [
+      "Issue",
+      "Hawaii rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Covered medical expenses",
+       "PIP provides qualifying benefits without requiring proof that another driver caused the accident.",
+       "HRS § 431:10C-301"
+      ],
+      [
+       "Vehicle damage",
+       "PIP is not vehicle-repair coverage. Property damage liability remains separate from the restrictions on personal injury tort claims.",
+       "HRS §§ 431:10C-301, 431:10C-306"
+      ],
+      [
+       "Pain and suffering",
+       "A personal injury tort claim must fit an exception to Hawaii’s statutory abolition of tort liability; PIP itself does not compensate pain and suffering.",
+       "HRS § 431:10C-306"
+      ],
+      [
+       "Shared fault",
+       "Contributory negligence does not bar recovery if it is no greater than the negligence of the defendant, or the combined negligence of defendants against whom recovery is sought.",
+       "HRS § 663-31"
+      ],
+      [
+       "Reduced damages",
+       "When recovery is permitted, damages are reduced in proportion to the negligence attributable to the injured person.",
+       "HRS § 663-31"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Hawaii",
+    "bullets": [
+     "Insurance regulation: The Hawaii Department of Commerce and Consumer Affairs, Insurance Division, handles insurance consumer complaints, including complaints about insurers’ handling of automobile insurance claims.",
+     "Civil lawsuits: Hawaii state District Courts and Circuit Courts hear civil disputes within their respective jurisdiction. A claim for damages against another driver is distinct from a regulatory complaint about an insurer.",
+     "Regulatory limits: An Insurance Division complaint is not a court judgment deciding another driver’s negligence or awarding personal injury damages. Questions about whether a claim meets Hawaii’s lawsuit exceptions are matters to discuss with a lawyer."
+    ]
+   },
+   {
+    "heading": "Common questions in Hawaii",
+    "bullets": [
+     "Does no-fault eliminate lawsuits? No. HRS § 431:10C-306 restricts personal injury tort claims but preserves specified exceptions.",
+     "Is $10,000 the maximum value of every accident claim? No. It is the minimum required PIP limit, not an overall ceiling on property damage or qualifying personal injury liability claims.",
+     "Can someone recover when equally at fault? Under HRS § 663-31, equal negligence does not itself bar recovery, but damages are proportionally reduced. Other legal requirements still apply.",
+     "Does no-fault insurance pay for repairs to my car? PIP covers qualifying personal injury expenses, not vehicle repairs. Property damage liability and collision coverage are separate insurance coverages."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Hawaii Legislature — HRS § 431:10C-301, Required motor vehicle policy coverage",
+    "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol09_Ch0431-0435H/HRS0431/HRS_0431-0010C-0301.htm"
+   },
+   {
+    "label": "Hawaii Legislature — HRS § 431:10C-306, Abolition of tort liability",
+    "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol09_Ch0431-0435H/HRS0431/HRS_0431-0010C-0306.htm"
+   },
+   {
+    "label": "Hawaii Legislature — HRS § 663-31, Contributory negligence",
+    "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol13_Ch0601-0676/HRS0663/HRS_0663-0031.htm"
+   },
+   {
+    "label": "Hawaii Department of Commerce and Consumer Affairs — Insurance Division",
+    "url": "https://cca.hawaii.gov/ins/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "auto-accident-law/maine/motorcycle-accident-lawyer": {
+  "summary": "Maine motorcycle accident claims generally follow the state’s negligence rules: an injured rider must establish legal responsibility, and damages may be reduced or barred when the rider shares fault. Most personal injury lawsuits have a six-year filing deadline, but claims involving government entities have separate notice and filing requirements that can be much shorter. Maine also requires motor vehicle liability insurance, and its comparative negligence statute can prevent recovery when the injured person is equally responsible for the accident.",
+  "sections": [
+   {
+    "heading": "Fault and compensation after a Maine motorcycle accident",
+    "facts": [
+     {
+      "label": "Shared responsibility",
+      "value": "An injured person’s own fault does not automatically defeat a claim. Maine requires damages to be reduced to the extent the jury considers just and equitable, considering the claimant’s share of responsibility. A claimant found equally at fault cannot recover. — 14 M.R.S. § 156"
+     },
+     {
+      "label": "Meaning of fault",
+      "value": "The comparative negligence statute defines fault to include negligence, breach of statutory duty, and other acts or omissions that create tort liability or would otherwise support a contributory negligence defense. — 14 M.R.S. § 156"
+     },
+     {
+      "label": "Damage findings",
+      "value": "The jury must determine the full damages that would have been recoverable without the claimant’s fault and separately state the reduced amount awarded. Maine’s statute describes a just-and-equitable reduction rather than simply prescribing a fixed percentage formula. — 14 M.R.S. § 156"
+     }
+    ]
+   },
+   {
+    "heading": "Maine deadlines and required insurance amounts",
+    "table": {
+     "columns": [
+      "Issue",
+      "Maine rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Ordinary personal injury lawsuit",
+       "Generally six years after the cause of action accrues, unless another statute supplies a different period.",
+       "14 M.R.S. § 752"
+      ],
+      [
+       "Government tort claim notice",
+       "Generally written notice within 365 days after the claim accrues; statutory exceptions and required notice contents apply.",
+       "14 M.R.S. § 8107"
+      ],
+      [
+       "Government tort lawsuit",
+       "Generally two years after the cause of action accrues. Notice and lawsuit deadlines are separate requirements.",
+       "14 M.R.S. § 8110"
+      ],
+      [
+       "Bodily injury liability insurance",
+       "Minimum limits of $50,000 for one person and $100,000 for one accident involving injury or death to multiple people.",
+       "29-A M.R.S. § 1605"
+      ],
+      [
+       "Property damage liability insurance",
+       "Minimum limit of $25,000.",
+       "29-A M.R.S. § 1605"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Motorcycle helmet requirements",
+    "facts": [
+     {
+      "label": "Riders and passengers under 18",
+      "value": "A person under 18 operating or riding as a passenger on a motorcycle must wear protective headgear conforming to the applicable standards. — 29-A M.R.S. § 2083"
+     },
+     {
+      "label": "Learners and newly licensed operators",
+      "value": "Helmet requirements also cover operators driving under a learner’s permit and operators within one year after successfully completing the driving test. Passengers of operators required to wear headgear must also wear it. — 29-A M.R.S. § 2083"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Maine",
+    "bullets": [
+     "Maine Superior Court hears civil personal injury lawsuits, including motorcycle collision claims. Its general civil jurisdiction is established by 4 M.R.S. § 105.",
+     "The Maine Bureau of Insurance handles consumer complaints concerning insurers and insurance claims practices. A regulatory complaint is distinct from a civil lawsuit seeking damages.",
+     "Claims against a Maine governmental entity have designated notice recipients: the Attorney General for claims against the State, and specified officials for political subdivisions. Government immunity and statutory exceptions also affect liability. — 14 M.R.S. §§ 8103–8104-A, 8107"
+    ]
+   },
+   {
+    "heading": "Common questions in Maine",
+    "bullets": [
+     "Can a rider recover when partly responsible? Yes, but shared fault can reduce damages; equal fault bars recovery under 14 M.R.S. § 156.",
+     "Is the six-year deadline universal? No. Government claims have separate deadlines, and other statutory exceptions can apply. Talk to a lawyer.",
+     "Must every adult motorcyclist wear a helmet? No. Maine’s statute identifies covered groups, including learners, newly licensed operators, and their passengers.",
+     "Does the minimum insurance limit cap an injury award? No. Liability policy limits address insurance coverage, not the total damages legally recoverable from a responsible defendant."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Maine Legislature — Comparative negligence, 14 M.R.S. § 156",
+    "url": "https://legislature.maine.gov/statutes/14/title14sec156.html"
+   },
+   {
+    "label": "Maine Legislature — Six-year limitation, 14 M.R.S. § 752",
+    "url": "https://legislature.maine.gov/statutes/14/title14sec752.html"
+   },
+   {
+    "label": "Maine Legislature — Required motor vehicle insurance, 29-A M.R.S. § 1605",
+    "url": "https://legislature.maine.gov/statutes/29-A/title29-Asec1605.html"
+   },
+   {
+    "label": "Maine Legislature — Protective headgear, 29-A M.R.S. § 2083",
+    "url": "https://legislature.maine.gov/statutes/29-A/title29-Asec2083.html"
+   }
+  ],
+  "reviewed": "2026-10"
+ }
+}
