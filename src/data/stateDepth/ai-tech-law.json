@@ -1229,5 +1229,218 @@
    }
   ],
   "reviewed": "2026-10"
+ },
+ "ai-tech-law/north-dakota/terms-of-service-enforceability": {
+  "summary": "North Dakota applies its general contract rules to terms of service for AI products; electronic presentation does not, by itself, make those terms unenforceable. Enforceability depends on requirements including consent, a lawful purpose, and sufficient consideration, while state law limits contractual attempts to excuse certain misconduct. North Dakota’s electronic-transactions law recognizes electronic contracts and automated contracting, but it does not eliminate the underlying requirements for a valid agreement or override applicable consumer-protection law.",
+  "sections": [
+   {
+    "heading": "Contract requirements for AI terms of service",
+    "facts": [
+     {
+      "label": "Essential elements",
+      "value": "A North Dakota contract requires parties capable of contracting, their consent, a lawful object, and sufficient cause or consideration. These requirements apply when an AI provider seeks to enforce subscription terms, account rules, or other contractual conditions. — N.D.C.C. § 9-01-02"
+     },
+     {
+      "label": "Electronic form",
+      "value": "A record or signature cannot be denied legal effect or enforceability solely because it is electronic. A contract likewise cannot be denied effect solely because an electronic record was used in its formation. This prevents an electronic-format objection; it does not establish that every posted term became part of a contract. — N.D.C.C. § 9-16-07"
+     },
+     {
+      "label": "Agreement to transact electronically",
+      "value": "The Uniform Electronic Transactions Act applies to transactions between parties that have agreed to conduct transactions electronically. Whether they agreed is determined from the context and surrounding circumstances, including their conduct. — N.D.C.C. § 9-16-05"
+     }
+    ]
+   },
+   {
+    "heading": "How state rules affect common AI contract provisions",
+    "table": {
+     "columns": [
+      "Provision or practice",
+      "North Dakota rule",
+      "Citation"
+     ],
+     "rows": [
+      [
+       "Online acceptance",
+       "Electronic contracting is recognized, but the ordinary requirement of consent remains.",
+       "N.D.C.C. §§ 9-01-02, 9-16-07"
+      ],
+      [
+       "Automated contracting",
+       "Electronic agents can form a contract even if no individual reviewed their actions or the resulting terms.",
+       "N.D.C.C. § 9-16-14"
+      ],
+      [
+       "Liability exclusions",
+       "Contracts intended to exempt someone from responsibility for their own fraud, willful injury, or violation of law are against public policy.",
+       "N.D.C.C. § 9-08-02"
+      ],
+      [
+       "AI marketing representations",
+       "Deceptive acts, false promises, and misrepresentations connected with selling or advertising merchandise are prohibited; merchandise includes services.",
+       "N.D.C.C. §§ 51-15-01, 51-15-02"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Automated transactions and consumer-protection limits",
+    "facts": [
+     {
+      "label": "Human review is not always required",
+      "value": "The electronic-transactions statute expressly addresses contracts formed through interactions between electronic agents. It also addresses interactions between an electronic agent and an individual who performs actions the individual is free to refuse and knows, or has reason to know, will complete a transaction. — N.D.C.C. § 9-16-14"
+     },
+     {
+      "label": "Consumer-fraud prohibition",
+      "value": "The consumer-fraud statute covers deceptive practices connected with the sale or advertisement of merchandise. Its prohibition applies whether or not anyone has actually been misled, deceived, or damaged; that does not mean every private claim succeeds without proof of injury. — N.D.C.C. § 51-15-02"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in North Dakota",
+    "bullets": [
+     "The North Dakota Attorney General’s Consumer Protection Division receives consumer complaints involving allegedly deceptive business practices, including complaints about services.",
+     "North Dakota district courts hear civil contract disputes within their jurisdiction. A contract-enforcement lawsuit and an Attorney General consumer complaint are different proceedings."
+    ]
+   },
+   {
+    "heading": "Common questions in North Dakota",
+    "bullets": [
+     "Are AI terms invalid because they are electronic? No. Electronic form alone is not a basis for denying enforceability under N.D.C.C. § 9-16-07.",
+     "Does posting terms establish consent? Posting alone does not establish all essential contract elements. Consent remains required under N.D.C.C. § 9-01-02.",
+     "Can software form a contract without human review? Yes. N.D.C.C. § 9-16-14 expressly recognizes specified automated transactions.",
+     "Can terms excuse the provider’s own fraud? A contract intended to exempt a party from responsibility for its own fraud is against public policy under N.D.C.C. § 9-08-02."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "North Dakota Legislative Branch — Chapter 9-01, General Provisions",
+    "url": "https://ndlegis.gov/cencode/t09c01.pdf"
+   },
+   {
+    "label": "North Dakota Legislative Branch — Chapter 9-16, Uniform Electronic Transactions Act",
+    "url": "https://ndlegis.gov/cencode/t09c16.pdf"
+   },
+   {
+    "label": "North Dakota Legislative Branch — Chapter 9-08, Unlawful and Voidable Contracts",
+    "url": "https://ndlegis.gov/cencode/t09c08.pdf"
+   },
+   {
+    "label": "North Dakota Legislative Branch — Chapter 51-15, Consumer Fraud and Unlawful Credit Practices",
+    "url": "https://ndlegis.gov/cencode/t51c15.pdf"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/north-carolina/right-to-repair": {
+  "summary": "In North Carolina, repair disputes involving AI-enabled devices can implicate sales warranties, service contracts, federal warranty protections, and the state’s unfair or deceptive trade practices law. These laws can address defective products, broken repair promises, and certain warranty restrictions, but they do not themselves give every owner a general entitlement to source code, diagnostic software, replacement parts, or continued cloud access. The distinction between a purchased device and a separately supplied digital service matters.",
+  "sections": [
+   {
+    "heading": "North Carolina laws affecting repair rights",
+    "facts": [
+     {
+      "label": "Merchantability",
+      "value": "Unless properly excluded or modified, a merchant selling goods supplies an implied warranty that they are fit for their ordinary purposes. For an AI-enabled physical product, a repair dispute may therefore involve whether the product works as ordinary buyers would expect — N.C. Gen. Stat. § 25-2-314."
+     },
+     {
+      "label": "Written and advertised promises",
+      "value": "A seller’s factual promises or product descriptions can create express warranties when they become part of the basis of the bargain. Formal words such as “warranty” are unnecessary, but statements of opinion or mere commendation do not create warranties — N.C. Gen. Stat. § 25-2-313."
+     },
+     {
+      "label": "Independent repair and warranties",
+      "value": "For covered consumer-product warranties, federal law generally prohibits conditioning warranty coverage on branded parts or services unless they are supplied without charge or the Federal Trade Commission grants a waiver. Coverage can still exclude damage caused by outside parts or service — 15 U.S.C. § 2302(c); 16 C.F.R. § 700.10."
+     },
+     {
+      "label": "Deceptive repair practices",
+      "value": "North Carolina prohibits unfair or deceptive acts or practices in or affecting commerce. Misleading repair representations can implicate this law, but an unsuccessful repair or warranty disagreement does not automatically establish a violation — N.C. Gen. Stat. § 75-1.1."
+     }
+    ]
+   },
+   {
+    "heading": "Deadlines and remedies",
+    "table": {
+     "columns": [
+      "Issue",
+      "North Carolina rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Sales-contract lawsuit",
+       "Generally four years after accrual; the original agreement may reduce the period to no less than one year but cannot extend it.",
+       "N.C. Gen. Stat. § 25-2-725(1)"
+      ],
+      [
+       "Warranty accrual",
+       "Generally starts at tender of delivery, even if the defect is unknown; a limited exception applies to warranties explicitly extending to future performance.",
+       "N.C. Gen. Stat. § 25-2-725(2)"
+      ],
+      [
+       "Notice of breach",
+       "After accepting goods, the buyer must notify the seller within a reasonable time after discovering, or when the buyer should have discovered, the breach.",
+       "N.C. Gen. Stat. § 25-2-607(3)(a)"
+      ],
+      [
+       "Unfair-practices deadline",
+       "An action under Chapter 75 is generally subject to a four-year limitation period after accrual.",
+       "N.C. Gen. Stat. § 75-16.2"
+      ],
+      [
+       "Unfair-practices damages",
+       "Damages assessed for a qualifying Chapter 75 violation are trebled; attorney fees are discretionary under separate statutory conditions.",
+       "N.C. Gen. Stat. §§ 75-16, 75-16.1"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Limits for AI-enabled products",
+    "facts": [
+     {
+      "label": "Devices versus digital services",
+      "value": "North Carolina’s Uniform Commercial Code sales provisions apply to transactions in goods. Whether a software, cloud-access, or mixed hardware-service dispute falls within those provisions depends on the transaction; the presence of AI alone does not answer that question — N.C. Gen. Stat. §§ 25-2-102, 25-2-105."
+     },
+     {
+      "label": "Repair-only remedies",
+      "value": "A sales agreement may limit remedies to repair or replacement. If that limited remedy fails of its essential purpose, remedies otherwise available under the sales article may become available. This is not itself a general source-code disclosure requirement — N.C. Gen. Stat. § 25-2-719."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in North Carolina",
+    "bullets": [
+     "The North Carolina Department of Justice’s Consumer Protection Division receives consumer complaints, including product, warranty, and repair disputes.",
+     "Private warranty and damages claims may proceed in North Carolina state trial courts. The proper court depends on jurisdiction and the relief sought; a consumer complaint to an agency is not a court action."
+    ]
+   },
+   {
+    "heading": "Common questions in North Carolina",
+    "bullets": [
+     "Does an independent repair automatically void the warranty? No. Federal warranty rules distinguish prohibited branded-service conditions from exclusions for damage actually caused by outside work.",
+     "Must a manufacturer release an AI model or source code? The warranty and consumer-protection provisions discussed here do not establish that general entitlement.",
+     "Does every failed repair justify triple damages? No. Treble damages require a qualifying Chapter 75 claim, not merely dissatisfaction with a repair.",
+     "Can a warranty restrict the remedy to repair? Yes, subject to statutory limits, including the rule for a remedy that fails of its essential purpose."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "North Carolina General Assembly — Uniform Commercial Code, Article 2",
+    "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_25/Article_2.html"
+   },
+   {
+    "label": "North Carolina General Assembly — Chapter 75",
+    "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByChapter/Chapter_75.html"
+   },
+   {
+    "label": "Federal Trade Commission — Businessperson’s Guide to Federal Warranty Law",
+    "url": "https://www.ftc.gov/business-guidance/resources/businesspersons-guide-federal-warranty-law"
+   },
+   {
+    "label": "North Carolina Department of Justice — Consumer Protection",
+    "url": "https://ncdoj.gov/protecting-consumers/"
+   }
+  ],
+  "reviewed": "2026-10"
  }
 }
