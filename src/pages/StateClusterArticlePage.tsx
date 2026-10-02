@@ -33,8 +33,13 @@ export default function StateClusterArticlePage() {
   const { state: stateInfo, pillar: pillarData, article } = variant;
   const stateName = stateInfo.name;
   const stateTitle = `${article.title} in ${stateName}`;
-  const metaTitle = `${article.title} in ${stateName} (2026) | LegallySpoken`;
-  const metaDescription = `${article.metaDescription} State-specific guide for ${stateName} including statute of limitations, negligence rules, and insurance requirements.`;
+  const metaTitle = `${stateName} ${article.title}: 2026 Rules & Deadlines`;
+  // Lead with a real state fact where the topic uses it, then the generic answer.
+  const injuryPillar = pillar === "personal-injury-law" || pillar === "auto-accident-law";
+  const stateFact = injuryPillar
+    ? `${stateName}: ${stateInfo.personalInjurySOL} to sue, ${stateInfo.negligenceRule} fault rule. `
+    : `${stateName} 2026: `;
+  const metaDescription = `${stateFact}${article.metaDescription}`.slice(0, 300);
   const url = `${SITE}/${pillar}/${state}/${slug}`;
 
   const relatedTools = tools.filter((t) => article.relatedToolIds.includes(t.id));
