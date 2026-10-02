@@ -214,5 +214,1020 @@
    }
   ],
   "reviewed": "2026-10"
+ },
+ "ai-tech-law/nevada/data-privacy-rights": {
+  "summary": "Nevada gives consumers a limited right to stop certain sales of personal information by covered website operators and data brokers, rather than a general right to control every use of their data. Nevada also separately protects consumer health data outside traditional medical settings, including some information inferred through algorithms. These laws can apply to AI businesses, but they do not create a general right to explanations of AI decisions or deletion of all personal information.",
+  "sections": [
+   {
+    "heading": "Online privacy rights and their limits",
+    "facts": [
+     {
+      "label": "Who and what are covered",
+      "value": "Nevada’s online privacy provisions cover qualifying commercial website and online-service operators and separately regulate data brokers. Covered information includes specified identifiers, such as names, email addresses and telephone numbers, collected and maintained in the circumstances defined by the law. Exemptions limit coverage. — NRS Chapter 603A, online privacy provisions."
+     },
+     {
+      "label": "Privacy notices",
+      "value": "Covered operators must make a privacy notice available identifying categories of information collected and categories of third parties with whom it may be shared. The notice must also address any available review-and-change process and how material notice changes are communicated. This disclosure requirement does not itself establish a general correction right. — NRS Chapter 603A, online privacy provisions."
+     },
+     {
+      "label": "Narrow meaning of sale",
+      "value": "The online privacy law’s sale definition requires monetary consideration and contains exclusions. Consequently, an opt-out does not prohibit every disclosure, advertising arrangement or use of information for AI development. — NRS Chapter 603A, online privacy provisions."
+     }
+    ]
+   },
+   {
+    "heading": "Requests, deadlines and enforcement",
+    "table": {
+     "columns": [
+      "Issue",
+      "Nevada rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Sale opt-out",
+       "Consumers may submit verified requests directing covered operators or data brokers not to sell covered information about them.",
+       "NRS Chapter 603A, online privacy provisions"
+      ],
+      [
+       "Response deadline",
+       "A response is due within 60 days after receipt of a verified request.",
+       "NRS Chapter 603A, online privacy provisions"
+      ],
+      [
+       "Extension",
+       "An additional 30 days is permitted when reasonably necessary, with notice to the consumer.",
+       "NRS Chapter 603A, online privacy provisions"
+      ],
+      [
+       "Public enforcement",
+       "The Attorney General may seek an injunction or a civil penalty of up to $5,000 for each violation.",
+       "NRS Chapter 603A, online privacy provisions"
+      ],
+      [
+       "Private lawsuits",
+       "These online privacy provisions do not establish a private right of action against an operator or data broker.",
+       "NRS Chapter 603A, online privacy provisions"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Consumer health data and AI inferences",
+    "facts": [
+     {
+      "label": "Separate health-data protections",
+      "value": "Nevada’s consumer health data law establishes rights concerning access, deletion and consent withdrawal for covered data. It generally requires consent for collection and sharing, subject to exceptions, and separate written authorization for sale. Its coverage and exemptions differ from the online sale-opt-out rules. — Nevada SB 370 (2023), enacted in NRS Chapter 603A."
+     },
+     {
+      "label": "Inferred health information",
+      "value": "Consumer health data can include information derived or extrapolated from nonhealth information through algorithms or machine learning when used to associate a consumer with protected health information. An AI-generated health inference can therefore fall within the law even when its underlying inputs were not medical records. — Nevada SB 370 (2023)."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Nevada",
+    "bullets": [
+     "Covered operators and data brokers must establish a designated request address for verified sale-opt-out requests; this may be an email address, toll-free telephone number or website. — NRS Chapter 603A.",
+     "The Nevada Attorney General’s Bureau of Consumer Protection receives consumer complaints. The Attorney General enforces Nevada’s online privacy and consumer health data provisions. — NRS Chapter 603A."
+    ]
+   },
+   {
+    "heading": "Common questions in Nevada",
+    "bullets": [
+     "Can every Nevada resident demand deletion of every company record? No. The online privacy provisions do not provide a general deletion right; the separate consumer health data law provides a more specific deletion right.",
+     "Does opting out stop all AI training? No. The online sale opt-out is not a general prohibition on internal data processing or model training.",
+     "Are health apps automatically exempt because HIPAA exists? No. Nevada’s consumer health data protections can reach data outside HIPAA, subject to statutory coverage and exemptions.",
+     "Can an algorithm’s prediction count as health data? Yes, qualifying inferred or extrapolated information can fall within Nevada’s consumer health data definition."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Nevada Legislature — NRS Chapter 603A",
+    "url": "https://www.leg.state.nv.us/NRS/NRS-603A.html"
+   },
+   {
+    "label": "Nevada Legislature — SB 370, enrolled text (2023)",
+    "url": "https://www.leg.state.nv.us/Session/82nd2023/Bills/SB/SB370_EN.pdf"
+   },
+   {
+    "label": "Nevada Attorney General — Bureau of Consumer Protection",
+    "url": "https://ag.nv.gov/About/Consumer_Protection/Bureau_of_Consumer_Protection/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/minnesota/right-to-repair": {
+  "summary": "Minnesota’s Digital Fair Repair Act requires manufacturers of covered digital electronic equipment to make repair documentation, parts, and tools available to equipment owners and independent repair providers on fair and reasonable terms. The law took effect July 1, 2024, and generally applies to covered equipment first sold on or after July 1, 2021, subject to statutory exclusions. It addresses access to repair resources, including certain software tools, rather than creating a general right to inspect or modify an AI model.",
+  "sections": [
+   {
+    "heading": "Minnesota’s right-to-repair framework",
+    "facts": [
+     {
+      "label": "Governing law",
+      "value": "Minnesota’s Digital Fair Repair Act is codified at Minnesota Statutes section 325E.72. It establishes obligations for original equipment manufacturers concerning diagnosis, maintenance, and repair of covered digital electronic equipment. — Minn. Stat. § 325E.72"
+     },
+     {
+      "label": "Covered technology",
+      "value": "Digital electronic equipment generally means a product that depends for its functioning, in whole or in part, on digital electronics embedded in or attached to it. Parts for that equipment are included within the statutory definition. — Minn. Stat. § 325E.72"
+     },
+     {
+      "label": "Who receives access",
+      "value": "The statute requires qualifying repair resources to be made available to equipment owners and independent repair providers, not only to manufacturer-authorized repair businesses. The obligation concerns equipment and parts sold or used in Minnesota. — Minn. Stat. § 325E.72"
+     }
+    ]
+   },
+   {
+    "heading": "What the repair-access requirement covers",
+    "table": {
+     "columns": [
+      "Resource or issue",
+      "Minnesota rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Documentation",
+       "Covered repair documentation must be available on fair and reasonable terms.",
+       "Minn. Stat. § 325E.72"
+      ],
+      [
+       "Replacement parts",
+       "The access requirement includes covered parts, subject to statutory availability limitations.",
+       "Minn. Stat. § 325E.72"
+      ],
+      [
+       "Tools and software",
+       "Required tools include applicable embedded software, firmware, and other repair software tools.",
+       "Minn. Stat. § 325E.72"
+      ],
+      [
+       "Security-related locks",
+       "The law addresses access to documentation, tools, and parts needed to disable and reset an electronic security lock or security-related function during diagnosis, maintenance, or repair.",
+       "Minn. Stat. § 325E.72"
+      ],
+      [
+       "Trade secrets",
+       "The statute does not require trade-secret disclosure except as necessary to provide required documentation, parts, and tools on fair and reasonable terms.",
+       "Minn. Stat. § 325E.72"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Limits for AI-enabled devices and other equipment",
+    "facts": [
+     {
+      "label": "AI is not a separate coverage category",
+      "value": "Coverage turns on the equipment and statutory requirements, not simply whether a product uses artificial intelligence. Section 325E.72 does not establish a separate entitlement to AI training data or general model transparency. — Minn. Stat. § 325E.72"
+     },
+     {
+      "label": "Excluded equipment",
+      "value": "The statute contains exclusions involving motor vehicles, medical devices, agricultural equipment, and video game consoles. Its repair-access obligations therefore do not apply uniformly to every product containing electronics. — Minn. Stat. § 325E.72"
+     },
+     {
+      "label": "Repair versus modification",
+      "value": "The law does not require manufacturers to make available special documentation, tools, or parts that would disable or override antitheft security measures without the owner’s authorization. — Minn. Stat. § 325E.72"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Minnesota",
+    "bullets": [
+     "Minnesota Attorney General’s Office: Consumer complaints concerning manufacturer compliance fall within the office’s consumer-protection role. The Digital Fair Repair Act expressly provides for attorney-general enforcement under Minnesota Statutes section 8.31. — Minn. Stat. § 325E.72.",
+     "Minnesota district courts: Attorney-general enforcement under section 8.31 can include court proceedings seeking injunctions and other statutory relief. An agency complaint is not itself a court judgment establishing a violation. — Minn. Stat. § 8.31."
+    ]
+   },
+   {
+    "heading": "Common questions in Minnesota",
+    "bullets": [
+     "Does Minnesota require every repair to be free? No. The statute requires fair and reasonable access terms; it does not make all parts, tools, and repair labor free. — Minn. Stat. § 325E.72.",
+     "Does an independent repair shop qualify for access? Yes, independent repair providers are expressly included in the access requirement for covered equipment. — Minn. Stat. § 325E.72.",
+     "Does the law cover older products? Its applicability provision generally reaches covered equipment first sold on or after July 1, 2021. — Minn. Stat. § 325E.72.",
+     "Does an AI feature automatically create a right to the model’s source code? No. The law establishes repair-resource access requirements, not an unrestricted source-code disclosure right. — Minn. Stat. § 325E.72."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Minnesota Revisor of Statutes — Digital Fair Repair Act, section 325E.72",
+    "url": "https://www.revisor.mn.gov/statutes/cite/325E.72"
+   },
+   {
+    "label": "Minnesota Revisor of Statutes — Attorney-general enforcement, section 8.31",
+    "url": "https://www.revisor.mn.gov/statutes/cite/8.31"
+   },
+   {
+    "label": "Minnesota Attorney General — File a Complaint",
+    "url": "https://www.ag.state.mn.us/Office/Complaint.asp"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/new-mexico/terms-of-service-enforceability": {
+  "summary": "In New Mexico, an AI service’s terms of service can form an enforceable contract electronically, but electronic presentation alone does not establish agreement or make every clause enforceable. The Uniform Electronic Transactions Act recognizes electronic records, signatures, and automated contracting, while ordinary contract defenses, the Uniform Arbitration Act, and the Unfair Practices Act remain relevant to subscription charges, arbitration provisions, liability limits, and representations about what an AI product can do.",
+  "sections": [
+   {
+    "heading": "Electronic terms and agreement",
+    "facts": [
+     {
+      "label": "Electronic format",
+      "value": "A record or signature cannot be denied legal effect solely because it is electronic. Likewise, a contract cannot be denied enforceability solely because an electronic record was used in its formation. These rules remove a format barrier; they do not automatically validate every provision in an AI provider’s terms. — NMSA 1978, § 14-16-7."
+     },
+     {
+      "label": "Agreement to transact electronically",
+      "value": "The Uniform Electronic Transactions Act applies to transactions between parties that have agreed to conduct them electronically. Whether they agreed is determined from the context and surrounding circumstances, including their conduct. — NMSA 1978, § 14-16-5(B)."
+     },
+     {
+      "label": "Attributing acceptance",
+      "value": "An electronic record or signature is attributable to a person if it was that person’s act. Attribution may be shown in any manner, and its legal effect depends on the context and circumstances surrounding its creation, execution, or adoption. — NMSA 1978, § 14-16-9."
+     }
+    ]
+   },
+   {
+    "heading": "Rules affecting common AI service provisions",
+    "table": {
+     "columns": [
+      "Issue",
+      "New Mexico rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Automated contracting",
+       "Electronic agents can form contracts even when no individual reviews their actions or the resulting terms.",
+       "NMSA 1978, § 14-16-14."
+      ],
+      [
+       "Arbitration",
+       "An arbitration agreement contained in a record is generally enforceable, subject to grounds available for revoking a contract.",
+       "NMSA 1978, § 44-7A-7(A)."
+      ],
+      [
+       "Disputed arbitration agreement",
+       "The court decides whether an arbitration agreement exists and whether a controversy is subject to it.",
+       "NMSA 1978, § 44-7A-7(B)."
+      ],
+      [
+       "Product claims and sales practices",
+       "Unfair or deceptive trade practices and unconscionable trade practices in trade or commerce are unlawful.",
+       "NMSA 1978, § 57-12-3."
+      ],
+      [
+       "Consumer damages",
+       "For qualifying losses under the Unfair Practices Act, recovery is actual damages or $100, whichever is greater; willful violations can support an increase.",
+       "NMSA 1978, § 57-12-10(B)."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Consumer protections beyond the contract",
+    "facts": [
+     {
+      "label": "AI marketing representations",
+      "value": "The Unfair Practices Act addresses qualifying false or misleading representations made in connection with selling goods or services. Claims about an AI service’s characteristics, uses, benefits, or quality can implicate these statutory categories; coverage depends on the statutory elements and facts. — NMSA 1978, § 57-12-2(D)."
+     },
+     {
+      "label": "Attorney fees",
+      "value": "The court must award attorney fees and costs to a complaining party who prevails under the Unfair Practices Act. A defending party receives fees and costs when the court finds that the claimant brought a groundless action. — NMSA 1978, § 57-12-10(C)."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in New Mexico",
+    "bullets": [
+     "The New Mexico Department of Justice receives consumer complaints involving businesses and potentially unfair or deceptive practices.",
+     "New Mexico district courts hear civil contract disputes. The Unfair Practices Act expressly authorizes district-court actions for injunctive relief under its terms. — NMSA 1978, § 57-12-10(A)."
+    ]
+   },
+   {
+    "heading": "Common questions in New Mexico",
+    "bullets": [
+     "Are online terms automatically binding? No. Electronic form is legally recognized, but agreement and other contract requirements still matter.",
+     "Can software form a contract without human review? Yes. Section 14-16-14 expressly recognizes certain contracts formed through electronic agents.",
+     "Does an arbitration clause always control? No. Section 44-7A-7 preserves contract-revocation grounds and assigns specified threshold questions to courts.",
+     "Does inaccurate AI output automatically establish consumer fraud? No. A claim must satisfy the applicable statutory elements; an incorrect output alone does not establish them."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "New Mexico Compilation Commission — official statutory compilation",
+    "url": "https://nmonesource.com/nmos/nmsa/en/nav.do"
+   },
+   {
+    "label": "New Mexico Department of Justice",
+    "url": "https://nmdoj.gov/"
+   },
+   {
+    "label": "New Mexico Judicial Branch",
+    "url": "https://nmcourts.gov/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/illinois/online-defamation": {
+  "summary": "Illinois defamation law can apply to false factual claims published online, including claims conveyed through AI-generated text, images, audio, or video, when the ordinary requirements for liability are met. Libel and slander claims generally have a one-year filing deadline, and Illinois follows a single-publication rule that matters when material remains available online. Liability depends on factors including defamatory meaning, identification, publication, fault, privileges, and whether damages must be proved.",
+  "sections": [
+   {
+    "heading": "Illinois rules for online defamation",
+    "facts": [
+     {
+      "label": "Basic claim",
+      "value": "A plaintiff generally must establish a false statement about the plaintiff, an unprivileged publication to a third party, and resulting damages. Constitutional fault requirements also apply; public officials and public figures generally must prove knowledge of falsity or reckless disregard for truth. — Green v. Rogers, 234 Ill. 2d 478 (2009); New York Times Co. v. Sullivan, 376 U.S. 254 (1964)."
+     },
+     {
+      "label": "One-year deadline",
+      "value": "Illinois requires actions for slander and libel to be commenced within one year after the cause of action accrues. Continued online availability does not itself create a fresh deadline each day. — 735 ILCS 5/13-201; Pippen v. NBCUniversal Media, LLC, 734 F.3d 610 (7th Cir. 2013)."
+     },
+     {
+      "label": "Single publication",
+      "value": "The Uniform Single Publication Act limits claims arising from a single publication or broadcast to one cause of action. A genuinely separate republication can present a different issue from leaving an existing webpage accessible. — 740 ILCS 165/1; Pippen v. NBCUniversal Media, LLC, 734 F.3d 610 (7th Cir. 2013)."
+     },
+     {
+      "label": "AI-generated material",
+      "value": "An AI label does not alone determine liability. Illinois evaluates whether the communication, read in context, reasonably conveys a defamatory factual assertion about an identifiable plaintiff; obvious parody and nonfactual opinion receive different treatment. — Solaia Technology, LLC v. Specialty Publishing Co., 221 Ill. 2d 558 (2006)."
+     }
+    ]
+   },
+   {
+    "heading": "How common online scenarios are treated",
+    "table": {
+     "columns": [
+      "Issue",
+      "Illinois legal treatment"
+     ],
+     "rows": [
+      [
+       "False criminal accusation",
+       "Words imputing commission of a crime are a recognized defamation-per-se category, subject to context and the innocent-construction rule. — Green v. Rogers, 234 Ill. 2d 478 (2009)."
+      ],
+      [
+       "False professional accusation",
+       "Certain statements prejudicing someone in a profession or trade, or imputing inability or lack of integrity in employment duties, qualify as defamation per se. — Green v. Rogers."
+      ],
+      [
+       "Opinion or exaggerated insult",
+       "Calling something an opinion is not decisive. Courts consider whether it conveys a provably false factual assertion in context. — Solaia Technology, 221 Ill. 2d 558."
+      ],
+      [
+       "Anonymous account",
+       "Illinois Supreme Court Rule 224 permits a verified petition for discovery to identify potential defendants. A defamation petition must satisfy substantive pleading requirements. — Hadley v. Doe, 2015 IL 118000."
+      ],
+      [
+       "Website hosting another user's post",
+       "Federal Section 230 generally prevents treating an interactive computer service provider or user as the publisher of information supplied by another information content provider; this is not blanket protection for creating defamatory content. — 47 U.S.C. § 230(c)(1), (f)(3)."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Illinois",
+    "bullets": [
+     "Illinois circuit courts hear state-law civil defamation cases. Venue generally lies where a properly joined defendant resides or where the transaction, or part of it, occurred, subject to statutory exceptions. — 735 ILCS 5/2-101.",
+     "Rule 224 identification proceedings are filed in circuit court and are limited to discovery needed to identify responsible persons or entities. — Illinois Supreme Court Rule 224.",
+     "The Illinois Attorney General's consumer-complaint process is not a substitute for a civil defamation lawsuit. Private defamation damages are determined through court proceedings."
+    ]
+   },
+   {
+    "heading": "Common questions in Illinois",
+    "bullets": [
+     "Does every damaging statement qualify? No. Substantial truth defeats a defamation claim, and context can make a statement nonactionable. — Solaia Technology.",
+     "Must financial loss always be proved? No. Defamation per se permits presumed damages under Illinois law, subject to applicable constitutional restrictions. — Green v. Rogers.",
+     "Does an old post become newly actionable whenever someone reads it? Generally no; continued access alone does not restart the limitations period. — Pippen.",
+     "Can an anonymous poster be identified through court proceedings? Potentially, through a properly supported Rule 224 petition; anonymity alone does not prevent discovery. — Hadley v. Doe."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Illinois General Assembly — 735 ILCS 5/13-201",
+    "url": "https://www.ilga.gov/legislation/ilcs/documents/073500050K13-201.htm"
+   },
+   {
+    "label": "Illinois General Assembly — Uniform Single Publication Act, Section 1",
+    "url": "https://www.ilga.gov/legislation/ilcs/documents/074001650K1.htm"
+   },
+   {
+    "label": "Illinois Courts — Supreme Court Rules",
+    "url": "https://www.illinoiscourts.gov/rules/supreme-court-rules/"
+   },
+   {
+    "label": "United States Code — 47 U.S.C. § 230",
+    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/kentucky/social-media-legal-issues": {
+  "summary": "Kentucky social media disputes can involve consumer protection, privacy, defamation, and criminal laws, whether content is created by a person or generated using AI. The Kentucky Consumer Data Protection Act took effect January 1, 2026, giving qualifying consumers rights against covered businesses, while existing laws address deceptive commercial practices and harassing communications. Not every platform or AI service falls within the privacy act, and its enforcement belongs to the attorney general rather than private plaintiffs.",
+  "sections": [
+   {
+    "heading": "Kentucky privacy rights for social media and AI services",
+    "facts": [
+     {
+      "label": "Coverage thresholds",
+      "value": "The Kentucky Consumer Data Protection Act covers businesses operating in Kentucky or targeting Kentucky residents that control or process at least 100,000 consumers’ personal data, or at least 25,000 consumers’ data while deriving over 50% of gross revenue from personal-data sales. Statutory exemptions also apply. — Kentucky Consumer Data Protection Act, 2024 HB 15."
+     },
+     {
+      "label": "Who qualifies as a consumer",
+      "value": "A consumer is a Kentucky resident acting in an individual or household context. People acting in commercial or employment contexts are excluded from that definition. — Kentucky Consumer Data Protection Act, 2024 HB 15."
+     },
+     {
+      "label": "Rights and response deadline",
+      "value": "Covered consumers have rights to access, correct, delete, and obtain copies of qualifying personal data, and to opt out of targeted advertising, data sales, and certain profiling. Controllers generally must respond within 45 days; a further 45-day extension is permitted when reasonably necessary, with notice. — Kentucky Consumer Data Protection Act, 2024 HB 15."
+     },
+     {
+      "label": "AI-related limits",
+      "value": "The profiling opt-out concerns solely automated decisions producing legal or similarly significant effects. It is not a general right to reject every AI-generated recommendation or social media ranking. — Kentucky Consumer Data Protection Act, 2024 HB 15."
+     }
+    ]
+   },
+   {
+    "heading": "Other Kentucky laws affecting online conduct",
+    "table": {
+     "columns": [
+      "Issue",
+      "Kentucky rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Deceptive promotions",
+       "Unfair, false, misleading, or deceptive practices in trade or commerce are unlawful; the rule is not limited to offline advertising.",
+       "KRS 367.170"
+      ],
+      [
+       "Consumer damages claims",
+       "Qualifying purchasers of goods or services primarily for personal, family, or household use may seek relief for ascertainable losses caused by unlawful practices.",
+       "KRS 367.220"
+      ],
+      [
+       "Harassing messages",
+       "Communications made with the required intent and in a manner causing annoyance or alarm can constitute harassing communications. The offense is a Class B misdemeanor.",
+       "KRS 525.080"
+      ],
+      [
+       "Defamation deadline",
+       "Kentucky generally requires libel or slander actions to be commenced within one year after the cause of action accrues.",
+       "KRS 413.140(1)(d)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Kentucky",
+    "bullets": [
+     "The Kentucky Attorney General’s Office handles consumer-protection complaints involving deceptive commercial practices and has exclusive enforcement authority under the Kentucky Consumer Data Protection Act.",
+     "Kentucky circuit courts have general jurisdiction over civil disputes unless jurisdiction is assigned elsewhere. District courts handle qualifying civil cases within their statutory jurisdiction. The correct court depends on the claim and relief sought. — Kentucky Constitution § 112; KRS 24A.120.",
+     "Local police departments and county sheriffs receive reports of potentially criminal online conduct. Whether a message satisfies a criminal statute depends on its content, context, and the required intent."
+    ]
+   },
+   {
+    "heading": "Common questions in Kentucky",
+    "bullets": [
+     "Can I sue under Kentucky’s data privacy act? The act does not create a private right of action. Attorney general enforcement is separate from any claim available under another law.",
+     "Does AI-generated advertising escape consumer-protection law? No. KRS 367.170 addresses deceptive commercial practices without an exemption merely because advertising was generated using AI.",
+     "Is every offensive post criminal harassment? No. KRS 525.080 requires statutory elements, including the required intent; offensiveness alone does not establish the offense.",
+     "Does the privacy act cover employee social media data? Its consumer definition excludes people acting in an employment context. That exclusion does not determine whether other laws apply."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Kentucky General Assembly — 2024 HB 15, Consumer Data Protection Act",
+    "url": "https://apps.legislature.ky.gov/record/24rs/hb15.html"
+   },
+   {
+    "label": "Kentucky General Assembly — Kentucky Revised Statutes",
+    "url": "https://apps.legislature.ky.gov/law/statutes/"
+   },
+   {
+    "label": "Kentucky Attorney General",
+    "url": "https://www.ag.ky.gov/"
+   },
+   {
+    "label": "Kentucky Court of Justice",
+    "url": "https://www.kycourts.gov/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/louisiana/right-to-repair": {
+  "summary": "In Louisiana, disputes over repairing AI-enabled devices can involve the Civil Code’s warranty against hidden defects, written product warranties, and consumer-protection law. Those protections can support repair, a price reduction, or cancellation of a sale in qualifying cases, but they do not automatically require manufacturers to release source code, diagnostic software, or proprietary repair tools. Federal warranty and copyright rules also affect what manufacturers and independent repairers may do.",
+  "sections": [
+   {
+    "heading": "Louisiana remedies for defective technology",
+    "facts": [
+     {
+      "label": "Hidden defects",
+      "value": "Louisiana calls its warranty against hidden defects “redhibition.” A defect can justify undoing a sale if it makes the product useless or so inconvenient that the buyer would not have purchased it. A less serious defect can support a price reduction. Whether an AI-related malfunction qualifies depends on the facts. — Louisiana Civil Code art. 2520"
+     },
+     {
+      "label": "Notice and opportunity to repair",
+      "value": "The buyer generally must notify the seller of a redhibitory defect in time to allow repairs. Failure to notify reduces recovery to the extent timely notice would have avoided damage; notice is unnecessary when the seller actually knew of the defect. — Louisiana Civil Code art. 2522"
+     },
+     {
+      "label": "Seller’s knowledge matters",
+      "value": "A seller who did not know of the defect generally must repair, remedy, or correct it before facing the article’s refund obligations. A seller who knew of the defect and failed to disclose it can also owe damages and reasonable attorney fees; a manufacturer is deemed to know its product’s redhibitory defects. — Louisiana Civil Code arts. 2531 and 2545"
+     }
+    ]
+   },
+   {
+    "heading": "Which legal protection applies?",
+    "table": {
+     "columns": [
+      "Issue",
+      "Relevant rule",
+      "Important limit"
+     ],
+     "rows": [
+      [
+       "Hidden hardware or software defect",
+       "Louisiana Civil Code art. 2520",
+       "Redhibition concerns defects in the thing sold, not an automatic entitlement to repair information."
+      ],
+      [
+       "Warranty restricted to branded service",
+       "Magnuson-Moss Warranty Act, 15 U.S.C. § 2302(c)",
+       "Covered warranties generally cannot require identified branded parts or service unless supplied free or an FTC waiver applies."
+      ],
+      [
+       "Damage caused by an independent repair",
+       "FTC guidance on warranties",
+       "Warranty coverage may be denied for damage caused by improper repairs or replacement parts."
+      ],
+      [
+       "Deceptive repair representations",
+       "Louisiana Revised Statutes § 51:1405(A)",
+       "Unfair or deceptive trade practices are unlawful; a repair disagreement alone does not establish a violation."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "AI software, access controls, and repair",
+    "facts": [
+     {
+      "label": "Repair rights are not source-code rights",
+      "value": "The cited Louisiana redhibition provisions establish sale-related remedies, not a general obligation to publish source code, model weights, passwords, or diagnostic tools. — Louisiana Civil Code arts. 2520 and 2531"
+     },
+     {
+      "label": "Digital locks",
+      "value": "Federal copyright law generally prohibits circumventing technological measures controlling access to copyrighted works. Regulatory exemptions are limited; permission to circumvent for a qualifying purpose does not itself require a manufacturer to provide tools or credentials. — 17 U.S.C. § 1201(a)"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Louisiana",
+    "bullets": [
+     "The Louisiana Department of Justice, Office of the Attorney General, Consumer Protection Section receives consumer complaints involving businesses, including repair and warranty disputes.",
+     "The Federal Trade Commission receives reports about deceptive business practices and warranty restrictions through ReportFraud.ftc.gov.",
+     "Private redhibition and consumer-protection claims may be brought in Louisiana courts with jurisdiction. Louisiana Revised Statutes § 51:1409 authorizes a private action for qualifying ascertainable losses caused by prohibited practices. Talk to a lawyer."
+    ]
+   },
+   {
+    "heading": "Common questions in Louisiana",
+    "bullets": [
+     "Does an AI feature eliminate Louisiana defect protections? No. Article 2520 addresses defects in things sold; applying it to a particular device or software arrangement depends on the transaction and defect.",
+     "Does independent service automatically void a warranty? No. Federal law restricts branded-service conditions in covered warranties, although repair-caused damage can be excluded.",
+     "Can a seller exclude redhibition? An exclusion must be clear, unambiguous, and brought to the buyer’s attention. Article 2548 also limits when a seller can rely on it.",
+     "Is every unsuccessful repair an unfair trade practice? No. A claim under Louisiana Revised Statutes § 51:1409 requires the statutory elements, including qualifying loss caused by a prohibited practice."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Louisiana Legislature — Louisiana Laws, Civil Code and Revised Statutes",
+    "url": "https://legis.la.gov/Legis/Laws.aspx"
+   },
+   {
+    "label": "Federal Trade Commission — Auto Warranties and Auto Service Contracts",
+    "url": "https://consumer.ftc.gov/articles/auto-warranties-and-auto-service-contracts"
+   },
+   {
+    "label": "U.S. House of Representatives — 17 U.S.C. § 1201",
+    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section1201&num=0&edition=prelim"
+   },
+   {
+    "label": "Louisiana Department of Justice — Office of the Attorney General",
+    "url": "https://www.ag.state.la.us/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/nevada/right-to-repair": {
+  "summary": "In Nevada, repair disputes involving AI-enabled devices can turn on warranties, sales contracts, and consumer-fraud law; those rules do not automatically require a manufacturer to disclose source code, model weights, or diagnostic tools. Nevada’s commercial code provides warranty protections for qualifying sales of goods, while federal law restricts certain warranty conditions requiring branded parts or services. Whether those protections cover a particular connected product depends on the transaction, warranty terms, and alleged defect or misrepresentation.",
+  "sections": [
+   {
+    "heading": "Nevada rules affecting repair rights",
+    "facts": [
+     {
+      "label": "Promises about repairability",
+      "value": "A seller’s factual promise or product description can create an express warranty when it becomes part of the basis of the bargain. Statements about replaceable components, repair access, or functionality may therefore matter; a seller’s opinion or commendation alone does not create that warranty. — NRS 104.2313"
+     },
+     {
+      "label": "Misleading product claims",
+      "value": "Nevada prohibits knowingly false representations about goods’ characteristics, uses, or benefits. A false claim about an AI-enabled device’s capabilities or repair features can implicate this rule, but the statutory requirements still must be established. — NRS 598.0915(5)"
+     },
+     {
+      "label": "Limits of these protections",
+      "value": "Warranty and deceptive-trade-practice provisions address promises, product quality, and misleading conduct. They are not a general entitlement to proprietary AI materials or unrestricted access to a manufacturer’s repair systems. — NRS 104.2313–104.2316; NRS 598.0915"
+     }
+    ]
+   },
+   {
+    "heading": "Warranty protections and deadlines",
+    "table": {
+     "columns": [
+      "Rule",
+      "Effect on repair disputes",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Merchantability",
+       "Unless properly excluded or modified, a merchant seller warrants that goods are fit for their ordinary purposes.",
+       "NRS 104.2314"
+      ],
+      [
+       "Particular-purpose fitness",
+       "A warranty can arise when the seller knows the buyer’s particular purpose and reliance on the seller’s judgment.",
+       "NRS 104.2315"
+      ],
+      [
+       "Warranty exclusions",
+       "Written merchantability disclaimers must mention merchantability and be conspicuous; other statutory exclusion rules also apply.",
+       "NRS 104.2316"
+      ],
+      [
+       "Sales-contract deadline",
+       "Generally four years after accrual. The original agreement may reduce this to at least one year, but cannot extend it.",
+       "NRS 104.2725"
+      ],
+      [
+       "Branded repair conditions",
+       "A consumer-product warrantor generally cannot condition coverage on identified branded parts or services unless supplied free or an FTC waiver applies.",
+       "15 U.S.C. § 2302(c)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Remedies and important boundaries",
+    "facts": [
+     {
+      "label": "Private consumer-fraud claims",
+      "value": "A victim of consumer fraud may bring an action under Nevada law. If the claimant prevails, available relief includes sustained damages, appropriate equitable relief, costs, and reasonable attorney’s fees. Covered consumer fraud includes deceptive trade practices identified in the statute. — NRS 41.600"
+     },
+     {
+      "label": "When the warranty clock starts",
+      "value": "A sales-warranty claim generally accrues upon tender of delivery, even without knowledge of the breach. A specific exception applies when a warranty explicitly extends to future performance and discovery must await that performance. — NRS 104.2725(2)"
+     },
+     {
+      "label": "Hardware versus AI services",
+      "value": "Nevada’s Uniform Commercial Code Article 2 applies to transactions in goods. Its application to a combined hardware, software, and cloud-service arrangement depends on how the transaction is legally classified. — NRS 104.2102"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Nevada",
+    "bullets": [
+     "The Nevada Attorney General’s Bureau of Consumer Protection accepts consumer complaints, including allegations of deceptive business practices.",
+     "Nevada state courts hear private warranty and consumer-fraud lawsuits, subject to jurisdictional requirements. Justice courts handle qualifying small-claims money disputes.",
+     "The Federal Trade Commission accepts reports about potentially unlawful warranty practices. An FTC report is distinct from a private lawsuit seeking compensation."
+    ]
+   },
+   {
+    "heading": "Common questions in Nevada",
+    "bullets": [
+     "Does an AI feature eliminate hardware warranty protections? No. Applicable sales and consumer-product warranty rules do not disappear merely because a device includes AI.",
+     "Can a warranty require only branded repairs? Federal law generally prohibits that condition, subject to the free-service and FTC-waiver exceptions.",
+     "Does a warranty guarantee access to model weights? No. The cited warranty rules do not themselves create that access right.",
+     "Does the four-year deadline always start when a defect is discovered? No. Nevada generally measures sales-warranty accrual from delivery, with a limited future-performance exception."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Nevada Legislature — NRS Chapter 104, Uniform Commercial Code",
+    "url": "https://www.leg.state.nv.us/NRS/NRS-104.html"
+   },
+   {
+    "label": "Nevada Legislature — NRS Chapter 598, Deceptive Trade Practices",
+    "url": "https://www.leg.state.nv.us/NRS/NRS-598.html"
+   },
+   {
+    "label": "Nevada Legislature — NRS 41.600, Consumer Fraud Actions",
+    "url": "https://www.leg.state.nv.us/NRS/NRS-041.html#NRS041Sec600"
+   },
+   {
+    "label": "U.S. House Office of the Law Revision Counsel — 15 U.S.C. § 2302",
+    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section2302&num=0&edition=prelim"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/new-mexico/social-media-legal-issues": {
+  "summary": "In New Mexico, social media disputes involving AI-generated posts, impersonation, advertising or exposed account data can implicate consumer protection, harassment, defamation and data breach laws. The applicable rules depend on the conduct: deceptive commercial claims differ from reputational injuries, threatening messages or a business’s loss of protected personal information. Using AI does not by itself establish liability; each claim or offense has statutory or court-developed requirements, and different deadlines apply to lawsuits and breach notices.",
+  "sections": [
+   {
+    "heading": "Core New Mexico rules",
+    "facts": [
+     {
+      "label": "Deceptive commercial content",
+      "value": "The Unfair Practices Act covers specified false or misleading representations knowingly made in connection with selling, leasing, renting or loaning goods or services, or extending credit or collecting debts, in the regular course of trade or commerce. Commercial social media content can fall within these rules; not every inaccurate personal post does. — NMSA 1978, § 57-12-2(D)"
+     },
+     {
+      "label": "Private consumer remedies",
+      "value": "A person suffering a qualifying loss of money or property from an unlawful practice may recover actual damages or $100, whichever is greater. For a willful violation, the court may award up to three times actual damages or $300, whichever is greater. The statute also provides attorney fees and costs for a prevailing claimant. — NMSA 1978, § 57-12-10(B), (C)"
+     },
+     {
+      "label": "Harassment",
+      "value": "Harassment is a misdemeanor. It requires knowingly pursuing a pattern of conduct intended to annoy, seriously alarm or terrorize another person, serving no lawful purpose, and conduct that would cause a reasonable person substantial emotional distress. Offensive online speech alone does not establish all these elements. — NMSA 1978, § 30-3A-2"
+     }
+    ]
+   },
+   {
+    "heading": "How common social media issues are classified",
+    "table": {
+     "columns": [
+      "Issue",
+      "New Mexico legal framework",
+      "Important distinction"
+     ],
+     "rows": [
+      [
+       "AI-written product claims",
+       "Unfair Practices Act, §§ 57-12-2 and 57-12-3",
+       "The commercial representation and statutory elements matter, not simply whether AI generated the words."
+      ],
+      [
+       "Repeated targeted messages",
+       "Harassment, § 30-3A-2",
+       "The offense requires a qualifying pattern and substantial emotional distress under a reasonable-person standard."
+      ],
+      [
+       "False posts harming reputation",
+       "Defamation; limitations provision, § 37-1-8",
+       "New Mexico generally provides a three-year limitations period for injury to reputation."
+      ],
+      [
+       "Business exposure of covered personal data",
+       "Data Breach Notification Act, §§ 57-12C-1 through 57-12C-12",
+       "Coverage depends on statutory definitions and exceptions, rather than every disclosure of online information."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Data breach notice deadlines",
+    "facts": [
+     {
+      "label": "Notice to affected residents",
+      "value": "A covered owner or licensee of computerized personal identifying information must notify affected New Mexico residents in the most expedient time possible, generally no later than 45 calendar days after discovering a security breach. Statutory exceptions include certain risk determinations, and a law-enforcement delay can apply. — NMSA 1978, §§ 57-12C-6 and 57-12C-9"
+     },
+     {
+      "label": "Larger breaches",
+      "value": "When notification is required for more than 1,000 New Mexico residents following a single breach, the law also requires notification to the attorney general and major consumer reporting agencies. — NMSA 1978, § 57-12C-10"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in New Mexico",
+    "bullets": [
+     "The New Mexico Department of Justice, headed by the attorney general, receives consumer complaints involving deceptive business practices.",
+     "Local police departments and county sheriffs receive reports of suspected criminal harassment; district attorneys prosecute state criminal cases.",
+     "New Mexico district courts hear civil claims, including defamation and requests for injunctive relief. Court jurisdiction and the relief requested determine the appropriate forum."
+    ]
+   },
+   {
+    "heading": "Common questions in New Mexico",
+    "bullets": [
+     "Does AI involvement automatically make a post unlawful? No. Liability depends on the applicable claim or offense and its required elements.",
+     "Is every insulting message criminal harassment? No. Section 30-3A-2 requires a qualifying pattern, specified intent and the statutory emotional-distress standard.",
+     "Can deceptive advertising support a private lawsuit? Yes, when the Unfair Practices Act’s requirements are met, including qualifying monetary or property loss for damages.",
+     "Is a data breach notice always due immediately? No. The law requires notice as expeditiously as possible and generally within 45 calendar days, subject to statutory exceptions and delays."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "New Mexico Legislature — Compilation of state laws",
+    "url": "https://www.nmlegis.gov/Laws/Compilation"
+   },
+   {
+    "label": "New Mexico Department of Justice",
+    "url": "https://nmdoj.gov/"
+   },
+   {
+    "label": "New Mexico Judicial Branch",
+    "url": "https://www.nmcourts.gov/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/new-york/deepfake-laws": {
+  "summary": "New York addresses deepfakes through several laws rather than one general ban on AI-generated content: Civil Rights Law § 52-c covers certain nonconsensual, digitally fabricated sexual depictions, while Penal Law § 245.15 criminalizes qualifying dissemination of intimate images, including images created or altered by digitization. Separate civil protections address intimate-image distribution and certain commercial uses of deceased personalities’ identities or deceased performers’ digital replicas, so liability depends on the content, consent, use, and statutory requirements.",
+  "sections": [
+   {
+    "heading": "New York’s principal sexual-deepfake protections",
+    "facts": [
+     {
+      "label": "Civil claim for fabricated sexual depictions",
+      "value": "Civil Rights Law § 52-c gives a depicted individual a civil cause of action for qualifying unauthorized dissemination or publication of a sexually explicit depiction produced through digitization. It addresses depictions that make someone appear to give a performance they did not actually perform, including performances altered through digitization. — N.Y. Civil Rights Law § 52-c"
+     },
+     {
+      "label": "Consent and labeling",
+      "value": "The statute contains specific consent requirements. A disclaimer stating that a sexually explicit depiction was unauthorized, or that the depicted individual did not participate in its creation or development, does not by itself prevent liability. — N.Y. Civil Rights Law § 52-c"
+     },
+     {
+      "label": "Criminal coverage",
+      "value": "Unlawful dissemination or publication of an intimate image is a class A misdemeanor. The offense expressly reaches qualifying images created or altered by digitization, but requires proof of the statute’s elements, including intent to cause harm to another person’s emotional, financial, or physical welfare. — N.Y. Penal Law § 245.15"
+     }
+    ]
+   },
+   {
+    "heading": "Which New York law covers which conduct?",
+    "table": {
+     "columns": [
+      "Law",
+      "Principal coverage",
+      "Important distinction"
+     ],
+     "rows": [
+      [
+       "Civil Rights Law § 52-c",
+       "Unauthorized dissemination or publication of qualifying digitally fabricated sexual depictions.",
+       "Provides a private civil claim; it is not a general prohibition on synthetic media."
+      ],
+      [
+       "Penal Law § 245.15",
+       "Qualifying nonconsensual dissemination or publication of intimate images, including digitized images.",
+       "Criminal liability requires the prosecution to establish the specified mental state and other elements."
+      ],
+      [
+       "Civil Rights Law § 52-b",
+       "Unlawful dissemination or publication of intimate images.",
+       "Provides civil remedies distinct from a criminal prosecution."
+      ],
+      [
+       "Civil Rights Law § 50-f",
+       "Certain commercial uses of deceased personalities’ identities and certain digital replicas of deceased performers.",
+       "Contains eligibility requirements, exceptions, and a 40-year post-death protection period."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Limits and remedies",
+    "facts": [
+     {
+      "label": "Not every deepfake is unlawful",
+      "value": "These provisions regulate defined conduct rather than AI generation in the abstract. Section 52-c includes exceptions concerning specified matters such as legitimate public concern, newsworthy material, and commentary or criticism; sexually explicit content is not automatically newsworthy merely because the depicted person is a public figure. — N.Y. Civil Rights Law § 52-c"
+     },
+     {
+      "label": "Civil relief",
+      "value": "Section 52-c authorizes monetary and injunctive relief, including compensatory damages, punitive damages, and reasonable attorney’s fees and costs. An injunction is a court order restricting conduct; it is separate from any criminal punishment. — N.Y. Civil Rights Law § 52-c"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in New York",
+    "bullets": [
+     "New York State Supreme Court is the state’s general trial court and handles civil actions seeking damages and injunctive relief under these provisions.",
+     "Local police departments and county district attorneys handle complaints and prosecutions involving alleged violations of Penal Law § 245.15. A criminal complaint and a private civil lawsuit are separate proceedings."
+    ]
+   },
+   {
+    "heading": "Common questions in New York",
+    "bullets": [
+     "Must a sexual deepfake show a real sexual event? No. Civil Rights Law § 52-c specifically addresses qualifying performances fabricated or altered through digitization.",
+     "Does labeling a sexual deepfake as fake eliminate liability? No. Section 52-c expressly limits the effect of disclaimers.",
+     "Is every AI impersonation a crime? No. Penal Law § 245.15 concerns specified intimate-image conduct, not every synthetic voice, photograph, or video.",
+     "Can protection continue after someone dies? Yes. Civil Rights Law § 50-f protects qualifying deceased personalities and performers, subject to its scope, exceptions, and time limit."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "New York Senate — Civil Rights Law § 52-c",
+    "url": "https://www.nysenate.gov/legislation/laws/CVR/52-C"
+   },
+   {
+    "label": "New York Senate — Penal Law § 245.15",
+    "url": "https://www.nysenate.gov/legislation/laws/PEN/245.15"
+   },
+   {
+    "label": "New York Senate — Civil Rights Law § 52-b",
+    "url": "https://www.nysenate.gov/legislation/laws/CVR/52-B"
+   },
+   {
+    "label": "New York Senate — Civil Rights Law § 50-f",
+    "url": "https://www.nysenate.gov/legislation/laws/CVR/50-F"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/nevada/social-media-legal-issues": {
+  "summary": "Nevada addresses social media disputes through online privacy rules, rights of publicity, defamation law and protections for certain speech connected to public issues, rather than through one comprehensive social media statute. Businesses operating covered websites or online services have specific privacy obligations, while commercial use of someone’s identity can require consent. AI-generated content is not automatically outside these laws, but liability depends on the particular conduct and the requirements of the applicable statute.",
+  "sections": [
+   {
+    "heading": "Nevada rules affecting social media and AI content",
+    "facts": [
+     {
+      "label": "Online privacy coverage",
+      "value": "Nevada’s online privacy provisions apply to qualifying operators of commercial websites and online services that collect covered information from Nevada consumers. The statutory definitions and exclusions matter; these provisions do not govern every account holder or every use of personal information. — NRS 603A.300–603A.360"
+     },
+     {
+      "label": "Commercial use of identity",
+      "value": "Nevada recognizes a right of publicity in a person’s name, voice, signature, photograph and likeness. Commercial use generally requires written consent, subject to statutory exceptions. An AI label does not itself supply that consent. — NRS 597.770–597.810"
+     },
+     {
+      "label": "Publicity exceptions",
+      "value": "Nevada provides exceptions for specified uses, including news, public affairs and sports broadcasts or publications. Whether a social media post qualifies depends on its use and context, not simply on whether it appears online. — NRS 597.790"
+     },
+     {
+      "label": "Protected speech and anti-SLAPP",
+      "value": "Nevada provides a special motion to dismiss certain claims based on good-faith communications furthering petition or free-speech rights in direct connection with an issue of public concern. The statute defines qualifying communications; it does not protect every social media statement. — NRS 41.637 and 41.660"
+     }
+    ]
+   },
+   {
+    "heading": "Requirements, deadlines and potential remedies",
+    "table": {
+     "columns": [
+      "Issue",
+      "Nevada rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Website privacy notice",
+       "Covered operators must make a notice available identifying categories of information collected and categories of third parties with whom information may be shared, among other required disclosures.",
+       "NRS 603A.340"
+      ],
+      [
+       "Sale opt-out response",
+       "Covered operators generally must respond to a verified opt-out request within 60 days. A necessary extension of up to 30 additional days requires notice to the consumer.",
+       "NRS 603A.345"
+      ],
+      [
+       "Privacy enforcement",
+       "The Attorney General may seek an injunction or a civil penalty of up to $5,000 for each violation. These online privacy provisions do not establish a private right of action.",
+       "NRS 603A.360"
+      ],
+      [
+       "Unauthorized commercial identity use",
+       "Available remedies include an injunction, actual damages of at least $750 and, where authorized, punitive damages and attorney’s fees.",
+       "NRS 597.810"
+      ],
+      [
+       "Anti-SLAPP filing deadline",
+       "A special motion generally must be filed within 60 days after service of the complaint; the court may allow a later filing for good cause.",
+       "NRS 41.660"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Nevada",
+    "bullets": [
+     "Nevada Attorney General, Bureau of Consumer Protection: receives consumer complaints, including complaints involving businesses’ privacy practices. Enforcement authority for the online privacy provisions appears in NRS 603A.360.",
+     "Nevada state courts: hear civil disputes involving unauthorized commercial use of identity and allegedly defamatory social media statements, subject to jurisdiction and venue requirements.",
+     "The court hearing the underlying civil lawsuit: decides a Nevada anti-SLAPP special motion and associated requests for statutory relief under NRS 41.660–41.670."
+    ]
+   },
+   {
+    "heading": "Common questions in Nevada",
+    "bullets": [
+     "Does Nevada require deletion of all social media information on request? The online privacy provisions discussed here establish a qualified sale opt-out, not a general right to erase every post or account record.",
+     "Does every transfer of personal information count as a sale? No. Nevada uses a specific statutory definition involving monetary consideration and includes exclusions. — NRS 603A.333",
+     "Can an AI-generated voice raise publicity issues? Yes. Voice is expressly protected, although a claim still depends on commercial use and applicable exceptions. — NRS 597.770–597.790",
+     "Does anti-SLAPP protection cover knowingly false posts? The statutory definition of a good-faith communication requires truthfulness or absence of knowledge of falsehood. — NRS 41.637"
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Nevada Legislature — NRS Chapter 603A",
+    "url": "https://www.leg.state.nv.us/NRS/NRS-603A.html"
+   },
+   {
+    "label": "Nevada Legislature — NRS Chapter 597, Rights of Publicity",
+    "url": "https://www.leg.state.nv.us/NRS/NRS-597.html"
+   },
+   {
+    "label": "Nevada Legislature — NRS Chapter 41",
+    "url": "https://www.leg.state.nv.us/NRS/NRS-041.html"
+   },
+   {
+    "label": "Nevada Attorney General — Bureau of Consumer Protection",
+    "url": "https://ag.nv.gov/About/Consumer_Protection/Bureau_of_Consumer_Protection/"
+   }
+  ],
+  "reviewed": "2026-10"
  }
 }
