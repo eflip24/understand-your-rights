@@ -55,7 +55,7 @@
   },
   "page": {
     "tools": "Tools",
-    "freeToolSuffix": "Free Tool | LegallySpoken",
+    "freeToolSuffix": "Free 2026 Tool",
     "faq": "Frequently Asked Questions",
     "relatedTools": "Related Tools",
     "legalTerms": "Legal Terms",
@@ -64,7 +64,7 @@
     "exampleClause": "Example Clause",
     "definitionExamplesSuffix": "Definition & Examples | LegallySpoken",
     "englishOnlyNotice": "This guide is currently available in English only.",
-    "termMetaTitle": "{{term}}: Legal Definition, Elements & Examples | LegallySpoken"
+    "termMetaTitle": "{{term}} Meaning: Legal Definition & Plain-English Examples"
   },
   "contractTypePage": {
     "metaSuffix": "Guide & Key Clauses | LegallySpoken",
@@ -73,7 +73,7 @@
     "commonRisks": "Common Risks"
   },
   "legalClausePage": {
-    "metaSuffix": "Guide & Examples | LegallySpoken",
+    "metaSuffix": "Meaning, Examples & Red Flags",
     "whatIs": "What Is a {{title}}?",
     "exampleLanguage": "Example Clause Language",
     "redFlags": "Red Flags to Watch For",
