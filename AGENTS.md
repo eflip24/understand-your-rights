@@ -1,0 +1,1 @@
+- State-guide indexing: pages listed in src/data/provenDemandUrls.ts (Search Console impressions) bypass the content-depth noindex gate and sitemap pruning — proven search demand outranks word-count heuristics.
