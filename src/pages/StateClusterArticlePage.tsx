@@ -25,6 +25,7 @@ export default function StateClusterArticlePage() {
 
   // Extract pillar slug from the URL path (e.g., "/auto-accident-law/california/slug" → "auto-accident-law")
   const pillar = location.pathname.split("/")[1];
+  const generatedDepth = useGeneratedDepth(pillar ?? "", state ?? "", slug ?? "");
 
   if (!pillar || !state || !slug) return <Navigate to={lp("/")} replace />;
 
