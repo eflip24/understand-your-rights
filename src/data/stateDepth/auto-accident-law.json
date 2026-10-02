@@ -599,5 +599,294 @@
    }
   ],
   "reviewed": "2026-10"
+ },
+ "auto-accident-law/georgia/diminished-value-claim": {
+  "summary": "Georgia recognizes diminished value as a potential part of an automobile property-damage claim: even after proper repairs, a vehicle may be worth less because of its accident history. Under State Farm Mutual Automobile Insurance Co. v. Mabry, an insurer’s obligation to pay for covered vehicle loss can include that remaining reduction in value, not just repair costs. Recovery depends on the applicable coverage or liability rules and proof of an actual loss; Georgia does not guarantee a fixed percentage payment.",
+  "sections": [
+   {
+    "heading": "What Georgia recognizes as diminished value",
+    "facts": [
+     {
+      "label": "First-party coverage",
+      "value": "In Mabry, the Georgia Supreme Court held that the insurer’s promise to pay for vehicle loss included diminished value, when present, as well as repair costs. The insurer also had a duty to assess diminished value when its policyholder reported a covered loss; a separate diminished-value request was not required under the policy at issue. — State Farm Mutual Automobile Insurance Co. v. Mabry, 274 Ga. 498 (2001)."
+     },
+     {
+      "label": "Repairs do not necessarily eliminate the loss",
+      "value": "The Georgia Supreme Court has reaffirmed that physical damage and remaining diminution in value can be distinct components of a covered property loss. Paying to repair damage does not necessarily compensate for the entire loss in value. — Royal Capital Development, LLC v. Maryland Casualty Co., 291 Ga. 262 (2012)."
+     },
+     {
+      "label": "Valuation is evidence-dependent",
+      "value": "Mabry did not establish a universal statutory payment schedule. Whether diminished value exists and its amount are factual questions; a repaired vehicle does not automatically qualify for a particular percentage of its former value. — Mabry, 274 Ga. 498."
+     }
+    ]
+   },
+   {
+    "heading": "Deadlines, fault, and court limits",
+    "table": {
+     "columns": [
+      "Issue",
+      "Georgia rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Claim against the responsible driver",
+       "An action for damage to personal property generally has a four-year limitation period measured from accrual.",
+       "O.C.G.A. § 9-3-32"
+      ],
+      [
+       "Shared responsibility",
+       "Damages are reduced for the claimant’s percentage of fault. A claimant who is 50% or more responsible cannot recover under this statute.",
+       "O.C.G.A. § 51-12-33"
+      ],
+      [
+       "Magistrate court",
+       "Civil claims within magistrate-court jurisdiction may involve up to $15,000, subject to statutory exclusions.",
+       "O.C.G.A. § 15-10-2(5)"
+      ],
+      [
+       "First-party insurer bad faith",
+       "For a covered loss refused in bad faith after the statutory 60-day demand period, potential additional recovery includes reasonable attorney fees and a penalty of up to 50% of the insurer’s liability or $5,000, whichever is greater.",
+       "O.C.G.A. § 33-4-6"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Georgia",
+    "bullets": [
+     "The Georgia Office of Commissioner of Insurance and Safety Fire accepts consumer complaints about insurers through its Consumer Services Division. Its complaint process is regulatory, not a court judgment awarding diminished-value damages.",
+     "Georgia magistrate courts hear qualifying civil money claims within their $15,000 jurisdictional limit. State courts, where established, and superior courts also hear civil property-damage disputes within their jurisdiction. — O.C.G.A. §§ 15-10-2, 15-7-4; Georgia Constitution, Article VI.",
+     "A lawsuit against the responsible driver and a coverage lawsuit against the claimant’s own insurer involve different legal duties. The four-year property-damage deadline does not necessarily determine the deadline for a policy-based claim. Talk to a lawyer."
+    ]
+   },
+   {
+    "heading": "Common questions in Georgia",
+    "bullets": [
+     "Can diminished value remain after satisfactory repairs? Yes. Georgia recognizes that repairs may restore function without restoring the vehicle’s full pre-loss market value. — Mabry.",
+     "Does Georgia require a fixed diminished-value percentage? No. Mabry does not prescribe a universal percentage award; the existence and amount of loss require valuation evidence.",
+     "Does Mabry mean every accident produces a payment? No. The decision concerns covered loss, and diminished value must actually exist.",
+     "Does an insurer’s refusal automatically establish bad faith? No. The additional remedies under O.C.G.A. § 33-4-6 require satisfaction of the statute’s demand requirements and proof of bad faith, not merely disagreement about value."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Georgia Office of Commissioner of Insurance and Safety Fire — Consumer Services",
+    "url": "https://oci.georgia.gov/consumer-services"
+   },
+   {
+    "label": "Georgia General Assembly — legislative and Georgia Code resources",
+    "url": "https://www.legis.ga.gov/"
+   },
+   {
+    "label": "Supreme Court of Georgia — opinions and court resources",
+    "url": "https://www.gasupreme.us/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "auto-accident-law/hawaii/no-fault-vs-at-fault-states": {
+  "summary": "Hawaii is a no-fault auto insurance state, but fault still matters for property damage and personal injury claims that qualify for a lawsuit. Required personal injury protection (PIP) generally pays covered accident-related medical and rehabilitation expenses without deciding who caused the crash, with a minimum required limit of $10,000 per person. Hawaii restricts personal injury lawsuits arising from motor vehicle accidents, while allowing statutory exceptions; comparative negligence can reduce or bar recovery when a fault-based claim is available.",
+  "sections": [
+   {
+    "heading": "What Hawaii’s no-fault system covers",
+    "facts": [
+     {
+      "label": "Required first-party protection",
+      "value": "Hawaii requires motor vehicle insurance policies to include personal injury protection with a minimum limit of $10,000 per person. This is coverage for qualifying medical and rehabilitation expenses, not a general payment for every financial loss caused by a crash. — Hawaii Revised Statutes § 431:10C-301."
+     },
+     {
+      "label": "Restricted personal injury liability",
+      "value": "Hawaii generally abolishes tort liability for accidental harm arising from motor vehicle accidents in the state, subject to statutory exceptions. The exceptions include accidents involving death, significant permanent loss of use of a body part or function, or permanent and serious disfigurement. These are not the statute’s only exceptions. — Hawaii Revised Statutes § 431:10C-306."
+     },
+     {
+      "label": "Fault remains relevant",
+      "value": "No-fault does not mean that every driver is legally blameless. Hawaii’s required insurance includes liability coverage for bodily injury and property damage, alongside PIP; liability coverage addresses covered legal responsibility to others. — Hawaii Revised Statutes § 431:10C-301."
+     }
+    ]
+   },
+   {
+    "heading": "No-fault benefits versus fault-based claims",
+    "table": {
+     "columns": [
+      "Issue",
+      "Hawaii rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Covered medical expenses",
+       "PIP provides qualifying benefits without requiring proof that another driver caused the accident.",
+       "HRS § 431:10C-301"
+      ],
+      [
+       "Vehicle damage",
+       "PIP is not vehicle-repair coverage. Property damage liability remains separate from the restrictions on personal injury tort claims.",
+       "HRS §§ 431:10C-301, 431:10C-306"
+      ],
+      [
+       "Pain and suffering",
+       "A personal injury tort claim must fit an exception to Hawaii’s statutory abolition of tort liability; PIP itself does not compensate pain and suffering.",
+       "HRS § 431:10C-306"
+      ],
+      [
+       "Shared fault",
+       "Contributory negligence does not bar recovery if it is no greater than the negligence of the defendant, or the combined negligence of defendants against whom recovery is sought.",
+       "HRS § 663-31"
+      ],
+      [
+       "Reduced damages",
+       "When recovery is permitted, damages are reduced in proportion to the negligence attributable to the injured person.",
+       "HRS § 663-31"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Hawaii",
+    "bullets": [
+     "Insurance regulation: The Hawaii Department of Commerce and Consumer Affairs, Insurance Division, handles insurance consumer complaints, including complaints about insurers’ handling of automobile insurance claims.",
+     "Civil lawsuits: Hawaii state District Courts and Circuit Courts hear civil disputes within their respective jurisdiction. A claim for damages against another driver is distinct from a regulatory complaint about an insurer.",
+     "Regulatory limits: An Insurance Division complaint is not a court judgment deciding another driver’s negligence or awarding personal injury damages. Questions about whether a claim meets Hawaii’s lawsuit exceptions are matters to discuss with a lawyer."
+    ]
+   },
+   {
+    "heading": "Common questions in Hawaii",
+    "bullets": [
+     "Does no-fault eliminate lawsuits? No. HRS § 431:10C-306 restricts personal injury tort claims but preserves specified exceptions.",
+     "Is $10,000 the maximum value of every accident claim? No. It is the minimum required PIP limit, not an overall ceiling on property damage or qualifying personal injury liability claims.",
+     "Can someone recover when equally at fault? Under HRS § 663-31, equal negligence does not itself bar recovery, but damages are proportionally reduced. Other legal requirements still apply.",
+     "Does no-fault insurance pay for repairs to my car? PIP covers qualifying personal injury expenses, not vehicle repairs. Property damage liability and collision coverage are separate insurance coverages."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Hawaii Legislature — HRS § 431:10C-301, Required motor vehicle policy coverage",
+    "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol09_Ch0431-0435H/HRS0431/HRS_0431-0010C-0301.htm"
+   },
+   {
+    "label": "Hawaii Legislature — HRS § 431:10C-306, Abolition of tort liability",
+    "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol09_Ch0431-0435H/HRS0431/HRS_0431-0010C-0306.htm"
+   },
+   {
+    "label": "Hawaii Legislature — HRS § 663-31, Contributory negligence",
+    "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol13_Ch0601-0676/HRS0663/HRS_0663-0031.htm"
+   },
+   {
+    "label": "Hawaii Department of Commerce and Consumer Affairs — Insurance Division",
+    "url": "https://cca.hawaii.gov/ins/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "auto-accident-law/maine/motorcycle-accident-lawyer": {
+  "summary": "Maine motorcycle accident claims generally follow the state’s negligence rules: an injured rider must establish legal responsibility, and damages may be reduced or barred when the rider shares fault. Most personal injury lawsuits have a six-year filing deadline, but claims involving government entities have separate notice and filing requirements that can be much shorter. Maine also requires motor vehicle liability insurance, and its comparative negligence statute can prevent recovery when the injured person is equally responsible for the accident.",
+  "sections": [
+   {
+    "heading": "Fault and compensation after a Maine motorcycle accident",
+    "facts": [
+     {
+      "label": "Shared responsibility",
+      "value": "An injured person’s own fault does not automatically defeat a claim. Maine requires damages to be reduced to the extent the jury considers just and equitable, considering the claimant’s share of responsibility. A claimant found equally at fault cannot recover. — 14 M.R.S. § 156"
+     },
+     {
+      "label": "Meaning of fault",
+      "value": "The comparative negligence statute defines fault to include negligence, breach of statutory duty, and other acts or omissions that create tort liability or would otherwise support a contributory negligence defense. — 14 M.R.S. § 156"
+     },
+     {
+      "label": "Damage findings",
+      "value": "The jury must determine the full damages that would have been recoverable without the claimant’s fault and separately state the reduced amount awarded. Maine’s statute describes a just-and-equitable reduction rather than simply prescribing a fixed percentage formula. — 14 M.R.S. § 156"
+     }
+    ]
+   },
+   {
+    "heading": "Maine deadlines and required insurance amounts",
+    "table": {
+     "columns": [
+      "Issue",
+      "Maine rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Ordinary personal injury lawsuit",
+       "Generally six years after the cause of action accrues, unless another statute supplies a different period.",
+       "14 M.R.S. § 752"
+      ],
+      [
+       "Government tort claim notice",
+       "Generally written notice within 365 days after the claim accrues; statutory exceptions and required notice contents apply.",
+       "14 M.R.S. § 8107"
+      ],
+      [
+       "Government tort lawsuit",
+       "Generally two years after the cause of action accrues. Notice and lawsuit deadlines are separate requirements.",
+       "14 M.R.S. § 8110"
+      ],
+      [
+       "Bodily injury liability insurance",
+       "Minimum limits of $50,000 for one person and $100,000 for one accident involving injury or death to multiple people.",
+       "29-A M.R.S. § 1605"
+      ],
+      [
+       "Property damage liability insurance",
+       "Minimum limit of $25,000.",
+       "29-A M.R.S. § 1605"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Motorcycle helmet requirements",
+    "facts": [
+     {
+      "label": "Riders and passengers under 18",
+      "value": "A person under 18 operating or riding as a passenger on a motorcycle must wear protective headgear conforming to the applicable standards. — 29-A M.R.S. § 2083"
+     },
+     {
+      "label": "Learners and newly licensed operators",
+      "value": "Helmet requirements also cover operators driving under a learner’s permit and operators within one year after successfully completing the driving test. Passengers of operators required to wear headgear must also wear it. — 29-A M.R.S. § 2083"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Maine",
+    "bullets": [
+     "Maine Superior Court hears civil personal injury lawsuits, including motorcycle collision claims. Its general civil jurisdiction is established by 4 M.R.S. § 105.",
+     "The Maine Bureau of Insurance handles consumer complaints concerning insurers and insurance claims practices. A regulatory complaint is distinct from a civil lawsuit seeking damages.",
+     "Claims against a Maine governmental entity have designated notice recipients: the Attorney General for claims against the State, and specified officials for political subdivisions. Government immunity and statutory exceptions also affect liability. — 14 M.R.S. §§ 8103–8104-A, 8107"
+    ]
+   },
+   {
+    "heading": "Common questions in Maine",
+    "bullets": [
+     "Can a rider recover when partly responsible? Yes, but shared fault can reduce damages; equal fault bars recovery under 14 M.R.S. § 156.",
+     "Is the six-year deadline universal? No. Government claims have separate deadlines, and other statutory exceptions can apply. Talk to a lawyer.",
+     "Must every adult motorcyclist wear a helmet? No. Maine’s statute identifies covered groups, including learners, newly licensed operators, and their passengers.",
+     "Does the minimum insurance limit cap an injury award? No. Liability policy limits address insurance coverage, not the total damages legally recoverable from a responsible defendant."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Maine Legislature — Comparative negligence, 14 M.R.S. § 156",
+    "url": "https://legislature.maine.gov/statutes/14/title14sec156.html"
+   },
+   {
+    "label": "Maine Legislature — Six-year limitation, 14 M.R.S. § 752",
+    "url": "https://legislature.maine.gov/statutes/14/title14sec752.html"
+   },
+   {
+    "label": "Maine Legislature — Required motor vehicle insurance, 29-A M.R.S. § 1605",
+    "url": "https://legislature.maine.gov/statutes/29-A/title29-Asec1605.html"
+   },
+   {
+    "label": "Maine Legislature — Protective headgear, 29-A M.R.S. § 2083",
+    "url": "https://legislature.maine.gov/statutes/29-A/title29-Asec2083.html"
+   }
+  ],
+  "reviewed": "2026-10"
  }
 }
