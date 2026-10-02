@@ -23,6 +23,33 @@ import { useLocalizedGuide } from "@/i18n/guideTranslationOverrides";
 
 const SITE = "https://legallyspoken.com";
 
+/** Blog articles that deepen a pillar; linked from the pillar's related strip. */
+const PILLAR_ARTICLES: Record<string, { label: string; href: string }[]> = {
+  "health-insurance-claim-denied": [
+    { label: "Health insurance appeal deadlines by state", href: "/blog/health-insurance-appeal-deadlines-by-state" },
+    { label: "How to dispute an insurance claim denial", href: "/blog/how-to-dispute-an-insurance-claim-denial" },
+  ],
+  "car-insurance-claim-denied": [
+    { label: "How to dispute an insurance claim denial", href: "/blog/how-to-dispute-an-insurance-claim-denial" },
+    { label: "Subrogation: when your insurer takes part of your settlement", href: "/blog/subrogation-when-your-insurer-takes-part-of-your-settlement" },
+  ],
+  "homeowners-insurance-claim-denied": [
+    { label: "How to dispute an insurance claim denial", href: "/blog/how-to-dispute-an-insurance-claim-denial" },
+  ],
+  "data-breach-claim-compensation": [
+    { label: "How data breach settlement payouts are calculated", href: "/blog/how-data-breach-settlement-payouts-are-calculated" },
+  ],
+  "wrongful-termination-settlements": [
+    { label: "How to negotiate a severance package", href: "/blog/how-to-negotiate-a-severance-package" },
+  ],
+  "ai-hiring-and-workplace-surveillance": [
+    { label: "Are deepfakes illegal? Take It Down Act and state laws", href: "/blog/are-deepfakes-illegal-take-it-down-act-state-laws" },
+  ],
+  "truck-accident-settlements": [
+    { label: "Subrogation: when your insurer takes part of your settlement", href: "/blog/subrogation-when-your-insurer-takes-part-of-your-settlement" },
+  ],
+};
+
 export default function HighCpcPillarPage({ slug: slugProp }: { slug?: string }) {
   const params = useParams();
   const slug = slugProp ?? params.slug ?? "";
@@ -262,7 +289,7 @@ function PillarBody({ data: source }: { data: Phase8Pillar }) {
         <RelatedIntentStrip
           cluster={data.cluster}
           heading="Continue in this cluster"
-          links={data.related}
+          links={[...data.related, ...(PILLAR_ARTICLES[data.slug] ?? [])]}
         />
 
 
