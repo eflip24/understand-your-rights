@@ -18,8 +18,8 @@ export default function BlogPage() {
   return (
     <>
       <Tier3Head
-        title="Blog — LegallySpoken"
-        description="Legal insights, guides, and analysis from LegallySpoken. Stay informed about your rights and the law."
+        title="Legal News & Guides 2026: Plain-English Law Blog | LegallySpoken"
+        description="New 2026 laws explained in plain English: insurance denials, severance, data breach payouts, deepfakes and more, with checklists and state tables."
       />
 
       <section className="bg-primary text-primary-foreground py-16">
