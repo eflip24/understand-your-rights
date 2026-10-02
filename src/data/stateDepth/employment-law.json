@@ -1,0 +1,3489 @@
+{
+ "employment-law/alabama/overtime-rights": {
+  "summary": "Alabama does not have a general state overtime law, so overtime rights generally come from the federal Fair Labor Standards Act (FLSA). Covered, nonexempt employees must receive at least one and one-half times their regular rate for hours worked over 40 in a workweek, rather than overtime simply for working a long day, weekend, or holiday. Coverage, exemptions, and the calculation of the regular rate determine whether additional pay is owed.",
+  "sections": [
+   {
+    "heading": "Which Alabama employees have overtime rights?",
+    "facts": [
+     {
+      "label": "Federal coverage",
+      "value": "The FLSA covers employees through covered enterprises or their own interstate-commerce work. Enterprise coverage generally includes businesses with at least $500,000 in annual sales or business, as well as specified institutions and public agencies regardless of business volume. A smaller employer can still have individually covered workers. — 29 U.S.C. §§ 203(s), 207(a)."
+     },
+     {
+      "label": "Exemptions",
+      "value": "Executive, administrative, and professional exemptions depend on applicable regulatory requirements, not job titles alone. Salary payment by itself does not eliminate overtime rights; these exemptions generally involve duties and compensation tests, subject to exceptions. — 29 U.S.C. § 213(a)(1); 29 C.F.R. Part 541."
+     },
+     {
+      "label": "Hours counted",
+      "value": "Work the employer permits can count even when it was not requested. An advance-approval rule does not erase the obligation to pay for compensable overtime actually worked. — 29 C.F.R. §§ 785.11–785.13."
+     }
+    ]
+   },
+   {
+    "heading": "Overtime calculations and exceptions",
+    "table": {
+     "columns": [
+      "Issue",
+      "Rule applying in Alabama",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Standard overtime",
+       "At least 1.5 times the regular rate after 40 hours worked in a workweek.",
+       "29 U.S.C. § 207(a)(1)"
+      ],
+      [
+       "Workweek",
+       "A fixed, recurring period of 168 hours; hours generally cannot be averaged across two weeks.",
+       "29 C.F.R. § 778.105"
+      ],
+      [
+       "Regular rate",
+       "Generally includes compensation for employment, including nondiscretionary bonuses, unless a statutory exclusion applies.",
+       "29 U.S.C. § 207(e); 29 C.F.R. § 778.208"
+      ],
+      [
+       "Weekends and holidays",
+       "These days do not automatically require premium pay under the FLSA.",
+       "29 C.F.R. § 778.102"
+      ],
+      [
+       "Public-sector compensatory time",
+       "Qualifying state and local government employers may provide compensatory time instead of cash overtime under statutory conditions, at 1.5 hours per overtime hour.",
+       "29 U.S.C. § 207(o)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Deadlines, recovery, and retaliation",
+    "facts": [
+     {
+      "label": "Lawsuit deadline",
+      "value": "An FLSA unpaid-overtime action generally must begin within two years after the claim accrues, extended to three years for a willful violation. A Wage and Hour Division complaint does not itself stop this lawsuit clock. — 29 U.S.C. § 255(a); U.S. Department of Labor, Fact Sheet #44."
+     },
+     {
+      "label": "Available recovery",
+      "value": "Employees can recover unpaid overtime and an equal amount in liquidated damages, plus reasonable attorney fees and costs. A court may reduce or deny liquidated damages if the employer proves statutory good faith and reasonable grounds. — 29 U.S.C. §§ 216(b), 260."
+     },
+     {
+      "label": "Retaliation",
+      "value": "The FLSA prohibits discharge or discrimination because an employee files a protected complaint or participates in covered proceedings. Remedies can include reinstatement, lost wages, and an equal amount in liquidated damages. — 29 U.S.C. §§ 215(a)(3), 216(b)."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Alabama",
+    "bullets": [
+     "The U.S. Department of Labor’s Wage and Hour Division receives and investigates FLSA overtime complaints involving Alabama employment. Its national telephone number is 1-866-487-9243.",
+     "FLSA private lawsuits may be brought in a federal or state court of competent jurisdiction. Alabama has Northern, Middle, and Southern federal judicial districts. — 29 U.S.C. § 216(b); 28 U.S.C. § 81."
+    ]
+   },
+   {
+    "heading": "Common questions in Alabama",
+    "bullets": [
+     "Does a 12-hour shift automatically earn overtime? No. The ordinary FLSA rule is based on more than 40 hours worked in a workweek, although special statutory arrangements apply to certain workers.",
+     "Can private employers substitute future time off? Generally, they cannot substitute time off in a later workweek for required FLSA cash overtime. The statutory compensatory-time exception concerns qualifying public employers.",
+     "Does paid vacation count toward 40 hours? Generally, paid time not worked does not count toward the FLSA overtime threshold.",
+     "Can an employee agree to waive overtime? An individual agreement generally cannot waive the FLSA’s overtime requirements."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "U.S. Department of Labor — State Minimum Wage and Overtime Laws",
+    "url": "https://www.dol.gov/agencies/whd/minimum-wage/state"
+   },
+   {
+    "label": "U.S. Department of Labor — Fact Sheet #23: Overtime Pay Requirements",
+    "url": "https://www.dol.gov/agencies/whd/fact-sheets/23-flsa-overtime-pay"
+   },
+   {
+    "label": "U.S. Department of Labor — Fact Sheet #44: Visits to Employers",
+    "url": "https://www.dol.gov/agencies/whd/fact-sheets/44-flsa-visits-to-employers"
+   },
+   {
+    "label": "U.S. House Office of the Law Revision Counsel — Title 29, Chapter 8",
+    "url": "https://uscode.house.gov/view.xhtml?path=/prelim@title29/chapter8&edition=prelim"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/alaska/family-medical-leave": {
+  "summary": "Alaska has a state family-leave law for qualifying public employees, while the federal Family and Medical Leave Act (FMLA) covers eligible employees of covered public and private employers. Alaska’s public-employee law provides up to 18 workweeks for qualifying family or medical reasons, with different measuring periods depending on the reason; federal FMLA generally provides 12 workweeks in 12 months. These are job-protected leave rights, not a general guarantee of paid wages during an absence.",
+  "sections": [
+   {
+    "heading": "Alaska public-employee family leave",
+    "facts": [
+     {
+      "label": "State law and coverage",
+      "value": "The Alaska Family Leave Act appears in AS 39.20.305–39.20.315 and applies to qualifying public employment. It is not a general family-leave mandate for private employers; statutory employer and employee eligibility requirements apply. — AS 39.20.305–39.20.315"
+     },
+     {
+      "label": "Employee eligibility",
+      "value": "An employee qualifies through employment for at least 35 hours a week for at least six consecutive months, or at least 17.5 hours a week for at least 12 consecutive months, immediately preceding the leave. — AS 39.20.305"
+     },
+     {
+      "label": "Medical reasons",
+      "value": "Qualifying reasons include the employee’s own serious health condition and caring for a spouse, child, or parent with a serious health condition. Routine illnesses do not automatically meet the statutory definition. — AS 39.20.305; AS 39.20.315"
+     },
+     {
+      "label": "Job protection",
+      "value": "The state law provides return-to-work protection following qualifying leave. Entitlement to leave and restoration remains subject to the statute’s conditions. — AS 39.20.305"
+     }
+    ]
+   },
+   {
+    "heading": "Leave amounts and eligibility compared",
+    "table": {
+     "columns": [
+      "Protection",
+      "Amount or threshold",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Alaska public-employee pregnancy, childbirth, or adoption leave",
+       "Up to 18 workweeks during any 24-month period",
+       "AS 39.20.305"
+      ],
+      [
+       "Alaska public-employee serious-health-condition leave",
+       "Up to 18 workweeks during any 12-month period",
+       "AS 39.20.305"
+      ],
+      [
+       "Federal ordinary family and medical leave",
+       "Up to 12 workweeks in a 12-month period",
+       "29 U.S.C. § 2612(a)(1)"
+      ],
+      [
+       "Federal military caregiver leave",
+       "Up to 26 workweeks during a single 12-month period",
+       "29 U.S.C. § 2612(a)(3)"
+      ],
+      [
+       "Federal employee eligibility",
+       "Generally 12 months employed, 1,250 hours worked in the preceding 12 months, and 50 employees within 75 miles",
+       "29 U.S.C. § 2611(2)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Federal protections and enforcement deadlines",
+    "facts": [
+     {
+      "label": "Employer coverage",
+      "value": "Private employers generally qualify with at least 50 employees during 20 or more workweeks in the current or preceding calendar year. Public agencies are covered regardless of size, but individual employee eligibility requirements still apply. — 29 U.S.C. § 2611; 29 C.F.R. § 825.108"
+     },
+     {
+      "label": "Pay, insurance, and overlapping leave",
+      "value": "FMLA leave is generally unpaid, although qualifying paid leave may run concurrently. Group health coverage continues on the same terms. State and federal leave can run concurrently when the absence qualifies under both laws; their maximum amounts are not automatically added together. — 29 U.S.C. §§ 2612(d), 2614(c); 29 C.F.R. § 825.701"
+     },
+     {
+      "label": "Federal lawsuit deadline",
+      "value": "An FMLA action generally must be filed within two years after the last alleged violation, or three years for a willful violation. Remedies can include lost compensation, interest, liquidated damages, equitable relief, and attorney fees. — 29 U.S.C. § 2617"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Alaska",
+    "bullets": [
+     "The U.S. Department of Labor’s Wage and Hour Division receives FMLA complaints involving employment within its enforcement jurisdiction.",
+     "Federal FMLA civil actions may be brought in a federal or state court of competent jurisdiction. — 29 U.S.C. § 2617(a)(2)",
+     "Alaska executive-branch employees’ state leave administration involves their employing agency and the Alaska Division of Personnel and Labor Relations."
+    ]
+   },
+   {
+    "heading": "Common questions in Alaska",
+    "bullets": [
+     "Does every Alaska worker receive 18 weeks? No. That entitlement comes from the public-employee law and depends on statutory eligibility.",
+     "Is family leave necessarily paid? No. Job protection and wage payment are separate questions; accrued paid leave or another applicable benefit may provide pay.",
+     "Can federal leave cover a parent’s serious illness? Yes, for an eligible employee caring for a qualifying parent with a serious health condition.",
+     "Can an employer punish an employee for using FMLA rights? Federal law prohibits interference with FMLA rights and prohibited retaliation. — 29 U.S.C. § 2615"
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Alaska Legislature — AS 39.20, public-employee leave statutes",
+    "url": "https://www.akleg.gov/basis/statutes.asp#39.20.305"
+   },
+   {
+    "label": "U.S. Department of Labor — Family and Medical Leave Act",
+    "url": "https://www.dol.gov/agencies/whd/fmla"
+   },
+   {
+    "label": "Electronic Code of Federal Regulations — FMLA regulations",
+    "url": "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-V/subchapter-C/part-825"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/alaska/overtime-rights": {
+  "summary": "Alaska generally requires covered employers to pay covered employees one and one-half times their regular rate for work beyond eight hours in a day or 40 hours in a workweek, with exemptions and special scheduling rules under the Alaska Wage and Hour Act. Federal overtime law can apply independently, including where an Alaska exemption applies. Coverage depends on the employer, the employee’s actual duties, and any applicable exception; receiving a salary alone does not eliminate overtime rights.",
+  "sections": [
+   {
+    "heading": "Alaska overtime coverage and pay",
+    "facts": [
+     {
+      "label": "State law",
+      "value": "The Alaska Wage and Hour Act governs state minimum-wage and overtime obligations. Its coverage provisions and exemptions must be read together; not every worker or employer is subject to the same requirements. — AS 23.10.050–23.10.150"
+     },
+     {
+      "label": "Daily and weekly triggers",
+      "value": "For covered employment, overtime is due for hours exceeding eight in a day or 40 in a workweek. The overtime rate is one and one-half times the employee’s regular rate of pay. — AS 23.10.060"
+     },
+     {
+      "label": "Small-employer exception",
+      "value": "Alaska’s overtime requirement does not apply to an employer employing fewer than four employees in the regular course of business. This state exception does not itself remove any separate federal overtime obligation. — AS 23.10.060; 29 U.S.C. § 207"
+     },
+     {
+      "label": "Salaried employees",
+      "value": "Salary payment alone does not establish an exemption. Alaska recognizes exemptions for qualifying bona fide executive, administrative, and professional employees, subject to the applicable statutory requirements. A job title alone does not determine exempt status. — AS 23.10.055"
+     }
+    ]
+   },
+   {
+    "heading": "How Alaska overtime works",
+    "table": {
+     "columns": [
+      "Situation",
+      "Treatment for a covered, nonexempt employee",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Ten hours worked in one day",
+       "Ordinarily, two hours are daily overtime, even if the employee works fewer than 40 hours that week.",
+       "AS 23.10.060"
+      ],
+      [
+       "More than 40 hours worked in a workweek",
+       "Weekly overtime applies, but hours already counted as daily overtime are not counted again to create duplicate overtime.",
+       "AS 23.10.060"
+      ],
+      [
+       "Weekend or holiday work",
+       "The date alone does not trigger statutory premium pay. Daily or weekly overtime thresholds can still require it.",
+       "Alaska Department of Labor and Workforce Development, Wage and Hour FAQs"
+      ],
+      [
+       "Paid vacation or holiday time",
+       "Paid time not actually worked generally does not count as hours worked when determining statutory overtime.",
+       "Alaska Department of Labor and Workforce Development, Wage and Hour FAQs"
+      ],
+      [
+       "Private agreement to waive overtime",
+       "An employee’s agreement to work for less than the statutory overtime entitlement is not a defense to an unpaid-overtime claim.",
+       "AS 23.10.110"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Alaska",
+    "bullets": [
+     "The Alaska Department of Labor and Workforce Development, Labor Standards and Safety Division, Wage and Hour Administration receives wage complaints and investigates compliance with Alaska wage laws.",
+     "The U.S. Department of Labor, Wage and Hour Division handles complaints under the federal Fair Labor Standards Act. Federal coverage and exemptions are separate from Alaska’s rules.",
+     "An employee may bring a civil action in a court of competent jurisdiction for unpaid overtime under AS 23.10.110. The statute provides for attorney fees and costs for a prevailing employee."
+    ]
+   },
+   {
+    "heading": "Common questions in Alaska",
+    "bullets": [
+     "Does Alaska require overtime after eight hours even during a short week? Generally yes for covered, nonexempt employment. Daily overtime is a separate protection from the weekly threshold, although statutory exceptions apply. — AS 23.10.060",
+     "Can an employer average a busy week with a quieter week? Generally no. Weekly overtime is determined by the workweek, not by averaging hours across a two-week payroll period. — Alaska Department of Labor and Workforce Development, Wage and Hour FAQs",
+     "Can an employee recover more than the unpaid wages? AS 23.10.110 provides for an additional equal amount as liquidated damages. A court may reduce or deny liquidated damages when the employer establishes the statutory good-faith defense.",
+     "Is there a deadline for a state overtime lawsuit? Alaska provides a two-year limitation for actions seeking unpaid minimum wages, unpaid overtime, or liquidated damages under the state act. Federal claims have separate limitation rules. — AS 23.10.130"
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Alaska Legislature — Alaska Wage and Hour Act",
+    "url": "https://www.akleg.gov/basis/statutes.asp#23.10.050"
+   },
+   {
+    "label": "Alaska Department of Labor and Workforce Development — Wage and Hour FAQs",
+    "url": "https://labor.alaska.gov/lss/whfaq.htm"
+   },
+   {
+    "label": "Alaska Department of Labor and Workforce Development — Wage and Hour Administration",
+    "url": "https://labor.alaska.gov/lss/whhome.htm"
+   },
+   {
+    "label": "U.S. Department of Labor — Overtime Pay",
+    "url": "https://www.dol.gov/agencies/whd/overtime"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/alaska/wage-theft": {
+  "summary": "In Alaska, wage theft can include unpaid agreed wages, minimum-wage shortfalls, unpaid overtime, and failure to pay final wages on time, subject to the coverage rules and exemptions that apply to the job. Alaska’s minimum wage increased to $14 an hour on July 1, 2026, and covered employees generally earn overtime after eight hours a day or 40 hours a week. Claims may involve the Alaska Department of Labor and Workforce Development or a civil lawsuit.",
+  "sections": [
+   {
+    "heading": "Alaska wage protections",
+    "facts": [
+     {
+      "label": "Minimum wage in 2026",
+      "value": "Alaska’s minimum wage was $13 an hour from January 1 through June 30, 2026, and became $14 an hour on July 1, 2026. Statutory exemptions mean this rate does not cover every worker. — AS 23.10.065; Alaska Department of Labor and Workforce Development, Minimum Wage"
+     },
+     {
+      "label": "Tips",
+      "value": "An employer cannot use employee tips as a credit toward Alaska’s required minimum wage. Tips therefore do not replace the employer’s minimum-wage obligation. — AS 23.10.065"
+     },
+     {
+      "label": "Overtime",
+      "value": "Covered employees must receive at least one and one-half times their regular rate for overtime. Alaska generally uses both a daily eight-hour threshold and a weekly 40-hour threshold, subject to statutory exemptions and exceptions. — AS 23.10.060"
+     },
+     {
+      "label": "Payroll records",
+      "value": "Employers must retain required employment records for at least three years, including each employee’s daily and weekly hours and wages paid each pay period. — AS 23.10.100"
+     }
+    ]
+   },
+   {
+    "heading": "Deadlines and possible recovery",
+    "table": {
+     "columns": [
+      "Issue",
+      "Alaska rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Employer ends employment",
+       "Wages become due within three working days after termination.",
+       "AS 23.05.140(b)"
+      ],
+      [
+       "Employee quits",
+       "Wages become due at the next regular payday that is at least three days after the employer receives notice of termination.",
+       "AS 23.05.140(b)"
+      ],
+      [
+       "Minimum-wage or overtime lawsuit",
+       "The statutory limitations period is two years after the cause of action accrues.",
+       "AS 23.10.130"
+      ],
+      [
+       "Unpaid minimum wage or overtime",
+       "An employer may owe the unpaid amount plus an equal amount in liquidated damages.",
+       "AS 23.10.110(a)"
+      ],
+      [
+       "Good-faith defense to liquidated damages",
+       "A court may reduce or deny liquidated damages if the employer establishes statutory good faith and reasonable grounds.",
+       "AS 23.10.110(d)"
+      ],
+      [
+       "Attorney fees and costs",
+       "The statute provides for reasonable attorney fees and costs in addition to a judgment for the employee.",
+       "AS 23.10.110(c)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Alaska",
+    "bullets": [
+     "The Alaska Department of Labor and Workforce Development’s Wage and Hour Administration receives wage complaints and investigates alleged violations of state wage laws. Its offices serve Anchorage, Fairbanks, and Juneau.",
+     "Alaska law authorizes the labor department to take assignments of employee wage claims and pursue collection in qualifying cases. An administrative wage claim and an employee’s lawsuit are distinct enforcement routes. — AS 23.05.220",
+     "Alaska courts hear civil claims for unpaid wages. The Alaska Wage and Hour Act expressly permits employees to sue for unpaid statutory minimum wages or overtime and associated remedies. — AS 23.10.110",
+     "The U.S. Department of Labor’s Wage and Hour Division handles federal Fair Labor Standards Act complaints where federal coverage applies; Alaska’s separate daily-overtime requirement comes from state law."
+    ]
+   },
+   {
+    "heading": "Common questions in Alaska",
+    "bullets": [
+     "Does receiving a salary automatically eliminate overtime? No. A salary alone does not establish an exemption; Alaska’s statutory exemption requirements still matter. — AS 23.10.055",
+     "Can an employee waive Alaska’s minimum-wage or overtime protections? An agreement to work for less than the statutory requirements is not a defense to a recovery action. — AS 23.10.110(a)",
+     "Is retaliation for a wage complaint prohibited? Alaska prohibits discharge or other discrimination because an employee filed a complaint or participated in proceedings under the Alaska Wage and Hour Act. — AS 23.10.135",
+     "Does the two-year deadline govern every unpaid-wage dispute? The stated two-year period applies to actions under the Alaska Wage and Hour Act. Claims for agreed compensation may involve different legal rules; talk to a lawyer. — AS 23.10.130"
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Alaska Legislature — Alaska Wage and Hour Act, AS 23.10",
+    "url": "https://www.akleg.gov/basis/statutes.asp#23.10"
+   },
+   {
+    "label": "Alaska Legislature — Employment Practices and Working Conditions, AS 23.05",
+    "url": "https://www.akleg.gov/basis/statutes.asp#23.05"
+   },
+   {
+    "label": "Alaska Department of Labor and Workforce Development — Minimum Wage",
+    "url": "https://labor.alaska.gov/lss/whact.htm"
+   },
+   {
+    "label": "Alaska Department of Labor and Workforce Development — Wage and Hour Administration",
+    "url": "https://labor.alaska.gov/lss/whhome.htm"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/alaska/workplace-discrimination": {
+  "summary": "Alaska’s Human Rights Law prohibits employment discrimination based on race, religion, color, national origin, age, physical or mental disability, sex, marital status, changes in marital status, pregnancy, and parenthood. State law generally reaches employers with at least one employee, subject to statutory exclusions, while federal coverage depends on the particular law and employer size. The Alaska State Commission for Human Rights investigates state-law complaints; federal claims generally go through the Equal Employment Opportunity Commission.",
+  "sections": [
+   {
+    "heading": "Alaska’s workplace discrimination protections",
+    "facts": [
+     {
+      "label": "Protected employment decisions",
+      "value": "An employer may not refuse employment, bar someone from employment, or discriminate in compensation or a term, condition, or privilege of employment because of a protected characteristic when the reasonable demands of the position do not require the distinction. The statute contains qualifications concerning age restrictions and pregnancy or parenthood — AS 18.80.220(a)(1)."
+     },
+     {
+      "label": "Employer coverage",
+      "value": "The state definition of employer covers a person employing one or more employees and expressly includes the state and its political subdivisions. It excludes a club that is exclusively social and a corporation, association, or society that is exclusively fraternal, charitable, educational, or religious, if it is not organized and operated for private profit — AS 18.80.300."
+     },
+     {
+      "label": "Retaliation",
+      "value": "Alaska prohibits discrimination against someone for opposing practices forbidden by the Human Rights Law or for filing a complaint, testifying, or assisting in a proceeding under that law — AS 18.80.220."
+     }
+    ]
+   },
+   {
+    "heading": "State and federal coverage compared",
+    "table": {
+     "columns": [
+      "Law",
+      "General employer-size rule",
+      "Principal protections"
+     ],
+     "rows": [
+      [
+       "Alaska Human Rights Law",
+       "One or more employees, subject to statutory exclusions",
+       "State-listed protected characteristics — AS 18.80.220; AS 18.80.300."
+      ],
+      [
+       "Title VII of the Civil Rights Act",
+       "Generally 15 or more employees",
+       "Race, color, religion, sex, and national origin; sex includes sexual orientation and transgender status — 42 U.S.C. §§ 2000e(b), 2000e-2; Bostock v. Clayton County."
+      ],
+      [
+       "Americans with Disabilities Act, Title I",
+       "Generally 15 or more employees",
+       "Disability discrimination and reasonable accommodation for qualified individuals, absent undue hardship — 42 U.S.C. §§ 12111–12112."
+      ],
+      [
+       "Age Discrimination in Employment Act",
+       "Generally 20 or more employees for private employers",
+       "Age discrimination against people 40 or older; state and local government coverage does not depend on that minimum — 29 U.S.C. §§ 630–631."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Federal filing deadlines and Alaska court jurisdiction",
+    "facts": [
+     {
+      "label": "EEOC charge deadlines",
+      "value": "The usual federal charge deadline is 180 days. It generally extends to 300 days where a state or local agency enforces a law prohibiting discrimination on the same basis. For age claims, the extension requires applicable state age-discrimination law and a state enforcement authority — 42 U.S.C. § 2000e-5(e)(1); 29 U.S.C. § 626(d)."
+     },
+     {
+      "label": "Federal employees",
+      "value": "Federal employees and applicants generally must contact their employing agency’s EEO counselor within 45 days; this is a separate process from an ordinary private-sector EEOC charge — 29 C.F.R. § 1614.105(a)(1)."
+     },
+     {
+      "label": "State court",
+      "value": "Alaska superior courts have jurisdiction over civil actions arising under AS 18.80 and may grant relief authorized by the jurisdictional statute, including injunctions — AS 22.10.020(i)."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Alaska",
+    "bullets": [
+     "Alaska State Commission for Human Rights: the state agency that receives and investigates complaints under the Alaska Human Rights Law — AS 18.80.100–18.80.110.",
+     "U.S. Equal Employment Opportunity Commission: the federal agency handling charges under Title VII, the ADA, and the ADEA.",
+     "Alaska Superior Court: the state trial court with jurisdiction over civil actions arising under AS 18.80 — AS 22.10.020(i)."
+    ]
+   },
+   {
+    "heading": "Common questions in Alaska",
+    "bullets": [
+     "Can a small workplace be covered? Yes. Alaska’s employer definition generally starts at one employee, subject to statutory exclusions.",
+     "Is parenthood protected? Yes. AS 18.80.220 expressly includes parenthood, with statutory qualifications.",
+     "Does federal age protection cover workers under 40? No. The ADEA protects individuals who are at least 40; Alaska separately lists age.",
+     "Is retaliation a separate violation? Yes. Alaska expressly prohibits retaliation for protected opposition or participation."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Alaska Legislature — Alaska Statutes, including AS 18.80 and AS 22.10.020",
+    "url": "https://www.akleg.gov/basis/statutes.asp"
+   },
+   {
+    "label": "Alaska State Commission for Human Rights",
+    "url": "https://humanrights.alaska.gov/"
+   },
+   {
+    "label": "EEOC — Employers and Small Business",
+    "url": "https://www.eeoc.gov/employers"
+   },
+   {
+    "label": "EEOC — Time Limits for Filing a Charge",
+    "url": "https://www.eeoc.gov/time-limits-filing-charge"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/arizona/overtime-rights": {
+  "summary": "Arizona does not have a general state overtime law requiring premium pay after eight hours in a day or 40 hours in a week; most overtime rights come from the federal Fair Labor Standards Act (FLSA). For covered, nonexempt employees, that law generally requires at least one and one-half times the regular rate for hours worked over 40 in a workweek, while Arizona wage-payment law separately addresses unpaid wages and potential remedies.",
+  "sections": [
+   {
+    "heading": "Which overtime rules apply in Arizona",
+    "facts": [
+     {
+      "label": "Federal coverage",
+      "value": "The FLSA covers employees through enterprise coverage or individual involvement in interstate commerce. Working in Arizona does not, by itself, establish federal coverage. — 29 U.S.C. §§ 203(s), 207(a)."
+     },
+     {
+      "label": "Exempt employees",
+      "value": "Executive, administrative, professional, and outside-sales exemptions depend on the applicable legal requirements, not simply an employer's job title. Receiving a salary alone does not eliminate overtime rights. — 29 U.S.C. § 213(a)(1); 29 C.F.R. Part 541."
+     },
+     {
+      "label": "Unauthorized work",
+      "value": "An employer must count work it suffers or permits, including work performed contrary to an advance-approval policy when the employer knows or has reason to know it is being performed. — 29 C.F.R. §§ 785.11–785.13."
+     },
+     {
+      "label": "Arizona wage remedies",
+      "value": "Arizona defines wages to include nondiscretionary compensation reasonably expected for services. Its wage statute permits a civil claim for treble unpaid wages in qualifying cases; trebling is not automatic for every overtime dispute. — A.R.S. §§ 23-350(7), 23-355(A)."
+     }
+    ]
+   },
+   {
+    "heading": "Overtime calculations and deadlines",
+    "table": {
+     "columns": [
+      "Issue",
+      "Rule for covered, nonexempt employees",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Weekly threshold",
+       "At least 1.5 times the regular rate after 40 hours worked in a workweek.",
+       "29 U.S.C. § 207(a)(1)"
+      ],
+      [
+       "Workweek",
+       "A fixed, recurring period of 168 hours; hours generally cannot be averaged across two weeks.",
+       "29 C.F.R. § 778.105"
+      ],
+      [
+       "Regular rate",
+       "Generally includes nondiscretionary bonuses and other compensation unless a statutory exclusion applies.",
+       "29 U.S.C. § 207(e)"
+      ],
+      [
+       "Paid time off",
+       "Holiday, vacation, and sick-leave hours not worked generally do not count toward the 40-hour threshold.",
+       "29 C.F.R. § 778.218"
+      ],
+      [
+       "Federal filing period",
+       "Generally two years, extended to three years for a willful violation.",
+       "29 U.S.C. § 255(a)"
+      ],
+      [
+       "Federal recovery",
+       "Unpaid overtime, potentially an equal amount in liquidated damages, plus reasonable attorney fees and costs; a statutory good-faith defense can affect liquidated damages.",
+       "29 U.S.C. §§ 216(b), 260"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Arizona",
+    "bullets": [
+     "The U.S. Department of Labor, Wage and Hour Division, receives and investigates FLSA overtime complaints involving Arizona workplaces. Its national assistance number is 1-866-487-9243.",
+     "The Industrial Commission of Arizona's Labor Department administers state wage-payment claims, but does not enforce federal overtime requirements. State wage-payment claims and federal overtime complaints are distinct processes.",
+     "The U.S. District Court for the District of Arizona and state courts of competent jurisdiction can hear private FLSA actions. Arizona's unpaid-wage statute also authorizes civil actions. — 29 U.S.C. § 216(b); A.R.S. § 23-355(A)."
+    ]
+   },
+   {
+    "heading": "Common questions in Arizona",
+    "bullets": [
+     "Does a 12-hour shift automatically require overtime? No. Arizona has no general daily overtime requirement, and the usual FLSA trigger is more than 40 hours worked in a workweek.",
+     "Is weekend or holiday work automatically overtime? No. Federal law does not require premium pay solely because work occurs on a weekend or holiday. — 29 C.F.R. § 778.102.",
+     "Can a private employer substitute future time off for overtime pay? Generally not for covered, nonexempt employees. Qualifying public agencies have separate compensatory-time rules. — 29 U.S.C. § 207(o).",
+     "Can an employer retaliate over an overtime complaint? The FLSA prohibits retaliation for protected complaints and participation in proceedings. — 29 U.S.C. § 215(a)(3)."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "U.S. Department of Labor — Overtime Pay",
+    "url": "https://www.dol.gov/agencies/whd/overtime"
+   },
+   {
+    "label": "U.S. Department of Labor — How to File a Complaint",
+    "url": "https://www.dol.gov/agencies/whd/contact/complaints"
+   },
+   {
+    "label": "Arizona Legislature — A.R.S. § 23-350",
+    "url": "https://www.azleg.gov/ars/23/00350.htm"
+   },
+   {
+    "label": "Arizona Legislature — A.R.S. § 23-355",
+    "url": "https://www.azleg.gov/ars/23/00355.htm"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/california/contractor-vs-employee": {
+  "summary": "California generally uses the ABC test to decide whether a worker is an employee or an independent contractor under its Labor Code, unemployment insurance law, and wage orders, unless a statutory exception applies. The hiring business must prove all three parts of that test, and a contract or Form 1099 does not settle the issue; misclassification can create liability for unpaid wages, employment taxes, and civil penalties.",
+  "sections": [
+   {
+    "heading": "California’s employee-classification rules",
+    "facts": [
+     {
+      "label": "Default rule",
+      "value": "A person providing labor or services for payment is presumed to be an employee unless the hiring entity satisfies the ABC test. California Labor Code section 2775 codifies this rule, subject to statutory exceptions. — California Labor Code § 2775(b)."
+     },
+     {
+      "label": "Exceptions require separate analysis",
+      "value": "Specified occupations and business relationships have exceptions with detailed conditions. An exception from the ABC test does not necessarily establish independent-contractor status; many exceptions instead require analysis under the multifactor Borello test. — California Labor Code §§ 2775–2787."
+     },
+     {
+      "label": "Business-to-business arrangements",
+      "value": "A qualifying business-to-business service relationship may be evaluated under Borello if the contracting business demonstrates that all statutory requirements are satisfied. Forming an LLC or signing a services agreement alone does not establish this exception. — California Labor Code § 2776(a)."
+     }
+    ]
+   },
+   {
+    "heading": "What the classification tests examine",
+    "table": {
+     "columns": [
+      "Rule",
+      "California requirement",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "ABC: Part A",
+       "The worker is free from the hiring entity’s control and direction in performing the work, both under the contract and in fact.",
+       "Labor Code § 2775(b)(1)(A)"
+      ],
+      [
+       "ABC: Part B",
+       "The work is outside the usual course of the hiring entity’s business.",
+       "Labor Code § 2775(b)(1)(B)"
+      ],
+      [
+       "ABC: Part C",
+       "The worker is customarily engaged in an independently established trade, occupation, or business of the same nature as the work performed.",
+       "Labor Code § 2775(b)(1)(C)"
+      ],
+      [
+       "Borello",
+       "This multifactor test principally examines the right to control the manner and means of work, together with factors such as a distinct business, tools, skill, and opportunity for profit or loss.",
+       "S. G. Borello & Sons, Inc. v. Department of Industrial Relations, 48 Cal.3d 341 (1989)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Liability for misclassification",
+    "facts": [
+     {
+      "label": "Employee protections",
+      "value": "Misclassified employees may be entitled to unpaid minimum wages, overtime where applicable, and reimbursement of necessary business expenses. Whether particular protections apply depends on the work and any applicable exemptions. — California Labor Code §§ 510, 1194, 2802."
+     },
+     {
+      "label": "Willful-misclassification penalties",
+      "value": "Willful misclassification carries civil penalties of $5,000–$15,000 per violation. A pattern or practice carries penalties of $10,000–$25,000 per violation. These penalties are additional to other penalties or fines permitted by law. — California Labor Code § 226.8(b)–(c)."
+     },
+     {
+      "label": "Meaning of willful",
+      "value": "For these penalties, willful misclassification means voluntarily and knowingly avoiding employee status by misclassifying an individual as an independent contractor. Not every classification error necessarily meets that definition. — California Labor Code § 226.8(i)(4)."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in California",
+    "bullets": [
+     "The California Labor Commissioner’s Office, within the Division of Labor Standards Enforcement, handles wage claims and investigates labor-law violations, including alleged misclassification affecting wages.",
+     "The Employment Development Department addresses worker classification for California employment-tax purposes and administers unemployment insurance claims.",
+     "California superior courts hear civil employment claims, including claims for unpaid wages under Labor Code section 1194. The available forum and remedies depend on the claim."
+    ]
+   },
+   {
+    "heading": "Common questions in California",
+    "bullets": [
+     "Does receiving a Form 1099 make someone a contractor? No. California evaluates the legal test and actual working relationship, not simply the tax form or contract label.",
+     "Must the business prove every ABC element? Yes. When the ABC test governs, the hiring entity must establish all three elements to classify the worker as an independent contractor.",
+     "Does working remotely establish contractor status? No. Work location alone does not establish the ABC elements or resolve a Borello analysis.",
+     "Does an occupational exception eliminate employee rights? No. Many exceptions substitute Borello for the ABC test, and the worker can still qualify as an employee."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "California Legislature — Labor Code section 2775",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=LAB&sectionNum=2775."
+   },
+   {
+    "label": "California Legislature — Labor Code section 2776",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=LAB&sectionNum=2776."
+   },
+   {
+    "label": "California Legislature — Labor Code section 226.8",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=LAB&sectionNum=226.8."
+   },
+   {
+    "label": "California Department of Industrial Relations — Independent Contractor FAQ",
+    "url": "https://www.dir.ca.gov/dlse/FAQ_IndependentContractor.htm"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/arizona/wrongful-termination": {
+  "summary": "Arizona generally permits at-will employment, but a discharge can be unlawful when it breaches a qualifying employment contract, violates an Arizona statute, or retaliates against conduct specifically protected by state law. The Arizona Employment Protection Act defines the principal state wrongful-termination claims and limits some remedies; discrimination claims have a separate administrative process, and Arizona generally imposes a one-year deadline for filing a wrongful-termination lawsuit.",
+  "sections": [
+   {
+    "heading": "Arizona’s wrongful-termination framework",
+    "facts": [
+     {
+      "label": "At-will employment and contracts",
+      "value": "Employment is generally terminable by either party. A written contract can restrict termination; a handbook can qualify if it expresses an intent to be an employment contract. The statute also recognizes qualifying writings signed by the party to be charged and preserves collective bargaining agreements. — A.R.S. § 23-1501(A)(2)."
+     },
+     {
+      "label": "Statutory limits on claims",
+      "value": "The Arizona Employment Protection Act identifies claims for breach of a qualifying employment contract, termination violating an Arizona statute, and specified retaliation. When the violated statute provides a remedy, that remedy is exclusive for the statutory-violation claim described in the Act. — A.R.S. § 23-1501(A)(3)(a)–(b)."
+     },
+     {
+      "label": "Protected whistleblowing",
+      "value": "Protection covers a reasonable disclosure that the employer or an employee has violated, is violating, or will violate the Arizona Constitution or Arizona statutes. The disclosure must go to an employer representative reasonably believed to have investigative and corrective authority, or to an employee of an appropriate public body. — A.R.S. § 23-1501(A)(3)(c)(ii)."
+     },
+     {
+      "label": "Discriminatory discharge",
+      "value": "The Arizona Civil Rights Act prohibits covered employers from discharging an individual because of race, color, religion, sex, age, national origin, or disability. It also prohibits retaliation for opposing unlawful employment practices or participating in covered proceedings. — A.R.S. § 41-1463(B), (F)."
+     }
+    ]
+   },
+   {
+    "heading": "Protected conduct and filing deadlines",
+    "table": {
+     "columns": [
+      "Issue",
+      "Arizona rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Wrongful-termination lawsuit",
+       "Generally must be commenced within one year after the claim accrues.",
+       "A.R.S. § 12-541(4)"
+      ],
+      [
+       "Employment-contract lawsuit",
+       "An action for breach of an oral or written employment contract generally has a one-year limitation period.",
+       "A.R.S. § 12-541(3)"
+      ],
+      [
+       "State discrimination charge",
+       "A charge must be filed within 180 days after the alleged unlawful employment practice occurred.",
+       "A.R.S. § 41-1481"
+      ],
+      [
+       "Refusing unlawful conduct",
+       "The Act protects refusal to commit an act or omission that would violate the Arizona Constitution or Arizona statutes.",
+       "A.R.S. § 23-1501(A)(3)(c)(i)"
+      ],
+      [
+       "Workers’ compensation",
+       "Termination in retaliation for exercising rights under Arizona’s workers’ compensation statutes is actionable.",
+       "A.R.S. § 23-1501(A)(3)(c)(iii)"
+      ],
+      [
+       "Jury service",
+       "Termination in retaliation for jury service is actionable.",
+       "A.R.S. § 23-1501(A)(3)(c)(iv)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Arizona",
+    "bullets": [
+     "Arizona Attorney General, Civil Rights Division: receives and investigates employment-discrimination charges under the Arizona Civil Rights Act. The administrative charge process is distinct from filing a court complaint. — A.R.S. § 41-1481.",
+     "Arizona Superior Court: hears civil wrongful-termination and employment-contract lawsuits within its jurisdiction. The Arizona Civil Rights Act also authorizes civil enforcement proceedings in superior court. — A.R.S. §§ 23-1501, 41-1481."
+    ]
+   },
+   {
+    "heading": "Common questions in Arizona",
+    "bullets": [
+     "Is an unfair firing automatically illegal? No. Arizona’s at-will rule does not require every discharge to have a fair reason; a claim requires a recognized legal basis. — A.R.S. § 23-1501.",
+     "Does every employee handbook create a contract? No. The Act requires the handbook or manual to express an intent that it is a contract of employment. — A.R.S. § 23-1501(A)(2).",
+     "Is every workplace complaint protected whistleblowing? No. This provision concerns reasonably believed violations of Arizona constitutional or statutory law and specifies eligible recipients. — A.R.S. § 23-1501(A)(3)(c)(ii).",
+     "Is the discrimination-charge deadline the same as the lawsuit deadline? No. The state discrimination-charge deadline is 180 days, while the general wrongful-termination limitation period is one year. — A.R.S. §§ 41-1481, 12-541."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Arizona Legislature — A.R.S. § 23-1501",
+    "url": "https://www.azleg.gov/ars/23/01501.htm"
+   },
+   {
+    "label": "Arizona Legislature — A.R.S. § 12-541",
+    "url": "https://www.azleg.gov/ars/12/00541.htm"
+   },
+   {
+    "label": "Arizona Legislature — A.R.S. § 41-1463",
+    "url": "https://www.azleg.gov/ars/41/01463.htm"
+   },
+   {
+    "label": "Arizona Legislature — A.R.S. § 41-1481",
+    "url": "https://www.azleg.gov/ars/41/01481.htm"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/alaska/workplace-harassment": {
+  "summary": "Alaska’s Human Rights Law prohibits employment discrimination based on specified protected characteristics, and workplace harassment can violate that law when it constitutes discriminatory treatment or creates an unlawful hostile work environment. Alaska law can cover employers with as few as one employee, subject to statutory exclusions; federal protections generally have higher employee thresholds. The Alaska State Commission for Human Rights handles state discrimination complaints, while the Equal Employment Opportunity Commission handles claims under federal employment discrimination laws.",
+  "sections": [
+   {
+    "heading": "Alaska workplace harassment protections",
+    "facts": [
+     {
+      "label": "Protected characteristics",
+      "value": "Alaska prohibits discrimination in compensation and employment terms, conditions, or privileges because of race, religion, color, national origin, age, physical or mental disability, sex, marital status, changes in marital status, pregnancy, or parenthood, subject to statutory qualifications and exceptions. Harassment connected to these characteristics can fall within this prohibition. — Alaska Stat. § 18.80.220(a)(1)"
+     },
+     {
+      "label": "Employer coverage",
+      "value": "The state definition of employer includes a person employing one or more employees in Alaska. The definition contains exclusions, including specified nonprofit organizations, so state coverage is not identical to federal coverage. — Alaska Stat. § 18.80.300"
+     },
+     {
+      "label": "Retaliation",
+      "value": "Alaska prohibits discrimination against a person for opposing practices forbidden by the Human Rights Law or for filing a complaint, testifying, or assisting in a proceeding under that law. This is a separate protection from the underlying discrimination prohibition. — Alaska Stat. § 18.80.220(a)(4)"
+     },
+     {
+      "label": "Federal harassment standard",
+      "value": "Under federal law, unlawful harassment includes protected-characteristic-based conduct that becomes a condition of continued employment or is sufficiently severe or pervasive to create an intimidating, hostile, or abusive work environment. Ordinary personality conflicts and isolated incidents generally do not qualify unless extremely serious. — EEOC, Harassment"
+     }
+    ]
+   },
+   {
+    "heading": "Federal damages limits for covered employers",
+    "table": {
+     "columns": [
+      "Employer size",
+      "Combined compensatory and punitive damages ceiling",
+      "Application"
+     ],
+     "rows": [
+      [
+       "15–100 employees",
+       "$50,000",
+       "Per complaining party under 42 U.S.C. § 1981a"
+      ],
+      [
+       "101–200 employees",
+       "$100,000",
+       "Per complaining party under 42 U.S.C. § 1981a"
+      ],
+      [
+       "201–500 employees",
+       "$200,000",
+       "Per complaining party under 42 U.S.C. § 1981a"
+      ],
+      [
+       "More than 500 employees",
+       "$300,000",
+       "Per complaining party under 42 U.S.C. § 1981a"
+      ],
+      [
+       "Limits of this table",
+       "Not a ceiling on every remedy",
+       "These federal limits cover specified compensatory and punitive damages in intentional Title VII and ADA cases, not back pay; they are not Alaska state-law damages limits."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Alaska",
+    "bullets": [
+     "Alaska State Commission for Human Rights: receives and investigates complaints alleging violations of Alaska’s Human Rights Law. Its statutory process includes investigation and efforts to resolve supported complaints through conference, conciliation, and persuasion. — Alaska Stat. §§ 18.80.100–18.80.110",
+     "Equal Employment Opportunity Commission: handles federal workplace discrimination and harassment charges. Title VII and the ADA generally cover employers with at least 15 employees; the federal Age Discrimination in Employment Act generally requires 20 employees. — 42 U.S.C. §§ 2000e(b), 12111(5); 29 U.S.C. § 630(b)",
+     "Alaska Superior Court: state law expressly provides jurisdiction over civil actions arising under the Human Rights Law. An administrative complaint and a civil lawsuit are distinct proceedings. — Alaska Stat. § 22.10.020(i)"
+    ]
+   },
+   {
+    "heading": "Common questions in Alaska",
+    "bullets": [
+     "Is every form of workplace bullying illegal harassment? No. Under discrimination law, the conduct must have the required connection to a protected characteristic and satisfy the applicable legal standard. — Alaska Stat. § 18.80.220; EEOC, Harassment",
+     "Can a coworker or customer be the harasser? Yes. Federal harassment law can apply to conduct by supervisors, coworkers, and nonemployees, although employer liability depends on the circumstances. — EEOC, Harassment",
+     "Does Alaska protect employees at very small businesses? Potentially yes. The state employer definition starts at one employee, subject to statutory exclusions. — Alaska Stat. § 18.80.300",
+     "Is there a deadline after an EEOC right-to-sue notice? Generally, a Title VII or ADA lawsuit must be filed within 90 days after receipt of the notice. That deadline is separate from the deadline for filing an EEOC charge. — 42 U.S.C. § 2000e-5(f)(1); EEOC, Filing a Lawsuit"
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Alaska Legislature — Alaska Statutes",
+    "url": "https://www.akleg.gov/basis/statutes.asp"
+   },
+   {
+    "label": "EEOC — Harassment",
+    "url": "https://www.eeoc.gov/harassment"
+   },
+   {
+    "label": "EEOC — Remedies for Employment Discrimination",
+    "url": "https://www.eeoc.gov/remedies-employment-discrimination"
+   },
+   {
+    "label": "EEOC — Filing a Lawsuit",
+    "url": "https://www.eeoc.gov/filing-lawsuit"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/arizona/at-will-employment": {
+  "summary": "Arizona generally allows either an employer or an employee to end employment at will, but a qualifying written agreement can restrict termination, and specific laws prohibit certain reasons for firing. The Arizona Employment Protection Act limits wrongful-termination claims to recognized categories, including qualifying contract breaches, violations of Arizona statutes, and specified retaliation. Discrimination complaints, wrongful-termination lawsuits, and constructive-discharge claims have different deadlines or procedural requirements; Arizona does not impose a general requirement that employers establish good cause before ending an at-will relationship.",
+  "sections": [
+   {
+    "heading": "Arizona’s at-will rule and contract exceptions",
+    "facts": [
+     {
+      "label": "Default employment relationship",
+      "value": "Employment is a contractual relationship that either side generally may end unless a qualifying written agreement limits termination. The Arizona Employment Protection Act supplies the state’s principal framework for termination claims. — A.R.S. § 23-1501(A)(1)–(3)"
+     },
+     {
+      "label": "Written restrictions",
+      "value": "A written agreement may establish a specified employment duration or otherwise expressly restrict termination. The statute recognizes qualifying signed writings and employment handbooks or similar distributed documents that express an intent to be an employment contract. — A.R.S. § 23-1501(A)(2)"
+     },
+     {
+      "label": "Handbooks and verbal promises",
+      "value": "A handbook does not automatically change at-will status merely because it describes workplace policies. The statute requires contractual intent for the handbook route and states that partial performance does not satisfy its writing requirement. — A.R.S. § 23-1501(A)(2)"
+     }
+    ]
+   },
+   {
+    "heading": "Recognized limits on termination",
+    "table": {
+     "columns": [
+      "Issue",
+      "Arizona rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Contract breach",
+       "Termination may support a claim when it breaches an employment contract meeting the statute’s requirements.",
+       "A.R.S. § 23-1501(A)(3)(a)"
+      ],
+      [
+       "Arizona statutory violations",
+       "Termination that violates an Arizona statute can support a claim, subject to the statute’s rules about available and exclusive remedies.",
+       "A.R.S. § 23-1501(A)(3)(b)"
+      ],
+      [
+       "Refusing unlawful conduct",
+       "The Act protects an employee against termination for refusing to commit an act or omission that would violate the Arizona Constitution or Arizona statutes.",
+       "A.R.S. § 23-1501(A)(3)(c)(i)"
+      ],
+      [
+       "Reporting suspected violations",
+       "Protection covers qualifying reasonable disclosures of actual or reasonably suspected Arizona constitutional or statutory violations to specified employer representatives or a public-body employee.",
+       "A.R.S. § 23-1501(A)(3)(c)(ii)"
+      ],
+      [
+       "Workers’ compensation",
+       "Termination in retaliation for exercising rights under Arizona’s workers’ compensation statutes is expressly covered.",
+       "A.R.S. § 23-1501(A)(3)(c)(iii)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Deadlines and constructive discharge",
+    "facts": [
+     {
+      "label": "Wrongful-termination lawsuit",
+      "value": "Arizona specifies a one-year limitations period for an action for damages for wrongful termination. Different claims can carry different deadlines. — A.R.S. § 12-541(4)"
+     },
+     {
+      "label": "State discrimination charge",
+      "value": "An employment discrimination charge under the Arizona Civil Rights Act must be filed within 180 days after the alleged unlawful employment practice. — A.R.S. § 41-1481(A)"
+     },
+     {
+      "label": "Resignation treated as discharge",
+      "value": "For the objectively intolerable working-conditions route, an employee generally must provide written notice and allow 15 calendar days for the employer’s response before resigning. The statute provides exceptions for outrageous conduct and employer waiver of the notice requirement. — A.R.S. § 23-1502"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Arizona",
+    "bullets": [
+     "The Arizona Attorney General’s Civil Rights Division receives employment discrimination charges under the Arizona Civil Rights Act. — A.R.S. § 41-1481",
+     "Arizona superior courts hear civil employment lawsuits within their jurisdiction, including wrongful-termination claims; the Civil Rights Act also provides for superior-court enforcement actions. — Arizona Constitution, article 6, § 14; A.R.S. § 41-1481",
+     "Administrative discrimination proceedings and civil wrongful-termination lawsuits are distinct processes. The Employment Protection Act does not replace a statutory exclusive remedy with a separate claim carrying broader relief. — A.R.S. § 23-1501(A)(3)(b)"
+    ]
+   },
+   {
+    "heading": "Common questions in Arizona",
+    "bullets": [
+     "Must an employer prove good cause? Generally no, unless an applicable contract or law restricts termination. — A.R.S. § 23-1501",
+     "Does every unfair firing create a claim? No. Arizona limits termination claims to recognized statutory categories; unfairness alone is not a separate category. — A.R.S. § 23-1501(A)(3)",
+     "Can reporting misconduct be protected? Yes, but the Act’s disclosure protection has requirements concerning the suspected legal violation and the recipient of the report. — A.R.S. § 23-1501(A)(3)(c)(ii)",
+     "Can quitting count as being fired? Sometimes. Arizona recognizes constructive discharge, subject to statutory proof and notice rules. — A.R.S. § 23-1502"
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Arizona Legislature — A.R.S. § 23-1501",
+    "url": "https://www.azleg.gov/ars/23/01501.htm"
+   },
+   {
+    "label": "Arizona Legislature — A.R.S. § 23-1502",
+    "url": "https://www.azleg.gov/ars/23/01502.htm"
+   },
+   {
+    "label": "Arizona Legislature — A.R.S. § 41-1481",
+    "url": "https://www.azleg.gov/ars/41/01481.htm"
+   },
+   {
+    "label": "Arizona Legislature — A.R.S. § 12-541",
+    "url": "https://www.azleg.gov/ars/12/00541.htm"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/arkansas/unemployment-benefits": {
+  "summary": "Arkansas unemployment insurance provides temporary benefits to workers who meet the state’s wage-history and ongoing eligibility requirements; losing a job does not automatically establish eligibility. Under the Arkansas Employment Security Law, claimants generally must be able to work, available for work, and actively seeking work, while voluntary quits, misconduct discharges, and refusals of suitable work can cause disqualification. The Arkansas Department of Commerce administers the program, and disputed determinations can proceed through administrative appeals and then judicial review.",
+  "sections": [
+   {
+    "heading": "Eligibility and continuing requirements",
+    "facts": [
+     {
+      "label": "Governing law",
+      "value": "The Arkansas Employment Security Law governs unemployment insurance eligibility, disqualifications, benefit determinations, and appeals. Monetary eligibility and eligibility for a particular week are separate requirements. — Ark. Code Ann. §§ 11-10-101 et seq., 11-10-507."
+     },
+     {
+      "label": "Ability and availability",
+      "value": "A claimant generally must be physically and mentally able to perform suitable work and available for that work. Statutory exceptions apply to certain claimants and circumstances. — Ark. Code Ann. § 11-10-507."
+     },
+     {
+      "label": "Work search",
+      "value": "Registration and reporting alone do not establish availability. The law generally requires efforts to secure work that a reasonably prudent person would make, subject to applicable exceptions. — Ark. Code Ann. § 11-10-507."
+     },
+     {
+      "label": "Weekly eligibility",
+      "value": "Eligibility is evaluated for individual benefit weeks. Arkansas requires continuing claims and information about work, earnings, and other circumstances affecting payment; approval of an initial claim does not guarantee payment for every later week. — Arkansas Division of Workforce Services, Unemployment Insurance."
+     }
+    ]
+   },
+   {
+    "heading": "How the reason for unemployment affects benefits",
+    "table": {
+     "columns": [
+      "Situation",
+      "Arkansas rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Layoff or lack of work",
+       "A layoff does not itself establish a disqualifying quit or misconduct discharge, but wage-history and weekly eligibility requirements still apply.",
+       "Ark. Code Ann. §§ 11-10-507, 11-10-513, 11-10-514."
+      ],
+      [
+       "Voluntary resignation",
+       "Leaving work voluntarily without good cause connected with the work generally disqualifies a claimant. The statute contains exceptions, including specified emergencies and health-related circumstances.",
+       "Ark. Code Ann. § 11-10-513."
+      ],
+      [
+       "Discharge for misconduct",
+       "Misconduct connected with the work can disqualify a claimant. Being fired and being discharged for statutory misconduct are not automatically the same thing.",
+       "Ark. Code Ann. § 11-10-514."
+      ],
+      [
+       "Poor performance",
+       "Poor performance is not misconduct unless the employer proves intentional conduct; repeated acts despite progressive discipline can establish intentional poor performance.",
+       "Ark. Code Ann. § 11-10-514(a)(4)."
+      ],
+      [
+       "Refusal of suitable work",
+       "Failure without good cause to apply for or accept suitable work can cause disqualification. Suitability includes factors such as health, training, experience, prior earnings, and distance.",
+       "Ark. Code Ann. § 11-10-515."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Arkansas",
+    "bullets": [
+     "Initial claims and continuing benefit claims: Arkansas Department of Commerce, Division of Workforce Services unemployment insurance program. Its official unemployment website provides claim-filing access and local office information.",
+     "Appeals from agency determinations: Arkansas Appeal Tribunal. An appeal generally must be filed within 20 calendar days after the determination is mailed, or delivered if it is not mailed. — Ark. Code Ann. § 11-10-524.",
+     "Further administrative review: Arkansas Board of Review reviews Appeal Tribunal decisions under the Employment Security Law. — Ark. Code Ann. § 11-10-525.",
+     "Judicial review: The Arkansas Court of Appeals reviews final Board of Review decisions under the statutory review procedure. — Ark. Code Ann. § 11-10-529."
+    ]
+   },
+   {
+    "heading": "Common questions in Arkansas",
+    "bullets": [
+     "Can someone receive benefits after quitting? Sometimes. Arkansas recognizes statutory exceptions, but a voluntary quit without good cause connected with the work generally results in disqualification. — Ark. Code Ann. § 11-10-513.",
+     "Does an employer decide whether a former employee gets benefits? No. The agency determines eligibility; employers and claimants can challenge determinations through the statutory appeal process. — Ark. Code Ann. §§ 11-10-522 through 11-10-525.",
+     "Does every firing count as misconduct? No. Arkansas distinguishes statutory misconduct from discharge alone and specifically addresses when poor performance qualifies. — Ark. Code Ann. § 11-10-514.",
+     "Can an appeal be accepted after the deadline? Arkansas permits an appeal to be considered timely when the late filing resulted from circumstances beyond the appellant’s control. — Ark. Code Ann. § 11-10-524."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Arkansas Division of Workforce Services — Unemployment",
+    "url": "https://dws.arkansas.gov/workforce-services/unemployment/"
+   },
+   {
+    "label": "Arkansas General Assembly — Arkansas Code",
+    "url": "https://www.arkleg.state.ar.us/ArkansasLaw"
+   },
+   {
+    "label": "Arkansas Judiciary — Court of Appeals",
+    "url": "https://www.arcourts.gov/courts/court-of-appeals"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/california/unemployment-benefits": {
+  "summary": "California unemployment insurance provides temporary payments to eligible workers who are unemployed or working reduced hours, have sufficient covered wages, and meet ongoing eligibility requirements administered by the Employment Development Department (EDD). Regular weekly benefits range from $40 to $450, generally for up to 26 weeks, although the amount and duration depend on the claim. Quitting or being fired does not automatically settle eligibility: EDD examines the reason employment ended under California’s unemployment insurance rules.",
+  "sections": [
+   {
+    "heading": "California eligibility and separation rules",
+    "facts": [
+     {
+      "label": "Basic eligibility",
+      "value": "A claimant generally must have sufficient covered wages, be unemployed, be able and available for work, and seek work as required by EDD. Eligibility is evaluated for individual benefit weeks, not just when the claim begins. — California Unemployment Insurance Code § 1253; EDD, Eligibility Requirements."
+     },
+     {
+      "label": "Quitting and discharge",
+      "value": "A worker may be disqualified for voluntarily leaving the most recent work without good cause or being discharged for misconduct connected with that work. Being fired, by itself, is not the same as a finding of misconduct. — California Unemployment Insurance Code § 1256."
+     },
+     {
+      "label": "Suitable work",
+      "value": "Refusing suitable work without good cause can disqualify a claimant. Suitability considers factors including health and safety risks, physical fitness, training, experience, prior earnings, length of unemployment, and distance from available work. — California Unemployment Insurance Code §§ 1257(b), 1258."
+     },
+     {
+      "label": "Ongoing certification",
+      "value": "Claimants generally certify for benefits every two weeks. Certification addresses continuing eligibility, including work and earnings during the weeks claimed; an approved claim does not guarantee payment for every subsequent week. — EDD, Eligibility Requirements."
+     }
+    ]
+   },
+   {
+    "heading": "Payment amounts, waiting periods, and deadlines",
+    "table": {
+     "columns": [
+      "Issue",
+      "California rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Weekly benefit",
+       "Regular unemployment insurance pays $40 to $450 per week, depending on covered wages.",
+       "California Unemployment Insurance Code § 1280; EDD"
+      ],
+      [
+       "Regular duration",
+       "Regular benefits are generally available for up to 26 weeks; the claim’s maximum award can limit payment sooner.",
+       "California Unemployment Insurance Code § 1281; EDD"
+      ],
+      [
+       "Waiting period",
+       "A claim generally includes a one-week unpaid waiting period for which eligibility requirements must otherwise be met.",
+       "California Unemployment Insurance Code § 1253(d); EDD"
+      ],
+      [
+       "Part-time earnings",
+       "For partial unemployment, the weekly benefit is reduced by wages exceeding $25 or 25% of those wages, whichever exclusion is greater.",
+       "California Unemployment Insurance Code § 1279"
+      ],
+      [
+       "Appeal deadline",
+       "An appeal generally must be filed within 30 days after the determination notice is mailed. A late appeal may be accepted for good cause.",
+       "California Unemployment Insurance Code § 1328; EDD, Appeals"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in California",
+    "bullets": [
+     "EDD administers unemployment insurance claims. Claims may be filed through UI Online, by telephone, or using EDD’s mail or fax procedures.",
+     "An appeal from an EDD determination is submitted to the EDD office identified on the notice. If EDD does not resolve the matter favorably, it forwards the appeal for a hearing before an administrative law judge.",
+     "The California Unemployment Insurance Appeals Board handles unemployment insurance appeals through its administrative hearing system. A further administrative appeal from an administrative law judge’s decision is generally due within 30 days after the decision is mailed. — California Unemployment Insurance Code § 1334."
+    ]
+   },
+   {
+    "heading": "Common questions in California",
+    "bullets": [
+     "Can someone receive benefits after quitting? Yes, if the separation meets California’s good-cause standard and the other eligibility requirements are satisfied. — Unemployment Insurance Code § 1256.",
+     "Does an employer decide whether benefits are paid? No. Employers can provide information and appeal determinations, but EDD initially decides eligibility, subject to administrative appeal.",
+     "Can reduced hours qualify? Yes. Partial unemployment may qualify, but earnings affect the payment and other eligibility requirements still apply. — Unemployment Insurance Code §§ 1252, 1279.",
+     "Are unemployment payments taxable? They are generally subject to federal income tax but are not taxable for California personal income tax purposes. — EDD, Tax Information."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "California EDD — Eligibility Requirements",
+    "url": "https://edd.ca.gov/en/unemployment/eligibility/"
+   },
+   {
+    "label": "California EDD — Calculating Benefit Payment Amounts",
+    "url": "https://edd.ca.gov/en/unemployment/Calculating_Benefit_Payment_Amounts/"
+   },
+   {
+    "label": "California EDD — Appeals",
+    "url": "https://edd.ca.gov/en/unemployment/appeals/"
+   },
+   {
+    "label": "California Legislature — Unemployment Insurance Code § 1256",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=UIC&sectionNum=1256."
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/california/wage-theft": {
+  "summary": "California wage theft can include unpaid minimum wages or overtime, off-the-clock work, unlawful deductions, and withholding earned final pay; many of these protections depend on employee status and applicable exemptions. Employees can pursue wage claims through the California Labor Commissioner’s Office, and state law also authorizes civil lawsuits for unpaid minimum wages and overtime. Depending on the violation, recovery can include unpaid wages, interest, statutory penalties, liquidated damages, and attorney’s fees.",
+  "sections": [
+   {
+    "heading": "California wage-payment protections",
+    "facts": [
+     {
+      "label": "Minimum wage and overtime",
+      "value": "An employee’s agreement to accept less does not eliminate the right to recover unpaid statutory minimum wages or overtime. Labor Code section 1194 authorizes recovery of the unpaid balance, interest, reasonable attorney’s fees, and costs through a civil action. — California Labor Code § 1194"
+     },
+     {
+      "label": "Off-the-clock work",
+      "value": "Under applicable Industrial Welfare Commission wage orders, compensable hours include time an employee is subject to employer control and time the employee is suffered or permitted to work, whether or not required. — IWC Wage Order No. 4-2001, § 2(K)"
+     },
+     {
+      "label": "Pay records",
+      "value": "Employers generally must provide itemized wage statements identifying gross and net wages, deductions, the pay period, and other required information. The requirement to list total hours worked has statutory exceptions. — California Labor Code § 226(a)"
+     }
+    ]
+   },
+   {
+    "heading": "Pay rules and potential recovery",
+    "table": {
+     "columns": [
+      "Issue",
+      "California rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Daily and weekly overtime",
+       "For covered nonexempt employees, work beyond eight hours in a workday or 40 hours in a workweek generally earns 1.5 times the regular rate; work beyond 12 hours in a workday generally earns double time.",
+       "Labor Code § 510"
+      ],
+      [
+       "Missed meal or rest periods",
+       "Failure to provide a legally required meal or rest period generally triggers one additional hour of pay at the regular rate of compensation for the workday. Separate meal and rest violations can support separate premiums.",
+       "Labor Code § 226.7; IWC wage orders"
+      ],
+      [
+       "Discharge",
+       "Earned, unpaid wages generally are due immediately upon discharge, subject to industry-specific exceptions.",
+       "Labor Code § 201"
+      ],
+      [
+       "Resignation",
+       "For employees without a written contract for a definite period, final wages generally are due within 72 hours after quitting, or at quitting if at least 72 hours’ notice was given.",
+       "Labor Code § 202"
+      ],
+      [
+       "Waiting-time penalties",
+       "Willful failure to pay qualifying final wages can produce a penalty calculated at the employee’s daily wage, continuing until payment or commencement of an action, for up to 30 days.",
+       "Labor Code § 203"
+      ],
+      [
+       "Minimum-wage liquidated damages",
+       "Qualifying minimum-wage claims can include liquidated damages equal to the unpaid minimum wages plus interest. The statute includes a good-faith defense permitting judicial discretion.",
+       "Labor Code § 1194.2"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Deadlines and retaliation",
+    "facts": [
+     {
+      "label": "Wage-claim deadlines",
+      "value": "The Labor Commissioner identifies a three-year filing period for minimum-wage, overtime, and meal or rest-period claims. Other claims can have different periods, including two years for an oral promise to pay more than minimum wage and four years for a written contract. — California Code of Civil Procedure §§ 337, 338, 339; DLSE wage-claim guidance"
+     },
+     {
+      "label": "Protected wage complaints",
+      "value": "California prohibits retaliation for protected wage complaints, including qualifying internal complaints and Labor Commissioner proceedings. A Labor Commissioner retaliation complaint under section 98.7 generally has a one-year deadline. — California Labor Code §§ 98.6, 98.7"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in California",
+    "bullets": [
+     "California Labor Commissioner’s Office, also called the Division of Labor Standards Enforcement: individual wage claims under Labor Code section 98.",
+     "California superior courts: civil actions for unpaid minimum wages or overtime under Labor Code section 1194.",
+     "Labor Commissioner’s Retaliation Complaint Investigation Unit: employment-retaliation complaints within its statutory jurisdiction."
+    ]
+   },
+   {
+    "heading": "Common questions in California",
+    "bullets": [
+     "Does a salary eliminate overtime rights? No. Exemption depends on the applicable legal requirements, not salary payment alone.",
+     "Can an employer keep employee tips? Labor Code section 351 prohibits employers and their agents from taking gratuities left for employees.",
+     "Are undocumented workers covered? California Labor Code section 1171.5 generally extends state employment-law protections regardless of immigration status, subject to federal-law limits.",
+     "Can employers charge employees necessary business expenses? Labor Code section 2802 generally requires reimbursement of necessary expenditures or losses incurred in performing job duties."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "California Labor Commissioner — How to File a Wage Claim",
+    "url": "https://www.dir.ca.gov/dlse/HowToFileWageClaim.htm"
+   },
+   {
+    "label": "California Labor Commissioner — Overtime",
+    "url": "https://www.dir.ca.gov/dlse/FAQ_Overtime.htm"
+   },
+   {
+    "label": "California Legislative Information — Labor Code",
+    "url": "https://leginfo.legislature.ca.gov/faces/codesTOCSelected.xhtml?tocCode=LAB&tocTitle=+Labor+Code+-+LAB"
+   },
+   {
+    "label": "California Labor Commissioner — Workplace Retaliation",
+    "url": "https://www.dir.ca.gov/dlse/dlseRetaliation.html"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/colorado/family-medical-leave": {
+  "summary": "Colorado provides paid family and medical leave through FAMLI, a state insurance program that generally offers eligible workers up to 12 weeks of benefits, with additional leave available for certain circumstances. Colorado also requires accrued paid sick leave under the Healthy Families and Workplaces Act, while the federal Family and Medical Leave Act provides qualifying employees with unpaid, job-protected leave. These programs have different eligibility, payment, and job-protection rules.",
+  "sections": [
+   {
+    "heading": "Colorado FAMLI eligibility and benefits",
+    "facts": [
+     {
+      "label": "Earnings requirement",
+      "value": "FAMLI eligibility generally requires at least $2,500 in wages subject to premiums during the applicable base period or alternative base period. Benefits replace part of a worker’s wages; they are not necessarily full salary. — C.R.S. §§ 8-13.3-503, 8-13.3-504, 8-13.3-506."
+     },
+     {
+      "label": "Qualifying reasons",
+      "value": "Covered reasons include the worker’s serious health condition, caring for a family member with a serious health condition, bonding with a new child, qualifying military exigencies, and safe leave related to domestic violence, stalking, sexual assault, or abuse. — C.R.S. § 8-13.3-504."
+     },
+     {
+      "label": "Family members",
+      "value": "Colorado’s definition includes specified relatives and another individual with whom the worker has a significant personal bond that is or is like a family relationship, regardless of biological or legal relationship. — C.R.S. § 8-13.3-503."
+     },
+     {
+      "label": "Coverage exceptions",
+      "value": "Federal employees are outside Colorado FAMLI coverage. Local governments may decline participation, and self-employed individuals may elect coverage. Employers may use approved private plans instead of the state plan. — C.R.S. §§ 8-13.3-503, 8-13.3-514, 8-13.3-515, 8-13.3-522."
+     }
+    ]
+   },
+   {
+    "heading": "Leave amounts and protections",
+    "table": {
+     "columns": [
+      "Program or protection",
+      "Colorado rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Ordinary FAMLI entitlement",
+       "Up to 12 weeks per application year for qualifying reasons.",
+       "C.R.S. § 8-13.3-505"
+      ],
+      [
+       "Pregnancy or childbirth complications",
+       "Up to four additional weeks for a serious health condition related to pregnancy complications or childbirth complications.",
+       "C.R.S. § 8-13.3-505"
+      ],
+      [
+       "Neonatal care leave",
+       "Beginning in 2026, up to 12 additional weeks while a covered worker’s child receives inpatient care in a neonatal intensive care unit.",
+       "C.R.S. § 8-13.3-505"
+      ],
+      [
+       "FAMLI job restoration",
+       "Restoration to the same or an equivalent position generally applies after at least 180 days with the current employer before leave begins.",
+       "C.R.S. § 8-13.3-509"
+      ],
+      [
+       "Colorado paid sick leave",
+       "Accrual of at least one hour per 30 hours worked, up to 48 hours per year, unless the employer provides a more generous qualifying policy.",
+       "C.R.S. § 8-13.3-403"
+      ],
+      [
+       "Federal FMLA",
+       "Generally up to 12 workweeks of unpaid, job-protected leave; qualifying military caregiver leave allows up to 26 workweeks.",
+       "29 U.S.C. § 2612"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Notice and coordination",
+    "facts": [
+     {
+      "label": "Foreseeable leave",
+      "value": "FAMLI generally requires at least 30 days’ advance notice to the employer when leave is foreseeable; otherwise, notice is required as soon as practicable. — C.R.S. § 8-13.3-505."
+     },
+     {
+      "label": "Overlapping protections",
+      "value": "FAMLI leave that also qualifies under federal FMLA runs concurrently with FMLA leave. An employer cannot require a worker to exhaust accrued vacation, sick leave, or other paid time off before or while receiving FAMLI benefits. — C.R.S. § 8-13.3-510."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Colorado",
+    "bullets": [
+     "Colorado Department of Labor and Employment, FAMLI Division: state-plan benefit claims through My FAMLI+ and complaints concerning FAMLI rights.",
+     "Colorado Division of Labor Standards and Statistics: Healthy Families and Workplaces Act paid-sick-leave complaints.",
+     "U.S. Department of Labor, Wage and Hour Division: federal FMLA complaints."
+    ]
+   },
+   {
+    "heading": "Common questions in Colorado",
+    "bullets": [
+     "Does a small employer automatically escape FAMLI? No. Employer size affects employer premium obligations, not an automatic exclusion of employees from benefits. — C.R.S. § 8-13.3-507.",
+     "Does federal FMLA cover every worker? No. Eligibility generally requires 12 months of employment, 1,250 hours during the preceding 12 months, and 50 employees within 75 miles. — 29 U.S.C. § 2611.",
+     "Can FAMLI be intermittent? Yes. Qualifying leave may be taken intermittently or on a reduced schedule. — C.R.S. § 8-13.3-505.",
+     "Can an employer retaliate for using FAMLI? No. Colorado prohibits interference with protected rights and retaliation for exercising them. — C.R.S. § 8-13.3-509."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Colorado FAMLI Division",
+    "url": "https://famli.colorado.gov/"
+   },
+   {
+    "label": "Colorado Revised Statutes",
+    "url": "https://leg.colorado.gov/agencies/office-legislative-legal-services/colorado-revised-statutes"
+   },
+   {
+    "label": "Colorado Division of Labor Standards and Statistics",
+    "url": "https://cdle.colorado.gov/dlss"
+   },
+   {
+    "label": "U.S. Department of Labor — Family and Medical Leave Act",
+    "url": "https://www.dol.gov/agencies/whd/fmla"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/colorado/severance-agreements": {
+  "summary": "Colorado generally does not require employers to offer severance pay, but an employment contract or severance plan may create an obligation to provide it. A severance agreement cannot replace payment of earned wages, and its confidentiality, release, and restrictive-covenant terms are subject to separate state and federal limits. Colorado specifically regulates agreements restricting disclosure of alleged discriminatory or unfair employment practices, while federal law imposes additional safeguards for waivers of age-discrimination claims by employees age 40 or older.",
+  "sections": [
+   {
+    "heading": "Severance pay and earned wages in Colorado",
+    "facts": [
+     {
+      "label": "Severance is separate from statutory wages",
+      "value": "The Colorado Wage Act expressly excludes severance pay from its definition of wages or compensation. Whether severance is owed can instead depend on an agreement or applicable benefit plan. — C.R.S. § 8-4-101(14)."
+     },
+     {
+      "label": "Earned compensation remains payable",
+      "value": "An employer's obligations to pay earned wages when employment ends are governed by the Wage Act, not merely by the severance offer. Agreements waiving or modifying an employee's rights in violation of the Act are void. — C.R.S. §§ 8-4-109, 8-4-121."
+     },
+     {
+      "label": "Vacation pay",
+      "value": "Earned and determinable vacation pay owed under an employer's vacation policy must be paid upon separation; a severance release does not eliminate statutory wage protections. — C.R.S. §§ 8-4-101(14)(a)(III), 8-4-121."
+     }
+    ]
+   },
+   {
+    "heading": "Limits on confidentiality and restrictive covenants",
+    "facts": [
+     {
+      "label": "Discrimination-related nondisclosure",
+      "value": "Colorado's Protecting Opportunities and Workers' Rights Act restricts provisions limiting disclosure of alleged discriminatory or unfair employment practices. Enforceability requires specified safeguards, including equal application to all parties, permitted disclosures, and an addendum signed by all parties attesting to compliance. — C.R.S. § 24-34-407."
+     },
+     {
+      "label": "Protected disclosures",
+      "value": "A covered nondisclosure provision cannot prohibit disclosures to specified people, including an employee's attorney, or to government agencies for any reason. The statute also protects disclosures made in response to legal process and other legally required disclosures. — C.R.S. § 24-34-407."
+     },
+     {
+      "label": "Noncompete clauses",
+      "value": "Including a noncompete in a severance agreement does not exempt it from Colorado's restrictive-covenant law. Enforceability depends on statutory exceptions and requirements, including compensation, trade-secret protection, scope, and notice where applicable. — C.R.S. § 8-2-113."
+     }
+    ]
+   },
+   {
+    "heading": "Federal age-discrimination release requirements",
+    "table": {
+     "columns": [
+      "Requirement",
+      "Rule for an ADEA waiver"
+     ],
+     "rows": [
+      [
+       "Coverage",
+       "Federal waiver safeguards apply to employees age 40 or older. — 29 U.S.C. §§ 631(a), 626(f)."
+      ],
+      [
+       "Individual consideration period",
+       "At least 21 days to consider an individual termination waiver. — 29 U.S.C. § 626(f)(1)(F)."
+      ],
+      [
+       "Group-program consideration period",
+       "At least 45 days for an exit incentive or other employment termination program offered to a group or class. — 29 U.S.C. § 626(f)(1)(F)."
+      ],
+      [
+       "Revocation",
+       "At least seven days after signing to revoke; the waiver is not effective until that period expires. — 29 U.S.C. § 626(f)(1)(G)."
+      ],
+      [
+       "Other safeguards",
+       "The waiver must specifically identify ADEA rights, provide additional consideration, and advise consultation with an attorney in writing. Future claims cannot be waived. — 29 U.S.C. § 626(f)(1)."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Colorado",
+    "bullets": [
+     "Colorado Department of Labor and Employment, Division of Labor Standards and Statistics: earned-wage complaints under the Colorado Wage Act; severance itself is excluded from statutory wages.",
+     "Colorado Civil Rights Division: employment-discrimination charges under the Colorado Anti-Discrimination Act. The state filing deadline is generally 300 days after the alleged discriminatory or unfair employment practice. — C.R.S. § 24-34-403.",
+     "U.S. Equal Employment Opportunity Commission: federal employment-discrimination charges. A release cannot prevent filing an EEOC charge or participating in an EEOC proceeding. — 29 U.S.C. § 626(f)(4)."
+    ]
+   },
+   {
+    "heading": "Common questions in Colorado",
+    "bullets": [
+     "Is severance automatically required after a layoff? No. Colorado does not generally mandate severance pay.",
+     "Does every employee receive 21 days to review? No. That federal minimum concerns qualifying ADEA waivers, not every severance agreement.",
+     "Can confidentiality cover discrimination allegations? Only if the provision satisfies Colorado's statutory requirements.",
+     "Can a release waive future age-discrimination claims? No. The ADEA prohibits waiving claims arising after execution."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Colorado Revised Statutes, Title 8",
+    "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2025-title-08.pdf"
+   },
+   {
+    "label": "Colorado Revised Statutes, Title 24",
+    "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2025-title-24.pdf"
+   },
+   {
+    "label": "EEOC: Understanding Waivers of Discrimination Claims in Employee Severance Agreements",
+    "url": "https://www.eeoc.gov/laws/guidance/qa-understanding-waivers-discrimination-claims-employee-severance-agreements"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/colorado/workplace-harassment": {
+  "summary": "Colorado prohibits workplace harassment under the Colorado Anti-Discrimination Act (CADA), and its Protecting Opportunities and Workers’ Rights (POWR) Act expressly rejects a requirement that harassment be severe or pervasive. Harassment must involve unwelcome conduct based on a protected characteristic and satisfy statutory subjective and objective offensiveness standards. Colorado’s protections generally reach employers too small for federal Title VII coverage, and state employment discrimination charges ordinarily must be filed with the Colorado Civil Rights Division within 300 days of the alleged discriminatory practice.",
+  "sections": [
+   {
+    "heading": "Colorado’s workplace harassment standard",
+    "facts": [
+     {
+      "label": "What qualifies",
+      "value": "Harassment includes unwelcome physical or verbal conduct, or written, pictorial, or visual communication, directed at someone because of membership or perceived membership in a protected class. It must be subjectively offensive to the person alleging harassment and objectively offensive to a reasonable member of the same protected class. Additional statutory conditions connect the conduct to employment or the work environment. — C.R.S. § 24-34-402."
+     },
+     {
+      "label": "Severity and context",
+      "value": "Conduct need not be severe or pervasive. Petty slights, minor annoyances, and lack of good manners ordinarily do not qualify unless, individually or together, they meet the statutory standard. The totality of the circumstances matters. — C.R.S. § 24-34-402."
+     },
+     {
+      "label": "Protected characteristics",
+      "value": "CADA’s employment protections include disability, race, creed, color, sex, sexual orientation, gender identity, gender expression, religion, age, national origin, and ancestry. Race includes hair texture, hair type, and protective hairstyles commonly or historically associated with race. — C.R.S. §§ 24-34-301, 24-34-402."
+     }
+    ]
+   },
+   {
+    "heading": "Coverage, filing periods, and court deadlines",
+    "table": {
+     "columns": [
+      "Issue",
+      "Colorado rule or applicable federal rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Employer size",
+       "CADA generally covers employers without Title VII’s 15-employee minimum; statutory exclusions apply.",
+       "C.R.S. § 24-34-401"
+      ],
+      [
+       "State administrative charge",
+       "Generally 300 days after the alleged discriminatory or unfair employment practice.",
+       "C.R.S. § 24-34-306"
+      ],
+      [
+       "Federal administrative charge",
+       "For Title VII harassment claims in Colorado, the filing period generally extends to 300 days.",
+       "42 U.S.C. § 2000e-5(e)(1)"
+      ],
+      [
+       "State lawsuit",
+       "A CADA civil action generally must begin within 90 days after receipt of the applicable notice of right to sue.",
+       "C.R.S. § 24-34-306"
+      ],
+      [
+       "Federal lawsuit",
+       "A Title VII lawsuit generally must begin within 90 days after receipt of the EEOC right-to-sue notice.",
+       "42 U.S.C. § 2000e-5(f)(1)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Retaliation and available remedies",
+    "facts": [
+     {
+      "label": "Retaliation",
+      "value": "Colorado prohibits retaliation for opposing a discriminatory practice or participating in proceedings under CADA, including making a charge, testifying, or assisting an investigation. A retaliation claim is distinct from the underlying harassment claim. — C.R.S. § 24-34-402."
+     },
+     {
+      "label": "Relief",
+      "value": "Available relief can include reinstatement, back pay, front pay, injunctive relief, and attorney fees. Compensatory and punitive damages are available for qualifying intentional discrimination claims, subject to statutory restrictions and limits; punitive damages are unavailable against government defendants. — C.R.S. §§ 24-34-405, 24-34-306."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Colorado",
+    "bullets": [
+     "The Colorado Civil Rights Division receives and investigates employment discrimination charges under CADA. The Colorado Civil Rights Commission has administrative enforcement responsibilities. — C.R.S. § 24-34-306.",
+     "The U.S. Equal Employment Opportunity Commission handles federal employment discrimination charges, including Title VII harassment and retaliation claims.",
+     "Colorado district courts hear CADA civil actions following applicable administrative requirements. The U.S. District Court for the District of Colorado hears federal employment discrimination lawsuits within its jurisdiction."
+    ]
+   },
+   {
+    "heading": "Common questions in Colorado",
+    "bullets": [
+     "Must harassment be severe or pervasive? No. Colorado expressly removes that requirement, but the other statutory elements still apply.",
+     "Does every rude workplace interaction violate CADA? No. Harassment must have the required connection to a protected characteristic and meet Colorado’s statutory standard.",
+     "Can one incident qualify? Potentially. Colorado evaluates the totality of the circumstances rather than imposing a minimum number of incidents.",
+     "Does an internal complaint replace an agency charge? No. An employer’s internal process is separate from the administrative charge process and generally does not extend filing deadlines."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Colorado General Assembly — SB23-172, Protecting Opportunities and Workers’ Rights Act",
+    "url": "https://leg.colorado.gov/bills/sb23-172"
+   },
+   {
+    "label": "Colorado Civil Rights Division",
+    "url": "https://ccrd.colorado.gov/"
+   },
+   {
+    "label": "U.S. Equal Employment Opportunity Commission — Time Limits for Filing a Charge",
+    "url": "https://www.eeoc.gov/time-limits-filing-charge"
+   },
+   {
+    "label": "U.S. Equal Employment Opportunity Commission — Filing a Lawsuit",
+    "url": "https://www.eeoc.gov/filing-lawsuit"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/colorado/overtime-rights": {
+  "summary": "Colorado generally requires overtime pay for covered, nonexempt employees who work more than 40 hours in a workweek, 12 hours in a workday, or 12 consecutive hours, even when those consecutive hours cross midnight. The Colorado Overtime and Minimum Pay Standards Order requires at least one and one-half times the employee’s regular rate, although exemptions and occupation-specific rules can change coverage. Unpaid overtime may be pursued through the Colorado Division of Labor Standards and Statistics or a court.",
+  "sections": [
+   {
+    "heading": "Colorado overtime coverage and calculation",
+    "facts": [
+     {
+      "label": "State overtime rule",
+      "value": "The Colorado Overtime and Minimum Pay Standards Order, commonly called COMPS, establishes overtime requirements for covered employment. Its general thresholds include both weekly and daily overtime, unlike the federal law’s general weekly-only standard. — 7 CCR 1103-1, Rule 4; 29 U.S.C. § 207(a)."
+     },
+     {
+      "label": "Regular rate",
+      "value": "Overtime is based on the regular rate, which is not necessarily the employee’s stated hourly wage. Certain bonuses, commissions, and other compensation must be included; legally excludable payments are treated differently. — 7 CCR 1103-1, Rule 1, definition of regular rate of pay; 29 U.S.C. § 207(e)."
+     },
+     {
+      "label": "Salary and exemptions",
+      "value": "A salary alone does not eliminate overtime rights. Colorado’s executive or supervisor, administrative, and professional exemptions have specific requirements, including applicable duties and compensation tests. Agricultural employment has separate overtime provisions rather than the ordinary daily and weekly framework. — 7 CCR 1103-1, Rules 2 and 4."
+     }
+    ]
+   },
+   {
+    "heading": "When overtime and paid time apply",
+    "table": {
+     "columns": [
+      "Situation",
+      "Colorado rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "More than 40 hours in a workweek",
+       "Covered, nonexempt employees generally earn overtime for hours above 40; hours cannot be averaged across multiple workweeks.",
+       "7 CCR 1103-1, Rule 4"
+      ],
+      [
+       "More than 12 hours in a workday",
+       "The general daily overtime threshold applies even when weekly hours remain below 40.",
+       "7 CCR 1103-1, Rule 4.1"
+      ],
+      [
+       "More than 12 consecutive hours",
+       "The general consecutive-hours threshold applies regardless of when the workday begins and ends, excluding duty-free meal periods.",
+       "7 CCR 1103-1, Rule 4.1"
+      ],
+      [
+       "Overlapping overtime thresholds",
+       "The calculation producing the greater payment controls; the same hours do not generate duplicate overtime premiums.",
+       "7 CCR 1103-1, Rule 4.1"
+      ],
+      [
+       "Required paid rest periods",
+       "Required rest periods count as time worked when determining overtime eligibility.",
+       "7 CCR 1103-1, Rule 5.2"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Recovery deadlines and protections",
+    "facts": [
+     {
+      "label": "Limitations period",
+      "value": "Colorado wage-law actions generally have a two-year limitations period, extended to three years for willful violations. Federal unpaid-overtime actions also generally use two years, or three years for willful violations. — C.R.S. § 8-4-122; 29 U.S.C. § 255(a)."
+     },
+     {
+      "label": "Additional recovery",
+      "value": "Colorado law provides penalties for qualifying failures to pay wages after the statutory demand or notice process. Federal law permits unpaid overtime plus an equal amount as liquidated damages, subject to statutory defenses. — C.R.S. § 8-4-109; 29 U.S.C. §§ 216(b), 260."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Colorado",
+    "bullets": [
+     "The Colorado Department of Labor and Employment’s Division of Labor Standards and Statistics administers the state wage complaint process and enforces COMPS.",
+     "The U.S. Department of Labor’s Wage and Hour Division handles complaints involving federal Fair Labor Standards Act overtime requirements.",
+     "Colorado courts hear state unpaid-wage claims; federal FLSA claims may be brought in a court with jurisdiction. — C.R.S. § 8-4-110; 29 U.S.C. § 216(b)."
+    ]
+   },
+   {
+    "heading": "Common questions in Colorado",
+    "bullets": [
+     "Does working Saturday automatically mean overtime? No. The applicable hours thresholds, rather than the day’s name, generally determine overtime.",
+     "Can a salaried employee receive overtime? Yes. Salaried employees who do not qualify for an exemption can remain entitled to overtime.",
+     "Does unauthorized overtime have to be paid? Work an employer suffers or permits must be counted; a preapproval policy does not erase payment obligations. — 7 CCR 1103-1, Rule 1.",
+     "Can an employer retaliate over a wage complaint? Colorado law prohibits retaliation for protected wage complaints and related activity. — C.R.S. § 8-4-120."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Colorado Division of Labor Standards and Statistics",
+    "url": "https://cdle.colorado.gov/dlss"
+   },
+   {
+    "label": "Colorado wage complaint process",
+    "url": "https://cdle.colorado.gov/complaint"
+   },
+   {
+    "label": "Colorado Revised Statutes, Title 8",
+    "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2025-title-08.pdf"
+   },
+   {
+    "label": "U.S. Department of Labor — Overtime Pay",
+    "url": "https://www.dol.gov/agencies/whd/overtime"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/colorado/wrongful-termination": {
+  "summary": "Colorado generally follows at-will employment, so a discharge is not automatically unlawful merely because it is unfair or unexplained; however, employers cannot terminate workers for reasons prohibited by discrimination, retaliation, leave, or other employment laws. Wrongful termination can also involve a violated employment agreement or Colorado’s public-policy exception, and the available claim, filing deadline, forum, and remedy depend on the legal basis for challenging the discharge.",
+  "sections": [
+   {
+    "heading": "When termination can be unlawful in Colorado",
+    "facts": [
+     {
+      "label": "At-will employment and public policy",
+      "value": "Colorado recognizes a wrongful-discharge claim when termination violates a clear mandate of public policy. This exception can cover discharge for refusing to perform an illegal act or for exercising an important job-related right; it does not make every unfair firing actionable. — Martin Marietta Corp. v. Lorenz, 823 P.2d 100 (Colo. 1992)"
+     },
+     {
+      "label": "Employment promises",
+      "value": "An employee handbook or employer promise can sometimes support an implied-contract or promissory-estoppel claim. Whether a promise limits the employer’s right to discharge depends on its language and the surrounding circumstances. — Continental Air Lines, Inc. v. Keenan, 731 P.2d 708 (Colo. 1987)"
+     },
+     {
+      "label": "Discrimination and retaliation",
+      "value": "The Colorado Anti-Discrimination Act prohibits discriminatory discharge and retaliation for opposing prohibited discrimination or participating in protected proceedings. Colorado’s employment-discrimination protections generally reach employers with one or more employees, subject to statutory exclusions. — C.R.S. §§ 24-34-401, 24-34-402"
+     }
+    ]
+   },
+   {
+    "heading": "Statutory protections against discharge",
+    "table": {
+     "columns": [
+      "Legal protection",
+      "Conduct protected or prohibited",
+      "Colorado authority"
+     ],
+     "rows": [
+      [
+       "Employment discrimination",
+       "Discharge because of protected characteristics, including disability, race, sex, sexual orientation, gender identity, gender expression, religion, age, national origin, or ancestry.",
+       "C.R.S. § 24-34-402"
+      ],
+      [
+       "Wage-rights retaliation",
+       "Retaliation for filing a wage complaint, participating in wage proceedings, or otherwise exercising rights protected by the Colorado Wage Act.",
+       "C.R.S. § 8-4-120"
+      ],
+      [
+       "Paid sick leave",
+       "Retaliation for exercising rights under the Healthy Families and Workplaces Act, including requesting or using protected sick leave.",
+       "C.R.S. § 8-13.3-407"
+      ],
+      [
+       "Family and medical leave insurance",
+       "Interference with protected FAMLI rights and retaliation for exercising those rights.",
+       "C.R.S. § 8-13.3-509"
+      ],
+      [
+       "Lawful off-duty activity",
+       "Termination because of lawful activity away from the employer’s premises during nonworking hours, subject to statutory occupational and conflict-of-interest exceptions.",
+       "C.R.S. § 24-34-402.5"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Deadlines and final wages",
+    "facts": [
+     {
+      "label": "Colorado discrimination charge",
+      "value": "A charge generally must be filed with the Colorado Civil Rights Division within 300 days after the alleged discriminatory or unfair employment practice. Administrative filing requirements differ from deadlines for filing a lawsuit. — C.R.S. § 24-34-306(1)"
+     },
+     {
+      "label": "Federal discrimination charge",
+      "value": "In Colorado, the EEOC charge deadline is generally 300 days for covered employment-discrimination claims. Federal coverage requirements and exceptions still apply. — EEOC, Time Limits for Filing a Charge"
+     },
+     {
+      "label": "Final earned wages",
+      "value": "When an employer discharges an employee, earned, vested, determinable, and unpaid compensation is generally due immediately. The statute provides exceptions involving an accounting unit’s operating hours or off-site location. — C.R.S. § 8-4-109(1)(a)"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Colorado",
+    "bullets": [
+     "Colorado Civil Rights Division: investigates employment-discrimination and retaliation charges under the Colorado Anti-Discrimination Act.",
+     "U.S. Equal Employment Opportunity Commission: handles charges under federal employment-discrimination laws.",
+     "Colorado Department of Labor and Employment, Division of Labor Standards and Statistics: handles wage and Healthy Families and Workplaces Act complaints; its FAMLI Division administers family and medical leave insurance.",
+     "Colorado state courts: hear contract and common-law wrongful-discharge claims. Federal courts hear qualifying federal employment lawsuits, subject to jurisdictional and administrative prerequisites."
+    ]
+   },
+   {
+    "heading": "Common questions in Colorado",
+    "bullets": [
+     "Is an unfair firing necessarily illegal? No. At-will employment permits many terminations that are unfair but do not violate a statute, enforceable promise, or public policy.",
+     "Does a small employer escape Colorado discrimination law? Not necessarily. CADA generally covers employers with one or more employees, although statutory exclusions apply.",
+     "Does lawful off-duty activity include all marijuana use? No. Colorado’s Supreme Court held that activity unlawful under federal law is not protected by this statute. — Coats v. Dish Network, LLC, 2015 CO 44.",
+     "Can different claims have different deadlines? Yes. Discrimination charges, wage claims, contract claims, and public-policy claims do not share one universal deadline. Talk to a lawyer."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Colorado General Assembly — Colorado Revised Statutes",
+    "url": "https://leg.colorado.gov/agencies/office-legislative-legal-services/colorado-revised-statutes"
+   },
+   {
+    "label": "Colorado Civil Rights Division — Employment Discrimination",
+    "url": "https://ccrd.colorado.gov/employment-discrimination"
+   },
+   {
+    "label": "EEOC — Time Limits for Filing a Charge",
+    "url": "https://www.eeoc.gov/time-limits-filing-charge"
+   },
+   {
+    "label": "Colorado Department of Labor and Employment — Wage and Hour Laws",
+    "url": "https://cdle.colorado.gov/dlss"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/connecticut/workplace-harassment": {
+  "summary": "Connecticut prohibits workplace harassment based on protected characteristics under the Connecticut Fair Employment Practices Act, which generally covers employers with at least one employee. Sexual harassment is expressly prohibited, and retaliation for opposing discriminatory practices or participating in discrimination proceedings is also unlawful. Employment discrimination complaints ordinarily must reach the Connecticut Commission on Human Rights and Opportunities within 300 days of the alleged discriminatory act; federal law provides a separate enforcement route for covered employers.",
+  "sections": [
+   {
+    "heading": "Connecticut workplace harassment protections",
+    "facts": [
+     {
+      "label": "State law and employer coverage",
+      "value": "The Connecticut Fair Employment Practices Act generally defines an employer as a person employing one or more employees, including the state and its political subdivisions. This makes state coverage broader than the usual federal Title VII threshold of 15 employees. — Connecticut General Statutes §§ 46a-51(10), 46a-60; 42 U.S.C. § 2000e(b)"
+     },
+     {
+      "label": "Protected characteristics",
+      "value": "Connecticut employment law protects characteristics including race, color, religious creed, age, sex, gender identity or expression, marital status, national origin, ancestry, qualifying veteran status, sexual orientation, and specified mental, intellectual, learning, and physical disabilities. Harassment must have a legally prohibited basis; ordinary workplace incivility alone is not necessarily discrimination. — Connecticut General Statutes §§ 46a-60(b)(1), 46a-81c"
+     },
+     {
+      "label": "Sexual harassment",
+      "value": "The statute covers unwelcome sexual advances, requests for sexual favors, and other sexual conduct when submission becomes an employment condition, submission or rejection affects employment decisions, or the conduct substantially interferes with work or creates an intimidating, hostile, or offensive working environment. — Connecticut General Statutes § 46a-60(b)(8)"
+     },
+     {
+      "label": "Retaliation",
+      "value": "Discharging, expelling, or otherwise discriminating against someone for opposing a discriminatory employment practice, filing a complaint, testifying, or assisting in a covered proceeding is prohibited. — Connecticut General Statutes § 46a-60(b)(4)"
+     }
+    ]
+   },
+   {
+    "heading": "Deadlines and employer requirements",
+    "table": {
+     "columns": [
+      "Issue",
+      "Connecticut rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "CHRO employment complaint",
+       "Generally due within 300 days after the alleged discriminatory act for employment practices occurring on or after October 1, 2019.",
+       "Connecticut General Statutes § 46a-82(f)"
+      ],
+      [
+       "Civil action after CHRO release",
+       "An action following a release must be brought within 90 days after receipt; separate statutory timing requirements also apply.",
+       "Connecticut General Statutes §§ 46a-101(e), 46a-102"
+      ],
+      [
+       "Training: three or more employees",
+       "Employers must provide employees with two hours of sexual harassment education and training; new employees generally must receive it within six months of hiring.",
+       "Connecticut General Statutes § 46a-54"
+      ],
+      [
+       "Training: smaller employers",
+       "Employers with fewer than three employees must train supervisory employees; new supervisors generally must receive training within six months of assuming supervisory duties.",
+       "Connecticut General Statutes § 46a-54"
+      ],
+      [
+       "Supplemental training",
+       "Employers must provide supplemental training at least every ten years.",
+       "Connecticut General Statutes § 46a-54"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Connecticut",
+    "bullets": [
+     "The Connecticut Commission on Human Rights and Opportunities (CHRO) receives and investigates state employment discrimination and harassment complaints through its regional offices. — Connecticut General Statutes §§ 46a-82, 46a-83.",
+     "The U.S. Equal Employment Opportunity Commission (EEOC) handles federal workplace discrimination complaints. In Connecticut, Title VII charges generally have a 300-day filing period; federal employee procedures differ. — 42 U.S.C. § 2000e-5(e).",
+     "Connecticut Superior Court hears authorized civil actions after the CHRO release process. Available court relief includes appropriate legal and equitable relief, attorney fees, and court costs. — Connecticut General Statutes §§ 46a-100–46a-104."
+    ]
+   },
+   {
+    "heading": "Common questions in Connecticut",
+    "bullets": [
+     "Does Connecticut law cover a two-person employer? Yes. The state-law employer definition generally reaches employers with one or more employees. — § 46a-51(10).",
+     "Must harassment involve sexual conduct? No. Harassment based on other protected characteristics can constitute unlawful employment discrimination. — §§ 46a-60, 46a-81c.",
+     "Can an employer punish someone for supporting a complaint? Retaliation for protected opposition or participation is prohibited. — § 46a-60(b)(4).",
+     "Does completing training eliminate liability? No. Training requirements and the prohibition against discriminatory employment practices are separate statutory obligations. — §§ 46a-54, 46a-60."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Connecticut General Assembly — Chapter 814c, Human Rights and Opportunities",
+    "url": "https://www.cga.ct.gov/current/pub/chap_814c.htm"
+   },
+   {
+    "label": "Connecticut Commission on Human Rights and Opportunities",
+    "url": "https://portal.ct.gov/chro"
+   },
+   {
+    "label": "EEOC — Time Limits for Filing a Charge",
+    "url": "https://www.eeoc.gov/time-limits-filing-charge"
+   },
+   {
+    "label": "EEOC — Title VII of the Civil Rights Act of 1964",
+    "url": "https://www.eeoc.gov/statutes/title-vii-civil-rights-act-1964"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/connecticut/overtime-rights": {
+  "summary": "Connecticut generally requires employers to pay covered employees at least one and one-half times their regular hourly rate for hours worked over 40 in a workweek, under Connecticut General Statutes § 31-76c. Coverage depends on statutory exemptions and the employee’s actual work, not simply whether the employer pays a salary or uses a managerial title. Unpaid overtime may be pursued through the Connecticut Department of Labor or a civil lawsuit, and state law can allow enhanced damages and attorney’s fees.",
+  "sections": [
+   {
+    "heading": "Connecticut overtime coverage and pay",
+    "facts": [
+     {
+      "label": "Basic entitlement",
+      "value": "A covered employee must receive at least one and one-half times the regular rate for employment beyond 40 hours in a workweek. Connecticut’s general overtime rule uses a weekly threshold rather than a daily threshold. — Conn. Gen. Stat. § 31-76c"
+     },
+     {
+      "label": "Regular rate",
+      "value": "The regular rate generally includes remuneration for employment, subject to statutory exclusions. Certain gifts, expense reimbursements, qualifying discretionary bonuses, and other specified payments may be excluded; the base hourly wage is not necessarily the entire regular rate. — Conn. Gen. Stat. § 31-76b"
+     },
+     {
+      "label": "Hours worked",
+      "value": "Hours worked include time an employee is required to be on the employer’s premises, on duty, or at the prescribed workplace, and time the employee is employed or permitted to work. — Conn. Gen. Stat. § 31-76b"
+     },
+     {
+      "label": "Exemptions",
+      "value": "Connecticut exempts specified categories from its overtime requirements, including employees working in bona fide executive, administrative, or professional capacities as defined by applicable law. Salary payment alone does not establish that an employee fits one of these exemptions. — Conn. Gen. Stat. § 31-76i"
+     }
+    ]
+   },
+   {
+    "heading": "How the weekly overtime rule applies",
+    "table": {
+     "columns": [
+      "Situation",
+      "Connecticut rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "More than 40 hours worked",
+       "Covered hours above 40 receive at least 1.5 times the regular rate.",
+       "§ 31-76c"
+      ],
+      [
+       "Long individual shift",
+       "The general statute does not require overtime solely because a shift exceeds eight hours.",
+       "§ 31-76c"
+      ],
+      [
+       "Weekend or holiday work",
+       "The day itself does not trigger overtime under the general weekly rule.",
+       "§ 31-76c"
+      ],
+      [
+       "Two-week payroll period",
+       "The statutory threshold applies by workweek, not by averaging hours across the payroll period.",
+       "§ 31-76c"
+      ],
+      [
+       "Salaried employee",
+       "Overtime may still be required unless a statutory exemption applies.",
+       "§§ 31-76c, 31-76i"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Deadlines, recovery, and retaliation",
+    "facts": [
+     {
+      "label": "Civil filing period",
+      "value": "Connecticut generally imposes a two-year limitation on actions for remuneration payable periodically, measured from when the right of action accrues. Section 52-596 also contains a tolling provision for qualifying complaints filed with the Labor Commissioner. — Conn. Gen. Stat. § 52-596"
+     },
+     {
+      "label": "Unpaid overtime recovery",
+      "value": "Section 31-68 authorizes recovery of twice the unpaid overtime amount, plus costs and reasonable attorney’s fees. If the employer establishes the statutory good-faith defense, recovery is limited to the unpaid amount plus costs and reasonable attorney’s fees. — Conn. Gen. Stat. § 31-68"
+     },
+     {
+      "label": "Protected complaints",
+      "value": "Connecticut prohibits discharge or other discrimination because an employee makes a covered wage complaint, institutes a proceeding, or testifies or is about to testify in such a proceeding. — Conn. Gen. Stat. § 31-69"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Connecticut",
+    "bullets": [
+     "Connecticut Department of Labor, Wage and Workplace Standards Division: administers state wage-and-hour requirements and accepts complaints involving unpaid wages, including overtime.",
+     "Connecticut Superior Court: civil actions under § 31-68 may seek unpaid overtime and the additional recovery authorized by that section."
+    ]
+   },
+   {
+    "heading": "Common questions in Connecticut",
+    "bullets": [
+     "Does a salary eliminate overtime rights? No. The applicable exemption requirements still matter (§ 31-76i).",
+     "Is overtime automatic after eight hours in one day? No. Connecticut’s general rule requires more than 40 hours in a workweek (§ 31-76c).",
+     "Does Sunday work automatically earn time-and-a-half? No. Sunday alone does not trigger the general statutory overtime premium (§ 31-76c).",
+     "Can an employer retaliate over an overtime complaint? Connecticut law prohibits retaliation for covered complaints and proceedings (§ 31-69)."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Connecticut General Assembly — Chapter 558, Wages",
+    "url": "https://www.cga.ct.gov/current/pub/chap_558.htm"
+   },
+   {
+    "label": "Connecticut General Assembly — Chapter 926, Statute of Limitations",
+    "url": "https://www.cga.ct.gov/current/pub/chap_926.htm#sec_52-596"
+   },
+   {
+    "label": "Connecticut Department of Labor — Wage and Workplace Standards",
+    "url": "https://portal.ct.gov/dol/divisions/wage-and-workplace-standards"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/delaware/workplace-discrimination": {
+  "summary": "Delaware’s Discrimination in Employment Act generally covers employers with four or more employees in Delaware and prohibits discrimination in hiring, discharge, compensation, and other employment terms based on specified protected characteristics. The Delaware Department of Labor handles state employment discrimination charges, while the federal Equal Employment Opportunity Commission enforces overlapping federal laws; coverage and procedures differ, and Delaware generally requires an administrative charge before a state discrimination lawsuit.",
+  "sections": [
+   {
+    "heading": "Delaware coverage and protected rights",
+    "facts": [
+     {
+      "label": "State employer coverage",
+      "value": "The Delaware Discrimination in Employment Act generally defines an employer as a person employing four or more employees within Delaware at the time of the alleged violation. Its definition includes state and local government employers. — 19 Del. C. § 710."
+     },
+     {
+      "label": "Protected characteristics",
+      "value": "Protected characteristics include race, color, religion, sex, sexual orientation, gender identity, national origin, marital status, age, genetic information, and reproductive health decisions. The statute also protects specified victims of domestic violence, sexual offenses, or stalking. Statutory definitions and exceptions apply. — 19 Del. C. §§ 710–711."
+     },
+     {
+      "label": "Pregnancy and disability",
+      "value": "Delaware requires reasonable accommodations for known limitations related to pregnancy, childbirth, or related conditions, subject to statutory requirements and an undue-hardship defense. Disability discrimination and reasonable accommodation are also addressed separately in the Persons With Disabilities Employment Protections Act. — 19 Del. C. § 711; §§ 720–728."
+     }
+    ]
+   },
+   {
+    "heading": "Conduct covered by Delaware employment discrimination law",
+    "table": {
+     "columns": [
+      "Workplace issue",
+      "Delaware rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Hiring and firing",
+       "An employer cannot refuse to hire or discharge someone because of a protected characteristic.",
+       "19 Del. C. § 711(a)"
+      ],
+      [
+       "Pay and employment conditions",
+       "Discrimination in compensation, terms, conditions, or privileges of employment is prohibited.",
+       "19 Del. C. § 711(a)"
+      ],
+      [
+       "Job segregation",
+       "Discriminatory employee classifications that deprive people of employment opportunities or adversely affect employment status are prohibited.",
+       "19 Del. C. § 711(a)"
+      ],
+      [
+       "Retaliation",
+       "Protection extends to opposing unlawful discrimination and participating in a discrimination investigation, proceeding, or hearing.",
+       "19 Del. C. § 711(f)"
+      ],
+      [
+       "Sexual harassment",
+       "Delaware expressly addresses sexual harassment, including circumstances establishing employer responsibility for supervisory or coworker harassment.",
+       "19 Del. C. § 711A"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Deadlines and the administrative process",
+    "facts": [
+     {
+      "label": "State charge deadline",
+      "value": "A Delaware employment discrimination charge generally must be filed with the Department of Labor within 300 days of the alleged unlawful employment practice. — 19 Del. C. § 712."
+     },
+     {
+      "label": "State lawsuit process",
+      "value": "A state-law civil action requires exhaustion of the administrative remedies established by the chapter. Delaware’s enforcement provisions address investigation, conciliation, right-to-sue notices, and civil litigation. — 19 Del. C. §§ 712–714."
+     },
+     {
+      "label": "Federal timing is separate",
+      "value": "EEOC charges generally have a 180-day deadline, extended to 300 days when a qualifying state or local agency enforces a law prohibiting discrimination on the same basis. Federal employees generally face a different administrative process. — EEOC, Time Limits for Filing a Charge."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Delaware",
+    "bullets": [
+     "Delaware Department of Labor, Division of Industrial Affairs: administers the state employment discrimination complaint process.",
+     "U.S. Equal Employment Opportunity Commission: receives charges under federal employment discrimination laws.",
+     "Delaware Superior Court: hears civil actions authorized by Delaware’s employment discrimination statute after applicable administrative requirements. — 19 Del. C. § 714.",
+     "U.S. District Court for the District of Delaware: hears federal employment discrimination lawsuits within its jurisdiction."
+    ]
+   },
+   {
+    "heading": "Common questions in Delaware",
+    "bullets": [
+     "Can a small employer be covered? Yes. Delaware’s general discrimination law reaches employers with four or more employees within Delaware.",
+     "Is every unfair workplace decision illegal discrimination? No. The discrimination prohibition concerns protected characteristics; retaliation and other statutory protections provide separate grounds.",
+     "Are applicants protected? Yes. The prohibition against discriminatory refusal to hire protects applicants.",
+     "Can complaining trigger lawful retaliation? No. Opposition to unlawful discrimination and participation in covered proceedings are protected activities."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Delaware Code, Title 19, Chapter 7",
+    "url": "https://delcode.delaware.gov/title19/c007/index.html"
+   },
+   {
+    "label": "Delaware Department of Labor, Division of Industrial Affairs",
+    "url": "https://labor.delaware.gov/divisions/industrial-affairs/"
+   },
+   {
+    "label": "EEOC: Time Limits for Filing a Charge",
+    "url": "https://www.eeoc.gov/time-limits-filing-charge"
+   },
+   {
+    "label": "U.S. District Court for the District of Delaware",
+    "url": "https://www.ded.uscourts.gov/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/florida/workplace-harassment": {
+  "summary": "Florida’s Civil Rights Act prohibits employment discrimination that includes harassment because of race, color, religion, sex, pregnancy, national origin, age, handicap, or marital status, and it prohibits retaliation for opposing unlawful discrimination or participating in proceedings under the Act. For covered employers, actionable harassment generally means discriminatory conduct that changes employment conditions through a tangible employment action or a hostile work environment; a Florida Commission on Human Relations complaint generally must be filed within 365 days of the alleged violation.",
+  "sections": [
+   {
+    "heading": "Florida coverage and prohibited conduct",
+    "facts": [
+     {
+      "label": "Covered employers",
+      "value": "The Florida Civil Rights Act generally covers employers with at least 15 employees for each working day in at least 20 calendar weeks in the current or preceding calendar year. Its employer definition includes an employer’s agents. — Fla. Stat. § 760.02(7)"
+     },
+     {
+      "label": "Protected characteristics",
+      "value": "Florida prohibits discrimination in compensation, terms, conditions, or privileges of employment because of race, color, religion, sex, pregnancy, national origin, age, handicap, or marital status. The statute uses the term “handicap.” — Fla. Stat. § 760.10(1)(a)"
+     },
+     {
+      "label": "Harassment threshold",
+      "value": "Under federal employment discrimination law, offensive conduct can become unlawful when enduring it is a condition of continued employment or when it is severe or pervasive enough to create an objectively hostile or abusive workplace. Ordinary annoyances and isolated incidents generally do not qualify unless extremely serious. — EEOC, Harassment"
+     },
+     {
+      "label": "Retaliation",
+      "value": "Florida separately prohibits discrimination against someone for opposing an unlawful employment practice or making a charge, testifying, assisting, or participating in an investigation, proceeding, or hearing under the Act. — Fla. Stat. § 760.10(7)"
+     }
+    ]
+   },
+   {
+    "heading": "Florida deadlines and remedies",
+    "table": {
+     "columns": [
+      "Issue",
+      "Florida rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Administrative complaint",
+       "A complaint may be filed with the Florida Commission on Human Relations within 365 days of the alleged violation.",
+       "Fla. Stat. § 760.11(1)"
+      ],
+      [
+       "Agency determination",
+       "The commission has 180 days after filing to determine whether reasonable cause exists.",
+       "Fla. Stat. § 760.11(3)"
+      ],
+      [
+       "Reasonable-cause finding",
+       "A civil action generally must begin within one year after the commission’s reasonable-cause determination.",
+       "Fla. Stat. § 760.11(5)"
+      ],
+      [
+       "No-reasonable-cause finding",
+       "An administrative hearing may be requested within 35 days of the determination; failure to request it bars the claim under the Act.",
+       "Fla. Stat. § 760.11(7)"
+      ],
+      [
+       "Punitive damages",
+       "Punitive damages under the Act cannot exceed $100,000 and are unavailable against the state or its agencies or subdivisions.",
+       "Fla. Stat. § 760.11(5)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Florida",
+    "bullets": [
+     "Florida Commission on Human Relations: The state agency receives employment discrimination complaints under the Florida Civil Rights Act and investigates whether reasonable cause exists. — Fla. Stat. § 760.11(1)–(3)",
+     "U.S. Equal Employment Opportunity Commission: The EEOC handles harassment charges under federal employment discrimination laws. Federal coverage and remedies are distinct from Florida’s statutory provisions. — EEOC, Harassment",
+     "Florida courts: Following the required administrative process, the Act authorizes a civil action in a court of competent jurisdiction. Available relief includes injunctions, back pay, compensatory damages, and potentially attorney’s fees. — Fla. Stat. § 760.11(4)–(5)",
+     "Administrative hearings: The commission or an administrative law judge may hear an administrative claim; this route is distinct from a civil lawsuit. — Fla. Stat. § 760.11(6)–(7)"
+    ]
+   },
+   {
+    "heading": "Common questions in Florida",
+    "bullets": [
+     "Is every instance of workplace bullying illegal harassment? No. A hostile-work-environment discrimination claim requires a connection to a legally protected characteristic and sufficiently serious conduct; ordinary workplace friction is not automatically unlawful. — EEOC, Harassment",
+     "Can a customer or coworker be the harasser? Yes. Federal harassment law recognizes harassment by coworkers and nonemployees, as well as supervisors; employer liability depends on the circumstances. — EEOC, Harassment",
+     "Does Florida protect employees who report discrimination? Yes. Opposition to unlawful discrimination and participation in proceedings under the Act are protected from retaliation. — Fla. Stat. § 760.10(7)",
+     "What if the commission makes no determination within 180 days? The complainant may proceed under the Act as though reasonable cause had been found; additional procedural and timing requirements still apply. — Fla. Stat. § 760.11(8)"
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Florida Legislature — Section 760.02",
+    "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0760/Sections/0760.02.html"
+   },
+   {
+    "label": "Florida Legislature — Section 760.10",
+    "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0760/Sections/0760.10.html"
+   },
+   {
+    "label": "Florida Legislature — Section 760.11",
+    "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0760/Sections/0760.11.html"
+   },
+   {
+    "label": "U.S. Equal Employment Opportunity Commission — Harassment",
+    "url": "https://www.eeoc.gov/harassment"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/georgia/overtime-rights": {
+  "summary": "Georgia does not have a general state overtime law, so overtime rights for most covered employees come from the federal Fair Labor Standards Act (FLSA). Covered, nonexempt employees generally must receive at least one and one-half times their regular rate for hours worked over 40 in a workweek, rather than for simply working a long day, weekend, or holiday. Coverage, exemptions, and what counts as working time determine whether overtime is owed.",
+  "sections": [
+   {
+    "heading": "Which overtime rules apply in Georgia",
+    "facts": [
+     {
+      "label": "Governing law",
+      "value": "Georgia has no general state overtime requirement. The federal FLSA supplies the principal overtime rule for covered, nonexempt employees — 29 U.S.C. § 207(a)(1); Georgia Department of Labor, Laws and Rules."
+     },
+     {
+      "label": "Federal coverage",
+      "value": "Coverage can arise through an employee's own interstate-commerce work or employment by a covered enterprise. The enterprise definition generally includes businesses with at least $500,000 in annual gross sales or business done and separately covers certain hospitals, schools, and public agencies — 29 U.S.C. §§ 203(s), 207(a)."
+     },
+     {
+      "label": "Exempt employees",
+      "value": "The FLSA exempts qualifying executive, administrative, professional, and outside-sales employees from overtime. A job title or salary alone does not establish an exemption; the applicable regulatory requirements must be met — 29 U.S.C. § 213(a)(1); 29 C.F.R. Part 541."
+     }
+    ]
+   },
+   {
+    "heading": "How overtime is calculated",
+    "table": {
+     "columns": [
+      "Issue",
+      "Rule for covered, nonexempt employees",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Weekly threshold",
+       "Overtime generally starts after 40 hours actually worked in a workweek.",
+       "29 U.S.C. § 207(a)(1)"
+      ],
+      [
+       "Workweek",
+       "A fixed, recurring period of 168 hours; hours cannot ordinarily be averaged across two or more weeks.",
+       "29 C.F.R. § 778.105"
+      ],
+      [
+       "Regular rate",
+       "Generally includes remuneration for employment, subject to statutory exclusions; it is not necessarily just the stated hourly rate.",
+       "29 U.S.C. § 207(e)"
+      ],
+      [
+       "Long days and weekends",
+       "Working more than eight hours in a day, or working weekends or holidays, does not by itself trigger the general federal overtime requirement.",
+       "29 U.S.C. § 207(a)(1)"
+      ],
+      [
+       "Unauthorized work",
+       "Work an employer suffers or permits counts even when not requested. A rule against unauthorized overtime does not erase compensable hours.",
+       "29 C.F.R. §§ 785.11–785.13"
+      ],
+      [
+       "Paid leave",
+       "Paid vacation, holiday, or sick time when no work occurs generally does not count toward the 40-hour threshold.",
+       "29 U.S.C. § 207(a), (e)(2); 29 C.F.R. § 778.218"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Deadlines, recovery, and retaliation",
+    "facts": [
+     {
+      "label": "Limitations period",
+      "value": "An FLSA unpaid-overtime action generally has a two-year limitations period, extended to three years for a willful violation — 29 U.S.C. § 255(a)."
+     },
+     {
+      "label": "Available recovery",
+      "value": "Employees may recover unpaid overtime and an equal amount as liquidated damages, plus reasonable attorney's fees and costs. A court may reduce or deny liquidated damages if the employer proves statutory good faith and reasonable grounds — 29 U.S.C. § 216(b); 29 U.S.C. § 260."
+     },
+     {
+      "label": "Retaliation",
+      "value": "The FLSA prohibits discharge or discrimination for protected complaints or participation in covered proceedings. Remedies can include reinstatement, lost wages, and liquidated damages — 29 U.S.C. §§ 215(a)(3), 216(b)."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Georgia",
+    "bullets": [
+     "The U.S. Department of Labor's Wage and Hour Division investigates federal overtime complaints involving Georgia employment. Its national assistance number is 1-866-487-9243.",
+     "The Georgia Department of Labor does not enforce the FLSA's overtime requirements; its Laws and Rules page identifies federal wage-and-hour law as U.S. Department of Labor jurisdiction.",
+     "Private FLSA actions may be brought in a federal or state court of competent jurisdiction. Georgia has Northern, Middle, and Southern federal judicial districts — 29 U.S.C. § 216(b); 28 U.S.C. § 90."
+    ]
+   },
+   {
+    "heading": "Common questions in Georgia",
+    "bullets": [
+     "Does receiving a salary eliminate overtime rights? No. Salaried employees can remain nonexempt — 29 C.F.R. Part 541.",
+     "Can a private employer substitute future time off for required overtime pay? Generally no. The statutory compensatory-time exception applies to qualifying state and local public employment — 29 U.S.C. § 207(o).",
+     "Can an employer average a 50-hour week with a 30-hour week? Generally no. Each workweek stands alone — 29 C.F.R. § 778.104.",
+     "Are short breaks compensable? Rest breaks lasting about five to 20 minutes generally count as working time — 29 C.F.R. § 785.18."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Georgia Department of Labor — Laws and Rules",
+    "url": "https://dol.georgia.gov/laws-and-rules"
+   },
+   {
+    "label": "U.S. Department of Labor — Overtime Pay",
+    "url": "https://www.dol.gov/agencies/whd/overtime"
+   },
+   {
+    "label": "U.S. Department of Labor — How to File a Complaint",
+    "url": "https://www.dol.gov/agencies/whd/contact/complaints"
+   },
+   {
+    "label": "U.S. House Office of the Law Revision Counsel — Fair Labor Standards Act, Title 29, Chapter 8",
+    "url": "https://uscode.house.gov/view.xhtml?path=/prelim@title29/chapter8&edition=prelim"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/idaho/non-compete-agreements": {
+  "summary": "Idaho permits employment noncompete agreements for key employees and key independent contractors when the restrictions protect legitimate business interests and are reasonable in duration, geographic reach, and the work restricted. Idaho Code Title 44, Chapter 27 establishes rebuttable presumptions for certain restrictions, including an eighteen-month duration, but does not make every noncompete enforceable. Courts can limit or modify unreasonable provisions, and enforceability depends on the agreement, the worker’s role, and the employer’s actual business interests.",
+  "sections": [
+   {
+    "heading": "Which workers and interests Idaho law covers",
+    "facts": [
+     {
+      "label": "Covered workers",
+      "value": "The statute authorizes written restrictive agreements involving key employees and key independent contractors. Its definition focuses on workers whose employer-provided knowledge, influence, reputation, or relationships give them the ability to threaten the employer’s legitimate business interests. It does not treat every worker as a key employee simply because the worker signed an agreement. — Idaho Code §§ 44-2701–44-2702."
+     },
+     {
+      "label": "Protected business interests",
+      "value": "Legitimate business interests include goodwill, technologies, intellectual property, business plans, business processes and methods, customer and vendor relationships, referral sources, financial and marketing information, and trade secrets. The statutory list is nonexclusive. — Idaho Code § 44-2702."
+     },
+     {
+      "label": "Basic enforceability standard",
+      "value": "Restrictions must be reasonable in duration, geographical area, and type of employment or line of business. They must not impose a greater restraint than reasonably necessary to protect the employer’s legitimate business interests. — Idaho Code § 44-2701."
+     }
+    ]
+   },
+   {
+    "heading": "Idaho’s statutory presumptions",
+    "table": {
+     "columns": [
+      "Issue",
+      "Statutory treatment",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Duration",
+       "A restriction lasting eighteen months or less is rebuttably presumed reasonable.",
+       "Idaho Code § 44-2704"
+      ],
+      [
+       "Geographic reach",
+       "A restriction limited to areas where the worker provided services or had a significant presence or influence is rebuttably presumed reasonable.",
+       "Idaho Code § 44-2704"
+      ],
+      [
+       "Restricted work",
+       "A restriction limited to the type of employment or line of business the worker conducted during the two years before termination is rebuttably presumed reasonable.",
+       "Idaho Code § 44-2704"
+      ],
+      [
+       "Key-worker status",
+       "A worker among the employer’s highest-paid five percent of employees or independent contractors is rebuttably presumed to be a key employee or key independent contractor.",
+       "Idaho Code § 44-2704"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Court review and remedies",
+    "facts": [
+     {
+      "label": "Modification rather than automatic invalidation",
+      "value": "When an agreement is unreasonable in a respect covered by the statute, the court must limit or modify it as necessary to reflect the parties’ intent and render it reasonable in light of the circumstances in which it was made. — Idaho Code § 44-2703."
+     },
+     {
+      "label": "Presumptions are not guarantees",
+      "value": "The statutory presumptions are rebuttable. An eighteen-month restriction is therefore not automatically enforceable, and the compensation presumption does not conclusively establish key-worker status. The statute also permits restrictions exceeding eighteen months when additional consideration is specifically given for extending the restriction beyond that period. — Idaho Code §§ 44-2701, 44-2704."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Idaho",
+    "bullets": [
+     "Idaho district courts hear civil disputes involving enforcement of employment noncompetes, including requests for injunctive relief. District courts have original jurisdiction in civil cases. — Idaho Constitution, Article V, § 20.",
+     "Title 44, Chapter 27 addresses judicial enforcement; it does not establish a separate administrative complaint process or agency tribunal for deciding whether an employment noncompete is enforceable. — Idaho Code §§ 44-2701–44-2704."
+    ]
+   },
+   {
+    "heading": "Common questions in Idaho",
+    "bullets": [
+     "Are employment noncompetes banned? No. Idaho expressly permits qualifying written agreements for key employees and key independent contractors, subject to reasonableness requirements. — Idaho Code § 44-2701.",
+     "Can an independent contractor be covered? Yes. The statute expressly includes key independent contractors. — Idaho Code §§ 44-2701–44-2702.",
+     "Does an overbroad restriction necessarily disappear? No. Idaho directs courts to limit or modify unreasonable agreements under the statutory standard. — Idaho Code § 44-2703.",
+     "Does being highly paid automatically make a worker key? No. The highest-paid-five-percent rule creates a rebuttable presumption, not a conclusive classification. — Idaho Code § 44-2704."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Idaho Legislature — Title 44, Chapter 27: Agreements and Covenants Protecting Legitimate Business Interests",
+    "url": "https://legislature.idaho.gov/statutesrules/idstat/Title44/T44CH27/"
+   },
+   {
+    "label": "Idaho Legislature — Idaho Code § 44-2704",
+    "url": "https://legislature.idaho.gov/statutesrules/idstat/Title44/T44CH27/SECT44-2704/"
+   },
+   {
+    "label": "Idaho Legislature — Idaho Constitution, Article V, § 20",
+    "url": "https://legislature.idaho.gov/statutesrules/idconst/ArtV/Sect20/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/illinois/at-will-employment": {
+  "summary": "Illinois generally follows at-will employment: absent an enforceable agreement or legal protection, an employer may end employment without proving good cause, and an employee may leave without giving a reason. At-will status does not permit discrimination, retaliation, or discharge that violates clearly mandated public policy, and Illinois statutes protect certain reports of wrongdoing, workplace rights, and earned compensation even when the termination itself is otherwise lawful.",
+  "sections": [
+   {
+    "heading": "Illinois’s at-will rule and its limits",
+    "facts": [
+     {
+      "label": "Default rule",
+      "value": "Employment without a fixed duration is generally terminable by either party at will. Illinois recognizes a narrow retaliatory-discharge exception when termination violates clearly mandated public policy. Ordinary unfairness does not, by itself, establish that exception. — Turner v. Memorial Medical Center, 233 Ill. 2d 494 (2009)."
+     },
+     {
+      "label": "Workers’ compensation retaliation",
+      "value": "An employer may not discharge or threaten to discharge an employee because the employee exercises rights or remedies under the Workers’ Compensation Act. Illinois also recognizes a civil retaliatory-discharge claim for firing an employee for pursuing workers’ compensation rights. — 820 ILCS 305/4(h); Kelsay v. Motorola, Inc., 74 Ill. 2d 172 (1978)."
+     }
+    ]
+   },
+   {
+    "heading": "Protections that override at-will status",
+    "table": {
+     "columns": [
+      "Protection",
+      "Illinois rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Discrimination",
+       "Covered employers cannot discharge employees because of protected characteristics, including race, religion, sex, age, disability, or sexual orientation.",
+       "775 ILCS 5/1-103 and 2-102(A)"
+      ],
+      [
+       "Discrimination complaints",
+       "Retaliation for opposing unlawful discrimination or participating in proceedings under the Illinois Human Rights Act is prohibited.",
+       "775 ILCS 5/6-101(A)"
+      ],
+      [
+       "Whistleblowing",
+       "The Whistleblower Act protects specified disclosures based on a good-faith belief that an employer’s activity violates law or poses a substantial and specific danger to employees, public health, or safety.",
+       "740 ILCS 174/15"
+      ],
+      [
+       "Refusing unlawful work",
+       "Retaliation is prohibited when an employee refuses an activity the employee has a good-faith belief would violate state or federal law, rule, or regulation.",
+       "740 ILCS 174/20"
+      ],
+      [
+       "Jury service",
+       "An employer cannot discharge, threaten to discharge, intimidate, or coerce an employee because of jury service.",
+       "705 ILCS 305/4.1"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Employment agreements and final compensation",
+    "facts": [
+     {
+      "label": "Handbooks can matter",
+      "value": "A handbook can create enforceable contractual rights when it contains a sufficiently clear promise, is disseminated so the employee knows its contents and reasonably understands it as an offer, and is accepted through starting or continuing work. Not every handbook creates a contract. — Duldulao v. Saint Mary of Nazareth Hospital Center, 115 Ill. 2d 482 (1987)."
+     },
+     {
+      "label": "Final-pay deadline",
+      "value": "An employer must pay final compensation, if possible, at separation, but no later than the employee’s next regularly scheduled payday. Earned vacation must be paid when an employment contract or policy provides paid vacation; separation cannot trigger forfeiture of earned vacation. — 820 ILCS 115/5."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Illinois",
+    "bullets": [
+     "Illinois Department of Human Rights: investigates employment discrimination and retaliation charges under the Illinois Human Rights Act. The Illinois Human Rights Commission adjudicates administrative complaints.",
+     "Illinois Department of Labor: administers wage-payment complaints under the Illinois Wage Payment and Collection Act, including unpaid final compensation.",
+     "Illinois circuit courts: hear common-law retaliatory-discharge lawsuits, employment-contract disputes, and civil actions authorized by the Illinois Whistleblower Act."
+    ]
+   },
+   {
+    "heading": "Common questions in Illinois",
+    "bullets": [
+     "Must an employer give warnings first? At-will employment itself does not require progressive discipline; an enforceable agreement may change that result.",
+     "Does an unfair firing automatically support a lawsuit? No. The firing must implicate an applicable legal protection or enforceable contractual obligation.",
+     "Can an internal report receive whistleblower protection? Yes. Section 15 protects qualifying disclosures to a supervisor, principal officer, or qualifying supervisor of a contracting organization.",
+     "Does being fired eliminate earned vacation pay? No. Section 5 requires payment of earned vacation provided under the employer’s contract or policy."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Illinois General Assembly — Illinois Human Rights Act",
+    "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2266&ChapterID=64"
+   },
+   {
+    "label": "Illinois General Assembly — Whistleblower Act",
+    "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2495&ChapterID=57"
+   },
+   {
+    "label": "Illinois General Assembly — Illinois Wage Payment and Collection Act",
+    "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2402&ChapterID=68"
+   },
+   {
+    "label": "Illinois Department of Human Rights — Employment",
+    "url": "https://dhr.illinois.gov/filing-a-charge/employment.html"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/illinois/contractor-vs-employee": {
+  "summary": "Illinois does not use one contractor-versus-employee test for every employment law: the governing standard depends on the work and the statute involved. The Employee Classification Act creates a specific employee presumption for construction work, while the Illinois Wage Payment and Collection Act and Unemployment Insurance Act contain their own independent-contractor exclusions. A contractor agreement or Form 1099 does not, by itself, establish that a worker satisfies the applicable statutory test.",
+  "sections": [
+   {
+    "heading": "Illinois classification rules",
+    "facts": [
+     {
+      "label": "Construction employee presumption",
+      "value": "An individual performing services for a contractor is deemed an employee under the Employee Classification Act unless the statutory independent-contractor test or qualifying sole-proprietor or partnership exception applies. The Act addresses construction, rather than all industries. — 820 ILCS 185/5 and 185/10."
+     },
+     {
+      "label": "Wage-payment coverage",
+      "value": "The Illinois Wage Payment and Collection Act excludes an individual from its employee definition only when all three statutory conditions concerning freedom from control, the location or nature of the services, and an independently established business are satisfied. — 820 ILCS 115/2."
+     },
+     {
+      "label": "Unemployment insurance",
+      "value": "Services performed by an individual for an employing unit are deemed employment unless the employing unit establishes all three conditions in the unemployment statute's independent-contractor exception. — 820 ILCS 405/212."
+     }
+    ]
+   },
+   {
+    "heading": "How the statutory tests compare",
+    "table": {
+     "columns": [
+      "Issue",
+      "Construction: Employee Classification Act",
+      "Wage payment and unemployment"
+     ],
+     "rows": [
+      [
+       "Control",
+       "The individual must be free from control or direction, both under the contract and in fact.",
+       "Both statutes require freedom from control and direction under the contract and in fact."
+      ],
+      [
+       "Type or location of work",
+       "The service must be outside the contractor's usual course of services.",
+       "Services must be outside the business's usual course or outside all its places of business."
+      ],
+      [
+       "Independent business",
+       "The individual must be engaged in an independently established trade, occupation, profession, or business.",
+       "Wage law requires an independently established trade, occupation, profession, or business; unemployment law requires customary engagement in one."
+      ],
+      [
+       "Alternative construction exception",
+       "A legitimate sole proprietor or partnership may qualify under the separate, multi-factor requirements of 820 ILCS 185/10(c).",
+       "Neither 820 ILCS 115/2 nor 820 ILCS 405/212 incorporates that construction-specific exception."
+      ],
+      [
+       "Controlling provisions",
+       "820 ILCS 185/10(b)-(c).",
+       "820 ILCS 115/2; 820 ILCS 405/212."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Illinois",
+    "bullets": [
+     "Illinois Department of Labor: administers the Employee Classification Act and handles complaints about construction-worker misclassification. — 820 ILCS 185/15 and 185/25.",
+     "Illinois Department of Labor: administers wage-payment complaints under the Illinois Wage Payment and Collection Act. A classification dispute may arise when a business denies employee status in an unpaid-wage claim. — 820 ILCS 115/11.",
+     "Illinois Department of Employment Security: administers unemployment insurance, including determinations about whether services constitute employment under the Unemployment Insurance Act. — 820 ILCS 405/212."
+    ]
+   },
+   {
+    "heading": "Common questions in Illinois",
+    "bullets": [
+     "Does receiving a Form 1099 settle my status? No. The cited Illinois statutes apply substantive conditions; a tax form alone does not establish freedom from control or an independently established business.",
+     "Does the construction law cover renovation and repairs? Yes. Its construction definition includes remodeling, repair, maintenance, rehabilitation, renovation, and demolition, among other activities. — 820 ILCS 185/5.",
+     "Is working away from the company's premises enough? No. Under the wage-payment and unemployment tests, working outside all places of business can satisfy one condition, but the control and independent-business conditions must also be met. — 820 ILCS 115/2; 820 ILCS 405/212.",
+     "Does passing one test settle every employment-law question? No. These statutes contain distinct coverage rules. Classification under one statute does not itself establish compliance with another; talk to a lawyer."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Illinois General Assembly — Employee Classification Act, Section 10",
+    "url": "https://www.ilga.gov/legislation/ilcs/documents/082001850K10.htm"
+   },
+   {
+    "label": "Illinois General Assembly — Illinois Wage Payment and Collection Act, Section 2",
+    "url": "https://www.ilga.gov/legislation/ilcs/documents/082001150K2.htm"
+   },
+   {
+    "label": "Illinois General Assembly — Unemployment Insurance Act, Section 212",
+    "url": "https://www.ilga.gov/legislation/ilcs/documents/082004050K212.htm"
+   },
+   {
+    "label": "Illinois Department of Labor",
+    "url": "https://labor.illinois.gov/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/illinois/non-compete-agreements": {
+  "summary": "Illinois limits employment noncompete and nonsolicitation agreements under the Illinois Freedom to Work Act, with its principal modern restrictions applying to agreements entered into on or after January 1, 2022. In 2026, a noncompete is prohibited unless annualized earnings exceed $75,000, and a nonsolicitation agreement is prohibited unless earnings exceed $45,000. Exceeding those thresholds does not establish enforceability: consideration, legitimate business interests, reasonableness, and statutory notice requirements also matter.",
+  "sections": [
+   {
+    "heading": "What Illinois regulates",
+    "facts": [
+     {
+      "label": "Noncompete agreements",
+      "value": "The Act covers agreements restricting work for another employer for a specified period, within a specified geographic area, or in similar work. It also includes agreements imposing adverse financial consequences for competitive activity after employment ends. — 820 ILCS 90/5."
+     },
+     {
+      "label": "Nonsolicitation agreements",
+      "value": "The Act separately regulates restrictions on soliciting an employer’s employees and on soliciting or interfering with relationships involving clients, prospective clients, vendors, prospective vendors, suppliers, and prospective suppliers. — 820 ILCS 90/5."
+     },
+     {
+      "label": "Excluded agreements",
+      "value": "The statutory definition of a noncompete excludes confidentiality agreements, restrictions on using or disclosing trade secrets, invention-assignment agreements, and covenants associated with buying or selling business goodwill or an ownership interest. These exclusions do not establish that every such agreement is enforceable. — 820 ILCS 90/5."
+     }
+    ]
+   },
+   {
+    "heading": "Illinois earnings thresholds",
+    "table": {
+     "columns": [
+      "Agreement date",
+      "Noncompete: annualized earnings must exceed",
+      "Nonsolicitation: annualized earnings must exceed"
+     ],
+     "rows": [
+      [
+       "2022–2026",
+       "$75,000",
+       "$45,000"
+      ],
+      [
+       "2027–2031",
+       "$80,000",
+       "$47,500"
+      ],
+      [
+       "2032–2036",
+       "$85,000",
+       "$50,000"
+      ],
+      [
+       "2037 onward",
+       "$90,000",
+       "$52,500"
+      ]
+     ]
+    },
+    "facts": [
+     {
+      "label": "Threshold rule",
+      "value": "Agreements prohibited by the earnings thresholds are illegal and void. Earnings include taxable compensation reflected or expected on Form W-2, including earned bonuses and commissions, plus specified employee elective deferrals. — 820 ILCS 90/5 and 90/10."
+     }
+    ]
+   },
+   {
+    "heading": "Conditions for enforceability",
+    "facts": [
+     {
+      "label": "Consideration",
+      "value": "Adequate consideration includes two years of employment after signing, or other sufficient consideration consisting of professional or financial benefits alone or combined with employment. — 820 ILCS 90/5."
+     },
+     {
+      "label": "Business justification and scope",
+      "value": "An enforceable restriction must be ancillary to a valid employment relationship, no broader than necessary to protect a legitimate business interest, free of undue hardship on the employee, and not injurious to the public. Legitimate business interests depend on the totality of the circumstances. — 820 ILCS 90/15."
+     },
+     {
+      "label": "Written notice and review period",
+      "value": "The employer must advise the employee in writing to consult an attorney. It must provide the covenant at least 14 calendar days before employment begins or provide at least 14 calendar days to review it; the employee may voluntarily sign sooner. — 820 ILCS 90/20."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Illinois",
+    "bullets": [
+     "Illinois circuit courts hear civil disputes over enforcement, subject to applicable jurisdiction and contractual dispute-resolution provisions.",
+     "The Illinois Attorney General may investigate and bring civil actions when there is reasonable cause to believe an employer has engaged in a pattern and practice prohibited by the Act. — 820 ILCS 90/30."
+    ]
+   },
+   {
+    "heading": "Common questions in Illinois",
+    "bullets": [
+     "Is earning exactly $75,000 enough for a noncompete in 2026? No. The statute prohibits a noncompete when annualized earnings are equal to or below that amount. — 820 ILCS 90/10.",
+     "Does signing immediately defeat the agreement? Not necessarily. An employee may voluntarily sign before the review period ends if the employer satisfied the statutory requirements. — 820 ILCS 90/20.",
+     "Can an employee recover attorney fees? An employee who prevails on an employer’s civil complaint or arbitration claim to enforce a noncompete or nonsolicitation agreement must receive costs and reasonable attorney fees. — 820 ILCS 90/25.",
+     "Can a court narrow an excessive restriction? A court may reform or sever provisions in its discretion rather than invalidate the entire covenant, considering the statutory factors. — 820 ILCS 90/35."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Illinois General Assembly — Illinois Freedom to Work Act, 820 ILCS 90",
+    "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3737&ChapterID=68"
+   },
+   {
+    "label": "Illinois General Assembly — Public Act 102-0358",
+    "url": "https://www.ilga.gov/legislation/publicacts/fulltext.asp?Name=102-0358"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/illinois/wage-theft": {
+  "summary": "Illinois wage-theft claims generally involve unpaid wages, missing overtime, unlawful deductions, or unpaid final compensation, including earned vacation owed under an employer’s policy. The Illinois Wage Payment and Collection Act governs payment of agreed compensation, while the Illinois Minimum Wage Law establishes minimum-wage and overtime rights; depending on the violation, workers may pursue an Illinois Department of Labor claim or a civil lawsuit, with different deadlines and remedies.",
+  "sections": [
+   {
+    "heading": "Illinois laws and covered compensation",
+    "facts": [
+     {
+      "label": "Agreed wages",
+      "value": "The Illinois Wage Payment and Collection Act covers compensation owed under an employment contract or agreement. Its definition of wages includes compensation calculated by time, task, piece, or another method; an agreement need not necessarily be a formal written contract. — 820 ILCS 115/2"
+     },
+     {
+      "label": "Minimum wage and overtime",
+      "value": "The Illinois Minimum Wage Law generally requires covered adult employees to receive at least $15 per hour. Covered, nonexempt employees generally must receive at least 1.5 times their regular rate for hours exceeding 40 in a workweek. Statutory exceptions apply. — 820 ILCS 105/4, 4a"
+     },
+     {
+      "label": "Deductions",
+      "value": "Wage deductions are restricted. Permitted categories include deductions required by law, deductions benefiting the employee, valid wage assignments or deduction orders, and deductions made with the employee’s express written consent given freely when the deduction is made. — 820 ILCS 115/9"
+     }
+    ]
+   },
+   {
+    "heading": "Payment rules and filing deadlines",
+    "table": {
+     "columns": [
+      "Issue",
+      "Illinois rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Regular payroll",
+       "Wages generally must be paid at least semimonthly; statutory exceptions permit some employees to be paid monthly.",
+       "820 ILCS 115/3"
+      ],
+      [
+       "Final paycheck",
+       "Final compensation is due at separation if possible, and no later than the next regularly scheduled payday.",
+       "820 ILCS 115/5"
+      ],
+      [
+       "Unused vacation",
+       "When an employment contract or policy provides paid vacation, earned unused vacation must be included in final compensation. A policy cannot forfeit earned vacation at separation.",
+       "820 ILCS 115/5"
+      ],
+      [
+       "Department wage-payment claim",
+       "A complaint under the Wage Payment and Collection Act must be filed with the Department of Labor within one year after the wages or final compensation became due.",
+       "820 ILCS 115/11"
+      ],
+      [
+       "Minimum-wage or overtime lawsuit",
+       "An employee’s civil action under the Minimum Wage Law must be brought within three years after the underpayment.",
+       "820 ILCS 105/12"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Recovery and retaliation",
+    "facts": [
+     {
+      "label": "Wage-payment damages",
+      "value": "Employees may recover unpaid wages or final compensation plus damages equal to 5% of the underpayment for each month it remains unpaid. In a civil action, employees may also recover costs and reasonable attorney fees. — 820 ILCS 115/14(a)"
+     },
+     {
+      "label": "Minimum-wage remedies",
+      "value": "The Minimum Wage Law authorizes a civil recovery of three times the underpayment, costs, reasonable attorney fees, and additional statutory monthly damages. — 820 ILCS 105/12(a)"
+     },
+     {
+      "label": "Protected complaints",
+      "value": "The Wage Payment and Collection Act prohibits discharge or other discrimination for protected wage complaints, proceedings, or testimony. Its retaliation provision authorizes reinstatement, lost compensation, costs, and reasonable attorney fees. — 820 ILCS 115/14(c)"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Illinois",
+    "bullets": [
+     "The Illinois Department of Labor accepts unpaid-wage and final-compensation complaints under the Wage Payment and Collection Act, and minimum-wage and overtime complaints under the Minimum Wage Law.",
+     "Illinois circuit courts hear civil wage-recovery lawsuits. The Wage Payment and Collection Act permits an employee to pursue its civil remedy without first exhausting the Department’s administrative process. — 820 ILCS 115/14(a)"
+    ]
+   },
+   {
+    "heading": "Common questions in Illinois",
+    "bullets": [
+     "Does quitting eliminate the right to a final paycheck? No. Final-compensation requirements apply to employees who resign as well as those discharged. — 820 ILCS 115/2, 5",
+     "Can an employer withhold all pay during a wage dispute? No. The employer must timely pay the amount it concedes is due, without conditions. — 820 ILCS 115/9",
+     "Does receiving a salary automatically eliminate overtime? No. Overtime coverage depends on applicable statutory requirements and exemptions, not salary status alone. — 820 ILCS 105/4a",
+     "Are independent contractors covered by the Wage Payment and Collection Act? The Act excludes individuals meeting its statutory independent-contractor criteria; a contractor label alone does not establish that exclusion. — 820 ILCS 115/2"
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Illinois General Assembly — Illinois Wage Payment and Collection Act",
+    "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2402&ChapterID=68"
+   },
+   {
+    "label": "Illinois General Assembly — Illinois Minimum Wage Law",
+    "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2400&ChapterID=68"
+   },
+   {
+    "label": "Illinois Department of Labor — Complaints",
+    "url": "https://labor.illinois.gov/complaints.html"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/illinois/unemployment-benefits": {
+  "summary": "Illinois unemployment insurance provides temporary benefits to eligible workers under the Illinois Unemployment Insurance Act, administered by the Illinois Department of Employment Security (IDES). Eligibility depends on covered earnings, the circumstances of separation, and continuing requirements such as being able and available for work; a layoff does not automatically establish entitlement, and quitting or being discharged does not automatically resolve the claim. Claimants and employers can challenge IDES decisions through administrative appeals, with judicial review available after a final administrative decision.",
+  "sections": [
+   {
+    "heading": "Illinois eligibility and continuing requirements",
+    "facts": [
+     {
+      "label": "Governing law and agency",
+      "value": "The Illinois Unemployment Insurance Act governs state unemployment benefits. IDES administers claims and determines whether a claimant satisfies the Act’s monetary and nonmonetary requirements. — 820 ILCS 405."
+     },
+     {
+      "label": "Weekly eligibility",
+      "value": "Eligibility is determined for individual weeks. The Act includes requirements concerning registration for work, claims for benefits, ability to work, availability for work, and actively seeking work, subject to statutory exceptions. — 820 ILCS 405/500."
+     },
+     {
+      "label": "Earnings requirement",
+      "value": "A claimant must satisfy the Act’s qualifying-wage requirements based on covered earnings in the applicable base period. Losing a job, by itself, does not establish monetary eligibility. — 820 ILCS 405/500(E)."
+     },
+     {
+      "label": "Continuing claims",
+      "value": "An initial application and continuing claims serve different purposes: continuing claims establish eligibility for the weeks for which benefits are requested. A claimant may meet the initial earnings requirement but be ineligible for a particular week. — 820 ILCS 405/500."
+     }
+    ]
+   },
+   {
+    "heading": "How common employment situations affect benefits",
+    "table": {
+     "columns": [
+      "Situation",
+      "Illinois rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Layoff or lack of work",
+       "The claimant must still meet the Act’s earnings and weekly eligibility requirements.",
+       "820 ILCS 405/500"
+      ],
+      [
+       "Voluntary resignation",
+       "Leaving voluntarily without good cause attributable to the employing unit generally disqualifies a claimant, subject to statutory exceptions.",
+       "820 ILCS 405/601"
+      ],
+      [
+       "Discharge",
+       "Discharge for misconduct connected with work can disqualify a claimant. The employer’s decision to fire someone is not itself the statutory test.",
+       "820 ILCS 405/602"
+      ],
+      [
+       "Refusing work",
+       "Failing without good cause to apply for or accept suitable work can cause disqualification; suitability is evaluated under statutory factors.",
+       "820 ILCS 405/603"
+      ],
+      [
+       "Unable or unavailable to work",
+       "The Act generally requires ability and availability for work for the week claimed, subject to its exceptions.",
+       "820 ILCS 405/500(C)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Appeals and review deadlines",
+    "facts": [
+     {
+      "label": "Appealing an initial determination",
+      "value": "An appeal from a claims adjudicator’s determination generally must be filed within 30 calendar days after delivery or mailing of the notice. The administrative appeal proceeds before a referee. — 820 ILCS 405/800."
+     },
+     {
+      "label": "Board of Review",
+      "value": "A referee’s decision may be appealed to the IDES Board of Review within 30 calendar days after the decision is mailed. — 820 ILCS 405/801."
+     },
+     {
+      "label": "Court review",
+      "value": "Final Board of Review decisions are subject to the Administrative Review Law. An administrative-review action generally must be commenced within 35 days after service of the decision. — 820 ILCS 405/1100; 735 ILCS 5/3-103."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Illinois",
+    "bullets": [
+     "IDES receives unemployment insurance claims and administers benefit determinations under the Illinois Unemployment Insurance Act.",
+     "Challenges to claims adjudicator determinations proceed through IDES administrative appeals; referee decisions are reviewed by the Board of Review.",
+     "Illinois circuit courts hear administrative-review actions challenging final Board of Review decisions. These are judicial-review proceedings, not new unemployment applications."
+    ]
+   },
+   {
+    "heading": "Common questions in Illinois",
+    "bullets": [
+     "Can someone receive benefits after quitting? Sometimes. Section 601 contains exceptions to the general voluntary-leaving disqualification.",
+     "Does every firing disqualify a worker? No. Section 602 addresses misconduct connected with work, not every reason an employer might terminate employment.",
+     "Must a claimant accept any offered job? No. Section 603 addresses suitable work and recognizes good cause for refusal.",
+     "Can an employer appeal an award? Yes. Section 800 provides appeal rights to claimants and qualifying employing units."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Illinois Department of Employment Security",
+    "url": "https://ides.illinois.gov/"
+   },
+   {
+    "label": "Illinois Unemployment Insurance Act, Section 500",
+    "url": "https://www.ilga.gov/legislation/ilcs/documents/082004050K500.htm"
+   },
+   {
+    "label": "Illinois Unemployment Insurance Act, Section 800",
+    "url": "https://www.ilga.gov/legislation/ilcs/documents/082004050K800.htm"
+   },
+   {
+    "label": "Illinois Administrative Review Law, Section 3-103",
+    "url": "https://www.ilga.gov/legislation/ilcs/documents/073500050K3-103.htm"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/indiana/wrongful-termination": {
+  "summary": "Indiana generally follows at-will employment: an employer may discharge an employee without proving good cause, but not for a reason prohibited by law or an enforceable employment agreement. Wrongful-termination claims can involve discrimination, retaliation, breach of contract, or narrow public-policy exceptions recognized by Indiana courts, including retaliation for exercising workers’ compensation rights. The applicable deadline and forum depend on the claim; Indiana Civil Rights Commission discrimination complaints generally must be filed within 180 days of the alleged discriminatory act.",
+  "sections": [
+   {
+    "heading": "When termination can be unlawful in Indiana",
+    "facts": [
+     {
+      "label": "At-will employment",
+      "value": "Employment without a definite or ascertainable term is presumptively at will. Indiana recognizes limited exceptions; unfair treatment alone does not necessarily establish wrongful discharge. — Orr v. Westminster Village North, Inc., 689 N.E.2d 712 (Ind. 1997)"
+     },
+     {
+      "label": "Workers’ compensation retaliation",
+      "value": "Indiana recognizes a wrongful-discharge claim when an employee is fired in retaliation for exercising rights under the workers’ compensation system. This is a judicially recognized exception to at-will employment. — Frampton v. Central Indiana Gas Co., 297 N.E.2d 425 (Ind. 1973)"
+     },
+     {
+      "label": "Refusing an unlawful act",
+      "value": "Indiana recognizes a narrow exception where an employee is discharged for refusing to commit an illegal act for which the employee would be personally liable. — McClanahan v. Remington Freight Lines, Inc., 517 N.E.2d 390 (Ind. 1988)"
+     },
+     {
+      "label": "Discriminatory termination",
+      "value": "The Indiana Civil Rights Law prohibits covered employment discrimination based on race, religion, color, sex, disability, national origin, or ancestry. Its employer definition generally reaches employers with six or more employees, subject to statutory exclusions. — Indiana Code §§ 22-9-1-2, 22-9-1-3, 22-9-1-6"
+     }
+    ]
+   },
+   {
+    "heading": "Deadlines and separate employment rights",
+    "table": {
+     "columns": [
+      "Claim or issue",
+      "Indiana rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "State discrimination complaint",
+       "An ICRC complaint generally must be filed within 180 days after the alleged discriminatory practice.",
+       "Indiana Code § 22-9-1-6"
+      ],
+      [
+       "Federal discrimination charge",
+       "For discrimination covered by both federal law and an applicable state or local prohibition, the EEOC charge deadline generally extends to 300 days; coverage and exceptions matter.",
+       "42 U.S.C. § 2000e-5(e)(1); EEOC time-limit guidance"
+      ],
+      [
+       "Employment-related lawsuit without a written contract",
+       "Indiana generally requires actions relating to employment terms, conditions, or privileges, except actions based on a written contract, within two years of the challenged act or omission.",
+       "Indiana Code § 34-11-2-1"
+      ],
+      [
+       "Final wages after discharge",
+       "Earned wages generally are payable on the regular payday for the pay period in which separation occurred, rather than immediately upon discharge.",
+       "Indiana Code § 22-2-9-2"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Indiana",
+    "bullets": [
+     "Indiana Civil Rights Commission: investigates employment-discrimination complaints under the Indiana Civil Rights Law. State administrative coverage and deadlines differ from federal requirements. — Indiana Code § 22-9-1-6",
+     "U.S. Equal Employment Opportunity Commission: receives federal employment-discrimination charges, including charges alleging discriminatory discharge or retaliation for protected discrimination complaints. — 42 U.S.C. § 2000e-5",
+     "Indiana trial courts: hear civil wrongful-discharge and contract claims within their jurisdiction. Federal employment claims may also proceed in the U.S. District Courts for the Northern or Southern District of Indiana when jurisdictional and procedural requirements are satisfied.",
+     "Indiana Department of Labor: administers the wage-claim process for qualifying unpaid-wage claims. Recovering earned wages is separate from proving the termination itself unlawful. — Indiana Code § 22-2-9-4"
+    ]
+   },
+   {
+    "heading": "Common questions in Indiana",
+    "bullets": [
+     "Must an employer give a reason for firing someone? Generally, at-will employment does not require good cause, but a prohibited motive can make the discharge unlawful.",
+     "Does an employee handbook automatically guarantee continued employment? No. Whether handbook language creates enforceable contractual rights depends on contract principles and the document’s terms. — Orr, 689 N.E.2d 712",
+     "Can filing for workers’ compensation support a retaliation claim? Yes. Indiana recognizes retaliatory discharge for exercising workers’ compensation rights. — Frampton, 297 N.E.2d 425",
+     "Does every wrongful-termination claim require an EEOC charge? No. Federal discrimination procedures differ from state common-law wrongful-discharge claims and contract actions."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Indiana General Assembly — Indiana Code",
+    "url": "https://iga.in.gov/laws"
+   },
+   {
+    "label": "Indiana Civil Rights Commission",
+    "url": "https://www.in.gov/icrc/"
+   },
+   {
+    "label": "EEOC — Time Limits for Filing a Charge",
+    "url": "https://www.eeoc.gov/time-limits-filing-charge"
+   },
+   {
+    "label": "Indiana Department of Labor — Wage Claim Process",
+    "url": "https://www.in.gov/dol/wage-and-hour/wage-claim-process/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/iowa/family-medical-leave": {
+  "summary": "Iowa does not have a general state paid family and medical leave program, but eligible employees can receive unpaid, job-protected leave under the federal Family and Medical Leave Act (FMLA). Iowa law separately requires covered employers to provide limited leave for pregnancy-related disability when other available leave is insufficient. These protections differ in employer coverage, employee eligibility, qualifying reasons, and duration; federal pregnancy-accommodation law can also require leave in appropriate circumstances.",
+  "sections": [
+   {
+    "heading": "Iowa pregnancy-related leave",
+    "facts": [
+     {
+      "label": "State entitlement",
+      "value": "When sufficient leave is unavailable under an employer’s health or temporary disability insurance or sick leave plan, an employee is entitled to leave for pregnancy, childbirth, or related medical conditions for the period of disability or eight weeks, whichever is shorter. This is not a general eight-week parental bonding benefit. — Iowa Code § 216.6(2)(e)"
+     },
+     {
+      "label": "Employer coverage",
+      "value": "Iowa’s employment-discrimination provisions generally exclude employers that regularly employ fewer than four individuals. Other statutory exclusions also apply. — Iowa Code § 216.6(6)"
+     },
+     {
+      "label": "Notice and certification",
+      "value": "The employee must give timely notice of the period requested, and the employer must approve a change in that period before it becomes effective. The employer may require medical certification that the employee cannot reasonably perform employment duties. — Iowa Code § 216.6(2)(e)"
+     },
+     {
+      "label": "Equal treatment",
+      "value": "Written and unwritten employment policies must treat pregnancy-related disabilities as temporary disabilities for employment-related purposes, including leave and benefits. — Iowa Code § 216.6(2)"
+     }
+    ]
+   },
+   {
+    "heading": "Federal protections available in Iowa",
+    "table": {
+     "columns": [
+      "Protection",
+      "Rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "FMLA employer coverage",
+       "Private employers generally need 50 employees for at least 20 workweeks in the current or preceding calendar year. Public agencies and elementary and secondary schools are covered regardless of size.",
+       "29 C.F.R. § 825.104"
+      ],
+      [
+       "FMLA employee eligibility",
+       "Generally requires 12 months of employment, 1,250 hours worked during the preceding 12 months, and 50 employees within 75 miles of the worksite.",
+       "29 C.F.R. § 825.110"
+      ],
+      [
+       "Ordinary FMLA leave",
+       "Up to 12 workweeks in a 12-month period for qualifying reasons, including a serious health condition, care for a spouse, child, or parent, and birth or placement of a child.",
+       "29 U.S.C. § 2612(a)(1)"
+      ],
+      [
+       "Military caregiver leave",
+       "Up to 26 workweeks in a single 12-month period to care for a covered servicemember, subject to eligibility and relationship requirements.",
+       "29 U.S.C. § 2612(a)(3)"
+      ],
+      [
+       "Pregnancy accommodation",
+       "The Pregnant Workers Fairness Act generally covers employers with at least 15 employees. Leave may be a reasonable accommodation unless it causes undue hardship.",
+       "42 U.S.C. §§ 2000gg–2000gg-1"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Pay, benefits, and return to work",
+    "facts": [
+     {
+      "label": "Pay and overlapping leave",
+      "value": "FMLA leave is generally unpaid, although qualifying accrued paid leave may run concurrently under applicable rules. Iowa’s pregnancy-leave provision does not itself require paid leave. — 29 U.S.C. § 2612(c)–(d); Iowa Code § 216.6(2)(e)"
+     },
+     {
+      "label": "Federal job protection",
+      "value": "FMLA generally requires continued group health coverage on the same terms and restoration to the same or an equivalent position. Interference and retaliation are prohibited. — 29 U.S.C. §§ 2614–2615"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Iowa",
+    "bullets": [
+     "Iowa Office of Civil Rights: Employment-discrimination complaints under the Iowa Civil Rights Act generally must be filed within 300 days of the alleged discriminatory practice. — Iowa Code § 216.15(13)",
+     "U.S. Department of Labor, Wage and Hour Division: Handles FMLA complaints. A private FMLA lawsuit generally must be filed within two years, or three years for a willful violation. — 29 U.S.C. § 2617",
+     "U.S. Equal Employment Opportunity Commission: Handles federal pregnancy-discrimination and Pregnant Workers Fairness Act charges."
+    ]
+   },
+   {
+    "heading": "Common questions in Iowa",
+    "bullets": [
+     "Does Iowa guarantee paid parental leave for all employees? No. Neither Iowa’s pregnancy-disability provision nor the FMLA creates that universal entitlement.",
+     "Does Iowa’s eight-week provision cover fathers bonding with a newborn? No. It addresses pregnancy-related disability, not general bonding leave; eligible fathers can qualify for FMLA bonding leave.",
+     "Can FMLA leave be taken intermittently? Yes, when medically necessary for qualifying conditions. Intermittent bonding leave generally requires employer agreement. — 29 U.S.C. § 2612(b)",
+     "Can an employer force pregnancy leave instead of an accommodation? Under the Pregnant Workers Fairness Act, an employer cannot require leave if another reasonable accommodation can be provided. — 42 U.S.C. § 2000gg-1(4)"
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Iowa Legislature — Iowa Code § 216.6",
+    "url": "https://www.legis.iowa.gov/docs/code/216.6.pdf"
+   },
+   {
+    "label": "Iowa Legislature — Iowa Code § 216.15",
+    "url": "https://www.legis.iowa.gov/docs/code/216.15.pdf"
+   },
+   {
+    "label": "U.S. Department of Labor — Family and Medical Leave Act",
+    "url": "https://www.dol.gov/agencies/whd/fmla"
+   },
+   {
+    "label": "U.S. Equal Employment Opportunity Commission — Pregnant Workers Fairness Act",
+    "url": "https://www.eeoc.gov/wysk/what-you-should-know-about-pregnant-workers-fairness-act"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/iowa/unemployment-benefits": {
+  "summary": "Iowa unemployment benefits are administered by Iowa Workforce Development and depend on covered wages, the reason employment ended, and continuing eligibility during each claimed week. Regular benefits are generally limited to 16 weeks, and workers ordinarily must be able to work, available for work, and actively seeking work. Quitting without good cause attributable to the employer, discharge for misconduct, or refusing suitable work can disqualify a claimant, subject to statutory exceptions and the circumstances of the case.",
+  "sections": [
+   {
+    "heading": "Eligibility and benefit limits in Iowa",
+    "facts": [
+     {
+      "label": "Covered wages",
+      "value": "Eligibility requires sufficient insured wages during the base period. Iowa generally defines the base period as the first four of the last five completed calendar quarters before the benefit year begins. Meeting the wage requirement does not by itself establish eligibility. — Iowa Code §§ 96.19(3), 96.4(4)"
+     },
+     {
+      "label": "Weekly eligibility",
+      "value": "A claimant generally must register for work, make a claim, and be able to work, available for work, and earnestly and actively seeking work. Statutory exceptions apply to certain claimants and circumstances. — Iowa Code § 96.4(1)–(3)"
+     },
+     {
+      "label": "Benefit amount and duration",
+      "value": "The weekly benefit calculation depends on covered wages and qualifying dependents, subject to statutory maximums. Regular benefits are generally capped at 16 times the weekly benefit amount; the base-period wage limitation can produce a smaller total entitlement. — Iowa Code § 96.3(4)–(5)"
+     }
+    ]
+   },
+   {
+    "heading": "How the reason for unemployment affects benefits",
+    "table": {
+     "columns": [
+      "Situation",
+      "Iowa rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Layoff or lack of work",
+       "A layoff does not remove the separate wage, claim-filing, and weekly eligibility requirements.",
+       "Iowa Code § 96.4"
+      ],
+      [
+       "Voluntary quit",
+       "Leaving voluntarily without good cause attributable to the employer generally disqualifies the worker, but statutory exceptions exist.",
+       "Iowa Code § 96.5(1)"
+      ],
+      [
+       "Discharge",
+       "Discharge for misconduct connected with employment can disqualify the worker. Being fired does not automatically establish misconduct.",
+       "Iowa Code § 96.5(2)"
+      ],
+      [
+       "Refusal of work",
+       "Failure without good cause to apply for or accept suitable work can disqualify a claimant. Suitability depends on statutory factors.",
+       "Iowa Code § 96.5(3)"
+      ],
+      [
+       "Partial unemployment",
+       "Reduced-hours work may qualify for partial benefits, but earnings affect the amount payable.",
+       "Iowa Code §§ 96.3(3), 96.19(38)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Decisions, appeals, and overpayments",
+    "facts": [
+     {
+      "label": "Initial appeal deadline",
+      "value": "An initial benefits determination generally becomes final unless an interested party appeals within ten calendar days after notification is mailed to the party’s last-known address. This is the initial-determination deadline, not a universal deadline for every review stage. — Iowa Code § 96.6(2)"
+     },
+     {
+      "label": "Overpayment recovery",
+      "value": "Benefits paid to someone later found ineligible are generally recoverable even when the claimant acted in good faith. Iowa law contains exceptions, including a limited exception involving certain reversed separation decisions and employer participation. — Iowa Code § 96.3(7)"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Iowa",
+    "bullets": [
+     "Iowa Workforce Development administers unemployment claims, benefit determinations, and claimant services. Its official unemployment website provides the claim-filing entry point.",
+     "Iowa Workforce Development’s unemployment appeals process handles challenges to initial benefit determinations under Iowa Code § 96.6.",
+     "Iowa district courts conduct judicial review of qualifying final agency decisions under Iowa Code § 17A.19."
+    ]
+   },
+   {
+    "heading": "Common questions in Iowa",
+    "bullets": [
+     "Does every unemployed worker receive 16 weeks? No. Sixteen weeks is the general regular-benefit ceiling; wage-based limits and ongoing eligibility can reduce benefits.",
+     "Can someone receive benefits after being fired? Yes, potentially. Iowa distinguishes discharge from disqualifying misconduct connected with employment.",
+     "Does quitting always prevent benefits? No. The voluntary-quit statute includes exceptions, and whether good cause is attributable to the employer matters.",
+     "Can part-time earnings affect benefits? Yes. Iowa’s partial-benefit rules account for earnings when determining the weekly payment."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Iowa Workforce Development — Unemployment",
+    "url": "https://workforce.iowa.gov/unemployment"
+   },
+   {
+    "label": "Iowa Legislature — Iowa Code § 96.3",
+    "url": "https://www.legis.iowa.gov/docs/code/96.3.pdf"
+   },
+   {
+    "label": "Iowa Legislature — Iowa Code § 96.5",
+    "url": "https://www.legis.iowa.gov/docs/code/96.5.pdf"
+   },
+   {
+    "label": "Iowa Legislature — Iowa Code § 96.6",
+    "url": "https://www.legis.iowa.gov/docs/code/96.6.pdf"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "employment-law/kansas/overtime-rights": {
+  "summary": "Kansas overtime rights depend on which law covers the employment: the federal Fair Labor Standards Act generally requires overtime after 40 hours in a workweek, while the Kansas Minimum Wage and Maximum Hours Law generally uses a 46-hour threshold for covered employment outside federal coverage. Both generally require time-and-a-half for covered, nonexempt overtime hours, but coverage and exemptions determine whether either rule applies; Kansas does not generally require overtime merely because someone works more than eight hours in a day.",
+  "sections": [
+   {
+    "heading": "Which overtime law applies in Kansas",
+    "facts": [
+     {
+      "label": "Federal coverage comes first",
+      "value": "The Kansas law’s definition of employer excludes employers subject to the federal Fair Labor Standards Act. The state’s 46-hour rule is therefore not a replacement for the federal 40-hour requirement at federally covered employers. — K.S.A. 44-1202; 29 U.S.C. § 207(a)(1)"
+     },
+     {
+      "label": "Kansas overtime requirement",
+      "value": "For employment covered by the Kansas overtime provision, an employer generally must pay at least one and one-half times the employee’s hourly wage rate for hours worked beyond 46 in a workweek. Statutory exclusions and exceptions apply. — K.S.A. 44-1204"
+     },
+     {
+      "label": "Federal overtime requirement",
+      "value": "Covered, nonexempt employees generally receive at least one and one-half times their regular rate for hours worked beyond 40 in a workweek. The regular rate can include compensation beyond the stated hourly wage, including certain bonuses. — 29 U.S.C. § 207(a), (e)"
+     },
+     {
+      "label": "Salaried employees",
+      "value": "A salary alone does not establish a federal overtime exemption. Executive, administrative and professional exemptions depend on applicable duties and compensation requirements, not simply a job title. — 29 U.S.C. § 213(a)(1); 29 C.F.R. Part 541"
+     }
+    ]
+   },
+   {
+    "heading": "Overtime thresholds and counting rules",
+    "table": {
+     "columns": [
+      "Situation",
+      "Rule"
+     ],
+     "rows": [
+      [
+       "Federally covered, nonexempt employment",
+       "Overtime generally begins after 40 hours worked in one workweek. — 29 U.S.C. § 207(a)(1)"
+      ],
+      [
+       "Employment covered by Kansas overtime law",
+       "Overtime generally begins after 46 hours worked in one workweek. — K.S.A. 44-1204"
+      ],
+      [
+       "Long individual shifts",
+       "Neither general overtime rule uses an eight-hour daily trigger. — K.S.A. 44-1204; 29 U.S.C. § 207(a)(1)"
+      ],
+      [
+       "Two-week federal payroll period",
+       "Each workweek stands alone; hours generally cannot be averaged across two weeks to avoid overtime. — 29 C.F.R. § 778.104"
+      ],
+      [
+       "Federal workweek definition",
+       "A workweek is a fixed, regularly recurring period of 168 hours, consisting of seven consecutive 24-hour periods. — 29 C.F.R. § 778.105"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Kansas",
+    "bullets": [
+     "The Kansas Department of Labor’s Employment Standards unit handles state wage complaints and administers Kansas wage-and-hour laws. Federal coverage affects whether the Kansas overtime provision applies. — K.S.A. 44-1202, 44-1204.",
+     "The U.S. Department of Labor’s Wage and Hour Division receives complaints about federal overtime violations involving employment in Kansas. — 29 U.S.C. § 211.",
+     "Federal overtime claims may also be brought in a state or federal court with jurisdiction. The usual federal limitations period is two years, extended to three years for willful violations; recovery can include unpaid overtime, an equal amount in liquidated damages, and attorney fees. — 29 U.S.C. §§ 216(b), 255(a), 260."
+    ]
+   },
+   {
+    "heading": "Common questions in Kansas",
+    "bullets": [
+     "Does Kansas let every employer wait until 46 hours to pay overtime? No. Federally covered, nonexempt employment generally follows the 40-hour federal threshold. — K.S.A. 44-1202; 29 U.S.C. § 207.",
+     "Is Sunday or holiday work automatically overtime? No. Weekend or holiday work alone does not trigger these statutory overtime requirements. — K.S.A. 44-1204; 29 C.F.R. § 778.102.",
+     "Can a private employer replace federally required overtime with time off in a later week? Generally no. Federal law provides a separate compensatory-time arrangement for qualifying state and local public employment. — 29 U.S.C. § 207(a), (o).",
+     "Can an employer retaliate over a federal overtime complaint? The FLSA prohibits retaliation for protected complaints or participation in proceedings under the Act. — 29 U.S.C. § 215(a)(3)."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Kansas Legislature — K.S.A. 44-1202",
+    "url": "https://www.ksrevisor.gov/statutes/chapters/ch44/044_012_0002.html"
+   },
+   {
+    "label": "Kansas Legislature — K.S.A. 44-1204",
+    "url": "https://www.ksrevisor.gov/statutes/chapters/ch44/044_012_0004.html"
+   },
+   {
+    "label": "Kansas Department of Labor",
+    "url": "https://www.dol.ks.gov/"
+   },
+   {
+    "label": "U.S. Department of Labor — Overtime Pay",
+    "url": "https://www.dol.gov/agencies/whd/overtime"
+   }
+  ],
+  "reviewed": "2026-10"
+ }
+}
