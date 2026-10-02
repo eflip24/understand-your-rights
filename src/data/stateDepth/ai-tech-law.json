@@ -1442,5 +1442,775 @@
    }
   ],
   "reviewed": "2026-10"
+ },
+ "ai-tech-law/tennessee/terms-of-service-enforceability": {
+  "summary": "In Tennessee, an AI service’s terms of service can form an enforceable contract, but electronic presentation alone does not establish that a user agreed to every provision. Tennessee’s Uniform Electronic Transactions Act recognizes electronic contracts and signatures, while ordinary contract requirements and defenses still apply. Arbitration provisions may also be enforceable under federal or state law, and consumer-facing AI businesses remain subject to Tennessee’s prohibitions on unfair or deceptive practices despite using contractual disclaimers.",
+  "sections": [
+   {
+    "heading": "Electronic terms and user agreement",
+    "facts": [
+     {
+      "label": "Electronic form is legally recognized",
+      "value": "A record or signature cannot be denied legal effect solely because it is electronic. A contract likewise cannot be denied legal effect solely because an electronic record was used in its formation. This removes a paper-signature barrier; it does not automatically validate an AI provider’s terms — Tennessee Uniform Electronic Transactions Act, Tenn. Code Ann. § 47-10-107."
+     },
+     {
+      "label": "Agreement to transact electronically",
+      "value": "The Act applies to transactions between parties who have agreed to conduct transactions electronically. Whether they agreed is determined from the context and surrounding circumstances, including their conduct — Tenn. Code Ann. § 47-10-105(b)."
+     },
+     {
+      "label": "Attributing a click or signature",
+      "value": "An electronic record or signature is attributable to a person if it was that person’s act. Its legal effect depends on the context and surrounding circumstances, including the parties’ agreement; attribution and enforceability are therefore distinct questions — Tenn. Code Ann. § 47-10-109."
+     }
+    ]
+   },
+   {
+    "heading": "Rules relevant to AI platform terms",
+    "table": {
+     "columns": [
+      "Issue",
+      "Tennessee rule or applicable federal rule"
+     ],
+     "rows": [
+      [
+       "Automated contracting",
+       "Electronic agents can form a contract even when no individual reviewed their actions or the resulting terms — Tenn. Code Ann. § 47-10-114."
+      ],
+      [
+       "Federal arbitration protection",
+       "Written arbitration provisions in contracts involving commerce are generally enforceable, subject to generally applicable contract defenses and statutory exceptions — Federal Arbitration Act, 9 U.S.C. § 2."
+      ],
+      [
+       "Tennessee arbitration law",
+       "Tennessee’s Uniform Arbitration Act recognizes qualifying written arbitration agreements, subject to grounds for revoking any contract — Tenn. Code Ann. § 29-5-302."
+      ],
+      [
+       "Misleading service claims",
+       "Representing that services have characteristics, uses, or benefits they do not have is an enumerated unlawful practice. That rule can matter when an AI provider markets capabilities its service lacks — Tenn. Code Ann. § 47-18-104(b)(5)."
+      ],
+      [
+       "Consumer-protection waivers",
+       "A waiver of the Tennessee Consumer Protection Act’s provisions is contrary to public policy, void, and unenforceable — Tenn. Code Ann. § 47-18-113(a)."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Consumer claims and remedies",
+    "facts": [
+     {
+      "label": "Private claim requirements",
+      "value": "A person suffering an ascertainable loss from an unlawful practice covered by the private-action provision may seek actual damages. An objectionable term alone does not establish the required loss or causation — Tenn. Code Ann. § 47-18-109(a)(1)."
+     },
+     {
+      "label": "Additional remedies",
+      "value": "For a willful or knowing violation, a court may award three times actual damages and other necessary and proper relief. The statute also permits reasonable attorney’s fees and costs upon a qualifying finding of a violation — Tenn. Code Ann. § 47-18-109(a)(3), (e)(1)."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Tennessee",
+    "bullets": [
+     "The Tennessee Attorney General’s Division of Consumer Affairs accepts consumer complaints concerning businesses. Its complaint process is separate from a private lawsuit and does not make the office the consumer’s private lawyer.",
+     "Tennessee circuit and chancery courts are authorized forums for private actions under Tenn. Code Ann. § 47-18-109(a)(1). Whether a particular dispute must instead proceed in arbitration depends on the agreement and applicable law."
+    ]
+   },
+   {
+    "heading": "Common questions in Tennessee",
+    "bullets": [
+     "Does an electronic signature make every term enforceable? No. Section 47-10-107 recognizes electronic form; it does not eliminate other contract requirements or defenses.",
+     "Can an automated AI transaction create a contract? Yes. Section 47-10-114 recognizes contract formation involving electronic agents.",
+     "Can terms waive Tennessee consumer-protection law? A waiver of the Act’s provisions is unenforceable under § 47-18-113(a).",
+     "Does every deceptive-practice allegation support a private lawsuit? No. The catchall prohibition in § 47-18-104(b)(27) is enforceable exclusively by the Attorney General."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Tennessee General Assembly — legislation and Tennessee Code access",
+    "url": "https://www.capitol.tn.gov/legislation/"
+   },
+   {
+    "label": "U.S. Government Publishing Office — Federal Arbitration Act, 9 U.S.C. § 2",
+    "url": "https://www.govinfo.gov/link/uscode/9/2"
+   },
+   {
+    "label": "Tennessee Attorney General — File a Consumer Complaint",
+    "url": "https://www.tn.gov/attorneygeneral/working-for-tennessee/consumer/file-a-complaint.html"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/wyoming/deepfake-laws": {
+  "summary": "In Wyoming, an AI-generated impersonation can raise legal issues under identity-theft, stalking, consumer-protection, or defamation law, depending on how it is created and used. These laws do not make every synthetic image, cloned voice, or fabricated video unlawful: the relevant questions include intent, use of identifying information, consumer deception, repeated harassment, and injury to reputation. A deepfake’s realistic appearance alone does not establish the elements of any particular claim or crime.",
+  "sections": [
+   {
+    "heading": "Wyoming laws relevant to deepfake misuse",
+    "facts": [
+     {
+      "label": "Identity theft",
+      "value": "Wyoming prohibits obtaining another person’s personal identifying information and using it, without that person’s consent, to obtain goods, services, property, or another thing of value, or to commit a crime. A cloned voice or fabricated likeness used in an impersonation scheme must still satisfy the statute’s identifying-information and prohibited-use requirements. — Wyo. Stat. § 6-3-901"
+     },
+     {
+      "label": "Stalking",
+      "value": "Stalking requires intent to harass and a course of conduct reasonably likely to harass another person. Wyoming’s definition of a course of conduct involves a series of acts evidencing continuity of purpose; it excludes constitutionally protected activity. Repeated deepfake-related harassment may therefore present a different legal question from a single publication. — Wyo. Stat. § 6-2-506"
+     },
+     {
+      "label": "Deceptive business practices",
+      "value": "The Wyoming Consumer Protection Act identifies prohibited deceptive practices committed knowingly in the course of business and in connection with a consumer transaction. Its provisions include specified misrepresentations about sponsorship, approval, affiliation, and goods or services—issues potentially implicated by fabricated endorsements. — Wyo. Stat. §§ 40-12-101–40-12-114, particularly § 40-12-105"
+     }
+    ]
+   },
+   {
+    "heading": "How the use of a deepfake affects the legal analysis",
+    "table": {
+     "columns": [
+      "Situation",
+      "Wyoming legal issue",
+      "Important limitation or deadline"
+     ],
+     "rows": [
+      [
+       "Impersonation used to obtain money or services",
+       "Identity theft — § 6-3-901",
+       "Unauthorized identifying-information use and a statutory prohibited purpose must be established."
+      ],
+      [
+       "Repeated targeted distribution intended to harass",
+       "Stalking — § 6-2-506",
+       "The statute requires intent and a qualifying course of conduct; protected expression is excluded."
+      ],
+      [
+       "Fabricated endorsement in a consumer transaction",
+       "Consumer Protection Act — § 40-12-105",
+       "The business, consumer-transaction, knowledge, and particular deceptive-practice requirements matter."
+      ],
+      [
+       "False factual portrayal harming reputation",
+       "Potential libel or slander claim",
+       "Wyoming generally provides a one-year limitation period for libel or slander, measured from accrual. — § 1-3-105"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Wyoming",
+    "bullets": [
+     "The Wyoming Attorney General’s Consumer Protection and Antitrust Unit handles consumer-protection matters, including complaints about allegedly deceptive business practices. This is not a general forum for every offensive or misleading AI-generated post.",
+     "Local police departments and county sheriffs receive reports of suspected crimes. County and prosecuting attorneys handle state criminal prosecutions; a private complainant does not independently prosecute a criminal case.",
+     "Wyoming state courts hear civil claims within their jurisdiction. The appropriate court depends on the claim and requested relief, rather than simply on whether AI technology was involved."
+    ]
+   },
+   {
+    "heading": "Common questions in Wyoming",
+    "bullets": [
+     "Does a convincing AI impersonation automatically establish identity theft? No. Section 6-3-901 requires the identifying-information, lack-of-consent, and prohibited-use elements; resemblance alone does not establish them.",
+     "Can a fake endorsement raise consumer-protection issues? Yes. Knowing misrepresentations about sponsorship, approval, or affiliation in a business-related consumer transaction can implicate § 40-12-105.",
+     "Is every offensive deepfake stalking? No. Section 6-2-506 requires intent to harass and a qualifying course of conduct, and excludes constitutionally protected activity.",
+     "What deadline matters for a reputational claim? Wyoming’s limitation statute generally gives libel or slander claims one year from accrual. Whether a particular publication supports such a claim is a separate question; talk to a lawyer."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Wyoming Legislature — Title 6, Crimes and Offenses",
+    "url": "https://wyoleg.gov/statutes/compress/title06.pdf"
+   },
+   {
+    "label": "Wyoming Legislature — Title 40, Trade and Commerce",
+    "url": "https://wyoleg.gov/statutes/compress/title40.pdf"
+   },
+   {
+    "label": "Wyoming Legislature — Title 1, Code of Civil Procedure",
+    "url": "https://wyoleg.gov/statutes/compress/title01.pdf"
+   },
+   {
+    "label": "Wyoming Attorney General",
+    "url": "https://ag.wyo.gov/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/texas/right-to-repair": {
+  "summary": "In Texas, disputes over repairing AI-enabled devices can involve consumer-protection law, warranty restrictions, software contracts, and personal-data rights rather than a single legal rule. The Texas Deceptive Trade Practices–Consumer Protection Act addresses misleading repair and warranty representations, while federal warranty law limits certain restrictions on independent repairs; Texas privacy rights concern personal data and do not themselves require manufacturers to release repair tools, source code, or AI model weights.",
+  "sections": [
+   {
+    "heading": "Texas rules affecting AI-device repairs",
+    "facts": [
+     {
+      "label": "Misleading repair representations",
+      "value": "The Deceptive Trade Practices–Consumer Protection Act prohibits representing that goods or services have characteristics, uses, or benefits they do not have. It also prohibits falsely representing that an agreement confers or involves particular rights, remedies, or obligations. These provisions can apply to statements about repair services or warranty coverage. — Texas Business & Commerce Code § 17.46(b)(5), (12)."
+     },
+     {
+      "label": "Consumer claims",
+      "value": "A qualifying consumer may seek relief when a listed deceptive practice, relied on to the consumer’s detriment, is a producing cause of economic damages or mental anguish damages. Breach of an express or implied warranty is another statutory basis for a claim. Not every unsuccessful repair establishes a violation. — Texas Business & Commerce Code § 17.50(a)."
+     },
+     {
+      "label": "Independent repair and warranties",
+      "value": "For covered consumer products, a warrantor generally cannot condition a written or implied warranty on using a branded article or service unless it is provided without charge or the Federal Trade Commission grants a waiver. This does not require coverage for damage actually caused by an independent repair. — 15 U.S.C. § 2302(c); 16 C.F.R. § 700.10."
+     }
+    ]
+   },
+   {
+    "heading": "Deadlines and limits",
+    "table": {
+     "columns": [
+      "Issue",
+      "Texas rule or limit",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "DTPA lawsuit deadline",
+       "Generally two years after the deceptive act occurred or was discovered, or reasonably should have been discovered.",
+       "Texas Business & Commerce Code § 17.565"
+      ],
+      [
+       "DTPA presuit notice",
+       "Generally written notice at least 60 days before suit; statutory exceptions apply.",
+       "Texas Business & Commerce Code § 17.505"
+      ],
+      [
+       "Justice court amount",
+       "Civil jurisdiction generally extends to $20,000, excluding statutory interest and court costs, subject to jurisdictional exceptions.",
+       "Texas Government Code § 27.031"
+      ],
+      [
+       "Personal-data request response",
+       "Covered controllers generally have 45 days, with a possible additional 45 days when reasonably necessary and timely explained.",
+       "Texas Business & Commerce Code § 541.052"
+      ],
+      [
+       "Data rights versus repair access",
+       "Access, correction, deletion, and portability rights do not themselves create an entitlement to diagnostic tools or proprietary AI technology.",
+       "Texas Business & Commerce Code § 541.051"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Texas",
+    "bullets": [
+     "Texas Office of the Attorney General, Consumer Protection Division: receives complaints about deceptive business practices, including repair and warranty disputes. An agency complaint is separate from a consumer’s civil lawsuit.",
+     "Texas Office of the Attorney General: enforces the Texas Data Privacy and Security Act. Chapter 541 does not create a private right of action for violations.",
+     "Texas justice courts: hear qualifying civil claims within their jurisdiction. Other repair-related civil claims may belong in county or district court, depending on the claim, amount, and applicable jurisdictional statutes.",
+     "Federal Trade Commission: receives reports about potentially unlawful warranty restrictions involving consumer products."
+    ]
+   },
+   {
+    "heading": "Common questions in Texas",
+    "bullets": [
+     "Does buying an AI device automatically provide access to its source code? No. The consumer-protection, warranty, and privacy provisions described here do not themselves grant that access.",
+     "Can a manufacturer exclude damage caused by an independent repair? Yes. Federal restrictions on warranty tying do not require a manufacturer to cover damage caused by unauthorized parts or service.",
+     "Does a Texas privacy request provide every file stored by a device maker? No. Chapter 541 concerns specified rights in personal data and includes limitations and exemptions; it is not a general disclosure law for proprietary technology.",
+     "Does a failed repair automatically establish a DTPA claim? No. The applicable statutory elements must be established, including consumer status and the required connection between actionable conduct and injury."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Texas Legislature — Business & Commerce Code Chapter 17",
+    "url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.17.htm"
+   },
+   {
+    "label": "Texas Legislature — Business & Commerce Code Chapter 541",
+    "url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.541.htm"
+   },
+   {
+    "label": "Texas Legislature — Government Code Chapter 27",
+    "url": "https://statutes.capitol.texas.gov/Docs/GV/htm/GV.27.htm"
+   },
+   {
+    "label": "Federal Trade Commission — Businessperson’s Guide to Federal Warranty Law",
+    "url": "https://www.ftc.gov/business-guidance/resources/businesspersons-guide-federal-warranty-law"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/virginia/deepfake-laws": {
+  "summary": "Virginia’s intimate-image law expressly reaches manipulated images that depict a recognizable real person, making some sexually explicit deepfakes a criminal offense even when the depicted nudity never occurred. Liability depends on the statute’s requirements, including malicious dissemination or sale, intent to coerce, harass, or intimidate, and knowledge that distribution is unauthorized; separate Virginia statutes provide civil remedies for prohibited intimate-image distribution and certain unauthorized uses of someone’s identity.",
+  "sections": [
+   {
+    "heading": "Virginia’s criminal rule for intimate deepfakes",
+    "facts": [
+     {
+      "label": "Main statute",
+      "value": "Virginia Code § 18.2-386.2 prohibits malicious dissemination or sale of specified nude or undressed images with intent to coerce, harass, or intimidate, when the distributor knows or has reason to know distribution is unauthorized. The statute covers images created by any means whatsoever. — Va. Code § 18.2-386.2."
+     },
+     {
+      "label": "Recognizable real people",
+      "value": "The definition of another person includes someone whose image was used to create, adapt, or modify an image intended to depict an actual person who is recognizable by face, likeness, or another distinguishing characteristic. This language expressly addresses manipulated depictions. — Va. Code § 18.2-386.2."
+     },
+     {
+      "label": "Covered exposure",
+      "value": "The image must depict total nudity or undress exposing the genitals, pubic area, buttocks, or female breast. An AI-generated image is not automatically prohibited simply because it is synthetic or misleading. — Va. Code § 18.2-386.2."
+     },
+     {
+      "label": "Criminal penalty",
+      "value": "A violation is a Class 1 misdemeanor, punishable by confinement in jail for up to 12 months, a fine of up to $2,500, or both. — Va. Code §§ 18.2-386.2 and 18.2-11."
+     }
+    ]
+   },
+   {
+    "heading": "Conduct and available legal routes",
+    "table": {
+     "columns": [
+      "Situation",
+      "Virginia rule"
+     ],
+     "rows": [
+      [
+       "Distributing an intimate face-swap",
+       "Can fall within the criminal statute when the depicted person is recognizable and the distribution, intent, and knowledge requirements are satisfied. — § 18.2-386.2."
+      ],
+      [
+       "Creating an image without distributing it",
+       "Creation alone is not the dissemination or sale prohibited by this particular provision. — § 18.2-386.2."
+      ],
+      [
+       "Civil claim for prohibited intimate-image distribution",
+       "A person depicted in an image distributed in violation of § 18.2-386.2 has a civil cause of action against the person who disseminated or sold it. — § 8.01-40.4."
+      ],
+      [
+       "Unauthorized identity use in advertising",
+       "Use of a person’s name, portrait, or picture for advertising or trade without the required written consent can support an action to stop the use and recover damages. Application to a particular synthetic depiction depends on the facts. — § 8.01-40."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Virginia",
+    "bullets": [
+     "Local police departments and county sheriffs receive reports of suspected criminal intimate-image distribution. The local Commonwealth’s Attorney handles prosecution of Virginia criminal offenses.",
+     "General district courts ordinarily hear adult Class 1 misdemeanor prosecutions, including charges under § 18.2-386.2; juvenile and domestic relations district court jurisdiction can apply in specified circumstances.",
+     "Virginia state courts hear civil claims under § 8.01-40.4. The appropriate court depends on jurisdiction and the relief requested.",
+     "Virginia Code § 8.01-40 expressly provides for an action in circuit court over qualifying unauthorized advertising or trade uses of a person’s name, portrait, or picture."
+    ]
+   },
+   {
+    "heading": "Common questions in Virginia",
+    "bullets": [
+     "Must the nudity be authentic? No. Section 18.2-386.2 expressly includes qualifying created or modified depictions of recognizable actual people.",
+     "Is every deceptive deepfake covered by this criminal law? No. Section 18.2-386.2 addresses specified nude or undressed images and requires the statutory intent, knowledge, and distribution elements.",
+     "Does permission to make an image necessarily authorize sharing it? No. The statute addresses whether dissemination or sale is licensed or authorized.",
+     "Can the depicted person bring a lawsuit? Yes. Section 8.01-40.4 provides a civil cause of action for dissemination or sale violating § 18.2-386.2."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Virginia Legislative Information System — § 18.2-386.2",
+    "url": "https://law.lis.virginia.gov/vacode/title18.2/chapter8/section18.2-386.2/"
+   },
+   {
+    "label": "Virginia Legislative Information System — § 18.2-11",
+    "url": "https://law.lis.virginia.gov/vacode/title18.2/chapter1/section18.2-11/"
+   },
+   {
+    "label": "Virginia Legislative Information System — § 8.01-40.4",
+    "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter3/section8.01-40.4/"
+   },
+   {
+    "label": "Virginia Legislative Information System — § 8.01-40",
+    "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter3/section8.01-40/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/rhode-island/social-media-legal-issues": {
+  "summary": "Rhode Island social media disputes can involve statutory privacy rights, unauthorized commercial use of a person’s name or image, and consumer data protections, including when AI tools generate or distribute the content. The Rhode Island Data Transparency and Privacy Protection Act took effect January 1, 2026, but its coverage and exemptions matter: an offensive post, an AI-generated likeness, and a platform’s collection of personal data raise different legal questions rather than falling under one general social media law.",
+  "sections": [
+   {
+    "heading": "Privacy and AI-generated social media content",
+    "facts": [
+     {
+      "label": "Four protected privacy interests",
+      "value": "Rhode Island expressly recognizes protection against unreasonable intrusion upon physical solitude or seclusion, appropriation of a name or likeness, unreasonable publicity given to private life, and publicity that unreasonably places someone in a false light. Each claim has its own statutory requirements; objectionable online content does not automatically establish liability. — R.I. Gen. Laws § 9-1-28.1."
+     },
+     {
+      "label": "Unauthorized commercial use",
+      "value": "A person whose name, portrait, or picture is used within Rhode Island for advertising or trade purposes without written consent may seek an injunction and damages. The statute includes exceptions, so the distinction between an advertisement and other expression matters. — R.I. Gen. Laws § 9-1-28."
+     },
+     {
+      "label": "AI does not replace the legal elements",
+      "value": "For an AI-generated social post, the relevant questions can include whether it appropriates an identifiable person’s likeness, falsely portrays that person, or publicizes private facts. These Rhode Island statutes address the underlying conduct rather than establishing that every synthetic image or inaccurate AI output is unlawful. — R.I. Gen. Laws §§ 9-1-28 and 9-1-28.1."
+     }
+    ]
+   },
+   {
+    "heading": "How common online disputes fit Rhode Island law",
+    "table": {
+     "columns": [
+      "Issue",
+      "Rhode Island legal framework"
+     ],
+     "rows": [
+      [
+       "AI likeness in an advertisement",
+       "Unauthorized advertising or trade use may implicate § 9-1-28; appropriation may also implicate § 9-1-28.1."
+      ],
+      [
+       "Fabricated account or misleading portrayal",
+       "The statutory false-light right may be relevant, but its publicity and other requirements must be established. § 9-1-28.1."
+      ],
+      [
+       "Publication of private information",
+       "Unreasonable publicity given to private life is a recognized privacy claim. § 9-1-28.1."
+      ],
+      [
+       "Intrusive information gathering",
+       "Unreasonable intrusion upon physical solitude or seclusion is separately protected. § 9-1-28.1."
+      ],
+      [
+       "Platform profiling or targeted advertising",
+       "Covered personal-data processing may trigger consumer rights under the Data Transparency and Privacy Protection Act. Chapter 6-48.1."
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Consumer data rights beginning in 2026",
+    "facts": [
+     {
+      "label": "Scope and rights",
+      "value": "The Rhode Island Data Transparency and Privacy Protection Act establishes rights for consumers concerning covered processing of personal data, including access, correction, deletion, portability, and specified opt-outs. Coverage depends on statutory applicability rules and exemptions; these rights are not a universal removal mechanism for every social media post. — R.I. Gen. Laws ch. 6-48.1."
+     },
+     {
+      "label": "Enforcement",
+      "value": "The attorney general has exclusive authority to enforce the Act. The Act does not create a private right of action, which distinguishes its enforcement process from civil claims under Rhode Island’s privacy statutes. — R.I. Gen. Laws ch. 6-48.1."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Rhode Island",
+    "bullets": [
+     "Rhode Island Office of the Attorney General: the state enforcement authority for the Data Transparency and Privacy Protection Act.",
+     "Rhode Island civil courts: claims under §§ 9-1-28 and 9-1-28.1 are distinct from attorney general enforcement of the data statute. The appropriate court depends on jurisdiction and the relief requested.",
+     "For questions about overlapping privacy claims, speech protections, or jurisdiction, talk to a lawyer."
+    ]
+   },
+   {
+    "heading": "Common questions in Rhode Island",
+    "bullets": [
+     "Is every AI deepfake unlawful? No. Liability under these statutes depends on the particular use and the elements of the applicable claim.",
+     "Does Rhode Island recognize false-light privacy claims? Yes. Section 9-1-28.1 expressly recognizes that privacy interest.",
+     "Can someone sue under the new consumer data Act? The Act itself provides no private right of action; enforcement belongs to the attorney general.",
+     "Can an unauthorized advertisement using someone’s picture lead to damages? Yes. Section 9-1-28 authorizes damages and injunctive relief when its requirements are met."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Rhode Island General Laws § 9-1-28.1 — Right to privacy",
+    "url": "https://webserver.rilegislature.gov/Statutes/TITLE9/9-1/9-1-28.1.htm"
+   },
+   {
+    "label": "Rhode Island General Laws § 9-1-28 — Action for unauthorized use of name, portrait, or picture",
+    "url": "https://webserver.rilegislature.gov/Statutes/TITLE9/9-1/9-1-28.htm"
+   },
+   {
+    "label": "Rhode Island General Laws Chapter 6-48.1 — Data Transparency and Privacy Protection Act",
+    "url": "https://webserver.rilegislature.gov/Statutes/TITLE6/6-48.1/INDEX.htm"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/texas/deepfake-laws": {
+  "summary": "Texas regulates deepfakes through targeted laws, including an election offense and a criminal provision addressing sexually explicit deepfake material, rather than treating every AI-generated depiction as unlawful. Election Code Section 255.004 covers deceptive videos created with the required election-related intent and published or distributed within 30 days of an election; Penal Code Section 21.165 separately addresses sexually explicit deepfakes, where consent and the statutory elements matter. Whether either provision applies depends on the material and the conduct involved.",
+  "sections": [
+   {
+    "heading": "Texas election deepfake law",
+    "facts": [
+     {
+      "label": "Conduct covered",
+      "value": "The election offense applies when a person, with intent to injure a candidate or influence an election’s result, creates a deepfake video and causes it to be published or distributed within 30 days of an election. Creating the video and causing its publication or distribution are both parts of the statutory test. — Texas Election Code § 255.004(b)"
+     },
+     {
+      "label": "Definition",
+      "value": "A deepfake video is a video created with intent to deceive that appears to depict a real person performing an action that did not occur in reality. The definition focuses on deceptive depiction, not a particular AI product, model, or editing technique. — Texas Election Code § 255.004(d)"
+     },
+     {
+      "label": "Criminal classification",
+      "value": "An offense under Section 255.004 is a Class A misdemeanor. Texas’s general punishment range for that classification is a fine of up to $4,000, confinement in jail for up to one year, or both. — Texas Election Code § 255.004(c); Texas Penal Code § 12.21"
+     }
+    ]
+   },
+   {
+    "heading": "Different materials and legal boundaries",
+    "table": {
+     "columns": [
+      "Material or issue",
+      "Texas statutory treatment"
+     ],
+     "rows": [
+      [
+       "Deceptive candidate video",
+       "Potentially covered when the creation, intent, publication or distribution, and timing elements are satisfied. — Election Code § 255.004(b)"
+      ],
+      [
+       "Sexually explicit deepfake material",
+       "Texas has a separate criminal provision addressing unlawful production or distribution of sexually explicit deepfake material; it is not limited to elections. — Penal Code § 21.165"
+      ],
+      [
+       "Audio-only impersonation",
+       "The election deepfake definition expressly concerns video. Audio-only content does not meet that definition merely because it imitates someone’s voice. — Election Code § 255.004(d)"
+      ],
+      [
+       "Election timing",
+       "The 30-day requirement concerns publication or distribution before an election. It is an element of this offense, not a general deadline for reporting all deepfake conduct. — Election Code § 255.004(b)(2)"
+      ],
+      [
+       "Nondeceptive synthetic video",
+       "Synthetic production alone does not establish the election offense: the statutory definition requires intent to deceive, and the offense requires additional election-related elements. — Election Code § 255.004(b), (d)"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Texas",
+    "bullets": [
+     "Local police departments and county sheriffs receive reports of suspected criminal conduct, including conduct potentially covered by the election and sexually explicit deepfake statutes.",
+     "Criminal charges are pursued by the prosecuting authority with jurisdiction. A private complaint is not itself a criminal prosecution.",
+     "County-level criminal courts generally handle Class A misdemeanor prosecutions, including the election deepfake offense; the particular court depends on the county’s court structure.",
+     "The Texas Ethics Commission administers civil enforcement of specified political-advertising requirements, but its complaint process is distinct from criminal prosecution under Election Code Section 255.004."
+    ]
+   },
+   {
+    "heading": "Common questions in Texas",
+    "bullets": [
+     "Is every deepfake illegal? No. Section 255.004 requires particular intent, conduct, and election timing; synthetic content alone does not establish that offense.",
+     "Does the election statute require proof that voters changed their votes? Its stated elements require intent to injure a candidate or influence an election, not proof that the election result actually changed.",
+     "Does the 30-day election rule govern sexual deepfakes? No. Penal Code Section 21.165 is a separate provision and does not use that election window.",
+     "Can an authentic recording be a deepfake under this definition? A recording accurately depicting an action that actually occurred does not meet the statutory requirement that the depicted action did not occur in reality."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Texas Legislature — Election Code Chapter 255",
+    "url": "https://statutes.capitol.texas.gov/Docs/EL/htm/EL.255.htm"
+   },
+   {
+    "label": "Texas Legislature — Penal Code Chapter 21",
+    "url": "https://statutes.capitol.texas.gov/Docs/PE/htm/PE.21.htm"
+   },
+   {
+    "label": "Texas Legislature — Penal Code Chapter 12",
+    "url": "https://statutes.capitol.texas.gov/Docs/PE/htm/PE.12.htm"
+   },
+   {
+    "label": "Texas Ethics Commission — Enforcement",
+    "url": "https://www.ethics.state.tx.us/enforcement/"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/washington/data-privacy-rights": {
+  "summary": "Washington’s My Health My Data Act protects consumer health data outside traditional medical-record settings, including certain health information inferred by algorithms or machine learning, and gives covered consumers access, deletion, and consent-withdrawal rights. Washington also regulates commercial biometric identifiers and requires notices for qualifying data breaches, but these laws have different coverage and enforcement rules; they do not create a general right to inspect every AI system or delete every kind of personal information.",
+  "sections": [
+   {
+    "heading": "Consumer health data and AI",
+    "facts": [
+     {
+      "label": "Coverage",
+      "value": "The My Health My Data Act covers Washington residents and individuals whose consumer health data is collected in Washington. Its consumer definition excludes individuals acting in an employment context. Covered businesses include entities doing business in Washington or targeting products or services to Washington consumers, subject to statutory exclusions. — RCW 19.373.010"
+     },
+     {
+      "label": "AI-generated health inferences",
+      "value": "Consumer health data includes identifiable information about physical or mental health and certain information derived or extrapolated from nonhealth information through algorithms or machine learning. An inference can therefore be protected even when the person never supplied a medical record. — RCW 19.373.010"
+     },
+     {
+      "label": "Exemptions",
+      "value": "The Act excludes specified information governed by other laws, including HIPAA protected health information and health care information collected, used, or disclosed under Washington’s Uniform Health Care Information Act. It is not a replacement for those medical-privacy laws. — RCW 19.373.100"
+     }
+    ]
+   },
+   {
+    "heading": "Rights and business obligations",
+    "table": {
+     "columns": [
+      "Issue",
+      "Washington rule",
+      "Citation"
+     ],
+     "rows": [
+      [
+       "Access",
+       "Consumers may confirm collection, sharing, or sale and access their health data, including a list of third parties and affiliates receiving it.",
+       "RCW 19.373.040"
+      ],
+      [
+       "Consent withdrawal",
+       "Consumers may withdraw consent for collection and sharing of consumer health data.",
+       "RCW 19.373.040"
+      ],
+      [
+       "Deletion",
+       "Consumers may request deletion; the business must also notify relevant affiliates, processors, contractors, and other recipients to delete the data.",
+       "RCW 19.373.040"
+      ],
+      [
+       "Response deadline",
+       "Businesses generally must respond within 45 days. A reasonably necessary extension of another 45 days requires timely notice explaining the delay.",
+       "RCW 19.373.040"
+      ],
+      [
+       "Collection and sharing",
+       "Consent is generally required unless necessary to provide a requested product or service. Sharing consent must be separate from collection consent.",
+       "RCW 19.373.030"
+      ],
+      [
+       "Sale",
+       "Selling or offering to sell consumer health data requires a valid authorization separate from consent to collect or share.",
+       "RCW 19.373.070"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Biometrics and breach notices",
+    "facts": [
+     {
+      "label": "Commercial biometric identifiers",
+      "value": "Washington separately regulates enrollment and use of biometric identifiers for commercial purposes. Its definition includes fingerprints, voiceprints, and specified biological patterns used to identify a person; it excludes photographs, video or audio recordings, and data generated from them. — RCW 19.375.010–.020"
+     },
+     {
+      "label": "Security and retention",
+      "value": "Possessors of enrolled biometric identifiers must exercise reasonable care against unauthorized access or acquisition and may retain them no longer than reasonably necessary for authorized purposes specified by law. — RCW 19.375.020"
+     },
+     {
+      "label": "Breach notification",
+      "value": "For qualifying breaches involving covered persons or businesses, consumer notice is generally due without unreasonable delay and within 30 calendar days after discovery, subject to statutory exceptions. Breaches requiring notice to more than 500 Washington residents also require Attorney General notice. — RCW 19.255.010"
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Washington",
+    "bullets": [
+     "Washington Attorney General: accepts consumer complaints and enforces the My Health My Data Act through the Consumer Protection Act. — RCW 19.373.090",
+     "Washington courts: a private Consumer Protection Act action may be available for a My Health My Data violation when the required elements are established; a violation does not automatically establish damages. — RCW 19.373.090",
+     "Washington Attorney General: has exclusive enforcement authority under the separate commercial biometric-identifiers chapter. — RCW 19.375.030"
+    ]
+   },
+   {
+    "heading": "Common questions in Washington",
+    "bullets": [
+     "Can an AI health prediction be protected? Yes, qualifying identifiable health inferences fall within consumer health data. — RCW 19.373.010",
+     "Does HIPAA coverage determine everything? No. Washington’s Act reaches qualifying health data outside its medical-information exemptions. — RCW 19.373.100",
+     "Can a business refuse a request? The Act permits authentication requirements and provides an appeal process for refusals. — RCW 19.373.040",
+     "Are health-related geofences restricted? Yes. The Act prohibits specified tracking, collection, and messaging uses of geofences around entities providing in-person health care services. — RCW 19.373.080"
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Washington Legislature — My Health My Data Act",
+    "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&full=true"
+   },
+   {
+    "label": "Washington Legislature — Biometric Identifiers",
+    "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true"
+   },
+   {
+    "label": "Washington Legislature — Personal Information Breach Notification",
+    "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.255.010"
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/oregon/social-media-legal-issues": {
+  "summary": "Oregon regulates social media and AI-related practices through its consumer privacy law, restrictions on employer access to personal accounts, and consumer protection rules against deceptive business conduct. The Oregon Consumer Privacy Act gives eligible residents rights over covered personal data, including certain profiling and targeted advertising, but it does not cover every platform or every use of AI. Enforcement and available remedies depend on the particular law involved.",
+  "sections": [
+   {
+    "heading": "Oregon privacy rights affecting social media and AI",
+    "facts": [
+     {
+      "label": "Scope and coverage",
+      "value": "The Oregon Consumer Privacy Act applies to businesses and other entities meeting its coverage requirements, subject to statutory exemptions. A consumer is an Oregon resident acting outside a commercial or employment context, so employment records do not receive these consumer rights merely because they contain personal information. — ORS 646A.570–646A.589"
+     },
+     {
+      "label": "Access, correction and deletion",
+      "value": "Covered consumers can request confirmation of processing, access to personal data, correction of inaccuracies and deletion. They can also request a list of specific third parties to which the controller disclosed personal data, subject to the statute's terms. — ORS 646A.570–646A.589"
+     },
+     {
+      "label": "Request deadlines",
+      "value": "Controllers generally must respond to consumer rights requests within 45 days. A further 45-day extension is permitted when reasonably necessary, with notice and an explanation during the initial response period. The law also requires an appeal process for refusals. — ORS 646A.570–646A.589"
+     },
+     {
+      "label": "Enforcement",
+      "value": "The Oregon Attorney General enforces the privacy act and may seek civil penalties of up to $7,500 per violation. The act does not create a private right of action for consumers. — ORS 646A.570–646A.589"
+     }
+    ]
+   },
+   {
+    "heading": "Rules for common social media and AI situations",
+    "table": {
+     "columns": [
+      "Situation",
+      "Oregon rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Targeted advertising or sale of personal data",
+       "Covered consumers have opt-out rights, subject to statutory definitions and exceptions.",
+       "ORS 646A.570–646A.589"
+      ],
+      [
+       "AI profiling for consequential decisions",
+       "The opt-out right reaches profiling used for decisions producing legal or similarly significant effects; it is not a general prohibition on AI recommendations.",
+       "ORS 646A.570–646A.589"
+      ],
+      [
+       "Sensitive personal information",
+       "Covered controllers generally need consent to process sensitive data, including specified health information and biometric data used for identification.",
+       "ORS 646A.570–646A.589"
+      ],
+      [
+       "Employer demands for account access",
+       "Employers generally cannot require workers or applicants to disclose credentials for personal social media accounts or compel access, subject to statutory exceptions.",
+       "ORS 659A.330"
+      ],
+      [
+       "Misleading commercial posts",
+       "False representations about goods or services can violate Oregon's Unlawful Trade Practices Act, whether the promotional content is human-written or AI-generated.",
+       "ORS 646.608"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Where to file or complain in Oregon",
+    "bullets": [
+     "The Oregon Department of Justice accepts consumer privacy complaints and enforces the Oregon Consumer Privacy Act.",
+     "The Oregon Department of Justice's consumer protection program receives complaints about deceptive business practices, including online marketing.",
+     "The Oregon Bureau of Labor and Industries handles complaints involving unlawful employment practices, including Oregon's personal social media account protections.",
+     "Oregon circuit courts hear qualifying civil claims under the Unlawful Trade Practices Act. Private claims require the statutory elements; they are distinct from privacy-act enforcement. — ORS 646.638"
+    ]
+   },
+   {
+    "heading": "Common questions in Oregon",
+    "bullets": [
+     "Can someone sue directly under Oregon's privacy act? No. The act assigns enforcement to the Attorney General and does not provide a private lawsuit under that act.",
+     "Can an employer demand a personal Instagram password? Generally no. ORS 659A.330 protects personal social media credentials, although statutory exceptions apply.",
+     "Does the privacy act cover every AI chatbot? No. Coverage depends on the entity, processing activity, statutory thresholds and exemptions—not simply whether a product uses AI.",
+     "Does deleting a platform account necessarily exercise every privacy right? No. Account closure and a statutory personal-data deletion request are different actions, and lawful retention exceptions may apply."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Oregon Legislature — ORS Chapter 646A, Consumer Privacy",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors646A.html"
+   },
+   {
+    "label": "Oregon Legislature — ORS 659A.330, Employer Access to Personal Social Media",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors659A.html"
+   },
+   {
+    "label": "Oregon Legislature — ORS Chapter 646, Unlawful Trade Practices",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors646.html"
+   }
+  ],
+  "reviewed": "2026-10"
  }
 }
