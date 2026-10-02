@@ -1,0 +1,218 @@
+{
+ "ai-tech-law/california/deepfake-laws": {
+  "summary": "California regulates deepfakes through several targeted laws rather than one general ban on AI-generated media: its rules address sexually explicit depictions, certain criminal distributions, performers’ digital-replica contracts, and deceased personalities’ publicity rights. Whether a particular use is unlawful depends on the statute’s requirements, including consent, knowledge, harm, contractual representation, or an applicable expressive-use exception; labeling content as AI-generated does not automatically make it lawful.",
+  "sections": [
+   {
+    "heading": "Sexually explicit deepfakes: civil and criminal rules",
+    "facts": [
+     {
+      "label": "Civil claims against creators",
+      "value": "A depicted individual can bring a civil action against someone who creates and intentionally discloses sexually explicit material when that person knows or reasonably should know the individual did not consent to its creation or disclosure. The statute covers qualifying material altered through digitization — California Civil Code § 1708.86."
+     },
+     {
+      "label": "Claims against distributors",
+      "value": "The civil law also reaches someone who intentionally discloses qualifying material that the person did not create, with knowledge that the depicted individual did not consent to its creation — California Civil Code § 1708.86."
+     },
+     {
+      "label": "Criminal liability",
+      "value": "California’s disorderly-conduct statute includes intentional distribution of qualifying intimate images created or altered through digitization. Liability requires the statutory conditions, including the required knowledge concerning serious emotional distress and that the depicted person actually suffer that distress; not every AI-generated image satisfies those elements — California Penal Code § 647(j)(4)."
+     }
+    ]
+   },
+   {
+    "heading": "Protections and remedies by type of use",
+    "table": {
+     "columns": [
+      "Type of use",
+      "California rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Nonconsensual sexually explicit deepfake",
+       "Civil remedies include actual damages or statutory damages, plus other available relief.",
+       "Civil Code § 1708.86"
+      ],
+      [
+       "Civil statutory damages",
+       "The statutory range is $1,500–$30,000; the statute permits up to $150,000 for conduct committed with malice.",
+       "Civil Code § 1708.86"
+      ],
+      [
+       "Qualifying criminal distribution",
+       "Distribution of covered digitized intimate images can constitute misdemeanor disorderly conduct.",
+       "Penal Code § 647(j)(4)"
+      ],
+      [
+       "Performer’s digital-replica contract",
+       "Certain provisions authorizing replacement of personal services with digital replicas are unenforceable when the statute’s conditions are met.",
+       "Labor Code § 927"
+      ],
+      [
+       "Deceased personality’s digital replica",
+       "Unauthorized production, distribution, or availability of qualifying replicas in expressive audiovisual works or sound recordings can create civil liability, subject to exceptions.",
+       "Civil Code § 3344.1"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "Performers and deceased personalities",
+    "facts": [
+     {
+      "label": "Contract safeguards",
+      "value": "The contract rule concerns a digital replica used instead of work the individual otherwise would have performed personally. Its conditions include an insufficiently specific description of intended uses and the absence of qualifying legal or labor-union representation. It does not automatically invalidate every agreement involving AI — California Labor Code § 927."
+     },
+     {
+      "label": "Postmortem protection",
+      "value": "California’s deceased-personality statute generally protects covered rights for 70 years after death. Its digital-replica provisions contain exceptions, including specified news, public-affairs, documentary, historical, commentary, criticism, satire, and parody uses, subject to statutory conditions — California Civil Code § 3344.1."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in California",
+    "bullets": [
+     "California Superior Courts hear state-law civil claims under Civil Code §§ 1708.86 and 3344.1. These are civil lawsuits, distinct from criminal complaints.",
+     "Local police departments and county sheriffs receive reports of suspected criminal distribution under Penal Code § 647(j)(4). Prosecutors, rather than private complainants, bring criminal charges.",
+     "Disputes about digital-replica contract enforceability involve Labor Code § 927; the statute does not create a general licensing or approval system for AI-generated performances."
+    ]
+   },
+   {
+    "heading": "Common questions in California",
+    "bullets": [
+     "Does an AI disclaimer eliminate liability? No. Civil Code § 1708.86 expressly provides that a disclaimer identifying unauthorized sexually explicit material does not itself defeat liability.",
+     "Must the depicted person be famous? No. The sexually explicit deepfake civil statute protects qualifying depicted individuals, not just celebrities.",
+     "Is every digital-replica contract unenforceable? No. Labor Code § 927 applies only when its specified conditions are satisfied.",
+     "Are satire and documentaries always prohibited? No. Civil Code § 3344.1 includes expressive-use exceptions, but their statutory conditions matter."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "California Legislature — Civil Code § 1708.86",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1708.86."
+   },
+   {
+    "label": "California Legislature — Penal Code § 647",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=647."
+   },
+   {
+    "label": "California Legislature — Labor Code § 927",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=LAB&sectionNum=927."
+   },
+   {
+    "label": "California Legislature — Civil Code § 3344.1",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=3344.1."
+   }
+  ],
+  "reviewed": "2026-10"
+ },
+ "ai-tech-law/georgia/right-to-repair": {
+  "summary": "In Georgia, repair disputes involving AI-enabled devices, connected appliances, and other consumer technology can involve sales warranties, consumer-protection law, federal warranty restrictions, and rules governing software access. These protections are not interchangeable: a warranty claim concerns the seller’s or warrantor’s obligations, while access to diagnostic software, cloud services, source code, or replacement components presents separate questions that depend on the product, contract, and applicable law.",
+  "sections": [
+   {
+    "heading": "Georgia warranty and consumer-protection rules",
+    "facts": [
+     {
+      "label": "Merchantability",
+      "value": "Unless excluded or modified, a merchant selling goods of that kind provides an implied warranty of merchantability. Goods must be fit for their ordinary purposes. This rule concerns the goods’ condition and performance, not a general obligation to publish repair instructions or AI source code. — O.C.G.A. § 11-2-314."
+     },
+     {
+      "label": "Warranty exclusions",
+      "value": "A written exclusion of merchantability must mention merchantability and be conspicuous. Georgia law also recognizes exclusions using expressions such as “as is,” subject to statutory requirements and other applicable law. Federal consumer-warranty law can limit exclusions where a written warranty or qualifying service contract exists. — O.C.G.A. § 11-2-316; 15 U.S.C. § 2308."
+     },
+     {
+      "label": "Misleading repair representations",
+      "value": "Georgia’s Fair Business Practices Act prohibits unfair or deceptive acts or practices in consumer transactions and consumer trade or commerce. False representations about a product’s characteristics, benefits, or warranty rights can implicate the Act; a repair disagreement alone does not establish deception. — O.C.G.A. § 10-1-393."
+     }
+    ]
+   },
+   {
+    "heading": "What the legal protections cover",
+    "table": {
+     "columns": [
+      "Issue",
+      "Rule",
+      "Authority"
+     ],
+     "rows": [
+      [
+       "Independent repair and warranties",
+       "A consumer-product warrantor generally cannot condition coverage on branded parts or services unless provided without charge or covered by an FTC waiver.",
+       "15 U.S.C. § 2302(c)"
+      ],
+      [
+       "Damage caused by a repair",
+       "Federal warranty rules permit exclusion of damage caused by unauthorized parts or service; independent service does not automatically eliminate all coverage.",
+       "16 C.F.R. § 700.10(c)"
+      ],
+      [
+       "Sales-warranty deadline",
+       "Georgia generally allows four years after accrual. An original agreement may reduce this to at least one year, but cannot extend it.",
+       "O.C.G.A. § 11-2-725(1)"
+      ],
+      [
+       "When a warranty claim accrues",
+       "Ordinarily, breach occurs upon tender of delivery, even without knowledge of the defect. An explicit future-performance warranty can change the accrual rule.",
+       "O.C.G.A. § 11-2-725(2)"
+      ],
+      [
+       "Software locks",
+       "Federal copyright law separately restricts circumvention of access controls. Statutory and regulatory exemptions are limited, not blanket repair permissions.",
+       "17 U.S.C. § 1201"
+      ]
+     ]
+    }
+   },
+   {
+    "heading": "AI software and connected-device limits",
+    "facts": [
+     {
+      "label": "Goods versus services",
+      "value": "Georgia’s Uniform Commercial Code sales provisions apply to transactions in goods. A cloud subscription or AI service is not automatically governed by the same rules as the physical device it supports. — O.C.G.A. §§ 11-2-102, 11-2-105."
+     },
+     {
+      "label": "Repair does not authorize every access method",
+      "value": "Georgia’s Computer Systems Protection Act defines offenses involving unauthorized computer use, including computer theft and computer trespass. The statutory elements matter; a repair purpose does not itself supply permission to access another party’s systems. — O.C.G.A. §§ 16-9-92, 16-9-93."
+     }
+    ]
+   },
+   {
+    "heading": "Where to file or complain in Georgia",
+    "bullets": [
+     "The Georgia Attorney General’s Consumer Protection Division accepts complaints involving allegedly unfair or deceptive business practices. It does not serve as the consumer’s private lawyer.",
+     "Georgia magistrate courts hear qualifying civil claims involving $15,000 or less, subject to jurisdictional exceptions. Larger claims may fall within state or superior court jurisdiction. — O.C.G.A. § 15-10-2.",
+     "A private Fair Business Practices Act damages claim generally requires a written demand delivered at least 30 days before filing. Its limitation period is generally two years. — O.C.G.A. §§ 10-1-399(b), 10-1-401."
+    ]
+   },
+   {
+    "heading": "Common questions in Georgia",
+    "bullets": [
+     "Does a warranty require disclosure of AI source code? Not by itself; warranty coverage and software-access rights are separate.",
+     "Does independent repair automatically void a warranty? No. Federal law restricts branded-service conditions, while allowing exclusions for damage caused by unauthorized service.",
+     "Is every failed repair consumer fraud? No. Defective performance and an unfair or deceptive practice are different legal questions.",
+     "Do repair rights guarantee continued cloud access? The cited warranty provisions do not establish a blanket entitlement to continued cloud or AI services."
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "label": "Georgia General Assembly — Georgia Code access",
+    "url": "https://www.legis.ga.gov/"
+   },
+   {
+    "label": "Georgia Attorney General — Consumer complaints",
+    "url": "https://consumer.georgia.gov/resolve-your-dispute/how-do-i-file-complaint"
+   },
+   {
+    "label": "U.S. House of Representatives — 15 U.S.C. § 2302",
+    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section2302&num=0&edition=prelim"
+   },
+   {
+    "label": "Electronic Code of Federal Regulations — Warranty interpretations",
+    "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-G/part-700/section-700.10"
+   }
+  ],
+  "reviewed": "2026-10"
+ }
+}
