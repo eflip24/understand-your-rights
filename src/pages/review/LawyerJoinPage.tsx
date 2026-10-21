@@ -55,7 +55,7 @@ export default function LawyerJoinPage() {
       <h1 className="font-serif text-3xl font-bold">Join the review panel</h1>
       <p className="mt-3 text-muted-foreground">
         For freelance and locum solicitors in Ireland and licensed lawyers in the US. Clients arrive with their agreement and a structured AI briefing already prepared.
-        You set your own fixed fee and clients pay you directly — we never take a share of your fee. Panel membership will be a flat monthly listing fee (free during the pilot).
+        You set your own fixed fee and clients pay you directly — we never take a share of your fee. Once approved, panel listing is a flat €39/month in Ireland or $49/month in the US — cancel anytime.
       </p>
       <ul className="mt-4 list-disc pl-6 text-sm text-muted-foreground space-y-1">
         <li>Ireland: you must hold a current practising certificate and professional indemnity insurance, and follow the LSRA advertising regulations.</li>

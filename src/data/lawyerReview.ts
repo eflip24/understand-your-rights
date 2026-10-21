@@ -47,6 +47,12 @@ export const REVIEW_JURISDICTIONS: Record<ReviewJurisdiction, {
   },
 };
 
+/** Flat monthly panel listing fee (never a share of legal fees). */
+export const LAWYER_LISTING_PRICES: Record<ReviewJurisdiction, { slug: "lawyer-listing-ie" | "lawyer-listing-us"; cents: number; label: string }> = {
+  ie: { slug: "lawyer-listing-ie", cents: 3900, label: "€39/month" },
+  us: { slug: "lawyer-listing-us", cents: 4900, label: "$49/month" },
+};
+
 export const IE_REDUNDANCY_WEEKLY_CAP = 600;
 
 /** Irish statutory redundancy: 2 weeks per year + 1 bonus week, weekly pay capped at €600, needs 2+ years. */

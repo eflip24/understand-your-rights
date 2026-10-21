@@ -10,6 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { useLocalizedPath } from "@/i18n/paths";
 import ReviewTracker from "@/components/review/ReviewTracker";
+import LawyerListingCard from "@/components/review/LawyerListingCard";
 
 export default function LawyerPortalPage() {
   const { user } = useAuth();
@@ -20,7 +21,7 @@ export default function LawyerPortalPage() {
 
   const load = useCallback(async () => {
     if (!user) return;
-    const { data: l } = await supabase.from("review_lawyers").select("id, status, full_name").eq("user_id", user.id).maybeSingle();
+    const { data: l } = await supabase.from("review_lawyers").select("id, status, full_name, jurisdiction").eq("user_id", user.id).maybeSingle();
     setLawyer(l);
     if (l?.status === "approved") {
       const { data } = await supabase.from("review_requests").select("*").eq("lawyer_id", l.id).order("created_at", { ascending: false });
@@ -62,6 +63,7 @@ export default function LawyerPortalPage() {
       <Head title="Lawyer portal | LegallySpoken" description="Review requests." noindex />
       <h1 className="font-serif text-3xl font-bold">Lawyer portal</h1>
       <p className="text-muted-foreground">Welcome, {lawyer.full_name}. Keep all case communication here.</p>
+      <LawyerListingCard jurisdiction={lawyer.jurisdiction} />
       {rows.length === 0 && <p className="mt-6 text-muted-foreground">No requests assigned yet.</p>}
       <div className="space-y-4 mt-6">
         {rows.map((r) => (
