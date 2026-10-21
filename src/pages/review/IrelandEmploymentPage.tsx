@@ -58,9 +58,9 @@ const CONTENT: Record<Variant, {
         { t: "How each payment is labelled in the agreement changes the tax, so the same headline figure can leave you with very different take-home pay.", s: REV },
       ]},
       { h: "Check the waiver and restrictions", points: [
-        { t: "Make sure the agreement lists which claims you are waiving, such as unfair dismissal, equality, wages, and notice. Ask for carve-outs for accrued pension rights and personal injury claims you don't know about yet.", s: WRC_D },
-        { t: "Look for mutual confidentiality and non-disparagement clauses, an agreed reference, and whether any non-compete clause is being reaffirmed.", s: WRC_D },
-        { t: "Employers often pay a contribution towards independent legal advice. Ask for it, because informed consent makes the waiver stronger for both sides.", s: WRC_D },
+        { t: "Make sure the agreement lists which claims you are waiving, such as unfair dismissal, equality, wages, and notice. Ask for carve-outs for accrued pension rights and personal injury claims you don't know about yet." },
+        { t: "Look for mutual confidentiality and non-disparagement clauses, an agreed reference, and whether any non-compete clause is being reaffirmed." },
+        { t: "Employers often pay a contribution towards independent legal advice. Ask for it, because informed consent makes the waiver stronger for both sides." },
       ]},
     ],
     faqs: [
