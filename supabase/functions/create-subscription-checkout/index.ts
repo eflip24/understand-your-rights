@@ -14,6 +14,8 @@ const supabase = createClient(
 const PLAN_INTERVAL: Record<string, "month" | "year"> = {
   "unlimited-monthly": "month",
   "unlimited-annual": "year",
+  "lawyer-listing-ie": "month",
+  "lawyer-listing-us": "month",
 };
 
 async function resolveCustomer(
@@ -73,8 +75,10 @@ Deno.serve(async (req) => {
       .select("id, status")
       .eq("user_id", user.id)
       .in("status", ["active", "trialing", "past_due"])
+      .like("plan_slug", plan.startsWith("lawyer-") ? "lawyer-%" : "unlimited-%")
+      .limit(1)
       .maybeSingle();
-    if (existing) throw new Error("You already have an active membership.");
+    if (existing) throw new Error(plan.startsWith("lawyer-") ? "Your panel listing is already active." : "You already have an active membership.");
 
     const stripe = createStripeClient(environment as StripeEnv);
     const customerId = await resolveCustomer(stripe, { userId: user.id, email: user.email ?? undefined });
