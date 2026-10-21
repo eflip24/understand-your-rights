@@ -10,3 +10,7 @@
 - [ ] Hide weak duplicates — only with per-page Search Console proof of zero showings
 - [ ] Publish, then resubmit sitemap in Search Console (needs user publish)
 - [ ] Four-week click check per page
+- [x] Lawyer review Phase 0-2: research, US + Ireland severance review pages, panel sign-up, lawyer portal, client tracker, admin approval
+- [ ] Lawyer monthly listing subscription (after pilot; needs price from user)
+- [ ] Ireland Phase 3: unfair dismissal / settlement agreement pages + solicitor outreach list
+- [ ] Email alerts to lawyers on new assigned request

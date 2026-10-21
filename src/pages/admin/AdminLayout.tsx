@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Outlet, Link, useNavigate, useLocation } from "react-router-dom";
 import { useAdminRole } from "@/hooks/useAdminRole";
 import { useAuth } from "@/contexts/AuthContext";
-import { LayoutDashboard, FileText, Tags, TrendingUp, DollarSign, Languages, ArrowLeft, Loader2 , Inbox, MonitorPlay } from "lucide-react";
+import { LayoutDashboard, FileText, Tags, TrendingUp, DollarSign, Languages, ArrowLeft, Loader2 , Inbox, MonitorPlay, Scale } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const sidebarLinks = [
@@ -14,6 +14,7 @@ const sidebarLinks = [
   { label: "Translations", href: "/admin/translations", icon: Languages },
   { label: "Case Leads", href: "/admin/leads", icon: Inbox },
   { label: "Ad Performance", href: "/admin/ads", icon: MonitorPlay },
+  { label: "Review Panel", href: "/admin/lawyers", icon: Scale },
 ];
 
 export default function AdminLayout() {

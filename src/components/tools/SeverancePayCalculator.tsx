@@ -1,3 +1,4 @@
+import LawyerReviewCta from "@/components/review/LawyerReviewCta";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -181,6 +182,7 @@ export default function SeverancePayCalculator() {
           Use the European severance calculator <ArrowRight className="h-3 w-3" />
         </Link>
       </p>
+      <LawyerReviewCta />
     </div>
   );
 }

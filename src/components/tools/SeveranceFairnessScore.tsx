@@ -1,3 +1,4 @@
+import LawyerReviewCta from "@/components/review/LawyerReviewCta";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -97,6 +98,7 @@ export default function SeveranceFairnessScore() {
           </CardContent>
         </Card>
       )}
+      <LawyerReviewCta />
     </div>
   );
 }

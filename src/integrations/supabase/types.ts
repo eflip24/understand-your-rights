@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.5"
+    PostgrestVersion: "14.1"
   }
   public: {
     Tables: {
@@ -748,6 +748,131 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      review_lawyers: {
+        Row: {
+          bio: string | null
+          created_at: string
+          credential_number: string
+          currency: string
+          email: string
+          firm_name: string | null
+          fixed_price_cents: number
+          full_name: string
+          has_insurance: boolean
+          id: string
+          jurisdiction: string
+          payment_link: string | null
+          region: string | null
+          status: string
+          turnaround_hours: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          bio?: string | null
+          created_at?: string
+          credential_number: string
+          currency?: string
+          email: string
+          firm_name?: string | null
+          fixed_price_cents: number
+          full_name: string
+          has_insurance?: boolean
+          id?: string
+          jurisdiction: string
+          payment_link?: string | null
+          region?: string | null
+          status?: string
+          turnaround_hours?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          bio?: string | null
+          created_at?: string
+          credential_number?: string
+          currency?: string
+          email?: string
+          firm_name?: string | null
+          fixed_price_cents?: number
+          full_name?: string
+          has_insurance?: boolean
+          id?: string
+          jurisdiction?: string
+          payment_link?: string | null
+          region?: string | null
+          status?: string
+          turnaround_hours?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      review_requests: {
+        Row: {
+          ai_summary: Json | null
+          answers: Json
+          client_email: string
+          client_id: string
+          client_name: string
+          created_at: string
+          delivered_path: string | null
+          document_path: string | null
+          id: string
+          jurisdiction: string
+          lawyer_id: string | null
+          lawyer_note: string | null
+          region: string | null
+          service: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          ai_summary?: Json | null
+          answers?: Json
+          client_email: string
+          client_id: string
+          client_name: string
+          created_at?: string
+          delivered_path?: string | null
+          document_path?: string | null
+          id?: string
+          jurisdiction: string
+          lawyer_id?: string | null
+          lawyer_note?: string | null
+          region?: string | null
+          service?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          ai_summary?: Json | null
+          answers?: Json
+          client_email?: string
+          client_id?: string
+          client_name?: string
+          created_at?: string
+          delivered_path?: string | null
+          document_path?: string | null
+          id?: string
+          jurisdiction?: string
+          lawyer_id?: string | null
+          lawyer_note?: string | null
+          region?: string | null
+          service?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "review_requests_lawyer_id_fkey"
+            columns: ["lawyer_id"]
+            isOneToOne: false
+            referencedRelation: "review_lawyers"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       saved_analyses: {
         Row: {
