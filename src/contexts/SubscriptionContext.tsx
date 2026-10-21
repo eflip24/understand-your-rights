@@ -42,6 +42,8 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
       .select("id, plan_slug, status, current_period_end, cancel_at_period_end")
       .eq("user_id", user.id)
       .in("status", ACTIVE_STATUSES)
+      .like("plan_slug", "unlimited-%")
+      .limit(1)
       .maybeSingle();
     setSubscription((data as SubscriptionRow) ?? null);
     setLoading(false);

@@ -73,6 +73,7 @@ export default function SeveranceReviewPage({ jurisdiction }: { jurisdiction: Re
       } else if (lawyerId) {
         await supabase.from("review_requests").update({ status: "with_lawyer" }).eq("id", row.id);
       }
+      if (lawyerId) await supabase.functions.invoke("notify-review", { body: { requestId: row.id, event: "assigned" } }).catch(() => {});
       navigate(lp("/my-reviews"));
     } catch (err: any) {
       toast({ title: "Something went wrong", description: err?.message ?? "Please try again.", variant: "destructive" });

@@ -34,15 +34,16 @@ export default function LawyerJoinPage() {
     if (!user) return;
     if (!insured) { toast({ title: "Insurance required", description: "Panel members must hold professional indemnity insurance.", variant: "destructive" }); return; }
     setBusy(true);
-    const { error } = await supabase.from("review_lawyers").insert([{
+    const { data: created, error } = await supabase.from("review_lawyers").insert([{
       user_id: user.id, email: user.email ?? "", jurisdiction: jur, currency: j.currency,
       full_name: f.full_name, firm_name: f.firm_name || null, region: f.region || null,
       credential_number: f.credential_number, has_insurance: insured,
       fixed_price_cents: Math.round(Number(f.price) * 100), turnaround_hours: Number(f.turnaround) || 48,
       payment_link: f.payment_link || null, bio: f.bio || null,
-    }]);
+    }]).select("id").single();
     setBusy(false);
     if (error) { toast({ title: "Could not submit", description: error.message, variant: "destructive" }); return; }
+    if (created) await supabase.functions.invoke("notify-review", { body: { requestId: created.id, event: "lawyer_applied" } }).catch(() => {});
     setExisting("pending");
   };
 
@@ -54,7 +55,7 @@ export default function LawyerJoinPage() {
       <h1 className="font-serif text-3xl font-bold">Join the review panel</h1>
       <p className="mt-3 text-muted-foreground">
         For freelance and locum solicitors in Ireland and licensed lawyers in the US. Clients arrive with their agreement and a structured AI briefing already prepared.
-        You set your own fixed fee and clients pay you directly — we never take a share of your fee. Panel membership will be a flat monthly listing fee (free during the pilot).
+        You set your own fixed fee and clients pay you directly — we never take a share of your fee. Once approved, panel listing is a flat €39/month in Ireland or $49/month in the US — cancel anytime.
       </p>
       <ul className="mt-4 list-disc pl-6 text-sm text-muted-foreground space-y-1">
         <li>Ireland: you must hold a current practising certificate and professional indemnity insurance, and follow the LSRA advertising regulations.</li>

@@ -549,6 +549,7 @@ function buildGuides(): string {
   e.push(u(`${SITE}/statute-of-limitations-by-state`,"weekly","0.9"));
   // Spain cross-border lawyer guide (EN, with DA/SV/NO/NL summaries)
   e.push(u(`${SITE}/english-speaking-lawyer-in-spain`,"monthly","0.9"));
+  for (const p of ["/ireland/unfair-dismissal","/ireland/settlement-agreement","/lawyer-review/severance","/lawyer-review/severance-ireland","/lawyer-review/join"]) e.push(u(`${SITE}${p}`,"monthly","0.8"));
   // International legal guides (EN-only)
   e.push(u(`${SITE}/international`,"weekly","0.9"));
   for (const c of ["united-kingdom","ireland","canada","australia","new-zealand","south-africa"]) {

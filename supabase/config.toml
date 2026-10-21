@@ -43,3 +43,6 @@ verify_jwt = false
 
 [functions.manage-subscription]
 verify_jwt = false
+
+[functions.notify-review]
+verify_jwt = false

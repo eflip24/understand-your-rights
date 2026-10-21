@@ -22,6 +22,7 @@ export default function AdminLawyers() {
   };
   const assign = async (reqId: string, lawyerId: string) => {
     await supabase.from("review_requests").update({ lawyer_id: lawyerId || null, status: lawyerId ? "with_lawyer" : "received" }).eq("id", reqId);
+    if (lawyerId) await supabase.functions.invoke("notify-review", { body: { requestId: reqId, event: "assigned" } }).catch(() => {});
     load();
   };
   const approved = lawyers.filter((l) => l.status === "approved");

@@ -4,6 +4,7 @@ import { template as purchaseReceipt } from './purchase-receipt.tsx'
 import { template as estimateResult } from './estimate-result.tsx'
 import { template as caseReviewReceived } from './case-review-received.tsx'
 import { template as deadlineReminder } from './deadline-reminder.tsx'
+import { template as reviewUpdate } from './review-update.tsx'
 
 export interface TemplateEntry {
   component: ComponentType<any>
@@ -18,4 +19,5 @@ export const TEMPLATES: Record<string, TemplateEntry> = {
   'estimate-result': estimateResult,
   'case-review-received': caseReviewReceived,
   'deadline-reminder': deadlineReminder,
+  'review-update': reviewUpdate,
 }
