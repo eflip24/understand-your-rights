@@ -1,3 +1,4 @@
+import LawyerReviewCta from "@/components/review/LawyerReviewCta";
 import { useMemo, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -145,6 +146,7 @@ export default function EuSeveranceCalculator({ fixedCountry }: Props) {
           termination letter before you sign anything.
         </AlertDescription>
       </Alert>
+      <LawyerReviewCta />
     </div>
   );
 }
