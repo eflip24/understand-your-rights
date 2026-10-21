@@ -35,7 +35,9 @@ export default function LawyerPortalPage() {
   };
   const setStatus = async (id: string, status: string) => {
     const { error } = await supabase.from("review_requests").update({ status }).eq("id", id);
-    if (error) toast({ title: "Error", description: error.message, variant: "destructive" }); else load();
+    if (error) { toast({ title: "Error", description: error.message, variant: "destructive" }); return; }
+    if (status === "declined") await supabase.functions.invoke("notify-review", { body: { requestId: id, event: "declined" } }).catch(() => {});
+    load();
   };
   const deliver = async (r: any, file: File | undefined) => {
     if (!file) return;
@@ -43,7 +45,8 @@ export default function LawyerPortalPage() {
     const { error } = await supabase.storage.from("reviews").upload(path, file);
     if (error) { toast({ title: "Upload failed", description: error.message, variant: "destructive" }); return; }
     await supabase.from("review_requests").update({ delivered_path: path, lawyer_note: notes[r.id] ?? r.lawyer_note, status: "delivered" }).eq("id", r.id);
-    toast({ title: "Delivered" }); load();
+    await supabase.functions.invoke("notify-review", { body: { requestId: r.id, event: "delivered" } }).catch(() => {});
+    toast({ title: "Delivered — the client has been emailed" }); load();
   };
 
   if (!user) return <div className="container py-16 text-center"><Button asChild><Link to={lp("/login?redirect=/lawyer-portal")}>Sign in</Link></Button></div>;
