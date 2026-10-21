@@ -41,6 +41,18 @@ export const guideGroups: GuideGroup[] = [
         badge: "New",
       },
       {
+        path: "/ireland/unfair-dismissal",
+        title: "Unfair dismissal in Ireland: rules, WRC deadlines and compensation",
+        blurb: "The 12-month rule, automatically unfair reasons, the 6-month WRC deadline and up to 104 weeks' pay — with fixed-fee solicitor review.",
+        badge: "New",
+      },
+      {
+        path: "/ireland/settlement-agreement",
+        title: "Settlement agreements in Ireland: what to check before signing",
+        blurb: "Statutory redundancy, the €10,160 + €765/year tax-free exemption, waivers and carve-outs — with fixed-fee solicitor review.",
+        badge: "New",
+      },
+      {
         path: "/international",
         title: "International legal guides (UK, Ireland, Canada, Australia, NZ, South Africa)",
         blurb:
