@@ -63,6 +63,7 @@ const SeveranceReviewPage = React.lazy(() => import("@/pages/review/SeveranceRev
 const LawyerJoinPage = React.lazy(() => import("@/pages/review/LawyerJoinPage"));
 const LawyerPortalPage = React.lazy(() => import("@/pages/review/LawyerPortalPage"));
 const MyReviewsPage = React.lazy(() => import("@/pages/review/MyReviewsPage"));
+const IrelandEmploymentPage = React.lazy(() => import("@/pages/review/IrelandEmploymentPage"));
 const DisclaimerPage = React.lazy(() => import("@/pages/DisclaimerPage"));
 const PrivacyPolicyPage = React.lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage"));
@@ -170,6 +171,8 @@ export default function AppRoutes() {
       <Route path="/lawyer-review/join" element={<LawyerJoinPage />} />
       <Route path="/lawyer-portal" element={<LawyerPortalPage />} />
       <Route path="/my-reviews" element={<MyReviewsPage />} />
+      <Route path="/ireland/unfair-dismissal" element={<IrelandEmploymentPage variant="unfair-dismissal" />} />
+      <Route path="/ireland/settlement-agreement" element={<IrelandEmploymentPage variant="settlement-agreement" />} />
       <Route path="/unsubscribe" element={<UnsubscribePage />} />
       <Route path="/legal-terms" element={<LegalTermsDirectory />} />
       <Route path="/legal-terms/:slug" element={<LegalTermPage />} />
