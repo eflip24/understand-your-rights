@@ -58,6 +58,11 @@ const AdminPrices = React.lazy(() => import("@/pages/admin/AdminPrices"));
 const AdminTranslations = React.lazy(() => import("@/pages/admin/AdminTranslations"));
 const AdminLeads = React.lazy(() => import("@/pages/admin/AdminLeads"));
 const AdminAds = React.lazy(() => import("@/pages/admin/AdminAds"));
+const AdminLawyers = React.lazy(() => import("@/pages/admin/AdminLawyers"));
+const SeveranceReviewPage = React.lazy(() => import("@/pages/review/SeveranceReviewPage"));
+const LawyerJoinPage = React.lazy(() => import("@/pages/review/LawyerJoinPage"));
+const LawyerPortalPage = React.lazy(() => import("@/pages/review/LawyerPortalPage"));
+const MyReviewsPage = React.lazy(() => import("@/pages/review/MyReviewsPage"));
 const DisclaimerPage = React.lazy(() => import("@/pages/DisclaimerPage"));
 const PrivacyPolicyPage = React.lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = React.lazy(() => import("@/pages/TermsOfServicePage"));
@@ -160,6 +165,11 @@ export default function AppRoutes() {
       <Route path="/eu-forms/:slug" element={<FormWizardPage />} />
       <Route path="/eu-forms/:country/:slug" element={<FormWizardPage />} />
       <Route path="/checkout/return" element={<CheckoutReturnPage />} />
+      <Route path="/lawyer-review/severance" element={<SeveranceReviewPage jurisdiction="us" />} />
+      <Route path="/lawyer-review/severance-ireland" element={<SeveranceReviewPage jurisdiction="ie" />} />
+      <Route path="/lawyer-review/join" element={<LawyerJoinPage />} />
+      <Route path="/lawyer-portal" element={<LawyerPortalPage />} />
+      <Route path="/my-reviews" element={<MyReviewsPage />} />
       <Route path="/unsubscribe" element={<UnsubscribePage />} />
       <Route path="/legal-terms" element={<LegalTermsDirectory />} />
       <Route path="/legal-terms/:slug" element={<LegalTermPage />} />
@@ -189,6 +199,7 @@ export default function AppRoutes() {
         <Route path="translations" element={<AdminTranslations />} />
         <Route path="leads" element={<AdminLeads />} />
         <Route path="ads" element={<AdminAds />} />
+        <Route path="lawyers" element={<AdminLawyers />} />
 
       </Route>
       <Route path="/auto-accident-law" element={<PillarPageWrapper category="auto" />} />
