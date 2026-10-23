@@ -8,6 +8,13 @@
       "when": 1792603663010,
       "tag": "0000_lawyer_review_marketplace",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792790326500,
+      "tag": "0001_pin_email_queue_search_path",
+      "breakpoints": true
     }
   ]
 }
