@@ -193,14 +193,17 @@ function uL(path: string, freq: string, pri: string): string {
 }
 
 function sitemapIndex(): string {
-  const BASE = "https://fpdfibyywvlcqjrkuuhz.supabase.co/functions/v1/generate-sitemap";
+  // Same-host shards are materialised by scripts/generate-sitemap-shards.mjs at
+  // build time; search engines discount sitemaps served from a different
+  // hostname than the URLs they contain, so never emit the function's own URL.
+  const SITE = "https://legallyspoken.com";
   const types = [
     "core","tools","legal-terms","guides","lawyers","blog","state-guides","statutes","forms",
     "core-i18n","tools-i18n","legal-terms-i18n","guides-i18n","lawyers-eu-i18n","forms-eu-i18n",
     "eu-tools-i18n",
   ];
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${BASE}?type=${t}</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${types.map(t => `  <sitemap>\n    <loc>${SITE}/sitemaps/${t}.xml</loc>\n  </sitemap>`).join("\n")}\n</sitemapindex>`;
 }
 
 // === i18n shards: one <url> per (path × locale), each with full hreflang alternates ===
